@@ -1,0 +1,784 @@
+365天培训HTML文件格式检查报告
+生成时间: 2026/5/26 13:07:46
+================================================================================
+
+问题统计:
+  缺少函数: initChoiceQuestions: 10 个文件
+  缺少函数: toggleOption: 10 个文件
+  缺少函数: getSelectedIndices: 10 个文件
+  缺少nav-bottom: 9 个文件
+  缺少函数: submitAll: 2 个文件
+  标题格式不正确: 1 个文件
+
+详细结果（按问题数量降序）:
+--------------------------------------------------------------------------------
+
+day157.html (第157天) - 5个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少函数: submitAll
+  ❌ 缺少nav-bottom
+
+day176.html (第176天) - 5个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少函数: submitAll
+  ❌ 缺少nav-bottom
+
+day154.html (第154天) - 4个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少nav-bottom
+
+day155.html (第155天) - 4个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少nav-bottom
+
+day156.html (第156天) - 4个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少nav-bottom
+
+day158.html (第158天) - 4个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少nav-bottom
+
+day159.html (第159天) - 4个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少nav-bottom
+
+day160.html (第160天) - 4个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少nav-bottom
+
+day161.html (第161天) - 4个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+  ❌ 缺少nav-bottom
+
+day118.html (第118天) - 3个问题
+  ❌ 缺少函数: initChoiceQuestions
+  ❌ 缺少函数: toggleOption
+  ❌ 缺少函数: getSelectedIndices
+
+day086.html (第86天) - 1个问题
+  ❌ 标题格式不正确
+
+day002.html (第2天) - 0个问题
+
+day003.html (第3天) - 0个问题
+
+day004.html (第4天) - 0个问题
+
+day005.html (第5天) - 0个问题
+
+day006.html (第6天) - 0个问题
+
+day007.html (第7天) - 0个问题
+
+day008.html (第8天) - 0个问题
+
+day009.html (第9天) - 0个问题
+
+day010.html (第10天) - 0个问题
+
+day011.html (第11天) - 0个问题
+
+day012.html (第12天) - 0个问题
+
+day013.html (第13天) - 0个问题
+
+day014.html (第14天) - 0个问题
+
+day015.html (第15天) - 0个问题
+
+day016.html (第16天) - 0个问题
+
+day017.html (第17天) - 0个问题
+
+day018.html (第18天) - 0个问题
+
+day019.html (第19天) - 0个问题
+
+day020.html (第20天) - 0个问题
+
+day021.html (第21天) - 0个问题
+
+day022.html (第22天) - 0个问题
+
+day023.html (第23天) - 0个问题
+
+day024.html (第24天) - 0个问题
+
+day025.html (第25天) - 0个问题
+
+day026.html (第26天) - 0个问题
+
+day027.html (第27天) - 0个问题
+
+day028.html (第28天) - 0个问题
+
+day029.html (第29天) - 0个问题
+
+day030.html (第30天) - 0个问题
+
+day031.html (第31天) - 0个问题
+
+day032.html (第32天) - 0个问题
+
+day033.html (第33天) - 0个问题
+
+day034.html (第34天) - 0个问题
+
+day035.html (第35天) - 0个问题
+
+day036.html (第36天) - 0个问题
+
+day037.html (第37天) - 0个问题
+
+day038.html (第38天) - 0个问题
+
+day039.html (第39天) - 0个问题
+
+day040.html (第40天) - 0个问题
+
+day041.html (第41天) - 0个问题
+
+day042.html (第42天) - 0个问题
+
+day043.html (第43天) - 0个问题
+
+day044.html (第44天) - 0个问题
+
+day045.html (第45天) - 0个问题
+
+day046.html (第46天) - 0个问题
+
+day047.html (第47天) - 0个问题
+
+day048.html (第48天) - 0个问题
+
+day049.html (第49天) - 0个问题
+
+day050.html (第50天) - 0个问题
+
+day051.html (第51天) - 0个问题
+
+day052.html (第52天) - 0个问题
+
+day053.html (第53天) - 0个问题
+
+day054.html (第54天) - 0个问题
+
+day055.html (第55天) - 0个问题
+
+day056.html (第56天) - 0个问题
+
+day057.html (第57天) - 0个问题
+
+day058.html (第58天) - 0个问题
+
+day059.html (第59天) - 0个问题
+
+day060.html (第60天) - 0个问题
+
+day061.html (第61天) - 0个问题
+
+day062.html (第62天) - 0个问题
+
+day063.html (第63天) - 0个问题
+
+day064.html (第64天) - 0个问题
+
+day065.html (第65天) - 0个问题
+
+day066.html (第66天) - 0个问题
+
+day067.html (第67天) - 0个问题
+
+day068.html (第68天) - 0个问题
+
+day069.html (第69天) - 0个问题
+
+day070.html (第70天) - 0个问题
+
+day071.html (第71天) - 0个问题
+
+day072.html (第72天) - 0个问题
+
+day073.html (第73天) - 0个问题
+
+day074.html (第74天) - 0个问题
+
+day075.html (第75天) - 0个问题
+
+day076.html (第76天) - 0个问题
+
+day077.html (第77天) - 0个问题
+
+day078.html (第78天) - 0个问题
+
+day079.html (第79天) - 0个问题
+
+day080.html (第80天) - 0个问题
+
+day081.html (第81天) - 0个问题
+
+day082.html (第82天) - 0个问题
+
+day083.html (第83天) - 0个问题
+
+day084.html (第84天) - 0个问题
+
+day085.html (第85天) - 0个问题
+
+day087.html (第87天) - 0个问题
+
+day088.html (第88天) - 0个问题
+
+day089.html (第89天) - 0个问题
+
+day090.html (第90天) - 0个问题
+
+day091.html (第91天) - 0个问题
+
+day092.html (第92天) - 0个问题
+
+day093.html (第93天) - 0个问题
+
+day094.html (第94天) - 0个问题
+
+day095.html (第95天) - 0个问题
+
+day096.html (第96天) - 0个问题
+
+day097.html (第97天) - 0个问题
+
+day098.html (第98天) - 0个问题
+
+day099.html (第99天) - 0个问题
+
+day100.html (第100天) - 0个问题
+
+day101.html (第101天) - 0个问题
+
+day102.html (第102天) - 0个问题
+
+day103.html (第103天) - 0个问题
+
+day104.html (第104天) - 0个问题
+
+day105.html (第105天) - 0个问题
+
+day106.html (第106天) - 0个问题
+
+day107.html (第107天) - 0个问题
+
+day108.html (第108天) - 0个问题
+
+day109.html (第109天) - 0个问题
+
+day110.html (第110天) - 0个问题
+
+day111.html (第111天) - 0个问题
+
+day112.html (第112天) - 0个问题
+
+day113.html (第113天) - 0个问题
+
+day114.html (第114天) - 0个问题
+
+day115.html (第115天) - 0个问题
+
+day116.html (第116天) - 0个问题
+
+day117.html (第117天) - 0个问题
+
+day119.html (第119天) - 0个问题
+
+day120.html (第120天) - 0个问题
+
+day121.html (第121天) - 0个问题
+
+day122.html (第122天) - 0个问题
+
+day123.html (第123天) - 0个问题
+
+day124.html (第124天) - 0个问题
+
+day125.html (第125天) - 0个问题
+
+day126.html (第126天) - 0个问题
+
+day127.html (第127天) - 0个问题
+
+day128.html (第128天) - 0个问题
+
+day129.html (第129天) - 0个问题
+
+day130.html (第130天) - 0个问题
+
+day131.html (第131天) - 0个问题
+
+day132.html (第132天) - 0个问题
+
+day133.html (第133天) - 0个问题
+
+day134.html (第134天) - 0个问题
+
+day135.html (第135天) - 0个问题
+
+day136.html (第136天) - 0个问题
+
+day137.html (第137天) - 0个问题
+
+day138.html (第138天) - 0个问题
+
+day139.html (第139天) - 0个问题
+
+day140.html (第140天) - 0个问题
+
+day141.html (第141天) - 0个问题
+
+day142.html (第142天) - 0个问题
+
+day143.html (第143天) - 0个问题
+
+day144.html (第144天) - 0个问题
+
+day145.html (第145天) - 0个问题
+
+day146.html (第146天) - 0个问题
+
+day147.html (第147天) - 0个问题
+
+day148.html (第148天) - 0个问题
+
+day149.html (第149天) - 0个问题
+
+day150.html (第150天) - 0个问题
+
+day151.html (第151天) - 0个问题
+
+day152.html (第152天) - 0个问题
+
+day153.html (第153天) - 0个问题
+
+day162.html (第162天) - 0个问题
+
+day163.html (第163天) - 0个问题
+
+day164.html (第164天) - 0个问题
+
+day165.html (第165天) - 0个问题
+
+day166.html (第166天) - 0个问题
+
+day167.html (第167天) - 0个问题
+
+day168.html (第168天) - 0个问题
+
+day169.html (第169天) - 0个问题
+
+day170.html (第170天) - 0个问题
+
+day171.html (第171天) - 0个问题
+
+day172.html (第172天) - 0个问题
+
+day173.html (第173天) - 0个问题
+
+day174.html (第174天) - 0个问题
+
+day175.html (第175天) - 0个问题
+
+day177.html (第177天) - 0个问题
+
+day178.html (第178天) - 0个问题
+
+day179.html (第179天) - 0个问题
+
+day180.html (第180天) - 0个问题
+
+day181.html (第181天) - 0个问题
+
+day182.html (第182天) - 0个问题
+
+day183.html (第183天) - 0个问题
+
+day184.html (第184天) - 0个问题
+
+day185.html (第185天) - 0个问题
+
+day186.html (第186天) - 0个问题
+
+day187.html (第187天) - 0个问题
+
+day188.html (第188天) - 0个问题
+
+day189.html (第189天) - 0个问题
+
+day190.html (第190天) - 0个问题
+
+day191.html (第191天) - 0个问题
+
+day192.html (第192天) - 0个问题
+
+day193.html (第193天) - 0个问题
+
+day194.html (第194天) - 0个问题
+
+day195.html (第195天) - 0个问题
+
+day196.html (第196天) - 0个问题
+
+day197.html (第197天) - 0个问题
+
+day198.html (第198天) - 0个问题
+
+day199.html (第199天) - 0个问题
+
+day200.html (第200天) - 0个问题
+
+day201.html (第201天) - 0个问题
+
+day202.html (第202天) - 0个问题
+
+day203.html (第203天) - 0个问题
+
+day204.html (第204天) - 0个问题
+
+day205.html (第205天) - 0个问题
+
+day206.html (第206天) - 0个问题
+
+day207.html (第207天) - 0个问题
+
+day208.html (第208天) - 0个问题
+
+day209.html (第209天) - 0个问题
+
+day210.html (第210天) - 0个问题
+
+day211.html (第211天) - 0个问题
+
+day212.html (第212天) - 0个问题
+
+day213.html (第213天) - 0个问题
+
+day214.html (第214天) - 0个问题
+
+day215.html (第215天) - 0个问题
+
+day216.html (第216天) - 0个问题
+
+day217.html (第217天) - 0个问题
+
+day218.html (第218天) - 0个问题
+
+day219.html (第219天) - 0个问题
+
+day220.html (第220天) - 0个问题
+
+day221.html (第221天) - 0个问题
+
+day222.html (第222天) - 0个问题
+
+day223.html (第223天) - 0个问题
+
+day224.html (第224天) - 0个问题
+
+day225.html (第225天) - 0个问题
+
+day226.html (第226天) - 0个问题
+
+day227.html (第227天) - 0个问题
+
+day228.html (第228天) - 0个问题
+
+day229.html (第229天) - 0个问题
+
+day230.html (第230天) - 0个问题
+
+day231.html (第231天) - 0个问题
+
+day232.html (第232天) - 0个问题
+
+day233.html (第233天) - 0个问题
+
+day234.html (第234天) - 0个问题
+
+day235.html (第235天) - 0个问题
+
+day236.html (第236天) - 0个问题
+
+day237.html (第237天) - 0个问题
+
+day238.html (第238天) - 0个问题
+
+day239.html (第239天) - 0个问题
+
+day240.html (第240天) - 0个问题
+
+day241.html (第241天) - 0个问题
+
+day242.html (第242天) - 0个问题
+
+day243.html (第243天) - 0个问题
+
+day244.html (第244天) - 0个问题
+
+day245.html (第245天) - 0个问题
+
+day246.html (第246天) - 0个问题
+
+day247.html (第247天) - 0个问题
+
+day248.html (第248天) - 0个问题
+
+day249.html (第249天) - 0个问题
+
+day250.html (第250天) - 0个问题
+
+day251.html (第251天) - 0个问题
+
+day252.html (第252天) - 0个问题
+
+day253.html (第253天) - 0个问题
+
+day254.html (第254天) - 0个问题
+
+day255.html (第255天) - 0个问题
+
+day256.html (第256天) - 0个问题
+
+day257.html (第257天) - 0个问题
+
+day258.html (第258天) - 0个问题
+
+day259.html (第259天) - 0个问题
+
+day260.html (第260天) - 0个问题
+
+day261.html (第261天) - 0个问题
+
+day262.html (第262天) - 0个问题
+
+day263.html (第263天) - 0个问题
+
+day264.html (第264天) - 0个问题
+
+day265.html (第265天) - 0个问题
+
+day266.html (第266天) - 0个问题
+
+day267.html (第267天) - 0个问题
+
+day268.html (第268天) - 0个问题
+
+day269.html (第269天) - 0个问题
+
+day270.html (第270天) - 0个问题
+
+day271.html (第271天) - 0个问题
+
+day272.html (第272天) - 0个问题
+
+day273.html (第273天) - 0个问题
+
+day274.html (第274天) - 0个问题
+
+day275.html (第275天) - 0个问题
+
+day276.html (第276天) - 0个问题
+
+day277.html (第277天) - 0个问题
+
+day278.html (第278天) - 0个问题
+
+day279.html (第279天) - 0个问题
+
+day280.html (第280天) - 0个问题
+
+day281.html (第281天) - 0个问题
+
+day282.html (第282天) - 0个问题
+
+day283.html (第283天) - 0个问题
+
+day284.html (第284天) - 0个问题
+
+day285.html (第285天) - 0个问题
+
+day286.html (第286天) - 0个问题
+
+day287.html (第287天) - 0个问题
+
+day288.html (第288天) - 0个问题
+
+day289.html (第289天) - 0个问题
+
+day290.html (第290天) - 0个问题
+
+day291.html (第291天) - 0个问题
+
+day292.html (第292天) - 0个问题
+
+day293.html (第293天) - 0个问题
+
+day294.html (第294天) - 0个问题
+
+day295.html (第295天) - 0个问题
+
+day296.html (第296天) - 0个问题
+
+day297.html (第297天) - 0个问题
+
+day298.html (第298天) - 0个问题
+
+day299.html (第299天) - 0个问题
+
+day300.html (第300天) - 0个问题
+
+day301.html (第301天) - 0个问题
+
+day302.html (第302天) - 0个问题
+
+day303.html (第303天) - 0个问题
+
+day304.html (第304天) - 0个问题
+
+day305.html (第305天) - 0个问题
+
+day306.html (第306天) - 0个问题
+
+day307.html (第307天) - 0个问题
+
+day308.html (第308天) - 0个问题
+
+day309.html (第309天) - 0个问题
+
+day310.html (第310天) - 0个问题
+
+day311.html (第311天) - 0个问题
+
+day312.html (第312天) - 0个问题
+
+day313.html (第313天) - 0个问题
+
+day314.html (第314天) - 0个问题
+
+day315.html (第315天) - 0个问题
+
+day316.html (第316天) - 0个问题
+
+day317.html (第317天) - 0个问题
+
+day318.html (第318天) - 0个问题
+
+day319.html (第319天) - 0个问题
+
+day320.html (第320天) - 0个问题
+
+day321.html (第321天) - 0个问题
+
+day322.html (第322天) - 0个问题
+
+day323.html (第323天) - 0个问题
+
+day324.html (第324天) - 0个问题
+
+day325.html (第325天) - 0个问题
+
+day326.html (第326天) - 0个问题
+
+day327.html (第327天) - 0个问题
+
+day328.html (第328天) - 0个问题
+
+day329.html (第329天) - 0个问题
+
+day330.html (第330天) - 0个问题
+
+day331.html (第331天) - 0个问题
+
+day332.html (第332天) - 0个问题
+
+day333.html (第333天) - 0个问题
+
+day334.html (第334天) - 0个问题
+
+day335.html (第335天) - 0个问题
+
+day336.html (第336天) - 0个问题
+
+day337.html (第337天) - 0个问题
+
+day338.html (第338天) - 0个问题
+
+day339.html (第339天) - 0个问题
+
+day340.html (第340天) - 0个问题
+
+day341.html (第341天) - 0个问题
+
+day342.html (第342天) - 0个问题
+
+day343.html (第343天) - 0个问题
+
+day344.html (第344天) - 0个问题
+
+day345.html (第345天) - 0个问题
+
+day346.html (第346天) - 0个问题
+
+day347.html (第347天) - 0个问题
+
+day348.html (第348天) - 0个问题
+
+day349.html (第349天) - 0个问题
+
+day350.html (第350天) - 0个问题
+
+day351.html (第351天) - 0个问题
+
+day352.html (第352天) - 0个问题
+
+day353.html (第353天) - 0个问题
+
+day354.html (第354天) - 0个问题
+
+day355.html (第355天) - 0个问题
+
+day356.html (第356天) - 0个问题
+
+day357.html (第357天) - 0个问题
+
+day358.html (第358天) - 0个问题
+
+day359.html (第359天) - 0个问题
+
+day360.html (第360天) - 0个问题
+
+day361.html (第361天) - 0个问题
+
+day362.html (第362天) - 0个问题
+
+day363.html (第363天) - 0个问题
+
+day364.html (第364天) - 0个问题
+
+day365.html (第365天) - 0个问题
