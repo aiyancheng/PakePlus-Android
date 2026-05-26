@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>365天眼镜门店员工晋级培训 - 培训大纲</title>
+    <link rel="stylesheet" href="training-styles.css">
+    <style>
+        /* index.html 专属样式 */
+        .index-hero {
+            background: linear-gradient(135deg, #1677FF 0%, #4096FF 50%, #69B1FF 100%);
+            color: white;
+            text-align: center;
+            padding: 48px 20px 40px;
+            margin: -20px -16px 0;
+            border-radius: 0 0 24px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .index-hero h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .index-hero p {
+            font-size: 15px;
+            opacity: 0.85;
+            margin-bottom: 4px;
+        }
+        .index-hero .subtitle {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        /* 搜索区 */
+        .search-area {
+            margin: 20px 0 16px;
+            position: relative;
+            z-index: 10;
+        }
+        .search-box {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: var(--font-family);
+            transition: border-color 0.2s;
+            background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>') no-repeat 12px center;
+            box-sizing: border-box;
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* 模块筛选标签 */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .filter-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid #E8E8E8;
+            background: white;
+            color: #666;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .filter-tab:hover {
+            border-color: var(--primary-lighter);
+            color: var(--primary);
+        }
+        .filter-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* 统计区 */
+        .stats-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 100px;
+            background: white;
+            border-radius: 12px;
+            padding: 14px 12px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #F0F0F0;
+        }
+        .stat-card .stat-num {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-card .stat-label {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        /* 模块手风琴 */
+        .module-accordion {
+            margin-bottom: 20px;
+        }
+        .module-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #1677FF 0%, #4096FF 100%);
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-bottom: 8px;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .module-header:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(22, 119, 255, 0.3);
+        }
+        .module-header.collapsed .module-arrow {
+            transform: rotate(-90deg);
+        }
+        .module-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .module-meta {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .module-arrow {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        /* 周手风琴 */
+        .week-accordion {
+            padding-left: 20px;
+            margin-bottom: 12px;
+            display: none;
+        }
+        .module-header:not(.collapsed) + .week-accordion {
+            display: block;
+        }
+        .week-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: #F0F5FF;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 6px;
+            transition: all 0.2s;
+            user-select: none;
+            border: 1px solid #D6E4FF;
+        }
+        .week-header:hover {
+            background: #E6F0FF;
+        }
+        .week-header.collapsed .week-arrow {
+            transform: rotate(-90deg);
+        }
+        .week-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1677FF;
+        }
+        .week-meta {
+            font-size: 12px;
+            color: #666;
+        }
+        .week-arrow {
+            font-size: 16px;
+            color: #1677FF;
+            transition: transform 0.3s;
+        }
+
+        /* 天数网格 */
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+            padding: 12px 16px 16px;
+            display: none;
+        }
+        .week-header:not(.collapsed) + .days-grid {
+            display: grid;
+        }
+        .day-card {
+            background: white;
+            border-radius: 10px;
+            padding: 10px 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #F0F0F0;
+            text-decoration: none;
+            color: var(--text-body);
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .day-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-lighter);
+        }
+        .day-card .day-num {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .day-card .day-topic {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .day-card .day-week {
+            font-size: 10px;
+            color: var(--text-light);
+            padding: 1px 6px;
+            border-radius: 8px;
+            background: #F5F5F5;
+            align-self: flex-start;
+        }
+        .day-card.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* 无结果提示 */
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* 底部 */
+        .index-footer {
+            text-align: center;
+            padding: 20px 16px 32px;
+            color: var(--text-light);
+            font-size: 13px;
+            border-top: 1px solid #E8E8E8;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .index-hero {
+                padding: 32px 16px 28px;
+                border-radius: 0 0 18px 18px;
+            }
+            .index-hero h1 {
+                font-size: 22px;
+            }
+            .days-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 8px;
+            }
+            .stat-card {
+                min-width: 80px;
+                padding: 10px 8px;
+            }
+            .stat-card .stat-num {
+                font-size: 20px;
+            }
+            .module-header {
+                padding: 12px 16px;
+            }
+            .module-title {
+                font-size: 16px;
+            }
+            .week-header {
+                padding: 10px 12px;
+            }
+            .week-title {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding-bottom: 40px;">
+        <!-- 英雄区 -->
+        <div class="index-hero">
+            <h1>📚 永州爱眼城在职员工晋级培训365天天学练</h1>
+            <p>每天进步一点点，打造专业门店团队</p>
+            <p class="subtitle">产品知识 · 销售技巧 · 验光与视力健康 · 客户服务与沟通</p>
+        </div>
+
+        <!-- 搜索区 -->
+        <div class="search-area">
+            <input type="text" class="search-box" id="searchInput" placeholder="搜索培训主题关键词..." oninput="filterDays()">
+        </div>
+
+        <!-- 模块筛选 -->
+        <div class="filter-tabs" id="filterTabs">
+            <button class="filter-tab active" data-module="all" onclick="switchModule('all', this)">📋 全部</button>
+            <button class="filter-tab" data-module="产品知识" onclick="switchModule('产品知识', this)">🔬 产品知识</button>
+            <button class="filter-tab" data-module="销售技巧" onclick="switchModule('销售技巧', this)">💼 销售技巧</button>
+            <button class="filter-tab" data-module="验光与视力健康" onclick="switchModule('验光与视力健康', this)">👁 验光与视力健康</button>
+            <button class="filter-tab" data-module="客户服务与沟通" onclick="switchModule('客户服务与沟通', this)">🤝 客户服务与沟通</button>
+        </div>
+
+        <!-- 统计区 -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-num" id="statTotal">365</div>
+                <div class="stat-label">总天数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num" id="statDone">326</div>
+                <div class="stat-label">已完成</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num" id="statPct">89.3%</div>
+                <div class="stat-label">完成率</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num" id="statLeft">39</div>
+                <div class="stat-label">剩余天数</div>
+            </div>
+        </div>
+
+        <!-- 模块手风琴区 -->
+        <div class="module-accordion" id="moduleAccordion">
+            <!-- 由JS动态生成 -->
+        </div>
+
+        <!-- 无结果 -->
+        <div class="no-result" id="noResult" style="display:none;">
+            😢 没有找到匹配的培训主题，请尝试其他关键词
+        </div>
+
+        <!-- 底部 -->
+        <div class="index-footer">
+            技术支持：闫胜君视光工作室
+        </div>
+    </div>
+
+    <script>
+        // ========== 365天培训数据（按模块-周-日结构） ==========
+        const trainingData = {
+            modules: [
+                {
+                    id: 'module1',
+                    name: '产品知识',
+                    daysRange: '第1-90天',
+                    totalDays: 90,
+                    weeks: [
+                        {
+                            id: 'week1-2',
+                            name: '第1-2周',
+                            daysRange: '第1-14天',
+                            days: [
+                                {day: 1, topic: '镜片的基本结构与功能'},
+                                {day: 2, topic: '单光镜片的特点与适用人群'},
+                                {day: 3, topic: '渐进多焦点镜片原理与优势'},
+                                {day: 4, topic: '防蓝光镜片：原理、适用场景与争议'},
+                                {day: 5, topic: '染色镜片与变色镜片的区别'},
+                                {day: 6, topic: '偏光镜片：原理与适用人群'},
+                                {day: 7, topic: '镜片材料：玻璃、树脂、PC片对比'},
+                                {day: 8, topic: '镜片镀膜技术：增透膜、硬膜、疏水膜'},
+                                {day: 9, topic: '非球面与双面非球面镜片设计'},
+                                {day: 10, topic: '自由曲面镜片技术前沿'},
+                                {day: 11, topic: '定制镜片：个性化参数解读'},
+                                {day: 12, topic: '如何根据处方选择合适镜片'},
+                                {day: 13, topic: '镜片品牌入门：依视路、蔡司、豪雅'},
+                                {day: 14, topic: '镜片选择常见误区与解答'}
+                            ]
+                        },
+                        {
+                            id: 'week3-4',
+                            name: '第3-4周',
+                            daysRange: '第15-28天',
+                            days: [
+                                {day: 15, topic: '金属镜框：不锈钢、蒙乃尔、纯钛对比'},
+                                {day: 16, topic: '板材镜框：醋酸纤维与注入成型'},
+                                {day: 17, topic: 'TR90镜框：轻盈与韧性的平衡'},
+                                {day: 18, topic: '钛合金镜框：纯钛、β钛、记忆钛'},
+                                {day: 19, topic: '镜框尺寸解读：52□18-140含义'},
+                                {day: 20, topic: '脸型与镜框搭配基础'},
+                                {day: 21, topic: '儿童镜框选择要点'},
+                                {day: 22, topic: '运动镜框：防滑、包裹、透气设计'},
+                                {day: 23, topic: '镜框调整基础：鼻托、镜腿、倾斜角'},
+                                {day: 24, topic: '镜框品牌概览：雷朋、暴龙、川久保玲等'},
+                                {day: 25, topic: '镜框风格：经典、时尚、复古、前卫'},
+                                {day: 26, topic: '老花镜框的特殊设计'},
+                                {day: 27, topic: '镜框保养与清洁指南'},
+                                {day: 28, topic: '镜框尺寸不合适的问题与解决'}
+                            ]
+                        },
+                        {
+                            id: 'week5-6',
+                            name: '第5-6周',
+                            daysRange: '第29-42天',
+                            days: [
+                                {day: 29, topic: '隐形眼镜基础：软性、硬性、混合型'},
+                                {day: 30, topic: '软性隐形眼镜参数解读'},
+                                {day: 31, topic: 'RGP硬性透气性隐形眼镜'},
+                                {day: 32, topic: '散光隐形眼镜：环面设计原理'},
+                                {day: 33, topic: '多焦点隐形眼镜：同时视原理'},
+                                {day: 34, topic: '彩色隐形眼镜：着色区与安全'},
+                                {day: 35, topic: '隐形眼镜基弧与直径选择'},
+                                {day: 36, topic: '隐形眼镜验配流程概述'},
+                                {day: 37, topic: '佩戴与摘取：标准操作教学'},
+                                {day: 38, topic: '护理液选择：多功能、过氧化氢系统'},
+                                {day: 39, topic: '隐形眼镜并发症预防'},
+                                {day: 40, topic: '隐形眼镜禁忌症识别'},
+                                {day: 41, topic: '主流隐形眼镜品牌对比'},
+                                {day: 42, topic: '隐形眼镜销售话术要点'}
+                            ]
+                        },
+                        {
+                            id: 'week7-8',
+                            name: '第7-8周',
+                            daysRange: '第43-56天',
+                            days: [
+                                {day: 43, topic: '太阳镜基础：UV防护标准解读'},
+                                {day: 44, topic: '偏光太阳镜：原理与驾驶安全'},
+                                {day: 45, topic: '变色太阳镜：光致变色原理'},
+                                {day: 46, topic: '时尚太阳镜：脸型搭配进阶'},
+                                {day: 47, topic: '运动太阳镜：骑行、跑步、高尔夫'},
+                                {day: 48, topic: '儿童太阳镜：UV防护重要性'},
+                                {day: 49, topic: '太阳镜镜片颜色与功能关系'},
+                                {day: 50, topic: '太阳镜品牌矩阵：雷朋、Oakley、暴龙等'},
+                                {day: 51, topic: '太阳镜销售场景：驾驶、户外、时尚'},
+                                {day: 52, topic: '太阳镜保养：镜片刮花预防'},
+                                {day: 53, topic: '驾驶太阳镜：偏光+夜视兼容性'},
+                                {day: 54, topic: '滑雪镜与水面运动镜特殊要求'},
+                                {day: 55, topic: '太阳镜验光：近视太阳镜配制'},
+                                {day: 56, topic: '太阳镜客诉常见问题'}
+                            ]
+                        },
+                        {
+                            id: 'week9-10',
+                            name: '第9-10周',
+                            daysRange: '第57-70天',
+                            days: [
+                                {day: 57, topic: '防蓝光镜片深度：波段、阻断率、色偏'},
+                                {day: 58, topic: '抗疲劳镜片：设计原理与适用人群'},
+                                {day: 59, topic: '驾驶镜片：夜视增强与眩光控制'},
+                                {day: 60, topic: '数码型镜片：近用区优化设计'},
+                                {day: 61, topic: '青少年近视防控镜片：周边离焦技术'},
+                                {day: 62, topic: '老花镜片：ADD设计与渐进对比'},
+                                {day: 63, topic: '双光镜片：分界线设计与适应'},
+                                {day: 64, topic: '依视路全系产品对比'},
+                                {day: 65, topic: '蔡司莲花膜与钻立方膜层'},
+                                {day: 66, topic: '豪雅兰御与VP膜层技术'},
+                                {day: 67, topic: '尼康镜片：非球面技术领先'},
+                                {day: 68, topic: '国产品牌：万新、凯米、康耐特'},
+                                {day: 69, topic: '镜片价格策略与报价技巧'},
+                                {day: 70, topic: '功能镜片销售场景演练'}
+                            ]
+                        },
+                        {
+                            id: 'week11-12',
+                            name: '第11-12周',
+                            daysRange: '第71-84天',
+                            days: [
+                                {day: 71, topic: '老花眼生理机制与矫正原理'},
+                                {day: 72, topic: '老花镜类型：单光、双光、渐进'},
+                                {day: 73, topic: '渐进多焦点深度：通道设计、畸变控制'},
+                                {day: 74, topic: '老花镜销售：年龄与ADD对应表'},
+                                {day: 75, topic: '老花眼检查：ADD测定方法'},
+                                {day: 76, topic: '老花镜调整：镜眼距与倾斜角'},
+                                {day: 77, topic: '防护眼镜：工业安全标准ANSI'},
+                                {day: 78, topic: '游泳镜：防雾、近视、平光选择'},
+                                {day: 79, topic: '滑雪护目镜：双层镜片与通风'},
+                                {day: 80, topic: '骑行镜：空气动力学与偏光'},
+                                {day: 81, topic: '电竞眼镜：蓝光+防眩光'},
+                                {day: 82, topic: '睡眠眼镜：遮光与舒适设计'},
+                                {day: 83, topic: '特殊职业眼镜：实验室、医疗、厨师'},
+                                {day: 84, topic: '特殊用途眼镜销售要点'}
+                            ]
+                        },
+                        {
+                            id: 'week13',
+                            name: '第13周',
+                            daysRange: '第85-90天',
+                            days: [
+                                {day: 85, topic: '产品组合销售策略'},
+                                {day: 86, topic: '产品知识阶段测验（一）'},
+                                {day: 87, topic: '产品卖点提炼方法'},
+                                {day: 88, topic: '竞品对比话术'},
+                                {day: 89, topic: '产品培训：如何教新员工'},
+                                {day: 90, topic: '产品知识模块总结与答疑'}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'module2',
+                    name: '销售技巧',
+                    daysRange: '第91-180天',
+                    totalDays: 90,
+                    weeks: [
+                        {
+                            id: 'week1-2',
+                            name: '第1-2周',
+                            daysRange: '第91-104天',
+                            days: [
+                                {day: 91, topic: '顾客进门：第一印象管理'},
+                                {day: 92, topic: '微笑服务与肢体语言'},
+                                {day: 93, topic: '标准问候语与开场白'},
+                                {day: 94, topic: '需求初步询问技巧'},
+                                {day: 95, topic: '建立信任：专业形象塑造'},
+                                {day: 96, topic: '破冰技巧：天气/节日/热点话题'},
+                                {day: 97, topic: '接待禁忌：绝对不能说的话'},
+                                {day: 98, topic: '顾客类型快速识别法'},
+                                {day: 99, topic: '需求紧急程度判断'},
+                                {day: 100, topic: '标准接待七步流程'},
+                                {day: 101, topic: '高峰期快速接待策略'},
+                                {day: 102, topic: '团体顾客：家庭/企业接待'},
+                                {day: 103, topic: '儿童顾客：安抚与引导'},
+                                {day: 104, topic: '特殊需求：低视力/色盲/斜视'}
+                            ]
+                        },
+                        {
+                            id: 'week3-4',
+                            name: '第3-4周',
+                            daysRange: '第105-118天',
+                            days: [
+                                {day: 105, topic: 'SPIN提问法基础'},
+                                {day: 106, topic: '倾听技巧：复述与确认'},
+                                {day: 107, topic: '需求确认：5W1H法'},
+                                {day: 108, topic: '视力问题深度询问'},
+                                {day: 109, topic: '生活场景：工作/娱乐/运动'},
+                                {day: 110, topic: '用眼习惯：时长/距离/光线'},
+                                {day: 111, topic: '预算探询：委婉而有效'},
+                                {day: 112, topic: '隐性需求挖掘：面子/健康/社交'},
+                                {day: 113, topic: '家庭需求：配偶/子女/父母'},
+                                {day: 114, topic: '多副眼镜需求识别'},
+                                {day: 115, topic: '季节性需求：暑假/过年/换季'},
+                                {day: 116, topic: '礼品需求：包装/贺卡/配送'},
+                                {day: 117, topic: '需求挖掘实战演练（一）'},
+                                {day: 118, topic: '需求挖掘实战演练（二）'}
+                            ]
+                        },
+                        {
+                            id: 'week5-6',
+                            name: '第5-6周',
+                            daysRange: '第119-132天',
+                            days: [
+                                {day: 119, topic: 'FAB销售法：特性-优势-利益'},
+                                {day: 120, topic: '产品卖点提炼三要素'},
+                                {day: 121, topic: '场景化推荐：讲故事的力量'},
+                                {day: 122, topic: '对比推荐法：竞品对比技巧'},
+                                {day: 123, topic: '权威推荐：数据/证书/专家'},
+                                {day: 124, topic: '限时推荐：促销与紧迫感'},
+                                {day: 125, topic: '镜片推荐策略（一）：按度数推荐'},
+                                {day: 126, topic: '镜片推荐策略（二）：按场景推荐'},
+                                {day: 127, topic: '镜框推荐策略：脸型+预算+风格'},
+                                {day: 128, topic: '隐形眼镜推荐：适配性评估'},
+                                {day: 129, topic: '太阳镜推荐：UV+偏光+时尚'},
+                                {day: 130, topic: '老花镜推荐：ADD+镜框+渐进'},
+                                {day: 131, topic: '儿童眼镜推荐：安全+舒适+成长'},
+                                {day: 132, topic: '多产品组合推荐策略'}
+                            ]
+                        },
+                        {
+                            id: 'week7-8',
+                            name: '第7-8周',
+                            daysRange: '第133-146天',
+                            days: [
+                                {day: 133, topic: '成交信号识别：语言/行为/表情'},
+                                {day: 134, topic: '促单话术：假设成交法'},
+                                {day: 135, topic: '价格异议处理：价值塑造'},
+                                {day: 136, topic: '分期付款与金融方案介绍'},
+                                {day: 137, topic: '赠品策略：提升感知价值'},
+                                {day: 138, topic: '成交后服务：交付预期管理'},
+                                {day: 139, topic: '难缠顾客成交技巧'},
+                                {day: 140, topic: '价格战应对策略'},
+                                {day: 141, topic: '竞品对比成交法'},
+                                {day: 142, topic: '团体订单成交流程'},
+                                {day: 143, topic: '线上订单转化技巧'},
+                                {day: 144, topic: '成交率提升：数据分析'},
+                                {day: 145, topic: '成交心理：损失厌恶原理'},
+                                {day: 146, topic: '价格谈判底线管理'}
+                            ]
+                        },
+                        {
+                            id: 'week9-10',
+                            name: '第9-10周',
+                            daysRange: '第147-160天',
+                            days: [
+                                {day: 147, topic: '配镜交期管理：承诺与跟踪'},
+                                {day: 148, topic: '取镜指导：佩戴适应训练'},
+                                {day: 149, topic: '调整服务标准流程'},
+                                {day: 150, topic: '保养指导：镜片/镜框/隐形'},
+                                {day: 151, topic: '回访服务：3天/7天/30天'},
+                                {day: 152, topic: '投诉预防：期望管理'},
+                                {day: 153, topic: '售后增值：清洁/调整/检测'},
+                                {day: 154, topic: '维修服务流程与收费'},
+                                {day: 155, topic: '换片服务：旧框新片'},
+                                {day: 156, topic: '以旧换新促销方案'},
+                                {day: 157, topic: '会员激活：沉睡客户唤醒'},
+                                {day: 158, topic: '流失顾客挽回策略'},
+                                {day: 159, topic: '口碑营销：转介绍激励'},
+                                {day: 160, topic: '售后服务KPI设定'}
+                            ]
+                        },
+                        {
+                            id: 'week11-12',
+                            name: '第11-12周',
+                            daysRange: '第161-174天',
+                            days: [
+                                {day: 161, topic: '会员体系设计原理'},
+                                {day: 162, topic: '会员权益销售话术'},
+                                {day: 163, topic: '会员活动策划：节日/店庆/换季'},
+                                {day: 164, topic: '会员数据分析：RFM模型'},
+                                {day: 165, topic: '会员专属优惠设计'},
+                                {day: 166, topic: '会员生日营销自动化'},
+                                {day: 167, topic: '会员升级：银卡→金卡→钻石'},
+                                {day: 168, topic: '复购时机：季节/度数变化/时尚'},
+                                {day: 169, topic: '家庭复购：一人配全家配'},
+                                {day: 170, topic: '礼品复购：节日礼品方案'},
+                                {day: 171, topic: '企业团购：B端销售技巧'},
+                                {day: 172, topic: '异业合作：与眼科医院/学校'},
+                                {day: 173, topic: '销售数据分析：漏斗/转化/客单'},
+                                {day: 174, topic: '销售技巧综合演练'}
+                            ]
+                        },
+                        {
+                            id: 'week13',
+                            name: '第13周',
+                            daysRange: '第175-180天',
+                            days: [
+                                {day: 175, topic: '销售全流程复盘演练'},
+                                {day: 176, topic: '销售话术角色扮演（一）'},
+                                {day: 177, topic: '销售话术角色扮演（二）'},
+                                {day: 178, topic: '销售心理障碍突破'},
+                                {day: 179, topic: '销售目标设定与追踪'},
+                                {day: 180, topic: '销售团队协作机制'}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'module3',
+                    name: '验光与视力健康',
+                    daysRange: '第181-270天',
+                    totalDays: 90,
+                    weeks: [
+                        {
+                            id: 'week1-2',
+                            name: '第1-2周',
+                            daysRange: '第181-194天',
+                            days: [
+                                {day: 181, topic: '视力检查方法：Snellen与LogMAR'},
+                                {day: 182, topic: '视力表使用规范'},
+                                {day: 183, topic: '屈光度概念：球镜/柱镜/轴位'},
+                                {day: 184, topic: '近视原理：眼轴与角膜曲率'},
+                                {day: 185, topic: '远视原理与调节负担'},
+                                {day: 186, topic: '散光原理：角膜不规则'},
+                                {day: 187, topic: '老花原理：晶状体弹性下降'},
+                                {day: 188, topic: '标准验光流程七步法'},
+                                {day: 189, topic: '主观验光：红绿测试原理'},
+                                {day: 190, topic: '客观验光：电脑验光仪使用'},
+                                {day: 191, topic: '散瞳验光适应证与禁忌'},
+                                {day: 192, topic: '小瞳验光适用场景'},
+                                {day: 193, topic: '验光设备基础操作'},
+                                {day: 194, topic: '验光单符号全解读'}
+                            ]
+                        },
+                        {
+                            id: 'week3-4',
+                            name: '第3-4周',
+                            daysRange: '第195-208天',
+                            days: [
+                                {day: 195, topic: '近视的危害：眼底病变风险'},
+                                {day: 196, topic: '高度近视：后巩膜葡萄肿'},
+                                {day: 197, topic: '远视的危害：弱视风险'},
+                                {day: 198, topic: '散光的影响：视觉质量下降'},
+                                {day: 199, topic: '老花的应对：ADD测定'},
+                                {day: 200, topic: '弱视的发现与黄金治疗期'},
+                                {day: 201, topic: '斜视的识别与转诊'},
+                                {day: 202, topic: '白内障：晶状体混浊与手术时机'},
+                                {day: 203, topic: '青光眼：眼压与视神经损伤'},
+                                {day: 204, topic: '黄斑变性：年龄相关与遗传'},
+                                {day: 205, topic: '糖尿病视网膜病变'},
+                                {day: 206, topic: '高血压眼底改变'},
+                                {day: 207, topic: '干眼症：泪膜破裂时间'},
+                                {day: 208, topic: '视疲劳：调节与集合失衡'}
+                            ]
+                        },
+                        {
+                            id: 'week5-6',
+                            name: '第5-6周',
+                            daysRange: '第209-222天',
+                            days: [
+                                {day: 209, topic: '用眼卫生20-20-20法则'},
+                                {day: 210, topic: '蓝光危害：波长与视网膜损伤'},
+                                {day: 211, topic: '户外活动：多巴胺与近视防控'},
+                                {day: 212, topic: '正确读写姿势：一尺一拳一寸'},
+                                {day: 213, topic: '照明环境：色温/照度/频闪'},
+                                {day: 214, topic: '电子产品使用时间管理'},
+                                {day: 215, topic: '眼保健操科学性与替代方案'},
+                                {day: 216, topic: '营养与视力：叶黄素/玉米黄质'},
+                                {day: 217, topic: '维生素A：夜盲与干眼'},
+                                {day: 218, topic: 'Omega-3：干眼症改善'},
+                                {day: 219, topic: '护眼食品清单'},
+                                {day: 220, topic: '护眼茶饮：菊花/枸杞/决明子'},
+                                {day: 221, topic: '视力健康产品：叶黄素补充剂'},
+                                {day: 222, topic: '家庭护眼环境改造方案'}
+                            ]
+                        },
+                        {
+                            id: 'week7-8',
+                            name: '第7-8周',
+                            daysRange: '第223-236天',
+                            days: [
+                                {day: 223, topic: '儿童验光特点：配合度与准确性'},
+                                {day: 224, topic: '散瞳验光必要性：真假近视鉴别'},
+                                {day: 225, topic: '儿童近视防控：OK镜/离焦镜'},
+                                {day: 226, topic: '角膜塑形镜（OK镜）原理'},
+                                {day: 227, topic: '儿童镜框选择：安全优先'},
+                                {day: 228, topic: '儿童隐形眼镜适应证'},
+                                {day: 229, topic: '儿童家庭用眼指导方案'},
+                                {day: 230, topic: '老年人配镜特点：调节幅度下降'},
+                                {day: 231, topic: '老花眼检查：ADD精确测定'},
+                                {day: 232, topic: '白内障术后配镜时机'},
+                                {day: 233, topic: '糖尿病眼病配镜注意事项'},
+                                {day: 234, topic: '低视力辅助器具介绍'},
+                                {day: 235, topic: '老年人镜框：轻便/防滑/易戴'},
+                                {day: 236, topic: '老年人家庭用眼环境建议'}
+                            ]
+                        },
+                        {
+                            id: 'week9-10',
+                            name: '第9-10周',
+                            daysRange: '第237-250天',
+                            days: [
+                                {day: 237, topic: '电脑验光仪：原理与操作规范'},
+                                {day: 238, topic: '综合验光仪：结构与使用'},
+                                {day: 239, topic: '眼压计：NCT与压平式'},
+                                {day: 240, topic: '眼底镜：直接/间接检眼镜'},
+                                {day: 241, topic: '角膜地形图：圆锥角膜筛查'},
+                                {day: 242, topic: '眼轴测量：A超与光学生物测量'},
+                                {day: 243, topic: '验光设备日常保养'},
+                                {day: 244, topic: '瞳距仪：远用/近用PD测量'},
+                                {day: 245, topic: '镜片检测仪：度数/中心/轴位'},
+                                {day: 246, topic: '焦度计：使用与校准'},
+                                {day: 247, topic: '视野计基础：青光眼筛查'},
+                                {day: 248, topic: '眼部B超：玻璃体视网膜检查'},
+                                {day: 249, topic: '验光室感染控制'},
+                                {day: 250, topic: '设备校准记录管理'}
+                            ]
+                        },
+                        {
+                            id: 'week11-12',
+                            name: '第11-12周',
+                            daysRange: '第251-264天',
+                            days: [
+                                {day: 251, topic: '球镜度数：正负含义全解'},
+                                {day: 252, topic: '柱镜度数与轴位：TABO标记法'},
+                                {day: 253, topic: '瞳距PD：远用/近用/单眼'},
+                                {day: 254, topic: '瞳高：渐进镜片的基准线'},
+                                {day: 255, topic: 'ADD：老花附加度数'},
+                                {day: 256, topic: '棱镜：斜视矫正参数'},
+                                {day: 257, topic: '镜片参数与镜框选择关系'},
+                                {day: 258, topic: '折射率：1.56/1.60/1.67/1.74'},
+                                {day: 259, topic: '阿贝数：色散与清晰度'},
+                                {day: 260, topic: '膜层参数：硬度/疏水/防静电'},
+                                {day: 261, topic: '非球面系数：薄与平的权衡'},
+                                {day: 262, topic: '自由曲面：个性化参数定制'},
+                                {day: 263, topic: '定制镜片：参数精度要求'},
+                                {day: 264, topic: '参数错误后果与客诉预防'}
+                            ]
+                        },
+                        {
+                            id: 'week13',
+                            name: '第13周',
+                            daysRange: '第265-270天',
+                            days: [
+                                {day: 265, topic: '验光报告完整解读演练'},
+                                {day: 266, topic: '视力健康咨询标准流程'},
+                                {day: 267, topic: '个性化护眼方案制定'},
+                                {day: 268, topic: '视力健康档案建立与管理'},
+                                {day: 269, topic: '验光师与销售配合技巧'},
+                                {day: 270, topic: '视力健康知识模块总结'}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'module4',
+                    name: '客户服务与沟通',
+                    daysRange: '第271-365天',
+                    totalDays: 95,
+                    weeks: [
+                        {
+                            id: 'week1-2',
+                            name: '第1-2周',
+                            daysRange: '第271-284天',
+                            days: [
+                                {day: 271, topic: '积极倾听：沉默的力量'},
+                                {day: 272, topic: '同理心表达：我理解您的感受'},
+                                {day: 273, topic: '非语言沟通：眼神/手势/距离'},
+                                {day: 274, topic: '提问艺术：开放式vs封闭式'},
+                                {day: 275, topic: '反馈技巧：确认与复述'},
+                                {day: 276, topic: '说服技巧：逻辑与情感并重'},
+                                {day: 277, topic: '拒绝处理：委婉而坚定'},
+                                {day: 278, topic: '电话沟通：声音形象管理'},
+                                {day: 279, topic: '微信沟通：文字/语音/表情'},
+                                {day: 280, topic: '面对面沟通：空间与氛围'},
+                                {day: 281, topic: '群体沟通：家庭决策引导'},
+                                {day: 282, topic: '跨部门沟通：信息与协作'},
+                                {day: 283, topic: '向上沟通：汇报与建议'},
+                                {day: 284, topic: '沟通风格：DISC模型应用'}
+                            ]
+                        },
+                        {
+                            id: 'week3-4',
+                            name: '第3-4周',
+                            daysRange: '第285-298天',
+                            days: [
+                                {day: 285, topic: '急躁型顾客：快速决策与效率'},
+                                {day: 286, topic: '犹豫型顾客：提供选择与保障'},
+                                {day: 287, topic: '专业型顾客：数据与技术对话'},
+                                {day: 288, topic: '价格敏感型：价值塑造优先'},
+                                {day: 289, topic: '社交型顾客：关系与话题延伸'},
+                                {day: 290, topic: '沉默型顾客：提问引导开口'},
+                                {day: 291, topic: '挑剔型顾客：细节与服务升级'},
+                                {day: 292, topic: '儿童顾客：趣味与奖励机制'},
+                                {day: 293, topic: '老年顾客：耐心与重复确认'},
+                                {day: 294, topic: '团体顾客：决策者识别'},
+                                {day: 295, topic: '投诉顾客：情绪优先于事实'},
+                                {day: 296, topic: 'VIP顾客：专属感与尊贵服务'},
+                                {day: 297, topic: '新顾客：信任建立快速通道'},
+                                {day: 298, topic: '老顾客：熟悉感与个性化'}
+                            ]
+                        },
+                        {
+                            id: 'week5-6',
+                            name: '第5-6周',
+                            daysRange: '第299-312天',
+                            days: [
+                                {day: 299, topic: '投诉根源分析：产品/服务/沟通'},
+                                {day: 300, topic: '投诉处理L.E.A.S.T原则'},
+                                {day: 301, topic: '情绪安抚：倾听-确认-道歉'},
+                                {day: 302, topic: '问题解决：方案提出与确认'},
+                                {day: 303, topic: '补偿方案：合理与超预期'},
+                                {day: 304, topic: '投诉预防：期望管理技巧'},
+                                {day: 305, topic: '投诉转化：从不满到忠诚'},
+                                {day: 306, topic: '配镜投诉：度数/外观/舒适'},
+                                {day: 307, topic: '质量投诉：镜片/镜框/隐形'},
+                                {day: 308, topic: '服务投诉：态度/效率/专业'},
+                                {day: 309, topic: '价格投诉：透明与解释'},
+                                {day: 310, topic: '交付投诉：延期/错发/损坏'},
+                                {day: 311, topic: '网络投诉：差评处理与挽回'},
+                                {day: 312, topic: '投诉案例复盘（一）'}
+                            ]
+                        },
+                        {
+                            id: 'week7-8',
+                            name: '第7-8周',
+                            daysRange: '第313-326天',
+                            days: [
+                                {day: 313, topic: '会员数据：采集与标签体系'},
+                                {day: 314, topic: '会员活跃：唤醒与留存策略'},
+                                {day: 315, topic: '流失预警：行为信号识别'},
+                                {day: 316, topic: '召回策略：优惠/关怀/专属'},
+                                {day: 317, topic: '会员分级：价值与潜力矩阵'},
+                                {day: 318, topic: '会员权益：设计与迭代'},
+                                {day: 319, topic: '会员满意度：NPS测量'},
+                                {day: 320, topic: '会员活动：策划与执行'},
+                                {day: 321, topic: '会员日：流量与转化设计'},
+                                {day: 322, topic: '会员专属：服务与产品定制'},
+                                {day: 323, topic: '会员社群：微信群运营'},
+                                {day: 324, topic: '会员内容：科普/优惠/互动'},
+                                {day: 325, topic: '会员KPI：活跃/复购/推荐'},
+                                {day: 326, topic: '会员管理系统操作'}
+                            ]
+                        },
+                        {
+                            id: 'week9-10',
+                            name: '第9-10周',
+                            daysRange: '第327-340天',
+                            days: [
+                                {day: 327, topic: '前台与销售配合：信息传递'},
+                                {day: 328, topic: '销售与验光师配合：转诊流程'},
+                                {day: 329, topic: '销售与仓库配合：库存确认'},
+                                {day: 330, topic: '销售与维修配合：售后衔接'},
+                                {day: 331, topic: '跨门店协作：调货与支援'},
+                                {day: 332, topic: '师徒制：知识传承机制'},
+                                {day: 333, topic: '团队目标：个人与集体对齐'},
+                                {day: 334, topic: '交接班管理：信息不遗漏'},
+                                {day: 335, topic: '信息共享：系统与客户档案'},
+                                {day: 336, topic: '团队冲突：识别与调解'},
+                                {day: 337, topic: '团队激励：物质与精神并重'},
+                                {day: 338, topic: '团队培训：内训师培养'},
+                                {day: 339, topic: '团队文化：价值观落地'},
+                                {day: 340, topic: '协作工具：企业微信/钉钉'}
+                            ]
+                        },
+                        {
+                            id: 'week11-12',
+                            name: '第11-12周',
+                            daysRange: '第341-354天',
+                            days: [
+                                {day: 341, topic: '仪容仪表：发型/妆容/指甲'},
+                                {day: 342, topic: '服务用语：标准与禁忌清单'},
+                                {day: 343, topic: '肢体语言：站姿/坐姿/手势'},
+                                {day: 344, topic: '个人卫生：口腔/体味/服装'},
+                                {day: 345, topic: '工作服：整洁与规范穿着'},
+                                {day: 346, topic: '名牌佩戴：位置与样式'},
+                                {day: 347, topic: '服务禁忌：20条红线'},
+                                {day: 348, topic: '门店环境：5S管理标准'},
+                                {day: 349, topic: '收银礼仪：速度/准确/微笑'},
+                                {day: 350, topic: '电话礼仪：接听/转接/挂断'},
+                                {day: 351, topic: '迎送礼仪：门口/电梯/停车场'},
+                                {day: 352, topic: '饮品服务：主动与适度'},
+                                {day: 353, topic: '儿童关怀：安全与趣味'},
+                                {day: 354, topic: '特殊顾客：轮椅/视障/听障'}
+                            ]
+                        },
+                        {
+                            id: 'week13-14',
+                            name: '第13-14周',
+                            daysRange: '第355-365天',
+                            days: [
+                                {day: 355, topic: '职业素养：诚信/专业/责任'},
+                                {day: 356, topic: '时间管理：四象限法则'},
+                                {day: 357, topic: '压力管理：识别与疏导'},
+                                {day: 358, topic: '持续学习：知识更新路径'},
+                                {day: 359, topic: '职业规划：店员→店长→区域'},
+                                {day: 360, topic: '行业趋势：数字化/个性化/预防'},
+                                {day: 361, topic: '365天培训总结与毕业典礼'},
+                                {day: 362, topic: '晋级考核：理论+实操'},
+                                {day: 363, topic: '未来展望：个人与门店共成长'},
+                                {day: 364, topic: '培训反馈收集与课程优化'},
+                                {day: 365, topic: '校友网络：持续交流与互助'}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+        let currentModule = 'all';
+        let searchKeyword = '';
+
+        // ========== 渲染模块手风琴 ==========
+        function renderModules() {
+            const accordion = document.getElementById('moduleAccordion');
+            accordion.innerHTML = '';
+            
+            trainingData.modules.forEach(module => {
+                // 检查模块是否匹配筛选
+                if (currentModule !== 'all' && module.name !== currentModule) return;
+                
+                // 检查模块内是否有匹配搜索的天数
+                const matchedWeeks = module.weeks.filter(week => {
+                    return week.days.some(day => {
+                        const matchesSearch = !searchKeyword || 
+                            day.topic.toLowerCase().includes(searchKeyword) || 
+                            day.day.toString().includes(searchKeyword);
+                        return matchesSearch;
+                    });
+                });
+                
+                if (matchedWeeks.length === 0 && searchKeyword) return;
+                
+                // 创建模块头部
+                const moduleHeader = document.createElement('div');
+                moduleHeader.className = 'module-header';
+                moduleHeader.innerHTML = `
+                    <div>
+                        <div class="module-title">📦 ${module.name}</div>
+                        <div class="module-meta">${module.daysRange} · 共${module.totalDays}天</div>
+                    </div>
+                    <div class="module-arrow">▼</div>
+                `;
+                moduleHeader.addEventListener('click', () => toggleModule(moduleHeader));
+                
+                // 创建周手风琴容器
+                const weekAccordion = document.createElement('div');
+                weekAccordion.className = 'week-accordion';
+                
+                // 渲染周
+                matchedWeeks.forEach(week => {
+                    const weekHeader = document.createElement('div');
+                    weekHeader.className = 'week-header';
+                    weekHeader.innerHTML = `
+                        <div>
+                            <div class="week-title">📅 ${week.name}</div>
+                            <div class="week-meta">${week.daysRange}</div>
+                        </div>
+                        <div class="week-arrow">▼</div>
+                    `;
+                    weekHeader.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        toggleWeek(weekHeader);
+                    });
+                    
+                    // 创建天数网格
+                    const daysGrid = document.createElement('div');
+                    daysGrid.className = 'days-grid';
+                    
+                        week.days.forEach(day => {
+                        const matchesSearch = !searchKeyword || 
+                            day.topic.toLowerCase().includes(searchKeyword) || 
+                            day.day.toString().includes(searchKeyword);
+                        
+                        if (!matchesSearch) return;
+                        
+                        const card = document.createElement('a');
+                        card.className = 'day-card';
+                        card.href = `day${String(day.day).padStart(3,'0')}.html`;
+                        card.innerHTML = `
+                            <span class="day-num">第${day.day}天</span>
+                            <span class="day-topic">${day.topic}</span>
+                            <span class="day-week">${week.name}</span>
+                        `;
+                        daysGrid.appendChild(card);
+                    });
+                    
+                    weekAccordion.appendChild(weekHeader);
+                    weekAccordion.appendChild(daysGrid);
+                });
+                
+                accordion.appendChild(moduleHeader);
+                accordion.appendChild(weekAccordion);
+            });
+            
+            // 显示/隐藏无结果提示
+            const noResult = document.getElementById('noResult');
+            noResult.style.display = accordion.children.length === 0 ? 'block' : 'none';
+            
+            // 默认展开第一个模块
+            const firstModuleHeader = accordion.querySelector('.module-header');
+            if (firstModuleHeader && currentModule !== 'all') {
+                firstModuleHeader.classList.add('collapsed');
+                toggleModule(firstModuleHeader);
+            }
+        }
+
+        // ========== 切换模块展开/折叠 ==========
+        function toggleModule(header) {
+            const isCollapsed = header.classList.contains('collapsed');
+            const weekAccordion = header.nextElementSibling;
+            
+            if (isCollapsed) {
+                header.classList.remove('collapsed');
+                weekAccordion.style.display = 'block';
+            } else {
+                header.classList.add('collapsed');
+                weekAccordion.style.display = 'none';
+            }
+        }
+
+        // ========== 切换周展开/折叠 ==========
+        function toggleWeek(header) {
+            const isCollapsed = header.classList.contains('collapsed');
+            const daysGrid = header.nextElementSibling;
+            
+            if (isCollapsed) {
+                header.classList.remove('collapsed');
+                daysGrid.style.display = 'grid';
+            } else {
+                header.classList.add('collapsed');
+                daysGrid.style.display = 'none';
+            }
+        }
+
+        // ========== 切换模块筛选 ==========
+        function switchModule(module, btn) {
+            currentModule = module;
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            renderModules();
+        }
+
+        // ========== 搜索过滤 ==========
+        function filterDays() {
+            searchKeyword = document.getElementById('searchInput').value.trim().toLowerCase();
+            renderModules();
+        }
+
+        // ========== 初始化 ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            renderModules();
+        });
+    </script>
+</body>
+</html>
