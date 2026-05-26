@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第164天 | 会员数据分析：RFM模型 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 164 天</div>
+            <h1 class="page-title">会员数据分析：RFM模型</h1>
+            <div class="page-subtitle">模块四：客户服务 · 第24周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>164/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 44.93%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、RFM模型概述</h3>
+                <p>RFM模型是客户价值分析的三大核心指标，广泛应用于零售行业，用于评估客户价值并制定针对性营销策略。</p>
+                
+                <p><strong>1. R (Recency) - 最近消费时间</strong><br>
+                客户最近一次消费距离现在的时间。R值越小，客户越活跃；R值越大，客户越可能流失。这是预测客户是否流失的最关键指标。</p>
+                
+                <p><strong>2. F (Frequency) - 消费频率</strong><br>
+                客户在特定时间段内的消费次数。F值越大，客户忠诚度越高；F值越小，客户越可能是价格敏感型或一次性客户。</p>
+                
+                <p><strong>3. M (Monetary) - 消费金额</strong><br>
+                客户在特定时间段内的消费总额。M值越大，客户价值越高；M值越小，客户可能是低价值或新客户。</p>
+                
+                <div class="tip-box">
+                    专业提示：RFM模型的核心思想是"最近、最频繁、花钱最多"的客户最有价值。同时，R值比F值和M值更重要——一个昨天刚消费的客户，比一个一年前消费1万元的客户更有价值。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、RFM模型在眼镜门店的应用</h3>
+                <p>眼镜行业消费周期长（通常1-3年），RFM模型的应用需要结合行业特点进行调整。</p>
+                
+                <p><strong>1. 时间窗口设定</strong><br>
+                眼镜行业建议用"过去2年"作为分析窗口。因为眼镜使用周期通常1-3年，超过2年没消费基本属于流失客户。</p>
+                
+                <p><strong>2. R值分段标准（以天为单位）</strong><br>
+                • R1（高活跃）：0-90天（3个月内消费过）<br>
+                • R2（中活跃）：91-180天（3-6个月）<br>
+                • R3（低活跃）：181-365天（6-12个月）<br>
+                • R4（沉睡）：366-730天（1-2年）<br>
+                • R5（流失）：>730天（2年以上）</p>
+                
+                <p><strong>3. F值分段标准（以次为单位）</strong><br>
+                • F1（高频）：≥3次/2年<br>
+                • F2（中频）：2次/2年<br>
+                • F3（低频）：1次/2年</p>
+                
+                <p><strong>4. M值分段标准（以元为单位）</strong><br>
+                • M1（高价值）：≥5000元/2年<br>
+                • M2（中价值）：2000-4999元/2年<br>
+                • M3（低价值）：<2000元/2年</p>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、RFM客户分群与策略</h3>
+                <p>根据RFM三个维度，可以将客户分为5大类、27个小类，每类采取不同的营销策略。</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>客户类型</th>
+                            <th>RFM特征</th>
+                            <th>客户特点</th>
+                            <th>营销策略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>重要价值客户</td>
+                            <td>R1,F1,M1</td>
+                            <td>最近消费、频次高、金额大</td>
+                            <td>VIP服务、专属活动、防流失</td>
+                        </tr>
+                        <tr>
+                            <td>重要保持客户</td>
+                            <td>R2-3,F1,M1</td>
+                            <td>最近没消费、但历史高频高额</td>
+                            <td>唤醒激活、大额优惠、专属顾问</td>
+                        </tr>
+                        <tr>
+                            <td>重要挽留客户</td>
+                            <td>R4,F1,M1</td>
+                            <td>长期未消费、但历史高频高额</td>
+                            <td>紧急挽留、店长亲自联系、特殊优惠</td>
+                        </tr>
+                        <tr>
+                            <td>重要发展客户</td>
+                            <td>R1,F1,M2-3</td>
+                            <td>最近消费、频次高、但金额小</td>
+                            <td>提升客单价、推荐高价值产品</td>
+                        </tr>
+                        <tr>
+                            <td>新客户</td>
+                            <td>R1,F0-1,M1-3</td>
+                            <td>最近首次消费</td>
+                            <td>快速第二次消费、建立忠诚度</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="warn-box">
+                    注意：RFM分析不是一次性工作，应该每月更新一次。客户状态会变化——今天的"重要价值客户"如果3个月不消费，就变成"重要保持客户"甚至"重要挽留客户"。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>四、RFM分析的执行步骤</h3>
+                <p>系统化的RFM分析流程，能确保分析结果准确、策略落地有效。</p>
+                
+                <p><strong>第一步：数据准备</strong><br>
+                从CRM系统导出过去2年的客户消费数据，包括：客户ID、消费日期、消费金额。清洗数据（去重、补缺失值）。</p>
+                
+                <p><strong>第二步：计算RFM值</strong><br>
+                对每个客户计算：R值（今天-最近消费日期）、F值（消费次数）、M值（消费总额）。可以用Excel或CRM系统自动计算。</p>
+                
+                <p><strong>第三步：RFM分段</strong><br>
+                根据分段标准（R:0-90-180-365-730-∞；F:≥3-2-1；M:≥5000-2000-<2000）将每个客户的RFM值转换为1-5分段。</p>
+                
+                <p><strong>第四步：客户分群</strong><br>
+                根据RFM分段组合，将客户分为5大类（重要价值、重要保持、重要挽留、重要发展、新客户）。每个大类再细分小类。</p>
+                
+                <p><strong>第五步：制定策略</strong><br>
+                针对不同客户群体制订营销策略（唤醒、保持、挽留、发展、转化）。明确责任人、执行时间、预算、效果指标。</p>
+                
+                <p><strong>第六步：执行与追踪</strong><br>
+                执行营销策略，追踪效果（回应率、转化率、ROI）。每月复盘，优化策略。</p>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li>RFM三指标：R（最近消费时间）、F（消费频率）、M（消费金额），R最重要</li>
+                    <li>眼镜行业RFM标准：时间窗口2年，R分段0-90-180-365-730-∞天，F分段≥3-2-1次，M分段≥5000-2000-<2000元</li>
+                    <li>客户分5类：重要价值（R1F1M1）、重要保持（R2-3F1M1）、重要挽留（R4F1M1）、重要发展（R1F1M2-3）、新客户（R1F0-1）</li>
+                    <li>分析步骤：数据准备→计算RFM→RFM分段→客户分群→制定策略→执行追踪，每月更新</li>
+                    <li>应用要点：R值比F和M更重要，每月更新RFM状态，策略要差异化</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. RFM模型中，哪个指标最能预测客户是否流失？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 眼镜门店RFM分析的时间窗口建议设为多久？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 客户A最近一次消费是120天前，2年内共消费2次，总金额4500元。该客户的RFM分段是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请简述RFM模型的含义，以及眼镜门店如何应用RFM模型进行客户分群和营销策略制定。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>RFM模型含义：R（Recency最近消费时间）、F（Frequency消费频率）、M（Monetary消费金额），用于评估客户价值。眼镜门店应用：1）时间窗口2年；2）R分段0-90-180-365-730-∞天；3）F分段≥3-2-1次；4）M分段≥5000-2000-<2000元；5）客户分5类：重要价值（R1F1M1）、重要保持（R2-3F1M1）、重要挽留（R4F1M1）、重要发展（R1F1M2-3）、新客户（R1F0-1）；6）制定差异化策略：重要价值客户VIP服务防流失、重要保持客户唤醒激活、重要挽留客户紧急挽留、重要发展客户提升客单价、新客户快速二次消费。每月更新RFM，追踪策略效果。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day163.html" class="nav-arrow">← 第163天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day165.html" class="nav-arrow">第165天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持署名 -->
+    
+
+    <script>
+        // ========== 选择题数据 ==========
+        const choiceQuestions = [
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. R（最近消费时间）' },
+                    { text: 'B. F（消费频率）' },
+                    { text: 'C. M（消费金额）' },
+                    { text: 'D. 三个指标同等重要' }
+                ],
+                answer: [0],
+                score: 10,
+                explanation: 'R（最近消费时间）最能预测客户是否流失。一个昨天刚消费的客户比一年前消费1万元的客户更有价值。'
+            },
+            {
+                type: 'multi',
+                options: [
+                    { text: 'A. 1年' },
+                    { text: 'B. 2年' },
+                    { text: 'C. 3年' },
+                    { text: 'D. 半年' }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '眼镜行业消费周期长（1-3年），建议用2年作为RFM分析时间窗口。超过2年没消费基本属于流失客户。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. R2,F2,M2' },
+                    { text: 'B. R3,F2,M2' },
+                    { text: 'C. R2,F2,M1' },
+                    { text: 'D. R3,F2,M1' }
+                ],
+                answer: [0],
+                score: 10,
+                explanation: '客户A：120天→R2（91-180天），2次→F2（2次），4500元→M2（2000-4999元）。所以RFM分段是R2,F2,M2。'
+            }
+        ];
+
+        // ========== 初始化选择题 ==========
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                const optionsList = container.querySelector('.options-list');
+                const isMulti = q.type === 'multi';
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.dataset.qidx = idx;
+                    li.dataset.optidx = optIdx;
+                    const marker = document.createElement('div');
+                    marker.className = 'option-marker';
+                    marker.textContent = String.fromCharCode(65 + optIdx);
+                    const text = document.createElement('span');
+                    text.className = 'option-text';
+                    text.textContent = opt.text;
+                    li.appendChild(marker);
+                    li.appendChild(text);
+                    li.addEventListener('click', () => toggleOption(idx, optIdx, isMulti));
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        function toggleOption(qIdx, optIdx, isMulti) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const item = container.querySelectorAll('.option-item')[optIdx];
+            if (isMulti) { item.classList.toggle('selected'); }
+            else { container.querySelectorAll('.option-item').forEach(li => li.classList.remove('selected')); item.classList.add('selected'); }
+        }
+
+        function getSelectedIndices(qIdx) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const selected = [];
+            container.querySelectorAll('.option-item.selected').forEach(li => selected.push(parseInt(li.dataset.optidx)));
+            return selected.sort((a, b) => a - b);
+        }
+
+        // ========== 提交判分 ==========
+        function submitAll() {
+            let totalScore = 0;
+            choiceQuestions.forEach((q, qIdx) => {
+                const container = document.querySelectorAll('.choice-question')[qIdx];
+                const selected = getSelectedIndices(qIdx);
+                const correct = q.answer.slice().sort((a, b) => a - b);
+                const isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+                container.querySelectorAll('.option-item').forEach(li => li.classList.remove('correct', 'wrong'));
+                container.querySelector('.feedback')?.classList.remove('show');
+                q.options.forEach((opt, optIdx) => {
+                    const li = container.querySelectorAll('.option-item')[optIdx];
+                    if (correct.includes(optIdx)) li.classList.add('correct');
+                    if (selected.includes(optIdx) && !correct.includes(optIdx)) li.classList.add('wrong');
+                });
+                const feedback = container.querySelector('.feedback');
+                if (feedback) {
+                    feedback.classList.add('show');
+                    if (isCorrect) {
+                        feedback.className = 'feedback correct-feedback show';
+                        feedback.innerHTML = '✅ 回答正确！' + (q.explanation || '');
+                        totalScore += q.score || 10;
+                    } else {
+                        feedback.className = 'feedback wrong-feedback show';
+                        const correctLetters = correct.map(i => String.fromCharCode(65 + i)).join('、');
+                        feedback.innerHTML = '❌ 回答错误。正确答案：' + correctLetters + '。' + (q.explanation || '');
+                    }
+                } else { if (isCorrect) totalScore += q.score || 10; }
+            });
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const scoreNumber = document.getElementById('scoreNumber');
+            const maxScore = choiceQuestions.reduce((sum, q) => sum + (q.score || 10), 0);
+            scoreDisplay.classList.add('show');
+            scoreNumber.textContent = totalScore + '/' + maxScore + '分';
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
