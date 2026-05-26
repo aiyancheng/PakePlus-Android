@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第{DAY}天 | {TITLE} - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="top-bar">
+        <a href="index.html" class="back-link">← 返回目录</a>
+        <span class="day-badge">第{DAY}天</span>
+        <span class="module-tag">{MODULE}</span>
+    </div>
+
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 {DAY} 天</div>
+            <h1 class="page-title">{TITLE}</h1>
+            <div class="page-subtitle">{SUBTITLE}</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>{DAY}/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: {PROGRESS}%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            {LEARNING_CONTENT}
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    {SUMMARY_POINTS}
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            {CHOICE_QUESTIONS}
+
+            {ESSAY_QUESTIONS}
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+        <a href="day{PrevDay}.html" class="nav-btn {PREV_DISABLED}">← 第{PrevDay}天</a>
+        <span class="progress-dot">{DAY} / 365</span>
+        <a href="day{NextDay}.html" class="nav-btn {NEXT_DISABLED}">第{NextDay}天 →</a>
+    </div>
+
+    <script>
+        // ========== 选择题数据 ==========
+        const choiceQuestions = [
+            {CHOICE_QUESTION_DATA}
+        ];
+
+        // ========== 初始化选择题 ==========
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+
+                const optionsList = container.querySelector('.options-list');
+                const isMulti = q.type === 'multi';
+                const inputType = isMulti ? 'checkbox' : 'radio';
+                const namePrefix = `q${idx}`;
+
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.dataset.qidx = idx;
+                    li.dataset.optidx = optIdx;
+
+                    const marker = document.createElement('div');
+                    marker.className = 'option-marker';
+                    marker.textContent = String.fromCharCode(65 + optIdx); // A, B, C...
+
+                    const text = document.createElement('span');
+                    text.className = 'option-text';
+                    text.textContent = opt.text;
+
+                    li.appendChild(marker);
+                    li.appendChild(text);
+
+                    li.addEventListener('click', () => toggleOption(idx, optIdx, isMulti));
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项选中状态
+        function toggleOption(qIdx, optIdx, isMulti) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const item = container.querySelectorAll('.option-item')[optIdx];
+            const q = choiceQuestions[qIdx];
+
+            if (isMulti) {
+                item.classList.toggle('selected');
+            } else {
+                container.querySelectorAll('.option-item').forEach(li => li.classList.remove('selected'));
+                item.classList.add('selected');
+            }
+        }
+
+        // 获取选中的选项索引
+        function getSelectedIndices(qIdx) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const selected = [];
+            container.querySelectorAll('.option-item.selected').forEach(li => {
+                selected.push(parseInt(li.dataset.optidx));
+            });
+            return selected.sort((a, b) => a - b);
+        }
+
+        // ========== 提交判分 ==========
+        function submitAll() {
+            let totalScore = 0;
+            let totalQuestions = choiceQuestions.length;
+
+            choiceQuestions.forEach((q, qIdx) => {
+                const container = document.querySelectorAll('.choice-question')[qIdx];
+                const selected = getSelectedIndices(qIdx);
+                const correct = q.answer.slice().sort((a, b) => a - b);
+                const isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+
+                // 清除之前的状态
+                container.querySelectorAll('.option-item').forEach(li => {
+                    li.classList.remove('correct', 'wrong');
+                });
+                container.querySelector('.feedback')?.classList.remove('show');
+
+                // 标记正确/错误选项
+                q.options.forEach((opt, optIdx) => {
+                    const li = container.querySelectorAll('.option-item')[optIdx];
+                    if (correct.includes(optIdx)) {
+                        li.classList.add('correct');
+                    }
+                    if (selected.includes(optIdx) && !correct.includes(optIdx)) {
+                        li.classList.add('wrong');
+                    }
+                });
+
+                // 显示反馈
+                const feedback = container.querySelector('.feedback');
+                if (feedback) {
+                    feedback.classList.add('show');
+                    if (isCorrect) {
+                        feedback.className = 'feedback correct-feedback show';
+                        feedback.innerHTML = `✅ 回答正确！${q.explanation || ''}`;
+                        totalScore += q.score || 10;
+                    } else {
+                        feedback.className = 'feedback wrong-feedback show';
+                        const correctLetters = correct.map(i => String.fromCharCode(65 + i)).join('、');
+                        feedback.innerHTML = `❌ 回答错误。正确答案：${correctLetters}。${q.explanation || ''}`;
+                    }
+                } else {
+                    if (isCorrect) totalScore += q.score || 10;
+                }
+            });
+
+            // 显示得分
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const scoreNumber = document.getElementById('scoreNumber');
+            const maxScore = choiceQuestions.reduce((sum, q) => sum + (q.score || 10), 0);
+            scoreDisplay.classList.add('show');
+            scoreNumber.textContent = `${totalScore}/${maxScore}分`;
+
+            // 滚动到得分区
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            initChoiceQuestions();
+        });
+    </script>
+</body>
+</html>
