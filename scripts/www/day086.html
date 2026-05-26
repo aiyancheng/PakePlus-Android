@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第86天 | 产品知识阶段测验（一）- 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 86 天</div>
+            <h1 class="page-title">产品知识阶段测验（一）</h1>
+            <div class="page-subtitle">模块一：产品知识 · 阶段测验</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>86/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 23.56%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📝</div>
+                <div class="card-title">测验说明</div>
+            </div>
+
+            <div class="learning-section">
+                <p><strong>📋 测验目的</strong><br>
+                本测验旨在检验您对前85天产品知识模块的学习成果。请认真作答，测试结束后可以查看正确答案和解析。</p>
+                
+                <p><strong>⏰ 建议时间</strong><br>
+                本测验包含10道选择题和2道问答题，建议完成时间：30分钟。</p>
+                
+                <p><strong>📊 评分标准</strong><br>
+                选择题每题10分，共100分。80分以上为合格，90分以上为优秀。问答题为主观题，用于自我检验。</p>
+
+                <div class="tip-box">
+                    💡 提示：本测验涵盖镜片基础、镜框材料、隐形眼镜、太阳镜、功能镜片等产品知识。请仔细阅读题目，选择最恰当的答案。
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">测验题</div>
+
+            <!-- 选择题 -->
+            <div class="choice-question" data-answer="[2]">
+                <div class="question-text">1. 目前市场上最主流的镜片材料是？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[1]">
+                <div class="question-text">2. 1.67折射率的镜片适合哪种度数的顾客？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[3]">
+                <div class="question-text">3. UV400防护标准是指？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[0]">
+                <div class="question-text">4. 以下哪种镜框材料具有"记忆功能"？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[2]">
+                <div class="question-text">5. 硅水凝胶隐形眼镜的主要优势是？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[1]">
+                <div class="question-text">6. 偏光太阳镜最适合哪种场景？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[3]">
+                <div class="question-text">7. 防蓝光镜片最适合哪类人群？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[0]">
+                <div class="question-text">8. 渐进多焦点镜片的特点是？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[2]">
+                <div class="question-text">9. 阿贝数是衡量什么的指标？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="choice-question" data-answer="[1]">
+                <div class="question-text">10. 变色镜片的工作原理是？</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <button class="submit-btn" onclick="submitAll()">提交答卷</button>
+            <div id="scoreDisplay"></div>
+
+            <!-- 问答题 -->
+            <div class="essay-question">
+                <div class="question-text">11. 请简述树脂镜片相比玻璃镜片的优缺点。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" onclick="showReference('essayBtn1', 'ref86-1')">查看参考答案</button>
+                <div id="ref86-1" class="reference-answer">
+                    <strong>参考答案：</strong><br>
+                    <strong>优点：</strong><br>
+                    1. 重量轻：密度约为玻璃的1/2，佩戴更舒适<br>
+                    2. 抗冲击：不易破碎，安全性高<br>
+                    3. 易染色：可以实现各种颜色效果<br>
+                    4. 易加工：可以进行各种表面处理<br>
+                    <strong>缺点：</strong><br>
+                    1. 硬度较低：容易被划伤，需要加硬处理<br>
+                    2. 折射率上限较低：最高约1.74，高度数时仍较厚<br>
+                    3. 阿贝数相对较低：高折射率树脂镜片色散较明显
+                </div>
+            </div>
+
+            <div class="essay-question">
+                <div class="question-text">12. 为一位-6.00D的顾客推荐镜片，你会考虑哪些因素？请说明推荐理由。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" onclick="showReference('essayBtn2', 'ref86-2')">查看参考答案</button>
+                <div id="ref86-2" class="reference-answer">
+                    <strong>参考答案：</strong><br>
+                    为-6.00D顾客推荐镜片时，会考虑以下因素：<br>
+                    1. <strong>折射率</strong>：推荐1.67或1.74高折射率镜片，减少边缘厚度，提升美观度<br>
+                    2. <strong>镜框尺寸</strong>：选择框高较小的镜框，减少镜片边缘厚度<br>
+                    3. <strong>阿贝数</strong>：在保证厚度的前提下，尽量选择阿贝数较高的镜片，提升视觉质量<br>
+                    4. <strong>使用场景</strong>：如果经常使用电子设备，推荐防蓝光镜片；如果经常开车，推荐偏光镜片<br>
+                    5. <strong>预算</strong>：根据顾客预算，推荐合适的品牌和产品线<br>
+                    6. <strong>年龄</strong>：如果是40岁以上，可能需要考虑渐进多焦点镜片
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day085.html" class="nav-arrow">← 第85天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day087.html" class="nav-arrow">第87天 →</a>
+        </div>
+    </div>
+
+    <script>
+        // 选择题题目数据
+        const choiceQuestions = [
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 玻璃' },
+                    { text: 'B. 水晶' },
+                    { text: 'C. 树脂' },
+                    { text: 'D. PC片' }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '树脂镜片因其重量轻、抗冲击性好、易染色、易加工等优点，是目前最主流的镜片材料，市场占比超过80%。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 低度数（-0.50D至-2.00D）' },
+                    { text: 'B. 中高度数（-3.00D至-6.00D）' },
+                    { text: 'C. 超高度数（-8.00D以上）' },
+                    { text: 'D. 任何度数都适合' }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '1.67折射率属于高折射率镜片，适合中高度数（-3.00D至-6.00D）顾客，能显著减少边缘厚度，提升美观度。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 阻挡400%的紫外线' },
+                    { text: 'B. 紫外线透过率低于400%' },
+                    { text: 'C. 紫外线防护指数400' },
+                    { text: 'D. 阻挡波长400nm以下的所有紫外线' }
+                ],
+                answer: [3],
+                score: 10,
+                explanation: 'UV400表示镜片可以阻挡波长400nm以下的所有紫外线，包括UVA（315-400nm）和UVB（280-315nm），是目前最高的UV防护标准。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. TR90' },
+                    { text: 'B. 纯钛' },
+                    { text: 'C. 合金' },
+                    { text: 'D. 板材' }
+                ],
+                answer: [0],
+                score: 10,
+                explanation: 'TR90是一种具有记忆功能的尼龙材料，韧性极佳，耐撞击，重量轻，是目前最受欢迎的镜框材料之一，特别适合运动眼镜。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 价格更便宜' },
+                    { text: 'B. 佩戴更舒适' },
+                    { text: 'C. 透氧量更高' },
+                    { text: 'D. 更换周期更长' }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '硅水凝胶隐形眼镜的透氧量是普通水凝胶的5-6倍，能让角膜获得充足氧气，适合长时间佩戴（8小时以上），大大降低缺氧风险。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 登山运动' },
+                    { text: 'B. 驾驶' },
+                    { text: 'C. 夜间跑步' },
+                    { text: 'D. 室内办公' }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '偏光镜片通过偏振滤光原理，能有效过滤来自水面、路面、玻璃等水平表面的反射眩光，特别适合驾驶、钓鱼、滑雪等场景。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 户外运动爱好者' },
+                    { text: 'B. 老年人' },
+                    { text: 'C. 儿童' },
+                    { text: 'D. 长时间使用电子设备的上班族' }
+                ],
+                answer: [3],
+                score: 10,
+                explanation: '防蓝光镜片通过特殊镀膜或基片材料，选择性阻断有害蓝光（385-455nm），适合长时间使用电子设备的人群，能减轻 digital eye strain。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 上半部分看远，下半部分看近' },
+                    { text: 'B. 左右两部分度数不同' },
+                    { text: 'C. 镜片颜色会随光线变化' },
+                    { text: 'D. 镜片可以自动清洁' }
+                ],
+                answer: [0],
+                score: 10,
+                explanation: '渐进多焦点镜片的上半部分用来看远，下半部分用来看近，中间是过渡区，适合老花眼人群，实现"一副眼镜看清远近"的效果。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 镜片硬度' },
+                    { text: 'B. 镜片重量' },
+                    { text: 'C. 色散程度' },
+                    { text: 'D. 防紫外线能力' }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '阿贝数（Abbe Number）是衡量镜片色散的指标，数值越高，色散越小，视觉越清晰。一般折射率越高，阿贝数越低。'
+            },
+            {
+                type: 'single',
+                options: [
+                    { text: 'A. 镜片内有电池和液晶' },
+                    { text: 'B. 卤化银在紫外线作用下变色' },
+                    { text: 'C. 镜片颜色随温度改变' },
+                    { text: 'D. 通过手机APP控制颜色' }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '变色镜片在室内透明，在室外紫外线照射下变深色，实现"一副眼镜两种用途"。其原理是镜片中的卤化银微粒在紫外线作用下发生化学反应。'
+            }
+        ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 100 分</h3><p>选择题正确率：${totalScore / 100 * 100}%</p>`;
+            }
+        }
+
+        // 显示参考答案
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+
+    <!-- 底部技术支持署名 -->
+    <div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
+
+</body>
+</html>
