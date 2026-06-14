@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青少年近视管理套餐</title>
+<style>
+  :root {
+    --blue: #1677ff;
+    --blue-light: #e6f4ff;
+    --teal: #0891b2;
+    --teal-light: #ecfeff;
+    --teal-mid: #06b6d4;
+    --green: #059669;
+    --green-light: #ecfdf5;
+    --orange: #ea580c;
+    --orange-light: #fff7ed;
+    --purple: #7c3aed;
+    --purple-light: #f5f3ff;
+    --gold: #d97706;
+    --red: #ef4444;
+    --red-light: #fef2f2;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --text-light: #888;
+    --border: #e5e7eb;
+    --radius: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #e8ecf1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0;
+    color: var(--text);
+  }
+
+  /* A4 纸张 */
+  .a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #ffffff;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.12);
+    padding: 16mm 16mm 18mm;
+    position: relative;
+  }
+
+  /* 页面头部 */
+  .header {
+    text-align: center;
+    padding-bottom: 14px;
+    border-bottom: 2px dashed var(--border);
+    margin-bottom: 18px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981, #6366f1);
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* 套餐卡片区块 */
+  .pkg-block {
+    margin-bottom: 16px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+    border: 1px solid var(--border);
+  }
+
+  /* 套餐主行（头部） */
+  .pkg-main {
+    display: flex;
+    align-items: center;
+    padding: 13px 18px;
+    gap: 14px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .pkg-main::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.09);
+  }
+
+  /* 四档配色 — 光谱渐变：绿→青→蓝→紫 */
+  .pkg-main.color-a { background: linear-gradient(135deg, #10b981, #06b6d4); }
+  .pkg-main.color-b { background: linear-gradient(135deg, #06b6d4, #6366f1); }
+  .pkg-main.color-c { background: linear-gradient(135deg, #6366f1, #7c3aed); }
+  .pkg-main.color-d { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+
+  .pkg-main .pkg-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .pkg-main .pkg-info {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .pkg-main .pkg-name {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+  .pkg-main .pkg-detail {
+    font-size: 11px;
+    opacity: 0.88;
+    line-height: 1.4;
+  }
+  .pkg-main .pkg-price-box {
+    text-align: right;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .pkg-main .pkg-price-label {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-bottom: 2px;
+  }
+  .pkg-main .pkg-price {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .pkg-main .pkg-price .unit {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .pkg-main .pkg-orig {
+    font-size: 11px;
+    opacity: 0.72;
+    text-decoration: line-through;
+    margin-top: 2px;
+  }
+
+  /* 升级选项区 */
+  .upgrade-list {
+    background: #fafbfc;
+    border-top: 1px solid #f0f0f0;
+  }
+  .upgrade-header {
+    padding: 8px 18px 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px dashed #eee;
+  }
+  .upgrade-item {
+    display: flex;
+    align-items: center;
+    padding: 9px 18px;
+    gap: 12px;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.15s;
+  }
+  .upgrade-item:last-child {
+    border-bottom: none;
+  }
+  .upgrade-item:hover {
+    background: #f5f5f5;
+  }
+  .upgrade-add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 68px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .upgrade-item.ua .upgrade-add { background: linear-gradient(135deg, #10b981, #06b6d4); }
+  .upgrade-item.ub .upgrade-add { background: linear-gradient(135deg, #06b6d4, #6366f1); }
+  .upgrade-item.uc .upgrade-add { background: linear-gradient(135deg, #6366f1, #7c3aed); }
+  .upgrade-item.ud .upgrade-add { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+
+  .upgrade-arrow {
+    color: var(--text-light);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .upgrade-info {
+    flex: 1;
+  }
+  .upgrade-info .up-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .upgrade-info .up-price {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 1px;
+  }
+
+  /* 页脚 */
+  .footer {
+    text-align: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-top: 4px;
+  }
+
+  /* 打印 */
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .a4-page {
+      box-shadow: none;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm 16mm 18mm;
+    }
+    @page { size: A4 portrait; margin: 0; }
+  }
+
+  @media (max-width: 800px) {
+    .a4-page { width: 100%; min-height: auto; padding: 16px 12px 20px; }
+    .pkg-main .pkg-price { font-size: 22px; }
+  }
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1677ff;
+    background: #f0f5ff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .back-home:hover { background: #dbe4ff; }
+</style>
+</head>
+<body>
+
+<div class="a4-page">
+
+  <!-- 头部 -->
+  <div class="header">
+    <div class="badge">👁️ 青少年近视防控</div>
+    <h1>爱眼城眼镜 · 青少年近视管理套餐</h1>
+    <p class="subtitle">高品质离焦镜片 · ¥398 镜架任选 · 专业定制升级方案</p>
+  </div>
+
+  <!-- ===== 套餐一 ===== -->
+  <div class="pkg-block">
+    <div class="pkg-main color-a">
+      <div class="pkg-num">1</div>
+      <div class="pkg-info">
+        <div class="pkg-name">趣百分 1.56 多点离焦镜片</div>
+        <div class="pkg-detail">镜片建议零售价 ¥1,180 ＋ ¥398 镜架任选</div>
+      </div>
+      <div class="pkg-price-box">
+        <div class="pkg-price-label">特惠套餐价</div>
+        <div class="pkg-price"><span class="unit">¥</span>880</div>
+        <div class="pkg-orig">门市约 ¥1,578</div>
+      </div>
+    </div>
+    <div class="upgrade-list">
+      <div class="upgrade-header">↑ 升级选项</div>
+      <div class="upgrade-item ua">
+        <span class="upgrade-add">＋¥200</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.60 多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥1,580</div>
+        </div>
+      </div>
+      <div class="upgrade-item ub">
+        <span class="upgrade-add">＋¥400</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.60 MR-8 多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥1,980</div>
+        </div>
+      </div>
+      <div class="upgrade-item uc">
+        <span class="upgrade-add">＋¥700</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.67 多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥2,380</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 套餐二 ===== -->
+  <div class="pkg-block">
+    <div class="pkg-main color-b">
+      <div class="pkg-num">2</div>
+      <div class="pkg-info">
+        <div class="pkg-name">趣百分 1.56 散射型低对比度镜片</div>
+        <div class="pkg-detail">镜片建议零售价 ¥1,980 ＋ ¥398 镜架任选</div>
+      </div>
+      <div class="pkg-price-box">
+        <div class="pkg-price-label">特惠套餐价</div>
+        <div class="pkg-price"><span class="unit">¥</span>1,280</div>
+        <div class="pkg-orig">门市约 ¥2,378</div>
+      </div>
+    </div>
+    <div class="upgrade-list">
+      <div class="upgrade-header">↑ 升级选项</div>
+      <div class="upgrade-item ua">
+        <span class="upgrade-add">＋¥200</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.60 多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥2,280</div>
+        </div>
+      </div>
+      <div class="upgrade-item ub">
+        <span class="upgrade-add">＋¥400</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.60 MR-8 多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥2,580</div>
+        </div>
+      </div>
+      <div class="upgrade-item uc">
+        <span class="upgrade-add">＋¥600</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.67 多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥2,880</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 套餐三 ===== -->
+  <div class="pkg-block">
+    <div class="pkg-main color-c">
+      <div class="pkg-num">3</div>
+      <div class="pkg-info">
+        <div class="pkg-name">趣百分 1.56 双效防护多点离焦镜片</div>
+        <div class="pkg-detail">镜片建议零售价 ¥2,380 ＋ ¥398 镜架任选</div>
+      </div>
+      <div class="pkg-price-box">
+        <div class="pkg-price-label">特惠套餐价</div>
+        <div class="pkg-price"><span class="unit">¥</span>1,580</div>
+        <div class="pkg-orig">门市约 ¥2,778</div>
+      </div>
+    </div>
+    <div class="upgrade-list">
+      <div class="upgrade-header">↑ 升级选项</div>
+      <div class="upgrade-item ua">
+        <span class="upgrade-add">＋¥300</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.60 双效防护多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥2,880</div>
+        </div>
+      </div>
+      <div class="upgrade-item ub">
+        <span class="upgrade-add">＋¥600</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.60 MR-8 双效防护多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥3,480</div>
+        </div>
+      </div>
+      <div class="upgrade-item uc">
+        <span class="upgrade-add">＋¥900</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">趣百分 1.67 双效防护多点离焦镜片</div>
+          <div class="up-price">镜片零售价 ¥3,980</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 套餐四 ===== -->
+  <div class="pkg-block">
+    <div class="pkg-main color-d">
+      <div class="pkg-num">4</div>
+      <div class="pkg-info">
+        <div class="pkg-name">柯学优 1.55 DOT 点扩散镜片</div>
+        <div class="pkg-detail">镜片建议零售价 ¥3,680 ＋ ¥398 镜架任选</div>
+      </div>
+      <div class="pkg-price-box">
+        <div class="pkg-price-label">特惠套餐价</div>
+        <div class="pkg-price"><span class="unit">¥</span>2,280</div>
+        <div class="pkg-orig">门市约 ¥4,078</div>
+      </div>
+    </div>
+    <div class="upgrade-list">
+      <div class="upgrade-header">↑ 升级选项</div>
+      <div class="upgrade-item ud">
+        <span class="upgrade-add">＋¥1,200</span>
+        <span class="upgrade-arrow">→</span>
+        <div class="upgrade-info">
+          <div class="up-name">柯学优 1.60 MR-8 DOT 点扩散镜片</div>
+          <div class="up-price">镜片零售价 ¥4,980</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footer">
+    📍 详情请咨询门店工作人员 &nbsp;|&nbsp; 高级验光技师为您专业推荐<br>
+    <span>活动解释权归本店所有 · 套餐价包含镜片（双片）＋ ¥398 镜架任选</span><br>
+    <a href="8.html" class="back-home" style="margin-top:10px;">← 返回首页</a>
+  </div>
+
+</div>
+
+</body>
+</html>
