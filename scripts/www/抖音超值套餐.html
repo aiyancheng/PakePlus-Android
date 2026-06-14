@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抖音超值套餐</title>
+<style>
+  :root {
+    --blue: #1677ff;
+    --blue-light: #e6f4ff;
+    --orange: #fa8c16;
+    --orange-light: #fff7e6;
+    --green: #52c41a;
+    --red: #ff4d4f;
+    --red-light: #fff1f0;
+    --gold: #faad14;
+    --gold-light: #fffbe6;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --text-light: #999;
+    --border: #e8e8e8;
+    --radius: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #e8ecf1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 12px;
+    color: var(--text);
+  }
+
+  /* A4 纸张：21cm × 29.7cm */
+  .a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #ffffff;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.12);
+    padding: 20mm 18mm 22mm;
+    position: relative;
+  }
+
+  /* ===== 页面头部 ===== */
+  .header {
+    text-align: center;
+    padding-bottom: 18px;
+    border-bottom: 2px dashed var(--border);
+    margin-bottom: 24px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff4d4f, #ff7875);
+    color: #fff;
+    padding: 6px 22px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .header .subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  /* ===== 分区标题 ===== */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .section-header .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--red-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .section-header .desc {
+    display: block;
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  /* ===== 套餐卡片（竖排单列） ===== */
+  .douyin-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dy-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+    background: #fff;
+    position: relative;
+  }
+
+  .dy-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .dy-card-header .dy-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dy-card-header .dy-name .emoji { font-size: 20px; }
+
+  .dy-card-header.economy  { background: linear-gradient(135deg, #52c41a, #73d13d); }
+  .dy-card-header.standard { background: linear-gradient(135deg, #1677ff, #4096ff); }
+  .dy-card-header.premium  { background: linear-gradient(135deg, #faad14, #ffc53d); color: #5c3d00; }
+
+  .dy-card-header .hot-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.3);
+  }
+  .dy-card-header.premium .hot-badge {
+    background: #ff4d4f;
+    color: #fff;
+  }
+
+  .dy-card-body {
+    padding: 20px;
+  }
+
+  .dy-combo {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding: 14px 18px;
+    background: #fafafa;
+    border-radius: 8px;
+    line-height: 1.7;
+  }
+
+  .dy-price-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .dy-price-row .dy-original {
+    font-size: 14px;
+    color: var(--text-light);
+    text-decoration: line-through;
+    padding-bottom: 6px;
+  }
+  .dy-price-row .dy-current {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--red);
+    line-height: 1;
+  }
+  .dy-price-row .dy-current .unit {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .dy-price-row .dy-save {
+    display: inline-block;
+    background: var(--red-light);
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+  }
+
+  /* 爆款金卡 */
+  .dy-card.premium-card .dy-save {
+    background: linear-gradient(135deg, #ff4d4f, var(--orange));
+    color: #fff;
+  }
+  .dy-card.premium-card .dy-current {
+    color: #d48806;
+  }
+  .dy-card.premium-card {
+    border: 2px solid var(--gold);
+    box-shadow: 0 4px 24px rgba(250,173,20,0.18);
+  }
+
+  /* 升级选项 */
+  .dy-upgrade {
+    padding: 12px 16px;
+    background: var(--blue-light);
+    border-radius: 8px;
+    border-left: 3px solid var(--blue);
+  }
+  .dy-upgrade .up-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .dy-upgrade .up-item {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 3px 0;
+    line-height: 1.7;
+  }
+  .dy-upgrade .up-item strong {
+    color: var(--orange);
+    font-weight: 700;
+  }
+
+  /* ===== 热卖标签栏 ===== */
+  .highlight-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, var(--gold-light), #fff7e6);
+    border-radius: var(--radius);
+    border: 1px dashed var(--gold);
+    font-size: 13px;
+    color: #ad6800;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .highlight-strip span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ===== 页脚 ===== */
+  .footer {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 4px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* ===== 打印样式 ===== */
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; }
+    .a4-page {
+      box-shadow: none;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 20mm 18mm 22mm;
+      page-break-after: always;
+    }
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  @media (max-width: 800px) {
+    .a4-page { width: 100%; min-height: auto; padding: 16px 14px 24px; }
+  }
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1677ff;
+    background: #f0f5ff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .back-home:hover { background: #dbe4ff; }
+</style>
+</head>
+<body>
+
+<div class="a4-page">
+
+  <!-- 头部 -->
+  <div class="header">
+   <h1>爱眼城眼镜 · 抖音超值套餐</h1>
+    <p class="subtitle">线上专属 · 超高性价比配镜方案</p>
+  </div>
+
+
+  <!-- 分区标题 -->
+  <div class="section-header">
+    <div class="icon">🎵</div>
+    <div>
+      <h2>抖音超值套餐</h2>
+      <span class="desc">线上专属 · 超值配镜方案</span>
+    </div>
+  </div>
+
+  <div class="douyin-cards">
+
+    <!-- 经济套餐 -->
+    <div class="dy-card">
+      <div class="dy-card-header economy">
+        <div class="dy-name"><span class="emoji">💰</span> 经济套餐</div>
+      </div>
+      <div class="dy-card-body">
+        <div class="dy-combo">¥198 镜架 + ¥198 欣博 1.56 非球面镜片（原价 ¥396）</div>
+        <div class="dy-price-row">
+          <span class="dy-current"><span class="unit">¥</span>198</span>
+          <span class="dy-save">省 ¥198</span>
+        </div>
+        <div class="dy-upgrade">
+          <div class="up-title">💡 升级选项</div>
+          <div class="up-item">+<strong>¥100</strong> 升级至 ¥358 欣博 1.598 非球面镜片</div>
+          <div class="up-item">+<strong>¥200</strong> 升级至 ¥488 欣博 1.598 多屏蓝光镜片</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 标准套餐 -->
+    <div class="dy-card">
+      <div class="dy-card-header standard">
+        <div class="dy-name"><span class="emoji">⭐</span> 标准套餐</div>
+      </div>
+      <div class="dy-card-body">
+        <div class="dy-combo">¥398 镜架 + ¥358 欣博 1.598 非球面镜片（原价 ¥756）</div>
+        <div class="dy-price-row">
+          <span class="dy-current"><span class="unit">¥</span>398</span>
+          <span class="dy-save">省 ¥358</span>
+        </div>
+        <div class="dy-upgrade">
+          <div class="up-title">💡 升级选项</div>
+          <div class="up-item">+<strong>¥100</strong> 升级至 ¥488 欣博 1.598 多屏蓝光镜片</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 品牌套餐（爆款推荐） -->
+    <div class="dy-card premium-card">
+      <div class="dy-card-header premium">
+        <div class="dy-name"><span class="emoji">💎</span> 品牌套餐</div>
+        <span class="hot-badge">👑 爆款推荐</span>
+      </div>
+      <div class="dy-card-body">
+        <div class="dy-combo">¥598 镜架 + ¥488 欣博 1.598 多屏蓝光镜片（原价 ¥1086）</div>
+        <div class="dy-price-row">
+          <span class="dy-current"><span class="unit">¥</span>598</span>
+          <span class="dy-save">省 ¥488</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    📍 详情请咨询门店工作人员<br>
+    <a href="8.html" class="back-home" style="margin-top:10px;">← 返回首页</a>
+  </div>
+
+</div>
+
+</body>
+</html>
