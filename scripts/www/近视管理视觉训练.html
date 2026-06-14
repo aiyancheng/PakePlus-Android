@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>近视管理视觉训练 · 套餐方案</title>
+<style>
+  :root {
+    --teal: #0891b2;
+    --teal-light: #ecfeff;
+    --teal-mid: #06b6d4;
+    --blue: #1677ff;
+    --blue-light: #e6f4ff;
+    --green: #059669;
+    --green-light: #ecfdf5;
+    --purple: #7c3aed;
+    --purple-light: #f5f3ff;
+    --gold: #d97706;
+    --gold-light: #fffbeb;
+    --red: #ef4444;
+    --red-light: #fef2f2;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --text-light: #999;
+    --border: #e5e7eb;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #e8ecf1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    color: var(--text);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .page {
+    width: 21cm;
+    min-height: 29.7cm;
+    background: #ffffff;
+    padding: 44px 40px 48px;
+    margin: 0 auto;
+  }
+
+  /* ===== 页面头部 ===== */
+  .header {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 2px dashed var(--border);
+    margin-bottom: 32px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--teal), var(--teal-mid));
+    color: #fff;
+    padding: 6px 22px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .header .subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ===== 课程理念区 ===== */
+  .intro-banner {
+    background: linear-gradient(135deg, #f0fdfa, #ecfeff);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid rgba(8,145,178,0.12);
+  }
+  .intro-banner .intro-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-mid));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    color: #fff;
+  }
+  .intro-banner .intro-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .intro-banner .intro-text p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ===== 训练内容亮点 ===== */
+  .training-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .hl-card {
+    text-align: center;
+    padding: 18px 10px;
+    background: #fafbfc;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: transform 0.2s;
+  }
+  .hl-card:hover { transform: translateY(-2px); }
+  .hl-card .hl-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .hl-card .hl-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .hl-card .hl-desc {
+    font-size: 11px;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+
+  /* ===== 套餐卡片区 ===== */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .section-header .sec-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .section-header .sec-desc {
+    display: block;
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    background: #fff;
+    position: relative;
+  }
+
+  /* 推荐卡金色边框 */
+  .card.recommended {
+    border: 2px solid var(--gold);
+    box-shadow: 0 4px 24px rgba(217,119,6,0.12);
+  }
+
+  /* 卡片头部 */
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 22px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-header::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .card-header .card-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .card-header .card-name .emoji { font-size: 20px; }
+
+  /* 三档配色 */
+  .card-header.tier1 { background: linear-gradient(135deg, #0891b2, #06b6d4); }
+  .card-header.tier2 { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+  .card-header.tier3 { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+
+  .card-header .rec-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.25);
+    position: relative;
+    z-index: 1;
+  }
+  .card-header.tier3 .rec-badge {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: #78350f;
+  }
+
+  /* 卡片主体 */
+  .card-body {
+    padding: 22px;
+  }
+
+  /* 赠品展示区 */
+  .gift-section {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .gift-item {
+    flex: 1;
+    min-width: 160px;
+    background: #fafbfc;
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .gift-item .gift-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .gift-item .gift-icon.lens { background: var(--blue-light); }
+  .gift-item .gift-icon.frame { background: var(--purple-light); }
+  .gift-item .gift-info .gift-label {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-bottom: 2px;
+  }
+  .gift-item .gift-info .gift-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .gift-item .gift-info .gift-value {
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* 价格行 */
+  .price-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .price-row .price-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding-bottom: 6px;
+  }
+  .price-row .price-current {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .price-row .price-current .unit {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .card.recommended .price-row .price-current {
+    color: var(--purple);
+  }
+
+  /* 价值对比条 */
+  .value-strip {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, var(--green-light), #d1fae5);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+  .value-strip .vs-total {
+    font-weight: 700;
+    color: var(--green);
+  }
+  .value-strip .vs-arrow {
+    color: var(--text-light);
+    font-size: 18px;
+  }
+  .value-strip .vs-save {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    font-weight: 700;
+    padding: 3px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  .card.recommended .value-strip {
+    background: linear-gradient(135deg, #fef3c7, #fef9c3);
+  }
+  .card.recommended .value-strip .vs-save {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+
+  /* 课程包含 */
+  .course-includes {
+    padding: 12px 16px;
+    background: #fafbfc;
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+  }
+  .course-includes .ci-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .course-includes .ci-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+  .course-includes .ci-list span::before {
+    content: '✓ ';
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  /* ===== 对比总览表 ===== */
+  .compare-section {
+    margin-bottom: 32px;
+  }
+  .compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .compare-table thead th {
+    background: #f7f8fa;
+    padding: 12px 14px;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  .compare-table thead th:first-child {
+    text-align: left;
+    padding-left: 20px;
+  }
+  .compare-table tbody td {
+    padding: 14px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #f3f4f6;
+    background: #fff;
+    font-weight: 500;
+  }
+  .compare-table tbody tr:last-child td { border-bottom: none; }
+  .compare-table tbody tr:hover td { background: #fafbfc; }
+  .compare-table .col-label {
+    text-align: left;
+    padding-left: 20px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .compare-table .price-highlight {
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--teal);
+  }
+  .compare-table .price-highlight.premium {
+    color: var(--purple);
+  }
+  .compare-table .check {
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* ===== 页脚 ===== */
+  .footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 800px) {
+    body {
+      padding: 0;
+    }
+    .page {
+      width: 100%;
+      min-height: auto;
+      padding: 20px 14px 24px;
+    }
+    .training-highlights {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gift-section {
+      flex-direction: column;
+    }
+    .header h1 {
+      font-size: 22px;
+    }
+    .price-row .price-current {
+      font-size: 28px;
+    }
+  }
+
+  /* 打印样式 */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+    }
+    .page {
+      width: 21cm;
+      min-height: 29.7cm;
+      margin: 0;
+    }
+    .card {
+      break-inside: avoid;
+    }
+  }
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1677ff;
+    background: #f0f5ff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .back-home:hover { background: #dbe4ff; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ===== 页面头部 ===== -->
+  <div class="header">
+    <div class="badge">👁️ 视觉健康管理</div>
+    <h1>近视管理视觉训练</h1>
+    <p class="subtitle">科学训练 · 定制方案 · 赠送高品质离焦镜片+时尚镜架</p>
+  </div>
+
+  <!-- ===== 课程理念 ===== -->
+  <div class="intro-banner">
+    <div class="intro-icon">🎯</div>
+    <div class="intro-text">
+      <h3>什么是视觉训练？</h3>
+      <p>通过系统化的视觉功能训练，改善调节、聚散、眼球运动等视觉能力，配合多点离焦镜片技术，从"训练+光学"双通道干预近视进展，帮助儿童青少年建立健康的视觉系统。</p>
+    </div>
+  </div>
+
+  <!-- ===== 训练内容亮点 ===== -->
+  <div class="training-highlights">
+    <div class="hl-card">
+      <div class="hl-icon">🔬</div>
+      <div class="hl-title">专业评估</div>
+      <div class="hl-desc">双眼视功能全面检查</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-icon">📋</div>
+      <div class="hl-title">定制方案</div>
+      <div class="hl-desc">一人一案个性训练</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-icon">📊</div>
+      <div class="hl-title">数据追踪</div>
+      <div class="hl-desc">训练效果量化对比</div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-icon">🎁</div>
+      <div class="hl-title">超值赠品</div>
+      <div class="hl-desc">离焦镜片+镜架赠送</div>
+    </div>
+  </div>
+
+  <!-- ===== 套餐卡片 ===== -->
+  <div class="section-header">
+    <div class="sec-icon">📦</div>
+    <div>
+      <h2>训练套餐方案</h2>
+      <span class="sec-desc">月卡制 · 赠品价值升级</span>
+    </div>
+  </div>
+
+  <div class="cards">
+
+    <!-- 1月卡 -->
+    <div class="card">
+      <div class="card-header tier1">
+        <div class="card-name"><span class="emoji">🌱</span> 1月卡训练课程</div>
+      </div>
+      <div class="card-body">
+        <!-- 赠品 -->
+        <div class="gift-section">
+          <div class="gift-item">
+            <div class="gift-icon lens">🔍</div>
+            <div class="gift-info">
+              <div class="gift-label">赠送镜片</div>
+              <div class="gift-name">趣百分 1.60<br>多点离焦镜片</div>
+              <div class="gift-value">价值 ¥1,580</div>
+            </div>
+          </div>
+          <div class="gift-item">
+            <div class="gift-icon frame">🕶️</div>
+            <div class="gift-info">
+              <div class="gift-label">赠送镜架</div>
+              <div class="gift-name">¥398 镜架<br>全场任选</div>
+              <div class="gift-value">价值 ¥398</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 价格 -->
+        <div class="price-row">
+          <span class="price-label">课程费用</span>
+          <span class="price-current"><span class="unit">¥</span>1,680</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2月卡 -->
+    <div class="card">
+      <div class="card-header tier2">
+        <div class="card-name"><span class="emoji">🌿</span> 2月卡训练课程</div>
+      </div>
+      <div class="card-body">
+        <!-- 赠品 -->
+        <div class="gift-section">
+          <div class="gift-item">
+            <div class="gift-icon lens">🔍</div>
+            <div class="gift-info">
+              <div class="gift-label">赠送镜片</div>
+              <div class="gift-name">趣百分 1.60 MR-8<br>散射型低对比度镜片</div>
+              <div class="gift-value">价值 ¥2,580</div>
+            </div>
+          </div>
+          <div class="gift-item">
+            <div class="gift-icon frame">🕶️</div>
+            <div class="gift-info">
+              <div class="gift-label">赠送镜架</div>
+              <div class="gift-name">¥398 镜架<br>全场任选</div>
+              <div class="gift-value">价值 ¥398</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 价格 -->
+        <div class="price-row">
+          <span class="price-label">课程费用</span>
+          <span class="price-current"><span class="unit">¥</span>2,880</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3月卡（推荐） -->
+    <div class="card recommended">
+      <div class="card-header tier3">
+        <div class="card-name"><span class="emoji">👑</span> 3月卡训练课程</div>
+        <span class="rec-badge">⭐ 力荐方案</span>
+      </div>
+      <div class="card-body">
+        <!-- 赠品 -->
+        <div class="gift-section">
+          <div class="gift-item">
+            <div class="gift-icon lens">🔍</div>
+            <div class="gift-info">
+              <div class="gift-label">赠送镜片</div>
+              <div class="gift-name">趣百分 1.60 MR-8<br>双效防护多点离焦镜片</div>
+              <div class="gift-value">价值 ¥3,480</div>
+            </div>
+          </div>
+          <div class="gift-item">
+            <div class="gift-icon frame">🕶️</div>
+            <div class="gift-info">
+              <div class="gift-label">赠送镜架</div>
+              <div class="gift-name">¥398 镜架<br>全场任选</div>
+              <div class="gift-value">价值 ¥398</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 价格 -->
+        <div class="price-row">
+          <span class="price-label">课程费用</span>
+          <span class="price-current"><span class="unit">¥</span>3,980</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== 页脚 ===== -->
+  <div class="footer">
+    📍 详情请咨询门店工作人员 &nbsp;|&nbsp; 高级验光技师为您定制专属训练方案<br>
+    <span style="font-size:11px;">活动解释权归本店所有 · 赠品以实物为准</span><br>
+    <a href="8.html" class="back-home" style="margin-top:10px;">← 返回首页</a>
+  </div>
+
+</div>
+
+</body>
+</html>
