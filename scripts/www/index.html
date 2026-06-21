@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>眼科诊所运营方案 · 全模块导航</title>
+<link rel="stylesheet" href="modules/clinic-styles.css">
+<style>
+  .hero {
+    background: linear-gradient(135deg, #0d47a1 0%, #1677ff 40%, #13c2c2 100%);
+    padding: 70px 40px; text-align: center; position: relative; overflow: hidden; color: #fff;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset:0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero h1 { font-size: 34px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; position: relative; }
+  .hero p { font-size: 15px; opacity: 0.85; position: relative; max-width: 640px; margin: 0 auto; }
+  .hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 28px; position: relative; }
+  .hero-stat { text-align: center; }
+  .hero-stat-num { font-size: 36px; font-weight: 800; display: block; }
+  .hero-stat-label { font-size: 13px; opacity: 0.75; }
+  .section-title {
+    font-size: 20px; font-weight: 700; margin: 32px 0 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title .st-line {
+    width: 4px; height: 20px; background: var(--primary); border-radius: 2px;
+  }
+  .link-box {
+    background: var(--white); border-radius: var(--radius);
+    box-shadow: var(--card-shadow); padding: 16px 20px;
+    margin-bottom: 12px; display: flex; align-items: center; gap: 12px;
+  }
+  .link-box:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .link-box .num {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--primary-light);
+    color: var(--primary); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; flex-shrink: 0;
+  }
+  .link-box .num.orange { background: var(--warning-light); color: var(--warning); }
+  .link-box .num.green { background: var(--success-light); color: var(--success); }
+  .link-box .num.purple { background: var(--purple-light); color: var(--purple); }
+  .link-box .num.cyan { background: var(--cyan-light); color: var(--cyan); }
+  .link-box .num.red { background: var(--danger-light); color: var(--danger); }
+  .link-box .info { flex:1; }
+  .link-box .info a { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
+  .link-box .info a:hover { color: var(--primary); }
+  .link-box .info .desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .badge-sm { font-size: 11px; padding: 1px 8px; border-radius: 8px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<div class="topbar">
+  <a href="index.html" class="logo">🏥 眼科诊所运营方案</a>
+  <span style="font-size:13px;color:var(--text-muted);">全模块导航 · 20个专题 + 完整版</span>
+  <a href="mindmap.html" target="_blank" style="margin-left:auto;background:linear-gradient(90deg,#722ed1,#13c2c2);color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:5px;">🗺️ 思维导图</a>
+</div>
+
+<!-- 英雄区 -->
+<div class="hero">
+  <h1>爱眼城眼科诊所运营全模块导航</h1>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">20</span><span class="hero-stat-label">专题模块</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">10</span><span class="hero-stat-label">新增模块</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">1</span><span class="hero-stat-label">思维导图</span></div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 搜索 -->
+  <div class="search-box" style="margin-top:24px;">
+    <span style="font-size:18px;">🔍</span>
+    <input type="text" id="searchInput" placeholder="搜索模块...（如：OK镜、营销、定价、团队、风险）" oninput="filterModules()">
+  </div>
+
+  <!-- 分类标签 -->
+  <div class="filter-tabs" id="filterTabs">
+    <span class="filter-tab active" onclick="setFilter('all', this)">全部</span>
+    <span class="filter-tab" onclick="setFilter('strategy', this)">🔷 战略规划</span>
+    <span class="filter-tab" onclick="setFilter('marketing', this)">🔶 营销获客</span>
+    <span class="filter-tab" onclick="setFilter('operations', this)">🟢 运营管理</span>
+    <span class="filter-tab" onclick="setFilter('medical', this)">🟣 医疗服务</span>
+    <span class="filter-tab" onclick="setFilter('growth', this)">🔴 增长风控</span>
+  </div>
+
+  <!-- ===== 全局视图 ===== -->
+  <div class="section-title"><span class="st-line"></span>📚 全局视图 &amp; 完整版</div>
+  <div class="link-box" style="border-left:4px solid #722ed1;">
+    <div class="num" style="background:linear-gradient(135deg,#722ed1,#13c2c2);color:#fff;width:36px;height:36px;font-size:18px;">🗺️</div>
+    <div class="info">
+      <a href="mindmap.html" target="_blank" style="color:#722ed1;">思维导图 · 全模块知识结构图</a>
+      <div class="desc">交互式思维导图，支持拖拽缩放、点击展开详情，一图览全局，快速定位所需模块</div>
+    </div>
+    <a href="mindmap.html" target="_blank" style="flex-shrink:0;background:linear-gradient(90deg,#722ed1,#13c2c2);color:#fff;padding:6px 16px;border-radius:16px;font-size:13px;font-weight:600;text-decoration:none;">打开 →</a>
+  </div>
+  <div class="link-box">
+    <div class="info">
+
+    </div>
+  </div>
+
+  <!-- ===== 第一部分：基础战略 ===== -->
+  <div class="section-title"><span class="st-line"></span>🔷 基础战略层（3个模块）</div>
+  <div class="module-grid" id="moduleList">
+    <!-- 模块由JS动态生成 -->
+  </div>
+
+  <!-- ===== 第二部分：营销获客 ===== -->
+  <div class="section-title"><span class="st-line"></span>🔶 营销获客层（4个模块）</div>
+  <div class="module-grid" id="marketingList"></div>
+
+  <!-- ===== 第三部分：运营管理 ===== -->
+  <div class="section-title"><span class="st-line"></span>🟢 运营管理层（5个模块）</div>
+  <div class="module-grid" id="opsList"></div>
+
+  <!-- ===== 第四部分：医疗服务 ===== -->
+  <div class="section-title"><span class="st-line"></span>🟣 医疗服务层（5个模块）</div>
+  <div class="module-grid" id="medicalList"></div>
+
+  <!-- ===== 第五部分：增长风控 ===== -->
+  <div class="section-title"><span class="st-line"></span>🔴 增长风控层（3个模块）</div>
+  <div class="module-grid" id="growthList"></div>
+
+  <!-- 页脚导航 -->
+  <div class="footer-nav">
+    <div class="footer-nav-group">
+      <h4>快速入口</h4>
+      <a href="mindmap.html">🗺️ 思维导图</a>
+      <a href="眼科诊所运营可行性方案.html">📋 完整版方案</a>
+    </div>
+    <div class="footer-nav-group">
+      <h4>战略规划</h4>
+      <a href="modules/mod_01_strategy.html">01 基础定位</a>
+      <a href="modules/mod_03_preparation.html">03 开诊筹备</a>
+      <a href="modules/mod_10_timeline.html">10 执行时间表</a>
+    </div>
+    <div class="footer-nav-group">
+      <h4>营销获客</h4>
+      <a href="modules/mod_02_marketing.html">02 装修营销</a>
+      <a href="modules/mod_14_school.html">14 学校筛查</a>
+      <a href="modules/mod_16_content.html">16 新媒体营销</a>
+      <a href="modules/mod_11_brand.html">11 品牌建设</a>
+    </div>
+    <div class="footer-nav-group">
+      <h4>运营管理</h4>
+      <a href="modules/mod_04_operations.html">04 日常运营</a>
+      <a href="modules/mod_07_team.html">07 团队建设</a>
+      <a href="modules/mod_12_digital.html">12 数字化运营</a>
+      <a href="modules/mod_13_quality.html">13 质量安全</a>
+      <a href="modules/mod_15_insurance.html">15 医保定价</a>
+    </div>
+    <div class="footer-nav-group">
+      <h4>医疗服务</h4>
+      <a href="modules/mod_05_services.html">05 核心服务</a>
+      <a href="modules/mod_06_patient.html">06 患者运营</a>
+      <a href="modules/mod_17_myopia.html">17 近视防控</a>
+      <a href="modules/mod_19_academic.html">19 学术建设</a>
+    </div>
+    <div class="footer-nav-group">
+      <h4>增长风控</h4>
+      <a href="modules/mod_08_finance.html">08 财务测算</a>
+      <a href="modules/mod_09_risk.html">09 风险管控</a>
+      <a href="modules/mod_18_crisis.html">18 危机公关</a>
+      <a href="modules/mod_20_growth.html">20 增长策略</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>高级验光技师 闫胜君 整理 · 2026年6月 · V3.0 模块化版</p>
+  <p style="font-size:11px;color:#bbb;">本方案仅供内部运营参考，具体执行请结合实际情况调整</p>
+</div>
+
+<a href="#" class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
+
+<script>
+// 模块数据
+const modules = [
+  // 战略层
+  {id:'mod_01_strategy', num:'01', title:'项目基础定位与战略规划', desc:'诊所定位、目标客群、核心产品、与原眼镜店协同策略、差异化竞争', icon:'🎯', color:'blue', cat:'strategy', tag:'核心'},
+  {id:'mod_03_preparation', num:'03', title:'开诊前筹备清单', desc:'证照资质办理、设备采购清单、人员配置方案、600㎡空间规划', icon:'📋', color:'green', cat:'strategy', tag:'核心'},
+  {id:'mod_10_timeline', num:'10', title:'执行时间表与里程碑', desc:'从装修到稳定运营的6阶段完整时间轴，关键节点甘特图', icon:'📅', color:'cyan', cat:'strategy', tag:'核心'},
+  // 营销层
+  {id:'mod_02_marketing', num:'02', title:'装修期营销预热方案', desc:'抖音/微信预热矩阵、围挡广告、社区合作、开业活动全案', icon:'📣', color:'orange', cat:'marketing', tag:'核心'},
+  {id:'mod_14_school', num:'14', title:'学校筛查与社区合作专项', desc:'学校视力筛查SOP、校医对接、社区义诊、企业团检合作方案', icon:'🏫', color:'orange', cat:'marketing', tag:'新增'},
+  {id:'mod_16_content', num:'16', title:'新媒体内容营销计划', desc:'抖音/小红书/视频号内容矩阵、专家IP打造、短视频脚本模板', icon:'📱', color:'orange', cat:'marketing', tag:'新增'},
+  {id:'mod_11_brand', num:'11', title:'品牌建设与VI视觉系统', desc:'品牌命名策略、LOGO/VI设计、诊所空间导视、品牌故事包装', icon:'🎨', color:'purple', cat:'marketing', tag:'新增'},
+  // 运营层
+  {id:'mod_04_operations', num:'04', title:'日常运营管理体系', desc:'分岗位SOP、每日检查清单、周月复盘模板、质控SOP、投诉处理', icon:'⚙️', color:'blue', cat:'operations', tag:'核心'},
+  {id:'mod_07_team', num:'07', title:'团队建设与培训体系', desc:'薪酬结构设计、绩效KPI、入职培训、继续教育、职业发展通道', icon:'👥', color:'green', cat:'operations', tag:'核心'},
+  {id:'mod_12_digital', num:'12', title:'数字化运营与信息化建设', desc:'HIS系统选型、患者CRM、在线预约、数据分析看板、小程序搭建', icon:'💻', color:'blue', cat:'operations', tag:'新增'},
+  {id:'mod_13_quality', num:'13', title:'医疗质量与安全管理', desc:'院感防控SOP、不良事件上报、处方审核、设备质控、应急预案', icon:'🛡️', color:'green', cat:'operations', tag:'新增'},
+  {id:'mod_15_insurance', num:'15', title:'医保对接与价格体系', desc:'医保定点申请流程、收费项目定价策略、套餐设计、医保结算SOP', icon:'💰', color:'purple', cat:'operations', tag:'新增'},
+  // 医疗层
+  {id:'mod_05_services', num:'05', title:'核心医疗服务体系', desc:'OK镜全链路SOP、阿托品诊疗、离焦镜验配、斜弱视训练、干眼症', icon:'🔬', color:'purple', cat:'medical', tag:'核心'},
+  {id:'mod_06_patient', num:'06', title:'患者运营与会员体系', desc:'4级会员权益、积分规则、患者旅程触点、老带新裂变、满意度管理', icon:'❤️', color:'cyan', cat:'medical', tag:'核心'},
+  {id:'mod_17_myopia', num:'17', title:'儿童青少年近视防控深度方案', desc:'全周期近视管理方案、家校医联动、数据追踪、科普教育体系', icon:'👁️', color:'purple', cat:'medical', tag:'新增'},
+  {id:'mod_19_academic', num:'19', title:'学术建设与继续教育', desc:'医师继续教育学分、学术交流、病例讨论会、论文发表、培训基地', icon:'📖', color:'cyan', cat:'medical', tag:'新增'},
+  // 增长风控层
+  {id:'mod_08_finance', num:'08', title:'财务测算与盈利模型', desc:'启动资金明细、盈亏平衡分析、收入结构预测、3年财务模型', icon:'📊', color:'green', cat:'growth', tag:'核心'},
+  {id:'mod_09_risk', num:'09', title:'风险管控体系', desc:'7大风险类型识别、防控措施、保险配置、合规红线清单', icon:'⚠️', color:'red', cat:'growth', tag:'核心'},
+  {id:'mod_18_crisis', num:'18', title:'医疗纠纷与危机公关预案', desc:'医疗纠纷分级处理、舆情监控、媒体应对、赔偿方案、案例演练', icon:'🚨', color:'red', cat:'growth', tag:'新增'},
+  {id:'mod_20_growth', num:'20', title:'第二曲线增长策略', desc:'连锁扩张路径、新业务孵化、数字化转型、产业链延伸、资本规划', icon:'🚀', color:'purple', cat:'growth', tag:'新增'},
+];
+
+let currentFilter = 'all';
+
+function renderModules(filter, search) {
+  const containers = {
+    strategy: document.getElementById('moduleList'),
+    marketing: document.getElementById('marketingList'),
+    operations: document.getElementById('opsList'),
+    medical: document.getElementById('medicalList'),
+    growth: document.getElementById('growthList'),
+  };
+  // Clear all
+  Object.values(containers).forEach(c => c.innerHTML = '');
+
+  modules.forEach(m => {
+    const matchCat = filter === 'all' || m.cat === filter;
+    const matchSearch = !search || m.title.includes(search) || m.desc.includes(search) || m.num.includes(search);
+    if (!matchCat || !matchSearch) return;
+
+    const card = document.createElement('a');
+    card.className = 'module-card';
+    card.href = `modules/${m.id}.html`;
+    card.target = '_blank';
+    card.innerHTML = `
+      <div class="module-card-header">
+        <div class="module-card-icon ${m.color}">${m.icon}</div>
+        <div class="module-card-info">
+          <div class="module-card-title">${m.num}. ${m.title}</div>
+        </div>
+      </div>
+      <div class="module-card-body">${m.desc}</div>
+      <div class="module-card-footer">
+        <span>📄 查看详情 →</span>
+        <span class="badge-sm" style="background:${m.tag==='新增'?'#e6fffb':'#fff7e6'};color:${m.tag==='新增'?'var(--cyan)':'var(--warning)'};">${m.tag}</span>
+      </div>`;
+    containers[m.cat].appendChild(card);
+  });
+}
+
+function setFilter(filter, el) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  filterModules();
+}
+
+function filterModules() {
+  const search = document.getElementById('searchInput').value.trim();
+  renderModules(currentFilter, search);
+}
+
+// 初始渲染
+renderModules('all', '');
+
+// 返回顶部按钮
+window.addEventListener('scroll', function() {
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+
+</body>
+</html>
