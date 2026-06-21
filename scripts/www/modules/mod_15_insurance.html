@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>医保对接与价格体系</title>
+<link rel="stylesheet" href="clinic-styles.css">
+</head>
+<body>
+<div class="topbar">
+  <a href="../index.html" class="logo">🏥 眼科诊所运营方案</a>
+  <div class="breadcrumb"><a href="../index.html">首页</a> <span>/</span> <span>医保对接与价格体系</span></div>
+</div>
+<div class="mod-cover purple">
+  <span class="cover-icon">💰</span><h1>医保对接与价格体系</h1>
+  <div class="mod-subtitle">医保定点申请 · 收费定价 · 套餐设计 · 结算SOP</div>
+  <div class="cover-tags"><span class="cover-tag">新增模块</span><span class="cover-tag">医保定价</span></div>
+  <div class="cover-author">高级验光技师 闫胜君 整理 · 2026年6月</div>
+</div>
+<div class="main">
+
+<!-- ============ 医保定点申请流程 ============ -->
+<div class="section theme-blue">
+  <div class="section-header"><span class="section-icon">📋</span> 医保定点申请流程</div>
+  <div class="section-body">
+    <h4>申请资格条件</h4>
+    <table class="data-table">
+      <tr><th>条件类别</th><th>具体要求</th><th>准备材料</th></tr>
+      <tr><td>执业资质</td><td>取得《医疗机构执业许可证》并正常运营满3个月以上</td><td>许可证正副本复印件</td></tr>
+      <tr><td>人员配置</td><td>至少有1名注册执业医师（眼科专业），医护比符合要求</td><td>医师执业证/资格证、护士执业证</td></tr>
+      <tr><td>场所要求</td><td>建筑面积≥200m²，功能分区合理，无障碍设施齐全</td><td>房屋产权证明或租赁合同、平面图</td></tr>
+      <tr><td>设备标准</td><td>配备与申报服务项目相匹配的诊疗设备</td><td>设备清单及购置凭证</td></tr>
+      <tr><td>管理制度</td><td>建立完善的医疗质量、医保管理、财务管理制度</td><td>制度文件汇编</td></tr>
+      <tr><td>信息系统</td><td>具备医保结算信息系统接口条件</td><td>HIS系统说明及接口承诺书</td></tr>
+      <tr><td>诚信记录</td><td>近2年内无重大医疗事故和行政处罚记录</td><td>信用承诺书</td></tr>
+    </table>
+    <h4>申请时间线与流程</h4>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div><strong>月1-2：准备阶段</strong><br>收集审核所有资质文件、完善内部管理制度、升级信息系统接口、准备申报材料。</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><strong>月3：提交申请</strong><br>向所在地市医保局提交《定点医疗机构申请表》及全套材料，同时提交电子版。</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><strong>月3-4：材料审核</strong><br>医保局对申报材料进行形式审核，如有缺漏通知补正。补正期限通常为10个工作日。</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><strong>月4-5：现场核查</strong><br>医保局组织专家现场核查：查看场地设备、调阅制度记录、抽查病例、访谈负责人。</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div><strong>月5-6：公示与签约</strong><br>审核通过后在医保局官网公示（通常7-15天），无异议后签订《医保服务协议》。</div></div>
+    </div>
+    <div class="tip-box blue">
+      <strong>总周期预估</strong>：正常情况下3-6个月。建议诊所取得执照满3个月后立即启动申请，不要等到开业后再准备。
+    </div>
+    <h4>常见被拒原因及规避策略</h4>
+    <table class="data-table">
+      <tr><th>被拒原因</th><th>发生概率</th><th>规避策略</th></tr>
+      <tr><td>申报材料不完整</td><td>高</td><td>对照清单逐项核对，请专业人士审核</td></tr>
+      <tr><td>执业范围与申报不符</td><td>中</td><td>提前确认许可证诊疗科目是否包含申报项目</td></tr>
+      <tr><td>人员资质不达标</td><td>中</td><td>确保所有医技人员持有效证件且在册</td></tr>
+      <tr><td>场地面积或布局不合规</td><td>中</td><td>装修前即按医保标准设计，避免后期整改</td></tr>
+      <tr><td>信息系统未就绪</td><td>中</td><td>提前采购医保接口HIS系统，完成联调测试</td></tr>
+      <tr><td>既往违规记录</td><td>低</td><td>保持合规运营，定期自查</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============ 医保结算SOP ============ -->
+<div class="section theme-green">
+  <div class="section-header"><span class="section-icon">💳</span> 医保结算SOP</div>
+  <div class="section-body">
+    <h4>患者接诊——医保核验</h4>
+    <ol>
+      <li><strong>身份验证</strong>：患者出示医保卡/医保电子凭证 → 前台刷卡读取参保信息 → 核实人证一致（本人/家庭成员）</li>
+      <li><strong>待遇查询</strong>：查询患者医保类型（职工/居民/新农合）、起付线、报销比例、年度限额</li>
+      <li><strong>告知义务</strong>：明确告知患者本次就诊预计自费金额、医保报销金额、非医保项目清单</li>
+      <li><strong>签署确认</strong>：患者在《医保项目确认单》上签字确认</li>
+    </ol>
+    <h4>服务编码与收费</h4>
+    <table class="data-table">
+      <tr><th>服务项目</th><th>ICD编码示例</th><th>医保类别</th><th>备注</th></tr>
+      <tr><td>常规视力检查</td><td>Z01.0</td><td>甲类</td><td>全额医保支付</td></tr>
+      <tr><td>裂隙灯检查</td><td>—</td><td>甲类</td><td>全额医保支付</td></tr>
+      <tr><td>非接触眼压测量</td><td>—</td><td>甲类</td><td>全额医保支付</td></tr>
+      <tr><td>眼底检查</td><td>—</td><td>甲类</td><td>全额医保支付</td></tr>
+      <tr><td>电脑验光</td><td>—</td><td>乙类</td><td>部分自付</td></tr>
+      <tr><td>OCT检查</td><td>—</td><td>乙类</td><td>部分自付（限适应症）</td></tr>
+      <tr><td>OK镜验配</td><td>—</td><td>自费</td><td>非医保项目</td></tr>
+      <tr><td>框架眼镜</td><td>—</td><td>自费</td><td>非医保项目</td></tr>
+      <tr><td>干眼治疗</td><td>—</td><td>自费</td><td>非医保项目</td></tr>
+      <tr><td>斜视训练</td><td>H50</td><td>乙类</td><td>需满足适应症条件</td></tr>
+    </table>
+    <h4>结算与对账</h4>
+    <div class="sop-note">
+      <p><strong>日结流程</strong>：每日下班前导出当日医保结算明细→核对收费项目与医保上传一致性→检查是否有拒付/挂账记录→打印日结单由负责人签字。</p>
+      <p><strong>月结流程</strong>：每月5日前导出上月医保结算汇总→与HIS系统对账→排查差异原因→提交月报表至医保局→等待拨款（通常次月15-25日到账）。</p>
+    </div>
+    <h4>常见结算错误及预防</h4>
+    <table class="data-table">
+      <tr><th>错误类型</th><th>后果</th><th>预防措施</th></tr>
+      <tr><td>人证不符</td><td>拒付+扣分+罚款</td><td>双重核验身份，拍照留存</td></tr>
+      <tr><td>超目录收费</td><td>拒付+通报</td><td>HIS系统设置医保目录匹配规则</td></tr>
+      <tr><td>编码错误</td><td>退回重报</td><td>每月更新编码对照表</td></tr>
+      <tr><td>重复收费</td><td>拒付+扣分</td><td>系统设置同项目同日不可重复计费</td></tr>
+      <tr><td>分解收费</td><td>严重违约</td><td>严格遵守套餐组合规定</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============ 商业健康保险合作策略 ============ -->
+<div class="section theme-cyan">
+  <div class="section-header"><span class="section-icon">🏦</span> 商业健康保险合作策略</div>
+  <div class="section-body">
+    <h4>商业健康保险在眼科的价值</h4>
+    <p>商业健康保险正在成为中高端眼科消费的重要支付手段。与医保覆盖常规诊疗不同，商业保险可覆盖OK镜验配、干眼治疗、视觉训练等自费项目，且<strong>商业保险患者客单价通常比自费患者高30-50%</strong>。接入商保直付网络不仅能吸引高净值客户，还能通过保险公司背书提升品牌信任度。</p>
+
+    <h4>目标保险合作方</h4>
+    <table class="data-table">
+      <tr><th>保险公司</th><th>覆盖范围</th><th>眼科相关产品</th><th>合作难度</th><th>患者画像</th></tr>
+      <tr>
+        <td><strong>平安健康</strong></td>
+        <td>全国</td>
+        <td>平安e生保（百万医疗含眼科门诊）、平安宝贝（儿童高端医疗）</td>
+        <td>⭐⭐ 中等</td>
+        <td>中产家庭、企业团险员工</td>
+      </tr>
+      <tr>
+        <td><strong>泰康在线</strong></td>
+        <td>全国</td>
+        <td>泰康齿科+眼科计划、儿童近视防控保险</td>
+        <td>⭐⭐ 中等</td>
+        <td>保险意识强的中青年群体</td>
+      </tr>
+      <tr>
+        <td><strong>MSH万欣和</strong></td>
+        <td>全国</td>
+        <td>高端健康险含眼科门诊+配镜额度</td>
+        <td>⭐⭐⭐ 较高</td>
+        <td>外企高管、高净值家庭</td>
+      </tr>
+      <tr>
+        <td><strong>BUPA保柏</strong></td>
+        <td>全国</td>
+        <td>全球高端医疗险含眼科全面保障</td>
+        <td>⭐⭐⭐ 较高</td>
+        <td>高净值/外籍人士</td>
+      </tr>
+      <tr>
+        <td><strong>本地中小保险公司</strong></td>
+        <td>区域</td>
+        <td>企业团险中的眼科补充保障</td>
+        <td>⭐ 较低</td>
+        <td>本地企业员工</td>
+      </tr>
+    </table>
+
+    <h4>商保直付网络接入流程</h4>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 1：资质准备</div>
+      <div class="sop-step-body">
+        <ul>
+          <li>确保《医疗机构执业许可证》注册满1年（多数商保公司要求）</li>
+          <li>准备诊所资质包：许可证副本、医师执业证书、设备清单、服务项目目录及定价表</li>
+          <li>建立符合商保要求的病历管理制度和收费系统</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 2：提交申请</div>
+      <div class="sop-step-body">
+        <p>向目标保险公司提交《医疗服务机构合作申请表》及全套资质材料 → 保险公司进行初步审核（约2-4周）→ 审核通过后安排现场考察。</p>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 3：现场考察与谈判</div>
+      <div class="sop-step-body">
+        <p>保险公司派遣考察专员到诊所现场核验（设施、人员、流程、制度）→ 双方协商服务项目清单和结算价格 → 签订《医疗服务合作协议》确定直付/垫付模式。</p>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 4：系统对接与培训</div>
+      <div class="sop-step-body">
+        <p>诊所HIS系统接入商保直付/预授权接口 → 完成内部全员商保操作培训（预授权流程、直付结算、理赔协助）→ 对接完成后试运行1个月。</p>
+      </div>
+    </div>
+
+    <h4>商保可覆盖的服务项目</h4>
+    <table class="data-table">
+      <tr><th>项目类别</th><th>具体项目</th><th>高端医疗险覆盖</th><th>百万医疗险覆盖</th></tr>
+      <tr><td>常规检查</td><td>视力、验光、裂隙灯、眼压、眼底</td><td>✅ 通常覆盖</td><td>⚠️ 部分覆盖（需符合适应症）</td></tr>
+      <tr><td>深度检查</td><td>OCT、视野、角膜地形图</td><td>✅ 覆盖</td><td>❌ 一般不覆盖</td></tr>
+      <tr><td>视光产品</td><td>框架眼镜、OK镜</td><td>⚠️ 有额度上限（通常500-3000元/年）</td><td>❌ 不覆盖</td></tr>
+      <tr><td>治疗</td><td>干眼SPA、IPL、视觉训练</td><td>⚠️ 需预授权</td><td>❌ 不覆盖</td></tr>
+      <tr><td>药品</td><td>阿托品眼药水、人工泪液</td><td>✅ 通常覆盖</td><td>⚠️ 部分覆盖</td></tr>
+    </table>
+
+    <h4>合作发展路线图</h4>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div><strong>Year 1：起步接入（1-2家）</strong><br>优先接入本地企业团险合作和1家全国性商保公司（如平安健康）。目标：商保患者占比5-10%。关注：理顺内部直付结算流程，积累服务经验。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div><strong>Year 2：拓展扩容（5家+）</strong><br>接入3-5家主流商保公司，争取1-2家高端医疗险（MSH/BUPA等）。目标：商保患者占比15-20%。关注：优化商保服务体验，制定差异化高端服务流程。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div><strong>Year 3：定制产品</strong><br>与保险公司联合开发"儿童近视防控专属保险"或"家庭眼健康年卡"，实现产品创新。目标：商保患者占比25%+。关注：从被动对接到主动创造价值。</div>
+      </div>
+    </div>
+
+    <h4>营收影响预测</h4>
+    <div class="kpi-grid">
+      <div class="kpi-card green">
+        <div class="kpi-value">+30-50%</div>
+        <div class="kpi-label">商保患者均单价比自费提升</div>
+      </div>
+      <div class="kpi-card blue">
+        <div class="kpi-value">+15-25%</div>
+        <div class="kpi-label">商保渠道营收占比（Year 2）</div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-value">+20%</div>
+        <div class="kpi-label">商保患者复购率提升</div>
+      </div>
+    </div>
+
+    <div class="tip-box cyan">
+      <span class="tip-icon">💰</span>
+      <p><strong>商保合作核心收益：</strong>商保患者除了客单价高之外，还有一个被低估的价值——保险公司背书会显著提升品牌的高端感和信任度。当一个患者发现"我的保险在这家诊所可以直付"时，会自动将诊所归类为"靠谱的中高端医疗机构"。</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ 收费项目定价策略 ============ -->
+<div class="section theme-purple">
+  <div class="section-header"><span class="section-icon">💲</span> 收费项目定价策略</div>
+  <div class="section-body">
+    <h4>定价方法论</h4>
+    <div class="card-grid col3">
+      <div class="mini-card">
+        <h4>成本加成法</h4>
+        <p>适用于检查类项目<br>定价=直接成本+间接成本分摊+期望利润率</p>
+        <p>示例：裂隙灯检查<br>耗材5元+设备折旧3元+人工10元+场所3元=21元成本<br>×1.5加成=31.5元→定价30元</p>
+      </div>
+      <div class="mini-card">
+        <h4>市场基准法</h4>
+        <p>适用于常规服务<br>参考区域内同类诊所/医院定价</p>
+        <p>定价=市场均价×(0.85-1.15)<br>新诊所建议略低于市场均价10-15%<br>以快速积累患者群体</p>
+      </div>
+      <div class="mini-card">
+        <h4>价值定价法</h4>
+        <p>适用于独有/特色服务<br>基于患者感知价值和支付意愿</p>
+        <p>示例：专家门诊<br>普通验光50元 vs 专家验光128元<br>差异化在于经验、设备、服务时长</p>
+      </div>
+    </div>
+    <h4>竞争对手价格对标表</h4>
+    <table class="data-table">
+      <tr><th>服务项目</th><th>三甲医院</th><th>眼科专科医院</th><th>连锁眼镜店</th><th>本诊所建议价</th></tr>
+      <tr><td>普通视力检查</td><td>20-30</td><td>30-50</td><td>免费</td><td>20</td></tr>
+      <tr><td>综合验光</td><td>50-80</td><td>80-150</td><td>30-50</td><td>68</td></tr>
+      <tr><td>裂隙灯检查</td><td>30-50</td><td>50-80</td><td>—</td><td>30</td></tr>
+      <tr><td>非接触眼压</td><td>20-30</td><td>30-50</td><td>—</td><td>20</td></tr>
+      <tr><td>眼底照相</td><td>50-80</td><td>80-120</td><td>—</td><td>60</td></tr>
+      <tr><td>OCT检查</td><td>120-180</td><td>150-200</td><td>—</td><td>120</td></tr>
+      <tr><td>儿童验光（散瞳）</td><td>80-120</td><td>120-180</td><td>50-80</td><td>98</td></tr>
+      <tr><td>OK镜验配检查</td><td>300-500</td><td>400-600</td><td>—</td><td>350</td></tr>
+      <tr><td>干眼综合评估</td><td>200-300</td><td>250-400</td><td>—</td><td>198</td></tr>
+    </table>
+    <div class="tip-box purple">
+      <strong>价格弹性策略</strong>：每年调价一次（控制涨幅≤5%），老患者按原价过渡3个月。重大节日（爱眼日/开学季）推出限时优惠，但不低于成本价。
+    </div>
+  </div>
+</div>
+
+<!-- ============ 定价调整决策模型 ============ -->
+<div class="section theme-blue">
+  <div class="section-header"><span class="section-icon">📐</span> 定价调整决策模型</div>
+  <div class="section-body">
+
+    <h4>触发调价的条件</h4>
+    <div class="card-grid col3">
+      <div class="mini-card">
+        <div class="mc-title">📊 宏观触发条件</div>
+        <ul>
+          <li>国家CPI连续两季度超过3%</li>
+          <li>医疗耗材/设备关税政策重大变化</li>
+          <li>区域最低工资标准调整幅度超过8%</li>
+          <li>医保目录调整影响核心服务项目</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <div class="mc-title">🏥 内部触发条件</div>
+        <ul>
+          <li>核心耗材（OK镜镜片/护理液）采购成本上涨超过10%</li>
+          <li>房租/物业成本年度涨幅超过15%</li>
+          <li>人力成本（新增编制或调薪）导致总成本上升超8%</li>
+          <li>整体利润率连续两季度低于目标值</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <div class="mc-title">🏪 竞品触发条件</div>
+        <ul>
+          <li>同区域内2家以上竞品调整核心服务项目价格</li>
+          <li>竞品调价幅度超过15%</li>
+          <li>新竞品进入市场采取低价策略</li>
+          <li>竞品推出差异化高价服务并有市场反响</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>调价决策六步流程</h4>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 1：调价提案</div>
+      <div class="sop-step-body">
+        <p>运营/财务部门根据触发条件提出调价建议。提案需包含：调价原因、涉及项目清单、建议调整幅度（含上下限）、预期营收影响测算、风险评估。</p>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 2：成本分析</div>
+      <div class="sop-step-body">
+        <p>财务部门对拟调价项目进行全成本核算：直接成本（耗材/药品）+ 间接成本分摊（人工/房租/折旧）+ 合理利润率。确认调整后的毛利率是否在健康区间（检查类≥50%，视光类≥30%，治疗类≥45%）。</p>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 3：竞品对标</div>
+      <div class="sop-step-body">
+        <p>调研区域内3-5家主要竞品的同项目价格 → 分析自身定价在竞品中的位置（高/中/低）→ 评估调价后市场竞争力变化 → 特别关注调价后是否会落入"无人区"（既比高端贵，又比低端不划算）。</p>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 4：模拟测试</div>
+      <div class="sop-step-body">
+        <p>按新价格对近6个月的历史成交数据进行模拟：①新价格下历史订单中的成交率变化预估；②患者敏感度假设（-10%价格弹性）下的营收影响；③高/中/低三种情景的营收测算。对价格敏感项目进行Van Westendorp价格敏感度测试（见下文）。</p>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 5：审批决策</div>
+      <div class="sop-step-body">
+        <p>调价方案提交诊所管理层审批 → 单项目涨幅≤10%且涉及数量≤3项：运营主管审批 → 涨幅>10%或涉及核心项目（OK镜/主要检查套餐）：主理人审批 → 涨幅>20%：需合伙人/投资人参与决策。</p>
+      </div>
+    </div>
+    <div class="sop-step">
+      <div class="sop-step-header">Step 6：发布与执行</div>
+      <div class="sop-step-body">
+        <p>内部全员调价培训（话术统一+常见客户疑问应对话术）→ 更新所有对外价格展示（电子屏/HIS系统/宣传物料/线上平台）→ 按患者沟通策略分期实施。</p>
+      </div>
+    </div>
+
+    <h4>患者价格沟通策略</h4>
+    <table class="data-table">
+      <tr><th>场景</th><th>策略</th><th>时间要求</th></tr>
+      <tr>
+        <td><strong>新价格公示</strong></td>
+        <td>调价前30天在诊所显著位置（候诊区/收费处）张贴调价通知，线上平台同步更新</td>
+        <td>调价前30天</td>
+      </tr>
+      <tr>
+        <td><strong>现有患者过渡</strong></td>
+        <td>已建档且在调价前6个月内有到诊记录的现有患者，享受原价过渡期60天</td>
+        <td>调价后60天内</td>
+      </tr>
+      <tr>
+        <td><strong>会员/年卡用户</strong></td>
+        <td>在会员权益有效期内的套餐/年卡按原价执行，到期续费时按新价执行</td>
+        <td>按合同约定</td>
+      </tr>
+      <tr>
+        <td><strong>已预约未成交</strong></td>
+        <td>调价前已预约但调价后到诊的患者，主动告知价格调整，给予首次新价9折优惠</td>
+        <td>调价后首次到诊</td>
+      </tr>
+      <tr>
+        <td><strong>价格异议处理</strong></td>
+        <td>前台/验光师统一话术："我们一直坚持透明定价，本次调整主要是因为[具体原因]，所有价格均在店内公示。您是我们的老客户，可以享受过渡期原价。"</td>
+        <td>即时响应</td>
+      </tr>
+    </table>
+
+    <h4>Van Westendorp价格敏感度测试方法</h4>
+    <div class="alert-box">
+      <div class="alert-title">📊 Van Westendorp四问法（适用于新项目定价和调价前测试）</div>
+      <p>从目标患者群体中选取30-50名代表性样本，逐一询问以下4个问题：</p>
+      <ol>
+        <li><strong>"您觉得这个服务卖多少钱您会认为太便宜、质疑质量？"</strong>（太便宜点）</li>
+        <li><strong>"您觉得这个服务卖多少钱您会认为便宜、物超所值？"</strong>（便宜点）</li>
+        <li><strong>"您觉得这个服务卖多少钱您开始觉得贵、但还可以考虑？"</strong>（贵点）</li>
+        <li><strong>"您觉得这个服务卖多少钱您会觉得太贵、完全不会考虑？"</strong>（太贵点）</li>
+      </ol>
+      <p><strong>结果分析：</strong>绘制4条累积分布曲线 → 找到"太便宜"与"太贵"曲线的交点（最优价格点OPP）→ "便宜"与"贵"曲线的交点（无差异价格点IDP）→ 推荐定价区间为IDP至OPP之间。</p>
+    </div>
+
+    <div class="tip-box blue">
+      <span class="tip-icon">💡</span>
+      <p><strong>调价黄金法则：</strong>①每年调价不超过1次（避免给患者"坐地起价"印象）；②单次涨幅控制在3-8%（超过10%需特殊审批）；③调价理由永远基于"成本和服务升级"，而非"市场需求"；④调价同时至少新增或优化1项服务，让患者感知到"涨得有道理"。</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ 套餐设计与打包 ============ -->
+<div class="section theme-orange">
+  <div class="section-header"><span class="section-icon">📦</span> 套餐设计与打包</div>
+  <div class="section-body">
+    <h4>三大核心套餐系列</h4>
+    <div class="card-grid col3">
+      <div class="mini-card">
+        <h4>👶 近视防控套餐</h4>
+        <p><strong>目标人群</strong>：6-16岁儿童青少年</p>
+        <p><strong>核心项目</strong>：综合验光+散瞳验光+眼轴测量+角膜地形图+眼底检查</p>
+        <p><strong>赠送</strong>：视觉发育档案建立（价值50元）</p>
+        <p><strong>定价</strong>：基础版198元 / 深度版298元</p>
+        <p><strong>附加</strong>：OK镜试戴评估+300元</p>
+      </div>
+      <div class="mini-card">
+        <h4>👴 中老年眼健康套餐</h4>
+        <p><strong>目标人群</strong>：45岁以上</p>
+        <p><strong>核心项目</strong>：视力+验光+眼压+裂隙灯+眼底照相+OCT黄斑</p>
+        <p><strong>赠送</strong>：老花镜验配优惠券50元</p>
+        <p><strong>定价</strong>：基础版168元 / 全面版368元</p>
+        <p><strong>附加</strong>：视野检查+150元</p>
+      </div>
+      <div class="mini-card">
+        <h4>🧒 儿童视觉发育套餐</h4>
+        <p><strong>目标人群</strong>：3-6岁学龄前儿童</p>
+        <p><strong>核心项目</strong>：视力筛查+屈光检查+眼位+立体视+色觉</p>
+        <p><strong>赠送</strong>：远视储备评估报告</p>
+        <p><strong>定价</strong>：基础版128元 / 进阶版228元</p>
+        <p><strong>附加</strong>：弱视筛查包+100元</p>
+      </div>
+    </div>
+    <h4>定价心理学应用</h4>
+    <div class="two-col">
+      <div>
+        <h5>诱饵效应（Decoy Effect）</h5>
+        <p>设置三个价格档位，中间的"标准版"作为锚点：</p>
+        <ul>
+          <li>基础版：98元（基础项目）</li>
+          <li><span class="hl-orange">标准版：198元（推荐★）</span></li>
+          <li>尊享版：398元（全项目+专家解读）</li>
+        </ul>
+        <p>消费者倾向于选择中间档，既觉得不亏，又不会过于奢侈。</p>
+      </div>
+      <div>
+        <h5>锚定效应（Anchoring）</h5>
+        <p>先展示高价项目再推套餐：</p>
+        <p>"如果单独做这些检查：验光80+OCT120+眼底照相60+裂隙灯30=290元。现在套餐价仅198元，相当于节省92元。"</p>
+        <p>让患者先看到单个项目总价，再展示套餐价，感知优惠幅度。</p>
+      </div>
+    </div>
+    <h4>套餐升级路径</h4>
+    <table class="data-table">
+      <tr><th>场景</th><th>基础版内容</th><th>升级触发条件</th><th>升级内容</th><th>补差价</th></tr>
+      <tr><td>儿童初诊</td><td>综合验光</td><td>检查发现近视≥-0.75D</td><td>+散瞳+眼轴+角膜地形图</td><td>+150元</td></tr>
+      <tr><td>成人体检</td><td>基础检查</td><td>眼压≥21mmHg</td><td>+OCT+视野检查</td><td>+200元</td></tr>
+      <tr><td>干眼筛查</td><td>裂隙灯</td><td>泪膜破裂时间&lt;5秒</td><td>+睑板腺成像+泪液测试</td><td>+100元</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============ 自费项目管理 ============ -->
+<div class="section theme-cyan">
+  <div class="section-header"><span class="section-icon">💎</span> 自费项目管理</div>
+  <div class="section-body">
+    <h4>自费项目清单</h4>
+    <table class="price-table">
+      <tr><th>类别</th><th>项目</th><th>定价</th><th>利润率</th></tr>
+      <tr><td>视光产品</td><td>框架眼镜（国产镜片）</td><td>298-798元</td><td>40-50%</td></tr>
+      <tr><td>视光产品</td><td>框架眼镜（进口镜片）</td><td>898-2,980元</td><td>35-45%</td></tr>
+      <tr><td>视光产品</td><td>近视防控镜片（新乐学/星趣控）</td><td>2,980-3,980元</td><td>30-40%</td></tr>
+      <tr><td>视光产品</td><td>OK镜（国产）</td><td>5,000-7,000元/副</td><td>25-35%</td></tr>
+      <tr><td>视光产品</td><td>OK镜（进口）</td><td>8,000-12,000元/副</td><td>25-35%</td></tr>
+      <tr><td>视光产品</td><td>软性隐形眼镜</td><td>按品牌定价</td><td>20-30%</td></tr>
+      <tr><td>治疗</td><td>干眼SPA（单次）</td><td>198元</td><td>50-60%</td></tr>
+      <tr><td>治疗</td><td>干眼IPL治疗（单次）</td><td>498元</td><td>40-50%</td></tr>
+      <tr><td>治疗</td><td>视觉训练（单次）</td><td>128元</td><td>60-70%</td></tr>
+      <tr><td>附加</td><td>专家门诊（加号）</td><td>100-200元</td><td>80-90%</td></tr>
+    </table>
+    <h4>透明化价格展示</h4>
+    <p>所有自费项目在候诊区设置<strong>电子价格公示屏</strong>，明确标注：</p>
+    <ul>
+      <li>项目名称及内容说明</li>
+      <li>收费标准（元/次或元/副）</li>
+      <li>是否医保可报销（标注"自费/医保甲类/医保乙类"）</li>
+      <li>预计时长</li>
+    </ul>
+    <h4>支付方式</h4>
+    <div class="card-grid col3">
+      <div class="mini-card"><h5>医保支付</h5><p>支持医保个人账户+统筹支付，实时结算</p></div>
+      <div class="mini-card"><h5>扫码支付</h5><p>微信/支付宝/银联云闪付，支持花呗分期</p></div>
+      <div class="mini-card"><h5>分期付款</h5><p>OK镜等大额消费支持3/6/12期免息分期（与银行合作）</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 医保合规注意事项 ============ -->
+<div class="section theme-red">
+  <div class="section-header"><span class="section-icon">⚠️</span> 医保合规注意事项</div>
+  <div class="section-body">
+    <h4>十大合规红线</h4>
+    <ol>
+      <li><span class="hl-red">严禁挂床住院</span>：不得为未实际住院患者虚构住院记录骗取医保</li>
+      <li><span class="hl-red">严禁虚假诊疗</span>：不得虚记、多记诊疗项目和药品</li>
+      <li><span class="hl-red">严禁人证不符</span>：不得冒用他人医保卡就医结算</li>
+      <li><span class="hl-red">严禁串换项目</span>：不得将自费项目串换为医保项目结算</li>
+      <li><span class="hl-red">严禁分解收费</span>：不得将同一服务分解为多个项目重复收费</li>
+      <li><span class="hl-red">严禁超范围用药</span>：严格按照药品说明书适应症使用</li>
+      <li><span class="hl-red">严禁诱导就医</span>：不得以免费/返现等方式诱导患者就医</li>
+      <li><span class="hl-red">严禁空刷医保卡</span>：不得未提供服务直接刷卡</li>
+      <li><span class="hl-red">严禁伪造病历</span>：所有病历资料必须真实、完整、及时</li>
+      <li><span class="hl-red">严禁倒卖药品</span>：不得以任何形式倒卖医保药品</li>
+    </ol>
+    <h4>迎检准备清单</h4>
+    <table class="data-table">
+      <tr><th>检查类别</th><th>准备内容</th><th>负责人</th></tr>
+      <tr><td>资质文件</td><td>许可证、人员执业证、医保协议、年度校验记录</td><td>行政主管</td></tr>
+      <tr><td>病历抽检</td><td>近6个月随机抽取50-100份病历备查</td><td>医疗主任</td></tr>
+      <tr><td>收费清单</td><td>近3个月收费明细、医保上传记录、退费记录</td><td>财务主管</td></tr>
+      <tr><td>药品/耗材</td><td>进销存台账、效期管理记录、处方与出库对应</td><td>药房管理</td></tr>
+      <tr><td>制度文件</td><td>医保管理制度、自查自纠报告、培训记录</td><td>行政主管</td></tr>
+    </table>
+    <div class="alert-box">
+      <strong>自查频率</strong>：每月进行内部医保合规自查，每季度由第三方机构进行外部审计。建立违规行为举报机制（匿名），鼓励员工参与合规监督。
+    </div>
+    <div class="tip-box red">
+      <strong>违规后果警示</strong>：违规可能面临：暂停医保服务1-6个月、追回违规金额并处2-5倍罚款、取消医保定点资格、纳入失信名单影响征信。严重者移交司法。
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="footer"><p>高级验光技师 闫胜君 整理 · 2026年6月</p></div>
+<a href="#" class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
+<script>window.addEventListener('scroll',function(){document.getElementById('backTop').classList.toggle('show',window.scrollY>400);});</script>
+</body>
+</html>
