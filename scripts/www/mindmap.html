@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>眼科诊所运营体系 — 思维导图</title>
+<style>
+  /* ========== BASE ========== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f0f4f8;
+    --panel: #ffffff;
+    --card: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #1a202c;
+    --muted: #64748b;
+    --accent: #1677ff;
+
+    --c-strategy: #1677ff;  /* 蓝 战略 */
+    --c-marketing: #fa8c16; /* 橙 营销 */
+    --c-ops: #13c2c2;      /* 绿 运营 */
+    --c-medical: #722ed1;   /* 紫 医疗 */
+    --c-growth: #d48806;    /* 金 增长 */
+
+    --center-size: 120px;
+    --branch-r: 210px;
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ========== TOPBAR ========== */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px;
+  }
+  .topbar-logo { font-size: 15px; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+  .topbar-tip { font-size: 12px; color: var(--muted); }
+  .topbar-actions { display: flex; align-items: center; gap: 12px; }
+  .btn-sm {
+    padding: 5px 14px; border-radius: 6px; font-size: 12px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--card); color: var(--text);
+    transition: all .2s;
+  }
+  .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-sm.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* ========== LEGEND ========== */
+  .legend {
+    position: fixed; bottom: 20px; left: 20px; z-index: 100;
+    background: rgba(255,255,255,.95);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .legend-title { font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ========== INFO PANEL ========== */
+  .info-panel {
+    position: fixed; top: 52px; right: 0; bottom: 0; z-index: 90;
+    width: 360px;
+    background: var(--panel);
+    border-left: 1px solid var(--border);
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+    overflow-y: auto;
+    padding: 24px 20px 40px;
+  }
+  .info-panel.open { transform: translateX(0); }
+  .info-close {
+    position: absolute; top: 16px; right: 16px;
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid var(--border); background: var(--card);
+    color: var(--muted); font-size: 16px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .info-close:hover { color: var(--text); }
+  .info-cat {
+    font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .info-title { font-size: 22px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .info-subtitle { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .info-divider { height: 1px; background: var(--border); margin: 16px 0; }
+  .info-section-label {
+    font-size: 11px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .info-point {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 13px; line-height: 1.6;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+  }
+  .info-point:last-child { border-bottom: none; }
+  .info-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+  .info-link {
+    display: block; margin-top: 20px;
+    padding: 10px 16px; border-radius: 8px;
+    border: 1px solid; text-align: center;
+    font-size: 13px; text-decoration: none; font-weight: 600;
+    transition: opacity .2s;
+  }
+  .info-link:hover { opacity: .8; }
+  .info-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .info-tag {
+    padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 600;
+    background: rgba(0,0,0,.06);
+    color: var(--text);
+  }
+
+  /* ========== CANVAS ========== */
+  #canvas-wrap {
+    position: fixed; top: 52px; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    cursor: grab;
+  }
+  #canvas-wrap:active { cursor: grabbing; }
+  #canvas-wrap.panel-open { right: 360px; }
+
+  svg#mm {
+    width: 100%; height: 100%;
+    user-select: none;
+  }
+
+  /* ========== SVG ELEMENTS ========== */
+  .mm-center {
+    cursor: default;
+  }
+  .mm-center circle {
+    fill: #f0f5ff;
+    stroke: var(--accent);
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 18px rgba(22,119,255,.25));
+  }
+  .mm-center text { fill: var(--text); font-weight: 700; text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+
+  .branch-group { cursor: pointer; }
+  .branch-node circle {
+    transition: r .2s, filter .2s;
+  }
+  .branch-node:hover circle {
+    filter: drop-shadow(0 0 14px currentColor);
+  }
+  .branch-node.selected circle {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 16px currentColor);
+  }
+  .branch-label {
+    font-size: 13px; font-weight: 600;
+    fill: var(--text);
+    pointer-events: none;
+    text-anchor: middle;
+  }
+
+  .leaf-group { cursor: pointer; }
+  .leaf-box {
+    rx: 8; ry: 8;
+    transition: filter .2s;
+  }
+  .leaf-group:hover .leaf-box {
+    filter: drop-shadow(0 0 8px rgba(0,0,0,.12));
+  }
+  .leaf-group.selected .leaf-box {
+    stroke-width: 2;
+  }
+  .leaf-text {
+    font-size: 11.5px;
+    fill: var(--text);
+    pointer-events: none;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+  .leaf-num {
+    font-size: 9px;
+    fill: var(--muted);
+    pointer-events: none;
+    text-anchor: middle;
+  }
+
+  /* connector lines */
+  .mm-line { fill: none; stroke-linecap: round; opacity: .65; }
+
+  /* ========== MINI TOOLTIP ========== */
+  .tooltip {
+    position: fixed;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: var(--text);
+    pointer-events: none;
+    z-index: 200;
+    display: none;
+    white-space: nowrap;
+  }
+
+  /* zoom controls */
+  .zoom-ctrl {
+    position: fixed; bottom: 20px; right: 20px; z-index: 100;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .zoom-btn {
+    width: 36px; height: 36px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--card);
+    color: var(--text); font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s;
+  }
+  .zoom-btn:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-logo">
+    🏥 <span>眼科诊所运营体系 — 思维导图</span>
+  </div>
+  <div class="topbar-tip">点击模块节点查看详情 · 拖拽移动画布 · 滚轮缩放</div>
+  <div class="topbar-actions">
+    <button class="btn-sm" onclick="resetView()">⌂ 复位</button>
+    <a href="index.html" class="btn-sm">← 返回首页</a>
+  </div>
+</div>
+
+<!-- CANVAS -->
+<div id="canvas-wrap">
+  <svg id="mm" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-title">图例</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--c-strategy)"></div>战略规划</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--c-marketing)"></div>营销增长</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--c-ops)"></div>日常运营</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--c-medical)"></div>医疗体系</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--c-growth)"></div>扩展专项</div>
+</div>
+
+<!-- ZOOM -->
+<div class="zoom-ctrl">
+  <button class="zoom-btn" onclick="zoom(1.2)">＋</button>
+  <button class="zoom-btn" onclick="zoom(0.83)">－</button>
+</div>
+
+<!-- INFO PANEL -->
+<div class="info-panel" id="infoPanel">
+  <button class="info-close" onclick="closePanel()">✕</button>
+  <div id="infoCat" class="info-cat"></div>
+  <div id="infoTitle" class="info-title"></div>
+  <div id="infoSubtitle" class="info-subtitle"></div>
+  <div id="infoTags" class="info-tags"></div>
+  <div class="info-divider"></div>
+  <div class="info-section-label">核心内容</div>
+  <div id="infoPoints"></div>
+  <div class="info-divider"></div>
+  <a id="infoLink" class="info-link" href="#" target="_blank">📄 打开完整模块</a>
+</div>
+
+<!-- TOOLTIP -->
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// =============================================
+// DATA: 5 branches × N leaves
+// =============================================
+const CATEGORIES = [
+  {
+    id: 'strategy',
+    label: '战略规划',
+    icon: '🎯',
+    color: '#4f8ef7',
+    angle: -108,
+    modules: [
+      {
+        id: 'mod_01', num: '01',
+        name: '基础定位\n战略规划',
+        file: 'modules/mod_01_strategy.html',
+        subtitle: '诊所定位 · 目标客群 · 竞争分析 · 里程碑',
+        tags: ['定位', '3年愿景', '选址评估'],
+        points: [
+          '医+商双引擎战略，与原眼镜店协同导流',
+          '社区精品眼科定位，差异化竞争4维护城河',
+          '5类目标客群画像（年龄/收入/痛点/触达渠道）',
+          '产品金字塔：引流/利润/战略产品三层结构',
+          '选址6维度评估模型（权重量化打分）',
+          '目标市场容量测算公式及三年渗透目标',
+          '前100天关键里程碑时间轴',
+          '急症转诊通道建设（青光眼/视网膜脱离/眼外伤）'
+        ]
+      },
+      {
+        id: 'mod_08', num: '08',
+        name: '财务测算\n盈利模型',
+        file: 'modules/mod_08_finance.html',
+        subtitle: '启动资金 · 盈亏分析 · 收入预测 · 3年模型',
+        tags: ['财务', '盈亏平衡', '三年模型'],
+        points: [
+          '启动资金三档预算：低配200万/标准260万/高配320万',
+          '月度固定成本详细拆解（租金/人工/水电/折旧）',
+          '各产品线月收入预测及季节性波动分析',
+          '盈亏平衡点计算：月均营收30万元',
+          '3年财务模型：收入/成本/利润逐年预测表',
+          '敏感性分析：客流量±20%对利润的影响',
+          '现金流预警机制及M3/M6/M9资金检查门',
+          '毛利率/净利率/坪效/人效等核心指标基准'
+        ]
+      },
+      {
+        id: 'mod_10', num: '10',
+        name: '执行时间表\n里程碑',
+        file: 'modules/mod_10_timeline.html',
+        subtitle: '6阶段时间轴 · RACI矩阵 · 关键路径',
+        tags: ['项目管理', 'RACI', '关键路径'],
+        points: [
+          '6阶段全周期：筹备→证照→装修→预热→试运营→正式',
+          'RACI责任矩阵：15类任务×6类角色分工明确',
+          '关键路径分析：4条依赖链条，总工期识别',
+          '月度资金支出时间线（M1-M9现金流预测）',
+          '各阶段量化验收标准（消防/装修/证照/人员）',
+          '开业后12周KPI达标路线图',
+          '常见延期风险及时间缓冲建议'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'marketing',
+    label: '营销增长',
+    icon: '📣',
+    color: '#f97f4e',
+    angle: -36,
+    modules: [
+      {
+        id: 'mod_02', num: '02',
+        name: '装修期\n营销预热',
+        file: 'modules/mod_02_marketing.html',
+        subtitle: '黄金窗口期 · 造势蓄客 · 开业全案',
+        tags: ['预热', '抖音', '线下活动'],
+        points: [
+          '三阶段预热法：好奇期→期待期→行动期',
+          '抖音内容日历：每周发布计划+3个视频脚本模板',
+          '小红书种草：5大内容支柱+KOC招募计划',
+          '公众号30天推文选题表+朋友圈人设打造',
+          '围挡广告设计规范（尺寸/内容/二维码）',
+          '线上投放ROI模型：CPC基准+A/B测试框架',
+          '开业3天小时级活动流程+3档开业礼包',
+          '老客户预登记活动+裂变激励规则'
+        ]
+      },
+      {
+        id: 'mod_11', num: '11',
+        name: '品牌建设\nVI视觉',
+        file: 'modules/mod_11_brand.html',
+        subtitle: '品牌命名 · LOGO · 空间导视 · 品牌健康',
+        tags: ['品牌', 'VI设计', '竞品对标'],
+        points: [
+          '品牌命名5原则+商标查询流程',
+          '竞品品牌对标：5类竞争者×5维度分析',
+          'VI系统：LOGO设计简报/色彩体系/应用物料清单',
+          '诊所空间导视：外部标识+内部导向+诊室设计原则',
+          '品牌健康度4大KPI：认知度/NPS/联想词/忠诚度',
+          '品牌发布倒计时计划（T-90天行动表）',
+          '商标注册/域名/社媒账号品牌保护'
+        ]
+      },
+      {
+        id: 'mod_14', num: '14',
+        name: '学校筛查\n社区合作',
+        file: 'modules/mod_14_school.html',
+        subtitle: '视力筛查SOP · 校医对接 · 义诊 · 企业团检',
+        tags: ['学校渠道', '筛查ROI', '转化漏斗'],
+        points: [
+          '三层学校合作模型（小学/初中/高中）',
+          '现场筛查全流程SOP：准备→检查→报告发放',
+          '5级转化漏斗：筛查→异常→通知→预约→到诊',
+          '转化漏斗优化：3天回访将预约率从15%提至40%',
+          '学校合作ROI模型（保守/基准/乐观三档）',
+          '12个月校园合作活动日历',
+          '政策借势策略：引用教育部八部门近视防控文件',
+          '企业团检三档套餐+HR话术模板'
+        ]
+      },
+      {
+        id: 'mod_16', num: '16',
+        name: '新媒体\n内容营销',
+        file: 'modules/mod_16_content.html',
+        subtitle: '抖音矩阵 · 小红书 · 专家IP · 合规审查',
+        tags: ['内容营销', '抖音', '医疗合规'],
+        points: [
+          '内容营销漏斗：认知→考虑→转化→忠诚四阶段',
+          '抖音内容日历+3个完整视频脚本（近视科普/OK镜/问答）',
+          '小红书笔记模板库+KOC合作计划',
+          '微信公众号4栏内容+社群每周主题日历',
+          '医疗内容合规审查10条清单+20个禁用词',
+          '年度内容营销预算三档：5K/10K/20K元/月',
+          '内容生产团队三种配置方案（全自建/半外包/全外包）',
+          '各平台KPI看板+月度内容报告模板'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'ops',
+    label: '日常运营',
+    icon: '⚙️',
+    color: '#34c88a',
+    angle: 36,
+    modules: [
+      {
+        id: 'mod_03', num: '03',
+        name: '开诊前\n筹备清单',
+        file: 'modules/mod_03_preparation.html',
+        subtitle: '证照办理 · 设备采购 · 人员配置 · 空间规划',
+        tags: ['筹备', '证照', '设备'],
+        points: [
+          '6大证照详细办理流程+时间节点+所需材料清单',
+          '核心设备采购清单（含参考品牌/型号/预算区间）',
+          '采购优先级四象限矩阵（P0必备/P1建议/P2可选）',
+          '600㎡功能分区详细布局+三条动线设计原则',
+          '各岗位JD摘要+招聘渠道+薪资预算',
+          'HIS系统选型对比（领健/丁香云/卫宁/医渡云）',
+          '试运营计划：内测流程+问题收集模板'
+        ]
+      },
+      {
+        id: 'mod_04', num: '04',
+        name: '日常运营\n管理体系',
+        file: 'modules/mod_04_operations.html',
+        subtitle: '分岗位SOP · 检查清单 · 质控 · KPI看板',
+        tags: ['SOP', 'KPI', '可执行'],
+        points: [
+          '三岗位每日SOP：前台/验光师/医师（含时间节点）',
+          '晨间6项+晚间7项每日运营检查清单',
+          '周复盘（30分钟）+月经营分析（60分钟）会议模板',
+          '医疗质量控制7大指标+责任人分工',
+          '患者投诉五步处理法+3组对话话术模板',
+          '库存管理三道防线+5项月度追踪指标',
+          '10项KPI看板：优秀/合格/预警三级基准'
+        ]
+      },
+      {
+        id: 'mod_07', num: '07',
+        name: '团队建设\n培训体系',
+        file: 'modules/mod_07_team.html',
+        subtitle: '薪酬设计 · 绩效考核 · 培训 · 职业发展',
+        tags: ['人力资源', '薪酬', '培训'],
+        points: [
+          '组织架构图+各岗位职责边界+汇报关系',
+          '薪酬三段结构：固定工资+绩效奖金+提成比例',
+          '各岗位KPI指标库（每岗5-8个量化指标）',
+          '新员工入职培训：第1天/第1周/第1月清单',
+          '岗位带教SOP+培训考核标准',
+          '医师CME学分管理+验光师技能等级晋升路径',
+          '职业双通道（管理通道/技术通道）',
+          '团建活动计划+内部沟通机制'
+        ]
+      },
+      {
+        id: 'mod_12', num: '12',
+        name: '数字化运营\n信息化建设',
+        file: 'modules/mod_12_digital.html',
+        subtitle: 'HIS系统 · 患者CRM · 在线预约 · BI看板',
+        tags: ['数字化', 'HIS', 'CRM'],
+        points: [
+          '数字化架构：HIS核心+CRM/小程序+BI看板三层',
+          'HIS实名对比：领健悦容/丁香云/卫宁/医渡云',
+          '8类眼科设备与系统数据集成规范（DICOM/HL7等）',
+          '患者CRM核心功能：360视图/自动提醒/分群营销',
+          'BI看板行业参考值（开业期/成长期/成熟期）',
+          '网络基础设施要求（带宽/WiFi/UPS/备份）',
+          '信息安全合规：数据分级+访问控制+应急响应'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'medical',
+    label: '医疗体系',
+    icon: '🔬',
+    color: '#a855f7',
+    angle: 108,
+    modules: [
+      {
+        id: 'mod_05', num: '05',
+        name: '核心医疗\n服务体系',
+        file: 'modules/mod_05_services.html',
+        subtitle: 'OK镜全链路 · 阿托品 · 离焦镜 · 干眼症',
+        tags: ['OK镜', '近视防控', '定价'],
+        points: [
+          'OK镜全链路SOP：初诊评估→试戴→取镜培训→5次复查',
+          'OK镜10项专项检查清单+适应症/禁忌症判断标准',
+          '低浓度阿托品治疗规范：副作用管理+停药原则',
+          '离焦镜验配：4大品牌推荐+验配技术要求',
+          '斜弱视治疗四步法+治愈标准',
+          '干眼症三层治疗+IPL治疗SOP',
+          '服务线间交叉转化模型（6条转化路径+目标转化率）',
+          '核心设备投资回报分析（6类设备回本周期）'
+        ]
+      },
+      {
+        id: 'mod_06', num: '06',
+        name: '患者运营\n会员体系',
+        file: 'modules/mod_06_patient.html',
+        subtitle: '会员权益 · 患者旅程 · 裂变增长 · LTV',
+        tags: ['会员', 'LTV', '患者旅程'],
+        points: [
+          '4级会员体系：普卡/银卡/金卡/钻石完整权益表',
+          '积分获取与兑换双向规则',
+          '患者LTV模型：普卡3-5K/银卡8-15K/钻石30K+',
+          '5阶段患者旅程触点地图（获客→口碑）',
+          '老带新裂变三档激励+五步执行法+话术模板',
+          '好评引导SOP+差评回复模板（2个场景）',
+          '月度会员运营日历（12月主题活动）',
+          '患者召回体系：流失预警标准+微信/短信/电话脚本'
+        ]
+      },
+      {
+        id: 'mod_13', num: '13',
+        name: '医疗质量\n安全管理',
+        file: 'modules/mod_13_quality.html',
+        subtitle: '院感防控 · 不良事件 · 处方审核 · 应急',
+        tags: ['质量安全', '院感', '应急预案'],
+        points: [
+          'PDCA质量管理框架+质量委员会架构',
+          '院感防控SOP：手卫生5时刻+器械灭菌+废物分类',
+          '处方审核制度：常见错误清单+双医审核流程',
+          '不良事件4级分类+根因分析（5Why+鱼骨图）',
+          '8类应急预案：过敏/心搏骤停/火灾/数据泄露等',
+          '设备质控：日常检查表+校准周期+故障上报',
+          '月度质量指标追踪+持续改进项目模板'
+        ]
+      },
+      {
+        id: 'mod_17', num: '17',
+        name: '儿童近视\n防控深度方案',
+        file: 'modules/mod_17_myopia.html',
+        subtitle: '全周期管理 · 家校医联动 · 服务包 · LTV',
+        tags: ['近视防控', '核心专项', '服务包'],
+        points: [
+          '三级预防体系：病因预防/早筛早治/并发症防控',
+          '年龄段分层方案：3-6/6-12/12-18岁各有差异化SOP',
+          '个体化决策树：生活干预→框架眼镜→离焦镜→OK镜→阿托品',
+          '家校医联动三文档：学校报告/家长通知/转介绍信',
+          '近视防控年度服务包三档：1980/3980/5980元/年',
+          'OK镜患者5年LTV：3-5万元（含护理产品订阅）',
+          '护理产品订阅服务：月度128/季度368/年度1398元',
+          '近视防控业务财务模型拆解（LTV/CAC≥5:1目标）'
+        ]
+      },
+      {
+        id: 'mod_19', num: '19',
+        name: '学术建设\n继续教育',
+        file: 'modules/mod_19_academic.html',
+        subtitle: '继续教育学分 · 病例讨论 · 论文发表',
+        tags: ['学术', 'CME学分', '科研'],
+        points: [
+          '三支柱战略：内部学习/外部交流/知识创造',
+          'CME学分要求：医师/验光师/护士各职种年度合规',
+          '月度病例讨论会：30分钟汇报+30分钟讨论格式',
+          'M&M会议（发病率与死亡率分析）规程',
+          '目标学术会议清单+投稿时间节点管理',
+          '论文发表阶梯：病例报告→系列研究→回顾性研究',
+          '培训基地建设：实习生/住院医培训+继教学习班',
+          '知识管理系统：指南库+文献月报+内部Wiki'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'growth',
+    label: '扩展专项',
+    icon: '🚀',
+    color: '#f7c94f',
+    angle: 180,
+    modules: [
+      {
+        id: 'mod_09', num: '09',
+        name: '风险管控\n合规体系',
+        file: 'modules/mod_09_risk.html',
+        subtitle: '7大风险 · OK镜专项 · 保险 · 数据安全',
+        tags: ['风险', '合规', 'OK镜安全'],
+        points: [
+          '7类风险评估矩阵（概率×影响度）',
+          'OK镜专项风险管理：5类风险+验配前10项核查清单',
+          '院感防控：手卫生/灭菌/废物/员工疫苗管理',
+          '医疗纠纷全流程：发生→调查→医调委→诉讼时间节点',
+          '证据保全标准清单（含各类文档保存年限）',
+          '保险配置方案：医责险/财产险/员工险/网络险',
+          'PIPL（个人信息保护法）合规10项检查清单',
+          '数据泄露应急响应：发现→遏制→通知→修复'
+        ]
+      },
+      {
+        id: 'mod_15', num: '15',
+        name: '医保对接\n价格体系',
+        file: 'modules/mod_15_insurance.html',
+        subtitle: '医保定点申请 · 套餐定价 · 商业保险',
+        tags: ['医保', '定价策略', '商保'],
+        points: [
+          '医保定点申请：资质条件/时间线/所需文件/拒批原因',
+          '医保结算SOP：核验→编码→提交→对账全流程',
+          '三种定价方法：成本加成/市场基准/价值定价',
+          '套餐打包策略：近视防控/中老年/儿童视觉三大系列',
+          '商业保险合作：平安健康/泰康在线/MSH直付申请',
+          '医保拒付申诉复议SOP+常见拒付原因对策',
+          '定价调整决策模型（触发条件+患者沟通30天预告）'
+        ]
+      },
+      {
+        id: 'mod_18', num: '18',
+        name: '医疗纠纷\n危机公关',
+        file: 'modules/mod_18_crisis.html',
+        subtitle: '纠纷分级 · 舆情监控 · 媒体应对 · 演练',
+        tags: ['危机管理', '纠纷处理', '舆情'],
+        points: [
+          '纠纷4级分类：L1轻微→L2投诉→L3严重→L4诉讼',
+          '各级处理SOP+24h/72h/7d/30d响应时限',
+          '赔偿指南按事故类型+调解流程+保险索赔',
+          '舆情监控：关键词库+预警阈值+应急小组架构',
+          '媒体应对：接待规程+发言话术+3个社媒危机脚本',
+          '4个演练场景（季度演练计划）',
+          '危机后恢复：声誉修复+患者信任重建+流程优化'
+        ]
+      },
+      {
+        id: 'mod_20', num: '20',
+        name: '第二曲线\n增长策略',
+        file: 'modules/mod_20_growth.html',
+        subtitle: '连锁扩张 · 新业务孵化 · 资本规划',
+        tags: ['增长', '连锁', '资本'],
+        points: [
+          '3-5年愿景：4大增长引擎（有机/复制/创新/整合）',
+          '连锁扩张：单店卓越清单→选址评分→Hub&Spoke模型',
+          '扩张时间线：Year1(1店)→Year3(3店)→Year5(5店+)',
+          '新业务机会矩阵（6项）+MVP测试方法论',
+          '数字化转型：远程眼科/AI筛查/O2O患者旅程',
+          '产业链延伸：光学实验室/自有镜片品牌/代理渠道',
+          '分阶段融资：银行贷款→天使→战略投资各阶段要求',
+          '多门店治理架构+标准运营手册+文化固化'
+        ]
+      }
+    ]
+  }
+];
+
+// =============================================
+// SVG MIND MAP RENDERER
+// =============================================
+const svg = document.getElementById('mm');
+const NS = 'http://www.w3.org/2000/svg';
+
+let transform = { x: 0, y: 0, scale: 1 };
+let dragging = false, lastMouse = null;
+let selectedLeaf = null;
+let mainG = null;
+
+function init() {
+  const w = svg.clientWidth || window.innerWidth;
+  const h = svg.clientHeight || window.innerHeight;
+  transform.x = w / 2;
+  transform.y = h / 2;
+
+  mainG = makeSVGEl('g');
+  svg.appendChild(mainG);
+  renderMap();
+  applyTransform();
+}
+
+function makeSVGEl(tag, attrs = {}) {
+  const el = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  return el;
+}
+
+function makeText(content, x, y, cls, dy = 0) {
+  const t = makeSVGEl('text', { x, y: y + dy, class: cls });
+  const lines = content.split('\n');
+  if (lines.length === 1) {
+    t.textContent = content;
+  } else {
+    lines.forEach((line, i) => {
+      const ts = makeSVGEl('tspan', { x, dy: i === 0 ? 0 : '1.2em' });
+      ts.textContent = line;
+      t.appendChild(ts);
+    });
+  }
+  return t;
+}
+
+function cubicBezier(x1, y1, x2, y2, cx, cy) {
+  const mx = (x1 + x2) / 2;
+  return `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+}
+
+function renderMap() {
+  mainG.innerHTML = '';
+
+  // Center node
+  const center = makeSVGEl('g', { class: 'mm-center' });
+  const cCircle = makeSVGEl('circle', { cx: 0, cy: 0, r: 68 });
+  const cText1 = makeSVGEl('text', { x: 0, y: -10, 'font-size': '16', 'font-weight': '800', fill: '#1a202c', 'text-anchor': 'middle', 'dominant-baseline': 'middle' });
+  cText1.textContent = '眼科诊所';
+  const cText2 = makeSVGEl('text', { x: 0, y: 10, 'font-size': '14', 'font-weight': '700', fill: '#64748b', 'text-anchor': 'middle', 'dominant-baseline': 'middle' });
+  cText2.textContent = '运营体系';
+  const cText3 = makeSVGEl('text', { x: 0, y: 28, 'font-size': '11', fill: '#1677ff', 'text-anchor': 'middle', 'dominant-baseline': 'middle' });
+  cText3.textContent = '20大专项模块';
+  center.appendChild(cCircle);
+  center.appendChild(cText1);
+  center.appendChild(cText2);
+  center.appendChild(cText3);
+  mainG.appendChild(center);
+
+  // Branch radii
+  const branchR = 230;
+  const leafR = 120;
+  const leafSpreadAngle = 65;
+
+  CATEGORIES.forEach(cat => {
+    const catAngle = cat.angle * Math.PI / 180;
+    const bx = Math.cos(catAngle) * branchR;
+    const by = Math.sin(catAngle) * branchR;
+
+    // Line center → branch
+    const lineC = makeSVGEl('path', {
+      d: `M 0 0 Q ${bx * 0.5} ${by * 0.5} ${bx} ${by}`,
+      class: 'mm-line',
+      stroke: cat.color,
+      'stroke-width': '2.5'
+    });
+    mainG.insertBefore(lineC, center);
+
+    // Branch node
+    const branchG = makeSVGEl('g', { class: 'branch-group' });
+    const bCircle = makeSVGEl('circle', {
+      cx: bx, cy: by, r: 38,
+      fill: cat.color,
+      opacity: '0.3',
+      stroke: cat.color,
+      'stroke-width': '1.5'
+    });
+    const bIcon = makeSVGEl('text', { x: bx, y: by - 8, 'font-size': '18', 'text-anchor': 'middle', 'dominant-baseline': 'middle' });
+    bIcon.textContent = cat.icon;
+    const bLabel = makeSVGEl('text', { x: bx, y: by + 10, 'font-size': '12', 'font-weight': '700', fill: cat.color, 'text-anchor': 'middle', 'dominant-baseline': 'middle' });
+    bLabel.textContent = cat.label;
+    branchG.appendChild(bCircle);
+    branchG.appendChild(bIcon);
+    branchG.appendChild(bLabel);
+    mainG.appendChild(branchG);
+
+    // Leaves
+    const nLeaves = cat.modules.length;
+    const spreadTotal = leafSpreadAngle * (nLeaves - 1);
+    const startAngle = catAngle - spreadTotal / 2 * Math.PI / 180;
+
+    cat.modules.forEach((mod, i) => {
+      const leafAngle = startAngle + i * leafSpreadAngle * Math.PI / 180;
+
+      // Distance depends on category angle to avoid overlap
+      const dist = branchR + leafR + 30;
+      const lx = Math.cos(leafAngle) * dist;
+      const ly = Math.sin(leafAngle) * dist;
+
+      // Leaf box
+      const boxW = 90, boxH = 46;
+      const leafGrp = makeSVGEl('g', {
+        class: 'leaf-group',
+        'data-mod': mod.id,
+        'data-cat': cat.id
+      });
+
+      // Line branch → leaf
+      const lineL = makeSVGEl('path', {
+        d: `M ${bx} ${by} Q ${(bx + lx) / 2} ${(by + ly) / 2} ${lx} ${ly}`,
+        class: 'mm-line',
+        stroke: cat.color,
+        'stroke-width': '1.5'
+      });
+      mainG.insertBefore(lineL, branchG);
+
+      // Leaf rect
+      const lRect = makeSVGEl('rect', {
+        x: lx - boxW / 2, y: ly - boxH / 2,
+        width: boxW, height: boxH,
+        rx: 8, ry: 8,
+        fill: cat.color,
+        opacity: '0.22',
+        stroke: cat.color,
+        'stroke-width': '1',
+        class: 'leaf-box'
+      });
+
+      // Badge num
+      const lBadge = makeSVGEl('circle', {
+        cx: lx - boxW / 2 + 10,
+        cy: ly - boxH / 2 + 10,
+        r: 9,
+        fill: cat.color,
+        opacity: '0.7'
+      });
+      const lNum = makeSVGEl('text', {
+        x: lx - boxW / 2 + 10,
+        y: ly - boxH / 2 + 10,
+        'font-size': '8',
+        'font-weight': '700',
+        fill: '#fff',
+        'text-anchor': 'middle',
+        'dominant-baseline': 'middle'
+      });
+      lNum.textContent = mod.num;
+
+      // Text (2 lines)
+      const lines = mod.name.split('\n');
+  const lText1 = makeSVGEl('text', {
+        x: lx, y: ly - 8,
+        'font-size': '11.5', 'font-weight': '600',
+        fill: '#1a202c', 'text-anchor': 'middle', 'dominant-baseline': 'middle'
+      });
+  lText1.textContent = lines[0] || '';
+  const lText2 = makeSVGEl('text', {
+        x: lx, y: ly + 8,
+        'font-size': '10.5', fill: '#64748b',
+        'text-anchor': 'middle', 'dominant-baseline': 'middle'
+      });
+  lText2.textContent = lines[1] || '';
+
+      leafGrp.appendChild(lRect);
+      leafGrp.appendChild(lBadge);
+      leafGrp.appendChild(lNum);
+      leafGrp.appendChild(lText1);
+      leafGrp.appendChild(lText2);
+
+      leafGrp.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectLeaf(leafGrp, mod, cat);
+      });
+
+      leafGrp.addEventListener('mouseenter', (e) => {
+        showTooltip(e, mod.name.replace('\n', ' ') + ' — ' + mod.subtitle);
+      });
+      leafGrp.addEventListener('mousemove', (e) => {
+        moveTooltip(e);
+      });
+      leafGrp.addEventListener('mouseleave', hideTooltip);
+
+      mainG.appendChild(leafGrp);
+    });
+  });
+}
+
+// =============================================
+// PANEL
+// =============================================
+function selectLeaf(el, mod, cat) {
+  // deselect previous
+  if (selectedLeaf) {
+    selectedLeaf.classList.remove('selected');
+    const prevRect = selectedLeaf.querySelector('rect');
+    if (prevRect) prevRect.setAttribute('opacity', '0.22');
+  }
+
+  el.classList.add('selected');
+  const rect = el.querySelector('rect');
+  if (rect) rect.setAttribute('opacity', '0.25');
+  selectedLeaf = el;
+
+  // fill panel
+  document.getElementById('infoCat').style.color = cat.color;
+  document.getElementById('infoCat').textContent = `${cat.icon} ${cat.label} / 模块 ${mod.num}`;
+  document.getElementById('infoTitle').textContent = mod.name.replace('\n', ' ');
+  document.getElementById('infoSubtitle').textContent = mod.subtitle;
+
+  const tagsEl = document.getElementById('infoTags');
+  tagsEl.innerHTML = mod.tags.map(t => `<span class="info-tag" style="color:${cat.color};background:${cat.color}30;">${t}</span>`).join('');
+
+  const ptsEl = document.getElementById('infoPoints');
+  ptsEl.innerHTML = mod.points.map(p =>
+    `<div class="info-point">
+      <div class="info-dot" style="background:${cat.color}"></div>
+      <span>${p}</span>
+    </div>`
+  ).join('');
+
+  const link = document.getElementById('infoLink');
+  link.href = mod.file;
+  link.style.borderColor = cat.color;
+  link.style.color = cat.color;
+  link.style.background = cat.color + '30';
+
+  document.getElementById('infoPanel').classList.add('open');
+  document.getElementById('canvas-wrap').classList.add('panel-open');
+}
+
+function closePanel() {
+  document.getElementById('infoPanel').classList.remove('open');
+  document.getElementById('canvas-wrap').classList.remove('panel-open');
+  if (selectedLeaf) {
+    selectedLeaf.classList.remove('selected');
+    const rect = selectedLeaf.querySelector('rect');
+    if (rect) rect.setAttribute('opacity', '0.22');
+    selectedLeaf = null;
+  }
+}
+
+svg.addEventListener('click', closePanel);
+
+// =============================================
+// DRAG & ZOOM
+// =============================================
+function applyTransform() {
+  mainG.setAttribute('transform',
+    `translate(${transform.x}, ${transform.y}) scale(${transform.scale})`
+  );
+}
+
+const wrap = document.getElementById('canvas-wrap');
+
+wrap.addEventListener('mousedown', (e) => {
+  if (e.target.closest('.leaf-group')) return;
+  dragging = true;
+  lastMouse = { x: e.clientX, y: e.clientY };
+});
+window.addEventListener('mousemove', (e) => {
+  if (!dragging) return;
+  const dx = e.clientX - lastMouse.x;
+  const dy = e.clientY - lastMouse.y;
+  transform.x += dx;
+  transform.y += dy;
+  lastMouse = { x: e.clientX, y: e.clientY };
+  applyTransform();
+});
+window.addEventListener('mouseup', () => { dragging = false; });
+
+wrap.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const delta = e.deltaY < 0 ? 1.1 : 0.9;
+  const rect = svg.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  transform.x = mx - (mx - transform.x) * delta;
+  transform.y = my - (my - transform.y) * delta;
+  transform.scale *= delta;
+  transform.scale = Math.max(0.3, Math.min(3, transform.scale));
+  applyTransform();
+}, { passive: false });
+
+// Touch support
+let touches = null;
+wrap.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    dragging = true;
+    lastMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  } else {
+    touches = e.touches;
+  }
+}, { passive: true });
+wrap.addEventListener('touchmove', (e) => {
+  if (e.touches.length === 1 && dragging) {
+    const dx = e.touches[0].clientX - lastMouse.x;
+    const dy = e.touches[0].clientY - lastMouse.y;
+    transform.x += dx;
+    transform.y += dy;
+    lastMouse = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    applyTransform();
+  } else if (e.touches.length === 2 && touches) {
+    const prev = Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
+    const curr = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    const delta = curr / prev;
+    transform.scale *= delta;
+    transform.scale = Math.max(0.3, Math.min(3, transform.scale));
+    touches = e.touches;
+    applyTransform();
+  }
+  e.preventDefault();
+}, { passive: false });
+wrap.addEventListener('touchend', () => { dragging = false; touches = null; });
+
+function zoom(factor) {
+  const w = svg.clientWidth;
+  const h = svg.clientHeight;
+  transform.x = w / 2 - (w / 2 - transform.x) * factor;
+  transform.y = h / 2 - (h / 2 - transform.y) * factor;
+  transform.scale *= factor;
+  transform.scale = Math.max(0.3, Math.min(3, transform.scale));
+  applyTransform();
+}
+
+function resetView() {
+  const w = svg.clientWidth;
+  const h = svg.clientHeight;
+  transform.x = w / 2;
+  transform.y = h / 2;
+  transform.scale = 1;
+  applyTransform();
+  closePanel();
+}
+
+// =============================================
+// TOOLTIP
+// =============================================
+const tip = document.getElementById('tooltip');
+function showTooltip(e, text) {
+  tip.textContent = text;
+  tip.style.display = 'block';
+  moveTooltip(e);
+}
+function moveTooltip(e) {
+  tip.style.left = (e.clientX + 12) + 'px';
+  tip.style.top = (e.clientY - 30) + 'px';
+}
+function hideTooltip() {
+  tip.style.display = 'none';
+}
+
+// =============================================
+// INIT
+// =============================================
+window.addEventListener('load', () => {
+  init();
+  setTimeout(applyTransform, 100);
+});
+window.addEventListener('resize', () => {
+  if (!dragging) resetView();
+});
+</script>
+</body>
+</html>
