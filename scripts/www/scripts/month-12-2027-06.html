@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 2027年6月短视频脚本 | 毕业季 · 618年中大促</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f0eb; color: #2c2c2c; line-height: 1.7; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* 顶部导航 */
+.top-nav { background: #c0392b; padding: 14px 0; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.top-nav a { color: #fff; text-decoration: none; font-size: 15px; padding: 8px 20px; border: 1.5px solid rgba(255,255,255,0.6); border-radius: 20px; transition: all 0.3s; }
+.top-nav a:hover { background: rgba(255,255,255,0.15); }
+
+/* 头部 */
+.header { background: linear-gradient(135deg, #c0392b 0%, #e76f51 50%, #c0392b 100%); color: #fff; padding: 48px 20px 40px; text-align: center; }
+.header .month-tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 18px; border-radius: 20px; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+.header h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+.header h2 { font-size: 22px; font-weight: 400; opacity: 0.9; margin-bottom: 4px; }
+.header .meta { font-size: 14px; opacity: 0.7; margin-top: 12px; }
+
+/* 内容区 */
+.content { padding: 32px 0 20px; }
+.script-card { background: #fff; border-radius: 12px; padding: 32px 28px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 5px solid #c0392b; transition: box-shadow 0.3s; }
+.script-card:hover { box-shadow: 0 4px 20px rgba(192,57,43,0.15); }
+
+/* 脚本头部 */
+.script-header { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed #e8e0d8; }
+.script-num { background: #c0392b; color: #fff; font-size: 20px; font-weight: 700; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.script-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.tag-week { background: #fdecea; color: #c0392b; }
+.tag-series { background: #eaf2f8; color: #2471a3; }
+.tag-duration { background: #eafaf1; color: #1e8449; }
+.script-title { font-size: 20px; font-weight: 700; color: #c0392b; margin-top: 4px; width: 100%; }
+
+/* 分节样式 */
+.section { margin-top: 18px; }
+.section-label { font-size: 14px; font-weight: 700; color: #c0392b; background: #fdecea; display: inline-block; padding: 4px 14px; border-radius: 14px; margin-bottom: 10px; }
+.hook-option { background: #fef9f5; border: 1px solid #f0d6c5; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; }
+.hook-option .hook-label { font-size: 12px; font-weight: 700; color: #c0392b; margin-bottom: 4px; }
+.hook-option p { font-size: 15px; color: #333; }
+.time-segment { padding: 10px 0; border-bottom: 1px dotted #eee; }
+.time-segment:last-child { border-bottom: none; }
+.time-range { font-size: 12px; font-weight: 700; color: #999; margin-bottom: 3px; }
+.time-content { font-size: 15px; color: #444; }
+.time-action { font-size: 13px; color: #888; font-style: italic; margin-top: 2px; }
+
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { padding: 6px 0 6px 22px; position: relative; font-size: 14px; color: #555; }
+.tips-list li::before { content: "●"; position: absolute; left: 4px; color: #c0392b; font-size: 8px; top: 10px; }
+.bgm-box { background: #f8f4ef; padding: 12px 16px; border-radius: 8px; font-size: 14px; color: #666; margin-top: 10px; }
+.hashtags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.hashtag { background: #c0392b; color: #fff; padding: 4px 12px; border-radius: 14px; font-size: 13px; }
+
+/* 底部导航 */
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0 40px; border-top: 1px solid #e0d5c9; margin-top: 16px; }
+.bottom-nav a { display: inline-flex; align-items: center; gap: 6px; color: #c0392b; text-decoration: none; font-size: 15px; font-weight: 600; padding: 10px 20px; border: 2px solid #c0392b; border-radius: 24px; transition: all 0.3s; }
+.bottom-nav a:hover { background: #c0392b; color: #fff; }
+.bottom-nav .nav-disabled { color: #bbb; border-color: #ddd; cursor: not-allowed; pointer-events: none; }
+.bottom-nav .nav-center { font-size: 14px; color: #999; }
+
+@media (max-width: 640px) {
+  .header h1 { font-size: 26px; }
+  .script-card { padding: 20px 16px; }
+  .bottom-nav { flex-direction: column; gap: 12px; align-items: stretch; }
+  .bottom-nav a { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <a href="../index.html">&#127968; 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">2027年6月</div>
+  <h1>毕业季 · 618年中大促</h1>
+  <h2>永州爱眼城眼镜短视频脚本</h2>
+  <div class="meta">第45周 — 第48周 | 共8条脚本 | 活动 / 穿搭 / 科普 / 种草 / 日常</div>
+</div>
+
+<div class="container content">
+
+<!-- ===== 脚本1 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">01</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第45周①</span>
+      <span class="tag tag-series">活动</span>
+      <span class="tag tag-duration">约30秒</span>
+    </div>
+    <div class="script-title">618抢先看：爱眼城这些眼镜值得囤</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 抢购型</div><p>"618第一波优惠来了！永州爱眼城这些眼镜现在不囤，等到下半年就后悔了！"（手持特价牌，快速切换多款眼镜画面）</p></div>
+    <div class="hook-option"><div class="hook-label">B 省錢型</div><p>"618别只买衣服护肤品——眼镜才是该趁大促囤的！我们店一年就这一次年中大促，直接打骨折。"（展示价格前后对比）</p></div>
+    <div class="hook-option"><div class="hook-label">C 预告型</div><p>"下半年要开学、要换季、要给家人配眼镜的——趁618来爱眼城，比平时省一多半！今天给你先看值得入手的。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 活动一</div>
+      <div class="time-content">"第一波：配镜片送镜框！指定防蓝光/抗疲劳镜片（依视路、明月、万新等品牌），配一副送一副等价镜架。相当于只花镜片的钱，镜框白给。"</div>
+      <div class="time-action">🎬 动作：展示品牌镜片包装盒+可选镜框墙，用"买镜片送镜框=省XXX元"大字幕标注价格优势，快切多款镜框。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-13秒 · 活动二</div>
+      <div class="time-content">"第二波：太阳镜第二副半价！全家一起买最划算——自己挑一副偏光驾驶镜，给老婆/老公再带一副时尚款。算下来两副才XXX，比网上还划算。"</div>
+      <div class="time-action">🎬 动作：展示太阳镜陈列区，快切男女款搭配，弹出"第二副半价"大字+计算器动画展示省了多少钱。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第14-20秒 · 活动三+时间</div>
+      <div class="time-content">"第三波：老花镜验光定制——原价XXX，618活动价只要XXX。给爸妈一人配一副不心疼。活动时间6月1日到6月18日，两星期抢完即止。现在来店里不用挤，款式齐全慢慢选！"</div>
+      <div class="time-action">🎬 动作：老花镜特写+优惠价格标签，倒计时日期动画（6.1→6.18），最后展示店铺实景+顾客正在挑选的画面。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-30秒 互动收尾</div>
+    <div class="time-content">"618你想配什么眼镜？太阳镜、近视镜还是老花镜？评论区告诉我，我私信你专属优惠！地址在评论区第一条，永州爱眼城等你来薅羊毛。"</div>
+    <div class="time-action">🎬 动作：主播热情收尾，画面弹出"618专属优惠"二维码（可用微信号替代），催促行动。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>活动类视频的核心是"优惠力度一目了然"——价格对比用大号红字标注</li>
+      <li>提前整理好镜片品牌授权的展示（包装盒+授权书），增加信任感</li>
+      <li>店内顾客挑选的实拍画面能让活动看起来"已经有人在抢"制造紧迫感</li>
+      <li>倒计时动画在剪映中用"文字+关键帧"快速制作</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：促销/大促类快节奏音乐（如《Big Sale Beat》或《Shopping Spree》），营造"抢购"氛围。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#618大促</span>
+    <span class="hashtag">#配眼镜</span>
+    <span class="hashtag">#年中优惠</span>
+  </div>
+</div>
+
+<!-- ===== 脚本2 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">02</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第45周②</span>
+      <span class="tag tag-series">穿搭</span>
+      <span class="tag tag-duration">约34秒</span>
+    </div>
+    <div class="script-title">高考结束第一件事：换副眼镜开启新人生</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 共鸣型</div><p>"高考终于结束了！永州的考生们——第一件事不是疯玩，是换掉这副陪了你三年的'战损'眼镜！"（展示一副镜腿缠胶带、镜片磨花的旧眼镜，拉开对比）</p></div>
+    <div class="hook-option"><div class="hook-label">B 新起点型</div><p>"高考结束意味着新人生开始——换发型、换穿搭、换眼镜。大一开学那天，要让新同学看到最好的自己。"（展示穿着新衣服戴新眼镜的变身画面）</p></div>
+    <div class="hook-option"><div class="hook-label">C 实用型</div><p>"永州今年高考的同学们看过来！趁大学开学前，这些事情做了高中三年都没时间做的事——第一件，换一副舒服好看的眼镜。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 旧眼镜回顾</div>
+      <div class="time-content">"高三这一年，眼镜可能是你身上最惨的装备——镜片磨花了没空换、镜腿歪了凑合戴、度数涨了硬撑着。这副眼镜陪了你最拼的一年，但该'退役'了。来，跟它说声谢谢，然后——换新的。"</div>
+      <div class="time-action">🎬 动作：特写旧眼镜的磨损细节（磨花镜片特写+歪腿+镜框掉漆），配上"辛苦了"的文字，然后切换新眼镜的闪亮画面。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 大学场景推荐</div>
+      <div class="time-content">"大学和高中不一样——要上台做自我介绍、要参加社团面试、要跟同学出去玩。一副有质感的眼镜就是你的'第一印象利器'。推荐轻商务半框风或者时尚大框风——颜值和能力一样重要。"</div>
+      <div class="time-action">🎬 动作：两个场景切换——高中教室戴旧眼镜（暗调）→ 大学校园/咖啡厅戴新眼镜（明亮调），强调转变。展示两种风格的上脸效果。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 功能性推荐</div>
+      <div class="time-content">"而且大学用电子产品的时间是高中好几倍——笔记本、手机、平板轮着来。镜片强烈建议上防蓝光+抗疲劳，保护眼睛四年不涨度数。618活动配镜片送镜框，趁现在换最划算。"</div>
+      <div class="time-action">🎬 动作：展示防蓝光镜片与普通镜片的蓝光测试对比（蓝光笔照测试卡），突出功能价值。加618优惠标签。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-34秒 互动收尾</div>
+    <div class="time-content">"永州高考生们——你们辛苦了！来爱眼城凭准考证享额外折扣，换个新面貌迎接大学新生活。你考上哪所大学了？评论区报个到，学弟学妹们给你加油！地址在评论区。"</div>
+    <div class="time-action">🎬 动作：主播真诚微笑，画面弹出"凭准考证享专属折扣"标识+加油祝福画面。添加"新起点"温馨氛围。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>"旧眼镜"效果找一副真的磨损严重的旧眼镜实拍，或用砂纸小心做旧（不要损坏可用镜片）</li>
+      <li>新旧对比画面是关键——旧眼镜暗调/冷色调，新眼镜明亮/暖色调</li>
+      <li>准考证优惠是强转化点——确保在画面中清晰停留至少3秒</li>
+      <li>大学校园素材可借用湖南科技学院等永州本地高校取景</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：青春/成长类励志轻音乐（如《Graduation》或《New Beginning》钢琴+弦乐），前半段略带感怀，后半段振奋向上。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#高考结束</span>
+    <span class="hashtag">#大学新生活</span>
+    <span class="hashtag">#换眼镜</span>
+  </div>
+</div>
+
+<!-- ===== 脚本3 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">03</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第46周①</span>
+      <span class="tag tag-series">科普</span>
+      <span class="tag tag-duration">约38秒</span>
+    </div>
+    <div class="script-title">父亲节：爸爸戴了十年的眼镜，看到我眼睛酸了</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 情感冲击型</div><p>"我爸的眼镜——镜腿缠了三层透明胶、鼻托掉了一个用纸垫着、镜片磨到跟磨砂玻璃一样。他戴了十年，从来没说过要换。"（特写一双粗糙的手拿着破旧眼镜，画面慢慢拉远）</p></div>
+    <div class="hook-option"><div class="hook-label">B 数据+情感型</div><p>"一项调查：中国爸爸平均一副眼镜戴8.3年。8年——你换了几部手机了？他却连300块的眼镜都不舍得给自己换。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 提问型</div><p>"你爸的眼镜戴了几年了？你有认真看过吗？这个父亲节，去看了再回答我。"（画面切入一副磨损严重的眼镜细节）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 旧眼镜的问题</div>
+      <div class="time-content">"别小看这副旧眼镜——镜片磨花会让光线散射，眼睛更吃力；镜腿变形导致镜片不在正确位置，看东西会变形；鼻托掉了镜框直接压在脸上，不仅难受还压迫鼻梁血管。爸爸不说不代表不难受——他只是习惯了'凑合'。"</div>
+      <div class="time-action">🎬 动作：依次特写旧眼镜的三大问题——镜片磨花/镜腿变形/鼻托缺失，每一项配上对应的视觉影响动画（模糊/变形/压痕）。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 为什么爸爸不换</div>
+      <div class="time-content">"爸爸为什么不换？不是不难受——是觉得'浪费钱'。你跟他说配一副一千的眼镜，他会说'旧的还能用'。但你跟他说'爸，618活动配镜送镜框才三百多'，他可能就心动了——因为在他心里，省钱永远是第一位的。"</div>
+      <div class="time-action">🎬 动作：还原"孩子劝爸爸换眼镜"的场景对话（可找真实父子/父女或演员），爸爸摆手拒绝→听说活动价后犹豫→最终被拉进店里。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 父亲节行动</div>
+      <div class="time-content">"这个父亲节，别送烟酒保健品——带爸爸来爱眼城免费验光。给他配一副真正看得清、戴着舒服的眼镜。爸爸也许嘴上说不要，但验完光戴上新眼镜那一刻，他看你的眼神里会有光。"</div>
+      <div class="time-action">🎬 动作：实拍爸爸在验光室→试戴新眼镜→看清后开心/惊讶/默默感动的表情特写。慢镜头+温暖色调。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-38秒 互动收尾</div>
+    <div class="time-content">"你爸的眼镜戴了几年了？你有多久没看过他的眼镜了？今天回家——拿下他的眼镜看一看。父亲节带他来爱眼城免费验光，用一副新眼镜告诉他：'爸，你看清楚一点，我们还有很长的路要走。'地址在评论区，618免费验光。"</div>
+    <div class="time-action">🎬 动作：主播深情收尾，画面缓缓变暗弹出"父亲节·让爱看得见"标语，引导点赞转发。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>这是全系列最有情感分量的一条——旧眼镜特写必须真实：找一副真正磨损的旧眼镜或小心做旧</li>
+      <li>爸爸的人选最好是真实父子/父女出镜，哪怕只有背影+手部特写也比演员强</li>
+      <li>验光+试戴+看清后表情的三段式结构是情感递进的关键，配乐慢升配合</li>
+      <li>控制"煽情"尺度——真情实感不等于过度煽情，克制反而更有力量</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：深情感人的钢琴独奏（如《Father》电影配乐风或《Tears》风格），前段低沉→中后段温暖升起。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#父亲节</span>
+    <span class="hashtag">#爸爸的眼镜</span>
+    <span class="hashtag">#让爱看得见</span>
+  </div>
+</div>
+
+<!-- ===== 脚本4 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">04</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第46周②</span>
+      <span class="tag tag-series">活动</span>
+      <span class="tag tag-duration">约32秒</span>
+    </div>
+    <div class="script-title">618第二波：店长私藏的几款好眼镜</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 内幕型</div><p>"618第二波活动来了！但今天不推爆款——给你们看几副店长自己藏起来自留的眼镜。顾客都不知道还有这些。"（店长神秘兮兮地从柜台下面拿出眼镜）</p></div>
+    <div class="hook-option"><div class="hook-label">B 信任型</div><p>"我在眼镜行业干了八年，这四副是我自掏腰包买给家人的618款。店长的选择，比任何广告都靠谱。"（店长本人出镜展示）</p></div>
+    <div class="hook-option"><div class="hook-label">C 独家型</div><p>"618大家都推活动款——我今天反着来，给你看四款平时不怎么做活动的隐形好镜。趁着618活动价赶紧入。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 自留一</div>
+      <div class="time-content">"私藏一：超轻纯钛半框——我这副自己戴了两年。8.5克，比三张A4纸还轻，夹在衬衫口袋完全没有存在感。钛材质不过敏不出汗不褪色，618活动配防蓝光镜片送这支镜框，超值。"</div>
+      <div class="time-action">🎬 动作：店长佩戴展示，放在电子秤上显示重量，快闪日常佩戴场景。字幕弹出价格对比（原价→618价）。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-13秒 · 自留二</div>
+      <div class="time-content">"私藏二：日本进口板材复古框——这副给我老婆的。玳瑁花纹每一个都是独一无二的颜色，戴上特别显气质。这种手工板材框平时很少打折，618是全年唯一一次降价。"</div>
+      <div class="time-action">🎬 动作：女性模特（或店长妻子）佩戴展示，特写玳瑁纹理细节，配合优雅BGM和慢镜头。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第14-20秒 · 自留三+四</div>
+      <div class="time-content">"私藏三：变色近视镜——给我爸的。室内透明、室外自动变灰，开车钓鱼不用换眼镜。这种功能镜片平时贵，618折扣力度最大。私藏四：TR90儿童镜——给我儿子备的，轻、弹性好、不怕掰不怕坐。有小孩的趁618入，省不少。"</div>
+      <div class="time-action">🎬 动作：变色镜片在紫外灯下变色实拍（从透明→变灰过程），TR90镜框弹性弯曲展示，两个孩子+老人佩戴效果。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-32秒 互动收尾</div>
+    <div class="time-content">"这四副店长私藏现在618都有活动，店里能试，喜欢再买。你平时买眼镜最看重什么？轻便、好看还是耐用？评论区告诉我。地址在评论区，趁618赶紧来——我私藏的库存也不多了。"</div>
+    <div class="time-action">🎬 动作：四副眼镜同框展示，店长真诚推荐，画面弹出"店长私藏 限量推荐"标签和618倒计时。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>"店长私藏"的秘诀是真诚——店长出镜，用自己的体验说话，不要像背稿</li>
+      <li>每款眼镜的名称和材质用字幕清晰标注，方便观众截图后到店询问</li>
+      <li>变色镜片实拍变色过程是整条视频的视觉爆点，一定用好的光线拍</li>
+      <li>儿童镜的弹性展示要安全——别真的用力掰断，展示弯曲即可</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：专业推荐类温和节奏（如《Good Vibes》轻电子），不过分吵闹，突出人声。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#618好物推荐</span>
+    <span class="hashtag">#店长私藏</span>
+    <span class="hashtag">#眼镜推荐</span>
+  </div>
+</div>
+
+<!-- ===== 脚本5 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">05</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第47周①</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约33秒</span>
+    </div>
+    <div class="script-title">毕业礼物送什么？一副好眼镜至少用三年</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 场景提问型</div><p>"毕业季又到了——大学室友、闺蜜、男/女朋友毕业送什么？香水？钱包？手表？都不如意副好眼镜！"（快速闪过几样礼物然后定格在眼镜上）</p></div>
+    <div class="hook-option"><div class="hook-label">B 算账型</div><p>"毕业礼物送一副眼镜——假设每天戴，用三年，1095天，每天才三毛钱。每次戴上都会想起你，这个礼物性价比我算明白了。"（计算器动画展示）</p></div>
+    <div class="hook-option"><div class="hook-label">C 故事型</div><p>"我闺蜜毕业后第一份工作面试，戴着我送的眼镜拿到了offer。她说：'这是幸运眼镜。' 毕业礼物，就该送能陪她走很远的东西。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 为什么送眼镜</div>
+      <div class="time-content">"毕业意味着什么？面试、上班、加班、考证——眼睛的使用强度直接翻三倍。一副好眼镜是职场第一生产力工具。而且比起鲜花三天谢、巧克力一周没，眼镜能用三年——每次看清每次想起你。"</div>
+      <div class="time-action">🎬 动作：快切毕业生场景——面试/办公/图书馆/加班，最后回到眼镜特写。鲜花枯萎+巧克力吃完的对比镜头（对比眼镜的持久）。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-14秒 · 送女生的推荐</div>
+      <div class="time-content">"送女生——玫瑰金金属细框+防蓝光镜片。精致又实用，面试戴、上班戴、约会也能戴。轻到戴一天不压鼻，看电脑久了眼睛也不酸——比送口红贴心一百倍。"</div>
+      <div class="time-action">🎬 动作：女模特佩戴玫瑰金细框，职场穿搭+生活场景切换。特写镜框颜色+防蓝光测试对比画面。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 送男生的推荐</div>
+      <div class="time-content">"送男生——纯钛半框或商务黑框。稳重、百搭、显专业。不管去什么公司面试，一副好眼镜就是第一印象的神助攻。而且618活动配镜片送镜框，预算可控心意无限。"</div>
+      <div class="time-action">🎬 动作：男模特佩戴商务黑框，西装/衬衫穿搭展示。弹出"618活动 配镜片送镜框"标签。男女款同框展示。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-33秒 互动收尾</div>
+    <div class="time-content">"毕业季来爱眼城挑一份'看得见的礼物'——618期间免费代写祝福卡片，配好镜我们帮你包好。你今年毕业吗？还是准备送毕业礼物？评论区聊聊你的毕业清单。地址在评论区。"</div>
+    <div class="time-action">🎬 动作：展示精美包装好的眼镜礼盒+手写祝福卡片特写。主播微笑收尾，弹出"毕业季特别礼盒"和地址。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>礼品包装和手写卡片是核心画面——提前准备精美包装盒和真正的钢笔手写卡片</li>
+      <li>男女款推荐分开拍摄，分清目标受众，但最后同框展示"情侣/闺蜜一起配"</li>
+      <li>"鲜花凋谢vs眼镜持久"的对比有幽默感但别冒犯女生——用可爱动画替代真实凋谢画面</li>
+      <li>毕业场景可借用永州职院/湖南科技学院等校园取景</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：青春温暖的毕业风格音乐（如《Graduation Gift》轻快钢琴+吉他），有纪念感和希望感。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#毕业礼物</span>
+    <span class="hashtag">#走心礼物</span>
+    <span class="hashtag">#618送礼</span>
+  </div>
+</div>
+
+<!-- ===== 脚本6 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">06</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第47周②</span>
+      <span class="tag tag-series">科普</span>
+      <span class="tag tag-duration">约35秒</span>
+    </div>
+    <div class="script-title">夏天游泳怎么护眼？泳镜+眼药水全攻略</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 亲身经历型</div><p>"昨天游完泳眼睛红了一天，查了才知道——泳池里不只有水，还有可能让你眼睛感染的'隐形杀手'。"（展示自己或演员红眼画面）</p></div>
+    <div class="hook-option"><div class="hook-label">B 警告型</div><p>"永州的家长们注意！暑假带孩子游泳，少做一件事眼睛可能会发炎好几天。不是吓你——医院眼科夏天最多的就是'游泳池眼'。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 装备型</div><p>"游泳护眼三件套，少一件你的眼睛都在'裸泳'。夏天游泳前看完这条，少受罪。"（手上依次出现泳镜、眼药水、毛巾）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 泳池里的眼睛威胁</div>
+      <div class="time-content">"游泳池的水里有氯消毒剂、汗液、尿液、各种微生物——这些东西会破坏眼睛的泪膜保护层，导致眼红、刺痒、怕光，严重的引起结膜炎甚至角膜炎。戴隐形眼镜游泳风险更大——镜片吸水变成细菌培养皿！"</div>
+      <div class="time-action">🎬 动作：用动画展示有害物质→眼睛→发炎的过程。配"⚠️隐形眼镜+游泳=❌"警示字幕，画面冲击力强。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 泳镜怎么选</div>
+      <div class="time-content">"泳镜是游泳护眼第一道防线，选不对等于白戴。三个硬标准：①密封圈硅胶材质（不是橡胶）②防雾处理（游半小时也不起雾）③UV防护（户外泳池紫外线反射很强）。近视的朋友可以配带度数的泳镜——不用戴隐形眼镜下水。"</div>
+      <div class="time-action">🎬 动作：展示泳镜挑选过程——硅胶vs橡胶密封圈对比、防雾测试展示、UV标识特写。带度数泳镜特写展示。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 泳后护理</div>
+      <div class="time-content">"游完泳第一件事不是擦头发——是用流动清水冲洗眼睛至少30秒。然后滴不含防腐剂的人工泪液（不是消炎眼药水！）冲洗眼表残余的氯和细菌。如果眼睛持续红超过24小时，马上去眼科。"</div>
+      <div class="time-action">🎬 动作：实拍冲洗眼睛+滴人工泪液的动作演示（找愿意出镜的同事），字幕标注"清水冲洗30秒→无防腐剂人工泪液→不适即就医"三步流程。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-35秒 互动收尾</div>
+    <div class="time-content">"夏天游泳别忘了护眼——泳镜和人工泪液爱眼城都有，618活动更实惠。你游泳戴泳镜吗？游完眼睛红过吗？评论区和永州游泳爱好者们交流一下。觉得有用转发给有小孩的家长。地址在评论区。"</div>
+    <div class="time-action">🎬 动作：主播展示护眼装备大合照（泳镜+人工泪液+毛巾），微笑收尾。画面弹出转发引导和店铺地址。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>拍摄背景建议在游泳池边或浴室风格场景，增强代入感</li>
+      <li>硅胶vs橡胶密封圈对比用微距拍摄，质感差异肉眼可见</li>
+      <li>冲洗眼睛的演示要专业——不允许拍摄真人冲洗眼睛近景的话用动画替代</li>
+      <li>此条可同步推广带度数泳镜（如果店里有的配），是差异化产品</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：清爽夏季风轻快音乐（如《Summer Pool》或《Splash Fun》），带点水声元素。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#游泳护眼</span>
+    <span class="hashtag">#暑假安全</span>
+    <span class="hashtag">#护眼攻略</span>
+  </div>
+</div>
+
+<!-- ===== 脚本7 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">07</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第48周①</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约34秒</span>
+    </div>
+    <div class="script-title">半年回顾：2027上半年爱眼城卖得最好的5款</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 盘点型</div><p>"2027年过去一半了——上半年永州人买得最多的五款眼镜，今天我摊开给你看！第五名你绝对戴过。"（五副眼镜一字排开，从右边开始揭晓）</p></div>
+    <div class="hook-option"><div class="hook-label">B 数据型</div><p>"永州人上半年配镜大数据来了——卖爆的五款，第一名居然不是最贵的。来看看你选对了没有。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 跟风型</div><p>"别纠结买什么眼镜了——上半年两千多个永州人用钱包投票的结果，跟着买不会错。TOP5直接抄作业。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-7秒 · TOP5</div>
+      <div class="time-content">"TOP5：钛合金老花镜——送父母的爆款。轻、耐用、不显老，母亲节父亲节期间卖得特别好，很多顾客配完又给岳父岳母配。"</div>
+      <div class="time-action">🎬 动作：产品特写+佩戴效果，配"TOP5"金色标签弹出。2秒画面切换。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第8-11秒 · TOP4</div>
+      <div class="time-content">"TOP4：TR90儿童镜——弹性好不怕掰，家长首选。永州的孩子下半年上小学、上初中，提前配一副控制度数的功能性镜片。"</div>
+      <div class="time-action">🎬 动作：儿童模特佩戴+镜腿弯曲弹性展示，配"TOP4"标签+弹幕"熊孩子摔不坏"。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第12-15秒 · TOP3</div>
+      <div class="time-content">"TOP3：复古金属圆框——永州年轻人的审美真的在线。配防蓝光镜片，看手机看电脑不累眼睛。这款从3月一直旺到6月。"</div>
+      <div class="time-action">🎬 动作：年轻人佩戴快剪，配"TOP3"标签。街头风格场景。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · TOP2 & TOP1</div>
+      <div class="time-content">"TOP2：偏光太阳镜驾驶款——4月太阳镜季开始就卖疯了，人手一副。夏天到了，太阳镜还在一路飙升。TOP1：防蓝光抗疲劳镜片套餐——这个不用多说，永州的上班族几乎人手一副，配镜片送镜框活动直接卖空好几次库存！"</div>
+      <div class="time-action">🎬 动作：TOP2和TOP1给足时间——太阳镜户外实拍+偏光测试，防蓝光套餐展示+镜框墙快闪。分别弹出"TOP2"和"TOP1 🔥上半年销冠🔥"。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-34秒 互动收尾</div>
+    <div class="time-content">"这五款你买过哪款？评论区打个TOP1到TOP5让我看看。没买的也别急——618最后两天了，这些爆款还有货，但有些款已经开始断码。趁最后机会来爱眼城，地址在评论区，手慢无！"</div>
+    <div class="time-action">🎬 动作：五款同框展示，弹出"618最后48小时"倒计时标签。主播热情收尾。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>倒叙揭晓（TOP5→TOP1）是排行榜视频的黄金节奏，每个排名配不同的音效递增</li>
+      <li>五款产品分别准备至少一个佩戴效果镜头和一个产品特写镜头</li>
+      <li>如果方便，用真实销售数据做字幕更真实（"上半年售出XXX副"）</li>
+      <li>"断码""手慢无"等字样在618最后阶段特别有紧迫感</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：排行榜类激昂节奏（如《Countdown Top》或《Hall of Fame》纯音乐），每个名次有鼓点强调。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#半年榜</span>
+    <span class="hashtag">#眼镜推荐</span>
+    <span class="hashtag">#永州好物</span>
+  </div>
+</div>
+
+<!-- ===== 脚本8 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">08</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第48周②</span>
+      <span class="tag tag-series">日常</span>
+      <span class="tag tag-duration">约35秒</span>
+    </div>
+    <div class="script-title">618收尾：顾客一口气买了三副，我惊了</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 震惊型</div><p>"618最后一天，有位顾客走进来，一口气买了三副眼镜！我从业八年，这种事一只手数得过来。"（做出震惊表情，展示三副打包好的眼镜）</p></div>
+    <div class="hook-option"><div class="hook-label">B 好奇型</div><p>"一个人买三副眼镜——你猜他买了哪三副？一副给自己，一副给老婆，一副给爸爸。618最后一单，太会买了！"（拆开三副展示）</p></div>
+    <div class="hook-option"><div class="hook-label">C 限时提醒型</div><p>"618最后几个小时了！今天这位顾客教会了我什么叫'该出手时就出手'——他用三副眼镜省了快一千块。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 剧情展开</div>
+      <div class="time-content">"下午快关门的时候，一位大哥走进来说：'听说你们618配镜片送镜框？' 我说是。他说：'好，给我来三副。' 我以为他开玩笑——结果他是真买。"</div>
+      <div class="time-action">🎬 动作：还原店内场景——顾客走进来→对话→店员惊讶表情。快节奏剪辑+轻松音效。字幕分色标注对话。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-14秒 · 展示三副</div>
+      <div class="time-content">"一副偏光太阳镜——给自己的，夏天开车；一副防蓝光商务半框——给老婆上班戴；一副轻钛老花镜——给老爸的。大哥说：'反正都要配，趁618一次搞定。平时配三副得快两千，现在省一半。'"</div>
+      <div class="time-action">🎬 动作：依次展示三副眼镜的实物+佩戴效果（可用店内模特快速展示），计算器动画展示"单买总价→618总价→省XXX元"。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 618总结</div>
+      <div class="time-content">"618就是这么实在——配镜片送镜框、太阳镜第二副半价、老花镜定制优惠——这三波叠加真的能省不少。大哥走的时候还笑着说了句：'明年618我再来'——好嘞，爱眼城每年等你。"</div>
+      <div class="time-action">🎬 动作：展示618活动海报叠加画面+三副眼镜打包好的温馨画面。加入"明年再见"的温暖字幕。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-35秒 互动收尾</div>
+    <div class="time-content">"618马上结束，但好的眼镜会陪你很久。感谢这半年每一位走进爱眼城的你。下半年我们准备了更多好眼镜和新活动——关注我，不要错过。你618买了什么？评论区晒一下。永州爱眼城，让你的眼睛被好好对待。"</div>
+    <div class="time-action">🎬 动作：主播真诚鞠躬/微笑收尾，画面慢速展示店铺全景+员工合影（如果有），弹出"感谢半年的陪伴 ❤"和"下半年见"。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>这是618收尾+半年收官之作——整体调性从促销感转为感恩和温情</li>
+      <li>"一口气买三副"可找朋友情景还原，注意突出计算省钱的画面</li>
+      <li>店铺全景和员工合影（如果有）增加人情味和真实感</li>
+      <li>结尾"下半年见"给观众留悬念，鼓励持续关注账号</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：温馨感恩类音乐（如《Thank You》钢琴版或《See You Again》纯音乐），结尾段升温暖。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#618收官</span>
+    <span class="hashtag">#眼镜店日常</span>
+    <span class="hashtag">#半年度总结</span>
+  </div>
+</div>
+
+<!-- ===== 底部导航 ===== -->
+<div class="bottom-nav">
+  <a href="month-11-2027-05.html">← 5月 · 亲情月</a>
+  <span class="nav-center">2027年6月 · 第45-48周</span>
+  <span class="nav-disabled">已是最新月份 · 无下一页</span>
+</div>
+
+</div>
+</body>
+</html>
