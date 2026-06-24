@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 短视频脚本 · 2027年1月</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    line-height: 1.7;
+  }
+  .top-bar {
+    background: #c0392b;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 28px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .top-bar a:hover { background: rgba(255,255,255,0.28); }
+  .header {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .header .month-tag { font-size: 14px; opacity: 0.85; letter-spacing: 2px; margin-bottom: 8px; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header .theme { font-size: 18px; opacity: 0.9; margin-bottom: 4px; }
+  .header .meta { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  .week-section { margin-bottom: 40px; }
+  .week-title {
+    background: #fff;
+    border-left: 5px solid #c0392b;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #c0392b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .script-card {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+  }
+  .script-card .script-num {
+    display: inline-block;
+    background: #c0392b;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .script-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 6px;
+  }
+  .script-card .tags-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+  .script-card .tag {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag-type { background: #fdecea; color: #c0392b; }
+  .tag-duration { background: #e8f5e9; color: #2e7d32; }
+  .script-block {
+    margin-bottom: 18px;
+  }
+  .script-block h4 {
+    font-size: 15px;
+    color: #c0392b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .script-block h4::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #c0392b;
+    border-radius: 50%;
+  }
+  .script-block ul { padding-left: 18px; }
+  .script-block li { margin-bottom: 6px; font-size: 14px; color: #555; }
+  .script-block .highlight {
+    background: #fff3e0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 14px;
+    border-left: 3px solid #ff9800;
+  }
+  .divider {
+    border: none;
+    border-top: 1px dashed #e0e0e0;
+    margin: 18px 0;
+  }
+  .shoot-tips {
+    background: #f9f9f9;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+  }
+  .shoot-tips strong { color: #c0392b; }
+  .bgm-tag, .hashtag-tag {
+    display: inline-block;
+    background: #e8eaf6;
+    color: #3f51b5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .hashtag-tag { background: #fce4ec; color: #c0392b; }
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 2px solid #e0d5cc;
+    margin-top: 20px;
+  }
+  .nav-bottom a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c0392b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-bottom a:hover { background: #a93226; }
+  .nav-bottom .nav-label { font-size: 12px; opacity: 0.7; }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 24px; }
+    .script-card { padding: 18px; }
+    .nav-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">SHORT VIDEO SCRIPTS</div>
+  <h1>2027年1月 · 视频脚本</h1>
+  <div class="theme">🏮 新年焕新 · 换镜迎新</div>
+  <div class="meta">共8条脚本 | 每周2条 | 店长直拍版</div>
+</div>
+
+<div class="container">
+
+<!-- ============ 第25周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第25周 · 年终奖 + 店长私藏</div>
+
+  <!-- Script 1 -->
+  <div class="script-card">
+    <span class="script-num">第25周 ①</span>
+    <h3>年终奖到了！给自己换副好眼镜，去爱眼城</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"年终奖到手了——买衣服？吃大餐？我劝你先换一副好眼镜。每天戴十小时的东西，比什么投资都划算。"</div>
+      <div class="highlight"><strong>版本B：</strong>"你的年终奖，够买一件穿不了几次的外套，也够配一副每天都要戴的好眼镜——这笔账你算算。"</div>
+      <div class="highlight"><strong>版本C：</strong>"2027年第一笔钱怎么花？听我的——先换眼镜。你脸上的东西，值得用好一点的。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>观念冲击。台词："算一笔账：你每天戴眼镜10小时以上，一年365天就是3650小时。这件'单品'你用得比手机还长——但很多人花6000买手机，眼镜只愿意花200。说真的，眼镜才应该是你身上最值钱的东西。"</li>
+        <li><strong>8-12秒：</strong>推荐方案。台词："年终奖配眼镜，我推荐这个组合——纯钛镜架+1.67超薄非球面镜片。钛架重量不到6克，鼻梁零压迫；1.67镜片薄到你低头都看不出厚度。整套600-800元，平摊一天不到1块钱。"</li>
+        <li><strong>13-16秒：</strong>高阶升级选项。台词："预算再高一点？直接上蔡司镜片+β钛镜架组合。蔡司的透光率和耐磨性是行业标杆，β钛架弹性好随便掰不变形。1200左右，年终奖一半就搞定。这是每天戴的东西——值得。"</li>
+        <li><strong>17-20秒：</strong>1月活动信息。台词："1月来爱眼城，年终奖专属福利：全场镜架8折、镜片套餐立减100、老顾客凭旧镜额外再减50。六店同步，持续整个1月。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"年终奖到手了吗？评论区说说你打算怎么花——1代表买眼镜，2代表还没到手。来爱眼城，让你的年终奖变成每天看得见的投资。新的一年，从看清开始。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 用计算器/账本道具展示"一天几毛钱"的计算过程；② 两套方案各配实物对比展示（普通vs纯钛）；③ 活动信息用红色数字板突出折扣力度；④ 店长语气真诚不浮夸，强调"值得"而非"便宜"。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">新年氛围轻快BGM</span> <span class="bgm-tag">温暖节拍</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#年终奖</span>
+      <span class="hashtag-tag">#新年换眼镜</span>
+      <span class="hashtag-tag">#眼镜推荐</span>
+    </div>
+  </div>
+
+  <!-- Script 2 -->
+  <div class="script-card">
+    <span class="script-num">第25周 ②</span>
+    <h3>爱眼城店长私藏：我最推荐的三款镜架</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"干了十几年眼镜，我自己戴的、家人戴的、推荐最多的三款镜架——今天全部公开。不是卖得最贵的，是真正好用的。"</div>
+      <div class="highlight"><strong>版本B：</strong>"店长私藏款是什么？这三款我自己都有一副——不推广不卖吆喝，纯分享。"</div>
+      <div class="highlight"><strong>版本C：</strong>"如果你问我'买哪款镜架最不后悔'——我的答案永远是这三款。个人经验，十几年验证过的。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>第一款——纯钛极细细边框。台词："第一款：纯钛极细细边框。这是我自己的日常款，6克不到，戴一天鼻梁完全没印子。颜色选银灰或枪灰，什么衣服什么场合都百搭。最关键的是不过敏——很多永州人对金属过敏，纯钛是唯一不痒的选择。价格280到360，绝对物有所值。"</li>
+        <li><strong>9-13秒：</strong>第二款——TR90超轻全框。台词："第二款：TR90超轻全框。我给我儿子配的就是这款——软弹材质随便掰不断，跑步打球甩不掉，摔了也不心疼。学生党、运动党首选。一百多块钱，性价比无敌。颜色推荐哑光黑或深蓝，低调但有质感。"</li>
+        <li><strong>14-17秒：</strong>第三款——β钛半框商务款。台词："第三款：β钛半框商务款。这是我们店里上班族买最多的款式——上半框金属质感显专业，下半无框显轻盈。开会戴不显呆板，日常戴不显太正式。弹性好、耐变形，出差挤火车放口袋也不怕。300元左右。"</li>
+        <li><strong>18-20秒：</strong>总结语。台词："这三款，是我十多年卖眼镜经验里退货率最低、复购率最高的——不是最贵的，但绝对是最省心的。来爱眼城试这三款，不买也行，你试了就知道什么叫'戴上就不想摘'。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"三款你最喜欢哪款？1纯钛、2TR90、3β钛半框——评论区告诉我。来爱眼城我帮你试戴，这三款我个人回购过，推的就是真的好用。永州爱眼城，店长只推自己信的。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 每款配店长自己佩戴的真实画面（增加信任感）；② 三款并排展示对比重量差异；③ 弹性测试：TR90掰弯回弹、β钛拉伸回弹的真实特写；④ 语气走心真诚，像朋友推荐而非推销。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">生活分享风轻节奏</span> <span class="bgm-tag">吉他民谣</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#镜架推荐</span>
+      <span class="hashtag-tag">#店长私藏</span>
+      <span class="hashtag-tag">#买眼镜不踩雷</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第26周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第26周 · 镜片科普 + 顾客互动</div>
+
+  <!-- Script 3 -->
+  <div class="script-card">
+    <span class="script-num">第26周 ①</span>
+    <h3>镜片用了一年就该换？很多人不知道的真相</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"你的镜片用了多久了？一年？两年？三年？我告诉你：镜片的保质期，大多数人根本不知道。"</div>
+      <div class="highlight"><strong>版本B：</strong>"眼镜不是买一次管一辈子的——镜片比你想的老化得更快。这个知识90%的人都不知道，但每天都在用旧镜片看东西。"</div>
+      <div class="highlight"><strong>版本C：</strong>"你以为镜片只要不碎就能一直戴？大错特错。镜片有一个'隐形保质期'——过了它，你的视力每天都在被悄悄损伤。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>镜片老化真相。台词："镜片的老化你肉眼不容易看出来，但它确实在发生。树脂镜片使用一年后，透光率下降约5%；两年后下降10%以上。什么意思？就是你的镜片越来越'灰'，你看到的越来越'暗'——但你以为那是正常的。"</li>
+        <li><strong>8-11秒：</strong>镀膜脱落问题。台词："更严重的是镀膜。镜片表面的防反射膜、加硬膜、防水膜，使用18到24个月后开始脱落。脱落了你看到什么？反光增加、清晰度下降、晚上开车眩光加重。很多人抱怨'晚上看不清'——不是度数问题，是镜片老了。"</li>
+        <li><strong>12-15秒：</strong>度数变化因素。台词："还有一个被忽略的事实：成年人的度数也不是不变的。即使过了18岁，用眼习惯变化、工作环境变化、年龄增长，都可能让度数微调25到50度。你戴着两年前的度数看现在的世界——当然不舒服。"</li>
+        <li><strong>16-20秒：</strong>换镜建议+爱眼城服务。台词："建议：镜片每12到18个月检查一次，每18到24个月更换一次。来爱眼城，旧镜片免费检测透光率和镀膜状态——我们有一台专业仪器，3分钟出结果。一目了然，该不该换，数据说话。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你的眼镜戴了多久了？评论区说说——1代表不到一年，2代表一到两年，3代表两年以上。超过两年的朋友，建议尽快来爱眼城测一下镜片状态，免费的。看不见的老化，比看得见的更危险。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 用新旧镜片对比展示（旧镜片对着光看明显发黄/有划痕）；② 镀膜脱落可用放大镜/微距镜头拍特写；③ 爱眼城检测仪器3分钟检测过程实拍；④ 用数据图表辅助说明透光率下降曲线。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">科普讲解节奏</span> <span class="bgm-tag">轻电子节拍</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#镜片更换</span>
+      <span class="hashtag-tag">#眼镜科普</span>
+      <span class="hashtag-tag">#镜片保质期</span>
+    </div>
+  </div>
+
+  <!-- Script 4 -->
+  <div class="script-card">
+    <span class="script-num">第26周 ②</span>
+    <h3>顾客说"这也太贵了吧"，我怎么回应的</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约50秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"顾客走进来说'这也太贵了吧'——我从来没有生气过。因为这句话背后，藏着一个很多人不敢说的真相。"</div>
+      <div class="highlight"><strong>版本B：</strong>"在眼镜店干了十几年，被说'贵'不下几百次。但我每次都笑着回应——今天公开一下，我是怎么说的。"</div>
+      <div class="highlight"><strong>版本C：</strong>"你觉得眼镜贵？嗯，我也觉得——贵的那个部分到底在哪？我来拆给你看。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>共情开场。台词："先说一句实话：我理解每个说贵的顾客。眼镜确实不是便宜的东西——尤其当你花了钱戴上觉得'好像也没比之前好多少'的时候。这种感受是真实的，我不回避。"</li>
+        <li><strong>8-12秒：</strong>拆解贵的真相。台词："但我想让你知道贵在哪：镜片——一副蔡司镜片的研发成本、镀膜工艺、光学精度，跟一副杂牌镜片差了几倍。这就像买手机——300的功能机和3000的旗舰机都能打电话，但体验差了几个世界。眼镜也一样，贵的是你每天10小时看东西的体验。"</li>
+        <li><strong>13-16秒：</strong>性价比方案。台词："话又说回来，不是每个人都得买最贵的。爱眼城从199到2000都有方案。预算有限？TR90镜架+基础镜片199起，够用耐用；想好一点？纯钛+1.67超薄500左右，舒适度飞跃。根据预算推荐，不硬推贵的——这是我的原则。"</li>
+        <li><strong>17-20秒：</strong>真诚收束。台词："说贵的顾客，最后很多都成了老顾客——因为他们第一次来只看到了价格，第二次来看到了体验。一副好眼镜戴两年，平摊一天几毛钱——贵不贵，算完账你自己判断。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你觉得眼镜贵吗？评论区真实聊——1觉得贵，2觉得还行，3觉得一分钱一分货。不管预算多少，来爱眼城我都帮你找到最适合的那副。永州爱眼城，贵的有道理，便宜的也不糊弄。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 店长坐在柜台前，语气平和真诚，像跟朋友聊天而非辩解；② 可穿插店内真实顾客互动的模糊画面（需征得同意）；③ 价格阶梯用实物镜架摆出199/500/1200三个档位；④ 避免说教感，多用"我理解"而非"你不懂"。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">日常对话风轻音乐</span> <span class="bgm-tag">咖啡厅氛围</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#眼镜价格</span>
+      <span class="hashtag-tag">#实体店日常</span>
+      <span class="hashtag-tag">#买眼镜攻略</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第27周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第27周 · 脸型选框 + 开店日常</div>
+
+  <!-- Script 5 -->
+  <div class="script-card">
+    <span class="script-num">第27周 ①</span>
+    <h3>方脸圆脸长脸，对号入座选镜框</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">穿搭</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"方脸戴圆框、圆脸戴方框——这句话听过吧？但只对了一半。真正选镜框的逻辑比这复杂一点，今天一次讲清。"</div>
+      <div class="highlight"><strong>版本B：</strong>"为什么别人戴的眼镜好看，你戴同一副就怪？不是眼镜的问题——是你的脸型跟镜框没对上号。"</div>
+      <div class="highlight"><strong>版本C：</strong>"方脸圆脸长脸菱形脸——四种脸型四种选框法则。对号入座，戴上立刻不一样。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>方脸选框法则。台词："方脸——脸部线条硬、下颌宽。选框原则：用圆弧中和棱角。推荐椭圆框、微微圆角的方框。绝对要避开：正方框、粗线条板材框——会让脸看起来更方更硬。镜框宽度要比脸宽略宽，形成'包裹感'柔化轮廓。"</li>
+        <li><strong>9-13秒：</strong>圆脸选框法则。台词："圆脸——线条柔和、脸宽和脸长差不多。选框原则：用棱角增加立体感。推荐方框、矩形框、有棱角的半框。绝对避开：正圆框、猫眼框——会让脸更圆更平。镜框选稍微宽一点的，横向拉长脸的比例，视觉上显瘦。"</li>
+        <li><strong>14-17秒：</strong>长脸选框法则。台词："长脸——脸的纵向比例大于横向。选框原则：用宽框'截断'长度。推荐宽大方框、大圆框、蛤蟆镜。绝对避开：细长窄框——会把脸拉得更长。镜框要大到能覆盖三分之一脸面积，横向占满，纵向'遮挡'。"</li>
+        <li><strong>18-20秒：</strong>菱形脸+实用建议。台词："菱形脸——颧骨宽、额头下巴窄。选框原则：用宽框填满额头区域。推荐猫眼框、上宽下窄框。实用建议：不确定自己什么脸型？来爱眼城我帮你判断——现场试戴10副以上不收费，试到找到对的那副为止。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你是哪种脸型？评论区发一张正面照（不戴眼镜的），我来帮你推荐镜框款式——纯免费纯建议。1方脸 2圆脸 3长脸 4菱形脸，对号入座。来爱眼城，脸型和镜框的匹配，是配镜的第一步——很多人忽略了。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 四种脸型各配真人模特（可找店员/朋友），戴对/戴错的对比效果一目了然；② 每种脸型配2-3副推荐镜框实物展示；③ 画简易脸型轮廓图辅助理解；④ 动作：模特上脸-摘下-换款-对比，节奏明快。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">时尚穿搭节奏</span> <span class="bgm-tag">轻快电子</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#脸型选框</span>
+      <span class="hashtag-tag">#眼镜穿搭</span>
+      <span class="hashtag-tag">#选镜框攻略</span>
+    </div>
+  </div>
+
+  <!-- Script 6 -->
+  <div class="script-card">
+    <span class="script-num">第27周 ②</span>
+    <h3>开店前20分钟，爱眼城店长在干嘛</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约50秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"8:00开门，8:20正式营业——中间这20分钟，才是爱眼城一天最关键的时段。今天带你偷看一下。"</div>
+      <div class="highlight"><strong>版本B：</strong>"你以为眼镜店开门就做生意？开店前的20分钟，我们做的那些事——比接待顾客还重要。"</div>
+      <div class="highlight"><strong>版本C：</strong>"永州爱眼城的早晨是怎样的？从开灯到第一个顾客进门——这20分钟的真实记录。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>开灯+打扫。台词："8:00——开灯、开空调。先擦一遍所有展柜玻璃，手摸上去不能有一点灰。镜架陈列有没有歪的？随手调整。地面拖一遍，门口玻璃门擦一遍——干净是第一印象，比什么都重要。"</li>
+        <li><strong>8-11秒：</strong>仪器校准。台词："8:07——开电脑、启动验光仪。每天开机必须做一次仪器自检——焦度计校准、验光仪零点检查。这是眼镜店的'饭前洗手'——数据不准，后面一切白费。3分钟搞定，但绝不能省。"</li>
+        <li><strong>12-15秒：</strong>库存+预约检查。台词："8:10——看一下今天有几个预约、查一下昨天有没有需要补货的镜架、有没有到货通知要取的成品镜。把这些写在当天的备忘板上——顾客来了不用翻系统，一眼就知道今天的事。"</li>
+        <li><strong>16-20秒：</strong>团队沟通+心态准备。台词："8:15——跟店员碰一下今天的安排：谁值验光台、谁负责接待、哪个时段可能忙。8:18——整理一下自己的状态，换上工服，对着镜子笑一下。8:20——开门。第一个顾客可能马上就到，准备好了。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"开店前的20分钟，决定了这一天顾客的体验。爱眼城15年，每天如此——不是因为规定，是因为习惯。你们上班前有什么固定习惯？评论区聊聊。永州爱眼城，每一个细节都认真对待。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 真实记录开店前20分钟，一镜到底或分段实拍；② 时间线用字幕标注"8:00""8:07"等；③ 验光仪校准特写增加专业感；④ 结尾开门瞬间配光线变化效果——从暗到亮。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">清晨氛围轻音乐</span> <span class="bgm-tag">钢琴+自然声</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#眼镜店日常</span>
+      <span class="hashtag-tag">#开店准备</span>
+      <span class="hashtag-tag">#实体店vlog</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第28周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第28周 · 新年爆款 + 翻车日常</div>
+
+  <!-- Script 7 -->
+  <div class="script-card">
+    <span class="script-num">第28周 ①</span>
+    <h3>2027新年换新镜：爱眼城开年爆款镜架</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"2027年第一副眼镜，要配就配今年的爆款——爱眼城开年上新5款镜架，每一款都是看了就想试的那种。"</div>
+      <div class="highlight"><strong>版本B：</strong>"新年换新镜，不知道选什么？直接看这个——爱眼城2027开年爆款榜，五款镜架，从经典到潮流全覆盖。"</div>
+      <div class="highlight"><strong>版本C：</strong>"元旦刚过，爱眼城的新款就上架了。这五款镜架是我从几十个新品里挑出来的——颜值高、实用强、价格合理。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>爆款一——雾蓝透明板材框。台词："爆款一：雾蓝透明板材框。2027的流行色——雾蓝色，不是蓝也不是灰，是那种高级到像雾一样的颜色。方中带圆的框型，男生女生都适合。搭配毛衣大衣特别好看，冬天配它绝了。"</li>
+        <li><strong>8-11秒：</strong>爆款二——极细β钛金丝框。台词："爆款二：极细β钛金丝框。今年最轻的镜架——整副不到5克，戴上跟没戴一样。金丝质感温润不浮夸，适合上班族、教师、医生等需要显专业又不想太刻板的职业。400左右，性价比之王。"</li>
+        <li><strong>12-14秒：</strong>爆款三——复古微椭圆金属框。台词："爆款三：复古微椭圆金属框。不是哈利波特那种完全圆的——是改良过的微椭圆，复古但不奇怪。文艺青年、创意工作者最爱，女生戴尤其有气质。"</li>
+        <li><strong>15-17秒：</strong>爆款四+五。台词："爆款四：哑光黑超轻TR半框——百搭运动款，学生党首选，160起。爆款五：玫瑰金纯钛细边——女生新年首选，温柔又高级，搭什么都好看，320左右。"</li>
+        <li><strong>18-20秒：</strong>开年活动。台词："1月来爱眼城配这五款爆款，新年专享：镜架8折+镜片套餐立减80+免费升级防蓝光。五款都有现货，来就能试。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"五款爆款你最想试哪款？1雾蓝透明 2金丝β钛 3微椭圆金属 4哑光TR 5玫瑰金纯钛——评论区扣数字。来爱眼城试戴不花钱，2027新年从一副好眼镜开始。永州爱眼城，新款抢先看！"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 五款镜架各配真人佩戴效果，每款5秒快切；② "爆款"标签/排名动画增加仪式感；③ 每款标注价格区间（字幕），增强决策参考；④ 新年氛围置景（红色/金色装饰、小灯笼）。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">新年时尚节奏</span> <span class="bgm-tag">欢快节拍</span> 音量32%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#新年换新镜</span>
+      <span class="hashtag-tag">#2027爆款</span>
+      <span class="hashtag-tag">#镜架推荐</span>
+    </div>
+  </div>
+
+  <!-- Script 8 -->
+  <div class="script-card">
+    <span class="script-num">第28周 ②</span>
+    <h3>同事被一个问题问到呆住了…</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约45秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"今天店里发生了一件搞笑的事——一个顾客问了我们同事一个问题，同事愣了三秒没回答上来。"</div>
+      <div class="highlight"><strong>版本B：</strong>"眼镜店的日常翻车现场——顾客的一句话，让整个柜台安静了三秒。"</div>
+      <div class="highlight"><strong>版本C：</strong>"在爱眼城干了好几年了，以为自己什么问题都能答——直到今天被一个顾客问住了。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>铺垫背景。台词："顾客进门看了一圈，指着镜架问：'你们家镜架和镜片是分开卖的吗？'——同事答：'是的。'顾客接着问：'那我只买镜架不买镜片行吗？'——同事愣住了。"</li>
+        <li><strong>8-12秒：</strong>翻车现场还原。台词："同事脑子转了三秒：只买镜架？可以啊，但是……没有镜片的镜架戴着就是个装饰品？不是近视镜也不是太阳镜……到底是想干嘛？同事憋了半天说：'可以的……您想……戴着当装饰吗？'"</li>
+        <li><strong>13-16秒：</strong>顾客的真实需求。台词："顾客笑了：'我是摄影师，需要用镜框做道具，只要镜架就行。'——原来人家是专业需求！同事恍然大悟：'那您要什么风格的？复古的？文艺的？我们有30多款空镜架可以单卖。'"</li>
+        <li><strong>17-20秒：</strong>反思+日常趣事。台词："事后同事跟我说：'做了这么多年眼镜，从来没想过有人只买镜架。'这就是做实体店的好处——你永远不知道下一个顾客需要什么。每天都是新的，每天都有意外。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你在眼镜店遇到过什么有趣的事？评论区分享——最好笑的那条我下期做成脚本。爱眼城每天都有故事，关注我看更多日常。永州爱眼城，不只是卖眼镜的店。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 同事"愣住"的表情用慢动作特写增加搞笑感；② 顾客和同事对话用现场还原或角色扮演；③ 结尾轻松自然，不用刻意卖产品；④ 语气轻松幽默，像讲日常段子。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">搞笑日常轻松BGM</span> <span class="bgm-tag">俏皮节奏</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#眼镜店日常</span>
+      <span class="hashtag-tag">#翻车现场</span>
+      <span class="hashtag-tag">#搞笑日常</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ 底部导航 ============ -->
+<div class="nav-bottom">
+  <a href="month-06-2026-12.html">
+    <div class="nav-label">← 上一月</div>
+    2026年12月
+  </a>
+  <span style="color:#999;font-size:15px;font-weight:600;">2027年1月</span>
+  <a href="month-08-2027-02.html">
+    <div class="nav-label">下一月 →</div>
+    2027年2月
+  </a>
+</div>
+
+<div class="footer">
+  © 2027 永州爱眼城眼镜 · 短视频内容策划 · 仅供内部使用
+</div>
+
+</div>
+</body>
+</html>
