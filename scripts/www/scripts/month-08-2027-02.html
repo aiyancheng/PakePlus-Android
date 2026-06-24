@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 短视频脚本 · 2027年2月</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    line-height: 1.7;
+  }
+  .top-bar {
+    background: #c0392b;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 28px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .top-bar a:hover { background: rgba(255,255,255,0.28); }
+  .header {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .header .month-tag { font-size: 14px; opacity: 0.85; letter-spacing: 2px; margin-bottom: 8px; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header .theme { font-size: 18px; opacity: 0.9; margin-bottom: 4px; }
+  .header .meta { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  .week-section { margin-bottom: 40px; }
+  .week-title {
+    background: #fff;
+    border-left: 5px solid #c0392b;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #c0392b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .script-card {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+  }
+  .script-card .script-num {
+    display: inline-block;
+    background: #c0392b;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .script-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 6px;
+  }
+  .script-card .tags-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+  .script-card .tag {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag-type { background: #fdecea; color: #c0392b; }
+  .tag-duration { background: #e8f5e9; color: #2e7d32; }
+  .script-block {
+    margin-bottom: 18px;
+  }
+  .script-block h4 {
+    font-size: 15px;
+    color: #c0392b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .script-block h4::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #c0392b;
+    border-radius: 50%;
+  }
+  .script-block ul { padding-left: 18px; }
+  .script-block li { margin-bottom: 6px; font-size: 14px; color: #555; }
+  .script-block .highlight {
+    background: #fff3e0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 14px;
+    border-left: 3px solid #ff9800;
+  }
+  .divider {
+    border: none;
+    border-top: 1px dashed #e0e0e0;
+    margin: 18px 0;
+  }
+  .shoot-tips {
+    background: #f9f9f9;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+  }
+  .shoot-tips strong { color: #c0392b; }
+  .bgm-tag, .hashtag-tag {
+    display: inline-block;
+    background: #e8eaf6;
+    color: #3f51b5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .hashtag-tag { background: #fce4ec; color: #c0392b; }
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 2px solid #e0d5cc;
+    margin-top: 20px;
+  }
+  .nav-bottom a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c0392b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-bottom a:hover { background: #a93226; }
+  .nav-bottom .nav-label { font-size: 12px; opacity: 0.7; }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 24px; }
+    .script-card { padding: 18px; }
+    .nav-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">SHORT VIDEO SCRIPTS</div>
+  <h1>2027年2月 · 视频脚本</h1>
+  <div class="theme">💝 春节护眼 · 情人节送礼</div>
+  <div class="meta">共8条脚本 | 每周2条 | 店长直拍版</div>
+</div>
+
+<div class="container">
+
+<!-- ============ 第29周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第29周 · 情人节选框 + 春节坚守</div>
+
+  <!-- Script 1 -->
+  <div class="script-card">
+    <span class="script-num">第29周 ①</span>
+    <h3>挑眼镜送男朋友/女朋友，避坑必看</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">穿搭</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"情人节送眼镜给对象——送对了比口红还甜蜜，送错了整个2月14号都在尴尬。三条避坑法则，一条都不能漏。"</div>
+      <div class="highlight"><strong>版本B：</strong>"想给男朋友/女朋友送眼镜当礼物？先别急——这三条避坑法则看完再买，否则你送的不是惊喜是惊吓。"</div>
+      <div class="highlight"><strong>版本C：</strong>"送眼镜当礼物，听起来很浪漫——但实操起来坑太多了。款式不对、脸型不搭、度数没验……怎么避？我一条条说。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>避坑一——款式选错。台词："第一条坑：选款式全凭自己喜好。你觉得好看的那款，对方戴上去可能完全不搭——脸型不同，适配的镜框完全不同。送之前：偷拍一张对方的正面照带过来，爱眼城店员帮你判断脸型、推荐款式。零失误。"</li>
+        <li><strong>9-13秒：</strong>避坑二——度数没验。台词："第二条坑：不验光直接买。有些人觉得'他/她度数我知道'——你知道的可能是两年前的度数，成年人的度数也会变的。偷拿对方旧眼镜来爱眼城，3分钟测出度数——精准配镜，戴上去才能真的'看清你'。"</li>
+        <li><strong>14-17秒：</strong>避坑三——价格心理。台词："第三条坑：只看价格不看体验。送人嘛，总想'差不多就行'——但'差不多'的眼镜戴上去鼻梁压痕、镜片反光、镜腿夹耳朵，对方不好意思说，但每次戴都在忍。建议：至少选纯钛镜架+防蓝光镜片组合，500左右，舒适度一眼可见的差别。"</li>
+        <li><strong>18-20秒：</strong>礼品卡方案。台词："实在怕选错？爱眼城有礼品卡——金额你来定，款式对方自己来挑。既有心意又有自由，最聪明的送法。情人节期间礼品卡还送精美礼盒包装。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"情人节你打算送什么？2月14号来爱眼城——帮你的礼物让在乎的人看得更清、戴得更舒服。评论区扣1送女朋友、2送男朋友、3选礼品卡。永州爱眼城，情人节的礼物不只是浪漫，更是实用。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三条避坑法则配"踩坑"vs"正确"对比画面；② 偷拍旧眼镜来测度数的真实场景展示；③ 礼品卡+精美礼盒实物展示；④ 粉色/红色情人节氛围置景。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">情人节甜蜜轻音乐</span> <span class="bgm-tag">温暖吉他</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#情人节礼物</span>
+      <span class="hashtag-tag">#送眼镜</span>
+      <span class="hashtag-tag">#眼镜穿搭</span>
+    </div>
+  </div>
+
+  <!-- Script 2 -->
+  <div class="script-card">
+    <span class="script-num">第29周 ②</span>
+    <h3>春节不打烊：除夕夜的爱眼城</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约50秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"除夕夜，永州的大街都关门了——但爱眼城的灯还亮着。不是因为我们不想回家，是因为有人需要我们。"</div>
+      <div class="highlight"><strong>版本B：</strong>"大年三十的晚上，你以为没有顾客了？错了——这一天，爱眼城反而特别忙。为什么？"</div>
+      <div class="highlight"><strong>版本C：</strong>"别人除夕在家吃年夜饭——我在爱眼城值班。这个故事说出来，你可能想不到。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>除夕值班场景。台词："大年三十，爱眼城值班到下午五点。为什么不打烊？因为每年都有人过年前才想起来要配眼镜——走亲戚要看清楚人、看电视不想眯眼、小孩寒假复查视力。这些需求不会因为过年就消失。"</li>
+        <li><strong>8-11秒：</strong>除夕典型顾客。台词："今天来了三类人：第一类——远道回家过年的永州人，平时在外地上班，回来才发现旧眼镜不行了，趁着假期赶紧配一副。第二类——家长带孩子来复查视力，寒假最后几天了，开学前必须搞定。"</li>
+        <li><strong>12-16秒：</strong>暖心瞬间。台词："第三类让我最感动——一个老先生，70多岁，子女都在外地。他来配老花镜，说'过年想看清电视上的春晚'。我帮他验了光、选了一副超轻老花镜，128块。他戴上后笑了——说'这下看清楚了'。那一刻我觉得，不开门对不起他。"</li>
+        <li><strong>17-20秒：</strong>值班结束+新年祝福。台词："五点关门，收拾完店里六点到家。年夜饭迟了半小时——但家人理解。做实体店15年了，过年不打烊不是口号，是习惯。新的一年，爱眼城继续在。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你们除夕在做什么？评论区聊聊——吃年夜饭的扣1，还在加班的扣2。永州爱眼城，过年也在，因为我们知道——有人需要看清这个世界，哪怕是除夕夜。新年快乐！"（微笑）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 真实记录除夕当天店内场景（自然光+暖灯）；② 老先生的故事可现场还原或叙述配画面；③ 窗外贴春联/灯笼与店内场景对比增加节日感；④ 结尾店长关门回家的镜头，配暖色调。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">春节温暖叙事曲</span> <span class="bgm-tag">轻钢琴+民乐元素</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#春节不打烊</span>
+      <span class="hashtag-tag">#除夕夜</span>
+      <span class="hashtag-tag">#实体店日常</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第30周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第30周 · 春节护眼 + 情人节种草</div>
+
+  <!-- Script 3 -->
+  <div class="script-card">
+    <span class="script-num">第30周 ①</span>
+    <h3>过年熬夜刷手机，眼睛干涩怎么救</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"过年熬夜刷手机看春晚抢红包——第二天眼睛干得像沙漠。这不是小事，这是眼睛在求救。"</div>
+      <div class="highlight"><strong>版本B：</strong>"春节假期，你的手机使用时间翻了几倍？眼睛干涩、红血丝、看东西模糊——这些症状春节后特别多。怎么自救？"</div>
+      <div class="highlight"><strong>版本C：</strong>"过年七天乐，眼睛七天累——熬夜+手机+烟花，三重伤害叠加。五条自救指南，春节必备。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>症状解释。台词："先说原因：熬夜时眨眼频率从正常的每分钟15到20次降到5到7次——泪液蒸发加速，角膜表面'干旱'。加上手机蓝光刺激，眼睛充血、干涩、异物感——严重的还会视力暂时模糊。这不是'休息一下就好'的事。"</li>
+        <li><strong>8-11秒：</strong>自救一+二。台词："第一条：20-20-20法则。看手机20分钟，抬头看20英尺（约6米）以外20秒。简单但有效，强迫眨眼。第二条：睡前热敷5分钟。用40℃左右的热毛巾敷眼，促进泪腺分泌——别用太烫的，眼睛比皮肤更怕高温。"</li>
+        <li><strong>12-15秒：</strong>自救三+四。台词："第三条：人工泪液。不是眼药水——是模拟天然泪液的润眼液，不含药物成分，可以随时滴。爱眼城有售，20一支，春节前后建议备一支。第四条：手机屏幕亮度降到50%以下，夜间模式全开——蓝光伤害减半。"</li>
+        <li><strong>16-20秒：</strong>自救五+提醒。台词："第五条最根本：控制熬夜时长。实在要刷手机，别超过凌晨1点。凌晨后泪液分泌本身就减少，再刷就是在让眼睛'裸奔'。如果春节后干涩超过3天不缓解——来爱眼城做个干眼检测，免费的。专业设备一测就知道是什么问题。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"过年你的手机使用时间比平时多了多少？评论区说说——1翻倍了，2差不多，3反而少了。截图保存这五条自救指南，春节用得上。来爱眼城做干眼检测——免费，过完年第一天就来。永州爱眼城，过年护眼不放假。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 熬夜场景模拟：暗光+手机屏幕+红血丝眼睛特写；② 热敷、20-20-20法则配实操画面；③ 人工泪液实物展示+正确滴眼手法演示；④ 干眼检测仪器实拍（增加专业感）。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">科普讲解轻节奏</span> <span class="bgm-tag">电子节拍</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#春节护眼</span>
+      <span class="hashtag-tag">#眼睛干涩</span>
+      <span class="hashtag-tag">#熬夜自救</span>
+    </div>
+  </div>
+
+  <!-- Script 4 -->
+  <div class="script-card">
+    <span class="script-num">第30周 ②</span>
+    <h3>情人节眼镜礼物合集，永州情侣必看</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"情人节还在送花送巧克力？2027年换一个思路——送眼镜。实用、走心、天天看得见。三套情侣组合，永州情侣闭眼入。"</div>
+      <div class="highlight"><strong>版本B：</strong>"他/她每天戴10小时的东西——你花几百块帮ta升级一下，这比什么花都长久。情人节眼镜礼物合集来了。"</div>
+      <div class="highlight"><strong>版本C：</strong>"情人节礼物排行榜：花会枯、巧克力会腻、但一副好眼镜——天天在ta脸上，天天想到你。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>组合一——甜蜜CP款。台词："组合一：甜蜜CP款。男生选哑光黑TR90半框，低调百搭；女生选玫瑰金纯钛细边框，温柔高级。两款风格互补但都好看，一起走在街上——你的眼镜和他的眼镜就是最好的情侣配饰。套装价520，寓意就在这里。"</li>
+        <li><strong>9-13秒：</strong>组合二——同款不同色。台词："组合二：同款不同色。选同一款镜架——比如极细β钛金丝框，但颜色不同：男生选枪灰、女生选银白。一样的造型、不同的味道。走在路上明显是'一对的'，但又不会一模一样太刻意。套装价480。"</li>
+        <li><strong>14-17秒：</strong>组合三——功能实用款。台词："组合三：功能实用款。他开车多——配偏光太阳镜夹片；她电脑多——配防蓝光镜片升级。不是浪漫款但是最实在款——你帮ta解决一个真实问题，比送玫瑰有用一百倍。套餐价360起。"</li>
+        <li><strong>18-20秒：</strong>情人节活动。台词："2月14号前后一周，爱眼城情人节专区：情侣套餐享9折、礼品卡送精美礼盒、到店试戴拍情侣照免费打印。来爱眼城，让这个情人节看得更清。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"三套组合你选哪个？1甜蜜CP 2同款不同色 3功能实用——评论区扣数字。情人节来爱眼城，我帮你们情侣配一副，比花更长久比巧克力更实在。永州爱眼城，情人节的礼物每天都在ta脸上。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三套组合各配情侣模特佩戴效果（可找真实情侣或店员搭档）；② "520""480""360"价格字幕配爱心动画；③ 礼盒包装实物展示+情侣照打印场景；④ 情人节粉色/红色氛围装饰。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">情人节甜蜜浪漫曲</span> <span class="bgm-tag">轻快恋爱风</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#情人节礼物</span>
+      <span class="hashtag-tag">#情侣眼镜</span>
+      <span class="hashtag-tag">#送眼镜</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第31周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第31周 · 孩子护眼 + 价格回应</div>
+
+  <!-- Script 5 -->
+  <div class="script-card">
+    <span class="script-num">第31周 ①</span>
+    <h3>春节孩子抱着手机不放？三招护眼必须做</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"春节假期，你家孩子一天看手机几小时？3小时？5小时？我见过8小时的——开学后近视直接涨了50度。三招护眼，每招都很简单但必须做。"</div>
+      <div class="highlight"><strong>版本B：</strong>"放寒假了，孩子抱着手机不放——你说了没用？不怪你，怪没有方法。三招实操护眼法，寒假照做开学不后悔。"</div>
+      <div class="highlight"><strong>版本C：</strong>"春节最让我头疼的不是忙——是开学后一波又一波近视加深的孩子。预防比矫正重要100倍。三招，家长码住。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>第一招——户外时间替代。台词："第一招：不是禁止玩手机，是用户外时间替代部分屏幕时间。每天至少2小时户外——不是运动量的问题，是自然光线的问题。户外光强是室内的100到1000倍，这种光刺激视网膜分泌多巴胺，能有效抑制眼轴增长。科学数据支撑的——不是老观念。"</li>
+        <li><strong>9-13秒：</strong>第二招——距离+时间管理。台词："第二招：管理使用距离和时间。手机距离眼睛至少30厘米、平板至少40厘米——不要躺着看！连续使用不超过25分钟，然后休息5分钟看远处。家长可以做一张'使用时间表'贴在墙上，孩子反而觉得有规矩好玩。"</li>
+        <li><strong>14-17秒：</strong>第三招——寒假验光。台词："第三招最重要：寒假结束前带孩子验一次光。很多孩子一学期下来度数已经变了，但自己不说——因为'好像还能看清'。50度以内的变化孩子感觉不到，但每学期涨50度，三年就是150度——从轻度变中度。早发现、早控制。"</li>
+        <li><strong>18-20秒：</strong>爱眼城服务+警示。台词："爱眼城青少年验光免费，寒假最后两周来最好——开学后忙，排不上。再说一句真话：如果孩子告诉你'眼睛酸'、'看黑板模糊'——别觉得是偷懒不想学习。大部分是真的看不清。负责任的家长，早行动。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你们家孩子寒假每天玩手机多长时间？评论区说说——看看谁家的最长（笑）。三招护眼截图保存，寒假照做。带孩子来爱眼城免费验光——我们也是做父母的，知道你的焦虑。永州爱眼城，护眼从娃娃抓起。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 户外活动场景可在永州本地公园拍摄（潇湘公园等）；② 手机/平板使用距离用对比画面（正确vs错误）；③ 时间管理表实物展示（可以手绘模板）；④ 店长语气亲和温暖，像邻居家长。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">家庭关怀风轻音乐</span> <span class="bgm-tag">温暖吉他</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#寒假护眼</span>
+      <span class="hashtag-tag">#青少年近视</span>
+      <span class="hashtag-tag">#家长必看</span>
+    </div>
+  </div>
+
+  <!-- Script 6 -->
+  <div class="script-card">
+    <span class="script-num">第31周 ②</span>
+    <h3>顾客：你们家最便宜的眼镜给我看看</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约50秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"顾客进门第一句话：'你们家最便宜的眼镜给我看看。'——每个眼镜店都会遇到这句话。今天说说我的真实回应。"</div>
+      <div class="highlight"><strong>版本B：</strong>"'最便宜的给我看看'——这是我在爱眼城听到最多的一句话。你猜我怎么回答？不是推销贵的，是——"</div>
+      <div class="highlight"><strong>版本C：</strong>"有人说'便宜就行'——我不反对。但我想让你知道：最便宜的眼镜和最贵的眼镜之间，到底差了什么。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>真实回应——先满足需求。台词："我的第一反应不是推贵的——是先问：'您是给自己配还是给孩子配？平时用手机多还是看远多？'因为我知道：说'最便宜'的人，不是不想花钱，是怕花了不值。需求搞清楚了，才能推荐真正适合的——哪怕是最便宜的。"</li>
+        <li><strong>8-12秒：</strong>最便宜方案展示。台词："爱眼城最便宜的眼镜：TR90镜架+基础树脂镜片，199起。它便宜吗？便宜。但你能得到什么？一副验光精准、加工合格、售后一年免费调整的眼镜——不是路边摊那种配完就走没人管的。便宜≠糊弄。"</li>
+        <li><strong>13-16秒：</strong>贵在哪的真相。台词："我也会告诉顾客贵的眼镜贵在哪：镜片的透光率差5%——你一天戴10小时就是在5%的灰度里看世界；镜架的重量差4克——一天下来鼻梁压痕肉眼可见；镀膜的耐磨性差3倍——半年后镜片开始花。这些差别你不对比不知道，对比了就明白了。"</li>
+        <li><strong>17-20秒：</strong>原则总结。台词："我的原则：不管你预算多少，我都先帮你验光、了解需求，再推荐最匹配的方案。199的配得精准，和1200的一样好用；199的配得不精准，还不如不配。预算是你的，专业是我的。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你配眼镜最看重什么？1便宜就行 2性价比 3品质体验——评论区选一个。不管选哪个，来爱眼城我都能满足——199起也有、1200也有，关键是帮你选对。永州爱眼城，便宜有底线，贵有道理。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 店长坐柜台前自然讲述，不做推销状；② 199/500/1200三个价位镜架实物并排展示差异；③ 新旧镜片透光率对比画面（对着光源拍）；④ 语气真诚不居高临下，强调"帮选对"而非"推贵的"。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">日常对话风轻节奏</span> <span class="bgm-tag">咖啡厅氛围</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#眼镜价格</span>
+      <span class="hashtag-tag">#配镜攻略</span>
+      <span class="hashtag-tag">#实体店日常</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第32周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第32周 · 元宵敬老 + 2月榜单</div>
+
+  <!-- Script 7 -->
+  <div class="script-card">
+    <span class="script-num">第32周 ①</span>
+    <h3>元宵节团圆，带父母来爱眼城查视力</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"元宵节你回家了吗？回家的时候，留意一下爸妈看电视的距离——越来越近了吗？那不是习惯，是视力在退。"</div>
+      <div class="highlight"><strong>版本B：</strong>"元宵团圆，一家人围坐看电视——你有没有发现爸妈调的音量越来越大、坐得越来越近？这不是小事。"</div>
+      <div class="highlight"><strong>版本C：</strong>"回家过年最值得做的一件事——不是买保健品，是带父母查一次视力。元宵节，给爸妈的眼睛也团圆一下。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>老年人视力退化真相。台词："50岁以上，视力退化是自然规律——但很多人不知道退化分两种：一种是老花，远近切换困难，看手机要拿远才能看清；一种是病理性的——白内障、青光眼、黄斑病变。后者如果不早发现，可能不可逆。"</li>
+        <li><strong>8-11秒：</strong>自测方法。台词："简易自测：让爸妈交替看远处和手机近处——如果切换时明显模糊需要几秒才看清，老花度数可能变了。如果单眼看出现扭曲、黑影、颜色变暗——这不是老花，必须去医院检查。爱眼城可以帮你做基础筛查。"</li>
+        <li><strong>12-15秒：</strong>老花镜误区。台词："三大误区：第一——在地摊买10块钱的老花镜。这种镜左右度数一样，但99%的人左右眼度数不同——戴久了加速视力退化。第二——戴别人的老花镜。每个人的老花度数、瞳距都不一样，借戴等于乱配。第三——不换镜。老花镜每2到3年需要升级一次，度数在变。"</li>
+        <li><strong>16-20秒：</strong>爱眼城老年服务。台词："元宵节前后，爱眼城推出敬老专区：60岁以上老人免费验光+免费基础视力筛查、老花镜定制128起（左右度数分开配、瞳距精准测量）、已有老花镜免费检测度数是否还合适。带爸妈来，一个下午搞定——比送什么保健品都实在。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你爸妈的老花镜用了多久了？1不到一年 2一到三年 3超过三年——评论区选一个。超过三年的赶紧带ta来爱眼城检测一下。元宵节团圆，让爸妈也看清你的脸。永州爱眼城，敬老不分节日，但节日更要行动。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 模拟老人看电视越坐越近的真实场景；② 自测方法配实操演示画面；③ 地摊老花镜vs爱眼城定制老花镜对比展示；④ 敬老专区场景实拍（老人验光的温暖画面）。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">温暖关怀叙事曲</span> <span class="bgm-tag">轻钢琴</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#元宵节</span>
+      <span class="hashtag-tag">#老年人护眼</span>
+      <span class="hashtag-tag">#老花镜</span>
+    </div>
+  </div>
+
+  <!-- Script 8 -->
+  <div class="script-card">
+    <span class="script-num">第32周 ②</span>
+    <h3>2月最受欢迎镜架TOP5，永州人都爱哪款</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"2月过了大半了，永州人在爱眼城用真金白银投票——最受欢迎的5款镜架，今天揭晓。"</div>
+      <div class="highlight"><strong>版本B：</strong>"想知道永州人2月都在配什么眼镜？这5款镜架的销量加起来占了全店一半以上——数据说话，不吹不黑。"</div>
+      <div class="highlight"><strong>版本C：</strong>"2月最受欢迎镜架TOP5——从过年配的'走亲戚款'到情人节配的'甜蜜款'，每一款都是市场验证过的。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-6秒：</strong>TOP5——玫瑰金纯钛细边框。台词："第五名：玫瑰金纯钛细边框。2月情人节专区最热款——温柔、高级、百搭，女生首选。卖得多的原因是'送人+自戴'双用途，一个月配了60多副。"</li>
+        <li><strong>7-9秒：</strong>TOP4——哑光黑TR90半框。台词："第四名：哑光黑TR90半框。男生通勤首选——低调、轻便、百搭。很多男生2月来配眼镜就点名这款，不用犹豫，试了就走。"</li>
+        <li><strong>10-12秒：</strong>TOP3——复古微椭圆金属框。台词："第三名：复古微椭圆金属框。文艺青年的最爱——2月春节走亲戚，戴这款显得有文化又不显刻意。很多回永州过年的人专门来配。"</li>
+        <li><strong>13-15秒：</strong>TOP2——雾蓝透明板材框。台词："第二名：雾蓝透明板材框。2027开年爆款继续热销——这个颜色谁戴谁好看，方脸圆脸都能驾驭。2月销量比1月还高，口碑传开了。"</li>
+        <li><strong>16-20秒：</strong>TOP1——纯钛极细细边框。台词："第一名：纯钛极细细边框。不意外吧？连续三个月销冠——6克不到、不过敏、什么场合都合适。2月卖了80多副，其中一半是老顾客推荐来的。好东西不需要推广——用过的人会替你说话。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"这5款你戴了哪款？评论区扣对应数字——1到5让我看看永州人的品味。3月马上来了，又有新款上架——关注我，第一时间看新品。永州爱眼城，数据说话，口碑验证。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① TOP5倒序揭晓配排名数字动画；② 每款展示5秒特写+真人佩戴；③ 销量数据字幕增强说服力（"60+副""80+副"）；④ 背景用"2月TOP榜"字样装饰增加仪式感。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">榜单揭晓节奏BGM</span> <span class="bgm-tag">轻快鼓点</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#2月榜单</span>
+      <span class="hashtag-tag">#镜架推荐</span>
+      <span class="hashtag-tag">#永州人气款</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ 底部导航 ============ -->
+<div class="nav-bottom">
+  <a href="month-07-2027-01.html">
+    <div class="nav-label">← 上一月</div>
+    2027年1月
+  </a>
+  <span style="color:#999;font-size:15px;font-weight:600;">2027年2月</span>
+  <a href="month-09-2027-03.html">
+    <div class="nav-label">下一月 →</div>
+    2027年3月
+  </a>
+</div>
+
+<div class="footer">
+  © 2027 永州爱眼城眼镜 · 短视频内容策划 · 仅供内部使用
+</div>
+
+</div>
+</body>
+</html>
