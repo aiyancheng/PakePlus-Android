@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城 · 2026年7月短视频脚本</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#fdf6f0;color:#333;line-height:1.7}
+  header{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;padding:20px 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+  header .inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .back-btn{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);color:#fff;padding:6px 14px;border-radius:20px;text-decoration:none;font-size:13px;transition:.2s}
+  .back-btn:hover{background:rgba(255,255,255,.35)}
+  .header-title{flex:1}
+  .header-title h1{font-size:20px;font-weight:700}
+  .header-title p{font-size:13px;opacity:.85;margin-top:2px}
+  .badge{background:rgba(255,255,255,.25);border-radius:12px;padding:3px 10px;font-size:12px}
+  main{max-width:900px;margin:28px auto;padding:0 16px}
+  .month-intro{background:#fff;border-left:5px solid #c0392b;border-radius:8px;padding:18px 22px;margin-bottom:28px;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+  .month-intro h2{font-size:17px;color:#c0392b;margin-bottom:6px}
+  .month-intro p{font-size:14px;color:#555}
+  .week-title{font-size:16px;font-weight:700;color:#c0392b;margin:32px 0 14px;padding:8px 14px;background:#fff3f0;border-radius:6px;border-left:4px solid #c0392b}
+  .script-card{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:24px;overflow:hidden}
+  .script-header{background:linear-gradient(90deg,#c0392b,#e95a4b);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px}
+  .script-num{font-size:13px;opacity:.85}
+  .script-title{font-size:17px;font-weight:700;margin-top:4px}
+  .script-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  .tag{background:rgba(255,255,255,.25);border-radius:12px;padding:2px 10px;font-size:12px}
+  .duration{font-size:13px;background:rgba(255,255,255,.2);border-radius:12px;padding:3px 10px;white-space:nowrap;align-self:flex-start}
+  .script-body{padding:20px}
+  .section{margin-bottom:18px}
+  .section-label{display:inline-block;background:#c0392b;color:#fff;font-size:12px;padding:3px 10px;border-radius:4px;margin-bottom:10px;font-weight:700}
+  .hook-box{background:#fff8f7;border:1px solid #f5c6c0;border-radius:8px;padding:14px 16px}
+  .hook-version{margin-bottom:8px;font-size:14px}
+  .hook-version:last-child{margin-bottom:0}
+  .hook-label{display:inline-block;background:#e74c3c;color:#fff;font-size:11px;padding:1px 7px;border-radius:3px;margin-right:6px}
+  .timeline{background:#f9f9f9;border-radius:8px;padding:14px 16px;border:1px solid #eee}
+  .tl-row{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+  .tl-row:last-child{margin-bottom:0}
+  .tl-time{background:#c0392b;color:#fff;font-size:11px;padding:2px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+  .tl-content{font-size:14px;color:#444}
+  .tl-action{font-weight:600;color:#c0392b}
+  .tl-line{font-size:13px;color:#666;margin-top:3px;background:#fff;border-left:3px solid #e74c3c;padding:4px 8px;border-radius:0 4px 4px 0}
+  .ending-box{background:#fff8f0;border:1px solid #f5d6b0;border-radius:8px;padding:14px 16px;font-size:14px}
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:600px){.meta-grid{grid-template-columns:1fr}}
+  .meta-item{background:#f7f7f7;border-radius:8px;padding:12px 14px;border:1px solid #eee}
+  .meta-item h4{font-size:12px;color:#c0392b;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+  .meta-item p,.meta-item ul{font-size:13px;color:#555}
+  .meta-item ul{padding-left:16px}
+  .meta-item li{margin-bottom:3px}
+  .hashtags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .hashtag{background:#ffeaea;color:#c0392b;border-radius:12px;padding:2px 10px;font-size:12px;border:1px solid #f5c6c0}
+  .note-tip{background:#fffbea;border:1px solid #f0e060;border-radius:8px;padding:10px 14px;font-size:13px;color:#666;margin-top:8px}
+  nav.pagination{display:flex;justify-content:space-between;align-items:center;padding:28px 0 40px;border-top:2px solid #f0e0de;margin-top:20px}
+  .page-btn{display:inline-flex;align-items:center;gap:6px;background:#c0392b;color:#fff;text-decoration:none;padding:10px 20px;border-radius:24px;font-size:14px;font-weight:600;transition:.2s;box-shadow:0 2px 8px rgba(192,57,43,.3)}
+  .page-btn:hover{background:#a93226}
+  .page-btn.disabled{background:#ccc;pointer-events:none;box-shadow:none}
+  .page-label{font-size:13px;color:#999}
+  footer{text-align:center;padding:16px;font-size:12px;color:#aaa;background:#f5ede9}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a href="../index.html" class="back-btn">← 返回首页</a>
+    <div class="header-title">
+      <h1>永州爱眼城眼镜 · 短视频脚本库</h1>
+      <p>2026年7月 · ☀️ 盛夏护眼 · 儿童近视防控</p>
+    </div>
+    <span class="badge">第1-4周 共8条</span>
+  </div>
+</header>
+
+<main>
+
+  <div class="month-intro">
+    <h2>📋 本月内容策略</h2>
+    <p>7月暑假高峰期，核心目标人群为<strong>永州本地家长</strong>。重点传递「暑假是近视加深最危险的季节」焦虑感，同时用专业内容建立爱眼城验光师形象。前两周主打科普建立信任，后两周转向产品种草与情感共鸣，形成「认知→信任→到店」转化链路。发布时间建议：每周二/四晚18:30-20:00。</p>
+  </div>
+
+  <!-- ==================== 第1周 ==================== -->
+  <div class="week-title">📅 第1周（7月1日—7月7日）</div>
+
+  <!-- 脚本01 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 01 · 第1周① · 科普/干货</div>
+        <div class="script-title">暑假是近视加深最快的季节！永州家长必看</div>
+        <div class="script-tags">
+          <span class="tag">📚 科普</span>
+          <span class="tag">👨‍👩‍👧 亲子</span>
+          <span class="tag">🔥 暑假</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：35-40秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【镜头正对验光师，语速快、表情严肃】「暑假两个月，近视能加深100度！家长你知道吗？」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【特写孩子揉眼睛的镜头，字幕弹出】「放暑假了，你家孩子的眼睛……在悄悄变坏！」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【验光师拿着眼镜片直视镜头】「做了十年眼镜，我最怕的就是暑假！告诉你为什么——」</div>
+        </div>
+        <div class="note-tip">💡 拍摄提示：钩子段建议正面近景，眼神直视镜头，语气要有紧迫感，前3秒决定是否被划走。</div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-8秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【验光师站在验光室，手持近视对照表】</div>
+              <div class="tl-line">「暑假孩子没有户外运动，全天抱着手机平板，眼睛一直处于超负荷近距离用眼状态——这是近视飙升最快的时期！」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">8-14秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【切换到数据图表/手写数字特写】</div>
+              <div class="tl-line">「我们店每年暑假后回来复查的孩子，平均涨了75-100度。有一个12岁小朋友，7月初550度，开学复查直接到了650度！」</div>
+              <div class="tl-line" style="margin-top:4px">「一个暑假，100度没了。」（放慢语速，停顿强调）</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">14-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【回到正面，列举三点建议】</div>
+              <div class="tl-line">「所以，暑假护眼三件事家长要做到：第一，每天保证<strong>2小时户外活动</strong>；第二，连续用眼不超过<strong>40分钟</strong>就要休息；第三，<strong>暑假前来验光</strong>，掌握孩子的基础度数！」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【验光师微笑，语气亲切】「你家孩子今年暑假有没有来验过光？没有的话，评论区扣个"1"，我教你怎么在家初步判断孩子视力有没有下降。爱眼城在永州，专业验光不收费，保护孩子眼睛趁早！」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 主讲人穿白大褂/专业工装，站在验光仪器前提升权威感</li>
+            <li>② 数据部分可用手写板/白板写出"100度"强化视觉冲击</li>
+            <li>③ 中间可插入1-2秒小朋友在验光的实拍素材（家长同意后）</li>
+            <li>④ 结尾露出门店环境，加店名水印</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>前段用轻微紧张感的背景音（如轻弦乐+鼓点），数据段配"叮"的提示音效，结尾切换轻松温暖的钢琴曲。整体BGM音量压低，以人声为主。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#暑假近视防控</span>
+            <span class="hashtag">#儿童护眼</span>
+            <span class="hashtag">#永州眼镜店</span>
+            <span class="hashtag">#暑假家长必看</span>
+            <span class="hashtag">#近视防控</span>
+            <span class="hashtag">#永州妈妈</span>
+            <span class="hashtag">#儿童眼健康</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- end script-card -->
+
+  <!-- 脚本02 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 02 · 第1周② · 日常/情感</div>
+        <div class="script-title">带孩子来爱眼城验光，今天遇到了一个让我很感动的妈妈</div>
+        <div class="script-tags">
+          <span class="tag">💛 日常</span>
+          <span class="tag">❤️ 情感</span>
+          <span class="tag">👩 妈妈</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：40-50秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师语气感慨，轻声说】「今天遇到一个妈妈，看完之后我一直在想她说的那句话……」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【空镜：验光室门口，然后切到讲述画面】「做眼镜这行，最难受的不是累，是看到这种家长……」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【直视镜头，眼眶微红】「今天一个小朋友的妈妈，让我在心里把她夸了三遍。」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【语速平缓，像在讲故事】</div>
+              <div class="tl-line">「今天来了一个妈妈，带着七岁的女儿，说孩子最近老爱眯眼看东西，想来查一查。」</div>
+              <div class="tl-line" style="margin-top:4px">「一验光，发现已经有150度近视了。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-16秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【稍作停顿，情感递进】</div>
+              <div class="tl-line">「然后那个妈妈当场就哭了，说：'我早就发现她眯眼了，但我一直觉得她可能只是习惯，一直没当回事……'」</div>
+              <div class="tl-line" style="margin-top:4px">「我给她解释说，7岁150度还属于早期，现在干预完全来得及。她才稍微平静一点。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">16-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【表情变得认真】</div>
+              <div class="tl-line">「让我感动的是——她临走前说：'以后每个学期我都来复查一次，一次都不落。'」</div>
+              <div class="tl-line" style="margin-top:4px">「这句话，说明这个妈妈真的把孩子的眼睛放心里了。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【语气温柔，望向镜头】「孩子眯眼、皱眉、歪头看东西，这些都可能是视力问题的信号。永州的家长们，暑假是黄金干预期，不要等开学才想起来查视力。爱眼城欢迎你带孩子来，免费验光，不怕烦。评论区告诉我，你家孩子上次查视力是什么时候？」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 以"讲故事"为核心，画面以讲述者面部特写为主</li>
+            <li>② 可在适当位置插入验光室实景空镜，增加真实感</li>
+            <li>③ 表情要有层次：开头神秘→中间难过→结尾温暖</li>
+            <li>④ 无需特效，真实感比精致感更重要</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>全程轻柔钢琴背景音乐，稍带温情感，不要节奏感强的曲子。推荐类似《kiss the rain》风格的轻音乐，烘托情感氛围。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#眼镜店日常</span>
+            <span class="hashtag">#永州妈妈</span>
+            <span class="hashtag">#儿童近视</span>
+            <span class="hashtag">#护眼日记</span>
+            <span class="hashtag">#暑假</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#感动瞬间</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- end script-card -->
+
+  <!-- ==================== 第2周 ==================== -->
+  <div class="week-title">📅 第2周（7月8日—7月14日）</div>
+
+  <!-- 脚本03 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 03 · 第2周① · 科普/干货</div>
+        <div class="script-title">角膜塑形镜（OK镜）到底靠不靠谱？爱眼城验光师告诉你真相</div>
+        <div class="script-tags">
+          <span class="tag">🔬 深度科普</span>
+          <span class="tag">👓 OK镜</span>
+          <span class="tag">💡 真相揭秘</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：40-50秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师拿起OK镜盒子，表情严肃】「OK镜，一副要几千块！花这个钱之前，你得先看这个视频！」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【直视镜头，用手比划"2"】「角膜塑形镜，两件事不搞清楚不要乱配！」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【反问语气】「OK镜真的能控制近视？还是智商税？做眼镜十年，今天说实话——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【验光师手持OK镜展示，配字幕】</div>
+              <div class="tl-line">「OK镜，学名角膜塑形镜，是晚上睡觉戴、白天不用戴眼镜的硬性隐形眼镜。它的原理是通过物理方式轻轻压平角膜，让白天视力暂时清晰。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【切"优点"字幕卡/手写板】</div>
+              <div class="tl-line">「靠不靠谱？科学研究显示，OK镜对8-18岁青少年近视控制有效率在<strong>50%-70%</strong>，是目前主流的近视控制手段之一，国家也批了用于临床。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【切"注意事项"，表情认真】</div>
+              <div class="tl-line">「但要注意：第一，必须先做专业检查，角膜曲率不合适的不能戴；第二，清洁护理要非常严格，不然角膜感染风险很高；第三，家长要监督孩子每天护理，不能偷懒！」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【语气诚恳】「OK镜靠不靠谱，关键看适不适合你家孩子。爱眼城可以做专业的角膜曲率和眼轴检查，判断孩子是否适合配OK镜。想了解的家长，评论区扣"OK"，我一一回复你们。」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 道具：OK镜护理套装、镜片展示盒摆在桌上，增加可信度</li>
+            <li>② 数据部分用字幕强调数字（50%-70%），视觉冲击更强</li>
+            <li>③ 中间可插入门店验光仪器的操作画面，体现专业性</li>
+            <li>④ 表情前半段轻松，后半段严肃，形成反差感</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>科技感轻音乐，节奏稳定清晰，类似"科普解说风"背景乐。推荐抖音热门科普类BGM，音量30%以下不盖人声。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#OK镜</span>
+            <span class="hashtag">#角膜塑形镜</span>
+            <span class="hashtag">#近视控制</span>
+            <span class="hashtag">#儿童近视防控</span>
+            <span class="hashtag">#永州眼镜店</span>
+            <span class="hashtag">#暑假护眼</span>
+            <span class="hashtag">#眼科科普</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- end script-card -->
+
+  <!-- 脚本04 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 04 · 第2周② · 科普/实用</div>
+        <div class="script-title">夏天戴眼镜总起雾？三个办法立刻解决</div>
+        <div class="script-tags">
+          <span class="tag">💡 实用技巧</span>
+          <span class="tag">😅 生活痛点</span>
+          <span class="tag">👓 眼镜护理</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：30-35秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【夸张演示眼镜起雾的画面，模糊特写】「夏天戴眼镜最崩溃的瞬间——出门10秒，整个世界消失了！」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【镜头对准起雾的镜片，语气无奈】「从有空调的地方出来，直接变盲人……戴眼镜的朋友有没有这个痛苦？」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【快速直接】「眼镜起雾，三秒解决！记好这三招——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-8秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【拿出防雾喷剂，展示喷涂过程】</div>
+              <div class="tl-line">「<strong>方法一：防雾喷剂。</strong>喷在镜片上，均匀擦开，防雾时间可以持续2-4小时，超市或眼镜店都能买到，5块钱左右，非常便宜。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">8-13秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示镜鼻位置调整动作】</div>
+              <div class="tl-line">「<strong>方法二：调整眼镜鼻托位置。</strong>很多人起雾是因为眼镜贴脸太近，热气出不去。把眼镜稍微往前推一点，留出空隙，就好多了。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">13-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【拿出防雾镜片样品展示】</div>
+              <div class="tl-line">「<strong>方法三：换防雾镜片。</strong>这是治本的方法，镜片表面有特殊镀膜，即使温差大也不会起雾。爱眼城目前有好几款防雾镜片，戴口罩、夏天进出空调房都完全没问题。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【轻松语气，微笑对镜头】「三招学会了吗？最彻底的还是换一副防雾镜片，一劳永逸。永州的朋友可以来爱眼城试一试，我们有免费的防雾测试！评论区告诉我，你今年夏天有没有被眼镜起雾折磨过？」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 开头用起雾镜片的特写画面，视觉冲击感强</li>
+            <li>② 三个方法用字幕数字"①②③"强调，便于观众记忆</li>
+            <li>③ 演示动作要慢、清晰，让观众能看懂</li>
+            <li>④ 结尾展示防雾镜片产品，自然带货</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>轻快活泼风格，节奏感稍强，配合"解决问题"的愉悦感。可用抖音流行的轻松教学类BGM，整体氛围要轻松不严肃。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#眼镜起雾</span>
+            <span class="hashtag">#戴眼镜的烦恼</span>
+            <span class="hashtag">#夏日护眼</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#防雾镜片</span>
+            <span class="hashtag">#眼镜小技巧</span>
+            <span class="hashtag">#生活技巧</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- end script-card -->
+
+
+  <!-- ==================== 第3周 ==================== -->
+  <div class="week-title">📅 第3周（7月15日—7月21日）</div>
+
+  <!-- 脚本05 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 05 · 第3周① · 种草/推荐</div>
+        <div class="script-title">暑假护眼三件套，永州家长收藏备用</div>
+        <div class="script-tags">
+          <span class="tag">🛍 种草</span>
+          <span class="tag">👨‍👩‍👧 亲子</span>
+          <span class="tag">📦 好物推荐</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：35-40秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师快速拿起三样东西放在画面中】「暑假护眼，只需要这三样东西！第一个你在超市就能买到——」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【展示一个精致收纳包，从里面逐一拿出产品】「来，给大家看我的'暑假护眼三件套'，每个永州有孩子的家庭都建议有一套。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【直接切主题】「永州的家长们，不知道怎么给孩子护眼？这三个东西就够了，收藏这个视频别划走——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-8秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【产品①展示：眼保健贴或热敷眼罩】</div>
+              <div class="tl-line">「<strong>第一件：蒸汽热敷眼罩。</strong>每天学习完之后敷一片，缓解眼部疲劳，促进局部血液循环。小学阶段一次20分钟就可以，超市就有卖，不需要贵。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">8-13秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【产品②展示：儿童叶黄素】</div>
+              <div class="tl-line">「<strong>第二件：儿童叶黄素。</strong>叶黄素是视网膜黄斑区的重要营养素，孩子如果蔬菜吃得少，补充一点是有帮助的。建议选正规品牌，每天吃一片就可以。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">13-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【产品③展示：防蓝光护目镜或护眼台灯】</div>
+              <div class="tl-line">「<strong>第三件：无频闪护眼台灯。</strong>国家标准是AA级照度、Ra95以上显色指数。孩子做作业，光不对同样伤眼。爱眼城有几款经过实测的合格台灯，家长可以来看看。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【微笑，展示产品合集画面】「三件套，加起来百来块，但能给孩子的眼睛建立一道防线。需要的话截图保存一下。永州的小伙伴，如果有验光需求，暑假来爱眼城找我，免费验光加这些产品推荐，一并给你安排。评论区告诉我，这三件你家有哪几件？」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 三个产品依次清晰展示，每个产品给2-3秒特写</li>
+            <li>② 可用"开箱式"把产品从袋子逐一拿出，增加视觉期待感</li>
+            <li>③ 结尾把三件产品并排铺开，画面整洁有货架感</li>
+            <li>④ 语气自然不做作，避免过度推销感</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>轻快温馨风，推荐Vlog常用日系轻音乐，节奏明快但不喧宾夺主。产品展示时可加"叮"音效强调每件产品。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#暑假护眼</span>
+            <span class="hashtag">#护眼好物</span>
+            <span class="hashtag">#家长必看</span>
+            <span class="hashtag">#儿童眼健康</span>
+            <span class="hashtag">#护眼三件套</span>
+            <span class="hashtag">#永州妈妈群</span>
+            <span class="hashtag">#育儿好物推荐</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 脚本06 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 06 · 第3周② · 日常/情感</div>
+        <div class="script-title">今天一口气接待了8个孩子验光，说几句掏心窝的话</div>
+        <div class="script-tags">
+          <span class="tag">💛 日常</span>
+          <span class="tag">❤️ 真心话</span>
+          <span class="tag">🏪 门店故事</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：40-50秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师略显疲惫但语重心长】「今天从早上9点到下午6点，连续验了8个孩子的光。下班前，有几句话我必须说出来。」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【快速展示几个验光单的叠加速放】「8张验光单，8个孩子。一个共同的问题——家长来得太晚了。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【表情认真】「验了十年光，看了无数个孩子。今天集中有一些话想对永州的爸妈说——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【坐在验光室，语气平和】</div>
+              <div class="tl-line">「说实话，今天这8个孩子里面，有5个是第一次来验光。一个9岁的孩子已经300度了，之前从来没查过。还有一个12岁的姑娘，一只眼350度，另一只75度——相差这么大自己都不知道。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【表情变得认真】</div>
+              <div class="tl-line">「第二个想说的是：<strong>不要只等学校筛查。</strong>学校体检那个视力表检查是初筛，很多问题查不出来。我遇到过好几个孩子，学校体检说'正常'，来我们这一查，散光度数已经很高了。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【语气诚恳，放慢语速】</div>
+              <div class="tl-line">「第三：孩子说'看不清'的时候，不要骂他、不要不当回事。早发现早干预，5岁到12岁是黄金期。过了这个阶段，很多方法效果就打折扣了。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【温柔一笑】「今天一口气说了这么多，是真的着急。永州的家长们，这个暑假——带孩子来做一次专业验光，不要钱的。我是爱眼城的验光师，地址在评论区置顶，随时来。」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 拍摄场景选在安静的验光室，灯光柔和</li>
+            <li>② 前半段可穿插几张手写的验光度数纸条特写（信息打码）</li>
+            <li>③ 语气要真诚不演，不用夸张表情</li>
+            <li>④ 结尾给出门店地址/招牌一个自然镜头</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>安静轻柔的吉他或钢琴独奏，营造深夜谈话的亲密感。整体音量控制在背景层级，突出人声。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#验光师日常</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#儿童近视</span>
+            <span class="hashtag">#掏心窝子</span>
+            <span class="hashtag">#暑假</span>
+            <span class="hashtag">#家长必看</span>
+            <span class="hashtag">#眼健康</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== 第4周 ==================== -->
+  <div class="week-title">📅 第4周（7月22日—7月31日）</div>
+
+  <!-- 脚本07 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 07 · 第4周① · 种草/测评</div>
+        <div class="script-title">儿童近视防控镜片，爱眼城实测三款对比</div>
+        <div class="script-tags">
+          <span class="tag">🔬 硬核测评</span>
+          <span class="tag">👓 镜片对比</span>
+          <span class="tag">💰 选购指南</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：40-50秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【三副镜片并排摆在桌上】「儿童近视防控镜片，市面上主流三家：蔡司、豪雅、依视路。真实差距有多大？今天直接对比。」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【验光师拿出一张对比表格】「给孩子选防控镜片，别只比价格。今天在永州爱眼城，三款主流防控镜片正面PK。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【直接切入】「上次有妈妈私信问我该给孩子选哪个牌的防控镜片，今天我把店里最常用的三款都拿出来，你们自己看——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【依次展示三款镜片，配字幕标签】</div>
+              <div class="tl-line">「第一组：蔡司小乐圆，用的是同心环带设计，数据漂亮——临床试验显示近视控制效果60%左右，缺点是价格偏高，两千起步。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【切换镜片样品+价格标签】</div>
+              <div class="tl-line">「第二组：豪雅新乐学，采用多区正向光学离焦技术，效果也非常稳定，市场认可度高，大概1500起。很多家长都选这款。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【切换第三款+总结对比】</div>
+              <div class="tl-line">「第三组：依视路星趣控，用的是梯度离焦技术，价格亲民一些，1200左右。预算有限的家庭可以考虑。」</div>
+              <div class="tl-line" style="margin-top:4px">「结论：<strong>不买最贵，要买最适合。</strong>建议家长带孩子先来验光，我们再根据度数和用眼习惯推荐。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【微笑展示三款镜片合集】「看完对比，心里有底了吧？想知道你家孩子适合哪款，在评论区发"镜片+孩子年龄"，我挨个回复。来爱眼城，验光免费，推荐不讲虚的。永州本地的朋友，欢迎直接到店里来体验！」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 三款镜片需用标签标注品牌名称，字幕+实物标签双重标识</li>
+            <li>② 特写镜头展示镜片上的环带/离焦纹理（需要微距镜头或手机微距模式）</li>
+            <li>③ 价格用字幕清晰标注，字体醒目</li>
+            <li>④ 风格走硬核测评路线，少用花哨转场</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>科技评测风的电子轻音乐，节奏清晰但不抢。不可用过于热血/炫酷的BGM，保持专业但亲和的调性。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#近视防控镜片</span>
+            <span class="hashtag">#儿童眼镜</span>
+            <span class="hashtag">#镜片对比</span>
+            <span class="hashtag">#蔡司小乐圆</span>
+            <span class="hashtag">#豪雅新乐学</span>
+            <span class="hashtag">#依视路星趣控</span>
+            <span class="hashtag">#永州验光</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 脚本08 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 08 · 第4周② · 科普/情感</div>
+        <div class="script-title">孩子说看黑板看不清，家长的第一反应有多重要</div>
+        <div class="script-tags">
+          <span class="tag">📚 科普</span>
+          <span class="tag">👨‍👩‍👧 亲子教育</span>
+          <span class="tag">⚠️ 家长须知</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：35-45秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【严肃直视镜头】「你家孩子说"看不清黑板"的时候，如果你说了这句话，你就是在害他！」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【场景重现：孩子说看不清，家长回"你坐前面一点不就行了"】「这句回答，我每年听过不下一百遍——也是最大的误区。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【快速提问】「孩子第一次说"看不清"的时候，家长最常见的三种错误反应是什么？第一条就伤眼睛——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【例举三种错误反应，用字幕弹出】</div>
+              <div class="tl-line">「错误一：<strong>'坐前面一点就行了'</strong>—— 这等于把问题隐藏掉，孩子近视了不去查，度数会继续加深。」</div>
+              <div class="tl-line" style="margin-top:4px">「错误二：<strong>'配眼镜度数会越戴越深'</strong>—— 这是谣言。不戴眼镜反而会因为看不清而眯眼看，更伤眼。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【语气加重，强调第三个误区】</div>
+              <div class="tl-line">「错误三：<strong>'去眼镜店随便配一副就行了'</strong>—— 配镜不是买东西，是医疗矫正行为。一定要做专业验光，了解眼轴长度、角膜曲率这些关键数据。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【给正确答案】</div>
+              <div class="tl-line">「正确做法就三步：第一，立刻预约到专业机构做全面验光；第二，查眼轴、查角膜曲率；第三，在验光师指导下选择合适的防控方案。近视不可逆，但可以控制。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【语气放软，转为温和建议】「孩子第一次说看不清的时候，你的反应决定了他的眼健康走向。永州的爸爸妈妈们，暑假就是最好的检查窗口。我在爱眼城，随时等你带孩子来——一次专业验光，给孩子一个明亮未来。觉得有用的话，转发给身边的家长！」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 开头推荐版本B情景演绎：一个孩子说"看不清"+家长回答"坐前面"，表演自然</li>
+            <li>② 三个错误反应配"X"型红叉字幕，正确做法配"√"绿色对钩</li>
+            <li>③ 中间插入专业验光仪器的操作画面体现专业度</li>
+            <li>④ 结尾加入门店门头或验光室实景，增强转化</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>前半段用略微紧张/悬念感的短音效，错误反应部分可配"叮"的警示音。后半段切换温暖钢琴或吉他，营造安心感。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#孩子近视</span>
+            <span class="hashtag">#家长必知</span>
+            <span class="hashtag">#近视误区</span>
+            <span class="hashtag">#儿童护眼</span>
+            <span class="hashtag">#暑假验光</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#眼睛健康</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================ 页面导航 ================ -->
+  <nav class="pagination">
+    <span class="page-btn disabled">← 已是第一月</span>
+    <span class="page-label">2026年7月 · 第1-4周</span>
+    <a href="month-02-2026-08.html" class="page-btn">8月（开学备战）→</a>
+  </nav>
+
+</main>
+<footer>永州爱眼城眼镜 · 短视频内容规划 · 2026年</footer>
+</body>
+</html>
