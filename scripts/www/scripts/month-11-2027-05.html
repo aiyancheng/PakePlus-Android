@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 2027年5月短视频脚本 | 亲情月 · 母亲节/520</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f0eb; color: #2c2c2c; line-height: 1.7; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* 顶部导航 */
+.top-nav { background: #c0392b; padding: 14px 0; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.top-nav a { color: #fff; text-decoration: none; font-size: 15px; padding: 8px 20px; border: 1.5px solid rgba(255,255,255,0.6); border-radius: 20px; transition: all 0.3s; }
+.top-nav a:hover { background: rgba(255,255,255,0.15); }
+
+/* 头部 */
+.header { background: linear-gradient(135deg, #c0392b 0%, #d3545d 50%, #c0392b 100%); color: #fff; padding: 48px 20px 40px; text-align: center; }
+.header .month-tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 18px; border-radius: 20px; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+.header h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+.header h2 { font-size: 22px; font-weight: 400; opacity: 0.9; margin-bottom: 4px; }
+.header .meta { font-size: 14px; opacity: 0.7; margin-top: 12px; }
+
+/* 内容区 */
+.content { padding: 32px 0 20px; }
+.script-card { background: #fff; border-radius: 12px; padding: 32px 28px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 5px solid #c0392b; transition: box-shadow 0.3s; }
+.script-card:hover { box-shadow: 0 4px 20px rgba(192,57,43,0.15); }
+
+/* 脚本头部 */
+.script-header { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed #e8e0d8; }
+.script-num { background: #c0392b; color: #fff; font-size: 20px; font-weight: 700; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.script-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.tag-week { background: #fdecea; color: #c0392b; }
+.tag-series { background: #eaf2f8; color: #2471a3; }
+.tag-duration { background: #eafaf1; color: #1e8449; }
+.script-title { font-size: 20px; font-weight: 700; color: #c0392b; margin-top: 4px; width: 100%; }
+
+/* 分节样式 */
+.section { margin-top: 18px; }
+.section-label { font-size: 14px; font-weight: 700; color: #c0392b; background: #fdecea; display: inline-block; padding: 4px 14px; border-radius: 14px; margin-bottom: 10px; }
+.hook-option { background: #fef9f5; border: 1px solid #f0d6c5; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; }
+.hook-option .hook-label { font-size: 12px; font-weight: 700; color: #c0392b; margin-bottom: 4px; }
+.hook-option p { font-size: 15px; color: #333; }
+.time-segment { padding: 10px 0; border-bottom: 1px dotted #eee; }
+.time-segment:last-child { border-bottom: none; }
+.time-range { font-size: 12px; font-weight: 700; color: #999; margin-bottom: 3px; }
+.time-content { font-size: 15px; color: #444; }
+.time-action { font-size: 13px; color: #888; font-style: italic; margin-top: 2px; }
+
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { padding: 6px 0 6px 22px; position: relative; font-size: 14px; color: #555; }
+.tips-list li::before { content: "●"; position: absolute; left: 4px; color: #c0392b; font-size: 8px; top: 10px; }
+.bgm-box { background: #f8f4ef; padding: 12px 16px; border-radius: 8px; font-size: 14px; color: #666; margin-top: 10px; }
+.hashtags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.hashtag { background: #c0392b; color: #fff; padding: 4px 12px; border-radius: 14px; font-size: 13px; }
+
+/* 底部导航 */
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0 40px; border-top: 1px solid #e0d5c9; margin-top: 16px; }
+.bottom-nav a { display: inline-flex; align-items: center; gap: 6px; color: #c0392b; text-decoration: none; font-size: 15px; font-weight: 600; padding: 10px 20px; border: 2px solid #c0392b; border-radius: 24px; transition: all 0.3s; }
+.bottom-nav a:hover { background: #c0392b; color: #fff; }
+.bottom-nav .nav-disabled { color: #bbb; border-color: #ddd; cursor: not-allowed; pointer-events: none; }
+.bottom-nav .nav-center { font-size: 14px; color: #999; }
+
+@media (max-width: 640px) {
+  .header h1 { font-size: 26px; }
+  .script-card { padding: 20px 16px; }
+  .bottom-nav { flex-direction: column; gap: 12px; align-items: stretch; }
+  .bottom-nav a { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <a href="../index.html">&#127968; 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">2027年5月</div>
+  <h1>亲情月 · 母亲节 / 520</h1>
+  <h2>永州爱眼城眼镜短视频脚本</h2>
+  <div class="meta">第41周 — 第44周 | 共8条脚本 | 种草 / 日常 / 科普 / 穿搭</div>
+</div>
+
+<div class="container content">
+
+<!-- ===== 脚本1 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">01</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第41周①</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约32秒</span>
+    </div>
+    <div class="script-title">五一出游护眼装备清单，出门前必看</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 紧迫型</div><p>"五一马上到了！行李收好了吗？停——这件东西99%的人都会忘，但少了它整个旅途都不舒服。"（镜头前摆出行李箱，做出紧急暂停手势）</p></div>
+    <div class="hook-option"><div class="hook-label">B 清单型</div><p>"五一出游护眼三件套，少一件都不行！永州出发前赶紧对照。"（三件物品一字摆开，做出打勾动作）</p></div>
+    <div class="hook-option"><div class="hook-label">C 场景型</div><p>"去海边玩了一天，晚上眼睛疼得睁不开——别让这种情况毁了你的五一假期！"（画面切入海边刺眼阳光→夜间不舒服揉眼）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 装备一</div>
+      <div class="time-content">"第一件：偏光太阳镜。去海边、爬山、自驾游必带！紫外线强度是平时的5到10倍，没偏光的普通墨镜反而让瞳孔变大吸收更多紫外线。选灰色偏光片，看风景颜色最真实。"</div>
+      <div class="time-action">🎬 动作：展示偏光太阳镜+偏光测试卡演示，背景换为户外晴天的画面（实拍或素材）。"5-10倍"用红色大字幕强调。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-13秒 · 装备二</div>
+      <div class="time-content">"第二件：人工泪液（不是普通眼药水！）。飞机上、高铁上空调吹得眼睛干涩，普通眼药水含防腐剂，越滴越干。带一支不含防腐剂的单支装人工泪液，干了就滴，用完即扔。"</div>
+      <div class="time-action">🎬 动作：对比展示人工泪液和普通眼药水的成分标签，用红圈标出"不含防腐剂"。展示单支包装的便携性。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第14-20秒 · 装备三+总结</div>
+      <div class="time-content">"第三件：防蓝光夹片。坐长途车/高铁刷手机看剧，一刷好几个小时——蓝光会让眼睛酸胀疲劳。如果你是近视眼更要注意，配一副防蓝光夹片挂在眼镜上，轻松搞定。三件装备爱眼城一站配齐，来店里我帮你选。"</div>
+      <div class="time-action">🎬 动作：实拍防蓝光夹片安装过程+使用场景模拟，三件装备并排展示，字幕弹出"出游护眼三件套 ✅"。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-32秒 互动收尾</div>
+    <div class="time-content">"五一出游你最容易忘带什么？评论区聊聊。出行前来爱眼城免费验光+免费测偏光，装备备齐了再出发！地址在评论区。"</div>
+    <div class="time-action">🎬 动作：主播微笑面对镜头，背景摆放三件装备，弹出关注+评论引导图标。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>三件装备实物提前摆好拍摄，背景干净（推荐浅木色桌面）</li>
+      <li>人工泪液产品选择常见品牌，注明"不含防腐剂"为核心卖点</li>
+      <li>户外场景可用永州本地高速/高铁/机场等出行地标做背景</li>
+      <li>装备展示间隙加入"打勾清单"动画，节奏感更强</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：旅行/出游类轻快音乐（如《Travel Vlog Beat》或《Adventure Time》），前段有出发感，中后段稳住节奏。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#五一出游</span>
+    <span class="hashtag">#护眼装备</span>
+    <span class="hashtag">#出门必备</span>
+  </div>
+</div>
+
+<!-- ===== 脚本2 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">02</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第41周②</span>
+      <span class="tag tag-series">日常</span>
+      <span class="tag tag-duration">约35秒</span>
+    </div>
+    <div class="script-title">顾客说"网上便宜一半"，我这样回应的</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 还原场景型</div><p>"'你们这太贵了，网上同款才一半价格。' 这句话我一个月听二十遍。今天录给你看，我是怎么回答的。"</p></div>
+    <div class="hook-option"><div class="hook-label">B 争议型</div><p>"网上配镜和实体店配镜到底差在哪？今天当着顾客的面一项一项比给你看。"（两副外观相似的眼镜并排展示）</p></div>
+    <div class="hook-option"><div class="hook-label">C 揭秘型</div><p>"你以为网上便宜是赚了？眼镜行业这些'潜规则'，今天一次性说清楚。"（做出揭秘手势+眼镜对比画面）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 正面回应</div>
+      <div class="time-content">顾客："你们这比网上贵一倍。" 店员："姐你说得对，光看价格确实网上便宜。但我给你看三样东西——看完你再决定在哪买。"（不反驳，先认同，拉近距离）</div>
+      <div class="time-action">🎬 动作：还原店内对话场景，注意店员表情要平和真诚，不防御不争论。字幕分色展示（店员红/顾客蓝）。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-14秒 · 第一对比：验光</div>
+      <div class="time-content">"第一：验光。网上你填个度数就完事了，但瞳距、瞳高、散光轴位这些数据差一毫米戴起来就头晕。我们店里是国家验光师给你验，二十分钟十几项检查——网上能给你这个吗？"（展示综合验光仪和详细的验光单）</div>
+      <div class="time-action">🎬 动作：实拍综合验光仪使用的画面，特写验光单上各种参数，与手机截图（网上填度数界面）分屏对比。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 第二、三对比</div>
+      <div class="time-content">"第二：试戴。网上看图片好看，戴自己脸上可能完全不对。来店里你能试十几款，找到最合适的。第三：售后。鼻托歪了、镜腿松了、度数不舒服——随时来店里免费调，终身服务。网上买的出问题你找谁？"</div>
+      <div class="time-action">🎬 动作：顾客在店里试戴多个款式，店员帮调整镜腿的实拍画面。结尾顾客露出"懂了"的笑容。字幕弹出"试戴+售后=网店没有的价值"。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-35秒 互动收尾</div>
+    <div class="time-content">"一副好眼镜戴两三年，算下来一天才几毛钱。但配错了，眼睛越来越差，那才是最贵的。你在网上配过眼镜吗？踩过坑的评论区聊一聊。来爱眼城，先验光再决定，不花冤枉钱。"</div>
+    <div class="time-action">🎬 动作：主播走出角色回归解说，微笑结尾。画面弹出"不怕比，怕你不比"字幕+店铺地址。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>本条的"真诚感"是关键——店员态度不能有攻击性或看不起网购的语气</li>
+      <li>综合验光仪的使用画面是建立专业信任的核心，提前打扫好验光室</li>
+      <li>分屏对比（验光单vs手机填度数界面）提前用手机截图做好素材</li>
+      <li>结尾"不怕比"的态度要有自信但不傲慢，微笑自然</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：Vlog叙事风轻音乐（如《Quiet Thoughts》钢琴曲），对话段落BGM降至几乎听不到。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#配镜避坑</span>
+    <span class="hashtag">#实体店vs网店</span>
+    <span class="hashtag">#靠谱眼镜店</span>
+  </div>
+</div>
+
+<!-- ===== 脚本3 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">03</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第42周①</span>
+      <span class="tag tag-series">科普</span>
+      <span class="tag tag-duration">约36秒</span>
+    </div>
+    <div class="script-title">母亲节到了：妈妈的老花镜该换了</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 情感共鸣型</div><p>"你有多久没有认真看过妈妈的脸？她戴的那副老花镜——是不是还是三年前路边摊买的？"（画面切入妈妈戴旧老花镜的侧脸慢动作）</p></div>
+    <div class="hook-option"><div class="hook-label">B 数据冲击型</div><p>"中国60%的老人戴的老花镜度数都是错的！母亲节快到了，你最该送的不是花，是一副验过光的眼镜。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 行动呼吁型</div><p>"母亲节礼物想好了吗？今年别送花别送保健品了——送妈妈一双'年轻的眼睛'。"（手持一副精致老花镜展示）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 路边老花镜的危害</div>
+      <div class="time-content">"很多妈妈都在夜市摊、菜市场顺手买副一二十块的老花镜——左右眼度数一样、瞳距是平均值——这根本不是'老花镜'，这是'毁眼镜'！长期戴会头晕、眼胀、加速老花加深，甚至诱发青光眼。"</div>
+      <div class="time-action">🎬 动作：展示路边摊老花镜vs正规老花镜，特写"左右眼度数一样"的问题。配合眼球结构的简易动画展示长期戴错度数的危害。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 为什么不验光不行</div>
+      <div class="time-content">"每个人的老花度数不一样，左右眼也不一样——有人左眼150度右眼200度，有人还带散光。不验光直接买，就像不量脚买鞋，十买九错。而且人过45岁每年老花都可能加深，建议每年查一次。"</div>
+      <div class="time-action">🎬 动作：展示综合验光过程（提前征得一位妈妈顾客同意拍摄），突出验光师调节镜片、顾客给出反馈的专业流程。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 母亲节行动</div>
+      <div class="time-content">"这个母亲节，带妈妈来爱眼城做一次全面验光。我们免费验光，验完告诉她'这副戴着舒服不舒服'——让她自己感受专业验光后的清晰世界。有些妈妈嘴上说'不用不用'，配完戴上那一刻眼睛亮了，什么都值了。"</div>
+      <div class="time-action">🎬 动作：展示妈妈戴上新眼镜看清东西的惊喜表情（实拍或情景演绎），加温馨滤镜，画面温暖感人。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-36秒 互动收尾</div>
+    <div class="time-content">"你妈妈的老花镜戴了几年了？多久没验光了？在评论区打出来，我敢说大部分都超过三年了。母亲节带妈妈来爱眼城免费验光，用一份'看得见的爱'送给她。地址在评论区。"</div>
+    <div class="time-action">🎬 动作：主播真诚收尾，画面弹出"母亲节特别活动"海报，背景温暖柔和。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>情感类脚本最怕"假"——如果方便，找真实母女/母子顾客授权出镜，真情流露最佳</li>
+      <li>路边摊老花镜可特意去夜市实拍一段作为素材，形成鲜明对比</li>
+      <li>妈妈看清东西那一段加点柔光滤镜，慢镜头+温馨BGM搭配</li>
+      <li>母亲节活动海报提前设计（免费验光+母亲节专属折扣），视频中弹出增强转化</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：温馨感人钢琴/弦乐（如《妈妈》配乐风格或《Family Love》），前半段营造关切感，后半段升温暖。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#母亲节</span>
+    <span class="hashtag">#老花镜</span>
+    <span class="hashtag">#送给妈妈的礼物</span>
+  </div>
+</div>
+
+<!-- ===== 脚本4 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">04</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第42周②</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约30秒</span>
+    </div>
+    <div class="script-title">给妈妈挑眼镜，爱眼城三个暖心推荐</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 礼物推荐型</div><p>"给妈妈挑母亲节礼物，预算200到800，我推荐这三款——妈妈戴上不仅看得清，还显年轻！"（三副眼镜一字排开）</p></div>
+    <div class="hook-option"><div class="hook-label">B 共情型</div><p>"我妈也是那种嘴上说不要但戴上就舍不得摘的人。这三款是我们店里妈妈买回去最满意的，给你抄作业。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 实用型</div><p>"母亲节最实用礼物TOP1绝对是眼镜——花送三天就谢了，眼镜天天戴，每次看清都是你在身边。"（对比鲜花和眼镜）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 推荐一</div>
+      <div class="time-content">"第一款：超轻钛架老花镜——8克重，比一张A4纸还轻，戴一天都不压鼻梁不会滑。弹性钛腿不怕压不怕坐，妈妈随便放包里。价格200到300，性价比超高。"</div>
+      <div class="time-action">🎬 动作：产品特写——放在电子秤上展示重量（8g），弹腿展示韧性，模特佩戴展示轻盈感。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-13秒 · 推荐二</div>
+      <div class="time-content">"第二款：时尚半框老花镜——很多妈妈在意'显老'，这个半框+玫瑰金配色，戴起来不像老花镜，像知性女性的装饰镜。又好看又实用，价格300到400。"</div>
+      <div class="time-action">🎬 动作：模特（40-50岁形象）佩戴展示，正面侧面特写，对比传统老花镜vs时尚款，字幕标注"减龄神器"。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第14-20秒 · 推荐三</div>
+      <div class="time-content">"第三款：渐变多焦镜——如果妈妈近视+老花都有，这个最合适。上面看远、中间看电脑、下面看手机，一副全搞定，不用来回换。价格600到800，但能用三五年，性价比算下来最划算。来店里现场试戴，我们一分钟教会她用。"</div>
+      <div class="time-action">🎬 动作：渐变镜片上中下区域用动画标注"看远/看中/看近"，实拍模特演示三个距离的视觉效果。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-30秒 互动收尾</div>
+    <div class="time-content">"母亲节来爱眼城给妈妈挑一副，免费验光+免费调适，一年质保。妈妈嘴上说不要，戴上那一刻你就懂了。你准备送妈妈什么？评论区交流一下。"</div>
+    <div class="time-action">🎬 动作：三款眼镜同框展示，整体温馨色调，弹出"母亲节快乐"字样。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>找一位40-55岁的女性模特（同事或朋友妈妈），自然佩戴效果远胜年轻人展示</li>
+      <li>电子秤称重画面是视觉爆点，提前准备干净的电子秤并确保数字清晰可读</li>
+      <li>"三款推荐"节奏要快，每款控制在5秒以内，信息量足但不拖沓</li>
+      <li>店铺背景布置温馨母亲节氛围（康乃馨、粉色/浅紫色装饰）</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：温馨轻快的推荐类音乐（如《Spring Gift》钢琴+吉他），女性化柔美风格。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#母亲节礼物</span>
+    <span class="hashtag">#老花镜推荐</span>
+    <span class="hashtag">#走心礼物</span>
+  </div>
+</div>
+
+<!-- ===== 脚本5 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">05</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第43周①</span>
+      <span class="tag tag-series">穿搭</span>
+      <span class="tag tag-duration">约32秒</span>
+    </div>
+    <div class="script-title">520情侣款眼镜合集，永州甜度拉满</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 甜蜜型</div><p>"520快到了，永州的'托尼'和'莉莉'们，今年的情侣装备给你们安排好了！这些情侣眼镜太甜了~"（小情侣出镜佩戴同系列眼镜，甜笑互动）</p></div>
+    <div class="hook-option"><div class="hook-label">B 穿搭型</div><p>"520怎么穿？衣服可以随便，但眼镜一定要配！永州最火情侣眼镜合集来了。"（快速切换多对情侣佩戴画面）</p></div>
+    <div class="hook-option"><div class="hook-label">C 惊喜型</div><p>"男朋友偷偷来配情侣眼镜，这个520礼物绝对让女朋友感动哭——来看看有哪些高颜值选择。"（男生单独出镜挑选的神秘感）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 风格一：文艺复古</div>
+      <div class="time-content">"第一组：复古金属圆框。男生戴玳瑁纹，女生戴透粉——同框不同色，搭在一起特别有'书卷气'。永州学院路、零陵古城散步拍照，文艺感拉满。"</div>
+      <div class="time-action">🎬 动作：一男一女模特佩戴同款不同色的复古圆框，互动甜蜜（碰拳/对视/自拍），背景可选书店或绿植墙。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-14秒 · 风格二：潮流街头</div>
+      <div class="time-content">"第二组：大框黑色板材镜。男女同款，酷飒风直接拉满！穿T恤、牛仔外套都能HOLD住，出街回头率翻倍。最重要是——两副一起买有优惠！"</div>
+      <div class="time-action">🎬 动作：模特换装为街头风格，佩戴大黑框，拍摄走路、街景等动态画面，快节奏剪辑。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 风格三：知性职场</div>
+      <div class="time-content">"第三组：钛合金半框。预算够的情侣首选——重量轻到几乎感觉不到，质感高级，上班戴得体大方。镜片可以个性化，两人配防蓝光镜片，加班熬夜一起保护眼睛。"</div>
+      <div class="time-action">🎬 动作：模特换装职场风，佩戴半框钛架，展示办公、喝咖啡等场景，突出质感和轻便。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-32秒 互动收尾</div>
+    <div class="time-content">"三组风格你喜欢哪一组？评论1、2、3告诉我。520来爱眼城配情侣眼镜，免费验光+同款折扣，两个人一起变好看！地址在评论区，艾特你的另一半来看——"</div>
+    <div class="time-action">🎬 动作：三组情侣快闪同框收尾，画面弹出"520甜蜜优惠"标签，艾特引导图标。氛围温暖甜蜜。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>找两对真CP或自然互动感好的男女同事出镜，避免尴尬的摆拍感</li>
+      <li>三组场景分别搭配不同穿搭风格和背景（文艺/街头/职场），提前准备服装</li>
+      <li>永州本地场景加分（零陵古城/湖南科技学院/潇水河边等）</li>
+      <li>快节奏拼接使用剪映"曲线变速"功能，每对不超过6秒素材</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：甜歌/恋爱风轻快流行（如《Love Story》纯音乐版或《Sweet Heartbeat》），甜而不腻。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#520情侣款</span>
+    <span class="hashtag">#情侣眼镜</span>
+    <span class="hashtag">#永州520</span>
+  </div>
+</div>
+
+<!-- ===== 脚本6 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">06</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第43周②</span>
+      <span class="tag tag-series">日常</span>
+      <span class="tag tag-duration">约35秒</span>
+    </div>
+    <div class="script-title">顾客带女朋友来配镜，全程被喂狗粮</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 吐槽型</div><p>"今天来了一对情侣配眼镜，我全程在旁边……单身狗太难了，你们自己看吧！"（做出无奈捂脸又偷笑的表情）</p></div>
+    <div class="hook-option"><div class="hook-label">B 温馨剧情型</div><p>"男生说：'给她配最好的镜片，多少钱都行。' 女生说：'给他也配一副，他老眯着眼开车。' 我在旁边——嗝，饱了。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 悬念型</div><p>"今天店里来了一对情侣，一个人配镜两个人甜。最后男生偷偷做了一件事，把我们都暖到了……"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 进场</div>
+      <div class="time-content">"下午来了一对情侣，男生牵着女生的手进店。——她近视有点深，想配副轻点的。——全程男生帮女生整理头发、扶镜框、问'这个戴着舒服吗'……我一个店员杵在旁边，手里的验光单突然不香了。"</div>
+      <div class="time-action">🎬 动作：实拍（或情景还原）情侣进店→女生试戴→男生帮整理头发扶镜框的过程。店员在旁边做出"被齁到了"的小表情。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 互相推让</div>
+      <div class="time-content">"挑镜框的时候最搞笑——女生挑了一副500的，男生说'太便宜了挑好的'，女生说'那你那副也不贵啊咱们一起换'。最后两人互相监督对方选了更好的镜片。这就是有人心疼的感觉吧。"</div>
+      <div class="time-action">🎬 动作：两人互相递镜框给对方试戴，相互摇头表示"不够好"然后挑更贵的，配上可爱的争辩字幕。店员在旁边姨母笑。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 暖心结局</div>
+      <div class="time-content">"最暖的是——取镜那天男生提前来把尾款全付了，留了张纸条：'妞，镜片是防蓝光的，少熬夜。520快乐。' 对不起，我先消化一会儿。"</div>
+      <div class="time-action">🎬 动作：展示纸条特写（手写体更有温度），女生拿到眼镜看到纸条微笑/眼红的画面，温馨收束。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-35秒 互动收尾</div>
+    <div class="time-content">"这种顾客请多来几个（不是想被虐），是觉得爱情太美好了。520快到了，你准备怎么过？评论区撒点糖让我羡慕一下。来爱眼城配情侣眼镜，说不定…就遇到我了，哈哈哈哈。"</div>
+    <div class="time-action">🎬 动作：主播俏皮收尾，画面弹出"520情侣配镜活动"海报，氛围轻松愉快。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>本条的核心是"真实感"和"甜"，如果能拍真实顾客最好（征得同意），否则找朋友演绎</li>
+      <li>店员"吃狗粮"反应要有层次——从无语→被打动→姨母笑→感动</li>
+      <li>纸条画面一定是手写体（拒绝打印），温度感加倍</li>
+      <li>字幕用粉色/暖色调，配合整体甜蜜氛围</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：甜系轻快流行歌曲（如《小幸运》或《甜甜的》纯音乐版），关键词"甜而不腻"。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#520狗粮</span>
+    <span class="hashtag">#眼镜店日常</span>
+    <span class="hashtag">#甜甜的爱情</span>
+  </div>
+</div>
+
+<!-- ===== 脚本7 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">07</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第44周①</span>
+      <span class="tag tag-series">科普</span>
+      <span class="tag tag-duration">约36秒</span>
+    </div>
+    <div class="script-title">老花镜别乱买！不验光直接戴的风险</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 警示型</div><p>"如果你爸妈还在戴那种十块钱一副的老花镜——马上让他们停下来！这不是在帮他们，是在害他们。"（手持劣质老花镜严肃警告）</p></div>
+    <div class="hook-option"><div class="hook-label">B 数据型</div><p>"眼科门诊接诊的中老年眼病患者，三分之一跟不合适的眼镜有关。这个数据你可能不信，但是真的。"（白大褂出镜增强权威感）</p></div>
+    <div class="hook-option"><div class="hook-label">C 亲历型</div><p>"前段时间一位阿姨来店里，因为长期戴错度数的老花镜，眼压已经偏高。要不是来验光发现，再拖半年就是青光眼。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 风险一：度数不对</div>
+      <div class="time-content">"老花镜不是'放大镜'！路边摊老花镜最大的问题是——左右眼度数一模一样。但几乎没有人两只眼睛老花度数完全一样。左眼戴100度够用、右眼其实需要200度——你硬让右眼用100度看东西，眼睛一直处于'费劲调节'的状态。"</div>
+      <div class="time-action">🎬 动作：用眼球+镜片简易动画展示"度数不匹配→眼睛被迫调节→长期疲劳"的过程。实测路边摊老花镜vs验光后镜片看同一排字的清晰度对比。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 风险二：瞳距不对</div>
+      <div class="time-content">"更隐蔽的危害是瞳距——两个瞳孔中心之间的距离。老花镜的瞳距不对，眼睛看东西会不自觉'对眼'或'外斜'。长期下来眼睛胀痛、头晕恶心都是轻的，严重会诱发间歇性斜视——而且年纪越大恢复越难。"</div>
+      <div class="time-action">🎬 动作：实拍瞳距测量过程（瞳距仪），然后动画展示"瞳距不对→视线歪斜→大脑纠正→疲劳"的过程。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 解决方案</div>
+      <div class="time-content">"正确做法很简单——带爸妈来正规眼镜店或眼科做一次全面验光。不花钱（我们免费验光），十分钟就能测出准确的度数、瞳距、散光情况。配对了眼镜，爸妈的世界才是真正的清晰。"</div>
+      <div class="time-action">🎬 动作：实拍爱眼城验光流程——电脑验光仪→综合验光仪→试戴架，整个过程快剪展示，强调专业和免费。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-36秒 互动收尾</div>
+    <div class="time-content">"你爸妈的老花镜是怎么买的？路边摊还是验光配的？评论区打出来，希望不是'路边摊'三个字。转发这条给你爸妈看——为了他们的眼睛。来爱眼城免费验光，地址在评论区，带爸妈来吧。"</div>
+    <div class="time-action">🎬 动作：主播真诚结尾，画面弹出"免费验光"标识+爱心转发引导，添加"关心父母从不将就开始"标语。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>本条需要"专业+关心"双重调性——科普内容要硬核，表达语气要温暖</li>
+      <li>眼球疲劳动画可搜索剪映素材"医学动画"或自己用PPT做简易示意图</li>
+      <li>瞳距测量画面要得到顾客同意后实拍，这是建立信任的关键画面</li>
+      <li>避免过于恐怖的医学画面（如手术图），重点放在"可预防"的积极面</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：科普向稳重纯音乐（如《Scientific Mind》），前段略严肃制造关切感，后段转温暖有希望。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#老花镜避坑</span>
+    <span class="hashtag">#关爱父母眼睛</span>
+    <span class="hashtag">#验光的重要性</span>
+  </div>
+</div>
+
+<!-- ===== 脚本8 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">08</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第44周②</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约35秒</span>
+    </div>
+    <div class="script-title">渐变多焦镜到底好不好用？永州人真实体验</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 争议型</div><p>"渐变多焦镜——有人说是'一副顶三副'的神器，有人说'戴了头晕根本用不了'。到底谁在说谎？今天给你最真实的答案。"</p></div>
+    <div class="hook-option"><div class="hook-label">B 体验型</div><p>"我在永州找了三位戴过渐变多焦镜的顾客，让他们说实话——这个镜片到底值不值得配。"（三位顾客出镜，不同年龄层）</p></div>
+    <div class="hook-option"><div class="hook-label">C 解决方案型</div><p>"如果你既近视又老花，看远一副看近一副来回换——这个解决办法你可能还不知道。"（一手拿远用眼镜一手拿近用眼镜，然后拿出一副渐变镜）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 什么是渐变多焦镜</div>
+      <div class="time-content">"先讲什么是渐变多焦镜——镜片上方是远用度数（看路开车），中间是中距离（看电脑），下方是近用度数（看手机看报）。中间平滑过渡，外表看起来和普通镜片一样，不像老花镜那样显年龄。"</div>
+      <div class="time-action">🎬 动作：渐变镜片特写，用彩色半透明标注线展示"上：远/中：电脑/下：近"三个区域，动画演示视线移动时度数平滑变化。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 真实体验分享（优点）</div>
+      <div class="time-content">"顾客张姐（52岁，小学老师）：'用了半年，太方便了！上课看学生、改作业看本子、看手机都不用换眼镜。刚开始两天有点不习惯，适应了就觉得以前怎么没早配。' 她的诀窍是——看远抬下巴、看近低眼睛，找到'角度'就顺了。"</div>
+      <div class="time-action">🎬 动作：张姐（本人或演员）在教室场景示范三个距离使用眼镜（看远处黑板→看桌上作业→看手机），快剪切换自然。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 谁适合/谁不适合</div>
+      <div class="time-content">"但说实话——不是所有人都适合。开车频繁、需要快速切换远近的人最合适。但如果颈椎不好（低头困难）、或者对视觉适应能力差的长辈，还是分开配两副更舒服。来爱眼城我们会根据你的实际用眼场景推荐，不适合绝不硬推。"</div>
+      <div class="time-action">🎬 动作：用"✓推荐/✗慎选"图表展示适配人群，字幕加上适用/不适用的人群特征。画面回到店内真人对话场景。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-35秒 互动收尾</div>
+    <div class="time-content">"你或者家里人用过渐变多焦镜吗？感觉怎么样？评论区真实分享一波，好的坏的都说。想要体验的来爱眼城免费验光+试戴，不习惯不配，一分钱不花。地址在评论区，月底来还有优惠。"</div>
+    <div class="time-action">🎬 动作：主播真诚收尾，展示渐变多焦镜实物并指向评论区。画面弹出"免费试戴"活动标签。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>顾客实拍是最佳选择——提前联系戴过渐变镜的老顾客，征得同意后简短采访拍摄</li>
+      <li>渐变镜片上中下区域标注一定要清晰，用高对比度线条或半透明色块</li>
+      <li>"适合/不适合"对照表做成分屏图表，信息一目了然</li>
+      <li>保持客观中立——不夸大渐变镜的效果，坦诚讲缺点反而增加信任</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：生活体验类温和背景音（如《Daily Life》轻吉他），真实分享段落可降低BGM突出人声。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#渐变多焦镜</span>
+    <span class="hashtag">#老花近视一副搞定</span>
+    <span class="hashtag">#真实体验分享</span>
+  </div>
+</div>
+
+<!-- ===== 底部导航 ===== -->
+<div class="bottom-nav">
+  <a href="month-10-2027-04.html">← 4月 · 太阳镜季</a>
+  <span class="nav-center">2027年5月 · 第41-44周</span>
+  <a href="month-12-2027-06.html">6月 · 毕业季/618 →</a>
+</div>
+
+</div>
+</body>
+</html>
