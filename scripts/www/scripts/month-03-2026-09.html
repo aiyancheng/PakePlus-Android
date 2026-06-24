@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城 · 2026年9月短视频脚本</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#fdf6f0;color:#333;line-height:1.7}
+  header{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;padding:20px 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+  header .inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .back-btn{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);color:#fff;padding:6px 14px;border-radius:20px;text-decoration:none;font-size:13px;transition:.2s}
+  .back-btn:hover{background:rgba(255,255,255,.35)}
+  .header-title{flex:1}
+  .header-title h1{font-size:20px;font-weight:700}
+  .header-title p{font-size:13px;opacity:.85;margin-top:2px}
+  .badge{background:rgba(255,255,255,.25);border-radius:12px;padding:3px 10px;font-size:12px}
+  main{max-width:900px;margin:28px auto;padding:0 16px}
+  .month-intro{background:#fff;border-left:5px solid #c0392b;border-radius:8px;padding:18px 22px;margin-bottom:28px;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+  .month-intro h2{font-size:17px;color:#c0392b;margin-bottom:6px}
+  .month-intro p{font-size:14px;color:#555}
+  .week-title{font-size:16px;font-weight:700;color:#c0392b;margin:32px 0 14px;padding:8px 14px;background:#fff3f0;border-radius:6px;border-left:4px solid #c0392b}
+  .script-card{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin-bottom:24px;overflow:hidden}
+  .script-header{background:linear-gradient(90deg,#c0392b,#e95a4b);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px}
+  .script-num{font-size:13px;opacity:.85}
+  .script-title{font-size:17px;font-weight:700;margin-top:4px}
+  .script-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  .tag{background:rgba(255,255,255,.25);border-radius:12px;padding:2px 10px;font-size:12px}
+  .duration{font-size:13px;background:rgba(255,255,255,.2);border-radius:12px;padding:3px 10px;white-space:nowrap;align-self:flex-start}
+  .script-body{padding:20px}
+  .section{margin-bottom:18px}
+  .section-label{display:inline-block;background:#c0392b;color:#fff;font-size:12px;padding:3px 10px;border-radius:4px;margin-bottom:10px;font-weight:700}
+  .hook-box{background:#fff8f7;border:1px solid #f5c6c0;border-radius:8px;padding:14px 16px}
+  .hook-version{margin-bottom:8px;font-size:14px}
+  .hook-version:last-child{margin-bottom:0}
+  .hook-label{display:inline-block;background:#e74c3c;color:#fff;font-size:11px;padding:1px 7px;border-radius:3px;margin-right:6px}
+  .timeline{background:#f9f9f9;border-radius:8px;padding:14px 16px;border:1px solid #eee}
+  .tl-row{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+  .tl-row:last-child{margin-bottom:0}
+  .tl-time{background:#c0392b;color:#fff;font-size:11px;padding:2px 8px;border-radius:12px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+  .tl-content{font-size:14px;color:#444}
+  .tl-action{font-weight:600;color:#c0392b}
+  .tl-line{font-size:13px;color:#666;margin-top:3px;background:#fff;border-left:3px solid #e74c3c;padding:4px 8px;border-radius:0 4px 4px 0}
+  .ending-box{background:#fff8f0;border:1px solid #f5d6b0;border-radius:8px;padding:14px 16px;font-size:14px}
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:600px){.meta-grid{grid-template-columns:1fr}}
+  .meta-item{background:#f7f7f7;border-radius:8px;padding:12px 14px;border:1px solid #eee}
+  .meta-item h4{font-size:12px;color:#c0392b;font-weight:700;margin-bottom:6px}
+  .meta-item p,.meta-item ul{font-size:13px;color:#555}
+  .meta-item ul{padding-left:16px}
+  .meta-item li{margin-bottom:3px}
+  .hashtags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .hashtag{background:#ffeaea;color:#c0392b;border-radius:12px;padding:2px 10px;font-size:12px;border:1px solid #f5c6c0}
+  .note-tip{background:#fffbea;border:1px solid #f0e060;border-radius:8px;padding:10px 14px;font-size:13px;color:#666;margin-top:8px}
+  nav.pagination{display:flex;justify-content:space-between;align-items:center;padding:28px 0 40px;border-top:2px solid #f0e0de;margin-top:20px}
+  .page-btn{display:inline-flex;align-items:center;gap:6px;background:#c0392b;color:#fff;text-decoration:none;padding:10px 20px;border-radius:24px;font-size:14px;font-weight:600;transition:.2s;box-shadow:0 2px 8px rgba(192,57,43,.3)}
+  .page-btn:hover{background:#a93226}
+  .page-btn.disabled{background:#ccc;pointer-events:none;box-shadow:none}
+  .page-label{font-size:13px;color:#999}
+  footer{text-align:center;padding:16px;font-size:12px;color:#aaa;background:#f5ede9}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a href="../index.html" class="back-btn">← 返回首页</a>
+    <div class="header-title">
+      <h1>永州爱眼城眼镜 · 短视频脚本库</h1>
+      <p>2026年9月 · 🍂 秋日焕新 · 致敬师恩</p>
+    </div>
+    <span class="badge">第9-12周 共8条</span>
+  </div>
+</header>
+
+<main>
+
+  <div class="month-intro">
+    <h2>📋 本月内容策略</h2>
+    <p>9月进入秋季，核心主题是<strong>"换季焕新+教师节感恩"</strong>。开学季刚过，学生护眼需求过渡到日常维护场景；入秋换季是镜架/镜片升级的好契机；教师节为特定人群（教师）提供精准种草。秋冬季口罩场景带出防雾镜片与穿搭话题，自然延伸到10月降温季。发布时间建议：每周二/四晚18:30-20:30。</p>
+  </div>
+
+  <!-- ==================== 第9周 ==================== -->
+  <div class="week-title">📅 第9周（9月1日—9月7日）</div>
+
+  <!-- 脚本01 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 01 · 第9周① · 科普/生活</div>
+        <div class="script-title">秋天眼睛干涩？三个改善小习惯不花一分钱</div>
+        <div class="script-tags">
+          <span class="tag">🍂 秋季护眼</span>
+          <span class="tag">💡 小技巧</span>
+          <span class="tag">💰 不花钱</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：30-35秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师揉着自己的眼睛做演示】「秋天一到，很多人眼睛又干又涩——然后就去买眼药水。停！不花钱的办法比眼药水管用多了——」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【快速列出秋季常见护眼误区】「一到秋天眼睛就干？是不是一直在滴眼药水？今天告诉你三个不花一分钱的正确方法。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【提问式钩子】「秋天觉得眼睛干涩，你的第一反应是什么？多数人答错了——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-8秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【验光师演示眨眼练习】</div>
+              <div class="tl-line">「<strong>第一个习惯：学会有意识地多眨眼。</strong>我们平时看屏幕，眨眼次数只有正常的一半。每次有意识地完全闭合再睁开，每次做20次，一天做四五组——泪膜稳定了，干涩感马上缓解。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">8-14秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【演示远眺动作】</div>
+              <div class="tl-line">「<strong>第二个习惯：20-20-20法则。</strong>每20分钟看远处20秒以上，让睫状肌放松。不用花钱买任何东西，就逼自己定时抬头看看窗外。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">14-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示加湿器/毛巾热敷】</div>
+              <div class="tl-line">「<strong>第三个习惯：增加环境湿度。</strong>秋天空气干，开加湿器或者早晚用热毛巾敷眼睛5-8分钟，缓解睑板腺堵塞的问题。这三招真的一分钱不花，但坚持做效果立竿见影。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【微笑总结】「如果你试了这三招还是不舒服、视力也模糊——那就要来验光了，可能是度数有了变化。永州爱眼城随时欢迎你，免费专业验光。评论区告诉我，你秋天眼睛干不干？」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 三个小习惯用实演方式展示，让观众能看到动作</li>
+            <li>② 场景可选择靠窗位置，阳光柔和，营造舒适感</li>
+            <li>③ 热敷部分可真正操作毛巾热敷展示</li>
+            <li>④ 每个方法用字幕编号①②③强调结构</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>温暖治愈系轻音乐，秋天感钢琴配风铃音效，节奏舒缓。推荐日系Lofi风背景配乐。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#秋季护眼</span>
+            <span class="hashtag">#眼睛干涩</span>
+            <span class="hashtag">#不花钱护眼</span>
+            <span class="hashtag">#护眼小技巧</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#眼健康</span>
+            <span class="hashtag">#生活常识</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 脚本02 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 02 · 第9周② · 种草/送礼</div>
+        <div class="script-title">教师节快到了，送老师眼镜这样选不会踩雷</div>
+        <div class="script-tags">
+          <span class="tag">🎁 送礼指南</span>
+          <span class="tag">👨‍🏫 教师节</span>
+          <span class="tag">🛍 种草</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：35-40秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师手举一副精美的礼盒眼镜】「教师节马上到！送老师一副眼镜——最有心的礼物在这里，但得会选！」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【快速切换几款不同类型眼镜】「送给老师的眼镜，这三个原则你记住了就不会踩雷。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【关心语气】「看到班上老师戴老花镜看作业的样子，想不能送副好的？我来告诉你怎么选——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示适合教师场景的镜架】</div>
+              <div class="tl-line">「<strong>第一个原则：舒适为王。</strong>老师每天戴眼镜8小时以上，一定要选超轻材质——纯钛或钛合金。爱眼城有专门的钛架系列，整副不到10克，鼻梁零负担。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【切换不同风格镜架展示】</div>
+              <div class="tl-line">「<strong>第二个原则：风格大方得体。</strong>深色半框或金属细边框最保险。简约不浮夸，和老师气质配得上。避免过于花哨的款式——老师要在讲台前，气质比潮流重要。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示镜片功能说明】</div>
+              <div class="tl-line">「<strong>第三个原则：镜片选实用的。</strong>老师需要频繁远近切换——讲台上看远处，看作业看近处。渐进多焦点镜片是最佳选择，一副眼镜解决所有距离。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【温馨微笑，展示礼盒包装镜架】「教师节送老师一副合身的眼镜，是健康和心意两全的好礼物。永州爱眼城提供礼盒包装，也有教师节特别活动。评论区告诉我，你印象最深的老师是谁？我们为他/她点个赞！」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 准备教师节主题的布置元素（小黑板、粉笔字）在背景中</li>
+            <li>② 推荐适合教师的三款镜架逐一展示+礼盒封装画面</li>
+            <li>③ 语气要敬重温和，符和教师节节日氛围</li>
+            <li>④ 结尾展示爱眼城门店+节日活动海报</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>温暖大气的背景音乐，可用带校课感觉的轻音乐。情感基调为"感恩"，不要搞笑或轻浮风格。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#教师节</span>
+            <span class="hashtag">#教师节礼物</span>
+            <span class="hashtag">#送给老师</span>
+            <span class="hashtag">#配镜指南</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#教师专属</span>
+            <span class="hashtag">#教师节快乐</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== 第10周 ==================== -->
+  <div class="week-title">📅 第10周（9月8日—9月14日）</div>
+
+  <!-- 脚本03 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 03 · 第10周① · 穿搭/潮流</div>
+        <div class="script-title">入秋换季，镜架也要换一副？秋冬流行款来了</div>
+        <div class="script-tags">
+          <span class="tag">🍂 秋季穿搭</span>
+          <span class="tag">🕶 镜架潮流</span>
+          <span class="tag">🌟 流行趋势</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：30-35秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师正正镜头上自己戴的眼镜】「换季了，你的衣服换了——眼镜换了吗？2026秋冬四款流行镜架，必入！」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【用服装搭配概念切入】「秋天穿风衣、西装的时候，戴夏天的黑框眼镜是不是有点突兀？今年秋冬流行这样的框架——」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【快速展示四款镜架轮转】「入秋镜架怎么选？2026四大趋势来了——暖色系、复古风、大框、透明款。」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示第一/二款】</div>
+              <div class="tl-line">「<strong>趋势一：琥珀色/焦糖色板材框。</strong>跟秋天的毛衣、大衣完美搭配。复古又大气，男女通用。」</div>
+              <div class="tl-line" style="margin-top:4px">「<strong>趋势二：细金属椭圆框。</strong>文艺感十足，配围巾、配大衣立刻高级起来。这是今年大热的'知识分子风'必备。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-16秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示第三/四款】</div>
+              <div class="tl-line">「<strong>趋势三：半透明灰/茶色框。</strong>若隐若现，中性色调，百搭不挑脸型。轻熟精致的秋季首选。」</div>
+              <div class="tl-line" style="margin-top:4px">「<strong>趋势四：复古大框全框。</strong>今年大框继续火。秋天大框的优势是不遮脸，穿搭有呼吸感——配西装、配风衣都很有范。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">16-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【总结推荐】</div>
+              <div class="tl-line">「四大趋势，核心词：<strong>暖色、质感、松弛、复古。</strong>这些款在爱眼城都已经全面上新了，趁换季正好来换一副。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【自信微笑】「换季不只是衣服的事，一副合适的眼镜是整体穿搭的点睛之笔。永州的朋友来爱眼城，免费试戴不限款，边试边挑。评论区告诉我你最想试哪个趋势——我帮你先留出来！」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 四款镜架用同一模特佩戴展示，穿搭与镜架同色系</li>
+            <li>② 画面中加入秋冬服饰元素（围巾、大衣）增强季节提示</li>
+            <li>③ 字幕标注每个趋势的关键词</li>
+            <li>④ 可穿插模特面部特写展示镜架细节</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>时尚穿搭类BGM，微欧美风或轻快城市感配乐。节奏明确带有时尚气息。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#秋季穿搭</span>
+            <span class="hashtag">#镜架推荐</span>
+            <span class="hashtag">#秋冬眼镜</span>
+            <span class="hashtag">#眼镜搭配</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#换季穿搭</span>
+            <span class="hashtag">#潮流眼镜</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 脚本04 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 04 · 第10周② · 种草/开箱</div>
+        <div class="script-title">爱眼城秋季新款镜架开箱试戴</div>
+        <div class="script-tags">
+          <span class="tag">📦 开箱</span>
+          <span class="tag">👓 试戴</span>
+          <span class="tag">🛍 种草</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：30-35秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【特写镜头对准一个未打开的眼镜盒，一只手缓缓打开】「秋季新品到了！今天开箱试戴爱眼城秋季最期待的三款新款——」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【快速闪切三副镜架带包装的画面】「秋季新款到店三款，现场试戴给你们看效果！」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【满满期待的表情】「等了好久的秋天新品终于到货了！开箱+上脸，一分不剪辑——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【开箱第一款：缓慢取出，试戴上脸】</div>
+              <div class="tl-line">「<strong>第一款：焦糖色复古圆框。</strong>一打开就很秋天的颜色。上脸效果——你们看，配白色毛衣太绝了。重量超轻，鼻托贴合也舒服。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【开箱第二款：取出试戴，旋转展示】</div>
+              <div class="tl-line">「<strong>第二款：枪灰色钛合金细框。</strong>金属丝质感，框腿处很精致。上脸感觉——气质立马上去了。上班族/老师真的可以考虑这款。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【开箱第三款：特别展示透明元素】</div>
+              <div class="tl-line">「<strong>第三款：半透明烟灰色大框。</strong>这款是爆款预定——透明不突兀，大框但是超轻。妹子戴起来很飒，秋天配大衣完美。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【微笑，展示三款镜架并排摆满】「三款秋季新品，个人最喜欢那款焦糖色，真的秋天的感觉。永州的小哥哥小姐姐，这周来爱眼城都能试到——全部是新款。评论区说"1号"、"2号"、"3号"投个票，让我看你最喜欢哪个！」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 开箱节奏要慢，给观众欣赏新品的期待感</li>
+            <li>② 每款试戴后要做正面、侧面、细节三个角度展示</li>
+            <li>③ 自然光线拍摄，凸显镜架色彩还原度</li>
+            <li>④ 指甲整洁、手部干净，开箱画面细节要精致</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>美妆/穿搭类开箱BGM，节奏轻快带点精致感，可配"拆箱音效"增加仪式感。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#眼镜开箱</span>
+            <span class="hashtag">#秋季新款</span>
+            <span class="hashtag">#镜架试戴</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#眼镜种草</span>
+            <span class="hashtag">#新款到店</span>
+            <span class="hashtag">#眼镜穿搭</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== 第11周 ==================== -->
+  <div class="week-title">📅 第11周（9月15日—9月21日）</div>
+
+  <!-- 脚本05 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 05 · 第11周① · 种草/实测</div>
+        <div class="script-title">防雾镜片测评：秋冬戴口罩必备，永州人必看</div>
+        <div class="script-tags">
+          <span class="tag">😷 口罩必备</span>
+          <span class="tag">🔬 实测</span>
+          <span class="tag">👓 防雾镜片</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：35-40秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【戴口罩的验光师正面对镜头，镜片瞬间起雾】「天气一凉，戴口罩眼镜就变这样——今天测评防雾镜片，到底能不能撑住！」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【实测画面：普通vs防雾，同时戴口罩对镜头对比】「同一个呼吸，一个看不见，一个完全清晰——秋冬防雾镜片有多必要？直接对比给你看。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【直接问】「永州人冬天戴口罩，你的眼镜是不是也这样起雾了？今天给你找最彻底的解决方案——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示防雾镜片产品+测试工具】</div>
+              <div class="tl-line">「这是爱眼城的专业级防雾镜片，表面有亲水防雾膜层。实验室测试可抵抗-10℃到+40℃温差，戴上口罩呼吸不起雾。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【蒸汽测试演示，热水杯上方对比画面】</div>
+              <div class="tl-line">「直接上蒸汽测试：左边普通镜片——一秒全白。右边防雾镜片——清晰依旧。这才是秋冬该有的镜片。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【说明使用&维护】</div>
+              <div class="tl-line">「注意：防雾膜层不能用纸巾干擦，要用镜布沾水轻轻擦——保护好膜层可维持2-3年效果。我们现在的防雾镜片价格已经下来了，不比普通镀膜贵多少。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【轻松语气总结】「永州的秋冬，口罩+眼镜的组合谁戴谁知道。换一副防雾镜片直接解决两年的烦恼。我在爱眼城，来试试免费的防雾测试，自己用蒸汽试，看完再说。评论区问"防雾价格"我私信回复你——」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 蒸汽热水杯对比实验是核心画面，需固定机位分屏对比</li>
+            <li>② 开头戴口罩起雾的画面越真实越好（不要故意加重）</li>
+            <li>③ 标注"普通镜片"vs"防雾镜片"字幕区分</li>
+            <li>④ 测试完成后展示镜片清洁方式</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>科技实测风格BGM，带轻微电子音效，蒸汽实验环节可配"嘶嘶"等生活音效增强代入。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#防雾镜片</span>
+            <span class="hashtag">#口罩眼镜</span>
+            <span class="hashtag">#秋冬必备</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#眼镜实测</span>
+            <span class="hashtag">#防雾测评</span>
+            <span class="hashtag">#眼镜起雾</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 脚本06 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 06 · 第11周② · 日常/故事</div>
+        <div class="script-title">顾客带着7年前的旧镜框来配片，结果…</div>
+        <div class="script-tags">
+          <span class="tag">💛 暖心故事</span>
+          <span class="tag">🕰 复古/怀旧</span>
+          <span class="tag">🏪 门店日常</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：40-50秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师举起一副磨损的旧镜框，表情带感情】「今天一位阿姨拿着一副7年前的旧镜框来店里……后面的事情让我特别感慨。」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【特写一副老旧的镜框，慢慢放大】「这副眼镜，是顾客2019年配的。七年了，她今天带着它回来——」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【微笑中带点动情】「配眼镜这么多年，偶尔会遇到这种让人心里特别暖的事——今天就是。」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【开始讲故事，语速缓慢】</div>
+              <div class="tl-line">「这位阿姨五十多岁了，拿着一副镜框来找我，说：'老板，能不能帮我换副镜片，就这个框，我舍不得换。'」</div>
+              <div class="tl-line" style="margin-top:4px">「我看了一眼，那个镜框确实是2019年的款，边框已经开始掉漆了。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-16秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【表情更加柔和】</div>
+              <div class="tl-line">「我问阿姨为啥不换个新的？她说：'这是我女儿上大学前陪我来配的，那时候她说我戴这个好看。后来她在外地上班、结婚、生孩子，都没空回来陪我。这副眼镜……就一直戴着。'」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">16-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【轻轻停顿】</div>
+              <div class="tl-line">「我们帮阿姨验了光，换了最好的新镜片。框虽然旧了，但阿姨自己把它擦得很干净——她说'不是买不起新的，是这个框有我家丫头的一份心意。'」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【眼中有光，语气柔和】「有些眼镜，真的很轻；但有些眼镜，在主人心里却特别重。爱眼城尊重每一位顾客的心意。评论区告诉我，你最长保留的一样东西是什么——因为什么原因？」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 核心是讲述，画面以讲述者面部+旧镜框特写为主</li>
+            <li>② 旧镜框细节特写要突出（漆面磨损、镜腿弯曲等细节）</li>
+            <li>③ 可以用一本日历在背景中翻到2019年增强年代感</li>
+            <li>④ 情感层次要自然，不讲段子，不夸张哭</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>温情怀旧钢琴/吉他独奏，音符缓慢有故事感。推荐《River flows in you》类纯音乐，配合情感节奏。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#眼镜店日常</span>
+            <span class="hashtag">#温暖故事</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#感动瞬间</span>
+            <span class="hashtag">#眼镜陪伴</span>
+            <span class="hashtag">#暖心日常</span>
+            <span class="hashtag">#人间温暖</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== 第12周 ==================== -->
+  <div class="week-title">📅 第12周（9月22日—9月30日）</div>
+
+  <!-- 脚本07 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 07 · 第12周① · 科普/对比</div>
+        <div class="script-title">框架眼镜vs隐形眼镜，到底哪个更适合你</div>
+        <div class="script-tags">
+          <span class="tag">🔬 对比测评</span>
+          <span class="tag">👓 框架vs隐形</span>
+          <span class="tag">📚 科普</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：35-45秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师一左一右展示框架和隐形眼镜】「框架眼镜和隐形眼镜，到底选哪个？做眼镜十年，今天一次性对比清楚——」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【快速提问诱发共鸣】「想戴隐形怕伤角膜、戴框架又不方便——纠结的你看了这个视频就懂了。」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【直接给出答案预告】「隐形眼镜和框架眼镜不是谁好谁坏的问题，是哪个更适合你——五维对比让你秒选。」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示框架眼镜的几大优势】</div>
+              <div class="tl-line">「<strong>框架镜的优势：</strong>安全不接触角膜、配戴摘取方便、没有护理成本。适合学生、敏感眼人群、不爱折腾的人。一副好框架甚至可以当穿搭配件。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【展示隐形眼镜的几大优势】</div>
+              <div class="tl-line">「<strong>隐形的优势：</strong>无框感观自然、运动更方便、视野更广没有框角遮挡。适合运动爱好者、特殊场合需要、想素颜无压力的人。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【给出关键决策建议】</div>
+              <div class="tl-line">「<strong>最关键的三个问题</strong>帮你判断：你的眼睛泪液质量好吗（眼干严重的慎选隐形）、你能严格遵守清洁护理吗（偷懒就用框架）、你每天戴多长时间（超过10小时选框架更妥当）。综合起来两个可以交替使用——最舒服的方案。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【微笑总结】「不是非得二选一，很多顾客都备一副框架当主力+隐形应急。来爱眼城可以做专业的干眼分析和角膜检查，再决定适不适合戴隐形。评论区告诉我你现在戴框架还是隐形——有没有对另一个心动过？」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 框架和隐形的对比用分屏或左右轮流展示</li>
+            <li>② 展示隐形眼镜盒/护理液等道具增加真实感</li>
+            <li>③ 三个判断问题用字幕逐条弹出</li>
+            <li>④ 结尾展示爱眼城隐形眼镜验配区+角膜检测仪器</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>清晰明了的"对比类"BGM，节奏不快不慢，适合理性分析风格内容。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#框架眼镜</span>
+            <span class="hashtag">#隐形眼镜</span>
+            <span class="hashtag">#配镜指南</span>
+            <span class="hashtag">#永州本地</span>
+            <span class="hashtag">#眼镜对比</span>
+            <span class="hashtag">#眼健康</span>
+            <span class="hashtag">#配镜攻略</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 脚本08 -->
+  <div class="script-card">
+    <div class="script-header">
+      <div>
+        <div class="script-num">视频 08 · 第12周② · 穿搭/时尚</div>
+        <div class="script-title">秋日穿搭×眼镜，永州街拍风格灵感</div>
+        <div class="script-tags">
+          <span class="tag">🍂 秋季穿搭</span>
+          <span class="tag">📸 街拍灵感</span>
+          <span class="tag">🕶 眼镜搭配</span>
+        </div>
+      </div>
+      <div class="duration">⏱ 建议时长：30-40秒</div>
+    </div>
+    <div class="script-body">
+
+      <div class="section">
+        <span class="section-label">🎣 0-3秒 黄金钩子</span>
+        <div class="hook-box">
+          <div class="hook-version"><span class="hook-label">版本A</span>【验光师穿秋装搭配眼镜，面对镜头快速摆造型】「秋天穿得好看，眼镜可不能拖后腿！三个风格，照搬就行——」</div>
+          <div class="hook-version"><span class="hook-label">版本B</span>【快速切换三组不同风格的秋季眼镜穿搭】「风衣×眼镜、毛衣×眼镜、西装×眼镜——秋天搭配灵感直接给你！」</div>
+          <div class="hook-version"><span class="hook-label">版本C</span>【穿搭对比】「同样的衣服，眼镜换一副气质就完全不同？今天上脸给你看三组——」</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">📖 4-20秒 主体内容</span>
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="tl-time">4-9秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【第一组穿搭展示：风衣+金属细框】</div>
+              <div class="tl-line">「<strong>风格一：都市职场风。</strong>深色风衣/长外套+金色或枪色金属细框。永州秋天早晚凉，这个搭配一整个秋季通勤都好看。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">9-15秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【第二组穿搭展示：毛衣+复古板材】</div>
+              <div class="tl-line">「<strong>风格二：温暖学院风。</strong>奶油色/驼色毛衣+焦糖色板材框。软糯感和木质色调很有秋天的质感，特别适合学生和文艺青年。」</div>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-time">15-20秒</div>
+            <div class="tl-content">
+              <div class="tl-action">【第三组穿搭展示：休闲运动+大胆配色框】</div>
+              <div class="tl-line">「<strong>风格三：运动街头风。</strong>卫衣/冲锋衣+半透明或亮色镜架。打破秋日沉闷感，年轻有活力的感觉一眼就能看到。」</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">🎯 21-30秒 互动收尾</span>
+        <div class="ending-box">
+          【微笑收尾，展示三组搭配同框】「秋日的眼镜就是穿搭的灵魂配件。三组风格，你在爱眼城全部能找到对应的款。永州街头最靓的风景，从一副好眼镜开始。评论区告诉我你平时的穿衣风格是什么——我帮你搭配建议！」
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>🎬 拍摄要点</h4>
+          <ul>
+            <li>① 每组搭配至少展示3个动作/角度（含全身、半身）</li>
+            <li>② 可选择永州有秋景的户外场景拍摄增加本地感</li>
+            <li>③ 搭配文字标注每套风格的三个关键词</li>
+            <li>④ 可使用热门"OOTD"转场方式提升时尚感</li>
+          </ul>
+        </div>
+        <div class="meta-item">
+          <h4>🎵 BGM建议</h4>
+          <p>OOTD穿搭类轻快BGM，节奏感和时尚度并存，推荐日系/韩系穿搭博主的常用配乐。</p>
+        </div>
+        <div class="meta-item" style="grid-column:1/-1">
+          <h4>#️⃣ 推荐话题标签</h4>
+          <div class="hashtags">
+            <span class="hashtag">#永州爱眼城</span>
+            <span class="hashtag">#秋日穿搭</span>
+            <span class="hashtag">#眼镜穿搭</span>
+            <span class="hashtag">#永州街拍</span>
+            <span class="hashtag">#OOTD</span>
+            <span class="hashtag">#秋季搭配</span>
+            <span class="hashtag">#眼镜搭配</span>
+            <span class="hashtag">#永州本地</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================ 页面导航 ================ -->
+  <nav class="pagination">
+    <a href="month-02-2026-08.html" class="page-btn">← 8月（开学备战）</a>
+    <span class="page-label">2026年9月 · 第9-12周</span>
+    <a href="month-04-2026-10.html" class="page-btn">10月（即将呈现）→</a>
+  </nav>
+
+</main>
+<footer>永州爱眼城眼镜 · 短视频内容规划 · 2026年</footer>
+</body>
+</html>
