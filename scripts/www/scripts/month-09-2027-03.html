@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 短视频脚本 · 2027年3月</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    line-height: 1.7;
+  }
+  .top-bar {
+    background: #c0392b;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 28px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .top-bar a:hover { background: rgba(255,255,255,0.28); }
+  .header {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .header .month-tag { font-size: 14px; opacity: 0.85; letter-spacing: 2px; margin-bottom: 8px; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header .theme { font-size: 18px; opacity: 0.9; margin-bottom: 4px; }
+  .header .meta { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  .week-section { margin-bottom: 40px; }
+  .week-title {
+    background: #fff;
+    border-left: 5px solid #c0392b;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #c0392b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .script-card {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+  }
+  .script-card .script-num {
+    display: inline-block;
+    background: #c0392b;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .script-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 6px;
+  }
+  .script-card .tags-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+  .script-card .tag {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag-type { background: #fdecea; color: #c0392b; }
+  .tag-duration { background: #e8f5e9; color: #2e7d32; }
+  .script-block {
+    margin-bottom: 18px;
+  }
+  .script-block h4 {
+    font-size: 15px;
+    color: #c0392b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .script-block h4::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #c0392b;
+    border-radius: 50%;
+  }
+  .script-block ul { padding-left: 18px; }
+  .script-block li { margin-bottom: 6px; font-size: 14px; color: #555; }
+  .script-block .highlight {
+    background: #fff3e0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 14px;
+    border-left: 3px solid #ff9800;
+  }
+  .divider {
+    border: none;
+    border-top: 1px dashed #e0e0e0;
+    margin: 18px 0;
+  }
+  .shoot-tips {
+    background: #f9f9f9;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+  }
+  .shoot-tips strong { color: #c0392b; }
+  .bgm-tag, .hashtag-tag {
+    display: inline-block;
+    background: #e8eaf6;
+    color: #3f51b5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .hashtag-tag { background: #fce4ec; color: #c0392b; }
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 2px solid #e0d5cc;
+    margin-top: 20px;
+  }
+  .nav-bottom a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c0392b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-bottom a:hover { background: #a93226; }
+  .nav-bottom .nav-label { font-size: 12px; opacity: 0.7; }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 24px; }
+    .script-card { padding: 18px; }
+    .nav-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">SHORT VIDEO SCRIPTS</div>
+  <h1>2027年3月 · 视频脚本</h1>
+  <div class="theme">🌸 春季护眼 · 开学配镜</div>
+  <div class="meta">共8条脚本 | 每周2条 | 店长直拍版</div>
+</div>
+
+<div class="container">
+
+<!-- ============ 第33周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第33周 · 春季眼痒 + 女神节穿搭</div>
+
+  <!-- Script 1 -->
+  <div class="script-card">
+    <span class="script-num">第33周 ①</span>
+    <h3>春天眼睛痒？不只是过敏，还可能是这个原因</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"春天眼睛痒，很多人以为是花粉过敏——吃点过敏药就好了？不一定。有一种痒，过敏药治不了，很多人不知道。"</div>
+      <div class="highlight"><strong>版本B：</strong>"每到春天，爱眼城来咨询'眼睛痒'的人就暴增。大部分人以为是过敏——但其中有30%其实是另一种问题，拖久了更麻烦。"</div>
+      <div class="highlight"><strong>版本C：</strong>"你的眼睛春天痒吗？痒到揉都不够？我告诉你——一半是过敏，另一半是干眼症。两种病治疗方法完全不同，吃错药等于白搭。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>区分两种痒。台词："先教你怎么区分：过敏的痒——痒感突然、明显、越揉越痒，眼睛红肿有水样分泌物；干眼症的痒——痒感持续、轻微、像眼里有沙子，揉完暂时好一会儿又痒。如果你是后者——过敏药没用，需要的是润眼。"</li>
+        <li><strong>8-11秒：</strong>春季干眼症的原因。台词："为什么春天干眼特别多？三个原因：第一，春季空气湿度波动大——干燥的日子泪液蒸发加速；第二，春天风大——风吹加速泪膜破裂；第三，很多人冬天长期用暖气，泪腺功能已经减弱，春天暴露后症状集中爆发。"</li>
+        <li><strong>12-15秒：</strong>误诊的后果。台词："最常见的误操作：眼睛痒就买过敏眼药水滴——但如果你是干眼症，过敏眼药水里的抗组胺成分反而会进一步抑制泪液分泌，越滴越干、越干越痒，恶性循环。还有人揉眼睛——揉会机械损伤角膜上皮，春夏天更容易感染结膜炎。"</li>
+        <li><strong>16-20秒：</strong>正确应对+爱眼城服务。台词："正确做法：先判断是哪种痒——不确定就来爱眼城做干眼检测（免费），3分钟出结果。如果是干眼症：人工泪液+热敷+减少屏幕时间；如果是过敏：需要去医院拿处方眼药水。别自己乱买药——眼睛的问题，专业判断才靠谱。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"春天你的眼睛痒吗？1过敏型（突然红痒） 2干眼型（持续沙粒感） 3不确定——评论区选一个。不确定的朋友来爱眼城免费检测一下，别乱买药。永州爱眼城，春天护眼从'分清痒的类型'开始。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 两种痒的对比画面（过敏红肿vs干眼微红沙粒感）；② 恶性循环用简图展示（痒→滴过敏药→更干→更痒）；③ 干眼检测仪器实拍3分钟流程；④ 春天户外风大场景与室内干燥场景对比。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">科普讲解轻节奏</span> <span class="bgm-tag">电子节拍</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#春季护眼</span>
+      <span class="hashtag-tag">#眼睛痒</span>
+      <span class="hashtag-tag">#干眼症</span>
+    </div>
+  </div>
+
+  <!-- Script 2 -->
+  <div class="script-card">
+    <span class="script-num">第33周 ②</span>
+    <h3>三八女神节，送自己一副又好看又能打的眼镜</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">穿搭</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"三八女神节，姐妹们犒劳自己——别只买衣服护肤品，你的脸上还有一件东西天天被忽略：眼镜。今天给你三款'又好看又能打'的女款镜架。"</div>
+      <div class="highlight"><strong>版本B：</strong>"女神节送自己什么？包包？口红？听我的——先换一副眼镜。你脸上的东西，比包包更天天可见。三款女款镜架，美到不想摘。"</div>
+      <div class="highlight"><strong>版本C：</strong>"好看的眼镜有多加分？比口红还明显——因为它在你脸上，全天候在线。三八女神节，从眼镜开始给自己升个级。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>第一款——玫瑰金纯钛细边框。台词："第一款：玫瑰金纯钛细边框。这是我店里女生买最多的镜架——为什么？因为玫瑰金这个颜色太懂女生了：温柔但不柔弱、高级但不张扬。纯钛材质6克不到，戴一天鼻梁无痕。搭衬衫搭连衣裙搭风衣，任何风格都拿得住。320左右，女神节当天有9折优惠。"</li>
+        <li><strong>9-13秒：</strong>第二款——雾蓝透明板材框。台词："第二款：雾蓝透明板材框。2027年的流行色——雾蓝，介于蓝灰之间，像雾一样的高级感。方中带圆的框型，圆脸方脸都适配。春天穿针织衫搭这款，拍照自带文艺滤镜。280左右，性价比超高的'好看款'。"</li>
+        <li><strong>14-17秒：</strong>第三款——复古微椭圆金属框。台词："第三款：复古微椭圆金属框。不是完全圆的——是改良微椭圆，复古有气质但不显奇怪。金丝质感温润，搭配丝巾、小西装特别有职场女精英范儿。400左右，职场女神首选。"</li>
+        <li><strong>18-20秒：</strong>女神节活动+穿搭建议。台词："三八女神节来爱眼城：三款女款镜架专区9折+免费升级防蓝光镜片+赠送品牌擦镜布套装。穿搭建议：春天选镜架要'轻'——轻材质、轻颜色、轻线条。厚重的大黑框留给冬天，春天要轻盈通透。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"三款你最喜欢哪款？1玫瑰金 2雾蓝 3微椭圆金丝——评论区扣数字。女神节来爱眼城试戴，不买也行，试了就知道什么叫'戴上不想摘'。永州姐妹们，节日快乐——给自己升个级，从眼睛开始！"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三款镜架各配女生真人佩戴效果+不同穿搭（衬衫/针织/西装）；② 鼻梁无痕的对比特写（旧镜压痕vs纯钛无痕）；③ 春季穿搭氛围：明亮色调+鲜花背景；④ 女神节粉色/金色装饰元素。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">女神节时尚轻快曲</span> <span class="bgm-tag">清新节拍</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#三八女神节</span>
+      <span class="hashtag-tag">#女款眼镜</span>
+      <span class="hashtag-tag">#眼镜穿搭</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第34周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第34周 · 开学配镜 + 取镜日常</div>
+
+  <!-- Script 3 -->
+  <div class="script-card">
+    <span class="script-num">第34周 ①</span>
+    <h3>开学配镜必看：永州学生镜片怎么选不踩雷</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"开学了，你家孩子要配眼镜吗？镜片怎么选——防蓝光？超薄？渐进？别听商家忽悠，听我这个干了十几年眼镜的人说真话。"</div>
+      <div class="highlight"><strong>版本B：</strong>"学生配镜踩雷率极高——买贵了发现不需要、买错了发现不适合。今天一次性讲清：永州学生镜片到底怎么选。"</div>
+      <div class="highlight"><strong>版本C：</strong>"你家孩子配眼镜花了多少钱？镜片选了什么类型？如果不确定选对了——这条视频码住，开学配镜必看。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>验光最重要。台词："第一条也是最重要的一条：镜片选什么不重要——验光准不准才是关键。学生验光必须做散瞳——散瞳后测出的度数才是真实的。不散瞳直接配镜，度数可能偏高50到100度，戴上去反而加速近视。爱眼城青少年验光一律散瞳，免费的。"</li>
+        <li><strong>8-11秒：</strong>镜片折射率选择。台词："镜片折射率怎么选？学生度数如果在300度以内——1.56足够，不需要加钱买1.67超薄；300到500度——选1.60，薄度和价格平衡得最好；500度以上——选1.67，不然镜片太厚边缘看过去很丑。别被推销'越薄越好'——够用就行，省下的钱花在验光精度上更值得。"</li>
+        <li><strong>12-15秒：</strong>防蓝光要不要？台词："防蓝光要不要加？说真话：学生日常用电脑手机确实多，但防蓝光镜片会让屏幕颜色偏暖偏黄——做设计、画画的别加。普通学习用的话可以加，但别指望它能'防近视'——防蓝光只是减少屏幕刺激疲劳感，控制近视还是要靠户外时间和用眼习惯。"</li>
+        <li><strong>16-20秒：</strong>镜架选择+总价参考。台词："镜架选什么？学生推荐TR90全框——软弹不变形、运动不掉、摔了不心疼，一百多块。一套下来：散瞳验光免费+TR90镜架150左右+1.56镜片200左右=350左右搞定。500度以上加1.67镜片也就500左右。这才是学生配镜的合理价位——别花冤枉钱。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你家孩子配眼镜花了多少钱？评论区说说——1代表300以内，2代表300到600，3代表600以上。超过600的来爱眼城重新验光看看是否配对了。学生配镜关键不在贵——在准。永州爱眼城，学生验光散瞳免费，配镜350起搞定。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 散瞳验光真实流程拍摄（增加专业信任感）；② 三种折射率镜片厚度对比实物展示（1.56/1.60/1.67）；③ 防蓝光镜片偏色效果用屏幕对比展示；④ 学生佩戴TR90镜架的轻松活泼画面。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">开学科普风轻快节奏</span> <span class="bgm-tag">清爽电子</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#开学配镜</span>
+      <span class="hashtag-tag">#学生眼镜</span>
+      <span class="hashtag-tag">#镜片选择</span>
+    </div>
+  </div>
+
+  <!-- Script 4 -->
+  <div class="script-card">
+    <span class="script-num">第34周 ②</span>
+    <h3>开学季忙到飞起，一天接待三个顾客同时来取镜</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约50秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"开学季的爱眼城有多忙？今天上午九点半，三个顾客同时进门来取眼镜——场面一度非常混乱。"</div>
+      <div class="highlight"><strong>版本B：</strong>"你以为眼镜店很闲？开学季——三个人同时来取镜，验光排队到门口，加工室机器不停转。今天记录一下这个真实的上午。"</div>
+      <div class="highlight"><strong>版本C：</strong>"三个顾客、三种需求、同一个时间点——开学季的爱眼城，每天都在上演'多人副本'。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>混乱开场。台词："上午9:30——三个人同时进门：一个妈妈带初中孩子取上周配的眼镜；一个大学生来取寒假配的备用眼镜；一个上班族赶在上班前取年前订的偏光夹片。三个人三个需求——我只有两只手。"</li>
+        <li><strong>8-12秒：</strong>分头应对。台词："怎么搞定？分工。店员A负责验光区——马上安排下一个排队的学生验光；店员B负责取镜——三个成品镜从库房取出，逐一核对度数、瞳距、镜片参数；我负责调整——每副眼镜取出来后必须现场调整镜腿弧度和鼻托，确保佩戴舒适。验光+取镜+调整，三条线同时跑。"</li>
+        <li><strong>13-16秒：</strong>小插曲。台词："中间出了个小插曲：初中孩子的眼镜瞳距偏了2毫米——加工室马上重新切割，10分钟搞定。这就是为什么爱眼城取镜要现场检查——偏2毫米你可能看不出来，但长期佩戴会让眼睛疲劳加重。宁可多等10分钟，也不让一副不合格的眼镜出门。"</li>
+        <li><strong>17-20秒：</strong>忙完收束。台词："10:15——三个顾客全部满意离开。下一个验光已经在等了。开学季的爱眼城，从早上开门到晚上关门基本没停过。忙是真忙，但每个顾客都服务到位——这是底线。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"开学季你有来爱眼城配眼镜吗？体验怎么样？评论区聊聊——好的坏的都欢迎，我认真看每一条。忙的时候我们确实做不到一对一慢节奏服务，但每一个环节都没省——验光、加工、检查、调整。永州爱眼城，忙但靠谱。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 真实记录店内忙碌场景（多人同时在场）；② 时间线字幕标注"9:30""10:15"等；③ 加工室切割镜片的操作特写；④ 取镜现场检查瞳距的仪器画面增加专业感。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">忙碌日常轻节奏</span> <span class="bgm-tag">快节奏电子</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#开学季</span>
+      <span class="hashtag-tag">#眼镜店日常</span>
+      <span class="hashtag-tag">#忙碌的一天</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第35周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第35周 · 防蓝光实测 + 春季穿搭</div>
+
+  <!-- Script 5 -->
+  <div class="script-card">
+    <span class="script-num">第35周 ①</span>
+    <h3>防蓝光到底是不是智商税？爱眼城实测给你看</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"防蓝光镜片到底是不是智商税？有人说没用、有人说必买——今天我用实测数据说话，不偏不倚，只看事实。"</div>
+      <div class="highlight"><strong>版本B：</strong>"防蓝光=智商税？这个话题吵了好几年了。今天爱眼城实测——蓝光光谱仪实测、屏幕对比实测、佩戴体验实测。三组数据，一目了然。"</div>
+      <div class="highlight"><strong>版本C：</strong>"买了防蓝光镜片的人——你觉得有用吗？没买的人——你觉得是智商税吗？别猜了，今天实测给你看。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>实测一——蓝光过滤数据。台词："实测一：蓝光光谱仪对比。普通镜片——415到455纳米波段蓝光透过率约90%；防蓝光镜片——透过率约30%到40%，过滤掉了50%以上的有害蓝光。数据摆在这——防蓝光确实有过滤效果，不是骗局。但注意：过滤的是'短波蓝光'（415-455nm），这部分才是对视网膜有潜在伤害的波段。"</li>
+        <li><strong>9-13秒：</strong>实测二——屏幕色彩偏移。台词："实测二：屏幕色彩对比。同一台手机——戴普通镜片看：颜色正常、白色是白色；戴防蓝光镜片看：颜色微微偏暖偏黄、白色变成微米色。偏移幅度取决于膜层类型——基础防蓝光偏移明显，高端膜层（如蔡司蓝臻膜）偏移几乎不可感知。所以防蓝光不是'完全没影响'——它会让颜色偏一点。设计相关职业慎选。"</li>
+        <li><strong>14-17秒：</strong>实测三——佩戴舒适度主观感受。台词："实测三：8小时佩戴对比。让三位店员各戴8小时——一位普通镜片、一位基础防蓝光、一位高端防蓝光。反馈：普通镜片——'下午眼睛有点干'；基础防蓝光——'疲劳感确实减轻了一点，但颜色有点怪'；高端防蓝光——'舒服、颜色也正常'。结论：效果有，但跟膜层质量成正比。"</li>
+        <li><strong>18-20秒：</strong>结论+选购建议。台词："所以防蓝光不是智商税——但便宜的防蓝光可能是。建议：上班族、学生选防蓝光，选膜层质量好的（蔡司蓝臻、明月防蓝光Pro等），偏色少效果好。预算有限？不加防蓝光也没问题——控制用眼时间比加膜层更重要。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你戴防蓝光镜片吗？1戴了觉得有用 2戴了觉得没感觉 3没戴觉得是智商税——评论区选一个，我来帮你看你选对了还是选错了。来爱眼城可以现场对比防蓝光和普通镜片的效果——亲眼看比网上争论靠谱。永州爱眼城，用实测说话。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 蓝光光谱仪实测画面实拍——数据图表字幕展示；② 手机屏幕戴普通vs防蓝光的色彩对比特写；③ 三位店员佩戴8小时后反馈的场景还原；④ 结论部分用简明对比表呈现。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">科学实测节奏</span> <span class="bgm-tag">轻电子实验风</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#防蓝光实测</span>
+      <span class="hashtag-tag">#防蓝光眼镜</span>
+      <span class="hashtag-tag">#智商税真相</span>
+    </div>
+  </div>
+
+  <!-- Script 6 -->
+  <div class="script-card">
+    <span class="script-num">第35周 ②</span>
+    <h3>春季镜架怎么搭衣服？三套永州街拍look</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">穿搭</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"春天穿什么？针织衫、衬衫、风衣——那眼镜怎么搭？三套永州街拍look，镜架和衣服的搭配公式直接给你。"</div>
+      <div class="highlight"><strong>版本B：</strong>"冬天配厚重镜框、春天配轻盈镜架——这是很多人的直觉。但具体怎么搭？我准备了三套永州本地街拍look，对号入座。"</div>
+      <div class="highlight"><strong>版本C：</strong>"春天到了，你的镜架还停留在冬天吗？厚重黑框配轻薄春装——违和感太强。三套春季搭配，让你的眼镜跟衣服一样轻盈。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>LOOK 1——温柔通勤。台词："LOOK 1：温柔通勤——针织开衫+直筒裤+玫瑰金纯钛细边框。搭配逻辑：针织开衫柔软温柔，镜架选金色系呼应暖调。纯钛细边框轻盈不抢视线，让整体造型'有配饰但不重'。适合上班族、教师、文职——永州写字楼到学校门口，这套look都适用。"</li>
+        <li><strong>9-13秒：</strong>LOOK 2——文艺休闲。台词："LOOK 2：文艺休闲——白衬衫+牛仔裤+雾蓝透明板材框。搭配逻辑：白衬衫干净简约，雾蓝色镜框加入'第二层色彩'但不喧宾夺主。透明材质自带春天的'通透感'，和轻薄衬衫呼应。适合周末逛街、咖啡馆看书——永州河东步行街拍这套绝了。"</li>
+        <li><strong>14-17秒：</strong>LOOK 3——利落风衣。台词："LOOK 3：利落风衣——卡其色风衣+小白鞋+极细β钛金丝框。搭配逻辑：风衣利落有线条感，镜架也要有线条——极细金丝框的几何感完美匹配。风衣是永州春天最实用的外套，配这款镜架上班开会逛街全覆盖，一镜三用。"</li>
+        <li><strong>18-20秒：</strong>搭配原则总结+活动。台词："春季搭配原则：轻材质、轻颜色、轻线条。告别冬天的大黑框，拥抱金属和透明材质。3月来爱眼城试春季新款——搭配专区：店里准备了穿搭参考图板，帮你选镜架+搭配风格一站式搞定。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"三套look你最喜欢哪套？1温柔通勤 2文艺休闲 3利落风衣——评论区选一个。来爱眼城试戴春季款镜架，我帮你看搭配效果——试到好看为止。永州爱眼城，春天从轻盈开始。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三套look各配真人街拍画面（永州本地场景：河东步行街、商场门口等）；② 每套look的穿搭+镜架拆解展示（先全图再单品）；③ 春季明亮光线+绿植背景；④ 搭配原则用简图总结。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">春季时尚轻快曲</span> <span class="bgm-tag">清新吉他节拍</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#春季穿搭</span>
+      <span class="hashtag-tag">#眼镜搭配</span>
+      <span class="hashtag-tag">#永州街拍</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第36周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第36周 · 近视手术真相 + 店长vlog</div>
+
+  <!-- Script 7 -->
+  <div class="script-card">
+    <span class="script-num">第36周 ①</span>
+    <h3>近视手术VS配眼镜，到底怎么选？说真话</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"近视手术和配眼镜——到底怎么选？我是眼镜店的人，但我今天说真话：手术不是万能的，眼镜也不是冤枉钱。两边利弊，一次说清。"</div>
+      <div class="highlight"><strong>版本B：</strong>"想做近视手术的人越来越多——但你知道吗？不是所有人都能做，也不是做了就一劳永逸。作为眼镜从业者，我说几句可能你不爱听的真话。"</div>
+      <div class="highlight"><strong>版本C：</strong>"手术还是配镜？这个问题我每周都会被问到。今天不推销、不回避——两边优缺点摊开说，你自己判断。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-8秒：</strong>近视手术的优势。台词："先说手术的优势：确实方便——摘了眼镜就看清，不用每天戴10小时，运动无障碍、外观无负担。全飞秒手术恢复快、切口小，很多人术后第二天就正常生活了。价格1万到3万之间，看起来比长期配镜省钱——毕竟一副眼镜几百到几千，配十年可能比手术还贵。"</li>
+        <li><strong>9-13秒：</strong>手术的限制和风险。台词："但手术有前提：角膜厚度够不够？度数稳定了没？有没有干眼症？有这些条件不满足的人——做不了。而且手术不是一劳永逸：术后可能出现干眼加重、夜间眩光、度数回退。40岁以后老花还是要戴眼镜——手术解决的是近视，不是老花。最重要的是：做了手术就不能再配框架眼镜了——万一回退，只有再手术或戴隐形。"</li>
+        <li><strong>14-17秒：</strong>配眼镜的优势和局限。台词："配眼镜的优势：安全、可控、随时调整。度数变了换镜片、不舒服换镜架、想换风格换颜色——灵活度手术比不了。而且配镜不需要满足任何'术前条件'，近视了就能配。局限：确实要天天戴，运动不方便、外观有负担。长期算下来费用也不低——但这个费用是分散的，一次性压力小。"</li>
+        <li><strong>18-20秒：</strong>我的建议。台词："我的真心话：如果你度数稳定、角膜条件好、能接受术后风险——手术值得考虑；如果你度数还在变化、有干眼倾向、或者40岁以上——配眼镜更稳。爱眼城不推销配镜也不反对手术——帮你验光、帮你判断条件，至于选哪条路，是你的决定。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你做过近视手术吗？还是在犹豫？1已做手术 2想做在犹豫 3继续配眼镜——评论区选一个。犹豫的朋友来爱眼城先验个光，看看你的度数稳定不稳定——这是做决定的第一步。永州爱眼城，不推销不回避，只说真话帮你选。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 优缺点用对比表格展示（手术vs配镜）；② 术后注意事项字幕列举；③ 店长语气中性客观，不偏向任何一方；④ 可以引用几个真实案例（匿名）增强说服力。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">科普讨论轻节奏</span> <span class="bgm-tag">中性电子</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#近视手术</span>
+      <span class="hashtag-tag">#配眼镜</span>
+      <span class="hashtag-tag">#近视选择</span>
+    </div>
+  </div>
+
+  <!-- Script 8 -->
+  <div class="script-card">
+    <span class="script-num">第36周 ②</span>
+    <h3>爱眼城店长的一天vlog（春季版）</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钚子</h4>
+      <div class="highlight"><strong>版本A：</strong>"很多粉丝说想看我一天到底在干什么——今天从早上8点到晚上6点，全程记录。春季版——开学季忙到飞起的真实一天。"</div>
+      <div class="highlight"><strong>版本B：</strong>"你以为眼镜店店长就是坐柜台等顾客？春季开学季的一天——比你想的忙10倍。今天完整记录。"</div>
+      <div class="highlight"><strong>版本C：</strong>"店长的一天vlog——春季版。从开门到关门，10小时不间断。看完你就知道为什么我们总是说'忙但靠谱'。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>8:00-9:00 开店准备。台词："8:00——开门、擦柜台、校验仪器、看预约单。今天预约了6个验光——全是学生。开学季就是这样，预约表从早上排到下午。8:30——第一个顾客进门，初二男生，妈妈带过来的，说'看黑板模糊'。散瞳验光开始——25分钟后出数据。"</li>
+        <li><strong>8-11秒：</strong>9:00-12:00 高峰期。台词："9:00到12:00——验光区一刻没停。三个验光师同时开工：散瞳验光、成人验光、复查验光。中间穿插了4个取镜的顾客——每副都要现场检查参数、调整镜腿。11点来了一个紧急的：小朋友打球镜架断了，马上修——10分钟搞定，免费。这是开学季的真实节奏：验光、取镜、维修、咨询，四种需求同时涌入。"</li>
+        <li><strong>12-15秒：</strong>12:00-14:00 午间+加工。台词："12:00——趁午间验光少，加工室全力开动。上午验光的6副镜片要切割装配——焦度计校准、镜片切割、镜架装配、参数核对，每副15到20分钟。12:30——扒了两口饭，继续。加工室不能停——下午顾客等着取镜。"</li>
+        <li><strong>16-20秒：</strong>14:00-18:00 下午+收店。台词："14:00到17:00——下午又验了5个光、取了4副镜、修了2副旧眼镜、接待了3个只来咨询不配镜的顾客——都认真服务了。17:30——最后一个顾客离开。18:00——关门。清点库存、整理加工室、写明天的预约备注。一天结束——10小时，验光11人次、取镜8副、维修2副、咨询3人。忙是真的忙，但每个环节都没省。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"看完了一天，你觉得眼镜店店长的日常和你的工作比——谁更忙？评论区聊聊。这是爱眼城春季的常态——开学季从早到晚不停歇。但忙不等于糊弄——验光散瞳免费、取镜现场检查、维修随到随修。永州爱眼城，一天10小时，每个环节认真到底。"（关门画面，灯光渐暗）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 全天真实记录vlog风格，分段剪辑时间线标注；② 各环节快节奏快切（验光、取镜、加工、维修）；③ 数据字幕展示（"11人次验光""8副取镜"等）；④ 结尾关门画面+灯光渐暗效果——"一天结束"的仪式感。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">日常vlog轻快BGM</span> <span class="bgm-tag">温暖叙事节奏</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#店长vlog</span>
+      <span class="hashtag-tag">#眼镜店日常</span>
+      <span class="hashtag-tag">#开学季</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ 底部导航 ============ -->
+<div class="nav-bottom">
+  <a href="month-08-2027-02.html">
+    <div class="nav-label">← 上一月</div>
+    2027年2月
+  </a>
+  <span style="color:#999;font-size:15px;font-weight:600;">2027年3月</span>
+  <a href="month-10-2027-04.html">
+    <div class="nav-label">下一月 →</div>
+    2027年4月
+  </a>
+</div>
+
+<div class="footer">
+  © 2027 永州爱眼城眼镜 · 短视频内容策划 · 仅供内部使用
+</div>
+
+</div>
+</body>
+</html>
