@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 短视频脚本 · 2026年12月</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    line-height: 1.7;
+  }
+  .top-bar {
+    background: #c0392b;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 28px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .top-bar a:hover { background: rgba(255,255,255,0.28); }
+  .header {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .header .month-tag { font-size: 14px; opacity: 0.85; letter-spacing: 2px; margin-bottom: 8px; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header .theme { font-size: 18px; opacity: 0.9; margin-bottom: 4px; }
+  .header .meta { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  .week-section { margin-bottom: 40px; }
+  .week-title {
+    background: #fff;
+    border-left: 5px solid #c0392b;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #c0392b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .script-card {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+  }
+  .script-card .script-num {
+    display: inline-block;
+    background: #c0392b;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .script-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 6px;
+  }
+  .script-card .tags-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+  .script-card .tag {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag-type { background: #fdecea; color: #c0392b; }
+  .tag-duration { background: #e8f5e9; color: #2e7d32; }
+  .script-block {
+    margin-bottom: 18px;
+  }
+  .script-block h4 {
+    font-size: 15px;
+    color: #c0392b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .script-block h4::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #c0392b;
+    border-radius: 50%;
+  }
+  .script-block ul { padding-left: 18px; }
+  .script-block li { margin-bottom: 6px; font-size: 14px; color: #555; }
+  .script-block .highlight {
+    background: #fff3e0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 14px;
+    border-left: 3px solid #ff9800;
+  }
+  .divider {
+    border: none;
+    border-top: 1px dashed #e0e0e0;
+    margin: 18px 0;
+  }
+  .shoot-tips {
+    background: #f9f9f9;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+  }
+  .shoot-tips strong { color: #c0392b; }
+  .bgm-tag, .hashtag-tag {
+    display: inline-block;
+    background: #e8eaf6;
+    color: #3f51b5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .hashtag-tag { background: #fce4ec; color: #c0392b; }
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 2px solid #e0d5cc;
+    margin-top: 20px;
+  }
+  .nav-bottom a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c0392b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-bottom a:hover { background: #a93226; }
+  .nav-bottom .nav-label { font-size: 12px; opacity: 0.7; }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 24px; }
+    .script-card { padding: 18px; }
+    .nav-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">SHORT VIDEO SCRIPTS</div>
+  <h1>2026年12月 · 视频脚本</h1>
+  <div class="theme">🎄 年终收官 · 双12圣诞</div>
+  <div class="meta">共8条脚本 | 每周2条 | 店长直拍版</div>
+</div>
+
+<div class="container">
+
+<!-- ============ 第21周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第21周 · 双12 + 圣诞季</div>
+
+  <!-- Script 1 -->
+  <div class="script-card">
+    <span class="script-num">第21周 ①</span>
+    <h3>双12最后机会：年终必配眼镜清单</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">活动</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"双11错过了？没关系——双12是今年最后一次配镜优惠窗口，错过了就是2027年再见。"</div>
+      <div class="highlight"><strong>版本B：</strong>"年终奖马上到账，我帮你列好了年底最值得配的三类眼镜——每一分钱都花在刀刃上。"</div>
+      <div class="highlight"><strong>版本C：</strong>"2026年最后一次大促，永州爱眼城双12清单——照着买，不踩雷。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>第一类——升级主力眼镜。台词："第一类：换掉你现在戴的这副——如果你眼镜戴了两年以上、镜片磨花了、或者验光度数变了。双12，爱眼城防蓝光+超薄套餐从369起，年终底价，年度最后一次。"</li>
+        <li><strong>8-11秒：</strong>第二类——功能眼镜。台词："第二类：给自己配一副功能镜。开车多的配偏光太阳镜、天天电脑的配抗疲劳镜片、经常外出的配变色镜片——一副功能镜能让生活方便很多。双12都参加活动。"</li>
+        <li><strong>12-15秒：</strong>第三类——送礼。台词："第三类：送人。年底了，送父母一副合适的老花镜、送对象一副好看的镜架——比送什么烟酒都实在。爱眼城还有礼品卡，收礼的人自己来挑款式。"</li>
+        <li><strong>16-20秒：</strong>双12活动速览。台词："爱眼城双12活动：全场镜架8折、镜片套餐满299减50、老花镜特价99起。12月10日到15日，六店同步。记住：这是2026年最后一波。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"双12你想配哪类？评论区回复数字——1自己戴 2功能镜 3送人。我根据你的需求帮你选款。点赞收藏这条，双12来爱眼城的时候直接给店员看，优先安排。今年最后一波了，别等！"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三类眼镜各配实物展示+功能标签；② 用倒计时/日历翻页效果强调"2026最后机会"；③ 活动信息用显眼数字板展示；④ 店长语气要有"年底清仓"的紧迫感但不失真诚。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">年终促销风格BGM</span> <span class="bgm-tag">欢快节奏</span> 音量35%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#双12</span>
+      <span class="hashtag-tag">#年终配镜</span>
+      <span class="hashtag-tag">#眼镜推荐</span>
+      <span class="hashtag-tag">#2026最后一波</span>
+    </div>
+  </div>
+
+  <!-- Script 2 -->
+  <div class="script-card">
+    <span class="script-num">第21周 ②</span>
+    <h3>圣诞节礼物送眼镜？这几款最有心意</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">穿搭</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"圣诞礼物送什么？送眼镜——但不是随便送。送对了比口红还懂她，送错了整个圣诞节都在尴尬。"</div>
+      <div class="highlight"><strong>版本B：</strong>"还在纠结圣诞节送什么？这副眼镜，可能是2026年最走心的圣诞礼物——前提是你选对款。"</div>
+      <div class="highlight"><strong>版本C：</strong>"圣诞节礼物排行榜第一不应该是围巾和巧克力——今年换个思路，送眼镜。我帮你挑好了三款，保准收礼的人喜欢。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>送女友推荐款。台词："送女朋友/老婆——纯钛玫瑰金细边框。轻到只有6克，颜色温柔有质感，搭什么衣服都高级。关键是不挑脸型，圆脸方脸戴着都好看。爱眼城卖得最多的一款女款。"</li>
+        <li><strong>8-11秒：</strong>送男友推荐款。台词："送男朋友/老公——哑光黑TR90半框。时尚但不浮夸，上班能戴、日常能戴、运动甩不掉。这款在永州年轻男士里复购率最高，基本来试过的都会买。"</li>
+        <li><strong>12-15秒：</strong>送父母推荐款。台词："送父母——超轻老花镜。记忆钛合金镜腿，戴上几乎没有重量感，镜片是高清渐进式焦点。老人家戴上了会念你一整年。孝顺不只是买保健品——让他们看清你的脸。"</li>
+        <li><strong>16-20秒：</strong>送礼攻略——配镜须知。台词："小提醒：送眼镜最好先带人来验个光，或者偷偷拍下他/她现在的眼镜——爱眼城可以测出现有眼镜的度数。实在想给惊喜，爱眼城有礼品卡，金额你来定，款式收礼人自己挑。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"圣诞节就在下周末了，现在来爱眼城挑礼物还来得及。三款推荐都在店里，来试戴不收费。你圣诞节准备送什么？评论区告诉我——送眼镜选项扣1，我来给你更多搭配建议。永州爱眼城，帮你的礼物让你在乎的人看得更清。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三款镜架配精美包装，增加礼物氛围；② 用圣诞元素置景（小灯串、松枝、红绿丝带）；③ 每款眼镜配真人上脸效果；④ 礼品卡实物展示。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">圣诞氛围Jingle Bells柔和版</span> <span class="bgm-tag">暖调钢琴</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#圣诞礼物</span>
+      <span class="hashtag-tag">#送眼镜</span>
+      <span class="hashtag-tag">#礼物推荐</span>
+      <span class="hashtag-tag">#永州生活</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第22周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第22周 · 冬季护镜 + 年度盘点</div>
+
+  <!-- Script 3 -->
+  <div class="script-card">
+    <span class="script-num">第22周 ①</span>
+    <h3>冬天镜架变脆是真的！低温护镜四个要点</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"冬天眼镜一掰就断？不是质量差——是低温让镜架变脆了。这个知识很多人不知道，知道的时候眼镜已经断了。"</div>
+      <div class="highlight"><strong>版本B：</strong>"去年12月，爱眼城一个星期修了13副断掉的镜架——全是因为同样一个原因：低温。"</div>
+      <div class="highlight"><strong>版本C：</strong>"你有没有发现，夏天随便掰的镜架，到了冬天变得特别脆弱？科学原理在这，四个要点护好你的眼镜。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>原理讲解。台词："大多数镜架材料——不管是板材还是TR90——在低温下都会变脆。5℃以下，镜架的柔韧性可以下降30%。这就是为什么冬天镜架容易断。"</li>
+        <li><strong>8-10秒：</strong>要点一。台词："第一：不要单手摘眼镜！冬天单手摘，镜腿受力不均匀——80%的镜腿断裂都是单手摘造成的。一定要双手同时摘。"</li>
+        <li><strong>11-14秒：</strong>要点二+三。台词："第二：从室外进室内不要马上用热水冲洗镜片。温差太大，镜片可能炸膜。先在室温放5分钟再洗。第三：不戴的时候放硬壳眼镜盒里，别随手塞口袋——冬天口袋里的钥匙就是镜片杀手。"</li>
+        <li><strong>15-20秒：</strong>要点四+提醒。台词："第四：每隔两周来爱眼城免费调整镜架。螺丝松了、镜腿歪了，冬天特别容易发生——调整免费，断了才花钱。另外冬天如果镜架真断了，来爱眼城一般都能修好，别自己拿胶水粘。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"这条码住，整个冬天都用得上。来永州爱眼城，免费清洗+免费调整+螺丝免费更换——冬天护镜一条龙。你冬天断过镜架吗？评论区说说怎么断的，看看谁最惨。"（笑）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 模拟单手摘镜的错误动作（慢动作特写）；② 温差对镜片的影响可用两个场景对比（室外冷→室内热）；③ 硬壳眼镜盒vs口袋放镜的对比画面；④ 调整镜架的画面可展示店内免费服务。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">生活科普节奏</span> <span class="bgm-tag">轻电子节拍</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#眼镜保养</span>
+      <span class="hashtag-tag">#冬季护镜</span>
+      <span class="hashtag-tag">#镜架维修</span>
+      <span class="hashtag-tag">#生活小妙招</span>
+    </div>
+  </div>
+
+  <!-- Script 4 -->
+  <div class="script-card">
+    <span class="script-num">第22周 ②</span>
+    <h3>年度盘点：2026年爱眼城卖得最好的TOP5镜架</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约65秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"一整年了，永州人在爱眼城用真金白银投票——2026年度TOP5镜架，今天一一揭晓。"</div>
+      <div class="highlight"><strong>版本B：</strong>"买了哪款镜架不会后悔？来看这个——12个月的数据，几千副销量，这才是永州人真实的眼光。"</div>
+      <div class="highlight"><strong>版本C：</strong>"想换镜架不知道选什么？直接看2026年度榜单——每一款都是经过市场验证的。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-5秒：</strong>TOP5——透明板材方框。台词："第五名：透明板材方框，时尚感拉满，大学生和文艺青年的首选，尤其适合男生。"</li>
+        <li><strong>6-8秒：</strong>TOP4——复古金属圆框。台词："第四名：复古金属圆框。哈利波特风但不是完全圆的——微椭圆设计，修饰脸型效果特别好。女生戴的多。"</li>
+        <li><strong>9-11秒：</strong>TOP3——TR90全框运动款。台词："第三名：TR90全框运动款。学生党最爱——软弹随便掰不断、跑步打球不掉。一百多块钱，性价比无敌。"</li>
+        <li><strong>12-15秒：</strong>TOP2——钛合金超轻半框。台词："第二名：钛合金超轻半框。重量只有8克多，戴一天鼻梁都没印子。上班族选的最多，300元左右的价格很能打。"</li>
+        <li><strong>16-20秒：</strong>TOP1——纯钛极细细边框。台词："第一名毫无悬念——纯钛极细细边框。重量不到6克、不过敏、不褪色、什么衣服都百搭。贵了一点点但复购率奇高——很多人配了一副又给家人配。这一年卖了超过500副，全永州爱眼城的销冠。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"这五款你戴过哪一款？评论区扣对应的数字——让我看看永州人的品味。2026年马上就结束了，12月来爱眼城还能赶上年终活动。明年又会上哪些新款？关注我，元旦给你们揭秘2027新品！"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① TOP5到TOP1倒序揭晓，每款展示5秒特写+真人佩戴；② 用排名数字动画+销量数据增强说服力；③ 店长服装可以换得正式一点（年度的仪式感）；④ 背景用年度字样装饰（"2026年度榜单"）。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">年度盘点大气BGM</span> <span class="bgm-tag">颁奖典礼风格</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#年度榜单</span>
+      <span class="hashtag-tag">#镜架推荐</span>
+      <span class="hashtag-tag">#2026年度盘点</span>
+      <span class="hashtag-tag">#永州好店</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第23周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第23周 · 年终总结 + 新年趋势</div>
+
+  <!-- Script 5 -->
+  <div class="script-card">
+    <span class="script-num">第23周 ①</span>
+    <h3>2026年终总结：这一年我在爱眼城配了多少付眼镜</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"你们做年终总结，我也得做——2026年，我在爱眼城一共验了___次光，配了___副眼镜。这个数字让我自己都惊讶。"</div>
+      <div class="highlight"><strong>版本B：</strong>"2026年最后几天了，翻了一下我们系统的数据——这一年，永州爱眼城发生了很多事。想记录下来。"</div>
+      <div class="highlight"><strong>版本C：</strong>"每到年底我就喜欢翻数据——2026年爱眼城从0做短视频到现在几千粉丝，这一年，值得一个认真的总结。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>数据总结。台词："这一年永州爱眼城六家门店总共配了超过八千副眼镜——平均每天20多副。最多的一天是双11，单日配了80副，机器都快冒烟了。感谢每一位信任我们的顾客。"</li>
+        <li><strong>8-11秒：</strong>服务数据回顾。台词："全年免费验光超过一万两千人次、免费调整镜架无数次、螺丝都不知道换了几千颗。我们在永州做了15年了，就是靠这些基本功一点点积累的信任。"</li>
+        <li><strong>12-16秒：</strong>短视频成绩和个人感悟。台词："2026年初我们开始拍短视频，从第一个视频没人看，到后来每天有永州人拿着视频到店里说'就配这个'。说实话，做眼镜这么多年，拍视频是新的挑战——但值得。"</li>
+        <li><strong>17-20秒：</strong>致谢。台词："最感动的是老顾客带新顾客来，说是'看了你的视频来的'。2026年，永州爱眼城谢谢大家。2027年，我们继续把这件小事做好——帮你看清这个世界。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你的2026年有什么想总结的？评论区留一句，算是给自己的年终结语。12月来爱眼城配眼镜，就当是给自己的年终礼物。永州爱眼城陪你一起，看清2027。"（微笑，镜头缓退）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 店长用温和走心语气，可以加入少量店内日常照片/视频闪回；② 数据展示使用字幕或轻动画；③ 背景用暖色调+年末氛围（小暖灯等）；④ 结尾可以给店长一个微笑特写
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">温暖叙事钢琴曲</span> <span class="bgm-tag">慢节奏暖调</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#2026年终总结</span>
+      <span class="hashtag-tag">#永州生活</span>
+      <span class="hashtag-tag">#实体店日常</span>
+      <span class="hashtag-tag">#年终回顾</span>
+    </div>
+  </div>
+
+  <!-- Script 6 -->
+  <div class="script-card">
+    <span class="script-num">第23周 ②</span>
+    <h3>2027眼镜流行趋势预测，永州潮人先看</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">穿搭</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"2027年戴什么眼镜最潮？作为在眼镜行业干了十几年的老眼镜人，给你一份趋势预测——提前知道不吃亏。"</div>
+      <div class="highlight"><strong>版本B：</strong>"别再买去年流行的镜架了——2027年的眼镜潮流已经开始转向。三个趋势，永州人先人一步。"</div>
+      <div class="highlight"><strong>版本C：</strong>"年底了，各大眼镜展的趋势报告我都看了。2027年眼镜会变成什么样？一个字：轻。细。透。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>趋势一——极致轻薄。台词："趋势一：极致轻薄。2027年镜架的重量会向5克以内进化。纯钛、β钛、碳纤维材料会成为主流——戴上几乎感觉不到。粗框大黑边的时代正在过去。"</li>
+        <li><strong>8-11秒：</strong>趋势二——透明/半透明材质。台词："趋势二：透明风继续吹。透明板材、果冻色镜架会是2027年的流量密码。特别是水晶灰、雾蓝这两个颜色，高级感拉满，谁戴谁好看。"</li>
+        <li><strong>12-15秒：</strong>趋势三——复古细金属。台词："趋势三：复古细金属框回归。90年代那种极细的椭圆金属框正在回来——但不是一模一样，是改良过的微椭圆+更精致的金属工艺。文艺但很高级。"</li>
+        <li><strong>16-20秒：</strong>给永州人的建议。台词："以上三个趋势在爱眼城已经有样品了，元旦前后会全面上架。建议永州潮人们：先来店里试戴看效果，流行只是一个方向，适合自己的才是最好的。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"这三个趋势你最看好哪个？评论区说说——看你的眼光跟不跟得上潮流。一月元旦，来永州爱眼城试戴2027新款，第一批尝鲜的人永远最赚。今年最后一期趋势预测了，明年见！"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 每个趋势配对应的镜架实物+时尚穿搭参考图；② 用"2026→2027"的过渡动画增加年终感；③ 镜架拍摄用简洁背景突出产品质感；④ 店长语气自信、专业、有前瞻感。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">时尚秀场风BGM</span> <span class="bgm-tag">T台节奏</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#2027眼镜趋势</span>
+      <span class="hashtag-tag">#眼镜潮流</span>
+      <span class="hashtag-tag">#永州潮人</span>
+      <span class="hashtag-tag">#时尚预测</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第24周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第24周 · 寒假 + 元旦迎新</div>
+
+  <!-- Script 7 -->
+  <div class="script-card">
+    <span class="script-num">第24周 ①</span>
+    <h3>寒假到了，给永州家长三个护眼建议</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"告诉你一个恐怖故事：寒假一个月，孩子的近视度数可能涨50度。每个永州家长都该防的事。"</div>
+      <div class="highlight"><strong>版本B：</strong>"寒假=近视加速器。这不是危言耸听，我见过太多孩子——开学第一天就来配眼镜，度数一个寒假涨了一截。"</div>
+      <div class="highlight"><strong>版本C：</strong>"永州的家长们注意了——放假不是放松眼睛的理由。寒假护眼三个建议，每一个都很简单但很重要。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>建议一——户外活动。台词："第一条也是最重要的一条：保证每天至少一到两个小时的户外活动。不是运动量的问题，是户外光线刺激视网膜分泌多巴胺，能有效抑制眼轴增长——这是有科学数据的。"</li>
+        <li><strong>8-11秒：</strong>建议二——电子产品管理。台词："第二条：管理电子产品时间。别一刀切不让玩，定规矩：平板/手机连续不超过25分钟，然后必须休息5分钟看远处。可以用番茄钟App，孩子反而觉得好玩。"</li>
+        <li><strong>12-15秒：</strong>建议三——寒假验光。台词："第三条：寒假结束前带孩子验一次光。很多孩子一学期下来度数已经变了，趁寒假换副合适的眼镜，开学不眯眼看黑板。来爱眼城，青少年验光免费。"</li>
+        <li><strong>16-20秒：</strong>补充提醒。台词："另外特别提醒：如果孩子告诉你'眼睛酸'、'看不清'——别觉得是偷懒不想写作业。大部分是真的看不清。早发现、早矫正，度数控制住，这才是负责任的家长。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"永州的家长们，这三个建议截图保存，寒假照着做。带孩子来爱眼城免费验光——我们也是做父母的，知道每个家长都希望孩子眼睛好。你们家孩子寒假每天户外多长时间？评论区说说。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 户外活动场景可在永州本地公园/江边拍摄；② 番茄钟App画面可投屏展示；③ 青少年验光镜头温暖专业；④ 店长语气亲切如邻家大哥/大姐。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">温暖家庭风BGM</span> <span class="bgm-tag">轻快吉他</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#寒假护眼</span>
+      <span class="hashtag-tag">#青少年近视</span>
+      <span class="hashtag-tag">#家长必看</span>
+      <span class="hashtag-tag">#护眼建议</span>
+    </div>
+  </div>
+
+  <!-- Script 8 -->
+  <div class="script-card">
+    <span class="script-num">第24周 ②</span>
+    <h3>元旦换新颜：年终奖买副好眼镜，去爱眼城</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约50秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"年终奖到手了，第一件事做什么？买衣服？换手机？我跟你说——换副好眼镜，天天要戴的才算值。"</div>
+      <div class="highlight"><strong>版本B：</strong>"2027年第一笔消费，别乱花。用在脸上——我是说眼镜上。这副眼镜，每天戴十个小时，值得用好一点的。"</div>
+      <div class="highlight"><strong>版本C：</strong>"元旦换新颜，从眼睛开始。一副好眼镜，是永州人2027年最好的开场。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>观念引导。台词："很多人年终奖买衣服买鞋子再吃顿好的——但眼镜呢？你每天睁眼就戴，一天十几个小时。衣服一年换十几套，眼镜三四年不换。这笔账算下来，眼镜才应该是你身上投资最大的单品。"</li>
+        <li><strong>8-12秒：</strong>推荐方案。台词："元旦来爱眼城，年终犒劳自己——建议纯钛镜架+1.67超薄镜片，顶级舒适度组合，一天戴下来跟没戴似的。价格600到800之间，一副戴两三年，平摊一天几毛钱。"</li>
+        <li><strong>13-16秒：</strong>元旦活动预告。台词："元旦期间爱眼城有迎新活动：全场消费满500送品牌擦镜布套装、满800送品牌偏光太阳镜夹片一副。1月1号到3号，限时三天。"</li>
+        <li><strong>17-20秒：</strong>新年仪式感。台词："2027年的第一天，做一件真正对自己好的事。配一副好眼镜，新的一年，看得更清、走得更远。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你的年终奖打算怎么花？评论区聊聊——我敢说，配眼镜一定是最值得的投资之一。元旦来永州爱眼城，我亲自帮你选一款，2027新年新气象，从眼睛开始。新年快乐！"（挥手致意）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 元旦氛围（新年装饰、红色/金色元素）；② 年终奖概念用趣味画面（红包、礼盒）；③ 产品展示精致有质感；④ 店长语气新年感，积极正能量。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">新年氛围喜庆BGM</span> <span class="bgm-tag">轻快欢庆</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#元旦换新</span>
+      <span class="hashtag-tag">#年终奖</span>
+      <span class="hashtag-tag">#新年新气象</span>
+      <span class="hashtag-tag">#2027新年</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ 底部导航 ============ -->
+<div class="nav-bottom">
+  <a href="month-05-2026-11.html">
+    <div class="nav-label">← 上一月</div>
+    2026年11月
+  </a>
+  <span style="color:#999;font-size:15px;font-weight:600;">2026年12月</span>
+  <a href="month-07-2027-01.html">
+    <div class="nav-label">下一月 →</div>
+    2027年1月
+  </a>
+</div>
+
+<div class="footer">
+  © 2026 永州爱眼城眼镜 · 短视频内容策划 · 仅供内部使用
+</div>
+
+</div>
+</body>
+</html>
