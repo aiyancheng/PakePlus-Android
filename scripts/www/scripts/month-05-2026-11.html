@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 短视频脚本 · 2026年11月</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f0eb;
+    color: #333;
+    line-height: 1.7;
+  }
+  .top-bar {
+    background: #c0392b;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .top-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 28px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .top-bar a:hover { background: rgba(255,255,255,0.28); }
+  .header {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .header .month-tag { font-size: 14px; opacity: 0.85; letter-spacing: 2px; margin-bottom: 8px; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header .theme { font-size: 18px; opacity: 0.9; margin-bottom: 4px; }
+  .header .meta { font-size: 13px; opacity: 0.7; margin-top: 8px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  .week-section { margin-bottom: 40px; }
+  .week-title {
+    background: #fff;
+    border-left: 5px solid #c0392b;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #c0392b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .script-card {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+  }
+  .script-card .script-num {
+    display: inline-block;
+    background: #c0392b;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .script-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 6px;
+  }
+  .script-card .tags-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+  .script-card .tag {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag-type { background: #fdecea; color: #c0392b; }
+  .tag-duration { background: #e8f5e9; color: #2e7d32; }
+  .script-block {
+    margin-bottom: 18px;
+  }
+  .script-block h4 {
+    font-size: 15px;
+    color: #c0392b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .script-block h4::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #c0392b;
+    border-radius: 50%;
+  }
+  .script-block ul { padding-left: 18px; }
+  .script-block li { margin-bottom: 6px; font-size: 14px; color: #555; }
+  .script-block .highlight {
+    background: #fff3e0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 14px;
+    border-left: 3px solid #ff9800;
+  }
+  .divider {
+    border: none;
+    border-top: 1px dashed #e0e0e0;
+    margin: 18px 0;
+  }
+  .shoot-tips {
+    background: #f9f9f9;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+  }
+  .shoot-tips strong { color: #c0392b; }
+  .bgm-tag, .hashtag-tag {
+    display: inline-block;
+    background: #e8eaf6;
+    color: #3f51b5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .hashtag-tag { background: #fce4ec; color: #c0392b; }
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 2px solid #e0d5cc;
+    margin-top: 20px;
+  }
+  .nav-bottom a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c0392b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-bottom a:hover { background: #a93226; }
+  .nav-bottom .nav-label { font-size: 12px; opacity: 0.7; }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 24px; }
+    .script-card { padding: 18px; }
+    .nav-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">SHORT VIDEO SCRIPTS</div>
+  <h1>2026年11月 · 视频脚本</h1>
+  <div class="theme">🛒 双11狂欢 · 冬季防护</div>
+  <div class="meta">共8条脚本 | 每周2条 | 店长直拍版</div>
+</div>
+
+<div class="container">
+
+<!-- ============ 第17周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第17周 · 双11主战场</div>
+
+  <!-- Script 1 -->
+  <div class="script-card">
+    <span class="script-num">第17周 ①</span>
+    <h3>双11配镜攻略：这样买最划算，永州人看过来</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">活动</span>
+      <span class="tag tag-duration">⏱ 约65秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"双11配眼镜，别再算满减算到头秃了。这一条，爱眼城帮你把账算得明明白白。"</div>
+      <div class="highlight"><strong>版本B：</strong>"永州人双11配镜最强省钱攻略来了——三个组合，每种需求都覆盖，照抄就行。"</div>
+      <div class="highlight"><strong>版本C：</strong>"今年双11配眼镜，有人多花了300块——同样的配置。来，我告诉你怎么组合最省钱。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>攻略框架。店长站在价目表前，手势引导。台词："双11爱眼城就三个核心套餐，根据自己的度数对号入座，不用满减、不用凑单，直接底价。"</li>
+        <li><strong>8-11秒：</strong>轻度近视套餐。台词："如果你300度以内——选1.56抗疲劳+钛合金半框套餐，299元拿下。适合学生和轻度近视的上班族，日常用完全够。"</li>
+        <li><strong>12-15秒：</strong>中度近视套餐。台词："300到600度——1.60防蓝光+TR90框套餐，369元。折射率合适，镜片不厚，还能防蓝光。这个组合是爱眼城双11的主力，卖最多。"</li>
+        <li><strong>16-20秒：</strong>高度近视/进阶需求。台词："600度以上或者想一步到位——1.67超薄+纯钛框套餐，599元。轻薄、不过敏、质感好。高度近视的朋友这个价位平时根本买不到。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"三个套餐，我都贴在评论区了。另外提醒：先验光再下单，验光免费！永州爱眼城六家门店都可以。不知道怎么选的，带度数额来店里我帮你搭配。这个攻略转发给要配眼镜的朋友，一起省钱。"（竖起大拇指）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 价目表做实体大展板或数字大字幕并列展示；② 每款套餐产品实拍+价格数字特效弹出；③ 店长用激光笔/手指引导，节奏干脆利落；④ 带永州爱眼城门店门头入镜增加可信度。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">促销快节奏电子乐</span> <span class="bgm-tag">鼓点强劲</span> 音量35%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#双11攻略</span>
+      <span class="hashtag-tag">#配镜省钱</span>
+      <span class="hashtag-tag">#双十一配眼镜</span>
+      <span class="hashtag-tag">#永州生活</span>
+    </div>
+  </div>
+
+  <!-- Script 2 -->
+  <div class="script-card">
+    <span class="script-num">第17周 ②</span>
+    <h3>线上配眼镜VS爱眼城到店，真实差距在哪</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"网上配眼镜只要99，我们店里起步299——差价200，到底差在哪？今天不遮不掩给你拆开看。"</div>
+      <div class="highlight"><strong>版本B：</strong>"网上配镜和到店配镜，我有发言权。因为每周都有顾客带网上买的眼镜来我们店里修——修不了。"</div>
+      <div class="highlight"><strong>版本C：</strong>"99元配一副眼镜——真的能用吗？我买了一副跟你实测，三个问题让我沉默了。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>差异一——验光。台词："差异一：验光。网上配镜你自己填度数，填高了晕、填低了看不清。爱眼城到店用综合验光仪，至少测瞳距、散光轴位、主导眼——这三个参数线上根本测不了。差1mm，戴着就是不舒服。"</li>
+        <li><strong>8-11秒：</strong>差异二——镜架适配。台词："差异二：镜架。网上看图选，拿到手上脸——大了、小了、夹头、滑鼻梁。到店能试戴几十款，鼻托弧度、镜腿角度现场调。眼镜这东西，差一毫米都不舒服。"</li>
+        <li><strong>12-16秒：</strong>差异三——售后。台词："差异三：售后。网上配镜出了事——镜片脱膜、镜架变形、戴着晕——你找客服？拉锯战。爱眼城到店，免费调整、免费清洗、半年质保，摔坏了一个星期内半价重配。这就是本地实体店的底气。"</li>
+        <li><strong>17-20秒：</strong>总结对比。台词："线上价格确实低，但如果戴着不舒服=钱白花。我们不是不让网上配，是想让你知道——眼镜不比衣服，不合适退货不心疼。眼镜没配好，就是花钱买难受。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你如果在网上配过眼镜，体验怎么样？评论区说实话，翻车了的扣1，还行的扣2。不管你在哪配，验光可以来爱眼城免费做——这个承诺不变。眼睛的事，认真点。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 网上买的眼镜和店铺眼镜对比特写（镀膜质量、镜架做工）；② 综合验光仪操作画面增加专业感；③ 镜架试戴画面：同一人戴不合适的镜架vs合适的镜架对比；④ 保持客观公正，不要攻击线上商家。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">理性分析风格背景音乐</span> <span class="bgm-tag">简约节奏</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#网上配镜</span>
+      <span class="hashtag-tag">#到店配眼镜</span>
+      <span class="hashtag-tag">#配镜避坑</span>
+      <span class="hashtag-tag">#实体店的优势</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第18周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第18周 · 冬季痛点 + 双11热度</div>
+
+  <!-- Script 3 -->
+  <div class="script-card">
+    <span class="script-num">第18周 ①</span>
+    <h3>冬天戴口罩眼镜起雾，三种方案测评哪个最好用</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"冬天戴口罩，眼镜起雾有多烦——进超市门那一刻直接失明。今天实测三种方案，告诉你哪个真有用。"</div>
+      <div class="highlight"><strong>版本B：</strong>"眼镜党冬天的终极噩梦——口罩一呼、镜片全白。肥皂水、防雾布、防雾镜片，我帮你都试了一遍。"</div>
+      <div class="highlight"><strong>版本C：</strong>"天一冷，爱眼城每天被问最多的问题——'有没有不起雾的眼镜？'——有，今天三条路都告诉你。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>方案一测评。店长实测展示。台词："方案一：肥皂水/洗洁精涂抹法。免费，但管用时间短，大概两小时，而且镜片会有一层薄雾感——不够清透。应急可以，日常不建议。"</li>
+        <li><strong>8-11秒：</strong>方案二测评。台词："方案二：防雾镜布。随身携带方便，擦一次管半天到一天。价格十几块钱一片，能用一个月。适合偶尔起雾的时候用，包里备一片不错。"</li>
+        <li><strong>12-16秒：</strong>方案三测评。台词："方案三：防雾镜片——永州爱眼城主力推荐。镜片表面有一层亲水膜，雾气过来直接铺平成水膜而不是结成水珠，所以不起雾。一劳永逸，只要镜片不换一直有效，比防雾布省心。"</li>
+        <li><strong>17-20秒：</strong>总结对比（字幕表格辅助）。台词："短期省钱→防雾布。天天戴口罩想彻底解决→防雾镜片。紧急→肥皂水。三种方案爱眼城都有，你想试哪种，来店里我给你看效果。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"这个冬天你准备选哪种方案？截图这个对比表，来爱眼城说'看视频来的'我帮你试防雾镜片——现场口罩吹气实测，不起雾再决定买不买。评论区说一下：你眼镜起雾时最社死的场面是什么？"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三种方案都要实测画面——戴口罩呼气的起雾/不起雾对比是核心；② 防雾镜片vs普通镜片的对比用分屏画面；③ 方案总结用大字幕表格对比；④ 店长戴眼镜+戴口罩亲身演示更有说服力。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">轻快测评风格</span> <span class="bgm-tag">科技感电子乐</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#眼镜起雾</span>
+      <span class="hashtag-tag">#防雾镜片</span>
+      <span class="hashtag-tag">#冬天戴口罩</span>
+      <span class="hashtag-tag">#眼镜党福音</span>
+    </div>
+  </div>
+
+  <!-- Script 4 -->
+  <div class="script-card">
+    <span class="script-num">第18周 ②</span>
+    <h3>双11爱眼城爆单了！现场来一波</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">日常</span>
+      <span class="tag tag-duration">⏱ 约50秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"双11你们在剁手衣服零食，永州有一群人——在疯狂配眼镜。来看现场。"</div>
+      <div class="highlight"><strong>版本B：</strong>"今天双11，爱眼城门店什么情况？我带你走一圈，真的忙飞了！"</div>
+      <div class="highlight"><strong>版本C：</strong>"知道双11什么最好卖吗？不是衣服不是零食——是眼镜。来看看爱眼城的双11实况。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>门店外景→推门进入，展示店内人气。台词："早上九点一开门，验光区已经排了四个人。这是我今天拍的——不是摆拍，真就这么忙。"</li>
+        <li><strong>8-12秒：</strong>镜头扫过配镜区、试戴区、加工室。台词："这边选镜架的、那边在验光的、后面加工室机器就没停过。最火的还是双11的三款套餐——299的抗疲劳套餐今天已经出了十几副。"</li>
+        <li><strong>13-16秒：</strong>随机采访一位正在配镜的顾客（提前沟通好）。台词："来，这位美女今天配了什么？'钛合金半框+防蓝光，369那个套餐，朋友推荐来的。'——看，口碑就是这么来的。"</li>
+        <li><strong>17-20秒：</strong>店长对着镜头擦汗但开心。台词："累是真累，但看到大家戴上新眼镜那个满意的表情，值了。双11活动到11月15号，没来的抓紧。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"今年双11配了眼镜的小伙伴，评论区晒一下你的新眼镜！还没来的，活动还有几天，趁周末过来——下周人少了服务更好。永州爱眼城，感谢每一位信任我们的顾客！"（对着镜头鞠躬）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 真实记录门店忙碌场景，不要过度摆拍；② 顾客出镜必须提前征得同意（可虚化处理或拍背面）；③ 节奏明快，镜头切换频繁（3秒一切）；④ 保留一些真实声音（验光师说话声、机器声）增加临场感。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">Vlog生活节奏BGM</span> <span class="bgm-tag">欢快电子乐</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#双11现场</span>
+      <span class="hashtag-tag">#配眼镜</span>
+      <span class="hashtag-tag">#实体店日常</span>
+      <span class="hashtag-tag">#永州生活</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第19周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第19周 · 防雾专题 + 冬季干燥</div>
+
+  <!-- Script 5 -->
+  <div class="script-card">
+    <span class="script-num">第19周 ①</span>
+    <h3>防雾镜片VS防雾布VS防雾喷雾，谁最能打</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"防雾产品花里胡哨一大堆，到底谁才是冬天眼镜党的真命天子？今天三款正面刚。"</div>
+      <div class="highlight"><strong>版本B：</strong>"花了半个月工资把市面上三种防雾方案都买回来了——评测结果：只有一款我愿意推荐给我妈。"</div>
+      <div class="highlight"><strong>版本C：</strong>"防雾布说能用一个月、防雾喷雾说喷一次管三天、防雾镜片说永久有效——都是吹牛还是真有用？实测来了。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>防雾布实测。台词："防雾布——擦一次当天有效。优点：方便、便宜。缺点：每天要擦，三天不擦就打回原形。而且水洗一次效果减一半。结论：懒人不适合。"</li>
+        <li><strong>8-11秒：</strong>防雾喷雾实测。台词："防雾喷雾——喷一次能管2到3天，比防雾布持久。但喷不均匀会有痕迹，而且有些喷雾味道不小。结论：效果还行但操作有门槛，手残党不友好。"</li>
+        <li><strong>12-16秒：</strong>防雾镜片实测。台词："防雾镜片——永久有效。怎么做到的？镜片前表面镀了一层超亲水膜层，水汽碰到镜片不是凝成雾珠，而是铺开成一层均匀水膜——透明的，完全不挡视线。不用喷不用擦，口罩呼一天都不起雾。"</li>
+        <li><strong>17-20秒：</strong>总结对比+价格说明。台词："结论：防雾镜片虽然单次投入最高，但长期用反而是最划算的——一副镜片两三年不用买任何防雾产品。爱眼城防雾镜片套餐299起，一副顶所有。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"所以你站哪个？评论区投票——A防雾布 B防雾喷雾 C防雾镜片。选C的来爱眼城双11返场活动还在，防雾镜片套餐有优惠。冬天还长着呢，别让起雾毁了你每天出门的心情。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三款产品做出镜实物对比；② 每款做口罩呼气实测，用分屏对比效果；③ 起雾眼镜的狼狈画面vs防雾镜片的清爽画面对比；④ 价格对比用柱状图形式展示。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">横向测评风格</span> <span class="bgm-tag">明快节奏BGM</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#防雾镜片</span>
+      <span class="hashtag-tag">#防雾布</span>
+      <span class="hashtag-tag">#眼镜测评</span>
+      <span class="hashtag-tag">#冬天必备</span>
+    </div>
+  </div>
+
+  <!-- Script 6 -->
+  <div class="script-card">
+    <span class="script-num">第19周 ②</span>
+    <h3>入冬了，暖气房里眼睛特别干怎么办</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"办公室暖气一开，眼睛干得像沙漠——滴眼药水也没用。问题不在眼睛，在空气。"</div>
+      <div class="highlight"><strong>版本B：</strong>"永州的冬天不太冷？但你开了暖气试试——半小时眼睛就干到眨不动。四个方法救你。"</div>
+      <div class="highlight"><strong>版本C：</strong>"你的眼睛不是干，是被暖气'烘'干的。知道这个原理，你就能对症解决。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>原理解释。台词："暖气房的湿度能掉到20%以下——正常眼睛舒服的湿度是40%-60%。泪液蒸发速度快了三倍，不干才怪。"</li>
+        <li><strong>8-11秒：</strong>方法一+二。台词："方法一：办公桌放个USB加湿器，几十块钱，局部湿度能提高15%。方法二：20-20-20法则——每20分钟看20英尺外20秒，同时做眨眼练习。"</li>
+        <li><strong>12-15秒：</strong>方法三+四。台词："方法三：午休时拿温毛巾敷眼5分钟，促进睑板腺分泌。方法四：选对眼药水——买不含防腐剂的人工泪液，单支装最好。三块五一支，能用一天。"</li>
+        <li><strong>16-20秒：</strong>提醒：如果干眼已经很严重。台词："如果你的眼睛已经干到有异物感、见光流泪、视力时好时坏——别拖了，来爱眼城做个干眼检查，我们有专门的裂隙灯可以看泪膜状况。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"这四个方法，点赞收藏，整个冬天都用得上。来永州爱眼城，免费干眼基础检查。你办公室/家里的湿度是多少？拿手机天气App看一下，评论区报个数，比比谁最干。"（笑）</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 用温湿度计实测暖气房的数据增加说服力；② 加湿器出雾画面有治愈感；③ 热敷画面温馨舒适；④ 人工泪液展示单支装产品实物，标注"无防腐剂"。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">舒缓治愈钢琴</span> 音量25%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#干眼症</span>
+      <span class="hashtag-tag">#暖气房</span>
+      <span class="hashtag-tag">#冬季护眼</span>
+      <span class="hashtag-tag">#护眼小妙招</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 第20周 ============ -->
+<div class="week-section">
+  <div class="week-title">📅 第20周 · 冬季护眼 + 月度收官</div>
+
+  <!-- Script 7 -->
+  <div class="script-card">
+    <span class="script-num">第20周 ①</span>
+    <h3>冬季护眼不踩坑，爱眼城验光师的私藏建议</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">科普</span>
+      <span class="tag tag-duration">⏱ 约60秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"冬季护眼最容易踩的四个坑——全踩过的人眼睛已经出问题了。验光师私藏建议，听一次少走弯路。"</div>
+      <div class="highlight"><strong>版本B：</strong>"为什么冬天眼睛比夏天更容易出问题？不是天冷，是你在这四件事上搞错了。"</div>
+      <div class="highlight"><strong>版本C：</strong>"我干了八年验光师，冬天最怕顾客问'眼睛不舒服是不是正常的'——当然不正常。这四个坑别踩。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>第1坑——盲目滴清凉眼药水。台词："第一坑：眼干就滴清凉眼药水。越滴越干，因为含防腐剂和血管收缩剂，长期用损伤角膜。记住：人工泪液是唯一安全的选择。"</li>
+        <li><strong>8-11秒：</strong>第2坑——暖气对着脸吹。台词："第二坑：暖气/空调出风口对着脸吹。这是冬天干眼头号帮凶。把风口往上调，或者加个挡板——这个小动作比眼药水管用。"</li>
+        <li><strong>12-15秒：</strong>第3坑——冬天忽略紫外线。台词："第三坑：冬天不戴墨镜。永州冬天大晴天紫外线强度能到4级，加上地面可能有薄雪反光——紫外线更猛。冬天开车也要戴偏光镜。"</li>
+        <li><strong>16-20秒：</strong>第4坑+总结。台词："第四坑：眼镜脏了用衣角擦。冬天静电大灰尘多，一擦就是划痕。随身带擦镜布——爱眼城免费送。以上四坑总结：别乱滴、别直吹、别忘防晒、别乱擦。冬天眼睛比夏天更需要呵护。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"这四坑你踩过几个？评论区老实说。来永州爱眼城，免费调整眼镜、免费清洗、还能领擦镜布——不收钱，就是想让永州人都有一双好眼睛。这个冬天，我们陪着你。"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 四个坑各做一个"❌"手势+搞笑示范（袖口擦眼镜等）；② 每坑用大字幕标注"坑一/二/三/四"和关键词；③ 店长语气可稍微严肃专业一些；④ 擦眼镜的错误示范要有喜剧效果。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">知识科普风格</span> <span class="bgm-tag">沉稳BGM</span> 音量28%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#冬季护眼</span>
+      <span class="hashtag-tag">#避坑指南</span>
+      <span class="hashtag-tag">#验光师建议</span>
+      <span class="hashtag-tag">#护眼知识</span>
+    </div>
+  </div>
+
+  <!-- Script 8 -->
+  <div class="script-card">
+    <span class="script-num">第20周 ②</span>
+    <h3>11月收官：这个月在爱眼城最受欢迎的三款眼镜</h3>
+    <div class="tags-line">
+      <span class="tag tag-type">种草</span>
+      <span class="tag tag-duration">⏱ 约55秒</span>
+    </div>
+
+    <div class="script-block">
+      <h4>🎣 0-3秒 钩子</h4>
+      <div class="highlight"><strong>版本A：</strong>"双11过去了，永州人用钱包选出了11月最值得买的三款眼镜——这个结果连我都有点意外。"</div>
+      <div class="highlight"><strong>版本B：</strong>"30天、六个门店、上千副眼镜——11月爱眼城销量前三名，今天全部公开。"</div>
+      <div class="highlight"><strong>版本C：</strong>"11月卖得最好的眼镜，不是最贵的那副——是这三副。永州人的眼光果然很准。"</div>
+    </div>
+
+    <div class="script-block">
+      <h4>📖 4-20秒 主体</h4>
+      <ul>
+        <li><strong>4-7秒：</strong>TOP3——防雾镜片套餐。台词："第三名：防雾镜片+TR90框套餐。11月天气一冷，口罩一戴，防雾需求直接爆了。这个月卖了快200副——永州人太懂自己的需求了。"</li>
+        <li><strong>8-12秒：</strong>TOP2——1.60防蓝光+钛合金框套餐。台词："第二名：1.60防蓝光+钛合金框双11套餐。369块的价格，中端配置，配合双11活动卖得飞起。尤其程序员和考研党买得最多——防蓝光是刚需。"</li>
+        <li><strong>13-16秒：</strong>TOP1——纯钛细边框+1.67超薄套餐。台词："第一名：纯钛细边框+1.67超薄套餐。这个是意料之中——月月都在前三。轻、薄、有质感，6克重的镜架，戴一天忘了自己戴着眼镜。双11价599，平时799，11月不买真的亏。"</li>
+        <li><strong>17-20秒：</strong>月度总结。台词："三款眼镜，覆盖了从299到599三个价位，不管什么预算都有好选择。12月还有双12和年终活动，关注我不错过。"</li>
+      </ul>
+    </div>
+
+    <div class="script-block">
+      <h4>💬 21-30秒 互动收尾</h4>
+      <div class="highlight">"你11月在爱眼城配了哪款？评论区带图让我看看你的新眼镜！下个月双12，提前告诉我你预算多少、想配什么类型，我帮你提前选——评论区留言就行。永州爱眼城，12月见！"</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="shoot-tips">
+      <strong>📷 拍摄要点：</strong>① 三款眼镜逐一特写+真人佩戴；② 销量数字用动态数字动画呈现；③ 店长可以在门店前拍摄增加归属感；④ 节奏轻松，有条"月度总结"的仪式感。
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>🎵 BGM建议：</strong> <span class="bgm-tag">总结盘点风格</span> <span class="bgm-tag">时尚轻电子</span> 音量30%
+    </div>
+    <div style="margin-top:6px;font-size:13px;">
+      <strong>🏷 话题标签：</strong>
+      <span class="hashtag-tag">#永州爱眼城</span>
+      <span class="hashtag-tag">#月度盘点</span>
+      <span class="hashtag-tag">#眼镜推荐</span>
+      <span class="hashtag-tag">#好物分享</span>
+      <span class="hashtag-tag">#永州生活</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 底部导航 ============ -->
+<div class="nav-bottom">
+  <a href="month-04-2026-10.html">
+    <div class="nav-label">← 上一月</div>
+    2026年10月
+  </a>
+  <span style="color:#999;font-size:15px;font-weight:600;">2026年11月</span>
+  <a href="month-06-2026-12.html">
+    <div class="nav-label">下一月 →</div>
+    2026年12月
+  </a>
+</div>
+
+<div class="footer">
+  © 2026 永州爱眼城眼镜 · 短视频内容策划 · 仅供内部使用
+</div>
+
+</div>
+</body>
+</html>
