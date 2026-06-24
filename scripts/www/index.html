@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 店长短视频全年运营手册</title>
+<style>
+  :root {
+    --primary: #1a1a2e;
+    --accent: #c0392b;
+    --accent2: #e74c3c;
+    --bg: #fafafa;
+    --card-bg: #ffffff;
+    --text: #333333;
+    --text-light: #666666;
+    --border: #e0e0e0;
+    --gold: #d4a853;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* 封面 */
+  .cover {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 30%, #1a1a2e 70%, #0f0c29 100%);
+    color: #fff;
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(212,168,83,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 30%, rgba(231,76,60,0.1) 0%, transparent 50%);
+  }
+  .cover .brand {
+    font-size: 16px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+  }
+  .cover h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 12px;
+  }
+  .cover h1 .city { color: var(--gold); }
+  .cover .subtitle {
+    font-size: 18px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+  }
+  .cover .meta {
+    font-size: 14px;
+    opacity: 0.55;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+  }
+
+  /* 主容器 */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    font-weight: 700;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 24px;
+  }
+  .section-title .num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    width: 38px; height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  table th {
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  table tr:hover td { background: #faf5f5; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 2px 4px;
+  }
+  .tag-red    { background: #fde8e8; color: #c81e1e; }
+  .tag-blue   { background: #e1effe; color: #1a56db; }
+  .tag-green  { background: #def7ec; color: #03543f; }
+  .tag-orange { background: #fef3c7; color: #92400f; }
+  .tag-purple { background: #ede9fe; color: #5521b5; }
+
+  .callout {
+    border-left: 4px solid var(--accent);
+    background: #fff5f5;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+  }
+  .callout strong { display: block; margin-bottom: 6px; }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .metric-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .metric-card .value { font-size: 32px; font-weight: 800; color: var(--accent); }
+  .metric-card .label { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+  /* 月份导航卡片 */
+  .month-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .month-link {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .month-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border-color: var(--accent2);
+  }
+  .month-link .month-num {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .month-link .month-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .month-link .month-theme {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+  .month-link .month-count {
+    font-size: 12px;
+    color: var(--accent2);
+    margin-top: 6px;
+  }
+
+  /* 脚本预览 */
+  .script-preview {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    border-left: 3px solid var(--accent);
+  }
+  .script-preview .vid-label {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 13px;
+  }
+  .script-preview .vid-title {
+    font-size: 14px;
+    margin: 4px 0;
+  }
+
+  @media (max-width: 768px) {
+    .cover h1 { font-size: 28px; }
+    .cover .subtitle { font-size: 15px; }
+    .month-nav { grid-template-columns: 1fr 1fr; }
+  }
+  @media print {
+    body { background: #fff; }
+    .cover { padding: 30px 20px; }
+    table th { background: #333 !important; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">◆ 永州爱眼城眼镜 ◆</div>
+  <h1>店长短视频<span class="city">全年运营手册</span></h1>
+  <p class="subtitle">每周2条 · 全年104条 · 逐条脚本拆解 · 直接拍摄</p>
+  <p class="meta">执行周期：2026年7月 — 2027年6月 ｜ 平台：抖音/快手/视频号 ｜ 适用：各门店店长</p>
+</div>
+
+<div class="container">
+
+<!-- ====== 核心策略 ====== -->
+<div>
+  <h2 class="section-title"><span class="num">0</span>致爱眼城店长：先看这里</h2>
+
+  <div class="callout">
+    <strong>🎯 为什么店长拍视频比请网红更有效？</strong>
+    永州本地流量，靠的是"熟悉感+专业度"。你每天都在门店、每天接触顾客、每天摸眼镜——这三样，外面请的达人永远做不到。这本手册就是帮你把日常变成内容。
+  </div>
+
+  <div class="metric-grid">
+    <div class="metric-card"><div class="value">104</div><div class="label">全年视频总条数</div></div>
+    <div class="metric-card"><div class="value">8</div><div class="label">每月发布条数</div></div>
+    <div class="metric-card"><div class="value">2</div><div class="label">每周发布条数</div></div>
+    <div class="metric-card"><div class="value">周三+周六</div><div class="label">推荐发布时间</div></div>
+  </div>
+</div>
+
+<!-- ====== 内容矩阵 ====== -->
+<div>
+  <h2 class="section-title"><span class="num">1</span>五大内容系列配比</h2>
+  <table>
+    <tr><th>系列</th><th>标签</th><th>占比</th><th>条数</th><th>目的</th></tr>
+    <tr><td>产品种草</td><td><span class="tag tag-red">种草</span></td><td>30%</td><td>31条</td><td>直接展示产品卖点，带动到店</td></tr>
+    <tr><td>知识科普</td><td><span class="tag tag-blue">科普</span></td><td>25%</td><td>26条</td><td>建立专业信任，让顾客觉得"这家店靠谱"</td></tr>
+    <tr><td>穿搭造型</td><td><span class="tag tag-purple">穿搭</span></td><td>20%</td><td>21条</td><td>破圈吸引永州本地年轻人群</td></tr>
+    <tr><td>门店日常</td><td><span class="tag tag-green">日常</span></td><td>15%</td><td>16条</td><td>打造店长人设，拉近本地顾客距离</td></tr>
+    <tr><td>促销活动</td><td><span class="tag tag-orange">活动</span></td><td>10%</td><td>10条</td><td>节点爆发，冲刺门店业绩</td></tr>
+  </table>
+</div>
+
+<!-- ====== 12个月导航 ====== -->
+<div>
+  <h2 class="section-title"><span class="num">2</span>12个月脚本页 · 点击进入</h2>
+  <p style="margin-bottom:16px;">每个月份包含8条完整拍摄脚本（每周2条），逐秒拆解，含钩子话术、动作指导、BGM建议、话题标签。店长直接打开对应月份，照着拍就行。</p>
+
+  <div class="month-nav">
+
+    <a href="scripts/month-01-2026-07.html" class="month-link">
+      <div class="month-num">第1个月</div>
+      <div class="month-name">📅 2026年7月</div>
+      <div class="month-theme">☀️ 盛夏护眼 · 儿童近视防控</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-02-2026-08.html" class="month-link">
+      <div class="month-num">第2个月</div>
+      <div class="month-name">📅 2026年8月</div>
+      <div class="month-theme">🎒 开学备战 · 七夕浪漫配镜</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-03-2026-09.html" class="month-link">
+      <div class="month-num">第3个月</div>
+      <div class="month-name">📅 2026年9月</div>
+      <div class="month-theme">🍂 秋日焕新 · 致敬师恩</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-04-2026-10.html" class="month-link">
+      <div class="month-num">第4个月</div>
+      <div class="month-name">📅 2026年10月</div>
+      <div class="month-theme">🇨🇳 国庆出行 · 重阳敬老护眼</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-05-2026-11.html" class="month-link">
+      <div class="month-num">第5个月</div>
+      <div class="month-name">📅 2026年11月</div>
+      <div class="month-theme">🛒 双11狂欢 · 冬季护眼</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-06-2026-12.html" class="month-link">
+      <div class="month-num">第6个月</div>
+      <div class="month-name">📅 2026年12月</div>
+      <div class="month-theme">🎄 年终收官 · 双12圣诞</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-07-2027-01.html" class="month-link">
+      <div class="month-num">第7个月</div>
+      <div class="month-name">📅 2027年1月</div>
+      <div class="month-theme">🏮 新年焕新 · 换镜迎新</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-08-2027-02.html" class="month-link">
+      <div class="month-num">第8个月</div>
+      <div class="month-name">📅 2027年2月</div>
+      <div class="month-theme">💝 春节护眼 · 情人节送礼</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-09-2027-03.html" class="month-link">
+      <div class="month-num">第9个月</div>
+      <div class="month-name">📅 2027年3月</div>
+      <div class="month-theme">🌸 春季护眼 · 开学配镜</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-10-2027-04.html" class="month-link">
+      <div class="month-num">第10个月</div>
+      <div class="month-name">📅 2027年4月</div>
+      <div class="month-theme">🕶️ 春夏之交 · 太阳镜季</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-11-2027-05.html" class="month-link">
+      <div class="month-num">第11个月</div>
+      <div class="month-name">📅 2027年5月</div>
+      <div class="month-theme">👩‍👧 亲情月 · 母亲节/520</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+    <a href="scripts/month-12-2027-06.html" class="month-link">
+      <div class="month-num">第12个月</div>
+      <div class="month-name">📅 2027年6月</div>
+      <div class="month-theme">🎓 毕业季 · 618年中大促</div>
+      <div class="month-count">8条脚本 →</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ====== SOP速查 ====== -->
+<div>
+  <h2 class="section-title"><span class="num">3</span>拍摄SOP速查卡（打印贴墙上）</h2>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px;">
+
+    <div class="card" style="margin:0;">
+      <h3 style="font-size:16px;color:var(--accent);">📱 拍摄前（5分钟）</h3>
+      <table style="font-size:13px;">
+        <tr><td>设备</td><td>手机后置，1080P</td></tr>
+        <tr><td>光线</td><td>面朝自然光/环形灯</td></tr>
+        <tr><td>收音</td><td>关门店音乐，靠近话筒</td></tr>
+        <tr><td>背景</td><td>展柜/验光区/镜子前</td></tr>
+        <tr><td>着装</td><td>爱眼城工服优先</td></tr>
+        <tr><td>脚本</td><td>打开当月脚本页对照</td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin:0;">
+      <h3 style="font-size:16px;color:var(--accent);">✂️ 剪辑（10-15分钟）</h3>
+      <table style="font-size:13px;">
+        <tr><td>1.粗剪</td><td>拖入素材，删废镜头</td></tr>
+        <tr><td>2.精剪</td><td>段间留0.3秒呼吸感</td></tr>
+        <tr><td>3.字幕</td><td>剪映自动识别+改错</td></tr>
+        <tr><td>4.BGM</td><td>音量=人声20%-30%</td></tr>
+        <tr><td>5.特效</td><td>钩子句加弹出动画</td></tr>
+        <tr><td>6.导出</td><td>1080P/竖屏9:16</td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin:0;">
+      <h3 style="font-size:16px;color:var(--accent);">📤 发布（2分钟）</h3>
+      <table style="font-size:13px;">
+        <tr><td>标题</td><td>12-20字，含关键词+情绪词</td></tr>
+        <tr><td>话题</td><td>#永州爱眼城 #眼镜 #当月热点</td></tr>
+        <tr><td>封面</td><td>选有表情/产品的高光帧</td></tr>
+        <tr><td>时间</td><td>周三12:00 / 周六12:00</td></tr>
+        <tr><td>置顶</td><td>发布后立即写一条引导评论</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== 数据指标 ====== -->
+<div>
+  <h2 class="section-title"><span class="num">4</span>及格线指标</h2>
+  <div class="metric-grid">
+    <div class="metric-card"><div class="value">≥35%</div><div class="label">完播率及格线</div></div>
+    <div class="metric-card"><div class="value">≥500</div><div class="label">播放量起步线</div></div>
+    <div class="metric-card"><div class="value">≥5%</div><div class="label">点赞率合格线</div></div>
+    <div class="metric-card"><div class="value">≥1%</div><div class="label">评论率合格线</div></div>
+  </div>
+  <div class="callout">
+    <strong>⚠️ 重要提醒：</strong>
+    前3条视频数据差是正常的——算法在"认识你"。坚持发两周，算法会慢慢把视频推给永州本地对眼镜感兴趣的人。不要因为开始数据差就放弃。
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:50px;padding:30px 20px;border-top:1px solid var(--border);">
+  <p style="color:var(--accent);font-weight:700;font-size:20px;">
+    永州爱眼城 · 让每一个永州人都知道，配眼镜就来爱眼城 🎵
+  </p>
+  <p style="color:#999;font-size:12px;margin-top:8px;">每个月的脚本已经逐一写好，点击上方月份卡片进入。</p>
+</div>
+
+</div>
+</body>
+</html>
