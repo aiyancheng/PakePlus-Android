@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永州爱眼城眼镜 · 2027年4月短视频脚本 | 春夏之交 · 太阳镜季</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f0eb; color: #2c2c2c; line-height: 1.7; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* 顶部导航 */
+.top-nav { background: #c0392b; padding: 14px 0; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.top-nav a { color: #fff; text-decoration: none; font-size: 15px; padding: 8px 20px; border: 1.5px solid rgba(255,255,255,0.6); border-radius: 20px; transition: all 0.3s; }
+.top-nav a:hover { background: rgba(255,255,255,0.15); }
+
+/* 头部 */
+.header { background: linear-gradient(135deg, #c0392b 0%, #e74c3c 50%, #c0392b 100%); color: #fff; padding: 48px 20px 40px; text-align: center; }
+.header .month-tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 18px; border-radius: 20px; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+.header h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+.header h2 { font-size: 22px; font-weight: 400; opacity: 0.9; margin-bottom: 4px; }
+.header .meta { font-size: 14px; opacity: 0.7; margin-top: 12px; }
+
+/* 内容区 */
+.content { padding: 32px 0 20px; }
+.script-card { background: #fff; border-radius: 12px; padding: 32px 28px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 5px solid #c0392b; transition: box-shadow 0.3s; }
+.script-card:hover { box-shadow: 0 4px 20px rgba(192,57,43,0.15); }
+
+/* 脚本头部信息 */
+.script-header { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed #e8e0d8; }
+.script-num { background: #c0392b; color: #fff; font-size: 20px; font-weight: 700; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.script-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.tag-week { background: #fdecea; color: #c0392b; }
+.tag-series { background: #eaf2f8; color: #2471a3; }
+.tag-duration { background: #eafaf1; color: #1e8449; }
+.script-title { font-size: 20px; font-weight: 700; color: #c0392b; margin-top: 4px; width: 100%; }
+
+/* 分节样式 */
+.section { margin-top: 18px; }
+.section-label { font-size: 14px; font-weight: 700; color: #c0392b; background: #fdecea; display: inline-block; padding: 4px 14px; border-radius: 14px; margin-bottom: 10px; }
+.hook-option { background: #fef9f5; border: 1px solid #f0d6c5; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; }
+.hook-option .hook-label { font-size: 12px; font-weight: 700; color: #c0392b; margin-bottom: 4px; }
+.hook-option p { font-size: 15px; color: #333; }
+.time-segment { padding: 10px 0; border-bottom: 1px dotted #eee; }
+.time-segment:last-child { border-bottom: none; }
+.time-range { font-size: 12px; font-weight: 700; color: #999; margin-bottom: 3px; }
+.time-content { font-size: 15px; color: #444; }
+.time-action { font-size: 13px; color: #888; font-style: italic; margin-top: 2px; }
+
+.tips-list { list-style: none; padding: 0; }
+.tips-list li { padding: 6px 0 6px 22px; position: relative; font-size: 14px; color: #555; }
+.tips-list li::before { content: "●"; position: absolute; left: 4px; color: #c0392b; font-size: 8px; top: 10px; }
+.bgm-box { background: #f8f4ef; padding: 12px 16px; border-radius: 8px; font-size: 14px; color: #666; margin-top: 10px; }
+.hashtags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.hashtag { background: #c0392b; color: #fff; padding: 4px 12px; border-radius: 14px; font-size: 13px; }
+
+/* 底部导航 */
+.bottom-nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0 40px; border-top: 1px solid #e0d5c9; margin-top: 16px; }
+.bottom-nav a { display: inline-flex; align-items: center; gap: 6px; color: #c0392b; text-decoration: none; font-size: 15px; font-weight: 600; padding: 10px 20px; border: 2px solid #c0392b; border-radius: 24px; transition: all 0.3s; }
+.bottom-nav a:hover { background: #c0392b; color: #fff; }
+.bottom-nav .nav-disabled { color: #bbb; border-color: #ddd; cursor: not-allowed; pointer-events: none; }
+.bottom-nav .nav-center { font-size: 14px; color: #999; }
+
+@media (max-width: 640px) {
+  .header h1 { font-size: 26px; }
+  .script-card { padding: 20px 16px; }
+  .bottom-nav { flex-direction: column; gap: 12px; align-items: stretch; }
+  .bottom-nav a { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <a href="../index.html">&#127968; 返回首页</a>
+</div>
+
+<div class="header">
+  <div class="month-tag">2027年4月</div>
+  <h1>春夏之交 · 太阳镜季</h1>
+  <h2>永州爱眼城眼镜短视频脚本</h2>
+  <div class="meta">第37周 — 第40周 | 共8条脚本 | 科普 / 种草 / 穿搭 / 日常</div>
+</div>
+
+<div class="container content">
+
+<!-- ===== 脚本1 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">01</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第37周①</span>
+      <span class="tag tag-series">科普</span>
+      <span class="tag tag-duration">约35秒</span>
+    </div>
+    <div class="script-title">太阳镜不是越黑越好！选镜片颜色避坑指南</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 疑问型</div><p>"你以为太阳镜越黑越好？错！戴错了反而伤眼睛！"（手里拿两副不同深浅的太阳镜对着镜头）</p></div>
+    <div class="hook-option"><div class="hook-label">B 警示型</div><p>"永州人注意！你车上的太阳镜，可能正在毁掉你的眼睛。"（手持偏光测试卡展示对比）</p></div>
+    <div class="hook-option"><div class="hook-label">C 好奇型</div><p>"为什么眼科医生从来不推荐黑色镜片？今天给你说清楚。"（白大褂造型出镜，拿验光设备）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 误区澄清</div>
+      <div class="time-content">"很多人觉得黑色镜片最防晒——其实这是最大的误区！黑色镜片只降低亮度，并不等于防紫外线。如果买到没UV标识的劣质镜片，瞳孔在黑暗中反而会放大，让更多紫外线进入眼睛。"</div>
+      <div class="time-action">🎬 动作：展示两副镜片，一副黑但不带UV标识（打红叉），一副灰棕色带UV400标识（打绿勾）。镜头特写镜腿上的UV400标识。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-14秒 · 颜色科普</div>
+      <div class="time-content">"给大家一个选色顺口溜——灰色：最接近真实色彩，适合日常开车；棕色：增强对比度，适合户外运动；绿色：缓解视疲劳，适合长时间佩戴；至于蓝色镜片，纯粹好看，防护最弱，少用！"</div>
+      <div class="time-action">🎬 动作：四种颜色镜片依次比在眼前展示，字幕对应弹出说明文字。蓝色镜片出现时加一个大大的"慎选"贴图。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 核心标准</div>
+      <div class="time-content">"不管你选什么颜色，记住三个字：看标识！UV400 + 偏光 + 合格证，这三个缺一个都别买。来爱眼城，我们每一副都敢当着你的面用测试卡验证偏光效果。"</div>
+      <div class="time-action">🎬 动作：实拍用偏光测试卡测试镜片，画面清晰露出偏光图案出现的过程，配合"咔嗒"音效强调专业感。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-35秒 互动收尾</div>
+    <div class="time-content">"你现在的太阳镜是什么颜色的？评论区告诉我，我帮你看看选对了没！觉得有用记得点赞，下次来店里我教你测偏光。"</div>
+    <div class="time-action">🎬 动作：微笑挥手，画面缩小出现评论区引导箭头+点赞关注图标。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>提前准备4种颜色镜片+偏光测试卡作为道具，镜片放在透明亚克力架上更显专业</li>
+      <li>科普内容建议白大褂出镜增加可信度，背景选验光室或镜片展示墙</li>
+      <li>镜腿UV400标识用微距镜头特写，务必光线充足露出细节</li>
+      <li>"三个缺一不可"处加红色强调文字特效，加深记忆点</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：轻快科技风纯音乐（如《Lofi Study Beat》或《Sunny Day Instrumental》），音量控制在30%以下，不压人声。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#太阳镜怎么选</span>
+    <span class="hashtag">#护眼小知识</span>
+    <span class="hashtag">#避坑指南</span>
+  </div>
+</div>
+
+<!-- ===== 脚本2 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">02</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第37周②</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约32秒</span>
+    </div>
+    <div class="script-title">清明踏青必备：一副太阳镜就够了</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 场景带入型</div><p>"清明小长假马上到了，永州人踏青三件套你准备好了吗？但90%的人都漏了最重要的一样。"（展示野餐垫+零食的踏青画面，然后突然切到刺眼阳光下眯眼的画面）</p></div>
+    <div class="hook-option"><div class="hook-label">B 痛点型</div><p>"清明上山扫墓，太阳晒得睁不开眼，风一吹眼睛狂流泪——这种尴尬你经历过吧？"（户外眯眼+擦眼泪的夸张演绎）</p></div>
+    <div class="hook-option"><div class="hook-label">C 种草型</div><p>"一副眼镜搞定清明出行——防晒+防风+拍照上镜，永州爱眼城这波新品太绝了。"（直接展示多款太阳镜摆拍）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 防晒需求</div>
+      <div class="time-content">"四月的永州太阳已经很毒了，长时间户外活动紫外线是平时的3倍以上，眼睛也会被'晒伤'，轻则流泪红肿，重则加速白内障风险。一副合格的偏光太阳镜就是眼睛的'防晒霜'。"</div>
+      <div class="time-action">🎬 动作：用紫外线测试卡在户外实拍，对比有镜片遮挡和无遮挡区域的变色速度，视觉冲击力强。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-14秒 · 防风沙需求</div>
+      <div class="time-content">"清明前后风大灰尘多，骑电动车扫墓的路上，沙子进眼睛别提多难受了。选镜面大一点的款式，不仅防风效果好，脸也显小——一举两得。"</div>
+      <div class="time-action">🎬 动作：展示大框型太阳镜上脸效果，前后对比（无眼镜眯眼 → 戴上后舒适自拍），加入"显脸小"字幕标签。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 拍照出片</div>
+      <div class="time-content">"还有一点说出来你可能不信——太阳镜是踏青拍照最出片的单品！不用修图就有大片感。像这几款今年特别火的飞行员款和复古圆框，在油菜花田里拍照简直绝了。"</div>
+      <div class="time-action">🎬 动作：店内模特佩戴不同款式太阳镜，搭配自然场景（可用店内绿植/户外小景），快剪多张佩戴效果。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-32秒 互动收尾</div>
+    <div class="time-content">"清明出行，给自己备一副好太阳镜吧。来爱眼城免费验光+免费调试，地址我放评论区了。你清明去哪玩？评论区聊聊，我帮你推荐适合的款！"</div>
+    <div class="time-action">🎬 动作：展示店铺门头画面，字幕弹出地址，最后回到主播微笑特写。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>拍一段15秒户外实景（如附近公园/江边），体现永州春日氛围</li>
+      <li>大框型太阳镜上脸对比是核心卖点，确保光线从正面打来</li>
+      <li>"油菜花田"搭配的款式提前选好，准备2-3副不同风格的</li>
+      <li>结尾地址字幕停留至少3秒，方便截图</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：清新吉他民谣（如《Sunny Day Joy》或《Spring Vibes Acoustic》），后半段可稍加强节奏感。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#清明踏青</span>
+    <span class="hashtag">#太阳镜推荐</span>
+    <span class="hashtag">#出行必备</span>
+  </div>
+</div>
+
+<!-- ===== 脚本3 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">03</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第38周①</span>
+      <span class="tag tag-series">科普</span>
+      <span class="tag tag-duration">约38秒</span>
+    </div>
+    <div class="script-title">开车戴偏光镜vs不戴，差别到底多大？实测</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 对比冲击型</div><p>"同样一条路，不戴偏光镜和戴偏光镜看到的完全是两个世界！"（分屏画面：左侧眩光刺眼/右侧清晰舒适）</p></div>
+    <div class="hook-option"><div class="hook-label">B 共鸣型</div><p>"永州的司机朋友，下午四五点开车往西走，那条路根本看不清吧？今天给你看个好东西。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 实测型</div><p>"我拿开车实测给你看偏光镜到底有没有用。注意看仪表台的反光——现在消失了！"（车内第一视角实拍）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 眩光危害</div>
+      <div class="time-content">"开车时最怕三种光：对面远光灯、路面反射光、仪表台倒影光。这三种眩光会让你反应慢0.5到1秒——60码车速下就是8到16米的盲开距离，太危险了！"</div>
+      <div class="time-action">🎬 动作：用画面模拟三种眩光场景（可用遮光板+强光灯营造），加危险警示图标和盲开距离动画。可以实拍一人在车内驾驶位的视角。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-14秒 · 实测对比</div>
+      <div class="time-content">"现场给你测——这是普通太阳镜看路面，反光还在。换偏光镜——看到没有？路面的白花花反光直接没了，前面车的尾灯看得一清二楚。"</div>
+      <div class="time-action">🎬 动作：同一视角，手机镜头前先放普通墨镜再放偏光镜，实拍透过镜片看窗外路面/水面的差异。这是这条视频最关键的画面。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 选购要点</div>
+      <div class="time-content">"但注意——不是所有偏光镜都能开车戴。开车最推荐灰色偏光片，色彩还原最准。棕色次之，但晚上开车一定要换透明防护镜。来爱眼城我们可以帮你测，当场看效果。"</div>
+      <div class="time-action">🎬 动作：展示灰色和棕色偏光镜对比，字幕标注"开车首选灰色"，店内实拍偏光测试过程。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-38秒 互动收尾</div>
+    <div class="time-content">"你开车戴偏光镜了吗？戴了几年？评论区说说你的驾驶'护眼装备'。觉得实测有用就点个赞，转发给你身边开车的朋友，安全无小事！我们店里免费测偏光，随时来。"</div>
+    <div class="time-action">🎬 动作：画面切回店内，主播手持偏光测试卡微笑收尾，点赞+转发引导弹出。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>核心画面是"透过镜片看路面"的第一视角实拍——提前在安全路段停车拍摄</li>
+      <li>备一台强光灯+反光板模拟路面眩光，确保室内也能复现对比效果</li>
+      <li>分屏对比建议用剪映"画中画"功能，左侧原画面右侧镜片后画面</li>
+      <li>安全提示务必加字幕标注"拍摄时车辆处于静止状态"</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：节奏感强的电子/科技风（如《Drive Forever》纯音乐版），实测段落可加悬念音效。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#偏光镜实测</span>
+    <span class="hashtag">#开车护眼</span>
+    <span class="hashtag">#安全驾驶</span>
+  </div>
+</div>
+
+<!-- ===== 脚本4 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">04</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第38周②</span>
+      <span class="tag tag-series">日常</span>
+      <span class="tag tag-duration">约35秒</span>
+    </div>
+    <div class="script-title">挑战一分钟，说服顾客在爱眼城买太阳镜</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 挑战型</div><p>"挑战一分钟说服顾客买太阳镜！计时开始——"（手机秒表计时画面+快节奏切入）</p></div>
+    <div class="hook-option"><div class="hook-label">B 剧情型</div><p>"顾客说：'我就随便看看。' 一分钟后，他说：'给我拿三副。' 发生了啥？"（还原顾客进门到成交的反转）</p></div>
+    <div class="hook-option"><div class="hook-label">C 实拍型</div><p>"今天店里来了一位纠结的顾客，来看看我们是怎么帮他选到满意太阳镜的。"（真实接待场景记录）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 破冰</div>
+      <div class="time-content">顾客："太阳镜都差不多，我网上买就行了。" 店员："帅哥你等一下——你平时开车多还是走路多？" 顾客："开车。" 店员："那我必须给你测一下偏光，网上买不到这个服务。"</div>
+      <div class="time-action">🎬 动作：还原店内接待场景，两人对话用字幕分色呈现（店员红色/顾客蓝色）。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-14秒 · 专业展示</div>
+      <div class="time-content">"来，你看这张测试卡，透过我们的镜片能看到隐藏图案，普通镜片什么都没有。这就是偏光——开车的刚需。而且你脸型偏方，我给你挑这副飞行员款，戴上看效果。"</div>
+      <div class="time-action">🎬 动作：实拍偏光测试卡演示过程，顾客凑近看惊喜表情。然后顾客试戴，镜头展示上脸效果。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第15-20秒 · 成交</div>
+      <div class="time-content">"你看镜子里——显脸小，鼻梁也撑得住，戴着不夹头。而且我们现在春季活动，UV400+偏光+一年质保，质量你放心。" 顾客照镜子："确实比网上看的好太多了，就这副。"</div>
+      <div class="time-action">🎬 动作：顾客照镜子点头满意，双方握手/微笑成交。弹出计时器停在"00:52"体现不到一分钟搞定。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-35秒 互动收尾</div>
+    <div class="time-content">"其实线下配镜最大的优势就是能试、能测、能调——这是网购永远替代不了的。你有在网上买过眼镜踩坑的吗？评论区聊聊。来爱眼城免费验光+免费测偏光，不满意不花一分钱。"</div>
+    <div class="time-action">🎬 动作：主播走出角色回归"解说"模式，微笑对着镜头，画面展示店铺门头和地址信息。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>日常类脚本真实感第一，不要生硬表演——找一位自然放松的同事扮演顾客</li>
+      <li>偏光测试卡特写是此条的核心画面，确保镜头对焦准确清晰</li>
+      <li>计时器动画在剪映中用"文字+关键帧"实现，让节奏更紧凑</li>
+      <li>服装建议店员穿工服，顾客穿日常装，强化身份感</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：轻松活力的Vlog风格（如《Funny Day》或《Happy Vlog Beat》），对话段落BGM降为背景。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#眼镜店日常</span>
+    <span class="hashtag">#太阳镜推荐</span>
+    <span class="hashtag">#实体店的优势</span>
+  </div>
+</div>
+
+<!-- ===== 脚本5 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">05</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第39周①</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约40秒</span>
+    </div>
+    <div class="script-title">50元和500元太阳镜区别在哪？拆开给你看</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 悬念型</div><p>"我买了一副50元和一副500元的太阳镜，拆开之后……差距比你想的还大！"（手持两副眼镜，镜头快速切换特写）</p></div>
+    <div class="hook-option"><div class="hook-label">B 省钱型</div><p>"贵的太阳镜是智商税吗？今天我把50和500的拆给你看，到底差在哪。"（两副眼镜并排放在桌面上）</p></div>
+    <div class="hook-option"><div class="hook-label">C 好奇型</div><p>"同样都是黑色太阳镜，凭什么一个卖50一个卖500？拆了你就明白了。"（螺丝刀准备拆镜腿的动作）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 镜片对比</div>
+      <div class="time-content">"第一看镜片——左边50块的塑料片，透光度不均匀，看东西变形；右边500块光学树脂片，透光均匀，视野不变形。而且真正的UV400镜片，用手电筒照不会透光。"</div>
+      <div class="time-action">🎬 动作：分屏展示两副镜片透光对比（用格子纸垫在下面看线条是否变形），手电筒照镜片展示透光差异。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 镜框材质</div>
+      <div class="time-content">"第二看镜框——便宜的是普通塑料，一掰就变形甚至断掉，戴两三个月就松垮；贵的是板材或TR90材质，弹性好不变形，戴两三年都没问题。看这个弹性对比——"</div>
+      <div class="time-action">🎬 动作：双手掰镜腿对比韧性，便宜款明显发白变形，贵价款弹性回弹。慢动作+字幕标注材质名称。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 细节做工</div>
+      <div class="time-content">"第三看细节——便宜货鼻托是胶水粘的，容易脱落；好镜片鼻托是螺丝固定，还能调节。铰链一个是铁片，三个月生锈；一个是不锈钢+弹簧，开合5万次不变形。一副好太阳镜，是能陪你走遍山河的。"</div>
+      <div class="time-action">🎬 动作：微距镜头依次展示鼻托、铰链、螺丝细节，便宜款配红色小叉，贵价款配绿色对勾。最后展示整副好眼镜的外观质感。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-40秒 互动收尾</div>
+    <div class="time-content">"50块的眼镜戴一季就扔，500块的能戴两三年——算下来，哪个更划算？来爱眼城我给你现场对比，让你每一分钱都花得明明白白。你买过最便宜的太阳镜多少钱？评论区大胆说，我不笑话你。"</div>
+    <div class="time-action">🎬 动作：主播微笑结尾，画面展示店铺实拍+地址。评论区引导箭头弹出。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>准备50元级和500元级各一副同色系太阳镜作为对比道具</li>
+      <li>镜片对比用A4方格纸放在镜片下方，变形的视觉冲击力很强</li>
+      <li>镜框掰弯测试最好拍慢动作，回弹瞬间非常解压好看</li>
+      <li>微距镜头拍摄螺丝/铰链细节，确保对焦清晰光线充足</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：揭秘/测评风格BGM（如《Investigation》悬疑感纯音乐），对比段落可切换为轻快音效。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#太阳镜选购攻略</span>
+    <span class="hashtag">#拆解测评</span>
+    <span class="hashtag">#避坑指南</span>
+  </div>
+</div>
+
+<!-- ===== 脚本6 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">06</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第39周②</span>
+      <span class="tag tag-series">穿搭</span>
+      <span class="tag tag-duration">约33秒</span>
+    </div>
+    <div class="script-title">不同脸型选太阳镜攻略，永州人进来对照</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 对号入座型</div><p>"圆脸、方脸、长脸、心形脸——你是哪种？对号入座，今天告诉你最适合的太阳镜！"（四张不同脸型的淡色轮廓图同时弹出）</p></div>
+    <div class="hook-option"><div class="hook-label">B 戳痛点型</div><p>"有没有人跟我一样，网上看图觉得好看，戴自己脸上秒变'阿炳'？不是你不好看，是没选对镜型！"</p></div>
+    <div class="hook-option"><div class="hook-label">C 教程型</div><p>"永州人买太阳镜必看——不同脸型该怎么选，记住这四个字就够了：圆选方，方选圆。"</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · 圆脸篇</div>
+      <div class="time-content">"圆脸朋友记住——选方形或者猫眼型，有棱角的边框能中和圆润感。千万别选圆形镜框，圆上加圆，脸看起来更大更圆。"</div>
+      <div class="time-action">🎬 动作：圆脸模特出镜，分别试戴方形和圆形镜框，字幕标注"✔"和"✘"，画面清晰展示脸型修饰效果。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-12秒 · 方脸篇</div>
+      <div class="time-content">"方脸、国字脸的朋友——选圆形、椭圆形镜框，柔化下颌角。避雷：方形、长方形镜框，会让脸看起来更方更硬。"</div>
+      <div class="time-action">🎬 动作：方脸模特出镜，圆形vs方形眼镜对比，下颌特写展示柔化效果。换人保持节奏紧凑。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第13-16秒 · 长脸篇</div>
+      <div class="time-content">"长脸型选大框、深色的镜框，视觉上缩短脸长。飞行员款、大圆框都合适。不要选窄框架——反而拉长脸型。"</div>
+      <div class="time-action">🎬 动作：长脸模特出镜，大框上脸展示，配上脸型轮廓辅助线演示视觉缩短效果。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第17-20秒 · 心形/鹅蛋脸篇</div>
+      <div class="time-content">"心形脸和鹅蛋脸最幸福——几乎所有款式都HOLD得住！飞行员、猫眼、圆框随便挑。选镜诀窍：镜框宽度别超过颧骨。"</div>
+      <div class="time-action">🎬 动作：鹅蛋脸模特快剪三种款式效果，加"羡慕"弹幕效果，结束快切做出总结手势。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-33秒 互动收尾</div>
+    <div class="time-content">"你是哪种脸型？不确定的来店里我免费帮你看。来爱眼城先试戴再决定，脸型和镜框现场搭，比网上看图靠谱一万倍！地址在评论区。"</div>
+    <div class="time-action">🎬 动作：四位模特一起戴着自己最合适的眼镜微笑出镜，画面温馨收尾。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>找四位不同脸型的模特（同事或朋友），提前化淡妆统一着装风格</li>
+      <li>每一组对比确保光线和角度完全一致，只看镜框差异</li>
+      <li>每种脸型"✔"和"✘"对比画面控制在4秒内，用剪映"画中画"分屏</li>
+      <li>脸型轮廓辅助线用AI画图工具或PPT做好后导入视频，增加专业感</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：时尚穿搭类轻快节奏（如《Fashion Beat》或《Vlog Chic》），模特出场时稍增强节奏。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#脸型选眼镜</span>
+    <span class="hashtag">#太阳镜穿搭</span>
+    <span class="hashtag">#永州人请对照</span>
+  </div>
+</div>
+
+<!-- ===== 脚本7 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">07</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第40周①</span>
+      <span class="tag tag-series">科普</span>
+      <span class="tag tag-duration">约34秒</span>
+    </div>
+    <div class="script-title">夏天马上就要到了，你的眼睛也需要防晒</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 类比型</div><p>"你出门会给脸涂防晒，给胳膊涂防晒——但你的眼睛呢？它也需要防晒！"（手里同时拿着防晒霜和太阳镜，举到镜头前）</p></div>
+    <div class="hook-option"><div class="hook-label">B 恐吓型</div><p>"你知道吗？白内障的第一大诱因不是年龄，是长期紫外线伤害！夏天快来了，你的眼睛还'裸奔'吗？"</p></div>
+    <div class="hook-option"><div class="hook-label">C 知识型</div><p>"夏天防晒别只涂脸——眼科医生提醒：眼睛的防晒比皮肤更重要。"（白大褂出镜，手持眼球模型）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-9秒 · 紫外线伤眼原理</div>
+      <div class="time-content">"眼睛比皮肤脆弱得多——角膜和晶状体会吸收紫外线，长期积累会导致翼状胬肉（眼睛里长'肉'）、加速白内障、损伤黄斑区。而且这些伤害是累积的、不可逆的！"</div>
+      <div class="time-action">🎬 动作：用眼球结构图动画演示紫外线穿透角膜→晶状体→视网膜的过程，关键部位标红警示。画面加入太阳+紫外线波浪线动画。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第10-15秒 · 高危场景</div>
+      <div class="time-content">"永州夏天紫外线指数常年8以上！特别是中午11点到下午3点，开车、钓鱼、户外工作、带孩子出去玩——这些场景紫外线强度是室内的20倍。一副UV400的太阳镜是最基础的防护。"</div>
+      <div class="time-action">🎬 动作：快速切换四个永州夏季户外场景画面（江边/马路/公园/露台），每个场景1秒，最后叠加紫外线指数动画。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第16-20秒 · 防护方案</div>
+      <div class="time-content">"给你的防护方案很简单——日常通勤戴变色镜片，车里自动变深；户外时间长戴偏光太阳镜；如果平时戴近视镜，可以配近视太阳镜或者夹片，不用专门换眼镜。选镜记得三看：UV400、偏光、合格证。"</div>
+      <div class="time-action">🎬 动作：依次展示三种方案对应的产品实物（变色片在紫外灯下变色实拍、偏光太阳镜、近视夹片），字幕标注适用场景。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-34秒 互动收尾</div>
+    <div class="time-content">"夏天快来了，别让你的眼睛裸奔一个夏天。来爱眼城免费验光+免费测紫外线防护，给你眼睛配上专属'防晒霜'。你平时夏天戴太阳镜吗？评论区说说你开始护眼了吗？"</div>
+    <div class="time-action">🎬 动作：主播手持太阳镜微笑结尾，背景换为夏日清爽色调。弹出评论引导+关注图标。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>眼球结构动画建议用剪映素材库中的医学动画+手写标注，避免太专业的医学术语</li>
+      <li>紫外线指数画面可用手机气象APP截图+录屏，展示永州当天的紫外线指数</li>
+      <li>变色镜片演示用小型验钞紫外灯（安全剂量），实拍变色过程很吸睛</li>
+      <li>四个户外场景建议提前拍摄永州地标+自然景色，增加本地亲切感</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：知识科普类温和纯音乐（如《Gentle Mind》钢琴曲），前半段增加紧迫感，后半段转温暖安心。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#眼睛防晒</span>
+    <span class="hashtag">#护眼知识</span>
+    <span class="hashtag">#夏天护眼</span>
+  </div>
+</div>
+
+<!-- ===== 脚本8 ===== -->
+<div class="script-card">
+  <div class="script-header">
+    <div class="script-num">08</div>
+    <div class="script-tags">
+      <span class="tag tag-week">第40周②</span>
+      <span class="tag tag-series">种草</span>
+      <span class="tag tag-duration">约30秒</span>
+    </div>
+    <div class="script-title">4月卖爆的太阳镜TOP3，永州人最爱哪款</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">0-3秒 黄金钩子</div>
+    <div class="hook-option"><div class="hook-label">A 排行榜型</div><p>"4月份我们店卖爆的三款太阳镜，永州人选镜眼光真的绝了！第一名你可能想不到——"（三副眼镜一字排开，做出神秘表情）</p></div>
+    <div class="hook-option"><div class="hook-label">B 跟风型</div><p>"最近来店里十个顾客有八个都在问这几款。不是我吹，永州人的审美真的在进步！TOP3给你看看。"</p></div>
+    <div class="hook-option"><div class="hook-label">C 好奇心型</div><p>"拆箱！这是我这个月补货最多的三款太阳镜，卖太快了。看看永州人都在戴什么。"（做出拆箱动作）</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">4-20秒 主体内容</div>
+    <div class="time-segment">
+      <div class="time-range">第4-8秒 · TOP3</div>
+      <div class="time-content">"第三名——经典飞行员款！金框+墨绿片，不挑脸型不挑穿搭，男女通杀。开车戴、旅游戴、日常戴，永州男顾客几乎人手一副。重点是轻！戴着跟没戴一样。"</div>
+      <div class="time-action">🎬 动作：展示飞行员款各个角度+模特上脸效果，字幕弹出"TOP3 飞行员款"金字标签。快闪多张佩戴效果。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第9-13秒 · TOP2</div>
+      <div class="time-content">"第二名——复古大圆框！小姐姐们的首选。黑框+深灰片，遮阳效果拉满还巨显脸小。穿裙子、穿牛仔裤都能搭，春游拍照神器。这款已经补货三次了。"</div>
+      <div class="time-action">🎬 动作：女模特佩戴复古圆框，多角度特写+微笑，展现"显脸小"效果，字幕弹出"TOP2 复古圆框"。</div>
+    </div>
+    <div class="time-segment">
+      <div class="time-range">第14-20秒 · TOP1</div>
+      <div class="time-content">"第一名来了——方形偏光驾驶镜！永州人最爱开车，这款简直为永州司机量身定做。灰色偏光片消除了路面反光，镜架TR90超轻材质不压鼻梁，性价比无敌。很多顾客买完就给家人也带一副。"</div>
+      <div class="time-action">🎬 动作：第一名给足镜头画面——产品360°旋转展示+户外实拍佩戴+偏光测试卡对比画面，字幕弹出"TOP1 方形偏光驾驶镜 🔥补货王🔥"。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">21-30秒 互动收尾</div>
+    <div class="time-content">"这三款店里都有现货，来试戴不用等。你觉得哪款最好看？评论TOP1/TOP2/TOP3告诉我。点赞+关注，下个月继续给你们盘卖爆款！地址在评论区。"</div>
+    <div class="time-action">🎬 动作：三款眼镜回归同框，主播指向评论区，微笑结尾。画面添加"下期更精彩"预告标签。</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">📍 拍摄要点</div>
+    <ul class="tips-list">
+      <li>准备转盘或展示架让三副眼镜同框旋转展示，增加视觉动感</li>
+      <li>每款至少拍1张模特佩戴照+1段户外实拍，TOP1给双倍素材</li>
+      <li>排行榜用倒序揭晓制造悬念，配合"咚咚"倒计时音效</li>
+      <li>补货数据可加字幕展示（"本月补货3次"）增加真实感和紧迫感</li>
+    </ul>
+  </div>
+
+  <div class="bgm-box">🎵 BGM建议：排行榜/种草类节奏感BGM（如《Top Chart Beat》或《Trending Now》），每揭晓一款加一段小高潮。</div>
+
+  <div class="hashtags">
+    <span class="hashtag">#永州爱眼城</span>
+    <span class="hashtag">#太阳镜推荐</span>
+    <span class="hashtag">#卖爆了</span>
+    <span class="hashtag">#永州好物</span>
+  </div>
+</div>
+
+<!-- ===== 底部导航 ===== -->
+<div class="bottom-nav">
+  <a href="month-09-2027-03.html">← 3月 · 春季视力筛查</a>
+  <span class="nav-center">2027年4月 · 第37-40周</span>
+  <a href="month-11-2027-05.html">5月 · 亲情月 →</a>
+</div>
+
+</div>
+</body>
+</html>
