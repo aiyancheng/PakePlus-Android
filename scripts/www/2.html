@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- 荣耀平板专属视口：禁止缩放、完美适配触摸 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>青少年近视防控预测与危害分析系统</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -516,49 +516,7 @@
             background-color: #1976D2;
             transform: translateY(-2px);
         }
-    
-        /* ===== 红米平板12.1寸(1280×800)专属适配 ===== */
-        @media screen and (min-width: 800px) and (max-width: 1366px) {
-            html {
-                font-size: 15px;
-                overflow-x: hidden;
-            }
-            body {
-                -webkit-text-size-adjust: 100%;
-                touch-action: manipulation;
-                overflow-x: hidden;
-                /* 最大宽度1200px，两侧留有16px间距 */
-                max-width: 1200px !important;
-                margin: 0 auto !important;
-                padding-left: 16px !important;
-                padding-right: 16px !important;
-            }
-            .container, .main-container, .content {
-                max-width: 100% !important;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-            }
-            img {
-                max-width: 100% !important;
-                height: auto !important;
-            }
-            table {
-                font-size: 14px;
-                width: 100%;
-                overflow-x: auto;
-                display: block;
-            }
-            /* 防止宽表格溢出 */
-            .table-wrapper, table {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            /* 优化触控目标大小 */
-            a, button {
-                min-height: 36px;
-            }
-        }
-</style>
+    </style>
 </head>
 <body>
     <div class="container">
