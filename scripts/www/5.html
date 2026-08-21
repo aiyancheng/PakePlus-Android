@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <title>中国学龄儿童眼科参考区间</title>
+  <style>
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      background-color: #e6f2ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #0078d4;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 2.5em;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .table-box {
+      flex: 1;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .table-box h3 {
+      background-color: #0078d4;
+      color: white;
+      padding: 15px;
+      margin: 0;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .table-box:nth-child(2) h3 {
+      background-color: #4caf50;
+    }
+
+    .table-box:nth-child(3) h3 {
+      background-color: #ff9800;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .image-box {
+      width: 100%;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+    }
+
+    .image-title {
+      background-color: #0078d4;
+      color: white;
+      padding: 15px;
+      margin: 0;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .image-box:nth-child(2) .image-title {
+      background-color: #4caf50;
+    }
+
+    .image-box:nth-child(3) .image-title {
+      background-color: #ff9800;
+    }
+
+    /* 底部翻页导航样式 */
+    .page-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      background-color: #1a6dcc;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      flex: 1;
+      min-width: 160px;
+      text-align: center;
+    }
+
+    .nav-btn:hover {
+      background-color: #0d4d9c;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 800px) {
+      .page-nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-btn {
+        width: 100%;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #333;
+      padding: 10px;
+      background-color: white;
+      border-top: 1px solid #ddd;
+      position: relative;
+    }
+    
+    /* 返回首页按钮样式 */
+    .back-to-home {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    
+    .back-to-home:hover {
+      background-color: #005a9e;
+      transform: scale(1.05);
+    }
+  
+        /* ===== 红米平板12.1寸(1280×800)专属适配 ===== */
+        @media screen and (min-width: 800px) and (max-width: 1366px) {
+            html {
+                font-size: 15px;
+                overflow-x: hidden;
+            }
+            body {
+                -webkit-text-size-adjust: 100%;
+                touch-action: manipulation;
+                overflow-x: hidden;
+            }
+            /* 三列表格在1280px下横向完整显示 */
+            .container {
+                max-width: 1260px !important;
+                padding: 16px !important;
+                flex-wrap: nowrap !important;
+                gap: 14px !important;
+            }
+            .table-box {
+                flex: 1;
+                min-width: 0;
+            }
+            .table-box h3 {
+                font-size: 1em;
+                padding: 10px 8px;
+            }
+            th, td {
+                padding: 8px 6px;
+                font-size: 13px;
+            }
+            .image-container {
+                max-width: 1260px !important;
+                padding: 16px !important;
+            }
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            .header {
+                font-size: 1.8em;
+                padding: 20px 16px;
+            }
+            /* 触控优化 */
+            a, button {
+                min-height: 36px;
+            }
+        }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    中国学龄儿童 眼球远视储备、<br>
+    眼轴长度、角膜曲率 参考区间
+  </div>
+
+  <div class="container">
+
+    <!-- 第一个表格：远视储备 -->
+    <div class="table-box">
+      <h3>6～15岁学龄儿童眼球<br>远视储备参考区间(D)</h3>
+      <table>
+        <tr>
+          <th>年龄</th>
+          <th>均值</th>
+          <th>参考区间</th>
+        </tr>
+        <tr><td>6岁</td><td>+1.38</td><td>+0.38～+3.63</td></tr>
+        <tr><td>7岁</td><td>+1.38</td><td>+0.38～+3.63</td></tr>
+        <tr><td>8岁</td><td>+1.25</td><td>+0.38～+3.38</td></tr>
+        <tr><td>9岁</td><td>+0.88</td><td>+0.13～+3.13</td></tr>
+        <tr><td>10岁</td><td>+0.75</td><td>-0.13～+2.88</td></tr>
+        <tr><td>11岁</td><td>+0.63</td><td>-0.38～+2.88</td></tr>
+        <tr><td>12岁</td><td>+0.50</td><td>-0.38～+2.50</td></tr>
+        <tr><td>13岁</td><td>+0.50</td><td>-0.32～+1.75</td></tr>
+        <tr><td>14岁</td><td>+0.38</td><td>-0.38～+2.00</td></tr>
+        <tr><td>15岁</td><td>+0.31</td><td>-0.38～+1.13</td></tr>
+      </table>
+    </div>
+
+    <!-- 第二个表格：眼轴长度 -->
+    <div class="table-box">
+      <h3>6～15岁学龄儿童眼球<br>眼轴长度参考区间(mm)</h3>
+      <table>
+        <tr>
+          <th>年龄</th>
+          <th>均值</th>
+          <th>参考区间</th>
+        </tr>
+        <tr><td>6岁</td><td>22.46</td><td>20.93～23.98</td></tr>
+        <tr><td>7岁</td><td>22.56</td><td>21.07～24.04</td></tr>
+        <tr><td>8岁</td><td>22.78</td><td>21.30～24.27</td></tr>
+        <tr><td>9岁</td><td>22.95</td><td>21.45～24.46</td></tr>
+        <tr><td>10岁</td><td>23.13</td><td>21.60～24.67</td></tr>
+        <tr><td>11岁</td><td>23.26</td><td>21.71～24.80</td></tr>
+        <tr><td>12岁</td><td>23.32</td><td>21.79～24.84</td></tr>
+        <tr><td>13岁</td><td>23.36</td><td>22.07～24.65</td></tr>
+        <tr><td>14岁</td><td>23.37</td><td>21.92～24.82</td></tr>
+        <tr><td>15岁</td><td>23.39</td><td>22.10～24.68</td></tr>
+      </table>
+    </div>
+
+    <!-- 第三个表格：角膜曲率半径 -->
+    <div class="table-box">
+      <h3>6～15岁学龄儿童角膜<br>曲率半径参考区间(mm)</h3>
+      <table>
+        <tr>
+          <th>年龄</th>
+          <th>均值</th>
+          <th>参考区间</th>
+        </tr>
+        <tr><td>6岁</td><td>7.92</td><td>7.39～8.45</td></tr>
+        <tr><td>7岁</td><td>7.89</td><td>7.09～8.70</td></tr>
+        <tr><td>8岁</td><td>7.91</td><td>7.42～8.41</td></tr>
+        <tr><td>9岁</td><td>7.92</td><td>7.41～8.43</td></tr>
+        <tr><td>10岁</td><td>7.92</td><td>7.41～8.43</td></tr>
+        <tr><td>11岁</td><td>7.92</td><td>7.42～8.41</td></tr>
+        <tr><td>12岁</td><td>7.91</td><td>7.39～8.43</td></tr>
+        <tr><td>13岁</td><td>7.93</td><td>7.39～8.46</td></tr>
+        <tr><td>14岁</td><td>7.91</td><td>7.36～8.47</td></tr>
+        <tr><td>15岁</td><td>7.89</td><td>7.40～8.38</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- 新增的图片区域 -->
+  <div class="image-container">
+    <div class="image-box">
+      <h3 class="image-title">眼视光学生理教学图</h3>
+      <img src="images/jinshi7.jpg" alt="眼视光学生理教学图">
+    </div>
+
+    <div class="image-box">
+      <h3 class="image-title">学生近视防控原理图</h3>
+      <img src="images/jinshi8.jpg" alt="学生近视防控原理图">
+    </div>
+
+    <div class="image-box">
+      <h3 class="image-title">看见心世界</h3>
+      <img src="images/jinshi9.jpg" alt="看见心世界">
+    </div>
+  </div>
+
+  <!-- ========== 底部翻页导航 ========== -->
+  <div class="page-nav">
+    <a href="4.html" class="nav-btn">⬅ 前一页：视功能异常</a>
+    <a href="index.html" class="nav-btn">🏠 首页</a>
+    <a href="6.html" class="nav-btn">后一页：近视前期 ➡</a>
+  </div>
+
+  <div class="footer">
+    参考文献：中华预防医学会公共卫生眼科分会·中国学龄儿童眼球远视储备、眼轴长度、角膜曲率参考区间及相关遗传因素专家共识（2022年）[J]中华眼科杂志，2022
+  </div>
+
+  <!-- 返回首页按钮 -->
+  <a href="index.html" class="back-to-home">
+        <span>🏠</span>
+  </a>
+
+</body>
+</html>
