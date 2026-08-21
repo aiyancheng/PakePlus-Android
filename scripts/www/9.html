@@ -1,0 +1,1629 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="基于VAK学习风格模型的专业感官学习风格自测工具，由永州爱眼城提供护眼建议">
+    <meta name="theme-color" content="#2c3e50">
+    <title>感官学习风格交互式自测 | 永州爱眼城</title>
+    <style>
+        :root {
+            --color-primary: #4A6CF7;
+            --color-primary-dark: #3651d5;
+            --color-visual: #4A90D9;
+            --color-visual-light: #e8f1fb;
+            --color-visual-border: #4A90D9;
+            --color-auditory: #E8734A;
+            --color-auditory-light: #fdf0ea;
+            --color-auditory-border: #E8734A;
+            --color-kinesthetic: #3CB371;
+            --color-kinesthetic-light: #edf8f2;
+            --color-kinesthetic-border: #3CB371;
+            --color-mix: #7B68EE;
+            --color-bg: #f0f4f8;
+            --color-card: #ffffff;
+            --color-text: #2c3e50;
+            --color-text-secondary: #5a6c7d;
+            --color-border: #e2e8f0;
+            --color-warning-bg: #fffbeb;
+            --color-warning-border: #f59e0b;
+            --color-warning-text: #92400e;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.13);
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-sans: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(160deg, #eef2f7 0%, #dce3ed 30%, #e8ecf3 60%, #f0f4f8 100%);
+            background-attachment: fixed;
+            padding: 20px;
+            line-height: 1.6;
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 860px;
+            background: var(--color-card);
+            padding: 0;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            animation: containerEnter 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+        }
+
+        @keyframes containerEnter {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== 顶部品牌头 ========== */
+        .brand-header {
+            text-align: center;
+            padding: 28px 30px 24px;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 40%, #2c3e50 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .brand-header::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .brand-header::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .brand-header .brand-icon {
+            font-size: 42px;
+            margin-bottom: 6px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        .brand-header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+        .brand-header .brand-subtitle {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-top: 6px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== 主体内容区 ========== */
+        .main-content {
+            padding: 28px 30px 10px;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .section-intro h2 {
+            font-size: 22px;
+            color: #1a252f;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .section-intro .intro-desc {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.3px;
+        }
+
+        /* 进度指示器 */
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 12px 18px;
+            background: #f8fafc;
+            border-radius: 30px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+        .progress-indicator .dot-pulse {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            animation: dotPulse 1.6s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.8);
+                opacity: 1;
+            }
+        }
+        .progress-indicator .answered-count {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 15px;
+        }
+
+        /* ========== 题目卡片 ========== */
+        .q-item {
+            margin: 0 0 16px;
+            padding: 18px 20px;
+            border-radius: var(--radius-md);
+            background: #fafbfc;
+            border: 1.5px solid transparent;
+            border-left: 4px solid var(--color-border);
+            transition: all var(--transition-smooth);
+            position: relative;
+            cursor: default;
+        }
+        .q-item:hover {
+            border-color: #dde4f0;
+            box-shadow: var(--shadow-sm);
+            background: #fdfefe;
+        }
+        .q-item.answered {
+            border-left-color: var(--color-primary);
+            border-color: #dce6f8;
+            background: #fdfeff;
+            box-shadow: var(--shadow-sm);
+        }
+        .q-item .q-number {
+            display: inline-block;
+            background: #e8ecf2;
+            color: #5a6c7d;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            transition: all var(--transition-fast);
+        }
+        .q-item.answered .q-number {
+            background: #dce6f8;
+            color: var(--color-primary);
+        }
+        .q-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a252f;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .option {
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 11px 14px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1.5px solid transparent;
+            background: #fff;
+            user-select: none;
+            -webkit-user-select: none;
+            position: relative;
+        }
+        .option:hover {
+            background: #eef3fb;
+            border-color: #d0ddf2;
+            transform: translateX(3px);
+        }
+        .option:active {
+            transform: scale(0.985);
+            transition: transform 0.1s ease;
+        }
+        .option.selected {
+            background: #e6f0ff;
+            border-color: #b3cff5;
+            box-shadow: inset 0 0 0 1px rgba(74, 108, 247, 0.15);
+            font-weight: 500;
+        }
+        .option .opt-letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #eef1f6;
+            font-weight: 700;
+            font-size: 13px;
+            color: #5a6c7d;
+            flex-shrink: 0;
+            transition: all var(--transition-fast);
+        }
+        .option.selected .opt-letter {
+            background: var(--color-primary);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(74, 108, 247, 0.3);
+        }
+        .option .opt-text {
+            flex: 1;
+            font-size: 15px;
+            color: #3a4d5e;
+        }
+        .option.selected .opt-text {
+            color: #1a2d40;
+        }
+        input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            pointer-events: none;
+        }
+        .option .radio-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #c5cdd8;
+            flex-shrink: 0;
+            transition: all var(--transition-fast);
+            position: relative;
+            background: #fff;
+        }
+        .option.selected .radio-dot {
+            border-color: var(--color-primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(74, 108, 247, 0.12);
+        }
+        .option.selected .radio-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            animation: radioPop 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+        @keyframes radioPop {
+            from {
+                transform: translate(-50%, -50%) scale(0);
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /* ========== 按钮区 ========== */
+        .btn-box {
+            text-align: center;
+            padding: 10px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        #submitBtn {
+            padding: 15px 48px;
+            background: linear-gradient(135deg, #4A6CF7 0%, #3651d5 100%);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            box-shadow: 0 6px 22px rgba(74, 108, 247, 0.35);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-sans);
+        }
+        #submitBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 108, 247, 0.45);
+        }
+        #submitBtn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(74, 108, 247, 0.3);
+            transition: all 0.1s ease;
+        }
+        #submitBtn:disabled {
+            background: #c5cdd8;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            opacity: 0.7;
+        }
+        #submitBtn .btn-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(0);
+            animation: ripple 0.6s ease-out forwards;
+            pointer-events: none;
+        }
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        #resetBtn {
+            padding: 10px 24px;
+            background: transparent;
+            color: #7a8ea0;
+            border: 1.5px solid #dde4ed;
+            border-radius: 24px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-family: var(--font-sans);
+            letter-spacing: 0.3px;
+        }
+        #resetBtn:hover {
+            border-color: #b0bec5;
+            color: #4a5e6e;
+            background: #fafbfc;
+        }
+
+        /* ========== 结果区 ========== */
+        #result {
+            margin: 0 30px 30px;
+            padding: 26px 28px;
+            border-radius: var(--radius-lg);
+            background: #fdfeff;
+            border: 1.5px solid #e8eef5;
+            display: none;
+            animation: resultReveal 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+            box-shadow: var(--shadow-md);
+        }
+        @keyframes resultReveal {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+                filter: blur(2px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        .res-type-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .badge-visual {
+            background: var(--color-visual-light);
+            color: #2a5d8f;
+        }
+        .badge-auditory {
+            background: var(--color-auditory-light);
+            color: #9b4a2a;
+        }
+        .badge-kinesthetic {
+            background: var(--color-kinesthetic-light);
+            color: #1e6b42;
+        }
+        .badge-mix {
+            background: #f3f0ff;
+            color: #4a3a9e;
+        }
+        .res-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a252f;
+            margin: 6px 0 16px;
+            line-height: 1.3;
+        }
+        .res-desc {
+            color: #4a5e6e;
+            line-height: 1.85;
+            font-size: 15px;
+        }
+        .res-desc strong {
+            color: #1a252f;
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            padding-bottom: 4px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .res-desc .highlight-box {
+            display: block;
+            background: #f8fafc;
+            border-left: 3px solid var(--color-primary);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0 14px;
+            color: #3a4d5e;
+            font-size: 14px;
+            line-height: 1.85;
+        }
+        .res-desc .highlight-box b {
+            color: #1a252f;
+        }
+        .tips-content b {
+            color: #92400e;
+        }
+
+        /* ========== 统计卡片 ========== */
+        .stats-box {
+            margin-top: 22px;
+            padding: 20px 18px;
+            background: #f8fafc;
+            border-radius: var(--radius-md);
+            border: 1px solid #eef2f7;
+        }
+        .stats-title {
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a252f;
+            text-align: center;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+        .stats-cards {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .stat-item {
+            flex: 1;
+            min-width: 90px;
+            max-width: 140px;
+            text-align: center;
+            padding: 14px 10px;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-fast);
+        }
+        .stat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        .stat-item .stat-icon {
+            font-size: 26px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .stat-item .stat-label {
+            font-size: 12px;
+            color: #7a8ea0;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .stat-item .stat-value {
+            font-weight: 700;
+            font-size: 22px;
+            color: #1a252f;
+            margin: 2px 0;
+        }
+        .stat-item.visual-stat {
+            border-top: 3px solid var(--color-visual-border);
+        }
+        .stat-item.audio-stat {
+            border-top: 3px solid var(--color-auditory-border);
+        }
+        .stat-item.touch-stat {
+            border-top: 3px solid var(--color-kinesthetic-border);
+        }
+
+        /* 条形图 */
+        .bar-chart {
+            margin-top: 10px;
+        }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0;
+        }
+        .bar-label {
+            width: 56px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #5a6c7d;
+            text-align: right;
+            flex-shrink: 0;
+            letter-spacing: 0.3px;
+        }
+        .bar-track {
+            flex: 1;
+            height: 20px;
+            background: #e8ecf2;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+            position: relative;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+        .bar-fill.visual-bar {
+            background: linear-gradient(90deg, #5ba0e0, #4A90D9);
+        }
+        .bar-fill.auditory-bar {
+            background: linear-gradient(90deg, #f08a64, #E8734A);
+        }
+        .bar-fill.kinesthetic-bar {
+            background: linear-gradient(90deg, #5cc98a, #3CB371);
+        }
+        .bar-percent {
+            font-size: 13px;
+            font-weight: 700;
+            color: #3a4d5e;
+            width: 42px;
+            text-align: left;
+            flex-shrink: 0;
+        }
+
+        /* ========== 护眼建议区 ========== */
+        .tips-section {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background: var(--color-warning-bg);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--color-warning-border);
+            position: relative;
+        }
+        .tips-title {
+            font-weight: 700;
+            color: var(--color-warning-text);
+            margin-bottom: 8px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .tips-content {
+            color: #6b4d1e;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ========== 页脚品牌 ========== */
+        .footer-brand {
+            text-align: center;
+            padding: 16px 30px;
+            background: #f5f7fa;
+            color: #7a8ea0;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+            border-top: 1px solid #eef2f7;
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+        }
+        .footer-brand strong {
+            color: #4a5e6e;
+        }
+
+        /* ========== 底部翻页导航 ========== */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin: 0 30px 24px;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 22px;
+            background-color: #1a6dcc;
+            color: #fff !important;
+            text-decoration: none !important;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 160px;
+            text-align: center;
+        }
+        .nav-btn:hover {
+            background-color: #0d4d9c;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 640px) {
+            .page-nav { margin: 0 14px 16px; flex-direction: column; gap: 10px; }
+            .nav-btn { width: 100%; }
+        }
+
+        /* ========== Toast提示 ========== */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-120px);
+            background: #1a252f;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            pointer-events: none;
+            transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            letter-spacing: 0.3px;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+        .toast.warning {
+            background: #e8734a;
+        }
+
+        /* ========== 响应式 ========== */
+        @media (max-width: 640px) {
+            body {
+                padding: 8px;
+            }
+            .container {
+                border-radius: var(--radius-lg);
+            }
+            .brand-header {
+                padding: 20px 16px 18px;
+            }
+            .brand-header h1 {
+                font-size: 21px;
+            }
+            .brand-header .brand-icon {
+                font-size: 32px;
+            }
+            .main-content {
+                padding: 18px 14px 6px;
+            }
+            .section-intro h2 {
+                font-size: 18px;
+            }
+            .q-item {
+                padding: 14px 12px;
+                margin-bottom: 10px;
+            }
+            .q-title {
+                font-size: 15px;
+            }
+            .option {
+                padding: 10px 10px;
+                gap: 6px;
+            }
+            .option .opt-letter {
+                width: 24px;
+                height: 24px;
+                font-size: 11px;
+            }
+            .option .opt-text {
+                font-size: 13px;
+            }
+            .option .radio-dot {
+                width: 16px;
+                height: 16px;
+            }
+            #submitBtn {
+                padding: 13px 32px;
+                font-size: 15px;
+                border-radius: 26px;
+            }
+            #result {
+                margin: 0 12px 20px;
+                padding: 18px 14px;
+            }
+            .res-title {
+                font-size: 19px;
+            }
+            .res-desc {
+                font-size: 14px;
+            }
+            .stats-cards {
+                gap: 6px;
+            }
+            .stat-item {
+                min-width: 70px;
+                padding: 10px 6px;
+            }
+            .stat-item .stat-value {
+                font-size: 18px;
+            }
+            .bar-label {
+                width: 40px;
+                font-size: 10px;
+            }
+            .bar-percent {
+                width: 32px;
+                font-size: 11px;
+            }
+            .footer-brand {
+                padding: 12px 14px;
+                font-size: 11px;
+                border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            }
+            .btn-box {
+                padding: 8px 14px 20px;
+                gap: 8px;
+            }
+        }
+        @media (max-width: 380px) {
+            .stats-cards {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .stat-item {
+                max-width: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .stat-item .stat-icon {
+                margin-bottom: 0;
+                font-size: 22px;
+            }
+            .stat-item .stat-value {
+                margin: 0;
+                font-size: 20px;
+            }
+            .bar-row {
+                gap: 4px;
+            }
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            #submitBtn,
+            #resetBtn,
+            .progress-indicator,
+            .btn-box {
+                display: none !important;
+            }
+            #result {
+                display: block !important;
+                border: none;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            .q-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ==================== 品牌头部 ==================== -->
+        <div class="brand-header">
+            <h1>感官学习风格自测</h1>
+            <p class="brand-subtitle">永州爱眼城 · 专业呵护眼健康</p>
+        </div>
+
+        <!-- ==================== 主体内容 ==================== -->
+        <div class="main-content">
+            <div class="section-intro">
+                <h2>🔍 发现你的学习天赋密码</h2>
+                <p class="intro-desc">基于VAKT学习风格模型 · 15道精选情景题 · 约3分钟完成</p>
+            </div>
+
+            <!-- 进度指示器 -->
+            <div class="progress-indicator" id="progressIndicator">
+                <span class="dot-pulse"></span>
+                已答：<span class="answered-count" id="answeredCount">0</span> / 15 题
+            </div>
+
+            <!-- 题目容器 -->
+            <div id="quiz" role="form" aria-label="学习风格自测问卷"></div>
+        </div>
+
+        <!-- 按钮区 -->
+        <div class="btn-box">
+            <button id="submitBtn" disabled>📝 提交答卷 · 查看专属分析</button>
+            <button id="resetBtn">🔄 重新测试</button>
+        </div>
+
+        <!-- ==================== 结果区域 ==================== -->
+        <div id="result" role="region" aria-live="polite" aria-label="测试结果">
+            <div class="res-type-badge" id="resultBadge"></div>
+            <div class="res-title" id="resultTitle"></div>
+            <div class="res-desc" id="resultDesc"></div>
+
+            <!-- 统计卡片 -->
+            <div class="stats-box">
+                <div class="stats-title">📊 你的答题统计</div>
+                <div class="stats-cards">
+                    <div class="stat-item visual-stat">
+                        <span class="stat-icon">👁️</span>
+                        <span class="stat-label">视觉型</span>
+                        <span class="stat-value" id="countVisual">0</span>
+                        <span class="stat-label">题</span>
+                    </div>
+                    <div class="stat-item audio-stat">
+                        <span class="stat-icon">👂</span>
+                        <span class="stat-label">听觉型</span>
+                        <span class="stat-value" id="countAuditory">0</span>
+                        <span class="stat-label">题</span>
+                    </div>
+                    <div class="stat-item touch-stat">
+                        <span class="stat-icon">✋</span>
+                        <span class="stat-label">触觉/动觉型</span>
+                        <span class="stat-value" id="countKinesthetic">0</span>
+                        <span class="stat-label">题</span>
+                    </div>
+                </div>
+                <!-- 条形图 -->
+                <div class="bar-chart">
+                    <div class="bar-row">
+                        <span class="bar-label">视觉型</span>
+                        <div class="bar-track">
+                            <div class="bar-fill visual-bar" id="visualBar" style="width:0%;">0%</div>
+                        </div>
+                        <span class="bar-percent" id="visualPercentLabel">0%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">听觉型</span>
+                        <div class="bar-track">
+                            <div class="bar-fill auditory-bar" id="auditoryBar" style="width:0%;">0%</div>
+                        </div>
+                        <span class="bar-percent" id="auditoryPercentLabel">0%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">触觉型</span>
+                        <div class="bar-track">
+                            <div class="bar-fill kinesthetic-bar" id="kinestheticBar" style="width:0%;">0%</div>
+                        </div>
+                        <span class="bar-percent" id="kinestheticPercentLabel">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 护眼建议 -->
+            <div class="tips-section" id="tipsSection">
+                <div class="tips-title">💡 永州爱眼城 · 专属护眼提醒</div>
+                <div class="tips-content" id="tipsContent"></div>
+            </div>
+        </div>
+
+        <!-- 底部翻页导航 -->
+        <div class="page-nav">
+            <a href="8.html" class="nav-btn">⬅ 前一页：尊享套餐</a>
+            <a href="index.html" class="nav-btn">🏠 首页</a>
+            <a href="阅读速度测试.html" class="nav-btn">后一页：阅读速度测试 ➡</a>
+        </div>
+
+        <!-- ==================== 页脚品牌 ==================== -->
+        <div class="footer-brand">
+            <strong>永州爱眼城</strong> · 专业护眼服务 &nbsp;|&nbsp; 呵护您的视力健康，提供个性化学习建议
+            <br><a href="index.html" style="display:inline-block;margin-top:8px;color:#4A6CF7;text-decoration:none;font-weight:600;">🏠 返回首页</a>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        (function() {
+            // ==================== 常量与类型定义 ====================
+            const TYPE_VISUAL = 'visual';
+            const TYPE_AUDITORY = 'auditory';
+            const TYPE_KINESTHETIC = 'kinesthetic';
+            const TYPE_MIX = 'mix';
+
+            // ==================== 题目数据（基于VAKT模型） ====================
+            const questionsRaw = [
+                { q: '学习新知识时，你更倾向于：',
+                    a: '看图文、视频、笔记或图表',
+                    b: '听讲解、听课、听语音说明',
+                    c: '动手实操、边做边学、亲身体验' },
+                { q: '记忆他人姓名时，你主要依靠：',
+                    a: '记住对方的长相和面部特征',
+                    b: '记住对方的声音特点和说话语气',
+                    c: '通过见面接触和相处来加深印象' },
+                { q: '空闲时间你最喜欢：',
+                    a: '看剧、看书、刷图文内容',
+                    b: '听歌、聊天、听播客或广播',
+                    c: '运动、手工、户外活动或到处走动' },
+                { q: '别人向你解释一个道理时，你最容易接受：',
+                    a: '发文字、画图、用示意图展示',
+                    b: '当面口头慢慢讲给你听',
+                    c: '带你实际做一遍演示给你看' },
+                { q: '背诵知识点效率最高的方式是：',
+                    a: '看笔记、画思维导图、制作图表',
+                    b: '大声朗读、默念、听自己的录音回放',
+                    c: '抄写、边写边动、通过实操演练记忆' },
+                { q: '你最容易被打扰注意力的因素是：',
+                    a: '环境杂乱、颜色刺眼、视觉混乱',
+                    b: '噪音干扰、旁边有人说话',
+                    c: '长时间静坐不动、身体感到拘束' },
+                { q: '面对长篇文字材料时你会：',
+                    a: '能够静下心来慢慢阅读',
+                    b: '看着容易犯困，更想听别人念出来',
+                    c: '坐不住，感觉看不进去，想动一动' },
+                { q: '别人形容你说话的特点是：',
+                    a: '语速偏快、喜欢比划、描述画面感强',
+                    b: '声音好听、爱聊天、喜欢复述事情',
+                    c: '动作多、坐不住、说话直接坦率' },
+                { q: '找路认路时你主要依靠：',
+                    a: '看路标、记建筑物外观和街景',
+                    b: '听别人指路、记住路口名称和方向描述',
+                    c: '亲自走过一遍后凭身体感觉记住路线' },
+                { q: '理解一个复杂问题时：',
+                    a: '看流程图或示意图就能立刻明白',
+                    b: '听别人口头解释几遍就能理解',
+                    c: '必须亲手模拟或实际操作一遍才真正明白' },
+                { q: '回忆往事时你最先想起的是：',
+                    a: '当时看到的画面和场景',
+                    b: '当时说过的话、听到的声音',
+                    c: '当时的身体感受和情绪体验' },
+                { q: '课堂上最适合你的状态是：',
+                    a: '多看黑板、看课件和板书内容',
+                    b: '认真听老师讲解、参与课堂讨论',
+                    c: '可以适当动手记笔记或参与互动活动' },
+                { q: '购物做决定时你倾向于：',
+                    a: '仔细看外观、参数和产品图片',
+                    b: '听别人推荐、看测评讲解视频',
+                    c: '一定要亲手触摸、试用后再决定' },
+                { q: '感到烦躁时最能缓解情绪的是：',
+                    a: '收拾整理桌面、看风景或美图',
+                    b: '听歌、找人倾诉聊天',
+                    c: '运动、散步、做手工或干活' },
+                { q: '学习一项新技能（如骑车/烹饪/解题）时：',
+                    a: '先看教程视频或图文说明再开始',
+                    b: '先听别人讲解要领和注意事项',
+                    c: '直接上手尝试，在实践中摸索调整' },
+            ];
+
+            // ==================== 构建带类型标记的题目 ====================
+            // 每个选项绑定其原始类型：a->visual, b->auditory, c->kinesthetic
+            const questionsWithTypes = questionsRaw.map(q => ({
+                questionText: q.q,
+                options: [
+                    { label: 'A', text: q.a, type: TYPE_VISUAL },
+                    { label: 'B', text: q.b, type: TYPE_AUDITORY },
+                    { label: 'C', text: q.c, type: TYPE_KINESTHETIC },
+                ],
+            }));
+
+            // 打乱每个题目的选项顺序（保留类型标签不变）
+            function shuffleArray(arr) {
+                const newArr = [...arr];
+                for (let i = newArr.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+                }
+                return newArr;
+            }
+
+            const shuffledQuestions = questionsWithTypes.map(q => ({
+                questionText: q.questionText,
+                shuffledOptions: shuffleArray(q.options),
+            }));
+
+            // ==================== 结果类型详细解析 ====================
+            const typeInfo = {
+                [TYPE_VISUAL]: {
+                    badgeClass: 'badge-visual',
+                    badgeText: '视觉型学习者',
+                    title: '👁️ 你是【视觉型】学习者',
+                    desc: `<strong>【核心特质】</strong>
+                你的大脑天生是一台"高清摄像机"，最擅长用眼睛接收和加工信息。思维充满画面感，想象力丰富，观察细致入微，对颜色、排版、空间布局极其敏感。信息一旦转化为图像或文字，就能在脑海中形成清晰印记，记忆高效持久。你往往是团队里第一个注意到细节变化的人，也是最擅长在脑海中"演练"一件事的人。
+
+                <strong>【学习优势】</strong>
+                <span class="highlight-box">
+                ✅ 阅读效率极高，能快速从文字材料中提炼核心要点<br>
+                ✅ 图像记忆力突出，看过的图表、流程图记得清晰且持久<br>
+                ✅ 笔记习惯优秀，喜欢用颜色、符号、框线区分层次<br>
+                ✅ 空间想象力强，擅长在脑海中构建三维结构和抽象模型<br>
+                ✅ 专注力强，能在安静、整洁的环境中长时间高效工作
+                </span>
+
+                <strong>【学习短板】</strong>
+                <span class="highlight-box" style="border-left-color:#e8734a;">
+                ⚠️ 纯语音/口头讲解容易走神，光靠耳朵听难以记牢<br>
+                ⚠️ 不喜欢无图文的纯音频课程，学习时需要"看到"才放心<br>
+                ⚠️ 环境杂乱或视觉干扰大时，注意力会严重分散<br>
+                ⚠️ 对口头批评或纯语音反馈不够敏感，容易遗漏重要信息<br>
+                ⚠️ 过于追求笔记"好看"，有时花在整理上的时间多于吸收内容
+                </span>
+
+                <strong>【最佳学习方法 · 7大策略】</strong>
+                <span class="highlight-box">
+                📌 <b>思维导图法：</b>用XMind、手绘等工具把知识可视化，整理逻辑关系一目了然<br>
+                📌 <b>彩色笔记法：</b>不同颜色区分重点、次重点、例子，强化大脑对信息层级的感知<br>
+                📌 <b>卡片记忆法：</b>制作图文卡片、知识速记卡，利用视觉联想触发记忆<br>
+                📌 <b>视频学习优先：</b>优先选择有字幕、有图表展示的视频课程替代纯音频课<br>
+                📌 <b>图表化笔记：</b>学任何内容都尝试画成流程图/时间轴/对比表格<br>
+                📌 <b>空间记忆法：</b>把需要记忆的知识"放置"到熟悉空间的不同位置进行关联记忆<br>
+                📌 <b>整洁学习区：</b>保持桌面整洁，减少无关视觉刺激，有助于快速进入专注状态
+                </span>
+
+                <strong>【沟通习惯与人际风格】</strong>
+                偏好文字沟通，喜欢看消息而非听语音；说话时常用"你看……""画面是……""我觉得看起来……"等视觉化词汇；喜欢用图文、截图表达想法；对外表整洁和环境美感有较高要求。在团队中往往担当"视觉化呈现"的角色，做PPT、排版、制图是你的强项。
+
+                <strong>【适合职业方向】</strong>
+                平面设计、UI/UX设计、摄影摄像、建筑规划、室内设计、数据分析、编程开发、会计财务、文案策划、新媒体运营、视频剪辑、眼镜验配师（需精准判断镜片、镜框外观细节）等视觉导向型职业。
+
+                <strong>【护眼建议】</strong>
+                <span class="highlight-box" style="border-left-color:#4A90D9;background:#e8f1fb;">
+                🔬 <b>20-20-20法则：</b>每用眼20分钟，望向6米外20秒，放松睫状肌<br>
+                🔬 <b>照明管理：</b>使用4000K护眼台灯，避免直射眩光<br>
+                🔬 <b>阅读距离：</b>保持35-40厘米，屏幕距离不低于60厘米<br>
+                🔬 <b>定期检查：</b>每6个月到永州爱眼城做屈光检查<br>
+                🔬 <b>营养补充：</b>多摄入叶黄素、花青素，保护视网膜<br>
+                🔬 <b>户外活动：</b>每天1-2小时户外自然光，延缓近视进展
+                </span>`,
+                    eyeCare: '作为视觉型学习者，你对眼睛的依赖程度最高，用眼负担也最重。永州爱眼城特别提醒：<br><br>① <b>20-20-20法则：</b>每用眼20分钟，望向20英尺（约6米）外20秒，让睫状肌充分放松；<br>② <b>照明管理：</b>读书写字时使用色温4000K左右的护眼台灯，避免直射眩光；<br>③ <b>姿势距离：</b>阅读距离保持35-40厘米，屏幕距离不低于60厘米；<br>④ <b>定期检查：</b>每6个月到永州爱眼城进行一次全面屈光检查，及时发现视力变化；<br>⑤ <b>营养护眼：</b>多摄入叶黄素、花青素，减少视网膜氧化损伤；<br>⑥ <b>户外活动：</b>每天保证1-2小时户外自然光接触，有效延缓近视进展。',
+                },
+                [TYPE_AUDITORY]: {
+                    badgeClass: 'badge-auditory',
+                    badgeText: '听觉型学习者',
+                    title: '👂 你是【听觉型】学习者',
+                    desc: `<strong>【核心特质】</strong>
+                你的大脑天生是一台"精密收音机"，最擅长通过声音和语言接收、加工信息。对声调、语气、节奏极其敏感，能从别人说话方式中感受到弦外之音。思维靠语言逻辑推进，信息一旦转化为声音，就能在记忆中留下深刻印记。你天生具备良好的语言表达能力和倾听技巧，是团队中最擅长"用嘴学习"的人。
+
+                <strong>【学习优势】</strong>
+                <span class="highlight-box">
+                ✅ 听课记忆效率极高，老师讲的内容往往一遍就能留下清晰印象<br>
+                ✅ 语言表达能力强，复述、辩论、演讲都比较擅长<br>
+                ✅ 越讨论越明白，与他人交流是最高效的知识内化方式<br>
+                ✅ 擅长捕捉语气和情绪，共情能力强，人际关系处理好<br>
+                ✅ 语音记忆力强，熟悉的声音或音乐能快速触发相关记忆
+                </span>
+
+                <strong>【学习短板】</strong>
+                <span class="highlight-box" style="border-left-color:#e8734a;">
+                ⚠️ 长篇纯文字阅读容易走神，独自默读效率偏低<br>
+                ⚠️ 无人讲解时，面对教材容易"看了等于没看"<br>
+                ⚠️ 对噪音十分敏感，嘈杂环境会严重降低学习质量<br>
+                ⚠️ 纯图表信息（无文字说明）理解相对费力<br>
+                ⚠️ 有时候语言思维太活跃，脑子转得比手快，导致笔记杂乱
+                </span>
+
+                <strong>【最佳学习方法 · 7大策略】</strong>
+                <span class="highlight-box">
+                📌 <b>大声朗读法：</b>学习新内容时先大声朗读一遍，声音输入比视觉输入效果更持久<br>
+                📌 <b>录音复习法：</b>用手机录下自己复述知识点的声音，通勤路上反复听<br>
+                📌 <b>口述教学法（费曼技巧）：</b>把学到的东西讲给别人听，是检验和深化理解的最好方式<br>
+                📌 <b>有声书/播客学习：</b>优先选择有语音讲解的课程形式，减少纯阅读量<br>
+                📌 <b>讨论小组法：</b>加入学习小组或找学习伙伴，通过对话交流加深记忆<br>
+                📌 <b>背景音乐辅助：</b>选择节奏适中的纯音乐作为学习背景音，帮助维持专注状态<br>
+                📌 <b>语音助手辅助：</b>利用语音输入工具记笔记、口述思考过程，减少纯打字输入的阻力
+                </span>
+
+                <strong>【沟通习惯与人际风格】</strong>
+                偏好电话或语音交流，不喜欢长篇文字沟通；说话时语调富有变化，表达情感细腻；常用"我听说……""听起来不错""你讲的很有道理"等听觉词汇；天生擅长倾听，是朋友眼中"很懂得聊天"的人。在团队中是天然的"口头协调者"和"团队氛围调节器"。
+
+                <strong>【适合职业方向】</strong>
+                培训讲师、销售顾问、主持人、播客主播、律师、心理咨询师、语言教师、翻译、客服经理、音乐创作、配音演员、口腔科医师沟通（需要精准语言反馈）、眼镜验配师（沟通型——擅长和顾客建立信任，问诊能力强）。
+
+                <strong>【护眼建议】</strong>
+                <span class="highlight-box" style="border-left-color:#E8734A;background:#fdf0ea;">
+                🎧 <b>减少屏幕依赖：</b>用语音转文字、音频课程替代长时间屏幕阅读<br>
+                🎧 <b>坐姿与供血：</b>保持正确坐姿，避免颈椎弯曲压迫眼部供血血管<br>
+                🎧 <b>耳机使用注意：</b>避免长时间大音量佩戴，适当休息保护听力<br>
+                🎧 <b>眼部按摩：</b>每学习50分钟做一次眼部穴位按摩（睛明、太阳）<br>
+                🎧 <b>定期检查：</b>每年到永州爱眼城检查屈光度变化情况<br>
+                🎧 <b>营养均衡：</b>保证充足睡眠，睡眠是修复眼部疲劳的最有效手段
+                </span>`,
+                    eyeCare: '虽然你更依赖听觉学习，但屏幕和阅读带来的用眼负担同样不可忽视。永州爱眼城特别提醒：<br><br>① <b>减少屏幕依赖：</b>尽量用语音转文字、音频课程替代长时间屏幕阅读，保护眼睛；<br>② <b>坐姿与供血：</b>长时间听课要保持正确坐姿，避免颈椎弯曲压迫血管影响眼部供血；<br>③ <b>耳机使用注意：</b>避免长时间大音量佩戴耳机，适当休息保护听力；<br>④ <b>眼部按摩：</b>每学习50分钟做一次眼部穴位按摩（睛明、太阳、攒竹），缓解疲劳；<br>⑤ <b>定期检查：</b>即使近视风险相对较低，也应每年到永州爱眼城检查屈光度变化情况；<br>⑥ <b>营养均衡：</b>保证充足睡眠，良好睡眠是修复眼部疲劳的最有效手段。',
+                },
+                [TYPE_KINESTHETIC]: {
+                    badgeClass: 'badge-kinesthetic',
+                    badgeText: '触觉/动觉型学习者',
+                    title: '✋ 你是【触觉/动觉型】学习者',
+                    desc: `<strong>【核心特质】</strong>
+                你的大脑天生是一台"体感处理器"，最擅长通过身体感受、动手操作和亲身体验来学习。必须"做一遍"才能真正掌握，光看光听远远不够。你有极强的行动力、执行力和空间感知能力，大脑在身体运动时反而更清醒、更活跃。在许多人眼中，你是"天生的实干家"——不喜欢空谈，一出手就能解决问题。
+
+                <strong>【学习优势】</strong>
+                <span class="highlight-box">
+                ✅ 动手能力极强，实操类技能一学就上手，熟悉快<br>
+                ✅ 行动力超强，学到就能立刻用到，知行合一<br>
+                ✅ 空间感知能力突出，擅长处理3D结构、机械操作等立体任务<br>
+                ✅ 共情力强，能通过感受他人的情绪快速建立信任关系<br>
+                ✅ 抗压能力好，在紧张或突发情况下反应迅速、临危不乱
+                </span>
+
+                <strong>【学习短板】</strong>
+                <span class="highlight-box" style="border-left-color:#e8734a;">
+                ⚠️ 长时间静坐听课或看书很痛苦，难以维持专注状态<br>
+                ⚠️ 枯燥的理论学习容易产生抵触情绪，难以吸收<br>
+                ⚠️ 没有实操机会时，纯理论知识的记忆留存率偏低<br>
+                ⚠️ 书面考试可能不如实操测验发挥好<br>
+                ⚠️ 容易在思考时不自觉地走动或动手，让旁人误认为不专心
+                </span>
+
+                <strong>【最佳学习方法 · 7大策略】</strong>
+                <span class="highlight-box">
+                📌 <b>即学即练法：</b>每学一个知识点，立刻找对应场景实操一遍，趁热打铁<br>
+                📌 <b>手写笔记法：</b>用手写代替打字记录，手部运动帮助大脑加深记忆印象<br>
+                📌 <b>角色模拟法：</b>通过模拟真实场景（如扮演顾客/验光师）进行演练学习<br>
+                📌 <b>番茄工作法变体：</b>学习25分钟后起身活动5分钟，避免久坐带来的注意力下降<br>
+                📌 <b>实物辅助法：</b>借助模型、实物、道具进行学习，触摸感强化记忆通道<br>
+                📌 <b>项目驱动学习：</b>设定一个实际目标（如完整接待一位顾客），在完成任务的过程中学习<br>
+                📌 <b>走动学习法：</b>背诵知识点时适当走动，肢体节律能帮助激活记忆提取效率
+                </span>
+
+                <strong>【沟通习惯与人际风格】</strong>
+                肢体语言丰富，喜欢用行动而非言语表达；说话直接坦率，不绕弯子；偏好当面沟通和互动体验，而非文字交流；常用"感觉""体验""试试看"等触觉词汇；在团队中往往是最能"落地执行"的那个人，是"执行力担当"的角色。
+
+                <strong>【适合职业方向】</strong>
+                眼镜验配师（实操型，擅长精密操作和顾客触感体验）、外科医生、护理师、物理治疗师、运动教练、工程师、厨师、手工艺师、消防救援、建筑施工、实验室技师、户外教练等需要精密手眼协调的职业。
+
+                <strong>【护眼建议】</strong>
+                <span class="highlight-box" style="border-left-color:#3CB371;background:#edf8f2;">
+                🏃 <b>户外UV防护：</b>佩戴UV400太阳镜，阻挡紫外线对晶状体和视网膜的损伤<br>
+                🏃 <b>运动护眼：</b>打球、跑步等运动时配备运动专用眼镜或隐形眼镜<br>
+                🏃 <b>近距离作业：</b>手工操作保持35厘米以上距离和充足照明<br>
+                🏃 <b>防止外伤：</b>参与对抗性运动或操作工具时注意眼部安全防护<br>
+                🏃 <b>定期远眺：</b>操作间隙每30分钟抬眼望远，让睫状肌放松<br>
+                🏃 <b>全面检查：</b>每年到永州爱眼城做全面眼健康评估
+                </span>`,
+                    eyeCare: '作为动觉型学习者，你充满活力但往往容易忽视用眼细节。永州爱眼城特别提醒：<br><br>① <b>户外UV防护：</b>户外活动时佩戴具有UV400防护功能的太阳镜，阻挡紫外线对晶状体和视网膜的损伤；<br>② <b>运动护眼：</b>打球、跑步等运动时避免摘掉眼镜后眯眼，应配备运动专用眼镜或隐形眼镜；<br>③ <b>近距离作业注意：</b>手工操作、精密工作时保持充足照明，工作面距眼睛35厘米以上；<br>④ <b>防止外伤：</b>参与对抗性运动或操作工具时注意眼部安全防护；<br>⑤ <b>定期远眺：</b>操作间隙每30分钟抬眼望远（6米以外），让睫状肌放松；<br>⑥ <b>定期检查：</b>由于你的用眼场景多样，建议每年到永州爱眼城进行全面眼健康评估。',
+                },
+                [TYPE_MIX]: {
+                    badgeClass: 'badge-mix',
+                    badgeText: '综合均衡型学习者',
+                    title: '⚡ 你是【综合均衡型】学习者',
+                    desc: `<strong>【核心特质】</strong>
+                你的视觉、听觉、触觉三种感官学习通道均衡发展，没有明显短板，是天生的"全感官学习者"。你的大脑像一台多模态处理器，能根据情境灵活切换最适合的信息接收方式，适应力极强。你既可以靠图文学习，也可以靠听讲学习，还可以靠实操学习——这是一种稀缺且宝贵的学习天赋。研究显示，多感官协同学习的知识保留率比单一感官学习高出约40%。
+
+                <strong>【学习优势】</strong>
+                <span class="highlight-box">
+                ✅ 学习方式灵活，换老师/换环境/换课程形式都能快速适应<br>
+                ✅ 三通道同时激活时（看+听+做），学习效率远超单通道的学习者<br>
+                ✅ 可以根据知识难度自由选择最匹配的学习策略<br>
+                ✅ 与不同学习风格的人沟通合作都比较顺畅<br>
+                ✅ 面对复杂多变的学习场景时，心理弹性强，不容易放弃
+                </span>
+
+                <strong>【学习短板与提升方向】</strong>
+                <span class="highlight-box" style="border-left-color:#e8734a;">
+                ⚠️ 没有单一最强感官通道，自我认知可能模糊，需要主动发现最优学习组合<br>
+                ⚠️ 多种方式都能接受，有时反而难以高效决策"用哪种方式最好"<br>
+                ⚠️ 缺乏针对性训练时，容易停留在"都会一点、但都不精"的浅层学习<br>
+                ⚠️ 建议做进一步的细分测试，找出三者中最强的那一项作为主力通道
+                </span>
+
+                <strong>【最佳学习方法 · 7大策略】</strong>
+                <span class="highlight-box">
+                📌 <b>多感官叠加法：</b>边看笔记边大声朗读边手写——三通道同时激活，记忆效果最强<br>
+                📌 <b>知识金字塔法：</b>先看整体框架图（视觉），再听细节讲解（听觉），最后实操验证（触觉）<br>
+                📌 <b>教学相长法：</b>把学到的东西讲给别人听，再辅助对方实操，完成完整的三感官学习闭环<br>
+                📌 <b>情境切换法：</b>根据知识类型灵活切换——理论用看，案例用听，技能用做<br>
+                📌 <b>番茄钟+多形式组合：</b>25分钟看书→5分钟走动回顾→再25分钟听讲→循环切换感官通道<br>
+                📌 <b>项目式学习：</b>围绕一个实际目标，整合多种学习资源完成，是最适合你的深度学习方式<br>
+                📌 <b>定期自我复盘：</b>每周用思维导图+录音总结+实操演练三种方式各复习一次
+                </span>
+
+                <strong>【沟通习惯与人际风格】</strong>
+                天生的"沟通全才"——既可以发文字，也可以语音聊天，还可以当面互动，和任何风格的人都能顺畅交流。说话善于根据对方喜好调整表达方式，是团队中的"语言桥梁"。共情能力强，能感受到不同类型人的需求和习惯，非常适合做协调、管理、服务类工作。
+
+                <strong>【适合职业方向】</strong>
+                团队管理、创业运营、教育培训（培训师天赋型）、产品经理、医疗健康服务（眼镜门店店长/培训讲师）、项目协调、跨部门沟通、活动策划、创意总监等需要同时调动多种能力的复合型岗位。
+
+                <strong>【护眼建议】</strong>
+                <span class="highlight-box" style="border-left-color:#7B68EE;background:#f3f0ff;">
+                ⚡ <b>均衡用眼时间：</b>根据学习方式动态调整，避免连续长时间盯屏<br>
+                ⚡ <b>20-20-20法则：</b>无论哪种学习方式，每20分钟向远处眺望20秒<br>
+                ⚡ <b>姿势管理：</b>看、听、动三种状态下都要维持正确体态<br>
+                ⚡ <b>全面检查：</b>每年做角膜地形图、眼轴测量等全面眼健康检查<br>
+                ⚡ <b>个性化防护：</b>屏幕使用多时佩戴防蓝光眼镜，户外佩戴防紫外线眼镜<br>
+                ⚡ <b>营养综合：</b>叶黄素、维生素A、欧米伽3脂肪酸一并补充
+                </span>`,
+                    eyeCare: '你的多样化学习方式意味着需要全面关注眼部健康。永州爱眼城特别提醒：<br><br>① <b>均衡用眼时间：</b>根据不同学习方式动态调整用眼强度，避免连续长时间盯屏；<br>② <b>20-20-20法则：</b>无论用哪种方式学习，每20分钟向远处眺望20秒是基础护眼习惯；<br>③ <b>姿势管理：</b>看、听、动三种状态下都要维持正确体态，保护颈椎与眼部血液循环；<br>④ <b>全面眼健康评估：</b>由于学习场景复杂，建议每年到永州爱眼城做一次包含角膜地形图、眼轴测量在内的全面眼健康检查；<br>⑤ <b>个性化防护：</b>屏幕使用多时佩戴防蓝光眼镜，户外活动时佩戴防紫外线眼镜；<br>⑥ <b>营养综合补充：</b>叶黄素、维生素A、欧米伽3脂肪酸一并补充，为多场景用眼提供全面营养支撑。',
+                },
+            };
+
+            // ==================== DOM引用 ====================
+            const quizDom = document.getElementById('quiz');
+            const submitBtn = document.getElementById('submitBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const resultDom = document.getElementById('result');
+            const answeredCountDom = document.getElementById('answeredCount');
+            const progressIndicator = document.getElementById('progressIndicator');
+            const toastDom = document.getElementById('toast');
+
+            // 存储用户选择：{ questionIndex: typeString }
+            const userSelections = {};
+            let isSubmitted = false;
+
+            // ==================== Toast提示 ====================
+            let toastTimer;
+
+            function showToast(msg, type = '') {
+                clearTimeout(toastTimer);
+                toastDom.textContent = msg;
+                toastDom.className = 'toast ' + type + ' show';
+                toastTimer = setTimeout(() => {
+                    toastDom.classList.remove('show');
+                }, 2200);
+            }
+
+            // ==================== 渲染题目 ====================
+            function renderAllQuestions() {
+                quizDom.innerHTML = '';
+                shuffledQuestions.forEach((item, idx) => {
+                    const qNum = idx + 1;
+                    let optionsHTML = '';
+                    item.shuffledOptions.forEach((opt, optIdx) => {
+                        const letterLabel = String.fromCharCode(65 + optIdx); // A, B, C
+                        optionsHTML += `
+                                <div class="option" 
+                                     data-qindex="${idx}" 
+                                     data-type="${opt.type}"
+                                     onclick="window._selectOption(${idx}, '${opt.type}', this)"
+                                     role="radio"
+                                     aria-checked="false"
+                                     tabindex="0"
+                                     aria-label="选项${letterLabel}：${opt.text}">
+                                    <span class="radio-dot"></span>
+                                    <span class="opt-letter">${letterLabel}</span>
+                                    <span class="opt-text">${opt.text}</span>
+                                </div>`;
+                    });
+                    const qItemHTML = `
+                            <div class="q-item" id="qItem${idx}">
+                                <span class="q-number">第 ${qNum} 题 / 共 15 题</span>
+                                <div class="q-title">${qNum}. ${item.questionText}</div>
+                                ${optionsHTML}
+                            </div>`;
+                    quizDom.innerHTML += qItemHTML;
+                });
+            }
+
+            // ==================== 选择选项 ====================
+            window._selectOption = function(qIndex, typeValue, clickedEl) {
+                if (isSubmitted) return; // 已提交后不允许修改
+
+                // 移除同题所有选项的选中状态
+                const qItemDom = document.getElementById('qItem' + qIndex);
+                if (!qItemDom) return;
+                const allOptions = qItemDom.querySelectorAll('.option');
+                allOptions.forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.setAttribute('aria-checked', 'false');
+                });
+
+                // 选中当前选项
+                clickedEl.classList.add('selected');
+                clickedEl.setAttribute('aria-checked', 'true');
+
+                // 记录选择
+                userSelections[qIndex] = typeValue;
+
+                // 标记题目为已答
+                qItemDom.classList.add('answered');
+
+                // 更新进度
+                updateProgress();
+
+                // 检查是否全部答完
+                checkAllAnswered();
+            };
+
+            // ==================== 更新进度 ====================
+            function updateProgress() {
+                const answered = Object.keys(userSelections).length;
+                answeredCountDom.textContent = answered;
+                if (answered === 15) {
+                    progressIndicator.querySelector('.dot-pulse').style.background = '#3CB371';
+                } else {
+                    progressIndicator.querySelector('.dot-pulse').style.background = 'var(--color-primary)';
+                }
+            }
+
+            // ==================== 检查是否全部答完 ====================
+            function checkAllAnswered() {
+                const allAnswered = Object.keys(userSelections).length === 15;
+                submitBtn.disabled = !allAnswered;
+                if (allAnswered && !isSubmitted) {
+                    submitBtn.style.background = 'linear-gradient(135deg, #3CB371, #2d9d5f)';
+                    submitBtn.style.boxShadow = '0 6px 22px rgba(60,179,113,0.4)';
+                } else if (!allAnswered) {
+                    submitBtn.style.background = 'linear-gradient(135deg, #4A6CF7, #3651d5)';
+                    submitBtn.style.boxShadow = '0 6px 22px rgba(74,108,247,0.35)';
+                }
+            }
+
+            // ==================== 按钮涟漪效果 ====================
+            function addRippleEffect(e, button) {
+                const ripple = document.createElement('span');
+                ripple.className = 'btn-ripple';
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                button.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            }
+
+            // ==================== 提交按钮 ====================
+            submitBtn.addEventListener('click', function(e) {
+                addRippleEffect(e, this);
+                if (isSubmitted) return;
+
+                const answeredCount = Object.keys(userSelections).length;
+                if (answeredCount < 15) {
+                    const remaining = 15 - answeredCount;
+                    showToast(`还有 ${remaining} 题未作答，请全部完成后再提交`, 'warning');
+                    // 滚动到第一个未答的题目
+                    for (let i = 0; i < 15; i++) {
+                        if (!(i in userSelections)) {
+                            const qItem = document.getElementById('qItem' + i);
+                            if (qItem) {
+                                qItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                qItem.style.boxShadow = '0 0 0 3px rgba(232,115,74,0.4)';
+                                setTimeout(() => { qItem.style.boxShadow = ''; }, 2000);
+                            }
+                            break;
+                        }
+                    }
+                    return;
+                }
+
+                // 统计各类型得分
+                let countVisual = 0,
+                    countAuditory = 0,
+                    countKinesthetic = 0;
+                for (let i = 0; i < 15; i++) {
+                    const selType = userSelections[i];
+                    if (selType === TYPE_VISUAL) countVisual++;
+                    else if (selType === TYPE_AUDITORY) countAuditory++;
+                    else if (selType === TYPE_KINESTHETIC) countKinesthetic++;
+                }
+
+                const total = countVisual + countAuditory + countKinesthetic;
+                const visualPercent = Math.round((countVisual / total) * 100);
+                const auditoryPercent = Math.round((countAuditory / total) * 100);
+                const kinestheticPercent = Math.round((countKinesthetic / total) * 100);
+
+                // 判断主导类型
+                const maxVal = Math.max(countVisual, countAuditory, countKinesthetic);
+                const maxTypes = [];
+                if (countVisual === maxVal) maxTypes.push(TYPE_VISUAL);
+                if (countAuditory === maxVal) maxTypes.push(TYPE_AUDITORY);
+                if (countKinesthetic === maxVal) maxTypes.push(TYPE_KINESTHETIC);
+
+                let resultType;
+                if (maxTypes.length >= 2) {
+                    resultType = TYPE_MIX;
+                } else if (maxTypes[0] === TYPE_VISUAL) {
+                    resultType = TYPE_VISUAL;
+                } else if (maxTypes[0] === TYPE_AUDITORY) {
+                    resultType = TYPE_AUDITORY;
+                } else {
+                    resultType = TYPE_KINESTHETIC;
+                }
+
+                // 填充结果
+                const info = typeInfo[resultType];
+                document.getElementById('resultBadge').textContent = info.badgeText;
+                document.getElementById('resultBadge').className = 'res-type-badge ' + info.badgeClass;
+                document.getElementById('resultTitle').textContent = info.title;
+                document.getElementById('resultDesc').innerHTML = info.desc;
+                document.getElementById('countVisual').textContent = countVisual;
+                document.getElementById('countAuditory').textContent = countAuditory;
+                document.getElementById('countKinesthetic').textContent = countKinesthetic;
+                document.getElementById('visualPercentLabel').textContent = visualPercent + '%';
+                document.getElementById('auditoryPercentLabel').textContent = auditoryPercent + '%';
+                document.getElementById('kinestheticPercentLabel').textContent = kinestheticPercent + '%';
+                document.getElementById('tipsContent').innerHTML = info.eyeCare;
+
+                // 显示结果
+                resultDom.style.display = 'block';
+                isSubmitted = true;
+                submitBtn.disabled = true;
+                submitBtn.style.background = '#c5cdd8';
+                submitBtn.style.boxShadow = 'none';
+                submitBtn.textContent = '✅ 已完成测试';
+
+                // 动画延迟——条形图展开
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        document.getElementById('visualBar').style.width = visualPercent + '%';
+                        document.getElementById('visualBar').textContent = visualPercent > 8 ? visualPercent +
+                            '%' : '';
+                        document.getElementById('auditoryBar').style.width = auditoryPercent + '%';
+                        document.getElementById('auditoryBar').textContent = auditoryPercent > 8 ? auditoryPercent +
+                            '%' : '';
+                        document.getElementById('kinestheticBar').style.width = kinestheticPercent + '%';
+                        document.getElementById('kinestheticBar').textContent = kinestheticPercent > 8 ?
+                            kinestheticPercent + '%' : '';
+                    });
+                });
+
+                // 平滑滚动到结果
+                setTimeout(() => {
+                    resultDom.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 150);
+
+                // 显示完成提示
+                showToast('🎉 测试完成！查看你的专属分析报告');
+            });
+
+            // ==================== 重置按钮 ====================
+            resetBtn.addEventListener('click', function() {
+                if (isSubmitted || Object.keys(userSelections).length > 0) {
+                    // 清除所有选择
+                    for (const key in userSelections) {
+                        delete userSelections[key];
+                    }
+                    // 清除UI选中状态
+                    document.querySelectorAll('.option.selected').forEach(opt => opt.classList.remove(
+                        'selected'));
+                    document.querySelectorAll('.option[aria-checked="true"]').forEach(opt => opt.setAttribute(
+                        'aria-checked', 'false'));
+                    document.querySelectorAll('.q-item.answered').forEach(item => item.classList.remove(
+                    'answered'));
+                    // 重置结果区域
+                    resultDom.style.display = 'none';
+                    document.getElementById('visualBar').style.width = '0%';
+                    document.getElementById('visualBar').textContent = '0%';
+                    document.getElementById('auditoryBar').style.width = '0%';
+                    document.getElementById('auditoryBar').textContent = '0%';
+                    document.getElementById('kinestheticBar').style.width = '0%';
+                    document.getElementById('kinestheticBar').textContent = '0%';
+                    // 重置按钮状态
+                    isSubmitted = false;
+                    submitBtn.disabled = true;
+                    submitBtn.style.background = 'linear-gradient(135deg, #4A6CF7, #3651d5)';
+                    submitBtn.style.boxShadow = '0 6px 22px rgba(74,108,247,0.35)';
+                    submitBtn.textContent = '📝 提交答卷 · 查看专属分析';
+                    // 更新进度
+                    updateProgress();
+                    progressIndicator.querySelector('.dot-pulse').style.background = 'var(--color-primary)';
+                    // 滚动到顶部
+                    document.querySelector('.main-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    showToast('已重置，请重新作答');
+                }
+            });
+
+            // ==================== 键盘导航支持 ====================
+            document.addEventListener('keydown', function(e) {
+                const activeEl = document.activeElement;
+                if (!activeEl || !activeEl.classList.contains('option')) return;
+
+                const qIndex = parseInt(activeEl.getAttribute('data-qindex'));
+                if (isNaN(qIndex)) return;
+
+                const qItemDom = document.getElementById('qItem' + qIndex);
+                if (!qItemDom) return;
+                const options = Array.from(qItemDom.querySelectorAll('.option'));
+                const currentIdx = options.indexOf(activeEl);
+
+                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    const nextIdx = (currentIdx + 1) % options.length;
+                    options[nextIdx].focus();
+                } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const prevIdx = (currentIdx - 1 + options.length) % options.length;
+                    options[prevIdx].focus();
+                } else if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const typeValue = activeEl.getAttribute('data-type');
+                    window._selectOption(qIndex, typeValue, activeEl);
+                }
+            });
+
+            // ==================== 初始化 ====================
+            function init() {
+                renderAllQuestions();
+                updateProgress();
+                submitBtn.disabled = true;
+                resultDom.style.display = 'none';
+                isSubmitted = false;
+                // 清空选择记录
+                for (const key in userSelections) {
+                    delete userSelections[key];
+                }
+                document.getElementById('visualBar').style.width = '0%';
+                document.getElementById('visualBar').textContent = '0%';
+                document.getElementById('auditoryBar').style.width = '0%';
+                document.getElementById('auditoryBar').textContent = '0%';
+                document.getElementById('kinestheticBar').style.width = '0%';
+                document.getElementById('kinestheticBar').textContent = '0%';
+            }
+
+            init();
+
+            console.log('%c感官学习风格交互式自测已就绪 %c| %c永州爱眼城',
+                'font-weight:bold;color:#2c3e50;',
+                '',
+                'color:#4A90D9;');
+            console.log('%c基于VAKT学习风格模型 · 15道情景题 · 支持键盘导航',
+                'color:#5a6c7d;font-size:12px;');
+        })();
+    </script>
+</body>
+</html>
