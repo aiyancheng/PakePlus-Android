@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 平板专属视口优化，核心适配代码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <title>近视防控的重要性</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        /* 标题区域 */
+        .header {
+            text-align: center;
+            background-color: #E6F7FF;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        /* 近视成因说明区 */
+        .causes-section {
+            background-color: #f8f9fa;
+        }
+        
+        /* ==================== 近视的临床表现区 ==================== */
+        .symptoms-section {
+            background-color: #f0f8ff;
+        }
+        
+        .symptoms-section h3 {
+            margin-top: 28px;
+            margin-bottom: 15px;
+            color: #1a6dcc;
+            font-size: 1.25rem;
+            border-left: 4px solid #1a6dcc;
+            padding-left: 12px;
+        }
+        
+        .symptoms-section h4 {
+            color: #2c3e50;
+            margin: 22px 0 10px;
+            font-size: 1.05rem;
+        }
+        
+        /* 症状卡片网格：2行2列 */
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0 20px;
+        }
+        
+        .symptom-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 16px;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid #3498db;
+            transition: transform 0.3s ease;
+        }
+        
+        .symptom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .symptom-card .symptom-icon {
+            font-size: 2.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .symptom-card h4 {
+            margin: 0 0 8px;
+            color: #2c3e50;
+            font-size: 1.02rem;
+        }
+        
+        .symptom-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+            text-align: left;
+            color: #555;
+        }
+        
+        /* 高度近视症状列表 */
+        .symptom-list {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .symptom-list li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        /* 外斜视重点提示框 */
+        .strabismus-box {
+            background: #fff5f5;
+            border: 2px solid #e74c3c;
+            border-left: 6px solid #e74c3c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0 20px;
+        }
+        
+        .strabismus-box h4 {
+            color: #c0392b;
+            margin: 0 0 12px;
+            font-size: 1.1rem;
+        }
+        
+        .strabismus-box p {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .strabismus-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 10px 0 5px;
+        }
+        
+        .strabismus-type {
+            flex: 1;
+            min-width: 210px;
+            background: white;
+            border-radius: 8px;
+            padding: 14px;
+            border: 1px solid #f5c6c6;
+        }
+        
+        .strabismus-type strong {
+            color: #c0392b;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .strabismus-type p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        
+        /* 调节-集合机制流程图 */
+        .mechanism-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: center;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .mechanism-step {
+            background: white;
+            border: 1px solid #d6e4f0;
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 14px;
+            text-align: center;
+            max-width: 185px;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .mechanism-step strong {
+            color: #1a6dcc;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .mechanism-arrow {
+            display: flex;
+            align-items: center;
+            color: #e74c3c;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        
+        /* 外斜危害警示 */
+        .strabismus-warning {
+            background: #fdf2f2;
+            border: 1px solid #f5c6c6;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin: 18px 0;
+        }
+        
+        .strabismus-warning ul {
+            padding-left: 22px;
+            margin-top: 10px;
+        }
+        
+        .strabismus-warning li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        /* 门店提示框 */
+        .store-tip {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 14px 16px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+        }
+        
+        /* 图表区域 */
+        .chart-section {
+            overflow-x: auto;
+        }
+        
+        .chart-container {
+            margin: 20px 0;
+            min-height: 320px;
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 240px;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+        
+        .bar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 28%;
+        }
+        
+        .bar {
+            width: 75%;
+            border-radius: 5px 5px 0 0;
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .bar:hover {
+            transform: scale(1.05);
+        }
+        
+        .bar-label {
+            margin-top: 8px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .bar-1 {
+            background-color: #3498db;
+            height: 100px;
+        }
+        
+        .bar-2 {
+            background-color: #e74c3c;
+            height: 180px;
+        }
+        
+        .bar-3 {
+            background-color: #f39c12;
+            height: 205px;
+        }
+        
+        .highlight-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+        
+        .data-source {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        /* 核心观点区 */
+        .core-view {
+            background-color: #E6F7FF;
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 500;
+            padding: 25px;
+        }
+        
+        /* 流程图区域 */
+        .flowchart-section {
+            text-align: center;
+        }
+        
+        .flowchart-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .flowchart-image-container {
+            margin: 20px auto;
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        .flowchart-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 25px;
+            gap: 10px;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 180px;
+            margin: 5px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        /* 底部翻页导航样式 */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 22px;
+            background-color: #1a6dcc;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 160px;
+            text-align: center;
+        }
+
+        .nav-btn:hover {
+            background-color: #0d4d9c;
+            transform: translateY(-2px);
+        }
+        
+        /* 底部呼吁语 */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        
+        /* 返回首页按钮样式 */
+        .back-to-home {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 48px;
+            height: 48px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background-color: #34495e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===================================
+           荣耀平板X9 1920×1200 专属响应式适配
+        =================================== */
+        /* 横屏：1920px */
+        @media (min-width: 1200px) and (max-width: 1920px) and (orientation: landscape) {
+            body {
+                padding: 25px 30px;
+                max-width: 1400px;
+            }
+            .header h1 { font-size: 2.8rem; }
+            .bar-chart { height: 280px; }
+            .process-step { min-width: 220px; }
+        }
+
+        /* 竖屏：1200px */
+        @media (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
+            body { padding: 20px; }
+            .header h1 { font-size: 2.4rem; }
+            .bar-chart { height: 260px; }
+            .process-steps { flex-direction: row; }
+        }
+
+        /* 通用平板小屏适配 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.9rem;
+            }
+            .process-steps {
+                flex-direction: column;
+            }
+            .process-step {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+            .bar-item {
+                width: 30%;
+            }
+            section {
+                padding: 18px 12px;
+            }
+            .back-to-home {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .nav-btn {
+                width: 100%;
+            }
+            .page-nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            .symptom-grid {
+                grid-template-columns: 1fr;
+            }
+            .bar-item {
+                width: 30%;
+            }
+            .back-to-home {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    
+        /* ===== 红米平板12.1寸(1280×800)专属适配 ===== */
+        @media screen and (min-width: 800px) and (max-width: 1366px) {
+            html {
+                font-size: 15px;
+                overflow-x: hidden;
+            }
+            body {
+                -webkit-text-size-adjust: 100%;
+                touch-action: manipulation;
+                overflow-x: hidden;
+                /* 最大宽度1200px，两侧留有16px间距 */
+                max-width: 1200px !important;
+                margin: 0 auto !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            .container, .main-container, .content {
+                max-width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            table {
+                font-size: 14px;
+                width: 100%;
+                overflow-x: auto;
+                display: block;
+            }
+            /* 防止宽表格溢出 */
+            .table-wrapper, table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            /* 优化触控目标大小 */
+            a, button {
+                min-height: 36px;
+            }
+        }
+</style>
+</head>
+<body>
+    <!-- 标题区域 -->
+    <header class="header">
+        <h1>近视防控的重要性</h1>
+        <p>保护视力，从了解开始</p>
+    </header>
+    
+    <!-- 近视成因说明区 -->
+    <section class="causes-section">
+        <h2>近视的成因</h2>
+        <p>近视主要由<strong>遗传因素、环境因素和用眼习惯</strong>共同作用形成。研究表明，遗传因素约占近视成因的50%，如果父母双方都近视，孩子近视的风险会显著增加。</p>
+        <p>环境因素包括近距离用眼时间过长、户外活动不足、照明条件不佳等。现代生活中，长时间使用电子产品、读书写字姿势不正确等不良用眼习惯也加剧了近视的发生和发展。</p>
+        <p>了解近视的成因是有效防控的第一步，只有明确原因，才能采取针对性的预防措施。</p>
+    </section>
+    
+    
+    <!-- 我国青少年近视现状图表区 -->
+    <section class="chart-section">
+        <h2 class="chart-title">我国青少年近视现状</h2>
+        
+        <div class="chart-container">
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar bar-1">
+                        <div class="bar-value">33.6%</div>
+                    </div>
+                    <div class="bar-label">小学生</div>
+                </div>
+                
+                <div class="bar-item">
+                    <div class="bar bar-2">
+                        <div class="bar-value">70.6%</div>
+                    </div>
+                    <div class="bar-label">初中生</div>
+                </div>
+                
+                <div class="bar-item">
+                    <div class="bar bar-3">
+                        <div class="bar-value">80.5%</div>
+                    </div>
+                    <div class="bar-label">高中生</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>数据警示：</strong> 高中生近视率已超过80%，这意味着每5名高中生中就有4人近视。近视高发年龄段正逐渐向低龄化发展，近视防控工作刻不容缓。
+            </div>
+            
+            <div class="data-source">
+                数据来源：国家卫健委《全国儿童青少年近视情况调查》（2025年）
+            </div>
+        </div>
+    </section>
+    <!-- 近视的临床表现区 -->
+    <section class="symptoms-section">
+        <h2>近视的临床表现</h2>
+        <p>近视绝不只是"看不清"这么简单，它是一系列<strong>眼部功能改变与结构变化</strong>的综合表现。作为门店验光师，掌握近视的临床表现，才能在接待顾客时第一时间捕捉到近视信号，尤其是那些容易被家长忽视的<strong>眼位异常</strong>问题。</p>
+        
+        <h3>一、常见临床表现</h3>
+        <div class="symptom-grid">
+            <div class="symptom-card">
+                <div class="symptom-icon">👀</div>
+                <h4>远视力下降</h4>
+                <p>看远模糊、看近清晰，是近视最典型的症状。孩子常抱怨"黑板看不清""电视要坐很近才看得清"。</p>
+            </div>
+            <div class="symptom-card">
+                <div class="symptom-icon">😑</div>
+                <h4>眯眼、歪头看物</h4>
+                <p>眯眼可形成"针孔效应"短暂提高清晰度，歪头可改变成像位置，都是近视儿童最常见的小动作。</p>
+            </div>
+            <div class="symptom-card">
+                <div class="symptom-icon">🤲</div>
+                <h4>频繁揉眼、眨眼</h4>
+                <p>视物模糊伴随视疲劳，孩子会下意识揉眼、频繁眨眼来缓解眼部不适，有时被误认为"坏习惯"。</p>
+            </div>
+            <div class="symptom-card">
+                <div class="symptom-icon">😫</div>
+                <h4>视疲劳症状</h4>
+                <p>眼睛酸胀、干涩、畏光，甚至头痛，尤其在长时间近距离用眼、看远看近频繁切换之后明显加重。</p>
+            </div>
+        </div>
+        
+        <h3>二、高度近视的特殊表现</h3>
+        <p>近视度数超过600度即为高度近视，除上述症状外，还可能出现以下结构性和功能性改变：</p>
+        <ul class="symptom-list">
+            <li><strong>眼球突出：</strong>眼轴过度增长使眼球前后径变长，外观上可见眼球轻度向前突出，俗称"金鱼眼"。</li>
+            <li><strong>飞蚊症：</strong>玻璃体发生液化、混浊，眼前出现飘动的点状或线状黑影，随眼球转动而移动。</li>
+            <li><strong>夜间视力差：</strong>暗环境下视网膜对比敏感度下降，夜间或光线不足时视物明显费力。</li>
+            <li><strong>闪光感：</strong>眼轴增长牵拉视网膜，眼前可出现闪光感，是视网膜裂孔的危险信号，需立即就医。</li>
+        </ul>
+        
+        <h3>三、重点关注：近视与眼位异常（外斜视 / 外隐斜）</h3>
+        <p>在近视的诸多临床表现中，<strong>外斜视与外隐斜是门店最需要重点关注的眼位问题</strong>。临床数据显示，近视人群中斜视发生率明显高于正视人群，而其中又以<strong>外斜视</strong>最为常见——近视程度越深、发病年龄越早，外斜的发生风险就越大。</p>
+        
+        <div class="strabismus-box">
+            <h4>⚠️ 什么是外隐斜、间歇性外斜视、恒定性外斜视？</h4>
+            <div class="strabismus-types">
+                <div class="strabismus-type">
+                    <strong>① 外隐斜（潜伏性外斜）</strong>
+                    <p>双眼有向外偏斜的"倾向"，但平时被大脑融合功能控制住，外观完全正常。只有在疲劳、注意力不集中或检查时才会暴露。</p>
+                </div>
+                <div class="strabismus-type">
+                    <strong>② 间歇性外斜视</strong>
+                    <p>疲劳、走神、看远或阳光下时，一只眼明显向外偏斜，专注或用力看时又能恢复正位。是外隐斜失代偿的表现，最常见于儿童。</p>
+                </div>
+                <div class="strabismus-type">
+                    <strong>③ 恒定性外斜视</strong>
+                    <p>一只眼持续向外偏斜、无法自行恢复正位。双眼视功能已被破坏，常伴有单眼抑制和弱视，需要积极干预。</p>
+                </div>
+            </div>
+        </div>
+        
+        <h4>🔍 为什么近视容易造成外斜？——"调节-集合联动"机制</h4>
+        <div class="mechanism-flow">
+            <div class="mechanism-step">
+                <strong>正常看近</strong>
+                晶状体调节变凸<br>双眼向内集合
+            </div>
+            <div class="mechanism-arrow">➡</div>
+            <div class="mechanism-step">
+                <strong>近视眼看近</strong>
+                度数已"帮"眼睛聚焦<br>少用或不用调节
+            </div>
+            <div class="mechanism-arrow">➡</div>
+            <div class="mechanism-step">
+                <strong>集合功能减弱</strong>
+                调节性集合下降<br>双眼"向内聚拢"动力不足
+            </div>
+            <div class="mechanism-arrow">➡</div>
+            <div class="mechanism-step">
+                <strong>眼位外飘</strong>
+                长期失衡<br>形成外隐斜→外斜视
+            </div>
+        </div>
+        <p>简单来说：<strong>调节和集合是一对"联动齿轮"</strong>。近视眼（尤其未矫正或矫正不足时）看近几乎不用调节，带动双眼集合的力量也随之减弱；长期如此，双眼向外偏斜的趋势就越来越大。度数越高、长期不戴镜矫正的孩子，出现外斜的风险越大。</p>
+        
+        <div class="store-tip">
+            <strong>💡 门店必知：</strong>近视孩子如果出现"阳光下一眼闭着""看书跳行漏字""注意力不集中""偶尔说看东西重影"，家长往往会当成"坏习惯"，其实这些都可能是外斜的早期信号，验光时应主动进行眼位检查。
+        </div>
+        
+        <div class="strabismus-warning">
+            <strong>⚠️ 外斜未干预的危害：</strong>
+            <ul>
+                <li><strong>立体视功能受损：</strong>双眼无法同时注视，立体视觉（判断远近、深度）发育受影响。</li>
+                <li><strong>单眼抑制与弱视：</strong>大脑为避免复视会"屏蔽"斜视眼的信号，长期可导致斜视眼视力下降、形成弱视。</li>
+                <li><strong>视疲劳与学习障碍：</strong>双眼融合困难，孩子看书写字易疲劳、跳行漏字，影响学习成绩。</li>
+                <li><strong>心理与外观影响：</strong>间歇性斜视被同伴发现后，孩子容易产生自卑、不愿与人交流。</li>
+            </ul>
+        </div>
+        
+        <div class="store-tip">
+            <strong>✅ 门店应对建议：</strong>① 发现可疑外斜，先完整矫正屈光不正（足矫），再复查眼位；② 轻度外隐斜可通过视觉训练（聚散球、笔尖逼近法、同视机集合训练）改善；③ 训练后仍有明显外斜或已影响双眼视功能者，应转诊眼科医生评估是否需要手术或进一步治疗。门店应建立<strong>"近视+眼位"联合检查意识</strong>，把眼位检查纳入青少年验光的常规流程。
+        </div>
+    </section>
+
+    
+    <!-- 核心观点区 -->
+    <section class="core-view">
+        <p>科学护眼可有效延缓度数加深。通过合理的用眼习惯、充足的户外活动以及适当的医学干预，可以显著减缓近视发展速度。</p>
+    </section>
+    
+    <!-- 不良用眼习惯演化流程图 -->
+    <section class="flowchart-section">
+        <h2 class="flowchart-title">不良用眼习惯导致视力恶化</h2>
+        
+        <div class="flowchart-image-container">
+            <img src="images/1111.jpg" alt="不良用眼习惯导致视力恶化流程图：展示了从视疲劳到假性近视，再到真性近视，最后到近视加重的四个阶段。第一阶段视疲劳表现为眼睛酸痛；第二阶段假性近视为暂时性视力下降；第三阶段真性近视需要佩戴眼镜矫正；第四阶段近视加深到300度，可能需要滴眼液和眼镜等干预措施。" class="flowchart-image">
+        </div>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-title">第一阶段：视疲劳</div>
+                <p>长时间近距离用眼，眼睛调节肌肉持续紧张，出现眼睛干涩、酸痛等症状。</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-title">第二阶段：假性近视</div>
+                <p>眼睛调节功能紊乱，出现暂时性视力下降，通过休息和治疗可以恢复。</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-title">第三阶段：真性近视</div>
+                <p>眼轴变长，光线聚焦在视网膜前，形成不可逆的近视，需要配戴眼镜矫正。</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-title">第四阶段：近视加深</div>
+                <p>近视度数不断加深，可能发展为高度近视，增加视网膜脱落、青光眼等眼病风险。</p>
+            </div>
+        </div>
+        
+        <p style="margin-top: 20px; font-style: italic;">预防胜于治疗，养成良好的用眼习惯是避免视力恶化的关键。</p>
+    </section>
+
+    <!-- 新增：底部翻页导航按钮 -->
+    <div class="page-nav">
+
+        <a href="index.html" class="nav-btn">🏠 首页</a>
+        <a href="2.html" class="nav-btn">后一页：预测与危害 ➡</a>
+    </div>
+    
+    <!-- 底部呼吁语 -->
+    <footer class="footer">
+        科学用眼，守护光明未来！
+    </footer>
+
+  
+
+    <script>
+        // 简单的悬停提示效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const bars = document.querySelectorAll('.bar');
+            
+            bars.forEach(bar => {
+                bar.addEventListener('mouseover', function() {
+                    const value = this.querySelector('.bar-value').textContent;
+                    const label = this.parentElement.querySelector('.bar-label').textContent;
+                    
+                    let tooltip = document.createElement('div');
+                    tooltip.className = 'tooltip';
+                    tooltip.innerHTML = `<strong>${label}</strong><br>近视率：${value}`;
+                    tooltip.style.position = 'absolute';
+                    tooltip.style.background = 'rgba(0, 0, 0, 0.8)';
+                    tooltip.style.color = 'white';
+                    tooltip.style.padding = '8px 12px';
+                    tooltip.style.borderRadius = '5px';
+                    tooltip.style.zIndex = '100';
+                    tooltip.style.fontSize = '14px';
+                    tooltip.style.top = '-70px';
+                    tooltip.style.left = '50%';
+                    tooltip.style.transform = 'translateX(-50%)';
+                    tooltip.style.whiteSpace = 'nowrap';
+                    
+                    this.appendChild(tooltip);
+                });
+                
+                bar.addEventListener('mouseout', function() {
+                    const tooltip = this.querySelector('.tooltip');
+                    if (tooltip) {
+                        this.removeChild(tooltip);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
