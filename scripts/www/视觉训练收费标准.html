@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视觉训练收费标准 · 眼科诊所</title>
+<style>
+  /* ========== Design Tokens ========== */
+  :root{
+    /* Brand — Teal */
+    --brand:#0E7C86;
+    --brand-dark:#0A5C64;
+    --brand-deep:#074147;
+    --brand-light:#e6f4f5;
+    --brand-soft:#f2fbfc;
+
+    /* Accent — Amber */
+    --accent:#C8861E;
+    --accent-dark:#a66a12;
+    --accent-soft:#fbf2e1;
+
+    /* Neutrals */
+    --ink:#1a2530;
+    --body:#374751;
+    --muted:#617179;
+    --line:#e2eaee;
+    --line-soft:#f0f5f7;
+    --bg:#f4f8fa;
+    --card:#ffffff;
+
+    /* Status */
+    --ok:#2e9e5b;
+    --ok-soft:#e8f6ee;
+
+    /* Effects */
+    --shadow-sm:0 2px 8px rgba(14,124,134,.06);
+    --shadow:0 6px 24px rgba(14,124,134,.09);
+    --shadow-lg:0 14px 40px rgba(14,124,134,.14);
+    --radius:16px;
+    --radius-sm:10px;
+    --radius-xs:6px;
+
+    /* Spacing scale */
+    --sp-1:4px;
+    --sp-2:8px;
+    --sp-3:12px;
+    --sp-4:16px;
+    --sp-5:20px;
+    --sp-6:24px;
+    --sp-8:32px;
+    --sp-10:40px;
+
+    /* Type scale */
+    --fs-xs:12px;
+    --fs-sm:13px;
+    --fs-base:14.5px;
+    --fs-md:16px;
+    --fs-lg:18px;
+    --fs-xl:22px;
+    --fs-2xl:28px;
+    --fs-3xl:36px;
+  }
+
+  /* ========== Reset ========== */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--body);
+    font-size:var(--fs-base);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:1040px;margin:0 auto;padding:0 var(--sp-5) var(--sp-10)}
+
+  /* ========== Header ========== */
+  header{
+    background:linear-gradient(135deg,var(--brand-deep) 0%,var(--brand-dark) 40%,var(--brand) 75%,#16a3ad 100%);
+    color:#fff;
+    padding:52px 20px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";position:absolute;left:-40px;bottom:-80px;
+    width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,rgba(126,240,224,.14),transparent 70%);
+  }
+  header::after{
+    content:"";position:absolute;right:-60px;top:-60px;
+    width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);
+  }
+  .head-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1;text-align:center}
+  .eye-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:var(--fs-sm);letter-spacing:2px;
+    background:rgba(255,255,255,.14);
+    padding:7px 18px;border-radius:30px;
+    margin-bottom:var(--sp-5);
+    border:1px solid rgba(255,255,255,.2);
+  }
+  .eye-badge .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:#7ef0e0;
+    box-shadow:0 0 0 4px rgba(126,240,224,.22);
+  }
+  header h1{
+    font-size:var(--fs-3xl);font-weight:800;letter-spacing:2px;
+    text-shadow:0 2px 12px rgba(0,0,0,.15);
+  }
+  header .sub{
+    margin-top:var(--sp-3);font-size:var(--fs-md);opacity:.88;
+    font-weight:300;letter-spacing:1px;
+  }
+  .meta-row{
+    display:flex;flex-wrap:wrap;gap:12px;
+    margin-top:var(--sp-6);justify-content:center;
+  }
+  .meta-pill{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    padding:8px 16px;border-radius:var(--radius-sm);
+    font-size:var(--fs-sm);color:#d8f5f7;
+    backdrop-filter:blur(4px);
+  }
+  .meta-pill b{color:#fff;font-weight:700}
+
+  /* ========== Sticky Nav ========== */
+  nav.navbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow-sm);
+  }
+  .nav-inner{
+    max-width:1040px;margin:0 auto;
+    display:flex;align-items:center;gap:6px;
+    padding:10px var(--sp-4);
+    overflow-x:auto;scrollbar-width:none;
+  }
+  .nav-inner::-webkit-scrollbar{display:none}
+  .nav-inner a{
+    flex:0 0 auto;white-space:nowrap;
+    font-size:var(--fs-sm);color:var(--muted);
+    padding:8px 14px;border-radius:20px;
+    transition:all .2s ease;font-weight:500;
+  }
+  .nav-inner a:hover{background:var(--brand-light);color:var(--brand-dark)}
+  .nav-inner a.active{background:var(--brand);color:#fff;box-shadow:0 2px 8px rgba(14,124,134,.3)}
+
+  /* ========== Principles ========== */
+  .principles{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:var(--sp-4);margin-top:var(--sp-6);
+  }
+  .principle{
+    background:var(--card);border-radius:var(--radius);
+    padding:var(--sp-5) var(--sp-4);box-shadow:var(--shadow);
+    border:1px solid var(--line);border-top:4px solid var(--brand);
+    transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .principle:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-lg);
+  }
+  .principle .ico{font-size:24px;margin-bottom:var(--sp-2)}
+  .principle h4{
+    font-size:var(--fs-md);color:var(--brand-dark);
+    margin-bottom:var(--sp-1);font-weight:700;
+  }
+  .principle p{font-size:var(--fs-xs);color:var(--muted);line-height:1.6}
+
+  /* ========== Section ========== */
+  section{
+    background:var(--card);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin-top:var(--sp-6);
+    overflow:hidden;border:1px solid var(--line);
+    scroll-margin-top:68px;
+    transition:box-shadow .25s ease;
+  }
+  section:hover{box-shadow:var(--shadow-lg)}
+  .sec-head{
+    display:flex;align-items:center;gap:var(--sp-4);
+    padding:var(--sp-5) var(--sp-6);
+    background:linear-gradient(90deg,var(--brand-light) 0%,#ffffff 70%);
+    border-bottom:1px solid var(--line);
+  }
+  .sec-no{
+    flex:0 0 auto;width:40px;height:40px;
+    border-radius:var(--radius-sm);
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    color:#fff;font-weight:800;font-size:var(--fs-lg);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(14,124,134,.3);
+  }
+  .sec-head h2{
+    font-size:var(--fs-xl);color:var(--brand-dark);
+    font-weight:700;letter-spacing:.5px;
+  }
+  .sec-body{padding:var(--sp-6) var(--sp-6) var(--sp-8)}
+
+  /* ========== Note Cards ========== */
+  .note-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:var(--sp-4);margin-bottom:var(--sp-5);
+  }
+  .note-card{
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:var(--sp-4) var(--sp-5);
+    background:linear-gradient(180deg,var(--brand-soft),#fff);
+    transition:all .2s ease;
+  }
+  .note-card:hover{
+    background:var(--brand-light);
+    border-color:var(--brand-light);
+    transform:translateY(-2px);
+  }
+  .note-card .t{
+    font-weight:700;color:var(--brand);
+    font-size:var(--fs-base);margin-bottom:var(--sp-1);
+    display:flex;align-items:center;gap:var(--sp-2);
+  }
+  .note-card .t::before{
+    content:"";width:7px;height:7px;border-radius:50%;
+    background:var(--accent);flex:0 0 auto;
+  }
+  .note-card p{font-size:var(--fs-sm);color:var(--muted);line-height:1.7}
+
+  /* ========== Plan Cards ========== */
+  .plan-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5)}
+  .plan{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:var(--sp-5) var(--sp-6);
+    background:linear-gradient(180deg,#ffffff,#fafdfd);
+    position:relative;transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .plan:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-lg);
+  }
+  .plan.best{
+    border:2px solid var(--brand);
+    box-shadow:0 8px 28px rgba(14,124,134,.16);
+    background:linear-gradient(180deg,var(--brand-soft),#fff);
+  }
+  .plan .tag{
+    position:absolute;top:-13px;right:var(--sp-5);
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    color:#fff;font-size:var(--fs-xs);
+    padding:5px 14px;border-radius:20px;
+    font-weight:700;letter-spacing:1px;
+    box-shadow:0 4px 12px rgba(14,124,134,.3);
+  }
+  .plan h3{
+    font-size:var(--fs-md);color:var(--ink);
+    margin-bottom:var(--sp-2);font-weight:700;
+  }
+  .plan .price{
+    font-size:30px;font-weight:800;color:var(--accent-dark);
+    margin:var(--sp-2) 0 var(--sp-3);line-height:1;
+  }
+  .plan .price small{
+    font-size:var(--fs-base);color:var(--muted);
+    font-weight:500;margin-left:2px;
+  }
+  .plan ul{list-style:none;margin-top:var(--sp-3)}
+  .plan li{
+    padding:var(--sp-2) 0 var(--sp-2) 22px;
+    position:relative;font-size:var(--fs-sm);
+    color:var(--body);border-top:1px dashed var(--line-soft);
+    line-height:1.65;
+  }
+  .plan li:first-child{border-top:none}
+  .plan li::before{
+    content:"✓";position:absolute;left:0;top:var(--sp-2);
+    color:var(--ok);font-weight:800;font-size:var(--fs-sm);
+  }
+
+  /* ========== Tables ========== */
+  .table-scroll{overflow-x:auto;margin-top:var(--sp-2);border-radius:var(--radius-sm)}
+  .table-scroll::-webkit-scrollbar{height:5px}
+  .table-scroll::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:4px}
+  table{
+    width:100%;border-collapse:collapse;
+    font-size:var(--fs-base);min-width:520px;
+  }
+  thead th{
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    color:#fff;font-weight:600;
+    padding:14px 16px;text-align:left;
+    font-size:var(--fs-sm);letter-spacing:.5px;
+    white-space:nowrap;
+  }
+  thead th .th-sub{
+    display:block;font-weight:400;font-size:var(--fs-xs);
+    opacity:.8;margin-top:2px;
+  }
+  tbody td{
+    padding:14px 16px;border-bottom:1px solid var(--line-soft);
+    vertical-align:top;
+  }
+  tbody tr:nth-child(even){background:#f7fbfc}
+  tbody tr:hover{background:var(--brand-light);transition:background .15s ease}
+  td .lvl{
+    font-weight:700;color:var(--brand-dark);
+    font-size:var(--fs-base);white-space:nowrap;
+  }
+  td .fee{
+    font-weight:800;color:var(--accent-dark);
+    white-space:nowrap;font-size:var(--fs-md);
+  }
+  td .refund{font-size:var(--fs-sm);color:var(--muted);line-height:1.8}
+  td .refund b{
+    color:var(--accent-dark);font-weight:700;
+    background:var(--accent-soft);padding:1px 6px;
+    border-radius:4px;
+  }
+
+  /* highlight rows for key pricing */
+  tbody tr.highlight{
+    background:linear-gradient(90deg,var(--accent-soft),#fff);
+    border-left:4px solid var(--accent);
+  }
+  tbody tr.highlight:hover{
+    background:linear-gradient(90deg,#f7e8c8,#fff);
+  }
+  .row-badge{
+    display:inline-block;background:var(--accent);color:#fff;
+    font-size:10px;padding:2px 8px;border-radius:10px;
+    font-weight:700;letter-spacing:.5px;margin-right:6px;
+    vertical-align:middle;
+  }
+
+  /* ====== #s2 专属：按效果收费区块底色排版（克制配色） ====== */
+  /* 区块背景 — 单一柔和底色 */
+  #s2 .sec-body{background:var(--brand-soft)}
+
+  /* 流程步骤卡 */
+  #s2 .note-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:var(--sp-3);margin-bottom:var(--sp-6);position:relative;
+  }
+  /* 连接线（桌面端） */
+  #s2 .note-grid::before{
+    content:"";position:absolute;top:28px;left:6%;right:6%;
+    height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px);
+    z-index:0;
+  }
+  #s2 .note-card{
+    position:relative;z-index:1;text-align:center;
+    padding:var(--sp-5) var(--sp-3) var(--sp-4);
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  #s2 .note-card:hover{
+    transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand-light);
+  }
+  #s2 .note-card .step-no{
+    width:32px;height:32px;border-radius:50%;
+    background:var(--brand);color:#fff;font-size:var(--fs-sm);font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto var(--sp-3);
+  }
+  #s2 .note-card .t{
+    justify-content:center;font-size:var(--fs-sm);margin-bottom:var(--sp-2);
+  }
+  #s2 .note-card .t::before{display:none}
+  #s2 .note-card p{font-size:var(--fs-xs);line-height:1.65}
+
+  /* 表格容器 */
+  #s2 .table-scroll{
+    border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;background:#fff;
+  }
+  #s2 table{min-width:560px;border-radius:0}
+  #s2 thead th{background:var(--brand-dark);padding:16px;font-size:var(--fs-sm)}
+  #s2 tbody td{padding:16px;border-bottom:1px solid var(--line-soft)}
+
+  /* 表格行 — 交替间隔底色（斑马纹） */
+  #s2 tbody tr:nth-child(odd){background:#fff}
+  #s2 tbody tr:nth-child(even){background:var(--brand-soft)}
+  #s2 tbody tr:hover{background:var(--brand-light)}
+
+  /* 左侧色条按严重程度加深（仅边框色，不改底色） */
+  #s2 tbody tr.sev-1{border-left:3px solid var(--brand-light)}
+  #s2 tbody tr.sev-2{border-left:3px solid #9cc8cd}
+  #s2 tbody tr.sev-3{border-left:3px solid var(--brand)}
+  #s2 tbody tr.sev-4{border-left:3px solid var(--brand-dark)}
+
+  /* 严重程度标签 — 统一中性样式 */
+  #s2 .sev-tag{
+    display:inline-block;font-size:10px;font-weight:600;
+    padding:2px 7px;border-radius:8px;letter-spacing:.5px;
+    margin-left:6px;vertical-align:middle;line-height:1.4;
+    background:var(--line-soft);color:var(--muted);
+  }
+
+  /* 退费金额 — 仅加粗着色，无背景块 */
+  #s2 td .refund b{
+    color:var(--accent-dark);font-weight:800;
+    background:none;border:none;box-shadow:none;padding:0;
+  }
+  /* 费用列 */
+  #s2 td:nth-child(2){text-align:left}
+  #s2 td .fee{font-size:var(--fs-lg);letter-spacing:.5px}
+
+  /* callout 保持简洁 */
+  #s2 .callout{border-left-width:6px}
+
+  /* #s2 响应式 */
+  @media(max-width:768px){
+    #s2 .note-grid{grid-template-columns:1fr 1fr;gap:var(--sp-2)}
+    #s2 .note-grid::before{display:none}
+    #s2 .note-card{padding:var(--sp-4) var(--sp-3)}
+    #s2 td .fee{font-size:var(--fs-md)}
+  }
+  @media(max-width:480px){
+    #s2 .note-grid{grid-template-columns:1fr}
+    #s2 .note-card{text-align:left}
+    #s2 .note-card .step-no{margin:0 0 var(--sp-2)}
+    #s2 .note-card .t{justify-content:flex-start}
+  }
+
+  /* ========== Callout & Remark ========== */
+  .callout{
+    margin-top:var(--sp-6);
+    background:linear-gradient(90deg,var(--accent-soft),#fdf8ee);
+    border-left:5px solid var(--accent);
+    border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+    padding:var(--sp-4) var(--sp-5);
+    font-size:var(--fs-sm);color:#7a5a1a;
+    line-height:1.8;
+  }
+  .callout b{color:var(--accent-dark)}
+  .callout .callout-title{
+    display:flex;align-items:center;gap:8px;
+    font-weight:700;font-size:var(--fs-base);
+    color:var(--accent-dark);margin-bottom:var(--sp-2);
+  }
+  .remark{
+    margin-top:var(--sp-4);font-size:var(--fs-sm);
+    color:var(--muted);padding:var(--sp-2) 0 var(--sp-2) 16px;
+    border-left:3px solid var(--line);line-height:1.7;
+  }
+  .remark b{color:var(--body);font-weight:700}
+
+  /* summary banner */
+  .summary-banner{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:var(--sp-3);margin-top:var(--sp-5);
+    padding:var(--sp-5);
+    background:linear-gradient(135deg,var(--brand-light),#fff);
+    border-radius:var(--radius-sm);border:1px solid var(--brand-light);
+  }
+  .summary-item{text-align:center}
+  .summary-item .num{
+    font-size:var(--fs-2xl);font-weight:800;
+    color:var(--brand);line-height:1;
+  }
+  .summary-item .num small{font-size:var(--fs-sm);font-weight:500;color:var(--muted)}
+  .summary-item .lbl{
+    font-size:var(--fs-xs);color:var(--muted);
+    margin-top:var(--sp-1);letter-spacing:.5px;
+  }
+
+  /* ========== Back to Top & Home ========== */
+  #toTop{
+    position:fixed;right:24px;bottom:24px;
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    color:#fff;border:none;font-size:22px;cursor:pointer;z-index:60;
+    box-shadow:0 8px 24px rgba(14,124,134,.4);
+    opacity:0;visibility:hidden;transform:translateY(12px);
+    transition:all .3s ease;
+    display:flex;align-items:center;justify-content:center;
+  }
+  #toTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+  #toTop:hover{
+    background:var(--brand-deep);
+    box-shadow:0 10px 28px rgba(14,124,134,.5);
+    transform:translateY(-2px);
+  }
+
+  /* ========== 底部翻页导航 ========== */
+  .page-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:15px;margin:30px 0;flex-wrap:wrap;
+  }
+  .nav-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:14px 22px;background-color:#1a6dcc;
+    color:#fff !important;text-decoration:none !important;
+    border-radius:8px;font-size:1.05rem;font-weight:500;
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+    transition:all .3s ease;flex:1;min-width:160px;text-align:center;
+  }
+  .nav-btn:hover{
+    background-color:#0d4d9c;transform:translateY(-2px);
+  }
+  @media(max-width:800px){
+    .page-nav{flex-direction:column;gap:12px;}
+    .nav-btn{width:100%;}
+  }
+
+  /* 返回首页浮动按钮 */
+  #goHome{
+    position:fixed;right:24px;bottom:84px;
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,#2c8ae1,#1a6bb8);
+    color:#fff;border:none;font-size:22px;cursor:pointer;z-index:60;
+    box-shadow:0 8px 24px rgba(44,138,225,.4);
+    opacity:0;visibility:hidden;transform:translateY(12px);
+    transition:all .3s ease;
+    display:flex;align-items:center;justify-content:center;
+  }
+  #goHome.show{opacity:1;visibility:visible;transform:translateY(0)}
+  #goHome:hover{
+    background:#15539e;
+    box-shadow:0 10px 28px rgba(44,138,225,.5);
+    transform:translateY(-2px);
+  }
+
+  /* ========== Footer ========== */
+  footer{
+    text-align:center;color:var(--muted);
+    font-size:var(--fs-xs);margin-top:var(--sp-8);
+    line-height:2;
+  }
+  footer .line{
+    height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);
+    margin:0 auto var(--sp-5);max-width:240px;
+  }
+  footer .org{color:var(--brand-dark);font-weight:600;font-size:var(--fs-sm)}
+
+  /* ========== Responsive ========== */
+  @media(max-width:768px){
+    :root{
+      --fs-3xl:30px;--fs-2xl:24px;--fs-xl:20px;
+      --fs-lg:17px;--fs-md:15px;--fs-base:14px;
+    }
+    .principles{grid-template-columns:1fr 1fr}
+    .plan-row{grid-template-columns:1fr}
+    .note-grid{grid-template-columns:1fr}
+    .summary-banner{grid-template-columns:1fr 1fr}
+    .sec-body{padding:var(--sp-5) var(--sp-4) var(--sp-6)}
+    .sec-head{padding:var(--sp-4) var(--sp-5)}
+    .sec-head h2{font-size:var(--fs-lg)}
+    header h1{font-size:var(--fs-2xl)}
+    header{padding:40px 16px 34px}
+  }
+  @media(max-width:480px){
+    .principles{grid-template-columns:1fr}
+    .summary-banner{grid-template-columns:1fr}
+    .meta-pill{font-size:var(--fs-xs);padding:6px 12px}
+    .plan .price{font-size:26px}
+    table{font-size:var(--fs-sm);min-width:440px}
+    thead th,tbody td{padding:10px 12px}
+  }
+
+  /* ========== Print ========== */
+  @media print{
+    body{background:#fff;font-size:12px}
+    nav.navbar,#toTop,#goHome{display:none}
+    section,header,.principle,.plan,.note-card{box-shadow:none}
+    header{
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;
+      padding:24px 16px;
+    }
+    thead th,tbody tr:nth-child(even),tbody tr.highlight,
+    tbody tr.sev-1,tbody tr.sev-2,tbody tr.sev-3,tbody tr.sev-4,
+    .sec-no,.eye-badge .dot,.plan.best,.callout,.summary-banner,
+    #s2 .sec-body,#s2 .note-card,#s2 .step-no,#s2 .sev-tag{
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;
+    }
+    section{scroll-margin-top:0;page-break-inside:avoid;border-radius:0}
+    .principles{grid-template-columns:repeat(4,1fr)}
+    .plan-row{grid-template-columns:1fr 1fr}
+    .note-grid{grid-template-columns:1fr 1fr}
+    #s2 .note-grid{grid-template-columns:repeat(4,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== Header ========== -->
+<header>
+  <div class="head-inner">
+    <div class="eye-badge"><span class="dot"></span>爱眼城 · 视觉训练中心</div>
+    <h1>视觉训练收费标准</h1>
+    <div class="sub">科学分型 · 按效计费 · 合约保障 · 透明公开</div>
+    <div class="meta-row">
+      <div class="meta-pill">文件类型：<b>价格公示</b></div>
+      <div class="meta-pill">适用对象：<b>在训患者 / 家属</b></div>
+      <div class="meta-pill">更新机制：<b>随方案调整同步更新</b></div>
+      <div class="meta-pill">公示日期：<b>2026-08</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== Sticky Nav ========== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" style="background:linear-gradient(135deg,#2c8ae1,#1a6bb8);color:#fff;box-shadow:0 2px 8px rgba(44,138,225,.3)">🏠 返回首页</a>
+    <a href="#principles">收费原则</a>
+    <a href="#s1">斜视·外隐斜</a>
+    <a href="#s2">弱视（按效果）</a>
+    <a href="#s3">弱视（按时间）</a>
+    <a href="#s4">近视管理</a>
+    <a href="#s5">双眼视功能</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ===== 收费原则 ===== -->
+  <div class="principles" id="principles">
+    <div class="principle">
+      <div class="ico">🔍</div>
+      <h4>评估先行</h4>
+      <p>训练前完成视功能评估，避免盲目投入、保障方案科学。</p>
+    </div>
+    <div class="principle">
+      <div class="ico">🎯</div>
+      <h4>分龄分型</h4>
+      <p>按弱视程度、视功能类型及年龄分级定价，方案个体化。</p>
+    </div>
+    <div class="principle">
+      <div class="ico">📊</div>
+      <h4>按效保障</h4>
+      <p>弱视按效果签约，未达标依阶梯差额退费，权益清晰。</p>
+    </div>
+    <div class="principle">
+      <div class="ico">💡</div>
+      <h4>透明公开</h4>
+      <p>一价一码、无隐形消费；套餐余量可退，设备支持退换。</p>
+    </div>
+  </div>
+
+  <!-- ===== 1. 高度外隐斜 / 间歇性外斜视 ===== -->
+  <section id="s1">
+    <div class="sec-head">
+      <div class="sec-no">1</div>
+      <h2>高度外隐斜 / 间歇性外斜视 视觉训练</h2>
+    </div>
+    <div class="sec-body">
+      <div class="plan-row">
+        <div class="plan best">
+          <span class="tag">推荐方案</span>
+          <h3>方案一 · 标准训练疗程</h3>
+          <div class="price">2980<small> 元 / 疗程</small></div>
+          <ul>
+            <li>训练频次：2 次 / 周</li>
+            <li>疗程周期：3 个月 / 疗程</li>
+            <li>视觉训练软件 3 个月</li>
+            <li>根据偏斜量、视功能程度、训练专注度不同，所需疗程数不同</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <h3>方案二 · 训练软件</h3>
+          <div class="price">1200<small> 元 / 家庭训练</small></div>
+          <ul>
+            <li>视觉训练软件 3 个月</li>
+            <li>适合已具备居家训练条件的患者</li>
+            <li>根据偏斜量、视功能程度、训练专注度不同，所需疗程数不同</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. 弱视训练 · 按视力效果 ===== -->
+  <section id="s2">
+    <div class="sec-head">
+      <div class="sec-no">2</div>
+      <h2>弱视训练 · 按视力效果收费</h2>
+    </div>
+    <div class="sec-body">
+      <div class="note-grid">
+        <div class="note-card">
+          <div class="step-no">01</div>
+          <div class="t">签约缴费</div>
+          <p>以初始矫正视力为起始段，约定康复预期段，按预期段一次性缴清费用。</p>
+        </div>
+        <div class="note-card">
+          <div class="step-no">02</div>
+          <div class="t">效果交付</div>
+          <p>合约期每月 1 次视力评估，达标即终止合约；未达标持续训练至下一评估期，直至合约期满。</p>
+        </div>
+        <div class="note-card">
+          <div class="step-no">03</div>
+          <div class="t">未达标退费</div>
+          <p>合约到期最终评估，未达标则按「预期段 − 已达段」收费差额全部退费。</p>
+        </div>
+        <div class="note-card">
+          <div class="step-no">04</div>
+          <div class="t">过程管理</div>
+          <p>每半月至一个月做一次视光检查，记录训练及复查情况并动态调整方案；每月效果评估留存复查结果。</p>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%">初始矫正视力</th>
+              <th style="width:22%">收费标准<span class="th-sub">矫正视力成果 ≥ 1.0</span></th>
+              <th>康复效果未达标的退费标准</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="lvl">0.7 – 0.8</span><span class="sev-tag"></span></td>
+              <td><span class="fee">4980 元</span></td>
+              <td class="refund">未达 ≥ 1.0，<b>全额退款</b>。</td>
+            </tr>
+            <tr class="sev-1">
+              <td><span class="lvl">0.5 – 0.6</span><span class="sev-tag"></span></td>
+              <td><span class="fee">9800 元</span></td>
+              <td class="refund">合约期满后矫正视力未达标的退费标准：<br>1. 达到 0.7–0.9，退 <b>5000 元</b>。</td>
+            </tr>
+            <tr class="sev-2">
+              <td><span class="lvl">0.3 – 0.4</span><span class="sev-tag"></span></td>
+              <td><span class="fee">18800 元</span></td>
+              <td class="refund">合约期满后矫正视力未达标的退费标准：<br>1. 达到 0.7–0.9，退 <b>6000 元</b>；<br>2. 达到 0.5–0.6，退 <b>12000 元</b>。</td>
+            </tr>
+            <tr class="sev-3">
+              <td><span class="lvl">0.1 – 0.2</span><span class="sev-tag"></span></td>
+              <td><span class="fee">24900 元</span></td>
+              <td class="refund">合约期满后矫正视力未达标的退费标准：<br>1. 达到 0.7–0.9，退 <b>3100 元</b>；<br>2. 达到 0.5–0.6，退 <b>10100 元</b>；<br>3. 达到 0.3–0.4，退 <b>14000 元</b>。</td>
+            </tr>
+            <tr class="sev-4">
+              <td><span class="lvl">&lt; 0.1</span><span class="sev-tag"></span></td>
+              <td><span class="fee">36800 元</span></td>
+              <td class="refund">合约期满后矫正视力未达标的退费标准：<br>1. 达到 0.7–0.9，退 <b>6000 元</b>；<br>2. 达到 0.5–0.6，退 <b>13000 元</b>；<br>3. 达到 0.3–0.4，退 <b>19000 元</b>；<br>4. 达到 0.1–0.2，退 <b>26000 元</b>。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">⚠ 年龄附加说明</div>
+        如果患者超过 <b>8 岁</b>，每个阶段的收费标准根据康复难度建议增加 <b>1100 元</b>；<br>
+        如果患者超过 <b>12 岁</b>，每个阶段根据康复难度建议增加 <b>2100 元</b>。
+      </div>
+      <div class="remark"><b>温馨提示：</b>视力达标后，患者家属可自行选择视力巩固、双眼视功能重建或提升训练。</div>
+    </div>
+  </section>
+
+  <!-- ===== 3. 弱视训练 · 按时间 ===== -->
+  <section id="s3">
+    <div class="sec-head">
+      <div class="sec-no">3</div>
+      <h2>弱视训练 · 按时间收费</h2>
+    </div>
+    <div class="sec-body">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>周期</th>
+              <th>标准版方案<span class="th-sub">30 分钟 / 课时</span></th>
+              <th>进阶版方案<span class="th-sub">45 分钟 / 课时</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="lvl">月度卡</span></td>
+              <td><span class="fee">1280 元</span></td>
+              <td><span class="fee">1880 元</span></td>
+            </tr>
+            <tr>
+              <td><span class="lvl">半年卡</span></td>
+              <td><span class="fee">7200 元</span></td>
+              <td><span class="fee">10200 元</span></td>
+            </tr>
+            <tr class="highlight">
+              <td><span class="lvl">年卡</span> <span class="row-badge">超值</span></td>
+              <td><span class="fee">12800 元</span></td>
+              <td><span class="fee">18800 元</span></td>
+            </tr>
+            <tr>
+              <td><span class="lvl">巩固期</span></td>
+              <td colspan="2"><span class="fee">3200 元</span> <small style="color:var(--muted);font-size:var(--fs-sm)">/ 96 课时（30 分钟 / 课时）</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="remark"><b>备注：</b>弱视视觉训练方案包含训后叶黄素补充营养。</div>
+    </div>
+  </section>
+
+  <!-- ===== 4. 近视管理 ===== -->
+  <section id="s4">
+    <div class="sec-head">
+      <div class="sec-no">4</div>
+      <h2>近视管理 · 鹰瞳 PBM</h2>
+    </div>
+    <div class="sec-body">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>周期</th>
+              <th>收费标准</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="lvl">鹰瞳 PBM　2 次 / 天　1 月</span></td>
+              <td><span class="fee">300 元</span></td>
+            </tr>
+            <tr>
+              <td><span class="lvl">鹰瞳 PBM　2 次 / 天　1 月（租赁）</span></td>
+              <td><span class="fee">600 元</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. 双眼视功能异常 ===== -->
+  <section id="s5">
+    <div class="sec-head">
+      <div class="sec-no">5</div>
+      <h2>双眼视功能异常 视觉训练</h2>
+    </div>
+    <div class="sec-body">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>周期</th>
+              <th>收费标准</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="lvl">24 课时（40 分钟 / 课时）</span></td>
+              <td><span class="fee">1200 元</span></td>
+            </tr>
+            <tr class="highlight">
+              <td><span class="lvl">24 课时 + 家训 3 个月</span> <span class="row-badge">推荐</span></td>
+              <td><span class="fee">2400 元</span></td>
+            </tr>
+            <tr>
+              <td><span class="lvl">48 课时（40 分钟 / 课时）</span></td>
+              <td><span class="fee">2200 元</span></td>
+            </tr>
+            <tr class="highlight">
+              <td><span class="lvl">48 课时 + 家训 6 个月</span> <span class="row-badge">推荐</span></td>
+              <td><span class="fee">3980 元</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="line"></div>
+    <span class="org">爱眼城 · 视觉训练中心</span>　|　本收费标准不明之处请咨询本机构工作人员<br>
+    价格如有调整，以门店现场公示及签约合约为准
+  </footer>
+
+  <!-- 底部翻页导航 -->
+  <div class="page-nav">
+    <a href="鹰瞳.html" class="nav-btn">⬅ 前一页：鹰瞳PBM视康仪</a>
+    <a href="index.html" class="nav-btn">🏠 首页</a>
+    <a href="1.html" class="nav-btn">后一页：了解近视 ➡</a>
+  </div>
+
+</div>
+
+<button id="toTop" title="返回顶部" aria-label="返回顶部">↑</button>
+<button id="goHome" title="返回首页" aria-label="返回首页">🏠</button>
+<script>
+  // ===== 返回顶部按钮 =====
+  var toTop = document.getElementById('toTop');
+  var goHome = document.getElementById('goHome');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      toTop.classList.add('show');
+      goHome.classList.add('show');
+    } else {
+      toTop.classList.remove('show');
+      goHome.classList.remove('show');
+    }
+  }, { passive: true });
+  toTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  goHome.addEventListener('click', function() {
+    window.location.href = 'index.html';
+  });
+
+  // ===== 导航高亮当前栏目 =====
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-inner a'));
+  var map = {};
+  links.forEach(function(a) {
+    map[a.getAttribute('href').slice(1)] = a;
+  });
+  var secs = Object.keys(map).map(function(id) {
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l) { l.classList.remove('active'); });
+          var a = map[e.target.id];
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    secs.forEach(function(s) { io.observe(s); });
+  }
+</script>
+</body>
+</html>
