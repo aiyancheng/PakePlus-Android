@@ -1,0 +1,1433 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专业阅读速度与理解力在线测评工具，测试阅读效率并获取个性化护眼建议">
+    <meta name="theme-color" content="#1a6dcc">
+    <title>阅读速度测试 | 青少年近视科学防控系统</title>
+    <style>
+        :root {
+            --brand: #1a6dcc;
+            --brand-dark: #0d4d9c;
+            --brand-deep: #093d7a;
+            --brand-light: #e8f2fc;
+            --accent: #e8734a;
+            --accent-light: #fdf0ea;
+            --green: #3CB371;
+            --green-light: #edf8f2;
+            --bg-grad: linear-gradient(160deg, #eef2f7 0%, #dce3ed 30%, #e8ecf3 60%, #f0f4f8 100%);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 6px 20px rgba(0,0,0,0.10);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+            --font-sans: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+        body {
+            background: var(--bg-grad);
+            background-attachment: fixed;
+            padding: 20px;
+            line-height: 1.6;
+            font-family: var(--font-sans);
+            color: #2c3e50;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            width: 100%;
+            max-width: 880px;
+            background: #fff;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            position: relative;
+            animation: containerEnter 0.6s cubic-bezier(0.22,0.61,0.36,1) both;
+        }
+        @keyframes containerEnter {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== 顶部导航栏 ========== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(26,109,204,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(26,109,204,0.2);
+        }
+        .nav-inner {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 52px;
+        }
+        .nav-inner a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+        .nav-inner a:hover { background: rgba(255,255,255,0.18); }
+        .nav-inner a.nav-home {
+            background: rgba(255,255,255,0.15);
+            font-weight: 700;
+        }
+        .nav-inner a.nav-home:hover { background: rgba(255,255,255,0.3); }
+        .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+
+        /* ========== 品牌头部 ========== */
+        .brand-header {
+            text-align: center;
+            padding: 32px 30px 26px;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 40%, var(--brand) 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .brand-header::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .brand-header::after {
+            content: '';
+            position: absolute;
+            bottom: -40px; left: -40px;
+            width: 150px; height: 150px;
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .brand-header .brand-icon {
+            font-size: 44px;
+            margin-bottom: 6px;
+            display: block;
+            position: relative; z-index: 1;
+        }
+        .brand-header h1 {
+            font-size: 27px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            position: relative; z-index: 1;
+        }
+        .brand-header .brand-subtitle {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-top: 6px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            position: relative; z-index: 1;
+        }
+
+        /* ========== 主体内容区 ========== */
+        .main-content { padding: 28px 30px 10px; }
+        .section-intro { text-align: center; margin-bottom: 24px; }
+        .section-intro h2 {
+            font-size: 22px;
+            color: var(--brand-deep);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .section-intro .intro-desc {
+            font-size: 14px;
+            color: #5a6c7d;
+            letter-spacing: 0.3px;
+        }
+
+        /* ========== 难度选择区 ========== */
+        .level-section {
+            margin-bottom: 24px;
+            padding: 20px 22px;
+            background: #f8fafc;
+            border-radius: var(--radius-md);
+            border: 1px solid #eef2f7;
+        }
+        .level-title {
+            font-weight: 700;
+            color: var(--brand-deep);
+            font-size: 16px;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+        .level-cards {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .level-card {
+            flex: 1;
+            min-width: 130px;
+            max-width: 200px;
+            padding: 16px 14px;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+        .level-card:hover {
+            border-color: var(--brand);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+        .level-card.active {
+            border-color: var(--brand);
+            background: var(--brand-light);
+            box-shadow: 0 0 0 3px rgba(26,109,204,0.12);
+        }
+        .level-card .level-icon { font-size: 28px; display: block; margin-bottom: 6px; }
+        .level-card .level-name { font-weight: 700; color: #2c3e50; font-size: 15px; }
+        .level-card .level-info { font-size: 12px; color: #7a8ea0; margin-top: 4px; }
+
+        /* ========== 阅读说明区 ========== */
+        .instructions {
+            margin-bottom: 22px;
+            padding: 18px 22px;
+            background: var(--accent-light);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent);
+        }
+        .instructions .instr-title {
+            font-weight: 700;
+            color: #9b4a2a;
+            font-size: 15px;
+            margin-bottom: 10px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .instructions ul { list-style: none; padding: 0; }
+        .instructions li {
+            color: #6b4d1e;
+            font-size: 14px;
+            line-height: 1.8;
+            padding-left: 22px;
+            position: relative;
+        }
+        .instructions li::before {
+            content: '▸';
+            position: absolute; left: 4px; top: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ========== 计时器 ========== */
+        .timer-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 16px 24px;
+            background: #f8fafc;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #5a6c7d;
+        }
+        .timer-bar .timer-icon {
+            font-size: 20px;
+            animation: timerPulse 2s ease-in-out infinite;
+        }
+        @keyframes timerPulse {
+            0%,100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        .timer-bar .timer-value {
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--brand);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 1px;
+        }
+        .timer-bar .timer-label { font-size: 13px; }
+        .timer-bar.reading .timer-icon { animation: timerPulse 0.8s ease-in-out infinite; }
+
+        /* ========== 阅读区域 ========== */
+        .reading-area {
+            margin-bottom: 24px;
+            padding: 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1.5px solid #e2e8f0;
+            background: #fff;
+        }
+        .reading-area-header {
+            padding: 14px 22px;
+            background: var(--brand-light);
+            border-bottom: 1px solid #d8e6f5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .reading-area-header .passage-title {
+            font-weight: 700;
+            color: var(--brand-deep);
+            font-size: 15px;
+        }
+        .reading-area-header .word-count {
+            font-size: 13px;
+            color: var(--brand);
+            font-weight: 600;
+            background: #fff;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+        .passage-text {
+            padding: 24px 26px;
+            font-size: 17px;
+            line-height: 2.0;
+            color: #2c3e50;
+            letter-spacing: 0.3px;
+            text-align: justify;
+        }
+        .passage-text.blurred {
+            filter: blur(8px);
+            user-select: none;
+            pointer-events: none;
+        }
+        .passage-text .blur-overlay {
+            position: absolute;
+        }
+        .passage-text p {
+            text-indent: 2em;
+            margin-bottom: 1.1em;
+        }
+        .passage-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========== 按钮区 ========== */
+        .btn-box {
+            text-align: center;
+            padding: 10px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-primary {
+            padding: 15px 48px;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 22px rgba(26,109,204,0.35);
+            letter-spacing: 0.5px;
+            font-family: var(--font-sans);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26,109,204,0.45);
+        }
+        .btn-primary:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(26,109,204,0.3);
+            transition: all 0.1s ease;
+        }
+        .btn-primary:disabled {
+            background: #c5cdd8;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            opacity: 0.7;
+        }
+        .btn-primary.finished {
+            background: linear-gradient(135deg, var(--green) 0%, #2d9d5f 100%);
+            box-shadow: 0 6px 22px rgba(60,179,113,0.35);
+        }
+        .btn-secondary {
+            padding: 10px 24px;
+            background: transparent;
+            color: #7a8ea0;
+            border: 1.5px solid #dde4ed;
+            border-radius: 24px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-sans);
+            letter-spacing: 0.3px;
+        }
+        .btn-secondary:hover {
+            border-color: #b0bec5;
+            color: #4a5e6e;
+            background: #fafbfc;
+        }
+
+        /* ========== 理解力测试区 ========== */
+        .quiz-section {
+            margin: 0 30px 24px;
+            display: none;
+        }
+        .quiz-section.show { display: block; animation: fadeInUp 0.5s ease both; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .quiz-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--brand-deep);
+            margin-bottom: 14px;
+            text-align: center;
+        }
+        .quiz-item {
+            margin-bottom: 16px;
+            padding: 16px 18px;
+            border-radius: var(--radius-md);
+            background: #fafbfc;
+            border: 1.5px solid transparent;
+            border-left: 4px solid #e2e8f0;
+            transition: all 0.25s ease;
+        }
+        .quiz-item.answered { border-left-color: var(--brand); border-color: #dce6f8; background: #fdfeff; box-shadow: var(--shadow-sm); }
+        .quiz-item .quiz-num {
+            display: inline-block;
+            background: #e8ecf2;
+            color: #5a6c7d;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+        .quiz-item.answered .quiz-num { background: #dce6f8; color: var(--brand); }
+        .quiz-item .quiz-q { font-weight: 600; color: #1a252f; font-size: 15px; margin-bottom: 10px; line-height: 1.5; }
+        .quiz-option {
+            margin: 7px 0;
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1.5px solid transparent;
+            background: #fff;
+            user-select: none;
+        }
+        .quiz-option:hover { background: #eef3fb; border-color: #d0ddf2; transform: translateX(3px); }
+        .quiz-option.selected { background: #e6f0ff; border-color: #b3cff5; font-weight: 500; }
+        .quiz-option .opt-radio {
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            border: 2px solid #c5cdd8;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+            position: relative;
+            background: #fff;
+        }
+        .quiz-option.selected .opt-radio { border-color: var(--brand); box-shadow: 0 0 0 4px rgba(26,109,204,0.12); }
+        .quiz-option.selected .opt-radio::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--brand);
+        }
+        .quiz-option .opt-letter {
+            display: inline-flex;
+            align-items: center; justify-content: center;
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            background: #eef1f6;
+            font-weight: 700;
+            font-size: 12px;
+            color: #5a6c7d;
+            flex-shrink: 0;
+        }
+        .quiz-option.selected .opt-letter { background: var(--brand); color: #fff; }
+        .quiz-option .opt-text { flex: 1; font-size: 14px; color: #3a4d5e; }
+
+        /* ========== 结果区 ========== */
+        #resultSection {
+            margin: 0 30px 30px;
+            padding: 26px 28px;
+            border-radius: var(--radius-lg);
+            background: #fdfeff;
+            border: 1.5px solid #e8eef5;
+            display: none;
+            box-shadow: var(--shadow-md);
+        }
+        #resultSection.show { display: block; animation: resultReveal 0.7s cubic-bezier(0.22,0.61,0.36,1) both; }
+        @keyframes resultReveal {
+            from { opacity: 0; transform: translateY(24px); filter: blur(2px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        .result-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .badge-excellent { background: var(--green-light); color: #1e6b42; }
+        .badge-good { background: var(--brand-light); color: var(--brand-deep); }
+        .badge-average { background: #fffbeb; color: #92400e; }
+        .badge-slow { background: var(--accent-light); color: #9b4a2a; }
+        .result-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a252f;
+            margin: 6px 0 16px;
+            line-height: 1.3;
+        }
+        .result-desc {
+            color: #4a5e6e;
+            line-height: 1.85;
+            font-size: 15px;
+        }
+        .result-desc strong {
+            color: #1a252f;
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            font-size: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .result-desc .highlight-box {
+            display: block;
+            background: #f8fafc;
+            border-left: 3px solid var(--brand);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0 14px;
+            color: #3a4d5e;
+            font-size: 14px;
+            line-height: 1.85;
+        }
+        .result-desc .highlight-box b { color: #1a252f; }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0 16px;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 100px;
+            max-width: 160px;
+            text-align: center;
+            padding: 16px 12px;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+            border-top: 3px solid var(--brand);
+        }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.13); }
+        .stat-card .stat-icon { font-size: 26px; display: block; margin-bottom: 4px; }
+        .stat-card .stat-label { font-size: 12px; color: #7a8ea0; font-weight: 500; }
+        .stat-card .stat-value { font-weight: 700; font-size: 24px; color: #1a252f; margin: 2px 0; }
+        .stat-card .stat-unit { font-size: 13px; color: #7a8ea0; }
+
+        /* 速度等级条 */
+        .speed-meter {
+            margin: 18px 0 10px;
+            padding: 16px 18px;
+            background: #f8fafc;
+            border-radius: var(--radius-md);
+        }
+        .speed-meter-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #1a252f;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .speed-bar-track {
+            height: 24px;
+            background: linear-gradient(90deg, #f5a623, #e8734a 20%, #4a90d9 45%, #3CB371 70%, #2d9d5f 100%);
+            border-radius: 12px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+        .speed-bar-marker {
+            position: absolute;
+            top: -6px;
+            width: 4px;
+            height: 36px;
+            background: #1a252f;
+            border-radius: 2px;
+            transition: left 1s cubic-bezier(0.22,0.61,0.36,1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .speed-bar-marker::after {
+            content: attr(data-value);
+            position: absolute;
+            top: -26px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a252f;
+            white-space: nowrap;
+        }
+        .speed-bar-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #7a8ea0;
+            padding: 0 4px;
+        }
+
+        /* 护眼建议 */
+        .tips-section {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background: var(--accent-light);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent);
+        }
+        .tips-title {
+            font-weight: 700;
+            color: #9b4a2a;
+            margin-bottom: 8px;
+            font-size: 15px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .tips-content {
+            color: #6b4d1e;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ========== 页脚 ========== */
+        .footer-brand {
+            text-align: center;
+            padding: 16px 30px;
+            background: #f5f7fa;
+            color: #7a8ea0;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+            border-top: 1px solid #eef2f7;
+        }
+        .footer-brand strong { color: #4a5e6e; }
+
+        /* ========== 底部翻页导航 ========== */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 20px;
+            flex-wrap: wrap;
+            padding: 0 30px;
+        }
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 24px;
+            background-color: #1a6dcc;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(26,108,204,0.15);
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 160px;
+            text-align: center;
+        }
+        .nav-btn:hover {
+            background-color: #0d4d9c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(26,108,204,0.25);
+        }
+        @media (max-width: 800px) {
+            .page-nav { flex-direction: column; gap: 12px; }
+            .nav-btn { width: 100%; }
+        }
+
+        /* ========== 返回首页浮动按钮 ========== */
+        .float-home {
+            position: fixed;
+            right: 24px;
+            bottom: 80px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            color: #fff;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 60;
+            box-shadow: 0 8px 24px rgba(26,109,204,0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .float-home.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .float-home:hover {
+            background: var(--brand-deep);
+            box-shadow: 0 10px 28px rgba(26,109,204,0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ========== 返回顶部 ========== */
+        #toTop {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            color: #fff;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 60;
+            box-shadow: 0 8px 24px rgba(26,109,204,0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #toTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        #toTop:hover { background: var(--brand-deep); box-shadow: 0 10px 28px rgba(26,109,204,0.5); transform: translateY(-2px); }
+
+        /* ========== Toast ========== */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-120px);
+            background: #1a252f;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            pointer-events: none;
+            transition: transform 0.4s cubic-bezier(0.18,0.89,0.32,1.28);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+        .toast.warning { background: var(--accent); }
+        .toast.success { background: var(--green); }
+
+        /* ========== 响应式 ========== */
+        @media (max-width: 640px) {
+            body { padding: 8px; }
+            .container { border-radius: var(--radius-lg); }
+            .brand-header { padding: 22px 16px 20px; }
+            .brand-header h1 { font-size: 22px; }
+            .brand-header .brand-icon { font-size: 34px; }
+            .main-content { padding: 18px 14px 6px; }
+            .section-intro h2 { font-size: 18px; }
+            .level-section { padding: 16px 14px; }
+            .level-card { min-width: 100px; padding: 12px 10px; }
+            .passage-text { padding: 18px 16px; font-size: 15px; line-height: 1.9; }
+            .reading-area-header { padding: 12px 16px; }
+            .btn-box { padding: 8px 14px 20px; }
+            .btn-primary { padding: 13px 32px; font-size: 15px; border-radius: 26px; }
+            .quiz-section { margin: 0 14px 20px; }
+            .quiz-item { padding: 12px 10px; }
+            .quiz-option { padding: 8px 8px; gap: 6px; }
+            .quiz-option .opt-text { font-size: 13px; }
+            #resultSection { margin: 0 14px 20px; padding: 18px 14px; }
+            .result-title { font-size: 19px; }
+            .result-desc { font-size: 14px; }
+            .stat-card { min-width: 80px; padding: 12px 6px; }
+            .stat-card .stat-value { font-size: 20px; }
+            .timer-bar { padding: 12px 16px; }
+            .timer-bar .timer-value { font-size: 24px; }
+            .footer-brand { padding: 12px 14px; font-size: 11px; }
+            .page-nav { padding: 0 14px; }
+        }
+
+        /* 打印样式 */
+        @media print {
+            body { background: #fff; padding: 0; }
+            .container { box-shadow: none; border-radius: 0; max-width: 100%; }
+            .navbar, .float-home, #toTop, .btn-box, .timer-bar { display: none !important; }
+            #resultSection { display: block !important; border: none; box-shadow: none; }
+            .quiz-section { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ========== 导航栏 ========== -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <div class="nav-links">
+                <a href="#test">开始测试</a>
+                <a href="#resultSection">查看结果</a>
+                <a href="#tips">护眼建议</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== 品牌头部 ========== -->
+    <div class="brand-header">
+        <span class="brand-icon">📖</span>
+        <h1>阅读速度测试</h1>
+        <p class="brand-subtitle">专业阅读效率测评 · 读懂你的眼睛与大脑</p>
+    </div>
+
+    <!-- ========== 主体内容 ========== -->
+    <div class="main-content" id="test">
+        <div class="section-intro">
+            <h2>📚 测量你的阅读效率</h2>
+            <p class="intro-desc">阅读速度 + 理解力双重测评 · 五档难度自选 · 约3-10分钟完成</p>
+        </div>
+
+        <!-- 难度选择 -->
+        <div class="level-section">
+            <div class="level-title">选择阅读难度</div>
+            <div class="level-cards">
+                <div class="level-card active" data-level="easy">
+                    <span class="level-icon">🌱</span>
+                    <div class="level-name">初级</div>
+                    <div class="level-info">约300字 · 简单</div>
+                </div>
+                <div class="level-card" data-level="medium">
+                    <span class="level-icon">🌿</span>
+                    <div class="level-name">中级</div>
+                    <div class="level-info">约500字 · 适中</div>
+                </div>
+                <div class="level-card" data-level="hard">
+                    <span class="level-icon">🌳</span>
+                    <div class="level-name">高级</div>
+                    <div class="level-info">约800字 · 挑战</div>
+                </div>
+                <div class="level-card" data-level="expert">
+                    <span class="level-icon">🏔️</span>
+                    <div class="level-name">专家级</div>
+                    <div class="level-info">约1200字 · 困难</div>
+                </div>
+                <div class="level-card" data-level="master">
+                    <span class="level-icon">🌋</span>
+                    <div class="level-name">大师级</div>
+                    <div class="level-info">约1800字 · 极限</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 说明 -->
+        <div class="instructions">
+            <div class="instr-title">📋 测试说明</div>
+            <ul>
+                <li>选择难度后，点击「开始阅读」按钮，计时器同步启动</li>
+                <li>请以正常阅读速度认真阅读全文，理解内容大意</li>
+                <li>读完后点击「阅读完毕」按钮，计时器停止</li>
+                <li>完成3道理解力测试题，提交后查看综合分析报告</li>
+                <li>阅读时保持35-40cm标准距离，光线充足</li>
+            </ul>
+        </div>
+
+        <!-- 计时器 -->
+        <div class="timer-bar" id="timerBar">
+            <span class="timer-icon">⏱️</span>
+            <span class="timer-value" id="timerValue">00:00.0</span>
+            <span class="timer-label" id="timerLabel">点击下方按钮开始计时</span>
+        </div>
+
+        <!-- 开始阅读按钮（文章上方） -->
+        <div class="btn-box" style="padding-bottom:0;">
+            <button class="btn-primary" id="startBtn">▶ 开始阅读</button>
+        </div>
+
+        <!-- 阅读区域 -->
+        <div class="reading-area">
+            <div class="reading-area-header">
+                <span class="passage-title" id="passageTitle">初级阅读材料</span>
+                <span class="word-count" id="wordCount">共 0 字</span>
+            </div>
+            <div class="passage-text blurred" id="passageText"></div>
+        </div>
+
+        <!-- 结束阅读按钮（文章下方） -->
+        <div class="btn-box">
+            <button class="btn-primary" id="endBtn" disabled>⏹ 结束阅读</button>
+            <button class="btn-secondary" id="resetBtn">🔄 重新选择</button>
+        </div>
+
+        <!-- 理解力测试 -->
+        <div class="quiz-section" id="quizSection">
+            <h3>🧠 阅读理解测试</h3>
+            <div id="quizContainer"></div>
+            <div class="btn-box">
+                <button class="btn-primary finished" id="submitQuizBtn" disabled>✅ 提交答卷 · 查看分析</button>
+            </div>
+        </div>
+
+        <!-- 结果区 -->
+        <div id="resultSection" id="tips">
+            <div class="result-badge" id="resultBadge"></div>
+            <div class="result-title" id="resultTitle"></div>
+            <div class="result-desc" id="resultDesc"></div>
+
+            <!-- 统计卡片 -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">⚡</span>
+                    <span class="stat-label">阅读速度</span>
+                    <span class="stat-value" id="statSpeed">0</span>
+                    <span class="stat-unit">字/分钟</span>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--accent);">
+                    <span class="stat-icon">🧠</span>
+                    <span class="stat-label">理解力</span>
+                    <span class="stat-value" id="statComprehension">0</span>
+                    <span class="stat-unit">%</span>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--green);">
+                    <span class="stat-icon">🏆</span>
+                    <span class="stat-label">综合评级</span>
+                    <span class="stat-value" id="statRating">-</span>
+                    <span class="stat-unit">级</span>
+                </div>
+            </div>
+
+            <!-- 速度等级条 -->
+            <div class="speed-meter">
+                <div class="speed-meter-title">📊 阅读速度等级参考</div>
+                <div class="speed-bar-track">
+                    <div class="speed-bar-marker" id="speedMarker" data-value="" style="left:0%;"></div>
+                </div>
+                <div class="speed-bar-labels">
+                    <span>慢速<br>&lt;200</span>
+                    <span>偏慢<br>200-300</span>
+                    <span>普通<br>300-400</span>
+                    <span>良好<br>400-600</span>
+                    <span>优秀<br>600-800</span>
+                    <span>卓越<br>&gt;800</span>
+                </div>
+            </div>
+
+            <!-- 护眼建议 -->
+            <div class="tips-section" id="tipsSection">
+                <div class="tips-title">💡 个性化护眼建议</div>
+                <div class="tips-content" id="tipsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 底部翻页导航 ========== -->
+    <div class="page-nav">
+        <a href="9.html" class="nav-btn">⬅ 前一页：学习风格自测</a>
+        <a href="index.html" class="nav-btn">🏠 首页</a>
+        <a href="鹰瞳.html" class="nav-btn">后一页：鹰瞳PBM视康仪 ➡</a>
+    </div>
+
+    <!-- ========== 页脚 ========== -->
+    <div class="footer-brand">
+        <strong>高级验光技师闫胜君工作室</strong> · 青少年近视科学防控系统
+    </div>
+</div>
+
+<!-- 返回首页浮动按钮 -->
+<a href="index.html" class="float-home" id="floatHome" title="返回首页" aria-label="返回首页">🏠</a>
+<!-- 返回顶部 -->
+<button id="toTop" title="返回顶部" aria-label="返回顶部">↑</button>
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+(function() {
+    // ==================== 阅读材料数据 ====================
+    const passages = {
+        easy: {
+            title: '初级阅读材料 · 近视小知识',
+            text: '近视是现代人常见的视力问题。当我们看远处的东西模糊，看近处的东西清楚时，就可能患有近视。近视的主要原因是眼球前后径变长，导致光线聚焦在视网膜前面而不是上面。\n\n预防近视需要从小做起。每天保证两小时以上的户外活动，让眼睛多接触自然光线。读书写字时保持正确的坐姿，眼睛距离书本约三十五到四十厘米。使用电子产品每二十分钟，抬头看六米以外的地方休息二十秒。这些简单的习惯能有效保护视力。\n\n饮食方面，多吃富含维生素A的胡萝卜、菠菜，含有叶黄素的玉米、蛋黄，还有富含花青素的蓝莓。少吃甜食和油炸食品，因为过多糖分会影响钙的吸收，让眼球壁变薄，加速近视发展。\n\n定期检查视力也很重要。建议每半年到专业的眼科或验光机构检查一次，及时发现视力变化。如果已经近视，要在专业指导下选择合适的矫正方式，如框架眼镜、角膜塑形镜等，并坚持良好的用眼习惯，防止度数加深。',
+            questions: [
+                {
+                    q: '近视眼看远处物体模糊的原因是？',
+                    options: ['眼球前后径变短', '眼球前后径变长，光线聚焦在视网膜前', '角膜弯曲度不足', '晶状体太薄'],
+                    answer: 1
+                },
+                {
+                    q: '预防近视建议每天户外活动多长时间？',
+                    options: ['半小时以上', '一小时以上', '两小时以上', '三小时以上'],
+                    answer: 2
+                },
+                {
+                    q: '以下哪种食物对眼睛有益？',
+                    options: ['蛋糕和巧克力', '油炸薯条', '胡萝卜和蓝莓', '碳酸饮料'],
+                    answer: 2
+                }
+            ]
+        },
+        medium: {
+            title: '中级阅读材料 · 视觉系统的工作原理',
+            text: '人类的视觉系统是一个精密而复杂的信息处理网络。当光线从物体反射进入眼睛，首先穿过角膜——这层透明的组织提供了眼球约三分之二的屈光力。接着光线通过房水到达瞳孔，虹膜通过调节瞳孔大小来控制进入眼内的光量，就像相机的光圈一样灵活运作。\n\n穿过瞳孔后，光线到达晶状体。晶状体是一个富有弹性的双凸透镜结构，通过睫状肌的收缩与舒张改变自身厚度，实现看远看近时的精准聚焦，这个过程称为调节。年轻时晶状体弹性极佳，调节能力可达十到十四个屈光度。随年龄增长，晶状体逐渐硬化失去弹性，调节力下降，便出现老花现象。\n\n经过晶状体折射的光线穿过玻璃体，最终聚焦在视网膜上。视网膜是眼球最内层结构，包含约一亿两千万个视杆细胞和七百万个视锥细胞。视杆细胞负责暗光下的视觉，灵敏度极高但无法分辨颜色；视锥细胞则负责明视觉和色彩感知，集中在黄斑区，提供我们最精细的中央视力。\n\n光感受细胞将光信号转化为电信号，经双极细胞传递至神经节细胞。约一百万根神经节细胞的轴突汇聚成视神经，将信息高速传输至大脑。在大脑枕叶的初级视觉皮层，这些信号经过层级加工，最终构建出我们感知到的丰富视觉世界——从颜色、形状、运动到深度，全部在数百毫秒内完成。\n\n整个视觉系统的精密协作令人惊叹。任何一个环节出现问题，都可能导致视力障碍。因此保护眼睛不仅要注意用眼习惯，还要关注全身健康，因为视觉系统的正常运作依赖于充足的供血、均衡的营养和良好的神经功能。',
+            questions: [
+                {
+                    q: '角膜为眼球提供了大约多少屈光力？',
+                    options: ['三分之一', '二分之一', '三分之二', '全部'],
+                    answer: 2
+                },
+                {
+                    q: '负责暗光视觉的感光细胞是？',
+                    options: ['视锥细胞', '视杆细胞', '双极细胞', '神经节细胞'],
+                    answer: 1
+                },
+                {
+                    q: '视神经由多少根神经节细胞轴突汇聚而成？',
+                    options: ['约十万根', '约五十万根', '约一百万根', '约一千万根'],
+                    answer: 2
+                }
+            ]
+        },
+        hard: {
+            title: '高级阅读材料 · 近视防控的前沿科学',
+            text: '近视的全球流行已成为重大公共卫生挑战。据世界卫生组织统计，二零二零年全球近视人口约二十七亿，预计到二零五零年将接近五十亿，其中高度近视人群将超过十亿。东亚地区尤其是中国、日本、韩国和新加坡，青少年近视率已超过百分之八十，呈现低龄化、重度化的趋势。中国青少年近视率位居全球前列，已成为国家层面重点防控的公共卫生问题。\n\n近视的发病机制涉及遗传和环境两大因素。目前已发现超过两百个近视易感基因位点，但基因变异仅能解释约百分之十到十五的近视发生。环境因素的作用更为关键——大量流行病学研究表明，户外活动时间不足是近视发生的最强环境风险因素。自然光中高强度的光照能刺激视网膜释放多巴胺，抑制眼轴增长，这一机制已在多种动物模型中得到验证。每天两小时以上的户外活动可使近视发生风险降低约百分之四十到五十。\n\n在近视矫正与控制技术方面，近年来取得了显著突破。角膜塑形镜（OK镜）通过夜间佩戴改变角膜形态，白天无需戴镜即可获得清晰视力，多中心研究证实其可使眼轴增长速度减缓约百分之三十到五十。低浓度阿托品滴眼液作为药物控制手段，在多项随机对照试验中展现出延缓近视进展的显著效果，其机制可能与抑制巩膜重塑有关。特殊光学设计的近视控制镜片采用多区正向光学离焦技术，在矫正中央视力的同时在视网膜上形成近视性离焦信号，抑制眼轴增长。\n\n新兴的基因治疗和光学干预技术正在快速发展中。光生物调节（PBM）技术利用特定波长的低能量光照射眼部组织，通过激活细胞色素C氧化酶促进细胞代谢，有望在近视防控领域发挥辅助作用。基于人工智能的近视预测模型整合眼轴长度、角膜曲率、屈光度、年龄等多维数据，可以较准确地预测个体未来近视发展轨迹，为精准防控提供决策支持。这些前沿技术的融合应用，正在推动近视防控从经验医学走向精准医学的新时代。\n\n然而，技术的进步不能替代基础的用眼健康管理。无论采用何种矫正和控制手段，都必须建立在良好的用眼习惯之上——充足的户外时间、正确的读写姿势、适当的近距离用眼休息、均衡的营养摄入和定期专业检查。科技赋能与行为干预的有机结合，才是应对近视流行的根本之策。这需要个人、家庭、学校、医疗机构和社会各界的协同努力，共同守护下一代的视觉健康。',
+            questions: [
+                {
+                    q: '预计到2050年全球近视人口将接近多少？',
+                    options: ['二十七亿', '三十五亿', '五十亿', '七十亿'],
+                    answer: 2
+                },
+                {
+                    q: '基因变异能解释大约多少比例的近视发生？',
+                    options: ['百分之五到十', '百分之十到十五', '百分之二十到三十', '百分之四十以上'],
+                    answer: 1
+                },
+                {
+                    q: '角膜塑形镜可使眼轴增长速度减缓约多少？',
+                    options: ['百分之十到二十', '百分之三十到五十', '百分之六十到七十', '百分之八十以上'],
+                    answer: 1
+                }
+            ]
+        },
+        expert: {
+            title: '专家级阅读材料 · 视觉训练的科学原理与实践',
+            text: '视觉训练，又称为视功能训练，是一种通过特定的视觉任务和练习来改善视觉系统功能的方法。它的理论基础源于神经可塑性——大脑视觉皮层在适当的刺激和训练下，能够重新组织和优化信息处理通路，提升视觉效率。\n\n视觉训练的核心目标包括三个方面。第一，改善双眼视功能，即让两只眼睛更好地协调工作，实现稳定的双眼单视和立体视觉。第二，提升调节和集合功能，使眼睛在不同距离之间切换时更加灵活高效。第三，增强视觉信息处理能力，包括视觉追踪、视觉记忆和视觉空间感知等高级视觉技能。\n\n双眼视功能异常在学龄儿童中并不罕见。研究显示，约百分之五到八的儿童存在不同程度的隐斜视或集合不足。这些问题常表现为阅读时容易串行、注意力难以集中、用眼后头痛等。如果不及时干预，不仅影响学习效率，还可能加速近视发展。通过系统的双眼视功能训练，大部分患者的立体视和双眼协调能力可以得到显著改善。\n\n调节功能训练是视觉训练的另一重要组成。人眼的调节系统通过晶状体形态变化实现看远看近的聚焦切换。当调节功能不足或灵活度下降时，近距离工作会感到吃力，出现视物模糊、眼胀不适等症状。常用的调节训练方法包括推拉训练、透镜翻转训练等，通过反复刺激调节系统，提升其反应速度和持久力。\n\n集合功能与调节功能密切相关。看近时双眼向内转动即集合，同时晶状体增厚即调节，两个系统通过近反射联动工作。集合不足会导致阅读时需要额外的努力维持双眼对齐，容易疲劳。集合训练通过棱镜和特定视标，训练双眼的内外转动能力，使之与调节功能匹配协调。\n\n在临床实践中，视觉训练通常需要在专业验光师或视觉训练师的指导下进行。训练方案根据个体的视功能检查结果量身定制，一般包括诊室训练和家庭训练两部分。诊室训练每周一到两次，每次约四十五分钟，使用专业设备进行高强度训练；家庭训练每天十五到二十分钟，巩固和强化训练效果。完整的训练周期通常需要三到六个月。\n\n视觉训练的效果评估需要综合多项指标。常用的评估工具包括 Worth 四点试验检查双眼融合功能，棱镜遮盖试验测量偏斜量，调节幅度测量评估调节力，立体视检查图评估深度感知。训练前后对比这些数据，可以客观地量化进步程度。此外，主观症状量表如问卷调查也是重要的辅助评估手段，能反映患者在日常生活中的视觉体验改善。\n\n近年来，视觉训练领域出现了数字化趋势。基于平板电脑和虚拟现实技术的交互式训练程序，将传统枯燥的训练任务包装为游戏化体验，显著提升了儿童患者的依从性。同时，计算机化训练能够精确记录反应时间、注视稳定性等客观数据，为疗效评估提供更精细的量化指标。这些技术创新正在推动视觉训练向更精准、更有趣的方向发展。\n\n需要强调的是，视觉训练并非万能。它主要适用于功能性视觉问题的改善，对于器质性病变如白内障、青光眼、视网膜疾病等并无治疗作用。因此，在开始任何视觉训练计划之前，必须进行全面的屈光和眼健康检查，排除器质性病变，确保训练方案的安全性和针对性。',
+            questions: [
+                {
+                    q: '视觉训练的理论基础是什么？',
+                    options: ['基因突变理论', '神经可塑性', '光学折射原理', '肌肉记忆理论'],
+                    answer: 1
+                },
+                {
+                    q: '约多少比例的儿童存在隐斜视或集合不足？',
+                    options: ['百分之二到三', '百分之五到八', '百分之十到十五', '百分之二十以上'],
+                    answer: 1
+                },
+                {
+                    q: '完整的视觉训练周期通常需要多长时间？',
+                    options: ['一到两个月', '三到六个月', '半年到一年', '一年以上'],
+                    answer: 1
+                }
+            ]
+        },
+        master: {
+            title: '大师级阅读材料 · 青少年近视防控系统工程',
+            text: '近视防控是一项需要全社会参与的系统工程。它不是单一的医疗行为，而是融合了公共卫生策略、教育政策、科技创新和家庭行为干预的多维度行动体系。理解这一系统工程的全貌，对于每一个关心青少年眼健康的人来说都至关重要。\n\n一、近视发生的社会背景\n\n近三十年来，全球近视率呈现爆发式增长。东亚地区尤为突出，中国青少年总体近视率已超过百分之五十，高中阶段甚至超过百分之八十。这一趋势与城市化进程、教育竞争加剧、电子设备普及和户外活动时间锐减密切相关。研究表明，每一代人的近视率都高于上一代，提示环境因素在近视流行中起着决定性作用。\n\n近视不仅仅是戴眼镜的问题。高度近视即超过六百度的患者面临视网膜脱离、黄斑变性、青光眼等严重并发症的风险大幅增加。这些并发症可能在成年后不可逆地损害视力，甚至导致致盲。因此，近视防控的本质是预防致盲性眼病，而不仅仅是矫正视力。\n\n此外，近视还给社会经济带来沉重负担。据估算，全球因近视导致的直接医疗支出和生产力损失每年高达数千亿元。随着近视人口持续增长，这一负担将进一步加重，成为不容忽视的公共卫生经济问题。\n\n二、循证医学的防控策略\n\n目前经过大规模随机对照试验验证、被国际公认的近视防控手段主要包括以下几类。\n\n光学干预方面，角膜塑形镜即OK镜是最成熟的选择之一。通过夜间佩戴改变角膜前表面形态，白天无需戴镜即可获得清晰视力。多项多中心研究证实，OK镜可使眼轴年增长量减少零点一五到零点二五毫米，约相当于减缓百分之三十到五十的近视进展速度。但OK镜验配需要严格的适应症筛选和规范的护理随访，存在角膜感染等风险，必须在有资质的医疗机构进行。\n\n特殊光学设计的框架眼镜是另一重要方向。采用多区正向光学离焦技术的镜片，通过在视网膜上形成近视性离焦信号来抑制眼轴增长。这种方案安全性高、适用年龄范围广，适合不愿意或不适合佩戴接触镜的儿童。临床数据显示，其年化近视控制效率约为百分之二十七到百分之六十，效果虽然不如OK镜显著，但依从性和安全性优势明显。\n\n低浓度阿托品滴眼液是唯一被广泛验证的药物控制手段。百分之零点零一至零点零五浓度的阿托品滴眼液，在多项随机对照试验中展现出延缓近视进展的效果。其作用机制可能涉及抑制巩膜重塑、影响多巴胺信号通路等多个层面。但药物方案的长期安全性仍在持续监测中，停药后可能存在反弹效应，需要在专业眼科医师指导下使用。\n\n近年来，联合防控策略受到越来越多关注。研究表明，光学干预与低浓度阿托品的联合使用可能产生叠加甚至协同效应，控制效果优于单一手段。对于近视进展较快的儿童，临床医生会考虑采用联合方案，但同时需要更加密切的随访监测，以平衡效果与安全性。\n\n三、行为与环境干预\n\n无论采用何种医疗手段，行为和环境干预都是近视防控的基础。大量流行病学研究一致表明，每天两小时以上的户外活动是预防近视最有效的手段。自然光中高强度的光照刺激视网膜释放多巴胺，直接抑制眼轴增长。这一效应已在小鸡、豚鼠、猕猴等多种动物模型中被反复验证。值得注意的是，户外活动的保护效果主要来自光照而非运动本身，因此即使在户外静坐也能获益。\n\n近距离用眼管理同样关键。读写时应保持三十五到四十厘米的距离，每持续用眼二十分钟需眺望六米远处二十秒，即二十二十二十法则。电子屏幕的使用应遵循年龄分级原则，学龄前儿童尽量不用，中小学生非学习目的使用每日不超过一小时。同时注意阅读环境的光照质量，桌面照度应达到三百勒克斯以上，色温在四千开尔文左右为宜。\n\n此外，充足的睡眠和均衡的营养摄入对近视防控同样重要。研究表明，睡眠不足会影响眼部血液循环和自主神经调节，可能加速近视发展。建议小学生每天睡眠十小时、初中生九小时、高中生八小时。饮食方面，适当补充富含维生素A、叶黄素、玉米黄质和花青素的食物，如胡萝卜、蓝莓、菠菜和深海鱼类，有助于维护视网膜健康。\n\n四、个性化精准防控\n\n随着检测技术的发展，近视防控正在走向个性化精准化。眼轴长度是比屈光度更敏感的近视进展指标，建议每三到六个月测量一次。角膜曲率、前房深度、晶状体厚度等参数的定期追踪，有助于全面评估眼球发育状态。\n\n结合年龄、性别、家族史、用眼习惯等多维度数据，人工智能模型已经能够预测个体未来三到五年的近视发展轨迹，为制定个性化防控方案提供决策依据。这种数据驱动的精准防控模式，使得每个孩子都能获得最适合自己的干预方案，避免一刀切的粗放管理。\n\n五、社会协同体系\n\n近视防控需要多方协同。政府层面应推动户外活动时间的政策保障，如延长课间休息、增加体育课时。学校应落实教室采光标准、控制电子教学设备使用时间、建立学生视力档案。医疗机构应提供规范的屈光检查和近视管理服务，加强基层眼科和视光人才队伍建设。家庭应培养孩子良好的用眼习惯，保证户外活动和睡眠时间。\n\n只有全社会形成合力，才能有效遏制近视流行的趋势，守护下一代的视觉健康。这是一场持久战，需要耐心、科学和持续的行动，也需要每一个家庭从现在做起、从日常做起。',
+            questions: [
+                {
+                    q: '高度近视患者面临哪些严重并发症的风险？',
+                    options: ['结膜炎和沙眼', '视网膜脱离、黄斑变性、青光眼', '斜视和弱视', '干眼症'],
+                    answer: 1
+                },
+                {
+                    q: 'OK镜可使眼轴年增长量减少约多少？',
+                    options: ['零点零五到零点一毫米', '零点一五到零点二五毫米', '零点三到零点四毫米', '零点五毫米以上'],
+                    answer: 1
+                },
+                {
+                    q: '户外活动预防近视的主要机制是什么？',
+                    options: ['运动增强体质', '自然光刺激视网膜释放多巴胺，抑制眼轴增长', '远眺放松睫状肌', '降低眼压'],
+                    answer: 1
+                }
+            ]
+        }
+    };
+    let currentLevel = 'easy';
+    let isReading = false;
+    let hasFinished = false;
+    let startTime = 0;
+    let endTime = 0;
+    let elapsedMs = 0;
+    let timerInterval = null;
+    let quizSelections = {};
+    let isSubmitted = false;
+
+    // ==================== DOM引用 ====================
+    const levelCards = document.querySelectorAll('.level-card');
+    const passageText = document.getElementById('passageText');
+    const passageTitle = document.getElementById('passageTitle');
+    const wordCountEl = document.getElementById('wordCount');
+    const startBtn = document.getElementById('startBtn');
+    const endBtn = document.getElementById('endBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const timerBar = document.getElementById('timerBar');
+    const timerValue = document.getElementById('timerValue');
+    const timerLabel = document.getElementById('timerLabel');
+    const quizSection = document.getElementById('quizSection');
+    const quizContainer = document.getElementById('quizContainer');
+    const submitQuizBtn = document.getElementById('submitQuizBtn');
+    const resultSection = document.getElementById('resultSection');
+    const toast = document.getElementById('toast');
+    const toTop = document.getElementById('toTop');
+    const floatHome = document.getElementById('floatHome');
+
+    // ==================== 工具函数 ====================
+    function showToast(msg, type) {
+        clearTimeout(toast._timer);
+        toast.textContent = msg;
+        toast.className = 'toast ' + (type || '') + ' show';
+        toast._timer = setTimeout(function() { toast.classList.remove('show'); }, 2400);
+    }
+
+    function countWords(text) {
+        // 去除空白符后统计字符数（中文按字计算）
+        return text.replace(/\s/g, '').length;
+    }
+
+    function formatTime(ms) {
+        var totalSec = ms / 1000;
+        var min = Math.floor(totalSec / 60);
+        var sec = Math.floor(totalSec % 60);
+        var tenth = Math.floor((totalSec * 10) % 10);
+        return String(min).padStart(2, '0') + ':' + String(sec).padStart(2, '0') + '.' + tenth;
+    }
+
+    function loadPassage(level) {
+        var p = passages[level];
+        passageTitle.textContent = p.title;
+        passageText.innerHTML = p.text.split('\n\n').filter(function(s){return s.trim();}).map(function(s){return '<p>'+s+'</p>';}).join('');
+        passageText.classList.add('blurred');
+        wordCountEl.textContent = '共 ' + countWords(p.text) + ' 字';
+        // 渲染理解题
+        var html = '';
+        p.questions.forEach(function(item, qi) {
+            var optsHTML = '';
+            item.options.forEach(function(opt, oi) {
+                var letter = String.fromCharCode(65 + oi);
+                optsHTML += '<div class="quiz-option" data-qi="' + qi + '" data-oi="' + oi + '" onclick="window._selectQuiz(' + qi + ',' + oi + ',this)" role="radio" aria-checked="false" tabindex="0">' +
+                    '<span class="opt-radio"></span>' +
+                    '<span class="opt-letter">' + letter + '</span>' +
+                    '<span class="opt-text">' + opt + '</span>' +
+                '</div>';
+            });
+            html += '<div class="quiz-item" id="quizItem' + qi + '">' +
+                '<span class="quiz-num">第 ' + (qi+1) + ' 题 / 共 ' + p.questions.length + ' 题</span>' +
+                '<div class="quiz-q">' + (qi+1) + '. ' + item.q + '</div>' +
+                optsHTML +
+            '</div>';
+        });
+        quizContainer.innerHTML = html;
+    }
+
+    // ==================== 难度选择 ====================
+    levelCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            if (isReading && !hasFinished) {
+                showToast('阅读进行中，无法切换难度', 'warning');
+                return;
+            }
+            levelCards.forEach(function(c) { c.classList.remove('active'); });
+            card.classList.add('active');
+            currentLevel = card.getAttribute('data-level');
+            // 重置状态
+            resetTest();
+            loadPassage(currentLevel);
+        });
+    });
+
+    // ==================== 开始阅读 ====================
+    startBtn.addEventListener('click', function() {
+        if (!hasFinished && !isReading) {
+            // 开始阅读
+            isReading = true;
+            startTime = Date.now();
+            passageText.classList.remove('blurred');
+            startBtn.disabled = true;
+            startBtn.textContent = '📖 正在阅读中…';
+            startBtn.classList.add('finished');
+            endBtn.disabled = false;
+            endBtn.textContent = '⏹ 结束阅读';
+            endBtn.classList.remove('finished');
+            timerLabel.textContent = '正在阅读…读完后点击下方「结束阅读」';
+            timerBar.classList.add('reading');
+            // 启动计时器
+            timerInterval = setInterval(function() {
+                elapsedMs = Date.now() - startTime;
+                timerValue.textContent = formatTime(elapsedMs);
+            }, 50);
+            // 滚动到文章区域
+            passageText.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+
+    // ==================== 结束阅读 ====================
+    endBtn.addEventListener('click', function() {
+        if (isReading && !hasFinished) {
+            // 阅读完毕
+            isReading = false;
+            hasFinished = true;
+            endTime = Date.now();
+            elapsedMs = endTime - startTime;
+            clearInterval(timerInterval);
+            timerValue.textContent = formatTime(elapsedMs);
+            timerLabel.textContent = '阅读完成！用时 ' + formatTime(elapsedMs);
+            timerBar.classList.remove('reading');
+            endBtn.disabled = true;
+            endBtn.textContent = '✅ 已完成阅读';
+            endBtn.classList.add('finished');
+            // 显示理解力测试
+            quizSection.classList.add('show');
+            setTimeout(function() {
+                quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 200);
+            showToast('阅读完成！请完成理解力测试', 'success');
+        }
+    });
+
+    // ==================== 理解题选择 ====================
+    window._selectQuiz = function(qi, oi, el) {
+        if (isSubmitted) return;
+        var quizItem = document.getElementById('quizItem' + qi);
+        if (!quizItem) return;
+        // 清除同题选中
+        quizItem.querySelectorAll('.quiz-option').forEach(function(opt) {
+            opt.classList.remove('selected');
+            opt.setAttribute('aria-checked', 'false');
+        });
+        el.classList.add('selected');
+        el.setAttribute('aria-checked', 'true');
+        quizItem.classList.add('answered');
+        quizSelections[qi] = oi;
+        // 检查全部答完
+        var total = passages[currentLevel].questions.length;
+        var answered = Object.keys(quizSelections).length;
+        submitQuizBtn.disabled = answered < total;
+    };
+
+    // ==================== 提交理解题 ====================
+    submitQuizBtn.addEventListener('click', function() {
+        if (isSubmitted) return;
+        var passage = passages[currentLevel];
+        var total = passage.questions.length;
+        var correct = 0;
+        for (var i = 0; i < total; i++) {
+            if (quizSelections[i] === passage.questions[i].answer) correct++;
+        }
+        var comprehensionRate = Math.round((correct / total) * 100);
+        var wordNum = countWords(passage.text);
+        var seconds = elapsedMs / 1000;
+        var speed = Math.round(wordNum / (seconds / 60));
+
+        // 计算综合评级（速度 × 理解力）
+        var effectiveSpeed = Math.round(speed * (comprehensionRate / 100));
+        var rating, badgeClass, badgeText, title, desc;
+
+        if (effectiveSpeed >= 700) {
+            rating = 'A+';
+            badgeClass = 'badge-excellent';
+            badgeText = '卓越阅读水平';
+            title = '🏆 你的阅读效率卓越！';
+            desc = '<strong>【综合分析】</strong>' +
+                '<span class="highlight-box">你的阅读速度达到 <b>' + speed + ' 字/分钟</b>，理解力 <b>' + comprehensionRate + '%</b>，综合效率 <b>' + effectiveSpeed + ' 字/分钟</b>。这表明你拥有出色的视觉信息处理能力，眼球追踪运动流畅，大脑语言加工高效。</span>' +
+                '<strong>【优势解读】</strong>' +
+                '<span class="highlight-box">✅ 阅读速度快，能在短时间内处理大量文字信息<br>✅ 理解力强，能精准捕捉关键信息和细节<br>✅ 视觉追踪效率高，眼球跳动模式优化<br>✅ 注意力集中，抗干扰能力强</span>' +
+                '<strong>【提升方向】</strong>' +
+                '<span class="highlight-box">📌 尝试更复杂的长文本阅读，训练持续专注力<br>📌 练习快速提炼文章结构和核心论点<br>📌 可尝试速读训练进一步提升极限速度<br>📌 注意在高速阅读中保持理解质量</span>' +
+                '<strong>【适合的学习方式】</strong>' +
+                '你的阅读效率极高，文字类学习材料对你来说效率最高。可以充分利用阅读来获取知识，但也注意不要过度用眼。适当结合听书、视频等其他感官方式，让眼睛得到休息。';
+        } else if (effectiveSpeed >= 450) {
+            rating = 'A';
+            badgeClass = 'badge-good';
+            badgeText = '良好阅读水平';
+            title = '👍 你的阅读效率良好！';
+            desc = '<strong>【综合分析】</strong>' +
+                '<span class="highlight-box">你的阅读速度为 <b>' + speed + ' 字/分钟</b>，理解力 <b>' + comprehensionRate + '%</b>，综合效率 <b>' + effectiveSpeed + ' 字/分钟</b>。这高于大多数人的平均水平，说明你的视觉信息处理和语言理解能力运作良好。</span>' +
+                '<strong>【优势解读】</strong>' +
+                '<span class="highlight-box">✅ 阅读速度高于平均，文字学习效率较好<br>✅ 理解力不错，能把握文章主要内容和细节<br>✅ 阅读习惯较为科学，注意力维持较好</span>' +
+                '<strong>【提升方向】</strong>' +
+                '<span class="highlight-box">📌 可通过指读法、视线引导法进一步提升速度<br>📌 训练段落大意快速提炼能力<br>📌 减少回视和默读，提升阅读流畅度<br>📌 尝试不同题材文章，扩展词汇和理解广度</span>' +
+                '<strong>【适合的学习方式】</strong>' +
+                '阅读是你高效的学习通道之一。可以多利用文字类资料，同时适当配合图解、视频等形式辅助理解复杂概念。保持每日阅读习惯，持续提升阅读能力。';
+        } else if (effectiveSpeed >= 280) {
+            rating = 'B';
+            badgeClass = 'badge-average';
+            badgeText = '普通阅读水平';
+            title = '📖 你的阅读效率处于普通水平';
+            desc = '<strong>【综合分析】</strong>' +
+                '<span class="highlight-box">你的阅读速度为 <b>' + speed + ' 字/分钟</b>，理解力 <b>' + comprehensionRate + '%</b>，综合效率 <b>' + effectiveSpeed + ' 字/分钟</b>。这接近大众平均阅读水平，仍有较大提升空间。</span>' +
+                '<strong>【现状分析】</strong>' +
+                '<span class="highlight-box">⚠️ 阅读速度一般，可能与回视、默读习惯有关<br>⚠️ 理解力有提升空间，建议加强主动阅读训练<br>⚠️ 阅读时注意力分散可能影响效率</span>' +
+                '<strong>【提升建议 · 5大策略】</strong>' +
+                '<span class="highlight-box">📌 <b>指读法：</b>用手指或笔尖引导视线移动，减少回视<br>📌 <b>减少默读：</b>尝试不逐字默念，以词组/意群为单位阅读<br>📌 <b>预读法：</b>先浏览标题、首尾段，建立框架再精读<br>📌 <b>限时训练：</b>设定时间目标，逐步提升阅读速度<br>📌 <b>主动阅读：</b>边读边思考、标记关键句，提升理解深度</span>' +
+                '<strong>【适合的学习方式】</strong>' +
+                '阅读对你仍然有效，但建议配合多种感官方式学习。可以结合视频课程、有声书和图文混排资料，多通道输入提升学习效率。同时加强阅读训练，逐步提升文字处理能力。';
+        } else {
+            rating = 'C';
+            badgeClass = 'badge-slow';
+            badgeText = '待提升阅读水平';
+            title = '✏️ 你的阅读效率有待提升';
+            desc = '<strong>【综合分析】</strong>' +
+                '<span class="highlight-box">你的阅读速度为 <b>' + speed + ' 字/分钟</b>，理解力 <b>' + comprehensionRate + '%</b>，综合效率 <b>' + effectiveSpeed + ' 字/分钟</b>。当前阅读效率偏低，可能影响学习效率和用眼健康。</span>' +
+                '<strong>【可能原因】</strong>' +
+                '<span class="highlight-box">⚠️ 频繁回视、逐字默读等习惯拖慢速度<br>⚠️ 词汇量不足或背景知识有限影响理解<br>⚠️ 注意力不集中或视疲劳影响发挥<br>⚠️ 屈光不正（近视/散光）未矫正也会影响阅读效率</span>' +
+                '<strong>【改善建议 · 6大策略】</strong>' +
+                '<span class="highlight-box">📌 <b>基础矫正：</b>首先到专业机构检查视力，确保屈光不正已正确矫正<br>📌 <b>指读训练：</b>用手指引导视线，逐步提高手指移动速度<br>📌 <b>意群阅读：</b>练习以3-5个字为单位整体理解，而非逐字阅读<br>📌 <b>减少回视：</b>用卡片遮挡已读内容，强制向前阅读<br>📌 <b>词汇积累：</b>多阅读不同题材，扩展词汇和背景知识<br>📌 <b>用眼休息：</b>每20分钟休息20秒，眺望远处缓解疲劳</span>' +
+                '<strong>【适合的学习方式】</strong>' +
+                '你可能更适合多感官学习方式。建议优先使用有声书、视频讲解等听觉+视觉方式，减少纯文字阅读的用眼负担。同时坚持基础阅读训练，循序渐进提升阅读能力。建议到永州爱眼城做全面视力检查，排除视力问题对阅读效率的影响。';
+        }
+
+        // 护眼建议
+        var tipsHTML = '';
+        if (speed > 600) {
+            tipsHTML = '你的阅读速度很快，说明用眼强度较大。特别注意：<br><br>' +
+                '① <b>定时休息：</b>高速阅读时每20分钟必须望远20秒，让睫状肌放松；<br>' +
+                '② <b>照明充足：</b>快速阅读时眼球运动频繁，需保证充足且均匀的照明；<br>' +
+                '③ <b>姿势管理：</b>保持35-40cm阅读距离，避免低头过近；<br>' +
+                '④ <b>定期检查：</b>高强度用眼者建议每6个月到专业机构检查视力。';
+        } else if (speed > 300) {
+            tipsHTML = '你的阅读速度适中，用眼负担一般。建议：<br><br>' +
+                '① <b>20-20-20法则：</b>每阅读20分钟，望向6米外20秒；<br>' +
+                '② <b>阅读环境：</b>使用色温4000K左右的护眼灯，避免眩光；<br>' +
+                '③ <b>距离姿势：</b>保持35-40cm标准阅读距离；<br>' +
+                '④ <b>户外活动：</b>每天保证1-2小时户外自然光接触；<br>' +
+                '⑤ <b>定期检查：</b>每年进行一次屈光检查。';
+        } else {
+            tipsHTML = '你的阅读速度偏慢，长时间阅读可能加重用眼负担。特别注意：<br><br>' +
+                '① <b>视力检查：</b>阅读速度偏慢可能与视力问题有关，建议到专业机构检查；<br>' +
+                '② <b>增加休息频率：</b>每15分钟休息一次，避免持续用眼疲劳；<br>' +
+                '③ <b>改善照明：</b>确保阅读环境光线充足均匀；<br>' +
+                '④ <b>调整距离：</b>检查阅读距离是否合适，过近过远都会影响效率；<br>' +
+                '⑤ <b>多感官学习：</b>适当用有声书、视频替代纯文字阅读，减轻用眼负担；<br>' +
+                '⑥ <b>营养护眼：</b>多摄入叶黄素、花青素等护眼营养素。';
+        }
+
+        // 速度等级条位置
+        var markerPos;
+        if (speed >= 800) markerPos = 95;
+        else markerPos = Math.min(90, (speed / 800) * 90);
+
+        // 填充结果
+        document.getElementById('resultBadge').textContent = badgeText;
+        document.getElementById('resultBadge').className = 'result-badge ' + badgeClass;
+        document.getElementById('resultTitle').textContent = title;
+        document.getElementById('resultDesc').innerHTML = desc;
+        document.getElementById('statSpeed').textContent = speed;
+        document.getElementById('statComprehension').textContent = comprehensionRate;
+        document.getElementById('statRating').textContent = rating;
+        document.getElementById('tipsContent').innerHTML = tipsHTML;
+        document.getElementById('speedMarker').setAttribute('data-value', speed + '字/分');
+        document.getElementById('speedMarker').style.left = markerPos + '%';
+
+        // 显示结果
+        resultSection.classList.add('show');
+        isSubmitted = true;
+        submitQuizBtn.disabled = true;
+        submitQuizBtn.textContent = '✅ 已完成测评';
+
+        setTimeout(function() {
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
+        showToast('🎉 测评完成！查看你的专属分析', 'success');
+    });
+
+    // ==================== 重置 ====================
+    function resetTest() {
+        isReading = false;
+        hasFinished = false;
+        startTime = 0;
+        endTime = 0;
+        elapsedMs = 0;
+        quizSelections = {};
+        isSubmitted = false;
+        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+        timerValue.textContent = '00:00.0';
+        timerLabel.textContent = '点击下方按钮开始计时';
+        timerBar.classList.remove('reading');
+        startBtn.disabled = false;
+        startBtn.textContent = '▶ 开始阅读';
+        startBtn.classList.remove('finished');
+        endBtn.disabled = true;
+        endBtn.textContent = '⏹ 结束阅读';
+        endBtn.classList.remove('finished');
+        passageText.classList.add('blurred');
+        quizSection.classList.remove('show');
+        resultSection.classList.remove('show');
+        submitQuizBtn.disabled = true;
+        submitQuizBtn.textContent = '✅ 提交答卷 · 查看分析';
+        document.getElementById('speedMarker').setAttribute('data-value', '');
+        document.getElementById('speedMarker').style.left = '0%';
+    }
+
+    resetBtn.addEventListener('click', function() {
+        resetTest();
+        loadPassage(currentLevel);
+        showToast('已重置，请重新开始');
+        document.getElementById('test').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // ==================== 返回顶部 & 返回首页 ====================
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+            toTop.classList.add('show');
+            floatHome.classList.add('show');
+        } else {
+            toTop.classList.remove('show');
+            floatHome.classList.remove('show');
+        }
+    }, { passive: true });
+    toTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ==================== 初始化 ====================
+    loadPassage(currentLevel);
+
+    console.log('%c阅读速度测试已就绪 %c| %c高级验光技师闫胜君工作室',
+        'font-weight:bold;color:#1a6dcc;', '', 'color:#1a6dcc;');
+    console.log('%c五档难度 · 阅读速度+理解力双重测评 · 支持键盘导航',
+        'color:#5a6c7d;font-size:12px;');
+})();
+</script>
+</body>
+</html>
