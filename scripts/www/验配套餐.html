@@ -240,10 +240,13 @@
 
   @media (max-width: 800px) {
     .a4-page { width: 100%; min-height: auto; padding: 16px 14px 24px; }
-    .feature-cards { grid-template-columns: 1fr; }
     .pricing-table { font-size: 12px; }
     .pricing-table thead th,
     .pricing-table tbody td { padding: 12px 8px; }
+  }
+  /* 手机端三列网格降为单列（平板竖屏保持一行三列） */
+  @media (max-width: 480px) {
+    .feature-cards { grid-template-columns: 1fr; }
   }
   .back-home {
     display: inline-flex;
@@ -263,7 +266,8 @@
 
   /* 底部翻页导航样式 */
   .page-nav {
-    display: flex;
+    display: grid;
+            grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
     gap: 15px;
@@ -292,7 +296,7 @@
     transform: translateY(-2px);
   }
   @media (max-width: 640px) {
-    .page-nav { flex-direction: column; gap: 12px; }
+    .page-nav { grid-template-columns: 1fr; gap: 12px; }
     .nav-btn { width: 100%; }
   }
 </style>
@@ -401,9 +405,9 @@
 
   <!-- 底部翻页导航 -->
   <div class="page-nav">
-    <a href="近视管理视觉训练.html" class="nav-btn">⬅ 前一页：近视管理视觉训练</a>
+    <a href="近视管理视觉训练.html" class="nav-btn">前一页：近视管理视觉训练</a>
     <a href="index.html" class="nav-btn">🏠 首页</a>
-    <a href="抖音超值套餐.html" class="nav-btn">后一页：抖音超值套餐 ➡</a>
+    <a href="抖音超值套餐.html" class="nav-btn">后一页：抖音超值套餐</a>
   </div>
 
 </div>
