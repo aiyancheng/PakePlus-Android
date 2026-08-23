@@ -491,8 +491,8 @@
 
   /* ========== 底部翻页导航 ========== */
   .page-nav{
-    display:flex;justify-content:space-between;align-items:center;
-    gap:15px;margin:30px 0;flex-wrap:wrap;
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:15px;margin:30px 0;
   }
   .nav-btn{
     display:inline-flex;align-items:center;justify-content:center;
@@ -505,8 +505,8 @@
   .nav-btn:hover{
     background-color:#0d4d9c;transform:translateY(-2px);
   }
-  @media(max-width:800px){
-    .page-nav{flex-direction:column;gap:12px;}
+  @media(max-width:480px){
+    .page-nav{grid-template-columns:1fr;gap:12px;}
     .nav-btn{width:100%;}
   }
 
@@ -549,7 +549,6 @@
     .principles{grid-template-columns:1fr 1fr}
     .plan-row{grid-template-columns:1fr}
     .note-grid{grid-template-columns:1fr}
-    .summary-banner{grid-template-columns:1fr 1fr}
     .sec-body{padding:var(--sp-5) var(--sp-4) var(--sp-6)}
     .sec-head{padding:var(--sp-4) var(--sp-5)}
     .sec-head h2{font-size:var(--fs-lg)}
@@ -768,6 +767,7 @@
               <th>周期</th>
               <th>标准版方案<span class="th-sub">30 分钟 / 课时</span></th>
               <th>进阶版方案<span class="th-sub">45 分钟 / 课时</span></th>
+              <th>家训软件</th>
             </tr>
           </thead>
           <tbody>
@@ -775,20 +775,23 @@
               <td><span class="lvl">月度卡</span></td>
               <td><span class="fee">1280 元</span></td>
               <td><span class="fee">1880 元</span></td>
+              <td><span class="fee">600 元</span></td>
             </tr>
             <tr>
               <td><span class="lvl">半年卡</span></td>
               <td><span class="fee">7200 元</span></td>
               <td><span class="fee">10200 元</span></td>
+              <td><span class="fee">3000 元</span></td>
             </tr>
             <tr class="highlight">
               <td><span class="lvl">年卡</span> <span class="row-badge">超值</span></td>
               <td><span class="fee">12800 元</span></td>
               <td><span class="fee">18800 元</span></td>
+              <td><span class="fee">5600 元</span></td>
             </tr>
             <tr>
               <td><span class="lvl">巩固期</span></td>
-              <td colspan="2"><span class="fee">3200 元</span> <small style="color:var(--muted);font-size:var(--fs-sm)">/ 96 课时（30 分钟 / 课时）</small></td>
+              <td colspan="3"><span class="fee">3200 元</span> <small style="color:var(--muted);font-size:var(--fs-sm)">/ 96 课时（30 分钟 / 课时）</small></td>
             </tr>
           </tbody>
         </table>
@@ -848,7 +851,7 @@
               <td><span class="fee">1200 元</span></td>
             </tr>
             <tr class="highlight">
-              <td><span class="lvl">24 课时 + 家训 3 个月</span> <span class="row-badge">推荐</span></td>
+              <td><span class="lvl">24 课时（40 分钟 / 课时）+ 家训软件 3 个月</span> <span class="row-badge">推荐</span></td>
               <td><span class="fee">2400 元</span></td>
             </tr>
             <tr>
@@ -856,7 +859,7 @@
               <td><span class="fee">2200 元</span></td>
             </tr>
             <tr class="highlight">
-              <td><span class="lvl">48 课时 + 家训 6 个月</span> <span class="row-badge">推荐</span></td>
+              <td><span class="lvl">48 课时（40 分钟 / 课时）+ 家训软件 6 个月</span> <span class="row-badge">推荐</span></td>
               <td><span class="fee">3980 元</span></td>
             </tr>
           </tbody>
@@ -874,9 +877,9 @@
 
   <!-- 底部翻页导航 -->
   <div class="page-nav">
-    <a href="鹰瞳.html" class="nav-btn">⬅ 前一页：鹰瞳PBM视康仪</a>
+    <a href="鹰瞳.html" class="nav-btn">前一页：鹰瞳PBM视康仪</a>
     <a href="index.html" class="nav-btn">🏠 首页</a>
-    <a href="1.html" class="nav-btn">后一页：了解近视 ➡</a>
+    <a href="1.html" class="nav-btn">后一页：了解近视</a>
   </div>
 
 </div>
