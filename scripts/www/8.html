@@ -224,7 +224,8 @@
 
   /* 底部翻页导航样式 */
   .page-nav {
-    display: flex;
+    display: grid;
+            grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
     gap: 15px;
@@ -252,8 +253,8 @@
     background-color: #0d4d9c;
     transform: translateY(-2px);
   }
-  @media (max-width: 800px) {
-    .page-nav { flex-direction: column; gap: 12px; }
+  @media (max-width: 480px) {
+    .page-nav { grid-template-columns: 1fr; gap: 12px; }
     .nav-btn { width: 100%; }
   }
 </style>
@@ -321,20 +322,11 @@
 
   </div>
 
-  <!-- ===== 页脚 ===== -->
-  <div class="footer">
-    <div class="clinic-name">零陵区爱眼城眼镜</div>
-    <div class="clinic-info">
-      湖南省永州市零陵区 · 师专附小对面<br>
-      专业近视管理 · 视觉训练 · 医学验光配镜
-    </div>
-  </div>
-
   <!-- 底部翻页导航 -->
   <div class="page-nav">
-    <a href="7.html" class="nav-btn">⬅ 前一页：视疲劳综合指南</a>
+    <a href="7.html" class="nav-btn">前一页：视疲劳综合指南</a>
     <a href="index.html" class="nav-btn">🏠 首页</a>
-    <a href="9.html" class="nav-btn">后一页：学习风格自测 ➡</a>
+    <a href="9.html" class="nav-btn">后一页：学习风格自测</a>
   </div>
 
 </div>
