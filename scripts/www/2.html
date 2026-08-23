@@ -487,6 +487,10 @@
         @media (max-width: 768px) {
             .footer-content { flex-direction: column; gap: 10px; text-align: center; }
             .disclaimer { text-align: center; }
+        }
+
+        /* 手机端三列网格降为单列 */
+        @media (max-width: 480px) {
             .eye-comparison-grid,
             .impact-grid {
                 grid-template-columns: 1fr;
@@ -495,7 +499,8 @@
 
         /* 底部翻页导航样式 */
         .page-nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -526,9 +531,9 @@
             transform: translateY(-2px);
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 480px) {
             .page-nav {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 12px;
             }
             .nav-btn {
@@ -730,9 +735,9 @@
 
         <!-- ====================== 新增：底部翻页导航 ====================== -->
         <div class="page-nav">
-            <a href="1.html" class="nav-btn">⬅ 前一页：了解近视</a>
+            <a href="1.html" class="nav-btn">前一页：了解近视</a>
             <a href="index.html" class="nav-btn">🏠 首页</a>
-            <a href="3.html" class="nav-btn">后一页：科学防控 ➡</a>
+            <a href="3.html" class="nav-btn">后一页：科学防控</a>
         </div>
         
         <footer>
