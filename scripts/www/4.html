@@ -328,7 +328,8 @@
         
         /* 底部翻页导航样式 */
         .page-nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -467,7 +468,6 @@
                 font-size: 1rem;
             }
             
-            .stats-grid,
             .function-grid,
             .recommendations {
                 grid-template-columns: 1fr;
@@ -494,10 +494,12 @@
                 bottom: 20px;
                 right: 20px;
             }
+        }
 
-            /* 竖屏导航适配 */
+        /* 手机端导航降为单列（平板竖屏保持一行三列） */
+        @media (max-width: 480px) {
             .page-nav {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 12px;
             }
             .nav-btn {
@@ -759,9 +761,9 @@
 
         <!-- 底部翻页导航 -->
         <div class="page-nav">
-            <a href="3.html" class="nav-btn">⬅ 前一页：科学防控</a>
+            <a href="3.html" class="nav-btn">前一页：科学防控</a>
             <a href="index.html" class="nav-btn">🏠 首页</a>
-            <a href="5.html" class="nav-btn">后一页：视力发育 ➡</a>
+            <a href="5.html" class="nav-btn">后一页：视力发育</a>
         </div>
         
         <footer>
