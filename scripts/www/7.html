@@ -204,7 +204,8 @@
 
         /* 底部翻页导航样式 */
         .page-nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -233,27 +234,29 @@
             transform: translateY(-2px);
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 480px) {
             .page-nav {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 12px;
             }
             .page-btn {
                 width: 100%;
             }
         }
-        
+
         @media (max-width: 768px) {
-            .card-container {
-                grid-template-columns: 1fr;
-            }
-            
             h1 {
                 font-size: 2rem;
             }
-            
+
             h2 {
                 font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-container {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -584,9 +587,9 @@
 
         <!-- 底部翻页导航 -->
         <div class="page-nav">
-            <a href="6.html" class="page-btn">⬅ 前一页：近视前期</a>
+            <a href="6.html" class="page-btn">前一页：近视前期</a>
             <a href="index.html" class="page-btn">🏠 首页</a>
-            <a href="8.html" class="page-btn">后一页：眼镜套餐 ➡</a>
+            <a href="8.html" class="page-btn">后一页：眼镜套餐</a>
         </div>
         
 
