@@ -381,33 +381,11 @@
             margin-top: 12px;
             font-size: 14px;
         }
-        
-        .process-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 25px;
-            gap: 10px;
-        }
-        
-        .process-step {
-            flex: 1;
-            min-width: 180px;
-            margin: 5px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .step-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        
+
         /* 底部翻页导航样式 */
         .page-nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -487,7 +465,6 @@
             }
             .header h1 { font-size: 2.8rem; }
             .bar-chart { height: 280px; }
-            .process-step { min-width: 220px; }
         }
 
         /* 竖屏：1200px */
@@ -495,20 +472,12 @@
             body { padding: 20px; }
             .header h1 { font-size: 2.4rem; }
             .bar-chart { height: 260px; }
-            .process-steps { flex-direction: row; }
         }
 
         /* 通用平板小屏适配 */
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.9rem;
-            }
-            .process-steps {
-                flex-direction: column;
-            }
-            .process-step {
-                width: 100%;
-                margin-bottom: 12px;
             }
             .bar-item {
                 width: 30%;
@@ -523,16 +492,16 @@
                 bottom: 20px;
                 right: 20px;
             }
-            .nav-btn {
-                width: 100%;
-            }
-            .page-nav {
-                flex-direction: column;
-                gap: 12px;
-            }
         }
 
         @media (max-width: 480px) {
+            .page-nav {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .nav-btn {
+                width: 100%;
+            }
             .header h1 {
                 font-size: 1.6rem;
             }
@@ -757,34 +726,10 @@
     
     <!-- 不良用眼习惯演化流程图 -->
     <section class="flowchart-section">
-        <h2 class="flowchart-title">不良用眼习惯导致视力恶化</h2>
-        
         <div class="flowchart-image-container">
             <img src="images/1111.jpg" alt="不良用眼习惯导致视力恶化流程图：展示了从视疲劳到假性近视，再到真性近视，最后到近视加重的四个阶段。第一阶段视疲劳表现为眼睛酸痛；第二阶段假性近视为暂时性视力下降；第三阶段真性近视需要佩戴眼镜矫正；第四阶段近视加深到300度，可能需要滴眼液和眼镜等干预措施。" class="flowchart-image">
         </div>
-        
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-title">第一阶段：视疲劳</div>
-                <p>长时间近距离用眼，眼睛调节肌肉持续紧张，出现眼睛干涩、酸痛等症状。</p>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-title">第二阶段：假性近视</div>
-                <p>眼睛调节功能紊乱，出现暂时性视力下降，通过休息和治疗可以恢复。</p>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-title">第三阶段：真性近视</div>
-                <p>眼轴变长，光线聚焦在视网膜前，形成不可逆的近视，需要配戴眼镜矫正。</p>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-title">第四阶段：近视加深</div>
-                <p>近视度数不断加深，可能发展为高度近视，增加视网膜脱落、青光眼等眼病风险。</p>
-            </div>
-        </div>
-        
+
         <p style="margin-top: 20px; font-style: italic;">预防胜于治疗，养成良好的用眼习惯是避免视力恶化的关键。</p>
     </section>
 
@@ -792,13 +737,9 @@
     <div class="page-nav">
 
         <a href="index.html" class="nav-btn">🏠 首页</a>
-        <a href="2.html" class="nav-btn">后一页：预测与危害 ➡</a>
+        <a href="2.html" class="nav-btn">后一页：预测与危害</a>
     </div>
-    
-    <!-- 底部呼吁语 -->
-    <footer class="footer">
-        科学用眼，守护光明未来！
-    </footer>
+
 
   
 
