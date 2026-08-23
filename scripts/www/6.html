@@ -460,7 +460,8 @@
 
         /* ========== 底部翻页导航样式 ========== */
         .page-nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -491,10 +492,10 @@
             transform: translateY(-2px);
         }
 
-        /* 手机竖屏适配 */
-        @media (max-width: 800px) {
+        /* 手机竖屏适配（平板竖屏保持一行三列） */
+        @media (max-width: 480px) {
             .page-nav {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 12px;
             }
             .nav-btn {
@@ -1103,9 +1104,9 @@
 
             <!-- ========== 底部翻页导航 ========== -->
             <div class="page-nav">
-                <a href="5.html" class="nav-btn">⬅ 前一页：视力发育</a>
+                <a href="5.html" class="nav-btn">前一页：视力发育</a>
                 <a href="index.html" class="nav-btn">🏠 首页</a>
-                <a href="7.html" class="nav-btn">后一页：视疲劳 ➡</a>
+                <a href="7.html" class="nav-btn">后一页：视疲劳</a>
             </div>
         </div>
         
