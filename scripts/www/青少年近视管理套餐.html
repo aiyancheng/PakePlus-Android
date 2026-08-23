@@ -284,7 +284,8 @@
 
   /* 底部翻页导航样式 */
   .page-nav {
-    display: flex;
+    display: grid;
+            grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
     gap: 15px;
@@ -313,7 +314,7 @@
     transform: translateY(-2px);
   }
   @media (max-width: 640px) {
-    .page-nav { flex-direction: column; gap: 12px; }
+    .page-nav { grid-template-columns: 1fr; gap: 12px; }
     .nav-btn { width: 100%; }
   }
 </style>
@@ -464,12 +465,12 @@
       <div class="pkg-num">4</div>
       <div class="pkg-info">
         <div class="pkg-name">柯学优 1.55 DOT 点扩散镜片</div>
-        <div class="pkg-detail">镜片建议零售价 ¥3,680 ＋ ¥398 镜架任选</div>
+        <div class="pkg-detail">镜片建议零售价 ¥3,180 ＋ ¥398 镜架任选</div>
       </div>
       <div class="pkg-price-box">
         <div class="pkg-price-label">特惠套餐价</div>
         <div class="pkg-price"><span class="unit">¥</span>2,280</div>
-        <div class="pkg-orig">门市约 ¥4,078</div>
+        <div class="pkg-orig">门市约 ¥3,578</div>
       </div>
     </div>
     <div class="upgrade-list">
@@ -494,9 +495,9 @@
 
   <!-- 底部翻页导航 -->
   <div class="page-nav">
-    <a href="8.html" class="nav-btn">⬅ 前一页：尊享套餐</a>
+    <a href="8.html" class="nav-btn">前一页：尊享套餐</a>
     <a href="index.html" class="nav-btn">🏠 首页</a>
-    <a href="近视管理视觉训练.html" class="nav-btn">后一页：近视管理视觉训练 ➡</a>
+    <a href="近视管理视觉训练.html" class="nav-btn">后一页：近视管理视觉训练</a>
   </div>
 
 </div>
