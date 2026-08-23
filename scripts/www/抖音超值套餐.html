@@ -311,7 +311,8 @@
 
   /* 底部翻页导航样式 */
   .page-nav {
-    display: flex;
+    display: grid;
+            grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
     gap: 15px;
@@ -340,7 +341,7 @@
     transform: translateY(-2px);
   }
   @media (max-width: 640px) {
-    .page-nav { flex-direction: column; gap: 12px; }
+    .page-nav { grid-template-columns: 1fr; gap: 12px; }
     .nav-btn { width: 100%; }
   }
 </style>
@@ -428,9 +429,9 @@
 
   <!-- 底部翻页导航 -->
   <div class="page-nav">
-    <a href="验配套餐.html" class="nav-btn">⬅ 前一页：验配套餐</a>
+    <a href="验配套餐.html" class="nav-btn">前一页：验配套餐</a>
     <a href="index.html" class="nav-btn">🏠 首页</a>
-    <a href="8.html" class="nav-btn">后一页：尊享套餐 ➡</a>
+    <a href="8.html" class="nav-btn">后一页：尊享套餐</a>
   </div>
 
 </div>
