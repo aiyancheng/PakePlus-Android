@@ -770,7 +770,6 @@
         }
         @media (max-width: 768px) {
             .cert-wrap { grid-template-columns: 1fr; }
-            .three-mech { grid-template-columns: 1fr; }
             .steps-wrap { grid-template-columns: 1fr; }
             .price-wrap { grid-template-columns: 1fr; }
             .crowd-wrap { grid-template-columns: 1fr; }
@@ -781,13 +780,19 @@
             .banner { padding: 32px 20px; }
             .section { padding: 24px 20px; }
             html { font-size: 15px; }
-            .page-nav { flex-direction: column; gap: 12px; }
+        }
+
+        /* 手机端三列网格降为单列（平板竖屏保持一行三列） */
+        @media (max-width: 480px) {
+            .three-mech { grid-template-columns: 1fr; }
+            .page-nav { grid-template-columns: 1fr; gap: 12px; }
             .nav-btn { width: 100%; }
         }
 
         /* ====== 底部翻页导航 ====== */
         .page-nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -1440,9 +1445,9 @@
 
     <!-- 底部翻页导航 -->
     <div class="page-nav">
-        <a href="阅读速度测试.html" class="nav-btn">⬅ 前一页：阅读速度测试</a>
+        <a href="阅读速度测试.html" class="nav-btn">前一页：阅读速度测试</a>
         <a href="index.html" class="nav-btn">🏠 首页</a>
-        <a href="视觉训练收费标准.html" class="nav-btn">后一页：视觉训练收费 ➡</a>
+        <a href="视觉训练收费标准.html" class="nav-btn">后一页：视觉训练收费</a>
     </div>
 
 </div>
