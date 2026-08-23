@@ -246,7 +246,8 @@
         
         /* 底部翻页导航 */
         .page-nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: space-between;
             align-items: center;
             gap: 15px;
@@ -277,9 +278,9 @@
             transform: translateY(-2px);
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 480px) {
             .page-nav {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 12px;
             }
             .nav-btn {
@@ -294,23 +295,25 @@
         }
 
         @media (max-width: 768px) {
-            .solution-grid {
-                grid-template-columns: 1fr;
-            }
-            
             h1 {
                 font-size: 2rem;
             }
-            
+
             .principle-card, .checklist, .summary {
                 padding: 20px;
             }
-            
+
             .back-to-home {
                 width: 50px;
                 height: 50px;
                 bottom: 20px;
                 right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
             }
         }
     
@@ -606,9 +609,9 @@
         
         <!-- 底部翻页导航 -->
         <div class="page-nav">
-            <a href="2.html" class="nav-btn">⬅ 前一页：预测与危害</a>
+            <a href="2.html" class="nav-btn">前一页：预测与危害</a>
             <a href="index.html" class="nav-btn">🏠 首页</a>
-            <a href="4.html" class="nav-btn">后一页：视功能异常 ➡</a>
+            <a href="4.html" class="nav-btn">后一页：视功能异常</a>
         </div>
     </div>
 
