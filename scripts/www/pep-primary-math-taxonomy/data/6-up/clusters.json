@@ -1,0 +1,60 @@
+{
+  "version": "pep-primary-math-6up-v2",
+  "clusterCount": 6,
+  "clusters": [
+    {
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "subdomain": "分数乘除法",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6u_001", "mt_g6u_002", "mt_g6u_003", "mt_g6u_004", "mt_g6u_005", "mt_g6u_006", "mt_g6u_007", "mt_g6u_010", "mt_g6u_011", "mt_g6u_012", "mt_g6u_013", "mt_g6u_035"],
+      "summary": "系统学习分数乘除法：从分数乘整数（加法简便）扩展到分数乘分数（面积模型），建立一个数乘分数的意义；引入倒数概念，将分数除法统一转化为乘倒数；掌握乘积与商和被乘数/被除数大小关系；能解决稍复杂的分数应用题（逆向求整体、工程问题）。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "subdomain": "比",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6u_015", "mt_g6u_016", "mt_g6u_017", "mt_g6u_036"],
+      "summary": "建立比的概念，理解比与除法、分数的对应关系（a:b=a÷b=a/b）；掌握比的基本性质和化简比的方法；能运用按比例分配解决实际问题；为后续比例学习做铺垫。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "subdomain": "圆",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6u_018", "mt_g6u_019", "mt_g6u_020", "mt_g6u_021", "mt_g6u_022", "mt_g6u_023", "mt_g6u_024", "mt_g6u_037", "mt_g6u_038"],
+      "summary": "系统认识圆：从圆心半径直径出发，通过实验发现圆周率π，建立C=2πr；通过割圆拼长方形推导S=πr²；认识扇形及圆心角；综合解决组合面积和跑道起跑线等实际问题；了解祖冲之、刘徽数学史。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "subdomain": "位置与方向",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6u_008", "mt_g6u_009"],
+      "summary": "用方向角加距离两要素唯一确定一个点的位置；能在图与文字之间双向转化；能处理多段转折的复杂路线描述，为中学坐标系学习铺垫。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "subdomain": "百分数",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6u_025", "mt_g6u_026", "mt_g6u_027", "mt_g6u_028", "mt_g6u_029"],
+      "summary": "引入百分数的概念，掌握与小数、分数的互化；能解决三类基本应用（求百分之几、增减后总量、增减了多少）；理解连续百分比变化的非对称性；认识不同类型百分数的合理取值范围。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "统计与概率",
+      "subdomain": "统计图",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6u_030", "mt_g6u_031"],
+      "summary": "认识扇形统计图（整圆=总体，扇形大小=百分比）；系统比较三种统计图的特点和适用场景；能根据数据类型和分析目的选择合适的统计图。"
+    }
+  ]
+}
