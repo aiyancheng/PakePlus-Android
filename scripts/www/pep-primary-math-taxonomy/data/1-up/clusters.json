@@ -1,0 +1,46 @@
+{
+  "version": "pep-primary-math-1up-v2",
+  "clusterCount": 5,
+  "clusters": [
+    {
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "从1~5扩展到6~10再到11~20，建立数的概念、数序、比较大小，引入位值思想（十位与个位）。核心里程碑：理解10个一是1个十，会用计数器表示两位数。",
+      "topicIds": ["mt_g1u_001","mt_g1u_002","mt_g1u_003","mt_g1u_004","mt_g1u_005","mt_g1u_006","mt_g1u_007","mt_g1u_008","mt_g1u_009","mt_g1u_010","mt_g1u_028","mt_g1u_029"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "从5以内加减法到10以内加减法，再到20以内进位加法（凑十法）。逐步扩大运算范围，引入加法交换律，形成完整的系统算法表。凑十法是本册核心算法策略。",
+      "topicIds": ["mt_g1u_011","mt_g1u_012","mt_g1u_013","mt_g1u_014","mt_g1u_015","mt_g1u_016","mt_g1u_017","mt_g1u_018","mt_g1u_019","mt_g1u_020","mt_g1u_021","mt_g1u_022"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "图形与几何",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "认识长方体、正方体、圆柱、球四种立体图形，了解其特征和滚动/堆叠性质，并通过拼组探索图形组合。同时认识前后左右方向词。",
+      "topicIds": ["mt_g1u_023","mt_g1u_024","mt_g1u_027"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数量关系",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "理解加减法的实际意义（合并与去掉），建立用加减法解决实际问题的模型意识，掌握阅读理解—分析解答—回顾反思三步解题法。",
+      "topicIds": ["mt_g1u_025","mt_g1u_026","mt_g1u_030"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "综合复习",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "全册综合复习，整理数与运算、图形认识、数量关系的知识体系，进行自我评价。",
+      "topicIds": ["mt_g1u_021","mt_g1u_022"]
+    }
+  ]
+}
