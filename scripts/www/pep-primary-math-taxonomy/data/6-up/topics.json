@@ -1,0 +1,690 @@
+{
+  "version": "pep-primary-math-6up-v2",
+  "topicCount": 38,
+  "topics": [
+    {
+      "id": "mt_g6u_001",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数乘整数的意义",
+      "description": "理解分数乘整数的意义：分数乘整数是分数加法的简便运算，表示几个相同分数相加的和。如2/9×3=2/9+2/9+2/9。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能用分数加法解释分数乘整数的意义",
+        "能正确列出分数乘整数的算式并说明含义",
+        "能将重复加法与乘法联系起来"
+      ],
+      "assessmentPrompt": "{{name}}能用加法说明2/9×3的意义，并说出计算结果吗？",
+      "standards": ["pep-math-2022:6上.1.1"]
+    },
+    {
+      "id": "mt_g6u_002",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数乘整数的计算",
+      "description": "掌握分数乘整数的计算方法：分子与整数相乘的积作分子，分母不变；计算前可先约分再相乘，使运算简便。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能正确计算分数乘整数并化简结果",
+        "能在计算前进行约分以简化计算",
+        "能运用分数乘整数解决实际问题"
+      ],
+      "assessmentPrompt": "{{name}}能计算3/4×4，并说明为什么可以先约分再乘吗？",
+      "standards": ["pep-math-2022:6上.1.2"]
+    },
+    {
+      "id": "mt_g6u_003",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "一个数乘分数的意义",
+      "description": "理解一个数乘分数的意义：一个数乘几分之几，表示求这个数的几分之几是多少。如12×1/4表示求12的四分之一是多少。通过折纸或面积图直观建立这一含义。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能说出一个数乘分数的意义",
+        "能用线段图或面积图直观表示乘分数的意义",
+        "能区分分数乘整数与整数乘分数的含义"
+      ],
+      "assessmentPrompt": "{{name}}能说明12×3/4表示什么意思，并用图形表示吗？",
+      "standards": ["pep-math-2022:6上.1.3"]
+    },
+    {
+      "id": "mt_g6u_004",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数乘分数的计算",
+      "description": "掌握分数乘分数的计算方法：分子相乘的积作分子，分母相乘的积作分母，即a/b×c/d=(a×c)/(b×d)；可先进行交叉约分再计算，使结果化简更简便。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能正确计算分数乘分数",
+        "能用折纸或画图验证计算结果",
+        "能进行交叉约分使计算简便"
+      ],
+      "assessmentPrompt": "{{name}}能计算3/4×2/3，并说明是怎么约分的吗？",
+      "standards": ["pep-math-2022:6上.1.4"]
+    },
+    {
+      "id": "mt_g6u_005",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数乘法的运算律应用",
+      "description": "理解乘法的交换律、结合律、分配律同样适用于分数乘法；能识别可利用运算律简化的计算场景，并正确运用运算律进行简便计算。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能举例说明三条乘法运算律对分数成立",
+        "能用运算律进行分数混合运算的简便计算",
+        "能识别可用运算律简化的计算场景"
+      ],
+      "assessmentPrompt": "{{name}}能用乘法分配律计算(1/2+1/3)×6吗？",
+      "standards": ["pep-math-2022:6上.1.5"]
+    },
+    {
+      "id": "mt_g6u_006",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数乘法应用题",
+      "description": "能用分数乘法解决实际问题，包括求一个数的几分之几是多少、连续求一个数的几分之几（分数的分数）、比某量多/少几分之几等稍复杂的应用题。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能解决一步分数乘法应用题",
+        "能解决两步或多步分数乘法应用题",
+        "能解决'比某量多/少几分之几'类型的问题"
+      ],
+      "assessmentPrompt": "{{name}}能解决：一块布料长5/6米，剪去了它的3/5，还剩多少米？",
+      "standards": ["pep-math-2022:6上.1.6"]
+    },
+    {
+      "id": "mt_g6u_007",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "乘积与被乘数大小的比较规律",
+      "description": "理解乘法中乘数大小对积的影响：乘大于1的数，积大于被乘数；乘等于1，积等于被乘数；乘小于1的数，积小于被乘数。此规律适用于分数乘法，可用于估算和检验。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能不计算直接判断乘积与被乘数的大小关系",
+        "能解释这一规律的原因",
+        "能用此规律检验计算结果的合理性"
+      ],
+      "assessmentPrompt": "{{name}}能不计算，直接比较3/4×5/6与3/4的大小，并说明理由吗？",
+      "standards": ["pep-math-2022:6上.1.7"]
+    },
+    {
+      "id": "mt_g6u_008",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "方向角表示位置",
+      "description": "用'北偏东/西X°'或'南偏东/西X°'的方向角结合距离确定一个点的位置；理解单独知道方向或单独知道距离都不能唯一确定位置，需要两个要素共同确定。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.65,
+      "evidence": [
+        "能用方向角和距离描述一个点的位置",
+        "能在平面图上标出指定方向角和距离的点",
+        "能读平面图，说出各地点的方向和距离"
+      ],
+      "assessmentPrompt": "{{name}}能在方向图上标出'北偏东30°，距中心600km'的位置吗？",
+      "standards": ["pep-math-2022:6上.2.1"]
+    },
+    {
+      "id": "mt_g6u_009",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "描述和绘制运动路线",
+      "description": "能根据方向角和距离信息绘制运动路线图（文字→图）；能读懂路线图并用方向角、距离描述路线（图→文字）；能处理含多段转折的路线。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.6,
+      "evidence": [
+        "能由路线描述文字绘制示意图",
+        "能由示意图描述路线（方向+距离）",
+        "能处理含多段转折的路线"
+      ],
+      "assessmentPrompt": "{{name}}能根据'从A出发，向北偏东45°走5km到B，再向东走3km到C'画出路线图吗？",
+      "standards": ["pep-math-2022:6上.2.2"]
+    },
+    {
+      "id": "mt_g6u_010",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "倒数的认识",
+      "description": "理解倒数的概念：乘积是1的两个数互为倒数；掌握求一个数倒数的方法（分子分母交换位置）；理解1的倒数是1、0没有倒数的特殊情况。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能判断两个数是否互为倒数",
+        "能求一个分数（整数、小数）的倒数",
+        "能解释为什么0没有倒数"
+      ],
+      "assessmentPrompt": "{{name}}能说出3/4的倒数是什么，并验证它们的乘积吗？",
+      "standards": ["pep-math-2022:6上.3.1"]
+    },
+    {
+      "id": "mt_g6u_011",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数除以整数的计算",
+      "description": "掌握分数除以整数的两种方法：当分子能被整除时，分子直接除以整数；一般方法是乘以该整数的倒数，即a/b÷n=a/b×1/n。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能用两种方法计算分数除以整数",
+        "能选择更简便的方法",
+        "能正确化简计算结果"
+      ],
+      "assessmentPrompt": "{{name}}能用两种方法计算6/7÷3，并比较哪种更简便吗？",
+      "standards": ["pep-math-2022:6上.3.2"]
+    },
+    {
+      "id": "mt_g6u_012",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "一个数除以分数的计算",
+      "description": "掌握一个数除以分数等于乘以该分数倒数的规则：a÷(b/c)=a×(c/b)；能用数线图推导这一规则；适用于整数除以分数和分数除以分数。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能用数线图解释为什么除以分数等于乘以倒数",
+        "能正确计算整数除以分数",
+        "能正确计算分数除以分数"
+      ],
+      "assessmentPrompt": "{{name}}能用数线图解释2÷2/3=3的道理，并计算3/4÷3/8吗？",
+      "standards": ["pep-math-2022:6上.3.3"]
+    },
+    {
+      "id": "mt_g6u_013",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "商与被除数大小的关系",
+      "description": "理解分数除法中除数大小对商的影响：除数大于1时商小于被除数；除数等于1时商等于被除数；除数小于1时商大于被除数。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能不计算直接判断商与被除数的大小关系",
+        "能用具体例子验证这一规律",
+        "能运用此规律检验计算结果的合理性"
+      ],
+      "assessmentPrompt": "{{name}}能不计算直接判断：3/4÷5/6的商比3/4大还是小？为什么？",
+      "standards": ["pep-math-2022:6上.3.4"]
+    },
+    {
+      "id": "mt_g6u_014",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数除法应用题",
+      "description": "能用分数除法（或方程）解决实际问题，包括已知一个数的几分之几是多少求原数（逆向分数问题）、工程类问题（假设整体为1的策略）；能对比方程解法和算术解法。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能用方程或算术方法解决'已知部分求整体'类问题",
+        "能解决工程类分数应用题（甲乙合作问题）",
+        "能灵活选择方程解法或算术解法"
+      ],
+      "assessmentPrompt": "{{name}}能解决：一条绳子的3/5是12米，这条绳子共有多少米？（用两种方法）",
+      "standards": ["pep-math-2022:6上.3.5"]
+    },
+    {
+      "id": "mt_g6u_015",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "比的意义和各部分名称",
+      "description": "理解比的意义：两个数的比表示两个数相除；掌握比的记法（a:b）和各部分名称（前项、比号、后项、比值=前项÷后项）；理解比与除法、分数的对应关系。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能说出比的各部分名称",
+        "能说明比与除法、分数的对应关系",
+        "能区分比值和比的概念"
+      ],
+      "assessmentPrompt": "{{name}}能说出3:4中各部分的名称，并说明与3÷4和3/4的关系吗？",
+      "standards": ["pep-math-2022:6上.4.1"]
+    },
+    {
+      "id": "mt_g6u_016",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "比的基本性质与化简比",
+      "description": "理解比的基本性质：前项和后项同时乘或除以相同的数（0除外），比值不变；掌握将整数比、分数比、小数比化成最简整数比的方法。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能化简整数比",
+        "能化简含分数或小数的比",
+        "能说明化简比与分数基本性质的联系"
+      ],
+      "assessmentPrompt": "{{name}}能化简0.75:1.5和1/2:3/4吗？",
+      "standards": ["pep-math-2022:6上.4.2"]
+    },
+    {
+      "id": "mt_g6u_017",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "按比例分配",
+      "description": "能根据给定的比将总量分成各部分，掌握两种方法：等份法（总量÷总份数×各部分份数）和分数法（各部分份数/总份数×总量）；能解决三量连比的分配问题。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能用两种方法解决按比例分配问题",
+        "能解决三量连比的分配问题",
+        "能解决实际情境中的按比分配问题"
+      ],
+      "assessmentPrompt": "{{name}}能按3:2的比将100分配给两人，用两种方法解决吗？",
+      "standards": ["pep-math-2022:6上.4.3"]
+    },
+    {
+      "id": "mt_g6u_018",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆的认识：圆心、半径、直径",
+      "description": "认识圆的各部分名称（圆心O、半径r、直径d）；通过动手操作发现：同圆内所有半径相等、所有直径相等；掌握直径与半径的关系d=2r；理解圆是轴对称图形。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能说出圆心、半径、直径的定义",
+        "能用圆规画指定大小的圆",
+        "能说明圆的轴对称性及对称轴的特征"
+      ],
+      "assessmentPrompt": "{{name}}能说出一个圆有几条半径、几条直径，并说明半径和直径的关系吗？",
+      "standards": ["pep-math-2022:6上.5.1"]
+    },
+    {
+      "id": "mt_g6u_019",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆周率π的认识",
+      "description": "通过实验测量多个圆的周长与直径，发现圆周率π的含义：任意圆的周长与直径的比值恒为π≈3.14159...（无限不循环小数）；了解祖冲之的历史贡献。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能说明π的定义（周长÷直径=常数）",
+        "能说明π是无限不循环小数，不等于3.14",
+        "能说出祖冲之在圆周率研究上的贡献"
+      ],
+      "assessmentPrompt": "{{name}}能解释为什么用不同大小的圆测量，周长÷直径的比值总是相同的吗？",
+      "standards": ["pep-math-2022:6上.5.2"]
+    },
+    {
+      "id": "mt_g6u_020",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆的周长公式与计算",
+      "description": "掌握圆的周长公式C=πd=2πr；能根据已知半径或直径计算周长；能由周长反求半径或直径；能解决含圆周长的实际问题（车轮行程等）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能正确运用公式C=2πr计算圆的周长",
+        "能由周长反求半径或直径",
+        "能解决结合圆周长的实际应用问题"
+      ],
+      "assessmentPrompt": "{{name}}能计算半径为5cm的圆的周长，并解释公式的来源吗？",
+      "standards": ["pep-math-2022:6上.5.3"]
+    },
+    {
+      "id": "mt_g6u_021",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆的面积公式推导与计算",
+      "description": "理解圆面积公式S=πr²的推导过程（割圆拼长方形法：等份越多，拼成的图形越接近长方形，长≈πr，宽≈r）；能正确计算圆面积；能解决圆环等组合图形面积问题。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能说明割圆拼长方形的推导过程",
+        "能正确运用S=πr²计算圆的面积",
+        "能计算圆环（S大圆-S小圆）的面积"
+      ],
+      "assessmentPrompt": "{{name}}能用割圆的方法说明为什么圆面积公式是πr²，并计算半径3cm的圆的面积吗？",
+      "standards": ["pep-math-2022:6上.5.4"]
+    },
+    {
+      "id": "mt_g6u_022",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆形组合图形的面积",
+      "description": "能计算含圆的组合图形面积，包括外方内圆（正方形面积-圆面积）、外圆内方（圆面积-正方形面积）等；能推导通用公式如：外方内圆面积≈0.86r²。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能正确计算圆环面积",
+        "能计算外方内圆或外圆内方的面积差",
+        "能建立组合图形面积的通用公式"
+      ],
+      "assessmentPrompt": "{{name}}能计算边长等于直径的正方形与其内切圆之间的面积差吗？",
+      "standards": ["pep-math-2022:6上.5.5"]
+    },
+    {
+      "id": "mt_g6u_023",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "扇形的认识",
+      "description": "认识弧、扇形、圆心角的概念；理解扇形的大小与圆心角的大小相关；能辨认半圆（圆心角180°）和四分之一圆（90°）等特殊扇形。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.65,
+      "evidence": [
+        "能说出弧、扇形、圆心角的定义",
+        "能辨认实物中的扇形",
+        "能画出指定圆心角大小的扇形"
+      ],
+      "assessmentPrompt": "{{name}}能说出扇形与圆心角的关系，并画一个圆心角为60°的扇形吗？",
+      "standards": ["pep-math-2022:6上.5.6"]
+    },
+    {
+      "id": "mt_g6u_024",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "综合实践",
+      "name": "确定起跑线的数学建模",
+      "description": "综合运用圆周长知识建立标准跑道起跑线问题的数学模型：各跑道直道长度相同，起跑线差距只取决于两端半圆的周长差，相邻跑道差值=2π×跑道宽≈7.85m。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.55,
+      "evidence": [
+        "能建立标准跑道的数学模型",
+        "能计算相邻跑道的起跑线差距",
+        "能解释为什么外圈运动员需要提前起跑"
+      ],
+      "assessmentPrompt": "{{name}}能说明标准跑道中相邻两条跑道的起跑线为什么要错开约7.85米吗？",
+      "standards": ["pep-math-2022:6上.6.1"]
+    },
+    {
+      "id": "mt_g6u_025",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "百分数的意义",
+      "description": "理解百分数（百分率/百分比）的含义：表示一个数是另一个数的百分之多少；理解百分数的写法和读法；能说明百分数只表示两量的比率关系而不表示具体量。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能读写百分数",
+        "能解释百分数的含义",
+        "能区分百分数与分数的本质区别（百分数不表示具体量）"
+      ],
+      "assessmentPrompt": "{{name}}能说明65%和65/100的联系与区别吗？",
+      "standards": ["pep-math-2022:6上.7.1"]
+    },
+    {
+      "id": "mt_g6u_026",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "百分数、小数、分数的互化",
+      "description": "掌握百分数与小数互化（小数点移动两位）；掌握百分数与分数互化；能对不能整除的情况保留指定位数；理解0.6、3/5、60%是同一比值的三种表示形式。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能将小数化为百分数",
+        "能将分数化为百分数（需计算时保留三位小数）",
+        "能将百分数化为最简分数或小数"
+      ],
+      "assessmentPrompt": "{{name}}能把3/8和0.625分别化成百分数吗？",
+      "standards": ["pep-math-2022:6上.7.2"]
+    },
+    {
+      "id": "mt_g6u_027",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "百分数的基本计算",
+      "description": "能解决百分数的三类基本计算问题：求一个数的百分之几（乘法）、求一个数是另一个数的百分之几（除法）、求增加或减少了百分之多少；掌握常用百分率的计算公式（命中率、合格率、出勤率等）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能计算某量的百分之几是多少",
+        "能计算两数之间的百分率",
+        "能计算增加或减少了百分之多少"
+      ],
+      "assessmentPrompt": "{{name}}能解决：750件商品中合格品720件，合格率是多少？",
+      "standards": ["pep-math-2022:6上.7.3"]
+    },
+    {
+      "id": "mt_g6u_028",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "百分数增减的综合应用",
+      "description": "能解决含百分数增减的复杂实际问题：增加某百分比后的总量=原量×(1+百分比)；连续百分比变化中基数不同导致结果不对称（先降20%再涨20%不等于原价，减少4%）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能用1+百分比的方法计算增加后的总量",
+        "能分析连续百分比变化中基数不同的影响",
+        "能正确区分'增加了百分之几'和'增加到百分之几'"
+      ],
+      "assessmentPrompt": "{{name}}能解释为什么一件商品先降价20%再涨价20%，最终价格不等于原价吗？",
+      "standards": ["pep-math-2022:6上.7.4"]
+    },
+    {
+      "id": "mt_g6u_029",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "百分数的取值范围",
+      "description": "理解不同类型百分数的合理范围：表示增长率、倍数关系的百分数可超过100%；表示比例、概率的百分数（合格率、出勤率、发芽率等）不能超过100%。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.6,
+      "evidence": [
+        "能举例说明哪类百分数可以超过100%",
+        "能举例说明哪类百分数不能超过100%",
+        "能分析实际问题中百分数的合理性"
+      ],
+      "assessmentPrompt": "{{name}}能解释为什么'出勤率可以是120%'这句话是错误的吗？",
+      "standards": ["pep-math-2022:6上.7.5"]
+    },
+    {
+      "id": "mt_g6u_030",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "统计与概率",
+      "name": "扇形统计图的认识与制作",
+      "description": "理解扇形统计图的特点：整圆代表总体，各扇形大小与对应百分比成正比，直观显示各部分占总体的比例关系；能制作简单的扇形统计图（先算百分比，再用量角器画扇形）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能读懂扇形统计图并回答问题",
+        "能说明扇形统计图与条形、折线统计图的适用场景",
+        "能根据百分比数据制作扇形统计图"
+      ],
+      "assessmentPrompt": "{{name}}能根据'喜欢乒乓球30%，足球20%，跑步50%'的数据画出扇形统计图吗？",
+      "standards": ["pep-math-2022:6上.8.1"]
+    },
+    {
+      "id": "mt_g6u_031",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "统计与概率",
+      "name": "三种统计图的比较与选择",
+      "description": "系统比较三种统计图的特点和适用场景：条形统计图（比较各类别数量大小）、折线统计图（反映数量随时间的变化趋势）、扇形统计图（显示各部分占总体的百分比）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能根据数据类型和分析目的选择合适的统计图",
+        "能说明三种统计图各自的优点和局限",
+        "能从统计图中提取有效信息并分析"
+      ],
+      "assessmentPrompt": "{{name}}能说明：表示一年12个月销售额变化趋势，应选哪种统计图？为什么？",
+      "standards": ["pep-math-2022:6上.8.2"]
+    },
+    {
+      "id": "mt_g6u_032",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "数形结合：奇数求和的图形规律",
+      "description": "通过图形发现并理解规律：前n个连续奇数之和等于n²（1+3+5+...+(2n-1)=n²）；能用正方形添加L形的方式直观验证这一规律，体会数形结合思想。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.6,
+      "evidence": [
+        "能发现奇数求和与完全平方数的规律",
+        "能用正方形图形验证这一规律",
+        "能用规律计算前n个奇数的和"
+      ],
+      "assessmentPrompt": "{{name}}能用图形说明为什么1+3+5+7=4²吗？",
+      "standards": ["pep-math-2022:6上.10.1"]
+    },
+    {
+      "id": "mt_g6u_033",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "数形结合：无限递减分数的极限规律",
+      "description": "通过图形理解1/2+1/4+1/8+...的无限递减分数之和趋近于1的规律；体会无限逼近的数学思想方法，认识到有限操作无法达到极限值，但可以无限接近。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.55,
+      "evidence": [
+        "能用图形表示无限递减分数的累加过程",
+        "能说明为什么这些分数之和趋近于1",
+        "能体会无限逼近这一数学思想方法"
+      ],
+      "assessmentPrompt": "{{name}}能用线段图说明1/2+1/4+1/8+...为什么越来越接近1吗？",
+      "standards": ["pep-math-2022:6上.10.2"]
+    },
+    {
+      "id": "mt_g6u_034",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "综合实践",
+      "name": "节约用水的数据统计",
+      "description": "通过测量水龙头漏水量并制作统计图，计算一天和一年的水资源浪费量；综合运用小数乘法、单位换算（毫升→升→吨）和百分数知识解决实际问题。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.45,
+      "evidence": [
+        "能收集数据并制作条形统计图",
+        "能计算年漏水量并与实际用水量对比",
+        "能用百分数表示节水措施的效果"
+      ],
+      "assessmentPrompt": "{{name}}能根据'每天漏水量200毫升'计算一年共浪费多少升水吗？",
+      "standards": ["pep-math-2022:6上.9.1"]
+    },
+    {
+      "id": "mt_g6u_035",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "刘徽割圆术的数学思想",
+      "description": "了解刘徽割圆术的基本思想：将圆分割成越来越多的等份拼成已知图形，通过无限逼近求圆的面积；理解'割之弥细，所失弥少'的极限思想是圆面积公式推导的数学基础。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.5,
+      "evidence": [
+        "能描述割圆术的基本思路",
+        "能说明分割份数越多近似越准确的原因",
+        "能体会无限逼近的数学思想方法"
+      ],
+      "assessmentPrompt": "{{name}}能用自己的话说明刘徽是怎样用割圆法求圆的面积的吗？",
+      "standards": ["pep-math-2022:6上.5.7"]
+    },
+    {
+      "id": "mt_g6u_036",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "分数四则混合运算",
+      "description": "能进行含分数的四则混合运算，遵循正确的运算顺序（先乘除后加减、括号内先算）；能灵活运用运算律进行简便计算；能解决含分数和百分数的综合应用题。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能按正确顺序进行分数四则混合运算",
+        "能识别并运用运算律进行简便计算",
+        "能解决多步骤综合应用题"
+      ],
+      "assessmentPrompt": "{{name}}能计算1/2÷(1/4+1/6)×2/3吗？",
+      "standards": ["pep-math-2022:6上.总复习.1"]
+    },
+    {
+      "id": "mt_g6u_037",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "比与分数、除法的综合联系",
+      "description": "系统理解比、分数、除法三者的关联：a:b=a÷b=a/b（b≠0），前项对应被除数和分子，后项对应除数和分母，比值对应商和分数值；三者有本质区别（比是关系，除法是运算，分数是数）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能用表格说明比、除法、分数三者的对应关系",
+        "能解释三者的联系与区别",
+        "能灵活在三种形式之间转化"
+      ],
+      "assessmentPrompt": "{{name}}能说明3:4、3÷4和3/4之间的联系与区别吗？",
+      "standards": ["pep-math-2022:6上.4.4"]
+    },
+    {
+      "id": "mt_g6u_038",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆与对称性的联系",
+      "description": "理解圆是轴对称图形，有无数条对称轴（每条对称轴都经过圆心）；能利用圆的轴对称性设计美丽图案；理解圆的各条直径都是对称轴的原因（直径两端关于圆心对称）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.6,
+      "evidence": [
+        "能说明圆有无数条对称轴",
+        "能利用圆的对称性设计图案",
+        "能验证圆的折叠对称性"
+      ],
+      "assessmentPrompt": "{{name}}能说明圆有多少条对称轴，并解释为什么吗？",
+      "standards": ["pep-math-2022:6上.5.8"]
+    }
+  ]
+}
