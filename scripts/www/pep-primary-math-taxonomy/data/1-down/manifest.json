@@ -1,0 +1,43 @@
+{
+  "dataset": "人教版一年级数学下册知识图谱",
+  "taxonomyVersion": "pep-primary-math-1down-v2",
+  "basedOn": "withmarbleapp/os-taxonomy schema",
+  "sourceTextbook": "义务教育教科书·数学 一年级下册（人民教育出版社2024版）",
+  "scope": "全册（98页）",
+  "generatedAt": "2026-08-07T00:00:00.000Z",
+  "extractionMethod": "full-pdf-read",
+  "counts": {
+    "topics": 31,
+    "topicsByDomain": {
+      "数的认识": 6,
+      "数的运算": 13,
+      "图形与几何": 3,
+      "数量关系": 6,
+      "综合（笔算规则）": 1,
+      "数的认识（100以内）": 2
+    },
+    "topicsByType": {
+      "CONCEPTUAL": 12,
+      "PROCEDURAL": 15,
+      "REPRESENTATIONAL": 4
+    },
+    "dependencies": 32,
+    "curricula": 1,
+    "curriculumStandards": 31,
+    "clusters": 5
+  },
+  "crossBookDependencies": [
+    {"fromBook": "1-down", "dependsOn": "1-up", "topicIds": ["mt_g1d_001","mt_g1d_004","mt_g1d_008","mt_g1d_013","mt_g1d_015","mt_g1d_016","mt_g1d_017","mt_g1d_030"]},
+    {"note": "下册多处依赖上册知识：立体图形→平面图形，进位加法→退位减法，11~20认识→100以内数"}
+  ],
+  "chapters": [
+    {"chapter": "第一章 认识平面图形", "pages": "1-7", "topics": ["认识平面图形","平面图形的拼组与分割","七巧板拼图"]},
+    {"chapter": "第二章 20以内的退位减法", "pages": "8-22", "topics": ["十几减9","十几减8、7、6","十几减5、4、3、2","想加算减法","退位减法解决实际问题","20以内退位减法系统整理"]},
+    {"chapter": "第三章 100以内数的认识", "pages": "23-42", "topics": ["100以内数的认识","100以内数的读写与位值","数的顺序与比较大小","百数表与数的规律","估数","多种描述比大小","整十数加减","两位数加减整十数或一位数"]},
+    {"chapter": "第四章 100以内的口算加、减法", "pages": "43-55", "topics": ["两位数加法（口算）","两位数减法（口算）","口算解决实际问题"]},
+    {"chapter": "第五章 100以内的笔算加、减法", "pages": "56-68", "topics": ["两位数笔算加法（不进位）","两位数笔算加法（进位）","两位数笔算减法（不退位）","两位数笔算减法（退位）","笔算加减法的计算规则"]},
+    {"chapter": "第六章 数量间的加减关系", "pages": "69-76", "topics": ["数量间的加减关系","比多少的数量关系","两步解决问题","用画图法分析数量关系"]},
+    {"chapter": "欢乐购物街", "pages": "77-82", "topics": ["认识人民币","人民币的计算（付款与找零）"]},
+    {"chapter": "第七章 复习与关联", "pages": "83-90", "topics": ["综合复习"]}
+  ]
+}
