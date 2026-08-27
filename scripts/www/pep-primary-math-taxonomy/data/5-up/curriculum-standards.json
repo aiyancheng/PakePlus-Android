@@ -1,0 +1,35 @@
+{
+  "curriculumCount": 1,
+  "curricula": [
+    {
+      "slug": "pep-math-2022",
+      "name": "义务教育数学课程标准（2022年版）",
+      "publisher": "人民教育出版社",
+      "mappings": [
+        { "standardCode": "pep-math-2022:5上.1.1", "topicId": "mt_g5u_001", "description": "能进行小数乘整数的计算" },
+        { "standardCode": "pep-math-2022:5上.1.2", "topicId": "mt_g5u_002", "description": "能进行小数乘小数的计算，理解积的变化规律" },
+        { "standardCode": "pep-math-2022:5上.1.3", "topicId": "mt_g5u_003", "description": "能求积的近似数" },
+        { "standardCode": "pep-math-2022:5上.1.4", "topicId": "mt_g5u_004", "description": "会运用运算律简化小数计算" },
+        { "standardCode": "pep-math-2022:5上.2.1", "topicId": "mt_g5u_005", "description": "能用数对描述物体在方格中的位置" },
+        { "standardCode": "pep-math-2022:5上.3.1", "topicId": "mt_g5u_006", "description": "能进行除数是整数的小数除法" },
+        { "standardCode": "pep-math-2022:5上.3.2", "topicId": "mt_g5u_007", "description": "能进行除数是小数的除法" },
+        { "standardCode": "pep-math-2022:5上.3.3", "topicId": "mt_g5u_008", "description": "能求商的近似数" },
+        { "standardCode": "pep-math-2022:5上.3.4", "topicId": "mt_g5u_009", "description": "了解循环小数的概念" },
+        { "standardCode": "pep-math-2022:5上.4.1", "topicId": "mt_g5u_010", "description": "能用分数表示简单事件发生的可能性" },
+        { "standardCode": "pep-math-2022:5上.5.1", "topicId": "mt_g5u_011", "description": "能用字母表示数量关系和运算律" },
+        { "standardCode": "pep-math-2022:5上.5.2", "topicId": "mt_g5u_012", "description": "理解方程的意义" },
+        { "standardCode": "pep-math-2022:5上.5.3", "topicId": "mt_g5u_013", "description": "理解等式的性质" },
+        { "standardCode": "pep-math-2022:5上.5.4", "topicId": "mt_g5u_014", "description": "会解简单的方程" },
+        { "standardCode": "pep-math-2022:5上.5.5", "topicId": "mt_g5u_015", "description": "能列方程解决实际问题" },
+        { "standardCode": "pep-math-2022:5上.6.1", "topicId": "mt_g5u_016", "description": "掌握平行四边形面积公式及推导过程" },
+        { "standardCode": "pep-math-2022:5上.6.2", "topicId": "mt_g5u_017", "description": "掌握三角形面积公式及推导过程" },
+        { "standardCode": "pep-math-2022:5上.6.3", "topicId": "mt_g5u_018", "description": "掌握梯形面积公式及推导过程" },
+        { "standardCode": "pep-math-2022:5上.6.4", "topicId": "mt_g5u_019", "description": "能计算组合图形的面积" },
+        { "standardCode": "pep-math-2022:5上.6.5", "topicId": "mt_g5u_020", "description": "能估算不规则图形面积" },
+        { "standardCode": "pep-math-2022:5上.7.1", "topicId": "mt_g5u_021", "description": "理解并应用植树问题中棵数与间隔数的关系" },
+        { "standardCode": "pep-math-2022:5上.7.2", "topicId": "mt_g5u_022", "description": "理解环形植树中棵数等于间隔数" },
+        { "standardCode": "pep-math-2022:5上.8.1", "topicId": "mt_g5u_023", "description": "能进行小数四则混合运算" }
+      ]
+    }
+  ]
+}
