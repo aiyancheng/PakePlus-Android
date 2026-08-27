@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版小学数学 · 全年级学习中心</title>
+<style>
+:root{
+  --primary:#1677ff; --primary-light:#e6f0ff; --primary-dark:#0958d9;
+  --text:#1f2329; --text2:#4e5969; --line:#e5e6eb; --bg:#f7f8fa; --card:#ffffff;
+  --g1:#52c41a; --g2:#fa8c16; --g3:#1677ff; --g4:#722ed1; --g5:#13c2c2; --g6:#eb2f96;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.wrap{max-width:1200px;margin:0 auto;padding:20px 16px 60px}
+header.hero{background:linear-gradient(135deg,#1677ff,#0958d9 60%,#722ed1);color:#fff;border-radius:16px;padding:36px 30px;margin-bottom:24px;position:relative;overflow:hidden}
+header.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
+header.hero::before{content:"";position:absolute;right:40px;bottom:-90px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.06)}
+header.hero h1{font-size:30px;margin-bottom:10px}
+header.hero p{opacity:.92;font-size:14.5px;max-width:720px}
+header.hero .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+header.hero .tag{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);padding:2px 12px;border-radius:99px;font-size:12.5px}
+nav.jump{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+nav.jump a{display:inline-block;background:var(--card);border:1px solid var(--line);color:var(--primary-dark);text-decoration:none;font-size:13px;padding:5px 14px;border-radius:99px}
+nav.jump a:hover{background:var(--primary-light);border-color:var(--primary)}
+section{margin-bottom:26px}
+h2.sec{font-size:19px;padding:10px 16px;border-radius:10px;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec .badge{font-size:12px;background:rgba(255,255,255,.25);padding:1px 10px;border-radius:99px}
+h2.map{background:linear-gradient(90deg,#1677ff,#722ed1)}
+.mapcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.mapcard .txt{flex:1;min-width:240px}
+.mapcard h3{font-size:17px;color:var(--primary-dark);margin-bottom:6px}
+.mapcard p{font-size:13.5px;color:var(--text2)}
+.mapcard a.btn{display:inline-block;background:linear-gradient(135deg,#1677ff,#722ed1);color:#fff;text-decoration:none;padding:9px 22px;border-radius:99px;font-size:14px;font-weight:bold}
+.mapcard a.btn:hover{opacity:.88}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:960px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.gcard .ghead{padding:16px 18px 12px;color:#fff}
+.gcard .ghead .gname{font-size:20px;font-weight:bold}
+.gcard .ghead .gdesc{font-size:12.5px;opacity:.92;margin-top:4px}
+.gcard .gbody{padding:10px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.gcard .ov{display:block;background:#fff;border:1.5px solid;border-radius:10px;padding:9px 12px;text-decoration:none;font-size:13.5px;font-weight:bold;text-align:center}
+.gcard .ov:hover{filter:brightness(.96)}
+.gcard .ov small{display:block;font-weight:normal;font-size:11.5px;margin-top:2px;opacity:.75}
+.gcard .half{font-size:12px;color:var(--text2);font-weight:bold;margin:2px 0 2px}
+.gcard ul{list-style:none;display:flex;flex-direction:column;gap:3px}
+.gcard li{font-size:12.8px}
+.gcard li a{color:var(--text);text-decoration:none;display:block;padding:3px 8px;border-radius:6px;border-left:3px solid transparent}
+.gcard li a:hover{background:var(--bg);border-left-color:var(--primary)}
+.g1 .ghead{background:linear-gradient(135deg,#52c41a,#389e0d)}
+.g1 .ov{border-color:#52c41a;color:#389e0d}
+.g1 li a:hover{border-left-color:#52c41a}
+.g2 .ghead{background:linear-gradient(135deg,#fa8c16,#d46b08)}
+.g2 .ov{border-color:#fa8c16;color:#d46b08}
+.g2 li a:hover{border-left-color:#fa8c16}
+.g3 .ghead{background:linear-gradient(135deg,#1677ff,#0958d9)}
+.g3 .ov{border-color:#1677ff;color:#0958d9}
+.g3 li a:hover{border-left-color:#1677ff}
+.g4 .ghead{background:linear-gradient(135deg,#722ed1,#531dab)}
+.g4 .ov{border-color:#722ed1;color:#531dab}
+.g4 li a:hover{border-left-color:#722ed1}
+.g5 .ghead{background:linear-gradient(135deg,#13c2c2,#08979c)}
+.g5 .ov{border-color:#13c2c2;color:#08979c}
+.g5 li a:hover{border-left-color:#13c2c2}
+.g6 .ghead{background:linear-gradient(135deg,#eb2f96,#c41d7f)}
+.g6 .ov{border-color:#eb2f96;color:#c41d7f}
+.g6 li a:hover{border-left-color:#eb2f96}
+.usage{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px}
+.usage h3{font-size:15.5px;color:var(--primary-dark);margin-bottom:10px}
+.usage ol{margin-left:20px;font-size:13.5px;color:var(--text2)}
+.usage li{margin:4px 0}
+footer{margin-top:30px;text-align:center;color:var(--text2);font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>人教版小学数学 · 全年级学习中心</h1>
+  <p>覆盖一年级至六年级全部教材知识点与考点，每个年级配套「知识点与考点总览」＋10份专项练习卷（每份37题、含参考答案与解析），支持期末复习、暑期巩固与门店培训教学。</p>
+  <div class="tags">
+    <span class="tag">教材版本：人教版（2024年新版）</span>
+    <span class="tag">年级：一 ~ 六年级</span>
+    <span class="tag">总览：6份</span>
+    <span class="tag">练习：60份</span>
+    <span class="tag">闫胜君整理</span>
+  </div>
+</header>
+
+<nav class="jump">
+  <a href="#map">知识图谱</a>
+  <a href="#g1">一年级</a>
+  <a href="#g2">二年级</a>
+  <a href="#g3">三年级</a>
+  <a href="#g4">四年级</a>
+  <a href="#g5">五年级</a>
+  <a href="#g6">六年级</a>
+  <a href="#usage">使用建议</a>
+</nav>
+
+<!-- ==================== 知识图谱 ==================== -->
+<section id="map">
+<h2 class="sec map">小学数学知识图谱<span class="badge">教材全貌总览</span></h2>
+<div class="mapcard">
+  <div class="txt">
+    <h3>人教版小学数学教材知识图谱（交互式）</h3>
+    <p>基于 pep-math-taxonomy 与 pep-primary-math-taxonomy 两个开源知识图谱整合构建，可视化展示小学六年各年级的知识点体系、单元结构与衔接关系，点击节点可查看知识点详情。</p>
+  </div>
+  <a class="btn" href="人教版数学教材知识图谱.html" target="_blank">打开知识图谱 →</a>
+</div>
+</section>
+
+<!-- ==================== 一年级 ==================== -->
+<section id="g1">
+<div class="grid">
+  <div class="gcard g1">
+    <div class="ghead">
+      <div class="gname">一年级</div>
+      <div class="gdesc">上册8单元 · 下册7单元 · 启蒙与20以内计算</div>
+    </div>
+    <div class="gbody">
+      <a class="ov" href="一年级数学/一年级数学知识点与考点总览.html">一年级知识点与考点总览<small>高频考点排行 · 复习计划 · 练习对应表</small></a>
+      <div class="half">上册练习（01~05）</div>
+      <ul>
+        <li><a href="一年级数学/练习01_准备课位置与1到5的认识加减法.html">01 · 准备课、位置与1~5的认识加减法</a></li>
+        <li><a href="一年级数学/练习02_认识图形与6到10的认识加减法.html">02 · 认识图形与6~10的认识加减法</a></li>
+        <li><a href="一年级数学/练习03_11到20各数与认识钟表.html">03 · 11~20各数与认识钟表</a></li>
+        <li><a href="一年级数学/练习04_20以内的进位加法.html">04 · 20以内的进位加法</a></li>
+        <li><a href="一年级数学/练习05_一年级上册期末综合模拟卷.html">05 · 上册期末综合模拟卷</a></li>
+      </ul>
+      <div class="half">下册练习（06~10）</div>
+      <ul>
+        <li><a href="一年级数学/练习06_认识图形与20以内退位减法.html">06 · 认识图形与20以内退位减法</a></li>
+        <li><a href="一年级数学/练习07_分类整理与100以内数的认识.html">07 · 分类整理与100以内数的认识</a></li>
+        <li><a href="一年级数学/练习08_认识人民币.html">08 · 认识人民币</a></li>
+        <li><a href="一年级数学/练习09_100以内的加法和减法.html">09 · 100以内的加法和减法</a></li>
+        <li><a href="一年级数学/练习10_一年级下册期末综合模拟卷.html">10 · 下册期末综合模拟卷</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 二年级 ==================== -->
+  <div class="gcard g2">
+    <div class="ghead">
+      <div class="gname">二年级</div>
+      <div class="gdesc">上册8单元 · 下册9单元 · 口诀与万以内数</div>
+    </div>
+    <div class="gbody">
+      <a class="ov" href="二年级数学/二年级数学知识点与考点总览.html">二年级知识点与考点总览<small>高频考点排行 · 复习计划 · 练习对应表</small></a>
+      <div class="half">上册练习（01~05）</div>
+      <ul>
+        <li><a href="二年级数学/练习01_长度单位与100以内加减法二.html">01 · 长度单位与100以内加减法（二）</a></li>
+        <li><a href="二年级数学/练习02_角的初步认识与观察物体.html">02 · 角的初步认识与观察物体</a></li>
+        <li><a href="二年级数学/练习03_表内乘法一.html">03 · 表内乘法（一）</a></li>
+        <li><a href="二年级数学/练习04_表内乘法二与认识时间.html">04 · 表内乘法（二）与认识时间</a></li>
+        <li><a href="二年级数学/练习05_二年级上册期末综合模拟卷.html">05 · 上册期末综合模拟卷</a></li>
+      </ul>
+      <div class="half">下册练习（06~10）</div>
+      <ul>
+        <li><a href="二年级数学/练习06_数据收集整理与表内除法一.html">06 · 数据收集整理与表内除法（一）</a></li>
+        <li><a href="二年级数学/练习07_图形的运动与表内除法二.html">07 · 图形的运动与表内除法（二）</a></li>
+        <li><a href="二年级数学/练习08_混合运算与有余数的除法.html">08 · 混合运算与有余数的除法</a></li>
+        <li><a href="二年级数学/练习09_万以内数的认识与克和千克.html">09 · 万以内数的认识与克和千克</a></li>
+        <li><a href="二年级数学/练习10_二年级下册期末综合模拟卷.html">10 · 下册期末综合模拟卷</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 三年级 ==================== -->
+  <div class="gcard g3">
+    <div class="ghead">
+      <div class="gname">三年级</div>
+      <div class="gdesc">上册9单元 · 下册8单元 · 万以内计算与分数小数</div>
+    </div>
+    <div class="gbody">
+      <a class="ov" href="三年级数学/三年级数学知识点与考点总览.html">三年级知识点与考点总览<small>高频考点排行 · 复习计划 · 练习对应表</small></a>
+      <div class="half">上册练习（01~05）</div>
+      <ul>
+        <li><a href="三年级数学/练习01_万以内的加法和减法.html">01 · 万以内的加法和减法</a></li>
+        <li><a href="三年级数学/练习02_时分秒与测量.html">02 · 时、分、秒与测量</a></li>
+        <li><a href="三年级数学/练习03_倍的认识与多位数乘一位数.html">03 · 倍的认识与多位数乘一位数</a></li>
+        <li><a href="三年级数学/练习04_周长与分数的初步认识.html">04 · 周长与分数的初步认识</a></li>
+        <li><a href="三年级数学/练习05_三年级上册期末综合模拟卷.html">05 · 上册期末综合模拟卷</a></li>
+      </ul>
+      <div class="half">下册练习（06~10）</div>
+      <ul>
+        <li><a href="三年级数学/练习06_除数是一位数的除法.html">06 · 除数是一位数的除法</a></li>
+        <li><a href="三年级数学/练习07_两位数乘两位数.html">07 · 两位数乘两位数</a></li>
+        <li><a href="三年级数学/练习08_面积与年月日.html">08 · 面积与年月日</a></li>
+        <li><a href="三年级数学/练习09_小数的初步认识与搭配.html">09 · 小数的初步认识与搭配</a></li>
+        <li><a href="三年级数学/练习10_三年级下册期末综合模拟卷.html">10 · 下册期末综合模拟卷</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 四年级 ==================== -->
+  <div class="gcard g4">
+    <div class="ghead">
+      <div class="gname">四年级</div>
+      <div class="gdesc">上册8单元 · 下册9单元 · 大数与运算律、几何</div>
+    </div>
+    <div class="gbody">
+      <a class="ov" href="四年级数学/四年级数学知识点与考点总览.html">四年级知识点与考点总览<small>高频考点排行 · 复习计划 · 练习对应表</small></a>
+      <div class="half">上册练习（01~05）</div>
+      <ul>
+        <li><a href="四年级数学/练习01_大数的认识.html">01 · 大数的认识</a></li>
+        <li><a href="四年级数学/练习02_公顷平方千米与角的度量.html">02 · 公顷平方千米与角的度量</a></li>
+        <li><a href="四年级数学/练习03_三位数乘两位数.html">03 · 三位数乘两位数</a></li>
+        <li><a href="四年级数学/练习04_平行四边形梯形与除法.html">04 · 平行四边形、梯形与除法</a></li>
+        <li><a href="四年级数学/练习05_四年级上册期末综合模拟卷.html">05 · 上册期末综合模拟卷</a></li>
+      </ul>
+      <div class="half">下册练习（06~10）</div>
+      <ul>
+        <li><a href="四年级数学/练习06_四则运算与运算律.html">06 · 四则运算与运算律</a></li>
+        <li><a href="四年级数学/练习07_小数的意义和性质.html">07 · 小数的意义和性质</a></li>
+        <li><a href="四年级数学/练习08_三角形与小数加减法.html">08 · 三角形与小数加减法</a></li>
+        <li><a href="四年级数学/练习09_图形运动平均数与鸡兔同笼.html">09 · 图形运动、平均数与鸡兔同笼</a></li>
+        <li><a href="四年级数学/练习10_四年级下册期末综合模拟卷.html">10 · 下册期末综合模拟卷</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 五年级 ==================== -->
+  <div class="gcard g5">
+    <div class="ghead">
+      <div class="gname">五年级</div>
+      <div class="gdesc">上册7单元 · 下册8单元 · 方程、分数与立体图形</div>
+    </div>
+    <div class="gbody">
+      <a class="ov" href="五年级数学/五年级数学知识点与考点总览.html">五年级知识点与考点总览<small>高频考点排行 · 复习计划 · 练习对应表</small></a>
+      <div class="half">上册练习（01~05）</div>
+      <ul>
+        <li><a href="五年级数学/练习01_小数乘法.html">01 · 小数乘法</a></li>
+        <li><a href="五年级数学/练习02_小数除法.html">02 · 小数除法</a></li>
+        <li><a href="五年级数学/练习03_简易方程.html">03 · 简易方程</a></li>
+        <li><a href="五年级数学/练习04_多边形面积与位置可能性.html">04 · 多边形面积与位置、可能性</a></li>
+        <li><a href="五年级数学/练习05_五年级上册期末综合模拟卷.html">05 · 上册期末综合模拟卷</a></li>
+      </ul>
+      <div class="half">下册练习（06~10）</div>
+      <ul>
+        <li><a href="五年级数学/练习06_因数与倍数.html">06 · 因数与倍数</a></li>
+        <li><a href="五年级数学/练习07_分数的意义和性质.html">07 · 分数的意义和性质</a></li>
+        <li><a href="五年级数学/练习08_分数的加法和减法.html">08 · 分数的加法和减法</a></li>
+        <li><a href="五年级数学/练习09_长方体与正方体专项.html">09 · 长方体与正方体专项</a></li>
+        <li><a href="五年级数学/练习10_五年级下册期末综合模拟卷.html">10 · 下册期末综合模拟卷</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 六年级 ==================== -->
+  <div class="gcard g6">
+    <div class="ghead">
+      <div class="gname">六年级</div>
+      <div class="gdesc">上册8单元 · 下册6单元 · 分数、比、圆柱与比例</div>
+    </div>
+    <div class="gbody">
+      <a class="ov" href="六年级数学/六年级数学知识点与考点总览.html">六年级知识点与考点总览<small>高频考点排行 · 复习计划 · 练习对应表</small></a>
+      <div class="half">上册练习（01~05）</div>
+      <ul>
+        <li><a href="六年级数学/练习01_分数乘法.html">01 · 分数乘法</a></li>
+        <li><a href="六年级数学/练习02_位置方向与分数除法.html">02 · 位置方向与分数除法</a></li>
+        <li><a href="六年级数学/练习03_比.html">03 · 比</a></li>
+        <li><a href="六年级数学/练习04_圆.html">04 · 圆</a></li>
+        <li><a href="六年级数学/练习05_六年级上册期末综合模拟卷.html">05 · 上册期末综合模拟卷</a></li>
+      </ul>
+      <div class="half">下册练习（06~10）</div>
+      <ul>
+        <li><a href="六年级数学/练习06_负数与百分数二.html">06 · 负数与百分数（二）</a></li>
+        <li><a href="六年级数学/练习07_圆柱与圆锥.html">07 · 圆柱与圆锥</a></li>
+        <li><a href="六年级数学/练习08_比例.html">08 · 比例</a></li>
+        <li><a href="六年级数学/练习09_鸽巢问题.html">09 · 鸽巢问题</a></li>
+        <li><a href="六年级数学/练习10_六年级下册期末综合模拟卷.html">10 · 下册期末综合模拟卷（小升初综合）</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== 使用建议 ==================== -->
+<section id="usage">
+<h2 class="sec plain">使用建议<span class="badge">家长 / 老师 / 门店培训通用</span></h2>
+<div class="usage">
+  <h3>四步复习法</h3>
+  <ol>
+    <li><b>第一步 · 总览定方向：</b>打开对应年级的《知识点与考点总览》，通读单元表格，标出孩子不熟悉的"⚠ 易错"点，确定复习优先级。</li>
+    <li><b>第二步 · 专项逐个破：</b>按总览底部的《10份练习题与考点对应表》，从薄弱单元对应的练习卷做起（每卷37题、30~40分钟）。</li>
+    <li><b>第三步 · 对答案做错题本：</b>每份练习自带参考答案与解析（点击"参考答案"展开），错题对照总览知识点标注薄弱单元，抄入错题本。</li>
+    <li><b>第四步 · 综合卷检验：</b>单元练习做完后，用每学期末的《期末综合模拟卷》限时检测，80分以下回到对应单元重新过一遍易错点。</li>
+  </ol>
+</div>
+</section>
+
+<footer>人教版小学数学全年级学习中心 · 知识点经知识图谱校验 · 闫胜君整理 · 一年级至六年级共6份总览＋60份练习卷</footer>
+</div>
+</body>
+</html>
