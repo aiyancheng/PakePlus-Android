@@ -1,0 +1,23 @@
+{
+  "dataset": "人教版五年级数学上册知识图谱",
+  "taxonomyVersion": "pep-primary-math-5up-v2",
+  "basedOn": "withmarbleapp/os-taxonomy schema",
+  "sourceTextbook": "义务教育教科书·数学 五年级上册（人民教育出版社，2022课标版）",
+  "isbn": "978-7-107-36926-1",
+  "generatedDate": "2026-08-07",
+  "topicCount": 23,
+  "edgeCount": 35,
+  "clusterCount": 5,
+  "domains": ["数的运算", "数与代数", "图形与几何", "统计与概率"],
+  "chapters": [
+    { "number": 1, "title": "小数乘法", "topicIds": ["mt_g5u_001", "mt_g5u_002", "mt_g5u_003", "mt_g5u_004"] },
+    { "number": 2, "title": "位置", "topicIds": ["mt_g5u_005"] },
+    { "number": 3, "title": "小数除法", "topicIds": ["mt_g5u_006", "mt_g5u_007", "mt_g5u_008", "mt_g5u_009"] },
+    { "number": 4, "title": "可能性", "topicIds": ["mt_g5u_010"] },
+    { "number": 5, "title": "简易方程", "topicIds": ["mt_g5u_011", "mt_g5u_012", "mt_g5u_013", "mt_g5u_014", "mt_g5u_015"] },
+    { "number": 6, "title": "多边形的面积", "topicIds": ["mt_g5u_016", "mt_g5u_017", "mt_g5u_018", "mt_g5u_019", "mt_g5u_020"] },
+    { "number": 7, "title": "数学广角——植树问题", "topicIds": ["mt_g5u_021", "mt_g5u_022"] },
+    { "number": 8, "title": "总复习", "topicIds": ["mt_g5u_023"] }
+  ],
+  "notes": "基于完整阅读五年级上册全部126页生成，v2版本修正了v1版本的知识点覆盖和依赖关系"
+}
