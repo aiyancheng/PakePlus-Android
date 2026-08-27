@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五年级数学 练习09 · 长方体与正方体专项</title>
+<style>
+:root{--primary:#1677ff;--primary-light:#e6f0ff;--primary-dark:#0958d9;--ok:#52c41a;--warn:#fa8c16;--text:#1f2329;--text2:#4e5969;--line:#e5e6eb;--bg:#f7f8fa;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",-apple-system,system-ui,SimHei,serif,sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:15px}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+header.paper{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--primary);border-radius:12px;padding:24px 26px;margin-bottom:18px}
+header.paper .sub{font-size:12.5px;color:var(--text2);letter-spacing:2px;margin-bottom:4px}
+header.paper h1{font-size:22px;color:var(--primary-dark)}
+header.paper .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:13px}
+header.paper .meta span{background:var(--primary-light);color:var(--primary-dark);padding:2px 12px;border-radius:99px}
+header.paper .scope{margin-top:12px;font-size:13.5px;color:var(--text2);background:var(--bg);padding:10px 14px;border-left:3px solid var(--primary);border-radius:0 8px 8px 0}
+section.block{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:18px}
+h2.qsec{font-size:16px;color:var(--primary-dark);border-bottom:2px solid var(--primary-light);padding-bottom:8px;margin-bottom:6px}
+h2.qsec small{font-weight:normal;color:var(--text2);font-size:12.5px;margin-left:8px}
+ol.qlist{list-style:none;counter-reset:q}
+ol.qlist>li{counter-increment:q;padding:8px 0 8px 34px;position:relative;border-bottom:1px dashed var(--line)}
+ol.qlist>li:last-child{border-bottom:none}
+ol.qlist>li::before{content:counter(q) ".";position:absolute;left:4px;color:var(--primary);font-weight:bold}
+.blank{display:inline-block;min-width:56px;border-bottom:1.5px solid var(--text2);text-align:center;color:transparent}
+input.fillin{display:inline-block;min-width:60px;border:none;border-bottom:1.5px solid #b9c0cc;text-align:center;font-size:15px;background:#fbfcfe;color:var(--primary-dark);outline:none;font-family:inherit}
+input.fillin:focus{border-bottom-color:var(--primary);background:var(--primary-light)}
+.opts{display:block;margin-top:2px}
+.answer{margin-top:22px}
+details.ans{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+details.ans summary{cursor:pointer;padding:13px 22px;font-size:15px;font-weight:bold;color:var(--ok);background:#f6ffed;border:1px solid #d9f7be;border-radius:12px;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.ans summary::before{content:"▸";transition:.2s}
+details.ans[open] summary::before{transform:rotate(90deg)}
+details.ans .ans-body{padding:14px 22px 20px}
+table.mini{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+table.mini th{background:var(--primary-light);color:var(--primary-dark);padding:6px 10px;border:1px solid #d4e3ff}
+table.mini td{padding:6px 10px;border:1px solid var(--line);vertical-align:top}
+table.mini td:first-child{white-space:nowrap;color:var(--primary-dark);font-weight:bold}
+footer{margin-top:26px;text-align:center;color:var(--text2);font-size:12.5px}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+@media(max-width:640px){.twocol{grid-template-columns:1fr}}
+.hint{font-size:12.5px;color:var(--warn);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="paper">
+  <div class="sub">人教版小学数学五年级 · 专项练习</div>
+  <h1>练习09 · 长方体与正方体专项</h1>
+  <div class="meta"><span>建议用时 40分钟</span><span>满分 100分</span><span>共 39 题</span></div>
+  <div class="scope"><b>考点范围：</b>长方体和正方体的特征、棱长总和、表面积、体积与容积、单位换算、排水法求体积（五下第3单元，含第1单元观察物体）</div>
+</header>
+<section class="block notice">
+  <h2 class="qsec">答题须知<small>先读一遍再动笔</small></h2>
+  <ol class="qlist">
+    <li>先写姓名和日期，按题目顺序作答；遇到暂时不会的题先跳过，做完再回头思考。</li>
+    <li>口算题不写过程，直接写得数；竖式题要列竖式，带※的题必须写出验算过程。</li>
+    <li>填空题按空作答，注意单位名称是否要求填写；判断题打√或×，选择题填字母序号。</li>
+    <li>解决问题要写出算式、得数和单位（或答句），只写得数要扣过程分。</li>
+    <li>做完后预留5分钟检查：数字有没有抄错、单位有没有漏写、验算了没有。</li>
+  </ol>
+  <p class="hint">评分参考：填空每空1分；判断、选择每题2分；口算每题1分；竖式每题4分（验算占1分）；解决问题每题6分（列式3分＋计算2分＋单位答句1分）。错题请回到《五年级数学知识点与考点总览》对应单元查漏补缺。</p>
+</section>
+<section class="block"><h2 class="qsec">一、填空题<small>每空1分</small></h2><ol class="qlist">
+<li>长方体有（　　）个面，（　　）条棱，（　　）个顶点</li>
+<li>长方体的棱长总和＝（　　）</li>
+<li>正方体有（　　）个面，每个面都是完全相同的（　　）形</li>
+<li>正方体的棱长总和＝（　　），表面积＝（　　）</li>
+<li>长方体的体积＝（　　），用字母表示是（　　）</li>
+<li>1立方米＝（　　）立方分米，1升＝（　　）毫升</li>
+<li>容积单位：1升＝（　　）立方分米，1毫升＝（　　）立方厘米</li>
+<li>一个正方体的棱长是5厘米，它的体积是（　　）立方厘米</li>
+<li>从不同方向观察同一个物体，看到的形状（　　）</li>
+</ol></section>
+<section class="block"><h2 class="qsec">二、判断题<small>对的打√，错的打×</small></h2><ol class="qlist">
+<li>长方体6个面一定都是长方形（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>正方体是特殊的长方体（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>体积单位比面积单位大（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>1升水和1立方分米水的体积相等（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>把长方体铁块熔铸成正方体，体积不变（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>两个体积相等的长方体，表面积一定相等（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+</ol></section>
+<section class="block"><h2 class="qsec">三、选择题<small>把正确答案的序号填在括号里</small></h2><ol class="qlist">
+<li>正方体的棱长扩大到原来的2倍，体积扩大到原来的（　　）倍（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．2</span>
+<span class="opts">B．4</span>
+<span class="opts">C．8</span></li><li>一个长方体的长、宽、高分别是5cm、4cm、3cm，它的体积是（　　）（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．60cm³</span>
+<span class="opts">B．94cm³</span>
+<span class="opts">C．120cm³</span></li><li>容积是1升的容器，最多能装（　　）立方分米的水（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．0.1</span>
+<span class="opts">B．1</span>
+<span class="opts">C．10</span></li><li>一个棱长1米的正方体，切成棱长1分米的小正方体，能切（　　）个（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．10</span>
+<span class="opts">B．100</span>
+<span class="opts">C．1000</span></li><li>要焊接一个棱长6cm的正方体框架，至少需要铁丝（　　）cm（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．36</span>
+<span class="opts">B．72</span>
+<span class="opts">C．216</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">四、口算题<small>直接写得数</small></h2><ol class="qlist twocol">
+<li>2³＝＝<span class="blank">　</span></li>
+<li>3²＝＝<span class="blank">　</span></li>
+<li>1.2×1.2＝<span class="blank">　</span></li>
+<li>棱长2cm的正方体，体积＝<span class="blank">　</span></li>
+<li>棱长3dm的正方体，表面积＝<span class="blank">　</span></li>
+<li>长5、宽4、高3的长方体体积＝<span class="blank">　</span></li>
+<li>底面积8、高5的长方体体积＝<span class="blank">　</span></li>
+<li>0.5×0.5×0.5＝<span class="blank">　</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">五、长方体正方体计算<small>要求：牢记棱长总和、表面积、体积公式，注意单位统一（m³、dm³、cm³相邻进率1000）</small></h2><ol class="qlist twocol">
+<li>求棱长6cm的正方体的表面积</li>
+<li>求长8cm、宽6cm、高5cm的长方体的体积</li>
+<li>求长10dm、宽4dm、高3dm的长方体的棱长总和</li>
+<li>求长7cm、宽5cm、高4cm的长方体的表面积</li>
+<li>一个正方体的棱长总和是48cm，求它的体积</li>
+<li>把0.8m³的水倒入棱长1m的正方体水箱，水深多少米？</li>
+</ol></section>
+<section class="block"><h2 class="qsec">六、解决问题<small>写出必要的过程</small></h2><ol class="qlist">
+<li>一个无盖玻璃鱼缸，长8dm、宽5dm、高6dm，做这个鱼缸至少需要玻璃多少平方分米？</li>
+<li>一个长方体容器从里面量长40cm、宽25cm，倒入4升水，水深多少厘米？</li>
+<li>一个长方体玻璃缸从里面量长50cm、宽40cm、高30cm，水深12cm，把一块石块完全浸入水中后水面上升到15cm。石块的体积是多少？</li>
+<li>用一根铁丝刚好焊成一个棱长8cm的正方体框架，如果用这根铁丝焊一个长10cm、宽8cm的长方体框架，高是多少厘米？</li>
+<li>一间教室长8m、宽6m、高3m，门窗面积11.4m²。要粉刷四壁和天花板，粉刷面积是多少平方米？</li>
+</ol></section>
+<div class="answer">
+<details class="ans">
+  <summary>参考答案与部分解析（点击展开 / 收起）</summary>
+  <div class="ans-body"><div class="ans-sec"><b>一、填空题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案</th></tr>
+<tr><td>1</td><td>6；12；8</td></tr>
+<tr><td>2</td><td>（长＋宽＋高）×4</td></tr>
+<tr><td>3</td><td>6；正方</td></tr>
+<tr><td>4</td><td>棱长×12；棱长×棱长×6</td></tr>
+<tr><td>5</td><td>长×宽×高；V＝abh</td></tr>
+<tr><td>6</td><td>1000；1000</td></tr>
+<tr><td>7</td><td>1；1</td></tr>
+<tr><td>8</td><td>125</td></tr>
+<tr><td>9</td><td>可能不同</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>二、判断题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>×</b>　可能有两个相对的面是正方形</td></tr>
+<tr><td>2</td><td><b>√</b>　长、宽、高都相等的长方体就是正方体</td></tr>
+<tr><td>3</td><td><b>×</b>　体积和面积是不同类的量，不能比较大小</td></tr>
+<tr><td>4</td><td><b>√</b>　1L＝1dm³</td></tr>
+<tr><td>5</td><td><b>√</b>　形状改变、体积不变</td></tr>
+<tr><td>6</td><td><b>×</b>　体积相等时长宽高搭配不同，表面积一般不同</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>三、选择题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>C</b>　2×2×2＝8</td></tr>
+<tr><td>2</td><td><b>A</b>　5×4×3＝60</td></tr>
+<tr><td>3</td><td><b>B</b>　1L＝1dm³</td></tr>
+<tr><td>4</td><td><b>C</b>　1m³＝1000dm³</td></tr>
+<tr><td>5</td><td><b>B</b>　6×12＝72</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>四、口算题</b>
+<table class="mini">
+<tr><th>算式</th><th>答案</th></tr>
+<tr><td>2³＝</td><td><b>8</b></td></tr>
+<tr><td>3²＝</td><td><b>9</b></td></tr>
+<tr><td>1.2×1.2</td><td><b>1.44</b></td></tr>
+<tr><td>棱长2cm的正方体，体积</td><td><b>8cm³</b></td></tr>
+<tr><td>棱长3dm的正方体，表面积</td><td><b>54dm²</b></td></tr>
+<tr><td>长5、宽4、高3的长方体体积</td><td><b>60</b></td></tr>
+<tr><td>底面积8、高5的长方体体积</td><td><b>40</b></td></tr>
+<tr><td>0.5×0.5×0.5</td><td><b>0.125</b></td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>五、长方体正方体计算</b>
+<table class="mini">
+<tr><th>题目</th><th>答案</th></tr>
+<tr><td>求棱长6cm的正方体的表面积</td><td><b>6×6×6＝216cm²</b>　棱长×棱长×6</td></tr>
+<tr><td>求长8cm、宽6cm、高5cm的长方体的体积</td><td><b>8×6×5＝240cm³</b>　长×宽×高</td></tr>
+<tr><td>求长10dm、宽4dm、高3dm的长方体的棱长总和</td><td><b>（10＋4＋3）×4＝68dm</b>　（长＋宽＋高）×4</td></tr>
+<tr><td>求长7cm、宽5cm、高4cm的长方体的表面积</td><td><b>（7×5＋7×4＋5×4）×2＝（35＋28＋20）×2＝166cm²</b>　（长×宽＋长×高＋宽×高）×2</td></tr>
+<tr><td>一个正方体的棱长总和是48cm，求它的体积</td><td><b>48÷12＝4cm，4×4×4＝64cm³</b>　先求棱长再求体积</td></tr>
+<tr><td>把0.8m³的水倒入棱长1m的正方体水箱，水深多少米？</td><td><b>0.8÷（1×1）＝0.8m。答：水深0.8m。</b>　h＝V÷底面积</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>六、解决问题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与过程</th></tr>
+<tr><td>1</td><td>8×5＋（8×6＋5×6）×2＝40＋（48＋30）×2＝40＋156＝196dm²。答：至少需要196dm²玻璃。</td></tr>
+<tr><td>2</td><td>4L＝4000cm³，4000÷（40×25）＝4000÷1000＝4cm。答：水深4cm。</td></tr>
+<tr><td>3</td><td>50×40×（15−12）＝2000×3＝6000cm³。答：石块的体积是6000cm³。</td></tr>
+<tr><td>4</td><td>8×12＝96cm，96÷4＝24cm，24−10−8＝6cm。答：高是6cm。</td></tr>
+<tr><td>5</td><td>8×6＋（8×3＋6×3）×2−11.4＝48＋84−11.4＝120.6m²。答：粉刷面积是120.6m²。</td></tr>
+</table>
+</div>
+  <p class="hint">答案核对规则：全对说明该考点已掌握；错1～3题标记"待巩固"，重做错题；错4题以上回到总览文档对应单元，先复习知识点再做本卷。</p>
+  </div>
+</details>
+</div>
+<footer>人教版五年级数学专项练习 · 闫胜君整理 · 建议先限时完成再核对答案，错题对照《五年级数学知识点与考点总览》标注薄弱单元</footer>
+</div>
+</body>
+</html>
