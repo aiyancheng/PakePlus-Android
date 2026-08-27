@@ -1,0 +1,295 @@
+{
+  "version": "1.0",
+  "grade": 2,
+  "semester": "up",
+  "dependencies": [
+    {
+      "from": "mt_g1u_add_sub_20",
+      "to": "mt_g2u_003",
+      "strength": "hard",
+      "note": "乘法从相同加数连加引入，需要理解加法"
+    },
+    {
+      "from": "mt_g1d_add_sub_100",
+      "to": "mt_g2u_003",
+      "strength": "hard",
+      "note": "100以内加减法是理解乘法意义的基础"
+    },
+    {
+      "from": "mt_g2u_003",
+      "to": "mt_g2u_004",
+      "strength": "hard",
+      "note": "理解乘法含义后才能学习5的乘法口诀"
+    },
+    {
+      "from": "mt_g2u_003",
+      "to": "mt_g2u_005",
+      "strength": "hard",
+      "note": "理解乘法含义后才能学习2、3、4的乘法口诀"
+    },
+    {
+      "from": "mt_g2u_004",
+      "to": "mt_g2u_005",
+      "strength": "soft",
+      "note": "5的口诀是学习2~4口诀的铺垫，方法相同"
+    },
+    {
+      "from": "mt_g2u_003",
+      "to": "mt_g2u_006",
+      "strength": "hard",
+      "note": "理解乘法含义后才能学习1和6的乘法口诀"
+    },
+    {
+      "from": "mt_g2u_005",
+      "to": "mt_g2u_006",
+      "strength": "soft",
+      "note": "2~4口诀学习方法迁移到1和6的口诀"
+    },
+    {
+      "from": "mt_g2u_004",
+      "to": "mt_g2u_007",
+      "strength": "hard",
+      "note": "乘加乘减需要先掌握乘法口诀"
+    },
+    {
+      "from": "mt_g2u_003",
+      "to": "mt_g2u_008",
+      "strength": "hard",
+      "note": "用乘法解决问题需要理解乘法含义"
+    },
+    {
+      "from": "mt_g2u_004",
+      "to": "mt_g2u_008",
+      "strength": "hard",
+      "note": "解决问题需要计算乘法"
+    },
+    {
+      "from": "mt_g2u_003",
+      "to": "mt_g2u_009",
+      "strength": "hard",
+      "note": "整理口诀表需要掌握乘法口诀"
+    },
+    {
+      "from": "mt_g2u_004",
+      "to": "mt_g2u_009",
+      "strength": "hard",
+      "note": "整理口诀表需要5的口诀"
+    },
+    {
+      "from": "mt_g2u_005",
+      "to": "mt_g2u_009",
+      "strength": "hard",
+      "note": "整理口诀表需要2~4的口诀"
+    },
+    {
+      "from": "mt_g2u_006",
+      "to": "mt_g2u_009",
+      "strength": "hard",
+      "note": "整理口诀表需要1和6的口诀"
+    },
+    {
+      "from": "mt_g1d_equal_share",
+      "to": "mt_g2u_010",
+      "strength": "soft",
+      "note": "一年级下册已有平均分的直观操作经验"
+    },
+    {
+      "from": "mt_g2u_010",
+      "to": "mt_g2u_011",
+      "strength": "hard",
+      "note": "平均分概念是除法认识的直接基础"
+    },
+    {
+      "from": "mt_g2u_003",
+      "to": "mt_g2u_011",
+      "strength": "hard",
+      "note": "除法与乘法密切相关，乘法是除法的前提"
+    },
+    {
+      "from": "mt_g2u_004",
+      "to": "mt_g2u_012",
+      "strength": "hard",
+      "note": "用5的口诀求商"
+    },
+    {
+      "from": "mt_g2u_005",
+      "to": "mt_g2u_012",
+      "strength": "hard",
+      "note": "用2~4的口诀求商"
+    },
+    {
+      "from": "mt_g2u_006",
+      "to": "mt_g2u_012",
+      "strength": "hard",
+      "note": "用1和6的口诀求商"
+    },
+    {
+      "from": "mt_g2u_011",
+      "to": "mt_g2u_012",
+      "strength": "hard",
+      "note": "需要理解除法意义才能用口诀求商"
+    },
+    {
+      "from": "mt_g2u_012",
+      "to": "mt_g2u_013",
+      "strength": "hard",
+      "note": "能计算除法才能解决除法实际问题"
+    },
+    {
+      "from": "mt_g2u_011",
+      "to": "mt_g2u_013",
+      "strength": "hard",
+      "note": "理解两种除法情境是解决问题的前提"
+    },
+    {
+      "from": "mt_g2u_012",
+      "to": "mt_g2u_014",
+      "strength": "hard",
+      "note": "掌握口诀求商后才能理解乘除法关系"
+    },
+    {
+      "from": "mt_g1u_direction",
+      "to": "mt_g2u_015",
+      "strength": "soft",
+      "note": "一年级已有上下左右前后方向基础"
+    },
+    {
+      "from": "mt_g2u_015",
+      "to": "mt_g2u_016",
+      "strength": "hard",
+      "note": "认识四个方向是看地图的基础"
+    },
+    {
+      "from": "mt_g1u_length_estimate",
+      "to": "mt_g2u_017",
+      "strength": "soft",
+      "note": "一年级有估测长度的经验"
+    },
+    {
+      "from": "mt_g2u_017",
+      "to": "mt_g2u_018",
+      "strength": "hard",
+      "note": "认识厘米是学习米的基础，建立长度感知"
+    },
+    {
+      "from": "mt_g2u_017",
+      "to": "mt_g2u_019",
+      "strength": "hard",
+      "note": "测量线段需要会用尺子量长度"
+    },
+    {
+      "from": "mt_g2u_018",
+      "to": "mt_g2u_019",
+      "strength": "soft",
+      "note": "线段长度可用厘米或米表示"
+    },
+    {
+      "from": "mt_g2u_017",
+      "to": "mt_g2u_020",
+      "strength": "soft",
+      "note": "学习标准单位后才能理解非标准单位的局限性"
+    },
+    {
+      "from": "mt_g2u_021",
+      "to": "mt_g2u_024",
+      "strength": "hard",
+      "note": "用7的口诀求商"
+    },
+    {
+      "from": "mt_g2u_022",
+      "to": "mt_g2u_024",
+      "strength": "hard",
+      "note": "用8的口诀求商"
+    },
+    {
+      "from": "mt_g2u_023",
+      "to": "mt_g2u_024",
+      "strength": "hard",
+      "note": "用9的口诀求商"
+    },
+    {
+      "from": "mt_g2u_012",
+      "to": "mt_g2u_024",
+      "strength": "soft",
+      "note": "用口诀求商的方法相同，从2~6迁移到7~9"
+    },
+    {
+      "from": "mt_g2u_009",
+      "to": "mt_g2u_025",
+      "strength": "hard",
+      "note": "1~6口诀表是1~9口诀表的基础"
+    },
+    {
+      "from": "mt_g2u_021",
+      "to": "mt_g2u_025",
+      "strength": "hard",
+      "note": "7的口诀纳入完整口诀表"
+    },
+    {
+      "from": "mt_g2u_022",
+      "to": "mt_g2u_025",
+      "strength": "hard",
+      "note": "8的口诀纳入完整口诀表"
+    },
+    {
+      "from": "mt_g2u_023",
+      "to": "mt_g2u_025",
+      "strength": "hard",
+      "note": "9的口诀纳入完整口诀表"
+    },
+    {
+      "from": "mt_g2u_024",
+      "to": "mt_g2u_026",
+      "strength": "hard",
+      "note": "两步问题需要7~9的除法"
+    },
+    {
+      "from": "mt_g2u_008",
+      "to": "mt_g2u_026",
+      "strength": "soft",
+      "note": "乘法解决问题方法迁移到两步乘除问题"
+    },
+    {
+      "from": "mt_g2u_003",
+      "to": "mt_g2u_027",
+      "strength": "hard",
+      "note": "复习需要理解乘法"
+    },
+    {
+      "from": "mt_g2u_011",
+      "to": "mt_g2u_027",
+      "strength": "hard",
+      "note": "复习需要理解除法"
+    },
+    {
+      "from": "mt_g2u_012",
+      "to": "mt_g2u_028",
+      "strength": "hard",
+      "note": "数量关系模型基于除法计算"
+    },
+    {
+      "from": "mt_g2u_008",
+      "to": "mt_g2u_028",
+      "strength": "hard",
+      "note": "数量关系模型基于乘法解决问题"
+    },
+    {
+      "from": "mt_g2u_016",
+      "to": "mt_g2u_029",
+      "strength": "hard",
+      "note": "方向综合复习基于地图方向知识"
+    },
+    {
+      "from": "mt_g2u_002",
+      "to": "mt_g2u_029",
+      "strength": "soft",
+      "note": "分类综合复习"
+    },
+    {
+      "from": "mt_g2u_025",
+      "to": "mt_g2u_030",
+      "strength": "soft",
+      "note": "在完整口诀表练习中发现平方数规律"
+    }
+  ]
+}
