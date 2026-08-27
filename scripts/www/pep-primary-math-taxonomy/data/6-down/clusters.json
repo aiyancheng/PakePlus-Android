@@ -1,0 +1,69 @@
+{
+  "version": "pep-primary-math-6down-v2",
+  "clusterCount": 7,
+  "clusters": [
+    {
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "subdomain": "负数",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6d_001", "mt_g6d_002", "mt_g6d_003"],
+      "summary": "通过温度、海拔、收支等真实情境引入负数，补全数轴上0左边的数；理解正数、负数、零的关系（0既不正也不负）；建立数轴的概念，将所有数统一在数轴上。为初中整数运算和数轴操作奠定基础。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "subdomain": "百分数应用",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6d_004", "mt_g6d_005", "mt_g6d_006", "mt_g6d_007", "mt_g6d_008"],
+      "summary": "在百分数基础知识（六年级上册）之上，进一步学习生活中的百分数应用：折扣（几折=百分之几十）、成数（几成=十分之几）、税率（应纳税额÷收入）、利率（利息=本金×利率×存期）；能比较不同促销方式的优惠程度，做出最优决策。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "subdomain": "圆柱与圆锥",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6d_009", "mt_g6d_010", "mt_g6d_011", "mt_g6d_012", "mt_g6d_013", "mt_g6d_014"],
+      "summary": "认识圆柱和圆锥的结构；推导并掌握圆柱表面积（2πrh+2πr²）和体积（V=πr²h）公式；通过等底等高实验发现圆锥体积=1/3圆柱体积，推导V=1/3πr²h；系统比较两种立体图形的异同，为初中几何学习奠基。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "subdomain": "比例",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6d_015", "mt_g6d_016", "mt_g6d_017", "mt_g6d_018", "mt_g6d_019", "mt_g6d_037"],
+      "summary": "在比（六年级上册）的基础上引入比例：两个相等的比构成比例；通过交叉相乘定理解比例；重点学习正比例（y/x=k，图象为过原点直线）和反比例（xy=k，图象为双曲线）的概念及判断；能用比例方程解决实际问题。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "subdomain": "比例应用",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6d_020", "mt_g6d_021"],
+      "summary": "比例尺是图上距离与实际距离的比，能在三量之间换算；图形按比例放大缩小时，角度不变、边长和周长按比例变化、面积按比例的平方变化；综合实践自行车里的数学（齿轮传动）进一步应用比例知识。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "subdomain": "鸽巢问题",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6d_023", "mt_g6d_024", "mt_g6d_025"],
+      "summary": "通过铅笔放笔筒引入鸽巢原理（n+1个物体放n个抽屉必有1个抽屉至少2个）；推广到m个物体n个抽屉（至少有⌈m/n⌉个）；运用原理解决'保证至少取几个'类问题；体会数学中的必然性推理。"
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "综合复习",
+      "subdomain": "整理和复习",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "topicIds": ["mt_g6d_026", "mt_g6d_027", "mt_g6d_028", "mt_g6d_029", "mt_g6d_030", "mt_g6d_031", "mt_g6d_032", "mt_g6d_033", "mt_g6d_034", "mt_g6d_036"],
+      "summary": "小学数学全面整理：数系（正负整数/分数/无理数）、四则运算与运算律、方程与代数表达式、比和比例、各类平面图形面积公式、长方体/圆柱/圆锥体积公式、图形变换（平移/旋转/对称/放大缩小）、两种位置描述法、三种统计图，为升入初中做完整准备。"
+    }
+  ]
+}
