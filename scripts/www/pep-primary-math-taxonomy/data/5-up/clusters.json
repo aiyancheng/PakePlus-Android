@@ -1,0 +1,74 @@
+{
+  "version": "pep-primary-math-5up-v2",
+  "clusterCount": 5,
+  "clusters": [
+    {
+      "id": "cluster_g5u_decimal_ops",
+      "name": "小数四则运算",
+      "domain": "数的运算",
+      "topicIds": [
+        "mt_g5u_001",
+        "mt_g5u_002",
+        "mt_g5u_003",
+        "mt_g5u_004",
+        "mt_g5u_006",
+        "mt_g5u_007",
+        "mt_g5u_008",
+        "mt_g5u_009",
+        "mt_g5u_023"
+      ],
+      "description": "系统掌握小数乘除法（竖式、移位、近似、循环）及运算律应用",
+      "centralTopic": "mt_g5u_007"
+    },
+    {
+      "id": "cluster_g5u_position",
+      "name": "位置与坐标",
+      "domain": "数与代数",
+      "topicIds": [
+        "mt_g5u_005"
+      ],
+      "description": "用数对（列，行）描述平面位置，为后续坐标系学习铺垫",
+      "centralTopic": "mt_g5u_005"
+    },
+    {
+      "id": "cluster_g5u_probability",
+      "name": "可能性",
+      "domain": "统计与概率",
+      "topicIds": [
+        "mt_g5u_010"
+      ],
+      "description": "理解不确定事件及可能性大小，用分数量化概率",
+      "centralTopic": "mt_g5u_010"
+    },
+    {
+      "id": "cluster_g5u_equations",
+      "name": "简易方程",
+      "domain": "数与代数",
+      "topicIds": [
+        "mt_g5u_011",
+        "mt_g5u_012",
+        "mt_g5u_013",
+        "mt_g5u_014",
+        "mt_g5u_015"
+      ],
+      "description": "从字母表示数出发，建立方程概念，掌握等式性质和解方程方法，用方程解决实际问题",
+      "centralTopic": "mt_g5u_014"
+    },
+    {
+      "id": "cluster_g5u_polygon_area",
+      "name": "多边形的面积",
+      "domain": "图形与几何",
+      "topicIds": [
+        "mt_g5u_016",
+        "mt_g5u_017",
+        "mt_g5u_018",
+        "mt_g5u_019",
+        "mt_g5u_020",
+        "mt_g5u_021",
+        "mt_g5u_022"
+      ],
+      "description": "通过割补/拼合转化推导平行四边形、三角形、梯形面积公式，扩展至组合图形和植树问题",
+      "centralTopic": "mt_g5u_016"
+    }
+  ]
+}
