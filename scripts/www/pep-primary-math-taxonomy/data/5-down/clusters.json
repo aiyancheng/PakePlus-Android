@@ -1,0 +1,104 @@
+{
+  "version": "pep-primary-math-5down-v2",
+  "clusterCount": 8,
+  "clusters": [
+    {
+      "id": "cluster_g5d_3d_view",
+      "name": "观察物体",
+      "domain": "图形与几何",
+      "topicIds": ["mt_g5d_001"],
+      "description": "从三个方向观察几何体，建立三视图概念",
+      "centralTopic": "mt_g5d_001"
+    },
+    {
+      "id": "cluster_g5d_factors_multiples",
+      "name": "因数与倍数",
+      "domain": "数与代数",
+      "topicIds": [
+        "mt_g5d_002",
+        "mt_g5d_003",
+        "mt_g5d_004"
+      ],
+      "description": "整除关系、因数倍数定义，2/5/3倍数特征，质数合数，为分数约分通分奠基",
+      "centralTopic": "mt_g5d_002"
+    },
+    {
+      "id": "cluster_g5d_3d_shape",
+      "name": "长方体和正方体",
+      "domain": "图形与几何",
+      "topicIds": [
+        "mt_g5d_005",
+        "mt_g5d_006",
+        "mt_g5d_007",
+        "mt_g5d_008",
+        "mt_g5d_026"
+      ],
+      "description": "从认识到表面积到体积，立体几何完整体系；引入体积单位和容积",
+      "centralTopic": "mt_g5d_008"
+    },
+    {
+      "id": "cluster_g5d_fraction_meaning",
+      "name": "分数的意义和性质",
+      "domain": "数与代数",
+      "topicIds": [
+        "mt_g5d_009",
+        "mt_g5d_010",
+        "mt_g5d_011",
+        "mt_g5d_012",
+        "mt_g5d_013",
+        "mt_g5d_014",
+        "mt_g5d_015",
+        "mt_g5d_025"
+      ],
+      "description": "分数意义→基本性质→GCF/LCM→约分通分→分数小数互化；本学期最大知识群",
+      "centralTopic": "mt_g5d_009"
+    },
+    {
+      "id": "cluster_g5d_transformation",
+      "name": "图形的运动（三）",
+      "domain": "图形与几何",
+      "topicIds": [
+        "mt_g5d_016",
+        "mt_g5d_017",
+        "mt_g5d_027"
+      ],
+      "description": "旋转三要素，方格纸上作旋转图形，平移旋转综合应用设计图案",
+      "centralTopic": "mt_g5d_016"
+    },
+    {
+      "id": "cluster_g5d_fraction_ops",
+      "name": "分数的加法和减法",
+      "domain": "数的运算",
+      "topicIds": [
+        "mt_g5d_018",
+        "mt_g5d_019",
+        "mt_g5d_020"
+      ],
+      "description": "同分母→异分母→混合运算，运算律推广到分数",
+      "centralTopic": "mt_g5d_019"
+    },
+    {
+      "id": "cluster_g5d_statistics",
+      "name": "折线统计图",
+      "domain": "统计与概率",
+      "topicIds": [
+        "mt_g5d_022",
+        "mt_g5d_023",
+        "mt_g5d_028"
+      ],
+      "description": "折线图表示变化趋势，复式折线图比较两组数据，统计图选择与分析",
+      "centralTopic": "mt_g5d_022"
+    },
+    {
+      "id": "cluster_g5d_math_thinking",
+      "name": "数学广角与综合实践",
+      "domain": "数的运算",
+      "topicIds": [
+        "mt_g5d_021",
+        "mt_g5d_024"
+      ],
+      "description": "怎样通知最快（二叉树优化）和找次品（三等分策略），培养优化思维",
+      "centralTopic": "mt_g5d_024"
+    }
+  ]
+}
