@@ -1,0 +1,210 @@
+{
+  "version": "pep-primary-math-3d-v1",
+  "edgeCount": 40,
+  "dependencies": [
+    {
+      "topicId": "mt_g3d_001",
+      "prerequisiteId": "mt_g2u_001",
+      "strength": "soft",
+      "reason": "二年级初步感知对称现象，三年级系统学习轴对称"
+    },
+    {
+      "topicId": "mt_g3d_002",
+      "prerequisiteId": "mt_g3d_001",
+      "strength": "soft",
+      "reason": "对称、平移、旋转同属图形变换，教材安排先对称后平移"
+    },
+    {
+      "topicId": "mt_g3d_003",
+      "prerequisiteId": "mt_g3d_002",
+      "strength": "soft",
+      "reason": "平移和旋转同属图形运动，教学上先平移后旋转"
+    },
+    {
+      "topicId": "mt_g3d_004",
+      "prerequisiteId": "mt_g2u_004",
+      "strength": "hard",
+      "reason": "口算除法需要熟练掌握乘法口诀（二年级学习）"
+    },
+    {
+      "topicId": "mt_g3d_004",
+      "prerequisiteId": "mt_g2d_002",
+      "strength": "hard",
+      "reason": "二年级下册有余数除法是三年级除法的直接基础"
+    },
+    {
+      "topicId": "mt_g3d_005",
+      "prerequisiteId": "mt_g3d_004",
+      "strength": "hard",
+      "reason": "笔算两位数除法建立在口算除法基础上"
+    },
+    {
+      "topicId": "mt_g3d_006",
+      "prerequisiteId": "mt_g3d_005",
+      "strength": "hard",
+      "reason": "三位数除法是两位数除法的直接进阶"
+    },
+    {
+      "topicId": "mt_g3d_007",
+      "prerequisiteId": "mt_g3d_005",
+      "strength": "hard",
+      "reason": "需要掌握除法计算才能进行验算"
+    },
+    {
+      "topicId": "mt_g3d_007",
+      "prerequisiteId": "mt_g3u_009",
+      "strength": "hard",
+      "reason": "验算除法需要用到多位数乘一位数（三年级上册）"
+    },
+    {
+      "topicId": "mt_g3d_008",
+      "prerequisiteId": "mt_g3d_004",
+      "strength": "hard",
+      "reason": "估算除法基于口算除法能力"
+    },
+    {
+      "topicId": "mt_g3d_009",
+      "prerequisiteId": "mt_g1u_001",
+      "strength": "soft",
+      "reason": "一年级已初步认识长方形和正方形"
+    },
+    {
+      "topicId": "mt_g3d_010",
+      "prerequisiteId": "mt_g3d_009",
+      "strength": "hard",
+      "reason": "周长概念建立在认识图形边的基础上"
+    },
+    {
+      "topicId": "mt_g3d_011",
+      "prerequisiteId": "mt_g3d_010",
+      "strength": "hard",
+      "reason": "周长公式需要先理解周长概念"
+    },
+    {
+      "topicId": "mt_g3d_012",
+      "prerequisiteId": "mt_g3d_011",
+      "strength": "soft",
+      "reason": "周长学习有助于区分面积（一维vs二维）"
+    },
+    {
+      "topicId": "mt_g3d_013",
+      "prerequisiteId": "mt_g3d_012",
+      "strength": "hard",
+      "reason": "先理解面积概念才能学习面积单位"
+    },
+    {
+      "topicId": "mt_g3d_014",
+      "prerequisiteId": "mt_g3d_012",
+      "strength": "hard",
+      "reason": "面积计算需要理解面积概念"
+    },
+    {
+      "topicId": "mt_g3d_014",
+      "prerequisiteId": "mt_g3d_013",
+      "strength": "hard",
+      "reason": "需要面积单位来表达计算结果"
+    },
+    {
+      "topicId": "mt_g3d_014",
+      "prerequisiteId": "mt_g3u_009",
+      "strength": "hard",
+      "reason": "面积公式用到乘法（三年级上册多位数乘一位数）"
+    },
+    {
+      "topicId": "mt_g3d_016",
+      "prerequisiteId": "mt_g2u_003",
+      "strength": "soft",
+      "reason": "二年级对线段有初步认识"
+    },
+    {
+      "topicId": "mt_g3d_017",
+      "prerequisiteId": "mt_g3d_016",
+      "strength": "hard",
+      "reason": "角由两条射线组成，需先认识射线"
+    },
+    {
+      "topicId": "mt_g3d_018",
+      "prerequisiteId": "mt_g2d_003",
+      "strength": "soft",
+      "reason": "二年级下册初步接触平均分概念"
+    },
+    {
+      "topicId": "mt_g3d_019",
+      "prerequisiteId": "mt_g3d_018",
+      "strength": "hard",
+      "reason": "理解几分之几需要先理解几分之一"
+    },
+    {
+      "topicId": "mt_g3d_020",
+      "prerequisiteId": "mt_g3d_019",
+      "strength": "hard",
+      "reason": "同分母分数加减法建立在理解分数含义的基础上"
+    },
+    {
+      "topicId": "mt_g3d_021",
+      "prerequisiteId": "mt_g3d_019",
+      "strength": "hard",
+      "reason": "用分数表示集合的一部分需要先理解几分之几"
+    },
+    {
+      "topicId": "mt_g3d_021",
+      "prerequisiteId": "mt_g3d_004",
+      "strength": "hard",
+      "reason": "求一个数的几分之几需要用到除法"
+    },
+    {
+      "topicId": "mt_g3d_022",
+      "prerequisiteId": "mt_g2d_001",
+      "strength": "hard",
+      "reason": "认识时分秒是认识年月日的时间知识基础"
+    },
+    {
+      "topicId": "mt_g3d_023",
+      "prerequisiteId": "mt_g3d_022",
+      "strength": "hard",
+      "reason": "计算天数需要先认识年月日各有多少天"
+    },
+    {
+      "topicId": "mt_g3d_024",
+      "prerequisiteId": "mt_g3d_022",
+      "strength": "soft",
+      "reason": "24时计时法建立在对时间认识的基础上"
+    },
+    {
+      "topicId": "mt_g3d_025",
+      "prerequisiteId": "mt_g3d_018",
+      "strength": "soft",
+      "reason": "分数初步认识有助于理解小数（0.1与1/10的关系）"
+    },
+    {
+      "topicId": "mt_g3d_025",
+      "prerequisiteId": "mt_g2u_002",
+      "strength": "hard",
+      "reason": "数位概念是理解小数各位（十分位、百分位）的基础"
+    },
+    {
+      "topicId": "mt_g3d_026",
+      "prerequisiteId": "mt_g3d_025",
+      "strength": "hard",
+      "reason": "比较小数大小需要先理解小数含义"
+    },
+    {
+      "topicId": "mt_g3d_027",
+      "prerequisiteId": "mt_g3d_025",
+      "strength": "hard",
+      "reason": "小数加减法基于对小数含义的理解"
+    },
+    {
+      "topicId": "mt_g3d_027",
+      "prerequisiteId": "mt_g2u_005",
+      "strength": "soft",
+      "reason": "小数加减法是整数加减法的延伸"
+    },
+    {
+      "topicId": "mt_g3d_028",
+      "prerequisiteId": "mt_g3d_019",
+      "strength": "soft",
+      "reason": "重叠问题涉及集合的分类计数，需有基本计数能力"
+    }
+  ]
+}
