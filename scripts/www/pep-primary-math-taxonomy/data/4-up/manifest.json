@@ -1,0 +1,33 @@
+{
+  "version": "pep-primary-math-4up-v2",
+  "grade": 4,
+  "volume": "up",
+  "label": "四年级上册",
+  "publisher": "人民教育出版社",
+  "edition": "2022版",
+  "ageRangeStart": 9,
+  "ageRangeEnd": 10,
+  "topicCount": 36,
+  "clusterCount": 9,
+  "dependencyCount": 39,
+  "standardCount": 34,
+  "units": [
+    {"order": 1, "name": "大数的认识", "pages": "2-33", "clusterId": ["cluster_4u_01", "cluster_4u_02"]},
+    {"order": 2, "name": "公顷和平方千米", "pages": "34-37", "clusterId": ["cluster_4u_03"]},
+    {"order": 3, "name": "角的度量", "pages": "38-46", "clusterId": ["cluster_4u_04"]},
+    {"order": 4, "name": "三位数乘两位数", "pages": "47-55", "clusterId": ["cluster_4u_05"]},
+    {"order": 5, "name": "平行四边形和梯形", "pages": "56-70", "clusterId": ["cluster_4u_06"]},
+    {"order": 6, "name": "除数是两位数的除法", "pages": "71-103", "clusterId": ["cluster_4u_07"]},
+    {"order": 7, "name": "条形统计图", "pages": "94-96", "clusterId": ["cluster_4u_08"]},
+    {"order": 8, "name": "数学广角——优化", "pages": "104-106", "clusterId": ["cluster_4u_09"]}
+  ],
+  "files": {
+    "topics": "topics.json",
+    "dependencies": "dependencies.json",
+    "clusters": "clusters.json",
+    "curriculumStandards": "curriculum-standards.json"
+  },
+  "generatedAt": "2026-08-07",
+  "sourceFile": "义务教育教科书 · 数学四年级上册.pdf",
+  "totalPages": 126
+}
