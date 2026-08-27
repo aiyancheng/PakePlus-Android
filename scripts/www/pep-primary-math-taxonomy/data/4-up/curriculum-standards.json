@@ -1,0 +1,259 @@
+{
+  "version": "pep-primary-math-4up-v2",
+  "curriculumVersion": "pep-math-2022",
+  "gradeVolume": "4上",
+  "standards": [
+    {
+      "code": "pep-math-2022:4上.1.1",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "认识亿以内的数，了解十进制计数法，掌握数位顺序表",
+      "topicIds": ["mt_g4u_001", "mt_g4u_035"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.2",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "会读亿以内的数，掌握按级读数规则",
+      "topicIds": ["mt_g4u_002"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.3",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "会写亿以内的数，掌握0的写法",
+      "topicIds": ["mt_g4u_003"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.4",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "会用四舍五入法求近似数，用≈表示",
+      "topicIds": ["mt_g4u_004"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.5",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "认识亿以上的数，会读写亿以上的数",
+      "topicIds": ["mt_g4u_005"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.6",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "理解十进制计数法，认识自然数",
+      "topicIds": ["mt_g4u_006"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.7",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "能将整万整亿的数改写，能比较多位数的大小",
+      "topicIds": ["mt_g4u_007"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.8",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "了解常见计算工具，会使用计算器进行大数运算",
+      "topicIds": ["mt_g4u_032"]
+    },
+    {
+      "code": "pep-math-2022:4上.1.9",
+      "area": "数与代数",
+      "domain": "数的认识",
+      "description": "能用数位顺序表完整表示亿以内和亿以上的数",
+      "topicIds": ["mt_g4u_035"]
+    },
+    {
+      "code": "pep-math-2022:4上.2.1",
+      "area": "图形与几何",
+      "domain": "量与计量",
+      "description": "认识较大面积单位公顷和平方千米，掌握换算关系",
+      "topicIds": ["mt_g4u_008"]
+    },
+    {
+      "code": "pep-math-2022:4上.3.1",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "认识线段、射线、直线，理解三者区别",
+      "topicIds": ["mt_g4u_009"]
+    },
+    {
+      "code": "pep-math-2022:4上.3.2",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "认识角的构成，会用量角器量角",
+      "topicIds": ["mt_g4u_010"]
+    },
+    {
+      "code": "pep-math-2022:4上.3.3",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "掌握锐角、直角、钝角、平角、周角的分类",
+      "topicIds": ["mt_g4u_011"]
+    },
+    {
+      "code": "pep-math-2022:4上.3.4",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "会用量角器画指定度数的角",
+      "topicIds": ["mt_g4u_012"]
+    },
+    {
+      "code": "pep-math-2022:4上.4.1",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "掌握三位数乘两位数的笔算方法",
+      "topicIds": ["mt_g4u_013"]
+    },
+    {
+      "code": "pep-math-2022:4上.4.2",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "理解并运用积的变化规律",
+      "topicIds": ["mt_g4u_014"]
+    },
+    {
+      "code": "pep-math-2022:4上.4.3",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "掌握速度、时间、路程的数量关系",
+      "topicIds": ["mt_g4u_015"]
+    },
+    {
+      "code": "pep-math-2022:4上.4.4",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "掌握单价、数量、总价的数量关系",
+      "topicIds": ["mt_g4u_033"]
+    },
+    {
+      "code": "pep-math-2022:4上.4.5",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "会进行乘除法估算，判断估算结果的合理性",
+      "topicIds": ["mt_g4u_036"]
+    },
+    {
+      "code": "pep-math-2022:4上.5.1",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "理解平行线与垂线的定义，会识别图形中的平行垂直关系",
+      "topicIds": ["mt_g4u_016"]
+    },
+    {
+      "code": "pep-math-2022:4上.5.2",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "会用直尺三角板画平行线和垂线",
+      "topicIds": ["mt_g4u_017"]
+    },
+    {
+      "code": "pep-math-2022:4上.5.3",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "认识平行四边形，掌握其特征",
+      "topicIds": ["mt_g4u_018"]
+    },
+    {
+      "code": "pep-math-2022:4上.5.4",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "认识梯形（包括等腰梯形、直角梯形），掌握其特征",
+      "topicIds": ["mt_g4u_019"]
+    },
+    {
+      "code": "pep-math-2022:4上.5.5",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "理解四边形之间的包含关系",
+      "topicIds": ["mt_g4u_020"]
+    },
+    {
+      "code": "pep-math-2022:4上.5.6",
+      "area": "图形与几何",
+      "domain": "图形的认识",
+      "description": "能画平行四边形和梯形的高",
+      "topicIds": ["mt_g4u_034"]
+    },
+    {
+      "code": "pep-math-2022:4上.6.1",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "会口算整十数整百数的除法",
+      "topicIds": ["mt_g4u_021"]
+    },
+    {
+      "code": "pep-math-2022:4上.6.2",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "掌握商是一位数的两位数除法笔算，学会试商和调商",
+      "topicIds": ["mt_g4u_022"]
+    },
+    {
+      "code": "pep-math-2022:4上.6.3",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "掌握商是两位数的两位数除法笔算",
+      "topicIds": ["mt_g4u_023"]
+    },
+    {
+      "code": "pep-math-2022:4上.6.4",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "理解商的变化规律，能用于简便计算",
+      "topicIds": ["mt_g4u_024"]
+    },
+    {
+      "code": "pep-math-2022:4上.6.5",
+      "area": "数与代数",
+      "domain": "数的运算",
+      "description": "会用乘法验算除法结果",
+      "topicIds": ["mt_g4u_025"]
+    },
+    {
+      "code": "pep-math-2022:4上.7.1",
+      "area": "统计与概率",
+      "domain": "数据整理与表示",
+      "description": "认识单式条形统计图的结构，能从图中获取信息",
+      "topicIds": ["mt_g4u_026"]
+    },
+    {
+      "code": "pep-math-2022:4上.7.2",
+      "area": "统计与概率",
+      "domain": "数据整理与表示",
+      "description": "会绘制单式条形统计图，能分析数据趋势",
+      "topicIds": ["mt_g4u_027"]
+    },
+    {
+      "code": "pep-math-2022:4上.8.1",
+      "area": "综合实践",
+      "domain": "综合与实践",
+      "description": "通过烧水沏茶等问题体验统筹安排的思想",
+      "topicIds": ["mt_g4u_028"]
+    },
+    {
+      "code": "pep-math-2022:4上.8.2",
+      "area": "综合实践",
+      "domain": "综合与实践",
+      "description": "通过烙饼问题体验优化思想",
+      "topicIds": ["mt_g4u_029"]
+    },
+    {
+      "code": "pep-math-2022:4上.8.3",
+      "area": "综合实践",
+      "domain": "综合与实践",
+      "description": "通过田忌赛马体验策略分析方法",
+      "topicIds": ["mt_g4u_030"]
+    },
+    {
+      "code": "pep-math-2022:4上.综合.1",
+      "area": "综合实践",
+      "domain": "综合与实践",
+      "description": "通过1亿有多大的活动培养数感",
+      "topicIds": ["mt_g4u_031"]
+    }
+  ]
+}
