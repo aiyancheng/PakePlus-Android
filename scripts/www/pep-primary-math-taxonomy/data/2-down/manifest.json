@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "id": "pep-math-g2-down",
+  "title": "人教版小学数学二年级下册",
+  "grade": 2,
+  "semester": "down",
+  "publisher": "人民教育出版社",
+  "edition": "2022年版课程标准修订版",
+  "isbn": "978-7-107-38913-9",
+  "total_pages": 106,
+  "topic_count": 28,
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "时间在哪里（认识时间）",
+      "page_range": [1, 18],
+      "topic_ids": ["mt_g2d_001", "mt_g2d_002", "mt_g2d_003"]
+    },
+    {
+      "unit_no": 2,
+      "title": "有余数的除法",
+      "page_range": [19, 42],
+      "topic_ids": ["mt_g2d_004", "mt_g2d_005", "mt_g2d_006", "mt_g2d_007"]
+    },
+    {
+      "unit_no": 3,
+      "title": "数量间的乘除关系",
+      "page_range": [43, 60],
+      "topic_ids": ["mt_g2d_008", "mt_g2d_009", "mt_g2d_010", "mt_g2d_011"]
+    },
+    {
+      "unit_no": 4,
+      "title": "万以内数的认识",
+      "page_range": [61, 84],
+      "topic_ids": ["mt_g2d_012", "mt_g2d_013", "mt_g2d_014", "mt_g2d_015", "mt_g2d_028"]
+    },
+    {
+      "unit_no": 5,
+      "title": "万以内的加法和减法",
+      "page_range": [61, 82],
+      "topic_ids": ["mt_g2d_016", "mt_g2d_017", "mt_g2d_018", "mt_g2d_019", "mt_g2d_020", "mt_g2d_021", "mt_g2d_022", "mt_g2d_023"]
+    },
+    {
+      "unit_no": "5-ext",
+      "title": "数学连环画（综合与实践）",
+      "page_range": [83, 86],
+      "topic_ids": ["mt_g2d_024"]
+    },
+    {
+      "unit_no": 6,
+      "title": "复习与关联",
+      "page_range": [87, 97],
+      "topic_ids": ["mt_g2d_025", "mt_g2d_026", "mt_g2d_027"]
+    }
+  ],
+  "cross_references": {
+    "prerequisites": ["mt_g2u_*", "mt_g1d_*"],
+    "prev_semester": "pep-math-g2-up",
+    "next_semester": "pep-math-g3-up"
+  },
+  "domain_coverage": {
+    "数与运算": ["mt_g2d_004", "mt_g2d_005", "mt_g2d_006", "mt_g2d_007", "mt_g2d_008", "mt_g2d_009", "mt_g2d_010", "mt_g2d_011", "mt_g2d_012", "mt_g2d_013", "mt_g2d_014", "mt_g2d_015", "mt_g2d_016", "mt_g2d_017", "mt_g2d_018", "mt_g2d_019", "mt_g2d_020", "mt_g2d_021", "mt_g2d_023", "mt_g2d_025", "mt_g2d_026", "mt_g2d_028"],
+    "图形与几何": ["mt_g2d_001", "mt_g2d_002", "mt_g2d_003"],
+    "综合与实践": ["mt_g2d_022", "mt_g2d_024", "mt_g2d_027"]
+  },
+  "generated_at": "2026-08-07",
+  "source": "人教版二年级下册PDF全文提取（106页）"
+}
