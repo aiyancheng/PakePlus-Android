@@ -1,0 +1,28 @@
+{
+  "dataset": "人教版六年级数学下册知识图谱",
+  "taxonomyVersion": "pep-primary-math-6down-v2",
+  "basedOn": "withmarbleapp/os-taxonomy schema",
+  "sourceTextbook": "义务教育教科书·数学 六年级下册（人民教育出版社2024版）",
+  "scope": "全册（122页）",
+  "generatedAt": "2026-08-07T00:00:00.000Z",
+  "extractionMethod": "full-pdf-read",
+  "counts": {
+    "topics": 37,
+    "topicsByDomain": {
+      "数与代数": 20,
+      "空间与几何": 12,
+      "统计与概率": 1,
+      "综合实践": 2,
+      "综合复习": 2
+    },
+    "topicsByType": {
+      "CONCEPTUAL": 15,
+      "PROCEDURAL": 12,
+      "REPRESENTATIONAL": 10
+    },
+    "dependencies": 56,
+    "curricula": 1,
+    "curriculumStandards": 37,
+    "clusters": 7
+  }
+}
