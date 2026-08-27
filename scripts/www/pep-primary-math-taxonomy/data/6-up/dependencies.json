@@ -1,0 +1,337 @@
+{
+  "version": "pep-primary-math-6up-v2",
+  "edgeCount": 55,
+  "note": "包含册内依赖和跨册依赖，prerequisiteId中mt_g5d/mt_g5u/mt_g4u等为跨册引用",
+  "dependencies": [
+    {
+      "topicId": "mt_g6u_001",
+      "prerequisiteId": "mt_g5u_001",
+      "strength": "hard",
+      "reason": "分数乘整数建立在五年级上册分数意义的基础上"
+    },
+    {
+      "topicId": "mt_g6u_002",
+      "prerequisiteId": "mt_g6u_001",
+      "strength": "hard",
+      "reason": "计算方法建立在理解意义之上"
+    },
+    {
+      "topicId": "mt_g6u_003",
+      "prerequisiteId": "mt_g6u_002",
+      "strength": "hard",
+      "reason": "一个数乘分数在分数乘整数的基础上拓展意义"
+    },
+    {
+      "topicId": "mt_g6u_004",
+      "prerequisiteId": "mt_g6u_003",
+      "strength": "hard",
+      "reason": "分数乘分数是一个数乘分数的延伸"
+    },
+    {
+      "topicId": "mt_g6u_005",
+      "prerequisiteId": "mt_g6u_004",
+      "strength": "hard",
+      "reason": "运算律的应用需要先掌握分数乘法计算"
+    },
+    {
+      "topicId": "mt_g6u_005",
+      "prerequisiteId": "mt_g5d_019",
+      "strength": "hard",
+      "reason": "整数乘法的运算律是分数运算律的前置知识"
+    },
+    {
+      "topicId": "mt_g6u_006",
+      "prerequisiteId": "mt_g6u_004",
+      "strength": "hard",
+      "reason": "应用题需要熟练运用分数乘法计算"
+    },
+    {
+      "topicId": "mt_g6u_006",
+      "prerequisiteId": "mt_g6u_005",
+      "strength": "soft",
+      "reason": "多步应用题常需运算律进行简便计算"
+    },
+    {
+      "topicId": "mt_g6u_007",
+      "prerequisiteId": "mt_g6u_003",
+      "strength": "hard",
+      "reason": "乘积大小规律需要理解乘分数的意义"
+    },
+    {
+      "topicId": "mt_g6u_008",
+      "prerequisiteId": "mt_g4u_007",
+      "strength": "hard",
+      "reason": "方向角位置描述建立在四年级上册方向与位置的基础上"
+    },
+    {
+      "topicId": "mt_g6u_009",
+      "prerequisiteId": "mt_g6u_008",
+      "strength": "hard",
+      "reason": "绘制路线图需要先掌握方向角表示位置"
+    },
+    {
+      "topicId": "mt_g6u_010",
+      "prerequisiteId": "mt_g6u_004",
+      "strength": "hard",
+      "reason": "倒数定义（乘积为1）需要先掌握分数乘法"
+    },
+    {
+      "topicId": "mt_g6u_011",
+      "prerequisiteId": "mt_g6u_010",
+      "strength": "hard",
+      "reason": "分数除以整数用倒数转化为乘法"
+    },
+    {
+      "topicId": "mt_g6u_012",
+      "prerequisiteId": "mt_g6u_011",
+      "strength": "hard",
+      "reason": "一个数除以分数是分数除以整数的一般化，均用乘倒数法"
+    },
+    {
+      "topicId": "mt_g6u_013",
+      "prerequisiteId": "mt_g6u_012",
+      "strength": "hard",
+      "reason": "商与被除数大小的关系依赖对分数除法的理解"
+    },
+    {
+      "topicId": "mt_g6u_013",
+      "prerequisiteId": "mt_g6u_007",
+      "strength": "hard",
+      "reason": "商与被除数大小规律与乘积大小规律是对偶关系"
+    },
+    {
+      "topicId": "mt_g6u_014",
+      "prerequisiteId": "mt_g6u_012",
+      "strength": "hard",
+      "reason": "分数除法应用题需要熟练运用除以分数的计算"
+    },
+    {
+      "topicId": "mt_g6u_014",
+      "prerequisiteId": "mt_g5d_012",
+      "strength": "hard",
+      "reason": "方程解法需要五年级下册用方程解决问题的能力"
+    },
+    {
+      "topicId": "mt_g6u_015",
+      "prerequisiteId": "mt_g6u_012",
+      "strength": "hard",
+      "reason": "比的意义本质上是除法，需要先掌握分数除法"
+    },
+    {
+      "topicId": "mt_g6u_015",
+      "prerequisiteId": "mt_g5d_006",
+      "strength": "hard",
+      "reason": "比的意义建立在理解除法和分数意义的基础上"
+    },
+    {
+      "topicId": "mt_g6u_016",
+      "prerequisiteId": "mt_g6u_015",
+      "strength": "hard",
+      "reason": "化简比需要先理解比的基本性质"
+    },
+    {
+      "topicId": "mt_g6u_016",
+      "prerequisiteId": "mt_g5d_008",
+      "strength": "hard",
+      "reason": "化简比需要用到最大公因数"
+    },
+    {
+      "topicId": "mt_g6u_017",
+      "prerequisiteId": "mt_g6u_016",
+      "strength": "hard",
+      "reason": "按比分配需要先掌握化简比和比的运算"
+    },
+    {
+      "topicId": "mt_g6u_017",
+      "prerequisiteId": "mt_g6u_003",
+      "strength": "hard",
+      "reason": "分数法解按比分配需要分数乘法"
+    },
+    {
+      "topicId": "mt_g6u_018",
+      "prerequisiteId": "mt_g3u_010",
+      "strength": "hard",
+      "reason": "圆的认识建立在三年级对圆形图案的直观认识上"
+    },
+    {
+      "topicId": "mt_g6u_019",
+      "prerequisiteId": "mt_g6u_018",
+      "strength": "hard",
+      "reason": "圆周率的认识需要先知道圆心、半径、直径的概念"
+    },
+    {
+      "topicId": "mt_g6u_020",
+      "prerequisiteId": "mt_g6u_019",
+      "strength": "hard",
+      "reason": "圆的周长公式需要圆周率知识"
+    },
+    {
+      "topicId": "mt_g6u_021",
+      "prerequisiteId": "mt_g6u_020",
+      "strength": "hard",
+      "reason": "圆面积推导（割圆拼长方形）需要用到圆周长的一半"
+    },
+    {
+      "topicId": "mt_g6u_022",
+      "prerequisiteId": "mt_g6u_021",
+      "strength": "hard",
+      "reason": "组合图形面积计算需要先掌握圆面积公式"
+    },
+    {
+      "topicId": "mt_g6u_023",
+      "prerequisiteId": "mt_g6u_018",
+      "strength": "hard",
+      "reason": "扇形的认识需要先了解圆心、半径等基础概念"
+    },
+    {
+      "topicId": "mt_g6u_024",
+      "prerequisiteId": "mt_g6u_020",
+      "strength": "hard",
+      "reason": "确定起跑线需要运用圆的周长公式"
+    },
+    {
+      "topicId": "mt_g6u_025",
+      "prerequisiteId": "mt_g5u_015",
+      "strength": "hard",
+      "reason": "百分数是分数的特殊形式，需要先理解分数意义"
+    },
+    {
+      "topicId": "mt_g6u_025",
+      "prerequisiteId": "mt_g6u_015",
+      "strength": "soft",
+      "reason": "百分数与比有密切联系，均表示两量的比率关系"
+    },
+    {
+      "topicId": "mt_g6u_026",
+      "prerequisiteId": "mt_g6u_025",
+      "strength": "hard",
+      "reason": "百分数互化需要理解百分数含义"
+    },
+    {
+      "topicId": "mt_g6u_027",
+      "prerequisiteId": "mt_g6u_026",
+      "strength": "hard",
+      "reason": "基本计算需要先掌握百分数与小数的互化"
+    },
+    {
+      "topicId": "mt_g6u_028",
+      "prerequisiteId": "mt_g6u_027",
+      "strength": "hard",
+      "reason": "增减应用需要先掌握百分数基本计算"
+    },
+    {
+      "topicId": "mt_g6u_029",
+      "prerequisiteId": "mt_g6u_028",
+      "strength": "soft",
+      "reason": "百分数取值范围的判断建立在理解增减变化的基础上"
+    },
+    {
+      "topicId": "mt_g6u_030",
+      "prerequisiteId": "mt_g6u_027",
+      "strength": "hard",
+      "reason": "扇形统计图需要先掌握百分数的计算"
+    },
+    {
+      "topicId": "mt_g6u_030",
+      "prerequisiteId": "mt_g6u_023",
+      "strength": "hard",
+      "reason": "扇形统计图的制作需要理解扇形和圆心角"
+    },
+    {
+      "topicId": "mt_g6u_031",
+      "prerequisiteId": "mt_g6u_030",
+      "strength": "hard",
+      "reason": "三种统计图的比较需要先认识扇形统计图"
+    },
+    {
+      "topicId": "mt_g6u_031",
+      "prerequisiteId": "mt_g4d_018",
+      "strength": "hard",
+      "reason": "需要先了解条形统计图和折线统计图"
+    },
+    {
+      "topicId": "mt_g6u_032",
+      "prerequisiteId": "mt_g5d_018",
+      "strength": "soft",
+      "reason": "图形规律探索需要五年级数学广角的数列规律基础"
+    },
+    {
+      "topicId": "mt_g6u_033",
+      "prerequisiteId": "mt_g6u_032",
+      "strength": "soft",
+      "reason": "无限递减分数规律是数形结合思想的延伸"
+    },
+    {
+      "topicId": "mt_g6u_034",
+      "prerequisiteId": "mt_g6u_036",
+      "strength": "hard",
+      "reason": "节约用水实践需要先掌握统计图制作"
+    },
+    {
+      "topicId": "mt_g6u_035",
+      "prerequisiteId": "mt_g6u_004",
+      "strength": "hard",
+      "reason": "分数四则混合运算需要先掌握分数乘除法"
+    },
+    {
+      "topicId": "mt_g6u_035",
+      "prerequisiteId": "mt_g6u_014",
+      "strength": "hard",
+      "reason": "混合运算需要分数除法"
+    },
+    {
+      "topicId": "mt_g6u_036",
+      "prerequisiteId": "mt_g6u_015",
+      "strength": "hard",
+      "reason": "比与分数、除法的综合联系是对比的意义的深化"
+    },
+    {
+      "topicId": "mt_g6u_037",
+      "prerequisiteId": "mt_g6u_018",
+      "strength": "hard",
+      "reason": "圆与对称性的联系需要先认识圆的基本概念"
+    },
+    {
+      "topicId": "mt_g6u_037",
+      "prerequisiteId": "mt_g4u_012",
+      "strength": "hard",
+      "reason": "轴对称图形的概念在四年级已学习"
+    },
+    {
+      "topicId": "mt_g6u_038",
+      "prerequisiteId": "mt_g6u_021",
+      "strength": "soft",
+      "reason": "刘徽割圆术是理解圆面积推导数学思想的拓展"
+    },
+    {
+      "topicId": "mt_g6u_034",
+      "prerequisiteId": "mt_g6u_027",
+      "strength": "hard",
+      "reason": "节约用水实践中需要用到百分数计算"
+    },
+    {
+      "topicId": "mt_g6u_034",
+      "prerequisiteId": "mt_g6u_030",
+      "strength": "soft",
+      "reason": "节约用水实践中制作统计图需要扇形统计图知识"
+    },
+    {
+      "topicId": "mt_g6u_017",
+      "prerequisiteId": "mt_g6u_015",
+      "strength": "hard",
+      "reason": "按比分配需要先掌握比的基本性质"
+    },
+    {
+      "topicId": "mt_g6u_013",
+      "prerequisiteId": "mt_g6u_007",
+      "strength": "soft",
+      "reason": "商与被除数大小的比较类比乘积大小的比较"
+    },
+    {
+      "topicId": "mt_g6u_036",
+      "prerequisiteId": "mt_g6u_016",
+      "strength": "hard",
+      "reason": "比与除法分数的关系是比基本性质的深化理解"
+    }
+  ]
+}
