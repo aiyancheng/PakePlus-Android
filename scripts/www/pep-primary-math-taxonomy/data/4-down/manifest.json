@@ -1,0 +1,34 @@
+{
+  "version": "pep-primary-math-4down-v2",
+  "grade": 4,
+  "volume": "down",
+  "label": "四年级下册",
+  "publisher": "人民教育出版社",
+  "edition": "2022版",
+  "ageRangeStart": 9,
+  "ageRangeEnd": 10,
+  "topicCount": 35,
+  "clusterCount": 9,
+  "dependencyCount": 43,
+  "standardCount": 35,
+  "units": [
+    {"order": 1, "name": "四则运算", "pages": "2-12", "clusterId": ["cluster_4d_01"]},
+    {"order": 2, "name": "运算定律", "pages": "17-32", "clusterId": ["cluster_4d_02"]},
+    {"order": 3, "name": "观察物体（二）", "pages": "35-37", "clusterId": ["cluster_4d_03"]},
+    {"order": 4, "name": "小数的意义和性质", "pages": "34-53", "clusterId": ["cluster_4d_04"]},
+    {"order": 5, "name": "三角形", "pages": "58-73", "clusterId": ["cluster_4d_05"]},
+    {"order": 6, "name": "图形的运动（二）", "pages": "74-81", "clusterId": ["cluster_4d_06"]},
+    {"order": 7, "name": "小数的加法和减法", "pages": "85-93", "clusterId": ["cluster_4d_07"]},
+    {"order": 8, "name": "平均数与统计图", "pages": "99-108", "clusterId": ["cluster_4d_08"]},
+    {"order": 9, "name": "数学广角——鸡兔同笼", "pages": "109-114", "clusterId": ["cluster_4d_09"]}
+  ],
+  "files": {
+    "topics": "topics.json",
+    "dependencies": "dependencies.json",
+    "clusters": "clusters.json",
+    "curriculumStandards": "curriculum-standards.json"
+  },
+  "generatedAt": "2026-08-07",
+  "sourceFile": "义务教育教科书·数学四年级下册.pdf",
+  "totalPages": 123
+}
