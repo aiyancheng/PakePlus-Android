@@ -1,0 +1,24 @@
+{
+  "dataset": "人教版五年级数学下册知识图谱",
+  "taxonomyVersion": "pep-primary-math-5down-v2",
+  "basedOn": "withmarbleapp/os-taxonomy schema",
+  "sourceTextbook": "义务教育教科书·数学 五年级下册（人民教育出版社，2022课标版）",
+  "isbn": "978-7-107-37173-8",
+  "generatedDate": "2026-08-07",
+  "topicCount": 28,
+  "edgeCount": 42,
+  "clusterCount": 8,
+  "domains": ["数与代数", "图形与几何", "数的运算", "统计与概率"],
+  "chapters": [
+    { "number": 1, "title": "观察物体（三）", "topicIds": ["mt_g5d_001"] },
+    { "number": 2, "title": "因数和倍数", "topicIds": ["mt_g5d_002", "mt_g5d_003", "mt_g5d_004"] },
+    { "number": 3, "title": "长方体和正方体", "topicIds": ["mt_g5d_005", "mt_g5d_006", "mt_g5d_007", "mt_g5d_008", "mt_g5d_026"] },
+    { "number": 4, "title": "分数的意义和性质", "topicIds": ["mt_g5d_009", "mt_g5d_010", "mt_g5d_011", "mt_g5d_012", "mt_g5d_013", "mt_g5d_014", "mt_g5d_015", "mt_g5d_025"] },
+    { "number": 5, "title": "图形的运动（三）", "topicIds": ["mt_g5d_016", "mt_g5d_017", "mt_g5d_027"] },
+    { "number": 6, "title": "分数的加法和减法", "topicIds": ["mt_g5d_018", "mt_g5d_019", "mt_g5d_020"] },
+    { "number": 7, "title": "折线统计图", "topicIds": ["mt_g5d_022", "mt_g5d_023", "mt_g5d_028"] },
+    { "number": 8, "title": "数学广角——找次品", "topicIds": ["mt_g5d_024"] },
+    { "number": 0, "title": "综合与实践", "topicIds": ["mt_g5d_021"] }
+  ],
+  "notes": "基于完整阅读五年级下册全部131页生成，v2版本覆盖了所有单元，修正了依赖关系，补充了GCF/LCM关系和综合实践内容"
+}
