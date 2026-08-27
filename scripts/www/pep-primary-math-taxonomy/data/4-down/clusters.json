@@ -1,0 +1,77 @@
+{
+  "version": "pep-primary-math-4down-v2",
+  "clusters": [
+    {
+      "id": "cluster_4d_01",
+      "name": "四则运算",
+      "description": "加减乘除的意义、0的运算规则、混合运算顺序与括号",
+      "topicIds": ["mt_g4d_001", "mt_g4d_002", "mt_g4d_003", "mt_g4d_004"],
+      "unitInTextbook": "第一单元：四则运算",
+      "sequence": 1
+    },
+    {
+      "id": "cluster_4d_02",
+      "name": "运算定律",
+      "description": "加法交换律和结合律、乘法交换律/结合律/分配律、减法除法性质，以及综合运用进行简便计算",
+      "topicIds": ["mt_g4d_005", "mt_g4d_006", "mt_g4d_007", "mt_g4d_008", "mt_g4d_009"],
+      "unitInTextbook": "第二单元：运算定律",
+      "sequence": 2
+    },
+    {
+      "id": "cluster_4d_03",
+      "name": "观察物体",
+      "description": "从正面、侧面、上面观察立体图形",
+      "topicIds": ["mt_g4d_018"],
+      "unitInTextbook": "第三单元：观察物体（二）",
+      "sequence": 3
+    },
+    {
+      "id": "cluster_4d_04",
+      "name": "小数的意义和性质",
+      "description": "小数的意义、计数单位、读写法、小数性质、大小比较、小数点移动、单位换算、近似数",
+      "topicIds": ["mt_g4d_010", "mt_g4d_011", "mt_g4d_012", "mt_g4d_013", "mt_g4d_014", "mt_g4d_015", "mt_g4d_016", "mt_g4d_017", "mt_g4d_035"],
+      "unitInTextbook": "第四单元：小数的意义和性质",
+      "sequence": 4
+    },
+    {
+      "id": "cluster_4d_05",
+      "name": "三角形",
+      "description": "三角形认识（高、稳定性）、三边关系、按角分类/按边分类、内角和",
+      "topicIds": ["mt_g4d_019", "mt_g4d_020", "mt_g4d_021", "mt_g4d_022"],
+      "unitInTextbook": "第五单元：三角形",
+      "sequence": 5
+    },
+    {
+      "id": "cluster_4d_06",
+      "name": "四边形内角和与图形变换",
+      "description": "四边形内角和、轴对称图形、画轴对称图形、平移",
+      "topicIds": ["mt_g4d_023", "mt_g4d_024", "mt_g4d_025", "mt_g4d_026"],
+      "unitInTextbook": "第六单元：图形的运动（二）",
+      "sequence": 6
+    },
+    {
+      "id": "cluster_4d_07",
+      "name": "小数的加法和减法",
+      "description": "小数加减法笔算、小数加减混合运算、运算律推广到小数",
+      "topicIds": ["mt_g4d_027", "mt_g4d_028", "mt_g4d_029"],
+      "unitInTextbook": "第七单元：小数的加法和减法",
+      "sequence": 7
+    },
+    {
+      "id": "cluster_4d_08",
+      "name": "平均数与统计",
+      "description": "平均数的意义与计算、复式条形统计图",
+      "topicIds": ["mt_g4d_030", "mt_g4d_031", "mt_g4d_032"],
+      "unitInTextbook": "第八单元：平均数与统计图",
+      "sequence": 8
+    },
+    {
+      "id": "cluster_4d_09",
+      "name": "数学广角——鸡兔同笼",
+      "description": "鸡兔同笼问题的列举法和假设法",
+      "topicIds": ["mt_g4d_033", "mt_g4d_034"],
+      "unitInTextbook": "第九单元：数学广角——鸡兔同笼",
+      "sequence": 9
+    }
+  ]
+}
