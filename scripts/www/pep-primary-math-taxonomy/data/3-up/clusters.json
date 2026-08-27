@@ -1,0 +1,76 @@
+{
+  "version": "pep-primary-math-3u-v1",
+  "clusterCount": 5,
+  "clusters": [
+    {
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "ageRangeStart": 8,
+      "summary": "通过观察物体发展空间观念，认识线段、射线、直线和角的基本概念，掌握角的分类和画法",
+      "topicIds": [
+        "mt_g3u_001",
+        "mt_g3u_002",
+        "mt_g3u_003",
+        "mt_g3u_022",
+        "mt_g3u_023",
+        "mt_g3u_024",
+        "mt_g3u_025"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "ageRangeStart": 8,
+      "summary": "掌握混合运算的顺序和括号规则，学习多位数乘一位数的口算、笔算和估算方法，初步学习同分母分数加减法",
+      "topicIds": [
+        "mt_g3u_004",
+        "mt_g3u_005",
+        "mt_g3u_006",
+        "mt_g3u_014",
+        "mt_g3u_015",
+        "mt_g3u_016",
+        "mt_g3u_017",
+        "mt_g3u_018",
+        "mt_g3u_019",
+        "mt_g3u_029"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "ageRangeStart": 8,
+      "summary": "认识毫米、分米、千米等长度单位和千克、克、吨等质量单位，掌握单位间的换算关系",
+      "topicIds": [
+        "mt_g3u_007",
+        "mt_g3u_008",
+        "mt_g3u_009",
+        "mt_g3u_010",
+        "mt_g3u_011",
+        "mt_g3u_012",
+        "mt_g3u_013"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "ageRangeStart": 8,
+      "summary": "初步认识分数，理解几分之一和几分之几的含义，能比较简单分数的大小",
+      "topicIds": [
+        "mt_g3u_026",
+        "mt_g3u_027",
+        "mt_g3u_028",
+        "mt_g3u_030"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数学思维",
+      "ageRangeStart": 8,
+      "summary": "了解数字编码在生活中的应用，能设计简单的编码方案，培养信息素养和逻辑思维",
+      "topicIds": [
+        "mt_g3u_020",
+        "mt_g3u_021"
+      ]
+    }
+  ]
+}
