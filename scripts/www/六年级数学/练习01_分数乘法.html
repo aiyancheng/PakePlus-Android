@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>六年级数学 练习01 · 分数乘法</title>
+<style>
+:root{--primary:#1677ff;--primary-light:#e6f0ff;--primary-dark:#0958d9;--ok:#52c41a;--warn:#fa8c16;--text:#1f2329;--text2:#4e5969;--line:#e5e6eb;--bg:#f7f8fa;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",-apple-system,system-ui,SimHei,serif,sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:15px}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+header.paper{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--primary);border-radius:12px;padding:24px 26px;margin-bottom:18px}
+header.paper .sub{font-size:12.5px;color:var(--text2);letter-spacing:2px;margin-bottom:4px}
+header.paper h1{font-size:22px;color:var(--primary-dark)}
+header.paper .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:13px}
+header.paper .meta span{background:var(--primary-light);color:var(--primary-dark);padding:2px 12px;border-radius:99px}
+header.paper .scope{margin-top:12px;font-size:13.5px;color:var(--text2);background:var(--bg);padding:10px 14px;border-left:3px solid var(--primary);border-radius:0 8px 8px 0}
+section.block{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:18px}
+h2.qsec{font-size:16px;color:var(--primary-dark);border-bottom:2px solid var(--primary-light);padding-bottom:8px;margin-bottom:6px}
+h2.qsec small{font-weight:normal;color:var(--text2);font-size:12.5px;margin-left:8px}
+ol.qlist{list-style:none;counter-reset:q}
+ol.qlist>li{counter-increment:q;padding:8px 0 8px 34px;position:relative;border-bottom:1px dashed var(--line)}
+ol.qlist>li:last-child{border-bottom:none}
+ol.qlist>li::before{content:counter(q) ".";position:absolute;left:4px;color:var(--primary);font-weight:bold}
+.blank{display:inline-block;min-width:56px;border-bottom:1.5px solid var(--text2);text-align:center;color:transparent}
+input.fillin{display:inline-block;min-width:60px;border:none;border-bottom:1.5px solid #b9c0cc;text-align:center;font-size:15px;background:#fbfcfe;color:var(--primary-dark);outline:none;font-family:inherit}
+input.fillin:focus{border-bottom-color:var(--primary);background:var(--primary-light)}
+.opts{display:block;margin-top:2px}
+.answer{margin-top:22px}
+details.ans{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+details.ans summary{cursor:pointer;padding:13px 22px;font-size:15px;font-weight:bold;color:var(--ok);background:#f6ffed;border:1px solid #d9f7be;border-radius:12px;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.ans summary::before{content:"▸";transition:.2s}
+details.ans[open] summary::before{transform:rotate(90deg)}
+details.ans .ans-body{padding:14px 22px 20px}
+table.mini{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+table.mini th{background:var(--primary-light);color:var(--primary-dark);padding:6px 10px;border:1px solid #d4e3ff}
+table.mini td{padding:6px 10px;border:1px solid var(--line);vertical-align:top}
+table.mini td:first-child{white-space:nowrap;color:var(--primary-dark);font-weight:bold}
+footer{margin-top:26px;text-align:center;color:var(--text2);font-size:12.5px}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+@media(max-width:640px){.twocol{grid-template-columns:1fr}}
+.hint{font-size:12.5px;color:var(--warn);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="paper">
+  <div class="sub">人教版小学数学六年级 · 专项练习</div>
+  <h1>练习01 · 分数乘法</h1>
+  <div class="meta"><span>建议用时 40分钟</span><span>满分 100分</span><span>共 37 题</span></div>
+  <div class="scope"><b>考点范围：</b>分数乘整数、分数乘分数；积与因数比较；小数乘分数；倒数的认识；求一个数的几分之几（六上第1单元）</div>
+</header>
+<section class="block notice">
+  <h2 class="qsec">答题须知<small>先读一遍再动笔</small></h2>
+  <ol class="qlist">
+    <li>先写姓名和日期，按题目顺序作答；遇到暂时不会的题先跳过，做完再回头思考。</li>
+    <li>口算题不写过程，直接写得数；竖式题要列竖式，带※的题必须写出验算过程。</li>
+    <li>填空题按空作答，注意单位名称是否要求填写；判断题打√或×，选择题填字母序号。</li>
+    <li>解决问题要写出算式、得数和单位（或答句），只写得数要扣过程分。</li>
+    <li>做完后预留5分钟检查：数字有没有抄错、单位有没有漏写、验算了没有。</li>
+  </ol>
+  <p class="hint">评分参考：填空每空1分；判断、选择每题2分；口算每题1分；竖式每题4分（验算占1分）；解决问题每题6分（列式3分＋计算2分＋单位答句1分）。错题请回到《六年级数学知识点与考点总览》对应单元查漏补缺。</p>
+</section>
+<section class="block"><h2 class="qsec">一、填空题<small>每空1分</small></h2><ol class="qlist">
+<li>3/4×8表示（　　）个（　　）是多少，结果是（　　）</li>
+<li>分数乘分数，用分子相乘的积作（　　），分母相乘的积作（　　）</li>
+<li>1/2的3/5是（　　）</li>
+<li>12×5/6＝（　　），2/3×9/14＝（　　）</li>
+<li>求一个数的几分之几是多少，用（　　）法计算</li>
+<li>1米的3/4是（　　）米，3米的1/4是（　　）米，它们（　　）</li>
+<li>一个数（0除外）乘大于1的分数，积（　　）这个数；乘小于1的分数，积（　　）这个数</li>
+<li>5的倒数是（　　），1的倒数是（　　），0（　　）倒数</li>
+</ol></section>
+<section class="block"><h2 class="qsec">二、判断题<small>对的打√，错的打×</small></h2><ol class="qlist">
+<li>两个分数相乘，积一定小于每一个因数（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>1的倒数是1，0的倒数是0（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>3/4×4/3＝1，所以3/4和4/3互为倒数（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>一个数（0除外）乘真分数，积一定小于这个数（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>整数乘分数，分母不变，只把整数和分子相乘（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+</ol></section>
+<section class="block"><h2 class="qsec">三、选择题<small>把正确答案的序号填在括号里</small></h2><ol class="qlist">
+<li>下面算式中，积大于第一个因数的是（　　）（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．5/6×1/2</span>
+<span class="opts">B．5/6×5/3</span>
+<span class="opts">C．5/6×2/5</span></li><li>3/7×2＝（　　）（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．6/7</span>
+<span class="opts">B．3/14</span>
+<span class="opts">C．6/14</span></li><li>与1/2×2/3结果相等的算式是（　　）（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．2/6</span>
+<span class="opts">B．1/3</span>
+<span class="opts">C．2/3</span></li><li>一根绳子长10米，用去2/5，用去（　　）米（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．4</span>
+<span class="opts">B．6</span>
+<span class="opts">C．5</span></li><li>2/9的倒数是（　　）（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．9/2</span>
+<span class="opts">B．2/9</span>
+<span class="opts">C．1</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">四、口算题<small>直接写得数</small></h2><ol class="qlist twocol">
+<li>1/2×4＝<span class="blank">　</span></li>
+<li>3/5×5＝<span class="blank">　</span></li>
+<li>2/7×14＝<span class="blank">　</span></li>
+<li>1/3×6/7＝<span class="blank">　</span></li>
+<li>5/8×4/5＝<span class="blank">　</span></li>
+<li>3/4×2/3＝<span class="blank">　</span></li>
+<li>7/9×3/7＝<span class="blank">　</span></li>
+<li>1/6×12＝<span class="blank">　</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">五、分数乘法计算<small>要求：先约分再计算，结果要化成最简分数</small></h2><ol class="qlist twocol">
+<li>计算：3/8×16</li>
+<li>计算：4/9×3/8</li>
+<li>计算：5/6×2/15</li>
+<li>计算：3/4×8/9</li>
+<li>计算：7/10×5/14</li>
+<li>简算：1/2×3/4×4/3</li>
+</ol></section>
+<section class="block"><h2 class="qsec">六、解决问题<small>写出必要的过程</small></h2><ol class="qlist">
+<li>果园里有苹果树120棵，梨树的棵数是苹果树的3/5，梨树有多少棵？</li>
+<li>一条路全长1200米，第一天修了全长的1/4，第二天修了全长的1/3，两天共修了多少米？</li>
+<li>一本书120页，第一天看了全书的1/4，第二天看了全书的1/5，第一天比第二天多看了多少页？</li>
+<li>一块长方形菜地长60米，宽是长的3/4，这块菜地的面积是多少平方米？</li>
+<li>比较2/3×4/5与2/3的大小，并说明理由。</li>
+</ol></section>
+<div class="answer">
+<details class="ans">
+  <summary>参考答案与部分解析（点击展开 / 收起）</summary>
+  <div class="ans-body"><div class="ans-sec"><b>一、填空题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案</th></tr>
+<tr><td>1</td><td>8；3/4；6</td></tr>
+<tr><td>2</td><td>分子；分母</td></tr>
+<tr><td>3</td><td>3/10</td></tr>
+<tr><td>4</td><td>10；3/7</td></tr>
+<tr><td>5</td><td>乘</td></tr>
+<tr><td>6</td><td>3/4；3/4；相等</td></tr>
+<tr><td>7</td><td>大于；小于</td></tr>
+<tr><td>8</td><td>1/5；1；没有</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>二、判断题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>×</b>　乘大于1的数时积会变大，如1/2×3/2＝3/4＞1/2</td></tr>
+<tr><td>2</td><td><b>×</b>　0没有倒数</td></tr>
+<tr><td>3</td><td><b>√</b>　乘积是1的两个数互为倒数</td></tr>
+<tr><td>4</td><td><b>√</b>　真分数小于1</td></tr>
+<tr><td>5</td><td><b>√</b>　如5×2/15＝10/15＝2/3</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>三、选择题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>B</b>　乘大于1的数，积变大</td></tr>
+<tr><td>2</td><td><b>A</b>　整数与分子相乘：6/7</td></tr>
+<tr><td>3</td><td><b>B</b>　1/2×2/3＝1/3</td></tr>
+<tr><td>4</td><td><b>A</b>　10×2/5＝4</td></tr>
+<tr><td>5</td><td><b>A</b>　分子分母颠倒</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>四、口算题</b>
+<table class="mini">
+<tr><th>算式</th><th>答案</th></tr>
+<tr><td>1/2×4</td><td><b>2</b></td></tr>
+<tr><td>3/5×5</td><td><b>3</b></td></tr>
+<tr><td>2/7×14</td><td><b>4</b></td></tr>
+<tr><td>1/3×6/7</td><td><b>2/7</b></td></tr>
+<tr><td>5/8×4/5</td><td><b>1/2</b></td></tr>
+<tr><td>3/4×2/3</td><td><b>1/2</b></td></tr>
+<tr><td>7/9×3/7</td><td><b>1/3</b></td></tr>
+<tr><td>1/6×12</td><td><b>2</b></td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>五、分数乘法计算</b>
+<table class="mini">
+<tr><th>题目</th><th>答案</th></tr>
+<tr><td>计算：3/8×16</td><td><b>6</b>　先约分：3/8×16＝3×2</td></tr>
+<tr><td>计算：4/9×3/8</td><td><b>1/6</b>　交叉约分：4/8、9/3</td></tr>
+<tr><td>计算：5/6×2/15</td><td><b>1/9</b>　约分：5/15、2/6</td></tr>
+<tr><td>计算：3/4×8/9</td><td><b>2/3</b>　约分：3/9、8/4</td></tr>
+<tr><td>计算：7/10×5/14</td><td><b>1/4</b>　约分：7/14、5/10</td></tr>
+<tr><td>简算：1/2×3/4×4/3</td><td><b>1/2</b>　后两个数乘积为1</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>六、解决问题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与过程</th></tr>
+<tr><td>1</td><td>120×3/5＝72（棵）。答：梨树有72棵。</td></tr>
+<tr><td>2</td><td>1200×1/4＝300米，1200×1/3＝400米，300＋400＝700（米）。答：两天共修了700米。</td></tr>
+<tr><td>3</td><td>120×1/4＝30页，120×1/5＝24页，30−24＝6（页）。答：第一天比第二天多看了6页。</td></tr>
+<tr><td>4</td><td>宽：60×3/4＝45米，面积：60×45＝2700（平方米）。答：这块菜地的面积是2700平方米。</td></tr>
+<tr><td>5</td><td>2/3×4/5＜2/3。理由：4/5小于1，一个数乘小于1的数，积小于这个数。</td></tr>
+</table>
+</div>
+  <p class="hint">答案核对规则：全对说明该考点已掌握；错1～3题标记"待巩固"，重做错题；错4题以上回到总览文档对应单元，先复习知识点再做本卷。</p>
+  </div>
+</details>
+</div>
+<footer>人教版六年级数学专项练习 · 闫胜君整理 · 建议先限时完成再核对答案，错题对照《六年级数学知识点与考点总览》标注薄弱单元</footer>
+</div>
+</body>
+</html>
