@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版小学数学知识图谱</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f7fa; }
+.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 30px; }
+.header h1 { font-size: 24px; margin-bottom: 5px; }
+.header p { opacity: 0.85; font-size: 14px; }
+.controls { padding: 15px 30px; background: white; border-bottom: 1px solid #e2e8f0; display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+.controls select, .controls input { padding: 8px 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px; }
+.controls select { min-width: 160px; }
+.stats { padding: 15px 30px; display: flex; gap: 20px; flex-wrap: wrap; }
+.stat-card { background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); min-width: 140px; }
+.stat-card .number { font-size: 28px; font-weight: 700; color: #667eea; }
+.stat-card .label { font-size: 12px; color: #718096; margin-top: 2px; }
+.main { display: flex; height: calc(100vh - 230px); }
+.graph-container { flex: 1; position: relative; overflow: hidden; background: white; margin: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar { width: 320px; padding: 15px; overflow-y: auto; }
+.topic-card { background: white; border-radius: 8px; padding: 15px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.1s; }
+.topic-card:hover { transform: translateY(-1px); box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+.topic-card .name { font-weight: 600; font-size: 14px; margin-bottom: 5px; }
+.topic-card .domain { font-size: 12px; color: #667eea; background: #ebf4ff; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+.topic-card .type { font-size: 11px; margin-left: 5px; padding: 2px 6px; border-radius: 10px; }
+.type-CONCEPTUAL { background: #fef3c7; color: #92400e; }
+.type-PROCEDURAL { background: #d1fae5; color: #065f46; }
+.type-REPRESENTATIONAL { background: #dbeafe; color: #1e40af; }
+.topic-detail { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: none; }
+.topic-detail h3 { margin-bottom: 10px; }
+.topic-detail .desc { color: #4a5568; font-size: 14px; margin-bottom: 12px; }
+.topic-detail .evidence { list-style: none; padding: 0; }
+.topic-detail .evidence li { padding: 4px 0; font-size: 13px; color: #4a5568; }
+.topic-detail .evidence li::before { content: "✓ "; color: #48bb78; }
+svg { width: 100%; height: 100%; }
+.node circle { stroke-width: 2; cursor: pointer; transition: r 0.2s; }
+.node circle:hover { r: 12; }
+.node text { font-size: 10px; pointer-events: none; }
+.link { stroke-opacity: 0.4; fill: none; }
+.link.hard { stroke-width: 2; }
+.link.soft { stroke-width: 1; stroke-dasharray: 4,2; }
+marker { fill: #94a3b8; }
+.domain-legend { position: absolute; bottom: 15px; left: 15px; background: rgba(255,255,255,0.95); padding: 10px 15px; border-radius: 8px; font-size: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.domain-legend .item { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+.domain-legend .dot { width: 10px; height: 10px; border-radius: 50%; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>人教版小学数学知识图谱</h1>
+  <p>378 个微知识点 · 502 条前置依赖边 · 覆盖小学1-6年级全12册</p>
+</div>
+<div class="controls">
+  <select id="gradeSelect">
+    <option value="all">全部年级</option>
+    <option value="1-up">一年级上册</option>
+    <option value="1-down">一年级下册</option>
+    <option value="2-up">二年级上册</option>
+    <option value="2-down">二年级下册</option>
+    <option value="3-up">三年级上册</option>
+    <option value="3-down">三年级下册</option>
+    <option value="4-up">四年级上册</option>
+    <option value="4-down">四年级下册</option>
+    <option value="5-up">五年级上册</option>
+    <option value="5-down">五年级下册</option>
+    <option value="6-up">六年级上册</option>
+    <option value="6-down">六年级下册</option>
+  </select>
+  <select id="domainSelect">
+    <option value="all">全部领域</option>
+  </select>
+  <input type="search" id="searchInput" placeholder="搜索知识点..." style="width:200px;">
+</div>
+<div class="stats">
+  <div class="stat-card"><div class="number" id="statTopics">0</div><div class="label">知识点</div></div>
+  <div class="stat-card"><div class="number" id="statEdges">0</div><div class="label">依赖关系</div></div>
+  <div class="stat-card"><div class="number" id="statDomains">0</div><div class="label">知识领域</div></div>
+  <div class="stat-card"><div class="number" id="statGrades">12</div><div class="label">册次</div></div>
+</div>
+<div class="main">
+  <div class="graph-container" id="graphContainer">
+    <svg id="graph"></svg>
+    <div class="domain-legend" id="legend"></div>
+  </div>
+  <div class="sidebar" id="sidebar"></div>
+</div>
+
+<script>
+const VOLUMES = ['1-up','1-down','2-up','2-down','3-up','3-down','4-up','4-down','5-up','5-down','6-up','6-down'];
+const DOMAIN_COLORS = {
+  '数的认识': '#f59e0b', '数的运算': '#ef4444', '图形与几何': '#3b82f6',
+  '量与计量': '#8b5cf6', '统计与概率': '#10b981', '综合实践': '#6366f1',
+  '图形的运动': '#06b6d4', '数与代数': '#f59e0b', '分数': '#ec4899',
+  '小数': '#f97316', '方程': '#14b8a6', '比与比例': '#a855f7',
+  '负数': '#64748b', '百分数': '#e11d48'
+};
+
+let allTopics = [], allDeps = [], currentTopics = [], currentDeps = [];
+
+async function loadData() {
+  for (const vol of VOLUMES) {
+    try {
+      const tRes = await fetch(`data/${vol}/topics.json`);
+      const tData = await tRes.json();
+      const topics = tData.topics || [];
+      topics.forEach(t => { t._volume = vol; });
+      allTopics.push(...topics);
+
+      const dRes = await fetch(`data/${vol}/dependencies.json`);
+      const dData = await dRes.json();
+      allDeps.push(...(dData.dependencies || []));
+    } catch(e) { console.warn(`Failed to load ${vol}:`, e); }
+  }
+  const domains = [...new Set(allTopics.map(t => t.domain).filter(Boolean))];
+  const domainSelect = document.getElementById('domainSelect');
+  domains.sort().forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    domainSelect.appendChild(opt);
+  });
+  updateView();
+}
+
+function updateView() {
+  const grade = document.getElementById('gradeSelect').value;
+  const domain = document.getElementById('domainSelect').value;
+  const search = document.getElementById('searchInput').value.toLowerCase();
+
+  currentTopics = allTopics.filter(t => {
+    if (grade !== 'all' && t._volume !== grade) return false;
+    if (domain !== 'all' && t.domain !== domain) return false;
+    if (search && !t.name.toLowerCase().includes(search) && !t.description.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  const ids = new Set(currentTopics.map(t => t.id));
+  currentDeps = allDeps.filter(d => ids.has(d.topicId) && ids.has(d.prerequisiteId));
+
+  document.getElementById('statTopics').textContent = currentTopics.length;
+  document.getElementById('statEdges').textContent = currentDeps.length;
+  document.getElementById('statDomains').textContent = new Set(currentTopics.map(t=>t.domain)).size;
+
+  renderGraph();
+  renderSidebar();
+}
+
+function renderGraph() {
+  const svg = document.getElementById('graph');
+  const container = document.getElementById('graphContainer');
+  const W = container.clientWidth, H = container.clientHeight;
+  svg.innerHTML = '';
+
+  if (currentTopics.length === 0) return;
+
+  const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+  defs.innerHTML = '<marker id="arrow" viewBox="0 0 10 10" refX="20" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker>';
+  svg.appendChild(defs);
+
+  const nodes = currentTopics.map((t, i) => ({ ...t, x: W/2 + (Math.random()-0.5)*W*0.6, y: H/2 + (Math.random()-0.5)*H*0.6 }));
+  const nodeMap = new Map(nodes.map(n => [n.id, n]));
+  const links = currentDeps.filter(d => nodeMap.has(d.topicId) && nodeMap.has(d.prerequisiteId));
+
+  // Simple force simulation
+  for (let iter = 0; iter < 120; iter++) {
+    // Repulsion
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i+1; j < nodes.length; j++) {
+        let dx = nodes[j].x - nodes[i].x, dy = nodes[j].y - nodes[i].y;
+        let dist = Math.sqrt(dx*dx + dy*dy) || 1;
+        let force = 800 / (dist * dist);
+        nodes[i].x -= dx/dist * force;
+        nodes[i].y -= dy/dist * force;
+        nodes[j].x += dx/dist * force;
+        nodes[j].y += dy/dist * force;
+      }
+    }
+    // Attraction along edges
+    for (const link of links) {
+      const s = nodeMap.get(link.prerequisiteId), t = nodeMap.get(link.topicId);
+      if (!s || !t) continue;
+      let dx = t.x - s.x, dy = t.y - s.y;
+      let dist = Math.sqrt(dx*dx + dy*dy) || 1;
+      let force = (dist - 80) * 0.01;
+      s.x += dx/dist * force; s.y += dy/dist * force;
+      t.x -= dx/dist * force; t.y -= dy/dist * force;
+    }
+    // Center gravity
+    nodes.forEach(n => { n.x += (W/2 - n.x) * 0.01; n.y += (H/2 - n.y) * 0.01; });
+    // Bounds
+    nodes.forEach(n => { n.x = Math.max(30, Math.min(W-30, n.x)); n.y = Math.max(30, Math.min(H-30, n.y)); });
+  }
+
+  // Draw links
+  for (const link of links) {
+    const s = nodeMap.get(link.prerequisiteId), t = nodeMap.get(link.topicId);
+    if (!s || !t) continue;
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', s.x); line.setAttribute('y1', s.y);
+    line.setAttribute('x2', t.x); line.setAttribute('y2', t.y);
+    line.setAttribute('class', `link ${link.strength}`);
+    line.setAttribute('stroke', '#94a3b8');
+    line.setAttribute('marker-end', 'url(#arrow)');
+    svg.appendChild(line);
+  }
+
+  // Draw nodes
+  const domains = [...new Set(nodes.map(n=>n.domain))];
+  for (const node of nodes) {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttribute('class', 'node');
+    g.setAttribute('transform', `translate(${node.x},${node.y})`);
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    const color = DOMAIN_COLORS[node.domain] || '#6b7280';
+    circle.setAttribute('r', 6 + (node.centrality || 0.5) * 4);
+    circle.setAttribute('fill', color);
+    circle.setAttribute('stroke', color);
+    circle.setAttribute('stroke-opacity', '0.3');
+    circle.addEventListener('click', () => showDetail(node));
+    g.appendChild(circle);
+
+    if (currentTopics.length <= 40) {
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('dy', -12); text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('fill', '#4a5568');
+      text.textContent = node.name.length > 8 ? node.name.slice(0,8)+'…' : node.name;
+      g.appendChild(text);
+    }
+
+    svg.appendChild(g);
+  }
+
+  // Legend
+  const legend = document.getElementById('legend');
+  const usedDomains = [...new Set(currentTopics.map(t=>t.domain).filter(Boolean))].slice(0,8);
+  legend.innerHTML = usedDomains.map(d => `<div class="item"><div class="dot" style="background:${DOMAIN_COLORS[d]||'#6b7280'}"></div>${d}</div>`).join('');
+}
+
+function renderSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const sorted = [...currentTopics].sort((a,b) => a.id.localeCompare(b.id));
+  sidebar.innerHTML = sorted.slice(0, 50).map(t => `
+    <div class="topic-card" onclick='showDetail(${JSON.stringify(t).replace(/'/g,"&#39;")})'>
+      <div class="name">${t.name}</div>
+      <span class="domain">${t.domain||''}</span>
+      <span class="type type-${t.type}">${t.type==='CONCEPTUAL'?'概念':t.type==='PROCEDURAL'?'程序':'表征'}</span>
+    </div>
+  `).join('');
+  if (currentTopics.length > 50) {
+    sidebar.innerHTML += `<p style="text-align:center;color:#718096;font-size:13px;">还有 ${currentTopics.length-50} 个知识点...</p>`;
+  }
+}
+
+function showDetail(topic) {
+  const sidebar = document.getElementById('sidebar');
+  const prereqs = allDeps.filter(d => d.topicId === topic.id).map(d => {
+    const t = allTopics.find(x => x.id === d.prerequisiteId);
+    return t ? `${t.name} (${d.strength})` : d.prerequisiteId;
+  });
+  const unlocks = allDeps.filter(d => d.prerequisiteId === topic.id).map(d => {
+    const t = allTopics.find(x => x.id === d.topicId);
+    return t ? t.name : d.topicId;
+  });
+  sidebar.innerHTML = `
+    <div class="topic-detail" style="display:block">
+      <h3>${topic.name}</h3>
+      <p class="desc">${topic.description}</p>
+      <p><strong>类型:</strong> ${topic.type} | <strong>领域:</strong> ${topic.domain} | <strong>册次:</strong> ${topic._volume}</p>
+      <p><strong>重要度:</strong> ${topic.centrality}</p>
+      <h4 style="margin-top:12px;">掌握证据:</h4>
+      <ul class="evidence">${(topic.evidence||[]).map(e=>`<li>${e}</li>`).join('')}</ul>
+      ${prereqs.length ? `<h4 style="margin-top:12px;">前置知识 (${prereqs.length}):</h4><ul class="evidence">${prereqs.map(p=>`<li>${p}</li>`).join('')}</ul>` : ''}
+      ${unlocks.length ? `<h4 style="margin-top:12px;">解锁后续 (${unlocks.length}):</h4><ul class="evidence">${unlocks.map(u=>`<li>${u}</li>`).join('')}</ul>` : ''}
+      <button onclick="updateView()" style="margin-top:15px;padding:8px 16px;border:none;background:#667eea;color:white;border-radius:6px;cursor:pointer;">返回列表</button>
+    </div>
+  `;
+}
+
+document.getElementById('gradeSelect').addEventListener('change', updateView);
+document.getElementById('domainSelect').addEventListener('change', updateView);
+document.getElementById('searchInput').addEventListener('input', updateView);
+
+loadData();
+</script>
+</body>
+</html>
