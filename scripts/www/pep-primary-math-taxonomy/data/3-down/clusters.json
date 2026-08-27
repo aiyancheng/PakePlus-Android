@@ -1,0 +1,93 @@
+{
+  "version": "pep-primary-math-3d-v1",
+  "clusterCount": 7,
+  "clusters": [
+    {
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "ageRangeStart": 8,
+      "summary": "认识生活中的轴对称、平移、旋转现象，掌握长方形和正方形特征，学习周长和面积计算公式",
+      "topicIds": [
+        "mt_g3d_001",
+        "mt_g3d_002",
+        "mt_g3d_003",
+        "mt_g3d_009",
+        "mt_g3d_010",
+        "mt_g3d_011",
+        "mt_g3d_014"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "ageRangeStart": 8,
+      "summary": "系统学习除数是一位数的除法（口算、笔算、估算、验算），初步学习同分母分数加减法和简单小数加减法",
+      "topicIds": [
+        "mt_g3d_004",
+        "mt_g3d_005",
+        "mt_g3d_006",
+        "mt_g3d_007",
+        "mt_g3d_008",
+        "mt_g3d_020",
+        "mt_g3d_027"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "度量与单位",
+      "ageRangeStart": 8,
+      "summary": "认识面积单位（平方厘米、平方分米、平方米），系统学习年月日时间知识和24时计时法",
+      "topicIds": [
+        "mt_g3d_012",
+        "mt_g3d_013",
+        "mt_g3d_022",
+        "mt_g3d_023",
+        "mt_g3d_024"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "ageRangeStart": 8,
+      "summary": "初步认识分数（几分之一到几分之几），理解分数表示整体和集合的一部分；初步认识小数的含义和大小比较",
+      "topicIds": [
+        "mt_g3d_018",
+        "mt_g3d_019",
+        "mt_g3d_021",
+        "mt_g3d_025",
+        "mt_g3d_026"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "图形与几何",
+      "ageRangeStart": 8,
+      "summary": "认识线段、射线和直线的特征与区别，学习角的概念及锐角、直角、钝角的分类",
+      "topicIds": [
+        "mt_g3d_016",
+        "mt_g3d_017"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数学思维",
+      "ageRangeStart": 8,
+      "summary": "了解数字编码在生活中的应用（身份证、邮政编码、ISBN）；学习重叠问题的容斥计数思想",
+      "topicIds": [
+        "mt_g3d_015",
+        "mt_g3d_028"
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数学思维",
+      "ageRangeStart": 8,
+      "summary": "综合应用乘除法、分数、小数解决实际问题，发展数量关系分析能力",
+      "topicIds": [
+        "mt_g3d_008",
+        "mt_g3d_021",
+        "mt_g3d_027"
+      ]
+    }
+  ]
+}
