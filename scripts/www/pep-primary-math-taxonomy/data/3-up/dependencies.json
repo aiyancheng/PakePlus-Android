@@ -1,0 +1,198 @@
+{
+  "version": "pep-primary-math-3u-v1",
+  "edgeCount": 32,
+  "dependencies": [
+    {
+      "topicId": "mt_g3u_002",
+      "prerequisiteId": "mt_g3u_001",
+      "strength": "hard",
+      "reason": "辨认各方向形状需要先理解从不同方向观察物体的方法"
+    },
+    {
+      "topicId": "mt_g3u_003",
+      "prerequisiteId": "mt_g3u_001",
+      "strength": "hard",
+      "reason": "观察组合体需要先掌握单个物体的观察方法"
+    },
+    {
+      "topicId": "mt_g3u_004",
+      "prerequisiteId": "mt_g2u_006",
+      "strength": "hard",
+      "reason": "混合运算需要先掌握加减乘除四则运算"
+    },
+    {
+      "topicId": "mt_g3u_004",
+      "prerequisiteId": "mt_g2d_004",
+      "strength": "hard",
+      "reason": "混合运算需要熟练掌握乘法口诀和除法运算"
+    },
+    {
+      "topicId": "mt_g3u_005",
+      "prerequisiteId": "mt_g3u_004",
+      "strength": "hard",
+      "reason": "含括号的混合运算需要先理解基本运算顺序"
+    },
+    {
+      "topicId": "mt_g3u_006",
+      "prerequisiteId": "mt_g3u_005",
+      "strength": "hard",
+      "reason": "用混合运算解决实际问题需要先掌握运算规则"
+    },
+    {
+      "topicId": "mt_g3u_007",
+      "prerequisiteId": "mt_g2u_001",
+      "strength": "hard",
+      "reason": "认识毫米需要先认识厘米和米的概念"
+    },
+    {
+      "topicId": "mt_g3u_008",
+      "prerequisiteId": "mt_g2u_001",
+      "strength": "hard",
+      "reason": "认识分米需要先认识厘米和米"
+    },
+    {
+      "topicId": "mt_g3u_009",
+      "prerequisiteId": "mt_g3u_008",
+      "strength": "soft",
+      "reason": "认识千米需要对米有清晰的感知"
+    },
+    {
+      "topicId": "mt_g3u_010",
+      "prerequisiteId": "mt_g3u_007",
+      "strength": "hard",
+      "reason": "长度单位换算需要先认识所有长度单位"
+    },
+    {
+      "topicId": "mt_g3u_010",
+      "prerequisiteId": "mt_g3u_008",
+      "strength": "hard",
+      "reason": "长度单位换算需要先认识分米"
+    },
+    {
+      "topicId": "mt_g3u_010",
+      "prerequisiteId": "mt_g3u_009",
+      "strength": "hard",
+      "reason": "长度单位换算需要先认识千米"
+    },
+    {
+      "topicId": "mt_g3u_012",
+      "prerequisiteId": "mt_g3u_011",
+      "strength": "hard",
+      "reason": "认识吨需要先认识千克和克"
+    },
+    {
+      "topicId": "mt_g3u_013",
+      "prerequisiteId": "mt_g3u_011",
+      "strength": "hard",
+      "reason": "质量单位换算需要先认识克和千克"
+    },
+    {
+      "topicId": "mt_g3u_013",
+      "prerequisiteId": "mt_g3u_012",
+      "strength": "hard",
+      "reason": "质量单位换算需要先认识吨"
+    },
+    {
+      "topicId": "mt_g3u_014",
+      "prerequisiteId": "mt_g2u_004",
+      "strength": "hard",
+      "reason": "整十整百乘一位数需要先熟练掌握乘法口诀"
+    },
+    {
+      "topicId": "mt_g3u_015",
+      "prerequisiteId": "mt_g3u_014",
+      "strength": "hard",
+      "reason": "笔算乘法需要先掌握口算乘法"
+    },
+    {
+      "topicId": "mt_g3u_016",
+      "prerequisiteId": "mt_g3u_015",
+      "strength": "hard",
+      "reason": "进位乘法需要先掌握不进位乘法的竖式方法"
+    },
+    {
+      "topicId": "mt_g3u_017",
+      "prerequisiteId": "mt_g3u_016",
+      "strength": "hard",
+      "reason": "因数含0的乘法是进位乘法的特殊情况"
+    },
+    {
+      "topicId": "mt_g3u_018",
+      "prerequisiteId": "mt_g3u_014",
+      "strength": "soft",
+      "reason": "估算需要对口算乘法有一定基础"
+    },
+    {
+      "topicId": "mt_g3u_019",
+      "prerequisiteId": "mt_g3u_016",
+      "strength": "hard",
+      "reason": "解决实际问题需要熟练掌握笔算乘法"
+    },
+    {
+      "topicId": "mt_g3u_021",
+      "prerequisiteId": "mt_g3u_020",
+      "strength": "hard",
+      "reason": "设计编码方案需要先理解编码的含义和规律"
+    },
+    {
+      "topicId": "mt_g3u_023",
+      "prerequisiteId": "mt_g3u_022",
+      "strength": "hard",
+      "reason": "认识角需要先认识线段和射线（角的边）"
+    },
+    {
+      "topicId": "mt_g3u_024",
+      "prerequisiteId": "mt_g3u_023",
+      "strength": "hard",
+      "reason": "角的分类需要先认识角的概念"
+    },
+    {
+      "topicId": "mt_g3u_025",
+      "prerequisiteId": "mt_g3u_024",
+      "strength": "hard",
+      "reason": "画角和比较角需要先认识各种角"
+    },
+    {
+      "topicId": "mt_g3u_022",
+      "prerequisiteId": "mt_g1u_010",
+      "strength": "soft",
+      "reason": "认识线段射线直线需要对基本图形有初步认识"
+    },
+    {
+      "topicId": "mt_g3u_026",
+      "prerequisiteId": "mt_g2d_003",
+      "strength": "soft",
+      "reason": "分数初步认识需要先理解平均分的概念"
+    },
+    {
+      "topicId": "mt_g3u_027",
+      "prerequisiteId": "mt_g3u_026",
+      "strength": "hard",
+      "reason": "理解几分之几需要先理解几分之一"
+    },
+    {
+      "topicId": "mt_g3u_028",
+      "prerequisiteId": "mt_g3u_027",
+      "strength": "hard",
+      "reason": "比较分数大小需要先理解分数的含义"
+    },
+    {
+      "topicId": "mt_g3u_029",
+      "prerequisiteId": "mt_g3u_027",
+      "strength": "hard",
+      "reason": "分数加减法需要先理解分数的含义"
+    },
+    {
+      "topicId": "mt_g3u_030",
+      "prerequisiteId": "mt_g3u_026",
+      "strength": "soft",
+      "reason": "分数联系生活需要先理解分数的基本概念"
+    },
+    {
+      "topicId": "mt_g3u_001",
+      "prerequisiteId": "mt_g1u_009",
+      "strength": "soft",
+      "reason": "观察物体需要对立体图形有基本认识"
+    }
+  ]
+}
