@@ -1,0 +1,28 @@
+{
+  "dataset": "人教版三年级数学上册知识图谱",
+  "taxonomyVersion": "pep-primary-math-3u-v1",
+  "basedOn": "withmarbleapp/os-taxonomy schema",
+  "sourceTextbook": "义务教育教科书·数学 三年级上册（人民教育出版社2024版）",
+  "scope": "全册",
+  "generatedAt": "2026-08-07T00:00:00.000Z",
+  "note": "基于完整阅读全册114页后生成（v2，确认内容无遗漏）",
+  "counts": {
+    "topics": 30,
+    "topicsByDomain": {
+      "空间与几何": 7,
+      "数的运算": 10,
+      "量与计量": 7,
+      "数学思维": 2,
+      "数的认识": 4
+    },
+    "topicsByType": {
+      "REPRESENTATIONAL": 3,
+      "CONCEPTUAL": 15,
+      "PROCEDURAL": 12
+    },
+    "dependencies": 32,
+    "curricula": 1,
+    "curriculumStandards": 30,
+    "clusters": 5
+  }
+}
