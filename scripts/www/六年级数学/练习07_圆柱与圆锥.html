@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>六年级数学 练习07 · 圆柱与圆锥</title>
+<style>
+:root{--primary:#1677ff;--primary-light:#e6f0ff;--primary-dark:#0958d9;--ok:#52c41a;--warn:#fa8c16;--text:#1f2329;--text2:#4e5969;--line:#e5e6eb;--bg:#f7f8fa;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",-apple-system,system-ui,SimHei,serif,sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:15px}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+header.paper{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--primary);border-radius:12px;padding:24px 26px;margin-bottom:18px}
+header.paper .sub{font-size:12.5px;color:var(--text2);letter-spacing:2px;margin-bottom:4px}
+header.paper h1{font-size:22px;color:var(--primary-dark)}
+header.paper .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:13px}
+header.paper .meta span{background:var(--primary-light);color:var(--primary-dark);padding:2px 12px;border-radius:99px}
+header.paper .scope{margin-top:12px;font-size:13.5px;color:var(--text2);background:var(--bg);padding:10px 14px;border-left:3px solid var(--primary);border-radius:0 8px 8px 0}
+section.block{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:18px}
+h2.qsec{font-size:16px;color:var(--primary-dark);border-bottom:2px solid var(--primary-light);padding-bottom:8px;margin-bottom:6px}
+h2.qsec small{font-weight:normal;color:var(--text2);font-size:12.5px;margin-left:8px}
+ol.qlist{list-style:none;counter-reset:q}
+ol.qlist>li{counter-increment:q;padding:8px 0 8px 34px;position:relative;border-bottom:1px dashed var(--line)}
+ol.qlist>li:last-child{border-bottom:none}
+ol.qlist>li::before{content:counter(q) ".";position:absolute;left:4px;color:var(--primary);font-weight:bold}
+.blank{display:inline-block;min-width:56px;border-bottom:1.5px solid var(--text2);text-align:center;color:transparent}
+input.fillin{display:inline-block;min-width:60px;border:none;border-bottom:1.5px solid #b9c0cc;text-align:center;font-size:15px;background:#fbfcfe;color:var(--primary-dark);outline:none;font-family:inherit}
+input.fillin:focus{border-bottom-color:var(--primary);background:var(--primary-light)}
+.opts{display:block;margin-top:2px}
+.answer{margin-top:22px}
+details.ans{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+details.ans summary{cursor:pointer;padding:13px 22px;font-size:15px;font-weight:bold;color:var(--ok);background:#f6ffed;border:1px solid #d9f7be;border-radius:12px;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.ans summary::before{content:"▸";transition:.2s}
+details.ans[open] summary::before{transform:rotate(90deg)}
+details.ans .ans-body{padding:14px 22px 20px}
+table.mini{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+table.mini th{background:var(--primary-light);color:var(--primary-dark);padding:6px 10px;border:1px solid #d4e3ff}
+table.mini td{padding:6px 10px;border:1px solid var(--line);vertical-align:top}
+table.mini td:first-child{white-space:nowrap;color:var(--primary-dark);font-weight:bold}
+footer{margin-top:26px;text-align:center;color:var(--text2);font-size:12.5px}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+@media(max-width:640px){.twocol{grid-template-columns:1fr}}
+.hint{font-size:12.5px;color:var(--warn);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="paper">
+  <div class="sub">人教版小学数学六年级 · 专项练习</div>
+  <h1>练习07 · 圆柱与圆锥</h1>
+  <div class="meta"><span>建议用时 40分钟</span><span>满分 100分</span><span>共 37 题</span></div>
+  <div class="scope"><b>考点范围：</b>圆柱与圆锥的特征；圆柱侧面积、表面积、体积；圆锥体积；等底等高关系；排水法（六下第3单元）</div>
+</header>
+<section class="block notice">
+  <h2 class="qsec">答题须知<small>先读一遍再动笔</small></h2>
+  <ol class="qlist">
+    <li>先写姓名和日期，按题目顺序作答；遇到暂时不会的题先跳过，做完再回头思考。</li>
+    <li>口算题不写过程，直接写得数；竖式题要列竖式，带※的题必须写出验算过程。</li>
+    <li>填空题按空作答，注意单位名称是否要求填写；判断题打√或×，选择题填字母序号。</li>
+    <li>解决问题要写出算式、得数和单位（或答句），只写得数要扣过程分。</li>
+    <li>做完后预留5分钟检查：数字有没有抄错、单位有没有漏写、验算了没有。</li>
+  </ol>
+  <p class="hint">评分参考：填空每空1分；判断、选择每题2分；口算每题1分；竖式每题4分（验算占1分）；解决问题每题6分（列式3分＋计算2分＋单位答句1分）。错题请回到《六年级数学知识点与考点总览》对应单元查漏补缺。</p>
+</section>
+<section class="block"><h2 class="qsec">一、填空题<small>每空1分</small></h2><ol class="qlist">
+<li>圆柱有（　　）个底面，是完全相同的（　　）形，有（　　）个侧面，是（　　）面</li>
+<li>圆柱的侧面沿高剪开展开是（　　）形，长等于圆柱的（　　），宽等于圆柱的（　　）</li>
+<li>圆柱的表面积＝侧面积＋（　　）</li>
+<li>圆柱的体积公式V＝（　　）</li>
+<li>圆锥有（　　）个顶点，（　　）个底面，侧面展开是（　　）形</li>
+<li>等底等高的圆柱和圆锥，圆锥的体积是圆柱的（　　）</li>
+<li>圆锥的体积公式V＝（　　）</li>
+<li>一个圆柱底面半径2cm、高5cm，它的体积是（　　）cm³</li>
+</ol></section>
+<section class="block"><h2 class="qsec">二、判断题<small>对的打√，错的打×</small></h2><ol class="qlist">
+<li>圆柱的体积是圆锥体积的3倍（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>圆柱的侧面展开一定是长方形（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>圆锥的体积等于和它等底等高的圆柱体积的1/3（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>求圆柱形水桶能装多少升水，是求水桶的表面积（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>两个圆柱的侧面积相等，它们的体积一定相等（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+</ol></section>
+<section class="block"><h2 class="qsec">三、选择题<small>把正确答案的序号填在括号里</small></h2><ol class="qlist">
+<li>一个圆柱的底面半径是2cm、高是10cm，它的侧面积是（　　）cm²（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．125.6</span>
+<span class="opts">B．62.8</span>
+<span class="opts">C．40</span></li><li>一个圆锥的底面积是12cm²、高是6cm，它的体积是（　　）cm³（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．72</span>
+<span class="opts">B．24</span>
+<span class="opts">C．36</span></li><li>圆柱的侧面展开得到一个正方形，说明这个圆柱的（　　）相等（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．底面周长和高</span>
+<span class="opts">B．底面半径和高</span>
+<span class="opts">C．底面直径和高</span></li><li>等底等高的圆柱和圆锥体积相差18cm³，圆锥的体积是（　　）cm³（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．9</span>
+<span class="opts">B．6</span>
+<span class="opts">C．27</span></li><li>一个圆柱和一个圆锥等底等高，圆柱体积是12cm³，圆锥体积是（　　）cm³（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．4</span>
+<span class="opts">B．36</span>
+<span class="opts">C．24</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">四、口算题<small>直接写得数</small></h2><ol class="qlist twocol">
+<li>3.14×10＝<span class="blank">　</span></li>
+<li>3.14×100＝<span class="blank">　</span></li>
+<li>r＝2、h＝1的圆柱体积＝<span class="blank">　</span></li>
+<li>等底等高圆柱与圆锥体积比＝<span class="blank">　</span></li>
+<li>3.14×5²＝<span class="blank">　</span></li>
+<li>3.14×3²＝<span class="blank">　</span></li>
+<li>底面积10、高3的圆锥体积＝<span class="blank">　</span></li>
+<li>3.14×2²＝<span class="blank">　</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">五、圆柱与圆锥计算<small>要求：先写公式再代入，圆锥别忘了乘1/3</small></h2><ol class="qlist twocol">
+<li>求r＝3cm、h＝10cm的圆柱的体积</li>
+<li>求d＝8cm、h＝5cm的圆柱的侧面积</li>
+<li>求底面积28.26cm²、高6cm的圆锥的体积</li>
+<li>求r＝4cm、h＝6cm的圆锥的体积</li>
+<li>求r＝5cm、h＝4cm的圆柱的表面积</li>
+<li>一个圆柱的体积是150.72cm³，底面积是12.56cm²，求高</li>
+</ol></section>
+<section class="block"><h2 class="qsec">六、解决问题<small>写出必要的过程</small></h2><ol class="qlist">
+<li>做10节圆柱形通风管，每节长80cm、底面直径10cm，至少需要多少平方厘米铁皮？</li>
+<li>一个无盖圆柱形水桶，底面直径4dm、高5dm，做这个水桶至少需要多少平方分米铁皮？（得数保留整数）</li>
+<li>一个圆柱形粮囤，底面周长6.28m、高2m，这个粮囤能装多少立方米粮食？</li>
+<li>一个圆锥形沙堆，底面半径3m、高1.5m，每立方米沙约重1.7吨，这堆沙约重多少吨？（得数保留整数）</li>
+<li>一个圆柱和一个圆锥等底等高，它们的体积之和是48cm³，圆柱和圆锥的体积各是多少？</li>
+</ol></section>
+<div class="answer">
+<details class="ans">
+  <summary>参考答案与部分解析（点击展开 / 收起）</summary>
+  <div class="ans-body"><div class="ans-sec"><b>一、填空题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案</th></tr>
+<tr><td>1</td><td>2；圆；1；曲</td></tr>
+<tr><td>2</td><td>长方；底面周长；高</td></tr>
+<tr><td>3</td><td>两个底面积</td></tr>
+<tr><td>4</td><td>πr²h（或Sh）</td></tr>
+<tr><td>5</td><td>1；1；扇</td></tr>
+<tr><td>6</td><td>1/3</td></tr>
+<tr><td>7</td><td>1/3πr²h（或1/3Sh）</td></tr>
+<tr><td>8</td><td>62.8</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>二、判断题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>×</b>　必须等底等高才成立</td></tr>
+<tr><td>2</td><td><b>×</b>　沿高剪开是长方形，斜着剪是平行四边形</td></tr>
+<tr><td>3</td><td><b>√</b>　等底等高是前提</td></tr>
+<tr><td>4</td><td><b>×</b>　是求水桶的容积（体积）</td></tr>
+<tr><td>5</td><td><b>×</b>　底面周长和高都可能不同</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>三、选择题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>A</b>　2×3.14×2×10＝125.6</td></tr>
+<tr><td>2</td><td><b>B</b>　12×6÷3＝24</td></tr>
+<tr><td>3</td><td><b>A</b>　展开图长＝底面周长、宽＝高</td></tr>
+<tr><td>4</td><td><b>A</b>　相差2份，1份是9</td></tr>
+<tr><td>5</td><td><b>A</b>　12÷3＝4</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>四、口算题</b>
+<table class="mini">
+<tr><th>算式</th><th>答案</th></tr>
+<tr><td>3.14×10</td><td><b>31.4</b></td></tr>
+<tr><td>3.14×100</td><td><b>314</b></td></tr>
+<tr><td>r＝2、h＝1的圆柱体积</td><td><b>12.56</b></td></tr>
+<tr><td>等底等高圆柱与圆锥体积比</td><td><b>3:1</b></td></tr>
+<tr><td>3.14×5²</td><td><b>78.5</b></td></tr>
+<tr><td>3.14×3²</td><td><b>28.26</b></td></tr>
+<tr><td>底面积10、高3的圆锥体积</td><td><b>10</b></td></tr>
+<tr><td>3.14×2²</td><td><b>12.56</b></td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>五、圆柱与圆锥计算</b>
+<table class="mini">
+<tr><th>题目</th><th>答案</th></tr>
+<tr><td>求r＝3cm、h＝10cm的圆柱的体积</td><td><b>3.14×9×10＝282.6cm³</b>　V＝πr²h</td></tr>
+<tr><td>求d＝8cm、h＝5cm的圆柱的侧面积</td><td><b>3.14×8×5＝125.6cm²</b>　S侧＝πdh</td></tr>
+<tr><td>求底面积28.26cm²、高6cm的圆锥的体积</td><td><b>28.26×6÷3＝56.52cm³</b>　V＝1/3Sh</td></tr>
+<tr><td>求r＝4cm、h＝6cm的圆锥的体积</td><td><b>3.14×16×6÷3＝100.48cm³</b>　V＝1/3πr²h</td></tr>
+<tr><td>求r＝5cm、h＝4cm的圆柱的表面积</td><td><b>2×3.14×5×4＋3.14×25×2＝125.6＋157＝282.6cm²</b>　S表＝侧面积＋2底面积</td></tr>
+<tr><td>一个圆柱的体积是150.72cm³，底面积是12.56cm²，求高</td><td><b>150.72÷12.56＝12cm</b>　h＝V÷S</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>六、解决问题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与过程</th></tr>
+<tr><td>1</td><td>每节：3.14×10×80＝2512cm²，10节：2512×10＝25120（cm²）。答：至少需要25120平方厘米铁皮。</td></tr>
+<tr><td>2</td><td>侧面积：3.14×4×5＝62.8dm²，底面积：3.14×(4÷2)²＝12.56dm²，合计：62.8＋12.56＝75.36≈76（dm²）。答：至少需要76平方分米铁皮。</td></tr>
+<tr><td>3</td><td>半径：6.28÷3.14÷2＝1m，体积：3.14×1²×2＝6.28（m³）。答：能装6.28立方米粮食。</td></tr>
+<tr><td>4</td><td>体积：3.14×9×1.5÷3＝14.13m³，重量：14.13×1.7≈24（吨）。答：这堆沙约重24吨。</td></tr>
+<tr><td>5</td><td>圆锥1份、圆柱3份，共4份，每份：48÷4＝12，圆锥：12cm³，圆柱：12×3＝36cm³。答：圆柱体积36cm³，圆锥体积12cm³。</td></tr>
+</table>
+</div>
+  <p class="hint">答案核对规则：全对说明该考点已掌握；错1～3题标记"待巩固"，重做错题；错4题以上回到总览文档对应单元，先复习知识点再做本卷。</p>
+  </div>
+</details>
+</div>
+<footer>人教版六年级数学专项练习 · 闫胜君整理 · 建议先限时完成再核对答案，错题对照《六年级数学知识点与考点总览》标注薄弱单元</footer>
+</div>
+</body>
+</html>
