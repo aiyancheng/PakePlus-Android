@@ -1,0 +1,289 @@
+{
+  "version": "1.0",
+  "grade": 2,
+  "semester": "down",
+  "dependencies": [
+    {
+      "from": "mt_g1d_time_hour",
+      "to": "mt_g2d_001",
+      "strength": "hard",
+      "note": "一年级下册已认识整时和半时，二年级扩展到几时几分"
+    },
+    {
+      "from": "mt_g2d_001",
+      "to": "mt_g2d_002",
+      "strength": "hard",
+      "note": "认识钟面结构是读写时间的前提"
+    },
+    {
+      "from": "mt_g2d_002",
+      "to": "mt_g2d_003",
+      "strength": "hard",
+      "note": "会读时间才能估计时间和用时间表"
+    },
+    {
+      "from": "mt_g2u_012",
+      "to": "mt_g2d_004",
+      "strength": "hard",
+      "note": "表内除法是有余数除法的直接前提"
+    },
+    {
+      "from": "mt_g2u_024",
+      "to": "mt_g2d_004",
+      "strength": "hard",
+      "note": "7~9口诀求商能力是有余数除法的基础"
+    },
+    {
+      "from": "mt_g2d_004",
+      "to": "mt_g2d_005",
+      "strength": "hard",
+      "note": "理解有余数除法意义后才学竖式写法"
+    },
+    {
+      "from": "mt_g2d_004",
+      "to": "mt_g2d_006",
+      "strength": "hard",
+      "note": "理解余数概念是掌握试商方法的前提"
+    },
+    {
+      "from": "mt_g2d_005",
+      "to": "mt_g2d_006",
+      "strength": "soft",
+      "note": "竖式写法与试商方法密切配合"
+    },
+    {
+      "from": "mt_g2d_006",
+      "to": "mt_g2d_007",
+      "strength": "hard",
+      "note": "能试商才能解决有余数除法实际问题"
+    },
+    {
+      "from": "mt_g2d_004",
+      "to": "mt_g2d_007",
+      "strength": "hard",
+      "note": "理解余数含义才能解决实际问题"
+    },
+    {
+      "from": "mt_g2u_012",
+      "to": "mt_g2d_008",
+      "strength": "hard",
+      "note": "倍的概念建立在除法意义基础上"
+    },
+    {
+      "from": "mt_g2u_011",
+      "to": "mt_g2d_008",
+      "strength": "hard",
+      "note": "理解除法两种情境有助于理解倍的概念"
+    },
+    {
+      "from": "mt_g2d_008",
+      "to": "mt_g2d_009",
+      "strength": "hard",
+      "note": "理解倍的概念才能求倍数"
+    },
+    {
+      "from": "mt_g2u_012",
+      "to": "mt_g2d_009",
+      "strength": "hard",
+      "note": "求倍数需要用除法计算"
+    },
+    {
+      "from": "mt_g2d_008",
+      "to": "mt_g2d_010",
+      "strength": "hard",
+      "note": "理解倍的概念才能求几倍是多少"
+    },
+    {
+      "from": "mt_g2u_024",
+      "to": "mt_g2d_010",
+      "strength": "hard",
+      "note": "求几倍是多少需要用乘法计算"
+    },
+    {
+      "from": "mt_g2d_009",
+      "to": "mt_g2d_011",
+      "strength": "hard",
+      "note": "能求倍数才能对比两种数量关系"
+    },
+    {
+      "from": "mt_g2d_010",
+      "to": "mt_g2d_011",
+      "strength": "hard",
+      "note": "能求几倍是多少才能对比两种数量关系"
+    },
+    {
+      "from": "mt_g1d_numbers_to_100",
+      "to": "mt_g2d_012",
+      "strength": "hard",
+      "note": "百以内数的认识是三位数的前提"
+    },
+    {
+      "from": "mt_g2d_012",
+      "to": "mt_g2d_013",
+      "strength": "hard",
+      "note": "三位数（千以内）的认识是四位数（万以内）的基础"
+    },
+    {
+      "from": "mt_g2d_013",
+      "to": "mt_g2d_014",
+      "strength": "soft",
+      "note": "学习四位数后了解算盘表示和近似数"
+    },
+    {
+      "from": "mt_g2d_013",
+      "to": "mt_g2d_015",
+      "strength": "hard",
+      "note": "认识万以内数后才能比较大小"
+    },
+    {
+      "from": "mt_g2d_012",
+      "to": "mt_g2d_015",
+      "strength": "hard",
+      "note": "三位数比较大小是四位数比较的基础"
+    },
+    {
+      "from": "mt_g1d_add_sub_100",
+      "to": "mt_g2d_016",
+      "strength": "hard",
+      "note": "百以内加法是三位数加法的直接基础，方法相同"
+    },
+    {
+      "from": "mt_g2d_012",
+      "to": "mt_g2d_016",
+      "strength": "hard",
+      "note": "认识三位数是三位数加法的前提"
+    },
+    {
+      "from": "mt_g2d_016",
+      "to": "mt_g2d_017",
+      "strength": "hard",
+      "note": "三位数加法是四位数加法的基础，方法相同"
+    },
+    {
+      "from": "mt_g2d_013",
+      "to": "mt_g2d_017",
+      "strength": "hard",
+      "note": "认识四位数是四位数加法的前提"
+    },
+    {
+      "from": "mt_g1d_add_sub_100",
+      "to": "mt_g2d_018",
+      "strength": "hard",
+      "note": "百以内减法是三位数减法的直接基础"
+    },
+    {
+      "from": "mt_g2d_016",
+      "to": "mt_g2d_018",
+      "strength": "soft",
+      "note": "加法进位方法与减法退位方法互为参照"
+    },
+    {
+      "from": "mt_g2d_018",
+      "to": "mt_g2d_019",
+      "strength": "hard",
+      "note": "减法验算在掌握减法竖式基础上进行"
+    },
+    {
+      "from": "mt_g2d_017",
+      "to": "mt_g2d_019",
+      "strength": "soft",
+      "note": "加法和减法互为逆运算，验算方法体现这一关系"
+    },
+    {
+      "from": "mt_g2d_017",
+      "to": "mt_g2d_020",
+      "strength": "soft",
+      "note": "估算基于对精确计算的理解"
+    },
+    {
+      "from": "mt_g2d_018",
+      "to": "mt_g2d_020",
+      "strength": "soft",
+      "note": "估算基于对精确计算的理解"
+    },
+    {
+      "from": "mt_g2d_017",
+      "to": "mt_g2d_021",
+      "strength": "hard",
+      "note": "多步实际问题可能需要四位数加法"
+    },
+    {
+      "from": "mt_g2d_018",
+      "to": "mt_g2d_021",
+      "strength": "hard",
+      "note": "多步实际问题可能需要减法"
+    },
+    {
+      "from": "mt_g2d_020",
+      "to": "mt_g2d_021",
+      "strength": "soft",
+      "note": "估算可帮助判断实际问题结果合理性"
+    },
+    {
+      "from": "mt_g2d_016",
+      "to": "mt_g2d_022",
+      "strength": "soft",
+      "note": "数独游戏中用到加法基础数感"
+    },
+    {
+      "from": "mt_g2d_021",
+      "to": "mt_g2d_023",
+      "strength": "hard",
+      "note": "整理复习需掌握多步问题"
+    },
+    {
+      "from": "mt_g2d_019",
+      "to": "mt_g2d_023",
+      "strength": "hard",
+      "note": "整理复习涵盖加减法关系"
+    },
+    {
+      "from": "mt_g2d_004",
+      "to": "mt_g2d_024",
+      "strength": "soft",
+      "note": "连环画综合应用包含有余数除法"
+    },
+    {
+      "from": "mt_g2d_010",
+      "to": "mt_g2d_024",
+      "strength": "soft",
+      "note": "连环画综合应用包含倍的关系"
+    },
+    {
+      "from": "mt_g2d_025",
+      "to": "mt_g2d_026",
+      "strength": "soft",
+      "note": "数量关系复习在综合数与运算复习基础上深化"
+    },
+    {
+      "from": "mt_g2d_011",
+      "to": "mt_g2d_026",
+      "strength": "hard",
+      "note": "倍的关系复习基于两种关系比较"
+    },
+    {
+      "from": "mt_g2d_023",
+      "to": "mt_g2d_025",
+      "strength": "hard",
+      "note": "加减法整理纳入综合复习"
+    },
+    {
+      "from": "mt_g2d_007",
+      "to": "mt_g2d_025",
+      "strength": "hard",
+      "note": "有余数除法纳入综合复习"
+    },
+    {
+      "from": "mt_g2d_013",
+      "to": "mt_g2d_028",
+      "strength": "hard",
+      "note": "四位数读写规则的重要组成部分"
+    },
+    {
+      "from": "mt_g2d_012",
+      "to": "mt_g2d_028",
+      "strength": "soft",
+      "note": "三位数含0的读法是四位数的铺垫"
+    }
+  ]
+}
