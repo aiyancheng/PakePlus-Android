@@ -1,0 +1,77 @@
+{
+  "version": "pep-primary-math-4up-v2",
+  "clusters": [
+    {
+      "id": "cluster_4u_01",
+      "name": "亿以内数的认识",
+      "description": "认识计数单位、数位，掌握亿以内大数的读写",
+      "topicIds": ["mt_g4u_001", "mt_g4u_002", "mt_g4u_003", "mt_g4u_004"],
+      "unitInTextbook": "第一单元：大数的认识（一）",
+      "sequence": 1
+    },
+    {
+      "id": "cluster_4u_02",
+      "name": "亿以上数与十进制",
+      "description": "亿以上数的读写、大数改写、十进制计数法、自然数概念",
+      "topicIds": ["mt_g4u_005", "mt_g4u_006", "mt_g4u_007", "mt_g4u_031", "mt_g4u_032", "mt_g4u_035"],
+      "unitInTextbook": "第一单元：大数的认识（二）",
+      "sequence": 2
+    },
+    {
+      "id": "cluster_4u_03",
+      "name": "公顷与平方千米",
+      "description": "较大面积单位的认识与换算",
+      "topicIds": ["mt_g4u_008"],
+      "unitInTextbook": "第二单元：公顷和平方千米",
+      "sequence": 3
+    },
+    {
+      "id": "cluster_4u_04",
+      "name": "角的认识",
+      "description": "线段、直线、射线，角的概念、度量、分类与画法",
+      "topicIds": ["mt_g4u_009", "mt_g4u_010", "mt_g4u_011", "mt_g4u_012"],
+      "unitInTextbook": "第三单元：角的度量",
+      "sequence": 4
+    },
+    {
+      "id": "cluster_4u_05",
+      "name": "三位数乘两位数",
+      "description": "三位数与两位数的乘法笔算，积的变化规律，实际应用（速度、单价等）",
+      "topicIds": ["mt_g4u_013", "mt_g4u_014", "mt_g4u_015", "mt_g4u_033", "mt_g4u_036"],
+      "unitInTextbook": "第四单元：三位数乘两位数",
+      "sequence": 5
+    },
+    {
+      "id": "cluster_4u_06",
+      "name": "平行四边形和梯形",
+      "description": "平行线与垂线，平行四边形和梯形的特征，四边形的关系，画高",
+      "topicIds": ["mt_g4u_016", "mt_g4u_017", "mt_g4u_018", "mt_g4u_019", "mt_g4u_020", "mt_g4u_034"],
+      "unitInTextbook": "第五单元：平行四边形和梯形",
+      "sequence": 6
+    },
+    {
+      "id": "cluster_4u_07",
+      "name": "除数是两位数的除法",
+      "description": "两位数除法的口算与笔算（一位商、两位商），商的变化规律，验算",
+      "topicIds": ["mt_g4u_021", "mt_g4u_022", "mt_g4u_023", "mt_g4u_024", "mt_g4u_025"],
+      "unitInTextbook": "第六单元：除数是两位数的除法",
+      "sequence": 7
+    },
+    {
+      "id": "cluster_4u_08",
+      "name": "条形统计图",
+      "description": "单式条形统计图的认识、绘制与分析",
+      "topicIds": ["mt_g4u_026", "mt_g4u_027"],
+      "unitInTextbook": "第七单元：条形统计图",
+      "sequence": 8
+    },
+    {
+      "id": "cluster_4u_09",
+      "name": "综合实践",
+      "description": "统筹优化（烙饼、沏茶）、田忌赛马对策问题",
+      "topicIds": ["mt_g4u_028", "mt_g4u_029", "mt_g4u_030"],
+      "unitInTextbook": "第八单元：数学广角——优化",
+      "sequence": 9
+    }
+  ]
+}
