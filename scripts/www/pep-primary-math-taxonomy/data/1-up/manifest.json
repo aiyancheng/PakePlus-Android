@@ -1,0 +1,36 @@
+{
+  "dataset": "人教版一年级数学上册知识图谱",
+  "taxonomyVersion": "pep-primary-math-1up-v2",
+  "basedOn": "withmarbleapp/os-taxonomy schema",
+  "sourceTextbook": "义务教育教科书·数学 一年级上册（人民教育出版社2024版）",
+  "scope": "全册（118页）",
+  "generatedAt": "2026-08-07T00:00:00.000Z",
+  "extractionMethod": "full-pdf-read",
+  "counts": {
+    "topics": 30,
+    "topicsByDomain": {
+      "数的认识": 12,
+      "数的运算": 12,
+      "图形与几何": 3,
+      "数量关系": 3
+    },
+    "topicsByType": {
+      "CONCEPTUAL": 15,
+      "PROCEDURAL": 11,
+      "REPRESENTATIONAL": 4
+    },
+    "dependencies": 28,
+    "curricula": 1,
+    "curriculumStandards": 30,
+    "clusters": 5
+  },
+  "chapters": [
+    {"chapter": "准备课", "pages": "1-11", "topics": ["方向与位置（前后左右）"]},
+    {"chapter": "第一章 5以内数的认识和加减法", "pages": "12-33", "topics": ["1~5各数的认识","0的认识","比大小","第几","数的分与合（5以内）","5以内加法","5以内减法"]},
+    {"chapter": "第二章 6~10的认识和加减法", "pages": "34-66", "topics": ["6~9各数的认识","6~9的分与合","6和7的加减法","8和9的加减法","10的认识与分与合","10的加减法","连加连减","加减混合运算","10以内加减法系统整理"]},
+    {"chapter": "第三章 认识立体图形", "pages": "67-72", "topics": ["认识立体图形","立体图形的拼组"]},
+    {"chapter": "第四章 11~20的认识", "pages": "73-87", "topics": ["11~20各数的认识与位值","11~20数的位值读写","双数与单数","20以内不进位加法","序数解决位置问题"]},
+    {"chapter": "第五章 20以内的进位加法", "pages": "88-102", "topics": ["20以内进位加法（凑十法）","加法交换律","20以内进位加法系统整理"]},
+    {"chapter": "第六章 复习与关联", "pages": "103-111", "topics": ["综合复习"]}
+  ]
+}
