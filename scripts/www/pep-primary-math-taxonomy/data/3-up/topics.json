@@ -1,0 +1,576 @@
+{
+  "version": "pep-primary-math-3u-v1",
+  "topicCount": 30,
+  "topics": [
+    {
+      "id": "mt_g3u_001",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "从不同方向观察物体",
+      "description": "能从正面、侧面、上面三个方向观察简单物体，辨认不同方向看到的形状",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.6,
+      "evidence": [
+        "发展空间观念的基础",
+        "为后续学习三视图做铺垫"
+      ],
+      "assessmentPrompt": "一个正方体从正面看是什么形状？从上面看呢？",
+      "standards": [
+        "pep-math-2022:3上.1.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_002",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "辨认简单物体的正面、侧面和上面的形状",
+      "description": "能根据给定的形状判断观察方向，或根据观察方向画出所看到的图形",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.55,
+      "evidence": [
+        "培养空间想象力",
+        "发展图形推理能力"
+      ],
+      "assessmentPrompt": "一个长方体（长比宽大）从侧面看是什么形状？请画出来。",
+      "standards": [
+        "pep-math-2022:3上.1.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_003",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "观察由小正方体组成的立体图形",
+      "description": "能从不同方向观察由几个小正方体拼成的立体图形，正确辨认各方向看到的平面图形",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.6,
+      "evidence": [
+        "空间与平面转换的核心训练",
+        "为高年级立体图形学习奠基"
+      ],
+      "assessmentPrompt": "3个小正方体摆成L形，从正面看是什么形状？从上面看呢？",
+      "standards": [
+        "pep-math-2022:3上.1.3"
+      ]
+    },
+    {
+      "id": "mt_g3u_004",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "混合运算的运算顺序",
+      "description": "理解含有两级运算（加减与乘除）的混合运算中先乘除后加减的规则",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.9,
+      "evidence": [
+        "运算顺序是代数学习的基石",
+        "贯穿整个数学学习过程"
+      ],
+      "assessmentPrompt": "计算 5 + 3 × 4 = ？请说明运算顺序。",
+      "standards": [
+        "pep-math-2022:3上.2.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_005",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "含有括号的混合运算",
+      "description": "掌握含有小括号的算式中先算括号内的运算规则，能正确进行计算",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": [
+        "括号改变运算顺序是核心数学规则",
+        "为复杂表达式计算做准备"
+      ],
+      "assessmentPrompt": "计算 (7 + 5) × 3 = ？",
+      "standards": [
+        "pep-math-2022:3上.2.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_006",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "混合运算的实际应用",
+      "description": "能用混合运算解决两步计算的实际问题，正确列出综合算式",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.8,
+      "evidence": [
+        "将运算规则应用于实际情境",
+        "培养数学建模意识"
+      ],
+      "assessmentPrompt": "小明买了3本笔记本每本5元，又买了一支钢笔8元，一共花了多少钱？列综合算式。",
+      "standards": [
+        "pep-math-2022:3上.2.3"
+      ]
+    },
+    {
+      "id": "mt_g3u_007",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "name": "认识毫米",
+      "description": "认识长度单位毫米，知道1厘米=10毫米，能用毫米作单位进行测量",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": [
+        "完善长度单位体系",
+        "培养精确测量意识"
+      ],
+      "assessmentPrompt": "1厘米等于多少毫米？量一量你的橡皮有多厚，用毫米作单位。",
+      "standards": [
+        "pep-math-2022:3上.3.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_008",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "name": "认识分米",
+      "description": "认识长度单位分米，知道1分米=10厘米，1米=10分米，能进行简单换算",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.65,
+      "evidence": [
+        "连接厘米与米之间的单位",
+        "建立长度单位之间的十进关系"
+      ],
+      "assessmentPrompt": "3分米等于多少厘米？30厘米等于多少分米？",
+      "standards": [
+        "pep-math-2022:3上.3.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_009",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "name": "认识千米",
+      "description": "认识长度单位千米（公里），知道1千米=1000米，感知千米的实际长度",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": [
+        "日常生活中最常用的大长度单位",
+        "地图与交通中必备概念"
+      ],
+      "assessmentPrompt": "从学校到你家大约多远？用千米或米来表示。1千米等于多少米？",
+      "standards": [
+        "pep-math-2022:3上.3.3"
+      ]
+    },
+    {
+      "id": "mt_g3u_010",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "name": "长度单位间的换算",
+      "description": "能在毫米、厘米、分米、米、千米之间进行正确换算",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": [
+        "单位换算是计量学习的核心技能",
+        "为面积和体积单位换算做铺垫"
+      ],
+      "assessmentPrompt": "5千米=（ ）米，80毫米=（ ）厘米，2米3分米=（ ）分米",
+      "standards": [
+        "pep-math-2022:3上.3.4"
+      ]
+    },
+    {
+      "id": "mt_g3u_011",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "name": "认识千克和克",
+      "description": "认识质量单位千克和克，知道1千克=1000克，能感知1千克和1克的实际重量",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": [
+        "日常生活中基本的质量单位",
+        "培养量感"
+      ],
+      "assessmentPrompt": "1千克等于多少克？一个苹果大约重多少克？",
+      "standards": [
+        "pep-math-2022:3上.4.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_012",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "name": "认识吨",
+      "description": "认识质量单位吨，知道1吨=1000千克，能感知吨的实际重量，了解吨在生活中的应用",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.65,
+      "evidence": [
+        "完善质量单位体系",
+        "与大型物品称量相关联"
+      ],
+      "assessmentPrompt": "1吨等于多少千克？举例说说生活中哪些东西要用吨作单位。",
+      "standards": [
+        "pep-math-2022:3上.4.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_013",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "量与计量",
+      "name": "质量单位间的换算",
+      "description": "能在克、千克、吨之间进行正确换算，解决相关实际问题",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": [
+        "质量单位换算是常见应用场景",
+        "培养单位转换的一般能力"
+      ],
+      "assessmentPrompt": "3吨=（ ）千克，5000克=（ ）千克，一辆卡车载重4（ ）",
+      "standards": [
+        "pep-math-2022:3上.4.3"
+      ]
+    },
+    {
+      "id": "mt_g3u_014",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "口算整十整百数乘一位数",
+      "description": "理解整十、整百数乘一位数的算理，能快速口算",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": [
+        "多位数乘法的基础",
+        "为笔算乘法提供估算验证手段"
+      ],
+      "assessmentPrompt": "口算：30×5=？ 200×4=？ 说说你是怎么想的。",
+      "standards": [
+        "pep-math-2022:3上.5.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_015",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "多位数乘一位数的笔算（不进位）",
+      "description": "掌握两位数、三位数乘一位数不进位的竖式计算方法",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.8,
+      "evidence": [
+        "笔算乘法的入门",
+        "理解乘法竖式的基本格式和流程"
+      ],
+      "assessmentPrompt": "用竖式计算：213 × 3 = ？",
+      "standards": [
+        "pep-math-2022:3上.5.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_016",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "多位数乘一位数的笔算（进位）",
+      "description": "掌握两位数、三位数乘一位数有进位的竖式计算方法",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": [
+        "进位乘法是乘法运算的核心难点",
+        "为多位数乘多位数做准备"
+      ],
+      "assessmentPrompt": "用竖式计算：156 × 4 = ？",
+      "standards": [
+        "pep-math-2022:3上.5.3"
+      ]
+    },
+    {
+      "id": "mt_g3u_017",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "因数中间或末尾有0的乘法",
+      "description": "掌握被乘数中间或末尾有0时的乘法计算方法和简便写法",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": [
+        "0在乘法中的特殊规则",
+        "常见易错点需专项训练"
+      ],
+      "assessmentPrompt": "用竖式计算：305 × 6 = ？ 240 × 3 = ？",
+      "standards": [
+        "pep-math-2022:3上.5.4"
+      ]
+    },
+    {
+      "id": "mt_g3u_018",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "多位数乘一位数的估算",
+      "description": "能对多位数乘一位数的结果进行合理估算，用于验算和解决实际问题",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.65,
+      "evidence": [
+        "估算能力是数感的重要体现",
+        "实际生活中常用估算做决策"
+      ],
+      "assessmentPrompt": "一本书198页，小明每天看约32页，一周能看完吗？用估算说明。",
+      "standards": [
+        "pep-math-2022:3上.5.5"
+      ]
+    },
+    {
+      "id": "mt_g3u_019",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "用乘法解决实际问题",
+      "description": "能用多位数乘一位数解决生活中的实际问题，正确分析数量关系",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": [
+        "运算的最终目的是解决问题",
+        "培养数学应用意识"
+      ],
+      "assessmentPrompt": "学校买了4箱矿泉水，每箱24瓶，一共有多少瓶？",
+      "standards": [
+        "pep-math-2022:3上.5.6"
+      ]
+    },
+    {
+      "id": "mt_g3u_020",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数学思维",
+      "name": "数字编码的含义",
+      "description": "了解生活中数字编码的作用，知道邮政编码、身份证号码等的编排规律",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.5,
+      "evidence": [
+        "数学在生活中的综合应用",
+        "培养信息素养"
+      ],
+      "assessmentPrompt": "身份证号码中的哪几位数字代表出生日期？邮政编码有什么规律？",
+      "standards": [
+        "pep-math-2022:3上.6.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_021",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数学思维",
+      "name": "设计简单的编码方案",
+      "description": "能根据需要设计简单的数字编码方案，体会编码的唯一性和合理性",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.45,
+      "evidence": [
+        "培养逻辑思维和创造力",
+        "初步体验信息编码思想"
+      ],
+      "assessmentPrompt": "给你们班40位同学设计一个学号编码方案，要能看出班级和性别。",
+      "standards": [
+        "pep-math-2022:3上.6.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_022",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "认识线段、射线和直线",
+      "description": "认识线段、射线和直线的特征，理解三者的联系与区别",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": [
+        "几何基本概念",
+        "为认识角和图形学习做基础"
+      ],
+      "assessmentPrompt": "线段、射线和直线各有什么特点？它们有什么区别？",
+      "standards": [
+        "pep-math-2022:3上.7.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_023",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "认识角",
+      "description": "认识角的组成（顶点和两条边），能辨认角，知道角的大小与边的长短无关",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": [
+        "几何图形的基本要素",
+        "为后续学习角的度量做铺垫"
+      ],
+      "assessmentPrompt": "一个角由哪几部分组成？角的大小跟什么有关？",
+      "standards": [
+        "pep-math-2022:3上.7.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_024",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "认识直角、锐角和钝角",
+      "description": "认识直角、锐角和钝角，能用三角尺判断和辨认各种角",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": [
+        "角的分类是几何学习的基础",
+        "为后续学习角的度量做准备"
+      ],
+      "assessmentPrompt": "比直角小的角叫什么角？比直角大的角叫什么角？用三角尺画一个直角。",
+      "standards": [
+        "pep-math-2022:3上.7.3"
+      ]
+    },
+    {
+      "id": "mt_g3u_025",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "画角和比较角的大小",
+      "description": "能用三角尺画指定类型的角，能用叠合法比较两个角的大小",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.6,
+      "evidence": [
+        "动手操作发展几何技能",
+        "为量角器的使用做铺垫"
+      ],
+      "assessmentPrompt": "用三角尺画一个锐角和一个钝角，比较它们的大小。",
+      "standards": [
+        "pep-math-2022:3上.7.4"
+      ]
+    },
+    {
+      "id": "mt_g3u_026",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "分数的初步认识——几分之一",
+      "description": "结合具体情境理解把一个整体平均分成若干份，其中一份就是几分之一",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.9,
+      "evidence": [
+        "分数概念是数系扩展的里程碑",
+        "为后续深入学习分数奠定基础"
+      ],
+      "assessmentPrompt": "把一个饼平均分成4份，每份是这个饼的几分之几？用分数表示。",
+      "standards": [
+        "pep-math-2022:3上.8.1"
+      ]
+    },
+    {
+      "id": "mt_g3u_027",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "分数的初步认识——几分之几",
+      "description": "理解几分之几的含义，知道分数各部分名称（分子、分母、分数线）",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": [
+        "完善分数概念",
+        "理解分数表示的量"
+      ],
+      "assessmentPrompt": "一条彩带平均分成5段，取其中3段，是这条彩带的几分之几？说出分子和分母。",
+      "standards": [
+        "pep-math-2022:3上.8.2"
+      ]
+    },
+    {
+      "id": "mt_g3u_028",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "分数的大小比较",
+      "description": "能比较同分母分数或同分子分数的大小，理解比较的道理",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": [
+        "建立分数大小的直觉",
+        "为分数运算做准备"
+      ],
+      "assessmentPrompt": "比较大小：2/5 和 4/5，1/3 和 1/6，哪个大？为什么？",
+      "standards": [
+        "pep-math-2022:3上.8.3"
+      ]
+    },
+    {
+      "id": "mt_g3u_029",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "简单的同分母分数加减法",
+      "description": "能计算同分母分数（分母不超过10）的加法和减法",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": [
+        "分数运算的起步",
+        "为后续系统学习分数加减法做准备"
+      ],
+      "assessmentPrompt": "计算：1/6 + 3/6 = ？ 5/8 - 2/8 = ？",
+      "standards": [
+        "pep-math-2022:3上.8.4"
+      ]
+    },
+    {
+      "id": "mt_g3u_030",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "分数与生活实际的联系",
+      "description": "能用分数描述生活中的简单问题，体会分数在日常生活中的应用",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.6,
+      "evidence": [
+        "数学联系生活的重要体现",
+        "加深对分数意义的理解"
+      ],
+      "assessmentPrompt": "一天有24小时，上午上课的时间占一天的几分之几？",
+      "standards": [
+        "pep-math-2022:3上.8.5"
+      ]
+    }
+  ]
+}
