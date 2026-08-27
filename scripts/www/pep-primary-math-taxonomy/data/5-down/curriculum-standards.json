@@ -1,0 +1,40 @@
+{
+  "curriculumCount": 1,
+  "curricula": [
+    {
+      "slug": "pep-math-2022",
+      "name": "义务教育数学课程标准（2022年版）",
+      "publisher": "人民教育出版社",
+      "mappings": [
+        { "standardCode": "pep-math-2022:5下.1.1", "topicId": "mt_g5d_001", "description": "能从正面、左面、上面观察几何体，读懂三视图" },
+        { "standardCode": "pep-math-2022:5下.2.1", "topicId": "mt_g5d_002", "description": "理解因数和倍数的概念" },
+        { "standardCode": "pep-math-2022:5下.2.2", "topicId": "mt_g5d_003", "description": "掌握2、5、3的倍数特征，理解奇数偶数" },
+        { "standardCode": "pep-math-2022:5下.2.3", "topicId": "mt_g5d_004", "description": "理解质数和合数，能分解质因数" },
+        { "standardCode": "pep-math-2022:5下.3.1", "topicId": "mt_g5d_005", "description": "认识长方体和正方体的面棱顶点" },
+        { "standardCode": "pep-math-2022:5下.3.2", "topicId": "mt_g5d_006", "description": "能计算长方体和正方体的表面积" },
+        { "standardCode": "pep-math-2022:5下.3.3", "topicId": "mt_g5d_007", "description": "理解体积概念和体积单位及进率" },
+        { "standardCode": "pep-math-2022:5下.3.4", "topicId": "mt_g5d_008", "description": "能计算长方体和正方体的体积" },
+        { "standardCode": "pep-math-2022:5下.3.5", "topicId": "mt_g5d_026", "description": "探索小正方体涂色规律" },
+        { "standardCode": "pep-math-2022:5下.4.1", "topicId": "mt_g5d_009", "description": "理解分数的意义和分数单位" },
+        { "standardCode": "pep-math-2022:5下.4.2", "topicId": "mt_g5d_010", "description": "理解真分数、假分数、带分数并互化" },
+        { "standardCode": "pep-math-2022:5下.4.3", "topicId": "mt_g5d_011", "description": "理解分数与除法的关系" },
+        { "standardCode": "pep-math-2022:5下.4.4", "topicId": "mt_g5d_012", "description": "理解并应用分数的基本性质" },
+        { "standardCode": "pep-math-2022:5下.4.5", "topicId": "mt_g5d_013", "description": "能求最大公因数，会约分" },
+        { "standardCode": "pep-math-2022:5下.4.6", "topicId": "mt_g5d_014", "description": "能求最小公倍数，会通分" },
+        { "standardCode": "pep-math-2022:5下.4.7", "topicId": "mt_g5d_015", "description": "能进行分数和小数的互化" },
+        { "standardCode": "pep-math-2022:5下.4.8", "topicId": "mt_g5d_025", "description": "了解GCF与LCM的关系" },
+        { "standardCode": "pep-math-2022:5下.5.1", "topicId": "mt_g5d_016", "description": "理解旋转三要素，描述图形旋转" },
+        { "standardCode": "pep-math-2022:5下.5.2", "topicId": "mt_g5d_017", "description": "能在方格纸上作旋转图形" },
+        { "standardCode": "pep-math-2022:5下.5.3", "topicId": "mt_g5d_027", "description": "综合运用平移和旋转设计图案" },
+        { "standardCode": "pep-math-2022:5下.6.1", "topicId": "mt_g5d_018", "description": "能计算同分母分数加减法" },
+        { "standardCode": "pep-math-2022:5下.6.2", "topicId": "mt_g5d_019", "description": "能计算异分母分数加减法" },
+        { "standardCode": "pep-math-2022:5下.6.3", "topicId": "mt_g5d_020", "description": "能进行分数加减混合运算，会简算" },
+        { "standardCode": "pep-math-2022:5下.7.1", "topicId": "mt_g5d_021", "description": "探索最优通知方案，体会优化思维" },
+        { "standardCode": "pep-math-2022:5下.7.2", "topicId": "mt_g5d_022", "description": "理解折线统计图并读取信息" },
+        { "standardCode": "pep-math-2022:5下.7.3", "topicId": "mt_g5d_023", "description": "能绘制和分析复式折线统计图" },
+        { "standardCode": "pep-math-2022:5下.7.4", "topicId": "mt_g5d_028", "description": "能根据数据特点选择合适的统计图" },
+        { "standardCode": "pep-math-2022:5下.8.1", "topicId": "mt_g5d_024", "description": "掌握找次品中三等分最优策略" }
+      ]
+    }
+  ]
+}
