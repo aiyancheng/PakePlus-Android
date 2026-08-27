@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五年级数学 练习01 · 小数乘法</title>
+<style>
+:root{--primary:#1677ff;--primary-light:#e6f0ff;--primary-dark:#0958d9;--ok:#52c41a;--warn:#fa8c16;--text:#1f2329;--text2:#4e5969;--line:#e5e6eb;--bg:#f7f8fa;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",-apple-system,system-ui,SimHei,serif,sans-serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:15px}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+header.paper{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--primary);border-radius:12px;padding:24px 26px;margin-bottom:18px}
+header.paper .sub{font-size:12.5px;color:var(--text2);letter-spacing:2px;margin-bottom:4px}
+header.paper h1{font-size:22px;color:var(--primary-dark)}
+header.paper .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:13px}
+header.paper .meta span{background:var(--primary-light);color:var(--primary-dark);padding:2px 12px;border-radius:99px}
+header.paper .scope{margin-top:12px;font-size:13.5px;color:var(--text2);background:var(--bg);padding:10px 14px;border-left:3px solid var(--primary);border-radius:0 8px 8px 0}
+section.block{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:18px}
+h2.qsec{font-size:16px;color:var(--primary-dark);border-bottom:2px solid var(--primary-light);padding-bottom:8px;margin-bottom:6px}
+h2.qsec small{font-weight:normal;color:var(--text2);font-size:12.5px;margin-left:8px}
+ol.qlist{list-style:none;counter-reset:q}
+ol.qlist>li{counter-increment:q;padding:8px 0 8px 34px;position:relative;border-bottom:1px dashed var(--line)}
+ol.qlist>li:last-child{border-bottom:none}
+ol.qlist>li::before{content:counter(q) ".";position:absolute;left:4px;color:var(--primary);font-weight:bold}
+.blank{display:inline-block;min-width:56px;border-bottom:1.5px solid var(--text2);text-align:center;color:transparent}
+input.fillin{display:inline-block;min-width:60px;border:none;border-bottom:1.5px solid #b9c0cc;text-align:center;font-size:15px;background:#fbfcfe;color:var(--primary-dark);outline:none;font-family:inherit}
+input.fillin:focus{border-bottom-color:var(--primary);background:var(--primary-light)}
+.opts{display:block;margin-top:2px}
+.answer{margin-top:22px}
+details.ans{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+details.ans summary{cursor:pointer;padding:13px 22px;font-size:15px;font-weight:bold;color:var(--ok);background:#f6ffed;border:1px solid #d9f7be;border-radius:12px;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.ans summary::before{content:"▸";transition:.2s}
+details.ans[open] summary::before{transform:rotate(90deg)}
+details.ans .ans-body{padding:14px 22px 20px}
+table.mini{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+table.mini th{background:var(--primary-light);color:var(--primary-dark);padding:6px 10px;border:1px solid #d4e3ff}
+table.mini td{padding:6px 10px;border:1px solid var(--line);vertical-align:top}
+table.mini td:first-child{white-space:nowrap;color:var(--primary-dark);font-weight:bold}
+footer{margin-top:26px;text-align:center;color:var(--text2);font-size:12.5px}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+@media(max-width:640px){.twocol{grid-template-columns:1fr}}
+.hint{font-size:12.5px;color:var(--warn);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="paper">
+  <div class="sub">人教版小学数学五年级 · 专项练习</div>
+  <h1>练习01 · 小数乘法</h1>
+  <div class="meta"><span>建议用时 40分钟</span><span>满分 100分</span><span>共 37 题</span></div>
+  <div class="scope"><b>考点范围：</b>小数乘整数、小数乘小数；积的小数位数；积的近似数；整数乘法运算律推广到小数；分段计费与估算解决问题（五上第1单元）</div>
+</header>
+<section class="block notice">
+  <h2 class="qsec">答题须知<small>先读一遍再动笔</small></h2>
+  <ol class="qlist">
+    <li>先写姓名和日期，按题目顺序作答；遇到暂时不会的题先跳过，做完再回头思考。</li>
+    <li>口算题不写过程，直接写得数；竖式题要列竖式，带※的题必须写出验算过程。</li>
+    <li>填空题按空作答，注意单位名称是否要求填写；判断题打√或×，选择题填字母序号。</li>
+    <li>解决问题要写出算式、得数和单位（或答句），只写得数要扣过程分。</li>
+    <li>做完后预留5分钟检查：数字有没有抄错、单位有没有漏写、验算了没有。</li>
+  </ol>
+  <p class="hint">评分参考：填空每空1分；判断、选择每题2分；口算每题1分；竖式每题4分（验算占1分）；解决问题每题6分（列式3分＋计算2分＋单位答句1分）。错题请回到《五年级数学知识点与考点总览》对应单元查漏补缺。</p>
+</section>
+<section class="block"><h2 class="qsec">一、填空题<small>每空1分</small></h2><ol class="qlist">
+<li>0.8×5 表示（　　）个（　　）相加，结果是（　　）</li>
+<li>计算 0.36×0.4 时，先算36×4＝144，两个因数共有（　　）位小数，积是（　　）</li>
+<li>0.25×0.4 的积是（　　），化简后是（　　）</li>
+<li>0.86×1.5 的积保留一位小数约是（　　）</li>
+<li>2.5×4＝（　　）；0.125×8＝（　　）</li>
+<li>3.5×99＋3.5＝3.5×（　　）＝（　　），运用了乘法（　　）律</li>
+<li>一种大米每千克4.8元，买2.5千克应付（　　）元</li>
+<li>一个因数不变，另一个因数乘10，积（　　）</li>
+</ol></section>
+<section class="block"><h2 class="qsec">二、判断题<small>对的打√，错的打×</small></h2><ol class="qlist">
+<li>两个小数的积一定小于1（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>0.05×0.02 的积有4位小数（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>整数乘法的运算律对小数乘法同样适用（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>3.6×1.02 ○ 3.6（○里填＞）（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+<li>一个因数扩大到原来的10倍，另一个因数缩小到原来的1/10，积不变（&nbsp;&nbsp;&nbsp;&nbsp;）</li>
+</ol></section>
+<section class="block"><h2 class="qsec">三、选择题<small>把正确答案的序号填在括号里</small></h2><ol class="qlist">
+<li>0.38×0.25 的积是（　　）位小数（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．三</span>
+<span class="opts">B．四</span>
+<span class="opts">C．五</span></li><li>下面各式中，积最小的是（　　）（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．0.25×0.4</span>
+<span class="opts">B．2.5×0.4</span>
+<span class="opts">C．25×0.4</span></li><li>2.5×12.5×0.4×8 的简便算法是（　　）（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．(2.5×0.4)×(12.5×8)</span>
+<span class="opts">B．2.5×(12.5×0.4×8)</span>
+<span class="opts">C．2.5×8+12.5×0.4</span></li><li>每千克苹果6.8元，买3.2千克，大约需要（　　）元（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．20</span>
+<span class="opts">B．21.8</span>
+<span class="opts">C．22</span></li><li>0.99×8.5＋0.085 与（　　）相等（&nbsp;&nbsp;&nbsp;&nbsp;）
+<span class="opts">A．0.99×8.5+0.01×8.5</span>
+<span class="opts">B．8.5×1</span>
+<span class="opts">C．8.5×0.99×2</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">四、口算题<small>直接写得数</small></h2><ol class="qlist twocol">
+<li>0.3×4＝<span class="blank">　</span></li>
+<li>0.5×6＝<span class="blank">　</span></li>
+<li>0.7×0.8＝<span class="blank">　</span></li>
+<li>1.2×3＝<span class="blank">　</span></li>
+<li>0.25×4＝<span class="blank">　</span></li>
+<li>0.125×8＝<span class="blank">　</span></li>
+<li>2.5×0.4＝<span class="blank">　</span></li>
+<li>0.6×0.5＝<span class="blank">　</span></li>
+</ol></section>
+<section class="block"><h2 class="qsec">五、竖式计算<small>要求：带※的题目要验算，积的末尾有0先点小数点再去0</small></h2><ol class="qlist twocol">
+<li>※0.86×2.5＝</li>
+<li>※3.05×2.4＝</li>
+<li>※0.56×0.13＝</li>
+<li>※1.08×25＝</li>
+<li>※0.25×4.8＝</li>
+<li>※2.9×0.07＝</li>
+</ol></section>
+<section class="block"><h2 class="qsec">六、解决问题<small>写出必要的过程</small></h2><ol class="qlist">
+<li>学校食堂买了2.5吨煤，每吨850元，一共要付多少元？</li>
+<li>一辆汽车每小时行驶62.5千米，2.4小时行驶多少千米？</li>
+<li>某市出租车收费标准：3千米以内8元，超过3千米的部分每千米2.5元（不足1千米按1千米算）。李叔叔乘车行了7.5千米，应付多少元？</li>
+<li>妈妈带50元去买水果，苹果每千克6.5元，买了4千克；香蕉每千克4.8元，买了2千克。钱够吗？</li>
+<li>一块长方形菜地长12.5米，宽8.4米，每平方米收白菜7.5千克。这块地一共收白菜多少千克？</li>
+</ol></section>
+<div class="answer">
+<details class="ans">
+  <summary>参考答案与部分解析（点击展开 / 收起）</summary>
+  <div class="ans-body"><div class="ans-sec"><b>一、填空题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案</th></tr>
+<tr><td>1</td><td>5；0.8；4</td></tr>
+<tr><td>2</td><td>3；0.144</td></tr>
+<tr><td>3</td><td>0.100；0.1</td></tr>
+<tr><td>4</td><td>1.3（0.86×1.5=1.29）</td></tr>
+<tr><td>5</td><td>10；1</td></tr>
+<tr><td>6</td><td>100；350；分配</td></tr>
+<tr><td>7</td><td>4.8×2.5＝12元</td></tr>
+<tr><td>8</td><td>也乘10</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>二、判断题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>×</b>　如1.2×1.5=1.8＞1</td></tr>
+<tr><td>2</td><td><b>√</b>　0.05×0.02=0.0010，4位小数</td></tr>
+<tr><td>3</td><td><b>√</b>　交换结合分配律都可推广</td></tr>
+<tr><td>4</td><td><b>√</b>　1.02＞1，积大于原数</td></tr>
+<tr><td>5</td><td><b>√</b>　10×1/10=1，积不变</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>三、选择题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与理由</th></tr>
+<tr><td>1</td><td><b>B</b>　2+2=4位，0.38×0.25=0.095</td></tr>
+<tr><td>2</td><td><b>A</b>　0.25×0.4=0.1最小</td></tr>
+<tr><td>3</td><td><b>A</b>　交换结合凑整：1×100=100</td></tr>
+<tr><td>4</td><td><b>B</b>　6.8×3.2=21.76≈21.8</td></tr>
+<tr><td>5</td><td><b>B</b>　0.085=0.01×8.5，合并=8.5×(0.99+0.01)=8.5</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>四、口算题</b>
+<table class="mini">
+<tr><th>算式</th><th>答案</th></tr>
+<tr><td>0.3×4</td><td><b>1.2</b></td></tr>
+<tr><td>0.5×6</td><td><b>3</b></td></tr>
+<tr><td>0.7×0.8</td><td><b>0.56</b></td></tr>
+<tr><td>1.2×3</td><td><b>3.6</b></td></tr>
+<tr><td>0.25×4</td><td><b>1</b></td></tr>
+<tr><td>0.125×8</td><td><b>1</b></td></tr>
+<tr><td>2.5×0.4</td><td><b>1</b></td></tr>
+<tr><td>0.6×0.5</td><td><b>0.3</b></td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>五、竖式计算</b>
+<table class="mini">
+<tr><th>题目</th><th>答案</th></tr>
+<tr><td>※0.86×2.5＝</td><td><b>2.15</b>　0.86×2.5=2.15，验算交换因数</td></tr>
+<tr><td>※3.05×2.4＝</td><td><b>7.32</b></td></tr>
+<tr><td>※0.56×0.13＝</td><td><b>0.0728</b>　4位小数</td></tr>
+<tr><td>※1.08×25＝</td><td><b>27</b>　108×25=2700，2位小数→27.00=27</td></tr>
+<tr><td>※0.25×4.8＝</td><td><b>1.2</b></td></tr>
+<tr><td>※2.9×0.07＝</td><td><b>0.203</b>　29×7=203，3位小数</td></tr>
+</table>
+</div>
+<div class="ans-sec"><b>六、解决问题</b>
+<table class="mini">
+<tr><th style="width:52px">题号</th><th>答案与过程</th></tr>
+<tr><td>1</td><td>850×2.5＝2125（元）。答：一共要付2125元。</td></tr>
+<tr><td>2</td><td>62.5×2.4＝150（千米）。答：行驶150千米。</td></tr>
+<tr><td>3</td><td>7.5千米按8千米算：8＋(8−3)×2.5＝8＋12.5＝20.5（元）。答：应付20.5元。</td></tr>
+<tr><td>4</td><td>6.5×4＋4.8×2＝26＋9.6＝35.6（元），35.6＜50，够。答：钱够。</td></tr>
+<tr><td>5</td><td>12.5×8.4×7.5＝105×7.5＝787.5（千克）。答：一共收白菜787.5千克。</td></tr>
+</table>
+</div>
+  <p class="hint">答案核对规则：全对说明该考点已掌握；错1～3题标记"待巩固"，重做错题；错4题以上回到总览文档对应单元，先复习知识点再做本卷。</p>
+  </div>
+</details>
+</div>
+<footer>人教版五年级数学专项练习 · 闫胜君整理 · 建议先限时完成再核对答案，错题对照《五年级数学知识点与考点总览》标注薄弱单元</footer>
+</div>
+</body>
+</html>
