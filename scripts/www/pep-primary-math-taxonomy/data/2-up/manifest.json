@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "id": "pep-math-g2-up",
+  "title": "人教版小学数学二年级上册",
+  "grade": 2,
+  "semester": "up",
+  "publisher": "人民教育出版社",
+  "edition": "2022年版课程标准修订版",
+  "isbn": "978-7-107-38912-2",
+  "total_pages": 107,
+  "topic_count": 30,
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "分类与整理",
+      "page_range": [1, 8],
+      "topic_ids": ["mt_g2u_001", "mt_g2u_002"]
+    },
+    {
+      "unit_no": 2,
+      "title": "1~6的表内乘法",
+      "page_range": [9, 46],
+      "topic_ids": ["mt_g2u_003", "mt_g2u_004", "mt_g2u_005", "mt_g2u_006", "mt_g2u_007", "mt_g2u_008", "mt_g2u_009"]
+    },
+    {
+      "unit_no": 3,
+      "title": "1~6的表内除法",
+      "page_range": [47, 70],
+      "topic_ids": ["mt_g2u_010", "mt_g2u_011", "mt_g2u_012", "mt_g2u_013", "mt_g2u_014"]
+    },
+    {
+      "unit_no": 4,
+      "title": "校园小导游（位置与方向）",
+      "page_range": [71, 80],
+      "topic_ids": ["mt_g2u_015", "mt_g2u_016"]
+    },
+    {
+      "unit_no": 5,
+      "title": "厘米和米",
+      "page_range": [81, 94],
+      "topic_ids": ["mt_g2u_017", "mt_g2u_018", "mt_g2u_019"]
+    },
+    {
+      "unit_no": "5-ext",
+      "title": "身体上的尺子（实践活动）",
+      "page_range": [95, 100],
+      "topic_ids": ["mt_g2u_020"]
+    },
+    {
+      "unit_no": 6,
+      "title": "7~9的表内乘除法",
+      "page_range": [73, 90],
+      "topic_ids": ["mt_g2u_021", "mt_g2u_022", "mt_g2u_023", "mt_g2u_024", "mt_g2u_025", "mt_g2u_026", "mt_g2u_030"]
+    },
+    {
+      "unit_no": 7,
+      "title": "复习与关联",
+      "page_range": [91, 100],
+      "topic_ids": ["mt_g2u_027", "mt_g2u_028", "mt_g2u_029"]
+    }
+  ],
+  "cross_references": {
+    "prerequisites": ["mt_g1u_*", "mt_g1d_*"],
+    "next_semester": "pep-math-g2-down"
+  },
+  "domain_coverage": {
+    "数与运算": ["mt_g2u_003", "mt_g2u_004", "mt_g2u_005", "mt_g2u_006", "mt_g2u_007", "mt_g2u_008", "mt_g2u_009", "mt_g2u_010", "mt_g2u_011", "mt_g2u_012", "mt_g2u_013", "mt_g2u_014", "mt_g2u_021", "mt_g2u_022", "mt_g2u_023", "mt_g2u_024", "mt_g2u_025", "mt_g2u_026", "mt_g2u_027", "mt_g2u_028", "mt_g2u_030"],
+    "图形与几何": ["mt_g2u_015", "mt_g2u_016", "mt_g2u_017", "mt_g2u_018", "mt_g2u_019", "mt_g2u_020", "mt_g2u_029"],
+    "统计与概率": ["mt_g2u_001", "mt_g2u_002"]
+  },
+  "generated_at": "2026-08-07",
+  "source": "人教版二年级上册PDF全文提取（107页）"
+}
