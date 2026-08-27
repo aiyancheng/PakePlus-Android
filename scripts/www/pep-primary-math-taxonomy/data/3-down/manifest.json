@@ -1,0 +1,40 @@
+{
+  "dataset": "人教版三年级数学下册知识图谱",
+  "taxonomyVersion": "pep-primary-math-3d-v2",
+  "basedOn": "withmarbleapp/os-taxonomy schema",
+  "sourceTextbook": "义务教育教科书·数学 三年级下册（人民教育出版社，根据2022年版课程标准修订）",
+  "scope": "全册（第1-114页，全部读取后生成）",
+  "generatedAt": "2026-08-07T00:00:00.000Z",
+  "chapters": [
+    {"chapter": 1, "title": "生活中的运动现象", "pages": "1-20", "topicIds": ["mt_g3d_001", "mt_g3d_002", "mt_g3d_003"]},
+    {"chapter": 2, "title": "除数是一位数的除法", "pages": "21-56", "topicIds": ["mt_g3d_004", "mt_g3d_005", "mt_g3d_006", "mt_g3d_007", "mt_g3d_008"]},
+    {"chapter": 3, "title": "长方形和正方形", "pages": "41-55", "topicIds": ["mt_g3d_009", "mt_g3d_010", "mt_g3d_011"]},
+    {"chapter": 4, "title": "图形的面积", "pages": "56-68", "topicIds": ["mt_g3d_012", "mt_g3d_013", "mt_g3d_014"]},
+    {"chapter": "5a", "title": "数字编码（综合实践）", "pages": "57-60", "topicIds": ["mt_g3d_015"]},
+    {"chapter": "5b", "title": "线和角", "pages": "61-72", "topicIds": ["mt_g3d_016", "mt_g3d_017"]},
+    {"chapter": 6, "title": "分数的初步认识", "pages": "73-91", "topicIds": ["mt_g3d_018", "mt_g3d_019", "mt_g3d_020", "mt_g3d_021"]},
+    {"chapter": "7a", "title": "年、月、日的秘密（综合实践）", "pages": "77-85", "topicIds": ["mt_g3d_022", "mt_g3d_023", "mt_g3d_024"]},
+    {"chapter": "7b", "title": "小数的初步认识", "pages": "86-94", "topicIds": ["mt_g3d_025", "mt_g3d_026", "mt_g3d_027"]},
+    {"chapter": "8", "title": "复习与关联（含重叠问题）", "pages": "92-105", "topicIds": ["mt_g3d_028"]}
+  ],
+  "counts": {
+    "topics": 28,
+    "topicsByDomain": {
+      "空间与几何": 6,
+      "数的运算": 7,
+      "度量与单位": 5,
+      "图形与几何": 2,
+      "数的认识": 5,
+      "数学思维": 3
+    },
+    "topicsByType": {
+      "CONCEPTUAL": 14,
+      "REPRESENTATIONAL": 2,
+      "PROCEDURAL": 12
+    },
+    "dependencies": 34,
+    "curricula": 1,
+    "curriculumStandards": 28,
+    "clusters": 7
+  }
+}
