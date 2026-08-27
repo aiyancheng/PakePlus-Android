@@ -1,0 +1,672 @@
+{
+  "version": "pep-primary-math-6down-v2",
+  "topicCount": 37,
+  "topics": [
+    {
+      "id": "mt_g6d_001",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "负数的引入与含义",
+      "description": "通过温度（零下温度）和收支账单（支出为负）等实际情境引入负数的概念：在正数前添加'−'号即为负数；正负数用来表示生活中具有相反意义的两类量，0是正负数的分界。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能用正负数表示具有相反意义的量",
+        "能在生活情境中识别哪些量用负数表示",
+        "能正确读写负数（如−6读作'负六'）"
+      ],
+      "assessmentPrompt": "{{name}}能说出−15℃和+15℃各表示什么意思，并指出谁更冷吗？",
+      "standards": ["pep-math-2022:6下.1.1"]
+    },
+    {
+      "id": "mt_g6d_002",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "正数、负数与零的关系",
+      "description": "理解正数、负数和零的关系：以前学过的数（不含0）都是正数，负数是在正数前加'−'；0既不是正数也不是负数，是正负数的分界点。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能说明0既不是正数也不是负数",
+        "能举例说明三类数（正、负、零）",
+        "能用正数表示某方向，负数表示相反方向"
+      ],
+      "assessmentPrompt": "{{name}}能说明0和正数、负数的关系，并举例说明在海拔高度中的应用吗？",
+      "standards": ["pep-math-2022:6下.1.2"]
+    },
+    {
+      "id": "mt_g6d_003",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "数轴的认识",
+      "description": "理解数轴的含义：以某点为原点（0），规定正方向，在数轴上0右边的点表示正数，左边的点表示负数；数轴可以表示整数、小数、分数等各种数。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能在数轴上标出正数、负数和零",
+        "能根据数轴判断两数大小（右边的数大于左边的数）",
+        "能用数轴表示具有相反意义的量（如向东走和向西走）"
+      ],
+      "assessmentPrompt": "{{name}}能在数轴上标出−3、−1.5、0、2.5的位置，并说明哪个数最大吗？",
+      "standards": ["pep-math-2022:6下.1.3"]
+    },
+    {
+      "id": "mt_g6d_004",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "折扣的含义与计算",
+      "description": "理解折扣的含义：几折表示原价的百分之几十（如九折=90%，八五折=85%）；掌握折后价格的计算：折后价=原价×折扣百分数。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能将折扣转化为百分数",
+        "能计算打折后的价格",
+        "能解决含折扣的两步应用题"
+      ],
+      "assessmentPrompt": "{{name}}能计算原价280元的商品打八五折后的价格吗？",
+      "standards": ["pep-math-2022:6下.2.1"]
+    },
+    {
+      "id": "mt_g6d_005",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "成数的含义",
+      "description": "理解成数的含义：成数表示一个数是另一个数的十分之几，如一成=10%，三成五=35%；能将成数转化为百分数进行计算。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.6,
+      "evidence": [
+        "能将成数转化为百分数",
+        "能用成数表示增减关系",
+        "能解决含成数的应用题"
+      ],
+      "assessmentPrompt": "{{name}}能说明'节电二成五'是什么意思，并计算节省的电量吗？",
+      "standards": ["pep-math-2022:6下.2.2"]
+    },
+    {
+      "id": "mt_g6d_006",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "税率与纳税",
+      "description": "理解税率的含义：税率是应纳税额与收入（销售额、营业额等）中应纳税部分的比率；掌握计算应纳税额的方法：应纳税额=收入×税率。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.65,
+      "evidence": [
+        "能说明税率的含义",
+        "能计算应纳税额",
+        "能解决简单的纳税应用题"
+      ],
+      "assessmentPrompt": "{{name}}能解决：某企业销售额30万元，增值税税率3%，应缴纳多少税款？",
+      "standards": ["pep-math-2022:6下.2.3"]
+    },
+    {
+      "id": "mt_g6d_007",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "利率与利息",
+      "description": "理解本金、利息、利率的含义；掌握利息计算公式：利息=本金×利率×存期；能根据银行存款利率表解决储蓄问题（活期/定期不同年限）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能说明本金、利息、利率的含义",
+        "能用公式计算存款到期的利息和本息合计",
+        "能比较不同存款方式的利息大小"
+      ],
+      "assessmentPrompt": "{{name}}能计算存5000元，年利率2.1%，存2年后到期共有多少钱吗？",
+      "standards": ["pep-math-2022:6下.2.4"]
+    },
+    {
+      "id": "mt_g6d_008",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "促销方式的比较",
+      "description": "能比较不同促销方式（打折、满减等）的实惠程度；理解'满100减50'与'打折'的区别——满减只对整百部分有效，零头不享受优惠；能通过计算和比较做出最优决策。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能分别计算不同促销方式下的实付金额",
+        "能通过比较选择最优方案",
+        "能理解满减和折扣的本质区别"
+      ],
+      "assessmentPrompt": "{{name}}能比较'打九折'和'满100减10元'哪种优惠更大（原价230元）？",
+      "standards": ["pep-math-2022:6下.2.5"]
+    },
+    {
+      "id": "mt_g6d_009",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆柱的认识",
+      "description": "认识圆柱的结构：两个相等的圆底面（上底和下底）、一个侧面（曲面）和高（两底面间的距离）；理解将圆柱侧面展开得到长方形，长=底面周长，宽=圆柱高。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能说出圆柱各部分的名称",
+        "能识别生活中的圆柱体",
+        "能说明圆柱侧面展开图的形状及尺寸关系"
+      ],
+      "assessmentPrompt": "{{name}}能说出圆柱侧面展开后是什么形状，长和宽各是什么吗？",
+      "standards": ["pep-math-2022:6下.3.1"]
+    },
+    {
+      "id": "mt_g6d_010",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆柱的表面积",
+      "description": "掌握圆柱表面积的计算方法：表面积=侧面积+两个底面面积=2πrh+2πr²；能根据具体情境确定计算哪些面（如帽子只需一个底面和侧面）；实际问题中用进一法取近似值。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能计算圆柱的侧面积（2πrh）",
+        "能计算圆柱的全表面积（2πrh+2πr²）",
+        "能根据问题情境确定需要计算哪些面"
+      ],
+      "assessmentPrompt": "{{name}}能计算底面半径5cm、高10cm的圆柱的表面积吗？",
+      "standards": ["pep-math-2022:6下.3.2"]
+    },
+    {
+      "id": "mt_g6d_011",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆柱的体积推导与计算",
+      "description": "通过类比圆面积推导过程，将圆柱底面分割成扇形重新拼成近似长方体（长方体底面积=圆柱底面积，高=圆柱高），推导圆柱体积公式V=Sh=πr²h。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能说明圆柱体积公式的推导过程",
+        "能正确计算圆柱体积",
+        "能解决含圆柱体积的实际问题（容积、排水等）"
+      ],
+      "assessmentPrompt": "{{name}}能说明圆柱体积公式V=πr²h是怎么推导出来的，并计算r=3cm、h=5cm圆柱的体积吗？",
+      "standards": ["pep-math-2022:6下.3.3"]
+    },
+    {
+      "id": "mt_g6d_012",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆锥的认识",
+      "description": "认识圆锥的结构：一个圆底面、一个侧面（曲面）、一个顶点和高（从顶点到底面圆心的距离）；能从生活中识别圆锥体（斗笠、漏斗、冰淇淋等）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能说出圆锥各部分的名称",
+        "能识别生活中的圆锥体",
+        "能用旋转直角三角形的方式理解圆锥的形成"
+      ],
+      "assessmentPrompt": "{{name}}能指出圆锥的底面、顶点和高分别指什么吗？",
+      "standards": ["pep-math-2022:6下.3.4"]
+    },
+    {
+      "id": "mt_g6d_013",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆锥的体积推导与计算",
+      "description": "通过实验（将等底等高的圆锥容器中的沙子倒入圆柱，恰好倒三次装满）发现并验证：等底等高时圆锥体积=1/3圆柱体积；公式V=1/3Sh=1/3πr²h。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能描述圆锥和圆柱等底等高时体积比为1:3的实验过程",
+        "能正确计算圆锥体积",
+        "能解决含圆锥体积的实际问题（沙堆等）"
+      ],
+      "assessmentPrompt": "{{name}}能说明为什么等底等高的圆锥体积是圆柱体积的1/3，并计算底面半径2m、高3m的圆锥体积吗？",
+      "standards": ["pep-math-2022:6下.3.5"]
+    },
+    {
+      "id": "mt_g6d_014",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "圆柱与圆锥的综合比较",
+      "description": "系统比较圆柱和圆锥的异同：底面（圆柱两个等圆底面，圆锥一个圆底面）、侧面、顶点、高的定义；熟练掌握两者的表面积和体积公式并能灵活运用。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能用表格比较圆柱和圆锥的各部分",
+        "能根据题目条件判断用圆柱还是圆锥的公式",
+        "能解决综合含两种立体图形的应用题"
+      ],
+      "assessmentPrompt": "{{name}}能画出圆柱和圆锥的对比表，列出各自的底面数、侧面、顶点和体积公式吗？",
+      "standards": ["pep-math-2022:6下.3.6"]
+    },
+    {
+      "id": "mt_g6d_015",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "比例的意义",
+      "description": "理解比例的含义：表示两个比相等的式子叫比例，如2.4:1.6=60:40；理解比和比例的联系与区别（比是两个数的关系，比例是两个相等的比构成的等式）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能说明比例的定义",
+        "能判断两个比是否能构成比例",
+        "能区分比和比例的概念"
+      ],
+      "assessmentPrompt": "{{name}}能判断3:4和6:8是否能构成比例，并说明理由吗？",
+      "standards": ["pep-math-2022:6下.4.1"]
+    },
+    {
+      "id": "mt_g6d_016",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "比例的基本性质与解比例",
+      "description": "理解比例的基本性质（交叉相乘定理）：在比例a:b=c:d中，两外项之积等于两内项之积（ad=bc）；能利用此性质解比例（求未知项x）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能说出比例中外项和内项的含义",
+        "能用比例基本性质解比例方程",
+        "能根据实际问题列出比例方程并求解"
+      ],
+      "assessmentPrompt": "{{name}}能解比例：x:57=1:10，并说明用了什么性质吗？",
+      "standards": ["pep-math-2022:6下.4.2"]
+    },
+    {
+      "id": "mt_g6d_017",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "正比例关系",
+      "description": "理解正比例关系的定义：两种相关联的量，其中一种变化另一种也变化，若对应的两个数的比值（y/x）一定，则这两种量成正比例，即y/x=k（k为常数）；正比例图象是过原点的直线。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能判断两种量是否成正比例",
+        "能说明正比例的特征（比值一定）",
+        "能识别正比例关系的图象（过原点直线）"
+      ],
+      "assessmentPrompt": "{{name}}能判断'速度一定时，路程与时间'是否成正比例，并说明理由吗？",
+      "standards": ["pep-math-2022:6下.4.3"]
+    },
+    {
+      "id": "mt_g6d_018",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "反比例关系",
+      "description": "理解反比例关系的定义：两种相关联的量，若对应的两个数的乘积（xy）一定，则这两种量成反比例，即xy=k（k为常数）；反比例图象是双曲线。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.9,
+      "evidence": [
+        "能判断两种量是否成反比例",
+        "能说明反比例的特征（乘积一定）",
+        "能识别反比例关系的图象（双曲线）"
+      ],
+      "assessmentPrompt": "{{name}}能判断'面积一定时，长方形的长与宽'是否成反比例，并说明理由吗？",
+      "standards": ["pep-math-2022:6下.4.4"]
+    },
+    {
+      "id": "mt_g6d_019",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "用比例解决实际问题",
+      "description": "能用正比例或反比例方程解决实际问题：先判断两量的比例关系（比值一定用正比例，乘积一定用反比例），再列方程求解；与算术法对比，理解比例方法的优势。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.85,
+      "evidence": [
+        "能判断实际问题中两量的比例类型",
+        "能正确列出比例方程",
+        "能用正比例和反比例方程分别解决对应类型的问题"
+      ],
+      "assessmentPrompt": "{{name}}能用正比例方程解决：8吨水费40元，10吨水费多少元？",
+      "standards": ["pep-math-2022:6下.4.5"]
+    },
+    {
+      "id": "mt_g6d_020",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "比例尺",
+      "description": "理解比例尺的含义：图上距离与实际距离的比，即比例尺=图上距离÷实际距离；分为数值比例尺（1:1000000）和线段比例尺；能进行图上距离、实际距离、比例尺三者之间的换算。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能说明比例尺的含义",
+        "能在数值比例尺和线段比例尺之间转换",
+        "能计算图上距离、实际距离或比例尺"
+      ],
+      "assessmentPrompt": "{{name}}能解决：地图比例尺1:5000000，图上距离3cm，实际距离是多少km？",
+      "standards": ["pep-math-2022:6下.4.6"]
+    },
+    {
+      "id": "mt_g6d_021",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "图形的放大与缩小",
+      "description": "理解图形按比例放大/缩小的含义：按a:b放大/缩小时，各边长度按此比例变化，角度不变；放大k倍后周长变k倍，面积变k²倍；能按指定比例在方格纸上画出放大或缩小的图形。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能按指定比例画出图形的放大或缩小图",
+        "能说明放大后边长、周长、面积各变化多少倍",
+        "能识别日常生活中的放大缩小（地图、显微镜等）"
+      ],
+      "assessmentPrompt": "{{name}}能按2:1画出一个正方形的放大图，并说明放大后面积变为原来的几倍吗？",
+      "standards": ["pep-math-2022:6下.4.7"]
+    },
+    {
+      "id": "mt_g6d_022",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "综合实践",
+      "name": "自行车里的数学：齿轮比与路程",
+      "description": "综合运用比和比例知识理解自行车的传动原理：后齿轮转动圈数=前齿轮齿数÷后齿轮齿数；踩一圈的路程=后齿轮转动圈数×车轮周长；能计算变速自行车不同齿轮组合下的行进距离。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.5,
+      "evidence": [
+        "能说明自行车前后齿轮的传动原理",
+        "能计算踩一圈的行进路程",
+        "能比较不同齿轮组合的效率（前大后小走得远）"
+      ],
+      "assessmentPrompt": "{{name}}能计算前齿轮48齿、后齿轮16齿、车轮半径35cm时，踩一圈走多远吗？",
+      "standards": ["pep-math-2022:6下.6.1"]
+    },
+    {
+      "id": "mt_g6d_023",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "鸽巢原理（基本型）",
+      "description": "理解鸽巢原理（抽屉原理）的基本形式：将n+1个物体放入n个抽屉，必有至少一个抽屉中含2个或更多物体；能用枚举和推理两种方法说明这一原理。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能用枚举法（列举所有情况）验证鸽巢原理",
+        "能用推理法（反证思路）说明鸽巢原理",
+        "能运用基本鸽巢原理解决简单问题"
+      ],
+      "assessmentPrompt": "{{name}}能说明：4支铅笔放进3个笔筒，为什么一定有1个笔筒至少有2支铅笔？",
+      "standards": ["pep-math-2022:6下.5.1"]
+    },
+    {
+      "id": "mt_g6d_024",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "鸽巢原理（推广型）",
+      "description": "理解鸽巢原理的推广：将m个物体放入n个抽屉，至少有一个抽屉中有⌈m/n⌉个物体（即m÷n商+1，当有余数时）；能用除法估算'至少有几个'。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能用除法计算'至少有几个'",
+        "能正确应用推广型鸽巢原理",
+        "能解决'保证至少取几个'类型的问题"
+      ],
+      "assessmentPrompt": "{{name}}能计算：11只鸽子飞进4个鸽笼，至少有一个笼子里有几只鸽子？",
+      "standards": ["pep-math-2022:6下.5.2"]
+    },
+    {
+      "id": "mt_g6d_025",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "保证取到同类的最少取法",
+      "description": "能解决'至少取几个才能保证有n个同类'的问题：当有k种类别时，取k×(n-1)+1个即可保证有n个同类；基本情形：保证2个同类需取k+1个。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能解决'至少取几个才能保证有2个同色'的问题",
+        "能说明取颜色种数+1个就能保证有2个同色的原因",
+        "能运用鸽巢原理解决生活中的最坏情况问题"
+      ],
+      "assessmentPrompt": "{{name}}能解决：袋中有红蓝黄三色球各5个，至少取几个才能保证有2个同色？",
+      "standards": ["pep-math-2022:6下.5.3"]
+    },
+    {
+      "id": "mt_g6d_026",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "数的系统整理",
+      "description": "系统整理小学阶段学过的数：正整数（自然数）、0、负整数（三者合为整数）、分数（含有限小数和无限循环小数）；了解无限不循环小数（无理数，如π）；能在数轴上表示各种数。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能画出数系结构图（整数、分数、无理数）",
+        "能说明自然数、整数、分数之间的关系",
+        "能在数轴上标出各类数"
+      ],
+      "assessmentPrompt": "{{name}}能说明自然数和整数是什么关系，0属于哪一类吗？",
+      "standards": ["pep-math-2022:6下.整理.1"]
+    },
+    {
+      "id": "mt_g6d_027",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "四则运算与运算律综合复习",
+      "description": "系统复习四则运算的意义和相互关系；熟练掌握五大运算律（加法交换律、结合律，乘法交换律、结合律、分配律）；能综合运用运算律进行简便计算，包含整数、小数、分数的混合。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能说出五大运算律并举例",
+        "能识别并运用运算律进行混合运算的简便计算",
+        "能解决含整数、小数、分数的综合运算问题"
+      ],
+      "assessmentPrompt": "{{name}}能用运算律简便计算：1.25×32×25吗？",
+      "standards": ["pep-math-2022:6下.整理.2"]
+    },
+    {
+      "id": "mt_g6d_028",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "用字母表示数和规律",
+      "description": "综合运用字母表示数量、数量关系、计算公式和运算律；能发现并用代数式表示图形数量的规律（如n个六边形共需5n+1根小棒）；能解含不同形式的方程。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能用代数式表示数量关系",
+        "能从图形数列中发现规律并用字母表示",
+        "能解含分数和百分数的方程"
+      ],
+      "assessmentPrompt": "{{name}}能发现：用小棒摆n个六边形，共需要多少根小棒？写出代数式吗？",
+      "standards": ["pep-math-2022:6下.整理.3"]
+    },
+    {
+      "id": "mt_g6d_029",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "比和比例的综合比较",
+      "description": "系统比较比和比例的联系与区别：比是两个数的关系（有前项、比号、后项）；比例是两个相等的比构成的等式（有四项：外项×外项=内项×内项）；理解化简比与解比例的不同操作。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.75,
+      "evidence": [
+        "能用表格对比比和比例的各方面",
+        "能说明正比例和反比例的判断方法",
+        "能解决综合运用比和比例的实际问题"
+      ],
+      "assessmentPrompt": "{{name}}能说明比和比例的区别，并判断'圆的半径与面积'是否成正比例吗？",
+      "standards": ["pep-math-2022:6下.整理.4"]
+    },
+    {
+      "id": "mt_g6d_030",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "平面图形的综合整理",
+      "description": "系统整理小学阶段所有平面图形的周长和面积公式（长方形、正方形、平行四边形、三角形、梯形、圆）；理解面积公式之间的推导关系（平行四边形→三角形→梯形→圆）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能背出所有平面图形的面积公式",
+        "能解释各面积公式的推导来源",
+        "能解决综合含多种图形的实际问题"
+      ],
+      "assessmentPrompt": "{{name}}能说出圆、梯形、三角形的面积公式，并说明它们是怎么推导出来的吗？",
+      "standards": ["pep-math-2022:6下.整理.5"]
+    },
+    {
+      "id": "mt_g6d_031",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "立体图形的综合整理",
+      "description": "系统整理长方体、正方体、圆柱、圆锥的表面积和体积公式；理解各公式的推导逻辑；能比较各种立体图形的异同（如圆柱两底面 vs 圆锥一底面）。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.8,
+      "evidence": [
+        "能背出长方体、圆柱、圆锥的体积公式",
+        "能比较圆柱和圆锥的结构异同",
+        "能解决综合含多种立体图形的应用题"
+      ],
+      "assessmentPrompt": "{{name}}能说出圆柱和圆锥体积公式的联系（等底等高时V锥=1/3 V柱）吗？",
+      "standards": ["pep-math-2022:6下.整理.6"]
+    },
+    {
+      "id": "mt_g6d_032",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "图形的运动综合整理",
+      "description": "系统整理图形的四种变换：平移（位置变、形状大小不变）、旋转（绕定点转，形状大小不变）、轴对称（镜像翻折，形状大小不变）、放大缩小（形状不变、大小变）；能综合运用变换设计图案。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.65,
+      "evidence": [
+        "能区分四种图形变换的特征",
+        "能判断一个图形经历了什么变换",
+        "能运用变换设计具有对称美感的图案"
+      ],
+      "assessmentPrompt": "{{name}}能说明平移、旋转、轴对称三种变换各自的特点，并举例吗？",
+      "standards": ["pep-math-2022:6下.整理.7"]
+    },
+    {
+      "id": "mt_g6d_033",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "两种位置描述方法的比较",
+      "description": "比较并综合运用两种位置描述方法：坐标法（数对表示横纵坐标）和方向距离法（方向角+距离）；理解两种方法各自的优势和适用场景。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.65,
+      "evidence": [
+        "能用坐标（数对）表示位置",
+        "能用方向角和距离表示位置",
+        "能说明两种方法各自的适用场景"
+      ],
+      "assessmentPrompt": "{{name}}能用两种不同方法描述地图上同一个地点的位置吗？",
+      "standards": ["pep-math-2022:6下.整理.8"]
+    },
+    {
+      "id": "mt_g6d_034",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "统计与概率",
+      "name": "三种统计图的综合复习",
+      "description": "综合复习条形统计图（比较数量）、折线统计图（显示趋势）、扇形统计图（显示比例）；能从多角度分析统计图中的数据，完成'数据收集→整理→分析→决策'的完整流程。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能读懂三种统计图并提取信息",
+        "能根据数据特点选择合适的统计图",
+        "能通过统计图进行简单的数据分析和预测"
+      ],
+      "assessmentPrompt": "{{name}}能说明：展示'全班同学每月零花钱金额分布'应选哪种统计图？为什么？",
+      "standards": ["pep-math-2022:6下.整理.9"]
+    },
+    {
+      "id": "mt_g6d_035",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "综合实践",
+      "name": "生活中的理财：储蓄方案设计",
+      "description": "综合运用利率、存期、本金、利息知识，比较不同储蓄方式（活期、定期、国债、理财产品）的收益差异；能根据资金使用计划设计最优理财方案。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.5,
+      "evidence": [
+        "能查阅银行利率表并计算不同方案的收益",
+        "能比较不同存款期限的利息",
+        "能根据使用时间设计储蓄方案"
+      ],
+      "assessmentPrompt": "{{name}}能为'6年后需要用钱'的情况设计一个最合理的储蓄方案吗？",
+      "standards": ["pep-math-2022:6下.3实践.1"]
+    },
+    {
+      "id": "mt_g6d_036",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "三视图的认识",
+      "description": "认识三视图（正视图、侧视图、俯视图）；能根据立体图形画出其三视图；能根据三视图推断对应的立体图形；用于工业设计、建筑图纸等实际应用场景。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.6,
+      "evidence": [
+        "能画出简单立体图形的三视图",
+        "能根据三视图搭建对应的立体图形",
+        "能说明三视图在工程设计中的应用"
+      ],
+      "assessmentPrompt": "{{name}}能画出一个L形立体图形的正视图、侧视图和俯视图吗？",
+      "standards": ["pep-math-2022:6下.整理.10"]
+    },
+    {
+      "id": "mt_g6d_037",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数与代数",
+      "name": "正反比例关系的图象特征",
+      "description": "理解正比例关系的图象是过原点的直线（斜率=比值k）；反比例关系的图象是双曲线（乘积=常数k）；能根据图象判断比例关系类型，并从图象读取数据。",
+      "ageRangeStart": 11,
+      "ageRangeEnd": 12,
+      "centrality": 0.7,
+      "evidence": [
+        "能识别正比例和反比例关系的图象",
+        "能从正比例图象中读取比值",
+        "能说明为什么正比例图象一定过原点"
+      ],
+      "assessmentPrompt": "{{name}}能画出y/x=2的图象，并说明它有什么特点吗？",
+      "standards": ["pep-math-2022:6下.4.8"]
+    }
+  ]
+}
