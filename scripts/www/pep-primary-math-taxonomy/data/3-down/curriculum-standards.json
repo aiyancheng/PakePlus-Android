@@ -1,0 +1,45 @@
+{
+  "curriculumCount": 1,
+  "curricula": [
+    {
+      "slug": "pep-math-2022",
+      "country": "CN",
+      "name": "义务教育数学课程标准（2022年版）",
+      "version": "2022",
+      "sourceUrl": null,
+      "textIncluded": false,
+      "license": "government",
+      "topicCount": 28,
+      "topics": [
+        {"key": "mt_g3d_001", "code": "pep-math-2022:3下.1.1"},
+        {"key": "mt_g3d_002", "code": "pep-math-2022:3下.1.2"},
+        {"key": "mt_g3d_003", "code": "pep-math-2022:3下.1.3"},
+        {"key": "mt_g3d_004", "code": "pep-math-2022:3下.2.1"},
+        {"key": "mt_g3d_005", "code": "pep-math-2022:3下.2.2"},
+        {"key": "mt_g3d_006", "code": "pep-math-2022:3下.2.3"},
+        {"key": "mt_g3d_007", "code": "pep-math-2022:3下.2.4"},
+        {"key": "mt_g3d_008", "code": "pep-math-2022:3下.2.5"},
+        {"key": "mt_g3d_009", "code": "pep-math-2022:3下.3.1"},
+        {"key": "mt_g3d_010", "code": "pep-math-2022:3下.3.2"},
+        {"key": "mt_g3d_011", "code": "pep-math-2022:3下.3.3"},
+        {"key": "mt_g3d_012", "code": "pep-math-2022:3下.4.1"},
+        {"key": "mt_g3d_013", "code": "pep-math-2022:3下.4.2"},
+        {"key": "mt_g3d_014", "code": "pep-math-2022:3下.4.3"},
+        {"key": "mt_g3d_015", "code": "pep-math-2022:3下.5.1"},
+        {"key": "mt_g3d_016", "code": "pep-math-2022:3下.5.2"},
+        {"key": "mt_g3d_017", "code": "pep-math-2022:3下.5.3"},
+        {"key": "mt_g3d_018", "code": "pep-math-2022:3下.6.1"},
+        {"key": "mt_g3d_019", "code": "pep-math-2022:3下.6.2"},
+        {"key": "mt_g3d_020", "code": "pep-math-2022:3下.6.3"},
+        {"key": "mt_g3d_021", "code": "pep-math-2022:3下.6.4"},
+        {"key": "mt_g3d_022", "code": "pep-math-2022:3下.7.1"},
+        {"key": "mt_g3d_023", "code": "pep-math-2022:3下.7.2"},
+        {"key": "mt_g3d_024", "code": "pep-math-2022:3下.7.3"},
+        {"key": "mt_g3d_025", "code": "pep-math-2022:3下.8.1"},
+        {"key": "mt_g3d_026", "code": "pep-math-2022:3下.8.2"},
+        {"key": "mt_g3d_027", "code": "pep-math-2022:3下.8.3"},
+        {"key": "mt_g3d_028", "code": "pep-math-2022:3下.9.1"}
+      ]
+    }
+  ]
+}
