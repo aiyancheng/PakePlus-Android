@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "grade": 2,
+  "semester": "down",
+  "clusters": [
+    {
+      "id": "cluster_g2d_01",
+      "name": "时间的认识",
+      "domain": "图形与几何",
+      "color": "#FF9800",
+      "topic_ids": ["mt_g2d_001", "mt_g2d_002", "mt_g2d_003"],
+      "description": "钟面结构，时间单位1时=60分=3600秒，读写几时几分，时间估计与生活应用",
+      "curriculum_thread": "测量"
+    },
+    {
+      "id": "cluster_g2d_02",
+      "name": "有余数的除法",
+      "domain": "数与运算",
+      "color": "#9C27B0",
+      "topic_ids": ["mt_g2d_004", "mt_g2d_005", "mt_g2d_006", "mt_g2d_007"],
+      "description": "余数概念，除法竖式，试商方法，实际问题（装袋、周期规律）",
+      "curriculum_thread": "数与运算"
+    },
+    {
+      "id": "cluster_g2d_03",
+      "name": "数量间的乘除关系（倍）",
+      "domain": "数与运算",
+      "color": "#2196F3",
+      "topic_ids": ["mt_g2d_008", "mt_g2d_009", "mt_g2d_010", "mt_g2d_011"],
+      "description": "倍的概念，求倍数（除法），求几倍是多少（乘法），相差关系vs倍的关系",
+      "curriculum_thread": "数量关系"
+    },
+    {
+      "id": "cluster_g2d_04",
+      "name": "万以内数的认识",
+      "domain": "数与运算",
+      "color": "#4CAF50",
+      "topic_ids": ["mt_g2d_012", "mt_g2d_013", "mt_g2d_014", "mt_g2d_015", "mt_g2d_028"],
+      "description": "三位数认识，四位数认识，数位顺序表，算盘，近似数，含0数的读写，大小比较",
+      "curriculum_thread": "数的认识"
+    },
+    {
+      "id": "cluster_g2d_05",
+      "name": "万以内的加法和减法",
+      "domain": "数与运算",
+      "color": "#F44336",
+      "topic_ids": ["mt_g2d_016", "mt_g2d_017", "mt_g2d_018", "mt_g2d_019", "mt_g2d_020", "mt_g2d_021", "mt_g2d_022", "mt_g2d_023"],
+      "description": "三位数加法（进位），四位数加法，加法验算，三位数减法（退位），减法验算，估算，多步实际问题，数独",
+      "curriculum_thread": "数与运算"
+    },
+    {
+      "id": "cluster_g2d_06",
+      "name": "综合应用与复习",
+      "domain": "综合与实践",
+      "color": "#607D8B",
+      "topic_ids": ["mt_g2d_024", "mt_g2d_025", "mt_g2d_026", "mt_g2d_027"],
+      "description": "数学连环画创作，数与运算综合复习，倍的关系综合复习，综合应用题",
+      "curriculum_thread": "综合与实践"
+    }
+  ]
+}
