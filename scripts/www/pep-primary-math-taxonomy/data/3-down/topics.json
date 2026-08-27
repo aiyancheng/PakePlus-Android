@@ -1,0 +1,454 @@
+{
+  "version": "pep-primary-math-3d-v1",
+  "topicCount": 32,
+  "topics": [
+    {
+      "id": "mt_g3d_001",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "轴对称图形的认识",
+      "description": "理解轴对称图形的含义，能判断一个图形是否是轴对称图形，找出对称轴；沿对称轴对折后两侧完全重合",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": "三年级下册 p.2-8",
+      "assessmentPrompt": "下面哪些图形是轴对称图形？请画出它们的对称轴。",
+      "standards": [
+        "pep-math-2022:3下.1.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_002",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "平移现象的认识与操作",
+      "description": "认识生活中的平移现象，理解平移沿某一方向移动的特征；能在方格纸上画出平移后的图形",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": "三年级下册 p.9-14",
+      "assessmentPrompt": "在方格纸上，将三角形向右平移5格，画出平移后的图形。",
+      "standards": [
+        "pep-math-2022:3下.1.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_003",
+      "type": "REPRESENTATIONAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "旋转现象的认识",
+      "description": "认识生活中的旋转现象，能区分顺时针和逆时针旋转；理解旋转绕某一点转动的特征",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.6,
+      "evidence": "三年级下册 p.14-18",
+      "assessmentPrompt": "钟表的指针是顺时针旋转还是逆时针旋转？请再举出一个旋转的例子。",
+      "standards": [
+        "pep-math-2022:3下.1.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_004",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "口算除法（整十整百整千数÷一位数）",
+      "description": "掌握整十、整百、整千数除以一位数的口算方法，利用乘法口诀反推；如400÷2=200",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": "三年级下册 p.19-22",
+      "assessmentPrompt": "口算：60÷3=？ 800÷4=？ 请说说你是怎么想的。",
+      "standards": [
+        "pep-math-2022:3下.2.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_005",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "一位数除两位数的笔算（商是两位数）",
+      "description": "掌握一位数除两位数的竖式笔算方法，从高位除起；理解商的各位含义",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.9,
+      "evidence": "三年级下册 p.22-30",
+      "assessmentPrompt": "用竖式计算：84÷4=？ 说说每一步的意思。",
+      "standards": [
+        "pep-math-2022:3下.2.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_006",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "一位数除三位数的笔算（含商中间或末尾有0）",
+      "description": "掌握一位数除三位数的竖式计算，重点处理商中间或末尾有0的情形（如618÷3=206）",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.9,
+      "evidence": "三年级下册 p.30-40",
+      "assessmentPrompt": "用竖式计算：618÷3=？ 408÷4=？",
+      "standards": [
+        "pep-math-2022:3下.2.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_007",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "除法的验算（用乘法验算）",
+      "description": "理解用乘法验算除法的方法：商×除数=被除数；有余数时：商×除数+余数=被除数",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": "三年级下册 p.35-38",
+      "assessmentPrompt": "计算 325÷5 并用乘法验算。如果有余数，应该怎么验算？",
+      "standards": [
+        "pep-math-2022:3下.2.4"
+      ]
+    },
+    {
+      "id": "mt_g3d_008",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "除法估算",
+      "description": "能根据具体情境对除法结果进行合理估算，选择合适的估算策略解决实际问题",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.65,
+      "evidence": "三年级下册 p.26-28",
+      "assessmentPrompt": "学校要把185本书平均分给4个班，每班大约能分到多少本？",
+      "standards": [
+        "pep-math-2022:3下.2.5"
+      ]
+    },
+    {
+      "id": "mt_g3d_009",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "多边形、长方形和正方形的特征",
+      "description": "认识多边形，掌握长方形（对边相等、四个直角）和正方形（四边相等、四个直角）的特征",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.8,
+      "evidence": "三年级下册 p.41-46",
+      "assessmentPrompt": "长方形有什么特征？正方形是特殊的长方形吗？为什么？",
+      "standards": [
+        "pep-math-2022:3下.3.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_010",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "周长的概念",
+      "description": "理解周长是封闭图形一周的长度，能用各种方法测量或计算图形的周长",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": "三年级下册 p.46-48",
+      "assessmentPrompt": "什么是周长？用你自己的方法测量一片树叶的周长。",
+      "standards": [
+        "pep-math-2022:3下.3.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_011",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "长方形和正方形的周长公式",
+      "description": "掌握长方形周长=(长+宽)×2，正方形周长=边长×4，能运用公式解决实际问题",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": "三年级下册 p.48-55",
+      "assessmentPrompt": "一个长方形长8厘米，宽5厘米，它的周长是多少？",
+      "standards": [
+        "pep-math-2022:3下.3.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_012",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "度量与单位",
+      "name": "面积的概念",
+      "description": "理解面积是物体表面或封闭图形的大小，能用观察、重叠、数方格等方法比较面积大小",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.9,
+      "evidence": "三年级下册 p.56-58",
+      "assessmentPrompt": "什么是面积？用自己的方法比较课本封面和课桌面的大小。",
+      "standards": [
+        "pep-math-2022:3下.4.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_013",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "度量与单位",
+      "name": "面积单位（平方厘米、平方分米、平方米）",
+      "description": "认识平方厘米(cm²)、平方分米(dm²)、平方米(m²)，建立面积单位的量感；进率：1dm²=100cm²，1m²=100dm²",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": "三年级下册 p.58-62",
+      "assessmentPrompt": "1平方厘米大约有多大？1平方分米等于多少平方厘米？",
+      "standards": [
+        "pep-math-2022:3下.4.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_014",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "空间与几何",
+      "name": "长方形和正方形面积公式",
+      "description": "探索并掌握：长方形面积=长×宽；正方形面积=边长×边长；能运用公式解决实际面积问题",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.95,
+      "evidence": "三年级下册 p.62-68",
+      "assessmentPrompt": "一块菜地长6米，宽4米，面积是多少平方米？一块正方形地砖边长3分米，面积多少？",
+      "standards": [
+        "pep-math-2022:3下.4.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_015",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数学思维",
+      "name": "数字编码的含义与应用",
+      "description": "了解数字编码的作用，理解公民身份号码18位结构（地址码6位+出生日期码8位+顺序码3位+校验码1位），认识邮政编码和ISBN编码",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.5,
+      "evidence": "三年级下册 p.57-60（第五章 数字编码综合实践）",
+      "assessmentPrompt": "身份证号码中哪几位代表出生日期？第17位数字为什么能看出性别？",
+      "standards": [
+        "pep-math-2022:3下.5.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_016",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "图形与几何",
+      "name": "线段、射线和直线",
+      "description": "认识线段（两端点，可度量）、射线（一端点，向一端无限延伸）、直线（无端点，两端无限延伸）的特征与区别；两点间线段最短",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": "三年级下册 p.61-64",
+      "assessmentPrompt": "线段、射线和直线各有什么特点？哪个可以度量长度？",
+      "standards": [
+        "pep-math-2022:3下.5.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_017",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "图形与几何",
+      "name": "角的认识与分类",
+      "description": "认识角的组成（顶点+两条射线边），角的大小与两边张口有关、与边长无关；分类：锐角（比直角小）、直角、钝角（比直角大）",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": "三年级下册 p.64-72",
+      "assessmentPrompt": "比直角小的角叫什么角？用三角尺判断一个角是什么类型的角。",
+      "standards": [
+        "pep-math-2022:3下.5.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_018",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "分数的初步认识：几分之一",
+      "description": "把一个整体平均分成几份，其中的一份就是几分之一；认识分子、分母、分数线；理解1/2、1/4、1/3等分数的含义",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.9,
+      "evidence": "三年级下册 p.73-75",
+      "assessmentPrompt": "把一个饼平均分成4份，每份是这个饼的几分之几？用分数表示。",
+      "standards": [
+        "pep-math-2022:3下.6.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_019",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "分数的进一步认识：几分之几",
+      "description": "理解几分之几的含义（平均分成几份，取其中几份）；同分母分数大小比较：分子大则分数大；不同分母分数比较：分母大则每份小",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": "三年级下册 p.75-80",
+      "assessmentPrompt": "比较大小：2/5和4/5，1/3和1/6，哪个大？为什么？",
+      "standards": [
+        "pep-math-2022:3下.6.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_020",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "分数的简单计算（同分母加减法）",
+      "description": "计算同分母分数的加法和减法：分子相加减，分母不变；能计算1减去一个分数（如1-3/4=1/4）",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.8,
+      "evidence": "三年级下册 p.81-84",
+      "assessmentPrompt": "计算：1/8+2/8=？ 2/8-1/8=？ 1-3/4=？",
+      "standards": [
+        "pep-math-2022:3下.6.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_021",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "分数与整体的关系（几分之几表示数量）",
+      "description": "理解分数可以表示一个集合的一部分；如12个中的1/3是4个；能用除法求一个数的几分之几",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": "三年级下册 p.85-88",
+      "assessmentPrompt": "航模小组12名学生中1/3是女生，女生有多少人？",
+      "standards": [
+        "pep-math-2022:3下.6.4"
+      ]
+    },
+    {
+      "id": "mt_g3d_022",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "度量与单位",
+      "name": "年、月、日及平年闰年",
+      "description": "认识年、月、日；大月31天、小月30天、二月特殊（平年28天，闰年29天）；闰年判断：公历年份是4的倍数（但100的倍数须是400的倍数）",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.75,
+      "evidence": "三年级下册 p.77-83",
+      "assessmentPrompt": "一年有几个大月？几个小月？2024年是平年还是闰年？",
+      "standards": [
+        "pep-math-2022:3下.7.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_023",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "度量与单位",
+      "name": "年月日之间的换算与计算",
+      "description": "掌握年月日之间的换算，计算两个日期之间经过的天数；用拳头记大月小月",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.65,
+      "evidence": "三年级下册 p.79-82",
+      "assessmentPrompt": "从3月1日到4月15日，一共经过了多少天？",
+      "standards": [
+        "pep-math-2022:3下.7.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_024",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "度量与单位",
+      "name": "24时计时法",
+      "description": "认识24时计时法（从0时到24时），能进行普通计时法与24时计时法的互相转换；下午3时=15时",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": "三年级下册 p.80-82",
+      "assessmentPrompt": "下午6时用24时计时法怎么表示？晚上8时30分呢？",
+      "standards": [
+        "pep-math-2022:3下.7.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_025",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "小数的含义（一位小数、两位小数）",
+      "description": "理解小数的含义：把1米平均分成10份，每份是0.1米（1/10米）；1厘米是0.01米（1/100米）；认识小数点，能读写小数",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.85,
+      "evidence": "三年级下册 p.86-90",
+      "assessmentPrompt": "0.3米等于几分米？1.34米怎么读？小数点在哪里？",
+      "standards": [
+        "pep-math-2022:3下.8.1"
+      ]
+    },
+    {
+      "id": "mt_g3d_026",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数的认识",
+      "name": "小数的大小比较",
+      "description": "能比较一位小数或两位小数的大小，理解在数轴上标出小数位置的方法",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.7,
+      "evidence": "三年级下册 p.89",
+      "assessmentPrompt": "比较0.4和0.6的大小，并在数轴上标出它们的位置。",
+      "standards": [
+        "pep-math-2022:3下.8.2"
+      ]
+    },
+    {
+      "id": "mt_g3d_027",
+      "type": "PROCEDURAL",
+      "subject": "Mathematics",
+      "domain": "数的运算",
+      "name": "简单小数的加减法",
+      "description": "掌握一位小数加减法的竖式计算，理解小数点对齐的道理；列竖式时小数点对齐",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.8,
+      "evidence": "三年级下册 p.90-92",
+      "assessmentPrompt": "计算：1.5+3.8=？ 13.2-2.3=？ 为什么要把小数点对齐？",
+      "standards": [
+        "pep-math-2022:3下.8.3"
+      ]
+    },
+    {
+      "id": "mt_g3d_028",
+      "type": "CONCEPTUAL",
+      "subject": "Mathematics",
+      "domain": "数学思维",
+      "name": "重叠问题（容斥原理初步）",
+      "description": "理解重叠问题：两个集合中有重叠元素时，总数=集合A人数+集合B人数-重叠人数；用画图方法表示重叠关系",
+      "ageRangeStart": 8,
+      "ageRangeEnd": 9,
+      "centrality": 0.5,
+      "evidence": "三年级下册 p.102-104（数学广角：重叠问题）",
+      "assessmentPrompt": "三（2）班有6人参加航空模型比赛，6人参加机器人比赛，两项都参加的有2人，共有多少人获奖？",
+      "standards": [
+        "pep-math-2022:3下.9.1"
+      ]
+    }
+  ]
+}
