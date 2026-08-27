@@ -1,0 +1,176 @@
+{
+  "version": "1.0",
+  "grade": 2,
+  "semester": "down",
+  "standard_version": "pep-math-2022",
+  "mappings": [
+    {
+      "topic_id": "mt_g2d_001",
+      "standard_code": "pep-math-2022:2下.3.1",
+      "standard_desc": "认识时分秒，知道1时=60分，1分=60秒",
+      "learning_objective": "认识钟面结构，掌握时间单位关系"
+    },
+    {
+      "topic_id": "mt_g2d_002",
+      "standard_code": "pep-math-2022:2下.3.2",
+      "standard_desc": "能正确读写几时几分，会用数字和汉字两种方式表示时间",
+      "learning_objective": "掌握读时间的方法，能写出时间"
+    },
+    {
+      "topic_id": "mt_g2d_003",
+      "standard_code": "pep-math-2022:2下.3.3",
+      "standard_desc": "能估计某项活动所需的时间，能看时刻表解决简单问题",
+      "learning_objective": "理解时间在生活中的应用，能估计时长"
+    },
+    {
+      "topic_id": "mt_g2d_004",
+      "standard_code": "pep-math-2022:2下.1.1",
+      "standard_desc": "理解有余数除法的意义，知道余数必须小于除数",
+      "learning_objective": "理解余数概念，掌握有余数除法算式写法"
+    },
+    {
+      "topic_id": "mt_g2d_005",
+      "standard_code": "pep-math-2022:2下.1.2",
+      "standard_desc": "能用竖式计算有余数的除法",
+      "learning_objective": "掌握除法竖式各部分的名称和位置，理解被除数=除数×商+余数"
+    },
+    {
+      "topic_id": "mt_g2d_006",
+      "standard_code": "pep-math-2022:2下.1.3",
+      "standard_desc": "能用乘法口诀进行试商，计算有余数的除法",
+      "learning_objective": "掌握试商方法：找最大的商使乘积不超过被除数"
+    },
+    {
+      "topic_id": "mt_g2d_007",
+      "standard_code": "pep-math-2022:2下.1.4",
+      "standard_desc": "能用有余数除法解决简单实际问题，理解余数的实际含义",
+      "learning_objective": "能解决分装问题，能用余数判断周期规律中第n个是什么"
+    },
+    {
+      "topic_id": "mt_g2d_008",
+      "standard_code": "pep-math-2022:2下.1.5",
+      "standard_desc": "理解倍的含义，能用语言描述两个数量之间的倍数关系",
+      "learning_objective": "理解几倍就是几个那样的量，能用线段图表示倍数关系"
+    },
+    {
+      "topic_id": "mt_g2d_009",
+      "standard_code": "pep-math-2022:2下.1.6",
+      "standard_desc": "能用除法求一个数是另一个数的几倍",
+      "learning_objective": "掌握被比较量÷标准量=倍数"
+    },
+    {
+      "topic_id": "mt_g2d_010",
+      "standard_code": "pep-math-2022:2下.1.7",
+      "standard_desc": "能用乘法求一个数的几倍是多少",
+      "learning_objective": "掌握标准量×倍数=所求量"
+    },
+    {
+      "topic_id": "mt_g2d_011",
+      "standard_code": "pep-math-2022:2下.1.8",
+      "standard_desc": "能区分相差关系（加减法）和倍的关系（乘除法），选择正确方法解决问题",
+      "learning_objective": "理解两种数量关系的区别，能用线段图区分"
+    },
+    {
+      "topic_id": "mt_g2d_012",
+      "standard_code": "pep-math-2022:2下.1.9",
+      "standard_desc": "认识千位，能正确读写1000以内的数，理解三位数的组成",
+      "learning_objective": "掌握三位数读写，理解数的组成"
+    },
+    {
+      "topic_id": "mt_g2d_013",
+      "standard_code": "pep-math-2022:2下.1.10",
+      "standard_desc": "认识万位，能正确读写10000以内的数，掌握含0的四位数读写规则",
+      "learning_objective": "掌握四位数读写，理解数位顺序表"
+    },
+    {
+      "topic_id": "mt_g2d_014",
+      "standard_code": "pep-math-2022:2下.1.11",
+      "standard_desc": "认识算盘，理解近似数和约等号的含义",
+      "learning_objective": "了解算盘的结构，掌握近似数的概念和≈的用法"
+    },
+    {
+      "topic_id": "mt_g2d_015",
+      "standard_code": "pep-math-2022:2下.1.12",
+      "standard_desc": "能比较万以内数的大小，掌握比较规则",
+      "learning_objective": "掌握位数多的数大，同位数从最高位比的规则"
+    },
+    {
+      "topic_id": "mt_g2d_016",
+      "standard_code": "pep-math-2022:2下.1.13",
+      "standard_desc": "能笔算三位数的加法，掌握进位方法",
+      "learning_objective": "掌握相同数位对齐，从个位加起，满十进一，能处理连续进位"
+    },
+    {
+      "topic_id": "mt_g2d_017",
+      "standard_code": "pep-math-2022:2下.1.14",
+      "standard_desc": "能笔算四位数的加法，掌握加法验算方法",
+      "learning_objective": "掌握四位数竖式加法，理解交换加数验算"
+    },
+    {
+      "topic_id": "mt_g2d_018",
+      "standard_code": "pep-math-2022:2下.1.15",
+      "standard_desc": "能笔算三位数的减法，掌握退位方法",
+      "learning_objective": "掌握不够减向前退一，能处理连续退位（包括被减数某位为0的情况）"
+    },
+    {
+      "topic_id": "mt_g2d_019",
+      "standard_code": "pep-math-2022:2下.1.16",
+      "standard_desc": "能用加法验算减法，理解加减法的互逆关系",
+      "learning_objective": "掌握差+减数=被减数，理解减法是加法的逆运算"
+    },
+    {
+      "topic_id": "mt_g2d_020",
+      "standard_code": "pep-math-2022:2下.1.17",
+      "standard_desc": "能进行万以内加减法的估算，体验估算的实用价值",
+      "learning_objective": "掌握只看最高位估算的策略"
+    },
+    {
+      "topic_id": "mt_g2d_021",
+      "standard_code": "pep-math-2022:2下.1.18",
+      "standard_desc": "能用多步加减法解决实际问题，分析数量关系",
+      "learning_objective": "能列多步算式解决实际问题"
+    },
+    {
+      "topic_id": "mt_g2d_022",
+      "standard_code": "pep-math-2022:2下.2.1",
+      "standard_desc": "经历数独游戏，体验逻辑推理的乐趣",
+      "learning_objective": "能完成4×4数独，掌握排除法解题策略"
+    },
+    {
+      "topic_id": "mt_g2d_023",
+      "standard_code": "pep-math-2022:2下.1.19",
+      "standard_desc": "能整理万以内加减法的知识结构，发现与百以内加减法的联系",
+      "learning_objective": "能用知识图整理加减法"
+    },
+    {
+      "topic_id": "mt_g2d_024",
+      "standard_code": "pep-math-2022:2下.5.1",
+      "standard_desc": "能将数学知识融入连环画创作，综合运用所学知识",
+      "learning_objective": "能设计包含数学问题的连环画"
+    },
+    {
+      "topic_id": "mt_g2d_025",
+      "standard_code": "pep-math-2022:2下.1.20",
+      "standard_desc": "综合整理本学期数与运算的知识，建立知识结构",
+      "learning_objective": "能用知识图整理万以内数、加减法、有余数除法"
+    },
+    {
+      "topic_id": "mt_g2d_026",
+      "standard_code": "pep-math-2022:2下.1.21",
+      "standard_desc": "综合复习倍的关系，理解以谁为标准的关键",
+      "learning_objective": "能区分相差关系和倍的关系，用线段图辅助理解"
+    },
+    {
+      "topic_id": "mt_g2d_027",
+      "standard_code": "pep-math-2022:2下.1.22",
+      "standard_desc": "综合运用本学期所有知识解决实际问题",
+      "learning_objective": "能解决包含大数、加减乘除、时间、倍数等综合题型"
+    },
+    {
+      "topic_id": "mt_g2d_028",
+      "standard_code": "pep-math-2022:2下.1.10",
+      "standard_desc": "掌握含0的四位数的读写规则（中间0读一个零，末尾0不读）",
+      "learning_objective": "能正确读写如4090、4500、3089等含0的四位数"
+    }
+  ]
+}
