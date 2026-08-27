@@ -1,0 +1,343 @@
+{
+  "version": "pep-primary-math-6down-v2",
+  "edgeCount": 56,
+  "note": "包含册内依赖和跨册依赖，prerequisiteId中mt_g6u/mt_g5d等为跨册引用",
+  "dependencies": [
+    {
+      "topicId": "mt_g6d_001",
+      "prerequisiteId": "mt_g5u_001",
+      "strength": "hard",
+      "reason": "负数引入需要先理解正数和0的概念"
+    },
+    {
+      "topicId": "mt_g6d_002",
+      "prerequisiteId": "mt_g6d_001",
+      "strength": "hard",
+      "reason": "正负数与零的关系是负数含义的深化"
+    },
+    {
+      "topicId": "mt_g6d_003",
+      "prerequisiteId": "mt_g6d_002",
+      "strength": "hard",
+      "reason": "数轴的认识需要先理解正负数的含义"
+    },
+    {
+      "topicId": "mt_g6d_004",
+      "prerequisiteId": "mt_g6u_027",
+      "strength": "hard",
+      "reason": "折扣计算需要先掌握百分数基本计算"
+    },
+    {
+      "topicId": "mt_g6d_005",
+      "prerequisiteId": "mt_g6u_027",
+      "strength": "hard",
+      "reason": "成数本质上是十分数，需要先理解百分数"
+    },
+    {
+      "topicId": "mt_g6d_006",
+      "prerequisiteId": "mt_g6u_027",
+      "strength": "hard",
+      "reason": "税率计算需要先掌握百分数乘法"
+    },
+    {
+      "topicId": "mt_g6d_007",
+      "prerequisiteId": "mt_g6u_027",
+      "strength": "hard",
+      "reason": "利息计算需要先掌握百分数乘法"
+    },
+    {
+      "topicId": "mt_g6d_007",
+      "prerequisiteId": "mt_g6u_028",
+      "strength": "soft",
+      "reason": "多年利息计算涉及百分数增减应用"
+    },
+    {
+      "topicId": "mt_g6d_008",
+      "prerequisiteId": "mt_g6d_004",
+      "strength": "hard",
+      "reason": "促销比较需要先掌握折扣计算"
+    },
+    {
+      "topicId": "mt_g6d_008",
+      "prerequisiteId": "mt_g6u_028",
+      "strength": "soft",
+      "reason": "促销方式比较是百分数综合应用的延伸"
+    },
+    {
+      "topicId": "mt_g6d_009",
+      "prerequisiteId": "mt_g6u_018",
+      "strength": "hard",
+      "reason": "圆柱的底面是圆，需要先认识圆"
+    },
+    {
+      "topicId": "mt_g6d_009",
+      "prerequisiteId": "mt_g5u_020",
+      "strength": "hard",
+      "reason": "圆柱是立体图形，需要先认识长方体等基础立体图形"
+    },
+    {
+      "topicId": "mt_g6d_010",
+      "prerequisiteId": "mt_g6d_009",
+      "strength": "hard",
+      "reason": "圆柱表面积需要先理解圆柱的组成结构"
+    },
+    {
+      "topicId": "mt_g6d_010",
+      "prerequisiteId": "mt_g6u_020",
+      "strength": "hard",
+      "reason": "底面积计算需要圆面积公式"
+    },
+    {
+      "topicId": "mt_g6d_010",
+      "prerequisiteId": "mt_g6u_019",
+      "strength": "hard",
+      "reason": "侧面积计算需要底面周长（2πr）"
+    },
+    {
+      "topicId": "mt_g6d_011",
+      "prerequisiteId": "mt_g6d_009",
+      "strength": "hard",
+      "reason": "体积公式推导需要理解圆柱的底面和高"
+    },
+    {
+      "topicId": "mt_g6d_011",
+      "prerequisiteId": "mt_g6u_021",
+      "strength": "hard",
+      "reason": "圆柱体积推导类比圆面积推导，需要先理解圆面积推导"
+    },
+    {
+      "topicId": "mt_g6d_012",
+      "prerequisiteId": "mt_g6d_009",
+      "strength": "soft",
+      "reason": "圆锥与圆柱同为含圆的立体图形，对比学习"
+    },
+    {
+      "topicId": "mt_g6d_013",
+      "prerequisiteId": "mt_g6d_012",
+      "strength": "hard",
+      "reason": "圆锥体积公式推导需要先认识圆锥的结构"
+    },
+    {
+      "topicId": "mt_g6d_013",
+      "prerequisiteId": "mt_g6d_011",
+      "strength": "hard",
+      "reason": "圆锥体积=1/3圆柱体积，需要先掌握圆柱体积"
+    },
+    {
+      "topicId": "mt_g6d_014",
+      "prerequisiteId": "mt_g6d_011",
+      "strength": "hard",
+      "reason": "综合比较需要先分别掌握圆柱和圆锥"
+    },
+    {
+      "topicId": "mt_g6d_014",
+      "prerequisiteId": "mt_g6d_013",
+      "strength": "hard",
+      "reason": "综合比较需要先掌握圆锥的体积公式"
+    },
+    {
+      "topicId": "mt_g6d_015",
+      "prerequisiteId": "mt_g6u_015",
+      "strength": "hard",
+      "reason": "比例的概念建立在比的概念基础上"
+    },
+    {
+      "topicId": "mt_g6d_016",
+      "prerequisiteId": "mt_g6d_015",
+      "strength": "hard",
+      "reason": "比例基本性质和解比例需要先理解比例的含义"
+    },
+    {
+      "topicId": "mt_g6d_016",
+      "prerequisiteId": "mt_g5d_012",
+      "strength": "hard",
+      "reason": "解比例用方程方法，需要五年级方程解题基础"
+    },
+    {
+      "topicId": "mt_g6d_017",
+      "prerequisiteId": "mt_g6d_015",
+      "strength": "hard",
+      "reason": "正比例是比例关系的一种，需要先理解比例含义"
+    },
+    {
+      "topicId": "mt_g6d_017",
+      "prerequisiteId": "mt_g6u_015",
+      "strength": "hard",
+      "reason": "正比例的判断（比值一定）需要理解比的概念"
+    },
+    {
+      "topicId": "mt_g6d_018",
+      "prerequisiteId": "mt_g6d_017",
+      "strength": "hard",
+      "reason": "理解反比例（乘积一定）需要对比正比例（比值一定）"
+    },
+    {
+      "topicId": "mt_g6d_019",
+      "prerequisiteId": "mt_g6d_017",
+      "strength": "hard",
+      "reason": "用正比例解题需要先掌握正比例的判断和方程"
+    },
+    {
+      "topicId": "mt_g6d_019",
+      "prerequisiteId": "mt_g6d_018",
+      "strength": "hard",
+      "reason": "用反比例解题需要先掌握反比例的判断和方程"
+    },
+    {
+      "topicId": "mt_g6d_019",
+      "prerequisiteId": "mt_g6d_016",
+      "strength": "hard",
+      "reason": "用比例解题需要先掌握解比例的方法"
+    },
+    {
+      "topicId": "mt_g6d_020",
+      "prerequisiteId": "mt_g6d_015",
+      "strength": "hard",
+      "reason": "比例尺是比例的实际应用，本质是图上距离与实际距离的比"
+    },
+    {
+      "topicId": "mt_g6d_021",
+      "prerequisiteId": "mt_g6d_020",
+      "strength": "soft",
+      "reason": "图形放大缩小与比例尺密切相关"
+    },
+    {
+      "topicId": "mt_g6d_021",
+      "prerequisiteId": "mt_g6d_019",
+      "strength": "hard",
+      "reason": "图形放大缩小的计算需要用到比例解题"
+    },
+    {
+      "topicId": "mt_g6d_022",
+      "prerequisiteId": "mt_g6d_017",
+      "strength": "hard",
+      "reason": "自行车齿轮传动原理本质上是正比例关系"
+    },
+    {
+      "topicId": "mt_g6d_022",
+      "prerequisiteId": "mt_g6u_019",
+      "strength": "hard",
+      "reason": "计算踩一圈路程需要用到圆的周长公式"
+    },
+    {
+      "topicId": "mt_g6d_023",
+      "prerequisiteId": "mt_g5d_023",
+      "strength": "soft",
+      "reason": "鸽巢原理是数学广角内容，需要一定的逻辑推理能力"
+    },
+    {
+      "topicId": "mt_g6d_024",
+      "prerequisiteId": "mt_g6d_023",
+      "strength": "hard",
+      "reason": "推广型鸽巢原理建立在基本型的基础上"
+    },
+    {
+      "topicId": "mt_g6d_025",
+      "prerequisiteId": "mt_g6d_024",
+      "strength": "hard",
+      "reason": "'保证取到同类'的最少取法是鸽巢原理的应用"
+    },
+    {
+      "topicId": "mt_g6d_026",
+      "prerequisiteId": "mt_g6d_003",
+      "strength": "hard",
+      "reason": "数系整理需要先认识数轴，将各类数纳入统一框架"
+    },
+    {
+      "topicId": "mt_g6d_026",
+      "prerequisiteId": "mt_g6d_001",
+      "strength": "hard",
+      "reason": "完整的数系包含负数，需要先理解负数概念"
+    },
+    {
+      "topicId": "mt_g6d_027",
+      "prerequisiteId": "mt_g6u_035",
+      "strength": "hard",
+      "reason": "四则运算综合复习需要先掌握分数四则混合运算"
+    },
+    {
+      "topicId": "mt_g6d_028",
+      "prerequisiteId": "mt_g5d_012",
+      "strength": "hard",
+      "reason": "代数表达式和方程复习建立在五年级用方程解题的基础上"
+    },
+    {
+      "topicId": "mt_g6d_029",
+      "prerequisiteId": "mt_g6d_017",
+      "strength": "hard",
+      "reason": "比和比例的综合比较需要分别掌握正反比例"
+    },
+    {
+      "topicId": "mt_g6d_029",
+      "prerequisiteId": "mt_g6d_018",
+      "strength": "hard",
+      "reason": "比和比例的综合比较需要分别掌握正反比例"
+    },
+    {
+      "topicId": "mt_g6d_030",
+      "prerequisiteId": "mt_g6u_021",
+      "strength": "hard",
+      "reason": "平面图形综合整理包含圆的面积公式"
+    },
+    {
+      "topicId": "mt_g6d_031",
+      "prerequisiteId": "mt_g6d_013",
+      "strength": "hard",
+      "reason": "立体图形综合整理包含圆锥体积公式"
+    },
+    {
+      "topicId": "mt_g6d_031",
+      "prerequisiteId": "mt_g6d_011",
+      "strength": "hard",
+      "reason": "立体图形综合整理包含圆柱体积公式"
+    },
+    {
+      "topicId": "mt_g6d_032",
+      "prerequisiteId": "mt_g6d_021",
+      "strength": "hard",
+      "reason": "图形变换综合整理包含放大缩小"
+    },
+    {
+      "topicId": "mt_g6d_033",
+      "prerequisiteId": "mt_g6u_008",
+      "strength": "hard",
+      "reason": "方向距离法位置描述在六年级上册已学习"
+    },
+    {
+      "topicId": "mt_g6d_033",
+      "prerequisiteId": "mt_g5d_001",
+      "strength": "hard",
+      "reason": "坐标（数对）表示位置在五年级下册已学习"
+    },
+    {
+      "topicId": "mt_g6d_034",
+      "prerequisiteId": "mt_g6u_031",
+      "strength": "hard",
+      "reason": "统计图综合复习建立在六年级上册三种统计图比较的基础上"
+    },
+    {
+      "topicId": "mt_g6d_035",
+      "prerequisiteId": "mt_g6d_007",
+      "strength": "hard",
+      "reason": "理财方案设计需要先掌握利率与利息的计算"
+    },
+    {
+      "topicId": "mt_g6d_036",
+      "prerequisiteId": "mt_g6d_031",
+      "strength": "soft",
+      "reason": "三视图是立体图形整理的延伸，帮助从多角度理解立体图形"
+    },
+    {
+      "topicId": "mt_g6d_037",
+      "prerequisiteId": "mt_g6d_017",
+      "strength": "hard",
+      "reason": "正反比例图象是对正反比例关系的图形化表示"
+    },
+    {
+      "topicId": "mt_g6d_037",
+      "prerequisiteId": "mt_g6d_018",
+      "strength": "hard",
+      "reason": "反比例图象（双曲线）需要先理解反比例关系"
+    }
+  ]
+}
