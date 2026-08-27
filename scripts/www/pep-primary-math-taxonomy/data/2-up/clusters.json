@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "grade": 2,
+  "semester": "up",
+  "clusters": [
+    {
+      "id": "cluster_g2u_01",
+      "name": "数据分类与统计",
+      "domain": "统计与概率",
+      "color": "#4CAF50",
+      "topic_ids": ["mt_g2u_001", "mt_g2u_002"],
+      "description": "按单一或多重标准对数据进行分类整理，用统计表记录结果",
+      "curriculum_thread": "数据处理"
+    },
+    {
+      "id": "cluster_g2u_02",
+      "name": "乘法认识与口诀（1~6）",
+      "domain": "数与运算",
+      "color": "#2196F3",
+      "topic_ids": ["mt_g2u_003", "mt_g2u_004", "mt_g2u_005", "mt_g2u_006", "mt_g2u_007", "mt_g2u_008", "mt_g2u_009"],
+      "description": "乘法的初步认识，1~6的乘法口诀建立，乘加乘减运算，用乘法解决实际问题",
+      "curriculum_thread": "数与运算"
+    },
+    {
+      "id": "cluster_g2u_03",
+      "name": "除法认识与口诀应用（1~6）",
+      "domain": "数与运算",
+      "color": "#9C27B0",
+      "topic_ids": ["mt_g2u_010", "mt_g2u_011", "mt_g2u_012", "mt_g2u_013", "mt_g2u_014"],
+      "description": "平均分引入除法，除法两种情境，用2~6乘法口诀求商，除法解决实际问题",
+      "curriculum_thread": "数与运算"
+    },
+    {
+      "id": "cluster_g2u_04",
+      "name": "位置与方向",
+      "domain": "图形与几何",
+      "color": "#FF9800",
+      "topic_ids": ["mt_g2u_015", "mt_g2u_016", "mt_g2u_029"],
+      "description": "东南西北四个方向的认识，地图方向原则，设计导游路线",
+      "curriculum_thread": "图形与位置"
+    },
+    {
+      "id": "cluster_g2u_05",
+      "name": "长度单位与测量",
+      "domain": "图形与几何",
+      "color": "#FF5722",
+      "topic_ids": ["mt_g2u_017", "mt_g2u_018", "mt_g2u_019", "mt_g2u_020"],
+      "description": "厘米和米的认识，测量方法，线段概念与画法，身体非标准单位",
+      "curriculum_thread": "测量"
+    },
+    {
+      "id": "cluster_g2u_06",
+      "name": "乘法口诀完整体系（7~9）",
+      "domain": "数与运算",
+      "color": "#00BCD4",
+      "topic_ids": ["mt_g2u_021", "mt_g2u_022", "mt_g2u_023", "mt_g2u_024", "mt_g2u_025", "mt_g2u_026", "mt_g2u_030"],
+      "description": "7、8、9的乘法口诀，用7~9口诀求商，完整口诀表整理，两步乘除问题",
+      "curriculum_thread": "数与运算"
+    },
+    {
+      "id": "cluster_g2u_07",
+      "name": "四则运算关系综合",
+      "domain": "数与运算",
+      "color": "#607D8B",
+      "topic_ids": ["mt_g2u_027", "mt_g2u_028"],
+      "description": "加减乘除四种运算关系梳理，每份数×份数=总数数量关系模型",
+      "curriculum_thread": "数与运算"
+    }
+  ]
+}
