@@ -1,0 +1,188 @@
+{
+  "version": "1.0",
+  "grade": 2,
+  "semester": "up",
+  "standard_version": "pep-math-2022",
+  "mappings": [
+    {
+      "topic_id": "mt_g2u_001",
+      "standard_code": "pep-math-2022:2上.4.1",
+      "standard_desc": "经历数据收集和整理的过程，会用简单的方法收集和整理数据",
+      "learning_objective": "能按照一个给定的标准或自己选择的标准对物体进行分类"
+    },
+    {
+      "topic_id": "mt_g2u_002",
+      "standard_code": "pep-math-2022:2上.4.2",
+      "standard_desc": "能对同一批数据按照不同标准进行分类，感受分类标准的多样性",
+      "learning_objective": "理解分类标准不同，分类结果不同"
+    },
+    {
+      "topic_id": "mt_g2u_003",
+      "standard_code": "pep-math-2022:2上.1.1",
+      "standard_desc": "结合具体情境，理解乘法的意义，掌握乘法各部分名称",
+      "learning_objective": "能理解相同加数连加与乘法的关系，认识乘号，知道乘数和积"
+    },
+    {
+      "topic_id": "mt_g2u_004",
+      "standard_code": "pep-math-2022:2上.1.2",
+      "standard_desc": "熟记1~6的乘法口诀，能熟练地口算表内乘法",
+      "learning_objective": "掌握5的乘法口诀并能运用口诀进行计算"
+    },
+    {
+      "topic_id": "mt_g2u_005",
+      "standard_code": "pep-math-2022:2上.1.2",
+      "standard_desc": "熟记1~6的乘法口诀，能熟练地口算表内乘法",
+      "learning_objective": "掌握2、3、4的乘法口诀并能运用口诀进行计算"
+    },
+    {
+      "topic_id": "mt_g2u_006",
+      "standard_code": "pep-math-2022:2上.1.2",
+      "standard_desc": "熟记1~6的乘法口诀，能熟练地口算表内乘法",
+      "learning_objective": "掌握1和6的乘法口诀并能运用口诀进行计算"
+    },
+    {
+      "topic_id": "mt_g2u_007",
+      "standard_code": "pep-math-2022:2上.1.3",
+      "standard_desc": "能计算乘加、乘减混合运算，掌握运算顺序",
+      "learning_objective": "理解先算乘法再算加减的运算顺序"
+    },
+    {
+      "topic_id": "mt_g2u_008",
+      "standard_code": "pep-math-2022:2上.1.4",
+      "standard_desc": "能运用乘法解决简单的实际问题，掌握解题基本步骤",
+      "learning_objective": "掌握阅读理解→分析解答→回顾反思三步法"
+    },
+    {
+      "topic_id": "mt_g2u_009",
+      "standard_code": "pep-math-2022:2上.1.2",
+      "standard_desc": "能整理1~6的乘法口诀，发现口诀规律",
+      "learning_objective": "能将1~6乘法口诀整理成三角形口诀表"
+    },
+    {
+      "topic_id": "mt_g2u_010",
+      "standard_code": "pep-math-2022:2上.1.5",
+      "standard_desc": "理解平均分的含义，知道每份同样多的分法就是平均分",
+      "learning_objective": "能判断是否是平均分，能动手操作进行平均分"
+    },
+    {
+      "topic_id": "mt_g2u_011",
+      "standard_code": "pep-math-2022:2上.1.6",
+      "standard_desc": "结合平均分的操作活动，理解除法的意义，认识除法各部分名称",
+      "learning_objective": "认识除号，理解被除数、除数、商，理解等分除和包含除两种情境"
+    },
+    {
+      "topic_id": "mt_g2u_012",
+      "standard_code": "pep-math-2022:2上.1.7",
+      "standard_desc": "理解乘法和除法的关系，能用乘法口诀求商",
+      "learning_objective": "掌握用2~6乘法口诀求商的方法"
+    },
+    {
+      "topic_id": "mt_g2u_013",
+      "standard_code": "pep-math-2022:2上.1.8",
+      "standard_desc": "能运用除法解决简单的实际问题",
+      "learning_objective": "能区分等分除问题和包含除问题，选择正确方法解答"
+    },
+    {
+      "topic_id": "mt_g2u_014",
+      "standard_code": "pep-math-2022:2上.1.7",
+      "standard_desc": "理解乘法和除法的互逆关系，掌握特殊除法",
+      "learning_objective": "理解a÷a=1，a÷1=a，掌握同一口诀对应一乘两除"
+    },
+    {
+      "topic_id": "mt_g2u_015",
+      "standard_code": "pep-math-2022:2上.3.1",
+      "standard_desc": "结合具体情境，认识东、南、西、北四个方向",
+      "learning_objective": "能辨认东南西北，理解相对方向，掌握利用太阳和指南针辨向"
+    },
+    {
+      "topic_id": "mt_g2u_016",
+      "standard_code": "pep-math-2022:2上.3.2",
+      "standard_desc": "理解地图的方向约定，能看简单地图确定方向和位置",
+      "learning_objective": "掌握上北下南左西右东原则，能设计简单导游路线"
+    },
+    {
+      "topic_id": "mt_g2u_017",
+      "standard_code": "pep-math-2022:2上.3.3",
+      "standard_desc": "认识长度单位厘米，建立厘米的长度观念，会用直尺测量物体长度",
+      "learning_objective": "认识cm，知道1cm约为食指宽，掌握正确量法"
+    },
+    {
+      "topic_id": "mt_g2u_018",
+      "standard_code": "pep-math-2022:2上.3.4",
+      "standard_desc": "认识长度单位米，知道1米=100厘米，能根据实际选择合适长度单位",
+      "learning_objective": "认识m，掌握1米=100厘米，能选择合适单位"
+    },
+    {
+      "topic_id": "mt_g2u_019",
+      "standard_code": "pep-math-2022:2上.3.5",
+      "standard_desc": "认识线段，能用直尺画指定长度的线段",
+      "learning_objective": "理解线段的特征，能画指定长度线段"
+    },
+    {
+      "topic_id": "mt_g2u_020",
+      "standard_code": "pep-math-2022:2上.3.6",
+      "standard_desc": "经历用身体部位测量物体长度的活动，体验统一长度单位的必要性",
+      "learning_objective": "了解拃、度等身体测量单位，理解标准单位的重要性"
+    },
+    {
+      "topic_id": "mt_g2u_021",
+      "standard_code": "pep-math-2022:2上.1.9",
+      "standard_desc": "熟记7的乘法口诀，能熟练地口算7的乘除法",
+      "learning_objective": "掌握7的乘法口诀并能运用"
+    },
+    {
+      "topic_id": "mt_g2u_022",
+      "standard_code": "pep-math-2022:2上.1.9",
+      "standard_desc": "熟记8的乘法口诀，能熟练地口算8的乘除法",
+      "learning_objective": "掌握8的乘法口诀并能运用"
+    },
+    {
+      "topic_id": "mt_g2u_023",
+      "standard_code": "pep-math-2022:2上.1.9",
+      "standard_desc": "熟记9的乘法口诀，能熟练地口算9的乘除法，发现口诀规律",
+      "learning_objective": "掌握9的乘法口诀，发现积的个位十位规律"
+    },
+    {
+      "topic_id": "mt_g2u_024",
+      "standard_code": "pep-math-2022:2上.1.10",
+      "standard_desc": "能用7~9的乘法口诀求商",
+      "learning_objective": "掌握用7~9口诀求商，理解一乘两除关系"
+    },
+    {
+      "topic_id": "mt_g2u_025",
+      "standard_code": "pep-math-2022:2上.1.11",
+      "standard_desc": "整理1~9的乘法口诀，发现规律，了解口诀的历史文化",
+      "learning_objective": "能完成完整口诀表，了解乘法口诀发展历史"
+    },
+    {
+      "topic_id": "mt_g2u_026",
+      "standard_code": "pep-math-2022:2上.1.12",
+      "standard_desc": "能综合运用乘法和除法解决两步实际问题",
+      "learning_objective": "能列两步算式解决乘除法综合问题"
+    },
+    {
+      "topic_id": "mt_g2u_027",
+      "standard_code": "pep-math-2022:2上.1.13",
+      "standard_desc": "理解加减法与乘除法的联系，能整理和梳理四种运算关系",
+      "learning_objective": "能用知识图整理加减乘除四种运算关系"
+    },
+    {
+      "topic_id": "mt_g2u_028",
+      "standard_code": "pep-math-2022:2上.1.14",
+      "standard_desc": "理解每份数、份数、总数三者之间的关系",
+      "learning_objective": "掌握每份数×份数=总数数量关系模型，能用线段图表示"
+    },
+    {
+      "topic_id": "mt_g2u_029",
+      "standard_code": "pep-math-2022:2上.3.7",
+      "standard_desc": "综合运用方向和分类知识解决实际问题",
+      "learning_objective": "能看安全疏散示意图，能进行综合分类"
+    },
+    {
+      "topic_id": "mt_g2u_030",
+      "standard_code": "pep-math-2022:2上.1.15",
+      "standard_desc": "在探索规律活动中发现平方数的特征（拓展）",
+      "learning_objective": "理解1×1到9×9的正方形数（平方数）的含义"
+    }
+  ]
+}
