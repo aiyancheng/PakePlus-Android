@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七年级数学上册 知识图谱</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:#080c1f;color:#d0d8f0;overflow:hidden}
+canvas{display:block;cursor:grab}canvas:active{cursor:grabbing}
+#ctrl{position:fixed;top:16px;right:16px;background:rgba(12,16,40,0.92);border:1px solid rgba(100,140,255,0.18);border-radius:14px;padding:14px 16px;z-index:60;display:flex;flex-direction:column;gap:7px;backdrop-filter:blur(8px)}
+#ctrl button{background:rgba(80,120,255,0.15);border:1px solid rgba(100,140,255,0.25);border-radius:8px;color:#a0b8ff;padding:7px 13px;font-size:12px;cursor:pointer;transition:all .2s;font-family:inherit}
+#ctrl button:hover{background:rgba(80,120,255,0.3)}
+#ctrl label{font-size:11px;color:#6878a0;display:flex;align-items:center;gap:5px;cursor:pointer}
+#ctrl label input{accent-color:#7eb8ff}
+#tip{position:fixed;background:rgba(16,20,48,0.96);border:1px solid rgba(100,140,255,0.3);border-radius:12px;padding:14px 16px;max-width:360px;pointer-events:none;display:none;z-index:100;backdrop-filter:blur(10px);box-shadow:0 8px 32px rgba(0,0,0,0.6)}
+#tip h3{color:#7eb8ff;font-size:14px;margin-bottom:6px}
+#tip .tg{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;margin-bottom:6px}
+#tip .tg.CONCEPTUAL{background:rgba(100,200,255,0.2);color:#64c8ff}
+#tip .tg.PROCEDURAL{background:rgba(255,180,100,0.2);color:#ffb464}
+#tip .tg.REPRESENTATIONAL{background:rgba(180,100,255,0.2);color:#b464ff}
+#tip p{font-size:12px;line-height:1.6;color:#a0a8c0}
+#tip .ev{margin-top:5px;font-size:11px;color:#8892b0}
+#tip .ev li{margin:1px 0}
+#lg{position:fixed;bottom:16px;left:16px;background:rgba(12,16,40,0.9);border:1px solid rgba(100,140,255,0.15);border-radius:12px;padding:10px 13px;z-index:50;font-size:11px}
+#lg .r{display:flex;align-items:center;gap:5px;margin:2px 0}
+#lg .d{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+#lg .l{width:14px;height:2px;flex-shrink:0}
+#st{position:fixed;bottom:16px;right:16px;background:rgba(12,16,40,0.9);border:1px solid rgba(100,140,255,0.15);border-radius:10px;padding:8px 12px;z-index:50;font-size:11px;color:#6878a0}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="ctrl">
+  <button onclick="fit()">⊞ 适配视图</button>
+  <label><input type="checkbox" id="cL" checked onchange="sL=this.checked"> 显示名称</label>
+  <label><input type="checkbox" id="cG" checked onchange="sG=this.checked"> 分组色块</label>
+</div>
+<div id="tip"></div>
+<div id="lg">
+  <div class="r"><div class="d" style="background:#4ecdc4"></div>有理数</div>
+  <div class="r"><div class="d" style="background:#ff6b9d"></div>整式</div>
+  <div class="r"><div class="d" style="background:#ffd93d"></div>一元一次方程</div>
+  <div class="r"><div class="d" style="background:#6c5ce7"></div>几何图形</div>
+  <div class="r"><div class="d" style="background:#a8e6cf"></div>直线射线线段</div>
+  <div class="r"><div class="d" style="background:#ff8a5c"></div>角</div>
+  <hr style="border-color:rgba(100,140,255,0.1);margin:4px 0">
+  <div class="r"><div class="l" style="background:#7eb8ff"></div>硬依赖</div>
+  <div class="r"><div class="l" style="background:#7eb8ff;opacity:0.3"></div>软依赖</div>
+  <div style="margin-top:5px;font-size:10px;color:#445">← 前置 → 后续</div>
+</div>
+<div id="st"></div>
+<script>
+const N=[{"id": "mt_ch1_001", "name": "正数和负数的概念", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解正数和负数的定义：大于0的数是正数，在正数前加上符号“−”的数是负数。0既不是正数也不是负数。", "evidence": ["能正确区分正数和负数", "能说明0既不是正数也不是负数", "能读出一个数并指出其符号"]}, {"id": "mt_ch1_002", "name": "用正负数表示相反意义的量", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.7, "description": "学会用正数和负数表示具有相反意义的实际量，如温度零上/零下、收入/支出、高于/低于海平面等。", "evidence": ["能用正负数表示温度、海拔、收支等实际情境中的量", "能解释实际问题中正负数的含义"]}, {"id": "mt_ch1_003", "name": "有理数的概念", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解有理数的定义：整数和分数统称为有理数。有理数包括正整数、0、负整数、正分数和负分数。", "evidence": ["能说出有理数的定义", "能区分整数和分数", "理解有理数是在正数和负数基础上的扩展"]}, {"id": "mt_ch1_004", "name": "有理数的分类", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.75, "description": "掌握有理数的两种分类方式：按定义分为整数和分数；按性质分为正有理数、0和负有理数。", "evidence": ["能按两种标准对有理数进行分类", "能将给定的数正确归类"]}, {"id": "mt_ch1_005", "name": "数轴的概念与画法", "domain": "有理数", "type": "REPRESENTATIONAL", "centrality": 0.9, "description": "理解数轴的三个要素：原点、正方向、单位长度。能在纸上画出规范的数轴。", "evidence": ["能说出数轴的三个要素", "能画出规范的数轴", "理解数轴是用直线上的点表示数的工具"]}, {"id": "mt_ch1_006", "name": "在数轴上表示有理数", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.8, "description": "学会在数轴上用点表示有理数，以及根据数轴上的点读出对应的有理数。", "evidence": ["能在数轴上标出给定的有理数", "能根据数轴上的点写出对应的数"]}, {"id": "mt_ch1_007", "name": "相反数", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解相反数的定义：只有符号不同的两个数互为相反数。0的相反数是0。互为相反数的两个数之和为0。", "evidence": ["能说出一个数的相反数", "理解 -(-a) = a", "能借助数轴说明相反数"]}, {"id": "mt_ch1_008", "name": "绝对值的概念", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解绝对值的定义：数轴上表示一个数的点与原点的距离叫做这个数的绝对值。正数的绝对值是它本身，负数的绝对值是它的相反数，0的绝对值是0。", "evidence": ["能用数轴解释绝对值的含义", "能说出正数、负数、0的绝对值规律", "理解绝对值的非负性"]}, {"id": "mt_ch1_009", "name": "求一个数的绝对值", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.75, "description": "熟练求任意有理数的绝对值，包括含字母的绝对值化简。", "evidence": ["能快速求出给定有理数的绝对值", "能化简含绝对值符号的表达式"]}, {"id": "mt_ch1_010", "name": "有理数大小比较", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.85, "description": "掌握有理数大小比较的规则：正数大于0，0大于负数，正数大于负数；两个负数比较，绝对值大的反而小。能在数轴上直观比较。", "evidence": ["能比较任意两个有理数的大小", "能用数轴说明有理数的大小顺序", "能比较两个负数的大小"]}, {"id": "mt_ch1_011", "name": "有理数加法法则", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解有理数加法法则：同号两数相加取相同符号并把绝对值相加；异号两数相加取绝对值较大数的符号并用较大绝对值减较小绝对值；互为相反数的两数相加得0；一个数加0仍得这个数。", "evidence": ["能说出同号和异号加法法则", "能用数轴验证加法结果"]}, {"id": "mt_ch1_012", "name": "有理数加法运算", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.85, "description": "熟练进行有理数的加法运算，包括同号加法、异号加法、与0相加等各种情况。", "evidence": ["能正确计算各种有理数加法", "运算速度和准确率较高"]}, {"id": "mt_ch1_013", "name": "有理数减法法则", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解有理数减法法则：减去一个数等于加上这个数的相反数。即 a - b = a + (-b)。", "evidence": ["能说出减法转化加法的法则", "理解减法是加法的逆运算"]}, {"id": "mt_ch1_014", "name": "有理数减法运算", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.8, "description": "熟练进行有理数的减法运算，能将减法转化为加法进行计算。", "evidence": ["能正确进行各种有理数减法", "能将减法转化为加法进行简便运算"]}, {"id": "mt_ch1_015", "name": "加减混合运算与运算律", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.8, "description": "能进行有理数的加减混合运算，掌握加法交换律和结合律，能用运算律进行简便计算。", "evidence": ["能正确进行加减混合运算", "能运用交换律和结合律简化计算"]}, {"id": "mt_ch1_016", "name": "有理数乘法法则", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解有理数乘法法则：两数相乘同号得正异号得负并把绝对值相乘；任何数与0相乘得0。多个有理数相乘时，负因数个数为偶数积为正，为奇数积为负。", "evidence": ["能说出有理数乘法的符号法则", "能正确判断多个有理数相乘的符号"]}, {"id": "mt_ch1_017", "name": "有理数乘法运算", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.8, "description": "熟练进行有理数的乘法运算，包括两个数相乘和多个数相乘。", "evidence": ["能正确计算各种有理数乘法", "能进行多个有理数的连乘"]}, {"id": "mt_ch1_018", "name": "倒数", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.75, "description": "理解倒数的定义：乘积为1的两个数互为倒数。0没有倒数。a的倒数是1/a（a≠0）。", "evidence": ["能说出一个数的倒数", "理解0没有倒数的原因"]}, {"id": "mt_ch1_019", "name": "有理数除法法则", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解有理数除法法则：除以一个不为0的数等于乘这个数的倒数。即 a÷b = a × (1/b)，b≠0。", "evidence": ["能说出除法转化乘法的法则", "理解0不能作为除数"]}, {"id": "mt_ch1_020", "name": "有理数除法与乘除混合运算", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.8, "description": "熟练进行有理数的除法运算和乘除混合运算。", "evidence": ["能正确进行有理数除法运算", "能进行乘除混合运算并判断结果符号"]}, {"id": "mt_ch1_021", "name": "有理数乘方的概念", "domain": "有理数", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解乘方的意义：n个相同因数a的乘积记作a^n，其中a是底数，n是指数，a^n是幂。乘方是特殊的乘法。", "evidence": ["能说出乘方、底数、指数、幂的定义", "能区分 (-2)^4 和 -2^4"]}, {"id": "mt_ch1_022", "name": "幂的计算", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.8, "description": "熟练计算有理数的乘方，包括正数的幂、负数的幂、0的幂等。", "evidence": ["能正确计算 (-2)^3, (-1)^10, 0^5 等", "能判断负数的偶次幂和奇次幂的符号"]}, {"id": "mt_ch1_023", "name": "有理数混合运算", "domain": "有理数", "type": "PROCEDURAL", "centrality": 0.9, "description": "掌握有理数混合运算的顺序：先乘方，再乘除，最后加减；有括号先算括号里的。能正确进行含加减乘除乘方的综合运算。", "evidence": ["能按正确顺序进行混合运算", "能处理含多层括号的运算"]}, {"id": "mt_ch1_024", "name": "科学记数法", "domain": "有理数", "type": "REPRESENTATIONAL", "centrality": 0.7, "description": "学会用科学记数法表示较大的数：将一个数写成 a x 10^n 的形式，其中 1 ≤ |a| < 10，n为正整数。", "evidence": ["能将较大的数用科学记数法表示", "能将科学记数法还原为原数"]}, {"id": "mt_ch2_001", "name": "用字母表示数", "domain": "整式", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解用字母表示数的意义：字母可以表示任意的数，用字母表示数可以使数量关系的表达更简洁、更具一般性。", "evidence": ["能用字母表示实际问题中的数量关系", "理解字母可以表示任意数"]}, {"id": "mt_ch2_002", "name": "单项式的概念", "domain": "整式", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解单项式的定义：数与字母的乘积组成的代数式叫做单项式。单独的一个数或一个字母也是单项式。单项式的数字因数是系数，所有字母指数的和是次数。", "evidence": ["能识别单项式并指出其系数和次数", "理解单独的数或字母也是单项式"]}, {"id": "mt_ch2_003", "name": "多项式的概念", "domain": "整式", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解多项式的定义：几个单项式的和叫做多项式。多项式中每个单项式叫做项，不含字母的项叫常数项。多项式里次数最高项的次数就是多项式的次数。", "evidence": ["能识别多项式的项和常数项", "能确定多项式的次数"]}, {"id": "mt_ch2_004", "name": "整式的概念与分类", "domain": "整式", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解整式的定义：单项式和多项式统称为整式。能区分单项式和多项式。", "evidence": ["能说出整式的定义", "能将给定的代数式分类为单项式或多项式"]}, {"id": "mt_ch2_005", "name": "列代数式表示数量关系", "domain": "整式", "type": "PROCEDURAL", "centrality": 0.75, "description": "学会根据实际问题中的数量关系列出代数式，包括和差积商的各种表达。", "evidence": ["能根据文字描述列出正确的代数式", "能正确使用括号表示运算顺序"]}, {"id": "mt_ch2_006", "name": "同类项的概念", "domain": "整式", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解同类项的定义：所含字母相同，并且相同字母的指数也相同的项叫做同类项。几个常数项也是同类项。", "evidence": ["能判断两个单项式是否是同类项", "理解同类项的两个条件"]}, {"id": "mt_ch2_007", "name": "合并同类项", "domain": "整式", "type": "PROCEDURAL", "centrality": 0.9, "description": "掌握合并同类项的法则：把同类项的系数相加，所得结果作为系数，字母和字母的指数不变。", "evidence": ["能正确合并同类项", "能在多项式中识别并合并所有同类项"]}, {"id": "mt_ch2_008", "name": "去括号法则", "domain": "整式", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解去括号法则：括号前是+号，去掉括号和它前面的+号，括号里各项不变号；括号前是-号，去掉括号和它前面的-号，括号里各项变号。", "evidence": ["能正确去掉括号前是正号的括号", "能正确去掉括号前是负号的括号"]}, {"id": "mt_ch2_009", "name": "整式的加减运算", "domain": "整式", "type": "PROCEDURAL", "centrality": 0.9, "description": "掌握整式加减的步骤：先去括号，再合并同类项。能进行多项式的加减运算。", "evidence": ["能正确进行整式的加减运算", "能先去括号再合并同类项"]}, {"id": "mt_ch2_010", "name": "化简求值", "domain": "整式", "type": "PROCEDURAL", "centrality": 0.8, "description": "学会先化简整式再代入求值的方法。能将整式的加减运算应用于求值问题。", "evidence": ["能先化简整式再代入数值求值", "理解化简后再求值更简便"]}, {"id": "mt_ch3_001", "name": "方程的概念", "domain": "一元一次方程", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解方程的定义：含有未知数的等式叫做方程。能区分方程与非方程。", "evidence": ["能说出方程的定义", "能判断一个式子是否是方程", "理解方程是含有未知数的等式"]}, {"id": "mt_ch3_002", "name": "一元一次方程的概念", "domain": "一元一次方程", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解一元一次方程的定义：只含有一个未知数（元），未知数的次数是1，等号两边都是整式的方程。", "evidence": ["能说出一元一次方程的三个条件", "能判断一个方程是否是一元一次方程"]}, {"id": "mt_ch3_003", "name": "根据实际问题列方程", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.85, "description": "学会分析实际问题中的数量关系，设未知数，利用相等关系列出一元一次方程。", "evidence": ["能根据文字描述设未知数", "能找出问题中的相等关系", "能列出正确的方程"]}, {"id": "mt_ch3_004", "name": "方程的解与解方程", "domain": "一元一次方程", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解方程的解是使方程等号左右两边相等的未知数的值。解方程就是求方程的解的过程。", "evidence": ["能说出方程的解的定义", "能验证一个值是否是方程的解", "理解解方程的含义"]}, {"id": "mt_ch3_005", "name": "等式的性质", "domain": "一元一次方程", "type": "CONCEPTUAL", "centrality": 0.9, "description": "掌握等式的两条基本性质：性质1——等式两边加（或减）同一个数，结果仍相等；性质2——等式两边乘同一个数，或除以同一个不为0的数，结果仍相等。", "evidence": ["能说出等式的两条性质", "理解等式性质是解方程的依据"]}, {"id": "mt_ch3_006", "name": "利用等式性质解简单方程", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.8, "description": "学会直接利用等式的基本性质解简单的方程，如 x+7=26, -5x=20 等。", "evidence": ["能用等式性质1解加减型方程", "能用等式性质2解乘除型方程"]}, {"id": "mt_ch3_007", "name": "移项法则", "domain": "一元一次方程", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解移项的概念：把等式一边的某项变号后移到另一边。移项的依据是等式的性质1。", "evidence": ["能说出移项的定义", "理解移项必须变号", "知道移项的依据是等式性质1"]}, {"id": "mt_ch3_008", "name": "用合并同类项和移项解方程", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.9, "description": "掌握通过合并同类项和移项解一元一次方程的步骤：移项、合并同类项、系数化为1。", "evidence": ["能正确移项", "能合并同类项", "能将系数化为1", "能按步骤解方程"]}, {"id": "mt_ch3_009", "name": "用去括号解方程", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.85, "description": "学会解含括号的一元一次方程，先去括号（注意变号），再移项、合并同类项、系数化为1。", "evidence": ["能正确去掉括号", "知道括号前是负号时各项变号", "能完成完整解题过程"]}, {"id": "mt_ch3_010", "name": "用去分母解方程", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.85, "description": "学会解含分数系数的一元一次方程，先去分母（方程两边乘各分母的最小公倍数），再去括号、移项、合并同类项、系数化为1。", "evidence": ["能找出分母的最小公倍数", "能正确去分母", "注意每一项都要乘最小公倍数"]}, {"id": "mt_ch3_011", "name": "解一元一次方程的完整步骤", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.9, "description": "综合运用去分母、去括号、移项、合并同类项、系数化为1五个步骤解较复杂的一元一次方程。", "evidence": ["能按正确顺序完成全部五个步骤", "能解含分数和括号的复杂方程", "能检验解的正确性"]}, {"id": "mt_ch3_012", "name": "列一元一次方程解应用题", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.9, "description": "学会分析实际问题中的数量关系，设未知数，列一元一次方程并求解。包括和差倍分问题、行程问题等基本类型。", "evidence": ["能分析问题中的已知量和未知量", "能找出相等关系", "能列方程并求解", "能检验答案的合理性"]}, {"id": "mt_ch3_013", "name": "列方程解应用题（综合类型）", "domain": "一元一次方程", "type": "PROCEDURAL", "centrality": 0.8, "description": "能解决较复杂的实际问题，包括打折销售、利率、比例分配、方案选择等问题，体会方程建模的思想。", "evidence": ["能处理含百分比的实际问题", "能进行方案比较", "能验证答案的合理性"]}, {"id": "mt_ch4_001", "name": "几何图形的概念", "domain": "几何图形", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解几何图形是从物体外形中抽象出来的数学对象。几何图形包括立体图形和平面图形。", "evidence": ["能从实物中抽象出几何图形", "理解几何图形是数学研究的对象"]}, {"id": "mt_ch4_002", "name": "立体图形与平面图形", "domain": "几何图形", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解立体图形（各部分不都在同一平面内，如长方体、圆柱、球）和平面图形（各部分在同一平面内，如线段、角、三角形、圆）的区别。", "evidence": ["能区分立体图形和平面图形", "能举出常见的立体和平面图形", "理解两者的关系"]}, {"id": "mt_ch4_003", "name": "从不同方向看立体图形", "domain": "几何图形", "type": "REPRESENTATIONAL", "centrality": 0.8, "description": "学会从正面、左面、上面三个方向观察立体图形，得到不同形状的平面图形。", "evidence": ["能从三个方向观察立体图形", "能画出简单的三视图", "能根据视图想象立体图形"]}, {"id": "mt_ch4_004", "name": "立体图形的展开图", "domain": "几何图形", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解展开图的概念：将立体图形的表面适当剪开，展开成平面图形。能识别正方体、长方体、圆柱等的展开图。", "evidence": ["能说出展开图的定义", "能识别正方体的展开图", "能将展开图折叠成立体图形"]}, {"id": "mt_ch4_005", "name": "点线面体的关系", "domain": "几何图形", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解几何图形由点、线、面、体组成。点动成线、线动成面、面动成体。点是构成图形的基本元素。", "evidence": ["能说出点线面体的关系", "能举例说明点动成线、线动成面、面动成体"]}, {"id": "mt_ch4_006", "name": "直线、射线、线段的概念", "domain": "直线射线线段", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解直线、射线、线段的定义和区别：线段有两个端点，射线有一个端点，直线没有端点。射线和线段都是直线的一部分。", "evidence": ["能说出三者的定义和区别", "能正确表示直线、射线、线段", "理解它们之间的包含关系"]}, {"id": "mt_ch4_007", "name": "直线的基本性质", "domain": "直线射线线段", "type": "CONCEPTUAL", "centrality": 0.8, "description": "掌握直线的基本事实：两点确定一条直线。理解直线相交的概念。", "evidence": ["能说出两点确定一条直线", "能在实际问题中应用这个性质", "理解直线相交和交点"]}, {"id": "mt_ch4_008", "name": "线段的度量与比较", "domain": "直线射线线段", "type": "PROCEDURAL", "centrality": 0.8, "description": "学会用刻度尺度量线段长度，用叠合法或度量法比较线段的长短。理解两点之间线段最短。", "evidence": ["能正确度量线段长度", "能用两种方法比较线段长短", "理解两点之间线段最短"]}, {"id": "mt_ch4_009", "name": "线段的中点", "domain": "直线射线线段", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解线段中点的定义：把线段分成相等的两条线段的点。若M是AB的中点，则AM=MB=AB/2。", "evidence": ["能说出中点的定义", "能用中点性质进行计算", "能用折纸或尺规找中点"]}, {"id": "mt_ch4_010", "name": "线段的尺规作图", "domain": "直线射线线段", "type": "PROCEDURAL", "centrality": 0.7, "description": "学会用无刻度的直尺和圆规作一条线段等于已知线段。", "evidence": ["能用圆规在射线上截取等长线段", "理解尺规作图的规范"]}, {"id": "mt_ch4_011", "name": "角的概念与表示", "domain": "角", "type": "CONCEPTUAL", "centrality": 0.9, "description": "理解角的两种定义：有公共端点的两条射线组成的图形；一条射线绕端点旋转形成的图形。掌握角的表示方法。", "evidence": ["能用两种方式定义角", "能用三种方法表示角", "能识别角的顶点和边"]}, {"id": "mt_ch4_012", "name": "角的度量与角度制", "domain": "角", "type": "CONCEPTUAL", "centrality": 0.85, "description": "掌握角的度量单位：度、分、秒。1周角=360度，1平角=180度，1度=60分，1分=60秒。角度制是60进制。", "evidence": ["能说出度分秒的换算关系", "能用量角器量角", "能进行度分秒的换算"]}, {"id": "mt_ch4_013", "name": "角的度量运算", "domain": "角", "type": "PROCEDURAL", "centrality": 0.8, "description": "熟练进行度、分、秒之间的换算和加减运算。能将度的小数形式与度分秒形式互化。", "evidence": ["能进行度分秒的加减运算", "能将小数度化为度分秒", "注意60进制的借位和进位"]}, {"id": "mt_ch4_014", "name": "角的大小比较", "domain": "角", "type": "PROCEDURAL", "centrality": 0.7, "description": "学会用量角器度量法和叠合法比较两个角的大小。", "evidence": ["能用量角器比较角的大小", "能用叠合法比较角的大小"]}, {"id": "mt_ch4_015", "name": "角的和差运算", "domain": "角", "type": "CONCEPTUAL", "centrality": 0.8, "description": "理解角的和差运算：两个角可以相加或相减。若角AOC = 角AOB + 角BOC，则角AOB = 角AOC - 角BOC。", "evidence": ["能进行角的加法和减法", "能根据图形写出角的和差关系"]}, {"id": "mt_ch4_016", "name": "角平分线", "domain": "角", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解角平分线的定义：从角的顶点出发，把这个角分成两个相等的角的射线。若OB是角AOC的平分线，则角AOB=角BOC=角AOC/2。", "evidence": ["能说出角平分线的定义", "能用角平分线性质进行计算", "能用折纸作角平分线"]}, {"id": "mt_ch4_017", "name": "余角和补角", "domain": "角", "type": "CONCEPTUAL", "centrality": 0.85, "description": "理解余角（两角之和为90度）和补角（两角之和为180度）的概念。掌握性质：同角（等角）的余角相等，同角（等角）的补角相等。", "evidence": ["能判断两个角是否互余或互补", "能说出余角和补角的性质", "能用余角补角性质进行计算"]}];
+const E=[{"source": "mt_ch1_001", "target": "mt_ch1_002", "strength": "hard", "reason": "必须先理解正负数的概念，才能用它们表示相反意义的量"}, {"source": "mt_ch1_001", "target": "mt_ch1_003", "strength": "hard", "reason": "有理数是在正数和负数基础上的概念扩展"}, {"source": "mt_ch1_003", "target": "mt_ch1_004", "strength": "hard", "reason": "必须先理解有理数的定义，才能对有理数进行分类"}, {"source": "mt_ch1_003", "target": "mt_ch1_005", "strength": "hard", "reason": "数轴是有理数的图形表示工具，需要先理解有理数"}, {"source": "mt_ch1_005", "target": "mt_ch1_006", "strength": "hard", "reason": "在数轴上表示有理数需要先掌握数轴的画法"}, {"source": "mt_ch1_003", "target": "mt_ch1_006", "strength": "hard", "reason": "需要理解有理数才能在数轴上表示它们"}, {"source": "mt_ch1_006", "target": "mt_ch1_007", "strength": "hard", "reason": "相反数的概念需要借助数轴来理解"}, {"source": "mt_ch1_006", "target": "mt_ch1_008", "strength": "hard", "reason": "绝对值的定义是数轴上点到原点的距离"}, {"source": "mt_ch1_007", "target": "mt_ch1_008", "strength": "soft", "reason": "负数的绝对值等于其相反数，了解相反数有助于理解绝对值"}, {"source": "mt_ch1_008", "target": "mt_ch1_009", "strength": "hard", "reason": "求绝对值需要先理解绝对值的定义"}, {"source": "mt_ch1_008", "target": "mt_ch1_010", "strength": "hard", "reason": "比较两个负数的大小需要用到绝对值"}, {"source": "mt_ch1_006", "target": "mt_ch1_010", "strength": "hard", "reason": "有理数大小比较可通过数轴直观理解"}, {"source": "mt_ch1_001", "target": "mt_ch1_011", "strength": "hard", "reason": "有理数加法涉及正数和负数的运算"}, {"source": "mt_ch1_008", "target": "mt_ch1_011", "strength": "hard", "reason": "加法法则中需要用到绝对值进行计算"}, {"source": "mt_ch1_011", "target": "mt_ch1_012", "strength": "hard", "reason": "加法运算必须先掌握加法法则"}, {"source": "mt_ch1_011", "target": "mt_ch1_013", "strength": "hard", "reason": "减法转化为加法，需要先掌握加法法则"}, {"source": "mt_ch1_007", "target": "mt_ch1_013", "strength": "hard", "reason": "减去一个数等于加上其相反数，需要理解相反数"}, {"source": "mt_ch1_013", "target": "mt_ch1_014", "strength": "hard", "reason": "减法运算需要先掌握减法法则"}, {"source": "mt_ch1_012", "target": "mt_ch1_014", "strength": "hard", "reason": "减法转化为加法后需要进行加法运算"}, {"source": "mt_ch1_012", "target": "mt_ch1_015", "strength": "hard", "reason": "加减混合运算需要熟练的加法运算能力"}, {"source": "mt_ch1_014", "target": "mt_ch1_015", "strength": "hard", "reason": "加减混合运算需要熟练的减法运算能力"}, {"source": "mt_ch1_008", "target": "mt_ch1_016", "strength": "hard", "reason": "乘法法则中需要计算绝对值的乘积"}, {"source": "mt_ch1_016", "target": "mt_ch1_017", "strength": "hard", "reason": "乘法运算需要先掌握乘法法则"}, {"source": "mt_ch1_016", "target": "mt_ch1_018", "strength": "hard", "reason": "倒数的定义基于乘积为1，需要先理解乘法"}, {"source": "mt_ch1_018", "target": "mt_ch1_019", "strength": "hard", "reason": "除以一个数等于乘它的倒数"}, {"source": "mt_ch1_016", "target": "mt_ch1_019", "strength": "hard", "reason": "除法转化为乘法后需要运用乘法法则"}, {"source": "mt_ch1_019", "target": "mt_ch1_020", "strength": "hard", "reason": "除法运算需要先掌握除法法则"}, {"source": "mt_ch1_017", "target": "mt_ch1_020", "strength": "hard", "reason": "乘除混合运算需要熟练的乘法运算能力"}, {"source": "mt_ch1_017", "target": "mt_ch1_021", "strength": "hard", "reason": "乘方是特殊乘法，需要先理解乘法"}, {"source": "mt_ch1_021", "target": "mt_ch1_022", "strength": "hard", "reason": "幂的计算需要先理解乘方的概念"}, {"source": "mt_ch1_015", "target": "mt_ch1_023", "strength": "hard", "reason": "混合运算中的加减部分需要加减运算能力"}, {"source": "mt_ch1_020", "target": "mt_ch1_023", "strength": "hard", "reason": "混合运算中的乘除部分需要乘除运算能力"}, {"source": "mt_ch1_022", "target": "mt_ch1_023", "strength": "hard", "reason": "混合运算中的乘方部分需要幂的计算能力"}, {"source": "mt_ch1_021", "target": "mt_ch1_024", "strength": "hard", "reason": "科学记数法需要用到10的幂"}, {"source": "mt_ch2_001", "target": "mt_ch2_002", "strength": "hard", "reason": "单项式是用字母表示数的直接应用"}, {"source": "mt_ch2_002", "target": "mt_ch2_003", "strength": "hard", "reason": "多项式由单项式的和构成"}, {"source": "mt_ch2_002", "target": "mt_ch2_004", "strength": "hard", "reason": "整式的分类需要先理解单项式"}, {"source": "mt_ch2_003", "target": "mt_ch2_004", "strength": "hard", "reason": "整式的分类需要先理解多项式"}, {"source": "mt_ch2_001", "target": "mt_ch2_005", "strength": "hard", "reason": "列代数式需要先学会用字母表示数"}, {"source": "mt_ch2_002", "target": "mt_ch2_006", "strength": "hard", "reason": "判断同类项需要理解单项式的字母和指数"}, {"source": "mt_ch2_006", "target": "mt_ch2_007", "strength": "hard", "reason": "合并同类项需要先识别同类项"}, {"source": "mt_ch1_012", "target": "mt_ch2_007", "strength": "soft", "reason": "合并同类项需要系数相加，用到有理数加法"}, {"source": "mt_ch2_002", "target": "mt_ch2_008", "strength": "hard", "reason": "去括号涉及符号变化，需要理解代数式的结构"}, {"source": "mt_ch1_007", "target": "mt_ch2_008", "strength": "soft", "reason": "去括号变号与相反数概念相关"}, {"source": "mt_ch2_007", "target": "mt_ch2_009", "strength": "hard", "reason": "整式加减需要合并同类项"}, {"source": "mt_ch2_008", "target": "mt_ch2_009", "strength": "hard", "reason": "整式加减常需要先去括号"}, {"source": "mt_ch2_009", "target": "mt_ch2_010", "strength": "hard", "reason": "化简求值需要先掌握整式加减运算"}, {"source": "mt_ch1_001", "target": "mt_ch2_001", "strength": "soft", "reason": "用字母表示数建立在对数的认识基础上"}, {"source": "mt_ch3_001", "target": "mt_ch3_002", "strength": "hard", "reason": "一元一次方程是方程的一种特殊类型"}, {"source": "mt_ch3_001", "target": "mt_ch3_003", "strength": "hard", "reason": "列方程需要先理解方程的概念"}, {"source": "mt_ch3_002", "target": "mt_ch3_004", "strength": "hard", "reason": "理解方程的解需要先理解一元一次方程"}, {"source": "mt_ch3_001", "target": "mt_ch3_005", "strength": "hard", "reason": "等式性质是解方程的基础，方程是特殊的等式"}, {"source": "mt_ch3_005", "target": "mt_ch3_006", "strength": "hard", "reason": "利用等式性质解方程需要先掌握等式性质"}, {"source": "mt_ch3_005", "target": "mt_ch3_007", "strength": "hard", "reason": "移项的依据是等式性质1"}, {"source": "mt_ch3_007", "target": "mt_ch3_008", "strength": "hard", "reason": "合并同类项与移项解方程需要先掌握移项法则"}, {"source": "mt_ch3_008", "target": "mt_ch3_009", "strength": "hard", "reason": "去括号解方程需要先掌握移项和合并同类项"}, {"source": "mt_ch3_008", "target": "mt_ch3_010", "strength": "hard", "reason": "去分母解方程需要先掌握移项和合并同类项"}, {"source": "mt_ch3_009", "target": "mt_ch3_011", "strength": "hard", "reason": "完整步骤需要掌握去括号"}, {"source": "mt_ch3_010", "target": "mt_ch3_011", "strength": "hard", "reason": "完整步骤需要掌握去分母"}, {"source": "mt_ch3_011", "target": "mt_ch3_012", "strength": "hard", "reason": "解应用题需要先会解方程"}, {"source": "mt_ch3_003", "target": "mt_ch3_012", "strength": "hard", "reason": "解应用题需要会列方程"}, {"source": "mt_ch3_012", "target": "mt_ch3_013", "strength": "hard", "reason": "综合应用题建立在基本应用题之上"}, {"source": "mt_ch1_012", "target": "mt_ch3_008", "strength": "soft", "reason": "合并同类项涉及有理数加法"}, {"source": "mt_ch1_020", "target": "mt_ch3_008", "strength": "soft", "reason": "系数化为1涉及有理数除法"}, {"source": "mt_ch2_004", "target": "mt_ch3_002", "strength": "hard", "reason": "一元一次方程定义中要求等号两边都是整式"}, {"source": "mt_ch2_007", "target": "mt_ch3_008", "strength": "hard", "reason": "解方程中的合并同类项直接用到整式中的合并同类项"}, {"source": "mt_ch2_008", "target": "mt_ch3_009", "strength": "hard", "reason": "解方程中的去括号直接用到整式中的去括号法则"}, {"source": "mt_ch4_001", "target": "mt_ch4_002", "strength": "hard", "reason": "区分立体和平面图形需要先理解几何图形"}, {"source": "mt_ch4_002", "target": "mt_ch4_003", "strength": "hard", "reason": "三视图需要先区分立体和平面图形"}, {"source": "mt_ch4_002", "target": "mt_ch4_004", "strength": "hard", "reason": "展开图需要先理解立体图形"}, {"source": "mt_ch4_002", "target": "mt_ch4_005", "strength": "hard", "reason": "点线面体关系需要先理解几何图形的分类"}, {"source": "mt_ch4_005", "target": "mt_ch4_006", "strength": "soft", "reason": "直线射线线段是'线'的具体类型"}, {"source": "mt_ch4_006", "target": "mt_ch4_007", "strength": "hard", "reason": "直线性质需要先理解直线的概念"}, {"source": "mt_ch4_006", "target": "mt_ch4_008", "strength": "hard", "reason": "线段度量需要先理解线段的概念"}, {"source": "mt_ch4_008", "target": "mt_ch4_009", "strength": "hard", "reason": "中点概念需要先理解线段的度量"}, {"source": "mt_ch4_008", "target": "mt_ch4_010", "strength": "hard", "reason": "尺规作图需要先理解线段度量"}, {"source": "mt_ch4_005", "target": "mt_ch4_011", "strength": "soft", "reason": "角的概念与点线面体关系相关"}, {"source": "mt_ch4_011", "target": "mt_ch4_012", "strength": "hard", "reason": "角的度量需要先理解角的概念"}, {"source": "mt_ch4_012", "target": "mt_ch4_013", "strength": "hard", "reason": "度分秒运算需要先掌握角度制"}, {"source": "mt_ch4_012", "target": "mt_ch4_014", "strength": "hard", "reason": "角的大小比较需要先掌握角的度量"}, {"source": "mt_ch4_013", "target": "mt_ch4_015", "strength": "hard", "reason": "角的和差运算需要掌握度分秒运算"}, {"source": "mt_ch4_014", "target": "mt_ch4_015", "strength": "soft", "reason": "角的和差运算与大小比较相关"}, {"source": "mt_ch4_015", "target": "mt_ch4_016", "strength": "hard", "reason": "角平分线是角的和差的特殊应用"}, {"source": "mt_ch4_015", "target": "mt_ch4_017", "strength": "hard", "reason": "余角补角需要角的和差运算"}, {"source": "mt_ch1_005", "target": "mt_ch4_006", "strength": "soft", "reason": "数轴是直线的数学化表示，有助于理解直线"}, {"source": "mt_ch1_014", "target": "mt_ch4_013", "strength": "soft", "reason": "度分秒减法运算用到有理数减法"}, {"source": "mt_ch1_014", "target": "mt_ch4_017", "strength": "soft", "reason": "求余角补角涉及有理数减法"}];
+
+const cv=document.getElementById('c'),cx=cv.getContext('2d'),tip=document.getElementById('tip');
+const DC={'有理数':'#4ecdc4','整式':'#ff6b9d','一元一次方程':'#ffd93d','几何图形':'#6c5ce7','直线射线线段':'#a8e6cf','角':'#ff8a5c'};
+let W,H,Z,dr,sL=true,sG=true;
+let cam={x:0,y:0,z:1};
+let hov=null,sel=null,ps=null,isP=false;
+
+const nm=new Map();N.forEach(t=>nm.set(t.id,t));
+const ch=new Map(),pa=new Map();
+N.forEach(t=>{ch.set(t.id,[]);pa.set(t.id,[])});
+E.forEach(d=>{ch.get(d.source)?.push(d.target);pa.get(d.target)?.push(d.source)});
+
+// Strict left-to-right: col = 1 + max(col[prereq])
+const col=new Map();
+function ac(id){if(col.has(id))return col.get(id);const p=pa.get(id)||[];if(!p.length){col.set(id,0);return 0}let m=-1;p.forEach(pid=>{m=Math.max(m,ac(pid))});col.set(id,m+1);return m+1}
+N.forEach(t=>ac(t.id));
+const MC=Math.max(...col.values());
+
+// Group by column
+const cg={};
+for(let i=0;i<=MC;i++)cg[i]=[];
+col.forEach((c,id)=>cg[c].push(id));
+
+// Barycenter ordering
+function order(){
+  for(let c=1;c<=MC;c++){const ids=cg[c];const sc=new Map();ids.forEach(id=>{const p=pa.get(id)||[];if(!p.length){sc.set(id,0);return}const r=p.map(pid=>cg[col.get(pid)].indexOf(pid)).filter(r=>r>=0);sc.set(id,r.length?r.reduce((a,b)=>a+b,0)/r.length:0)});ids.sort((a,b)=>sc.get(a)-sc.get(b))}
+  for(let c=MC-1;c>=0;c--){const ids=cg[c];const sc=new Map();ids.forEach(id=>{const k=ch.get(id)||[];if(!k.length){sc.set(id,0);return}const r=k.map(cid=>cg[col.get(cid)].indexOf(cid)).filter(r=>r>=0);sc.set(id,r.length?r.reduce((a,b)=>a+b,0)/r.length:0)});ids.sort((a,b)=>sc.get(a)-sc.get(b))}
+  for(let c=1;c<=MC;c++){const ids=cg[c];const sc=new Map();ids.forEach(id=>{const p=pa.get(id)||[];if(!p.length){sc.set(id,0);return}const r=p.map(pid=>cg[col.get(pid)].indexOf(pid)).filter(r=>r>=0);sc.set(id,r.length?r.reduce((a,b)=>a+b,0)/r.length:0)});ids.sort((a,b)=>sc.get(a)-sc.get(b))}
+}
+order();
+
+const XG=200,YG=52;
+const pos=new Map();
+for(let c=0;c<=MC;c++){const ids=cg[c];const th=(ids.length-1)*YG;ids.forEach((id,i)=>pos.set(id,{x:c*XG,y:i*YG-th/2}))}
+
+// Canvas
+function rs(){dr=window.devicePixelRatio||1;W=innerWidth;H=innerHeight;cv.width=W*dr;cv.height=H*dr;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(dr,0,0,dr,0,0)}
+addEventListener('resize',rs);rs();
+
+function fit(){
+  let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;
+  pos.forEach(p=>{x0=Math.min(x0,p.x);x1=Math.max(x1,p.x);y0=Math.min(y0,p.y);y1=Math.max(y1,p.y)});
+  const gw=x1-x0+XG,gh=y1-y0+YG;
+  cam.z=Math.min((W-100)/gw,(H-80)/gh,2.5);
+  cam.x=50-x0*cam.z+(W-100-gw*cam.z)/2;
+  cam.y=H/2-((y0+y1)/2)*cam.z;
+}
+fit();
+
+function ts(p){return{x:cam.x+p.x*cam.z,y:cam.y+p.y*cam.z}}
+
+function draw(){
+  cx.clearRect(0,0,W,H);
+
+  // Column background groups by chapter
+  if(sG){
+    const chs=[{p:'mt_ch1',l:'第一章 有理数',c:'#4ecdc4'},{p:'mt_ch2',l:'第二章 整式的加减',c:'#ff6b9d'},{p:'mt_ch3',l:'第三章 一元一次方程',c:'#ffd93d'},{p:'mt_ch4',l:'第四章 几何图形初步',c:'#6c5ce7'}];
+    chs.forEach(ch=>{
+      const cc=new Set();N.forEach(t=>{if(t.id.startsWith(ch.p))cc.add(col.get(t.id))});
+      if(!cc.size)return;
+      const mn=Math.min(...cc),mx=Math.max(...cc);
+      // Find y range for these columns
+      let yMin=1e9,yMax=-1e9;
+      cc.forEach(c=>{cg[c].forEach(id=>{if(id.startsWith(ch.p)){const p=pos.get(id);yMin=Math.min(yMin,p.y);yMax=Math.max(yMax,p.y)}})});
+      const s1=ts({x:(mn-0.5)*XG,y:yMin-30}),s2=ts({x:(mx+0.5)*XG,y:yMax+30});
+      cx.fillStyle=ch.c+'06';cx.strokeStyle=ch.c+'18';cx.lineWidth=1;
+      cx.beginPath();cx.roundRect(s1.x,s1.y,s2.x-s1.x,s2.y-s1.y,10);cx.fill();cx.stroke();
+      cx.fillStyle=ch.c+'30';cx.font=`bold ${Math.max(9,11*cam.z)}px -apple-system,sans-serif`;cx.textAlign='left';
+      cx.fillText(ch.l,s1.x+6,s1.y+13*cam.z);
+    });
+  }
+
+  // Column guides
+  cx.setLineDash([2,4]);
+  for(let c=0;c<=MC;c++){const sp=ts({x:c*XG,y:0});cx.strokeStyle='rgba(100,140,255,0.04)';cx.lineWidth=1;cx.beginPath();cx.moveTo(sp.x,0);cx.lineTo(sp.x,H);cx.stroke()}
+  cx.setLineDash([]);
+
+  // Edges
+  E.forEach(d=>{
+    const sp=ts(pos.get(d.source)),tp=ts(pos.get(d.target));
+    const hard=d.strength==='hard';
+    const hl=sel&&(d.source===sel.id||d.target===sel.id);
+    const dx=tp.x-sp.x,cp=dx*0.4;
+    cx.beginPath();cx.moveTo(sp.x,sp.y);cx.bezierCurveTo(sp.x+cp,sp.y,tp.x-cp,tp.y,tp.x,tp.y);
+    cx.strokeStyle=hl?'rgba(126,184,255,0.85)':`rgba(100,140,255,${hard?0.22:0.06})`;
+    cx.lineWidth=hl?2.5:(hard?1.2:0.5);
+    if(!hard&&!hl)cx.setLineDash([4,3]);else cx.setLineDash([]);
+    cx.stroke();cx.setLineDash([]);
+    if(hl){
+      const t2=0.6,bx=sp.x+cp,cx2=tp.x-cp;
+      const px=3*(1-t2)*(1-t2)*t2*sp.x+3*(1-t2)*t2*t2*cx2+t2*t2*t2*tp.x;
+      const py=3*(1-t2)*(1-t2)*t2*sp.y+3*(1-t2)*t2*t2*tp.y+t2*t2*t2*tp.y;
+      const ang=Math.atan2(tp.y-sp.y,tp.x-sp.x),as=7;
+      cx.fillStyle='rgba(126,184,255,0.7)';cx.beginPath();
+      cx.moveTo(px+as*Math.cos(ang),py+as*Math.sin(ang));
+      cx.lineTo(px+as*Math.cos(ang+2.5),py+as*Math.sin(ang+2.5));
+      cx.lineTo(px+as*Math.cos(ang-2.5),py+as*Math.sin(ang-2.5));
+      cx.closePath();cx.fill();
+    }
+  });
+
+  // Nodes
+  N.forEach(t=>{
+    const sp=ts(pos.get(t.id));
+    const iS=sel?.id===t.id,iH=hov?.id===t.id;
+    const iC=sel&&E.some(d=>(d.source===sel.id&&d.target===t.id)||(d.target===sel.id&&d.source===t.id));
+    const iD=sel&&!iS&&!iC;
+    const r=(6+(t.centrality||0.5)*12)*Math.max(0.6,cam.z)*(iH?1.2:1);
+    const col=DC[t.domain]||'#888';
+
+    if(iS||iH){const g=cx.createRadialGradient(sp.x,sp.y,r,sp.x,sp.y,r*3.5);g.addColorStop(0,col+'30');g.addColorStop(1,'transparent');cx.fillStyle=g;cx.beginPath();cx.arc(sp.x,sp.y,r*3.5,0,Math.PI*2);cx.fill()}
+
+    cx.fillStyle=iD?'rgba(40,40,60,0.2)':col+(iS||iH?'ee':'aa');
+    cx.strokeStyle=iS?'#fff':(iH?'rgba(255,255,255,0.4)':'transparent');
+    cx.lineWidth=iS?2:1;
+    if(t.type==='CONCEPTUAL'){cx.beginPath();cx.arc(sp.x,sp.y,r,0,Math.PI*2);cx.fill();cx.stroke()}
+    else if(t.type==='PROCEDURAL'){const s=r*0.85;cx.beginPath();cx.roundRect(sp.x-s,sp.y-s,s*2,s*2,3);cx.fill();cx.stroke()}
+    else{cx.beginPath();cx.moveTo(sp.x,sp.y-r);cx.lineTo(sp.x+r,sp.y);cx.lineTo(sp.x,sp.y+r);cx.lineTo(sp.x-r,sp.y);cx.closePath();cx.fill();cx.stroke()}
+
+    if(sL&&!iD&&cam.z>0.2){
+      cx.fillStyle=iS||iH?'#e0e8ff':'#8890b0';
+      const fs=Math.max(8,Math.min(13,11*cam.z));
+      cx.font=`${iS||iH?'bold ':''}${fs}px -apple-system,'PingFang SC',sans-serif`;
+      cx.textAlign='center';cx.fillText(t.name,sp.x,sp.y+r+fs+2);
+    }
+  });
+
+  // Flow arrow
+  cx.strokeStyle='rgba(126,184,255,0.15)';cx.lineWidth=1.5;
+  cx.beginPath();cx.moveTo(20,25);cx.lineTo(120,25);cx.stroke();
+  cx.fillStyle='rgba(126,184,255,0.2)';cx.beginPath();cx.moveTo(120,25);cx.lineTo(112,20);cx.lineTo(112,30);cx.closePath();cx.fill();
+  cx.fillStyle='rgba(126,184,255,0.15)';cx.font='10px sans-serif';cx.textAlign='left';cx.fillText('前置',20,17);cx.textAlign='right';cx.fillText('后续',120,17);
+
+  document.getElementById('st').textContent=`64 知识点 · 87 依赖 · ${MC+1} 列 · 前置→后续严格从左到右`;
+  requestAnimationFrame(draw);
+}
+
+function gnAt(mx,my){
+  let b=null,md=1e9;
+  N.forEach(t=>{const sp=ts(pos.get(t.id));const r=(6+(t.centrality||0.5)*12)*Math.max(0.6,cam.z);const d=Math.sqrt((sp.x-mx)**2+(sp.y-my)**2);if(d<r+6&&d<md){md=d;b={...t,sx:sp.x,sy:sp.y}}});
+  return b;
+}
+
+cv.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.12:0.89;cam.x=e.clientX-(e.clientX-cam.x)*f;cam.y=e.clientY-(e.clientY-cam.y)*f;cam.z=Math.max(0.1,Math.min(5,cam.z*f))},{passive:false});
+cv.addEventListener('mousedown',e=>{const n=gnAt(e.clientX,e.clientY);if(n)sel=n;else{ps={x:e.clientX-cam.x,y:e.clientY-cam.y};isP=true;sel=null}});
+cv.addEventListener('mousemove',e=>{
+  if(isP&&ps){cam.x=e.clientX-ps.x;cam.y=e.clientY-ps.y;return}
+  const n=gnAt(e.clientX,e.clientY);hov=n;cv.style.cursor=n?'pointer':(isP?'grabbing':'grab');
+  if(n){const tl={'CONCEPTUAL':'概念','PROCEDURAL':'程序','REPRESENTATIONAL':'表征'};const p=(pa.get(n.id)||[]).map(pid=>nm.get(pid)?.name).filter(Boolean);const k=(ch.get(n.id)||[]).map(cid=>nm.get(cid)?.name).filter(Boolean);let h=`<h3>${n.name}</h3><span class="tg ${n.type}">${tl[n.type]||n.type}</span><span style="font-size:10px;color:#8892b0;margin-left:8px">${n.domain}</span><p>${n.description}</p>`;if(p.length)h+=`<div class="ev"><b>前置：</b>${p.join('、')}</div>`;if(k.length)h+=`<div class="ev"><b>解锁：</b>${k.join('、')}</div>`;tip.innerHTML=h;tip.style.display='block';tip.style.left=Math.min(e.clientX+16,W-380)+'px';tip.style.top=Math.min(e.clientY-10,H-250)+'px'}else tip.style.display='none';
+});
+cv.addEventListener('mouseup',()=>{isP=false;ps=null});
+draw();
+</script>
+</body>
+</html>
