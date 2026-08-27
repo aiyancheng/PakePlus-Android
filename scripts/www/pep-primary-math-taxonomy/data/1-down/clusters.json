@@ -1,0 +1,46 @@
+{
+  "version": "pep-primary-math-1down-v2",
+  "clusterCount": 5,
+  "clusters": [
+    {
+      "subject": "Mathematics",
+      "domain": "图形与几何",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "从立体图形的面上认识长方形、正方形、平行四边形、三角形、圆五种平面图形，通过拼组和七巧板活动发展空间想象能力。",
+      "topicIds": ["mt_g1d_001","mt_g1d_002","mt_g1d_003"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的运算（退位减法）",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "系统学习20以内退位减法，掌握破十法和想加算减法两种策略，形成完整退位减法算法表，并用于解决实际问题。",
+      "topicIds": ["mt_g1d_004","mt_g1d_005","mt_g1d_006","mt_g1d_007","mt_g1d_027","mt_g1d_030"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的认识（100以内）",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "将数的认识从20扩展到100，引入百位，掌握100以内数的读写、顺序、比较大小，发现百数表规律，建立更完整的数系认知。",
+      "topicIds": ["mt_g1d_008","mt_g1d_009","mt_g1d_010","mt_g1d_011","mt_g1d_026","mt_g1d_031"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数的运算（100以内加减法）",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "从整十数加减到两位数口算加减，再到两位数笔算加减（含进退位），建立完整的100以内加减法体系，总结竖式计算三条规则。",
+      "topicIds": ["mt_g1d_012","mt_g1d_013","mt_g1d_014","mt_g1d_015","mt_g1d_016","mt_g1d_017","mt_g1d_018","mt_g1d_019","mt_g1d_020","mt_g1d_028"]
+    },
+    {
+      "subject": "Mathematics",
+      "domain": "数量关系",
+      "ageRangeStart": 6,
+      "ageRangeEnd": 7,
+      "summary": "深化加减关系理解（部分与整体、比多比少），学习两步解决问题，认识人民币并进行付款找零计算，用画图法分析数量关系。",
+      "topicIds": ["mt_g1d_021","mt_g1d_022","mt_g1d_023","mt_g1d_024","mt_g1d_025","mt_g1d_029"]
+    }
+  ]
+}
