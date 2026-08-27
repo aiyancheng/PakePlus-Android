@@ -1,0 +1,47 @@
+{
+  "curriculumCount": 1,
+  "curricula": [
+    {
+      "slug": "pep-math-2022",
+      "country": "CN",
+      "name": "义务教育数学课程标准（2022年版）",
+      "version": "2022",
+      "sourceUrl": null,
+      "textIncluded": false,
+      "license": "government",
+      "topicCount": 30,
+      "topics": [
+        {"key": "mt_g1u_001", "code": "pep-math-2022:1上.1.1"},
+        {"key": "mt_g1u_002", "code": "pep-math-2022:1上.1.2"},
+        {"key": "mt_g1u_003", "code": "pep-math-2022:1上.1.3"},
+        {"key": "mt_g1u_004", "code": "pep-math-2022:1上.1.4"},
+        {"key": "mt_g1u_005", "code": "pep-math-2022:1上.1.5"},
+        {"key": "mt_g1u_006", "code": "pep-math-2022:1上.2.1"},
+        {"key": "mt_g1u_007", "code": "pep-math-2022:1上.2.2"},
+        {"key": "mt_g1u_008", "code": "pep-math-2022:1上.2.3"},
+        {"key": "mt_g1u_009", "code": "pep-math-2022:1上.4.1"},
+        {"key": "mt_g1u_010", "code": "pep-math-2022:1上.4.2"},
+        {"key": "mt_g1u_011", "code": "pep-math-2022:1上.1.6"},
+        {"key": "mt_g1u_012", "code": "pep-math-2022:1上.1.7"},
+        {"key": "mt_g1u_013", "code": "pep-math-2022:1上.2.4"},
+        {"key": "mt_g1u_014", "code": "pep-math-2022:1上.2.5"},
+        {"key": "mt_g1u_015", "code": "pep-math-2022:1上.2.6"},
+        {"key": "mt_g1u_016", "code": "pep-math-2022:1上.2.7"},
+        {"key": "mt_g1u_017", "code": "pep-math-2022:1上.2.8"},
+        {"key": "mt_g1u_018", "code": "pep-math-2022:1上.4.3"},
+        {"key": "mt_g1u_019", "code": "pep-math-2022:1上.5.1"},
+        {"key": "mt_g1u_020", "code": "pep-math-2022:1上.5.2"},
+        {"key": "mt_g1u_021", "code": "pep-math-2022:1上.2.9"},
+        {"key": "mt_g1u_022", "code": "pep-math-2022:1上.5.3"},
+        {"key": "mt_g1u_023", "code": "pep-math-2022:1上.3.1"},
+        {"key": "mt_g1u_024", "code": "pep-math-2022:1上.3.2"},
+        {"key": "mt_g1u_025", "code": "pep-math-2022:1上.6.1"},
+        {"key": "mt_g1u_026", "code": "pep-math-2022:1上.6.2"},
+        {"key": "mt_g1u_027", "code": "pep-math-2022:1上.3.3"},
+        {"key": "mt_g1u_028", "code": "pep-math-2022:1上.1.8"},
+        {"key": "mt_g1u_029", "code": "pep-math-2022:1上.4.4"},
+        {"key": "mt_g1u_030", "code": "pep-math-2022:1上.4.5"}
+      ]
+    }
+  ]
+}
