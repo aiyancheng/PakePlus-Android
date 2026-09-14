@@ -49,11 +49,17 @@
         h1 {
             font-size: 2.4rem;
             font-weight: 700;
+            line-height: 1.35;
             letter-spacing: 3px;
             margin-bottom: 15px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         
+        /* 无副标题时，标题底部不再留空 */
+        header h1 {
+            margin-bottom: 0;
+        }
+
         .subtitle {
             font-size: 1.15rem;
             font-weight: 400;
@@ -72,14 +78,35 @@
             border-left: 5px solid #1a6dcc;
         }
         
+        /* 核心结论：作为导语长句排版，带圆点引导记号 */
         .core-summary h3 {
-            font-size: 1.2rem;
-            line-height: 1.85;
-            margin: 0;
+            position: relative;
+            font-size: 1.12rem;
+            font-weight: 500;
+            line-height: 1.95;
+            letter-spacing: 0.3px;
+            color: #1f2d3d;
+            margin: 0 0 10px;
+            padding-left: 28px;
+            border-left: none;
+            text-align: justify;
+            text-justify: inter-ideograph;
         }
         
-        .core-summary h3 + h3 {
-            margin-top: 12px;
+        .core-summary h3:last-child {
+            margin-bottom: 0;
+        }
+        
+        .core-summary h3::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 0.78em;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #1a6dcc;
+            box-shadow: 0 0 0 3px rgba(26, 109, 204, 0.15);
         }
         
         .summary-title {
@@ -111,7 +138,9 @@
         
         h2 {
             color: #1a6dcc;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #eef3f8;
             display: flex;
             align-items: center;
             font-size: 1.55rem;
@@ -134,10 +163,13 @@
         
         h3 {
             color: #0d4d9c;
-            margin: 18px 0 10px;
-            font-size: 1.25rem;
+            margin: 24px 0 12px;
+            padding-left: 12px;
+            border-left: 4px solid #1a6dcc;
+            font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 0.5px;
+            line-height: 1.6;
         }
         
         .stats-grid {
@@ -160,7 +192,19 @@
             font-weight: 800;
             color: #1a6dcc;
             letter-spacing: 0.5px;
+            line-height: 1.2;
             margin-bottom: 10px;
+            /* 数字等宽，避免动画跳动 */
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+        }
+        
+        .stat-box p {
+            text-align: center;
+            margin-bottom: 0;
+            color: #555;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
         }
         
         .image-container {
@@ -194,7 +238,10 @@
             color: #777;
             font-size: 0.92rem;
             line-height: 1.6;
+            letter-spacing: 0.2px;
+            text-align: center;
             margin-top: 10px;
+            margin-bottom: 0;
         }
         
         .function-grid {
@@ -210,10 +257,18 @@
         }
         
         .function-card {
-            background-color: #f8f9fa;
-            padding: 20px;
+            background-color: #ffffff;
+            padding: 20px 22px;
             border-radius: 8px;
+            border: 1px solid #e8eff7;
+            border-top: 3px solid #1a6dcc;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .function-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.09);
         }
         
         .function-card h4 {
@@ -221,13 +276,22 @@
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            letter-spacing: 0.3px;
         }
         
         .function-card h4 i {
             margin-right: 10px;
             color: #1a6dcc;
+        }
+        
+        .function-card p {
+            line-height: 1.8;
+        }
+        
+        .function-card p:last-child {
+            margin-bottom: 0;
         }
         
         .steps-container {
@@ -286,9 +350,18 @@
         }
         
         .recommendation-card h4 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            letter-spacing: 0.5px;
             margin-bottom: 12px;
+        }
+        
+        .recommendation-card p {
+            text-align: center;
+            margin-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
         }
         
         .warning-box {
@@ -319,6 +392,31 @@
             line-height: 1.9;
             letter-spacing: 0.5px;
             justify-content: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        /* 结语三行：居中长句 + 细分隔线，弱化标题感、强化可读性 */
+        .conclusion-line {
+            color: #ffffff;
+            font-size: 1.12rem;
+            font-weight: 400;
+            line-height: 2.0;
+            letter-spacing: 0.6px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 16px;
+            opacity: 0.97;
+        }
+        
+        .conclusion-line:last-child {
+            margin-bottom: 0;
+        }
+        
+        .conclusion-line + .conclusion-line {
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
         }
         
         .conclusion .warning-box {
@@ -368,6 +466,13 @@
             font-size: 1rem;
         }
         
+        footer p {
+            text-align: center;
+            color: #777;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        
         /* 返回首页按钮 - 平板优化尺寸 */
         .back-to-home {
             position: fixed;
@@ -398,14 +503,47 @@
         
         p {
             font-size: 1.05rem;
-            line-height: 1.8;
+            line-height: 1.85;
             color: #444;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
+            /* 中文正文两端对齐，避免右边缘锯齿 */
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 板块正文段落：首行缩进两字（中文排版规范） */
+        .section > p {
+            text-indent: 2em;
+        }
+        
+        /* 卡片内短句不缩进，保持紧凑 */
+        .function-card p,
+        .recommendation-card p,
+        .stat-box p,
+        .image-caption,
+        .conclusion p {
+            text-indent: 0;
         }
         
         strong {
-            font-weight: bold;
+            font-weight: 600;
             color: #0d4d9c;
+        }
+        
+        /* 正文强调词：荧光笔式底纹，视觉锚点更清晰 */
+        .section p strong,
+        .section li strong {
+            background: linear-gradient(transparent 62%, rgba(26, 109, 204, 0.18) 62%);
+            padding: 0 2px;
+        }
+        
+        .flow-box strong {
+            background: none;
+            padding: 0;
         }
         
         /* 恶性循环链路高亮框 */
@@ -415,23 +553,48 @@
             border-radius: 8px;
             padding: 20px 25px;
             margin: 20px 0;
-            font-size: 1.08rem;
-            line-height: 1.9;
+            font-size: 1.05rem;
+            line-height: 1.95;
+            letter-spacing: 0.3px;
+            text-align: justify;
+            text-justify: inter-ideograph;
             color: #0d4d9c;
-            font-weight: 600;
+            font-weight: 500;
             box-shadow: 0 2px 8px rgba(26, 109, 204, 0.08);
         }
         
         ul {
-            margin: 12px 0;
-            padding-left: 25px;
+            margin: 14px 0 16px;
+            padding-left: 0;
+            list-style: none;
         }
         
         li {
-            margin-bottom: 10px;
+            position: relative;
+            margin-bottom: 12px;
+            padding-left: 24px;
             font-size: 1.05rem;
-            line-height: 1.8;
+            line-height: 1.85;
             color: #444;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+        
+        li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 自定义菱形项目符号，与主题色统一 */
+        li::before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 0.72em;
+            width: 7px;
+            height: 7px;
+            background-color: #1a6dcc;
+            transform: rotate(45deg);
+            border-radius: 1px;
         }
 
         /* 修复代码错误 */
@@ -584,7 +747,6 @@
     <div class="container">
         <header>
             <h1>视功能对近视影响</h1>
-            <p class="subtitle">视功能异常与近视防控的深度解析</p>
         </header>
         
         <div class="core-summary">
@@ -754,9 +916,9 @@
         </section>
         
         <section class="conclusion">
-            <h2>面对青少年近视，我们应从被动的"矫正视力"转向主动的"管理视觉健康"。</h2>
-            <h2> 针对普遍存在的视功能异常，进行科学、个性化的视觉训练，是缓解视疲劳、提升视觉品质、并为近视综合防控贡献积极力量的有效策略。</h2>  
-            <h2> 早筛查、早诊断、早干预，多管齐下，方能更好地守护孩子的光明未来。</h2>   
+            <p class="conclusion-line">面对青少年近视，我们应从被动的"矫正视力"转向主动的"管理视觉健康"。</p>
+            <p class="conclusion-line">针对普遍存在的视功能异常，进行科学、个性化的视觉训练，是缓解视疲劳、提升视觉品质、并为近视综合防控贡献积极力量的有效策略。</p>
+            <p class="conclusion-line">早筛查、早诊断、早干预，多管齐下，方能更好地守护孩子的光明未来。</p>
         </section>
 
         <!-- 底部翻页导航 -->
