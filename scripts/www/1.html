@@ -88,18 +88,18 @@
             font-size: 1.05rem;
         }
         
-        /* 症状卡片网格：2行2列 */
+        /* 症状卡片网格：1行4列 */
         .symptom-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
             margin: 15px 0 20px;
         }
         
         .symptom-card {
             background: white;
             border-radius: 10px;
-            padding: 18px 16px;
+            padding: 16px 12px;
             text-align: center;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
             border-top: 4px solid #3498db;
@@ -112,21 +112,42 @@
         }
         
         .symptom-card .symptom-icon {
-            font-size: 2.1rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
         
         .symptom-card h4 {
             margin: 0 0 8px;
             color: #2c3e50;
-            font-size: 1.02rem;
+            font-size: 0.95rem;
         }
         
         .symptom-card p {
-            font-size: 14px;
+            font-size: 13px;
+            line-height: 1.6;
             margin-bottom: 0;
             text-align: left;
             color: #555;
+        }
+        
+        /* 中等屏（窄于1100px）自动降为2列，保证可读性 */
+        @media (max-width: 1100px) {
+            .symptom-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+            .symptom-card {
+                padding: 18px 16px;
+            }
+            .symptom-card .symptom-icon {
+                font-size: 2.1rem;
+            }
+            .symptom-card h4 {
+                font-size: 1.02rem;
+            }
+            .symptom-card p {
+                font-size: 14px;
+            }
         }
         
         /* 高度近视症状列表 */
