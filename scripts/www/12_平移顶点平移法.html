@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第12讲 平移·顶点平移法 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 进阶篇 · 变换 / 第12讲</div>
+<div class="badge-line"><span class="badge">第 12 讲 / 共 26 讲</span><span class="badge">进阶篇 · 变换</span><span class="badge gold">方法升级</span></div>
+<h1 class="title">平移·顶点平移法</h1>
+<div class="motto">顶点先行，图像跟着走：先搬顶点再写顶点式，比替换 x 更稳。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>第 1 讲讲了「替换 x」的平移做法。它很顺手，但遇上<strong>连续多次平移</strong>、或需要<strong>倒推原图像</strong>时就容易乱。</p>
+<p>更稳的做法是「<strong>顶点平移法</strong>」：既然平移不改变形状（a 不变），那么整幅图像的移动完全等价于<strong>顶点这一个点的移动</strong>。搬一个点，比搬整个式子省心多了。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、为什么可以只搬顶点</h3>
+<p>抛物线的三个要素是：顶点位置（决定在哪）、对称轴（由顶点横坐标决定）、开口参数 a（决定形状）。平移只改变第一个，所以：</p>
+<p><span class="hl">平移 = 顶点坐标改变 + a 不变</span></p>
+<p>既然顶点式 <span class="mono">y = a(x−h)² + k</span> 里 h、k 就是顶点坐标，我们只要算出新的 (h,k)，把 a 抄下来，新解析式就写完了。</p>
+<h3 class="sub">二、正向与反向</h3>
+<div class="formula"><div class="row"><div class="k">正向平移</div><div class="v">原顶点 → 按题目要求位移 → 新顶点 → 写新式</div></div><div class="row"><div class="k">反向还原</div><div class="v">新顶点 → 按相反方向位移 → 原顶点 → 写原式</div></div><div class="row"><div class="k">复合平移</div><div class="v">把所有位移合起来一次性作用在顶点上（左加右减、上加下减）</div></div></div>
+<p>反向还原是这类题的常见问法：已知平移后的式子，求原来的。只要把位移方向反过来走就行。</p>
+<div class="formula"><div class="v">顶点平移法与替换法是等价的，你可以用另一个来验证。建议：<strong>正向简单平移用替换法，多次平移或反向问题用顶点平移法</strong>。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 330" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="330" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="104.4" y1="48.0" x2="104.4" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="160.8" y1="48.0" x2="160.8" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="217.2" y1="48.0" x2="217.2" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="273.6" y1="48.0" x2="273.6" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="330.0" y1="48.0" x2="330.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="386.4" y1="48.0" x2="386.4" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="442.8" y1="48.0" x2="442.8" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="499.2" y1="48.0" x2="499.2" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="555.6" y1="48.0" x2="555.6" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="282.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="266.4" x2="612.0" y2="266.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="250.8" x2="612.0" y2="250.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="235.2" x2="612.0" y2="235.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="219.6" x2="612.0" y2="219.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="204.0" x2="612.0" y2="204.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="188.4" x2="612.0" y2="188.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="172.8" x2="612.0" y2="172.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="157.2" x2="612.0" y2="157.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="141.6" x2="612.0" y2="141.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="126.0" x2="612.0" y2="126.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="110.4" x2="612.0" y2="110.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="94.8" x2="612.0" y2="94.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="79.2" x2="612.0" y2="79.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="63.6" x2="612.0" y2="63.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="188.4" x2="626" y2="188.4" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 188.4 L 634.0 183.9 L 634.0 192.9 Z" fill="#64748b"/><line x1="160.8" y1="292" x2="160.8" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 160.8 34 L 156.3 26 L 165.3 26 Z" fill="#64748b"/><line x1="48.0" y1="184.4" x2="48.0" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><line x1="104.4" y1="184.4" x2="104.4" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="104.4" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><line x1="217.2" y1="184.4" x2="217.2" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="217.2" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><line x1="273.6" y1="184.4" x2="273.6" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="273.6" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><line x1="330.0" y1="184.4" x2="330.0" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="330.0" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><line x1="386.4" y1="184.4" x2="386.4" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="386.4" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><line x1="442.8" y1="184.4" x2="442.8" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="442.8" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><line x1="499.2" y1="184.4" x2="499.2" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="499.2" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><line x1="555.6" y1="184.4" x2="555.6" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="555.6" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><line x1="612.0" y1="184.4" x2="612.0" y2="192.4" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="205.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">8</text><text x="153.8" y="286.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-6</text><text x="153.8" y="270.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="153.8" y="254.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="153.8" y="239.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="153.8" y="223.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="153.8" y="208.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="153.8" y="176.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="153.8" y="161.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="153.8" y="145.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="153.8" y="130.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="153.8" y="114.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="153.8" y="98.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="153.8" y="83.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="153.8" y="67.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">8</text><text x="153.8" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">9</text><text x="167.8" y="204.4" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="180.4" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="168.8" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 129.1 30.3 L 130.2 33.6 L 131.4 36.9 L 132.6 40.2 L 133.8 43.4 L 134.9 46.6 L 136.1 49.8 L 137.3 53.0 L 138.5 56.1 L 139.7 59.2 L 140.8 62.3 L 142.0 65.3 L 143.2 68.4 L 144.4 71.3 L 145.5 74.3 L 146.7 77.2 L 147.9 80.2 L 149.1 83.0 L 150.2 85.9 L 151.4 88.7 L 152.6 91.5 L 153.8 94.3 L 154.9 97.1 L 156.1 99.8 L 157.3 102.5 L 158.4 105.1 L 159.6 107.8 L 160.8 110.4 L 162.0 113.0 L 163.1 115.5 L 164.3 118.1 L 165.5 120.6 L 166.7 123.1 L 167.8 125.5 L 169.0 127.9 L 170.2 130.3 L 171.4 132.7 L 172.6 135.0 L 173.7 137.4 L 174.9 139.7 L 176.1 141.9 L 177.2 144.1 L 178.4 146.4 L 179.6 148.5 L 180.8 150.7 L 181.9 152.8 L 183.1 154.9 L 184.3 157.0 L 185.5 159.0 L 186.7 161.0 L 187.8 163.0 L 189.0 165.0 L 190.2 166.9 L 191.3 168.8 L 192.5 170.7 L 193.7 172.6 L 194.9 174.4 L 196.1 176.2 L 197.2 178.0 L 198.4 179.7 L 199.6 181.5 L 200.8 183.1 L 201.9 184.8 L 203.1 186.4 L 204.3 188.1 L 205.5 189.6 L 206.6 191.2 L 207.8 192.7 L 209.0 194.2 L 210.1 195.7 L 211.3 197.2 L 212.5 198.6 L 213.7 200.0 L 214.8 201.3 L 216.0 202.7 L 217.2 204.0 L 218.4 205.3 L 219.5 206.5 L 220.7 207.8 L 221.9 209.0 L 223.1 210.2 L 224.2 211.3 L 225.4 212.4 L 226.6 213.5 L 227.8 214.6 L 229.0 215.6 L 230.1 216.7 L 231.3 217.6 L 232.5 218.6 L 233.7 219.5 L 234.8 220.5 L 236.0 221.3 L 237.2 222.2 L 238.4 223.0 L 239.5 223.8 L 240.7 224.6 L 241.9 225.3 L 243.0 226.0 L 244.2 226.7 L 245.4 227.4 L 246.6 228.0 L 247.7 228.6 L 248.9 229.2 L 250.1 229.8 L 251.3 230.3 L 252.4 230.8 L 253.6 231.3 L 254.8 231.7 L 256.0 232.2 L 257.1 232.5 L 258.3 232.9 L 259.5 233.2 L 260.7 233.6 L 261.9 233.8 L 263.0 234.1 L 264.2 234.3 L 265.4 234.5 L 266.6 234.7 L 267.7 234.9 L 268.9 235.0 L 270.1 235.1 L 271.2 235.1 L 272.4 235.2 L 273.6 235.2 L 274.8 235.2 L 276.0 235.1 L 277.1 235.1 L 278.3 235.0 L 279.5 234.9 L 280.6 234.7 L 281.8 234.5 L 283.0 234.3 L 284.2 234.1 L 285.3 233.8 L 286.5 233.6 L 287.7 233.2 L 288.9 232.9 L 290.1 232.5 L 291.2 232.2 L 292.4 231.7 L 293.6 231.3 L 294.8 230.8 L 295.9 230.3 L 297.1 229.8 L 298.3 229.2 L 299.4 228.6 L 300.6 228.0 L 301.8 227.4 L 303.0 226.7 L 304.2 226.0 L 305.3 225.3 L 306.5 224.6 L 307.7 223.8 L 308.9 223.0 L 310.0 222.2 L 311.2 221.3 L 312.4 220.5 L 313.6 219.5 L 314.7 218.6 L 315.9 217.6 L 317.1 216.7 L 318.2 215.6 L 319.4 214.6 L 320.6 213.5 L 321.8 212.4 L 322.9 211.3 L 324.1 210.2 L 325.3 209.0 L 326.5 207.8 L 327.6 206.5 L 328.8 205.3 L 330.0 204.0 L 331.2 202.7 L 332.3 201.3 L 333.5 200.0 L 334.7 198.6 L 335.9 197.2 L 337.0 195.7 L 338.2 194.2 L 339.4 192.7 L 340.6 191.2 L 341.7 189.6 L 342.9 188.1 L 344.1 186.4 L 345.3 184.8 L 346.4 183.1 L 347.6 181.5 L 348.8 179.7 L 350.0 178.0 L 351.1 176.2 L 352.3 174.4 L 353.5 172.6 L 354.7 170.7 L 355.8 168.8 L 357.0 166.9 L 358.2 165.0 L 359.4 163.0 L 360.6 161.0 L 361.7 159.0 L 362.9 157.0 L 364.1 154.9 L 365.2 152.8 L 366.4 150.7 L 367.6 148.5 L 368.8 146.4 L 369.9 144.1 L 371.1 141.9 L 372.3 139.7 L 373.5 137.4 L 374.7 135.0 L 375.8 132.7 L 377.0 130.3 L 378.2 127.9 L 379.4 125.5 L 380.5 123.1 L 381.7 120.6 L 382.9 118.1 L 384.1 115.5 L 385.2 113.0 L 386.4 110.4 L 387.6 107.8 L 388.8 105.1 L 389.9 102.5 L 391.1 99.8 L 392.3 97.1 L 393.5 94.3 L 394.6 91.5 L 395.8 88.7 L 397.0 85.9 L 398.2 83.0 L 399.3 80.2 L 400.5 77.2 L 401.7 74.3 L 402.8 71.3 L 404.0 68.4 L 405.2 65.3 L 406.4 62.3 L 407.5 59.2 L 408.7 56.1 L 409.9 53.0 L 411.1 49.8 L 412.2 46.6 L 413.4 43.4 L 414.6 40.2 L 415.8 36.9 L 416.9 33.6 L 418.1 30.3" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="7 5" stroke-linejoin="round"/><path d="M 310.0 31.1 L 311.2 34.1 L 312.4 37.2 L 313.6 40.1 L 314.7 43.1 L 315.9 46.1 L 317.1 49.0 L 318.2 51.8 L 319.4 54.7 L 320.6 57.5 L 321.8 60.3 L 322.9 63.1 L 324.1 65.9 L 325.3 68.6 L 326.5 71.3 L 327.6 73.9 L 328.8 76.6 L 330.0 79.2 L 331.2 81.8 L 332.3 84.3 L 333.5 86.9 L 334.7 89.4 L 335.9 91.9 L 337.0 94.3 L 338.2 96.7 L 339.4 99.1 L 340.6 101.5 L 341.7 103.8 L 342.9 106.2 L 344.1 108.4 L 345.3 110.7 L 346.4 112.9 L 347.6 115.2 L 348.8 117.3 L 350.0 119.5 L 351.1 121.6 L 352.3 123.7 L 353.5 125.8 L 354.7 127.8 L 355.8 129.8 L 357.0 131.8 L 358.2 133.8 L 359.4 135.7 L 360.6 137.6 L 361.7 139.5 L 362.9 141.4 L 364.1 143.2 L 365.2 145.0 L 366.4 146.8 L 367.6 148.5 L 368.8 150.3 L 369.9 151.9 L 371.1 153.6 L 372.3 155.2 L 373.5 156.9 L 374.7 158.4 L 375.8 160.0 L 377.0 161.5 L 378.2 163.0 L 379.4 164.5 L 380.5 166.0 L 381.7 167.4 L 382.9 168.8 L 384.1 170.1 L 385.2 171.5 L 386.4 172.8 L 387.6 174.1 L 388.8 175.3 L 389.9 176.6 L 391.1 177.8 L 392.3 179.0 L 393.5 180.1 L 394.6 181.2 L 395.8 182.3 L 397.0 183.4 L 398.2 184.4 L 399.3 185.5 L 400.5 186.4 L 401.7 187.4 L 402.8 188.3 L 404.0 189.3 L 405.2 190.1 L 406.4 191.0 L 407.5 191.8 L 408.7 192.6 L 409.9 193.4 L 411.1 194.1 L 412.2 194.8 L 413.4 195.5 L 414.6 196.2 L 415.8 196.8 L 416.9 197.4 L 418.1 198.0 L 419.3 198.6 L 420.5 199.1 L 421.6 199.6 L 422.8 200.1 L 424.0 200.5 L 425.2 201.0 L 426.3 201.3 L 427.5 201.7 L 428.7 202.1 L 429.9 202.4 L 431.1 202.6 L 432.2 202.9 L 433.4 203.1 L 434.6 203.3 L 435.8 203.5 L 436.9 203.7 L 438.1 203.8 L 439.3 203.9 L 440.4 203.9 L 441.6 204.0 L 442.8 204.0 L 444.0 204.0 L 445.2 203.9 L 446.3 203.9 L 447.5 203.8 L 448.7 203.7 L 449.9 203.5 L 451.0 203.3 L 452.2 203.1 L 453.4 202.9 L 454.6 202.6 L 455.7 202.4 L 456.9 202.1 L 458.1 201.7 L 459.3 201.3 L 460.4 201.0 L 461.6 200.5 L 462.8 200.1 L 464.0 199.6 L 465.1 199.1 L 466.3 198.6 L 467.5 198.0 L 468.7 197.4 L 469.8 196.8 L 471.0 196.2 L 472.2 195.5 L 473.3 194.8 L 474.5 194.1 L 475.7 193.4 L 476.9 192.6 L 478.0 191.8 L 479.2 191.0 L 480.4 190.1 L 481.6 189.3 L 482.7 188.3 L 483.9 187.4 L 485.1 186.4 L 486.3 185.5 L 487.4 184.4 L 488.6 183.4 L 489.8 182.3 L 491.0 181.2 L 492.1 180.1 L 493.3 179.0 L 494.5 177.8 L 495.7 176.6 L 496.8 175.3 L 498.0 174.1 L 499.2 172.8 L 500.4 171.5 L 501.5 170.1 L 502.7 168.8 L 503.9 167.4 L 505.1 166.0 L 506.2 164.5 L 507.4 163.0 L 508.6 161.5 L 509.8 160.0 L 511.0 158.4 L 512.1 156.9 L 513.3 155.2 L 514.5 153.6 L 515.6 151.9 L 516.8 150.3 L 518.0 148.5 L 519.2 146.8 L 520.4 145.0 L 521.5 143.2 L 522.7 141.4 L 523.9 139.5 L 525.1 137.6 L 526.2 135.7 L 527.4 133.8 L 528.6 131.8 L 529.8 129.8 L 530.9 127.8 L 532.1 125.8 L 533.3 123.7 L 534.5 121.6 L 535.6 119.5 L 536.8 117.3 L 538.0 115.2 L 539.2 112.9 L 540.3 110.7 L 541.5 108.4 L 542.7 106.2 L 543.8 103.8 L 545.0 101.5 L 546.2 99.1 L 547.4 96.7 L 548.5 94.3 L 549.7 91.9 L 550.9 89.4 L 552.1 86.9 L 553.2 84.3 L 554.4 81.8 L 555.6 79.2 L 556.8 76.6 L 557.9 73.9 L 559.1 71.3 L 560.3 68.6 L 561.5 65.9 L 562.6 63.1 L 563.8 60.3 L 565.0 57.5 L 566.2 54.7 L 567.4 51.8 L 568.5 49.0 L 569.7 46.1 L 570.9 43.1 L 572.0 40.1 L 573.2 37.2 L 574.4 34.1 L 575.6 31.1" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><line x1="273.6" y1="235.2" x2="442.8" y2="204.0" stroke="#0ea5e9" stroke-width="1.6" stroke-dasharray="6 4"/><circle cx="273.6" cy="235.2" r="4.2" fill="#64748b" stroke="#64748b" stroke-width="2"/><text x="273.6" y="255.2" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">原顶点 (2,−3)</text><text x="273.6" y="255.2" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">原顶点 (2,−3)</text><circle cx="442.8" cy="204.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="442.8" y="192.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">新顶点 (5,−1)</text><text x="442.8" y="192.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">新顶点 (5,−1)</text><text x="358.2" y="260.2" font-size="12.5" fill="#0ea5e9" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">右移 3，上移 2</text><text x="358.2" y="260.2" font-size="12.5" fill="#0ea5e9" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">右移 3，上移 2</text><text x="550.0" y="63.6" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">a=2 不变</text><text x="550.0" y="63.6" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">a=2 不变</text></svg><figcaption>整幅图像的移动等价于顶点这一个点的移动：a=2 原样保留，顶点从 (2,−3) 走到 (5,−1)。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">核心等式</div><div class="v">平移后的式子 = a(x − h新)² + k新，a 抄原值</div></div><div class="row"><div class="k">顶点位移</div><div class="v">右移 m：h+m；上移 k：纵坐标 +k（左、下取负）</div></div><div class="row"><div class="k">反向还原</div><div class="v">把位移全部反过来作用在「平移后」的顶点上</div></div><div class="row"><div class="k">等价旧法</div><div class="v">替换法：左右改 x（左加右减），上下改尾巴</div></div></div>
+<p><span class="hl">a 是平移过程中的不变量</span>，写新式时直接抄下来。</p>
+<p>多步平移时先把所有位移合成一次总位移，避免中间过程累积误差。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>求原顶点</strong>：把原式配方成 <span class="mono">y=a(x−h)²+k</span>，读出 (h,k) 和 a。</li><li><strong>算新顶点</strong>：把所有平移动作合并（右为 +，上为 +），直接加到 (h,k) 上。</li><li><strong>写新式</strong>：<span class="mono">y = a(x − h新)² + k新</span>，a 用原值。</li><li><strong>反向题反向做</strong>：已知新式求原式时，位移取相反方向。</li><li><strong>展开与检验</strong>：把结果展开成一般式，并用「原图某点平移后应落在新图上」验证。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>把 <span class="mono">y = 2x² − 8x + 5</span> 向右平移 3 个单位、再向上平移 2 个单位，求新解析式。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>先配方拿到顶点，再一次性平移它。</p>
+<ol><li>配方：<span class="mono">y = 2(x² − 4x) + 5 = 2(x − 2)² − 3</span>，原顶点 (2, −3)，a = 2。</li><li>合并位移：右移 3 → 横坐标 2+3 = 5；上移 2 → 纵坐标 −3+2 = −1。</li><li>新顶点 (5, −1)，a 仍为 2 → <span class="mono">y = 2(x − 5)² − 1</span>。</li><li>展开：<span class="mono">2(x² − 10x + 25) − 1 = 2x² − 20x + 49</span>。</li><li>替换法验证：原式右移 3 → <span class="mono">2(x−3−2)²−3 = 2(x−5)²−3</span>，再上移 2 → <span class="mono">2(x−5)²−1</span> ✓。</li></ol>
+<div class="ansbox">答：y = 2(x−5)² − 1（展开式 y = 2x² − 20x + 49）。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 反向还原</span>某抛物线向左平移 2 个单位、再向上平移 3 个单位后得到 <span class="mono">y = 2x² + 4x + 5</span>，求原来的抛物线。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>先把结果配成顶点式拿到「平移后的顶点」，再把位移倒过来走回去。</p>
+<ol><li>配方新式：<span class="mono">y = 2(x² + 2x) + 5 = 2(x + 1)² + 3</span>，平移后的顶点为 (−1, 3)，a = 2。</li><li>倒推位移：原来被「左移 2、上移 3」，还原就要「右移 2、下移 3」。</li><li>原顶点：横坐标 −1 + 2 = 1；纵坐标 3 − 3 = 0。</li><li>所以原式为 <span class="mono">y = 2(x − 1)² + 0 = 2(x − 1)² = 2x² − 4x + 2</span>。</li><li>验证：把它左移 2 → <span class="mono">2(x+2−1)² = 2(x+1)²</span>，再上移 3 → <span class="mono">2(x+1)²+3 = 2x²+4x+5</span> ✓。</li></ol>
+<div class="ansbox">答：原来的抛物线为 y = 2(x−1)² = 2x² − 4x + 2。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>还原时方向搞反</strong>：题目说左移，还原必须右移；用一个简单的点检验就能发现。</li><li><strong>中间过程多次配方</strong>：正确做法是一次性把总位移加到顶点上，不要每步展开再配方。</li><li><strong>把 a 改了</strong>：平移不改变形状，a 必须原样复制。</li><li><strong>顶点式括号写反</strong>：新顶点 (5,−1) 应写成 <span class="mono">2(x−5)²−1</span>，写成 <span class="mono">(x+5)</span> 就把顶点放到了 −5。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>小区规划</strong>：把一栋标准户型的图纸整体挪到小区另一个位置，户型（a）不变，只有坐标变。</li><li><strong>喷泉机组迁移</strong>：整套喷水形状不变，只需改变喷嘴安装坐标。</li><li><strong>动画制作中的关键帧</strong>：物体形状不变，只让锚点（顶点）沿轨迹移动。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="hl">平移 = 顶点搬家 + a 不变</span>。</li><li>正向简单平移用替换法，多次平移和反向问题用顶点平移法。</li><li>还原类题目把位移全部取反再走一遍。</li><li>算完用另一个方法交叉验证，答案几乎不会错。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">平移先搬顶点　a不变照原抄
+多步合一走　还原反向跑</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="11_开口宽窄比较.html"><span>← 上一讲</span>开口宽窄比较</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="13_翻折平移组合.html"><span>下一讲 →</span>翻折平移组合</a>
+</div>
+<footer>二次函数26讲 · 第 12 讲《平移·顶点平移法》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "抛物线 y = (x − 2)² + 3 向左平移 4 个单位，所得抛物线的顶点是（　）",
+    "options": [
+      "(−2, 3)",
+      "(6, 3)",
+      "(2, −1)",
+      "(−2, −1)"
+    ],
+    "answer": 0,
+    "explain": "原顶点 (2,3)，左移 4 → 横坐标 2−4=−2，纵坐标不变，新顶点 (−2,3)。"
+  },
+  {
+    "q": "某抛物线向右平移 1 个单位、向下平移 2 个单位后得到 y = (x − 3)² + 4，则原抛物线解析式为（　）",
+    "options": [
+      "y = (x − 2)² + 6",
+      "y = (x − 4)² + 2",
+      "y = (x − 2)² + 2",
+      "y = (x − 4)² + 6"
+    ],
+    "answer": 0,
+    "explain": "新式顶点 (3,4)，还原需左移 1、上移 2 → 原顶点 (2,6)，故原式 y=(x−2)²+6。"
+  },
+  {
+    "q": "平移不会改变抛物线下列哪一项（　）",
+    "options": [
+      "顶点坐标",
+      "对称轴位置",
+      "二次项系数 a",
+      "与坐标轴交点"
+    ],
+    "answer": 2,
+    "explain": "平移只改变位置，顶点、对称轴、交点都会随之移动，唯有形状参数 a（含其符号与绝对值）保持不变。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
