@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第11讲 开口宽窄比较 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 进阶篇 · 参数 / 第11讲</div>
+<div class="badge-line"><span class="badge">第 11 讲 / 共 26 讲</span><span class="badge">进阶篇 · 参数</span><span class="badge gold">看图基本功</span></div>
+<h1 class="title">开口宽窄比较</h1>
+<div class="motto">|a| 越大开口越窄；a 的正负只管方向，不管宽窄。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>两条抛物线一条瘦一条胖，同样「狭窄程度」差别背后只有一个数：|a|。这个结论看似简单，但它能解释很多现象：为什么开口大的抛物线更容易「压」到 x 轴下面（更容易有根）。</p>
+<p>更重要的一点：<span class="hl">a 的正负决定朝哪边开口，|a| 的大小决定张开的程度，两者互不干扰</span>。很多同学把这两件事混在一起，本讲把它们彻底分开。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、从「同样高度处有多宽」来看</h3>
+<p>设 <span class="mono">y = a(x−h)² + k</span>。问：要距离顶点竖直方向 1 个单位，需要横向走多远？</p>
+<p>令 <span class="mono">y = k + 1</span>（a&gt;0 时向上，a&lt;0 时取 k−1，结论相同），则 <span class="mono">a(x−h)² = ±1</span> → <span class="mono">|x−h| = 1/√|a|</span>。</p>
+<p>结果很清楚：<span class="hl">|a| 越大，1/√|a| 越小，也就是升高同样高度所需的横向距离越短 ⟹ 开口越窄</span>。这就是宽窄的本质定义。</p>
+<h3 class="sub">二、另一个更快的看法</h3>
+<p>在顶点式里取 x = h+1（从顶点往右走 1 格），此时 <span class="mono">y = a + k</span>，比顶点高（或低）了 <span class="mono">|a|</span>。走同样 1 格，抬升得越多当然就越「陡」。</p>
+<h3 class="sub">三、比较两条抛物线的方法</h3>
+<div class="formula"><div class="row"><div class="k">已知解析式</div><div class="v">直接比 |a|：|a| 大的更窄</div></div><div class="row"><div class="k">只给图像</div><div class="v">在图上取离顶点同样水平距离的点，抬升更多的更窄</div></div><div class="row"><div class="k">翻折前后</div><div class="v">关于 x 轴翻折会把 a 变成 −a，但 |a| 不变 ⟹ 宽窄不变</div></div></div>
+<div class="formula"><div class="v">易混点：开口<strong>方向</strong>看 a 的符号，开口<strong>大小</strong>看 |a| 的绝对值。<span class="mono">y=−3x²</span> 比 <span class="mono">y=0.5x²</span> 窄，虽然它的 a 是负的、看起来「更小」。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 330" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="330" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="136.1" y1="48.0" x2="136.1" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="224.2" y1="48.0" x2="224.2" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="312.4" y1="48.0" x2="312.4" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="400.5" y1="48.0" x2="400.5" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="488.6" y1="48.0" x2="488.6" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="576.8" y1="48.0" x2="576.8" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="282.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="251.6" x2="612.0" y2="251.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="221.2" x2="612.0" y2="221.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="190.8" x2="612.0" y2="190.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="160.4" x2="612.0" y2="160.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="130.1" x2="612.0" y2="130.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="99.7" x2="612.0" y2="99.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="69.3" x2="612.0" y2="69.3" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="245.5" x2="626" y2="245.5" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 245.5 L 634.0 241.0 L 634.0 250.0 Z" fill="#64748b"/><line x1="330.0" y1="292" x2="330.0" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 330.0 34 L 325.5 26 L 334.5 26 Z" fill="#64748b"/><line x1="48.0" y1="241.5" x2="48.0" y2="249.5" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="262.5" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3.2</text><line x1="136.1" y1="241.5" x2="136.1" y2="249.5" stroke="#94a3b8" stroke-width="1"/><text x="136.1" y="262.5" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.2</text><line x1="224.2" y1="241.5" x2="224.2" y2="249.5" stroke="#94a3b8" stroke-width="1"/><text x="224.2" y="262.5" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.2</text><line x1="312.4" y1="241.5" x2="312.4" y2="249.5" stroke="#94a3b8" stroke-width="1"/><text x="312.4" y="262.5" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.2</text><line x1="400.5" y1="241.5" x2="400.5" y2="249.5" stroke="#94a3b8" stroke-width="1"/><text x="400.5" y="262.5" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.8</text><line x1="488.6" y1="241.5" x2="488.6" y2="249.5" stroke="#94a3b8" stroke-width="1"/><text x="488.6" y="262.5" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.8</text><line x1="576.8" y1="241.5" x2="576.8" y2="249.5" stroke="#94a3b8" stroke-width="1"/><text x="576.8" y="262.5" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.8</text><text x="323.0" y="286.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.2</text><text x="323.0" y="255.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.2</text><text x="323.0" y="225.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.8</text><text x="323.0" y="194.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.8</text><text x="323.0" y="164.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.8</text><text x="323.0" y="134.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.8</text><text x="323.0" y="103.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.8</text><text x="323.0" y="73.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5.8</text><text x="337.0" y="261.5" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="237.5" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="338.0" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 164.3 30.7 L 165.5 33.8 L 166.7 36.8 L 167.8 39.8 L 169.0 42.7 L 170.2 45.7 L 171.4 48.6 L 172.6 51.5 L 173.7 54.4 L 174.9 57.3 L 176.1 60.1 L 177.2 62.9 L 178.4 65.7 L 179.6 68.5 L 180.8 71.3 L 181.9 74.0 L 183.1 76.7 L 184.3 79.4 L 185.5 82.1 L 186.7 84.7 L 187.8 87.3 L 189.0 89.9 L 190.2 92.5 L 191.3 95.1 L 192.5 97.6 L 193.7 100.1 L 194.9 102.6 L 196.1 105.1 L 197.2 107.6 L 198.4 110.0 L 199.6 112.4 L 200.8 114.8 L 201.9 117.2 L 203.1 119.5 L 204.3 121.8 L 205.4 124.1 L 206.6 126.4 L 207.8 128.7 L 209.0 130.9 L 210.1 133.1 L 211.3 135.3 L 212.5 137.5 L 213.7 139.6 L 214.8 141.8 L 216.0 143.9 L 217.2 146.0 L 218.4 148.0 L 219.5 150.1 L 220.7 152.1 L 221.9 154.1 L 223.1 156.1 L 224.2 158.0 L 225.4 159.9 L 226.6 161.9 L 227.8 163.7 L 228.9 165.6 L 230.1 167.5 L 231.3 169.3 L 232.5 171.1 L 233.7 172.9 L 234.8 174.6 L 236.0 176.4 L 237.2 178.1 L 238.3 179.8 L 239.5 181.5 L 240.7 183.1 L 241.9 184.8 L 243.0 186.4 L 244.2 188.0 L 245.4 189.5 L 246.6 191.1 L 247.7 192.6 L 248.9 194.1 L 250.1 195.6 L 251.3 197.0 L 252.5 198.5 L 253.6 199.9 L 254.8 201.3 L 256.0 202.6 L 257.1 204.0 L 258.3 205.3 L 259.5 206.6 L 260.7 207.9 L 261.9 209.2 L 263.0 210.4 L 264.2 211.6 L 265.4 212.8 L 266.5 214.0 L 267.7 215.2 L 268.9 216.3 L 270.1 217.4 L 271.2 218.5 L 272.4 219.6 L 273.6 220.6 L 274.8 221.7 L 276.0 222.7 L 277.1 223.7 L 278.3 224.6 L 279.5 225.6 L 280.6 226.5 L 281.8 227.4 L 283.0 228.2 L 284.2 229.1 L 285.4 229.9 L 286.5 230.7 L 287.7 231.5 L 288.9 232.3 L 290.1 233.0 L 291.2 233.8 L 292.4 234.5 L 293.6 235.1 L 294.8 235.8 L 295.9 236.4 L 297.1 237.1 L 298.3 237.7 L 299.5 238.2 L 300.6 238.8 L 301.8 239.3 L 303.0 239.8 L 304.1 240.3 L 305.3 240.8 L 306.5 241.2 L 307.7 241.6 L 308.9 242.0 L 310.0 242.4 L 311.2 242.8 L 312.4 243.1 L 313.6 243.4 L 314.7 243.7 L 315.9 244.0 L 317.1 244.2 L 318.2 244.5 L 319.4 244.7 L 320.6 244.8 L 321.8 245.0 L 322.9 245.1 L 324.1 245.3 L 325.3 245.4 L 326.5 245.4 L 327.6 245.5 L 328.8 245.5 L 330.0 245.5 L 331.2 245.5 L 332.3 245.5 L 333.5 245.4 L 334.7 245.4 L 335.9 245.3 L 337.0 245.1 L 338.2 245.0 L 339.4 244.8 L 340.6 244.7 L 341.8 244.5 L 342.9 244.2 L 344.1 244.0 L 345.3 243.7 L 346.4 243.4 L 347.6 243.1 L 348.8 242.8 L 350.0 242.4 L 351.1 242.0 L 352.3 241.6 L 353.5 241.2 L 354.7 240.8 L 355.9 240.3 L 357.0 239.8 L 358.2 239.3 L 359.4 238.8 L 360.6 238.2 L 361.7 237.7 L 362.9 237.1 L 364.1 236.4 L 365.2 235.8 L 366.4 235.1 L 367.6 234.5 L 368.8 233.8 L 370.0 233.0 L 371.1 232.3 L 372.3 231.5 L 373.5 230.7 L 374.6 229.9 L 375.8 229.1 L 377.0 228.2 L 378.2 227.4 L 379.4 226.5 L 380.5 225.6 L 381.7 224.6 L 382.9 223.7 L 384.1 222.7 L 385.2 221.7 L 386.4 220.6 L 387.6 219.6 L 388.8 218.5 L 389.9 217.4 L 391.1 216.3 L 392.3 215.2 L 393.5 214.0 L 394.6 212.8 L 395.8 211.6 L 397.0 210.4 L 398.2 209.2 L 399.3 207.9 L 400.5 206.6 L 401.7 205.3 L 402.9 204.0 L 404.0 202.6 L 405.2 201.3 L 406.4 199.9 L 407.5 198.5 L 408.7 197.0 L 409.9 195.6 L 411.1 194.1 L 412.2 192.6 L 413.4 191.1 L 414.6 189.5 L 415.8 188.0 L 416.9 186.4 L 418.1 184.8 L 419.3 183.1 L 420.5 181.5 L 421.6 179.8 L 422.8 178.1 L 424.0 176.4 L 425.2 174.6 L 426.4 172.9 L 427.5 171.1 L 428.7 169.3 L 429.9 167.5 L 431.0 165.6 L 432.2 163.7 L 433.4 161.9 L 434.6 159.9 L 435.8 158.0 L 436.9 156.1 L 438.1 154.1 L 439.3 152.1 L 440.4 150.1 L 441.6 148.0 L 442.8 146.0 L 444.0 143.9 L 445.1 141.8 L 446.3 139.6 L 447.5 137.5 L 448.7 135.3 L 449.9 133.1 L 451.0 130.9 L 452.2 128.7 L 453.4 126.4 L 454.6 124.1 L 455.7 121.8 L 456.9 119.5 L 458.1 117.2 L 459.2 114.8 L 460.4 112.4 L 461.6 110.0 L 462.8 107.6 L 463.9 105.1 L 465.1 102.6 L 466.3 100.1 L 467.5 97.6 L 468.7 95.1 L 469.8 92.5 L 471.0 89.9 L 472.2 87.3 L 473.3 84.7 L 474.5 82.1 L 475.7 79.4 L 476.9 76.7 L 478.0 74.0 L 479.2 71.3 L 480.4 68.5 L 481.6 65.7 L 482.8 62.9 L 483.9 60.1 L 485.1 57.3 L 486.3 54.4 L 487.4 51.5 L 488.6 48.6 L 489.8 45.7 L 491.0 42.7 L 492.2 39.8 L 493.3 36.8 L 494.5 33.8 L 495.7 30.7" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linejoin="round"/><path d="M 95.0 29.4 L 96.2 31.6 L 97.3 33.7 L 98.5 35.9 L 99.7 38.0 L 100.9 40.1 L 102.0 42.2 L 103.2 44.3 L 104.4 46.4 L 105.6 48.4 L 106.7 50.5 L 107.9 52.5 L 109.1 54.6 L 110.3 56.6 L 111.5 58.6 L 112.6 60.6 L 113.8 62.6 L 115.0 64.6 L 116.2 66.6 L 117.3 68.5 L 118.5 70.5 L 119.7 72.4 L 120.8 74.4 L 122.0 76.3 L 123.2 78.2 L 124.4 80.1 L 125.5 82.0 L 126.7 83.8 L 127.9 85.7 L 129.1 87.6 L 130.2 89.4 L 131.4 91.2 L 132.6 93.0 L 133.8 94.9 L 134.9 96.7 L 136.1 98.4 L 137.3 100.2 L 138.5 102.0 L 139.7 103.7 L 140.8 105.5 L 142.0 107.2 L 143.2 108.9 L 144.4 110.7 L 145.5 112.4 L 146.7 114.1 L 147.9 115.7 L 149.0 117.4 L 150.2 119.1 L 151.4 120.7 L 152.6 122.3 L 153.8 124.0 L 154.9 125.6 L 156.1 127.2 L 157.3 128.8 L 158.4 130.4 L 159.6 131.9 L 160.8 133.5 L 162.0 135.1 L 163.2 136.6 L 164.3 138.1 L 165.5 139.6 L 166.7 141.1 L 167.8 142.6 L 169.0 144.1 L 170.2 145.6 L 171.4 147.1 L 172.6 148.5 L 173.7 150.0 L 174.9 151.4 L 176.1 152.8 L 177.2 154.2 L 178.4 155.6 L 179.6 157.0 L 180.8 158.4 L 181.9 159.8 L 183.1 161.1 L 184.3 162.5 L 185.5 163.8 L 186.7 165.1 L 187.8 166.4 L 189.0 167.7 L 190.2 169.0 L 191.3 170.3 L 192.5 171.6 L 193.7 172.8 L 194.9 174.1 L 196.1 175.3 L 197.2 176.5 L 198.4 177.8 L 199.6 179.0 L 200.8 180.2 L 201.9 181.3 L 203.1 182.5 L 204.3 183.7 L 205.4 184.8 L 206.6 186.0 L 207.8 187.1 L 209.0 188.2 L 210.1 189.3 L 211.3 190.4 L 212.5 191.5 L 213.7 192.6 L 214.8 193.6 L 216.0 194.7 L 217.2 195.7 L 218.4 196.8 L 219.5 197.8 L 220.7 198.8 L 221.9 199.8 L 223.1 200.8 L 224.2 201.8 L 225.4 202.7 L 226.6 203.7 L 227.8 204.6 L 228.9 205.6 L 230.1 206.5 L 231.3 207.4 L 232.5 208.3 L 233.7 209.2 L 234.8 210.1 L 236.0 211.0 L 237.2 211.8 L 238.3 212.7 L 239.5 213.5 L 240.7 214.3 L 241.9 215.1 L 243.0 215.9 L 244.2 216.7 L 245.4 217.5 L 246.6 218.3 L 247.7 219.1 L 248.9 219.8 L 250.1 220.6 L 251.3 221.3 L 252.5 222.0 L 253.6 222.7 L 254.8 223.4 L 256.0 224.1 L 257.1 224.8 L 258.3 225.4 L 259.5 226.1 L 260.7 226.7 L 261.9 227.4 L 263.0 228.0 L 264.2 228.6 L 265.4 229.2 L 266.5 229.8 L 267.7 230.4 L 268.9 230.9 L 270.1 231.5 L 271.2 232.0 L 272.4 232.6 L 273.6 233.1 L 274.8 233.6 L 276.0 234.1 L 277.1 234.6 L 278.3 235.1 L 279.5 235.5 L 280.6 236.0 L 281.8 236.5 L 283.0 236.9 L 284.2 237.3 L 285.4 237.7 L 286.5 238.1 L 287.7 238.5 L 288.9 238.9 L 290.1 239.3 L 291.2 239.6 L 292.4 240.0 L 293.6 240.3 L 294.8 240.7 L 295.9 241.0 L 297.1 241.3 L 298.3 241.6 L 299.5 241.9 L 300.6 242.2 L 301.8 242.4 L 303.0 242.7 L 304.1 242.9 L 305.3 243.1 L 306.5 243.4 L 307.7 243.6 L 308.9 243.8 L 310.0 244.0 L 311.2 244.1 L 312.4 244.3 L 313.6 244.5 L 314.7 244.6 L 315.9 244.8 L 317.1 244.9 L 318.2 245.0 L 319.4 245.1 L 320.6 245.2 L 321.8 245.3 L 322.9 245.3 L 324.1 245.4 L 325.3 245.4 L 326.5 245.5 L 327.6 245.5 L 328.8 245.5 L 330.0 245.5 L 331.2 245.5 L 332.3 245.5 L 333.5 245.5 L 334.7 245.4 L 335.9 245.4 L 337.0 245.3 L 338.2 245.3 L 339.4 245.2 L 340.6 245.1 L 341.8 245.0 L 342.9 244.9 L 344.1 244.8 L 345.3 244.6 L 346.4 244.5 L 347.6 244.3 L 348.8 244.1 L 350.0 244.0 L 351.1 243.8 L 352.3 243.6 L 353.5 243.4 L 354.7 243.1 L 355.9 242.9 L 357.0 242.7 L 358.2 242.4 L 359.4 242.2 L 360.6 241.9 L 361.7 241.6 L 362.9 241.3 L 364.1 241.0 L 365.2 240.7 L 366.4 240.3 L 367.6 240.0 L 368.8 239.6 L 370.0 239.3 L 371.1 238.9 L 372.3 238.5 L 373.5 238.1 L 374.6 237.7 L 375.8 237.3 L 377.0 236.9 L 378.2 236.5 L 379.4 236.0 L 380.5 235.5 L 381.7 235.1 L 382.9 234.6 L 384.1 234.1 L 385.2 233.6 L 386.4 233.1 L 387.6 232.6 L 388.8 232.0 L 389.9 231.5 L 391.1 230.9 L 392.3 230.4 L 393.5 229.8 L 394.6 229.2 L 395.8 228.6 L 397.0 228.0 L 398.2 227.4 L 399.3 226.7 L 400.5 226.1 L 401.7 225.4 L 402.9 224.8 L 404.0 224.1 L 405.2 223.4 L 406.4 222.7 L 407.5 222.0 L 408.7 221.3 L 409.9 220.6 L 411.1 219.8 L 412.2 219.1 L 413.4 218.3 L 414.6 217.5 L 415.8 216.7 L 416.9 215.9 L 418.1 215.1 L 419.3 214.3 L 420.5 213.5 L 421.6 212.7 L 422.8 211.8 L 424.0 211.0 L 425.2 210.1 L 426.4 209.2 L 427.5 208.3 L 428.7 207.4 L 429.9 206.5 L 431.0 205.6 L 432.2 204.6 L 433.4 203.7 L 434.6 202.7 L 435.8 201.8 L 436.9 200.8 L 438.1 199.8 L 439.3 198.8 L 440.4 197.8 L 441.6 196.8 L 442.8 195.7 L 444.0 194.7 L 445.1 193.6 L 446.3 192.6 L 447.5 191.5 L 448.7 190.4 L 449.9 189.3 L 451.0 188.2 L 452.2 187.1 L 453.4 186.0 L 454.6 184.8 L 455.7 183.7 L 456.9 182.5 L 458.1 181.3 L 459.2 180.2 L 460.4 179.0 L 461.6 177.8 L 462.8 176.5 L 463.9 175.3 L 465.1 174.1 L 466.3 172.8 L 467.5 171.6 L 468.7 170.3 L 469.8 169.0 L 471.0 167.7 L 472.2 166.4 L 473.3 165.1 L 474.5 163.8 L 475.7 162.5 L 476.9 161.1 L 478.0 159.8 L 479.2 158.4 L 480.4 157.0 L 481.6 155.6 L 482.8 154.2 L 483.9 152.8 L 485.1 151.4 L 486.3 150.0 L 487.4 148.5 L 488.6 147.1 L 489.8 145.6 L 491.0 144.1 L 492.2 142.6 L 493.3 141.1 L 494.5 139.6 L 495.7 138.1 L 496.9 136.6 L 498.0 135.1 L 499.2 133.5 L 500.4 131.9 L 501.5 130.4 L 502.7 128.8 L 503.9 127.2 L 505.1 125.6 L 506.2 124.0 L 507.4 122.3 L 508.6 120.7 L 509.8 119.1 L 511.0 117.4 L 512.1 115.7 L 513.3 114.1 L 514.5 112.4 L 515.7 110.7 L 516.8 108.9 L 518.0 107.2 L 519.2 105.5 L 520.4 103.7 L 521.5 102.0 L 522.7 100.2 L 523.9 98.4 L 525.0 96.7 L 526.2 94.9 L 527.4 93.0 L 528.6 91.2 L 529.8 89.4 L 530.9 87.6 L 532.1 85.7 L 533.3 83.8 L 534.5 82.0 L 535.6 80.1 L 536.8 78.2 L 538.0 76.3 L 539.2 74.4 L 540.3 72.4 L 541.5 70.5 L 542.7 68.5 L 543.8 66.6 L 545.0 64.6 L 546.2 62.6 L 547.4 60.6 L 548.5 58.6 L 549.7 56.6 L 550.9 54.6 L 552.1 52.5 L 553.2 50.5 L 554.4 48.4 L 555.6 46.4 L 556.8 44.3 L 558.0 42.2 L 559.1 40.1 L 560.3 38.0 L 561.5 35.9 L 562.7 33.7 L 563.8 31.6 L 565.0 29.4" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><path d="M 48.0 89.9 L 49.2 91.2 L 50.4 92.5 L 51.5 93.8 L 52.7 95.1 L 53.9 96.4 L 55.1 97.6 L 56.2 98.9 L 57.4 100.1 L 58.6 101.4 L 59.8 102.6 L 60.9 103.9 L 62.1 105.1 L 63.3 106.3 L 64.4 107.6 L 65.6 108.8 L 66.8 110.0 L 68.0 111.2 L 69.2 112.4 L 70.3 113.6 L 71.5 114.8 L 72.7 116.0 L 73.9 117.2 L 75.0 118.3 L 76.2 119.5 L 77.4 120.7 L 78.5 121.8 L 79.7 123.0 L 80.9 124.1 L 82.1 125.3 L 83.2 126.4 L 84.4 127.5 L 85.6 128.7 L 86.8 129.8 L 87.9 130.9 L 89.1 132.0 L 90.3 133.1 L 91.5 134.2 L 92.7 135.3 L 93.8 136.4 L 95.0 137.5 L 96.2 138.6 L 97.3 139.6 L 98.5 140.7 L 99.7 141.8 L 100.9 142.8 L 102.0 143.9 L 103.2 144.9 L 104.4 146.0 L 105.6 147.0 L 106.7 148.0 L 107.9 149.0 L 109.1 150.1 L 110.3 151.1 L 111.5 152.1 L 112.6 153.1 L 113.8 154.1 L 115.0 155.1 L 116.2 156.1 L 117.3 157.0 L 118.5 158.0 L 119.7 159.0 L 120.8 159.9 L 122.0 160.9 L 123.2 161.9 L 124.4 162.8 L 125.5 163.7 L 126.7 164.7 L 127.9 165.6 L 129.1 166.5 L 130.2 167.5 L 131.4 168.4 L 132.6 169.3 L 133.8 170.2 L 134.9 171.1 L 136.1 172.0 L 137.3 172.9 L 138.5 173.8 L 139.7 174.6 L 140.8 175.5 L 142.0 176.4 L 143.2 177.2 L 144.4 178.1 L 145.5 178.9 L 146.7 179.8 L 147.9 180.6 L 149.0 181.5 L 150.2 182.3 L 151.4 183.1 L 152.6 183.9 L 153.8 184.8 L 154.9 185.6 L 156.1 186.4 L 157.3 187.2 L 158.4 188.0 L 159.6 188.7 L 160.8 189.5 L 162.0 190.3 L 163.2 191.1 L 164.3 191.8 L 165.5 192.6 L 166.7 193.3 L 167.8 194.1 L 169.0 194.8 L 170.2 195.6 L 171.4 196.3 L 172.6 197.0 L 173.7 197.7 L 174.9 198.5 L 176.1 199.2 L 177.2 199.9 L 178.4 200.6 L 179.6 201.3 L 180.8 202.0 L 181.9 202.6 L 183.1 203.3 L 184.3 204.0 L 185.5 204.7 L 186.7 205.3 L 187.8 206.0 L 189.0 206.6 L 190.2 207.3 L 191.3 207.9 L 192.5 208.6 L 193.7 209.2 L 194.9 209.8 L 196.1 210.4 L 197.2 211.0 L 198.4 211.6 L 199.6 212.2 L 200.8 212.8 L 201.9 213.4 L 203.1 214.0 L 204.3 214.6 L 205.4 215.2 L 206.6 215.8 L 207.8 216.3 L 209.0 216.9 L 210.1 217.4 L 211.3 218.0 L 212.5 218.5 L 213.7 219.1 L 214.8 219.6 L 216.0 220.1 L 217.2 220.6 L 218.4 221.2 L 219.5 221.7 L 220.7 222.2 L 221.9 222.7 L 223.1 223.2 L 224.2 223.7 L 225.4 224.1 L 226.6 224.6 L 227.8 225.1 L 228.9 225.6 L 230.1 226.0 L 231.3 226.5 L 232.5 226.9 L 233.7 227.4 L 234.8 227.8 L 236.0 228.2 L 237.2 228.7 L 238.3 229.1 L 239.5 229.5 L 240.7 229.9 L 241.9 230.3 L 243.0 230.7 L 244.2 231.1 L 245.4 231.5 L 246.6 231.9 L 247.7 232.3 L 248.9 232.7 L 250.1 233.0 L 251.3 233.4 L 252.5 233.8 L 253.6 234.1 L 254.8 234.5 L 256.0 234.8 L 257.1 235.1 L 258.3 235.5 L 259.5 235.8 L 260.7 236.1 L 261.9 236.4 L 263.0 236.8 L 264.2 237.1 L 265.4 237.4 L 266.5 237.7 L 267.7 237.9 L 268.9 238.2 L 270.1 238.5 L 271.2 238.8 L 272.4 239.0 L 273.6 239.3 L 274.8 239.6 L 276.0 239.8 L 277.1 240.1 L 278.3 240.3 L 279.5 240.5 L 280.6 240.8 L 281.8 241.0 L 283.0 241.2 L 284.2 241.4 L 285.4 241.6 L 286.5 241.8 L 287.7 242.0 L 288.9 242.2 L 290.1 242.4 L 291.2 242.6 L 292.4 242.8 L 293.6 242.9 L 294.8 243.1 L 295.9 243.3 L 297.1 243.4 L 298.3 243.6 L 299.5 243.7 L 300.6 243.8 L 301.8 244.0 L 303.0 244.1 L 304.1 244.2 L 305.3 244.3 L 306.5 244.5 L 307.7 244.6 L 308.9 244.7 L 310.0 244.8 L 311.2 244.8 L 312.4 244.9 L 313.6 245.0 L 314.7 245.1 L 315.9 245.1 L 317.1 245.2 L 318.2 245.3 L 319.4 245.3 L 320.6 245.4 L 321.8 245.4 L 322.9 245.4 L 324.1 245.5 L 325.3 245.5 L 326.5 245.5 L 327.6 245.5 L 328.8 245.5 L 330.0 245.5 L 331.2 245.5 L 332.3 245.5 L 333.5 245.5 L 334.7 245.5 L 335.9 245.5 L 337.0 245.4 L 338.2 245.4 L 339.4 245.4 L 340.6 245.3 L 341.8 245.3 L 342.9 245.2 L 344.1 245.1 L 345.3 245.1 L 346.4 245.0 L 347.6 244.9 L 348.8 244.8 L 350.0 244.8 L 351.1 244.7 L 352.3 244.6 L 353.5 244.5 L 354.7 244.3 L 355.9 244.2 L 357.0 244.1 L 358.2 244.0 L 359.4 243.8 L 360.6 243.7 L 361.7 243.6 L 362.9 243.4 L 364.1 243.3 L 365.2 243.1 L 366.4 242.9 L 367.6 242.8 L 368.8 242.6 L 370.0 242.4 L 371.1 242.2 L 372.3 242.0 L 373.5 241.8 L 374.6 241.6 L 375.8 241.4 L 377.0 241.2 L 378.2 241.0 L 379.4 240.8 L 380.5 240.5 L 381.7 240.3 L 382.9 240.1 L 384.1 239.8 L 385.2 239.6 L 386.4 239.3 L 387.6 239.0 L 388.8 238.8 L 389.9 238.5 L 391.1 238.2 L 392.3 237.9 L 393.5 237.7 L 394.6 237.4 L 395.8 237.1 L 397.0 236.8 L 398.2 236.4 L 399.3 236.1 L 400.5 235.8 L 401.7 235.5 L 402.9 235.1 L 404.0 234.8 L 405.2 234.5 L 406.4 234.1 L 407.5 233.8 L 408.7 233.4 L 409.9 233.0 L 411.1 232.7 L 412.2 232.3 L 413.4 231.9 L 414.6 231.5 L 415.8 231.1 L 416.9 230.7 L 418.1 230.3 L 419.3 229.9 L 420.5 229.5 L 421.6 229.1 L 422.8 228.7 L 424.0 228.2 L 425.2 227.8 L 426.4 227.4 L 427.5 226.9 L 428.7 226.5 L 429.9 226.0 L 431.0 225.6 L 432.2 225.1 L 433.4 224.6 L 434.6 224.1 L 435.8 223.7 L 436.9 223.2 L 438.1 222.7 L 439.3 222.2 L 440.4 221.7 L 441.6 221.2 L 442.8 220.6 L 444.0 220.1 L 445.1 219.6 L 446.3 219.1 L 447.5 218.5 L 448.7 218.0 L 449.9 217.4 L 451.0 216.9 L 452.2 216.3 L 453.4 215.8 L 454.6 215.2 L 455.7 214.6 L 456.9 214.0 L 458.1 213.4 L 459.2 212.8 L 460.4 212.2 L 461.6 211.6 L 462.8 211.0 L 463.9 210.4 L 465.1 209.8 L 466.3 209.2 L 467.5 208.6 L 468.7 207.9 L 469.8 207.3 L 471.0 206.6 L 472.2 206.0 L 473.3 205.3 L 474.5 204.7 L 475.7 204.0 L 476.9 203.3 L 478.0 202.6 L 479.2 202.0 L 480.4 201.3 L 481.6 200.6 L 482.8 199.9 L 483.9 199.2 L 485.1 198.5 L 486.3 197.7 L 487.4 197.0 L 488.6 196.3 L 489.8 195.6 L 491.0 194.8 L 492.2 194.1 L 493.3 193.3 L 494.5 192.6 L 495.7 191.8 L 496.9 191.1 L 498.0 190.3 L 499.2 189.5 L 500.4 188.7 L 501.5 188.0 L 502.7 187.2 L 503.9 186.4 L 505.1 185.6 L 506.2 184.8 L 507.4 183.9 L 508.6 183.1 L 509.8 182.3 L 511.0 181.5 L 512.1 180.6 L 513.3 179.8 L 514.5 178.9 L 515.7 178.1 L 516.8 177.2 L 518.0 176.4 L 519.2 175.5 L 520.4 174.6 L 521.5 173.8 L 522.7 172.9 L 523.9 172.0 L 525.0 171.1 L 526.2 170.2 L 527.4 169.3 L 528.6 168.4 L 529.8 167.5 L 530.9 166.5 L 532.1 165.6 L 533.3 164.7 L 534.5 163.7 L 535.6 162.8 L 536.8 161.9 L 538.0 160.9 L 539.2 159.9 L 540.3 159.0 L 541.5 158.0 L 542.7 157.0 L 543.8 156.1 L 545.0 155.1 L 546.2 154.1 L 547.4 153.1 L 548.5 152.1 L 549.7 151.1 L 550.9 150.1 L 552.1 149.0 L 553.2 148.0 L 554.4 147.0 L 555.6 146.0 L 556.8 144.9 L 558.0 143.9 L 559.1 142.8 L 560.3 141.8 L 561.5 140.7 L 562.7 139.6 L 563.8 138.6 L 565.0 137.5 L 566.2 136.4 L 567.4 135.3 L 568.5 134.2 L 569.7 133.1 L 570.9 132.0 L 572.1 130.9 L 573.2 129.8 L 574.4 128.7 L 575.6 127.5 L 576.8 126.4 L 577.9 125.3 L 579.1 124.1 L 580.3 123.0 L 581.4 121.8 L 582.6 120.7 L 583.8 119.5 L 585.0 118.3 L 586.1 117.2 L 587.3 116.0 L 588.5 114.8 L 589.7 113.6 L 590.9 112.4 L 592.0 111.2 L 593.2 110.0 L 594.4 108.8 L 595.5 107.6 L 596.7 106.3 L 597.9 105.1 L 599.1 103.9 L 600.2 102.6 L 601.4 101.4 L 602.6 100.1 L 603.8 98.9 L 605.0 97.6 L 606.1 96.4 L 607.3 95.1 L 608.5 93.8 L 609.6 92.5 L 610.8 91.2 L 612.0 89.9" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round"/><circle cx="418.1" cy="184.8" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="426.1" y="190.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">|a|=2 最窄</text><text x="426.1" y="190.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">|a|=2 最窄</text><circle cx="418.1" cy="215.1" r="4.2" fill="#1d4ed8" stroke="#1d4ed8" stroke-width="2"/><text x="426.1" y="221.1" font-size="12.5" font-weight="600" fill="#1d4ed8" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">|a|=1</text><text x="426.1" y="221.1" font-size="12.5" font-weight="600" fill="#1d4ed8" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">|a|=1</text><circle cx="418.1" cy="230.3" r="4.2" fill="#16a34a" stroke="#16a34a" stroke-width="2"/><text x="426.1" y="236.3" font-size="12.5" font-weight="600" fill="#16a34a" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">|a|=0.5 最宽</text><text x="426.1" y="236.3" font-size="12.5" font-weight="600" fill="#16a34a" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">|a|=0.5 最宽</text><text x="330.0" y="63.2" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">同样的 x 离对称轴距离，抬升越多 → 开口越窄</text><text x="330.0" y="63.2" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">同样的 x 离对称轴距离，抬升越多 → 开口越窄</text></svg><figcaption>三条抛物线都过顶点 (0,0)、都开口向上，唯一区别是 |a|：2 最窄、1 居中、0.5 最宽。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">核心结论</div><div class="v">|a| 越大 ⟹ 开口越窄；|a| 越小 ⟹ 开口越宽</div></div><div class="row"><div class="k">定量定义</div><div class="v">距顶点水平 1 单位处，抬升量恰为 |a|</div></div><div class="row"><div class="k">半宽公式</div><div class="v">抬升 1 个单位处到轴的距离 = 1/√|a|</div></div><div class="row"><div class="k">方向 vs 大小</div><div class="v">a 的符号管方向，|a| 管宽窄，互不影响</div></div></div>
+<p>记忆抓手：<span class="hl">|a| 大 = 陡 = 瘦；|a| 小 = 缓 = 胖</span>。</p>
+<p>翻折、平移都不改变 |a|，所以平移和翻折都不会改变开口大小。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>确认是二次函数</strong>：把式子化成标准形式，取出二次项系数 a。</li><li><strong>取绝对值</strong>：忘记正负号，只看 |a|。</li><li><strong>比大小</strong>：|a| 大的那条更窄。</li><li><strong>图像题反推</strong>：没给式子时，在图上取同一 x 偏移，比较抬升量。</li><li><strong>写结论</strong>：注意题目问的是「开口大」还是「|a| 大」，两者是反过来的！</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>把 <span class="mono">y = 2x²</span>、<span class="mono">y = x²</span>、<span class="mono">y = 0.5x²</span> 三条抛物线按开口从窄到宽排列。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>只看 |a| 的大小，方向这里全是向上。</p>
+<ol><li>三条的 |a| 分别是 2、1、0.5。</li><li>|a| 越大开口越窄，所以从窄到宽是：2 &gt; 1 &gt; 0.5。</li><li>对应到具体式子：<span class="mono">y=2x²</span> 最窄，<span class="mono">y=x²</span> 居中，<span class="mono">y=0.5x²</span> 最宽。</li><li>验证：取 x=1，三条的 y 分别是 2、1、0.5——同样走 1 格，抬升越多越陡 ✓。</li></ol>
+<div class="ansbox">答：由窄到宽依次为 y = 2x²、y = x²、y = 0.5x²。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 符号陷阱</span><span class="mono">y = −3x²</span> 与 <span class="mono">y = 0.5x²</span> 相比，哪条开口更窄？</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>别被负号骗了：负号只说明开口朝下，与宽窄无关。</p>
+<ol><li>取绝对值：|−3| = 3，|0.5| = 0.5。</li><li>因为 3 &gt; 0.5，所以 <span class="mono">y = −3x²</span> <strong>开口更窄</strong>。</li><li>两者的区别：前者开口向下且很瘦，后者开口向上且很胖。</li><li>验证：前者 x=1 时 y=−3（离顶点下降 3），后者 x=1 时 y=0.5（只上升 0.5）✓。</li></ol>
+<div class="ansbox">答：y = −3x² 开口更窄（更陡），尽管它的 a 是负数。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>用 a 的正负比大小</strong>：−3 &lt; 0.5，但 <span class="mono">y=−3x²</span> 反而更窄。必须比<strong>绝对值</strong>。</li><li><strong>把「开口大」和「|a| 大」弄混</strong>：开口大（张得开）= |a| 小，两者是相反的。</li><li><strong>认为翻折会改变宽窄</strong>：关于 x 轴翻折只是把 a 变号，|a| 不变，形状宽窄完全一样。</li><li><strong>忽略配方后的 a</strong>：<span class="mono">y=2(x−1)²+3</span> 的 a 是 2 而不是别的值，横向平移不改变 a。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>滑梯坡度</strong>：同样的水平长度，滑得越快的滑梯越「陡」，对应的就是 |a| 越大的抛物线。</li><li><strong>桥梁弧度</strong>：跨度大、拱高小的桥，对应 |a| 小的「胖」抛物线，看起来平缓。</li><li><strong>跳水板/蹦床</strong>：形变量与受力的关系曲线，|a| 越大代表材料越硬。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="hl">|a| 越大开口越窄</span>，a 的正负只管方向不管宽窄。</li><li>定量理解：离开顶点 1 格，抬升量正好是 |a|。</li><li>半宽公式：<span class="mono">−</span>）纵向抬升 1 处到轴距离 = 1/√|a|。</li><li>题目问「开口大」时要反过来答 |a| 小的那条。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">方向看正负　宽窄看绝对值
+|a|大则瘦　|a|小则胖</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="10_四参数铁律.html"><span>← 上一讲</span>四参数铁律</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="12_平移顶点平移法.html"><span>下一讲 →</span>平移·顶点平移法</a>
+</div>
+<footer>二次函数26讲 · 第 11 讲《开口宽窄比较》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "下列抛物线中开口最窄的是（　）",
+    "options": [
+      "y = x²",
+      "y = −4x²",
+      "y = 0.2x²",
+      "y = −x² + 1"
+    ],
+    "answer": 1,
+    "explain": "比较 |a|：1、4、0.2、1，最大的是 4，所以 y=−4x² 最窄（负号只表示开口向下）。"
+  },
+  {
+    "q": "若抛物线的开口比 y = 0.5x² 更宽，则它的 |a| 应满足（　）",
+    "options": [
+      "|a| > 0.5",
+      "|a| < 0.5",
+      "|a| = 0.5",
+      "无法确定"
+    ],
+    "answer": 1,
+    "explain": "|a| 越小开口越宽，要比 0.5 更宽就要 |a| < 0.5。"
+  },
+  {
+    "q": "把抛物线 y = 2x² 关于 x 轴翻折后，关于它的开口下列说法正确的是（　）",
+    "options": [
+      "开口方向不变，宽窄不变",
+      "开口方向改变，宽窄不变",
+      "开口方向改变，宽窄也改变",
+      "开口方向不变，宽窄改变"
+    ],
+    "answer": 1,
+    "explain": "关于 x 轴翻折得到 y=−2x²，a 由 2 变成 −2，方向反了；但 |a| 仍是 2，宽窄不变。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
