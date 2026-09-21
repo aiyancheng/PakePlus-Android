@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第06讲 抛物线对称性 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 基础篇 · 图像 / 第6讲</div>
+<div class="badge-line"><span class="badge">第 6 讲 / 共 26 讲</span><span class="badge">基础篇 · 图像</span><span class="badge gold">看图基本功</span></div>
+<h1 class="title">抛物线对称性</h1>
+<div class="motto">对称轴两侧，等高点等距离：f(h+t) = f(h−t)。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>蝴蝶左右翅膀一模一样，抛物线的左右两半也是镜像的。这条对称轴不只是画图参考线，它是二次函数的<strong>身份证</strong>：只要知道轴的位置，很多求值题连式子都不用全算。</p>
+<p>比如题目说「对称轴是 x=2，且 f(1)=5，求 f(3)」——不用求解析式，答案是 5。因为它们到轴的距离都是 1。这就是对称性的威力。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、对称性的代数来源</h3>
+<p>把一般式配方成 <span class="mono">y = a(x−h)² + k</span>。注意 x 只以 <span class="mono">(x−h)²</span> 的形式出现，而平方满足 <span class="mono">(t)² = (−t)²</span>。</p>
+<p>于是令 <span class="mono">x = h + t</span>，得 <span class="mono">y = a·t² + k</span>；令 <span class="mono">x = h − t</span>，得 <span class="mono">y = a·(−t)² + k = a·t² + k</span>。两者完全相同：</p>
+<p><span class="hl"><span class="mono">f(h + t) = f(h − t)</span></span></p>
+<p>这就是对称性最本质的写法：<strong>到对称轴距离相等的两个自变量，函数值一定相等</strong>。</p>
+<h3 class="sub">二、由它能推出什么</h3>
+<div class="formula"><div class="row"><div class="k">等高点成对</div><div class="v">若 f(x₁) = f(x₂) 且 x₁≠x₂，则 (x₁+x₂)/2 = h</div></div><div class="row"><div class="k">中点即轴</div><div class="v">x₁、x₂ 关于 x=h 对称 ⟺ x₁ + x₂ = 2h</div></div><div class="row"><div class="k">零点对称</div><div class="v">两个零点的中点落在对称轴上（第 5 讲已见）</div></div><div class="row"><div class="k">单侧单调</div><div class="v">a&gt;0 时：x&lt;h 递减、x&gt;h 递增（a&lt;0 反之）</div></div></div>
+<p>反过来说也成立：如果两个不同自变量的函数值相等，它们的<strong>中点一定在对称轴上</strong>。这条在选择题里几乎是秒杀级别的结论。</p>
+<div class="formula"><div class="v">配对技巧：见到 <span class="mono">x₁ + x₂ = 2h</span> 就立刻想到「这两点关于轴对称，函数值相等」；见到 <span class="mono">f(x₁)=f(x₂)</span> 就立刻想到「两点中点是轴」。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 330" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="330" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="110.7" y1="48.0" x2="110.7" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="173.3" y1="48.0" x2="173.3" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="236.0" y1="48.0" x2="236.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="298.7" y1="48.0" x2="298.7" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="361.3" y1="48.0" x2="361.3" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="424.0" y1="48.0" x2="424.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="486.7" y1="48.0" x2="486.7" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="549.3" y1="48.0" x2="549.3" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="282.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="264.0" x2="612.0" y2="264.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="246.0" x2="612.0" y2="246.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="228.0" x2="612.0" y2="228.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="210.0" x2="612.0" y2="210.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="192.0" x2="612.0" y2="192.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="174.0" x2="612.0" y2="174.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="156.0" x2="612.0" y2="156.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="138.0" x2="612.0" y2="138.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="120.0" x2="612.0" y2="120.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="102.0" x2="612.0" y2="102.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="84.0" x2="612.0" y2="84.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="66.0" x2="612.0" y2="66.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="192.0" x2="626" y2="192.0" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 192.0 L 634.0 187.5 L 634.0 196.5 Z" fill="#64748b"/><line x1="204.7" y1="292" x2="204.7" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 204.7 34 L 200.2 26 L 209.2 26 Z" fill="#64748b"/><line x1="48.0" y1="188.0" x2="48.0" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="110.7" y1="188.0" x2="110.7" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="110.7" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="173.3" y1="188.0" x2="173.3" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="173.3" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="236.0" y1="188.0" x2="236.0" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="236.0" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="298.7" y1="188.0" x2="298.7" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="298.7" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="361.3" y1="188.0" x2="361.3" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="361.3" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="424.0" y1="188.0" x2="424.0" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="424.0" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="486.7" y1="188.0" x2="486.7" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="486.7" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><line x1="549.3" y1="188.0" x2="549.3" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="549.3" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">5.5</text><line x1="612.0" y1="188.0" x2="612.0" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">6.5</text><text x="197.7" y="286.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="197.7" y="268.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="197.7" y="250.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="197.7" y="232.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="197.7" y="214.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="197.7" y="178.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="197.7" y="160.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="197.7" y="142.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="197.7" y="124.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="197.7" y="106.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="197.7" y="88.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="197.7" y="70.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="197.7" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">8</text><text x="211.7" y="208.0" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="184.0" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="212.7" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 112.6 29.4 L 113.8 31.8 L 115.0 34.1 L 116.1 36.4 L 117.3 38.7 L 118.5 41.0 L 119.7 43.2 L 120.9 45.5 L 122.0 47.7 L 123.2 50.0 L 124.4 52.2 L 125.6 54.4 L 126.7 56.6 L 127.9 58.8 L 129.1 61.0 L 130.2 63.1 L 131.4 65.3 L 132.6 67.4 L 133.8 69.5 L 134.9 71.6 L 136.1 73.7 L 137.3 75.8 L 138.5 77.9 L 139.6 79.9 L 140.8 82.0 L 142.0 84.0 L 143.2 86.0 L 144.4 88.0 L 145.5 90.0 L 146.7 92.0 L 147.9 94.0 L 149.1 95.9 L 150.2 97.9 L 151.4 99.8 L 152.6 101.7 L 153.8 103.6 L 154.9 105.5 L 156.1 107.4 L 157.3 109.3 L 158.4 111.1 L 159.6 113.0 L 160.8 114.8 L 162.0 116.6 L 163.1 118.4 L 164.3 120.2 L 165.5 122.0 L 166.7 123.7 L 167.9 125.5 L 169.0 127.2 L 170.2 129.0 L 171.4 130.7 L 172.6 132.4 L 173.7 134.1 L 174.9 135.7 L 176.1 137.4 L 177.2 139.1 L 178.4 140.7 L 179.6 142.3 L 180.8 143.9 L 182.0 145.5 L 183.1 147.1 L 184.3 148.7 L 185.5 150.3 L 186.7 151.8 L 187.8 153.3 L 189.0 154.9 L 190.2 156.4 L 191.3 157.9 L 192.5 159.4 L 193.7 160.8 L 194.9 162.3 L 196.0 163.8 L 197.2 165.2 L 198.4 166.6 L 199.6 168.0 L 200.8 169.4 L 201.9 170.8 L 203.1 172.2 L 204.3 173.5 L 205.5 174.9 L 206.6 176.2 L 207.8 177.6 L 209.0 178.9 L 210.1 180.2 L 211.3 181.4 L 212.5 182.7 L 213.7 184.0 L 214.8 185.2 L 216.0 186.5 L 217.2 187.7 L 218.4 188.9 L 219.5 190.1 L 220.7 191.3 L 221.9 192.4 L 223.1 193.6 L 224.2 194.7 L 225.4 195.9 L 226.6 197.0 L 227.8 198.1 L 229.0 199.2 L 230.1 200.3 L 231.3 201.3 L 232.5 202.4 L 233.7 203.4 L 234.8 204.5 L 236.0 205.5 L 237.2 206.5 L 238.4 207.5 L 239.5 208.5 L 240.7 209.4 L 241.9 210.4 L 243.0 211.3 L 244.2 212.3 L 245.4 213.2 L 246.6 214.1 L 247.8 215.0 L 248.9 215.9 L 250.1 216.7 L 251.3 217.6 L 252.5 218.4 L 253.6 219.3 L 254.8 220.1 L 256.0 220.9 L 257.1 221.7 L 258.3 222.5 L 259.5 223.2 L 260.7 224.0 L 261.9 224.7 L 263.0 225.4 L 264.2 226.2 L 265.4 226.9 L 266.5 227.5 L 267.7 228.2 L 268.9 228.9 L 270.1 229.5 L 271.2 230.2 L 272.4 230.8 L 273.6 231.4 L 274.8 232.0 L 276.0 232.6 L 277.1 233.2 L 278.3 233.7 L 279.5 234.3 L 280.6 234.8 L 281.8 235.4 L 283.0 235.9 L 284.2 236.4 L 285.4 236.9 L 286.5 237.3 L 287.7 237.8 L 288.9 238.2 L 290.0 238.7 L 291.2 239.1 L 292.4 239.5 L 293.6 239.9 L 294.8 240.3 L 295.9 240.7 L 297.1 241.0 L 298.3 241.4 L 299.5 241.7 L 300.6 242.0 L 301.8 242.4 L 303.0 242.7 L 304.2 242.9 L 305.3 243.2 L 306.5 243.5 L 307.7 243.7 L 308.8 243.9 L 310.0 244.2 L 311.2 244.4 L 312.4 244.6 L 313.6 244.8 L 314.7 244.9 L 315.9 245.1 L 317.1 245.2 L 318.2 245.4 L 319.4 245.5 L 320.6 245.6 L 321.8 245.7 L 323.0 245.8 L 324.1 245.8 L 325.3 245.9 L 326.5 245.9 L 327.7 246.0 L 328.8 246.0 L 330.0 246.0 L 331.2 246.0 L 332.3 246.0 L 333.5 245.9 L 334.7 245.9 L 335.9 245.8 L 337.0 245.8 L 338.2 245.7 L 339.4 245.6 L 340.6 245.5 L 341.8 245.4 L 342.9 245.2 L 344.1 245.1 L 345.3 244.9 L 346.4 244.8 L 347.6 244.6 L 348.8 244.4 L 350.0 244.2 L 351.2 243.9 L 352.3 243.7 L 353.5 243.5 L 354.7 243.2 L 355.8 242.9 L 357.0 242.7 L 358.2 242.4 L 359.4 242.0 L 360.6 241.7 L 361.7 241.4 L 362.9 241.0 L 364.1 240.7 L 365.2 240.3 L 366.4 239.9 L 367.6 239.5 L 368.8 239.1 L 369.9 238.7 L 371.1 238.2 L 372.3 237.8 L 373.5 237.3 L 374.7 236.9 L 375.8 236.4 L 377.0 235.9 L 378.2 235.4 L 379.3 234.8 L 380.5 234.3 L 381.7 233.7 L 382.9 233.2 L 384.1 232.6 L 385.2 232.0 L 386.4 231.4 L 387.6 230.8 L 388.8 230.2 L 389.9 229.5 L 391.1 228.9 L 392.3 228.2 L 393.5 227.5 L 394.6 226.9 L 395.8 226.2 L 397.0 225.4 L 398.2 224.7 L 399.3 224.0 L 400.5 223.2 L 401.7 222.5 L 402.8 221.7 L 404.0 220.9 L 405.2 220.1 L 406.4 219.3 L 407.5 218.4 L 408.7 217.6 L 409.9 216.7 L 411.1 215.9 L 412.2 215.0 L 413.4 214.1 L 414.6 213.2 L 415.8 212.3 L 416.9 211.3 L 418.1 210.4 L 419.3 209.4 L 420.5 208.5 L 421.7 207.5 L 422.8 206.5 L 424.0 205.5 L 425.2 204.5 L 426.3 203.4 L 427.5 202.4 L 428.7 201.3 L 429.9 200.3 L 431.1 199.2 L 432.2 198.1 L 433.4 197.0 L 434.6 195.9 L 435.8 194.7 L 436.9 193.6 L 438.1 192.4 L 439.3 191.3 L 440.4 190.1 L 441.6 188.9 L 442.8 187.7 L 444.0 186.5 L 445.2 185.2 L 446.3 184.0 L 447.5 182.7 L 448.7 181.4 L 449.8 180.2 L 451.0 178.9 L 452.2 177.6 L 453.4 176.2 L 454.6 174.9 L 455.7 173.5 L 456.9 172.2 L 458.1 170.8 L 459.2 169.4 L 460.4 168.0 L 461.6 166.6 L 462.8 165.2 L 464.0 163.8 L 465.1 162.3 L 466.3 160.8 L 467.5 159.4 L 468.7 157.9 L 469.8 156.4 L 471.0 154.9 L 472.2 153.3 L 473.3 151.8 L 474.5 150.3 L 475.7 148.7 L 476.9 147.1 L 478.0 145.5 L 479.2 143.9 L 480.4 142.3 L 481.6 140.7 L 482.8 139.1 L 483.9 137.4 L 485.1 135.7 L 486.3 134.1 L 487.4 132.4 L 488.6 130.7 L 489.8 129.0 L 491.0 127.2 L 492.2 125.5 L 493.3 123.7 L 494.5 122.0 L 495.7 120.2 L 496.8 118.4 L 498.0 116.6 L 499.2 114.8 L 500.4 113.0 L 501.6 111.1 L 502.7 109.3 L 503.9 107.4 L 505.1 105.5 L 506.2 103.6 L 507.4 101.7 L 508.6 99.8 L 509.8 97.9 L 510.9 95.9 L 512.1 94.0 L 513.3 92.0 L 514.5 90.0 L 515.7 88.0 L 516.8 86.0 L 518.0 84.0 L 519.2 82.0 L 520.3 79.9 L 521.5 77.9 L 522.7 75.8 L 523.9 73.7 L 525.0 71.6 L 526.2 69.5 L 527.4 67.4 L 528.6 65.3 L 529.8 63.1 L 530.9 61.0 L 532.1 58.8 L 533.3 56.6 L 534.5 54.4 L 535.6 52.2 L 536.8 50.0 L 538.0 47.7 L 539.2 45.5 L 540.3 43.2 L 541.5 41.0 L 542.7 38.7 L 543.8 36.4 L 545.0 34.1 L 546.2 31.8 L 547.4 29.4" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><line x1="42" y1="174.0" x2="618" y2="174.0" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="5 4"/><line x1="330.0" y1="36" x2="330.0" y2="288" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="5 4"/><text x="330.0" y="32.0" font-size="11.5" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">对称轴 x=2</text><text x="330.0" y="32.0" font-size="11.5" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">对称轴 x=2</text><circle cx="204.7" cy="174.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="204.7" y="194.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">f(0)=1</text><text x="204.7" y="194.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">f(0)=1</text><circle cx="455.3" cy="174.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="455.3" y="194.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">f(4)=1</text><text x="455.3" y="194.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">f(4)=1</text><circle cx="330.0" cy="246.0" r="4.2" fill="#15803d" stroke="#15803d" stroke-width="2"/><text x="330.0" y="234.0" font-size="12.5" font-weight="600" fill="#15803d" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">顶点 (2,−3)</text><text x="330.0" y="234.0" font-size="12.5" font-weight="600" fill="#15803d" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">顶点 (2,−3)</text><line x1="204.7" y1="256.8" x2="330.0" y2="256.8" stroke="#64748b" stroke-width="1.6"/><line x1="204.7" y1="251.8" x2="204.7" y2="261.8" stroke="#64748b" stroke-width="1.6"/><line x1="330.0" y1="251.8" x2="330.0" y2="261.8" stroke="#64748b" stroke-width="1.6"/><text x="267.3" y="246.8" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">距离 2</text><text x="267.3" y="246.8" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">距离 2</text><line x1="330.0" y1="256.8" x2="455.3" y2="256.8" stroke="#64748b" stroke-width="1.6"/><line x1="330.0" y1="251.8" x2="330.0" y2="261.8" stroke="#64748b" stroke-width="1.6"/><line x1="455.3" y1="251.8" x2="455.3" y2="261.8" stroke="#64748b" stroke-width="1.6"/><text x="392.7" y="246.8" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">距离 2</text><text x="392.7" y="246.8" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">距离 2</text></svg><figcaption>0 与 4 到对称轴 x=2 的距离都是 2，函数值都是 1；顶点到两侧相同距离处高度一定相等。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">对称公式</div><div class="v">f(h + t) = f(h − t)，其中 x = h 为对称轴</div></div><div class="row"><div class="k">等高点</div><div class="v">f(x₁) = f(x₂)（x₁≠x₂）⟹ (x₁+x₂)/2 = h</div></div><div class="row"><div class="k">中点判据</div><div class="v">x₁ + x₂ = 2h ⟺ 两点关于轴对称</div></div><div class="row"><div class="k">单调性</div><div class="v">a&gt;0：x&lt;h 减、x&gt;h 增；a&lt;0 相反</div></div></div>
+<p>已知轴和一个点的函数值，等于<strong>免费得到对称点的函数值</strong>。</p>
+<p>对称性对所有二次函数成立，与开口方向、是否有根都无关。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>先找轴</strong>：<span class="mono">x = h</span>，由顶点式、两零点中点或题目直接给出。</li><li><strong>算距离</strong>：把目标点与已知点到 h 的距离都算出来。</li><li><strong>配成对</strong>：距离相等 ⟹ 函数值相等，直接写出答案，无需解析式。</li><li><strong>涉及范围时用单调性</strong>：比较时先看点在轴的哪一侧，再用增减性判断。</li><li><strong>方程形式的处理</strong>：若题目给 f(x₁)=f(x₂)，立刻写 <span class="mono">(x₁+x₂)/2 = h</span> 求参数。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>已知抛物线对称轴为 x = 2，且 f(1) = 5，求 f(3)。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>1 和 3 到轴的距离分别是多少？</p>
+<ol><li>点 x=1 到对称轴 x=2 的距离为 |1−2| = 1。</li><li>点 x=3 到对称轴 x=2 的距离为 |3−2| = 1，两者距离相等。</li><li>由对称性 f(2−1) = f(2+1)，即 f(1) = f(3)。</li><li>所以 f(3) = 5，全程没有用到解析式。</li></ol>
+<div class="ansbox">答：f(3) = 5。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 反求对称轴</span>已知二次函数 y = ax² + bx + c 满足：当 x = −1 与 x = 5 时函数值相等，求它的对称轴。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>两个自变量函数值相等 → 它们关于轴对称 → 中点即轴。</p>
+<ol><li>由对称性，函数值相等的两个不同自变量关于对称轴对称。</li><li>所以对称轴是它们的中点：<span class="mono">x = (−1 + 5)/2 = 2</span>。</li><li>用公式验证：由 f(−1)=f(5) 得 a−b+c = 25a+5b+c → 6b = −24a → b = −4a。</li><li>代入轴公式 <span class="mono">x = −b/(2a) = 4a/(2a) = 2</span>，结论一致 ✓。</li></ol>
+<div class="ansbox">答：对称轴为 x = 2。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>把中点当成距离</strong>：对称轴 = 中点 = 平均值，要除以 2，别写成 <span class="mono">x₁ + x₂</span>。</li><li><strong>忽略 x₁≠x₂ 的条件</strong>：同一个点的函数值当然等于自己，不构成对称点配对。</li><li><strong>在敌人的词典里学词汇</strong>：单调递减一侧若用错了间距，容易跳到错的一侧，建议每次都画一条竖轴对称线。</li><li><strong>混淆对称性与奇偶性</strong>：对称轴不一定非是 y 轴，是 x=h 时结论依然成立，只是把中心换成 h。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>拱桥</strong>：桥拱左右完全对称，测出左半的高度就能推知右半，工程测绘只用测一半。</li><li><strong>投篮弧线</strong>：上升段与下降段关于最高点对称，最高点两侧相同水平距离处高度相同。</li><li><strong>卫星天线</strong>：抛物面绕轴旋转对称，馈源装在对称轴上才能把所有信号汇聚到一点。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li>对称性最本质的写法：<span class="mono">f(h+t) = f(h−t)</span>。</li><li><span class="hl">等高点必关于轴对称，其连线中点落在轴上</span>。</li><li>已知轴与一点的函数值，等于免费得到对称点的函数值。</li><li>反过也成立：f(x₁)=f(x₂) ⟹ 轴 = (x₁+x₂)/2。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">左右两部分　关于轴镜像
+等高两点中点是轴　求值不必算解析</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="05_交点式.html"><span>← 上一讲</span>交点式</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="07_函数值比大小.html"><span>下一讲 →</span>函数值比大小</a>
+</div>
+<footer>二次函数26讲 · 第 6 讲《抛物线对称性》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "抛物线对称轴为 x = −1，若 f(−3) = 7，则 f(1) 等于（　）",
+    "options": [
+      "7",
+      "−7",
+      "无法确定",
+      "0"
+    ],
+    "answer": 0,
+    "explain": "−3 到 −1 距离为 2，1 到 −1 距离也是 2，两点关于轴对称，函数值相等，所以 f(1)=7。"
+  },
+  {
+    "q": "若二次函数满足 f(2) = f(8)，则它的对称轴是（　）",
+    "options": [
+      "x = 5",
+      "x = 4",
+      "x = 6",
+      "x = −3"
+    ],
+    "answer": 0,
+    "explain": "函数值相等的两个自变量关于轴对称，中点为 (2+8)/2 = 5，即对称轴 x=5。"
+  },
+  {
+    "q": "对于二次函数 y = a(x − h)² + k（a>0），下列判断正确的是（　）",
+    "options": [
+      "在对称轴左侧 y 随 x 增大而增大",
+      "在对称轴左侧 y 随 x 增大而减小",
+      "在整个定义域内递增",
+      "在对称轴右侧递减"
+    ],
+    "answer": 1,
+    "explain": "a>0 开口向上：对称轴左侧递减、右侧递增，顶点处取最小值。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
