@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第14讲 判别式Δ | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 进阶篇 · 方程根 / 第14讲</div>
+<div class="badge-line"><span class="badge">第 14 讲 / 共 26 讲</span><span class="badge">进阶篇 · 方程根</span><span class="badge gold">根的开关</span></div>
+<h1 class="title">判别式Δ</h1>
+<div class="motto">函数方程本同源，Δ 定交点个数：几何意义是顶点与 x 轴的距离。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>为什么偏偏是 <span class="mono">b²−4ac</span> 这个怪式子决定有没有根？它不是凭空规定的，而是<strong>配方过程中自然出现的一项</strong>。理解了它的出身，你就不会记错公式，也知道 Δ=0 意味着什么。</p>
+<p>这一讲把 Δ 的来历、几何意义、以及它在含参题里怎么用，一次性讲透。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、Δ 是配方配出来的</h3>
+<p>解方程 <span class="mono">ax² + bx + c = 0</span>（a≠0），两边除以 a 并配方：</p>
+<p><span class="mono">x² + (b/a)x + c/a = 0</span> → <span class="mono">(x + b/2a)² = (b² − 4ac) / 4a² = Δ / 4a²</span></p>
+<p>左边是一个完全平方，永远 ≥ 0。右边分母 <span class="mono">4a² &gt; 0</span> 恒正，所以<strong>能不能解出实数 x，完全取决于分子 Δ 的正负</strong>：</p>
+<div class="formula"><div class="row"><div class="k">Δ &gt; 0</div><div class="v">右边 &gt; 0 → 可以开平方得到两个不同解 → 与 x 轴两个交点</div></div><div class="row"><div class="k">Δ = 0</div><div class="v">右边 = 0 → x = −b/2a 一个解（重根）→ 顶点恰好落在 x 轴上</div></div><div class="row"><div class="k">Δ &lt; 0</div><div class="v">右边 &lt; 0 → 平方不可能为负 → 无实数解 → 与 x 轴无交点</div></div></div>
+<h3 class="sub">二、Δ 的几何意义：顶点高度</h3>
+<p>顶点纵坐标 <span class="mono">k = (4ac − b²)/4a = −Δ/(4a)</span>。于是：</p>
+<div class="formula"><div class="row"><div class="k">a &gt; 0 且 Δ &gt; 0</div><div class="v">k = −Δ/4a &lt; 0 → 顶点在 x 轴下方 → 必穿过两次</div></div><div class="row"><div class="k">任意 a，Δ = 0</div><div class="v">k = 0 → 顶点正好在 x 轴上 → 相切</div></div><div class="row"><div class="k">a &gt; 0 且 Δ &lt; 0</div><div class="v">k &gt; 0 → 顶点在 x 轴上方 → 完全悬空</div></div></div>
+<p>看到了吗：<strong>Δ 的正负，本质上说的是顶点相对于 x 轴的位置</strong>。这就是为什么「算 Δ」能解决一大类「能不能」的问题。</p>
+<div class="formula"><div class="v">判别式只回答「有没有」「有几个」，<strong>不回答根具体是多少</strong>。想知道根的大小分布（都比 3 大、都在某个区间里），需要第 24~26 讲的「卡点三条件」，别指望 Δ 一个人搞定。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="300" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="118.5" y1="48.0" x2="118.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="189.0" y1="48.0" x2="189.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="259.5" y1="48.0" x2="259.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="330.0" y1="48.0" x2="330.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="400.5" y1="48.0" x2="400.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="471.0" y1="48.0" x2="471.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="541.5" y1="48.0" x2="541.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="252.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="236.3" x2="612.0" y2="236.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="220.6" x2="612.0" y2="220.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="204.9" x2="612.0" y2="204.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="189.2" x2="612.0" y2="189.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="173.5" x2="612.0" y2="173.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="157.8" x2="612.0" y2="157.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="142.2" x2="612.0" y2="142.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="126.5" x2="612.0" y2="126.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="110.8" x2="612.0" y2="110.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="95.1" x2="612.0" y2="95.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="79.4" x2="612.0" y2="79.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="63.7" x2="612.0" y2="63.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="157.8" x2="626" y2="157.8" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 157.8 L 634.0 153.3 L 634.0 162.3 Z" fill="#64748b"/><line x1="294.8" y1="262" x2="294.8" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 294.8 34 L 290.2 26 L 299.2 26 Z" fill="#64748b"/><line x1="48.0" y1="153.8" x2="48.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3.5</text><line x1="118.5" y1="153.8" x2="118.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="118.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="189.0" y1="153.8" x2="189.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="189.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="259.5" y1="153.8" x2="259.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="259.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="330.0" y1="153.8" x2="330.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="330.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="400.5" y1="153.8" x2="400.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="400.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="471.0" y1="153.8" x2="471.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="471.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="541.5" y1="153.8" x2="541.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="541.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="612.0" y1="153.8" x2="612.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><text x="287.8" y="256.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-6</text><text x="287.8" y="240.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="287.8" y="224.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="287.8" y="208.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="287.8" y="193.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="287.8" y="177.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="287.8" y="146.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="287.8" y="130.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="287.8" y="114.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="287.8" y="99.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="287.8" y="83.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="287.8" y="67.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="287.8" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="301.8" y="173.8" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="149.8" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="302.8" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 120.8 32.0 L 122.0 33.8 L 123.2 35.6 L 124.4 37.4 L 125.6 39.2 L 126.7 41.0 L 127.9 42.8 L 129.1 44.5 L 130.2 46.3 L 131.4 48.0 L 132.6 49.7 L 133.8 51.4 L 134.9 53.2 L 136.1 54.9 L 137.3 56.6 L 138.5 58.2 L 139.6 59.9 L 140.8 61.6 L 142.0 63.3 L 143.2 64.9 L 144.4 66.6 L 145.5 68.2 L 146.7 69.8 L 147.9 71.4 L 149.1 73.0 L 150.2 74.6 L 151.4 76.2 L 152.6 77.8 L 153.8 79.4 L 154.9 80.9 L 156.1 82.5 L 157.3 84.1 L 158.4 85.6 L 159.6 87.1 L 160.8 88.6 L 162.0 90.2 L 163.1 91.7 L 164.3 93.2 L 165.5 94.6 L 166.7 96.1 L 167.8 97.6 L 169.0 99.0 L 170.2 100.5 L 171.4 101.9 L 172.6 103.4 L 173.7 104.8 L 174.9 106.2 L 176.1 107.6 L 177.2 109.0 L 178.4 110.4 L 179.6 111.8 L 180.8 113.2 L 181.9 114.5 L 183.1 115.9 L 184.3 117.2 L 185.5 118.6 L 186.7 119.9 L 187.8 121.2 L 189.0 122.5 L 190.2 123.8 L 191.3 125.1 L 192.5 126.4 L 193.7 127.7 L 194.9 129.0 L 196.1 130.2 L 197.2 131.5 L 198.4 132.7 L 199.6 134.0 L 200.8 135.2 L 201.9 136.4 L 203.1 137.6 L 204.3 138.8 L 205.5 140.0 L 206.6 141.2 L 207.8 142.3 L 209.0 143.5 L 210.1 144.7 L 211.3 145.8 L 212.5 146.9 L 213.7 148.1 L 214.8 149.2 L 216.0 150.3 L 217.2 151.4 L 218.4 152.5 L 219.5 153.6 L 220.7 154.7 L 221.9 155.7 L 223.1 156.8 L 224.2 157.8 L 225.4 158.9 L 226.6 159.9 L 227.8 160.9 L 229.0 162.0 L 230.1 163.0 L 231.3 164.0 L 232.5 165.0 L 233.7 165.9 L 234.8 166.9 L 236.0 167.9 L 237.2 168.8 L 238.4 169.8 L 239.5 170.7 L 240.7 171.6 L 241.9 172.6 L 243.0 173.5 L 244.2 174.4 L 245.4 175.3 L 246.6 176.1 L 247.8 177.0 L 248.9 177.9 L 250.1 178.8 L 251.3 179.6 L 252.4 180.4 L 253.6 181.3 L 254.8 182.1 L 256.0 182.9 L 257.1 183.7 L 258.3 184.5 L 259.5 185.3 L 260.7 186.1 L 261.9 186.9 L 263.0 187.6 L 264.2 188.4 L 265.4 189.1 L 266.6 189.9 L 267.7 190.6 L 268.9 191.3 L 270.1 192.0 L 271.2 192.7 L 272.4 193.4 L 273.6 194.1 L 274.8 194.8 L 276.0 195.4 L 277.1 196.1 L 278.3 196.7 L 279.5 197.4 L 280.6 198.0 L 281.8 198.6 L 283.0 199.3 L 284.2 199.9 L 285.4 200.5 L 286.5 201.0 L 287.7 201.6 L 288.9 202.2 L 290.0 202.8 L 291.2 203.3 L 292.4 203.9 L 293.6 204.4 L 294.8 204.9 L 295.9 205.4 L 297.1 206.0 L 298.3 206.5 L 299.5 206.9 L 300.6 207.4 L 301.8 207.9 L 303.0 208.4 L 304.1 208.8 L 305.3 209.3 L 306.5 209.7 L 307.7 210.1 L 308.9 210.6 L 310.0 211.0 L 311.2 211.4 L 312.4 211.8 L 313.6 212.2 L 314.7 212.6 L 315.9 212.9 L 317.1 213.3 L 318.2 213.6 L 319.4 214.0 L 320.6 214.3 L 321.8 214.6 L 322.9 215.0 L 324.1 215.3 L 325.3 215.6 L 326.5 215.9 L 327.7 216.2 L 328.8 216.4 L 330.0 216.7 L 331.2 216.9 L 332.3 217.2 L 333.5 217.4 L 334.7 217.7 L 335.9 217.9 L 337.0 218.1 L 338.2 218.3 L 339.4 218.5 L 340.6 218.7 L 341.8 218.9 L 342.9 219.0 L 344.1 219.2 L 345.3 219.4 L 346.4 219.5 L 347.6 219.6 L 348.8 219.8 L 350.0 219.9 L 351.1 220.0 L 352.3 220.1 L 353.5 220.2 L 354.7 220.3 L 355.8 220.3 L 357.0 220.4 L 358.2 220.5 L 359.4 220.5 L 360.6 220.5 L 361.7 220.6 L 362.9 220.6 L 364.1 220.6 L 365.2 220.6 L 366.4 220.6 L 367.6 220.6 L 368.8 220.6 L 369.9 220.5 L 371.1 220.5 L 372.3 220.5 L 373.5 220.4 L 374.7 220.3 L 375.8 220.3 L 377.0 220.2 L 378.2 220.1 L 379.4 220.0 L 380.5 219.9 L 381.7 219.8 L 382.9 219.6 L 384.1 219.5 L 385.2 219.4 L 386.4 219.2 L 387.6 219.0 L 388.8 218.9 L 389.9 218.7 L 391.1 218.5 L 392.3 218.3 L 393.5 218.1 L 394.6 217.9 L 395.8 217.7 L 397.0 217.4 L 398.2 217.2 L 399.3 216.9 L 400.5 216.7 L 401.7 216.4 L 402.8 216.2 L 404.0 215.9 L 405.2 215.6 L 406.4 215.3 L 407.5 215.0 L 408.7 214.6 L 409.9 214.3 L 411.1 214.0 L 412.2 213.6 L 413.4 213.3 L 414.6 212.9 L 415.8 212.6 L 416.9 212.2 L 418.1 211.8 L 419.3 211.4 L 420.5 211.0 L 421.6 210.6 L 422.8 210.1 L 424.0 209.7 L 425.2 209.3 L 426.3 208.8 L 427.5 208.4 L 428.7 207.9 L 429.9 207.4 L 431.1 206.9 L 432.2 206.5 L 433.4 206.0 L 434.6 205.4 L 435.8 204.9 L 436.9 204.4 L 438.1 203.9 L 439.3 203.3 L 440.4 202.8 L 441.6 202.2 L 442.8 201.6 L 444.0 201.0 L 445.2 200.5 L 446.3 199.9 L 447.5 199.3 L 448.7 198.6 L 449.9 198.0 L 451.0 197.4 L 452.2 196.7 L 453.4 196.1 L 454.6 195.4 L 455.7 194.8 L 456.9 194.1 L 458.1 193.4 L 459.2 192.7 L 460.4 192.0 L 461.6 191.3 L 462.8 190.6 L 464.0 189.9 L 465.1 189.1 L 466.3 188.4 L 467.5 187.6 L 468.7 186.9 L 469.8 186.1 L 471.0 185.3 L 472.2 184.5 L 473.3 183.7 L 474.5 182.9 L 475.7 182.1 L 476.9 181.3 L 478.0 180.4 L 479.2 179.6 L 480.4 178.8 L 481.6 177.9 L 482.8 177.0 L 483.9 176.1 L 485.1 175.3 L 486.3 174.4 L 487.4 173.5 L 488.6 172.6 L 489.8 171.6 L 491.0 170.7 L 492.1 169.8 L 493.3 168.8 L 494.5 167.9 L 495.7 166.9 L 496.8 165.9 L 498.0 165.0 L 499.2 164.0 L 500.4 163.0 L 501.6 162.0 L 502.7 160.9 L 503.9 159.9 L 505.1 158.9 L 506.2 157.8 L 507.4 156.8 L 508.6 155.7 L 509.8 154.7 L 510.9 153.6 L 512.1 152.5 L 513.3 151.4 L 514.5 150.3 L 515.7 149.2 L 516.8 148.1 L 518.0 146.9 L 519.2 145.8 L 520.4 144.7 L 521.5 143.5 L 522.7 142.3 L 523.9 141.2 L 525.0 140.0 L 526.2 138.8 L 527.4 137.6 L 528.6 136.4 L 529.8 135.2 L 530.9 134.0 L 532.1 132.7 L 533.3 131.5 L 534.5 130.2 L 535.6 129.0 L 536.8 127.7 L 538.0 126.4 L 539.2 125.1 L 540.3 123.8 L 541.5 122.5 L 542.7 121.2 L 543.8 119.9 L 545.0 118.6 L 546.2 117.2 L 547.4 115.9 L 548.5 114.5 L 549.7 113.2 L 550.9 111.8 L 552.1 110.4 L 553.2 109.0 L 554.4 107.6 L 555.6 106.2 L 556.8 104.8 L 558.0 103.4 L 559.1 101.9 L 560.3 100.5 L 561.5 99.0 L 562.6 97.6 L 563.8 96.1 L 565.0 94.6 L 566.2 93.2 L 567.4 91.7 L 568.5 90.2 L 569.7 88.6 L 570.9 87.1 L 572.1 85.6 L 573.2 84.1 L 574.4 82.5 L 575.6 80.9 L 576.8 79.4 L 577.9 77.8 L 579.1 76.2 L 580.3 74.6 L 581.4 73.0 L 582.6 71.4 L 583.8 69.8 L 585.0 68.2 L 586.1 66.6 L 587.3 64.9 L 588.5 63.3 L 589.7 61.6 L 590.9 59.9 L 592.0 58.2 L 593.2 56.6 L 594.4 54.9 L 595.5 53.2 L 596.7 51.4 L 597.9 49.7 L 599.1 48.0 L 600.2 46.3 L 601.4 44.5 L 602.6 42.8 L 603.8 41.0 L 605.0 39.2 L 606.1 37.4 L 607.3 35.6 L 608.5 33.8 L 609.6 32.0" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><circle cx="224.2" cy="157.8" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="224.2" y="177.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">Δ&gt;0</text><text x="224.2" y="177.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">Δ&gt;0</text><circle cx="506.2" cy="157.8" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="125.6" y="66.8" font-size="13.0" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">Δ = 16 &gt; 0：两个不同交点</text><text x="125.6" y="66.8" font-size="13.0" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">Δ = 16 &gt; 0：两个不同交点</text></svg><figcaption>y = x²−2x−3：Δ = 4 + 12 = 16 &gt; 0，抛物线穿过 x 轴两次。</figcaption></figure>
+<figure><svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="300" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="118.5" y1="48.0" x2="118.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="189.0" y1="48.0" x2="189.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="259.5" y1="48.0" x2="259.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="330.0" y1="48.0" x2="330.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="400.5" y1="48.0" x2="400.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="471.0" y1="48.0" x2="471.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="541.5" y1="48.0" x2="541.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="252.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="236.3" x2="612.0" y2="236.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="220.6" x2="612.0" y2="220.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="204.9" x2="612.0" y2="204.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="189.2" x2="612.0" y2="189.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="173.5" x2="612.0" y2="173.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="157.8" x2="612.0" y2="157.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="142.2" x2="612.0" y2="142.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="126.5" x2="612.0" y2="126.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="110.8" x2="612.0" y2="110.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="95.1" x2="612.0" y2="95.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="79.4" x2="612.0" y2="79.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="63.7" x2="612.0" y2="63.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="157.8" x2="626" y2="157.8" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 157.8 L 634.0 153.3 L 634.0 162.3 Z" fill="#64748b"/><line x1="294.8" y1="262" x2="294.8" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 294.8 34 L 290.2 26 L 299.2 26 Z" fill="#64748b"/><line x1="48.0" y1="153.8" x2="48.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3.5</text><line x1="118.5" y1="153.8" x2="118.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="118.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="189.0" y1="153.8" x2="189.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="189.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="259.5" y1="153.8" x2="259.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="259.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="330.0" y1="153.8" x2="330.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="330.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="400.5" y1="153.8" x2="400.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="400.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="471.0" y1="153.8" x2="471.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="471.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="541.5" y1="153.8" x2="541.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="541.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="612.0" y1="153.8" x2="612.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><text x="287.8" y="256.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-6</text><text x="287.8" y="240.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="287.8" y="224.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="287.8" y="208.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="287.8" y="193.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="287.8" y="177.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="287.8" y="146.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="287.8" y="130.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="287.8" y="114.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="287.8" y="99.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="287.8" y="83.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="287.8" y="67.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="287.8" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="301.8" y="173.8" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="149.8" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="302.8" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 165.5 31.9 L 166.7 33.3 L 167.8 34.8 L 169.0 36.3 L 170.2 37.7 L 171.4 39.2 L 172.6 40.6 L 173.7 42.0 L 174.9 43.4 L 176.1 44.9 L 177.2 46.3 L 178.4 47.6 L 179.6 49.0 L 180.8 50.4 L 181.9 51.8 L 183.1 53.1 L 184.3 54.5 L 185.5 55.8 L 186.7 57.1 L 187.8 58.5 L 189.0 59.8 L 190.2 61.1 L 191.3 62.4 L 192.5 63.7 L 193.7 64.9 L 194.9 66.2 L 196.1 67.5 L 197.2 68.7 L 198.4 70.0 L 199.6 71.2 L 200.8 72.4 L 201.9 73.6 L 203.1 74.8 L 204.3 76.0 L 205.5 77.2 L 206.6 78.4 L 207.8 79.6 L 209.0 80.7 L 210.1 81.9 L 211.3 83.0 L 212.5 84.2 L 213.7 85.3 L 214.8 86.4 L 216.0 87.5 L 217.2 88.6 L 218.4 89.7 L 219.5 90.8 L 220.7 91.9 L 221.9 93.0 L 223.1 94.0 L 224.2 95.1 L 225.4 96.1 L 226.6 97.2 L 227.8 98.2 L 229.0 99.2 L 230.1 100.2 L 231.3 101.2 L 232.5 102.2 L 233.7 103.2 L 234.8 104.1 L 236.0 105.1 L 237.2 106.1 L 238.4 107.0 L 239.5 107.9 L 240.7 108.9 L 241.9 109.8 L 243.0 110.7 L 244.2 111.6 L 245.4 112.5 L 246.6 113.4 L 247.8 114.3 L 248.9 115.1 L 250.1 116.0 L 251.3 116.8 L 252.4 117.7 L 253.6 118.5 L 254.8 119.3 L 256.0 120.1 L 257.1 121.0 L 258.3 121.7 L 259.5 122.5 L 260.7 123.3 L 261.9 124.1 L 263.0 124.9 L 264.2 125.6 L 265.4 126.4 L 266.6 127.1 L 267.7 127.8 L 268.9 128.5 L 270.1 129.2 L 271.2 129.9 L 272.4 130.6 L 273.6 131.3 L 274.8 132.0 L 276.0 132.7 L 277.1 133.3 L 278.3 134.0 L 279.5 134.6 L 280.6 135.2 L 281.8 135.9 L 283.0 136.5 L 284.2 137.1 L 285.4 137.7 L 286.5 138.3 L 287.7 138.9 L 288.9 139.4 L 290.0 140.0 L 291.2 140.5 L 292.4 141.1 L 293.6 141.6 L 294.8 142.2 L 295.9 142.7 L 297.1 143.2 L 298.3 143.7 L 299.5 144.2 L 300.6 144.7 L 301.8 145.1 L 303.0 145.6 L 304.1 146.1 L 305.3 146.5 L 306.5 146.9 L 307.7 147.4 L 308.9 147.8 L 310.0 148.2 L 311.2 148.6 L 312.4 149.0 L 313.6 149.4 L 314.7 149.8 L 315.9 150.2 L 317.1 150.5 L 318.2 150.9 L 319.4 151.2 L 320.6 151.6 L 321.8 151.9 L 322.9 152.2 L 324.1 152.5 L 325.3 152.8 L 326.5 153.1 L 327.7 153.4 L 328.8 153.7 L 330.0 153.9 L 331.2 154.2 L 332.3 154.4 L 333.5 154.7 L 334.7 154.9 L 335.9 155.1 L 337.0 155.3 L 338.2 155.5 L 339.4 155.7 L 340.6 155.9 L 341.8 156.1 L 342.9 156.3 L 344.1 156.4 L 345.3 156.6 L 346.4 156.7 L 347.6 156.9 L 348.8 157.0 L 350.0 157.1 L 351.1 157.2 L 352.3 157.3 L 353.5 157.4 L 354.7 157.5 L 355.8 157.6 L 357.0 157.6 L 358.2 157.7 L 359.4 157.7 L 360.6 157.8 L 361.7 157.8 L 362.9 157.8 L 364.1 157.8 L 365.2 157.8 L 366.4 157.8 L 367.6 157.8 L 368.8 157.8 L 369.9 157.8 L 371.1 157.7 L 372.3 157.7 L 373.5 157.6 L 374.7 157.6 L 375.8 157.5 L 377.0 157.4 L 378.2 157.3 L 379.4 157.2 L 380.5 157.1 L 381.7 157.0 L 382.9 156.9 L 384.1 156.7 L 385.2 156.6 L 386.4 156.4 L 387.6 156.3 L 388.8 156.1 L 389.9 155.9 L 391.1 155.7 L 392.3 155.5 L 393.5 155.3 L 394.6 155.1 L 395.8 154.9 L 397.0 154.7 L 398.2 154.4 L 399.3 154.2 L 400.5 153.9 L 401.7 153.7 L 402.8 153.4 L 404.0 153.1 L 405.2 152.8 L 406.4 152.5 L 407.5 152.2 L 408.7 151.9 L 409.9 151.6 L 411.1 151.2 L 412.2 150.9 L 413.4 150.5 L 414.6 150.2 L 415.8 149.8 L 416.9 149.4 L 418.1 149.0 L 419.3 148.6 L 420.5 148.2 L 421.6 147.8 L 422.8 147.4 L 424.0 146.9 L 425.2 146.5 L 426.3 146.1 L 427.5 145.6 L 428.7 145.1 L 429.9 144.7 L 431.1 144.2 L 432.2 143.7 L 433.4 143.2 L 434.6 142.7 L 435.8 142.2 L 436.9 141.6 L 438.1 141.1 L 439.3 140.5 L 440.4 140.0 L 441.6 139.4 L 442.8 138.9 L 444.0 138.3 L 445.2 137.7 L 446.3 137.1 L 447.5 136.5 L 448.7 135.9 L 449.9 135.2 L 451.0 134.6 L 452.2 134.0 L 453.4 133.3 L 454.6 132.7 L 455.7 132.0 L 456.9 131.3 L 458.1 130.6 L 459.2 129.9 L 460.4 129.2 L 461.6 128.5 L 462.8 127.8 L 464.0 127.1 L 465.1 126.4 L 466.3 125.6 L 467.5 124.9 L 468.7 124.1 L 469.8 123.3 L 471.0 122.5 L 472.2 121.7 L 473.3 121.0 L 474.5 120.1 L 475.7 119.3 L 476.9 118.5 L 478.0 117.7 L 479.2 116.8 L 480.4 116.0 L 481.6 115.1 L 482.8 114.3 L 483.9 113.4 L 485.1 112.5 L 486.3 111.6 L 487.4 110.7 L 488.6 109.8 L 489.8 108.9 L 491.0 107.9 L 492.1 107.0 L 493.3 106.1 L 494.5 105.1 L 495.7 104.1 L 496.8 103.2 L 498.0 102.2 L 499.2 101.2 L 500.4 100.2 L 501.6 99.2 L 502.7 98.2 L 503.9 97.2 L 505.1 96.1 L 506.2 95.1 L 507.4 94.0 L 508.6 93.0 L 509.8 91.9 L 510.9 90.8 L 512.1 89.7 L 513.3 88.6 L 514.5 87.5 L 515.7 86.4 L 516.8 85.3 L 518.0 84.2 L 519.2 83.0 L 520.4 81.9 L 521.5 80.7 L 522.7 79.6 L 523.9 78.4 L 525.0 77.2 L 526.2 76.0 L 527.4 74.8 L 528.6 73.6 L 529.8 72.4 L 530.9 71.2 L 532.1 70.0 L 533.3 68.7 L 534.5 67.5 L 535.6 66.2 L 536.8 64.9 L 538.0 63.7 L 539.2 62.4 L 540.3 61.1 L 541.5 59.8 L 542.7 58.5 L 543.8 57.1 L 545.0 55.8 L 546.2 54.5 L 547.4 53.1 L 548.5 51.8 L 549.7 50.4 L 550.9 49.0 L 552.1 47.6 L 553.2 46.3 L 554.4 44.9 L 555.6 43.4 L 556.8 42.0 L 558.0 40.6 L 559.1 39.2 L 560.3 37.7 L 561.5 36.3 L 562.6 34.8 L 563.8 33.3 L 565.0 31.9" fill="none" stroke="#f59e0b" stroke-width="2.6" stroke-linejoin="round"/><circle cx="365.2" cy="157.8" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="365.2" y="145.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">Δ=0 重根 x=1</text><text x="365.2" y="145.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">Δ=0 重根 x=1</text><text x="125.6" y="66.8" font-size="13.0" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">Δ = 4 − 4 = 0：顶点在 x 轴上（相切）</text><text x="125.6" y="66.8" font-size="13.0" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">Δ = 4 − 4 = 0：顶点在 x 轴上（相切）</text></svg><figcaption>y = x²−2x+1 = (x−1)²：顶点恰好落在 x 轴上，只有一个交点。</figcaption></figure>
+<figure><svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="300" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="118.5" y1="48.0" x2="118.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="189.0" y1="48.0" x2="189.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="259.5" y1="48.0" x2="259.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="330.0" y1="48.0" x2="330.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="400.5" y1="48.0" x2="400.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="471.0" y1="48.0" x2="471.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="541.5" y1="48.0" x2="541.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="252.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="236.3" x2="612.0" y2="236.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="220.6" x2="612.0" y2="220.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="204.9" x2="612.0" y2="204.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="189.2" x2="612.0" y2="189.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="173.5" x2="612.0" y2="173.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="157.8" x2="612.0" y2="157.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="142.2" x2="612.0" y2="142.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="126.5" x2="612.0" y2="126.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="110.8" x2="612.0" y2="110.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="95.1" x2="612.0" y2="95.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="79.4" x2="612.0" y2="79.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="63.7" x2="612.0" y2="63.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="157.8" x2="626" y2="157.8" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 157.8 L 634.0 153.3 L 634.0 162.3 Z" fill="#64748b"/><line x1="294.8" y1="262" x2="294.8" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 294.8 34 L 290.2 26 L 299.2 26 Z" fill="#64748b"/><line x1="48.0" y1="153.8" x2="48.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3.5</text><line x1="118.5" y1="153.8" x2="118.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="118.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="189.0" y1="153.8" x2="189.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="189.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="259.5" y1="153.8" x2="259.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="259.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="330.0" y1="153.8" x2="330.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="330.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="400.5" y1="153.8" x2="400.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="400.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="471.0" y1="153.8" x2="471.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="471.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="541.5" y1="153.8" x2="541.5" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="541.5" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="612.0" y1="153.8" x2="612.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><text x="287.8" y="256.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-6</text><text x="287.8" y="240.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="287.8" y="224.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="287.8" y="208.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="287.8" y="193.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="287.8" y="177.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="287.8" y="146.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="287.8" y="130.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="287.8" y="114.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="287.8" y="99.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="287.8" y="83.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="287.8" y="67.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="287.8" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="301.8" y="173.8" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="149.8" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="302.8" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 224.2 32.3 L 225.4 33.3 L 226.6 34.4 L 227.8 35.4 L 229.0 36.4 L 230.1 37.4 L 231.3 38.4 L 232.5 39.4 L 233.7 40.4 L 234.8 41.4 L 236.0 42.3 L 237.2 43.3 L 238.4 44.2 L 239.5 45.2 L 240.7 46.1 L 241.9 47.0 L 243.0 47.9 L 244.2 48.8 L 245.4 49.7 L 246.6 50.6 L 247.8 51.5 L 248.9 52.4 L 250.1 53.2 L 251.3 54.1 L 252.4 54.9 L 253.6 55.7 L 254.8 56.6 L 256.0 57.4 L 257.1 58.2 L 258.3 59.0 L 259.5 59.8 L 260.7 60.5 L 261.9 61.3 L 263.0 62.1 L 264.2 62.8 L 265.4 63.6 L 266.6 64.3 L 267.7 65.0 L 268.9 65.8 L 270.1 66.5 L 271.2 67.2 L 272.4 67.9 L 273.6 68.6 L 274.8 69.2 L 276.0 69.9 L 277.1 70.6 L 278.3 71.2 L 279.5 71.8 L 280.6 72.5 L 281.8 73.1 L 283.0 73.7 L 284.2 74.3 L 285.4 74.9 L 286.5 75.5 L 287.7 76.1 L 288.9 76.7 L 290.0 77.2 L 291.2 77.8 L 292.4 78.3 L 293.6 78.9 L 294.8 79.4 L 295.9 79.9 L 297.1 80.4 L 298.3 80.9 L 299.5 81.4 L 300.6 81.9 L 301.8 82.4 L 303.0 82.8 L 304.1 83.3 L 305.3 83.7 L 306.5 84.2 L 307.7 84.6 L 308.9 85.0 L 310.0 85.4 L 311.2 85.9 L 312.4 86.2 L 313.6 86.6 L 314.7 87.0 L 315.9 87.4 L 317.1 87.7 L 318.2 88.1 L 319.4 88.4 L 320.6 88.8 L 321.8 89.1 L 322.9 89.4 L 324.1 89.7 L 325.3 90.0 L 326.5 90.3 L 327.7 90.6 L 328.8 90.9 L 330.0 91.2 L 331.2 91.4 L 332.3 91.7 L 333.5 91.9 L 334.7 92.1 L 335.9 92.4 L 337.0 92.6 L 338.2 92.8 L 339.4 93.0 L 340.6 93.2 L 341.8 93.3 L 342.9 93.5 L 344.1 93.7 L 345.3 93.8 L 346.4 94.0 L 347.6 94.1 L 348.8 94.2 L 350.0 94.3 L 351.1 94.4 L 352.3 94.5 L 353.5 94.6 L 354.7 94.7 L 355.8 94.8 L 357.0 94.9 L 358.2 94.9 L 359.4 95.0 L 360.6 95.0 L 361.7 95.0 L 362.9 95.1 L 364.1 95.1 L 365.2 95.1 L 366.4 95.1 L 367.6 95.1 L 368.8 95.0 L 369.9 95.0 L 371.1 95.0 L 372.3 94.9 L 373.5 94.9 L 374.7 94.8 L 375.8 94.7 L 377.0 94.6 L 378.2 94.5 L 379.4 94.4 L 380.5 94.3 L 381.7 94.2 L 382.9 94.1 L 384.1 94.0 L 385.2 93.8 L 386.4 93.7 L 387.6 93.5 L 388.8 93.3 L 389.9 93.2 L 391.1 93.0 L 392.3 92.8 L 393.5 92.6 L 394.6 92.4 L 395.8 92.1 L 397.0 91.9 L 398.2 91.7 L 399.3 91.4 L 400.5 91.2 L 401.7 90.9 L 402.8 90.6 L 404.0 90.3 L 405.2 90.0 L 406.4 89.7 L 407.5 89.4 L 408.7 89.1 L 409.9 88.8 L 411.1 88.4 L 412.2 88.1 L 413.4 87.7 L 414.6 87.4 L 415.8 87.0 L 416.9 86.6 L 418.1 86.2 L 419.3 85.9 L 420.5 85.4 L 421.6 85.0 L 422.8 84.6 L 424.0 84.2 L 425.2 83.7 L 426.3 83.3 L 427.5 82.8 L 428.7 82.4 L 429.9 81.9 L 431.1 81.4 L 432.2 80.9 L 433.4 80.4 L 434.6 79.9 L 435.8 79.4 L 436.9 78.9 L 438.1 78.3 L 439.3 77.8 L 440.4 77.2 L 441.6 76.7 L 442.8 76.1 L 444.0 75.5 L 445.2 74.9 L 446.3 74.3 L 447.5 73.7 L 448.7 73.1 L 449.9 72.5 L 451.0 71.8 L 452.2 71.2 L 453.4 70.6 L 454.6 69.9 L 455.7 69.2 L 456.9 68.6 L 458.1 67.9 L 459.2 67.2 L 460.4 66.5 L 461.6 65.8 L 462.8 65.0 L 464.0 64.3 L 465.1 63.6 L 466.3 62.8 L 467.5 62.1 L 468.7 61.3 L 469.8 60.5 L 471.0 59.8 L 472.2 59.0 L 473.3 58.2 L 474.5 57.4 L 475.7 56.6 L 476.9 55.7 L 478.0 54.9 L 479.2 54.1 L 480.4 53.2 L 481.6 52.4 L 482.8 51.5 L 483.9 50.6 L 485.1 49.7 L 486.3 48.8 L 487.4 47.9 L 488.6 47.0 L 489.8 46.1 L 491.0 45.2 L 492.1 44.2 L 493.3 43.3 L 494.5 42.3 L 495.7 41.4 L 496.8 40.4 L 498.0 39.4 L 499.2 38.4 L 500.4 37.4 L 501.6 36.4 L 502.7 35.4 L 503.9 34.4 L 505.1 33.3 L 506.2 32.3" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round"/><circle cx="365.2" cy="95.1" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="365.2" y="83.1" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">Δ&lt;0 悬空</text><text x="365.2" y="83.1" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">Δ&lt;0 悬空</text><text x="125.6" y="66.8" font-size="13.0" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">Δ = 4 − 20 = −16 &lt; 0：与 x 轴无交点</text><text x="125.6" y="66.8" font-size="13.0" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">Δ = 4 − 20 = −16 &lt; 0：与 x 轴无交点</text></svg><figcaption>y = x²−2x+5：开口向上且顶点在 x 轴上方，整条曲线悬在 x 轴之上。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">Δ = b² − 4ac</div><div class="v">来自配方过程中被开方的一项</div></div><div class="row"><div class="k">Δ &gt; 0</div><div class="v">两个不同实根 / 两个交点</div></div><div class="row"><div class="k">Δ = 0</div><div class="v">两个相等实根（重根）/ 顶点在 x 轴上</div></div><div class="row"><div class="k">Δ ≥ 0</div><div class="v">有实根（含重根），常用于「有公共点」类题</div></div><div class="row"><div class="k">Δ &lt; 0</div><div class="v">无实根 / 无交点</div></div></div>
+<p>几何记忆法：<span class="mono">k = −Δ/(4a)</span>——<span class="hl">Δ 说的是顶点在 x 轴的哪一侧</span>。</p>
+<p>「有公共点」⟹ Δ ≥ 0；「有两个公共点」⟹ Δ &gt; 0，一字之差别丢了等号。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>明确问的是什么</strong>：有没有根（Δ≥0）还是两个不同根（Δ&gt;0）。</li><li><strong>抄 a、b、c</strong>（含符号），代入 <span class="mono">b² − 4ac</span>，建议分两步写下 <span class="mono">−4ac</span> 的值。</li><li><strong>列不等式</strong>：按题意写 Δ&gt;0 / Δ=0 / Δ&lt;0 / Δ≥0。</li><li><strong>解含参不等式</strong>：注意二次项系数是否为 0 的讨论（若题目说是二次函数则 ¬）。</li><li><strong>回头看图检验</strong>：把求得的参数代回，判断顶点在轴的哪一侧。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>判断 <span class="mono">y = 2x² − 3x + 4</span> 与 x 轴是否有交点。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>把 a、b、c 抄清楚，注意 c 为正、a 为正。</p>
+<ol><li>a = 2，b = −3，c = 4。</li><li>Δ = (−3)² − 4·2·4 = 9 − 32 = −23。</li><li>Δ &lt; 0 → 方程无实数解 → <strong>与 x 轴没有交点</strong>。</li><li>几何验证：顶点纵坐标 k = −Δ/(4a) = 23/8 &gt; 0，开口向上，顶点在 x 轴上方，自然碰不到 x 轴 ✓。</li></ol>
+<div class="ansbox">答：Δ = −23 &lt; 0，与 x 轴没有交点。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 含参</span>已知二次函数 <span class="mono">y = x² − 2x + m</span> 的图象与 x 轴有公共点，求 m 的取值范围。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>「有公共点」包含相切的情形，用 Δ ≥ 0。</p>
+<ol><li>a = 1，b = −2，c = m。</li><li>Δ = 4 − 4·1·m = 4 − 4m。</li><li>「有公共点」⟹ Δ ≥ 0 → <span class="mono">4 − 4m ≥ 0</span> → <span class="mono">m ≤ 1</span>。</li><li>当 m = 1 时 Δ = 0，图象与 x 轴相切于 x = 1，也算「有公共点」✓。</li><li>几何验证：顶点纵坐标 k = 1 − 2 + m = m − 1 ≤ 0，即顶点不高于 x 轴 ✓。</li></ol>
+<div class="ansbox">答：m ≤ 1。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>「有公共点」与「有两个公共点」不分</strong>：前者 Δ ≥ 0，后者 Δ &gt; 0。</li><li><strong>符号算错</strong>：<span class="mono">−4ac</span> 在 a、c 异号时会变成加号，务必分步写。</li><li><strong>忘讨论二次项系数为 0</strong>：含参时若 a 可能为 0，就不是二次函数了，需单独讨论。</li><li><strong>以为 Δ 能管根的位置</strong>：想知道根是否大于某数，Δ 不够用，必须上第 24~26 讲的三条件。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>投篮能否入筐</strong>：Δ&lt;0 意味着球的轨迹整条都在篮筐高度之上，永远进不去。</li><li><strong>桥梁是否需要支撑</strong>：桥拱与水面的关系，Δ 决定是否真的「落水」。</li><li><strong>盈亏平衡点</strong>：利润模型的 Δ&lt;0 表示永远不亏损（恒在零以上），这正是第 20 讲恒成立问题。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="mono">Δ = b² − 4ac</span> 来自配方后被开方的一项，<span class="hl">几何意义是顶点在 x 轴的哪一侧</span>。</li><li>Δ&gt;0 两根、Δ=0 重根（顶点在轴上）、Δ&lt;0 无根。</li><li><span class="mono">k = −Δ/(4a)</span>，把判别式与顶点高度统一起来。</li><li>「有公共点」用 ≥，「有两个公共点」用 &gt;。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">Δ等于b方减四ac　配方自然冒出来
+大于零两根　等于零相切　小于零悬空</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="13_翻折平移组合.html"><span>← 上一讲</span>翻折平移组合</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="15_两根差弦长公式.html"><span>下一讲 →</span>两根差·弦长公式</a>
+</div>
+<footer>二次函数26讲 · 第 14 讲《判别式Δ》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "抛物线 y = x² − 4x + 4 与 x 轴的交点个数是（　）",
+    "options": [
+      "0 个",
+      "1 个",
+      "2 个",
+      "3 个"
+    ],
+    "answer": 1,
+    "explain": "Δ = 16 − 16 = 0，y=(x−2)²，顶点 (2,0) 落在 x 轴上，只有一个交点（相切）。"
+  },
+  {
+    "q": "若抛物线 y = x² + 2x + m 与 x 轴没有交点，则 m 的取值范围是（　）",
+    "options": [
+      "m > 1",
+      "m < 1",
+      "m ≥ 1",
+      "m ≤ 1"
+    ],
+    "answer": 0,
+    "explain": "Δ = 4 − 4m < 0 ⟹ m > 1。此时顶点纵坐标 m−1>0，整条曲线悬在 x 轴上方。"
+  },
+  {
+    "q": "关于判别式，下列说法正确的是（　）",
+    "options": [
+      "Δ 可以判断根的具体数值",
+      "Δ=0 时抛物线与 x 轴相切",
+      "Δ<0 时有两个交点",
+      "Δ 与交点个数无关"
+    ],
+    "answer": 1,
+    "explain": "Δ 只判断有无与个数；Δ=0 时重根、顶点在 x 轴上，图象与 x 轴相切。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
