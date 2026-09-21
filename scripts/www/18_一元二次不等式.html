@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第18讲 一元二次不等式 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 进阶篇 · 不等式 / 第18讲</div>
+<div class="badge-line"><span class="badge">第 18 讲 / 共 26 讲</span><span class="badge">进阶篇 · 不等式</span><span class="badge gold">中考必考</span></div>
+<h1 class="title">一元二次不等式</h1>
+<div class="motto">大于取两边、小于取中间——前提是先「化正」再看有没有根。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>「x²−2x−3 &gt; 0 的解集是什么？」如果你还在纠结要不要因式分解、要不要分情况，那就把图像请出来：<strong>不等式 &gt; 0 就是在问抛物线哪一段在 x 轴上方</strong>。</p>
+<p>这一讲把口算口诀背后的真正条件讲清楚——因为那句「大于取两边」是有前提的，用错了会全盘皆输。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、把不等式翻译成图像问题</h3>
+<p><span class="mono">ax² + bx + c &gt; 0</span> 的解，就是使抛物线 <span class="mono">y = ax²+bx+c</span> 落在 x 轴<strong>上方</strong>的那些 x。</p>
+<p><span class="mono">ax² + bx + c &lt; 0</span> 的解，就是曲线落在 x 轴<strong>下方</strong>的那些 x。等号 <span class="mono">&lt; 0</span> 与 <span class="mono">= 0</span> 的差别，只是是否包含交点。</p>
+<h3 class="sub">二、口诀成立的条件</h3>
+<p>先<strong>化正</strong>：若 a &lt; 0，两边同乘 −1，<strong>不等号必须反向</strong>。例如 <span class="mono">−x²+2x+3 ≥ 0</span> 化为 <span class="mono">x²−2x−3 ≤ 0</span>。</p>
+<p>再看 Δ：设两根为 x₁ &lt; x₂。</p>
+<div class="formula"><div class="row"><div class="k">a &gt; 0，Δ &gt; 0</div><div class="v">&gt;0 取两边：x &lt; x₁ 或 x &gt; x₂；&lt;0 取中间：x₁ &lt; x &lt; x₂</div></div><div class="row"><div class="k">a &gt; 0，Δ = 0</div><div class="v">&gt;0 取除顶点外全体：x ≠ x₁；&lt;0 无解</div></div><div class="row"><div class="k">a &gt; 0，Δ &lt; 0</div><div class="v">&gt;0 解集为全体实数；&lt;0 无解</div></div><div class="row"><div class="k">a &lt; 0</div><div class="v">先化正，再套上面三行</div></div></div>
+<h3 class="sub">三、为什么是这样</h3>
+<p>a&gt;0 开口向上：中间那段（两根之间）曲线在轴的下面，两侧（两根之外）在上面。这就是「大于取两边、小于取中间」的图像依据。</p>
+<p>如果 Δ&lt;0 呢？此时整条曲线都在 x 轴同侧：开口向上则全在上方（&gt;0 恒成立），向下则全在下方。这就是第 20 讲恒成立问题的雏形。</p>
+<div class="formula"><div class="v">执行顺序一定不能乱：<span class="hl">先化正 → 再算 Δ 求根 → 最后按口诀写解集</span>。跳过「化正」直接套口诀，是这一讲最致命的错误。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 180" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="180" fill="#ffffff"/><line x1="30" y1="101.5" x2="634" y2="101.5" stroke="#64748b" stroke-width="1.6"/><path d="M 634.0 101.5 L 642.0 97.0 L 642.0 106.0 Z" fill="#64748b"/><text x="272.6" y="117.5" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="628" y="93.5" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><circle cx="201.1" cy="101.5" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="201.1" y="121.5" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">x₁=−1</text><text x="201.1" y="121.5" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">x₁=−1</text><circle cx="458.9" cy="101.5" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="458.9" y="121.5" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">x₂=3</text><text x="458.9" y="121.5" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">x₂=3</text><text x="98.0" y="78.5" font-size="13.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">正 + +</text><text x="98.0" y="78.5" font-size="13.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">正 + +</text><text x="330.0" y="78.5" font-size="13.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">负 − −</text><text x="330.0" y="78.5" font-size="13.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">负 − −</text><text x="549.1" y="78.5" font-size="13.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">正 + +</text><text x="549.1" y="78.5" font-size="13.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">正 + +</text></svg><figcaption>x²−2x−3 的符号分布：两根之外为正、之间为负，所以 &gt;0 取两边、&lt;0 取中间。</figcaption></figure>
+<figure><svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="300" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="110.7" y1="48.0" x2="110.7" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="173.3" y1="48.0" x2="173.3" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="236.0" y1="48.0" x2="236.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="298.7" y1="48.0" x2="298.7" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="361.3" y1="48.0" x2="361.3" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="424.0" y1="48.0" x2="424.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="486.7" y1="48.0" x2="486.7" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="549.3" y1="48.0" x2="549.3" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="252.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="236.3" x2="612.0" y2="236.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="220.6" x2="612.0" y2="220.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="204.9" x2="612.0" y2="204.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="189.2" x2="612.0" y2="189.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="173.5" x2="612.0" y2="173.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="157.8" x2="612.0" y2="157.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="142.2" x2="612.0" y2="142.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="126.5" x2="612.0" y2="126.5" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="110.8" x2="612.0" y2="110.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="95.1" x2="612.0" y2="95.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="79.4" x2="612.0" y2="79.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="63.7" x2="612.0" y2="63.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="157.8" x2="626" y2="157.8" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 157.8 L 634.0 153.3 L 634.0 162.3 Z" fill="#64748b"/><line x1="267.3" y1="262" x2="267.3" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 267.3 34 L 262.8 26 L 271.8 26 Z" fill="#64748b"/><line x1="48.0" y1="153.8" x2="48.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3.5</text><line x1="110.7" y1="153.8" x2="110.7" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="110.7" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="173.3" y1="153.8" x2="173.3" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="173.3" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="236.0" y1="153.8" x2="236.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="236.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="298.7" y1="153.8" x2="298.7" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="298.7" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="361.3" y1="153.8" x2="361.3" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="361.3" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="424.0" y1="153.8" x2="424.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="424.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="486.7" y1="153.8" x2="486.7" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="486.7" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="549.3" y1="153.8" x2="549.3" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="549.3" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><line x1="612.0" y1="153.8" x2="612.0" y2="161.8" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="174.8" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">5.5</text><text x="260.3" y="256.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-6</text><text x="260.3" y="240.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="260.3" y="224.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="260.3" y="208.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="260.3" y="193.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="260.3" y="177.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="260.3" y="146.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="260.3" y="130.5" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="260.3" y="114.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="260.3" y="99.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="260.3" y="83.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="260.3" y="67.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="260.3" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="274.3" y="173.8" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="149.8" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="275.3" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><rect x="204.7" y="48.0" width="250.7" height="204.0" fill="#2563eb" opacity="0.12"/><path d="M 112.6 31.8 L 113.8 33.8 L 115.0 35.9 L 116.1 37.9 L 117.3 39.9 L 118.5 41.9 L 119.7 43.9 L 120.9 45.8 L 122.0 47.8 L 123.2 49.7 L 124.4 51.7 L 125.5 53.6 L 126.7 55.5 L 127.9 57.4 L 129.1 59.3 L 130.2 61.2 L 131.4 63.0 L 132.6 64.9 L 133.8 66.8 L 134.9 68.6 L 136.1 70.4 L 137.3 72.2 L 138.5 74.0 L 139.6 75.8 L 140.8 77.6 L 142.0 79.4 L 143.2 81.1 L 144.4 82.9 L 145.5 84.6 L 146.7 86.4 L 147.9 88.1 L 149.1 89.8 L 150.2 91.5 L 151.4 93.2 L 152.6 94.8 L 153.8 96.5 L 154.9 98.1 L 156.1 99.8 L 157.3 101.4 L 158.4 103.0 L 159.6 104.6 L 160.8 106.2 L 162.0 107.8 L 163.1 109.4 L 164.3 110.9 L 165.5 112.5 L 166.7 114.0 L 167.9 115.6 L 169.0 117.1 L 170.2 118.6 L 171.4 120.1 L 172.6 121.6 L 173.7 123.0 L 174.9 124.5 L 176.1 125.9 L 177.2 127.4 L 178.4 128.8 L 179.6 130.2 L 180.8 131.6 L 182.0 133.0 L 183.1 134.4 L 184.3 135.8 L 185.5 137.2 L 186.7 138.5 L 187.8 139.8 L 189.0 141.2 L 190.2 142.5 L 191.3 143.8 L 192.5 145.1 L 193.7 146.4 L 194.9 147.7 L 196.0 148.9 L 197.2 150.2 L 198.4 151.4 L 199.6 152.6 L 200.8 153.9 L 201.9 155.1 L 203.1 156.3 L 204.3 157.5 L 205.5 158.6 L 206.6 159.8 L 207.8 160.9 L 209.0 162.1 L 210.1 163.2 L 211.3 164.3 L 212.5 165.4 L 213.7 166.5 L 214.8 167.6 L 216.0 168.7 L 217.2 169.8 L 218.4 170.8 L 219.5 171.9 L 220.7 172.9 L 221.9 173.9 L 223.1 174.9 L 224.2 175.9 L 225.4 176.9 L 226.6 177.9 L 227.8 178.9 L 229.0 179.8 L 230.1 180.8 L 231.3 181.7 L 232.5 182.6 L 233.7 183.5 L 234.8 184.4 L 236.0 185.3 L 237.2 186.2 L 238.4 187.1 L 239.5 187.9 L 240.7 188.8 L 241.9 189.6 L 243.0 190.4 L 244.2 191.2 L 245.4 192.0 L 246.6 192.8 L 247.8 193.6 L 248.9 194.3 L 250.1 195.1 L 251.3 195.9 L 252.5 196.6 L 253.6 197.3 L 254.8 198.0 L 256.0 198.7 L 257.1 199.4 L 258.3 200.1 L 259.5 200.8 L 260.7 201.4 L 261.9 202.1 L 263.0 202.7 L 264.2 203.3 L 265.4 203.9 L 266.5 204.5 L 267.7 205.1 L 268.9 205.7 L 270.1 206.3 L 271.2 206.8 L 272.4 207.4 L 273.6 207.9 L 274.8 208.4 L 276.0 208.9 L 277.1 209.4 L 278.3 209.9 L 279.5 210.4 L 280.6 210.9 L 281.8 211.3 L 283.0 211.8 L 284.2 212.2 L 285.4 212.6 L 286.5 213.1 L 287.7 213.5 L 288.9 213.9 L 290.0 214.2 L 291.2 214.6 L 292.4 215.0 L 293.6 215.3 L 294.8 215.7 L 295.9 216.0 L 297.1 216.3 L 298.3 216.6 L 299.5 216.9 L 300.6 217.2 L 301.8 217.4 L 303.0 217.7 L 304.2 217.9 L 305.3 218.2 L 306.5 218.4 L 307.7 218.6 L 308.8 218.8 L 310.0 219.0 L 311.2 219.2 L 312.4 219.4 L 313.6 219.5 L 314.7 219.7 L 315.9 219.8 L 317.1 219.9 L 318.2 220.1 L 319.4 220.2 L 320.6 220.3 L 321.8 220.3 L 323.0 220.4 L 324.1 220.5 L 325.3 220.5 L 326.5 220.6 L 327.7 220.6 L 328.8 220.6 L 330.0 220.6 L 331.2 220.6 L 332.3 220.6 L 333.5 220.6 L 334.7 220.5 L 335.9 220.5 L 337.0 220.4 L 338.2 220.3 L 339.4 220.3 L 340.6 220.2 L 341.8 220.1 L 342.9 219.9 L 344.1 219.8 L 345.3 219.7 L 346.4 219.5 L 347.6 219.4 L 348.8 219.2 L 350.0 219.0 L 351.2 218.8 L 352.3 218.6 L 353.5 218.4 L 354.7 218.2 L 355.8 217.9 L 357.0 217.7 L 358.2 217.4 L 359.4 217.2 L 360.6 216.9 L 361.7 216.6 L 362.9 216.3 L 364.1 216.0 L 365.2 215.7 L 366.4 215.3 L 367.6 215.0 L 368.8 214.6 L 369.9 214.2 L 371.1 213.9 L 372.3 213.5 L 373.5 213.1 L 374.7 212.6 L 375.8 212.2 L 377.0 211.8 L 378.2 211.3 L 379.3 210.9 L 380.5 210.4 L 381.7 209.9 L 382.9 209.4 L 384.1 208.9 L 385.2 208.4 L 386.4 207.9 L 387.6 207.4 L 388.8 206.8 L 389.9 206.3 L 391.1 205.7 L 392.3 205.1 L 393.5 204.5 L 394.6 203.9 L 395.8 203.3 L 397.0 202.7 L 398.2 202.1 L 399.3 201.4 L 400.5 200.8 L 401.7 200.1 L 402.8 199.4 L 404.0 198.7 L 405.2 198.0 L 406.4 197.3 L 407.5 196.6 L 408.7 195.9 L 409.9 195.1 L 411.1 194.3 L 412.2 193.6 L 413.4 192.8 L 414.6 192.0 L 415.8 191.2 L 416.9 190.4 L 418.1 189.6 L 419.3 188.8 L 420.5 187.9 L 421.7 187.1 L 422.8 186.2 L 424.0 185.3 L 425.2 184.4 L 426.3 183.5 L 427.5 182.6 L 428.7 181.7 L 429.9 180.8 L 431.1 179.8 L 432.2 178.9 L 433.4 177.9 L 434.6 176.9 L 435.8 175.9 L 436.9 174.9 L 438.1 173.9 L 439.3 172.9 L 440.4 171.9 L 441.6 170.8 L 442.8 169.8 L 444.0 168.7 L 445.2 167.6 L 446.3 166.5 L 447.5 165.4 L 448.7 164.3 L 449.8 163.2 L 451.0 162.1 L 452.2 160.9 L 453.4 159.8 L 454.6 158.6 L 455.7 157.5 L 456.9 156.3 L 458.1 155.1 L 459.2 153.9 L 460.4 152.6 L 461.6 151.4 L 462.8 150.2 L 464.0 148.9 L 465.1 147.7 L 466.3 146.4 L 467.5 145.1 L 468.7 143.8 L 469.8 142.5 L 471.0 141.2 L 472.2 139.8 L 473.3 138.5 L 474.5 137.2 L 475.7 135.8 L 476.9 134.4 L 478.0 133.0 L 479.2 131.6 L 480.4 130.2 L 481.6 128.8 L 482.8 127.4 L 483.9 125.9 L 485.1 124.5 L 486.3 123.0 L 487.4 121.6 L 488.6 120.1 L 489.8 118.6 L 491.0 117.1 L 492.2 115.6 L 493.3 114.0 L 494.5 112.5 L 495.7 110.9 L 496.8 109.4 L 498.0 107.8 L 499.2 106.2 L 500.4 104.6 L 501.6 103.0 L 502.7 101.4 L 503.9 99.8 L 505.1 98.1 L 506.2 96.5 L 507.4 94.8 L 508.6 93.2 L 509.8 91.5 L 510.9 89.8 L 512.1 88.1 L 513.3 86.4 L 514.5 84.6 L 515.7 82.9 L 516.8 81.1 L 518.0 79.4 L 519.2 77.6 L 520.3 75.8 L 521.5 74.0 L 522.7 72.2 L 523.9 70.4 L 525.0 68.6 L 526.2 66.8 L 527.4 64.9 L 528.6 63.0 L 529.8 61.2 L 530.9 59.3 L 532.1 57.4 L 533.3 55.5 L 534.5 53.6 L 535.6 51.7 L 536.8 49.7 L 538.0 47.8 L 539.2 45.8 L 540.3 43.9 L 541.5 41.9 L 542.7 39.9 L 543.8 37.9 L 545.0 35.9 L 546.2 33.8 L 547.4 31.8" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><circle cx="204.7" cy="157.8" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="204.7" y="177.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">−1</text><text x="204.7" y="177.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">−1</text><circle cx="455.3" cy="157.8" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="455.3" y="177.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">3</text><text x="455.3" y="177.8" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="104.4" y="70.0" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">阴影段在下方 → &lt;0 的解集是 (−1, 3)</text><text x="104.4" y="70.0" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">阴影段在下方 → &lt;0 的解集是 (−1, 3)</text></svg><figcaption>对照图像：把 x 轴上方的「+」区域与曲线在轴上的位置一一对应，口诀自然成立。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">第 0 步（最致命）</div><div class="v">化正：a&lt;0 时两边同乘 −1，<strong>不等号反向</strong></div></div><div class="row"><div class="k">a&gt;0，Δ&gt;0</div><div class="v">&gt;0 取两边（x&lt;x₁ 或 x&gt;x₂）；&lt;0 取中间（x₁&lt;x&lt;x₂）</div></div><div class="row"><div class="k">a&gt;0，Δ=0</div><div class="v">&gt;0：x ≠ x₁；&lt;0：无解</div></div><div class="row"><div class="k">a&gt;0，Δ&lt;0</div><div class="v">&gt;0：全体实数；&lt;0：无解</div></div><div class="row"><div class="k">等号处理</div><div class="v">≥ 或 ≤ 时，两根点要包含进解集</div></div></div>
+<p>图像依据：<span class="hl">开口向上时，两根之间为负、两根之外为正</span>。</p>
+<p>严格不等号用开区间，含等号用闭区间并包含端点。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>化正</strong>：把二次项系数变为正（乘 −1 则变号），统一讨论。</li><li><strong>算 Δ 并求根</strong>：解 <span class="mono">ax²+bx+c=0</span> 得 x₁、x₂（注意按大小排列）。</li><li><strong>画图定位</strong>：脑中画出开口向上的抛物线，标出两零点。</li><li><strong>按口诀写解集</strong>：&gt;0 两边、&lt;0 中间；注意 ≥、≤ 时包含端点。</li><li><strong>特殊情况</strong>：Δ≤0 时回到第 20 讲的恒成立结论，别硬套口诀。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>解不等式 <span class="mono">x² − 2x − 3 &gt; 0</span>。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>a=1 已为正，直接求根再按口诀写。</p>
+<ol><li>已化正：a = 1 &gt; 0。</li><li>求根：x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0 → x₁ = −1，x₂ = 3。</li><li>开口向上，&gt;0 取两边：<span class="mono">x &lt; −1 或 x &gt; 3</span>。</li><li>检验：取 x=4 代入 16−8−3=5&gt;0 ✓；取 x=0 代入 −3&lt;0 ✗（应在中间，符合）。</li></ol>
+<div class="ansbox">答：解集为 x &lt; −1 或 x &gt; 3（即 (−∞,−1)∪(3,+∞)）。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 必须先化正</span>解不等式 <span class="mono">−x² + 2x + 3 ≥ 0</span>。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>a=−1&lt;0，第一步必须化正，否则口诀会把方向弄反。</p>
+<ol><li>化正：两边乘 −1，不等号<strong>反向</strong> → <span class="mono">x² − 2x − 3 ≤ 0</span>。</li><li>求根：x₁ = −1，x₂ = 3（与例 1 同一根）。</li><li>现在是 ≤0，开口向上应取<strong>中间</strong>：<span class="mono">−1 ≤ x ≤ 3</span>。</li><li>注意含等号，端点 −1 与 3 都要包含进去。</li><li>检验：原式取 x=0 得 3 ≥ 0 ✓；取 x=4 得 −16+8+3 = −5 &lt; 0 ✗（应排除）✓。</li></ol>
+<div class="ansbox">答：解集为 −1 ≤ x ≤ 3（即 [−1, 3]）。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>忘了化正</strong>：直接对 a&lt;0 的式子套「大于取两边」，方向会完全相反，这是本讲头号错误。</li><li><strong>不等号没跟着反向</strong>：乘负数时 &gt;= 都要翻转。</li><li><strong>等号端点没包含</strong>：题目是 ≥/≤ 时，解集里两根必须带上等号。</li><li><strong>Δ&lt;0 时仍硬套口诀</strong>：此时没有两根，应回到「恒成立/恒不成立」的判断。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>盈亏分析</strong>：利润函数 &gt;0 的区间就是盈利区间，两个零点是盈亏平衡点。</li><li><strong>安全区间</strong>：拱桥高度必须大于某个值的水平范围，正是「大于取两边」的实际映射。</li><li><strong>投篮的可用角度</strong>：出手角度落在哪段区间球才能入筐，本质上就是一个不等式解集。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="hl">先化正（注意变号）→ 再求根 → 最后套口诀</span>。</li><li>a&gt;0 且有两个根：&gt;0 取两边、&lt;0 取中间。</li><li>Δ=0 时口诀退化：&gt;0 排除顶点，&lt;0 无解。</li><li>Δ&lt;0 时看整体位置，交给第 20 讲的恒成立判断。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">先把二次项化正　变号别忘 с号
+有根大于取两边　小于则取正中间</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="17_抛物线与任意直线.html"><span>← 上一讲</span>抛物线与任意直线</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="19_解集反推开口.html"><span>下一讲 →</span>解集反推开口</a>
+</div>
+<footer>二次函数26讲 · 第 18 讲《一元二次不等式》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "不等式 x² − 5x + 6 < 0 的解集是（　）",
+    "options": [
+      "x < 2 或 x > 3",
+      "2 < x < 3",
+      "x < −3 或 x > −2",
+      "全体实数"
+    ],
+    "answer": 1,
+    "explain": "两根为 2 与 3，a=1>0，<0 取中间，故 2<x<3。取 x=2.5 代入得 6.25−12.5+6=−0.25<0 验证成立。"
+  },
+  {
+    "q": "不等式 −x² + 4x − 3 ≥ 0 的解集是（　）",
+    "options": [
+      "1 ≤ x ≤ 3",
+      "x ≤ 1 或 x ≥ 3",
+      "x ≤ −3 或 x ≥ −1",
+      "无解"
+    ],
+    "answer": 0,
+    "explain": "化正后为 x²−4x+3 ≤ 0，两根 1 与 3，取中间且含端点，故 1≤x≤3。"
+  },
+  {
+    "q": "若 ax²+bx+c>0（a>0）的解集为全体实数，则该抛物线一定满足（　）",
+    "options": [
+      "Δ > 0",
+      "Δ = 0",
+      "Δ < 0",
+      "c > 0"
+    ],
+    "answer": 2,
+    "explain": "开口向上且整条曲线都在 x 轴上方，说明与 x 轴无交点，即 Δ<0（且顶点纵坐标 >0）。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
