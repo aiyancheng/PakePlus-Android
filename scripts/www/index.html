@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>二次函数26讲 · 课程总目录</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in"><div class="badge-line"><span class="badge">初中数学 · 二次函数</span><span class="badge gold">26 讲全部完结</span></div><h1 class="title">二次函数 26 讲通关 · 课程总目录</h1><div class="motto">从第 1 讲「平移·左加右减」出发，到第 26 讲「区间内恰有一根」收官——每一讲攻克一类题型、一套方法。前 13 讲围着「图像」转，后 13 讲围着「根」转。</div><div class="hero-meta">概念讲透型：原理推导 → 图像逻辑 → 核心结论 → 例题精讲 → 易错陷阱 → 生活场景 → 小结口诀 → 自测反馈</div></div></div>
+<div class="wrap">
+<div class="card">
+<div class="stat"><div><b>26</b><span>讲课程</span></div><div><b>8</b><span>套方法</span></div><div><b>5</b><span>句口诀</span></div><div><b>78</b><span>道自测题</span></div></div>
+<p class="lead" style="margin-top:14px">学完 26 讲还做错题，往往不是不会，而是知识散成一把豆子、考场上一紧张抓错那一颗。这套课程按<b>「先懂为什么，再用套路」</b>的方式编排：每一讲都从原理推导讲起，配一张示意图建立图像感，再落到可执行的步骤与例子。建议按顺序学，学完一讲立刻做自测。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">目</span>课程地图</h2>
+<div class="group">基础篇 · 图像</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="01_平移左加右减.html"><div class="no">第 1 讲</div><div class="nm">平移·左加右减</div><div class="mo">自变量左加右减，常数上下加减；a 永远不动。</div></a>
+<a class="lesson" href="02_待定系数法.html"><div class="no">第 2 讲</div><div class="nm">待定系数法</div><div class="mo">已知什么设什么：三点用一般式、顶点用顶点式、两交点用交点式。</div></a>
+<a class="lesson" href="03_区间最值轴在区间内.html"><div class="no">第 3 讲</div><div class="nm">区间最值·轴在区间内</div><div class="mo">轴在区间内：顶点吃掉一头最值，另一头靠「离轴更远的端点」决出。</div></a>
+<a class="lesson" href="04_顶点式.html"><div class="no">第 4 讲</div><div class="nm">顶点式</div><div class="mo">配方成顶点式，顶点、对称轴、最值一口读出。</div></a>
+<a class="lesson" href="05_交点式.html"><div class="no">第 5 讲</div><div class="nm">交点式</div><div class="mo">已知两个交点，交点式最快；交点中点就是对称轴。</div></a>
+<a class="lesson" href="06_抛物线对称性.html"><div class="no">第 6 讲</div><div class="nm">抛物线对称性</div><div class="mo">对称轴两侧，等高点等距离：f(h+t) = f(h−t)。</div></a>
+<a class="lesson" href="07_函数值比大小.html"><div class="no">第 7 讲</div><div class="nm">函数值比大小</div><div class="mo">开口向上，离轴越远值越大；开口向下，离轴越远值越小。</div></a>
+<a class="lesson" href="08_区间最值轴在区间外.html"><div class="no">第 8 讲</div><div class="nm">区间最值·轴在区间外</div><div class="mo">轴在区间外：整段单调，最值全在端点，靠「谁离轴近」判断。</div></a>
+<a class="lesson" href="09_符号多结论判断.html"><div class="no">第 9 讲</div><div class="nm">符号多结论判断</div><div class="mo">开口、对称轴、截距，四步逐个推：多结论题逐个判真伪。</div></a>
+</div>
+<div class="group">进阶篇 · 参数</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="10_四参数铁律.html"><div class="no">第 10 讲</div><div class="nm">四参数铁律</div><div class="mo">a 定开口与宽窄、a 与 b 共定轴、c 定截距、Δ 定交点个数。</div></a>
+<a class="lesson" href="11_开口宽窄比较.html"><div class="no">第 11 讲</div><div class="nm">开口宽窄比较</div><div class="mo">|a| 越大开口越窄；a 的正负只管方向，不管宽窄。</div></a>
+</div>
+<div class="group">进阶篇 · 变换</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="12_平移顶点平移法.html"><div class="no">第 12 讲</div><div class="nm">平移·顶点平移法</div><div class="mo">顶点先行，图像跟着走：先搬顶点再写顶点式，比替换 x 更稳。</div></a>
+<a class="lesson" href="13_翻折平移组合.html"><div class="no">第 13 讲</div><div class="nm">翻折平移组合</div><div class="mo">先翻折后平移，按序作图不乱套：关于谁对称就改谁。</div></a>
+</div>
+<div class="group">进阶篇 · 方程根</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="14_判别式Δ.html"><div class="no">第 14 讲</div><div class="nm">判别式Δ</div><div class="mo">函数方程本同源，Δ 定交点个数：几何意义是顶点与 x 轴的距离。</div></a>
+<a class="lesson" href="15_两根差弦长公式.html"><div class="no">第 15 讲</div><div class="nm">两根差·弦长公式</div><div class="mo">|x₁−x₂| = √Δ / |a|，一行算出两根距离，不必求出根。</div></a>
+</div>
+<div class="group">进阶篇 · 交点</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="16_联立方程判交点.html"><div class="no">第 16 讲</div><div class="nm">联立方程判交点</div><div class="mo">把 y = t 代入，交点问题就变成方程的根问题：看顶点高度即可。</div></a>
+<a class="lesson" href="17_抛物线与任意直线.html"><div class="no">第 17 讲</div><div class="nm">抛物线与任意直线</div><div class="mo">联立二元二次，Δ 定交点个数：相切、相交、相离三种情况。</div></a>
+</div>
+<div class="group">进阶篇 · 不等式</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="18_一元二次不等式.html"><div class="no">第 18 讲</div><div class="nm">一元二次不等式</div><div class="mo">大于取两边、小于取中间——前提是先「化正」再看有没有根。</div></a>
+</div>
+<div class="group">提高篇 · 不等式</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="19_解集反推开口.html"><div class="no">第 19 讲</div><div class="nm">解集反推开口</div><div class="mo">解集两头开 ⟹ 开口朝上；解集在中间 ⟹ 开口朝下。端点就是两根。</div></a>
+<a class="lesson" href="20_恒成立问题.html"><div class="no">第 20 讲</div><div class="nm">恒成立问题</div><div class="mo">图像恒在上方 ⟺ 开口向上 + Δ&lt;0：永远别忘了讨论 a=0。</div></a>
+<a class="lesson" href="21_函数不等式看高看低.html"><div class="no">第 21 讲</div><div class="nm">函数不等式·看高看低</div><div class="mo">图像在上函数值就大：先求交点，再看两段谁在上面。</div></a>
+<a class="lesson" href="22_穿针引线法.html"><div class="no">第 22 讲</div><div class="nm">穿针引线法</div><div class="mo">化正 → 标根 → 从右上起笔 → 奇穿偶不穿。</div></a>
+</div>
+<div class="group">提高篇 · 韦达</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="23_根的正负判断.html"><div class="no">第 23 讲</div><div class="nm">根的正负判断</div><div class="mo">和定正负方向、积定同号异号：判根正负不用解方程。</div></a>
+</div>
+<div class="group">提高篇 · 根的分布</div>
+<div class="g-desc">练的是数形结合的硬功夫：判别式、韦达定理、根的分布</div>
+<div class="lessons">
+<a class="lesson" href="24_两根都大于k.html"><div class="no">第 24 讲</div><div class="nm">两根都大于k</div><div class="mo">Δ 兜底 + 对称轴定位 + f(k) 卡点，三条缺一不可。</div></a>
+<a class="lesson" href="25_两根都小于k.html"><div class="no">第 25 讲</div><div class="nm">两根都小于k</div><div class="mo">与上一讲同模板，只把对称轴的不等号方向反过来。</div></a>
+<a class="lesson" href="26_区间内恰有一根.html"><div class="no">第 26 讲</div><div class="nm">区间内恰有一根</div><div class="mo">f(m)·f(n) &lt; 0 秒杀主情形，端点与重根另做检验。</div></a>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">法</span>26 讲其实只有八套方法</h2>
+<p>遇到题先看它属于哪一类，再打开对应的那一枚锦囊。</p>
+<table class="tb"><tr><th style="width:22%">锦囊</th><th style="width:28%">核心式子</th><th>什么时候用</th></tr>
+<tr><td><b>方法一 · 判别定根</b></td><td>Δ=b²−4ac</td><td>Δ&gt;0 两根不同、Δ=0 一根（重根）、Δ&lt;0 无实根。含参题第一道门。</td></tr>
+<tr><td><b>方法二 · 韦达和积</b></td><td>x₁+x₂=−b/a，x₁x₂=c/a</td><td>和定正负方向、积定同号异号，不求出根也能判性质。</td></tr>
+<tr><td><b>方法三 · 穿针引线</b></td><td>化正→标根→穿线→定解</td><td>奇穿偶不穿，从右上角起笔，高次不等式通杀。</td></tr>
+<tr><td><b>方法四 · 图像卡点</b></td><td>Δ + 对称轴 + f(k) 三条件</td><td>区间根、同侧根的唯一解法，缺一不可。</td></tr>
+<tr><td><b>方法五 · 对称轴位</b></td><td>x=−b/2a</td><td>决定两根整体靠左还是靠右，卡点法的核心位置变量。</td></tr>
+<tr><td><b>方法六 · 开口方向</b></td><td>a&gt;0 向上，a&lt;0 向下</td><td>决定外部位置、f(k) 变号方向、比大小结果。</td></tr>
+<tr><td><b>方法七 · 看高看低</b></td><td>图像在上，函数值大</td><td>函数不等式与函数值比较的不二法门。</td></tr>
+<tr><td><b>方法八 · 端点取舍</b></td><td>有等号端点可取</td><td>Δ=0 可取、分母的根必须舍去，端点逐项核对。</td></tr>
+</table></div>
+<div class="card">
+<h2 class="sec"><span class="n">诀</span>五句口诀 · 考前十分钟</h2>
+<div class="verse" style="margin-bottom:12px;text-align:left;font-size:16px">第一句｜判别式兜底万变　——　Δ=b²−4ac 永远先算，没根后面都不用列。</div>
+<div class="verse" style="margin-bottom:12px;text-align:left;font-size:16px">第二句｜韦达和积定正反　——　ac 定同异、ab 定正负，判根正负别硬解。</div>
+<div class="verse" style="margin-bottom:12px;text-align:left;font-size:16px">第三句｜奇穿偶不穿一点　——　化正→标根→穿线→定解，所有整式不等式通杀。</div>
+<div class="verse" style="margin-bottom:12px;text-align:left;font-size:16px">第四句｜异号乘积必穿轴　——　f(m)·f(n)&lt;0 区间恰一根，闭区间另验端点。</div>
+<div class="verse" style="margin-bottom:12px;text-align:left;font-size:16px">第五句｜开口方向莫看反　——　看图第一步先看开口，一切方法建立在开口明确之上。</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">用</span>二次函数在生活里长什么样</h2>
+<table class="tb"><tr><th style="width:20%">场景</th><th style="width:26%">数学本质</th><th>对应的讲次</th></tr>
+<tr><td><b>拱桥承重</b></td><td>桥拱是一条抛物线</td><td>顶点处承重最大 → 求最值就是求顶点坐标</td></tr>
+<tr><td><b>喷泉水柱</b></td><td>水柱轨迹是抛物线</td><td>最高点高度 → 顶点纵坐标 = 最大高度</td></tr>
+<tr><td><b>篮球抛投</b></td><td>球的飞行轨迹</td><td>何时到最高点 → 对称轴 t = −b/2a</td></tr>
+<tr><td><b>灯光设计</b></td><td>抛物面反射聚光</td><td>照射距离 → 抛物线与地面的落点距离</td></tr>
+<tr><td><b>利润最大化</b></td><td>收入是二次的</td><td>定价多少利润最高 → 顶点横坐标</td></tr>
+</table></div>
+<div class="card">
+<h2 class="sec"><span class="n">序</span>建议的学习顺序</h2>
+<ol class="num"><li><b>初次学：</b>按第 1→26 讲顺序来，每讲先自己推一遍原理，再看解析。</li><li><b>考前复习：</b>优先重看第 3、8、9、10、18、20、24、25、26 讲——这几讲是中考高频。</li><li><b>做题手感：</b>遮住解析，先看题干判断「该用哪套方法」，三秒内调不出来就回看该讲的核心结论。</li><li><b>错题处理：</b>错题回到对应讲次，只看「易错陷阱」和「核心结论」两块。</li></ol></div>
+<footer>二次函数26讲 · 概念讲透型课程包｜共 26 讲，每讲含：原理推导 · 图像逻辑 · 核心结论 · 解题步骤 · 例题精讲 · 易错陷阱 · 生活场景 · 小结口诀 · 自测反馈</footer>
+</div>
+
+</body>
+</html>
