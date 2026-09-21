@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第22讲 穿针引线法 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 提高篇 · 不等式 / 第22讲</div>
+<div class="badge-line"><span class="badge">第 22 讲 / 共 26 讲</span><span class="badge">提高篇 · 不等式</span><span class="badge gold">高次通杀</span></div>
+<h1 class="title">穿针引线法</h1>
+<div class="motto">化正 → 标根 → 从右上起笔 → 奇穿偶不穿。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>第 18 讲的一元二次不等式只是开胃菜。到了三次、四次不等式，展开后根本没法看——但只要你把它<strong>因式分解</strong>后画一条「穿行」的曲线，答案五秒钟就出来了。这就是<strong>穿针引线法</strong>（也叫数轴标根法）。</p>
+<p>它的强大之处在于：不管多少次、多少个因式，规则完全一样。学会了它，高中三年的整式不等式基本通吃。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、五步流程</h3>
+<div class="formula"><div class="row"><div class="k">① 化正</div><div class="v">把最高次项的系数化为正（乘 −1 则不等号反向）</div></div><div class="row"><div class="k">② 分解</div><div class="v">因式分解，求出每个根并标明重数</div></div><div class="row"><div class="k">③ 标根</div><div class="v">把根按从小到大标到数轴上</div></div><div class="row"><div class="k">④ 穿线</div><div class="v"><strong>从右上方起笔</strong>，向左依次穿过每个根：奇次根穿过中心线、偶次根从同侧弹回</div></div><div class="row"><div class="k">⑤ 定解</div><div class="v">看曲线在数轴上方（&gt;0）还是下方（&lt;0），写出对应区间</div></div></div>
+<h3 class="sub">二、为什么「右上起笔」？</h3>
+<p>最高次项系数为正时，当 x → +∞，整式的值趋向 +∞，也就是正数。所以最右边的区间一定是「正」，曲线从上方开始往左走。</p>
+<h3 class="sub">三、为什么「奇穿偶不穿」？</h3>
+<p>越过一个根时，只有<strong>这一个因式</strong>改变符号（其他因式在根附近符号几乎不变）。</p>
+<p>若该因式是奇次幂（如 <span class="mono">(x−2)¹</span>），符号会改变 → 曲线穿过数轴；若是偶次幂（如 <span class="mono">(x−2)²</span>），它恒 ≥0，符号不变 → 曲线在同侧弹回（碰到但不穿过）。</p>
+<div class="formula"><div class="row"><div class="k">奇重数（1、3、5…）</div><div class="v">符号翻转 → 穿过数轴</div></div><div class="row"><div class="k">偶重数（2、4、6…）</div><div class="v">符号不变 → 同侧弹回（不穿过）</div></div></div>
+<div class="formula"><div class="v">最后一步别忘了检查：<strong>取到的端点是否应该挖掉</strong>。原式是严格不等号时，所有根都不包含在解集中；若式子出现在分母位置，该根即使由偶次「弹回」也一定要挖掉。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="200" fill="#ffffff"/><line x1="30" y1="100.0" x2="634" y2="100.0" stroke="#64748b" stroke-width="1.6"/><path d="M 634.0 100.0 L 642.0 95.5 L 642.0 104.5 Z" fill="#64748b"/><line x1="293.8" y1="170" x2="293.8" y2="26" stroke="#64748b" stroke-width="1.6"/><path d="M 293.8 26 L 289.2 18 L 298.2 18 Z" fill="#64748b"/><text x="300.8" y="116.0" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="628" y="92.0" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="301.8" y="20" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 221.2 100.0 Q 330.0 36.3 438.8 100.0" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/><path d="M 438.8 100.0 Q 475.0 163.8 511.2 100.0" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/><path d="M 511.2 100.0 C 547.5 77.7 558.4 52.2 601.9 45.8" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/><path d="M 58.1 154.2 C 101.6 147.8 185.0 122.3 221.2 100.0" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/><circle cx="221.2" cy="100.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="221.2" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">−1</text><text x="221.2" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">−1</text><circle cx="438.8" cy="100.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="438.8" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">2</text><text x="438.8" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><circle cx="511.2" cy="100.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="511.2" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">3</text><text x="511.2" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="576.5" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">+</text><text x="576.5" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">+</text><text x="475.0" y="116.9" font-size="14.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">−</text><text x="475.0" y="116.9" font-size="14.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">−</text><text x="330.0" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">+</text><text x="330.0" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">+</text><text x="119.8" y="116.9" font-size="14.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">−</text><text x="119.8" y="116.9" font-size="14.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">−</text></svg><figcaption>(x+1)(x−2)(x−3)&gt;0：从右上起笔，三个奇重根依次穿过，正区间为 (−1,2)∪(3,+∞)。</figcaption></figure>
+<figure><svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="200" fill="#ffffff"/><line x1="30" y1="100.0" x2="634" y2="100.0" stroke="#64748b" stroke-width="1.6"/><path d="M 634.0 100.0 L 642.0 95.5 L 642.0 104.5 Z" fill="#64748b"/><line x1="293.8" y1="170" x2="293.8" y2="26" stroke="#64748b" stroke-width="1.6"/><path d="M 293.8 26 L 289.2 18 L 298.2 18 Z" fill="#64748b"/><text x="300.8" y="116.0" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="628" y="92.0" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="301.8" y="20" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 148.8 100.0 Q 257.5 36.3 366.2 100.0" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/><path d="M 366.2 100.0 C 402.5 77.7 558.4 52.2 601.9 45.8" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/><path d="M 58.1 154.2 C 101.6 147.8 112.5 122.3 148.8 100.0" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round"/><text x="366.2" y="130.0" font-size="11" fill="#7c3aed" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">偶·弹回</text><text x="366.2" y="130.0" font-size="11" fill="#7c3aed" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">偶·弹回</text><circle cx="148.8" cy="100.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="148.8" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">−2</text><text x="148.8" y="120.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">−2</text><circle cx="366.2" cy="100.0" r="4.2" fill="#ea580c" stroke="#ea580c" stroke-width="2"/><text x="366.2" y="120.0" font-size="12.5" font-weight="600" fill="#ea580c" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">1（偶重·弹回）</text><text x="366.2" y="120.0" font-size="12.5" font-weight="600" fill="#ea580c" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1（偶重·弹回）</text><text x="511.2" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">+</text><text x="511.2" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">+</text><text x="257.5" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">+</text><text x="257.5" y="83.1" font-size="14.0" fill="#dc2626" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">+</text><text x="76.2" y="116.9" font-size="14.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">−</text><text x="76.2" y="116.9" font-size="14.0" fill="#2563eb" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">−</text></svg><figcaption>(x−1)²(x+2)&gt;0 的解很意外：在 x=1 处（偶重）曲线弹回不穿轴，所以 &lt;0 的部分只剩 x&lt;−2。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">第 1 步</div><div class="v">化正：最高次项系数变正（不等号随之反向）</div></div><div class="row"><div class="k">第 2 步</div><div class="v">因式分解，标出所有根及其重数</div></div><div class="row"><div class="k">第 3 步</div><div class="v">从小到大标根，从<strong>右上角</strong>起笔</div></div><div class="row"><div class="k">第 4 步</div><div class="v">奇重数穿过数轴，偶重数同侧弹回</div></div><div class="row"><div class="k">第 5 步</div><div class="v">取「正」区间或「负」区间，挖掉不该含的端点</div></div></div>
+<p><span class="hl">奇穿偶不穿，右上起笔</span>，这八个字就是全部口诀。</p>
+<p>它与第 18 讲的二次不等式完全兼容：两根都是奇重时就是「大于取两边、小于取中间」。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>整理</strong>：移项使右边为 0，左边因式分解。</li><li><strong>化正</strong>：若最高次项系数为负，两边乘 −1 并翻转不等号。</li><li><strong>标根</strong>：把所有根（含重数）标到数轴上，按大小排列。</li><li><strong>穿线</strong>：从右上方开始，奇穿偶不穿地画到最左边。</li><li><strong>读数</strong>：&gt;0 取曲线在轴上方的区间，&lt;0 取下方的区间；注意分母的根必须挖去。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>解不等式 <span class="mono">(x + 1)(x − 2)(x − 3) &gt; 0</span>。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>已经分解好了，最高次项系数为正，直接标根穿线。</p>
+<ol><li>最高次项系数为正（三次项系数为 +1），无需化正。</li><li>三个根：−1、2、3，重数都是 1（奇重），全部穿过。</li><li>从右上方起笔：x&gt;3 为正 → 穿 3 → (2,3) 为负 → 穿 2 → (−1,2) 为正 → 穿 −1 → x&lt;−1 为负。</li><li>&gt;0 取正区间：<span class="mono">−1 &lt; x &lt; 2 或 x &gt; 3</span>。</li><li>取点验证：x=0 得 (1)(−2)(−3)=6&gt;0 ✓；x=2.5 得 (3.5)(0.5)(−0.5)&lt;0 ✓。</li></ol>
+<div class="ansbox">答：−1 &lt; x &lt; 2 或 x &gt; 3。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 偶重根</span>解不等式 <span class="mono">(x − 1)²(x + 2) &lt; 0</span>。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>x=1 是平方项，属于偶重根，穿到这里会「弹回」而不穿过。</p>
+<ol><li>最高次项系数为正，无需化正。</li><li>根为 −2（重数 1，奇）与 1（重数 2，偶）。</li><li>从右上方起笔：x&gt;1 为正 → 到 x=1 因是<strong>偶重</strong>，弹回不穿，仍是正 → 过 (−2,1) 保持正 → 到 x=−2 为<strong>奇重</strong>，穿轴变负 → x&lt;−2 为负。</li><li>&lt;0 取负区间：<span class="mono">x &lt; −2</span>。</li><li>取点验证：x=0 时 (1)(2)=2&gt;0（落在正区间）✓；x=−3 时 16·(−1)=−16&lt;0 ✓。</li></ol>
+<div class="ansbox">答：x &lt; −2。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>忘记化正</strong>：最高次项系数为负时右端不是「+,必须从右上起笔。</li><li><strong>偶重根照样穿过</strong>：这是最常见的失误，记住「碰到就弹回」。</li><li><strong>端点没挖掉</strong>：分母中的根、以及严格不等号下的所有根都不能包含在解集里。</li><li><strong>没分解就穿线</strong>：必须先化成若干一次（或不可再分）因式的乘积。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>多因素区间分析</strong>：把复杂条件拆成若干开关（因式），逐个判正负，得到整体可用的参数区间。</li><li><strong>多因素决策</strong>：几个因素各自独立影响结果的正负，正是「各个因式独立变号」的现实版。</li><li><strong>电路分析</strong>：多个开关串联时，总通断由各段的奇偶状态决定。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="hl">化正 → 标根 → 右上起笔 → 奇穿偶不穿 → 定解集</span>。</li><li>偶重根时不翻转符号，奇重根时翻转——这是整套方法的灵魂。</li><li>它与一元二次不等式的口诀完全兼容。</li><li>分母中的根、严格不等号下的端点，一定要挖掉。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">右上起笔画穿线　奇穿偶弹要分清
+因式分完再动手　端点取舍看不等号</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="21_函数不等式看高看低.html"><span>← 上一讲</span>函数不等式·看高看低</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="23_根的正负判断.html"><span>下一讲 →</span>根的正负判断</a>
+</div>
+<footer>二次函数26讲 · 第 22 讲《穿针引线法》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "不等式 (x−1)(x−2)(x−4) > 0 的解集是（　）",
+    "options": [
+      "x<1 或 2<x<4",
+      "1<x<2 或 x>4",
+      "x<1 或 x>4",
+      "2<x<4"
+    ],
+    "answer": 1,
+    "explain": "三个奇重根，从右上起笔：x>4 正、2<x<4 负、1<x<2 正、x<1 负，故 >0 为 1<x<2 或 x>4。"
+  },
+  {
+    "q": "用穿针引线法时，遇到偶重根应该（　）",
+    "options": [
+      "照常穿过数轴",
+      "在同侧弹回，符号不变",
+      "停止画线",
+      "翻转两次"
+    ],
+    "answer": 1,
+    "explain": "偶次幂因式恒非负，越过该根时它不变号，故整式符号不变，曲线从同侧弹回。"
+  },
+  {
+    "q": "关于穿针引线法第 1 步「化正」，下列说法正确的是（　）",
+    "options": [
+      "可省略",
+      "最高次项系数化为正，不等号相应反向",
+      "只需把常数项化为正",
+      "只需把一次项化为正"
+    ],
+    "answer": 1,
+    "explain": "最高次项系数为正才能保证最右区间取正值，从而「右上起笔」成立；乘 −1 时不等号必须跟着反向。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
