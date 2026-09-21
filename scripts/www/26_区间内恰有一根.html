@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第26讲 区间内恰有一根 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 提高篇 · 根的分布 / 第26讲</div>
+<div class="badge-line"><span class="badge">第 26 讲 / 共 26 讲</span><span class="badge">提高篇 · 根的分布</span><span class="badge gold">收官压轴</span></div>
+<h1 class="title">区间内恰有一根</h1>
+<div class="motto">f(m)·f(n) &lt; 0 秒杀主情形，端点与重根另做检验。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>只剩下最后一个场景：方程在区间 (m, n) 里<strong>恰好有一个根</strong>。这是整套课程里最综合的一讲——它用到了连续性、端点值、还有前 25 讲的全部直觉。</p>
+<p>好消息是主情形一条式子就能秒杀：<span class="mono">f(m)·f(n)&lt;0</span>。难的是那些容易被忽略的<strong>边界</strong>：端点恰好是根、以及重根的情况。本讲把它们一次讲清。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、主条件为什么成立</h3>
+<p>二次函数图像是一条<strong>连续不断</strong>的曲线。若 <span class="mono">f(m)</span> 与 <span class="mono">f(n)</span> 异号（一个在 x 轴上方、一个在下方），那么从 x=m 走到 x=n 的过程必然穿过 x 轴<strong>奇数次</strong>。</p>
+<p>而二次函数最多只有两个根，所以「奇数次」只能是 1 次 → 区间内恰好一个根。这就是：</p>
+<p><span class="hl"><span class="mono">f(m) · f(n) &lt; 0</span> ⟹ (m,n) 内恰有一根</span></p>
+<h3 class="sub">二、但它只是充分条件，不是全部</h3>
+<p>下面两种情形也可能导致「恰有一根」，必须单独检验：</p>
+<div class="formula"><div class="row"><div class="k">① 端点恰是根</div><div class="v">若 f(m)=0，需检查<strong>另一个根</strong>是否落在 (m,n) 内</div></div><div class="row"><div class="k">② 重根落在区间内</div><div class="v">Δ=0 时两根重合为一个值，若它落在 (m,n) 内，是否算「一根」取决于题目约定</div></div></div>
+<h3 class="sub">三、完整的分类检查清单</h3>
+<div class="formula"><div class="row"><div class="k">主情形</div><div class="v">f(m)·f(n) &lt; 0 → 直接成立</div></div><div class="row"><div class="k">补充 A</div><div class="v">f(m) = 0 → 求另一根，看是否 ∈ (m,n)</div></div><div class="row"><div class="k">补充 B</div><div class="v">f(n) = 0 → 求另一根，看是否 ∈ (m,n)</div></div><div class="row"><div class="k">补充 C</div><div class="v">Δ = 0 → 重根 x = −b/(2a)，看是否 ∈ (m,n)</div></div></div>
+<div class="formula"><div class="v">不同教材对「重根是否算一个根」的约定略有差别：按<strong>不同实数值</strong>计数时算一个，按「两个相等的实根」计数时不算。中考命题一般会明确写出「两个不相等的实根」来避免歧义，遇到含糊表述时按上述分类分别说明即可。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 340" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="340" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="110.7" y1="48.0" x2="110.7" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="173.3" y1="48.0" x2="173.3" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="236.0" y1="48.0" x2="236.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="298.7" y1="48.0" x2="298.7" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="361.3" y1="48.0" x2="361.3" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="424.0" y1="48.0" x2="424.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="486.7" y1="48.0" x2="486.7" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="549.3" y1="48.0" x2="549.3" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="292.0" x2="612.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="278.4" x2="612.0" y2="278.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="264.9" x2="612.0" y2="264.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="251.3" x2="612.0" y2="251.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="237.8" x2="612.0" y2="237.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="224.2" x2="612.0" y2="224.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="210.7" x2="612.0" y2="210.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="197.1" x2="612.0" y2="197.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="183.6" x2="612.0" y2="183.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="170.0" x2="612.0" y2="170.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="156.4" x2="612.0" y2="156.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="142.9" x2="612.0" y2="142.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="129.3" x2="612.0" y2="129.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="115.8" x2="612.0" y2="115.8" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="102.2" x2="612.0" y2="102.2" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="88.7" x2="612.0" y2="88.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="75.1" x2="612.0" y2="75.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="61.6" x2="612.0" y2="61.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="183.6" x2="626" y2="183.6" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 183.6 L 634.0 179.1 L 634.0 188.1 Z" fill="#64748b"/><line x1="204.7" y1="302" x2="204.7" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 204.7 34 L 200.2 26 L 209.2 26 Z" fill="#64748b"/><line x1="48.0" y1="179.6" x2="48.0" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="110.7" y1="179.6" x2="110.7" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="110.7" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="173.3" y1="179.6" x2="173.3" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="173.3" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="236.0" y1="179.6" x2="236.0" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="236.0" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="298.7" y1="179.6" x2="298.7" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="298.7" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="361.3" y1="179.6" x2="361.3" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="361.3" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="424.0" y1="179.6" x2="424.0" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="424.0" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="486.7" y1="179.6" x2="486.7" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="486.7" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><line x1="549.3" y1="179.6" x2="549.3" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="549.3" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">5.5</text><line x1="612.0" y1="179.6" x2="612.0" y2="187.6" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="200.6" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">6.5</text><text x="197.7" y="296.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-8</text><text x="197.7" y="282.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-7</text><text x="197.7" y="268.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-6</text><text x="197.7" y="255.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="197.7" y="241.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="197.7" y="228.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="197.7" y="214.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="197.7" y="201.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="197.7" y="174.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="197.7" y="160.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="197.7" y="146.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="197.7" y="133.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="197.7" y="119.8" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="197.7" y="106.2" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="197.7" y="92.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="197.7" y="79.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">8</text><text x="197.7" y="65.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">9</text><text x="197.7" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">10</text><text x="211.7" y="199.6" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="175.6" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="212.7" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><rect x="204.7" y="48.0" width="188.0" height="244.0" fill="#f59e0b" opacity="0.12"/><path d="M 48.0 41.2 L 49.2 43.4 L 50.4 45.5 L 51.5 47.7 L 52.7 49.8 L 53.9 51.9 L 55.0 54.0 L 56.2 56.1 L 57.4 58.2 L 58.6 60.3 L 59.8 62.3 L 60.9 64.4 L 62.1 66.5 L 63.3 68.5 L 64.5 70.5 L 65.6 72.6 L 66.8 74.6 L 68.0 76.6 L 69.1 78.6 L 70.3 80.5 L 71.5 82.5 L 72.7 84.5 L 73.9 86.4 L 75.0 88.4 L 76.2 90.3 L 77.4 92.3 L 78.5 94.2 L 79.7 96.1 L 80.9 98.0 L 82.1 99.9 L 83.2 101.7 L 84.4 103.6 L 85.6 105.5 L 86.8 107.3 L 87.9 109.2 L 89.1 111.0 L 90.3 112.8 L 91.5 114.6 L 92.7 116.4 L 93.8 118.2 L 95.0 120.0 L 96.2 121.8 L 97.3 123.6 L 98.5 125.3 L 99.7 127.1 L 100.9 128.8 L 102.1 130.5 L 103.2 132.2 L 104.4 133.9 L 105.6 135.6 L 106.8 137.3 L 107.9 139.0 L 109.1 140.7 L 110.3 142.3 L 111.4 144.0 L 112.6 145.6 L 113.8 147.3 L 115.0 148.9 L 116.1 150.5 L 117.3 152.1 L 118.5 153.7 L 119.7 155.3 L 120.9 156.8 L 122.0 158.4 L 123.2 160.0 L 124.4 161.5 L 125.6 163.1 L 126.7 164.6 L 127.9 166.1 L 129.1 167.6 L 130.2 169.1 L 131.4 170.6 L 132.6 172.1 L 133.8 173.5 L 134.9 175.0 L 136.1 176.4 L 137.3 177.9 L 138.5 179.3 L 139.6 180.7 L 140.8 182.2 L 142.0 183.6 L 143.2 184.9 L 144.4 186.3 L 145.5 187.7 L 146.7 189.1 L 147.9 190.4 L 149.1 191.8 L 150.2 193.1 L 151.4 194.4 L 152.6 195.8 L 153.8 197.1 L 154.9 198.4 L 156.1 199.6 L 157.3 200.9 L 158.4 202.2 L 159.6 203.5 L 160.8 204.7 L 162.0 205.9 L 163.1 207.2 L 164.3 208.4 L 165.5 209.6 L 166.7 210.8 L 167.9 212.0 L 169.0 213.2 L 170.2 214.4 L 171.4 215.5 L 172.6 216.7 L 173.7 217.8 L 174.9 219.0 L 176.1 220.1 L 177.2 221.2 L 178.4 222.3 L 179.6 223.4 L 180.8 224.5 L 182.0 225.6 L 183.1 226.6 L 184.3 227.7 L 185.5 228.8 L 186.7 229.8 L 187.8 230.8 L 189.0 231.8 L 190.2 232.9 L 191.3 233.9 L 192.5 234.9 L 193.7 235.8 L 194.9 236.8 L 196.0 237.8 L 197.2 238.7 L 198.4 239.7 L 199.6 240.6 L 200.8 241.5 L 201.9 242.5 L 203.1 243.4 L 204.3 244.3 L 205.5 245.1 L 206.6 246.0 L 207.8 246.9 L 209.0 247.8 L 210.1 248.6 L 211.3 249.4 L 212.5 250.3 L 213.7 251.1 L 214.8 251.9 L 216.0 252.7 L 217.2 253.5 L 218.4 254.3 L 219.5 255.1 L 220.7 255.8 L 221.9 256.6 L 223.1 257.3 L 224.2 258.1 L 225.4 258.8 L 226.6 259.5 L 227.8 260.2 L 229.0 260.9 L 230.1 261.6 L 231.3 262.3 L 232.5 262.9 L 233.7 263.6 L 234.8 264.2 L 236.0 264.9 L 237.2 265.5 L 238.4 266.1 L 239.5 266.8 L 240.7 267.4 L 241.9 267.9 L 243.0 268.5 L 244.2 269.1 L 245.4 269.7 L 246.6 270.2 L 247.8 270.8 L 248.9 271.3 L 250.1 271.8 L 251.3 272.3 L 252.5 272.9 L 253.6 273.3 L 254.8 273.8 L 256.0 274.3 L 257.1 274.8 L 258.3 275.2 L 259.5 275.7 L 260.7 276.1 L 261.9 276.6 L 263.0 277.0 L 264.2 277.4 L 265.4 277.8 L 266.5 278.2 L 267.7 278.6 L 268.9 278.9 L 270.1 279.3 L 271.2 279.7 L 272.4 280.0 L 273.6 280.3 L 274.8 280.7 L 276.0 281.0 L 277.1 281.3 L 278.3 281.6 L 279.5 281.9 L 280.6 282.2 L 281.8 282.4 L 283.0 282.7 L 284.2 282.9 L 285.4 283.2 L 286.5 283.4 L 287.7 283.6 L 288.9 283.8 L 290.0 284.0 L 291.2 284.2 L 292.4 284.4 L 293.6 284.6 L 294.8 284.7 L 295.9 284.9 L 297.1 285.0 L 298.3 285.2 L 299.5 285.3 L 300.6 285.4 L 301.8 285.5 L 303.0 285.6 L 304.2 285.7 L 305.3 285.8 L 306.5 285.9 L 307.7 285.9 L 308.8 286.0 L 310.0 286.0 L 311.2 286.0 L 312.4 286.1 L 313.6 286.1 L 314.7 286.1 L 315.9 286.1 L 317.1 286.0 L 318.2 286.0 L 319.4 286.0 L 320.6 285.9 L 321.8 285.9 L 323.0 285.8 L 324.1 285.7 L 325.3 285.7 L 326.5 285.6 L 327.7 285.5 L 328.8 285.3 L 330.0 285.2 L 331.2 285.1 L 332.3 284.9 L 333.5 284.8 L 334.7 284.6 L 335.9 284.5 L 337.0 284.3 L 338.2 284.1 L 339.4 283.9 L 340.6 283.7 L 341.8 283.5 L 342.9 283.2 L 344.1 283.0 L 345.3 282.8 L 346.4 282.5 L 347.6 282.2 L 348.8 282.0 L 350.0 281.7 L 351.2 281.4 L 352.3 281.1 L 353.5 280.8 L 354.7 280.5 L 355.8 280.1 L 357.0 279.8 L 358.2 279.4 L 359.4 279.1 L 360.6 278.7 L 361.7 278.3 L 362.9 277.9 L 364.1 277.5 L 365.2 277.1 L 366.4 276.7 L 367.6 276.3 L 368.8 275.8 L 369.9 275.4 L 371.1 274.9 L 372.3 274.5 L 373.5 274.0 L 374.7 273.5 L 375.8 273.0 L 377.0 272.5 L 378.2 272.0 L 379.3 271.5 L 380.5 270.9 L 381.7 270.4 L 382.9 269.9 L 384.1 269.3 L 385.2 268.7 L 386.4 268.1 L 387.6 267.6 L 388.8 267.0 L 389.9 266.3 L 391.1 265.7 L 392.3 265.1 L 393.5 264.5 L 394.6 263.8 L 395.8 263.2 L 397.0 262.5 L 398.2 261.8 L 399.3 261.1 L 400.5 260.4 L 401.7 259.7 L 402.8 259.0 L 404.0 258.3 L 405.2 257.6 L 406.4 256.8 L 407.5 256.1 L 408.7 255.3 L 409.9 254.5 L 411.1 253.8 L 412.2 253.0 L 413.4 252.2 L 414.6 251.4 L 415.8 250.5 L 416.9 249.7 L 418.1 248.9 L 419.3 248.0 L 420.5 247.2 L 421.7 246.3 L 422.8 245.4 L 424.0 244.6 L 425.2 243.7 L 426.3 242.8 L 427.5 241.8 L 428.7 240.9 L 429.9 240.0 L 431.1 239.0 L 432.2 238.1 L 433.4 237.1 L 434.6 236.2 L 435.8 235.2 L 436.9 234.2 L 438.1 233.2 L 439.3 232.2 L 440.4 231.2 L 441.6 230.1 L 442.8 229.1 L 444.0 228.1 L 445.2 227.0 L 446.3 225.9 L 447.5 224.9 L 448.7 223.8 L 449.8 222.7 L 451.0 221.6 L 452.2 220.5 L 453.4 219.3 L 454.6 218.2 L 455.7 217.1 L 456.9 215.9 L 458.1 214.7 L 459.2 213.6 L 460.4 212.4 L 461.6 211.2 L 462.8 210.0 L 464.0 208.8 L 465.1 207.6 L 466.3 206.4 L 467.5 205.1 L 468.7 203.9 L 469.8 202.6 L 471.0 201.3 L 472.2 200.1 L 473.3 198.8 L 474.5 197.5 L 475.7 196.2 L 476.9 194.9 L 478.0 193.6 L 479.2 192.2 L 480.4 190.9 L 481.6 189.5 L 482.8 188.2 L 483.9 186.8 L 485.1 185.4 L 486.3 184.0 L 487.4 182.6 L 488.6 181.2 L 489.8 179.8 L 491.0 178.4 L 492.2 176.9 L 493.3 175.5 L 494.5 174.0 L 495.7 172.6 L 496.8 171.1 L 498.0 169.6 L 499.2 168.1 L 500.4 166.6 L 501.6 165.1 L 502.7 163.6 L 503.9 162.0 L 505.1 160.5 L 506.2 158.9 L 507.4 157.4 L 508.6 155.8 L 509.8 154.2 L 510.9 152.6 L 512.1 151.0 L 513.3 149.4 L 514.5 147.8 L 515.7 146.2 L 516.8 144.5 L 518.0 142.9 L 519.2 141.2 L 520.3 139.6 L 521.5 137.9 L 522.7 136.2 L 523.9 134.5 L 525.0 132.8 L 526.2 131.1 L 527.4 129.4 L 528.6 127.6 L 529.8 125.9 L 530.9 124.1 L 532.1 122.4 L 533.3 120.6 L 534.5 118.8 L 535.6 117.0 L 536.8 115.2 L 538.0 113.4 L 539.2 111.6 L 540.3 109.8 L 541.5 107.9 L 542.7 106.1 L 543.8 104.2 L 545.0 102.4 L 546.2 100.5 L 547.4 98.6 L 548.5 96.7 L 549.7 94.8 L 550.9 92.9 L 552.1 91.0 L 553.2 89.0 L 554.4 87.1 L 555.6 85.1 L 556.8 83.2 L 557.9 81.2 L 559.1 79.2 L 560.3 77.2 L 561.5 75.2 L 562.7 73.2 L 563.8 71.2 L 565.0 69.2 L 566.2 67.1 L 567.4 65.1 L 568.5 63.0 L 569.7 61.0 L 570.9 58.9 L 572.1 56.8 L 573.2 54.7 L 574.4 52.6 L 575.6 50.5 L 576.8 48.4 L 577.9 46.2 L 579.1 44.1 L 580.3 41.9 L 581.4 39.8 L 582.6 37.6 L 583.8 35.4 L 585.0 33.2 L 586.1 31.0 L 587.3 28.8" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><line x1="204.7" y1="36" x2="204.7" y2="298" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="5 4"/><text x="204.7" y="32.0" font-size="11.5" fill="#ea580c" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">m=0</text><text x="204.7" y="32.0" font-size="11.5" fill="#ea580c" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">m=0</text><line x1="392.7" y1="36" x2="392.7" y2="298" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="5 4"/><text x="392.7" y="32.0" font-size="11.5" fill="#ea580c" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">n=3</text><text x="392.7" y="32.0" font-size="11.5" fill="#ea580c" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">n=3</text><circle cx="142.0" cy="183.6" r="4.2" fill="#64748b" stroke="#64748b" stroke-width="2"/><text x="142.0" y="203.6" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">根在区间外</text><text x="142.0" y="203.6" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">根在区间外</text><circle cx="486.7" cy="183.6" r="4.2" fill="#64748b" stroke="#64748b" stroke-width="2"/><text x="486.7" y="203.6" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">根在区间外</text><text x="486.7" y="203.6" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">根在区间外</text><circle cx="204.7" cy="244.6" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="204.7" y="232.6" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">f(0)&lt;0</text><text x="204.7" y="232.6" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">f(0)&lt;0</text><circle cx="392.7" cy="102.2" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="392.7" y="90.2" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">f(3)&gt;0</text><text x="392.7" y="90.2" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">f(3)&gt;0</text><text x="298.7" y="273.0" font-size="12.5" fill="#b45309" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">f(0)·f(3)&lt;0 → 区间内必穿轴一次</text><text x="298.7" y="273.0" font-size="12.5" fill="#b45309" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">f(0)·f(3)&lt;0 → 区间内必穿轴一次</text></svg><figcaption>f(0) 与 f(3) 异号意味着这段曲线必然跨过 x 轴一次；由于二次函数最多两个根，跨奇数次就是恰好一次。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">主条件</div><div class="v">f(m)·f(n) &lt; 0 ⟹ (m,n) 内恰有一根</div></div><div class="row"><div class="k">补充 A</div><div class="v">f(m)=0 时检查另一根是否在区间内</div></div><div class="row"><div class="k">补充 B</div><div class="v">f(n)=0 时检查另一根是否在区间内</div></div><div class="row"><div class="k">补充 C</div><div class="v">Δ=0 时检查重根 x=−b/(2a) 是否在区间内</div></div><div class="row"><div class="k">原理</div><div class="v">连续性保证异号必穿轴；二次式最多两根故只穿一次</div></div></div>
+<p><span class="hl">主条件负责秒杀，三个补充负责兜漏</span>。</p>
+<p>闭区间 [m,n] 与开区间 (m,n) 的差别只在端点是否计入，读题务必看清。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>看区间开闭</strong>：确认题目写的是 (m,n) 还是 [m,n]，决定端点是否计数。</li><li><strong>算主条件</strong>：求 f(m)、f(n)，令乘积 &lt; 0，解出参数范围（这是答案的主体）。</li><li><strong>检验端点</strong>：分别令 f(m)=0、f(n)=0，看另一个根是否落在区间内，决定是否并入。</li><li><strong>检验重根</strong>：令 Δ=0，看重根是否落在区间内，按题目约定决定是否并入。</li><li><strong>汇总并回代检验</strong>：取边界值和典型值各一个代入原式核对。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>判断 <span class="mono">f(x) = x² − 2x − 3</span> 在区间 <span class="mono">(−2, 2)</span> 内是否恰有一根。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>直接算两端点函数值，看是否异号。</p>
+<ol><li>f(−2) = 4 + 4 − 3 = 5 &gt; 0；f(2) = 4 − 4 − 3 = −3 &lt; 0。</li><li>f(−2)·f(2) &lt; 0 → 区间 (−2, 2) 内<strong>恰有一根</strong>。</li><li>核对：方程为 (x−3)(x+1)=0，两根 3 与 −1，只有 −1 落在 (−2,2) 内 ✓。</li><li>补充检查：端点值都不是 0，Δ=16&gt;0 无重根，故无需额外并入。</li></ol>
+<div class="ansbox">答：是，区间 (−2, 2) 内恰有一根（x = −1）。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 含参 + 边界检验</span>已知 <span class="mono">x² − (m+1)x + 4 = 0</span> 在区间 <span class="mono">(0, 3)</span> 内恰有一个实数根，求 m 的取值范围。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>主条件 f(0)·f(3)&lt;0 先解出主体范围，再逐项检验端点与重根。</p>
+<ol><li><strong>主条件</strong>：f(0) = 4 &gt; 0，f(3) = 9 − 3(m+1) + 4 = 10 − 3m。</li><li>要求 f(0)·f(3) &lt; 0 ⟹ 10 − 3m &lt; 0 ⟹ <span class="mono">m &gt; 10/3</span>。</li><li><strong>补充 A</strong>：f(0)=4≠0，x=0 永远不是根，无需处理。</li><li><strong>补充 B</strong>：令 f(3)=0 得 m=10/3，此时一根为 3（在端点上），另一根由乘积为 4 得 4/3，落在 (0,3) 内 → 若按「区间内的不同实数值」计数，则应并入；是否并入最终取决于题目对端点与重根的约定。</li><li><strong>补充 C</strong>：令 Δ=(m+1)²−16=0 得 m=3 或 m=−5；m=3 时重根 x=2 落在 (0,3)，m=−5 时重根 x=−5 在区间外。</li><li>m=3 不在 m&gt;10/3 的范围内，若题目允许把「重根也算一根」单独计入，则需把 m=3 作为孤立点并入；若要求两根不相等，则不计。</li><li>常规答案（不含重根）：<span class="mono">m &gt; 10/3</span>。</li></ol>
+<div class="ansbox">答：常规解法为 m &gt; 10/3；若把重根情形单独计入，还应并入 m = 3。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>只写主条件忘了补充检验</strong>：端点值和重根三种情况必须逐一过一遍。</li><li><strong>把主条件写成 ≤0</strong>：等于 0 时端点本身是根，不属于「穿过」，要单独判断。</li><li><strong>忽略区间开闭</strong>：开区间不算端点、闭区间算端点，结论可能不同。</li><li><strong>忘记二次函数最多两个根这一前提</strong>：正因为如此，「跨奇数次」才等价于「恰好一次」。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>温度窗口</strong>：要求在一段时间区间内恰好有一次达到警戒阈值，这在工业温控中很常见。</li><li><strong>投篮弧线</strong>：球在某段水平距离内恰好越过一次防守者手的高度。</li><li><strong>盈亏切换</strong>：在一个经营周期内，利润曲线恰好穿越一次盈亏平衡线。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="hl">f(m)·f(n)&lt;0 秒杀主情形，端点与重根另做检验</span>。</li><li>原理是连续性 + 二次式最多两根，跨奇数次即恰好一次。</li><li>闭区间与开区间要分清，端点是否计入取决于题意。</li><li>含参题按「主条件 + 三项补充」的清单逐条过，一条都别漏。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">端点异号必穿轴　主式一出答案现
+端点重根再补验　开闭区间看仔细</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="25_两根都小于k.html"><span>← 上一讲</span>两根都小于k</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="index.html"><span>返回 →</span>课程目录</a>
+</div>
+<footer>二次函数26讲 · 第 26 讲《区间内恰有一根》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "若 f(m)·f(n) < 0，则在 (m,n) 内二次函数根的个数是（　）",
+    "options": [
+      "0 个",
+      "1 个",
+      "2 个",
+      "无法确定"
+    ],
+    "answer": 1,
+    "explain": "连续曲线两端异号必穿轴奇数次，而二次函数最多两根，故只能是 1 个。"
+  },
+  {
+    "q": "使用 f(m)·f(n)<0 判断「恰有一根」时，最容易漏掉的是（　）",
+    "options": [
+      "端点恰好是根的情形",
+      "判别式",
+      "开口方向",
+      "对称轴"
+    ],
+    "answer": 0,
+    "explain": "端点恰为根时乘积等于 0，不在主条件范围内，需要单独求出另一根判断是否落在区间内。"
+  },
+  {
+    "q": "关于 Δ=0 的重根情形，下列说法正确的是（　）",
+    "options": [
+      "一定不算区间内的根",
+      "一定算一个根",
+      "取决于题目对「根的个数的计数约定",
+      "与本题无关"
+    ],
+    "answer": 2,
+    "explain": "按不同实数值计数时算一根；若要求「两个不相等的实根」则不算。中考命题通常会明确表述，含糊时应分类说明。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
