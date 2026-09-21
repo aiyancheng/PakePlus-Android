@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第16讲 联立方程判交点 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 进阶篇 · 交点 / 第16讲</div>
+<div class="badge-line"><span class="badge">第 16 讲 / 共 26 讲</span><span class="badge">进阶篇 · 交点</span><span class="badge gold">函数方程同源</span></div>
+<h1 class="title">联立方程判交点</h1>
+<div class="motto">把 y = t 代入，交点问题就变成方程的根问题：看顶点高度即可。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>第 14 讲讲的是与 x 轴（y=0）的交点。但如果把这条水平线往上挪到 y=5，交点还存在吗？存在几个？你会发现：<span class="hl">所有水平线与抛物线的交点问题，本质都是同一个套路</span>。</p>
+<p>这一讲把「函数」与「方程」彻底打通：求交点就是解方程，判个数就是算 Δ。后面第 17 讲的斜线交点，只是把 y=t 换成 y=kx+b。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、交点 ⟺ 方程的解</h3>
+<p>抛物线 <span class="mono">y = ax²+bx+c</span> 与水平直线 <span class="mono">y = t</span> 的交点，必须同时满足两个式子，于是：</p>
+<p><span class="mono">ax² + bx + c = t</span> ⟹ <span class="mono">ax² + bx + (c − t) = 0</span></p>
+<p>这是一个新的一元二次方程，<strong>它的每一个解 x 就对应一个交点的横坐标</strong>。判别式：</p>
+<p><span class="mono">Δ(t) = b² − 4a(c − t) = b² − 4ac + 4at = Δ₀ + 4at</span></p>
+<h3 class="sub">二、可以完全不用算：看图说话</h3>
+<p>其实这里有个更省事的角度。把抛物线上下平移 t（等价于水平线下移），顶点高度变了而已。设原顶点纵坐标为 k：</p>
+<div class="formula"><div class="row"><div class="k">a &gt; 0（开口向上）</div><div class="v">t &gt; k → 两个交点；t = k → 一个（顶点）；t &lt; k → 无交点</div></div><div class="row"><div class="k">a &lt; 0（开口向下）</div><div class="v">t &lt; k → 两个交点；t = k → 一个（顶点）；t &gt; k → 无交点</div></div></div>
+<p>一句话：<span class="hl">开口向上时，水平线要在顶点「之上」才有交点；开口向下时在顶点「之下」</span>。这比列式子快得多，还不容易算错。</p>
+<div class="formula"><div class="v">这条思路与第 14 讲完全一致：与 x 轴的交点不过是 t=0 的特例。所以第 14 讲其实可以看成本讲的推论。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 340" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="340" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="110.7" y1="48.0" x2="110.7" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="173.3" y1="48.0" x2="173.3" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="236.0" y1="48.0" x2="236.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="298.7" y1="48.0" x2="298.7" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="361.3" y1="48.0" x2="361.3" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="424.0" y1="48.0" x2="424.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="486.7" y1="48.0" x2="486.7" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="549.3" y1="48.0" x2="549.3" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="292.0" x2="612.0" y2="292.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="274.6" x2="612.0" y2="274.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="257.1" x2="612.0" y2="257.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="239.7" x2="612.0" y2="239.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="222.3" x2="612.0" y2="222.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="204.9" x2="612.0" y2="204.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="187.4" x2="612.0" y2="187.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="170.0" x2="612.0" y2="170.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="152.6" x2="612.0" y2="152.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="135.1" x2="612.0" y2="135.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="117.7" x2="612.0" y2="117.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="100.3" x2="612.0" y2="100.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="82.9" x2="612.0" y2="82.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="65.4" x2="612.0" y2="65.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="187.4" x2="626" y2="187.4" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 187.4 L 634.0 182.9 L 634.0 191.9 Z" fill="#64748b"/><line x1="267.3" y1="302" x2="267.3" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 267.3 34 L 262.8 26 L 271.8 26 Z" fill="#64748b"/><line x1="48.0" y1="183.4" x2="48.0" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3.5</text><line x1="110.7" y1="183.4" x2="110.7" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="110.7" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="173.3" y1="183.4" x2="173.3" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="173.3" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="236.0" y1="183.4" x2="236.0" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="236.0" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="298.7" y1="183.4" x2="298.7" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="298.7" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="361.3" y1="183.4" x2="361.3" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="361.3" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="424.0" y1="183.4" x2="424.0" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="424.0" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="486.7" y1="183.4" x2="486.7" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="486.7" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="549.3" y1="183.4" x2="549.3" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="549.3" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><line x1="612.0" y1="183.4" x2="612.0" y2="191.4" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="204.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">5.5</text><text x="260.3" y="296.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-6</text><text x="260.3" y="278.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="260.3" y="261.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="260.3" y="243.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="260.3" y="226.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="260.3" y="208.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="260.3" y="174.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="260.3" y="156.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="260.3" y="139.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="260.3" y="121.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="260.3" y="104.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="260.3" y="86.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="260.3" y="69.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="260.3" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">8</text><text x="274.3" y="203.4" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="179.4" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="275.3" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 103.2 28.9 L 104.4 31.3 L 105.6 33.6 L 106.8 35.9 L 107.9 38.3 L 109.1 40.6 L 110.3 42.9 L 111.5 45.2 L 112.6 47.4 L 113.8 49.7 L 115.0 51.9 L 116.1 54.2 L 117.3 56.4 L 118.5 58.6 L 119.7 60.8 L 120.9 63.0 L 122.0 65.2 L 123.2 67.3 L 124.4 69.5 L 125.5 71.6 L 126.7 73.8 L 127.9 75.9 L 129.1 78.0 L 130.2 80.1 L 131.4 82.1 L 132.6 84.2 L 133.8 86.3 L 134.9 88.3 L 136.1 90.3 L 137.3 92.3 L 138.5 94.3 L 139.6 96.3 L 140.8 98.3 L 142.0 100.3 L 143.2 102.2 L 144.4 104.2 L 145.5 106.1 L 146.7 108.0 L 147.9 109.9 L 149.1 111.8 L 150.2 113.7 L 151.4 115.6 L 152.6 117.4 L 153.8 119.3 L 154.9 121.1 L 156.1 122.9 L 157.3 124.7 L 158.4 126.5 L 159.6 128.3 L 160.8 130.1 L 162.0 131.8 L 163.1 133.6 L 164.3 135.3 L 165.5 137.0 L 166.7 138.8 L 167.9 140.5 L 169.0 142.1 L 170.2 143.8 L 171.4 145.5 L 172.6 147.1 L 173.7 148.8 L 174.9 150.4 L 176.1 152.0 L 177.2 153.6 L 178.4 155.2 L 179.6 156.8 L 180.8 158.3 L 182.0 159.9 L 183.1 161.4 L 184.3 162.9 L 185.5 164.4 L 186.7 165.9 L 187.8 167.4 L 189.0 168.9 L 190.2 170.4 L 191.3 171.8 L 192.5 173.3 L 193.7 174.7 L 194.9 176.1 L 196.0 177.5 L 197.2 178.9 L 198.4 180.3 L 199.6 181.6 L 200.8 183.0 L 201.9 184.3 L 203.1 185.7 L 204.3 187.0 L 205.5 188.3 L 206.6 189.6 L 207.8 190.9 L 209.0 192.1 L 210.1 193.4 L 211.3 194.6 L 212.5 195.9 L 213.7 197.1 L 214.8 198.3 L 216.0 199.5 L 217.2 200.7 L 218.4 201.8 L 219.5 203.0 L 220.7 204.1 L 221.9 205.3 L 223.1 206.4 L 224.2 207.5 L 225.4 208.6 L 226.6 209.7 L 227.8 210.8 L 229.0 211.8 L 230.1 212.9 L 231.3 213.9 L 232.5 214.9 L 233.7 215.9 L 234.8 216.9 L 236.0 217.9 L 237.2 218.9 L 238.4 219.9 L 239.5 220.8 L 240.7 221.8 L 241.9 222.7 L 243.0 223.6 L 244.2 224.5 L 245.4 225.4 L 246.6 226.3 L 247.8 227.1 L 248.9 228.0 L 250.1 228.8 L 251.3 229.6 L 252.5 230.5 L 253.6 231.3 L 254.8 232.0 L 256.0 232.8 L 257.1 233.6 L 258.3 234.3 L 259.5 235.1 L 260.7 235.8 L 261.9 236.5 L 263.0 237.2 L 264.2 237.9 L 265.4 238.6 L 266.5 239.3 L 267.7 239.9 L 268.9 240.6 L 270.1 241.2 L 271.2 241.8 L 272.4 242.4 L 273.6 243.0 L 274.8 243.6 L 276.0 244.2 L 277.1 244.7 L 278.3 245.3 L 279.5 245.8 L 280.6 246.3 L 281.8 246.8 L 283.0 247.3 L 284.2 247.8 L 285.4 248.3 L 286.5 248.8 L 287.7 249.2 L 288.9 249.6 L 290.0 250.1 L 291.2 250.5 L 292.4 250.9 L 293.6 251.3 L 294.8 251.6 L 295.9 252.0 L 297.1 252.3 L 298.3 252.7 L 299.5 253.0 L 300.6 253.3 L 301.8 253.6 L 303.0 253.9 L 304.2 254.2 L 305.3 254.4 L 306.5 254.7 L 307.7 254.9 L 308.8 255.2 L 310.0 255.4 L 311.2 255.6 L 312.4 255.8 L 313.6 255.9 L 314.7 256.1 L 315.9 256.3 L 317.1 256.4 L 318.2 256.5 L 319.4 256.6 L 320.6 256.8 L 321.8 256.8 L 323.0 256.9 L 324.1 257.0 L 325.3 257.0 L 326.5 257.1 L 327.7 257.1 L 328.8 257.1 L 330.0 257.1 L 331.2 257.1 L 332.3 257.1 L 333.5 257.1 L 334.7 257.0 L 335.9 257.0 L 337.0 256.9 L 338.2 256.8 L 339.4 256.8 L 340.6 256.6 L 341.8 256.5 L 342.9 256.4 L 344.1 256.3 L 345.3 256.1 L 346.4 255.9 L 347.6 255.8 L 348.8 255.6 L 350.0 255.4 L 351.2 255.2 L 352.3 254.9 L 353.5 254.7 L 354.7 254.4 L 355.8 254.2 L 357.0 253.9 L 358.2 253.6 L 359.4 253.3 L 360.6 253.0 L 361.7 252.7 L 362.9 252.3 L 364.1 252.0 L 365.2 251.6 L 366.4 251.3 L 367.6 250.9 L 368.8 250.5 L 369.9 250.1 L 371.1 249.6 L 372.3 249.2 L 373.5 248.8 L 374.7 248.3 L 375.8 247.8 L 377.0 247.3 L 378.2 246.8 L 379.3 246.3 L 380.5 245.8 L 381.7 245.3 L 382.9 244.7 L 384.1 244.2 L 385.2 243.6 L 386.4 243.0 L 387.6 242.4 L 388.8 241.8 L 389.9 241.2 L 391.1 240.6 L 392.3 239.9 L 393.5 239.3 L 394.6 238.6 L 395.8 237.9 L 397.0 237.2 L 398.2 236.5 L 399.3 235.8 L 400.5 235.1 L 401.7 234.3 L 402.8 233.6 L 404.0 232.8 L 405.2 232.0 L 406.4 231.3 L 407.5 230.5 L 408.7 229.6 L 409.9 228.8 L 411.1 228.0 L 412.2 227.1 L 413.4 226.3 L 414.6 225.4 L 415.8 224.5 L 416.9 223.6 L 418.1 222.7 L 419.3 221.8 L 420.5 220.8 L 421.7 219.9 L 422.8 218.9 L 424.0 217.9 L 425.2 216.9 L 426.3 215.9 L 427.5 214.9 L 428.7 213.9 L 429.9 212.9 L 431.1 211.8 L 432.2 210.8 L 433.4 209.7 L 434.6 208.6 L 435.8 207.5 L 436.9 206.4 L 438.1 205.3 L 439.3 204.1 L 440.4 203.0 L 441.6 201.8 L 442.8 200.7 L 444.0 199.5 L 445.2 198.3 L 446.3 197.1 L 447.5 195.9 L 448.7 194.6 L 449.8 193.4 L 451.0 192.1 L 452.2 190.9 L 453.4 189.6 L 454.6 188.3 L 455.7 187.0 L 456.9 185.7 L 458.1 184.3 L 459.2 183.0 L 460.4 181.6 L 461.6 180.3 L 462.8 178.9 L 464.0 177.5 L 465.1 176.1 L 466.3 174.7 L 467.5 173.3 L 468.7 171.8 L 469.8 170.4 L 471.0 168.9 L 472.2 167.4 L 473.3 165.9 L 474.5 164.4 L 475.7 162.9 L 476.9 161.4 L 478.0 159.9 L 479.2 158.3 L 480.4 156.8 L 481.6 155.2 L 482.8 153.6 L 483.9 152.0 L 485.1 150.4 L 486.3 148.8 L 487.4 147.1 L 488.6 145.5 L 489.8 143.8 L 491.0 142.1 L 492.2 140.5 L 493.3 138.8 L 494.5 137.0 L 495.7 135.3 L 496.8 133.6 L 498.0 131.8 L 499.2 130.1 L 500.4 128.3 L 501.6 126.5 L 502.7 124.7 L 503.9 122.9 L 505.1 121.1 L 506.2 119.3 L 507.4 117.4 L 508.6 115.6 L 509.8 113.7 L 510.9 111.8 L 512.1 109.9 L 513.3 108.0 L 514.5 106.1 L 515.7 104.2 L 516.8 102.2 L 518.0 100.3 L 519.2 98.3 L 520.3 96.3 L 521.5 94.3 L 522.7 92.3 L 523.9 90.3 L 525.0 88.3 L 526.2 86.3 L 527.4 84.2 L 528.6 82.1 L 529.8 80.1 L 530.9 78.0 L 532.1 75.9 L 533.3 73.8 L 534.5 71.6 L 535.6 69.5 L 536.8 67.3 L 538.0 65.2 L 539.2 63.0 L 540.3 60.8 L 541.5 58.6 L 542.7 56.4 L 543.8 54.2 L 545.0 51.9 L 546.2 49.7 L 547.4 47.4 L 548.5 45.2 L 549.7 42.9 L 550.9 40.6 L 552.1 38.3 L 553.2 35.9 L 554.4 33.6 L 555.6 31.3 L 556.8 28.9" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><line x1="42" y1="257.1" x2="618" y2="257.1" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="5 4"/><text x="46" y="251.1" font-size="11.5" fill="#f59e0b" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">顶点 y=−4（切点线）</text><text x="46" y="251.1" font-size="11.5" fill="#f59e0b" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">顶点 y=−4（切点线）</text><line x1="42" y1="100.3" x2="618" y2="100.3" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="5 4"/><text x="46" y="94.3" font-size="11.5" fill="#dc2626" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">t=5：两个交点</text><text x="46" y="94.3" font-size="11.5" fill="#dc2626" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">t=5：两个交点</text><line x1="42" y1="292.0" x2="618" y2="292.0" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="5 4"/><text x="46" y="286.0" font-size="11.5" fill="#16a34a" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">t=−6：无交点</text><text x="46" y="286.0" font-size="11.5" fill="#16a34a" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">t=−6：无交点</text><circle cx="330.0" cy="257.1" r="4.2" fill="#f59e0b" stroke="#f59e0b" stroke-width="2"/><text x="330.0" y="277.1" font-size="12.5" font-weight="600" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">顶点</text><text x="330.0" y="277.1" font-size="12.5" font-weight="600" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">顶点</text><circle cx="142.0" cy="100.3" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="142.0" y="88.3" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">交点</text><text x="142.0" y="88.3" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">交点</text><circle cx="518.0" cy="100.3" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="518.0" y="88.3" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">交点</text><text x="518.0" y="88.3" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">交点</text><text x="104.4" y="61.9" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">a&gt;0：水平线在顶点之上才有交点</text><text x="104.4" y="61.9" font-size="12.5" fill="#334155" text-anchor="middle" font-weight="400" font-family="Microsoft YaHei, PingFang SC, sans-serif">a&gt;0：水平线在顶点之上才有交点</text></svg><figcaption>同一条抛物线 y=x²−2x−3（顶点 −4）：水平线 t=5 在上面穿过两次，t=−6 在下面完全碰不到。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">联立方法</div><div class="v">ax²+bx+c = t → ax²+bx+(c−t)=0，用 Δ(t) 判个数</div></div><div class="row"><div class="k">Δ(t) 表达式</div><div class="v">Δ(t) = b² − 4a(c − t) = Δ₀ + 4at</div></div><div class="row"><div class="k">图像判据（a&gt;0）</div><div class="v">t &gt; k 两个；t = k 一个；t &lt; k 无</div></div><div class="row"><div class="k">图像判据（a&lt;0）</div><div class="v">t &lt; k 两个；t = k 一个；t &gt; k 无</div></div><div class="row"><div class="k">推广</div><div class="v">两个函数相交 ⟺ 联立方程有解</div></div></div>
+<p><span class="hl">求交点 ⟹ 联立 ⟹ 解方程 ⟹ 数判别式</span>，这是贯穿后面几讲的总思路。</p>
+<p>能看图就别算：先求顶点纵坐标 k，直接比较 t 与 k。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>明确对象</strong>：抛物线 <span class="mono">y=ax²+bx+c</span> 与直线 <span class="mono">y=t</span>（或两个函数之一为常数的情况）。</li><li><strong>优先走图像路线</strong>：配方求出顶点纵坐标 k 与开口方向。</li><li><strong>比较 t 与 k</strong>：按上面表格给出 0、1、2 个交点的结论。</li><li><strong>需要具体交点时</strong>：解方程 <span class="mono">ax²+bx+(c−t)=0</span>。</li><li><strong>含参时</strong>：把「有两个交点」翻译成 <span class="mono">Δ(t) &gt; 0</span> 或 <span class="mono">t</span> 与 <span class="mono">k</span> 的不等式再解。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>求 <span class="mono">y = x² − 2x − 3</span> 与水平直线 <span class="mono">y = 5</span> 的交点坐标。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>联立后解一元二次方程，或先判断有没有。</p>
+<ol><li>联立：<span class="mono">x² − 2x − 3 = 5</span> → <span class="mono">x² − 2x − 8 = 0</span>。</li><li>Δ = 4 + 32 = 36 &gt; 0，有两个解（顶点 −4 &lt; 5，符合预期）。</li><li>因式分解：<span class="mono">(x − 4)(x + 2) = 0</span> → x = 4 或 x = −2。</li><li>交点坐标为 (−2, 5) 与 (4, 5)。</li><li>验证：把 x=4 代入原式 y = 16 − 8 − 3 = 5 ✓。</li></ol>
+<div class="ansbox">答：交点坐标为 (−2, 5) 与 (4, 5)。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 含参</span>若抛物线 <span class="mono">y = x² − 2x − 3</span> 与水平直线 <span class="mono">y = k</span> 有两个交点，求 k 的取值范围。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>顶点纵坐标是 −4，开口向上，水平线要高于顶点才会穿过两次。</p>
+<ol><li>配方：<span class="mono">y = (x − 1)² − 4</span>，顶点纵坐标 k₀ = −4，开口向上。</li><li>开口向上的抛物线只在顶点之上才有「两支」，故水平线需满足 <span class="mono">k &gt; −4</span>。</li><li>用判别式核对：Δ(k) = b² − 4a(c − k) = 4 − 4(−3 − k) = 4 + 12 + 4k = 16 + 4k &gt; 0 → k &gt; −4 ✓。</li><li>边界：k = −4 时直线恰好过顶点，只有一个交点，所以是严格大于。</li></ol>
+<div class="ansbox">答：k &gt; −4。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>把「有两个交点」写成 Δ≥0</strong>：等于 0 时直线过顶点，只有一个交点。</li><li><strong>开口方向不看</strong>：a&lt;0 时结论全部反过来，这是最典型的翻转错误。</li><li><strong>把 c−t 的符号搞错</strong>：方程是 <span class="mono">ax²+bx+c = t</span>，移项后常数项是 <span class="mono">c − t</span>。</li><li><strong>求了交点忘记写纵坐标</strong>：交点是一对坐标 (x, t)，别只写一个数。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>投篮与篮筐高度</strong>：篮筐是一条水平线，球能否入筐就是「水平线与抛物线有没有交点」。</li><li><strong>限高杆</strong>：车辆顶部高度是一条水平线，与拱桥曲线有无交点决定能否通过。</li><li><strong>水位警戒线</strong>：水位线（水平直线）与河床抛物线断面的交点就是水面宽度。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="hl">求交点 = 联立 = 解方程 = 数判别式</span>。</li><li>水平线 y=t 的情形：先看顶点纵坐标 k，直接与 t 比大小。</li><li>开口向上要 t &gt; k 才有两个交点；开口向下要 t &lt; k。</li><li>含参题把「有两个交点」翻译成不等式再解，注意严格不等号。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">联立消元成方程　判别式数交点数
+水平线比顶点高　　开口向上才有两支</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="15_两根差弦长公式.html"><span>← 上一讲</span>两根差·弦长公式</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="17_抛物线与任意直线.html"><span>下一讲 →</span>抛物线与任意直线</a>
+</div>
+<footer>二次函数26讲 · 第 16 讲《联立方程判交点》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "抛物线 y = x² − 4x + 3 与直线 y = 3 的交点个数是（　）",
+    "options": [
+      "0 个",
+      "1 个",
+      "2 个",
+      "无数个"
+    ],
+    "answer": 2,
+    "explain": "联立 x²−4x+3=3 → x²−4x=0 → x=0 或 4，两个解，故两个交点（顶点纵坐标 −1<3 也说明有两支）。"
+  },
+  {
+    "q": "抛物线 y = −x² + 2x + 3 与水平直线 y = t 只有一个交点，则 t 等于（　）",
+    "options": [
+      "3",
+      "4",
+      "0",
+      "−1"
+    ],
+    "answer": 1,
+    "explain": "y=−(x−1)²+4，顶点纵坐标 4；开口向下时水平线过顶点才只有一个交点，故 t=4。"
+  },
+  {
+    "q": "「求两函数交点个数」的通用做法是（　）",
+    "options": [
+      "分别画草图估一下",
+      "联立两解析式解方程，再用判别式数解的个数",
+      "只用其中一个函数的顶点判断",
+      "比较它们的开口方向"
+    ],
+    "answer": 1,
+    "explain": "交点必须同时满足两个函数关系，因此标准做法是联立消元得到方程，再用 Δ 判断解的个数。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
