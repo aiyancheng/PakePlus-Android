@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第20讲 恒成立问题 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 提高篇 · 不等式 / 第20讲</div>
+<div class="badge-line"><span class="badge">第 20 讲 / 共 26 讲</span><span class="badge">提高篇 · 不等式</span><span class="badge gold">中考高频</span></div>
+<h1 class="title">恒成立问题</h1>
+<div class="motto">图像恒在上方 ⟺ 开口向上 + Δ&lt;0：永远别忘了讨论 a=0。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>「不论 x 取什么值，这个式子都大于 0」——这类问法叫<strong>恒成立</strong>。它听起来抽象，翻译成图像却极其直白：<strong>整条抛物线必须全部待在 x 轴上方</strong>。</p>
+<p>于是条件只有两个：开口必须向上（否则两头迟早掉下去），并且不能碰到 x 轴（Δ&lt;0）。本讲还要补上那个最容易丢的坑：二次项系数可能为 0 的情形。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、把恒成立翻译成图像</h3>
+<p><span class="mono">ax²+bx+c &gt; 0</span> 对任意实数 x 恒成立 ⟺ 抛物线整体在 x 轴上方。这需要同时满足：</p>
+<div class="formula"><div class="row"><div class="k">① 开口向上</div><div class="v">a &gt; 0（否则两端终将下降至 −∞）</div></div><div class="row"><div class="k">② 与 x 轴无交点</div><div class="v">Δ &lt; 0（碰到就算破功；若允许等于 0 则 Δ ≤ 0）</div></div></div>
+<p>用顶点坐标也能得到同一结论：<span class="mono">k = −Δ/(4a)</span>。要求 k &gt; 0 且 a &gt; 0，等价于 <span class="mono">Δ &lt; 0</span> 且 <span class="mono">a &gt; 0</span>。两条路完全一致。</p>
+<h3 class="sub">二、三种常见问法</h3>
+<div class="formula"><div class="row"><div class="k">f(x) &gt; 0 恒成立</div><div class="v">a &gt; 0 且 Δ &lt; 0</div></div><div class="row"><div class="k">f(x) ≥ 0 恒成立</div><div class="v">a &gt; 0 且 Δ ≤ 0</div></div><div class="row"><div class="k">f(x) &lt; 0 恒成立</div><div class="v">a &lt; 0 且 Δ &lt; 0</div></div></div>
+<h3 class="sub">三、那个致命的坑：a 可能为 0</h3>
+<p>如果题目说的是「关于 x 的不等式」（没说二次），那么二次项系数可能为 0。此时函数退化成一次式 <span class="mono">bx+c</span> 或常数，必须<strong>单独讨论</strong>：</p>
+<div class="formula"><div class="row"><div class="k">a = 0 且 b = 0</div><div class="v">式子变成常数 c：c &gt; 0 时恒成立</div></div><div class="row"><div class="k">a = 0 且 b ≠ 0</div><div class="v">变成一次式，值域覆盖全体实数，<strong>不可能</strong>恒大于 0</div></div></div>
+<div class="formula"><div class="v">答题格式建议：<strong>先写「当二次项系数 = 0 时……」，再写「当二次项系数 ≠ 0 时……」</strong>，最后取并集。漏掉第一段是这类题最常见的扣分点。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="300" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="118.5" y1="48.0" x2="118.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="189.0" y1="48.0" x2="189.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="259.5" y1="48.0" x2="259.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="330.0" y1="48.0" x2="330.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="400.5" y1="48.0" x2="400.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="471.0" y1="48.0" x2="471.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="541.5" y1="48.0" x2="541.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="252.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="229.3" x2="612.0" y2="229.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="206.7" x2="612.0" y2="206.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="184.0" x2="612.0" y2="184.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="161.3" x2="612.0" y2="161.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="138.7" x2="612.0" y2="138.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="116.0" x2="612.0" y2="116.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="93.3" x2="612.0" y2="93.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="70.7" x2="612.0" y2="70.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="206.7" x2="626" y2="206.7" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 206.7 L 634.0 202.2 L 634.0 211.2 Z" fill="#64748b"/><line x1="330.0" y1="262" x2="330.0" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 330.0 34 L 325.5 26 L 334.5 26 Z" fill="#64748b"/><line x1="48.0" y1="202.7" x2="48.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><line x1="118.5" y1="202.7" x2="118.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="118.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><line x1="189.0" y1="202.7" x2="189.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="189.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><line x1="259.5" y1="202.7" x2="259.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="259.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><line x1="400.5" y1="202.7" x2="400.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="400.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><line x1="471.0" y1="202.7" x2="471.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="471.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><line x1="541.5" y1="202.7" x2="541.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="541.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><line x1="612.0" y1="202.7" x2="612.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="323.0" y="256.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="323.0" y="233.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="323.0" y="188.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="323.0" y="165.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="323.0" y="142.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="323.0" y="120.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="323.0" y="97.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="323.0" y="74.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="323.0" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="337.0" y="222.7" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="198.7" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="338.0" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 232.5 32.6 L 233.7 34.4 L 234.8 36.2 L 236.0 37.9 L 237.2 39.7 L 238.4 41.4 L 239.5 43.2 L 240.7 44.9 L 241.9 46.6 L 243.0 48.3 L 244.2 50.0 L 245.4 51.6 L 246.6 53.3 L 247.8 54.9 L 248.9 56.6 L 250.1 58.2 L 251.3 59.8 L 252.4 61.4 L 253.6 63.0 L 254.8 64.5 L 256.0 66.1 L 257.1 67.6 L 258.3 69.1 L 259.5 70.7 L 260.7 72.2 L 261.9 73.7 L 263.0 75.1 L 264.2 76.6 L 265.4 78.1 L 266.6 79.5 L 267.7 80.9 L 268.9 82.4 L 270.1 83.8 L 271.2 85.1 L 272.4 86.5 L 273.6 87.9 L 274.8 89.2 L 276.0 90.6 L 277.1 91.9 L 278.3 93.2 L 279.5 94.5 L 280.6 95.8 L 281.8 97.1 L 283.0 98.4 L 284.2 99.6 L 285.4 100.9 L 286.5 102.1 L 287.7 103.3 L 288.9 104.5 L 290.0 105.7 L 291.2 106.9 L 292.4 108.0 L 293.6 109.2 L 294.8 110.3 L 295.9 111.5 L 297.1 112.6 L 298.3 113.7 L 299.5 114.8 L 300.6 115.8 L 301.8 116.9 L 303.0 118.0 L 304.1 119.0 L 305.3 120.0 L 306.5 121.0 L 307.7 122.0 L 308.9 123.0 L 310.0 124.0 L 311.2 125.0 L 312.4 125.9 L 313.6 126.9 L 314.7 127.8 L 315.9 128.7 L 317.1 129.6 L 318.2 130.5 L 319.4 131.4 L 320.6 132.2 L 321.8 133.1 L 322.9 133.9 L 324.1 134.7 L 325.3 135.5 L 326.5 136.3 L 327.7 137.1 L 328.8 137.9 L 330.0 138.7 L 331.2 139.4 L 332.3 140.2 L 333.5 140.9 L 334.7 141.6 L 335.9 142.3 L 337.0 143.0 L 338.2 143.6 L 339.4 144.3 L 340.6 145.0 L 341.8 145.6 L 342.9 146.2 L 344.1 146.8 L 345.3 147.4 L 346.4 148.0 L 347.6 148.6 L 348.8 149.1 L 350.0 149.7 L 351.1 150.2 L 352.3 150.7 L 353.5 151.3 L 354.7 151.8 L 355.8 152.2 L 357.0 152.7 L 358.2 153.2 L 359.4 153.6 L 360.6 154.1 L 361.7 154.5 L 362.9 154.9 L 364.1 155.3 L 365.2 155.7 L 366.4 156.0 L 367.6 156.4 L 368.8 156.7 L 369.9 157.1 L 371.1 157.4 L 372.3 157.7 L 373.5 158.0 L 374.7 158.3 L 375.8 158.6 L 377.0 158.8 L 378.2 159.1 L 379.4 159.3 L 380.5 159.5 L 381.7 159.7 L 382.9 159.9 L 384.1 160.1 L 385.2 160.3 L 386.4 160.4 L 387.6 160.6 L 388.8 160.7 L 389.9 160.8 L 391.1 160.9 L 392.3 161.0 L 393.5 161.1 L 394.6 161.2 L 395.8 161.2 L 397.0 161.3 L 398.2 161.3 L 399.3 161.3 L 400.5 161.3 L 401.7 161.3 L 402.8 161.3 L 404.0 161.3 L 405.2 161.2 L 406.4 161.2 L 407.5 161.1 L 408.7 161.0 L 409.9 160.9 L 411.1 160.8 L 412.2 160.7 L 413.4 160.6 L 414.6 160.4 L 415.8 160.3 L 416.9 160.1 L 418.1 159.9 L 419.3 159.7 L 420.5 159.5 L 421.6 159.3 L 422.8 159.1 L 424.0 158.8 L 425.2 158.6 L 426.3 158.3 L 427.5 158.0 L 428.7 157.7 L 429.9 157.4 L 431.1 157.1 L 432.2 156.7 L 433.4 156.4 L 434.6 156.0 L 435.8 155.7 L 436.9 155.3 L 438.1 154.9 L 439.3 154.5 L 440.4 154.1 L 441.6 153.6 L 442.8 153.2 L 444.0 152.7 L 445.2 152.2 L 446.3 151.8 L 447.5 151.3 L 448.7 150.7 L 449.9 150.2 L 451.0 149.7 L 452.2 149.1 L 453.4 148.6 L 454.6 148.0 L 455.7 147.4 L 456.9 146.8 L 458.1 146.2 L 459.2 145.6 L 460.4 145.0 L 461.6 144.3 L 462.8 143.6 L 464.0 143.0 L 465.1 142.3 L 466.3 141.6 L 467.5 140.9 L 468.7 140.2 L 469.8 139.4 L 471.0 138.7 L 472.2 137.9 L 473.3 137.1 L 474.5 136.3 L 475.7 135.5 L 476.9 134.7 L 478.0 133.9 L 479.2 133.1 L 480.4 132.2 L 481.6 131.4 L 482.8 130.5 L 483.9 129.6 L 485.1 128.7 L 486.3 127.8 L 487.4 126.9 L 488.6 125.9 L 489.8 125.0 L 491.0 124.0 L 492.1 123.0 L 493.3 122.0 L 494.5 121.0 L 495.7 120.0 L 496.8 119.0 L 498.0 118.0 L 499.2 116.9 L 500.4 115.8 L 501.6 114.8 L 502.7 113.7 L 503.9 112.6 L 505.1 111.5 L 506.2 110.3 L 507.4 109.2 L 508.6 108.0 L 509.8 106.9 L 510.9 105.7 L 512.1 104.5 L 513.3 103.3 L 514.5 102.1 L 515.7 100.9 L 516.8 99.6 L 518.0 98.4 L 519.2 97.1 L 520.4 95.8 L 521.5 94.5 L 522.7 93.2 L 523.9 91.9 L 525.0 90.6 L 526.2 89.2 L 527.4 87.9 L 528.6 86.5 L 529.8 85.1 L 530.9 83.8 L 532.1 82.4 L 533.3 80.9 L 534.5 79.5 L 535.6 78.1 L 536.8 76.6 L 538.0 75.1 L 539.2 73.7 L 540.3 72.2 L 541.5 70.7 L 542.7 69.1 L 543.8 67.6 L 545.0 66.1 L 546.2 64.5 L 547.4 63.0 L 548.5 61.4 L 549.7 59.8 L 550.9 58.2 L 552.1 56.6 L 553.2 54.9 L 554.4 53.3 L 555.6 51.6 L 556.8 50.0 L 558.0 48.3 L 559.1 46.6 L 560.3 44.9 L 561.5 43.2 L 562.6 41.4 L 563.8 39.7 L 565.0 37.9 L 566.2 36.2 L 567.4 34.4 L 568.5 32.6" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-linejoin="round"/><line x1="42" y1="206.7" x2="618" y2="206.7" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5 4"/><circle cx="400.5" cy="161.3" r="4.2" fill="#16a34a" stroke="#16a34a" stroke-width="2"/><text x="400.5" y="149.3" font-size="12.5" font-weight="600" fill="#16a34a" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">顶点在上方　Δ&lt;0 恒成立</text><text x="400.5" y="149.3" font-size="12.5" font-weight="600" fill="#16a34a" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">顶点在上方　Δ&lt;0 恒成立</text></svg><figcaption>y = x²−2x+3：a=1&gt;0 且 Δ=4−12=−8&lt;0，整条曲线悬在 x 轴上方，故 &gt;0 恒成立。</figcaption></figure>
+<figure><svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="300" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="118.5" y1="48.0" x2="118.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="189.0" y1="48.0" x2="189.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="259.5" y1="48.0" x2="259.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="330.0" y1="48.0" x2="330.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="400.5" y1="48.0" x2="400.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="471.0" y1="48.0" x2="471.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="541.5" y1="48.0" x2="541.5" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="252.0" x2="612.0" y2="252.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="229.3" x2="612.0" y2="229.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="206.7" x2="612.0" y2="206.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="184.0" x2="612.0" y2="184.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="161.3" x2="612.0" y2="161.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="138.7" x2="612.0" y2="138.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="116.0" x2="612.0" y2="116.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="93.3" x2="612.0" y2="93.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="70.7" x2="612.0" y2="70.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="206.7" x2="626" y2="206.7" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 206.7 L 634.0 202.2 L 634.0 211.2 Z" fill="#64748b"/><line x1="330.0" y1="262" x2="330.0" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 330.0 34 L 325.5 26 L 334.5 26 Z" fill="#64748b"/><line x1="48.0" y1="202.7" x2="48.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><line x1="118.5" y1="202.7" x2="118.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="118.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><line x1="189.0" y1="202.7" x2="189.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="189.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><line x1="259.5" y1="202.7" x2="259.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="259.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><line x1="400.5" y1="202.7" x2="400.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="400.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><line x1="471.0" y1="202.7" x2="471.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="471.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><line x1="541.5" y1="202.7" x2="541.5" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="541.5" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><line x1="612.0" y1="202.7" x2="612.0" y2="210.7" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="223.7" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="323.0" y="256.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="323.0" y="233.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="323.0" y="188.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="323.0" y="165.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="323.0" y="142.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="323.0" y="120.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="323.0" y="97.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="323.0" y="74.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="323.0" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="337.0" y="222.7" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="198.7" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="338.0" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 218.4 267.3 L 219.5 265.3 L 220.7 263.4 L 221.9 261.5 L 223.1 259.6 L 224.2 257.7 L 225.4 255.8 L 226.6 253.9 L 227.8 252.1 L 229.0 250.2 L 230.1 248.4 L 231.3 246.6 L 232.5 244.8 L 233.7 243.0 L 234.8 241.2 L 236.0 239.4 L 237.2 237.7 L 238.4 235.9 L 239.5 234.2 L 240.7 232.5 L 241.9 230.8 L 243.0 229.1 L 244.2 227.4 L 245.4 225.7 L 246.6 224.1 L 247.8 222.4 L 248.9 220.8 L 250.1 219.2 L 251.3 217.6 L 252.4 216.0 L 253.6 214.4 L 254.8 212.8 L 256.0 211.3 L 257.1 209.7 L 258.3 208.2 L 259.5 206.7 L 260.7 205.2 L 261.9 203.7 L 263.0 202.2 L 264.2 200.7 L 265.4 199.3 L 266.6 197.8 L 267.7 196.4 L 268.9 195.0 L 270.1 193.6 L 271.2 192.2 L 272.4 190.8 L 273.6 189.4 L 274.8 188.1 L 276.0 186.7 L 277.1 185.4 L 278.3 184.1 L 279.5 182.8 L 280.6 181.5 L 281.8 180.2 L 283.0 179.0 L 284.2 177.7 L 285.4 176.5 L 286.5 175.2 L 287.7 174.0 L 288.9 172.8 L 290.0 171.6 L 291.2 170.5 L 292.4 169.3 L 293.6 168.1 L 294.8 167.0 L 295.9 165.9 L 297.1 164.8 L 298.3 163.7 L 299.5 162.6 L 300.6 161.5 L 301.8 160.4 L 303.0 159.4 L 304.1 158.3 L 305.3 157.3 L 306.5 156.3 L 307.7 155.3 L 308.9 154.3 L 310.0 153.3 L 311.2 152.4 L 312.4 151.4 L 313.6 150.5 L 314.7 149.6 L 315.9 148.6 L 317.1 147.7 L 318.2 146.9 L 319.4 146.0 L 320.6 145.1 L 321.8 144.3 L 322.9 143.4 L 324.1 142.6 L 325.3 141.8 L 326.5 141.0 L 327.7 140.2 L 328.8 139.4 L 330.0 138.7 L 331.2 137.9 L 332.3 137.2 L 333.5 136.5 L 334.7 135.7 L 335.9 135.0 L 337.0 134.4 L 338.2 133.7 L 339.4 133.0 L 340.6 132.4 L 341.8 131.7 L 342.9 131.1 L 344.1 130.5 L 345.3 129.9 L 346.4 129.3 L 347.6 128.8 L 348.8 128.2 L 350.0 127.6 L 351.1 127.1 L 352.3 126.6 L 353.5 126.1 L 354.7 125.6 L 355.8 125.1 L 357.0 124.6 L 358.2 124.2 L 359.4 123.7 L 360.6 123.3 L 361.7 122.9 L 362.9 122.4 L 364.1 122.1 L 365.2 121.7 L 366.4 121.3 L 367.6 120.9 L 368.8 120.6 L 369.9 120.3 L 371.1 119.9 L 372.3 119.6 L 373.5 119.3 L 374.7 119.0 L 375.8 118.8 L 377.0 118.5 L 378.2 118.3 L 379.4 118.0 L 380.5 117.8 L 381.7 117.6 L 382.9 117.4 L 384.1 117.2 L 385.2 117.1 L 386.4 116.9 L 387.6 116.8 L 388.8 116.6 L 389.9 116.5 L 391.1 116.4 L 392.3 116.3 L 393.5 116.2 L 394.6 116.2 L 395.8 116.1 L 397.0 116.1 L 398.2 116.0 L 399.3 116.0 L 400.5 116.0 L 401.7 116.0 L 402.8 116.0 L 404.0 116.1 L 405.2 116.1 L 406.4 116.2 L 407.5 116.2 L 408.7 116.3 L 409.9 116.4 L 411.1 116.5 L 412.2 116.6 L 413.4 116.8 L 414.6 116.9 L 415.8 117.1 L 416.9 117.2 L 418.1 117.4 L 419.3 117.6 L 420.5 117.8 L 421.6 118.0 L 422.8 118.3 L 424.0 118.5 L 425.2 118.8 L 426.3 119.0 L 427.5 119.3 L 428.7 119.6 L 429.9 119.9 L 431.1 120.3 L 432.2 120.6 L 433.4 120.9 L 434.6 121.3 L 435.8 121.7 L 436.9 122.1 L 438.1 122.4 L 439.3 122.9 L 440.4 123.3 L 441.6 123.7 L 442.8 124.2 L 444.0 124.6 L 445.2 125.1 L 446.3 125.6 L 447.5 126.1 L 448.7 126.6 L 449.9 127.1 L 451.0 127.6 L 452.2 128.2 L 453.4 128.8 L 454.6 129.3 L 455.7 129.9 L 456.9 130.5 L 458.1 131.1 L 459.2 131.7 L 460.4 132.4 L 461.6 133.0 L 462.8 133.7 L 464.0 134.4 L 465.1 135.0 L 466.3 135.7 L 467.5 136.5 L 468.7 137.2 L 469.8 137.9 L 471.0 138.7 L 472.2 139.4 L 473.3 140.2 L 474.5 141.0 L 475.7 141.8 L 476.9 142.6 L 478.0 143.4 L 479.2 144.3 L 480.4 145.1 L 481.6 146.0 L 482.8 146.9 L 483.9 147.7 L 485.1 148.6 L 486.3 149.6 L 487.4 150.5 L 488.6 151.4 L 489.8 152.4 L 491.0 153.3 L 492.1 154.3 L 493.3 155.3 L 494.5 156.3 L 495.7 157.3 L 496.8 158.3 L 498.0 159.4 L 499.2 160.4 L 500.4 161.5 L 501.6 162.6 L 502.7 163.7 L 503.9 164.8 L 505.1 165.9 L 506.2 167.0 L 507.4 168.1 L 508.6 169.3 L 509.8 170.5 L 510.9 171.6 L 512.1 172.8 L 513.3 174.0 L 514.5 175.2 L 515.7 176.5 L 516.8 177.7 L 518.0 179.0 L 519.2 180.2 L 520.4 181.5 L 521.5 182.8 L 522.7 184.1 L 523.9 185.4 L 525.0 186.7 L 526.2 188.1 L 527.4 189.4 L 528.6 190.8 L 529.8 192.2 L 530.9 193.6 L 532.1 195.0 L 533.3 196.4 L 534.5 197.8 L 535.6 199.3 L 536.8 200.7 L 538.0 202.2 L 539.2 203.7 L 540.3 205.2 L 541.5 206.7 L 542.7 208.2 L 543.8 209.7 L 545.0 211.3 L 546.2 212.8 L 547.4 214.4 L 548.5 216.0 L 549.7 217.6 L 550.9 219.2 L 552.1 220.8 L 553.2 222.4 L 554.4 224.1 L 555.6 225.7 L 556.8 227.4 L 558.0 229.1 L 559.1 230.8 L 560.3 232.5 L 561.5 234.2 L 562.6 235.9 L 563.8 237.7 L 565.0 239.4 L 566.2 241.2 L 567.4 243.0 L 568.5 244.8 L 569.7 246.6 L 570.9 248.4 L 572.1 250.2 L 573.2 252.1 L 574.4 253.9 L 575.6 255.8 L 576.8 257.7 L 577.9 259.6 L 579.1 261.5 L 580.3 263.4 L 581.4 265.3 L 582.6 267.3" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linejoin="round"/><line x1="42" y1="206.7" x2="618" y2="206.7" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5 4"/><circle cx="259.5" cy="206.7" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="259.5" y="226.7" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">有交点 → 不恒成立</text><text x="259.5" y="226.7" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">有交点 → 不恒成立</text><circle cx="541.5" cy="206.7" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/></svg><figcaption>y = −x²+2x+3：与 x 轴相交且两端向下延伸，&gt;0 只在两根之间成立，不是恒成立。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">f(x) &gt; 0 恒成立</div><div class="v">a &gt; 0 且 Δ &lt; 0</div></div><div class="row"><div class="k">f(x) ≥ 0 恒成立</div><div class="v">a &gt; 0 且 Δ ≤ 0</div></div><div class="row"><div class="k">f(x) &lt; 0 恒成立</div><div class="v">a &lt; 0 且 Δ &lt; 0</div></div><div class="row"><div class="k">等价说法</div><div class="v">顶点纵坐标 k 与 a 同号，且 Δ 严格小于 0</div></div><div class="row"><div class="k">必讨论</div><div class="v">二次项系数可能为 0 时单独分类</div></div></div>
+<p><span class="hl">开口向上 + 没有交点 = 恒在上方</span>，一句话记牢。</p>
+<p>Δ&lt;0 与 Δ≤0 的区别只在是否允许「碰到」x 轴，看题目是 &gt;0 还是 ≥0。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>先讨论退化</strong>：题目没说「二次」时，先令二次项系数 = 0，看是否满足。</li><li><strong>判开口</strong>：恒 &gt;0 ⟹ a&gt;0；恒 &lt;0 ⟹ a&lt;0。</li><li><strong>列 Δ 条件</strong>：&gt;0 用 Δ&lt;0，≥0 用 Δ≤0。</li><li><strong>解不等式组并取交集</strong>，再与第一段的结果取并集。</li><li><strong>用顶点复核</strong>：算一下顶点纵坐标是否与 a 同号且不为 0。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>若 <span class="mono">x² + 2x + m &gt; 0</span> 对任意实数 x 恒成立，求 m 的取值范围。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>开口系数 1&gt;0 已满足，只需保证无交点。</p>
+<ol><li>二次项系数 a = 1 &gt; 0，已满足第一个条件。</li><li>要求恒 &gt;0 ⟹ Δ &lt; 0：<span class="mono">4 − 4m &lt; 0</span> → <span class="mono">m &gt; 1</span>。</li><li>顶点复核：y = (x+1)² + m − 1，顶点纵坐标 m−1，要求 &gt;0 ⟹ m&gt;1 ✓。</li><li>边界：m = 1 时顶点恰好在 x 轴上（触到 0），此时是 ≥0 而非 &gt;0，必须排除。</li></ol>
+<div class="ansbox">答：m &gt; 1。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 必须讨论退化</span>若不等式 <span class="mono">(m−1)x² + 2(m−1)x + 4 &gt; 0</span> 对任意实数 x 恒成立，求 m 的取值范围。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>二次项系数含 m，可能为 0，必须先单独讨论。</p>
+<ol><li><strong>情形一（退化）</strong>：m − 1 = 0 即 m = 1 时，式子变成 <span class="mono">4 &gt; 0</span>，恒成立 ✓。</li><li><strong>情形二（真正二次）</strong>：m ≠ 1 时需同时满足：</li><li>　① 开口向上：<span class="mono">m − 1 &gt; 0</span> → <span class="mono">m &gt; 1</span>；</li><li>　② 无交点：Δ = 4(m−1)² − 16(m−1) = 4(m−1)(m−5) &lt; 0。</li><li>因 m−1 &gt; 0，故需 <span class="mono">m − 5 &lt; 0</span> → <span class="mono">m &lt; 5</span>，于是 <span class="mono">1 &lt; m &lt; 5</span>。</li><li>合并两种情形：<span class="mono">1 ≤ m &lt; 5</span>。</li><li>检验：m=1 时确实恒成立；m=5 时 Δ=0，顶点触及 x 轴，只能保证 ≥0 ✗ ✓。</li></ol>
+<div class="ansbox">答：1 ≤ m &lt; 5。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>漏掉「二次项系数为 0」的讨论</strong>：含参题目必须分两类，这是本讲头号扣分点。</li><li><strong>Δ 的等号处理错</strong>：&gt;0 用 Δ&lt;0（不能碰），≥0 才能用 Δ≤0。</li><li><strong>只写 Δ&lt;0 忘了 a&gt;0</strong>：开口向下时曲线两端必然掉下去，两个条件缺一不可。</li><li><strong>把「恒成立」与「有解」混淆</strong>：有解只需存在一个 x，恒成立要求所有 x。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>永不负亏的生意</strong>：利润曲线恒在零以上，意味着任何销量都赚钱——现实中对应「躺着也能赚」的商业模式。</li><li><strong>结构安全</strong>：桥梁承重冗余要求在最不利工况下仍大于 0，本质就是恒成立。</li><li><strong>药物安全剂量</strong>：要求在整个剂量区间内副作用指标恒低于阈值。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li><span class="hl">恒 &gt;0 ⟺ a&gt;0 且 Δ&lt;0</span>（恒 ≥0 则 Δ≤0）。</li><li>等价于：顶点纵坐标与 a 同号且不为 0。</li><li>含参时<strong>必须先讨论二次项系数等于 0</strong> 的退化情形。</li><li>最后的答案区间注意开闭：能「碰到」就不算严格大于。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">恒正在上方　开口向上且无根
+系数含参先讨论　等于零时另算账</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="19_解集反推开口.html"><span>← 上一讲</span>解集反推开口</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="21_函数不等式看高看低.html"><span>下一讲 →</span>函数不等式·看高看低</a>
+</div>
+<footer>二次函数26讲 · 第 20 讲《恒成立问题》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "要使 x² − 2x + m > 0 恒成立，m 的取值范围是（　）",
+    "options": [
+      "m > 1",
+      "m ≥ 1",
+      "m < 1",
+      "任意实数"
+    ],
+    "answer": 0,
+    "explain": "a=1>0，Δ=4−4m<0 ⟹ m>1。m=1 时顶点在 x 轴上，只能保证 ≥0。"
+  },
+  {
+    "q": "要使 −x² + 2x + m < 0 恒成立，下列条件正确的是（　）",
+    "options": [
+      "a>0 且 Δ<0",
+      "a<0 且 Δ<0",
+      "a<0 且 Δ>0",
+      "只需 Δ<0"
+    ],
+    "answer": 1,
+    "explain": "恒 <0 要求整条曲线在 x 轴下方：开口向下（a<0）且与 x 轴无交点（Δ<0）。"
+  },
+  {
+    "q": "解「含参不等式恒成立」问题时，首先应该做的是（　）",
+    "options": [
+      "直接列 Δ<0",
+      "讨论二次项系数是否可能为 0",
+      "求出两根",
+      "配方"
+    ],
+    "answer": 1,
+    "explain": "若二次项系数可以为 0，函数会退化为一次式或常数，判别式不再适用，必须优先分类讨论。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
