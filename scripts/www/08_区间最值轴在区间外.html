@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第08讲 区间最值·轴在区间外 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 基础篇 · 图像 / 第8讲</div>
+<div class="badge-line"><span class="badge">第 8 讲 / 共 26 讲</span><span class="badge">基础篇 · 图像</span><span class="badge gold">中考高频</span></div>
+<h1 class="title">区间最值·轴在区间外</h1>
+<div class="motto">轴在区间外：整段单调，最值全在端点，靠「谁离轴近」判断。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>第 3 讲处理了轴在区间里面的情形。如果轴在区间<strong>外面</strong>呢？这时整个区间落在抛物线的一侧，函数在这段上干脆就是单调的——顶点根本不在考虑范围内。</p>
+<p>典型场景：某商品销量只能在 0~50 件之间，但理论最优销量是 80 件。此时区间里的最值出现在边界上，这就是本讲要解决的问题。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、轴在区间外意味着什么</h3>
+<p>回忆单调性：a&gt;0 时，x &lt; h（轴左侧）函数<strong>递减</strong>，x &gt; h（轴右侧）函数<strong>递增</strong>。</p>
+<p>如果整个区间 <span class="mono">[m,n]</span> 都在轴的左边（<span class="mono">n &lt; h</span>），那么区间上函数全程递减 → 左端点最大、右端点最小。</p>
+<p>如果整个区间都在轴的右边（<span class="mono">m &gt; h</span>），函数全程递增 → 左端点最小、右端点最大。</p>
+<div class="formula"><div class="row"><div class="k">a&gt;0，区间在轴左侧</div><div class="v">递减：max = f(m)，min = f(n)</div></div><div class="row"><div class="k">a&gt;0，区间在轴右侧</div><div class="v">递增：min = f(m)，max = f(n)</div></div><div class="row"><div class="k">a&lt;0，区间在轴左侧</div><div class="v">递增：min = f(m)，max = f(n)</div></div><div class="row"><div class="k">a&lt;0，区间在轴右侧</div><div class="v">递减：max = f(m)，min = f(n)</div></div></div>
+<h3 class="sub">二、一句话统一记忆</h3>
+<p>其实不用背四行表格，记住第 7 讲的结论就行：<strong>开口向上时离轴越远值越大，开口向下时离轴越远值越小</strong>。轴在区间外，哪个端点离轴更远，答案就落在哪个端点：</p>
+<p><span class="hl">轴在外，两端点；远离轴的端点取「远离中心的那个最值」</span></p>
+<p>具体来说：a&gt;0 时离轴远的端点取最大值，离轴近的端点取最小值；a&lt;0 则相反。</p>
+<div class="formula"><div class="v">注意轴<strong>恰好落在端点</strong>的情形：<span class="mono">m = h</span> 或 <span class="mono">n = h</span>。这时顶点就在区间的边界上，属于两种模型的交界：用「轴在内」的公式算也行（顶点值就是端点值），结果一致，不必纠结。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 330" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="330" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="123.2" y1="48.0" x2="123.2" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="198.4" y1="48.0" x2="198.4" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="273.6" y1="48.0" x2="273.6" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="348.8" y1="48.0" x2="348.8" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="424.0" y1="48.0" x2="424.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="499.2" y1="48.0" x2="499.2" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="574.4" y1="48.0" x2="574.4" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="282.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="264.0" x2="612.0" y2="264.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="246.0" x2="612.0" y2="246.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="228.0" x2="612.0" y2="228.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="210.0" x2="612.0" y2="210.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="192.0" x2="612.0" y2="192.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="174.0" x2="612.0" y2="174.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="156.0" x2="612.0" y2="156.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="138.0" x2="612.0" y2="138.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="120.0" x2="612.0" y2="120.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="102.0" x2="612.0" y2="102.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="84.0" x2="612.0" y2="84.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="66.0" x2="612.0" y2="66.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="192.0" x2="626" y2="192.0" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 192.0 L 634.0 187.5 L 634.0 196.5 Z" fill="#64748b"/><line x1="311.2" y1="292" x2="311.2" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 311.2 34 L 306.7 26 L 315.7 26 Z" fill="#64748b"/><line x1="48.0" y1="188.0" x2="48.0" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3.5</text><line x1="123.2" y1="188.0" x2="123.2" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="123.2" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2.5</text><line x1="198.4" y1="188.0" x2="198.4" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="198.4" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="273.6" y1="188.0" x2="273.6" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="273.6" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="348.8" y1="188.0" x2="348.8" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="348.8" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="424.0" y1="188.0" x2="424.0" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="424.0" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="499.2" y1="188.0" x2="499.2" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="499.2" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="574.4" y1="188.0" x2="574.4" y2="196.0" stroke="#94a3b8" stroke-width="1"/><text x="574.4" y="209.0" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><text x="304.2" y="286.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="304.2" y="268.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="304.2" y="250.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="304.2" y="232.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="304.2" y="214.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="304.2" y="178.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="304.2" y="160.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="304.2" y="142.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="304.2" y="124.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="304.2" y="106.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="304.2" y="88.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="304.2" y="70.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="304.2" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">8</text><text x="318.2" y="208.0" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="184.0" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="319.2" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><rect x="160.8" y="48.0" width="150.4" height="234.0" fill="#0ea5e9" opacity="0.12"/><path d="M 115.0 29.5 L 116.2 31.5 L 117.3 33.5 L 118.5 35.6 L 119.7 37.6 L 120.9 39.5 L 122.0 41.5 L 123.2 43.5 L 124.4 45.5 L 125.6 47.4 L 126.7 49.4 L 127.9 51.3 L 129.1 53.2 L 130.2 55.2 L 131.4 57.1 L 132.6 59.0 L 133.8 60.9 L 134.9 62.7 L 136.1 64.6 L 137.3 66.5 L 138.5 68.4 L 139.7 70.2 L 140.8 72.0 L 142.0 73.9 L 143.2 75.7 L 144.4 77.5 L 145.5 79.3 L 146.7 81.1 L 147.9 82.9 L 149.1 84.7 L 150.2 86.5 L 151.4 88.2 L 152.6 90.0 L 153.8 91.7 L 154.9 93.5 L 156.1 95.2 L 157.3 96.9 L 158.4 98.6 L 159.6 100.3 L 160.8 102.0 L 162.0 103.7 L 163.1 105.4 L 164.3 107.0 L 165.5 108.7 L 166.7 110.3 L 167.8 112.0 L 169.0 113.6 L 170.2 115.2 L 171.4 116.8 L 172.6 118.4 L 173.7 120.0 L 174.9 121.6 L 176.1 123.2 L 177.2 124.8 L 178.4 126.3 L 179.6 127.9 L 180.8 129.4 L 181.9 131.0 L 183.1 132.5 L 184.3 134.0 L 185.5 135.5 L 186.7 137.0 L 187.8 138.5 L 189.0 140.0 L 190.2 141.4 L 191.3 142.9 L 192.5 144.4 L 193.7 145.8 L 194.9 147.2 L 196.1 148.7 L 197.2 150.1 L 198.4 151.5 L 199.6 152.9 L 200.8 154.3 L 201.9 155.7 L 203.1 157.1 L 204.3 158.4 L 205.5 159.8 L 206.6 161.1 L 207.8 162.5 L 209.0 163.8 L 210.1 165.1 L 211.3 166.4 L 212.5 167.7 L 213.7 169.0 L 214.8 170.3 L 216.0 171.6 L 217.2 172.9 L 218.4 174.1 L 219.5 175.4 L 220.7 176.6 L 221.9 177.9 L 223.1 179.1 L 224.2 180.3 L 225.4 181.5 L 226.6 182.7 L 227.8 183.9 L 229.0 185.1 L 230.1 186.3 L 231.3 187.4 L 232.5 188.6 L 233.7 189.7 L 234.8 190.9 L 236.0 192.0 L 237.2 193.1 L 238.4 194.2 L 239.5 195.3 L 240.7 196.4 L 241.9 197.5 L 243.0 198.6 L 244.2 199.7 L 245.4 200.7 L 246.6 201.8 L 247.8 202.8 L 248.9 203.8 L 250.1 204.9 L 251.3 205.9 L 252.4 206.9 L 253.6 207.9 L 254.8 208.9 L 256.0 209.9 L 257.1 210.8 L 258.3 211.8 L 259.5 212.7 L 260.7 213.7 L 261.9 214.6 L 263.0 215.6 L 264.2 216.5 L 265.4 217.4 L 266.6 218.3 L 267.7 219.2 L 268.9 220.1 L 270.1 220.9 L 271.2 221.8 L 272.4 222.7 L 273.6 223.5 L 274.8 224.3 L 276.0 225.2 L 277.1 226.0 L 278.3 226.8 L 279.5 227.6 L 280.6 228.4 L 281.8 229.2 L 283.0 230.0 L 284.2 230.7 L 285.4 231.5 L 286.5 232.2 L 287.7 233.0 L 288.9 233.7 L 290.0 234.5 L 291.2 235.2 L 292.4 235.9 L 293.6 236.6 L 294.8 237.3 L 295.9 237.9 L 297.1 238.6 L 298.3 239.3 L 299.5 239.9 L 300.6 240.6 L 301.8 241.2 L 303.0 241.8 L 304.1 242.5 L 305.3 243.1 L 306.5 243.7 L 307.7 244.3 L 308.9 244.9 L 310.0 245.4 L 311.2 246.0 L 312.4 246.6 L 313.6 247.1 L 314.7 247.6 L 315.9 248.2 L 317.1 248.7 L 318.2 249.2 L 319.4 249.7 L 320.6 250.2 L 321.8 250.7 L 322.9 251.2 L 324.1 251.7 L 325.3 252.1 L 326.5 252.6 L 327.7 253.0 L 328.8 253.4 L 330.0 253.9 L 331.2 254.3 L 332.3 254.7 L 333.5 255.1 L 334.7 255.5 L 335.9 255.9 L 337.0 256.2 L 338.2 256.6 L 339.4 257.0 L 340.6 257.3 L 341.8 257.7 L 342.9 258.0 L 344.1 258.3 L 345.3 258.6 L 346.4 258.9 L 347.6 259.2 L 348.8 259.5 L 350.0 259.8 L 351.1 260.0 L 352.3 260.3 L 353.5 260.6 L 354.7 260.8 L 355.8 261.0 L 357.0 261.3 L 358.2 261.5 L 359.4 261.7 L 360.6 261.9 L 361.7 262.1 L 362.9 262.2 L 364.1 262.4 L 365.2 262.6 L 366.4 262.7 L 367.6 262.9 L 368.8 263.0 L 369.9 263.1 L 371.1 263.3 L 372.3 263.4 L 373.5 263.5 L 374.7 263.6 L 375.8 263.6 L 377.0 263.7 L 378.2 263.8 L 379.4 263.8 L 380.5 263.9 L 381.7 263.9 L 382.9 264.0 L 384.1 264.0 L 385.2 264.0 L 386.4 264.0 L 387.6 264.0 L 388.8 264.0 L 389.9 264.0 L 391.1 263.9 L 392.3 263.9 L 393.5 263.8 L 394.6 263.8 L 395.8 263.7 L 397.0 263.6 L 398.2 263.6 L 399.3 263.5 L 400.5 263.4 L 401.7 263.3 L 402.8 263.1 L 404.0 263.0 L 405.2 262.9 L 406.4 262.7 L 407.5 262.6 L 408.7 262.4 L 409.9 262.2 L 411.1 262.1 L 412.2 261.9 L 413.4 261.7 L 414.6 261.5 L 415.8 261.3 L 416.9 261.0 L 418.1 260.8 L 419.3 260.6 L 420.5 260.3 L 421.6 260.0 L 422.8 259.8 L 424.0 259.5 L 425.2 259.2 L 426.3 258.9 L 427.5 258.6 L 428.7 258.3 L 429.9 258.0 L 431.1 257.7 L 432.2 257.3 L 433.4 257.0 L 434.6 256.6 L 435.8 256.2 L 436.9 255.9 L 438.1 255.5 L 439.3 255.1 L 440.4 254.7 L 441.6 254.3 L 442.8 253.9 L 444.0 253.4 L 445.2 253.0 L 446.3 252.6 L 447.5 252.1 L 448.7 251.7 L 449.9 251.2 L 451.0 250.7 L 452.2 250.2 L 453.4 249.7 L 454.6 249.2 L 455.7 248.7 L 456.9 248.2 L 458.1 247.6 L 459.2 247.1 L 460.4 246.6 L 461.6 246.0 L 462.8 245.4 L 464.0 244.9 L 465.1 244.3 L 466.3 243.7 L 467.5 243.1 L 468.7 242.5 L 469.8 241.8 L 471.0 241.2 L 472.2 240.6 L 473.3 239.9 L 474.5 239.3 L 475.7 238.6 L 476.9 237.9 L 478.0 237.3 L 479.2 236.6 L 480.4 235.9 L 481.6 235.2 L 482.8 234.5 L 483.9 233.7 L 485.1 233.0 L 486.3 232.2 L 487.4 231.5 L 488.6 230.7 L 489.8 230.0 L 491.0 229.2 L 492.1 228.4 L 493.3 227.6 L 494.5 226.8 L 495.7 226.0 L 496.8 225.2 L 498.0 224.3 L 499.2 223.5 L 500.4 222.7 L 501.6 221.8 L 502.7 220.9 L 503.9 220.1 L 505.1 219.2 L 506.2 218.3 L 507.4 217.4 L 508.6 216.5 L 509.8 215.6 L 510.9 214.6 L 512.1 213.7 L 513.3 212.7 L 514.5 211.8 L 515.7 210.8 L 516.8 209.9 L 518.0 208.9 L 519.2 207.9 L 520.4 206.9 L 521.5 205.9 L 522.7 204.9 L 523.9 203.8 L 525.0 202.8 L 526.2 201.8 L 527.4 200.7 L 528.6 199.7 L 529.8 198.6 L 530.9 197.5 L 532.1 196.4 L 533.3 195.3 L 534.5 194.2 L 535.6 193.1 L 536.8 192.0 L 538.0 190.9 L 539.2 189.7 L 540.3 188.6 L 541.5 187.4 L 542.7 186.3 L 543.8 185.1 L 545.0 183.9 L 546.2 182.7 L 547.4 181.5 L 548.5 180.3 L 549.7 179.1 L 550.9 177.9 L 552.1 176.6 L 553.2 175.4 L 554.4 174.1 L 555.6 172.9 L 556.8 171.6 L 558.0 170.3 L 559.1 169.0 L 560.3 167.7 L 561.5 166.4 L 562.6 165.1 L 563.8 163.8 L 565.0 162.5 L 566.2 161.1 L 567.4 159.8 L 568.5 158.4 L 569.7 157.1 L 570.9 155.7 L 572.1 154.3 L 573.2 152.9 L 574.4 151.5 L 575.6 150.1 L 576.8 148.7 L 577.9 147.2 L 579.1 145.8 L 580.3 144.4 L 581.4 142.9 L 582.6 141.4 L 583.8 140.0 L 585.0 138.5 L 586.1 137.0 L 587.3 135.5 L 588.5 134.0 L 589.7 132.5 L 590.9 131.0 L 592.0 129.4 L 593.2 127.9 L 594.4 126.3 L 595.5 124.8 L 596.7 123.2 L 597.9 121.6 L 599.1 120.0 L 600.2 118.4 L 601.4 116.8 L 602.6 115.2 L 603.8 113.6 L 605.0 112.0 L 606.1 110.3 L 607.3 108.7 L 608.5 107.0 L 609.6 105.4 L 610.8 103.7 L 612.0 102.0" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><line x1="386.4" y1="36" x2="386.4" y2="288" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="5 4"/><text x="386.4" y="32.0" font-size="11.5" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">轴 x=1（在区间右侧外）</text><text x="386.4" y="32.0" font-size="11.5" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">轴 x=1（在区间右侧外）</text><line x1="160.8" y1="36" x2="160.8" y2="288" stroke="#0ea5e9" stroke-width="1.3" stroke-dasharray="5 4"/><text x="160.8" y="32.0" font-size="11.5" fill="#0ea5e9" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">m=−2</text><text x="160.8" y="32.0" font-size="11.5" fill="#0ea5e9" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">m=−2</text><line x1="311.2" y1="36" x2="311.2" y2="288" stroke="#0ea5e9" stroke-width="1.3" stroke-dasharray="5 4"/><text x="311.2" y="32.0" font-size="11.5" fill="#0ea5e9" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">n=0</text><text x="311.2" y="32.0" font-size="11.5" fill="#0ea5e9" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">n=0</text><circle cx="160.8" cy="102.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="160.8" y="90.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">f(−2)=5 最大</text><text x="160.8" y="90.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">f(−2)=5 最大</text><circle cx="311.2" cy="246.0" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="319.2" y="252.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">f(0)=−3 最小</text><text x="319.2" y="252.0" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">f(0)=−3 最小</text><circle cx="386.4" cy="264.0" r="4.2" fill="#15803d" stroke="#15803d" stroke-width="2"/><text x="386.4" y="284.0" font-size="12.5" font-weight="600" fill="#15803d" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">顶点不在区间内</text><text x="386.4" y="284.0" font-size="12.5" font-weight="600" fill="#15803d" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">顶点不在区间内</text></svg><figcaption>x∈[−2,0] 全在对称轴 x=1 的左侧，抛物线在这段是递减的：左端点最大、右端点最小。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">判据</div><div class="v">n &lt; h（区间在左）或 m &gt; h（区间在右）</div></div><div class="row"><div class="k">a&gt;0</div><div class="v">离轴远的端点给最大值，离轴近的端点给最小值</div></div><div class="row"><div class="k">a&lt;0</div><div class="v">离轴远的端点给最小值，离轴近的端点给最大值</div></div><div class="row"><div class="k">顶点</div><div class="v">不在区间内，<strong>不参与</strong>最值竞争</div></div><div class="row"><div class="k">边界情形</div><div class="v">轴恰好等于端点时，顶点值即端点值，两模型结论一致</div></div></div>
+<p>解题核心：<span class="hl">先看轴在区间的哪一侧，再看开口方向</span>。</p>
+<p>完全不需要画完整图像，只需比较 <span class="mono">|端点 − h|</span> 与开口方向即可。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>求轴</strong>：算出 <span class="mono">h = −b/(2a)</span>，明确判断 <span class="mono">h</span> 与 <span class="mono">[m,n]</span> 的位置关系。</li><li><strong>确认在外</strong>：<span class="mono">n &lt; h</span> 或 <span class="mono">m &gt; h</span>，本讲模型成立。</li><li><strong>看开口</strong>：确定 a 的正负。</li><li><strong>两端点求值</strong>：把 x=m 与 x=n 分别代入算出函数值（此时不必算顶点）。</li><li><strong>定最值</strong>：按表格或「离轴远近 + 开口方向」给出最大与最小，并检查区间开闭。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>求 <span class="mono">y = x² − 2x − 3</span> 在 <span class="mono">−2 ≤ x ≤ 0</span> 上的最大值与最小值。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>先求轴，看它在区间的左边还是右边。</p>
+<ol><li>对称轴 <span class="mono">x = 1</span>，而区间是 [−2, 0]，显然 <span class="mono">n = 0 &lt; 1</span>，轴在区间右侧之外。</li><li>a=1&gt;0 开口向上，且区间在轴的左侧 → 这一段单调递减。</li><li>所以左端点取最大、右端点取最小。</li><li><span class="mono">f(−2) = 4 + 4 − 3 = 5</span>（最大值），<span class="mono">f(0) = −3</span>（最小值）。</li><li>验证：顶点 x=1 处值 −4 虽最小，但不在区间内，不予考虑 ✓。</li></ol>
+<div class="ansbox">答：最大值为 5（x=−2），最小值为 −3（x=0）。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 应用题</span>某商品利润 y（元）与降价幅度 x（元）满足 <span class="mono">y = −2x² + 20x + 300</span>，其中 <span class="mono">0 ≤ x ≤ 4</span>。求最大利润。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>开口向下，理论最优点在 x=5，超出了允许的降价范围 0~4。</p>
+<ol><li>对称轴 <span class="mono">x = −20/(2·(−2)) = 5</span>，而区间上限是 4，所以轴在区间右侧之外。</li><li>a=−2&lt;0 开口向下，区间在轴左侧 → 这一段单调递增（离顶点越近值越大）。</li><li>离轴 5 更近的端点是 x=4（距离 1），所以最大值在 x=4。</li><li><span class="mono">y(4) = −32 + 80 + 300 = 348</span>。</li><li>最小值在 x=0：<span class="mono">y(0) = 300</span>。若不限 x≤4，理论最大是 x=5 处的 350，但规则不允许 ✓。</li></ol>
+<div class="ansbox">答：最大利润为 348 元（降价 4 元时取得）。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>没判断就说「顶点是最值」</strong>：顶点不在区间内时它是无效的，必须先判位置。</li><li><strong>单调方向搞反</strong>：开口向上的左侧是递减不是递增，建议背口诀「上：左减右增；下：左增右减」。</li><li><strong>忽略端点开闭</strong>：开区间时最值可能取不到，需要写「无最大值/最小值」。</li><li><strong>应用题忘记取整与实际限制</strong>：如 x 必须为整数或正数，要在最值点附近取合法值再比较。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>限价政策</strong>：理论最优定价超出允许浮动区间时，最优解一定落在区间边界。</li><li><strong>田径起跑</strong>：给定的跑道长度区间与实际最优策略不匹配时，只能取区间端点。</li><li><strong>投篮距离</strong>：只能在 3~6 米出手，但最优距离是 8 米，实际只能在边界 6 米处做到最好。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li>轴在区间外 ⟹ 区间上单调 ⟹ <span class="hl">最值必在端点</span>。</li><li>判 combinations：a&gt;0 时「左减右增」，a&lt;0 时「左增右减」。</li><li>用「离轴远近 + 开口方向」统一记忆，不必死背四行表格。</li><li>顶点不在区间内就不参与竞争；顶点恰在端点时两套模型结论一致。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">轴在一侧外　整段是单调
+最值只在端点找　左右递增要记牢</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="07_函数值比大小.html"><span>← 上一讲</span>函数值比大小</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="09_符号多结论判断.html"><span>下一讲 →</span>符号多结论判断</a>
+</div>
+<footer>二次函数26讲 · 第 8 讲《区间最值·轴在区间外》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "函数 y = x² − 4x + 3 在 3 ≤ x ≤ 5 上的最小值是（　）",
+    "options": [
+      "0",
+      "3",
+      "−1",
+      "8"
+    ],
+    "answer": 0,
+    "explain": "对称轴 x=2 在区间左侧之外，且 a>0，故区间上递增，最小值在左端点 x=3：9−12+3=0。"
+  },
+  {
+    "q": "函数 y = −x² − 2x + 4 在 0 ≤ x ≤ 3 上的最大值是（　）",
+    "options": [
+      "4",
+      "3",
+      "−11",
+      "5"
+    ],
+    "answer": 0,
+    "explain": "对称轴 x=−1 在区间左侧之外，a<0 故区间上递减，最大值在左端点 x=0，即 4。"
+  },
+  {
+    "q": "若二次函数在区间 [m,n] 上单调，则关于它的最值下列说法正确的是（　）",
+    "options": [
+      "一定在顶点取得",
+      "一定在端点取得",
+      "一定不存在",
+      "无法确定"
+    ],
+    "answer": 1,
+    "explain": "单调区间上的函数最值一定出现在区间端点；若在闭区间上取得，否则可能取不到。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
