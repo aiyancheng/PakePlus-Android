@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第04讲 顶点式 | 二次函数26讲</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1d4ed8;--primary-d:#1e3a8a;--soft:#eff6ff;--soft2:#dbeafe;
+  --accent:#ea580c;--accent-soft:#fff7ed;
+  --ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f7fb;--card:#ffffff;
+  --ok:#15803d;--bad:#dc2626;--okbg:#f0fdf4;--badbg:#fef2f2;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.85;font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(125deg,#1e3a8a 0%,#1d4ed8 55%,#2563eb 100%);
+  color:#fff;padding:34px 0 30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  border-radius:50%;background:rgba(255,255,255,.07);
+}
+.hero-in{max-width:1000px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+.crumb{font-size:13px;opacity:.82;margin-bottom:10px}
+.crumb a{color:#fff;text-decoration:none;opacity:.9}
+.crumb a:hover{text-decoration:underline}
+.badge-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:13px;padding:4px 13px;border-radius:999px;letter-spacing:.5px;
+}
+.badge.gold{background:#f59e0b;border-color:#fbbf24;color:#7c2d12;font-weight:700}
+h1.title{font-size:29px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.motto{margin-top:12px;font-size:16.5px;background:rgba(255,255,255,.14);
+  border-left:4px solid #fbbf24;padding:10px 16px;border-radius:0 10px 10px 0;line-height:1.7}
+.hero-meta{margin-top:14px;font-size:13.5px;opacity:.85}
+
+/* ---------- 卡片 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+h2.sec{font-size:20px;font-weight:800;color:var(--primary-d);display:flex;align-items:center;
+  gap:10px;padding-bottom:12px;margin-bottom:16px;border-bottom:2px solid var(--soft2)}
+h2.sec .n{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:16.5px;font-weight:700;color:var(--primary-d);margin:18px 0 8px;
+  padding-left:11px;border-left:4px solid var(--primary)}
+p{margin-bottom:11px}
+p.tight{margin-bottom:7px}
+ul.dot,ol.num{margin:6px 0 12px 0;padding-left:22px}
+ul.dot li,ol.num li{margin-bottom:7px}
+b,strong{color:var(--primary-d)}
+.hl{background:linear-gradient(transparent 62%,#fde68a 62%);font-weight:700;padding:0 1px}
+.mono{font-family:Consolas,"Courier New",monospace;background:var(--soft);color:var(--primary-d);
+  padding:1px 6px;border-radius:5px;font-size:15px}
+
+/* ---------- 引子 ---------- */
+.hook{background:var(--accent-soft);border:1px dashed #fdba74;border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.hook .t{font-weight:800;color:var(--accent);margin-bottom:6px;font-size:15.5px}
+
+/* ---------- 公式 / 结论 ---------- */
+.formula{background:var(--soft);border:1px solid var(--soft2);border-left:5px solid var(--primary);
+  border-radius:10px;padding:16px 20px;margin:12px 0}
+.formula .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed #c7d7fb;align-items:baseline}
+.formula .row:last-child{border-bottom:none}
+.formula .k{flex:none;width:132px;font-weight:800;color:var(--primary-d);font-size:15px}
+.formula .v{flex:1;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.mini h4{font-size:15px;color:var(--primary-d);margin-bottom:6px;font-weight:800}
+.mini p{font-size:14.5px;color:#374151;margin-bottom:0}
+
+/* ---------- 图 ---------- */
+figure{margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+figure svg{max-width:100%}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.6}
+
+/* ---------- 例题 ---------- */
+.ex{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden;background:#fff}
+.ex-q{background:#f8fafc;padding:14px 18px;font-size:15.5px;border-bottom:1px solid var(--line)}
+.ex-q .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:9px;font-weight:700;vertical-align:2px}
+.ex-q .tag.g{background:var(--accent)}
+details.sol{border-top:1px dashed var(--line)}
+details.sol summary{cursor:pointer;padding:11px 18px;font-size:14.5px;color:var(--primary);
+  font-weight:700;user-select:none;background:#fcfdff;list-style:none}
+details.sol summary::-webkit-details-marker{display:none}
+details.sol summary::before{content:"▸ ";display:inline-block;transition:.2s}
+details.sol[open] summary::before{transform:rotate(90deg)}
+details.sol[open] summary{border-bottom:1px dashed var(--line)}
+.sol-body{padding:14px 20px 16px;font-size:15.2px;background:#fff}
+.sol-body ol{padding-left:20px}
+.sol-body li{margin-bottom:8px}
+.ansbox{margin-top:12px;background:var(--okbg);border:1px solid #bbf7d0;color:#166534;
+  padding:10px 15px;border-radius:9px;font-weight:700;font-size:15px}
+
+/* ---------- 陷阱 ---------- */
+.pit{background:var(--badbg);border:1px solid #fecaca;border-radius:12px;padding:16px 20px}
+.pit h4{color:var(--bad);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.pit li{color:#7f1d1d;font-size:15px}
+
+/* ---------- 生活 / 小结 ---------- */
+.life{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:16px 20px}
+.life h4{color:#0f766e;font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum{background:linear-gradient(120deg,#eff6ff,#f5f3ff);border:1px solid var(--soft2);border-radius:12px;padding:16px 20px}
+.sum h4{color:var(--primary-d);font-size:15.5px;margin-bottom:8px;font-weight:800}
+.sum li{margin-bottom:6px}
+.verse{background:#111827;color:#fef3c7;border-radius:12px;padding:18px 22px;text-align:center;
+  font-size:17px;font-weight:700;letter-spacing:1px;line-height:1.9}
+
+/* ---------- 自测 ---------- */
+#quiz .q-item{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;background:#fff}
+.q-title{font-size:15.5px;font-weight:600;margin-bottom:11px;line-height:1.75}
+.q-no{display:inline-block;background:var(--soft2);color:var(--primary-d);font-size:12.5px;
+  padding:2px 9px;border-radius:6px;margin-right:8px;font-weight:800}
+.q-options{list-style:none}
+.q-opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;margin-bottom:7px;
+  border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:.15s;font-size:15px;background:#fff}
+.q-opt:hover{border-color:var(--primary);background:var(--soft)}
+.q-key{flex:none;width:23px;height:23px;line-height:21px;text-align:center;border:1px solid var(--line);
+  border-radius:6px;font-size:13px;font-weight:700;color:var(--muted)}
+.q-opt.right{border-color:#16a34a;background:var(--okbg)}
+.q-opt.right .q-key{background:#16a34a;color:#fff;border-color:#16a34a}
+.q-opt.wrong{border-color:#dc2626;background:var(--badbg)}
+.q-opt.wrong .q-key{background:#dc2626;color:#fff;border-color:#dc2626}
+.q-opt.locked{cursor:default}
+.q-opt.locked:hover{border-color:var(--line);background:#fff}
+.q-opt.locked.right:hover{border-color:#16a34a;background:var(--okbg)}
+.q-opt.locked.wrong:hover{border-color:#dc2626;background:var(--badbg)}
+.q-explain{display:none;margin-top:10px;padding:12px 15px;border-radius:9px;font-size:14.5px;line-height:1.8}
+.q-explain.show{display:block}
+.q-explain.ok{background:var(--okbg);border:1px solid #bbf7d0;color:#166534}
+.q-explain.bad{background:var(--badbg);border:1px solid #fecaca;color:#7f1d1d}
+
+/* ---------- 导航 ---------- */
+.nav{display:flex;gap:12px;justify-content:space-between;margin:26px 0 8px;flex-wrap:wrap}
+.nav a{flex:1;min-width:150px;text-align:center;background:#fff;border:1px solid var(--line);
+  border-radius:11px;padding:13px 16px;text-decoration:none;color:var(--ink);font-size:14.5px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);transition:.15s}
+.nav a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px)}
+.nav a.home{flex:none;min-width:120px;font-weight:700;color:var(--primary);border-color:var(--soft2);background:var(--soft)}
+.nav a span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 0;border-top:1px solid var(--line);margin-top:26px}
+
+/* ---------- 目录页 ---------- */
+.lead{font-size:15.5px;color:#374151;margin-bottom:6px}
+.group{margin:26px 0 10px;font-size:18px;font-weight:800;color:var(--primary-d);
+  display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:2px;background:var(--soft2)}
+.g-desc{font-size:14px;color:var(--muted);margin:2px 0 14px}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:15px 17px;text-decoration:none;color:var(--ink);transition:.15s;position:relative;overflow:hidden}
+.lesson::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.lesson:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,78,216,.1)}
+.lesson .no{font-size:12.5px;color:var(--primary);font-weight:800;letter-spacing:.5px}
+.lesson .nm{font-size:16.5px;font-weight:800;color:var(--primary-d);margin:3px 0 5px}
+.lesson .mo{font-size:13.8px;color:var(--muted);line-height:1.65}
+table.tb{width:100%;border-collapse:collapse;font-size:14.8px;margin:10px 0}
+table.tb th,table.tb td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+table.tb th{background:var(--soft);color:var(--primary-d);font-weight:800;text-align:center}
+table.tb td.c{text-align:center}
+table.tb tr:nth-child(even) td{background:#fbfcfe}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 4px}
+.stat div{background:var(--soft);border:1px solid var(--soft2);border-radius:11px;padding:13px;text-align:center}
+.stat b{display:block;font-size:22px;color:var(--primary-d);line-height:1.3}
+.stat span{font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .lessons{grid-template-columns:1fr}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .stat{grid-template-columns:repeat(2,1fr)}
+  h1.title{font-size:24px}
+  .formula .k{width:100px}
+}
+@media print{
+  body{background:#fff}
+  .hero{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  details.sol{display:block}
+  details.sol summary{display:none}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-in">
+<div class="crumb"><a href="index.html">二次函数26讲</a> / 基础篇 · 图像 / 第4讲</div>
+<div class="badge-line"><span class="badge">第 4 讲 / 共 26 讲</span><span class="badge">基础篇 · 图像</span><span class="badge gold">配方核心</span></div>
+<h1 class="title">顶点式</h1>
+<div class="motto">配方成顶点式，顶点、对称轴、最值一口读出。</div>
+<div class="hero-meta">概念讲透型 · 原理推导 + 图像逻辑 + 生活场景 + 自测反馈</div>
+</div></div>
+<div class="wrap">
+<div class="card">
+<div class="hook"><div class="t">🌱 生活引子：为什么要学这一讲</div>
+<p>第 1 讲我们说过 <span class="mono">y=a(x−h)²+k</span> 一眼就能看出顶点在 (h,k)。但试卷上发下来的往往不是这个样子，而是乱糟糟的 <span class="mono">y=2x²−8x+5</span>。怎么把它变回「一眼看穿」的样子？答案是<strong>配方</strong>。</p>
+<p>配方不是新东西，它来自完全平方公式 <span class="mono">(x±p)² = x² ± 2px + p²</span>。把它倒过来用，就能把任意二次函数改写成顶点式。这一讲把它练到不用思考的程度。</p>
+</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">壹</span>从原理上讲透</h2>
+<h3 class="sub">一、从完全平方公式倒着用</h3>
+<p>我们知道 <span class="mono">(x − 2)² = x² − 4x + 4</span>。反过来，看到 <span class="mono">x² − 4x</span> 就应该想到它是 <span class="mono">(x−2)²</span> 缺了那个 4。于是：</p>
+<p><span class="mono">x² − 4x + 5 = (x² − 4x + 4) − 4 + 5 = (x − 2)² + 1</span>。</p>
+<p>配方的关键动作是：<span class="hl">加上一次项系数一半的平方，再减掉同样的量，保证式子等值</span>。</p>
+<h3 class="sub">二、一般化的配方流程</h3>
+<p>对于 <span class="mono">y = ax² + bx + c</span>：</p>
+<p><span class="mono">y = a(x² + (b/a)x) + c = a[(x + b/2a)² − b²/4a²] + c = a(x + b/2a)² + c − b²/4a</span></p>
+<p>整理成 <span class="mono">y = a(x − h)² + k</span> 的形式，其中 <span class="mono">h = −b/2a</span>，<span class="mono">k = (4ac − b²)/4a</span>。这就是<strong>顶点坐标公式</strong>的来源，不需要死记，配方时自然就出来了。</p>
+<h3 class="sub">三、顶点式能带来什么</h3>
+<div class="grid2"><div class="mini"><h4>顶点坐标</h4><p>直接读出 (h, k)，不必套公式</p></div><div class="mini"><h4>对称轴</h4><p>直接读出 x = h</p></div><div class="mini"><h4>最值</h4><p>a&gt;0 时最小值 k；a&lt;0 时最大值 k</p></div><div class="mini"><h4>平移来源</h4><p>由 y=ax² 平移而来，与第 1 讲闭环</p></div></div>
+<div class="formula"><div class="v">二次项系数 a≠1 时最容易出错：必须<strong>先把 a 提出来</strong>（连同 bx 一起），只对被提取后的括号内部配方，配完再把乘出去的部分补回常数项。</div></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">贰</span>图像里的逻辑</h2>
+<figure><svg viewBox="0 0 660 330" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;display:block"><defs><marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0ea5e9"/></marker></defs><rect width="660" height="330" fill="#ffffff"/><line x1="48.0" y1="48.0" x2="48.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="128.6" y1="48.0" x2="128.6" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="209.1" y1="48.0" x2="209.1" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="289.7" y1="48.0" x2="289.7" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="370.3" y1="48.0" x2="370.3" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="450.9" y1="48.0" x2="450.9" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="531.4" y1="48.0" x2="531.4" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="612.0" y1="48.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="282.0" x2="612.0" y2="282.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="265.3" x2="612.0" y2="265.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="248.6" x2="612.0" y2="248.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="231.9" x2="612.0" y2="231.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="215.1" x2="612.0" y2="215.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="198.4" x2="612.0" y2="198.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="181.7" x2="612.0" y2="181.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="165.0" x2="612.0" y2="165.0" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="148.3" x2="612.0" y2="148.3" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="131.6" x2="612.0" y2="131.6" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="114.9" x2="612.0" y2="114.9" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="98.1" x2="612.0" y2="98.1" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="81.4" x2="612.0" y2="81.4" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="64.7" x2="612.0" y2="64.7" stroke="#edf1f7" stroke-width="1"/><line x1="48.0" y1="48.0" x2="612.0" y2="48.0" stroke="#edf1f7" stroke-width="1"/><line x1="38" y1="198.4" x2="626" y2="198.4" stroke="#64748b" stroke-width="1.6"/><path d="M 626.0 198.4 L 634.0 193.9 L 634.0 202.9 Z" fill="#64748b"/><line x1="168.9" y1="292" x2="168.9" y2="34" stroke="#64748b" stroke-width="1.6"/><path d="M 168.9 34 L 164.4 26 L 173.4 26 Z" fill="#64748b"/><line x1="48.0" y1="194.4" x2="48.0" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="48.0" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1.5</text><line x1="128.6" y1="194.4" x2="128.6" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="128.6" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">-0.5</text><line x1="209.1" y1="194.4" x2="209.1" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="209.1" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">0.5</text><line x1="289.7" y1="194.4" x2="289.7" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="289.7" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">1.5</text><line x1="370.3" y1="194.4" x2="370.3" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="370.3" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">2.5</text><line x1="450.9" y1="194.4" x2="450.9" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="450.9" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">3.5</text><line x1="531.4" y1="194.4" x2="531.4" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="531.4" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">4.5</text><line x1="612.0" y1="194.4" x2="612.0" y2="202.4" stroke="#94a3b8" stroke-width="1"/><text x="612.0" y="215.4" font-size="11" fill="#64748b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">5.5</text><text x="161.9" y="286.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-5</text><text x="161.9" y="269.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-4</text><text x="161.9" y="252.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-3</text><text x="161.9" y="235.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-2</text><text x="161.9" y="219.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">-1</text><text x="161.9" y="185.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text><text x="161.9" y="169.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text><text x="161.9" y="152.3" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text><text x="161.9" y="135.6" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">4</text><text x="161.9" y="118.9" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">5</text><text x="161.9" y="102.1" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">6</text><text x="161.9" y="85.4" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">7</text><text x="161.9" y="68.7" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">8</text><text x="161.9" y="52.0" font-size="11" fill="#64748b" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif">9</text><text x="175.9" y="214.4" font-size="11" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, sans-serif">O</text><text x="620" y="190.4" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">x</text><text x="176.9" y="28" font-size="12" fill="#475569" font-family="Microsoft YaHei, PingFang SC, sans-serif">y</text><path d="M 124.4 30.8 L 125.6 33.3 L 126.7 35.8 L 127.9 38.2 L 129.1 40.7 L 130.2 43.1 L 131.4 45.5 L 132.6 47.9 L 133.8 50.3 L 134.9 52.7 L 136.1 55.0 L 137.3 57.4 L 138.5 59.7 L 139.7 62.0 L 140.8 64.3 L 142.0 66.6 L 143.2 68.8 L 144.4 71.1 L 145.5 73.3 L 146.7 75.6 L 147.9 77.8 L 149.1 80.0 L 150.2 82.1 L 151.4 84.3 L 152.6 86.5 L 153.8 88.6 L 154.9 90.7 L 156.1 92.8 L 157.3 94.9 L 158.4 97.0 L 159.6 99.1 L 160.8 101.2 L 162.0 103.2 L 163.1 105.2 L 164.3 107.2 L 165.5 109.2 L 166.7 111.2 L 167.8 113.2 L 169.0 115.1 L 170.2 117.1 L 171.4 119.0 L 172.6 120.9 L 173.7 122.8 L 174.9 124.7 L 176.1 126.6 L 177.2 128.4 L 178.4 130.3 L 179.6 132.1 L 180.8 133.9 L 182.0 135.7 L 183.1 137.5 L 184.3 139.3 L 185.5 141.0 L 186.7 142.8 L 187.8 144.5 L 189.0 146.2 L 190.2 147.9 L 191.3 149.6 L 192.5 151.3 L 193.7 152.9 L 194.9 154.5 L 196.1 156.2 L 197.2 157.8 L 198.4 159.4 L 199.6 161.0 L 200.8 162.5 L 201.9 164.1 L 203.1 165.6 L 204.3 167.2 L 205.5 168.7 L 206.6 170.2 L 207.8 171.7 L 209.0 173.1 L 210.2 174.6 L 211.3 176.0 L 212.5 177.5 L 213.7 178.9 L 214.8 180.3 L 216.0 181.7 L 217.2 183.1 L 218.4 184.4 L 219.6 185.8 L 220.7 187.1 L 221.9 188.4 L 223.1 189.7 L 224.2 191.0 L 225.4 192.3 L 226.6 193.5 L 227.8 194.8 L 228.9 196.0 L 230.1 197.2 L 231.3 198.4 L 232.5 199.6 L 233.7 200.8 L 234.8 201.9 L 236.0 203.1 L 237.2 204.2 L 238.3 205.3 L 239.5 206.4 L 240.7 207.5 L 241.9 208.6 L 243.0 209.6 L 244.2 210.7 L 245.4 211.7 L 246.6 212.7 L 247.7 213.7 L 248.9 214.7 L 250.1 215.7 L 251.3 216.7 L 252.4 217.6 L 253.6 218.5 L 254.8 219.5 L 256.0 220.4 L 257.1 221.2 L 258.3 222.1 L 259.5 223.0 L 260.7 223.8 L 261.9 224.7 L 263.0 225.5 L 264.2 226.3 L 265.4 227.1 L 266.6 227.8 L 267.7 228.6 L 268.9 229.3 L 270.1 230.1 L 271.2 230.8 L 272.4 231.5 L 273.6 232.2 L 274.8 232.9 L 276.0 233.5 L 277.1 234.2 L 278.3 234.8 L 279.5 235.4 L 280.6 236.0 L 281.8 236.6 L 283.0 237.2 L 284.2 237.8 L 285.4 238.3 L 286.5 238.8 L 287.7 239.4 L 288.9 239.9 L 290.1 240.4 L 291.2 240.8 L 292.4 241.3 L 293.6 241.7 L 294.8 242.2 L 295.9 242.6 L 297.1 243.0 L 298.3 243.4 L 299.4 243.8 L 300.6 244.1 L 301.8 244.5 L 303.0 244.8 L 304.1 245.1 L 305.3 245.4 L 306.5 245.7 L 307.7 246.0 L 308.8 246.3 L 310.0 246.5 L 311.2 246.8 L 312.4 247.0 L 313.6 247.2 L 314.7 247.4 L 315.9 247.5 L 317.1 247.7 L 318.2 247.9 L 319.4 248.0 L 320.6 248.1 L 321.8 248.2 L 322.9 248.3 L 324.1 248.4 L 325.3 248.5 L 326.5 248.5 L 327.6 248.5 L 328.8 248.6 L 330.0 248.6 L 331.2 248.6 L 332.3 248.5 L 333.5 248.5 L 334.7 248.5 L 335.9 248.4 L 337.0 248.3 L 338.2 248.2 L 339.4 248.1 L 340.6 248.0 L 341.8 247.9 L 342.9 247.7 L 344.1 247.5 L 345.3 247.4 L 346.4 247.2 L 347.6 247.0 L 348.8 246.8 L 350.0 246.5 L 351.1 246.3 L 352.3 246.0 L 353.5 245.7 L 354.7 245.4 L 355.8 245.1 L 357.0 244.8 L 358.2 244.5 L 359.4 244.1 L 360.6 243.8 L 361.7 243.4 L 362.9 243.0 L 364.1 242.6 L 365.2 242.2 L 366.4 241.7 L 367.6 241.3 L 368.8 240.8 L 369.9 240.4 L 371.1 239.9 L 372.3 239.4 L 373.5 238.8 L 374.6 238.3 L 375.8 237.8 L 377.0 237.2 L 378.2 236.6 L 379.4 236.0 L 380.5 235.4 L 381.7 234.8 L 382.9 234.2 L 384.1 233.5 L 385.2 232.9 L 386.4 232.2 L 387.6 231.5 L 388.8 230.8 L 389.9 230.1 L 391.1 229.3 L 392.3 228.6 L 393.4 227.8 L 394.6 227.1 L 395.8 226.3 L 397.0 225.5 L 398.2 224.7 L 399.3 223.8 L 400.5 223.0 L 401.7 222.1 L 402.8 221.2 L 404.0 220.4 L 405.2 219.5 L 406.4 218.5 L 407.6 217.6 L 408.7 216.7 L 409.9 215.7 L 411.1 214.7 L 412.2 213.7 L 413.4 212.7 L 414.6 211.7 L 415.8 210.7 L 416.9 209.6 L 418.1 208.6 L 419.3 207.5 L 420.5 206.4 L 421.6 205.3 L 422.8 204.2 L 424.0 203.1 L 425.2 201.9 L 426.4 200.8 L 427.5 199.6 L 428.7 198.4 L 429.9 197.2 L 431.0 196.0 L 432.2 194.8 L 433.4 193.5 L 434.6 192.3 L 435.8 191.0 L 436.9 189.7 L 438.1 188.4 L 439.3 187.1 L 440.5 185.8 L 441.6 184.4 L 442.8 183.1 L 444.0 181.7 L 445.1 180.3 L 446.3 178.9 L 447.5 177.5 L 448.7 176.0 L 449.9 174.6 L 451.0 173.1 L 452.2 171.7 L 453.4 170.2 L 454.6 168.7 L 455.7 167.2 L 456.9 165.6 L 458.1 164.1 L 459.3 162.5 L 460.4 161.0 L 461.6 159.4 L 462.8 157.8 L 463.9 156.2 L 465.1 154.5 L 466.3 152.9 L 467.5 151.3 L 468.7 149.6 L 469.8 147.9 L 471.0 146.2 L 472.2 144.5 L 473.3 142.8 L 474.5 141.0 L 475.7 139.3 L 476.9 137.5 L 478.1 135.7 L 479.2 133.9 L 480.4 132.1 L 481.6 130.3 L 482.7 128.4 L 483.9 126.6 L 485.1 124.7 L 486.3 122.8 L 487.4 120.9 L 488.6 119.0 L 489.8 117.1 L 491.0 115.1 L 492.1 113.2 L 493.3 111.2 L 494.5 109.2 L 495.7 107.2 L 496.9 105.2 L 498.0 103.2 L 499.2 101.2 L 500.4 99.1 L 501.5 97.0 L 502.7 94.9 L 503.9 92.8 L 505.1 90.7 L 506.2 88.6 L 507.4 86.5 L 508.6 84.3 L 509.8 82.1 L 511.0 80.0 L 512.1 77.8 L 513.3 75.6 L 514.5 73.3 L 515.6 71.1 L 516.8 68.8 L 518.0 66.6 L 519.2 64.3 L 520.4 62.0 L 521.5 59.7 L 522.7 57.4 L 523.9 55.0 L 525.0 52.7 L 526.2 50.3 L 527.4 47.9 L 528.6 45.5 L 529.8 43.1 L 530.9 40.7 L 532.1 38.2 L 533.3 35.8 L 534.5 33.3 L 535.6 30.8" fill="none" stroke="#1d4ed8" stroke-width="2.6" stroke-linejoin="round"/><line x1="42" y1="248.6" x2="618" y2="248.6" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="5 4"/><line x1="330.0" y1="36" x2="330.0" y2="288" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="5 4"/><text x="330.0" y="32.0" font-size="11.5" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3" paint-order="stroke">对称轴 x=2</text><text x="330.0" y="32.0" font-size="11.5" fill="#f59e0b" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">对称轴 x=2</text><circle cx="330.0" cy="248.6" r="4.2" fill="#dc2626" stroke="#dc2626" stroke-width="2"/><text x="330.0" y="236.6" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">顶点 (2,−3)</text><text x="330.0" y="236.6" font-size="12.5" font-weight="600" fill="#dc2626" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">顶点 (2,−3)</text><circle cx="168.9" cy="114.9" r="4.2" fill="#7c3aed" stroke="#7c3aed" stroke-width="2"/><text x="176.9" y="120.9" font-size="12.5" font-weight="600" fill="#7c3aed" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">(0,5)</text><text x="176.9" y="120.9" font-size="12.5" font-weight="600" fill="#7c3aed" text-anchor="start" font-family="Microsoft YaHei, PingFang SC, sans-serif">(0,5)</text><circle cx="491.1" cy="114.9" r="4.2" fill="#7c3aed" stroke="#7c3aed" stroke-width="2"/><text x="491.1" y="102.9" font-size="12.5" font-weight="600" fill="#7c3aed" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">(4,5) 等高点</text><text x="491.1" y="102.9" font-size="12.5" font-weight="600" fill="#7c3aed" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif">(4,5) 等高点</text><text x="410.6" y="88.1" font-size="14.0" fill="#1d4ed8" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif" stroke="#ffffff" stroke-width="3.5" paint-order="stroke">y = 2(x−2)² − 3</text><text x="410.6" y="88.1" font-size="14.0" fill="#1d4ed8" text-anchor="middle" font-weight="700" font-family="Microsoft YaHei, PingFang SC, sans-serif">y = 2(x−2)² − 3</text></svg><figcaption>y = 2x² − 8x + 5 配方后是 y = 2(x−2)² − 3：顶点 (2,−3)、对称轴 x=2、最小值 −3，全部一目了然。</figcaption></figure>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">叁</span>核心结论（要背的）</h2>
+<div class="formula"><div class="row"><div class="k">顶点式</div><div class="v">y = a(x − h)² + k，顶点 (h, k)</div></div><div class="row"><div class="k">对称轴</div><div class="v">x = h = −b/(2a)</div></div><div class="row"><div class="k">顶点纵坐标</div><div class="v">k = (4ac − b²)/(4a)　（也可把 x=h 代回原式）</div></div><div class="row"><div class="k">最值</div><div class="v">a&gt;0 时 y最小 = k；a&lt;0 时 y最大 = k</div></div><div class="row"><div class="k">配方要诀</div><div class="v">加一次项系数一半的平方，再减去同一个量</div></div></div>
+<p>配方的中间变形可以写成 <span class="mono">y = a(x + b/2a)² + (4ac−b²)/4a</span>，不必硬背，用两次就熟。</p>
+<p>顶点式同时是第 1 讲平移的第 4 步——它在整套专题里是枢纽。</p>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">肆</span>解题步骤：拿到题怎么下手</h2>
+<ol class="num"><li><strong>提取</strong>：把 a 从 ax²、bx 两项中提出来 → <span class="mono">a(x² + (b/a)x) + c</span>。</li><li><strong>配方</strong>：括号内加上并减去 <span class="mono">(b/2a)²</span>（即一次项系数一半的平方）。</li><li><strong>写成平方</strong>：把括号内的三项合成为完全平方 <span class="mono">(x + b/2a)²</span>。</li><li><strong>化简常数</strong>：把多减的量乘 a 移出括号，与 c 合并成 k。</li><li><strong>读出结论</strong>：顶点 (h,k)、对称轴 x=h、最值 k。</li></ol>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">伍</span>例题精讲</h2>
+<div class="ex">
+<div class="ex-q"><span class="tag">例1</span>把 <span class="mono">y = 2x² − 8x + 5</span> 化为顶点式，并写出它的顶点、对称轴和最值。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>a=2 不是 1，第一步必须把 2 提出来。</p>
+<ol><li>提 a：<span class="mono">y = 2(x² − 4x) + 5</span>。</li><li>配方：括号内加 4 再减 4 → <span class="mono">2[(x² − 4x + 4) − 4] + 5</span>。</li><li>写成完全平方：<span class="mono">2[(x − 2)² − 4] + 5</span>。</li><li>化简：<span class="mono">2(x − 2)² − 8 + 5 = 2(x − 2)² − 3</span>。</li><li>读出：顶点 (2, −3)，对称轴 x=2，因 a=2&gt;0，最小值为 −3。</li></ol>
+<div class="ansbox">答：y = 2(x−2)² − 3；顶点 (2,−3)，对称轴 x=2，最小值 −3。</div>
+</div></details></div>
+<div class="ex">
+<div class="ex-q"><span class="tag g">例2 · 系数为负</span>把 <span class="mono">y = −3x² + 6x + 1</span> 化为顶点式，并指出它的最大值。</div>
+<details class="sol"><summary>展开完整解析</summary><div class="sol-body">
+<p style="color:#6b7280;font-size:14.5px"><b>思路：</b>a=−3 为负，开口向下，顶点给的是最大值；提取时负号容易漏。</p>
+<ol><li>提 a：<span class="mono">y = −3(x² − 2x) + 1</span>。</li><li>配方：括号内加 1 减 1 → <span class="mono">−3[(x² − 2x + 1) − 1] + 1</span>。</li><li>写成完全平方：<span class="mono">−3[(x − 1)² − 1] + 1</span>。</li><li>化简：<span class="mono">−3(x − 1)² + 3 + 1 = −3(x − 1)² + 4</span>。</li><li>读出：顶点 (1, 4)，a=−3&lt;0 开口向下，所以<strong>最大值是 4</strong>。</li></ol>
+<div class="ansbox">答：y = −3(x−1)² + 4；顶点 (1,4)，对称轴 x=1，最大值 4。</div>
+</div></details></div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">陆</span>易错陷阱</h2>
+<div class="pit"><h4>⚠️ 这一讲最容易丢分的地方</h4>
+<ul class="dot"><li><strong>忘记把 b 一起提出来</strong>：<span class="mono">2x²−8x</span> 提取后应是 <span class="mono">2(x²−4x)</span>，写成 <span class="mono">2(x²−8x)</span> 是最常见的低级错误。</li><li><strong>加了忘记减</strong>：配方必须「加一个数、再减同一个数」，只加不减就改变了原函数。</li><li><strong>负号漏乘</strong>：<span class="mono">−3(x−1)²</span> 展开时外面的 −3 要乘到里面每一项，包括常数。</li><li><strong>把顶点横坐标符号写反</strong>：<span class="mono">y=a(x−2)²+k</span> 的顶点是 (2,k) 不是 (−2,k)。</li><li><strong>最值方向搞反</strong>：开口向下时 k 是最大值，不是最小值。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">柒</span>它在生活里长什么样</h2>
+<div class="life"><h4>🏀 从课本走到现实</h4>
+<ul class="dot"><li><strong>建筑拱顶</strong>：把桥拱方程配方后，顶点就是最高承重点的位置与高度。</li><li><strong>利润模型</strong>：利润 = −a(销量−h)² + k，配方后立刻知道最优销量 h 与最高利润 k。</li><li><strong>投篮最高点</strong>：球的轨迹配方后，顶点横坐标是到达最高点的时间，纵坐标是最高高度。</li></ul>
+</div></div>
+<div class="card">
+<h2 class="sec"><span class="n">捌</span>本节小结</h2>
+<div class="sum"><h4>✍️ 记住这几条就够了</h4>
+<ul class="dot"><li>配方的本质是 <span class="hl">加一半系数的平方再减回来</span>，式子等值不变。</li><li>顶点式 <span class="mono">y=a(x−h)²+k</span> 一眼给出：顶点、对称轴、最值、平移来源。</li><li>a≠1 时必须先把 a 提出来，再对括号内部配方。</li><li>顶点坐标公式 <span class="mono">(−b/2a, (4ac−b²)/4a)</span> 是配方的必然结果，理解即可不必死记。</li></ul>
+</div>
+<div class="verse" style="margin-top:14px">提a配方再还原　一半平方加减同
+顶点对称轴最值　三个信息一口出</div>
+</div>
+<div class="card">
+<h2 class="sec"><span class="n">玖</span>自测反馈</h2>
+<div id="quiz"></div>
+</div>
+<div class="nav">
+<a href="03_区间最值轴在区间内.html"><span>← 上一讲</span>区间最值·轴在区间内</a>
+<a class="home" href="index.html"><span>课程总目录</span>二次函数26讲</a>
+<a href="05_交点式.html"><span>下一讲 →</span>交点式</a>
+</div>
+<footer>二次函数26讲 · 第 4 讲《顶点式》｜概念讲透型 · 建议先遮住解析自己做一遍</footer>
+</div>
+<script>
+
+const choiceQuestions = [
+  {
+    "q": "把 y = x² − 6x + 4 化为顶点式，结果是（　）",
+    "options": [
+      "y = (x − 3)² − 5",
+      "y = (x − 3)² + 5",
+      "y = (x − 6)² − 5",
+      "y = (x + 3)² − 5"
+    ],
+    "answer": 0,
+    "explain": "x²−6x+4 = (x²−6x+9) −9 +4 = (x−3)² −5，顶点 (3,−5)。"
+  },
+  {
+    "q": "抛物线 y = −2(x + 1)² + 5 的顶点坐标与最大值分别是（　）",
+    "options": [
+      "(1,5) 与 5",
+      "(−1,5) 与 5",
+      "(−1,5) 与 −5",
+      "(1,−5) 与 5"
+    ],
+    "answer": 1,
+    "explain": "括号内是 x+1=x−(−1)，故 h=−1，顶点 (−1,5)；a=−2<0 开口向下，最大值 5。"
+  },
+  {
+    "q": "把 y = 3x² + 6x − 1 化为顶点式后，k（即顶点纵坐标）是（　）",
+    "options": [
+      "−4",
+      "−1",
+      "2",
+      "−10"
+    ],
+    "answer": 0,
+    "explain": "y=3(x²+2x)−1=3[(x+1)²−1]−1=3(x+1)²−3−1=3(x+1)²−4，顶点 (−1,−4)，故 k=−4。"
+  }
+];
+
+function initChoiceQuestions(){
+  const box = document.getElementById('quiz');
+  if(!box) return;
+  let html = '';
+  for(let i=0;i<choiceQuestions.length;i++){
+    const q = choiceQuestions[i];
+    html += '<div class="q-item" id="q'+i+'">';
+    html += '<div class="q-title"><span class="q-no">自测 '+(i+1)+'</span>'+q.q+'</div>';
+    html += '<ul class="q-options">';
+    for(let j=0;j<q.options.length;j++){
+      html += '<li class="q-opt" onclick="toggleOption('+i+','+j+')">'
+           +  '<span class="q-key">'+'ABCD'[j]+'</span><span>'+q.options[j]+'</span></li>';
+    }
+    html += '</ul><div class="q-explain" id="e'+i+'"></div></div>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleOption(qi, oi){
+  const q = choiceQuestions[qi];
+  const opts = document.querySelectorAll('#q'+qi+' .q-opt');
+  const right = (oi === q.answer);
+  for(let j=0;j<opts.length;j++){
+    opts[j].classList.add('locked');
+    if(j === q.answer) opts[j].classList.add('right');
+    if(j === oi && !right) opts[j].classList.add('wrong');
+  }
+  const box = document.getElementById('e'+qi);
+  box.className = 'q-explain show ' + (right ? 'ok' : 'bad');
+  box.innerHTML = (right ? '✅ 回答正确！' : '❌ 正确答案：' + 'ABCD'[q.answer])
+                + '<br>' + q.explain;
+}
+
+document.addEventListener('DOMContentLoaded', initChoiceQuestions);
+
+</script>
+</body>
+</html>
