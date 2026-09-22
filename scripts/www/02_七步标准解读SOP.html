@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块02 · 七步标准解读SOP | 永州爱眼城 检查报告解读标准化方案</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:18px;font-weight:700}
+.topbar .meta{font-size:13px;opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:13.5px;color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:26px;color:#1677ff;margin-bottom:6px}
+.lead{color:#5b6b7d;font-size:15.5px;margin-bottom:22px;max-width:1000px}
+h2.sec{font-size:20px;color:#1677ff;margin:30px 0 14px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:18px 22px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14.5px;margin-bottom:8px}
+th,td{border:1px solid #dae3f5;padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600}
+tbody tr:nth-child(even){background:#fafcff}
+ul,ol{margin:6px 0 10px 20px;font-size:15px}
+li{margin-bottom:6px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-left:5px solid #e07b39;border-radius:8px;padding:14px 16px;font-size:14.5px;color:#6b4a25;margin:14px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-left:5px solid #2e9e6b;border-radius:8px;padding:14px 16px;font-size:14.5px;color:#1f5c40;margin:14px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-left:5px solid #d94b4b;border-radius:8px;padding:14px 16px;font-size:14.5px;color:#7d2b2b;margin:14px 0}
+/* 流程图 */
+.flow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0}
+.fnode{background:#fff;border:1px solid #c9dfff;border-top:4px solid #1677ff;border-radius:10px;padding:10px 14px;min-width:150px;text-align:center}
+.fnode b{display:block;font-size:15px;color:#1677ff}
+.fnode span{font-size:12.5px;color:#7a8799}
+.farrow{display:flex;align-items:center;color:#e07b39;font-size:20px;font-weight:700}
+/* 步骤卡 */
+.step{background:#fff;border:1px solid #dae3f5;border-radius:12px;margin-bottom:18px;overflow:hidden;box-shadow:0 1px 3px rgba(22,119,255,.08)}
+.step .hd{background:#1677ff;color:#fff;padding:11px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.step .hd h3{font-size:17.5px;font-weight:700}
+.step .hd .time{background:rgba(255,255,255,.2);border-radius:20px;padding:3px 12px;font-size:13px}
+.step .bd{padding:16px 22px}
+.step .bd .row{display:grid;grid-template-columns:110px 1fr;gap:10px;padding:7px 0;border-bottom:1px dashed #e6edfa;font-size:14.5px}
+.step .bd .row:last-child{border-bottom:none}
+.step .bd .row .k{color:#1677ff;font-weight:600}
+.say{background:#f1f6ff;border-left:4px solid #3c89ff;border-radius:0 8px 8px 0;padding:11px 14px;margin:10px 0;font-size:14.5px;color:#23477f}
+.say b{color:#1677ff}
+.bad{background:#fdecec;border-left:4px solid #d94b4b;border-radius:0 8px 8px 0;padding:11px 14px;margin:10px 0;font-size:14.5px;color:#7d2b2b}
+/* 检查项目四大板块 */
+.pkg4{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0 16px}
+@media (max-width:820px){.pkg4{grid-template-columns:1fr}}
+.pkg4 .box{background:#fff;border:1px solid #dae3f5;border-top:4px solid #1677ff;border-radius:10px;padding:14px 16px}
+.pkg4 .box h4{font-size:16px;color:#1677ff;margin-bottom:8px;padding-bottom:6px;border-bottom:1px dashed #e6edfa}
+.pkg4 .box .lbl{margin:8px 0 3px;font-size:13px;color:#e07b39;font-weight:600;letter-spacing:.5px}
+.pkg4 .box .p{font-size:14.2px;color:#45596e;line-height:1.7}
+.pkg4 .box .d{font-size:13.8px;color:#23477f;background:#f1f6ff;border-radius:6px;padding:9px 11px;margin-top:8px;line-height:1.65}
+.pkg4 .box .d b{color:#1677ff}
+h3.sub2{font-size:16px;color:#1677ff;margin:18px 0 8px;padding-left:9px;border-left:4px solid #c9dfff}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:13.5px;line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:14px;cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media print{.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:12px}.step{page-break-inside:avoid}.pkg4 .box{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta">模块 02 / 13 ｜ V1.0 ｜ 2026-09-21</div>
+</div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="01_方案总览与目标.html">01 方案总览与目标</a> ｜ 下一模块：<a href="03_指标参考区间与异常判定表.html">03 指标参考区间与判定表</a></div>
+
+<div class="wrap">
+  <h1 class="t">模块 02 · 七步标准解读 SOP</h1>
+  <p class="lead">这是整套方案的主心骨。门店的每一次正式报告解读，都必须按"①检查数据梳理 → ②异常值识别 → ③异常原因 → ④异常影响 → ⑤解决方案 → ⑥科普宣教 → ⑦案例佐证"七个环节依次完成。每一步都有明确的<b>输入、动作、输出和完成标准</b>。顺序不能颠倒——因为顾客只有在"听懂原因"之后，才会接受"方案"；只有"听过方案"，科普和案例才有落脚点。</p>
+
+  <h2 class="sec">流程总览与建议时间分配</h2>
+  <div class="card">
+    <div class="flow">
+      <div class="fnode"><b>① 梳理</b><span>把数据理清楚<br>1-2 分钟（多在幕后）</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b>② 识别</b><span>找出异常的点<br>1-2 分钟</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b>③ 原因</b><span>为什么会这样<br>2-3 分钟</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b>④ 影响</b><span>放着不管会怎样<br>1-2 分钟</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b>⑤ 方案</b><span>我们能做什么<br>3-5 分钟</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b>⑥ 科普</b><span>日常要注意什么<br>2-3 分钟</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b>⑦ 案例</b><span>别人是怎么做的<br>1-2 分钟</span></div>
+    </div>
+    <table>
+      <thead><tr><th style="width:14%">环节</th><th style="width:12%">建议时长</th><th style="width:26%">一句话任务</th><th style="width:48%">这一步做完后，顾客心里应该有的感受/想法</th></tr></thead>
+      <tbody>
+        <tr><td>① 检查数据梳理</td><td>1-2′</td><td>把报告看全、看准</td><td>（顾客不在场，员工内心有数：这次拿到的数据够不够、可信吗）</td></tr>
+        <tr><td>② 异常值识别</td><td>1-2′</td><td>圈出需要讲的项</td><td>（员工内心有数：这次重点讲哪 2-3 项，其余略过）</td></tr>
+        <tr><td>③ 异常原因</td><td>2-3′</td><td>解释为什么会这样</td><td>"原来是这样来的，不是无缘无故的"</td></tr>
+        <tr><td>④ 异常影响</td><td>1-2′</td><td>说明不处理的后果</td><td>"这个事跟我有关系，值得重视"</td></tr>
+        <tr><td>⑤ 解决方案</td><td>3-5′</td><td>给分层可选的处理</td><td>"有办法，而且我能选"</td></tr>
+        <tr><td>⑥ 科普宣教</td><td>2-3′</td><td>给日常可执行的动作</td><td>"讲得挺细，是真心为我着想"</td></tr>
+        <tr><td>⑦ 案例佐证</td><td>1-2′</td><td>讲一个同类的真实故事</td><td>"别人这么做有效果，我也可以试试"</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>时间弹性原则：</b>常规配镜总时长控制在 8-12 分钟；青少年建档/复查 15-20 分钟；中老年首次眼健康 15-25 分钟。<b>时间不够时，砍⑥⑦，不能砍②③④；尤其②（异常识别）绝不能省</b>——宁可少说，也不能漏掉重要提示。遇到需转诊的情况，前半程可以直接切入，把重心放在"是什么、为什么要去医院、怎么去"。</div>
+  </div>
+
+  <!-- ===================== 第①步 ===================== -->
+  <h2 class="sec">第①步 · 检查数据梳理</h2>
+  <div class="step">
+    <div class="hd"><h3>① 检查数据梳理：先看全，再开口</h3><span class="time">建议 1-2 分钟</span></div>
+    <div class="bd">
+      <div class="row"><div class="k">输入</div><div>本次检查生成的全部原始数据：电脑验光/主觉验光结果、眼轴与角膜曲率（生物测量）、眼压（非接触/接触）、裂隙灯记录、眼底照相、角膜地形图、双眼视功能检查（调节/聚散/隐斜/立体视）、泪膜相关检查；以及顾客<b>既往档案</b>（历史度数、历史眼轴、既往配镜史、手术史、全身病与用药史、家族史）。</div></div>
+      <div class="row"><div class="k">动作</div><div>
+        <b>1. 查完整性：</b>用"五必有清单"核对——①视力（裸眼+矫正）②客观+主觉验光③眼轴/曲率（儿童青少年必查）④眼压（成人必查）⑤眼前节+眼底（成人必查）。缺失项标注"本次未查"。<br>
+        <b>2. 查真实性：</b>检查数据是否符合生理逻辑（如眼轴 21mm 却高度近视、左右眼数据是否录反、单眼多次测量差异是否过大）。发现可疑立即<b>重测</b>，不用可疑数据做解读。<br>
+        <b>3. 查连续性：</b>调出上次记录，列出本次与上次的<b>差值</b>（度数变化、眼轴年化增长、矫正视力变化）。没有历史数据的首次到店顾客，本次即为基线。<br>
+        <b>4. 查基本背景：</b>年龄、职业/学业阶段、用眼时长、戴镜习惯、家族史、全身病（高血压、糖尿病）、既往手术与外伤。<br>
+        <b>5. 在《解读记录表》上端 "数据梳理" 区勾选已完成项，留出空白处填写关键差值。</b>
+      </div></div>
+      <div class="row"><div class="k">输出</div><div>①一份"数据齐全可用的检查报告"；②<b>本次 vs 上次的差值清单</b>（至少包含：等效球镜变化、矫正视力变化、眼轴年化增长）；③标注出的缺失项/可疑项（安排补测或复查）。</div></div>
+      <div class="row"><div class="k">完成标准</div><div>五必有清单核对完毕、无疑似录错数据、差值已算出；记录表"数据梳理区"无空格。</div></div>
+      <div class="row"><div class="k">常见错误</div><div>只拿最新一张报告开讲，不调历史；把电脑验光单当最终度数讲；数据明显异常仍照念不误；儿童没有眼轴数据就下"控制得不错"的结论。</div></div>
+      <div class="say"><b>这一步的开场白（让顾客知道你在认真比对，而不是随手念单子）：</b>"我先调一下您上次的数据对比一下——上次是 3 月做的，眼轴 23.62，这次…… 好，三个月长了 0.15。"</div>
+    </div>
+  </div>
+
+  <!-- ===================== 第①步附件：检查项目四大板块 ===================== -->
+  <h2 class="sec">附 · 爱眼城检查项目四大板块（第①步的讲解素材）</h2>
+  <div class="card">
+    <p style="font-size:15px;color:#45596e;margin-bottom:10px">顾客最常问的一句话是："不就是验个光、配副眼镜吗？"第①步梳理数据时，视光师必须能<b>一句话说清这次一共做了哪几类检查</b>——这既是让顾客明白自己花钱买到了什么，也是把后面的解读建立在一套完整数据上。爱眼城的检查按<b>四大板块</b>组织，覆盖"眼睛好不好用、度数准不准、眼轴有没有长、两只眼睛配不配合"四个层面，常规门店流程往往只做其中一部分。</p>
+    <div class="pkg4">
+      <div class="box">
+        <h4>板块一 ｜ 眼部基本功能检查</h4>
+        <p class="lbl">检查目的</p>
+        <div class="p">确认视力水平与眼部基础健康状态，把"看不清"先分清楚：是度数问题，还是眼睛本身的问题；同时筛查需要到医院就诊的眼病风险。</div>
+        <p class="lbl">具体项目</p>
+        <div class="p">裸眼视力与矫正视力（远/近）、针孔视力、非接触眼压、裂隙灯眼前节检查（角膜·前房·晶状体）、眼底照相、泪膜破裂时间与泪液分泌检查、色觉、瞳孔对光反应、眼位与眼球运动初筛。</div>
+        <div class="d"><b>差异点：</b>多数常规配镜流程以"电脑验光 + 视力表"为主，眼压、裂隙灯、眼底照相常常不做或需另行安排。我们把这三项纳入成人基础检查的<b>常规项</b>，报告里能直接看到眼压数值与眼底图像，发现异常当场提示转诊，不靠主观经验判断。</div>
+      </div>
+      <div class="box">
+        <h4>板块二 ｜ 屈光度数的确定</h4>
+        <p class="lbl">检查目的</p>
+        <div class="p">得出既能看清、又戴得住的配镜度数——目标不是"把 1.0 看出来"，而是看得清、看得久、戴着舒服。</div>
+        <p class="lbl">具体项目</p>
+        <div class="p">客观验光（电脑验光 / 检影验光）→ 主觉验光（雾视放松、红绿平衡、交叉柱镜散光轴位与度数精调、双眼平衡）→ 试戴与行走适应 → 老视近附加（ADD）测定 → 主导眼、瞳距与瞳高测量；儿童及调节不稳定者按规范做散瞳（睫状肌麻痹）验光。</div>
+        <div class="d"><b>差异点：</b>常见做法是在电脑验光单上直接加减度数，省略雾视与红绿平衡，容易出现"过矫"（度数给高、看近更累）。我们坚持<b>客观 + 主觉双轨</b>：必做雾视放松调节、必做试戴适应、散光用交叉柱镜精调轴位；儿童散瞳前后均留记录，可对比。</div>
+      </div>
+      <div class="box">
+        <h4>板块三 ｜ 眼轴等生理参数检查</h4>
+        <p class="lbl">检查目的</p>
+        <div class="p">把"度数"这个结果，追溯到"眼轴长度"这个原因——用于判断近视进展速度、评估眼底风险，也让控制手段的效果可以被量化。</div>
+        <p class="lbl">具体项目</p>
+        <div class="p">眼轴长度（AL）、角膜曲率（K1/K2）、前房深度、晶状体厚度、角膜直径（WTW）、轴率比（AL/CR）、角膜地形图（角膜形态与散光分布）、角膜厚度（按需）。</div>
+        <div class="d"><b>差异点：</b>多数机构只测度数不测眼轴，家长无从判断防控手段到底有没有用。我们把眼轴列为<b>儿童青少年必查项</b>并建立连续档案，每次复查给出"年化增长量"，用数据说话；角膜地形图用于分清散光来源、筛查角膜形态异常征象。</div>
+      </div>
+      <div class="box">
+        <h4>板块四 ｜ 双眼聚焦与协调功能检查</h4>
+        <p class="lbl">检查目的</p>
+        <div class="p">排查"度数配足了还是不舒服"的那一类问题——看近易疲劳、阅读串行跳行、注意力不集中、偶尔重影、长时间用眼后头痛。</div>
+        <p class="lbl">具体项目</p>
+        <div class="p">调节幅度、调节灵敏度（Flipper）、调节反应与调节滞后、远近隐斜、AC/A 比值、正负相对集合、集合近点（NPC）、融像范围、立体视（Titmus / Worth 四点）。</div>
+        <div class="d"><b>差异点：</b>常规配镜基本不做双眼视功能检查，于是"度数没问题但看书就是累"往往无解。我们把视功能作为<b>青少年与视疲劳人群的常规评估项</b>，异常者给出训练或转诊建议，并在训练前后用同一组指标复测对比。</div>
+      </div>
+    </div>
+
+    <h3 class="sub2">一图看懂：四板块 vs 常规配镜流程</h3>
+    <table>
+      <thead><tr><th style="width:16%">板块</th><th style="width:26%">解决的问题</th><th style="width:28%">常规配镜流程的常见做法</th><th style="width:30%">爱眼城的做法与顾客价值</th></tr></thead>
+      <tbody>
+        <tr><td><b>眼部基本功能</b></td><td>看不清是度数问题还是眼睛问题？有没有需要就医的风险</td><td>电脑验光 + 视力表，眼压/裂隙灯/眼底多不做</td><td>眼压、眼前节、眼底照相纳入常规项，异常当场提示转诊并留痕</td></tr>
+        <tr><td><b>屈光度数确定</b></td><td>度数准不准、戴着舒不舒服</td><td>以电脑验光单为基准直接加减度数</td><td>客观 + 主觉双轨，雾视、红绿平衡、散光精调、试戴四步不省，降低过矫</td></tr>
+        <tr><td><b>眼轴等生理参数</b></td><td>近视在不在发展？控制手段有没有效</td><td>一般只测度数，不测眼轴</td><td>儿童青少年必查眼轴并建档，给出年化增长量，用数据评估控制效果</td></tr>
+        <tr><td><b>双眼聚焦与协调</b></td><td>为什么配够了度数还是看近累、串行</td><td>基本不检查</td><td>青少年与视疲劳人群常规评估，异常给训练/转诊建议，前后同指标复测</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub2">现场怎么用（三句话讲完，不背稿）</h3>
+    <div class="say"><b>通用开场：</b>"我们这次一共做了四类检查：先看眼睛本身好不好，再把度数验准，然后量眼轴看有没有变化，最后看两只眼睛配合得好不好。所以我等下讲的不只是一个度数。"</div>
+    <div class="say"><b>对家长：</b>"很多地方验完度数就配镜了。我们多了眼轴和双眼视功能这两块——<b>度数是结果，眼轴才是原因</b>，只看度数判断不了控制得好不好。"</div>
+    <div class="say"><b>对视疲劳的成人：</b>"您度数其实不高，但看书容易累，问题多半出在两只眼睛的配合上。这部分一般验光不查，我们这次给您查了。"</div>
+
+    <div class="warn">
+      <b>讲优势的三条纪律（避免夸大与贬低）：</b><br>
+      ① <b>说事实，不贬低同行。</b>统一说"多数常规配镜流程"，<b>不点名任何机构</b>，不说"别人都不专业""医院都不如我们"。<br>
+      ② <b>说项目，不说疗效。</b>只讲"我们查了什么、为什么查"，<b>不得</b>说"查了就能治""查了就不会近视""我们比医院检查更准"。<br>
+      ③ <b>讲清设备定位。</b>门店设备用于<b>筛查与配镜参考</b>，医院设备用于<b>诊断</b>；顾客有疑似眼病时，明确提示去医院，不拿门店检查替代医疗检查。
+    </div>
+    <div class="good">
+      <b>与第①步的衔接：</b>梳理数据时，视光师要能在记录表上<b>逐板块打勾</b>——本次做了哪几个板块、缺哪一板块需补查。四个板块齐全，才叫"数据够用"；缺板块而下的结论，一律标注"本次未查，仅供参考"。
+    </div>
+  </div>
+
+  <!-- ===================== 第②步 ===================== -->
+  <h2 class="sec">第②步 · 异常值识别</h2>
+  <div class="step">
+    <div class="hd"><h3>② 异常值识别：这一步是整套 SOP 的安全阀</h3><span class="time">建议 1-2 分钟</span></div>
+    <div class="bd">
+      <div class="row"><div class="k">输入</div><div>第①步整理好的数据 + 差值；《指标参考区间与异常判定表》（模块03）、《异常值对照表》（模块04）。</div></div>
+      <div class="row"><div class="k">动作</div><div>
+        <b>1. 全项扫描：</b>按"视力—屈光—眼轴曲率—眼压—眼前节—眼底—双眼视—干眼"的次序，逐项对照模块03判定表，给每项打上四个档位之一：<b>正常 / 关注 / 异常 / 建议就医</b>。<br>
+        <b>2. 排序取舍：</b>把结果按"重要且顾客在意"排序，本次只选定 <b>2-3 项</b>作为重点讲解项，其余正常项口头一句带过（"其他指标都在正常范围，放心"）。<br>
+        <b>3. 红线筛查：</b>对照模块12《必须转诊清单》，只要命中任一项，立即启动<b>转诊提醒动作</b>（口头提示 + 书面提示 + 记录 + 72 小时回访），此时解读转为"就医导向"模式，不再推方案。<br>
+        <b>4. 填写《解读记录表》"异常项登记"栏：</b>逐项写明指标名、数值、判定档位。</div></div>
+      <div class="row"><div class="k">输出</div><div>①一份带档位标注的检查报告（可用荧光笔在给顾客那份上做记号）；②<b>本次讲哪 2-3 项</b>的决定；③是否触发转诊提醒的结论。</div></div>
+      <div class="row"><div class="k">完成标准</div><div>本次实际检查的所有项目均已查表判定（不是凭印象）；异常项已在顾客报告上可视标记；红线项已按转诊流程处理。</div></div>
+      <div class="row"><div class="k">常见错误</div><div>只看度数不看眼轴；只讲"近视加深"却漏掉眼压 24mmHg；把"关注"档说成"正常"安抚顾客；看到眼底异常提示却"怕顾客跑掉"而隐瞒。</div></div>
+      <div class="warn"><b>红线提示：</b>眼压&gt;21mmHg、双眼眼压差&gt;5mmHg、杯盘比（C/D）&gt;0.6 或双眼差&gt;0.2、角膜曲率&gt;47D 或双眼差&gt;1D、晶体明显混浊、视网膜出血/渗出/裂孔/脱离迹象、突发视力下降、视野缺损、眼红剧痛、糖尿病/高血压患者眼底改变——以上任一情况，<b>必须先走转诊提醒</b>，详见模块12。</div>
+    </div>
+  </div>
+
+  <!-- ===================== 第③步 ===================== -->
+  <h2 class="sec">第③步 · 异常原因</h2>
+  <div class="step">
+    <div class="hd"><h3>③ 异常原因：把"怎么会这样"讲成顾客能理解的故事</h3><span class="time">建议 2-3 分钟</span></div>
+    <div class="bd">
+      <div class="row"><div class="k">输入</div><div>第②步确定的重点讲解项；《异常值对照表》（模块04）中的"可能原因"列；顾客的年龄、职业/学业、用眼习惯、家族史。</div></div>
+      <div class="row"><div class="k">动作</div><div>
+        <b>1. 归因三问：</b>对每一个异常项，问自己——这个数值变化，<b>是眼球结构带来的</b>（如眼轴变长、角膜变陡、晶体混浊）？<b>还是用眼/习惯带来的</b>（如长时间近距离、户外活动少、睡眠不足、揉眼）？<b>还是发育/年龄带来的</b>（如远视储备消耗、老视）？<br>
+        <b>2. 选择最贴切的一两条：</b>原因<b>最多讲两条</b>，讲多了顾客记不住；选择时优先"与顾客生活直接相关"的那条（"您孩子每天写作业到 10 点"胜过"调节滞后"）。<br>
+        <b>3. 用比喻翻译：</b>把每个专业原因配一个生活化说法（见下表）。<br>
+        <b>4. 口径克制：</b>原因讲"可能"和"常见"，<b>不下定论</b>。例："这种情况最常见的原因是……"，而不是"就是因为……"。</div></div>
+      <div class="row"><div class="k">输出</div><div>顾客能用自己话说出的 1-2 条原因；顾客点头认同（"是这样，我确实……"）。</div></div>
+      <div class="row"><div class="k">完成标准</div><div>顾客复述原因无困难；视光师未使用未经解释的术语；未出现"一定是/肯定是"等绝对化归因。</div></div>
+      <div class="row"><div class="k">常见错误</div><div>讲机制讲成生理课；把所有可能原因一股脑倒出来；使用"你肯定是因为玩手机"等指责式归因。</div></div>
+      <table>
+        <thead><tr><th style="width:22%">专业说法</th><th style="width:38%">通俗翻译（推荐这样讲）</th><th style="width:40%">适用场景</th></tr></thead>
+        <tbody>
+          <tr><td>眼轴增长</td><td>"眼球像气球一样被拉长了，光就落在了视网膜前面。就像孩子长个子衣服会变短，眼球变长眼镜度数就往上走。"</td><td>儿童青少年近视进展</td></tr>
+          <tr><td>角膜曲率偏陡</td><td>"黑眼珠前面那层透明的'窗户玻璃'弧度更弯一些，所以光折射得更多。"</td><td>散光、圆锥角膜筛查</td></tr>
+          <tr><td>调节不足 / 调节滞后</td><td>"眼睛里负责看近'调焦'的小肌肉力量偏弱，看久了容易累，看远要缓一缓才清楚。"</td><td>视疲劳、青少年读数波动</td></tr>
+          <tr><td>集合不足</td><td>"两只眼睛往中间'对拢'的能力弱一点，看近久了容易串行、重影、头痛。"</td><td>阅读困难、近距离工作疲劳</td></tr>
+          <tr><td>泪膜破裂时间短</td><td>"眼球表面那层'滋润膜'维持不住，眨眼没多久就干了，所以会觉得干、涩、像有沙子。"</td><td>干眼、长时间用屏幕</td></tr>
+          <tr><td>眼压偏高</td><td>"眼球内部有一定压力，像轮胎要维持合适气压。压力高了需要让医生进一步检查确认。"（<b>必须转诊，不解释病因</b>）</td><td>疑似青光眼筛查</td></tr>
+          <tr><td>晶状体混浊</td><td>"眼睛里那个像'镜头'的透明结构变浑浊了，就像相机镜头脏了、起雾了。"</td><td>中老年视力下降</td></tr>
+          <tr><td>屈光参差</td><td>"两只眼睛度数差得比较多，大脑要把两个大小不同的画面合成一个，比较费劲。"</td><td>双眼度数差异大</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===================== 第④步 ===================== -->
+  <h2 class="sec">第④步 · 异常影响</h2>
+  <div class="step">
+    <div class="hd"><h3>④ 异常影响：讲清"和我有什么关系"，但不制造恐慌</h3><span class="time">建议 1-2 分钟</span></div>
+    <div class="bd">
+      <div class="row"><div class="k">输入</div><div>第③步确定的原因；《异常值对照表》"潜在影响"列；顾客的生活场景（学习、驾驶、运动、职业用眼）。</div></div>
+      <div class="row"><div class="k">动作</div><div>
+        <b>1. 场景化影响：</b>把影响落到顾客的真实生活里——"上课看黑板要眯眼""开车看不清路牌""看手机二十分钟就头晕"，而不是抽象地讲"会加深"。<br>
+        <b>2. 时间维度：</b>说明"现在是什么程度、继续下去大概会怎样变化"，用"<b>趋势</b>"而不是"<b>必然结果</b>"表述。<br>
+        <b>3. 分层提醒：</b>对"关注"档只说"先留意"；对"异常"档说明"需要处理"；对"建议就医"档明确"这一步我们先不配镜，先让医生看"。<br>
+        <b>4. 语气控制：</b>用<b>关心式</b>而不是<b>威胁式</b>。允许说"如果不注意，可能会……"，禁止说"再这样下去你就瞎了""肯定会发展成……"。</div></div>
+      <div class="row"><div class="k">输出</div><div>顾客理解"这个情况对自己的实际影响"，并产生"该做点什么"的意愿。</div></div>
+      <div class="row"><div class="k">完成标准</div><div>影响描述具体（可对应到生活场景）；未出现恐吓、绝对化、宿命论表述；情绪平稳的顾客未被吓到。</div></div>
+      <div class="row"><div class="k">常见错误</div><div>过度恐吓导致顾客焦虑反感；只说"会加深"说不出后果与生活的关联；对可逆/不可逆的表述越界（如断言"高度近视一定视网膜脱离"）。</div></div>
+      <div class="say"><b>推荐句式：</b>"这个情况现在是<b>轻中度</b>，还不用太担心。但如果按现在这个速度往下走，明年可能就有 xxx 的变化，所以我们<b>现在开始管</b>是最划算的时候。"——<b>给出希望，是这一步最重要的任务。</b></div>
+    </div>
+  </div>
+
+  <!-- ===================== 第⑤步 ===================== -->
+  <h2 class="sec">第⑤步 · 解决方案</h2>
+  <div class="step">
+    <div class="hd"><h3>⑤ 解决方案：分层给选择，让顾客自己拍板</h3><span class="time">建议 3-5 分钟</span></div>
+    <div class="bd">
+      <div class="row"><div class="k">输入</div><div>前四步的结论；《异常值对照表》"应对对策"列；门店可提供产品/服务项目清单；顾客预算与时间；是否命中医嘱/转诊。</div></div>
+      <div class="row"><div class="k">动作</div><div>
+        <b>1. 三层结构：</b>每次方案都按三层表述——
+        <ul>
+          <li><b>必做项（基础）：</b>不带损益也必须做。如：足矫配镜、定期复查、调整用眼时长。（通常成本最低，顾客最容易答应）</li>
+          <li><b>建议项（核心）：</b>针对本次异常的关键干预。如：离焦镜片/角膜塑形镜评估、渐进镜、视觉训练、干眼护理。</li>
+          <li><b>可选项（加分）：</b>锦上添花的。如：防蓝光（按需）、偏光镜、护眼灯具。</li>
+        </ul>
+        <b>2. 每项说明三件事：</b>做什么 / 为什么对您有用 / 大概要花多少时间和费用（费用必须透明）。<br>
+        <b>3. 给出默认值：</b>新人最容易在这里卡住。可用"像您这种情况，我们一般建议先用 X，三个月后再看效果决定要不要加 Y"的方式给台阶。<br>
+        <b>4. 医嘱优先：</b>凡已有医疗机构的诊断或医嘱，<b>门店方案不得与之冲突</b>，只做配镜层面的配合执行。<br>
+        <b>5. 写入《方案建议书》，明确复查时间点。</b>
+      </div></div>
+      <div class="row"><div class="k">输出</div><div>一份分层、可选、带时间节点的《个性化处理方案建议书》；顾客明确的下一步动作（含复查日期）。</div></div>
+      <div class="row"><div class="k">完成标准</div><div>顾客能说出"我接下来先做什么"；必做项已获得顾客口头确认；复查日期已写入记录表与系统提醒。</div></div>
+      <div class="row"><div class="k">常见错误</div><div>一上来就推最贵的产品；只讲产品不讲行为调整；把"建议"说成"必须"；承诺疗效（"保证降度""戴了就不涨"）——<b>属合规红线</b>。</div></div>
+      <div class="bad"><b>禁止出现的表述：</b>"这个镜片能治好近视""保证度数不涨""戴上这个就不用复查了""别的牌子没用，只有这个有效"（贬低同行）。替代说法见模块06与模块12。</div>
+    </div>
+  </div>
+
+  <!-- ===================== 第⑥步 ===================== -->
+  <h2 class="sec">第⑥步 · 科普宣教</h2>
+  <div class="step">
+    <div class="hd"><h3>⑥ 科普宣教：给一条今晚就能开始做的事</h3><span class="time">建议 2-3 分钟</span></div>
+    <div class="bd">
+      <div class="row"><div class="k">输入</div><div>模块08《科普知识点清单》；顾客人群属性（儿童青少年/成人/中老年）；本次发现的异常类型。</div></div>
+      <div class="row"><div class="k">动作</div><div>
+        <b>1. 只讲 2-3 条：</b>从清单中挑选与本次异常最相关的 2-3 条，<b>讲透</b>比讲多重要。<br>
+        <b>2. 每条配一个动作：</b>知识 + 行动。"每天户外活动 2 小时"→"您家孩子放学后可以先在小区里玩 30 分钟再写作业。"<br>
+        <b>3. 纠正一个误区：</b>主动点破一个常见误解，专业感立刻提升（"很多人以为度数涨了换眼镜就行，其实……"）。<br>
+        <b>4. 交付物：</b>有条件时提供一张对应的科普小卡/单页，让顾客带回家贴在书桌或给家人看。</div></div>
+      <div class="row"><div class="k">输出</div><div>顾客记住 1-2 条可执行的生活调整；带走的科普材料（可选）。</div></div>
+      <div class="row"><div class="k">完成标准</div><div>每条知识点 2 句话内讲完；至少一条是"当天可执行"；无"保证""治愈"类措辞。</div></div>
+      <div class="row"><div class="k">常见错误</div><div>一口气讲十几条；讲的都是书上的大道理没法落地；把科普讲成产品广告。</div></div>
+      <div class="good"><b>儿童三条、成人两条、中老年两条（速用版）：</b><br>
+      <b>儿童：</b>①每天户外 2 小时（最关键）；②读写"一尺一拳一寸"+ 每 30 分钟看远 20 秒以上；③晚上 9-10 点前睡，熄灯后不看手机。<br>
+      <b>成人：</b>①近距离工作每 30-40 分钟休息 5 分钟（20-20-20）；②主动眨眼睛、有意识湿润；屏幕略低于视线水平。<br>
+      <b>中老年：</b>①每年一次眼底与眼压检查（即使没不舒服）；②控制好血压血糖，比任何保健都管用。</div>
+    </div>
+  </div>
+
+  <!-- ===================== 第⑦步 ===================== -->
+  <h2 class="sec">第⑦步 · 案例佐证</h2>
+  <div class="step">
+    <div class="hd"><h3>⑦ 案例佐证：用别人的真实经历，压下最后一点犹豫</h3><span class="time">建议 1-2 分钟</span></div>
+    <div class="bd">
+      <div class="row"><div class="k">输入</div><div>模块09《案例库》；本次顾客的<b>同类属性</b>（年龄相近、问题相似、处境相近）。</div></div>
+      <div class="row"><div class="k">动作</div><div>
+        <b>1. 选同类：</b>优先选"年龄相仿 + 问题相同 + 起点相近"的案例，相似度越高越有说服力。<br>
+        <b>2. 六段式讲述：</b>背景 → 发现 → 解释 → 行动 → 结果 → 启示（详见模块09），总时长控制在 60-90 秒。<br>
+        <b>3. 数据要具体但不必精确：</b>"眼轴三个月长了 0.2，后来半年长了 0.1"比"效果不错"有效十倍。<br>
+        <b>4. 合规：</b>隐去姓名、只说"有一个孩子/一位顾客"，不得出现疗效承诺，不得出现具体价格折扣或诱导性表述。</div></div>
+      <div class="row"><div class="k">输出</div><div>顾客产生"同样情况有人做过了、我也可以"的心理认同；为方案接受做最后推动。</div></div>
+      <div class="row"><div class="k">完成标准</div><div>案例真实、同类、可感知；讲述≤90秒；无承诺、无夸大、无贬低。</div></div>
+      <div class="row"><div class="k">常见错误</div><div>讲的例子和顾客完全不是一类人；编造数据；讲完案例不回到顾客自身（缺"启示"段）。</div></div>
+      <div class="say"><b>标准收尾（案例讲完必用）：</b>"我讲这个不是说他一定和您完全一样，每个人的情况不同。我是想说——<b>这种情况是可以管的，而且开始得越早越主动。</b>我们就按刚才说的先做三个月，三个月后<b>用数据看效果</b>，好吗？"</div>
+    </div>
+  </div>
+
+  <h2 class="sec">七步之后：收尾动作（必做 4 件）</h2>
+  <div class="card">
+    <ol>
+      <li><b>请顾客复述：</b>"您能不能用您自己的话，跟我讲一下今天主要说了哪两件事？"——能复述出来，才算真正听懂（顾客理解度的现场检验）。</li>
+      <li><b>填写《顾客报告解读记录表》：</b>当场填，不补填。写完用平板或纸质签字。</li>
+      <li><b>交付《方案建议书》：</b>顾客带走一份，门店留存一份；同时把复查日期录入系统，生成提醒任务。</li>
+      <li><b>约定下一次复习：</b>明确日期（不说是"有空再来"，要给具体时间，"12 月 20 日左右"），并说明复查的意义（看趋势，不是为收费）。</li>
+    </ol>
+    <div class="note"><b>两人配合时的分工：</b>一人主讲解读（视光师），一人在旁记录并适时补充生活化提问（验光师/眼保健师）。记录人负责：把顾客的原话（如"孩子每天写作业到十点半"）记下来，这是后续跟进和异议处理的素材。</div>
+  </div>
+
+  <h2 class="sec">不同场景下的七步侧重</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:20%">场景</th><th style="width:26%">加强哪些步骤</th><th style="width:26%">可压缩哪些步骤</th><th style="width:28%">特别注意</th></tr></thead>
+      <tbody>
+        <tr><td>常规配镜（成人）</td><td>③原因、⑤方案</td><td>②可口头带过（若无异常）、⑦可短讲</td><td>顾客时间有限，边试戴边讲最自然</td></tr>
+        <tr><td>青少年建档/复查</td><td>②识别、④影响、⑤方案、⑥科普</td><td>⑦保留但缩短</td><td>必须讲清"控制目标"和"复查看趋势"，家长需要具体动作</td></tr>
+        <tr><td>视疲劳/干眼诉求</td><td>③原因、⑥科普</td><td>④影响（顾客已有感受）</td><td>顾客已有症状，重点在"诱因—对策"对应</td></tr>
+        <tr><td>中老年眼健康</td><td>②识别、④影响、⑥科普</td><td>⑦可略</td><td>语速放慢、音量提高；最好有家属陪同；必要时重复关键句</td></tr>
+        <tr><td>触发转诊提醒</td><td>②识别、④影响</td><td>⑤方案（只讲就医，不讲产品）</td><td>不推销任何产品；只解决"去哪里看、为什么现在要去"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sec">岗位自查表（每次解读后自己打勾）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:8%">序号</th><th style="width:62%">自查项目</th><th style="width:15%">是/否</th><th style="width:15%">备注</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>核对了历史数据并算出差值</td><td>□是 □否</td><td></td></tr>
+        <tr><td>2</td><td>本次检查项目全部查过《判定表》并打档</td><td>□是 □否</td><td></td></tr>
+        <tr><td>3</td><td>红线 12 项筛查完成，如需转诊已提醒并记录</td><td>□是 □否</td><td></td></tr>
+        <tr><td>4</td><td>重点讲解项不超过 3 项，且已用通俗语言翻译</td><td>□是 □否</td><td></td></tr>
+        <tr><td>5</td><td>影响描述关联到顾客生活场景，无恐吓用语</td><td>□是 □否</td><td></td></tr>
+        <tr><td>6</td><td>方案分必做/建议/可选三层，费用透明</td><td>□是 □否</td><td></td></tr>
+        <tr><td>7</td><td>讲了 2-3 条可执行科普，无"保证治愈"类表述</td><td>□是 □否</td><td></td></tr>
+        <tr><td>8</td><td>讲了 1 个同类案例并有"回到顾客"的收尾</td><td>□是 □否</td><td></td></tr>
+        <tr><td>9</td><td>请顾客复述确认听懂</td><td>□是 □否</td><td></td></tr>
+        <tr><td>10</td><td>《记录表》《方案建议书》填写完毕，复查日期已录入</td><td>□是 □否</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="warn"><b>店长抽查规则：</b>每天抽查不少于 2 份记录表，重点看第 2、3、10 项；凡第 3 项（红线筛查）漏做的，无论结果如何，均计入当月合规扣分。</div>
+  </div>
+
+  <div class="btnwrap">
+    <button class="btn" onclick="window.print()">打印本模块</button>
+    <a class="btn ghost" href="index.html">返回首页</a>
+    <a class="btn ghost" href="03_指标参考区间与异常判定表.html">下一模块：03 指标参考区间与判定表 →</a>
+  </div>
+</div>
+
+<footer>
+  <b>模块 02 · 七步标准解读 SOP</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  本流程为门店服务流程，其中任何涉及疾病判断的内容均为"提醒就医"，不构成诊断。执行中如遇红线指标，一律以医疗机构诊断为准。
+</footer>
+</body>
+</html>
