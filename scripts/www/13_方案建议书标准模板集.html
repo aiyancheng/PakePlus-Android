@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块13 · 个性化处理方案建议书标准模板集 | 永州爱眼城 检查报告解读标准化方案</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.7;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:calc(18px * var(--fs));font-weight:700}
+.topbar .meta{font-size:calc(13px * var(--fs));opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:calc(13.5px * var(--fs));color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:calc(22px * var(--fs));color:#1677ff;margin:0 auto 6px;line-height:1.45;text-align:center}
+.lead{text-indent:2em;color:#5b6b7d;font-size:calc(15.5px * var(--fs));margin-bottom:20px;max-width:960px}
+h2.sec{font-size:calc(20px * var(--fs));color:#1677ff;margin:32px 0 12px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+h3.sub{font-size:calc(16.5px * var(--fs));color:#1677ff;margin:16px 0 8px}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:18px 22px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:calc(14px * var(--fs));margin-bottom:10px}
+th,td{border:1px solid #c6d9f7;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600}
+td.c,th.c{text-align:center}
+tbody tr:nth-child(even){background:#fafcff}
+ul,ol{margin:6px 0 10px 20px;font-size:calc(15px * var(--fs))}
+li{margin-bottom:5px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#6b4a25;margin:14px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#1f5c40;margin:14px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#7d2b2b;margin:14px 0}
+.say{background:#f1f6ff;border-radius:0 8px 8px 0;padding:11px 14px;margin:10px 0;font-size:calc(14.3px * var(--fs));color:#23477f}
+.say b{color:#1677ff}
+/* 表单 */
+.form{background:#fff;border:2px solid #1677ff;border-radius:10px;padding:0;margin-bottom:24px;overflow:hidden}
+.form .fhead{background:#1677ff;color:#fff;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.form .fhead h3{font-size:calc(18px * var(--fs));font-weight:700}
+.form .fhead .no{font-size:calc(13px * var(--fs));background:rgba(255,255,255,.2);padding:3px 10px;border-radius:20px}
+.form .fbody{padding:16px 20px}
+.fnote{font-size:calc(13.3px * var(--fs));color:#45596e;margin:0 0 12px;padding:8px 11px;background:#f7faff;}
+.fnote b{color:#1677ff}
+.sec-title{background:#e8f1ff;color:#1677ff;font-weight:700;padding:7px 10px;font-size:calc(15px * var(--fs));border:1px solid #c6d9f7}
+.blk{border:1px solid #c6d9f7;border-top:none;padding:10px}
+.line2{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;align-items:baseline}
+.line2 label{font-size:calc(14px * var(--fs));color:#45596e;white-space:nowrap}
+.line2 .fill{border-bottom:1px solid #7a8799;min-width:calc(120px * var(--fs));flex:1;display:inline-block;height:1.2em}
+.check{display:inline-flex;align-items:flex-start;gap:4px;margin-right:14px;font-size:calc(14px * var(--fs));margin-bottom:4px}
+.check input{width:14px;height:14px;margin-top:3px}
+.hint{font-size:calc(12.5px * var(--fs));color:#8b96a9;margin-top:2px}
+.sig{display:flex;flex-wrap:wrap;gap:18px;margin-top:10px;font-size:calc(14px * var(--fs));color:#45596e}
+.sig span{display:inline-block;border-bottom:1px solid #7a8799;min-width:calc(110px * var(--fs))}
+.decl{font-size:calc(12.3px * var(--fs));color:#7a8799;line-height:1.6;border-top:1px dashed #c6d9f7;margin-top:10px;padding-top:8px}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:calc(13.5px * var(--fs));line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:calc(14px * var(--fs));cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media print{.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:12px}.form{page-break-inside:avoid;border-color:#333}.form .fhead{background:#333}.card{page-break-inside:avoid}}
+</style>
+<!-- LAYOUT-V2 -->
+<style>
+/* ==========================================================================
+   平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
+   只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
+   ========================================================================== */
+:root{
+  --fs:1;            /* 字号/组件缩放系数 */
+  --wrap:1180px;     /* 正文容器最大宽度 */
+  --wpx:22px;        /* 容器左右留白 */
+  --wpy:26px;        /* 容器上留白 */
+  --cy:9px; --cx:12px;  /* 表格单元格内边距 */
+  --subh:44px;       /* 吸顶导航高度 */
+}
+/* 平板（横屏 1280 / 竖屏 800 均命中）：整站同比缩放，--fs=1.02（较上一版 -11.3%） */
+@media screen and (min-width:641px) and (max-width:1400px){
+  :root{--fs:1.02;--wrap:1160px;--wpx:24px;--wpy:20px;--cy:11px;--cx:13px;--subh:44px}
+}
+@media screen and (max-width:640px){
+  :root{--fs:1.04;--wrap:100%;--wpx:14px;--wpy:16px;--cy:9px;--cx:10px;--subh:44px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","HarmonyOS Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;letter-spacing:.012em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:rgba(22,119,255,.12);
+}
+::selection{background:#c9dfff;color:#0b3d91}
+
+/* ---------- 容器与页头 ---------- */
+body .wrap{max-width:var(--wrap);padding:var(--wpy) var(--wpx) 72px}
+body .hero{padding:26px var(--wpx) 24px}
+body .topbar{padding:14px var(--wpx);gap:12px}
+body footer{padding:20px var(--wpx);line-height:1.9}
+
+/* ---------- 吸顶导航：翻到任何位置都能一眼跳模块 ---------- */
+body .subnav{
+  position:sticky;top:0;z-index:80;
+  min-height:var(--subh);
+  padding:calc((var(--subh) - 1.5em - 1px) / 2) var(--wpx);
+  line-height:1.5;
+  white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+  background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 2px 12px rgba(22,119,255,.07);
+  scrollbar-width:none;
+}
+body .subnav::-webkit-scrollbar{height:0}
+body .subnav a{white-space:nowrap;padding:0 1px;text-decoration:none}
+
+/* ---------- 标题节奏与锚点定位 ---------- */
+body h1.t{line-height:1.45}
+body h2.sec{margin:38px 0 16px;line-height:1.4}
+body h2.sec,body h3.sub,body h3.sub2,body .card,body .step,body .form,body .item{
+  scroll-margin-top:calc(var(--subh) + 16px);
+}
+body .lead{margin-bottom:24px;line-height:1.85}
+
+/* ---------- 卡片 / 提示块 ---------- */
+body .card{padding:20px 24px;margin-bottom:18px;border-radius:14px}
+body .note,body .good,body .warn{padding:15px 18px;margin:16px 0;border-radius:10px;line-height:1.8}
+body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:16px 18px}
+body .case{padding:16px 20px;margin-bottom:16px}
+body .case .txt{padding:12px 15px}
+body .quote{padding:12px 16px;margin:10px 0}
+body .scard{padding:14px 16px}
+body .fnode{padding:12px 16px}
+body .step .hd,body .form .fhead{padding:13px 22px}
+body .form .fbody{padding:18px 22px}
+body .peopledet .hd{padding:16px 24px}
+body .daybar{padding:12px 18px;margin:26px 0 14px}
+body .sec-title{padding:9px 12px}
+body .blk{padding:12px 14px}
+body .line2{gap:14px;margin-bottom:10px}
+body .check{margin-right:16px}
+
+/* ---------- 表格：更容易一行一行读下去 ---------- */
+body table{
+  border-collapse:separate;border-spacing:0;border-radius:12px;
+  line-height:1.62;margin:12px 0 16px;
+}
+body th,body td{
+  border:0;
+  border-right:1px solid #dae3f5;border-bottom:1px solid #dae3f5;
+  padding:var(--cy) var(--cx);
+  overflow-wrap:break-word;
+}
+body th{
+  background:linear-gradient(180deg,#f1f7ff,#e4eeff);
+  color:#0b3d91;font-weight:700;letter-spacing:.02em;
+text-align:center;}
+body thead th{
+  border-top:1px solid #dae3f5;
+  position:sticky;top:calc(var(--subh) + 1px);z-index:6;
+}
+body tr>th:first-child,body tr>td:first-child{border-left:1px solid #dae3f5}
+body table>thead>tr:first-child>th:first-child{border-top-left-radius:12px}
+body table>thead>tr:first-child>th:last-child{border-top-right-radius:12px}
+body table:not(:has(thead))>tbody>tr:first-child>td:first-child{border-top-left-radius:12px;border-top:1px solid #dae3f5}
+body table:not(:has(thead))>tbody>tr:first-child>td:last-child{border-top-right-radius:12px;border-top:1px solid #dae3f5}
+body table>tbody>tr:last-child>td:first-child{border-bottom-left-radius:12px}
+body table>tbody>tr:last-child>td:last-child{border-bottom-right-radius:12px}
+body tbody tr:nth-child(even)>td{background:#fafcff}
+body tbody tr:hover>td{background:#eef5ff}
+body tbody td{transition:background .15s}
+body table.ct th,body table.ct td{text-align:center;vertical-align:middle}
+
+/* ---------- 触控友好：按钮、胶囊、复选框 ---------- */
+body .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 20px;border-radius:10px;
+}
+body .btnwrap{margin:30px 0 10px}
+body .chips{gap:10px}
+body .chips a,body .idxbar a{
+  display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:10px;
+}
+body .idxbar{gap:10px;margin-bottom:20px}
+body .check input,body input[type=checkbox]{width:18px;height:18px;accent-color:#1677ff}
+body .fill{min-height:1.35em}
+body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:3px 9px;border-radius:6px}
+body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:3px 10px}
+body .farrow,body .story .arrow{padding:0 2px}
+body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fill:focus-visible{
+  outline:2px solid #1677ff;outline-offset:2px;border-radius:6px;
+}
+
+/* ---------- 小屏栅格回流（仅屏幕，不影响打印分栏） ---------- */
+@media screen and (max-width:1000px){
+  body .steps{grid-template-columns:1fr 1fr !important}
+}
+@media screen and (max-width:900px){
+  body .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important}
+  body .scards,body .pkg4{grid-template-columns:1fr !important}
+  body .scards{gap:10px}
+}
+@media screen and (max-width:640px){
+  body .grid,body .steps,body .kpi,body .kpi4,body .lv,body .chk,
+  body .std,body .three{grid-template-columns:1fr !important}
+  body .subnav{padding-left:12px;padding-right:12px}
+}
+
+/* ---------- 打印兜底：恢复紧凑版式，A4 友好 ---------- */
+/* ---------- 平板档专项：行高 / 间距 / 图标同步收缩（仅 641–1400px） ---------- */
+@media screen and (min-width:641px) and (max-width:1400px){
+  body{line-height:1.62;letter-spacing:.008em}
+  body .wrap{padding:20px var(--wpx) 64px}
+  body .hero{padding:22px var(--wpx) 20px}
+  body .topbar{padding:12px var(--wpx);gap:10px}
+  body footer{padding:17px var(--wpx);line-height:1.72}
+  body .subnav{line-height:1.45}
+  body h2.sec{margin:32px 0 14px;line-height:1.38}
+  body .lead{margin-bottom:20px;line-height:1.68}
+  body .card{padding:16px 20px;margin-bottom:15px;border-radius:12px}
+  body .note,body .good,body .warn{padding:12px 15px;margin:13px 0;border-radius:9px;line-height:1.62}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:13px 15px}
+  body .case{padding:13px 16px;margin-bottom:13px}
+  body .case .txt{padding:10px 13px}
+  body .quote{padding:10px 13px;margin:8px 0}
+  body .scard{padding:12px 14px}
+  body .fnode{padding:10px 14px}
+  body .step .hd,body .form .fhead{padding:11px 18px}
+  body .form .fbody{padding:15px 18px}
+  body .peopledet .hd{padding:13px 20px}
+  body .daybar{padding:10px 15px;margin:22px 0 12px}
+  body .sec-title{padding:7px 10px}
+  body .blk{padding:10px 12px}
+  body .line2{gap:12px;margin-bottom:8px}
+  body .check{margin-right:13px}
+  body table{line-height:1.5;margin:10px 0 14px;border-radius:10px}
+  body .btn{min-height:42px;padding:8px 17px;border-radius:9px}
+  body .btnwrap{margin:26px 0 8px}
+  body .chips{gap:9px}
+  body .chips a,body .idxbar a{min-height:40px;padding:7px 12px;border-radius:9px}
+  body .idxbar{gap:9px;margin-bottom:17px}
+  body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:2px 8px;border-radius:5px}
+  body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:2px 8px}
+}
+@media print{
+  :root{--fs:1;--wpx:0;--wpy:0}
+  body{line-height:1.55;letter-spacing:0;background:#fff}
+  body .wrap{max-width:none;padding:0 0 8px}
+  body .topbar,body .btnwrap{box-shadow:none}
+  body .subnav{position:static;box-shadow:none;background:#fff;overflow:visible;white-space:normal;
+    min-height:0;padding:0 0 6px}
+  body .card{padding:10px 12px;margin-bottom:10px;border-radius:0;box-shadow:none}
+  body .note,body .good,body .warn{padding:8px 10px;margin:8px 0;border-radius:0}
+  body .step .hd,body .form .fhead,body .form .fbody,body .peopledet .hd,body .daybar{padding:7px 10px}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item,body .case,body .scard{
+    padding:8px 10px;border-radius:0;box-shadow:none}
+  body table{border-collapse:collapse;border-radius:0;margin:6px 0 10px}
+  body thead th{position:static}
+  body th,body td{border:1px solid #cbd5e1;padding:4px 6px}
+  body th{background:#e8f1ff !important;color:#0b3d91 !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body tbody tr:nth-child(even)>td{background:#fafcff !important}
+  body tbody tr:hover>td{background:transparent !important}
+}
+</style>
+<!-- /LAYOUT-V2 -->
+<!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
+<style>
+/* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
+   text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
+   恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
+body .wrap p,
+body .hero p{text-indent:2em;overflow-wrap:break-word}
+
+/* 相邻正文段落间距：用 margin 分隔，不插空行伪造缩进 */
+body .wrap p + p{margin-top:.5em}
+
+/* ---- 例外：以下不属于"正文段落"，一律不缩进（选择器特异性高于上方规则） ---- */
+/* 结构元素：列表项内 / 表格单元格 / 图注 / 代码 / 引用块 / 页眉页脚导航 */
+body .wrap :is(li,td,th,caption,figcaption,dt,dd,pre,code,blockquote,figure) p,
+body .topbar p,body .subnav p,body footer p,body .btnwrap p,
+/* 组件化短行：四大板块标签、KPI 数值卡说明行、人群卡元信息行 */
+body .wrap .pkg4 p,body .wrap .kpi p,body .wrap .kpi4 p,body .wrap .hd p,
+/* 字段行（注入时自动识别并加 ni 类），以及手工豁免 */
+body .wrap p.ni,body .wrap .ni p,
+/* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
+body p:lang(en),body p.en{text-indent:0}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta">模块 13 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+</div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="12_医疗边界与合规红线.html">12 医疗边界与合规</a> ｜ 下一模块：<a href="14_情景卡库30张演练卡.html">14 情景卡库（30张）</a> ｜ 关联模块：<a href="07_记录表与方案建议书.html">07 记录表与建议书</a></div>
+
+<div class="wrap">
+  <h1 class="t">模块 13 · 《个性化处理方案建议书》标准模板集</h1>
+  <p class="lead">模块07给出的是<b>通用版</b>建议书。实际门店里，儿童家长、上班族、老人关心的事完全不同，一份通用模板讲不透。本模块按<b>六类高频场景</b>各做一份专用模板：预置了该人群最常出现的异常项、最该讲的影响、最对口的管理动作，视光师只要<b>勾选项 + 填数字 + 填时间</b>就能出一份完整建议书，顾客带走一份、门店存档一份。</p>
+
+  <h2 class="sec">一、六份模板怎么选</h2>
+  <table>
+    <thead><tr><th style="width:10%">模板</th><th style="width:24%">适用场景</th><th style="width:26%">触发信号（出现其一即可选用）</th><th style="width:40%">本模板的重点</th></tr></thead>
+    <tbody>
+      <tr><td class="c"><b>A</b></td><td>儿童青少年近视管理</td><td>18岁以下；近视前期或已近视；眼轴年增长 ≥0.3mm；家长关注"涨得快不快"</td><td>以眼轴年化增长为核心证据，方案围绕"控制发展速度"，强调户外活动与复查周期</td></tr>
+      <tr><td class="c"><b>B</b></td><td>成人视疲劳与干眼</td><td>长时间近距离用眼；眼干、异物感、眨眼频繁；BUT&lt;5s；下午视物模糊</td><td>把"度数不高但不舒服"讲清楚，方案以用眼节奏、环境、泪膜管理为主</td></tr>
+      <tr><td class="c"><b>C</b></td><td>中老年老视与渐进</td><td>40岁以上；看近需拿远；看近久头晕；原有近用镜不匹配</td><td>以"远近切换需求"为主线，讲清适应期与使用场景，降低退换风险</td></tr>
+      <tr><td class="c"><b>D</b></td><td>双眼视功能异常 / 视觉训练</td><td>阅读串行、跳行；看近易疲劳；调节或集合指标异常；训练前后复测</td><td>用具体指标说明问题所在，方案以训练周期 + 阶段性复测为主，明确不承诺疗效</td></tr>
+      <tr><td class="c"><b>E</b></td><td>角膜塑形镜 / 接触镜验配</td><td>OK镜或RGP/软镜验配、复查；需说明护理与复诊要求</td><td>以安全佩戴为核心，护理规范、复查节点、停戴信号三项必写</td></tr>
+      <tr><td class="c"><b>F</b></td><td>转诊提示型</td><td>出现模块12所列12类红线指标中的任一项</td><td><b>不做任何产品推荐</b>，只讲异常项、紧迫程度、就诊建议与回访安排</td></tr>
+    </tbody>
+  </table>
+  <div class="warn"><b>选型原则：</b>一位顾客可能同时适用两份模板（例如"近视儿童 + 需转诊"）。此时<b>一律以 F 模板为主</b>，转诊提示必须写在最前面，其余内容待爱眼城眼科诊断后再补充。<b>转诊情形下不得出具任何产品方案。</b></div>
+
+  <h2 class="sec">二、通用填写规范（六份模板都适用）</h2>
+  <div class="card">
+    <ol>
+      <li><b>数据只填本次实测值。</b>所有数字必须能在《报告解读记录表》或档案中查到，不得估算、不得沿用上次。</li>
+      <li><b>变化量必须算出来。</b>有历史数据的必须写差值（度数变化、眼轴年化增长），只写"本次值"的建议书视为不合格。</li>
+      <li><b>方案分三档勾。</b>必做项 / 建议做项 / 可选项分开列，每档不超过 3 条；一档写太多等于没重点。</li>
+      <li><b>复查时间写具体日期。</b>不写"三个月后"，写"2026年12月20日前后"，并注明复查项目。</li>
+      <li><b>影响要落到生活。</b>写"看黑板吃力""看近半小时就胀"，不写"调节滞后 +0.75D"（术语留在记录表里）。</li>
+      <li><b>顾客带走一份、门店存一份。</b>底联与《报告解读记录表》同号归档，便于下次接待直接调阅。</li>
+    </ol>
+    <div class="note"><b>六份模板共同的禁语：</b>不得出现"治疗""治愈""根治""保证不涨""一定有效"；不得写疾病诊断名称；不得推荐或评价药品；不得承诺具体度数或视力改善值。<b>拿不准的表述一律留空，交由视光师口头补充。</b></div>
+  </div>
+
+  <!-- ==================== 模板 A ==================== -->
+  <h2 class="sec">模板 A · 儿童青少年近视管理型</h2>
+  <div class="form">
+    <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（近视管理）</h3><span class="no">编号 A｜适用 18 岁以下</span></div>
+    <div class="fbody">
+      <div class="fnote"><b>填写要点：</b>①"眼轴"一栏必填，并算出年化增长；②影响部分只写生活场景（看黑板、运动、眯眼）；③方案必做项不得超过3条，家长记不住；④复查日期必须写死。<br><b>配套话术：</b>"度数只是结果，眼轴才是原因。我们这次的建议就是围绕怎么让眼轴长得慢一点。"</div>
+
+      <div class="sec-title">一、基本信息</div>
+      <div class="blk">
+        <div class="line2"><label>顾客姓名：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>性别：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>年龄：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>学校/年级：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span></div>
+        <div class="line2"><label>检查门店：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span><label>视光师：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span><label>档案号：</label><span class="fill" style="max-width:calc(120px * var(--fs))"></span></div>
+        <div class="line2"><label>上次检查日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span><label>本次距上次：</label><span class="fill" style="max-width:calc(80px * var(--fs))"></span>个月<label>监护人到场：</label><span class="fill" style="max-width:calc(80px * var(--fs))"></span></div>
+      </div>
+
+      <div class="sec-title">二、本次关键数据（与上次对比）</div>
+      <div class="blk">
+        <table>
+          <thead><tr><th style="width:16%">项目</th><th class="c" style="width:16%">右眼 OD</th><th class="c" style="width:16%">左眼 OS</th><th class="c" style="width:16%">上次值</th><th class="c" style="width:16%">本次变化</th><th style="width:20%">判读</th></tr></thead>
+          <tbody>
+            <tr><td>裸眼视力</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>矫正视力</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>等效球镜（SE）</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td><b>眼轴长度 AL</b></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td>年化增长 ______ mm/年</td></tr>
+            <tr><td>角膜曲率 K1/K2</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>角膜地形图</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>眼压</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>双眼视功能</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr>
+          </tbody>
+        </table>
+        <div class="hint">儿童青少年：眼轴为必查项；无历史眼轴数据时，本次即为基线，并在下方注明"首次建档，暂无对比"。</div>
+      </div>
+
+      <div class="sec-title">三、我们发现的情况（勾选并简述）</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">近视度数有增长，本次较上次增加 ______ D</span><span class="check"><input type="checkbox">眼轴有增长，年化约 ______ mm</span></div>
+        <div><span class="check"><input type="checkbox">远视储备低于同龄参考范围</span><span class="check"><input type="checkbox">散光偏大或较上次增加</span><span class="check"><input type="checkbox">双眼度数相差较大（屈光参差）</span></div>
+        <div><span class="check"><input type="checkbox">矫正视力未达同龄预期，需进一步查明原因</span><span class="check"><input type="checkbox">双眼视功能提示看近负担偏重</span></div>
+        <div><span class="check"><input type="checkbox">眼位/眼球运动需进一步评估</span><span class="check"><input type="checkbox">其他：______________________</span></div>
+        <div class="line2" style="margin-top:8px"><label>对日常的影响（写生活场景）：</label><span class="fill"></span></div>
+        <div class="line2"><label></label><span class="fill"></span></div>
+      </div>
+
+      <div class="sec-title">四、建议方案（分档勾选）</div>
+      <div class="blk">
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin-bottom:4px">必做项（建议尽快落实）</div>
+        <div><span class="check"><input type="checkbox">按本次处方配镜并<b>全天佩戴</b>（除睡眠与洗漱）</span><span class="check"><input type="checkbox">每天户外活动累计 ≥ 2 小时</span></div>
+        <div><span class="check"><input type="checkbox">近距离用眼每 30-40 分钟休息 10 分钟</span><span class="check"><input type="checkbox">读写距离保持一尺、姿势"一拳一寸"</span></div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">建议做项</div>
+        <div><span class="check"><input type="checkbox">选用近视管理类镜片（离焦设计等）</span><span class="check"><input type="checkbox">晚间减少近距离用眼，睡前 1 小时不看屏幕</span></div>
+        <div><span class="check"><input type="checkbox">调整读写照明（顶灯 + 左前方台灯）</span><span class="check"><input type="checkbox">保证睡眠时长，小学 ≥10 小时、初中 ≥9 小时</span></div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">可选项（由家长自行决定）</div>
+        <div><span class="check"><input type="checkbox">视觉训练课程评估</span><span class="check"><input type="checkbox">其他：____________________</span></div>
+      </div>
+
+      <div class="sec-title">五、复查计划</div>
+      <div class="blk">
+        <div class="line2"><label>下次复查日期：</label><span class="fill" style="max-width:calc(180px * var(--fs))"></span><label>复查项目：</label><span class="fill"></span></div>
+        <div class="hint">儿童青少年一般每 3-6 个月复查一次；近视进展偏快者建议 3 个月，必查视力、屈光度、眼轴。</div>
+      </div>
+
+      <div class="sec-title">六、转诊提示</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">本次<b>无</b>需转诊项目</span><span class="check"><input type="checkbox">有项目建议到爱眼城眼科就诊：______________________</span></div>
+        <div class="line2" style="margin-top:6px"><label>建议就诊时间：</label><span class="fill" style="max-width:calc(120px * var(--fs))"></span><label>回访确认日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span></div>
+      </div>
+
+      <div class="sec-title">七、顾客（监护人）确认</div>
+      <div class="blk">
+        <div class="line2"><label>我已听懂以上说明，清楚孩子目前的情况与建议：</label><span class="check"><input type="checkbox">是</span><span class="check"><input type="checkbox">还有疑问（已记录在记录表）</span></div>
+        <div class="line2"><label>方案意向：</label><span class="check"><input type="checkbox">同意按建议执行</span><span class="check"><input type="checkbox">先部分执行</span><span class="check"><input type="checkbox">再考虑/另行咨询</span></div>
+        <div class="sig"><span>监护人签字：</span>____________　<span>视光师签字：</span>____________　<span>日期：</span>____________</div>
+      </div>
+      <div class="decl">本建议书为永州爱眼城依据本次检查数据提供的<b>验配建议与健康宣教</b>，<b>不构成医疗诊断</b>。近视目前不可逆，所有建议的目标是控制发展速度与保证清晰舒适，具体效果存在个体差异，需通过定期复查的数据变化来评估。若出现视力骤降、眼痛、眼红等急性情况，请立即就医。</div>
+    </div>
+  </div>
+
+  <!-- ==================== 模板 B ==================== -->
+  <h2 class="sec">模板 B · 成人视疲劳与干眼型</h2>
+  <div class="form">
+    <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（视疲劳与干眼）</h3><span class="no">编号 B｜适用 18-59 岁</span></div>
+    <div class="fbody">
+      <div class="fnote"><b>填写要点：</b>①先写清楚"度数不高但不舒服"这一点，打消"是不是没配好"的疑虑；②干眼相关项必须写数值（BUT、Schirmer）；③方案以用眼节奏与环境改造为主，镜片为辅。<br><b>配套话术：</b>"您的度数其实不高，问题主要在眼睛的耐受力上——就像肌肉累了会酸，眼睛用久了也会累。"</div>
+
+      <div class="sec-title">一、基本信息</div>
+      <div class="blk">
+        <div class="line2"><label>顾客姓名：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>性别：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>年龄：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>职业/用眼场景：</label><span class="fill" style="max-width:calc(170px * var(--fs))"></span></div>
+        <div class="line2"><label>门店：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span><label>视光师：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span><label>每日近距离用眼：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span>小时</div>
+      </div>
+
+      <div class="sec-title">二、本次关键数据</div>
+      <div class="blk">
+        <table>
+          <thead><tr><th style="width:20%">项目</th><th class="c" style="width:16%">右眼 OD</th><th class="c" style="width:16%">左眼 OS</th><th style="width:48%">判读</th></tr></thead>
+          <tbody>
+            <tr><td>裸眼视力 / 矫正视力</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>屈光度（球/柱/轴）</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>矫正后近视力</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>泪膜破裂时间 BUT</td><td class="c"></td><td class="c"></td><td>&lt;5s 提示泪膜不稳定</td></tr>
+            <tr><td>泪液分泌 Schirmer</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>眼压</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>调节幅度 / 灵敏度</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>隐斜 / 集合近点</td><td class="c"></td><td class="c"></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sec-title">三、我们发现的情况</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">度数本身不高，但<b>长时间看近后</b>出现模糊、酸胀</span><span class="check"><input type="checkbox">泪膜不稳定，眨眼后清晰度短暂改善</span></div>
+        <div><span class="check"><input type="checkbox">干涩、异物感、眼红，下午或空调房加重</span><span class="check"><input type="checkbox">调节/集合指标提示看近负担偏重</span></div>
+        <div><span class="check"><input type="checkbox">现有眼镜度数或瞳距与本次检查有偏差</span><span class="check"><input type="checkbox">屏幕使用时长偏长、环境照明偏暗</span></div>
+        <div><span class="check"><input type="checkbox">其他：______________________</span></div>
+        <div class="line2" style="margin-top:8px"><label>对日常的影响：</label><span class="fill"></span></div>
+      </div>
+
+      <div class="sec-title">四、建议方案</div>
+      <div class="blk">
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin-bottom:4px">必做项</div>
+        <div><span class="check"><input type="checkbox">近距离用眼每 40 分钟远眺或闭眼 5-10 分钟</span><span class="check"><input type="checkbox">有意识增加眨眼频率，避免"盯着不眨"</span></div>
+        <div><span class="check"><input type="checkbox">屏幕中心略低于视线、距离 ≥40cm，避免仰头/俯视</span><span class="check"><input type="checkbox">改善环境照明，避免暗环境看亮屏</span></div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">建议做项</div>
+        <div><span class="check"><input type="checkbox">按本次处方更新眼镜（含近用/防疲劳设计评估）</span><span class="check"><input type="checkbox">空调房、长时间驾车时使用加湿或减少直吹</span></div>
+        <div><span class="check"><input type="checkbox">减少睡前关灯看手机</span><span class="check"><input type="checkbox">睑缘清洁与热敷（方法由视光师现场演示）</span></div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">可选项</div>
+        <div><span class="check"><input type="checkbox">视功能训练评估</span><span class="check"><input type="checkbox">复查时同步评估泪膜变化</span><span class="check"><input type="checkbox">其他：__________</span></div>
+        <div class="hint">若症状明显或持续加重，建议到爱眼城眼科就诊，由医生判断是否需要药物或其他治疗。</div>
+      </div>
+
+      <div class="sec-title">五、复查计划与确认</div>
+      <div class="blk">
+        <div class="line2"><label>下次复查日期：</label><span class="fill" style="max-width:calc(180px * var(--fs))"></span><label>复查项目：</label><span class="fill"></span></div>
+        <div class="line2" style="margin-top:8px"><label>方案意向：</label><span class="check"><input type="checkbox">同意按建议执行</span><span class="check"><input type="checkbox">先部分执行</span><span class="check"><input type="checkbox">再考虑/另行咨询</span></div>
+        <div class="sig"><span>顾客签字：</span>____________　<span>视光师签字：</span>____________　<span>日期：</span>____________</div>
+      </div>
+      <div class="decl">本建议书为永州爱眼城依据本次检查数据提供的<b>验配建议与健康宣教</b>，<b>不构成医疗诊断</b>，也不替代眼科医生的诊疗。涉及用药与疾病治疗的事项，请以医疗机构意见为准。</div>
+    </div>
+  </div>
+
+  <!-- ==================== 模板 C ==================== -->
+  <h2 class="sec">模板 C · 中老年老视与渐进型</h2>
+  <div class="form">
+    <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（老视与渐进）</h3><span class="no">编号 C｜适用 40 岁以上</span></div>
+    <div class="fbody">
+      <div class="fnote"><b>填写要点：</b>①先说明"看不清不一定只是老花"，矫正视力不达标必须提示就医；②把顾客的用眼场景问出来（看手机、看报、开车、做饭）再写方案；③适应期必须写在建议书上，避免后期退换纠纷。<br><b>配套话术：</b>"渐进片不是戴上就立刻习惯，一般一到两周适应。这段时间上下楼梯慢一点，转头而不是转眼。"</div>
+
+      <div class="sec-title">一、基本信息与用眼场景</div>
+      <div class="blk">
+        <div class="line2"><label>顾客姓名：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>性别：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>年龄：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>门店：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span></div>
+        <div class="line2"><label>视光师：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span><label>现戴眼镜：</label><span class="fill" style="max-width:calc(170px * var(--fs))"></span></div>
+        <div style="font-size:14px;color:#45596e;margin:6px 0 4px">主要用眼场景（勾选）：</div>
+        <div><span class="check"><input type="checkbox">看手机/平板</span><span class="check"><input type="checkbox">看书报</span><span class="check"><input type="checkbox">开车</span><span class="check"><input type="checkbox">做饭/家务</span><span class="check"><input type="checkbox">运动/户外</span><span class="check"><input type="checkbox">看电脑</span><span class="check"><input type="checkbox">其他：______</span></div>
+      </div>
+
+      <div class="sec-title">二、本次关键数据</div>
+      <div class="blk">
+        <table>
+          <thead><tr><th style="width:20%">项目</th><th class="c" style="width:16%">右眼 OD</th><th class="c" style="width:16%">左眼 OS</th><th style="width:48%">判读</th></tr></thead>
+          <tbody>
+            <tr><td>远用矫正视力</td><td class="c"></td><td class="c"></td><td>不达标需查明原因，勿直接归因老视</td></tr>
+            <tr><td>远用屈光度</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>近附加 ADD</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>近用视力（含ADD）</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>眼压</td><td class="c"></td><td class="c"></td><td>&gt;21 mmHg 需提示就医</td></tr>
+            <tr><td>裂隙灯（晶体）</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>眼底照相</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>瞳距 / 瞳高</td><td class="c"></td><td class="c"></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sec-title">三、我们发现的情况</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">看近需要拿远、光线暗时更明显（老视表现）</span><span class="check"><input type="checkbox">远近切换频繁，现用眼镜顾此失彼</span></div>
+        <div><span class="check"><input type="checkbox">原有近用镜度数与本次检查有偏差</span><span class="check"><input type="checkbox">矫正视力未达应有水平，<b>需进一步查明原因</b></span></div>
+        <div><span class="check"><input type="checkbox">晶体透明度有改变，建议由医生评估</span><span class="check"><input type="checkbox">眼底/眼压项目建议由医生评估</span></div>
+        <div><span class="check"><input type="checkbox">干涩、异物感，影响配戴舒适度</span><span class="check"><input type="checkbox">其他：__________________</span></div>
+        <div class="line2" style="margin-top:8px"><label>对日常的影响：</label><span class="fill"></span></div>
+      </div>
+
+      <div class="sec-title">四、建议方案</div>
+      <div class="blk">
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin-bottom:4px">必做项</div>
+        <div><span class="check"><input type="checkbox">按本次处方配镜，保证远用清晰与近用舒适</span><span class="check"><input type="checkbox">渐进片适应期 1-2 周，按指导方式使用</span></div>
+        <div><span class="check"><input type="checkbox">瞳高需现场点瞳测量，不得沿用旧值</span><span class="check"><input type="checkbox">上下楼梯、起身时先低头或用余光，转头不转眼</span></div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">建议做项</div>
+        <div><span class="check"><input type="checkbox">按使用场景配置专用镜（如电脑镜、驾驶镜）</span><span class="check"><input type="checkbox">改善居家照明，近用区域增加局部光源</span></div>
+        <div><span class="check"><input type="checkbox">每年一次眼压与眼底检查，配套慢病随访</span><span class="check"><input type="checkbox">干涩明显者同步做泪膜评估</span></div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">可选项</div>
+        <div><span class="check"><input type="checkbox">变色/偏光片评估</span><span class="check"><input type="checkbox">备用近用镜</span><span class="check"><input type="checkbox">其他：______</span></div>
+        <div class="hint">矫正视力不达标、眼压异常、眼底异常者，先就医再定配镜方案，本建议书不给出产品结论。</div>
+      </div>
+
+      <div class="sec-title">五、复查计划与确认</div>
+      <div class="blk">
+        <div class="line2"><label>取镜后随访日期：</label><span class="fill" style="max-width:calc(170px * var(--fs))"></span><label>下次复查日期：</label><span class="fill" style="max-width:calc(170px * var(--fs))"></span></div>
+        <div class="line2" style="margin-top:8px"><label>方案意向：</label><span class="check"><input type="checkbox">同意按建议执行</span><span class="check"><input type="checkbox">先部分执行</span><span class="check"><input type="checkbox">再考虑/另行咨询</span></div>
+        <div class="sig"><span>顾客签字：</span>____________　<span>视光师签字：</span>____________　<span>日期：</span>____________</div>
+      </div>
+      <div class="decl">本建议书为永州爱眼城依据本次检查数据提供的<b>验配建议与健康宣教</b>，<b>不构成医疗诊断</b>。老视是随年龄出现的生理现象，配镜目标是提高生活便利与舒适度；如矫正视力达不到应有水平，需由爱眼城眼科查明原因。</div>
+    </div>
+  </div>
+
+  <!-- ==================== 模板 D ==================== -->
+  <h2 class="sec">模板 D · 双眼视功能异常 / 视觉训练型</h2>
+  <div class="form">
+    <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（双眼视功能）</h3><span class="no">编号 D｜全年龄</span></div>
+    <div class="fbody">
+      <div class="fnote"><b>填写要点：</b>①必须写明是<b>哪一项指标</b>异常、顾客对应的<b>具体表现</b>（串行、跳行、看近累）；②训练方案写周期与频次，不写"几个月能好"；③前后用同一组指标复测，有对比才有说服力。<br><b>配套话术：</b>"度数配对了只是第一步，两只眼睛配合得顺不顺，决定了您能不能看得久。这一块我们是单独查的。"</div>
+
+      <div class="sec-title">一、基本信息</div>
+      <div class="blk">
+        <div class="line2"><label>顾客姓名：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>年龄：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>门店：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span><label>视光师：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span></div>
+        <div class="line2"><label>主诉（用顾客原话）：</label><span class="fill"></span></div>
+      </div>
+
+      <div class="sec-title">二、本次关键数据（视功能专项）</div>
+      <div class="blk">
+        <table>
+          <thead><tr><th style="width:24%">项目</th><th class="c" style="width:18%">本次结果</th><th class="c" style="width:18%">参考范围</th><th style="width:40%">提示</th></tr></thead>
+          <tbody>
+            <tr><td>调节幅度</td><td class="c"></td><td class="c"></td><td>低于同龄预期提示调节不足</td></tr>
+            <tr><td>调节灵敏度（Flipper）</td><td class="c"></td><td class="c"></td><td>看远看近切换吃力</td></tr>
+            <tr><td>调节反应 / 滞后</td><td class="c"></td><td class="c"></td><td>滞后偏大与近视进展相关</td></tr>
+            <tr><td>远近隐斜</td><td class="c"></td><td class="c"></td><td>内/外隐斜方向需注明</td></tr>
+            <tr><td>AC/A 比值</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>集合近点 NPC</td><td class="c"></td><td class="c"></td><td>偏远提示集合不足</td></tr>
+            <tr><td>融像范围（BI/BO）</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>立体视</td><td class="c"></td><td class="c"></td><td>明显下降需进一步查明原因</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sec-title">三、我们发现的情况</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">调节不足/调节灵活度下降——看近久了模糊、酸胀</span><span class="check"><input type="checkbox">集合不足——阅读串行、跳行、重影</span></div>
+        <div><span class="check"><input type="checkbox">隐斜量偏大，眼睛需要"额外用力"维持双眼单视</span><span class="check"><input type="checkbox">融像储备不足，长时间用眼后症状加重</span></div>
+        <div><span class="check"><input type="checkbox">立体视下降，需进一步查明原因（必要时转诊）</span><span class="check"><input type="checkbox">其他：__________________</span></div>
+        <div class="line2" style="margin-top:8px"><label>对日常的影响：</label><span class="fill"></span></div>
+      </div>
+
+      <div class="sec-title">四、建议方案</div>
+      <div class="blk">
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin-bottom:4px">必做项</div>
+        <div><span class="check"><input type="checkbox">按本次处方配镜（含必要的近用矫正/棱镜评估）</span><span class="check"><input type="checkbox">阅读距离与姿势调整，每 30 分钟休息</span></div>
+        <div><span class="check"><input type="checkbox">先排除斜视、弱视等需医疗处理的情况</span></div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">建议做项（视觉训练）</div>
+        <div class="line2"><label>训练周期：</label><span class="fill" style="max-width:calc(100px * var(--fs))"></span><label>频次：</label><span class="fill" style="max-width:calc(100px * var(--fs))"></span><label>单次时长：</label><span class="fill" style="max-width:calc(100px * var(--fs))"></span></div>
+        <div><span class="check"><input type="checkbox">院内训练（每周 ______ 次）</span><span class="check"><input type="checkbox">家庭训练（每日 ______ 分钟）</span><span class="check"><input type="checkbox">阶段性复测（每 ______ 周一次）</span></div>
+        <div class="hint">训练目标写"改善调节灵活度/提高看近耐受时间"等<b>功能性描述</b>，<b>不得写</b>"几个月恢复到 1.0""保证不疲劳"。</div>
+        <div style="font-size:14px;color:#1677ff;font-weight:600;margin:8px 0 4px">可选项</div>
+        <div><span class="check"><input type="checkbox">调整阅读照明与字体大小</span><span class="check"><input type="checkbox">学校/工位用眼环境建议</span><span class="check"><input type="checkbox">其他：______</span></div>
+      </div>
+
+      <div class="sec-title">五、复测与确认</div>
+      <div class="blk">
+        <div class="line2"><label>首次复测日期：</label><span class="fill" style="max-width:calc(170px * var(--fs))"></span><label>复测项目（须与本次一致）：</label><span class="fill"></span></div>
+        <div class="line2" style="margin-top:8px"><label>方案意向：</label><span class="check"><input type="checkbox">同意按建议执行</span><span class="check"><input type="checkbox">先部分执行</span><span class="check"><input type="checkbox">再考虑/另行咨询</span></div>
+        <div class="sig"><span>顾客/监护人签字：</span>____________　<span>视光师签字：</span>____________　<span>日期：</span>____________</div>
+      </div>
+      <div class="decl">本建议书为永州爱眼城依据本次检查数据提供的<b>验配建议与视觉训练建议</b>，<b>不构成医疗诊断</b>，视觉训练不等同于疾病治疗。训练效果存在个体差异，以阶段性复测的数据变化为评估依据。如伴有斜视、弱视或矫正视力不达标，请先到爱眼城眼科就诊。</div>
+    </div>
+  </div>
+
+  <!-- ==================== 模板 E ==================== -->
+  <h2 class="sec">模板 E · 角膜塑形镜 / 接触镜验配型</h2>
+  <div class="form">
+    <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（接触镜验配）</h3><span class="no">编号 E｜OK镜 / RGP / 软镜</span></div>
+    <div class="fbody">
+      <div class="fnote"><b>填写要点：</b>①护理规范与复查节点必写，这是安全底线；②"停戴信号"必须让顾客或家长能复述；③配适评估结论写客观描述，不写疗效承诺。<br><b>配套话术：</b>"戴这一类镜片，护理比镜片本身更重要。这三条停戴信号您记住了，基本就安全了。"</div>
+
+      <div class="sec-title">一、基本信息</div>
+      <div class="blk">
+        <div class="line2"><label>顾客姓名：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>年龄：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>门店：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span><label>视光师：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span></div>
+        <div class="line2"><label>镜片类型：</label><span class="check"><input type="checkbox">角膜塑形镜（OK镜）</span><span class="check"><input type="checkbox">RGP</span><span class="check"><input type="checkbox">软性接触镜</span><span class="check"><input type="checkbox">其他：______</span></div>
+        <div class="line2"><label>状态：</label><span class="check"><input type="checkbox">首次验配</span><span class="check"><input type="checkbox">换片</span><span class="check"><input type="checkbox">定期复查</span><label>戴镜时长：</label><span class="fill" style="max-width:calc(100px * var(--fs))"></span></div>
+      </div>
+
+      <div class="sec-title">二、本次关键数据与配适评估</div>
+      <div class="blk">
+        <table>
+          <thead><tr><th style="width:22%">项目</th><th class="c" style="width:18%">右眼 OD</th><th class="c" style="width:18%">左眼 OS</th><th style="width:42%">说明</th></tr></thead>
+          <tbody>
+            <tr><td>屈光度（SE / 散光）</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>角膜曲率 K1/K2</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>角膜地形图</td><td class="c"></td><td class="c"></td><td>形态描述，异常征象需转诊</td></tr>
+            <tr><td>眼轴长度</td><td class="c"></td><td class="c"></td><td>年化增长 ______ mm/年</td></tr>
+            <tr><td>角膜直径 / 瞳孔</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>配适评估（荧光图）</td><td class="c"></td><td class="c"></td><td>定位、活动度、着陆区</td></tr>
+            <tr><td>戴镜视力 / 裸眼视力</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>角膜上皮情况</td><td class="c"></td><td class="c"></td><td>染色阳性需记录并随访</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sec-title">三、我们发现的情况</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">镜片定位/活动度需调整</span><span class="check"><input type="checkbox">角膜上皮有染色，需加强观察与护理</span></div>
+        <div><span class="check"><input type="checkbox">眼轴仍有增长，需结合其他管理手段</span><span class="check"><input type="checkbox">护理操作存在不规范环节（已现场纠正）</span></div>
+        <div><span class="check"><input type="checkbox">镜片使用已到期或接近更换周期</span><span class="check"><input type="checkbox">角膜形态异常征象，<b>需转诊</b></span></div>
+        <div><span class="check"><input type="checkbox">其他：______________________</span></div>
+      </div>
+
+      <div class="sec-title">四、护理规范与复查要求（必写项）</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">摘戴前洗手，指甲修剪，不使用毛巾/纸巾擦拭镜片</span><span class="check"><input type="checkbox">使用指定护理液，<b>不使用自来水、口水</b>冲洗镜片</span></div>
+        <div><span class="check"><input type="checkbox">镜盒每次更换护理液，每周清洁、每 3 个月更换</span><span class="check"><input type="checkbox">感冒、发热、眼部不适期间暂停佩戴</span></div>
+        <div><span class="check"><input type="checkbox">不戴镜游泳、过夜佩戴须按处方执行</span><span class="check"><input type="checkbox">镜片到期及时更换，不超期使用</span></div>
+        <div style="font-size:14px;color:#d94b4b;font-weight:600;margin:8px 0 4px">出现以下任一情况，立即停戴并联系门店 / 就诊：</div>
+        <div><span class="check"><input type="checkbox">眼红、眼痛、畏光、流泪明显</span><span class="check"><input type="checkbox">视力突然下降或视物模糊加重</span><span class="check"><input type="checkbox">分泌物增多、异物感持续不缓解</span></div>
+        <div class="line2" style="margin-top:6px"><label>复查节点：戴后 1 天 / 1 周 / 1 个月 / 之后每</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span>个月一次（已勾选执行）</div>
+        <div class="line2"><label>下次复查日期：</label><span class="fill" style="max-width:calc(170px * var(--fs))"></span><label>复查项目：</label><span class="fill"></span></div>
+      </div>
+
+      <div class="sec-title">五、确认</div>
+      <div class="blk">
+        <div class="line2"><label>我已学会摘戴与护理，并能复述三条停戴信号：</label><span class="check"><input type="checkbox">是</span><span class="check"><input type="checkbox">需再练习一次</span></div>
+        <div class="sig"><span>顾客/监护人签字：</span>____________　<span>视光师签字：</span>____________　<span>日期：</span>____________</div>
+      </div>
+      <div class="decl">本建议书为永州爱眼城依据本次检查数据提供的<b>接触镜验配与护理建议</b>，<b>不构成医疗诊断</b>。角膜塑形镜等属于医疗器械，须严格按处方与护理规范使用并定期复查；出现眼部不适请及时停戴并就诊。</div>
+    </div>
+  </div>
+
+  <!-- ==================== 模板 F ==================== -->
+  <h2 class="sec">模板 F · 转诊提示型（红线指标专用）</h2>
+  <div class="form">
+    <div class="fhead" style="background:#d94b4b"><h3>永州爱眼城 · 转诊提示与就诊建议书</h3><span class="no">编号 F｜出现红线指标时使用</span></div>
+    <div class="fbody">
+      <div class="fnote"><b>使用规则：</b>凡触发模块12所列12类情况之一，<b>本表优先于任何其他模板</b>，且<b>不得同时出具产品推荐</b>。填写后当场交顾客，3 日内电话回访是否就诊。<br><b>配套话术：</b>"这一项我不能给您下结论，必须让医生看。我已经帮您写在单子上了，您这两天就去，别拖。"</div>
+
+      <div class="sec-title">一、基本信息</div>
+      <div class="blk">
+        <div class="line2"><label>顾客姓名：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>性别：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>年龄：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>联系电话：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span></div>
+        <div class="line2"><label>门店：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span><label>视光师：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span><label>陪同人：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span></div>
+      </div>
+
+      <div class="sec-title">二、需就诊的异常项（勾选，可多选）</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">眼压偏高</span><span class="check"><input type="checkbox">杯盘比偏大/不对称</span><span class="check"><input type="checkbox">眼底可见异常</span></div>
+        <div><span class="check"><input type="checkbox">矫正视力不达标且无法用屈光解释</span><span class="check"><input type="checkbox">儿童疑似弱视</span><span class="check"><input type="checkbox">显性斜视</span></div>
+        <div><span class="check"><input type="checkbox">眼球震颤/异常头位</span><span class="check"><input type="checkbox">急性症状（视力骤降、眼痛、闪光感等）</span></div>
+        <div><span class="check"><input type="checkbox">角膜形态异常（地形图）</span><span class="check"><input type="checkbox">晶状体混浊</span><span class="check"><input type="checkbox">眼轴异常增长</span></div>
+        <div><span class="check"><input type="checkbox">糖尿病/高血压相关眼底需评估</span><span class="check"><input type="checkbox">其他：__________________</span></div>
+        <div class="line2" style="margin-top:8px"><label>本次实测值（写具体数字）：</label><span class="fill"></span></div>
+        <div class="line2"><label></label><span class="fill"></span></div>
+      </div>
+
+      <div class="sec-title">三、我们已做的与未做的（明确边界）</div>
+      <div class="blk">
+        <div class="line2"><label>本次已完成的检查：</label><span class="fill"></span></div>
+        <div class="line2"><label>门店无法判断、需由医生确认的：</label><span class="fill"></span></div>
+        <div class="hint">如实说明门店检查的用途是筛查与配镜参考，不替代眼科的检查与诊断。</div>
+      </div>
+
+      <div class="sec-title">四、就诊建议</div>
+      <div class="blk">
+        <div><span class="check"><input type="checkbox">建议<b>尽快</b>就诊（数日内）</span><span class="check"><input type="checkbox">建议<b>当天/急诊</b>就诊</span><span class="check"><input type="checkbox">建议纳入定期筛查（每 ______ 个月）</span></div>
+        <div class="line2" style="margin-top:8px"><label>建议就诊科室：</label><span class="fill" style="max-width:calc(180px * var(--fs))"></span><label>需携带材料：</label><span class="fill"></span></div>
+        <div class="line2"><label>配镜安排：</label><span class="check"><input type="checkbox">暂缓配镜，待就诊后再定</span><span class="check"><input type="checkbox">可先按现有处方维持</span><span class="check"><input type="checkbox">其他：______</span></div>
+        <div class="warn" style="margin:10px 0 0"><b>本表不给出任何产品方案。</b>在医生出具诊断前，不得向顾客推荐镜片、训练或任何干预产品。</div>
+        <div class="hint">转诊去向统一为<b>爱眼城眼科</b>（科室按实际勾填：小儿眼科 / 眼表 / 眼底 / 青光眼等）；遇急性症状或爱眼城眼科闭诊时段，<b>就近前往有眼科急诊的医院，不得因去向而拖延</b>。顾客坚持去其他医疗机构时，正常出具本表、正常回访。</div>
+      </div>
+
+      <div class="sec-title">五、回访与确认</div>
+      <div class="blk">
+        <div class="line2"><label>回访日期：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span><label>回访结果：</label><span class="check"><input type="checkbox">已就诊</span><span class="check"><input type="checkbox">未就诊（已再次提醒）</span><span class="check"><input type="checkbox">联系不上</span></div>
+        <div class="line2"><label>我已听懂该项异常需由医生判断：</label><span class="check"><input type="checkbox">是</span><span class="check"><input type="checkbox">仍有疑问</span></div>
+        <div class="sig"><span>顾客/监护人签字：</span>____________　<span>视光师签字：</span>____________　<span>店长确认：</span>____________　<span>日期：</span>____________</div>
+      </div>
+      <div class="decl">本表为永州爱眼城依据本次检查数据出具的<b>转诊提示</b>，<b>不构成医疗诊断</b>，也不能替代执业医师的诊断与治疗方案。请尽早前往爱眼城眼科就诊，并将医生的诊断意见反馈给我们，以便后续为您提供合适的验配服务。</div>
+    </div>
+  </div>
+
+  <h2 class="sec">三、模板使用与版本管理</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:20%">事项</th><th style="width:40%">要求</th><th style="width:40%">责任人 / 频率</th></tr></thead>
+      <tbody>
+        <tr><td>印制与领用</td><td>六份模板各印 100 份/店，按 A-F 分格存放；领用登记，避免混用</td><td>行政｜每月盘点一次</td></tr>
+        <tr><td>填写责任</td><td>由视光师填写，转诊型（F）须由店长复核签字</td><td>视光师 / 店长｜每份</td></tr>
+        <tr><td>归档</td><td>底联与《报告解读记录表》同号归档，保存不少于 2 年</td><td>店长｜每日收齐</td></tr>
+        <tr><td>抽查</td><td>店长每周抽查 5 份，重点看：差值是否填写、复查日期是否具体、有无禁语</td><td>店长｜每周</td></tr>
+        <tr><td>修订</td><td>每季度收集一次门店反馈，修订勾选项与话术，版本号递增</td><td>内训师｜每季度</td></tr>
+      </tbody>
+    </table>
+    <div class="good"><b>一句话判断建议书写得好不好：</b>顾客带回家后，能不能<b>不看报告也讲得出</b>"我哪一项有问题、我该做什么、我什么时候再来"。讲得出，就是合格的；讲不出，就是写得太专业了。</div>
+  </div>
+
+  <div class="btnwrap">
+    <button class="btn" onclick="window.print()">打印全套模板</button>
+    <a class="btn ghost" href="index.html">返回首页</a>
+    <a class="btn ghost" href="07_记录表与方案建议书.html">查看通用版建议书</a>
+    <a class="btn ghost" href="14_情景卡库30张演练卡.html">下一模块 →</a>
+  </div>
+</div>
+
+<footer>
+  <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 模块 13</b><br>
+  编制：闫胜君整理 ｜ 适用门店：零陵8家、冷水滩2家、祁阳5家 ｜ 归口部门：视光运营部<br>
+  说明：本模板集用于门店验配服务与健康宣教，<b>不构成医疗诊断</b>；模板中勾选项为常见情形提示，实际填写以顾客本次检查数据为准；凡涉及红线指标一律使用 F 模板并转诊。
+</footer>
+</body>
+</html>
