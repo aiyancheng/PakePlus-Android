@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块14 · 情景卡库（30张演练卡）| 永州爱眼城 检查报告解读标准化方案</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.72;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:calc(18px * var(--fs));font-weight:700}
+.topbar .meta{font-size:calc(13px * var(--fs));opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:calc(13.5px * var(--fs));color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:calc(22px * var(--fs));color:#1677ff;margin:0 auto 6px;line-height:1.45;text-align:center}
+.lead{text-indent:2em;color:#5b6b7d;font-size:calc(15.5px * var(--fs));margin-bottom:20px;max-width:1040px}
+h2.sec{font-size:calc(20px * var(--fs));color:#1677ff;margin:30px 0 12px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+h3.sub{font-size:calc(16.5px * var(--fs));color:#1677ff;margin:16px 0 8px}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:18px 22px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:calc(14.3px * var(--fs));margin-bottom:10px}
+th,td{border:1px solid #dae3f5;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600}
+tbody tr:nth-child(even){background:#fafcff}
+ul,ol{margin:6px 0 10px 20px;font-size:calc(15px * var(--fs))}
+li{margin-bottom:5px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#6b4a25;margin:14px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#1f5c40;margin:14px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#7d2b2b;margin:14px 0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 16px}
+.steps .box{background:#fff;border:1px solid #dae3f5;border-radius:10px;padding:12px 14px}
+.steps .box h4{font-size:calc(15px * var(--fs));color:#1677ff;margin-bottom:5px}
+.steps .box p{font-size:calc(13.6px * var(--fs));color:#45596e;margin:0}
+.scards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px}
+.scard{background:#fff;border:1px solid #dae3f5;border-radius:10px;padding:12px 14px;page-break-inside:avoid;box-shadow:0 1px 3px rgba(22,119,255,.06)}
+.schead{display:flex;gap:7px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #e8f1ff;padding-bottom:7px;margin-bottom:8px}
+.no{background:#1677ff;color:#fff;border-radius:6px;padding:2px 9px;font-weight:700;font-size:calc(13px * var(--fs))}
+.tg{font-size:calc(12px * var(--fs));border-radius:4px;padding:1px 7px;border:1px solid #dae3f5;color:#45596e;background:#f7faff}
+.tg-child{color:#1677ff;border-color:#c9dfff;background:#f1f6ff}
+.tg-adult{color:#2e9e6b;border-color:#bde3cd;background:#eaf7f0}
+.tg-old{color:#e07b39;border-color:#f4d3b0;background:#fdf1e7}
+.tg-p{color:#b32727;border-color:#f3c4c4;background:#fdecec}
+.st{margin-left:auto;color:#e07b39;font-size:calc(12.5px * var(--fs));letter-spacing:1px}
+.scard p{font-size:calc(13.6px * var(--fs));color:#233247;margin:0 0 5px;line-height:1.65}
+.scard p b{color:#1677ff}
+.scard p.kill{background:#fdecec;border-radius:6px;padding:5px 8px;color:#7d2b2b;margin-top:6px}
+.scard p.kill b{color:#b32727}
+.gtag{display:inline-block;font-size:calc(12px * var(--fs));background:#1677ff;color:#fff;border-radius:4px;padding:1px 8px;margin-left:6px}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:calc(13.5px * var(--fs));line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:calc(14px * var(--fs));cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media (max-width:900px){.scards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+@media print{@page{size:A4;margin:10mm}.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:11.5px}.scard,.card{border-color:#999;box-shadow:none}.scards{gap:8px}}
+</style>
+<!-- LAYOUT-V2 -->
+<style>
+/* ==========================================================================
+   平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
+   只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
+   ========================================================================== */
+:root{
+  --fs:1;            /* 字号/组件缩放系数 */
+  --wrap:1180px;     /* 正文容器最大宽度 */
+  --wpx:22px;        /* 容器左右留白 */
+  --wpy:26px;        /* 容器上留白 */
+  --cy:9px; --cx:12px;  /* 表格单元格内边距 */
+  --subh:44px;       /* 吸顶导航高度 */
+}
+/* 平板（横屏 1280 / 竖屏 800 均命中）：整站同比缩放，--fs=1.02（较上一版 -11.3%） */
+@media screen and (min-width:641px) and (max-width:1400px){
+  :root{--fs:1.02;--wrap:1160px;--wpx:24px;--wpy:20px;--cy:11px;--cx:13px;--subh:44px}
+}
+@media screen and (max-width:640px){
+  :root{--fs:1.04;--wrap:100%;--wpx:14px;--wpy:16px;--cy:9px;--cx:10px;--subh:44px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","HarmonyOS Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;letter-spacing:.012em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:rgba(22,119,255,.12);
+}
+::selection{background:#c9dfff;color:#0b3d91}
+
+/* ---------- 容器与页头 ---------- */
+body .wrap{max-width:var(--wrap);padding:var(--wpy) var(--wpx) 72px}
+body .hero{padding:26px var(--wpx) 24px}
+body .topbar{padding:14px var(--wpx);gap:12px}
+body footer{padding:20px var(--wpx);line-height:1.9}
+
+/* ---------- 吸顶导航：翻到任何位置都能一眼跳模块 ---------- */
+body .subnav{
+  position:sticky;top:0;z-index:80;
+  min-height:var(--subh);
+  padding:calc((var(--subh) - 1.5em - 1px) / 2) var(--wpx);
+  line-height:1.5;
+  white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+  background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 2px 12px rgba(22,119,255,.07);
+  scrollbar-width:none;
+}
+body .subnav::-webkit-scrollbar{height:0}
+body .subnav a{white-space:nowrap;padding:0 1px;text-decoration:none}
+
+/* ---------- 标题节奏与锚点定位 ---------- */
+body h1.t{line-height:1.45}
+body h2.sec{margin:38px 0 16px;line-height:1.4}
+body h2.sec,body h3.sub,body h3.sub2,body .card,body .step,body .form,body .item{
+  scroll-margin-top:calc(var(--subh) + 16px);
+}
+body .lead{margin-bottom:24px;line-height:1.85}
+
+/* ---------- 卡片 / 提示块 ---------- */
+body .card{padding:20px 24px;margin-bottom:18px;border-radius:14px}
+body .note,body .good,body .warn{padding:15px 18px;margin:16px 0;border-radius:10px;line-height:1.8}
+body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:16px 18px}
+body .case{padding:16px 20px;margin-bottom:16px}
+body .case .txt{padding:12px 15px}
+body .quote{padding:12px 16px;margin:10px 0}
+body .scard{padding:14px 16px}
+body .fnode{padding:12px 16px}
+body .step .hd,body .form .fhead{padding:13px 22px}
+body .form .fbody{padding:18px 22px}
+body .peopledet .hd{padding:16px 24px}
+body .daybar{padding:12px 18px;margin:26px 0 14px}
+body .sec-title{padding:9px 12px}
+body .blk{padding:12px 14px}
+body .line2{gap:14px;margin-bottom:10px}
+body .check{margin-right:16px}
+
+/* ---------- 表格：更容易一行一行读下去 ---------- */
+body table{
+  border-collapse:separate;border-spacing:0;border-radius:12px;
+  line-height:1.62;margin:12px 0 16px;
+}
+body th,body td{
+  border:0;
+  border-right:1px solid #dae3f5;border-bottom:1px solid #dae3f5;
+  padding:var(--cy) var(--cx);
+  overflow-wrap:break-word;
+}
+body th{
+  background:linear-gradient(180deg,#f1f7ff,#e4eeff);
+  color:#0b3d91;font-weight:700;letter-spacing:.02em;
+text-align:center;}
+body thead th{
+  border-top:1px solid #dae3f5;
+  position:sticky;top:calc(var(--subh) + 1px);z-index:6;
+}
+body tr>th:first-child,body tr>td:first-child{border-left:1px solid #dae3f5}
+body table>thead>tr:first-child>th:first-child{border-top-left-radius:12px}
+body table>thead>tr:first-child>th:last-child{border-top-right-radius:12px}
+body table:not(:has(thead))>tbody>tr:first-child>td:first-child{border-top-left-radius:12px;border-top:1px solid #dae3f5}
+body table:not(:has(thead))>tbody>tr:first-child>td:last-child{border-top-right-radius:12px;border-top:1px solid #dae3f5}
+body table>tbody>tr:last-child>td:first-child{border-bottom-left-radius:12px}
+body table>tbody>tr:last-child>td:last-child{border-bottom-right-radius:12px}
+body tbody tr:nth-child(even)>td{background:#fafcff}
+body tbody tr:hover>td{background:#eef5ff}
+body tbody td{transition:background .15s}
+body table.ct th,body table.ct td{text-align:center;vertical-align:middle}
+
+/* ---------- 触控友好：按钮、胶囊、复选框 ---------- */
+body .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 20px;border-radius:10px;
+}
+body .btnwrap{margin:30px 0 10px}
+body .chips{gap:10px}
+body .chips a,body .idxbar a{
+  display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:10px;
+}
+body .idxbar{gap:10px;margin-bottom:20px}
+body .check input,body input[type=checkbox]{width:18px;height:18px;accent-color:#1677ff}
+body .fill{min-height:1.35em}
+body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:3px 9px;border-radius:6px}
+body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:3px 10px}
+body .farrow,body .story .arrow{padding:0 2px}
+body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fill:focus-visible{
+  outline:2px solid #1677ff;outline-offset:2px;border-radius:6px;
+}
+
+/* ---------- 小屏栅格回流（仅屏幕，不影响打印分栏） ---------- */
+@media screen and (max-width:1000px){
+  body .steps{grid-template-columns:1fr 1fr !important}
+}
+@media screen and (max-width:900px){
+  body .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important}
+  body .scards,body .pkg4{grid-template-columns:1fr !important}
+  body .scards{gap:10px}
+}
+@media screen and (max-width:640px){
+  body .grid,body .steps,body .kpi,body .kpi4,body .lv,body .chk,
+  body .std,body .three{grid-template-columns:1fr !important}
+  body .subnav{padding-left:12px;padding-right:12px}
+}
+
+/* ---------- 打印兜底：恢复紧凑版式，A4 友好 ---------- */
+/* ---------- 平板档专项：行高 / 间距 / 图标同步收缩（仅 641–1400px） ---------- */
+@media screen and (min-width:641px) and (max-width:1400px){
+  body{line-height:1.62;letter-spacing:.008em}
+  body .wrap{padding:20px var(--wpx) 64px}
+  body .hero{padding:22px var(--wpx) 20px}
+  body .topbar{padding:12px var(--wpx);gap:10px}
+  body footer{padding:17px var(--wpx);line-height:1.72}
+  body .subnav{line-height:1.45}
+  body h2.sec{margin:32px 0 14px;line-height:1.38}
+  body .lead{margin-bottom:20px;line-height:1.68}
+  body .card{padding:16px 20px;margin-bottom:15px;border-radius:12px}
+  body .note,body .good,body .warn{padding:12px 15px;margin:13px 0;border-radius:9px;line-height:1.62}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:13px 15px}
+  body .case{padding:13px 16px;margin-bottom:13px}
+  body .case .txt{padding:10px 13px}
+  body .quote{padding:10px 13px;margin:8px 0}
+  body .scard{padding:12px 14px}
+  body .fnode{padding:10px 14px}
+  body .step .hd,body .form .fhead{padding:11px 18px}
+  body .form .fbody{padding:15px 18px}
+  body .peopledet .hd{padding:13px 20px}
+  body .daybar{padding:10px 15px;margin:22px 0 12px}
+  body .sec-title{padding:7px 10px}
+  body .blk{padding:10px 12px}
+  body .line2{gap:12px;margin-bottom:8px}
+  body .check{margin-right:13px}
+  body table{line-height:1.5;margin:10px 0 14px;border-radius:10px}
+  body .btn{min-height:42px;padding:8px 17px;border-radius:9px}
+  body .btnwrap{margin:26px 0 8px}
+  body .chips{gap:9px}
+  body .chips a,body .idxbar a{min-height:40px;padding:7px 12px;border-radius:9px}
+  body .idxbar{gap:9px;margin-bottom:17px}
+  body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:2px 8px;border-radius:5px}
+  body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:2px 8px}
+}
+@media print{
+  :root{--fs:1;--wpx:0;--wpy:0}
+  body{line-height:1.55;letter-spacing:0;background:#fff}
+  body .wrap{max-width:none;padding:0 0 8px}
+  body .topbar,body .btnwrap{box-shadow:none}
+  body .subnav{position:static;box-shadow:none;background:#fff;overflow:visible;white-space:normal;
+    min-height:0;padding:0 0 6px}
+  body .card{padding:10px 12px;margin-bottom:10px;border-radius:0;box-shadow:none}
+  body .note,body .good,body .warn{padding:8px 10px;margin:8px 0;border-radius:0}
+  body .step .hd,body .form .fhead,body .form .fbody,body .peopledet .hd,body .daybar{padding:7px 10px}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item,body .case,body .scard{
+    padding:8px 10px;border-radius:0;box-shadow:none}
+  body table{border-collapse:collapse;border-radius:0;margin:6px 0 10px}
+  body thead th{position:static}
+  body th,body td{border:1px solid #cbd5e1;padding:4px 6px}
+  body th{background:#e8f1ff !important;color:#0b3d91 !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body tbody tr:nth-child(even)>td{background:#fafcff !important}
+  body tbody tr:hover>td{background:transparent !important}
+}
+</style>
+<!-- /LAYOUT-V2 -->
+<!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
+<style>
+/* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
+   text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
+   恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
+body .wrap p,
+body .hero p{text-indent:2em;overflow-wrap:break-word}
+
+/* 相邻正文段落间距：用 margin 分隔，不插空行伪造缩进 */
+body .wrap p + p{margin-top:.5em}
+
+/* ---- 例外：以下不属于"正文段落"，一律不缩进（选择器特异性高于上方规则） ---- */
+/* 结构元素：列表项内 / 表格单元格 / 图注 / 代码 / 引用块 / 页眉页脚导航 */
+body .wrap :is(li,td,th,caption,figcaption,dt,dd,pre,code,blockquote,figure) p,
+body .topbar p,body .subnav p,body footer p,body .btnwrap p,
+/* 组件化短行：四大板块标签、KPI 数值卡说明行、人群卡元信息行 */
+body .wrap .pkg4 p,body .wrap .kpi p,body .wrap .kpi4 p,body .wrap .hd p,
+/* 字段行（注入时自动识别并加 ni 类），以及手工豁免 */
+body .wrap p.ni,body .wrap .ni p,
+/* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
+body p:lang(en),body p.en{text-indent:0}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta">模块 14 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+</div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="13_方案建议书标准模板集.html">13 建议书模板集</a> ｜ 下一模块：<a href="15_新人三天集训执行方案.html">15 新人三天集训方案</a> ｜ 关联：<a href="10_培训演练与考核指标.html">10 培训演练与考核</a></div>
+
+<div class="wrap">
+  <h1 class="t">模块 14 · 情景卡库（30 张演练卡）</h1>
+  <p class="lead">这是模块10「角色扮演」的弹药箱。30 张卡＝30 个真实顾客，把门店最常遇到、也最容易讲砸的局面全部演一遍：<b>顾客方照着卡演，视光师照着七步讲，旁观者照着卡打分</b>。卡片可以直接打印裁剪，一卡一人一场，全员轮完再进压力题。</p>
+
+  <h2 class="sec">一、这套卡怎么用（演练四步法）</h2>
+  <div class="steps">
+    <div class="box"><h4>① 抽卡</h4><p>从本模块抽 1 张（常规题优先，压力题需先通过常规题）。抽卡人只把「场景+顾客设定+参考数据」给顾客方看，视光师事先不看。</p></div>
+    <div class="box"><h4>② 演</h4><p>顾客方按卡上的设定提问、质疑、给压力，不得自由发挥加戏。视光师完整走一遍七步，允许查模块03判定表。</p></div>
+    <div class="box"><h4>③ 评</h4><p>第三人持《实操考评表》（模块10）打分，重点看本卡「考察重点」是否全部命中，出现「否决项」即整场不合格。</p></div>
+    <div class="box"><h4>④ 复盘</h4><p>当场给 3 条反馈：做对 1 条 / 可改 1 条 / 下次重点 1 条。不合格者一周内换同人群另一张卡重考，不得重复抽同一张。</p></div>
+  </div>
+  <div class="note"><b>使用的三条纪律：</b>① 卡片数据均为<b>演练用虚构数据</b>，不得作为真实案例对外讲述，也不得写进宣传物料；② 演练中出现的错误话术（如"保证不涨"）必须在复盘时当场纠正并记录在《晨会演练记录本》；③ 卡片属于内部培训资料，不外借、不上传网络。</div>
+
+  <h2 class="sec">二、抽卡规则与评分标准</h2>
+  <table>
+    <thead><tr><th style="width:16%">项目</th><th style="width:26%">常规题（S-01 ~ S-21 中的常规卡）</th><th style="width:26%">压力题（标注「压力」的 10 张）</th><th style="width:32%">说明</th></tr></thead>
+    <tbody>
+      <tr><td><b>通过线</b></td><td>≥ 85 分</td><td>≥ 80 分即可通过</td><td>压力题的难点在"扛住"，不在"说服"</td></tr>
+      <tr><td><b>七步完整</b></td><td>七步缺一步即扣 10 分</td><td>允许简化第⑥⑦步，但第①②步不得跳过</td><td>第②步异常值扫描是硬指标</td></tr>
+      <tr><td><b>回答顺序</b></td><td colspan="2">必须"先共情 → 再讲数据 → 后给方案"，先报价或先推产品扣 15 分</td><td>顺序错误是最常见失分点</td></tr>
+      <tr><td><b>一票否决</b></td><td colspan="2">出现卡片「否决项」任一条 = 本场 0 分，记录在案</td><td>否决项均涉及合规红线，无商量余地</td></tr>
+      <tr><td><b>重考</b></td><td colspan="2">不合格者 7 日内重考，换卡不换人群；连续两次不合格暂停独立解读，跟诊 2 周</td><td>同人群换卡，避免背答案</td></tr>
+      <tr><td><b>抽考</b></td><td colspan="2">每周五晨会抽查 1 张，全员轮流；店长记录，月度汇总</td><td>对接模块10 常态化训练</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec">三、卡库总览（30 张索引）</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:7%">编号</th><th style="width:11%">人群</th><th style="width:8%">题型</th><th style="width:29%">情景主题</th><th style="width:38%">核心考察点</th><th style="width:7%">难度</th></tr></thead>
+      <tbody>
+        <tr><td>S-01</td><td>儿童青少年</td><td>常规</td><td>首次配镜，家长不认"近视"</td><td>共情开场；不下"假性近视"结论；建立眼轴档案</td><td>★★</td></tr>
+        <tr><td>S-02</td><td>儿童青少年</td><td>常规</td><td>一年涨 100 度</td><td>用年化增速切入，而不是单次度数；讲"控速"不讲"不涨"</td><td>★★★</td></tr>
+        <tr><td>S-03</td><td>儿童青少年</td><td>常规</td><td>远视储备不足</td><td>解释储备概念；不渲染恐慌；给户外与用眼方案</td><td>★★★</td></tr>
+        <tr><td>S-04</td><td>儿童青少年</td><td>常规</td><td>家长问"能不能只靠滴眼液/中医调理"</td><td>不碰药品；不做疗效评价；转到可执行的行为方案</td><td>★★</td></tr>
+        <tr><td>S-05</td><td>儿童青少年</td><td>常规</td><td>孩子不肯戴镜，怕同学笑</td><td>儿童心理沟通；把戴镜讲成"看得清才学得动"</td><td>★★</td></tr>
+        <tr><td>S-06</td><td>儿童青少年</td><td>常规</td><td>家长问要不要配角膜塑形镜 / 离焦镜</td><td>讲适用条件与前置检查；只讲项目不讲疗效承诺</td><td>★★★★</td></tr>
+        <tr><td>S-07</td><td>儿童青少年</td><td>常规</td><td>度数够了看近仍累（双眼视功能异常）</td><td>解释"度数不是唯一原因"；先排斜弱视再谈训练</td><td>★★★★</td></tr>
+        <tr><td>S-08</td><td>儿童青少年</td><td>压力</td><td>母亲要求"保证不涨，否则退款"</td><td>守住边界；把承诺改为可控目标与复查节奏</td><td>★★★★</td></tr>
+        <tr><td>S-09</td><td>儿童青少年</td><td>压力</td><td>外婆说"长大做个手术就行"</td><td>讲清手术解决度数、不解决眼底风险；不冒犯长辈</td><td>★★★</td></tr>
+        <tr><td>S-10</td><td>儿童青少年</td><td>压力</td><td>家长拿网上文章质疑"眼轴检查没必要"</td><td>不反驳顾客；用自家历史数据说明价值</td><td>★★★★</td></tr>
+        <tr><td>S-11</td><td>儿童青少年</td><td>压力</td><td>家长认定"你们就是推销"，全程录像</td><td>情绪稳定；先问需求；不推高单价；规范留痕</td><td>★★★★</td></tr>
+        <tr><td>S-12</td><td>成年人</td><td>常规</td><td>度数没变，要不要换镜</td><td>区分屈光度未变与镜片磨损、瞳距、镜架变形</td><td>★★</td></tr>
+        <tr><td>S-13</td><td>成年人</td><td>常规</td><td>长期电脑工作，重度视疲劳</td><td>先查视功能与泪膜，而不是简单加度数</td><td>★★★</td></tr>
+        <tr><td>S-14</td><td>成年人</td><td>常规</td><td>眼干、异物感、早上睁不开眼</td><td>区分筛查与诊断；不推荐药品；说明就诊时机</td><td>★★★</td></tr>
+        <tr><td>S-15</td><td>成年人</td><td>常规</td><td>夜间开车眩光、看不清路牌</td><td>散光矫正与镜片光学质量；必要时提示就诊</td><td>★★★</td></tr>
+        <tr><td>S-16</td><td>成年人</td><td>常规</td><td>隐形眼镜配戴十年，近期红眼</td><td>识别角膜缺氧信号并转诊；不鼓励继续戴</td><td>★★★★</td></tr>
+        <tr><td>S-17</td><td>成年人</td><td>常规</td><td>双眼度数差 200 度（屈光参差）</td><td>不等像、易疲劳、双眼视与驾驶安全</td><td>★★★</td></tr>
+        <tr><td>S-18</td><td>成年人</td><td>常规</td><td>高度近视，眼底提示需定期随访</td><td>讲清高度近视眼底风险与随访间隔；转诊边界</td><td>★★★★</td></tr>
+        <tr><td>S-19</td><td>成年人</td><td>压力</td><td>"你们就是想卖东西"</td><td>只讲数据不给压力；给"什么都可以不选"的选项</td><td>★★★★</td></tr>
+        <tr><td>S-20</td><td>成年人</td><td>压力</td><td>"我只有 5 分钟"</td><td>时间不够时的取舍：宁少讲不跳步；留记录表下次接</td><td>★★★</td></tr>
+        <tr><td>S-21</td><td>成年人</td><td>压力</td><td>反复比价，要求照抄别家度数</td><td>不贬低同行；说明验光流程价值；不承诺价格</td><td>★★★</td></tr>
+        <tr><td>S-22</td><td>中老年</td><td>常规</td><td>55 岁看近模糊，是老花还是度数加深</td><td>老视与近视加深的区分；ADD 与用眼距离</td><td>★★★</td></tr>
+        <tr><td>S-23</td><td>中老年</td><td>常规</td><td>首次配渐进镜</td><td>提前讲清适应期、边缘变形、瞳高瞳距与退换规则</td><td>★★★★</td></tr>
+        <tr><td>S-24</td><td>中老年</td><td>常规</td><td>配了渐进头晕，要求退货</td><td>先查配戴问题（瞳高、镜架下滑、通道）再谈方案</td><td>★★★★</td></tr>
+        <tr><td>S-25</td><td>中老年</td><td>常规</td><td>"我配镜就行，用不用查眼底"</td><td>说明眼底检查的必要性与转诊流程</td><td>★★★</td></tr>
+        <tr><td>S-26</td><td>中老年</td><td>常规</td><td>白内障早期，视力 0.6</td><td>眼镜能改善视物质量但不治病；最终以医疗机构意见为准</td><td>★★★★</td></tr>
+        <tr><td>S-27</td><td>中老年</td><td>常规</td><td>糖尿病十年，眼底有可疑改变</td><td>识别糖网风险；尽快转诊；配镜不能替代治疗</td><td>★★★★</td></tr>
+        <tr><td>S-28</td><td>中老年</td><td>压力</td><td>眼压 25mmHg</td><td>医疗边界；立即转诊话术；不得提诊断名词、不得借机推销</td><td>★★★★★</td></tr>
+        <tr><td>S-29</td><td>中老年</td><td>压力</td><td>"不用去医院，你给我配就行"</td><td>坚持转诊、不出产品方案、留痕并做回访</td><td>★★★★★</td></tr>
+        <tr><td>S-30</td><td>中老年</td><td>压力</td><td>本人不愿配、子女坚持要配</td><td>尊重知情选择；不夹在中间销售；签字留痕</td><td>★★★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sec">四、A 组 · 儿童青少年（11 张）</h2>
+  <div class="scards">
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-01</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★</span></div>
+      <p class="ni"><b>场景：</b>学校体检说视力有问题，家长带孩子来看，第一句话是"我们家没有近视的，是不是眼睛累了"。</p>
+      <p class="ni"><b>顾客设定：</b>7 岁男孩，母亲陪同，语气平和但明显不想接受"近视"这个结论，会反复问"能不能恢复"。</p>
+      <p class="ni"><b>参考数据：</b>OD −1.25D / OS −1.00D；裸眼视力 0.6 / 0.6，矫正 1.0；眼轴 23.85mm / 23.78mm；眼压正常；眼底未见异常。</p>
+      <p class="ni"><b>考察重点：</b>①共情开场（先接住家长情绪，不急着纠正）；②第①步四板块数据说全，眼轴要说"这是第一次记录，作为以后对比的起点"；③不在小瞳数据上给"假性近视"或"能恢复"的判断；④给出配镜与行为管理的分层方案，明确复查时间。</p>
+      <p class="kill ni"><b>否决项：</b>说"假性近视，休息休息就能好"；承诺"能恢复到 1.0"；未提出建档复查时间。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-02</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>一年后复查，家长拿着两次单子问"是不是涨了 100 度，怎么这么快"。</p>
+      <p class="ni"><b>顾客设定：</b>10 岁女孩，父亲陪同，工作忙、说话快，希望"一句话说清到底要不要紧"。</p>
+      <p class="ni"><b>参考数据：</b>本次 OD −3.50D；上次 −2.50D；眼轴 25.10mm（一年 +0.42mm）；角膜曲率稳定；矫正视力 1.0。</p>
+      <p class="ni"><b>考察重点：</b>①把"涨了 100 度"换算成年化增速再讲；②用眼轴增长佐证，指出"度数是结果，眼轴是原因"；③把目标说成"把速度降下来"，而不是"不涨"；④方案分三档（必做/建议做/可选），说清每档作用与复查节点。</p>
+      <p class="kill ni"><b>否决项：</b>出现"保证不涨""一定控制住"；只讲度数不讲眼轴；未给复查时间。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-03</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>学校筛查提示"远视储备不足"，家长第一次听到这个词，问"这是要近视了吗"。</p>
+      <p class="ni"><b>顾客设定：</b>6 岁男孩，母亲陪同，焦虑型家长，会追问"是不是现在就得配眼镜"。</p>
+      <p class="ni"><b>参考数据：</b>散瞳验光 OD +0.25D / OS +0.50D；眼轴 23.20mm / 23.15mm；裸眼视力 0.8 / 0.9。</p>
+      <p class="ni"><b>考察重点：</b>①用"存款"类比把储备讲明白；②强调这是筛查提示而非诊断，结论必须以散瞳验光与眼轴趋势为准；③给出今天就能做的三件事（户外 2 小时、阅读距离、光照）；④定下一次复查时间（3~6 个月），说明为什么不需要立刻配镜。</p>
+      <p class="kill ni"><b>否决项：</b>凭小瞳验光单下"储备不足"的结论；用"马上要近视了"制造恐慌促成下单。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-04</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★</span></div>
+      <p class="ni"><b>场景：</b>家长听说某种滴眼液或调理方法能控制近视，问"你们这儿有没有，能不能不做别的"。</p>
+      <p class="ni"><b>顾客设定：</b>9 岁男孩，母亲陪同，明显已经打听过多家机构，对"行为管理"兴趣不高，想要一个"省事的方法"。</p>
+      <p class="ni"><b>参考数据：</b>OD −2.50D / OS −2.25D；眼轴 24.60mm（半年 +0.22mm）；其余正常。</p>
+      <p class="ni"><b>考察重点：</b>①明确门店不碰药品、不做疗效评价，涉及用药一律建议到爱眼城眼科评估；②不贬低顾客听到的方法，只说明"门店能提供的部分"是检查、镜片方案与行为管理；③把"省事"翻译成可实现的小动作（每天户外 2 小时怎么拆分、读写距离怎么量）；④给出可量化的半年目标与复查节点。</p>
+      <p class="kill ni"><b>否决项：</b>推荐、代购或评价任何药品；承诺任何方法的效果。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-05</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★</span></div>
+      <p class="ni"><b>场景：</b>孩子明确说不想戴眼镜，理由是"同学会笑我"，家长在旁边催"你别管他，你就说配哪种"。</p>
+      <p class="ni"><b>顾客设定：</b>11 岁男孩，低头、话少、回避眼神；母亲强势，替孩子做决定。</p>
+      <p class="ni"><b>参考数据：</b>OD −1.50D / OS −1.75D；矫正视力 1.0 / 1.0；眼轴 24.30mm / 24.42mm。</p>
+      <p class="ni"><b>考察重点：</b>①先对孩子说话，把孩子当决策参与者而不是旁听者；②把戴镜的意义落在生活场景（看得清黑板、体育课、看路），不落在"度数会涨"的恐吓上；③给出降低心理负担的具体办法（镜架选择、上课戴与运动摘的规则）；④请孩子复述一句关键结论。</p>
+      <p class="kill ni"><b>否决项：</b>当着孩子的面贬低他（如"不戴就是学习差"）；全程只对家长讲、无视孩子。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-06</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>家长直接问"要不要配角膜塑形镜，还是配那个离焦的"，并在手机里存好了几个产品名。</p>
+      <p class="ni"><b>顾客设定：</b>12 岁男孩，母亲陪同，做过功课、术语能说对一半，会追问"哪个效果更好、能差多少"。</p>
+      <p class="ni"><b>参考数据：</b>OD −4.00D / OS −3.75D；眼轴 26.00mm / 25.92mm；角膜曲率 43.2D / 43.0D；眼压正常；泪膜正常。</p>
+      <p class="ni"><b>考察重点：</b>①先做前置条件说明（角膜地形图、泪膜、卫生条件、家长操作能力、复查依从性）；②只讲适用条件与检查项目，不做"效果更好"的比较性承诺；③讲清安全与复查要求，指明角膜塑形镜属于医疗机构验配范畴这一边界；④给出到爱眼城眼科评估与门店可选方案的两条路径。</p>
+      <p class="kill ni"><b>否决项：</b>承诺控制效果或"多少度以内都没问题"；在门店自行承诺验配角膜塑形镜。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-07</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>家长说"度数配够了，孩子还是说看近累、看书跳行、写作业半小时就趴下"。</p>
+      <p class="ni"><b>顾客设定：</b>8 岁女孩，母亲陪同，已经换过两次镜仍不满意，带着情绪，怀疑"是不是你们验得不准"。</p>
+      <p class="ni"><b>参考数据：</b>OD −2.00D / OS −2.00D，矫正视力 1.0；集合近点 14cm；调节幅度低于同龄参考值；看近隐斜偏大；立体视正常。</p>
+      <p class="ni"><b>考察重点：</b>①先接住"换过两次还不行"的情绪，再解释"度数只是其中一项"；②用生活语言解释调节与集合（"眼睛的对焦和两只眼的配合"）；③明确先排除斜视、弱视等需就医的情况，再谈训练；④讲清训练是周期性的、需要复查对比，不给"几个月恢复到 1.0"的承诺。</p>
+      <p class="kill ni"><b>否决项：</b>承诺训练效果或恢复时间；未提排除斜视、弱视；把问题全部归结为"用眼习惯差"。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-08</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>讲到方案时，家长打断："你就直说，保证不涨我就买，不保证我不做，回头涨了你退款吗？"</p>
+      <p class="ni"><b>顾客设定：</b>母亲，教师，逻辑清晰，会把你的每一句话是否许诺都记下来，语气强硬但并非恶意。</p>
+      <p class="ni"><b>参考数据：</b>10 岁男孩，OD −3.25D / OS −3.00D；眼轴 24.10mm（一年 +0.45mm）；其余正常。</p>
+      <p class="ni"><b>考察重点：</b>①明确说明没有任何方法能保证不涨，门店不做疗效承诺；②把话题转到"可控的部分"：增长速度、复查节奏、行为管理，给出可核对的数据目标；③理解并承接家长的焦虑，不因对方强势而失态或松口；④主动提出书面建议书，把"做什么、多久复查、怎么判断是否有效"写清楚。</p>
+      <p class="kill ni"><b>否决项：</b>任何形式的承诺或变相承诺（如"基本不会涨""我们做过的都没涨"）；为留客答应退费承诺。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-09</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>外婆陪孩子来，全程一句"现在别配那么认真，长大做个手术就行了，我邻居家孩子就是"。母亲在旁边犹豫。</p>
+      <p class="ni"><b>顾客设定：</b>外婆，60 多岁，说话多、爱举例，不接受被"教育"；母亲中间派。</p>
+      <p class="ni"><b>参考数据：</b>9 岁女孩，OD −2.75D / OS −2.50D；眼轴 24.85mm / 24.70mm；眼底正常。</p>
+      <p class="ni"><b>考察重点：</b>①不反驳长辈，先承认"手术确实能解决度数"这一事实；②再说明手术解决的是"要不要戴眼镜"，不解决高度近视带来的眼底风险，而眼底风险与眼轴长度相关；③用今天的数据说话，不讲空道理；④把结论落到具体行动，让孩子母亲成为决策者而非旁观者。</p>
+      <p class="kill ni"><b>否决项：</b>与长辈争执、使用"你不懂""别听人乱说"等否定性话语；宣称手术有害或效果不佳。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-10</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>家长掏手机读一段网上文章："说眼轴检查没必要，孩子长个子眼轴也会变长，你们是不是多收钱？"</p>
+      <p class="ni"><b>顾客设定：</b>父亲，工程师，习惯用资料说话，语气不算冲但明显在考验专业度。</p>
+      <p class="ni"><b>参考数据：</b>孩子 11 岁，两次检查间隔一年，眼轴 24.95mm → 25.38mm；同期身高中等增长；屈光度 −3.00D → −3.50D。</p>
+      <p class="ni"><b>考察重点：</b>①先认可文章里"眼轴随发育增长"这句是对的，不与顾客对立；②用自家两次数据说明：单纯看长度不够，要看增长速度与是否伴随屈光度改变，这正是复查的价值；③说明门店设备用于筛查与随访参考，诊断以医疗机构为准；④不因被质疑而缩短流程，第②步异常值扫描照做。</p>
+      <p class="kill ni"><b>否决项：</b>贬低顾客的信息来源或用"你不懂"打发；为迎合顾客而承诺减免指标检查。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-11</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>家长一进门就打开手机录像，说"上次你们也是这么讲的，最后就是让我买贵的，今天我自己留个记录"。</p>
+      <p class="ni"><b>顾客设定：</b>母亲，有过不愉快经历，全程防备，每讲一个方案就问"这个多少钱、是不是必须买"。</p>
+      <p class="ni"><b>参考数据：</b>12 岁男孩，OD −5.00D / OS −4.75D；眼轴 26.40mm / 26.28mm；眼底未见异常；矫正视力 1.0。</p>
+      <p class="ni"><b>考察重点：</b>①对录像保持平稳（门店为经营场所，可在合规告知下正常进行），先为上次的不愉快致歉；②前半程只讲数据与结论，不谈价格；③方案必须包含"可以什么都不选"的选项，并说明每一项解决什么问题、不做会怎样；④主动提出把记录表与建议书交给家长带走，留痕清楚。</p>
+      <p class="kill ni"><b>否决项：</b>因录像而与顾客争执、拒绝服务；先报价格或先推产品再讲数据。</p>
+    </div>
+  </div>
+
+  <h2 class="sec">五、B 组 · 成年人（10 张）</h2>
+  <div class="scards">
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-12</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★</span></div>
+      <p class="ni"><b>场景：</b>顾客说"我度数好几年没变了，眼镜还能戴，为什么你们说该换了"。</p>
+      <p class="ni"><b>顾客设定：</b>32 岁男性，上班族，实用主义，认为换镜是"多花钱"，不排斥沟通但需要理由。</p>
+      <p class="ni"><b>参考数据：</b>OD −3.50D / OS −3.25D，与两年前一致；旧镜镜片有明显划痕与膜层脱落；旧镜瞳距比实测小 4mm；镜架变形、镜眼距偏大。</p>
+      <p class="ni"><b>考察重点：</b>①把"度数没变"和"这副镜片还能不能提供好视觉"分开讲；②逐项指出可验证的问题（划痕散射、膜层脱落、瞳距偏差、镜架变形）；③用顾客自己的体验提问验证（夜间眩光、看屏幕易累）；④给出"换片"与"换整副"两个层级的选项与各自理由。</p>
+      <p class="kill ni"><b>否决项：</b>只讲"该换了"而不给任何可验证依据；为提高单值硬说度数变了。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-13</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客说"每天看电脑十小时，下午眼睛就胀、看字发虚，是不是度数不够了"。</p>
+      <p class="ni"><b>顾客设定：</b>29 岁女性，设计岗，加班多，明确提出"想加度数"或"想配防蓝光的"。</p>
+      <p class="ni"><b>参考数据：</b>OD −2.75D / OS −2.50D，矫正视力 1.0；调节灵敏度偏低；调节滞后偏大；看近隐斜轻度偏斜；泪膜破裂时间 5 秒；角膜与眼底正常。</p>
+      <p class="ni"><b>考察重点：</b>①先做数据梳理，指出"度数不是主要原因"，用视功能与泪膜两组数据支撑；②用生活语言解释"对焦速度慢"和"泪膜不稳定"各自造成的感受；③方案分两线：视功能相关（用眼节奏、必要时训练）与眼表相关（环境、湿度、眨眼习惯），并说明什么时候该到爱眼城眼科；④不讲"防蓝光能治视疲劳"这类结论。</p>
+      <p class="kill ni"><b>否决项：</b>仅靠加度数解决；把视疲劳解释为"用眼过度"一句话带过；推荐药品。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-14</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客说"眼睛干、有异物感，早上起来睁眼困难，你们有没有那种治干眼的眼药水"。</p>
+      <p class="ni"><b>顾客设定：</b>41 岁女性，长期在空调办公室，已经自行买过几种滴眼液。</p>
+      <p class="ni"><b>参考数据：</b>泪膜破裂时间 4 秒；角膜上皮点状着色（提示）；睑缘轻度充血；Schirmer 试验 8mm/5min；屈光度稳定。</p>
+      <p class="ni"><b>考察重点：</b>①说明门店做的是眼表筛查与症状评估，不能做诊断；②明确不推荐、不代购、不评价任何滴眼液，涉及用药建议到眼科门诊；③讲清持续干眼与角膜上皮改变需要就医评估，给出建议就诊的时机（症状持续加重、视力波动、明显疼痛畏光）；④门店端可做的是用眼环境与习惯的调整，并说明复查时间。</p>
+      <p class="kill ni"><b>否决项：</b>推荐或用门店自有名义销售任何滴眼液；对症状下"干眼症"诊断性结论。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-15</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客说"白天都还行，就是晚上开车看不清路牌、对面车灯特别晃，是不是夜盲"。</p>
+      <p class="ni"><b>顾客设定：</b>45 岁男性，跑业务，开车多，自己猜测"可能是缺维生素"。</p>
+      <p class="ni"><b>参考数据：</b>OD −3.75D / OS −3.50D，散光 −1.25D / −0.75D；矫正视力 1.0；暗适应主观描述明显下降；裂隙灯与眼底未见异常提示项。旧镜为普通镜片，无明显防反射镀膜。</p>
+      <p class="ni"><b>考察重点：</b>①不使用"夜盲"这类诊断名词，只描述"夜间视觉质量差"并说明原因可能是未矫正散光与镜片光学质量；②说明散光矫正与镜片膜层、光学设计对夜间眩光的影响；③提示如果症状持续或伴视野变化，应到眼科做进一步检查；④给方案时先解决"是否散光矫正到位"，再谈镜片选择。</p>
+      <p class="kill ni"><b>否决项：</b>下"夜盲""视网膜病变"等诊断性结论；把症状简单归因于营养缺乏并推荐购买保健品。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-16</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>老顾客戴隐形眼镜十年，最近"眼睛红、怕光、戴着不舒服"，问"是不是该换一副新的隐形"。</p>
+      <p class="ni"><b>顾客设定：</b>27 岁女性，图方便，不愿戴框架镜，希望"换一副就好"。</p>
+      <p class="ni"><b>参考数据：</b>角膜周边可见浅层新生血管（提示）；角膜上皮点状着色（提示）；眼红明显；配戴时长每天 12 小时以上，有连续过夜配戴史。</p>
+      <p class="ni"><b>考察重点：</b>①识别角膜缺氧相关信号，明确今天不配镜，先建议到眼科评估；②说明为什么"换一副新的"不能解决当前问题；③给出建议就诊的说法，不用诊断名词，只描述观察到的现象与需要医生判断的理由；④为顾客保留解决路径（评估通过后如何选镜、如何控时、复查节点），并记录在案。</p>
+      <p class="kill ni"><b>否决项：</b>在角膜有明显异常提示的情况下继续推荐或交付隐形眼镜；对顾客宣称"没事，换新的就行"。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-17</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客说"我一只眼睛清楚一只眼睛模糊，平时也还行，就是看久了累"。</p>
+      <p class="ni"><b>顾客设定：</b>38 岁男性，长期单眼视物习惯，未戴镜，不确定是否需要处理。</p>
+      <p class="ni"><b>参考数据：</b>OD −4.00D / OS −2.00D；屈光参差 2.00D；矫正视力 1.0 / 1.0；立体视功能下降；无明显眼位异常。</p>
+      <p class="ni"><b>考察重点：</b>①解释"两眼度数差得多"带来的不等像、双眼配合困难与疲劳；②说明长期单眼视物的可能影响，包括驾驶时对距离判断的影响；③给出可行方案层级（足矫配镜、镜片选择、必要时进一步评估双眼视功能）；④不做"能不能治好"的表述，只讲改善视物质量与用眼舒适度。</p>
+      <p class="kill ni"><b>否决项：</b>宣称可"治好"参差或提升视力；只讲配镜价格不讲参差带来的影响。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-18</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>高度近视顾客复查，眼底照相提示需定期随访，顾客认为"我每年都配镜，眼睛没问题"。</p>
+      <p class="ni"><b>顾客设定：</b>34 岁女性，高度近视多年，对"眼底"概念模糊，担心被吓。</p>
+      <p class="ni"><b>参考数据：</b>OD −9.50D / OS −9.00D；眼轴 27.60mm / 27.45mm；眼底可见豹纹状改变；杯盘比在参考范围内；眼压正常。</p>
+      <p class="ni"><b>考察重点：</b>①说明高度近视与眼轴过长对眼底结构的影响，强调"视力度数"与"眼底健康"是两件事；②明确门店做的是筛查，给出随访建议与随访间隔，最终诊断与随访方案以医疗机构为准；③讲清哪些情况必须立即就医（突然闪光感、飞蚊骤增、视野缺损、视力骤降）；④配镜方案照常给，但不得用眼底话题制造紧迫感促单。</p>
+      <p class="kill ni"><b>否决项：</b>以眼底话题恐吓下单；下"视网膜变性""黄斑病变"等诊断性结论；未交代需立即就医的警示信号。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-19</span><span class="tg tg-adult">成年人</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>刚开始讲第二组数据，顾客打断："不用讲了，我知道你们就是想卖东西，直接说多少钱吧。"</p>
+      <p class="ni"><b>顾客设定：</b>35 岁男性，曾被其他机构过度推销过，语气不客气，但不拒绝听，如果讲得有理也会松口。</p>
+      <p class="ni"><b>参考数据：</b>OD −4.50D / OS −4.25D；眼轴 25.60mm；旧镜为三年前配的，矫正视力 0.8；镜片有明显磨损。</p>
+      <p class="ni"><b>考察重点：</b>①先接住情绪，明确"今天完全可以不消费"，把选择权交还顾客；②后半程只讲数据和结论，不报价、不提产品；③用"不做会怎样"的方式说明每一项的必要性，而不是用"优惠限时"；④把记录表交给顾客带走，说明下次来可直接对着看。</p>
+      <p class="kill ni"><b>否决项：</b>用限时优惠、赠品等方式施压；因顾客态度差而草率结束解读、跳过异常值扫描。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-20</span><span class="tg tg-adult">成年人</span><span class="tg">压力题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客进门就说"我只有 5 分钟，你快点，能配就配"。此时检查已完成，报告刚出，其中一项眼压偏高需复测。</p>
+      <p class="ni"><b>顾客设定：</b>40 岁女性，赶时间，频繁看表，明确表示不想听讲解。</p>
+      <p class="ni"><b>参考数据：</b>OD −2.25D / OS −2.00D；眼压初测 24mmHg（需复测）；角膜厚度偏薄；眼底未见异常；矫正视力 1.0。</p>
+      <p class="ni"><b>考察重点：</b>①时间不足时的取舍原则：先说结论、再说最关键的一项异常、其余留到下次，但第②步异常值扫描不得省略；②对眼压偏高给出复测与建议就诊的处理，不能因赶时间略过；③明确写出"本次未完成解读"，说明哪些项目下次补；④请顾客确认下一步动作与时间。</p>
+      <p class="kill ni"><b>否决项：</b>因赶时间跳过异常值处理直接成交；对偏高眼压不做任何提示与交代。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-21</span><span class="tg tg-adult">成年人</span><span class="tg">压力题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客拿着别家的验光单："你就照这个度数给我配，网上便宜一半，我就是来比个价。"</p>
+      <p class="ni"><b>顾客设定：</b>26 岁男性，价格敏感，已跑过两三家，对验光流程没有概念。</p>
+      <p class="ni"><b>参考数据：</b>外单单眼足矫、双眼平衡未做；实测瞳距与旧镜相差 3mm；旧镜散光轴位与外单不一致；实测矫正视力 1.0。</p>
+      <p class="ni"><b>考察重点：</b>①不贬低同行，只讲"单子上写了什么、缺了什么"；②说明验光流程中瞳距、瞳高、双眼平衡、试戴这些环节各自影响什么体验；③明确价格不做承诺、不评价线上渠道，只说明门店提供的服务范围；④如顾客坚持外配，仍完成解读并给出记录表。</p>
+      <p class="kill ni"><b>否决项：</b>贬低同行或线上渠道、编造对方验光不准；为成交做出未经授权的价格承诺。</p>
+    </div>
+  </div>
+
+  <h2 class="sec">六、C 组 · 中老年（9 张）</h2>
+  <div class="scards">
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-22</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>55 岁顾客说"看手机要拿远才行，是不是近视加深了"。</p>
+      <p class="ni"><b>顾客设定：</b>55 岁女性，有轻度近视史，怕"度数一直涨"，对戴两副镜有抵触。</p>
+      <p class="ni"><b>参考数据：</b>远用 OD −1.50D / OS −1.25D；近距离需要加正镜；调节幅度下降；眼压正常；晶体轻度混浊（提示）；眼底未见明显异常。</p>
+      <p class="ni"><b>考察重点：</b>①先区分"看远度数的变化"与"看近需要助视"，说明老视是调节能力下降，不是度数加深；②用生活场景确认用眼距离（手机、看书、电脑）再定加光度；③讲清两副镜与渐进镜的差别，不强推；④对晶体轻度混浊只描述观察到的现象，建议到爱眼城眼科进一步评估，不做诊断。</p>
+      <p class="kill ni"><b>否决项：</b>把老视说成近视加深或"眼睛老化没办法"；对晶体改变下诊断性结论。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-23</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客第一次听说渐进镜，问"这个一副顶两副，是不是戴上就方便了"。</p>
+      <p class="ni"><b>顾客设定：</b>58 岁男性，退休教师，阅读多、也开车，期望值偏高。</p>
+      <p class="ni"><b>参考数据：</b>远用 OD −2.00D / OS −1.75D，散光 −0.50D / −0.50D；近加光 +2.00D；瞳距 64mm；瞳高需实测；眼位与双眼视基本正常。</p>
+      <p class="ni"><b>考察重点：</b>①先用场景问诊（看书、手机、开车、看电脑），说明渐进镜并非人人首选；②提前讲清适应期、周边变形、看近需要低头配合这三点，管理预期；③说明瞳高、瞳距、镜架高度对舒适度的影响，并现场测量；④讲清退换与调整规则，把"多久内可调整、什么情况可退换"写清。</p>
+      <p class="kill ni"><b>否决项：</b>宣称"戴上就和年轻时一样""完全没有适应期"；未测量瞳高即交付渐进镜。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-24</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客戴渐进镜一周后回来，情绪激动："头晕、走路不稳，退了，你们这镜不行。"</p>
+      <p class="ni"><b>顾客设定：</b>62 岁女性，已投诉到店里，要求全额退货，但并非完全不接受解释。</p>
+      <p class="ni"><b>参考数据：</b>实测瞳高比配镜时记录低 3mm；镜架明显下滑、镜眼距偏大；远用度数复查与处方一致；近加光 +2.25D。</p>
+      <p class="ni"><b>考察重点：</b>①先处理情绪与投诉，不辩解；②逐项排查可验证的配戴问题（瞳高、镜架下滑、镜眼距、通道位置），说明这些问题与头晕的关系；③说明可先调整镜架与复测，再判断是否需要重做，不用"你再适应适应"打发；④把处理方案与时限写清，留痕并约定回访时间。</p>
+      <p class="kill ni"><b>否决项：</b>把问题全部推给顾客"不适应"；未经排查即承诺全额退货或拒绝处理。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-25</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客说"我就是来配镜的，你们给我拍眼底干嘛，多此一举"。</p>
+      <p class="ni"><b>顾客设定：</b>57 岁男性，务实、怕麻烦，对额外检查有戒心。</p>
+      <p class="ni"><b>参考数据：</b>矫正视力 0.9；眼压正常；眼底照相提示视盘边界可辨、血管走行大致正常，未见明显异常；屈光度轻度变化。</p>
+      <p class="ni"><b>考察重点：</b>①用一句话说清眼底检查解决什么问题（"配镜解决看得清，眼底看的是眼睛本身有没有问题"）；②说明这属于健康筛查，结果正常就是最好的消息，不是白花钱；③讲清哪些人群更需要定期查（高度近视、糖尿病、高血压、年龄相关）；④结果正常也要写进记录表，让顾客看到"留了档"。</p>
+      <p class="kill ni"><b>否决项：</b>把额外检查说成必须购买的服务并加价捆绑；为促成检查夸大风险。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-26</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客说"医院说我有白内障，还不到做手术的时候，那你给我配副镜能看清就行吧"。</p>
+      <p class="ni"><b>顾客设定：</b>66 岁男性，已就诊，拿得出医院记录，想让门店"解决视力问题"。</p>
+      <p class="ni"><b>参考数据：</b>OD 0.5 / OS 0.6（矫正视力）；晶体混浊（提示）；屈光度有变化；眼底可窥见度欠佳；眼压正常。</p>
+      <p class="ni"><b>考察重点：</b>①明确配镜能在一定程度上改善视物质量，但不能解决晶体混浊本身，手术时机由医疗机构判断；②不评价医院方案、不催顾客做或不做手术；③说明矫正视力受限与配镜能改善的部分在哪，管理预期，避免"配了还看不清"的投诉；④约定复查时间，并提示视力快速下降时及时就医。</p>
+      <p class="kill ni"><b>否决项：</b>宣称配镜能"治好白内障""不用手术了"；建议顾客推迟或放弃手术。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-27</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>顾客有 10 年糖尿病史，配镜时说"我血糖控制得还行，眼睛不用查"。</p>
+      <p class="ni"><b>顾客设定：</b>59 岁女性，慢性病长期管理，对并发症认识不足，不排斥沟通。</p>
+      <p class="ni"><b>参考数据：</b>矫正视力 0.7 / 0.8；眼底照相可见点状出血与渗出（提示）；屈光度波动；眼压正常。</p>
+      <p class="ni"><b>考察重点：</b>①说明糖尿病对视网膜的影响与血糖波动、病程年限的关系，强调定期查眼底的必要性；②明确门店发现的是筛查提示，需要尽快到眼科做进一步检查，并给出建议的紧迫程度；③说明配镜可以做，但不能替代眼底检查与治疗；④不做任何诊断性表述，不使用"糖网"作为结论，只描述观察到的现象；⑤记录并安排回访。</p>
+      <p class="kill ni"><b>否决项：</b>下"糖尿病视网膜病变"诊断；配镜后不提示就医；用"血糖好就没问题"安抚顾客。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-28</span><span class="tg tg-old">中老年</span><span class="tg tg-p">压力题</span><span class="st">★★★★★</span></div>
+      <p class="ni"><b>场景：</b>眼压初测 25mmHg，你用眼压计复测仍偏高。顾客说"我又不疼不痒，你别吓我，赶紧给我配镜"。</p>
+      <p class="ni"><b>顾客设定：</b>61 岁男性，无明显不适，对"去医院"有强烈抵触，情绪开始不耐烦。</p>
+      <p class="ni"><b>参考数据：</b>眼压 25mmHg / 24mmHg（复测）；中央角膜厚度偏薄；杯盘比偏大（提示）；矫正视力 0.9 / 0.9；视野未做（门店无此设备）。</p>
+      <p class="ni"><b>考察重点：</b>①不使用"青光眼"等诊断名词，只说明"眼压测量值高于一般参考范围，需要专业机构进一步检查"；②说明眼压偏高早期常常没有感觉，这正是需要检查的原因；③给出明确的建议就诊科室与时间（尽快、近期），并提供书面提示；④配镜需求照常安排，但不得用眼压问题捆绑销售，也不得推销任何"降眼压"产品；⑤记录并安排回访，确认顾客是否已就诊。</p>
+      <p class="kill ni"><b>否决项：</b>说出"青光眼"等诊断名词；推荐任何所谓降眼压的药品或器械；因顾客抵触而放弃提示或不留痕。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-29</span><span class="tg tg-old">中老年</span><span class="tg tg-p">压力题</span><span class="st">★★★★★</span></div>
+      <p class="ni"><b>场景：</b>眼底照相提示可疑改变，你建议到爱眼城眼科就诊。顾客说"去医院排队一整天，不用了，你给我配就行，我自己负责"。</p>
+      <p class="ni"><b>顾客设定：</b>64 岁女性，行动不便、子女不在身边，怕麻烦、怕花钱，态度坚决但并非不信任门店。</p>
+      <p class="ni"><b>参考数据：</b>矫正视力 0.6 / 0.5；眼底可见黄斑区可疑改变（提示）；屈光度变化明显；眼压正常。</p>
+      <p class="ni"><b>考察重点：</b>①坚持转诊建议，不因为顾客"自己负责"就改口；②理解顾客的实际困难，给出可执行的帮忙方式（就诊科室、就近机构、家属沟通、陪同协助），把障碍解决掉而不是只给结论；③本次不出具任何产品方案，只出转诊提示型建议书（模块13 模板 F）；④留痕并明确回访时间，若顾客坚持不就诊，记录顾客的知情选择。</p>
+      <p class="kill ni"><b>否决项：</b>因顾客坚持而配镜并出具常规方案；在疑似眼底病变情况下推荐高单价产品。</p>
+    </div>
+
+    <div class="scard">
+      <div class="schead"><span class="no">S-30</span><span class="tg tg-old">中老年</span><span class="tg tg-p">压力题</span><span class="st">★★★★</span></div>
+      <p class="ni"><b>场景：</b>子女陪着来，坚持要给父亲配渐进镜，"钱我出"。老人全程说"我不用、我看得见"。</p>
+      <p class="ni"><b>顾客设定：</b>老人 70 岁，抗拒戴镜，对陌生事物有抵触；女儿 40 岁，主导沟通，明显着急。</p>
+      <p class="ni"><b>参考数据：</b>远用 OD +1.00D / OS +0.75D；近加光 +2.50D；矫正视力 0.7 / 0.8；眼压正常；眼底未见明显异常提示项；晶体轻度混浊（提示）。</p>
+      <p class="ni"><b>考察重点：</b>①把老人作为主要沟通对象，先问他的实际困扰，不跳过本人意愿；②向女儿说明配镜的需求判断以老人的用眼习惯与实际需求为准，避免替顾客做决定；③若老人有需求但担心操作复杂，给出降低使用门槛的方案与适应支持；④明确知情选择与签字留痕，说清"可先配、可用后再调整"的处理方式。</p>
+      <p class="kill ni"><b>否决项：</b>只与家属谈、无视本人意愿；用"子女孝顺你就得配"这类话语施压；将不情愿的顾客当作成交对象。</p>
+    </div>
+  </div>
+
+  <div class="warn"><b>压力题使用提醒：</b>标注「压力题」的 10 张（S-08、S-09、S-10、S-11、S-19、S-20、S-21、S-28、S-29、S-30）必须在员工通过常规题之后才可抽取。压力题评分时，<b>"拒绝了不合理要求"与"坚持了转诊建议"得分高于"说服了顾客"</b>；如果员工为了成交而放弃转诊或做出承诺，即使顾客当场满意也判不合格。</div>
+
+  <h2 class="sec">七、组合扩题法（30 张怎么变成 90 张）</h2>
+  <div class="card">
+    <p style="font-size:15px;color:#45596e;margin-bottom:10px">卡片数量不必固定。把下面四个变量各换一档，同一张卡就能变成新题，抽卡时不容易被"背答案"。</p>
+    <table>
+      <thead><tr><th style="width:18%">可替换变量</th><th style="width:46%">可选档位</th><th style="width:36%">换档后考察重点怎么变</th></tr></thead>
+      <tbody>
+        <tr><td><b>随行人角色</b></td><td>父母 / 祖辈 / 配偶 / 朋友 / 同事 / 独自前来</td><td>决策人变了，能否识别"谁做决定"就成了新考点</td></tr>
+        <tr><td><b>数据档位</b></td><td>轻度（≤−2.00D）/ 中度（−2.00~−6.00D）/ 高度（＞−6.00D）；眼轴年增 0.2 / 0.35 / 0.5mm 以上</td><td>方案层级、转诊判断、复查间隔随之调整</td></tr>
+        <tr><td><b>异常项</b></td><td>眼压偏高 / 眼底可疑 / 眼底正常 / 双眼视功能异常 / 泪膜异常</td><td>第②步异常值扫描的重点不同，压力题集中在下半段</td></tr>
+        <tr><td><b>顾客态度</b></td><td>配合 / 焦虑 / 抗拒 / 已就诊过 / 已被其他机构推销过</td><td>共情难度升级，考察情绪处理与边界守持</td></tr>
+      </tbody>
+    </table>
+    <div class="good"><b>换档规则：</b>每次只换一档，保持卡片结构不变；换档后的卡片应重新登记编号（如 S-07-2），并在卡片右下角注明"由 S-07 换档生成"，避免演练内容反复使用。门店也可根据当季实际客群，把真实高频问题（去掉可识别信息后）写成新卡，报区域督导审核后入库。</div>
+  </div>
+
+  <h2 class="sec">八、印制、保管与更新</h2>
+  <div class="card">
+    <ul>
+      <li><b>印制：</b>A4 双面、157g 以上铜版纸或卡纸，按本模块打印后沿卡片边框裁剪；建议按人群分色装订——儿童青少年（蓝边）、成年人（绿边）、中老年（橙边），压力题在正面右上角盖红色"压力题"章。</li>
+      <li><b>配套：</b>每套卡配一本《演练记录本》、一张《实操考评表》（模块10），三者同放一个卡盒，盒面写明门店名与卡片版本号。</li>
+      <li><b>编号唯一：</b>全连锁统一使用 S-01 ~ S-30 编号，门店自建卡片从 S-31 起顺序编号，不得复用已有编号。</li>
+      <li><b>保管：</b>卡盒由店长保管，晨会与演练时发放，用后当场收回，不得由员工个人带走；卡片属于内部培训资料，不得拍摄外传、不得用于对外宣传或短视频素材。</li>
+      <li><b>更新：</b>每半年（1 月、7 月）由区域督导组织复核一次：淘汰已不符合当前流程的卡、把门店高频新问题补入、把被误用的卡（顾客方加戏过多）重写。每次复核后更新版本号与修订日期，旧版收回销毁。</li>
+      <li><b>与考核挂钩：</b>每季度至少完成 6 张卡的演练（其中儿童青少年 3 张、成人 2 张、中老年 1 张），记录在《演练记录本》，纳入 L1/L2/L3 认证的实操分（模块10）。</li>
+    </ul>
+    <div class="note"><b>内容一致性要求：</b>调整卡片数据时，必须同步检查三处——① 判定结论是否符合模块03《指标参考区间与异常判定表》；② 应对对策是否符合模块04《异常值对照表》；③ 是否触及模块12《医疗边界与合规红线》的 12 类转诊情形。三者不一致时，以模块03、04、12 为准，先改卡片再演练。</div>
+  </div>
+
+  <div class="btnwrap">
+    <a class="btn ghost" href="13_方案建议书标准模板集.html">← 上一模块</a>
+    <a class="btn" href="10_培训演练与考核指标.html">回到模块10 培训演练与考核</a>
+    <a class="btn ghost" href="index.html">返回首页</a>
+    <a class="btn ghost" href="15_新人三天集训执行方案.html">下一模块 →</a>
+    <button class="btn" onclick="window.print()">打印全部卡片</button>
+  </div>
+</div>
+
+<footer>
+  <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 · 模块14 情景卡库</b><br>
+  编制：闫胜君整理 ｜ 适用门店：零陵8家、冷水滩2家、祁阳5家（共15家）｜ 归口部门：视光运营部<br>
+  说明：本模块卡片为门店内部培训演练用具，卡片中的人物、数据均为虚构示例，不得作为真实案例对外讲述或用于宣传。演练中的判定标准以模块03《指标参考区间与异常判定表》为准，涉及需转诊情形一律按模块12《医疗边界与合规红线》执行。
+</footer>
+</body>
+</html>
