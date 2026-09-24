@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块09 · 培训演练与考核指标 | 永州爱眼城 检查报告解读标准化方案</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.72;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:calc(18px * var(--fs));font-weight:700}
+.topbar .meta{font-size:calc(13px * var(--fs));opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:calc(13.5px * var(--fs));color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:calc(22px * var(--fs));color:#1677ff;margin:0 auto 6px;line-height:1.45;text-align:center}
+.lead{text-indent:2em;color:#5b6b7d;font-size:calc(15.5px * var(--fs));margin-bottom:20px;max-width:1040px}
+h2.sec{font-size:calc(20px * var(--fs));color:#1677ff;margin:30px 0 12px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+h3.sub{font-size:calc(16.5px * var(--fs));color:#1677ff;margin:16px 0 8px}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:18px 22px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:calc(14.3px * var(--fs));margin-bottom:10px}
+th,td{border:1px solid #dae3f5;padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600}
+tbody tr:nth-child(even){background:#fafcff}
+ul,ol{margin:6px 0 10px 20px;font-size:calc(15px * var(--fs))}
+li{margin-bottom:5px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#6b4a25;margin:14px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#1f5c40;margin:14px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#7d2b2b;margin:14px 0}
+.kpi4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+@media screen and (max-width:820px){.kpi4{grid-template-columns:repeat(2,1fr)}}
+@media screen and (max-width:640px){.kpi4{grid-template-columns:1fr}}
+@media print{.kpi4{grid-template-columns:repeat(2,1fr)}}
+.kpi4 .box{background:#fff;border:1px solid #dae3f5;border-radius:10px;padding:14px 16px}
+.kpi4 .box h4{font-size:calc(15.5px * var(--fs));color:#1677ff;margin-bottom:4px}
+.kpi4 .box .big{font-size:calc(24px * var(--fs));font-weight:700;color:#e07b39;margin:4px 0}
+.kpi4 .box p{font-size:calc(13.5px * var(--fs));color:#5b6b7d;margin:0}
+.lv{display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(280px * var(--fs)),1fr));gap:14px}
+.lv .box{background:#fff;border:1px solid #dae3f5;border-radius:10px;padding:14px 16px}
+.lv .box h4{font-size:calc(16px * var(--fs));color:#1677ff;margin-bottom:6px}
+.lv .box .tagx{display:inline-block;font-size:calc(12px * var(--fs));color:#fff;border-radius:4px;padding:1px 8px;margin-bottom:6px}
+.lv .box p{font-size:calc(14px * var(--fs));color:#45596e}
+.sc{background:#f1f6ff;border:1px solid #c7ddff;border-radius:8px;padding:12px 15px;font-size:calc(14.3px * var(--fs));color:#23477f;margin:8px 0}
+.sc b{color:#1677ff}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:calc(13.5px * var(--fs));line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:calc(14px * var(--fs));cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media print{.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:12px}.card{page-break-inside:avoid}}
+</style>
+<!-- LAYOUT-V2 -->
+<style>
+/* ==========================================================================
+   平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
+   只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
+   ========================================================================== */
+:root{
+  --fs:1;            /* 字号/组件缩放系数 */
+  --wrap:1180px;     /* 正文容器最大宽度 */
+  --wpx:22px;        /* 容器左右留白 */
+  --wpy:26px;        /* 容器上留白 */
+  --cy:9px; --cx:12px;  /* 表格单元格内边距 */
+  --subh:44px;       /* 吸顶导航高度 */
+}
+/* 平板（横屏 1280 / 竖屏 800 均命中）：整站同比缩放，--fs=1.02（较上一版 -11.3%） */
+@media screen and (min-width:641px) and (max-width:1400px){
+  :root{--fs:1.02;--wrap:1160px;--wpx:24px;--wpy:20px;--cy:11px;--cx:13px;--subh:44px}
+}
+@media screen and (max-width:640px){
+  :root{--fs:1.04;--wrap:100%;--wpx:14px;--wpy:16px;--cy:9px;--cx:10px;--subh:44px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","HarmonyOS Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;letter-spacing:.012em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:rgba(22,119,255,.12);
+}
+::selection{background:#c9dfff;color:#0b3d91}
+
+/* ---------- 容器与页头 ---------- */
+body .wrap{max-width:var(--wrap);padding:var(--wpy) var(--wpx) 72px}
+body .hero{padding:26px var(--wpx) 24px}
+body .topbar{padding:14px var(--wpx);gap:12px}
+body footer{padding:20px var(--wpx);line-height:1.9}
+
+/* ---------- 吸顶导航：翻到任何位置都能一眼跳模块 ---------- */
+body .subnav{
+  position:sticky;top:0;z-index:80;
+  min-height:var(--subh);
+  padding:calc((var(--subh) - 1.5em - 1px) / 2) var(--wpx);
+  line-height:1.5;
+  white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+  background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 2px 12px rgba(22,119,255,.07);
+  scrollbar-width:none;
+}
+body .subnav::-webkit-scrollbar{height:0}
+body .subnav a{white-space:nowrap;padding:0 1px;text-decoration:none}
+
+/* ---------- 标题节奏与锚点定位 ---------- */
+body h1.t{line-height:1.45}
+body h2.sec{margin:38px 0 16px;line-height:1.4}
+body h2.sec,body h3.sub,body h3.sub2,body .card,body .step,body .form,body .item{
+  scroll-margin-top:calc(var(--subh) + 16px);
+}
+body .lead{margin-bottom:24px;line-height:1.85}
+
+/* ---------- 卡片 / 提示块 ---------- */
+body .card{padding:20px 24px;margin-bottom:18px;border-radius:14px}
+body .note,body .good,body .warn{padding:15px 18px;margin:16px 0;border-radius:10px;line-height:1.8}
+body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:16px 18px}
+body .case{padding:16px 20px;margin-bottom:16px}
+body .case .txt{padding:12px 15px}
+body .quote{padding:12px 16px;margin:10px 0}
+body .scard{padding:14px 16px}
+body .fnode{padding:12px 16px}
+body .step .hd,body .form .fhead{padding:13px 22px}
+body .form .fbody{padding:18px 22px}
+body .peopledet .hd{padding:16px 24px}
+body .daybar{padding:12px 18px;margin:26px 0 14px}
+body .sec-title{padding:9px 12px}
+body .blk{padding:12px 14px}
+body .line2{gap:14px;margin-bottom:10px}
+body .check{margin-right:16px}
+
+/* ---------- 表格：更容易一行一行读下去 ---------- */
+body table{
+  border-collapse:separate;border-spacing:0;border-radius:12px;
+  line-height:1.62;margin:12px 0 16px;
+}
+body th,body td{
+  border:0;
+  border-right:1px solid #dae3f5;border-bottom:1px solid #dae3f5;
+  padding:var(--cy) var(--cx);
+  overflow-wrap:break-word;
+}
+body th{
+  background:linear-gradient(180deg,#f1f7ff,#e4eeff);
+  color:#0b3d91;font-weight:700;letter-spacing:.02em;
+text-align:center;}
+body thead th{
+  border-top:1px solid #dae3f5;
+  position:sticky;top:calc(var(--subh) + 1px);z-index:6;
+}
+body tr>th:first-child,body tr>td:first-child{border-left:1px solid #dae3f5}
+body table>thead>tr:first-child>th:first-child{border-top-left-radius:12px}
+body table>thead>tr:first-child>th:last-child{border-top-right-radius:12px}
+body table:not(:has(thead))>tbody>tr:first-child>td:first-child{border-top-left-radius:12px;border-top:1px solid #dae3f5}
+body table:not(:has(thead))>tbody>tr:first-child>td:last-child{border-top-right-radius:12px;border-top:1px solid #dae3f5}
+body table>tbody>tr:last-child>td:first-child{border-bottom-left-radius:12px}
+body table>tbody>tr:last-child>td:last-child{border-bottom-right-radius:12px}
+body tbody tr:nth-child(even)>td{background:#fafcff}
+body tbody tr:hover>td{background:#eef5ff}
+body tbody td{transition:background .15s}
+body table.ct th,body table.ct td{text-align:center;vertical-align:middle}
+
+/* ---------- 触控友好：按钮、胶囊、复选框 ---------- */
+body .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 20px;border-radius:10px;
+}
+body .btnwrap{margin:30px 0 10px}
+body .chips{gap:10px}
+body .chips a,body .idxbar a{
+  display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:10px;
+}
+body .idxbar{gap:10px;margin-bottom:20px}
+body .check input,body input[type=checkbox]{width:18px;height:18px;accent-color:#1677ff}
+body .fill{min-height:1.35em}
+body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:3px 9px;border-radius:6px}
+body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:3px 10px}
+body .farrow,body .story .arrow{padding:0 2px}
+body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fill:focus-visible{
+  outline:2px solid #1677ff;outline-offset:2px;border-radius:6px;
+}
+
+/* ---------- 小屏栅格回流（仅屏幕，不影响打印分栏） ---------- */
+@media screen and (max-width:1000px){
+  body .steps{grid-template-columns:1fr 1fr !important}
+}
+@media screen and (max-width:900px){
+  body .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important}
+  body .scards,body .pkg4{grid-template-columns:1fr !important}
+  body .scards{gap:10px}
+}
+@media screen and (max-width:640px){
+  body .grid,body .steps,body .kpi,body .kpi4,body .lv,body .chk,
+  body .std,body .three{grid-template-columns:1fr !important}
+  body .subnav{padding-left:12px;padding-right:12px}
+}
+
+/* ---------- 打印兜底：恢复紧凑版式，A4 友好 ---------- */
+/* ---------- 平板档专项：行高 / 间距 / 图标同步收缩（仅 641–1400px） ---------- */
+@media screen and (min-width:641px) and (max-width:1400px){
+  body{line-height:1.62;letter-spacing:.008em}
+  body .wrap{padding:20px var(--wpx) 64px}
+  body .hero{padding:22px var(--wpx) 20px}
+  body .topbar{padding:12px var(--wpx);gap:10px}
+  body footer{padding:17px var(--wpx);line-height:1.72}
+  body .subnav{line-height:1.45}
+  body h2.sec{margin:32px 0 14px;line-height:1.38}
+  body .lead{margin-bottom:20px;line-height:1.68}
+  body .card{padding:16px 20px;margin-bottom:15px;border-radius:12px}
+  body .note,body .good,body .warn{padding:12px 15px;margin:13px 0;border-radius:9px;line-height:1.62}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:13px 15px}
+  body .case{padding:13px 16px;margin-bottom:13px}
+  body .case .txt{padding:10px 13px}
+  body .quote{padding:10px 13px;margin:8px 0}
+  body .scard{padding:12px 14px}
+  body .fnode{padding:10px 14px}
+  body .step .hd,body .form .fhead{padding:11px 18px}
+  body .form .fbody{padding:15px 18px}
+  body .peopledet .hd{padding:13px 20px}
+  body .daybar{padding:10px 15px;margin:22px 0 12px}
+  body .sec-title{padding:7px 10px}
+  body .blk{padding:10px 12px}
+  body .line2{gap:12px;margin-bottom:8px}
+  body .check{margin-right:13px}
+  body table{line-height:1.5;margin:10px 0 14px;border-radius:10px}
+  body .btn{min-height:42px;padding:8px 17px;border-radius:9px}
+  body .btnwrap{margin:26px 0 8px}
+  body .chips{gap:9px}
+  body .chips a,body .idxbar a{min-height:40px;padding:7px 12px;border-radius:9px}
+  body .idxbar{gap:9px;margin-bottom:17px}
+  body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:2px 8px;border-radius:5px}
+  body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:2px 8px}
+}
+@media print{
+  :root{--fs:1;--wpx:0;--wpy:0}
+  body{line-height:1.55;letter-spacing:0;background:#fff}
+  body .wrap{max-width:none;padding:0 0 8px}
+  body .topbar,body .btnwrap{box-shadow:none}
+  body .subnav{position:static;box-shadow:none;background:#fff;overflow:visible;white-space:normal;
+    min-height:0;padding:0 0 6px}
+  body .card{padding:10px 12px;margin-bottom:10px;border-radius:0;box-shadow:none}
+  body .note,body .good,body .warn{padding:8px 10px;margin:8px 0;border-radius:0}
+  body .step .hd,body .form .fhead,body .form .fbody,body .peopledet .hd,body .daybar{padding:7px 10px}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item,body .case,body .scard{
+    padding:8px 10px;border-radius:0;box-shadow:none}
+  body table{border-collapse:collapse;border-radius:0;margin:6px 0 10px}
+  body thead th{position:static}
+  body th,body td{border:1px solid #cbd5e1;padding:4px 6px}
+  body th{background:#e8f1ff !important;color:#0b3d91 !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body tbody tr:nth-child(even)>td{background:#fafcff !important}
+  body tbody tr:hover>td{background:transparent !important}
+}
+</style>
+<!-- /LAYOUT-V2 -->
+<!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
+<style>
+/* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
+   text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
+   恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
+body .wrap p,
+body .hero p{text-indent:2em;overflow-wrap:break-word}
+
+/* 相邻正文段落间距：用 margin 分隔，不插空行伪造缩进 */
+body .wrap p + p{margin-top:.5em}
+
+/* ---- 例外：以下不属于"正文段落"，一律不缩进（选择器特异性高于上方规则） ---- */
+/* 结构元素：列表项内 / 表格单元格 / 图注 / 代码 / 引用块 / 页眉页脚导航 */
+body .wrap :is(li,td,th,caption,figcaption,dt,dd,pre,code,blockquote,figure) p,
+body .topbar p,body .subnav p,body footer p,body .btnwrap p,
+/* 组件化短行：四大板块标签、KPI 数值卡说明行、人群卡元信息行 */
+body .wrap .pkg4 p,body .wrap .kpi p,body .wrap .kpi4 p,body .wrap .hd p,
+/* 字段行（注入时自动识别并加 ni 类），以及手工豁免 */
+body .wrap p.ni,body .wrap .ni p,
+/* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
+body p:lang(en),body p.en{text-indent:0}
+</style>
+<style>
+/* ==========================================================================
+   TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
+   仅调整容器与列宽，不动文字/字段/配色/字号
+   ========================================================================== */
+/* 表格外层容器：宽屏不裁剪（保留吸顶表头），窄屏启用横向滚动 */
+body .tsc{margin:12px 0 16px}
+body .tsc>table{margin:0}
+@media screen and (max-width:820px){
+  body .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  /* 多列表给出最小可读宽度，超出即横向滚动，绝不撑破页面 */
+  body .tsc.w4>table{min-width:calc(460px * var(--fs))}
+  body .tsc.w5>table{min-width:calc(560px * var(--fs))}
+  body .tsc.w6>table{min-width:calc(660px * var(--fs))}
+  body .tsc.w7>table,body .tsc.w8>table{min-width:calc(780px * var(--fs))}
+  body .tsc.w9>table{min-width:calc(940px * var(--fs))}
+  /* 滚动容器内表头吸顶失效，显式降级，避免错位 */
+  body .tsc thead th{position:static}
+}
+/* 打印兜底：容器不裁剪，边距回落到原紧凑值 */
+@media print{
+  body .tsc{margin:6px 0 10px;overflow:visible}
+  body .tsc>table{min-width:0}
+}
+/* 单元格兜底：长文本优先换行，短字段不折行 */
+body th,body td{overflow-wrap:break-word;word-break:break-word}
+body .tsc table.now1 th:nth-child(1),body .tsc table.now1 td:nth-child(1),
+body .tsc table.now2 th:nth-child(2),body .tsc table.now2 td:nth-child(2),
+body .tsc table.now3 th:nth-child(3),body .tsc table.now3 td:nth-child(3),
+body .tsc table.now4 th:nth-child(4),body .tsc table.now4 td:nth-child(4),
+body .tsc table.now5 th:nth-child(5),body .tsc table.now5 td:nth-child(5),
+body .tsc table.now6 th:nth-child(6),body .tsc table.now6 td:nth-child(6),
+body .tsc table.now7 th:nth-child(7),body .tsc table.now7 td:nth-child(7),
+body .tsc table.now8 th:nth-child(8),body .tsc table.now8 td:nth-child(8),
+body .tsc table.now9 th:nth-child(9),body .tsc table.now9 td:nth-child(9),
+body .tsc table.now10 th:nth-child(10),body .tsc table.now10 td:nth-child(10),
+body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(240px * var(--fs));
+}
+</style>
+<!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
+<style>
+/* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
+body table>thead>tr>th{position:static}
+body table.sticky-on>thead>tr>th{
+  position:sticky;top:calc(var(--subh,0px) + 1px);z-index:6;
+  box-shadow:0 6px 14px -9px rgba(11,61,145,.45);
+}
+@media screen and (max-width:820px){
+  body table.sticky-on>thead>tr>th{position:static;box-shadow:none}
+}
+@media print{
+  body table.sticky-on>thead>tr>th{position:static}
+}
+</style>
+
+<!-- COLBAL-V1 -->
+<!-- COLFIT-V1 -->
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta">模块 09 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+</div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="08_案例库选取与讲述.html">08 案例库选取与讲述</a> ｜ 下一模块：<a href="10_试点复盘与全门店推广.html">10 试点复盘与推广</a> ｜ 关联：<a href="13_情景卡库30张演练卡.html">13 情景卡库</a> ｜ <a href="14_新人三天集训执行方案.html">14 三天集训方案</a></div>
+
+<div class="wrap">
+  <h1 class="t">模块 09 · 培训演练机制与考核指标</h1>
+  <p class="lead">标准写得再好，没人会等于零。本模块把"知道"变成"会做"：通过<b>三级认证体系</b>明确能力台阶，通过<b>四种演练方式</b>形成肌肉记忆，通过<b>四项可量化指标</b>让改进看得见。</p>
+
+  <h2 class="sec">一、能力分级：L1 / L2 / L3</h2>
+  <div class="lv">
+    <div class="box">
+      <h4><span class="tagx" style="background:#8aa4c9">L1 初级视光师</span></h4>
+      <p class="ni"><b>能力要求：</b>能按七步顺序完成常规配镜解读；能正确使用模块03判定表查出"关注/异常"；能照念模块02话术；能完整填写模块06表单。</p>
+      <p class="ni"><b>权限边界：</b>可独立完成成年低风险顾客的解读；<b>涉及红线指标必须交由 L2 以上处理</b>。</p>
+      <p class="ni"><b>达标路径：</b>入职集训 3 天 + 20 场跟岗解读 + 通过口试与实操考核。</p>
+    </div>
+    <div class="box">
+      <h4><span class="tagx" style="background:#1677ff">L2 标准视光师</span></h4>
+      <p class="ni"><b>能力要求：</b>熟练完成全场景解读（A-E）；能处理顾客异议；能通俗解释全部常见指标；能独立完成青少年档案复查解读；能带教 L1。</p>
+      <p class="ni"><b>权限边界：</b>可独立识别并处理红线指标（发起转诊提醒）；可签发《方案建议书》。</p>
+      <p class="ni"><b>达标路径：</b>累计 100 场解读 + 实操考评 ≥85 分 + 通过情景随机抽考。</p>
+    </div>
+    <div class="box">
+      <h4><span class="tagx" style="background:#e07b39">L3 高级视光师</span></h4>
+      <p class="ni"><b>能力要求：</b>具备全人群、全场景能力；能处理复杂异议与投诉前置；能承担门店培训与案例征集；掌握合规边界并能现场纠偏。</p>
+      <p class="ni"><b>权限边界：</b>门店解读<b>最终把关人</b>；疑难/高风险案例由其复核；参与区域内训。</p>
+      <p class="ni"><b>达标路径：</b>累计 300 场解读 + 实操 ≥90 分 + 完成 1 次对内培训 + 无合规扣分记录。</p>
+    </div>
+  </div>
+  <div class="note"><b>门店最低配置：</b>每家门店至少 1 名 L2 及以上解读骨干，并指定 1 名备份人员；无 L2 门店由区域指派骨干挂牌支持。<b>L1 不得单独处置红线指标</b>——这是硬性要求。</div>
+
+  <h2 class="sec">二、三天集训课程表（新人）</h2>
+  <div class="card">
+    <div class="tsc w5"><table class="ct">
+      <thead><tr><th style="width:10%">时间</th><th style="width:22%">Day 1 · 懂标准</th><th style="width:22%">Day 2 · 会操作</th><th style="width:22%">Day 3 · 能开口</th><th style="width:24%">过关要求</th></tr></thead>
+      <tbody>
+        <tr><td>09:00-10:30</td><td>方案总览：为什么做、目标、分工（模块01）</td><td>判定表实操：给 10 份报告打档（模块03）</td><td>话术演练：第①②③步</td><td>Day1 结课口试：说出七步顺序</td></tr>
+        <tr><td>10:45-12:00</td><td>七步 SOP 精讲（模块02）</td><td>对照表实操：异常→对策配对（模块04）</td><td>话术演练：第④⑤⑥步</td><td>Day2 结课：独立完成 1 份完整判定</td></tr>
+        <tr><td>14:00-15:30</td><td>人群差异：三类客群侧重（模块05）</td><td>表单实操：记录表+建议书填写（模块06）</td><td>话术演练：第⑦步 + 异议应答</td><td>Day3 结课：模拟一场完整解读</td></tr>
+        <tr><td>15:45-17:00</td><td>边界与合规红线（模块11，必考）</td><td>案例库：选得准、讲得好（模块08）</td><td>两人一组全流程角色扮演 ×3 轮</td><td><b>合规模块必须满分</b>，否则不予结业</td></tr>
+        <tr><td>17:00-17:30</td><td>复盘与答疑</td><td>复盘与答疑</td><td>结业测评 + 签署《合规承诺书》</td><td>测评 ≥80 分 + 签署承诺书</td></tr>
+      </tbody>
+    </table></div>
+    <div class="good"><b>带教要求：</b>结业不等于独立上岗。回到门店后需完成 <b>20 场带教解读</b>——前 5 场由 L2 全程主导、新人在旁记录；中间 5 场新人主讲、L2 随时接手补位；后 10 场新人主导、L2 旁听并于每场后给 3 条改进建议。</div>
+    <div class="note"><b>展开版教案见模块14：</b>本节只给出课程骨架；<b>15 节课的完整教案</b>（教学目标、内容要点、组织形式、讲师与教具、当堂产出、过关标准）、开班前 T-7 到 T-1 准备清单、教材印制清单、结课三张测评卷、20 场带教衔接安排，以及可直接复制的培训通知、签到表、结业评定表，见 <a href="14_新人三天集训执行方案.html" style="color:#1677ff;font-weight:600">模块14《新人三天集训执行方案》</a>。</div>
+  </div>
+
+  <h2 class="sec">三、在岗常态化训练（四种方式）</h2>
+  <div class="card">
+    <div class="tsc w4"><table>
+      <thead><tr><th style="width:13%">方式</th><th style="width:13%">频次</th><th style="width:40%">怎么操作</th><th style="width:34%">产出与检查</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>①晨会 15 分钟</b></td>
+          <td>每日</td>
+          <td>周一/三/五：一人念一段标准话术（轮值）；周二/四：抽 1 份昨日记录表，全组找问题；每周五：<b>情景卡抽考1张</b></td>
+          <td>《晨会演练记录本》，店长签字；缺席者次日补做</td>
+        </tr>
+        <tr>
+          <td><b>②角色扮演</b></td>
+          <td>每周 1 次（30分钟）</td>
+          <td>两人一组，一人扮顾客（使用<b>情景卡</b>设定：如"嫌贵且不信网络信息的妈妈"），另一人完整走完七步，第三人旁观记录</td>
+          <td>旁观者用《实操考评表》打分；得分 &lt;80 者下周重考</td>
+        </tr>
+        <tr>
+          <td><b>③录音/录像复盘</b></td>
+          <td>每月 2 次</td>
+          <td>经<b>顾客知情同意</b>后对解读过程录音；视光师回听并自评：专业术语出现几次、是否请顾客复述、是否有禁语</td>
+          <td>《自检表》一份；店长每周抽查一次并给出点评</td>
+        </tr>
+        <tr>
+          <td><b>④带教跟诊</b></td>
+          <td>新人期持续</td>
+          <td>师徒结对（L2 带 L1），每场后 3 条反馈（做对1条、可改1条、下次重点1条）</td>
+          <td>《带教日志》，纳入 L2 的绩效加分项</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <div class="warn"><b>隐私要求：</b>任何录音录像必须在<b>解读开始前明确征得顾客同意</b>，说明用途（内部培训质量改进）；顾客拒绝则跳过，不得隐蔽录制；录音文件仅用于内部复盘，不得外传、不得作为宣传素材。</div>
+  </div>
+
+  <h2 class="sec">四、情景卡库（演练用，建议制作 30 张）</h2>
+  <div class="card">
+    <h3 class="sub">卡片格式</h3>
+    <div class="sc">
+      <b>卡片编号：</b>S-07 ｜ <b>人群：</b>儿童青少年 ｜ <b>场景：</b>青少年档案复查 ｜ <b>难度：</b>★★★<br>
+      <b>顾客设定：</b>9 岁男孩，母亲陪同。一年近视涨了 150 度，眼轴年增 0.45mm。母亲是老师，说话条理性强，会追问数据来源，对"效果"要求明确承诺。<br>
+      <b>关键数据：</b>OD -3.25D / OS -3.00D；AL 24.10mm（+0.45/年）；矫正视力 1.0；眼压正常；眼底正常。<br>
+      <b>考察重点：</b>①能否用年增速而非单次度数切入；②能否抵御"保证不涨"的追问；③能否给出分层方案；④能否讲到眼底/转诊边界（本例无需转诊，但要体现已筛查）。<br>
+      <b>否决项：</b>出现承诺性话语；跳过第②步；未填记录表。
+    </div>
+    <h3 class="sub">建议覆盖的主题（30 张分配）</h3>
+    <div class="tsc"><table>
+      <thead><tr><th style="width:12%">人群</th><th style="width:44%">常规题（约 20 张）</th><th style="width:44%">压力题（约 10 张）</th></tr></thead>
+      <tbody>
+        <tr><td>儿童青少年</td><td>首次配镜、一年涨 100 度、储备不足、户外不够、孩子不肯戴镜、是否要 OK 镜</td><td>家长要求"保证不涨"、外婆坚持"长大做手术就行"、怀疑推销、拿网上文章来质问</td></tr>
+        <tr><td>成年人</td><td>度数没变要不要换镜、视疲劳、干眼、夜间驾车、隐形眼镜配戴史</td><td>明确说"你们就是想卖东西"、时间只有 5 分钟、反复比价</td></tr>
+        <tr><td>中老年</td><td>纯老视、渐进镜介绍、配了渐进头晕、要不要查眼底</td><td>眼压 25mmHg 需要转诊、眼底有可疑改变、坚持"不用去医院你给我配就行"、家属与本人意见冲突</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>压力题的使用：</b>必须在员工通过常规题后才进入；压力题的重点不是"说服顾客"，而是<b>守住边界、不越界、不失态</b>。评分时，"拒绝了不合理要求"得分高于"勉强答应"。</div>
+    <div class="good"><b>完整卡片见模块13：</b>本节只规定卡片格式与主题分配；30 张卡片（含场景设定、参考数据、考察重点、通过标准、否决项）已全部写成可直接打印裁剪的成品，见 <a href="13_情景卡库30张演练卡.html" style="color:#1677ff;font-weight:600">模块13《情景卡库（30 张演练卡）》</a>。抽卡规则、评分线、组合扩题法、印制与更新要求也在该模块。</div>
+  </div>
+
+  <h2 class="sec">五、四项核心考核指标</h2>
+  <div class="kpi4">
+    <div class="box"><h4>指标一 · 解读覆盖率</h4><div class="big">≥95%</div><p>完成解读场次 ÷ 应解读场次</p></div>
+    <div class="box"><h4>指标二 · 顾客理解度</h4><div class="big">≥4.5</div><p>顾客自评能听懂的平均分（5分制）</p></div>
+    <div class="box"><h4>指标三 · 方案接受率</h4><div class="big">≥60%</div><p>接受建议方案人数 ÷ 建议干预人数</p></div>
+    <div class="box"><h4>指标四 · 按期复诊率</h4><div class="big">≥70%</div><p>约定窗口内到店人数 ÷ 约定人数</p></div>
+  </div>
+  <div class="tsc w5"><table>
+    <thead><tr><th style="width:16%">指标</th><th style="width:30%">计算口径（分子/分母）</th><th style="width:18%">数据来源</th><th style="width:12%">统计周期</th><th style="width:24%">达标说明与防作弊</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>解读覆盖率</b></td>
+        <td>分子：当月<b>完成七步解读并留痕（有记录表编号）</b>的人次<br>分母：当月完成完整检查（屈光+至少一项眼健康检查）的人次</td>
+        <td>解读台账 + 检查登记</td><td>月度</td>
+        <td>只看有没有<b>记录表编号</b>，口头声称无效。禁止只对"好沟通的顾客"做解读——抽查发现"有检查无记录"者按未覆盖计入</td>
+      </tr>
+      <tr>
+        <td><b>顾客理解度</b></td>
+        <td>解读后顾客评分（1-5分）的平均值</td>
+        <td>记录表顾客评分栏 / 平板问卷</td>
+        <td>月度（≥30份有效样本）</td>
+        <td>评分必须由<b>顾客本人</b>填写（未成年人由家长）；员工代填视为无效并扣分</td>
+      </tr>
+      <tr>
+        <td><b>方案接受率</b></td>
+        <td>分子：被建议干预且<b>当场或7日内确认执行</b>的人数<br>分母：当月被建议干预（记录表"建议项"非空）的总人数</td>
+        <td>记录表 + 销售小票/预约单</td>
+        <td>月度</td>
+        <td>"建议项"必须与记录一致，不得事后补记；<b>转诊类不计入此项</b>（避免诱导员工隐瞒转诊）</td>
+      </tr>
+      <tr>
+        <td><b>按期复诊率</b></td>
+        <td>分子：约定日期 ±15 天内实际到店完成复查的人数<br>分母：当月约定了复查日期的人数（不含取消/转外院）</td>
+        <td>系统预约 + 到店登记</td>
+        <td>按"约定的复查月份"归属</td>
+        <td>由客服负责跟进 ≤3 次（电话/微信），须留痕；未跟进者责任在门店，计入扣分</td>
+      </tr>
+    </tbody>
+  </table></div>
+  <div class="good"><b>过程指标（辅助，不设权重，用于复盘归因）：</b>①红线筛查完成率（目标 100%，<b>硬性否决项</b>）；②记录表合格率（抽查 ≥90%）；③转诊回访完成率（72小时内，目标 100%）；④科普材料交付率；⑤单场平均解读时长（目标落在标准区间）。</div>
+
+  <h2 class="sec">六、实操考评表（百分制）</h2>
+  <div class="card">
+    <div class="tsc"><table class="now2">
+      <thead><tr><th style="width:20%">考评项</th><th style="width:14%">分值</th><th style="width:66%">评分要点</th></tr></thead>
+      <tbody>
+        <tr><td>流程完整性</td><td>15</td><td>七步齐全、顺序正确；每缺一步扣 5 分</td></tr>
+        <tr><td>异常识别准确性</td><td>20</td><td>是否查表判定、是否漏项、是否触发红线却未处理（<b>漏红线直接判定不合格</b>）</td></tr>
+        <tr><td>通俗表达能力</td><td>20</td><td>每个术语是否在 1 句内做出翻译；顾客能否复述</td></tr>
+        <tr><td>话术与共情</td><td>15</td><td>是否先共情；是否有指责、恐吓、承诺等禁语（<b>出现任一禁语扣 10 分</b>）</td></tr>
+        <tr><td>方案合理性</td><td>15</td><td>是否分层（必做/建议/可选）；费用是否透明；是否符合顾客实际场景</td></tr>
+        <tr><td>表单填写</td><td>10</td><td>记录表/建议书填写完整、规范、无空白</td></tr>
+        <tr><td>边界与合规</td><td>5</td><td>是否越界诊断、是否违规承诺；<b>此项零分则总分不合格</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="sc"><b>评级：</b>≥90 分优秀（可申报 L3）｜80-89 分合格（可申报 L2）｜70-79 分待改进（补训后重考）｜&lt;70 分或边界项零分 → <b>不合格，暂停独立解读资格</b>。</div>
+  </div>
+
+  <h2 class="sec">七、月度复盘会机制</h2>
+  <div class="card">
+    <div class="tsc"><table class="now1 now2">
+      <thead><tr><th style="width:18%">环节</th><th style="width:16%">时长</th><th style="width:66%">内容</th></tr></thead>
+      <tbody>
+        <tr><td>数据通报</td><td>10′</td><td>店长通报四项指标月度值、达标情况、在全区排名</td></tr>
+        <tr><td>抽查点评</td><td>15′</td><td>随机抽 3 份本月记录表与 1 段录音（如有），全组找问题、给建议</td></tr>
+        <tr><td>难点共解</td><td>15′</td><td>每人提出本月遇到的一个"讲不通"的点，集体给出标准答复并入库</td></tr>
+        <tr><td>案例更新</td><td>10′</td><td>新增 2 个案例入库；淘汰效果不佳的案例</td></tr>
+        <tr><td>合规再确认</td><td>5′</td><td>重温红线清单；本月有无越界情况通报</td></tr>
+        <tr><td>下月目标</td><td>5′</td><td>设定个人目标与重点改进项，写入《月度复盘纪要》</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn"><b>纠偏机制：</b>①单店连续 2 个月覆盖率&lt;80% → 店长约谈 + 区域介入支持；②出现 1 起合规越界（诊断、承诺、瞒报红线）→ 当事人停岗复训，店长连带扣分；③理解度连续 2 个月&lt;4.0 → 全员回炉重训第③⑥步话术。</div>
+  </div>
+
+  <h2 class="sec">八、认证与复评</h2>
+  <div class="card">
+    <ul>
+      <li><b>认证有效期：</b>L1/L2/L3 认证有效期<b>一年</b>，到期需复评（实操考评 + 无违规记录）。</li>
+      <li><b>升级通道：</b>每年两次集中评定（3月、9月），由区域督导 + 内训师组成考评组。</li>
+      <li><b>降级处理：</b>出现合规事故、连续两次考评不合格、被顾客有效投诉两次者，降级处理。</li>
+      <li><b>激励挂钩：</b>认证等级与带教资格、疑难案例接诊权限、绩效系数挂钩（具体由公司人力政策确定）。</li>
+      <li><b>新人保护期：</b>入职 3 个月内考核按"学习期标准"（覆盖率≥70%、理解度≥4.0）执行，不计入正式排名。</li>
+    </ul>
+  </div>
+
+  <div class="btnwrap">
+    <button class="btn" onclick="window.print()">打印本模块</button>
+    <a class="btn ghost" href="index.html">返回首页</a>
+    <a class="btn ghost" href="10_试点复盘与全门店推广.html">下一模块：10 试点复盘与推广 →</a>
+  </div>
+</div>
+
+<footer>
+  <b>模块 09 · 培训演练机制与考核指标</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  考核指标为门店服务管理目标，不与医疗行为挂钩；所有涉及转诊与合规的项目为硬性否决项，不参与加权计算。
+</footer>
+<script>
+/* SMART-STICKY-V1 : 智能表头吸顶 */
+(function(){
+  var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
+  function calc(){
+    var vh = window.innerHeight || 800;
+    var wide = (window.innerWidth || 1280) > WIDE;
+    var tabs = document.querySelectorAll('table'), i, t, on;
+    for(i = 0; i < tabs.length; i++){
+      t = tabs[i];
+      if(!t.tHead) continue;
+      on = wide && t.rows.length >= MIN_ROWS && t.getBoundingClientRect().height >= vh * MIN_H;
+      if(on) { t.className += ' sticky-on'; } else { t.className = t.className.replace(/\s*sticky-on\b/g, ''); }
+    }
+  }
+  function defer(){ if(tm) clearTimeout(tm); tm = setTimeout(calc, 120); }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', calc); } else { calc(); }
+  window.addEventListener('load', calc);
+  window.addEventListener('resize', defer);
+  var ds = document.querySelectorAll('details'), j;
+  for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+</body>
+</html>
