@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块06 · 记录表与方案建议书模板 | 永州爱眼城 检查报告解读标准化方案</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.7;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:calc(18px * var(--fs));font-weight:700}
+.topbar .meta{font-size:calc(13px * var(--fs));opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:calc(13.5px * var(--fs));color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:calc(22px * var(--fs));color:#1677ff;margin:0 auto 6px;line-height:1.45;text-align:center}
+.lead{text-indent:2em;color:#5b6b7d;font-size:calc(15.5px * var(--fs));margin-bottom:20px;max-width:960px}
+h2.sec{font-size:calc(20px * var(--fs));color:#1677ff;margin:32px 0 12px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+h3.sub{font-size:calc(16.5px * var(--fs));color:#1677ff;margin:16px 0 8px}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:18px 22px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:16px}
+.form{background:#fff;border:2px solid #1677ff;border-radius:10px;padding:0;margin-bottom:22px;overflow:hidden}
+.form .fhead{background:#1677ff;color:#fff;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.form .fhead h3{font-size:calc(18px * var(--fs));font-weight:700}
+.form .fhead .no{font-size:calc(13px * var(--fs));background:rgba(255,255,255,.2);padding:3px 10px;border-radius:20px}
+.form .fbody{padding:16px 20px}
+.fnote{font-size:calc(13px * var(--fs));color:#7a8799;margin:6px 0 12px;padding:6px 10px;background:#f7faff;}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:calc(14px * var(--fs));margin-bottom:10px}
+th,td{border:1px solid #c6d9f7;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600}
+td.c,th.c{text-align:center}
+.sec-title{background:#e8f1ff;color:#1677ff;font-weight:700;padding:7px 10px;font-size:calc(15px * var(--fs));border:1px solid #c6d9f7}
+.blk{border:1px solid #c6d9f7;border-top:none;padding:10px}
+.line2{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;align-items:baseline}
+.line2 label{font-size:calc(14px * var(--fs));color:#45596e;white-space:nowrap}
+.line2 .fill{border-bottom:1px solid #7a8799;min-width:calc(120px * var(--fs));flex:1;display:inline-block;height:1.2em}
+.check{display:inline-flex;align-items:center;gap:4px;margin-right:14px;font-size:calc(14px * var(--fs))}
+.check input{width:14px;height:14px}
+.hint{font-size:calc(12.5px * var(--fs));color:#8b96a9;margin-top:2px}
+ul,ol{margin:6px 0 10px 20px;font-size:calc(15px * var(--fs))}
+li{margin-bottom:5px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#6b4a25;margin:14px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#1f5c40;margin:14px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#7d2b2b;margin:14px 0}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:calc(13.5px * var(--fs));line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:calc(14px * var(--fs));cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media print{.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:12px}.form{page-break-inside:avoid;border-color:#333}.form .fhead{background:#333}}
+</style>
+<!-- LAYOUT-V2 -->
+<style>
+/* ==========================================================================
+   平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
+   只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
+   ========================================================================== */
+:root{
+  --fs:1;            /* 字号/组件缩放系数 */
+  --wrap:1180px;     /* 正文容器最大宽度 */
+  --wpx:22px;        /* 容器左右留白 */
+  --wpy:26px;        /* 容器上留白 */
+  --cy:9px; --cx:12px;  /* 表格单元格内边距 */
+  --subh:44px;       /* 吸顶导航高度 */
+}
+/* 平板（横屏 1280 / 竖屏 800 均命中）：整站同比缩放，--fs=1.02（较上一版 -11.3%） */
+@media screen and (min-width:641px) and (max-width:1400px){
+  :root{--fs:1.02;--wrap:1160px;--wpx:24px;--wpy:20px;--cy:11px;--cx:13px;--subh:44px}
+}
+@media screen and (max-width:640px){
+  :root{--fs:1.04;--wrap:100%;--wpx:14px;--wpy:16px;--cy:9px;--cx:10px;--subh:44px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","HarmonyOS Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;letter-spacing:.012em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:rgba(22,119,255,.12);
+}
+::selection{background:#c9dfff;color:#0b3d91}
+
+/* ---------- 容器与页头 ---------- */
+body .wrap{max-width:var(--wrap);padding:var(--wpy) var(--wpx) 72px}
+body .hero{padding:26px var(--wpx) 24px}
+body .topbar{padding:14px var(--wpx);gap:12px}
+body footer{padding:20px var(--wpx);line-height:1.9}
+
+/* ---------- 吸顶导航：翻到任何位置都能一眼跳模块 ---------- */
+body .subnav{
+  position:sticky;top:0;z-index:80;
+  min-height:var(--subh);
+  padding:calc((var(--subh) - 1.5em - 1px) / 2) var(--wpx);
+  line-height:1.5;
+  white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+  background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 2px 12px rgba(22,119,255,.07);
+  scrollbar-width:none;
+}
+body .subnav::-webkit-scrollbar{height:0}
+body .subnav a{white-space:nowrap;padding:0 1px;text-decoration:none}
+
+/* ---------- 标题节奏与锚点定位 ---------- */
+body h1.t{line-height:1.45}
+body h2.sec{margin:38px 0 16px;line-height:1.4}
+body h2.sec,body h3.sub,body h3.sub2,body .card,body .step,body .form,body .item{
+  scroll-margin-top:calc(var(--subh) + 16px);
+}
+body .lead{margin-bottom:24px;line-height:1.85}
+
+/* ---------- 卡片 / 提示块 ---------- */
+body .card{padding:20px 24px;margin-bottom:18px;border-radius:14px}
+body .note,body .good,body .warn{padding:15px 18px;margin:16px 0;border-radius:10px;line-height:1.8}
+body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:16px 18px}
+body .case{padding:16px 20px;margin-bottom:16px}
+body .case .txt{padding:12px 15px}
+body .quote{padding:12px 16px;margin:10px 0}
+body .scard{padding:14px 16px}
+body .fnode{padding:12px 16px}
+body .step .hd,body .form .fhead{padding:13px 22px}
+body .form .fbody{padding:18px 22px}
+body .peopledet .hd{padding:16px 24px}
+body .daybar{padding:12px 18px;margin:26px 0 14px}
+body .sec-title{padding:9px 12px}
+body .blk{padding:12px 14px}
+body .line2{gap:14px;margin-bottom:10px}
+body .check{margin-right:16px}
+
+/* ---------- 表格：更容易一行一行读下去 ---------- */
+body table{
+  border-collapse:separate;border-spacing:0;border-radius:12px;
+  line-height:1.62;margin:12px 0 16px;
+}
+body th,body td{
+  border:0;
+  border-right:1px solid #dae3f5;border-bottom:1px solid #dae3f5;
+  padding:var(--cy) var(--cx);
+  overflow-wrap:break-word;
+}
+body th{
+  background:linear-gradient(180deg,#f1f7ff,#e4eeff);
+  color:#0b3d91;font-weight:700;letter-spacing:.02em;
+text-align:center;}
+body thead th{
+  border-top:1px solid #dae3f5;
+  position:sticky;top:calc(var(--subh) + 1px);z-index:6;
+}
+body tr>th:first-child,body tr>td:first-child{border-left:1px solid #dae3f5}
+body table>thead>tr:first-child>th:first-child{border-top-left-radius:12px}
+body table>thead>tr:first-child>th:last-child{border-top-right-radius:12px}
+body table:not(:has(thead))>tbody>tr:first-child>td:first-child{border-top-left-radius:12px;border-top:1px solid #dae3f5}
+body table:not(:has(thead))>tbody>tr:first-child>td:last-child{border-top-right-radius:12px;border-top:1px solid #dae3f5}
+body table>tbody>tr:last-child>td:first-child{border-bottom-left-radius:12px}
+body table>tbody>tr:last-child>td:last-child{border-bottom-right-radius:12px}
+body tbody tr:nth-child(even)>td{background:#fafcff}
+body tbody tr:hover>td{background:#eef5ff}
+body tbody td{transition:background .15s}
+body table.ct th,body table.ct td{text-align:center;vertical-align:middle}
+
+/* ---------- 触控友好：按钮、胶囊、复选框 ---------- */
+body .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 20px;border-radius:10px;
+}
+body .btnwrap{margin:30px 0 10px}
+body .chips{gap:10px}
+body .chips a,body .idxbar a{
+  display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:10px;
+}
+body .idxbar{gap:10px;margin-bottom:20px}
+body .check input,body input[type=checkbox]{width:18px;height:18px;accent-color:#1677ff}
+body .fill{min-height:1.35em}
+body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:3px 9px;border-radius:6px}
+body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:3px 10px}
+body .farrow,body .story .arrow{padding:0 2px}
+body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fill:focus-visible{
+  outline:2px solid #1677ff;outline-offset:2px;border-radius:6px;
+}
+
+/* ---------- 小屏栅格回流（仅屏幕，不影响打印分栏） ---------- */
+@media screen and (max-width:1000px){
+  body .steps{grid-template-columns:1fr 1fr !important}
+}
+@media screen and (max-width:900px){
+  body .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important}
+  body .scards,body .pkg4{grid-template-columns:1fr !important}
+  body .scards{gap:10px}
+}
+@media screen and (max-width:640px){
+  body .grid,body .steps,body .kpi,body .kpi4,body .lv,body .chk,
+  body .std,body .three{grid-template-columns:1fr !important}
+  body .subnav{padding-left:12px;padding-right:12px}
+}
+
+/* ---------- 打印兜底：恢复紧凑版式，A4 友好 ---------- */
+/* ---------- 平板档专项：行高 / 间距 / 图标同步收缩（仅 641–1400px） ---------- */
+@media screen and (min-width:641px) and (max-width:1400px){
+  body{line-height:1.62;letter-spacing:.008em}
+  body .wrap{padding:20px var(--wpx) 64px}
+  body .hero{padding:22px var(--wpx) 20px}
+  body .topbar{padding:12px var(--wpx);gap:10px}
+  body footer{padding:17px var(--wpx);line-height:1.72}
+  body .subnav{line-height:1.45}
+  body h2.sec{margin:32px 0 14px;line-height:1.38}
+  body .lead{margin-bottom:20px;line-height:1.68}
+  body .card{padding:16px 20px;margin-bottom:15px;border-radius:12px}
+  body .note,body .good,body .warn{padding:12px 15px;margin:13px 0;border-radius:9px;line-height:1.62}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:13px 15px}
+  body .case{padding:13px 16px;margin-bottom:13px}
+  body .case .txt{padding:10px 13px}
+  body .quote{padding:10px 13px;margin:8px 0}
+  body .scard{padding:12px 14px}
+  body .fnode{padding:10px 14px}
+  body .step .hd,body .form .fhead{padding:11px 18px}
+  body .form .fbody{padding:15px 18px}
+  body .peopledet .hd{padding:13px 20px}
+  body .daybar{padding:10px 15px;margin:22px 0 12px}
+  body .sec-title{padding:7px 10px}
+  body .blk{padding:10px 12px}
+  body .line2{gap:12px;margin-bottom:8px}
+  body .check{margin-right:13px}
+  body table{line-height:1.5;margin:10px 0 14px;border-radius:10px}
+  body .btn{min-height:42px;padding:8px 17px;border-radius:9px}
+  body .btnwrap{margin:26px 0 8px}
+  body .chips{gap:9px}
+  body .chips a,body .idxbar a{min-height:40px;padding:7px 12px;border-radius:9px}
+  body .idxbar{gap:9px;margin-bottom:17px}
+  body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:2px 8px;border-radius:5px}
+  body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:2px 8px}
+}
+@media print{
+  :root{--fs:1;--wpx:0;--wpy:0}
+  body{line-height:1.55;letter-spacing:0;background:#fff}
+  body .wrap{max-width:none;padding:0 0 8px}
+  body .topbar,body .btnwrap{box-shadow:none}
+  body .subnav{position:static;box-shadow:none;background:#fff;overflow:visible;white-space:normal;
+    min-height:0;padding:0 0 6px}
+  body .card{padding:10px 12px;margin-bottom:10px;border-radius:0;box-shadow:none}
+  body .note,body .good,body .warn{padding:8px 10px;margin:8px 0;border-radius:0}
+  body .step .hd,body .form .fhead,body .form .fbody,body .peopledet .hd,body .daybar{padding:7px 10px}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item,body .case,body .scard{
+    padding:8px 10px;border-radius:0;box-shadow:none}
+  body table{border-collapse:collapse;border-radius:0;margin:6px 0 10px}
+  body thead th{position:static}
+  body th,body td{border:1px solid #cbd5e1;padding:4px 6px}
+  body th{background:#e8f1ff !important;color:#0b3d91 !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body tbody tr:nth-child(even)>td{background:#fafcff !important}
+  body tbody tr:hover>td{background:transparent !important}
+}
+</style>
+<!-- /LAYOUT-V2 -->
+<!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
+<style>
+/* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
+   text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
+   恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
+body .wrap p,
+body .hero p{text-indent:2em;overflow-wrap:break-word}
+
+/* 相邻正文段落间距：用 margin 分隔，不插空行伪造缩进 */
+body .wrap p + p{margin-top:.5em}
+
+/* ---- 例外：以下不属于"正文段落"，一律不缩进（选择器特异性高于上方规则） ---- */
+/* 结构元素：列表项内 / 表格单元格 / 图注 / 代码 / 引用块 / 页眉页脚导航 */
+body .wrap :is(li,td,th,caption,figcaption,dt,dd,pre,code,blockquote,figure) p,
+body .topbar p,body .subnav p,body footer p,body .btnwrap p,
+/* 组件化短行：四大板块标签、KPI 数值卡说明行、人群卡元信息行 */
+body .wrap .pkg4 p,body .wrap .kpi p,body .wrap .kpi4 p,body .wrap .hd p,
+/* 字段行（注入时自动识别并加 ni 类），以及手工豁免 */
+body .wrap p.ni,body .wrap .ni p,
+/* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
+body p:lang(en),body p.en{text-indent:0}
+</style>
+<style>
+/* ==========================================================================
+   TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
+   仅调整容器与列宽，不动文字/字段/配色/字号
+   ========================================================================== */
+/* 表格外层容器：宽屏不裁剪（保留吸顶表头），窄屏启用横向滚动 */
+body .tsc{margin:12px 0 16px}
+body .tsc>table{margin:0}
+@media screen and (max-width:820px){
+  body .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  /* 多列表给出最小可读宽度，超出即横向滚动，绝不撑破页面 */
+  body .tsc.w4>table{min-width:calc(460px * var(--fs))}
+  body .tsc.w5>table{min-width:calc(560px * var(--fs))}
+  body .tsc.w6>table{min-width:calc(660px * var(--fs))}
+  body .tsc.w7>table,body .tsc.w8>table{min-width:calc(780px * var(--fs))}
+  body .tsc.w9>table{min-width:calc(940px * var(--fs))}
+  /* 滚动容器内表头吸顶失效，显式降级，避免错位 */
+  body .tsc thead th{position:static}
+}
+/* 打印兜底：容器不裁剪，边距回落到原紧凑值 */
+@media print{
+  body .tsc{margin:6px 0 10px;overflow:visible}
+  body .tsc>table{min-width:0}
+}
+/* 单元格兜底：长文本优先换行，短字段不折行 */
+body th,body td{overflow-wrap:break-word;word-break:break-word}
+body .tsc table.now1 th:nth-child(1),body .tsc table.now1 td:nth-child(1),
+body .tsc table.now2 th:nth-child(2),body .tsc table.now2 td:nth-child(2),
+body .tsc table.now3 th:nth-child(3),body .tsc table.now3 td:nth-child(3),
+body .tsc table.now4 th:nth-child(4),body .tsc table.now4 td:nth-child(4),
+body .tsc table.now5 th:nth-child(5),body .tsc table.now5 td:nth-child(5),
+body .tsc table.now6 th:nth-child(6),body .tsc table.now6 td:nth-child(6),
+body .tsc table.now7 th:nth-child(7),body .tsc table.now7 td:nth-child(7),
+body .tsc table.now8 th:nth-child(8),body .tsc table.now8 td:nth-child(8),
+body .tsc table.now9 th:nth-child(9),body .tsc table.now9 td:nth-child(9),
+body .tsc table.now10 th:nth-child(10),body .tsc table.now10 td:nth-child(10),
+body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(240px * var(--fs));
+}
+</style>
+<!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
+<style>
+/* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
+body table>thead>tr>th{position:static}
+body table.sticky-on>thead>tr>th{
+  position:sticky;top:calc(var(--subh,0px) + 1px);z-index:6;
+  box-shadow:0 6px 14px -9px rgba(11,61,145,.45);
+}
+@media screen and (max-width:820px){
+  body table.sticky-on>thead>tr>th{position:static;box-shadow:none}
+}
+@media print{
+  body table.sticky-on>thead>tr>th{position:static}
+}
+</style>
+
+<!-- COLBAL-V1 -->
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta">模块 06 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+</div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="05_三类人群差异化解读.html">05 三类人群差异化解读</a> ｜ 下一模块：<a href="07_科普知识点清单.html">07 科普知识点清单</a> ｜ 关联：<a href="12_方案建议书标准模板集.html">12 建议书模板集</a></div>
+
+<div class="wrap">
+  <h1 class="t">模块 06 · 报告解读记录表 与 方案建议书模板</h1>
+  <p class="lead">讲得再好，不留痕迹就等于没讲。<b>这套表单有两个作用：</b>对内，它是服务质量的凭证、异常发现的保护伞、下一次接待的交接单；对外，它是顾客带回家的"说明书"，决定了他的家人会不会认可我们的专业度。<b>记录表门店留存，建议书交给顾客。</b></p>
+
+  <div class="note"><b>使用规则：</b>①<b>当场填写，不得事后补录</b>；②两张表编号一致，便于对照；③纸质件按月度归档，电子件录入顾客档案系统；④保存期限不少于 2 年（涉及转诊提醒的建议永久保存）；⑤凡顾客签字处不得代签。</div>
+
+  <h2 class="sec">表单一 · 《顾客报告解读记录表》（门店留存）</h2>
+  <div class="form">
+    <div class="fhead"><h3>顾客报告解读记录表</h3><span class="no">表单编号：AYC-JD-001 ｜ 永州爱眼城连锁</span></div>
+    <div class="fbody">
+      <div class="sec-title">一、基本信息</div>
+      <div class="blk">
+        <div class="line2">
+          <label>顾客姓名：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span>
+          <label>性别：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span>
+          <label>年龄：</label><span class="fill" style="max-width:calc(70px * var(--fs))"></span>
+          <label>联系电话：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span>
+        </div>
+        <div class="line2">
+          <label>门店：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span>
+          <label>解读日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span>
+          <label>视光师：</label><span class="fill" style="max-width:calc(100px * var(--fs))"></span>
+          <label>记录人：</label><span class="fill" style="max-width:calc(100px * var(--fs))"></span>
+        </div>
+        <div class="line2">
+          <label>客群类型：</label>
+          <span class="check"><input type="checkbox"> 儿童青少年</span>
+          <span class="check"><input type="checkbox"> 成年人</span>
+          <span class="check"><input type="checkbox"> 中老年</span>
+          <label>陪同人：</label><span class="fill" style="max-width:calc(120px * var(--fs))"></span>
+          <label>是否首诊：</label>
+          <span class="check"><input type="checkbox"> 是</span><span class="check"><input type="checkbox"> 否</span>
+        </div>
+        <div class="line2">
+          <label>解读场景：</label>
+          <span class="check"><input type="checkbox"> A 配镜即解读</span>
+          <span class="check"><input type="checkbox"> B 青少年档案复查</span>
+          <span class="check"><input type="checkbox"> C 视疲劳/干眼</span>
+          <span class="check"><input type="checkbox"> D 中老年眼健康</span>
+          <span class="check"><input type="checkbox"> E 顾客带报告来问</span>
+        </div>
+      </div>
+
+      <div class="sec-title">二、①检查数据梳理</div>
+      <div class="blk">
+        <div class="tsc w6"><table>
+          <thead><tr><th style="width:18%">检查项目</th><th class="c" style="width:9%">已完成</th><th style="width:21%">本次结果</th><th style="width:22%">上次结果</th><th style="width:20%">变化量</th><th style="width:10%">数据来源</th></tr></thead>
+          <tbody>
+            <tr><td>裸眼视力（远）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>矫正视力（远）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>屈光度（OD/OS，SE）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>眼轴 AL（年化增长）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>角膜曲率 K / 角膜散光</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>眼压 NCT（OD/OS）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>眼底（照相/杯盘比）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>双眼视功能</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>干眼相关（BUT/泪液）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>眼前节/晶体</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+          </tbody>
+        </table></div>
+        <div class="line2"><label>缺失项说明：</label><span class="fill"></span></div>
+        <div class="line2"><label>背景信息（职业/学业、用眼时长、戴镜史、家族史、全身病）：</label></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
+      </div>
+
+      <div class="sec-title">三、②异常项登记（照模块03、04判定）</div>
+      <div class="blk">
+        <div class="tsc w6"><table class="now1 now4 now5">
+          <thead><tr><th class="c" style="width:6%">序</th><th style="width:19%">指标名称</th><th style="width:19%">本次值</th><th style="width:12%">判定档位</th><th style="width:10%">是否转诊</th><th style="width:34%">处理方式（简要）</th></tr></thead>
+          <tbody>
+            <tr><td class="c">1</td><td></td><td></td><td>□正常 □关注 □异常</td><td>□是 □否</td><td></td></tr>
+            <tr><td class="c">2</td><td></td><td></td><td>□正常 □关注 □异常</td><td>□是 □否</td><td></td></tr>
+            <tr><td class="c">3</td><td></td><td></td><td>□正常 □关注 □异常</td><td>□是 □否</td><td></td></tr>
+            <tr><td class="c">4</td><td></td><td></td><td>□正常 □关注 □异常</td><td>□是 □否</td><td></td></tr>
+          </tbody>
+        </table></div>
+        <div class="line2">
+          <label>红线筛查（必须完项打√）：</label>
+          <span class="check"><input type="checkbox"> 眼压异常</span>
+          <span class="check"><input type="checkbox"> 眼底异常</span>
+          <span class="check"><input type="checkbox"> 角膜曲率/厚度异常</span>
+          <span class="check"><input type="checkbox"> 显性斜视</span>
+          <span class="check"><input type="checkbox"> 矫正不达标</span>
+          <span class="check"><input type="checkbox"> 急性症状</span>
+        </div>
+      </div>
+
+      <div class="sec-title">四、③—⑦解读要点与顾客反馈</div>
+      <div class="blk">
+        <div class="line2"><label>顾客主诉/在意的问题：</label></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
+        <div class="line2"><label>讲的原因（≤2条）：</label></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
+        <div class="line2"><label>讲的影响（关联生活场景）：</label></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
+        <div class="line2"><label>⑤解决方案：必做项：</label></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
+        <div class="line2"><label>建议项：</label><span class="fill"></span><label>&nbsp;&nbsp;可选项：</label><span class="fill"></span></div>
+        <div class="line2"><label>⑥科普点（≤3条）：</label><span class="fill"></span></div>
+        <div class="line2"><label>⑦使用的案例编号（模块08）：</label><span class="fill" style="max-width:calc(120px * var(--fs))"></span></div>
+        <div class="line2"><label>顾客顾虑 / 拒绝原因：</label></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
+        <div class="line2"><label>顾客原话记录（跟进素材）：</label></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
+      </div>
+
+      <div class="sec-title">五、顾客理解确认（视光师提问，顾客复述后记录）</div>
+      <div class="blk">
+        <div class="line2"><label>顾客能复述的关键信息：</label><span class="fill"></span></div>
+        <div class="line2">
+          <label>理解度自评：</label>
+          <span class="check"><input type="checkbox"> 完全听懂</span>
+          <span class="check"><input type="checkbox"> 基本听懂</span>
+          <span class="check"><input type="checkbox"> 仍有疑问</span>
+          <label>&nbsp;&nbsp;顾客评分（1-5分）：</label><span class="fill" style="max-width:calc(80px * var(--fs))"></span>
+        </div>
+      </div>
+
+      <div class="sec-title">六、复查、转诊与跟进</div>
+      <div class="blk">
+        <div class="line2">
+          <label>是否发出转诊提醒：</label>
+          <span class="check"><input type="checkbox"> 否</span><span class="check"><input type="checkbox"> 是（项目：<span class="fill" style="max-width:calc(160px * var(--fs))"></span>）</span>
+        </div>
+        <div class="line2">
+          <label>转诊方式：</label>
+          <span class="check"><input type="checkbox"> 口头说明</span>
+          <span class="check"><input type="checkbox"> 书面提示</span>
+          <span class="check"><input type="checkbox"> 提供报告图像</span>
+          <label>&nbsp;&nbsp;回访日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span>
+        </div>
+        <div class="line2">
+          <label>复查项目：</label><span class="fill" style="max-width:calc(200px * var(--fs))"></span>
+          <label>约定复查日期：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span>
+          <label>已录入提醒：</label><span class="check"><input type="checkbox"> 是</span>
+        </div>
+        <div class="line2" style="margin-top:22px">
+          <label>视光师签字：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span>
+          <label>顾客/监护人签字：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span>
+          <label>日期：</label><span class="fill" style="max-width:calc(120px * var(--fs))"></span>
+        </div>
+      </div>
+      <div class="fnote">说明：本表用于门店服务质量管理与健康宣教留痕，其中所有数值均为检查原始数据记录，不构成医疗诊断。表中涉及"异常""转诊"的判定依据见《指标参考区间与异常判定表》。</div>
+    </div>
+  </div>
+
+  <h2 class="sec">表单二 · 《个性化处理方案建议书》（顾客带走）</h2>
+  <div class="form">
+    <div class="fhead"><h3>个性化处理方案建议书</h3><span class="no">表单编号：AYC-JD-002 ｜ 永州爱眼城连锁</span></div>
+    <div class="fbody">
+      <p style="font-size:14.5px;color:#45596e;margin-bottom:12px">尊敬的 <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> 顾客：<br>感谢您到永州爱眼城 <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> 门店接受检查。以下是我们根据您今天的检查结果整理的情况说明与后续建议，请您留存。</p>
+
+      <div class="sec-title">一、本次检查的关键结果</div>
+      <div class="blk">
+        <div class="tsc w4"><table>
+          <thead><tr><th style="width:26%">项目</th><th style="width:22%">本次结果</th><th style="width:22%">对照/上次</th><th style="width:30%">通俗说明</th></tr></thead>
+          <tbody>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table></div>
+        <p class="hint ni">填写提示："通俗说明"栏用一句生活化的话解释这个项目，例如"眼轴＝眼球的前后长度"。</p>
+      </div>
+
+      <div class="sec-title">二、我们建议重点关注的内容</div>
+      <div class="blk">
+        <div style="border-bottom:1px solid #7a8799;height:2.4em;margin-bottom:6px"></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.4em;margin-bottom:6px"></div>
+      </div>
+
+      <div class="sec-title">三、后续处理建议（三层结构）</div>
+      <div class="blk">
+        <div class="tsc w4"><table>
+          <thead><tr><th style="width:14%">层级</th><th style="width:20%">建议内容</th><th style="width:30%">预计所需时间/频次</th><th style="width:36%">费用区间（透明填写）</th></tr></thead>
+          <tbody>
+            <tr><td><b>必做项</b><br>（基础）</td><td></td><td></td><td></td></tr>
+            <tr><td><b>建议项</b><br>（针对本次异常）</td><td></td><td></td><td></td></tr>
+            <tr><td><b>可选项</b><br>（体验提升）</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table></div>
+        <p class="hint ni">填写提示：必做项必须包含至少一项"不花钱、可执行"的内容；费用必须写明区间，不得空着。</p>
+      </div>
+
+      <div class="sec-title">四、日常注意事项（科普）</div>
+      <div class="blk">
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:6px"></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:6px"></div>
+        <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:6px"></div>
+      </div>
+
+      <div class="sec-title">五、复查安排</div>
+      <div class="blk">
+        <div class="line2">
+          <label>建议复查时间：</label><span class="fill" style="max-width:calc(200px * var(--fs))"></span>
+          <label>复查项目：</label><span class="fill" style="max-width:calc(200px * var(--fs))"></span>
+        </div>
+        <p class="hint ni">复查的意义：观察数据的变化趋势，判断现有方法是否有效，必要时调整方案。</p>
+      </div>
+
+      <div class="sec-title">六、需要提醒您到爱眼城眼科进一步检查的事项</div>
+      <div class="blk">
+        <div class="line2">
+          <span class="check"><input type="checkbox"> 本次未发现需要进一步检查的提示</span>
+        </div>
+        <div class="line2">
+          <span class="check"><input type="checkbox"> 有以下项目建议到爱眼城眼科就诊：</span><span class="fill"></span>
+        </div>
+        <div class="line2"><label>建议科室：</label><span class="fill" style="max-width:calc(180px * var(--fs))"></span><label>建议时限：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span></div>
+        <div class="warn" style="margin:10px 0 0;font-size:13.5px"><b>重要提示：</b>本建议书为眼健康宣教与配镜服务沟通文件，<b>不属于医疗诊断文书</b>。其中任何涉及"异常"的表述仅为筛查提示，不构成疾病诊断。是否患病、如何治疗，请以医疗机构执业医师的诊断和方案为准。</div>
+      </div>
+
+      <div class="line2" style="margin-top:20px">
+        <label>视光师：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span>
+        <label>门店电话：</label><span class="fill" style="max-width:calc(150px * var(--fs))"></span>
+        <label>日期：</label><span class="fill" style="max-width:calc(120px * var(--fs))"></span>
+        <label>顾客签字：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec">表单三 · 门店月度解读台账（店长用）</h2>
+  <div class="card">
+    <div class="tsc w9"><table class="now1 now7">
+      <thead><tr><th class="c" style="width:6%">序</th><th style="width:13%">日期</th><th style="width:10%">顾客姓名</th><th class="c" style="width:10%">年龄</th><th style="width:10%">解读场景</th><th style="width:10%">异常项</th><th class="c" style="width:6%">转诊</th><th class="c" style="width:5%">接受方案</th><th style="width:10%">复查日期</th><th style="width:10%">视光师</th><th class="c" style="width:10%">记录表号</th></tr></thead>
+      <tbody>
+        <tr><td class="c">1</td><td></td><td></td><td></td><td></td><td></td><td class="c">□</td><td class="c">□</td><td></td><td></td><td></td></tr>
+        <tr><td class="c">2</td><td></td><td></td><td></td><td></td><td></td><td class="c">□</td><td class="c">□</td><td></td><td></td><td></td></tr>
+        <tr><td class="c">3</td><td></td><td></td><td></td><td></td><td></td><td class="c">□</td><td class="c">□</td><td></td><td></td><td></td></tr>
+        <tr><td class="c">…</td><td></td><td></td><td></td><td></td><td></td><td class="c">□</td><td class="c">□</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <div class="line2"><label>月度统计：</label><label>完成检查人数：</label><span class="fill" style="max-width:calc(80px * var(--fs))"></span><label>完成解读人数：</label><span class="fill" style="max-width:calc(80px * var(--fs))"></span><label>转诊提醒：</label><span class="fill" style="max-width:calc(70px * var(--fs))"></span>例<label>方案接受：</label><span class="fill" style="max-width:calc(70px * var(--fs))"></span>例</div>
+  </div>
+
+  <h2 class="sec">填写规范与常见错误</h2>
+  <div class="card">
+    <h3 class="sub">六条填写规范</h3>
+    <ol>
+      <li><b>当场填，不补填。</b>顾客离店后凭记忆补写，等于没写。</li>
+      <li><b>不写"感觉""好像"。</b>数值一律写实客观：写"眼压 24mmHg"，不写"眼压偏高一点"。</li>
+      <li><b>写顾客原话。</b>"孩子每天写作业到十点半""看手机要把手机拿得很近才舒服"——原话是最有价值的跟进素材。</li>
+      <li><b>每一栏都要有内容。</b>没有的写"/"，不得留空（留空＝无法证明做过）。</li>
+      <li><b>转诊必须有时间和回访日期。</b>只写"建议进一步检查"没有闭环，等于免责失败。</li>
+      <li><b>不写诊断。</b>记录中禁止出现疾病名称和定性表述，只能写"XX 项目超出参考范围，建议到爱眼城眼科进一步检查"。</li>
+    </ol>
+    <h3 class="sub">常见错误清单</h3>
+    <div class="tsc"><table>
+      <thead><tr><th style="width:25%">错误</th><th style="width:31%">造成的后果</th><th style="width:44%">正确做法</th></tr></thead>
+      <tbody>
+        <tr><td>异常项栏写"基本正常"</td><td>无法证明是否查过该项目，出问题无法自证</td><td>写明具体数值与档位</td></tr>
+        <tr><td>记录里写"疑似青光眼，已告知"</td><td>构成诊断表述，风险极高</td><td>写"眼压 25mmHg，超出参考范围，已书面提示到爱眼城眼科做进一步检查"</td></tr>
+        <tr><td>转诊项不打勾但确有异常</td><td>漏诊风险 + 服务失误</td><td>红线筛查必须逐项打勾</td></tr>
+        <tr><td>复查日期写"三个月后"</td><td>无法生成提醒，顾客流失</td><td>写具体日期并录入系统</td></tr>
+        <tr><td>顾客未签字</td><td>顾客否认接受过解读和建议</td><td>必填；拒签时注明"顾客拒签"并由店长确认</td></tr>
+        <tr><td>方案建议书不交付顾客</td><td>家人不知情，方案易被劝退</td><td>必须交付并要求顾客带走</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="good"><b>编号规则（建议）：</b>门店代码 + 年月 + 流水号，如"<b>LL03-202609-018</b>"表示零陵区第 3 家门店 2026 年 9 月第 18 份解读记录。<b>记录表与建议书使用同一编号</b>，便于对照查询。可通过修改文件后直接打印使用。</div>
+
+  <div class="btnwrap">
+    <button class="btn" onclick="window.print()">打印本模块（含空白表单）</button>
+    <a class="btn ghost" href="index.html">返回首页</a>
+    <a class="btn ghost" href="07_科普知识点清单.html">下一模块：07 科普知识点清单 →</a>
+  </div>
+</div>
+
+<footer>
+  <b>模块 06 · 报告解读记录表与方案建议书模板</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  表单中涉及的所有检查数值与健康建议均为门店服务留痕用途，不构成医疗诊断；涉及就医建议的部分以医疗机构意见为最终依据。
+</footer>
+<script>
+/* SMART-STICKY-V1 : 智能表头吸顶 */
+(function(){
+  var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
+  function calc(){
+    var vh = window.innerHeight || 800;
+    var wide = (window.innerWidth || 1280) > WIDE;
+    var tabs = document.querySelectorAll('table'), i, t, on;
+    for(i = 0; i < tabs.length; i++){
+      t = tabs[i];
+      if(!t.tHead) continue;
+      on = wide && t.rows.length >= MIN_ROWS && t.getBoundingClientRect().height >= vh * MIN_H;
+      if(on) { t.className += ' sticky-on'; } else { t.className = t.className.replace(/\s*sticky-on\b/g, ''); }
+    }
+  }
+  function defer(){ if(tm) clearTimeout(tm); tm = setTimeout(calc, 120); }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', calc); } else { calc(); }
+  window.addEventListener('load', calc);
+  window.addEventListener('resize', defer);
+  var ds = document.querySelectorAll('details'), j;
+  for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+</body>
+</html>
