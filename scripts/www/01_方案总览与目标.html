@@ -279,6 +279,64 @@ body .wrap p.ni,body .wrap .ni p,
 /* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
 body p:lang(en),body p.en{text-indent:0}
 </style>
+<style>
+/* ==========================================================================
+   TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
+   仅调整容器与列宽，不动文字/字段/配色/字号
+   ========================================================================== */
+/* 表格外层容器：宽屏不裁剪（保留吸顶表头），窄屏启用横向滚动 */
+body .tsc{margin:12px 0 16px}
+body .tsc>table{margin:0}
+@media screen and (max-width:820px){
+  body .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  /* 多列表给出最小可读宽度，超出即横向滚动，绝不撑破页面 */
+  body .tsc.w4>table{min-width:calc(460px * var(--fs))}
+  body .tsc.w5>table{min-width:calc(560px * var(--fs))}
+  body .tsc.w6>table{min-width:calc(660px * var(--fs))}
+  body .tsc.w7>table,body .tsc.w8>table{min-width:calc(780px * var(--fs))}
+  body .tsc.w9>table{min-width:calc(940px * var(--fs))}
+  /* 滚动容器内表头吸顶失效，显式降级，避免错位 */
+  body .tsc thead th{position:static}
+}
+/* 打印兜底：容器不裁剪，边距回落到原紧凑值 */
+@media print{
+  body .tsc{margin:6px 0 10px;overflow:visible}
+  body .tsc>table{min-width:0}
+}
+/* 单元格兜底：长文本优先换行，短字段不折行 */
+body th,body td{overflow-wrap:break-word;word-break:break-word}
+body .tsc table.now1 th:nth-child(1),body .tsc table.now1 td:nth-child(1),
+body .tsc table.now2 th:nth-child(2),body .tsc table.now2 td:nth-child(2),
+body .tsc table.now3 th:nth-child(3),body .tsc table.now3 td:nth-child(3),
+body .tsc table.now4 th:nth-child(4),body .tsc table.now4 td:nth-child(4),
+body .tsc table.now5 th:nth-child(5),body .tsc table.now5 td:nth-child(5),
+body .tsc table.now6 th:nth-child(6),body .tsc table.now6 td:nth-child(6),
+body .tsc table.now7 th:nth-child(7),body .tsc table.now7 td:nth-child(7),
+body .tsc table.now8 th:nth-child(8),body .tsc table.now8 td:nth-child(8),
+body .tsc table.now9 th:nth-child(9),body .tsc table.now9 td:nth-child(9),
+body .tsc table.now10 th:nth-child(10),body .tsc table.now10 td:nth-child(10),
+body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(240px * var(--fs));
+}
+</style>
+<!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
+<style>
+/* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
+body table>thead>tr>th{position:static}
+body table.sticky-on>thead>tr>th{
+  position:sticky;top:calc(var(--subh,0px) + 1px);z-index:6;
+  box-shadow:0 6px 14px -9px rgba(11,61,145,.45);
+}
+@media screen and (max-width:820px){
+  body table.sticky-on>thead>tr>th{position:static;box-shadow:none}
+}
+@media print{
+  body table.sticky-on>thead>tr>th{position:static}
+}
+</style>
+
+<!-- COLBAL-V1 -->
+<!-- COLFIT-V1 -->
 </head>
 <body>
 <div class="topbar">
@@ -309,7 +367,7 @@ body p:lang(en),body p.en{text-indent:0}
     <p style="font-size:16.5px;color:#1677ff"><b>把"报告解读"建设成永州爱眼城每家门店、每位验配人员都能执行的标准化服务动作，用统一、通俗、有温度的专业解读，提升顾客理解与信任，进而提高复查率、配镜成交率与干预方案接受率。</b></p>
     <h3 class="sub">四个核心指标（自方案落地之日起计算，滚动 12 个月）</h3>
     <div class="kpi">
-      <div class="box"><h4>指标一：解读覆盖率</h4><div class="num">≥ 95%</div><p>完成全部检查（含屈光发育档案/眼健康检查）的顾客中，按七步 SOP 完成解读并留痕的比例。<span style="color:#7a8799">口径见模块10</span></p></div>
+      <div class="box"><h4>指标一：解读覆盖率</h4><div class="num">≥ 95%</div><p>完成全部检查（含屈光发育档案/眼健康检查）的顾客中，按七步 SOP 完成解读并留痕的比例。<span style="color:#7a8799">口径见模块09</span></p></div>
       <div class="box"><h4>指标二：顾客理解度</h4><div class="num">≥ 4.5 / 5</div><p>解读结束后顾客评分为"能听懂自己的眼睛情况"的平均得分（门店平板或纸质问卷 5 分制）。</p></div>
       <div class="box"><h4>指标三：方案接受率</h4><div class="num">≥ 60%</div><p>被解读判为"建议干预"（离焦/渐进/视觉训练/干眼护理/转诊复查）的顾客中，当场或 7 日内确认执行的比例。</p></div>
       <div class="box"><h4>指标四：按期复诊率</h4><div class="num">≥ 70%</div><p>解读时约定了复查时间的顾客中，在约定窗口（±15天）内实际到店复查的比例。</p></div>
@@ -334,7 +392,7 @@ body p:lang(en),body p.en{text-indent:0}
       <h4>⛔ 不适用场景（须受限或停做）</h4>
       <ul>
         <li><b>明确的眼病诊断</b>（青光眼、白内障、视网膜病变等）：只做转诊提醒，不做病情解读</li>
-        <li><b>急性症状</b>（眼红剧痛、突发视力下降、闪光感、视野缺损、外伤）：立即停止配镜流程，指引就医（模块12）</li>
+        <li><b>急性症状</b>（眼红剧痛、突发视力下降、闪光感、视野缺损、外伤）：立即停止配镜流程，指引就医（模块11）</li>
         <li>顾客<b>处于医疗纠纷或投诉情绪中</b>：先由店长接待处理，不进入标准解读</li>
         <li><b>未满 3 岁儿童</b>首次就诊：建议先至爱眼城眼科检查，门店不承担解读</li>
         <li>顾客<b>明确拒绝解读</b>或时间不足：记录"顾客拒绝/时间不足"，改为交付书面提示卡并安排回电</li>
@@ -345,8 +403,8 @@ body p:lang(en),body p.en{text-indent:0}
 
   <h2 class="sec">4. 岗位分工（RACI 简表）</h2>
   <div class="card">
-    <table>
-      <thead><tr><th style="width:16%">环节</th><th style="width:16%">主导（R）</th><th style="width:16%">承担支持（A/C 的配合角色）</th><th style="width:52%">具体职责</th></tr></thead>
+    <div class="tsc w4"><table>
+      <thead><tr><th style="width:14%">环节</th><th style="width:21%">主导（R）</th><th style="width:23%">承担支持（A/C 的配合角色）</th><th style="width:42%">具体职责</th></tr></thead>
       <tbody>
         <tr><td>① 检查数据梳理</td><td>验光师 / 视光师</td><td>检查技师</td><td>核对检查完整性、录入/打印报告、标记缺失项；确保数据源可靠</td></tr>
         <tr><td>② 异常值识别</td><td>视光师</td><td>验光师</td><td>对照模块03判定表逐项扫描，圈出"关注/异常/转诊"项，不得口头判断</td></tr>
@@ -355,15 +413,15 @@ body p:lang(en),body p.en{text-indent:0}
         <tr><td>复查跟进</td><td>客服/客服专员</td><td>视光师（提供复查建议口径）</td><td>到期前提醒、邀约、预约到店；记录失约原因</td></tr>
         <tr><td>转诊提醒</td><td>视光师（口头）+ 店长（确认）</td><td>客服（跟进是否就医）</td><td>发现红线指标立即转诊提示、登记、72小时回访</td></tr>
         <tr><td>质量管控</td><td>店长</td><td>区域督导</td><td>每日抽查2份记录表、每周检查覆盖率、月度复盘会</td></tr>
-        <tr><td>培训认证</td><td>区域督导 / 内训师</td><td>店长</td><td>组织集训、角色扮演、L1-L3认证考核（模块10）</td></tr>
+        <tr><td>培训认证</td><td>区域督导 / 内训师</td><td>店长</td><td>组织集训、角色扮演、L1-L3认证考核（模块09）</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p class="ni"><b>门店最低配置要求：</b>每家门店至少有 <b>1 名 L2 及以上</b>的视光骨干（具备独立解读与处理异议能力）和 <b>1 名</b>备份人员；高峰时段可按"一人检查—一人解读"的流水方式安排，但<b>视光师必须全程参与异常值识别环节</b>，不得由检查技师代替判断。</p>
   </div>
 
   <h2 class="sec">5. 五大使用场景与触发时机</h2>
   <div class="card">
-    <table>
+    <div class="tsc w4"><table>
       <thead><tr><th style="width:18%">场景</th><th style="width:20%">触发时机</th><th style="width:34%">解读重点</th><th style="width:28%">目标产出</th></tr></thead>
       <tbody>
         <tr>
@@ -397,7 +455,7 @@ body p:lang(en),body p.en{text-indent:0}
           <td>提升专业形象；登记潜在顾客；不得做诊断性解读</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <div class="good"><b>时间配置建议：</b>常规配镜解读 <b>8-12 分钟</b>；青少年档案复查解读 <b>15-20 分钟</b>（家长需要理解更多）；中老年首次眼健康解读 <b>15-25 分钟</b>；发现转诊提示时，解读可延长至 <b>20 分钟</b>，但须确保顾客情绪稳定、有人陪同。</div>
   </div>
 
@@ -414,7 +472,7 @@ body p:lang(en),body p.en{text-indent:0}
     </ol>
     <h3 class="sub">三条加分项（鼓励做到）</h3>
     <ul>
-      <li>使用了至少一个<b>同类人群</b>的真实案例（模块09），且讲述了"当时怎么做、后来怎样"。</li>
+      <li>使用了至少一个<b>同类人群</b>的真实案例（模块08），且讲述了"当时怎么做、后来怎样"。</li>
       <li>至少给出一条<b>当天就能做</b>的行为建议（如"今天回家把书桌灯换成 …级别""今晚开始 20-20-20"）。</li>
       <li>解读结束时顾客能<b>自己复述</b>出自己眼睛的两条关键信息（现场请顾客复述验证）。</li>
     </ul>
@@ -423,16 +481,16 @@ body p:lang(en),body p.en{text-indent:0}
 
   <h2 class="sec">7. 与其他模块的衔接关系</h2>
   <div class="card">
-    <table>
-      <thead><tr><th style="width:22%">本模块产出</th><th style="width:78%">交给谁 / 怎么用</th></tr></thead>
+    <div class="tsc"><table>
+      <thead><tr><th style="width:30%">本模块产出</th><th style="width:70%">交给谁 / 怎么用</th></tr></thead>
       <tbody>
         <tr><td>适用范围与场景</td><td>→ 模块02：不同场景下七步的侧重不同（场景 B、C 需加重第二步异常识别）</td></tr>
-        <tr><td>岗位分工</td><td>→ 模块10：分工是培训分组和考核对象划分的依据</td></tr>
-        <tr><td>四个量化指标</td><td>→ 模块10 定义统计口径；→ 模块11 设为试点验收标准</td></tr>
-        <tr><td>六条硬性标准</td><td>→ 模块07《记录表》直接按此设计栏目；→ 用作店长抽查清单</td></tr>
-        <tr><td>边界原则</td><td>→ 模块12 细化展开，本模块只做原则性声明</td></tr>
+        <tr><td>岗位分工</td><td>→ 模块09：分工是培训分组和考核对象划分的依据</td></tr>
+        <tr><td>四个量化指标</td><td>→ 模块09 定义统计口径；→ 模块10 设为试点验收标准</td></tr>
+        <tr><td>六条硬性标准</td><td>→ 模块06《记录表》直接按此设计栏目；→ 用作店长抽查清单</td></tr>
+        <tr><td>边界原则</td><td>→ 模块11 细化展开，本模块只做原则性声明</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </div>
 
   <div class="btnwrap">
@@ -446,5 +504,28 @@ body p:lang(en),body p.en{text-indent:0}
   <b>模块 01 · 方案总览与目标</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
   本文件所有指标数值均为门店服务管理目标，非医疗诊疗标准；涉及疾病的内容一律以医疗机构诊断为唯一依据。
 </footer>
+<script>
+/* SMART-STICKY-V1 : 智能表头吸顶 */
+(function(){
+  var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
+  function calc(){
+    var vh = window.innerHeight || 800;
+    var wide = (window.innerWidth || 1280) > WIDE;
+    var tabs = document.querySelectorAll('table'), i, t, on;
+    for(i = 0; i < tabs.length; i++){
+      t = tabs[i];
+      if(!t.tHead) continue;
+      on = wide && t.rows.length >= MIN_ROWS && t.getBoundingClientRect().height >= vh * MIN_H;
+      if(on) { t.className += ' sticky-on'; } else { t.className = t.className.replace(/\s*sticky-on\b/g, ''); }
+    }
+  }
+  function defer(){ if(tm) clearTimeout(tm); tm = setTimeout(calc, 120); }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', calc); } else { calc(); }
+  window.addEventListener('load', calc);
+  window.addEventListener('resize', defer);
+  var ds = document.querySelectorAll('details'), j;
+  for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
 </body>
 </html>
