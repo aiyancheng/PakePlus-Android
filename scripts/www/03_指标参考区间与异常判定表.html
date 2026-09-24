@@ -270,6 +270,64 @@ body .wrap p.ni,body .wrap .ni p,
 /* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
 body p:lang(en),body p.en{text-indent:0}
 </style>
+<style>
+/* ==========================================================================
+   TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
+   仅调整容器与列宽，不动文字/字段/配色/字号
+   ========================================================================== */
+/* 表格外层容器：宽屏不裁剪（保留吸顶表头），窄屏启用横向滚动 */
+body .tsc{margin:12px 0 16px}
+body .tsc>table{margin:0}
+@media screen and (max-width:820px){
+  body .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  /* 多列表给出最小可读宽度，超出即横向滚动，绝不撑破页面 */
+  body .tsc.w4>table{min-width:calc(460px * var(--fs))}
+  body .tsc.w5>table{min-width:calc(560px * var(--fs))}
+  body .tsc.w6>table{min-width:calc(660px * var(--fs))}
+  body .tsc.w7>table,body .tsc.w8>table{min-width:calc(780px * var(--fs))}
+  body .tsc.w9>table{min-width:calc(940px * var(--fs))}
+  /* 滚动容器内表头吸顶失效，显式降级，避免错位 */
+  body .tsc thead th{position:static}
+}
+/* 打印兜底：容器不裁剪，边距回落到原紧凑值 */
+@media print{
+  body .tsc{margin:6px 0 10px;overflow:visible}
+  body .tsc>table{min-width:0}
+}
+/* 单元格兜底：长文本优先换行，短字段不折行 */
+body th,body td{overflow-wrap:break-word;word-break:break-word}
+body .tsc table.now1 th:nth-child(1),body .tsc table.now1 td:nth-child(1),
+body .tsc table.now2 th:nth-child(2),body .tsc table.now2 td:nth-child(2),
+body .tsc table.now3 th:nth-child(3),body .tsc table.now3 td:nth-child(3),
+body .tsc table.now4 th:nth-child(4),body .tsc table.now4 td:nth-child(4),
+body .tsc table.now5 th:nth-child(5),body .tsc table.now5 td:nth-child(5),
+body .tsc table.now6 th:nth-child(6),body .tsc table.now6 td:nth-child(6),
+body .tsc table.now7 th:nth-child(7),body .tsc table.now7 td:nth-child(7),
+body .tsc table.now8 th:nth-child(8),body .tsc table.now8 td:nth-child(8),
+body .tsc table.now9 th:nth-child(9),body .tsc table.now9 td:nth-child(9),
+body .tsc table.now10 th:nth-child(10),body .tsc table.now10 td:nth-child(10),
+body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(240px * var(--fs));
+}
+</style>
+<!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
+<style>
+/* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
+body table>thead>tr>th{position:static}
+body table.sticky-on>thead>tr>th{
+  position:sticky;top:calc(var(--subh,0px) + 1px);z-index:6;
+  box-shadow:0 6px 14px -9px rgba(11,61,145,.45);
+}
+@media screen and (max-width:820px){
+  body table.sticky-on>thead>tr>th{position:static;box-shadow:none}
+}
+@media print{
+  body table.sticky-on>thead>tr>th{position:static}
+}
+</style>
+
+<!-- COLBAL-V1 -->
+<!-- COLFIT-V1 -->
 </head>
 <body>
 <div class="topbar">
@@ -287,27 +345,27 @@ body p:lang(en),body p.en{text-indent:0}
     1. <b>本表为健康宣教与转诊提示用的参考区间</b>，不是诊断标准。参考区间会因设备型号、测量方法、人群与教材版本而有差异。<b>与最新国家诊疗指南或接诊医疗机构意见不一致时，以后者为准。</b><br>
     2. <b>单次异常不等于有病。</b>任何"异常"档位，标准动作是<b>复查确认 + 必要时转诊</b>，而不是直接下结论。<br>
     3. <b>看趋势比看单次数值重要。</b>尤其是儿童青少年，一次眼轴/度数值没有意义，半年、一年的变化量才有意义。<br>
-    4. <b>转诊去向统一为爱眼城眼科。</b>本表所有"转诊提示"档位，口头与书面指引一律指向<b>爱眼城眼科</b>（完整口径见模块12）；遇急性症状或爱眼城眼科闭诊时段，<b>就近前往有眼科急诊的医院，不因去向而拖延</b>。
+    4. <b>转诊去向统一为爱眼城眼科。</b>本表所有"转诊提示"档位，口头与书面指引一律指向<b>爱眼城眼科</b>（完整口径见模块11）；遇急性症状或爱眼城眼科闭诊时段，<b>就近前往有眼科急诊的医院，不因去向而拖延</b>。
   </div>
 
   <h2 class="sec">查表规则：四档判定怎么标</h2>
   <div class="card">
-    <table>
-      <thead><tr><th style="width:16%">档位</th><th style="width:28%">含义</th><th style="width:30%">标准动作</th><th style="width:26%">对顾客怎么说</th></tr></thead>
+    <div class="tsc w4"><table>
+      <thead><tr><th style="width:11%">档位</th><th style="width:26%">含义</th><th style="width:30%">标准动作</th><th style="width:33%">对顾客怎么说</th></tr></thead>
       <tbody>
         <tr><td><span class="lv1">正常（绿）</span></td><td>在参考范围内</td><td>记录，无需处理</td><td>"这项在正常范围，没问题。"（一句带过，不要展开）</td></tr>
         <tr><td><span class="lv2">关注（橙）</span></td><td>接近临界值，或有轻度偏离，或本次较上次变化明显</td><td>纳入解读要点；调整用眼行为的建议；缩短复查周期</td><td>"这项稍微偏一点点，我们先留意，三个月后复查看看趋势。"</td></tr>
         <tr><td><span class="lv3">异常（红）</span></td><td>明确超出参考范围，或与症状相符</td><td>纳入重点讲解；给出方案；必要时安排复测确认</td><td>"这项不在正常范围，我们具体来看一下，然后商量怎么处理好。"</td></tr>
         <tr><td><span class="tag r">转诊提示</span></td><td>可能提示眼病，超出门店服务范围</td><td><b>停止推销</b>；书面+口头转诊提醒；登记；72 小时回访；留存记录</td><td>"这一项我建议尽快到爱眼城眼科做个检查确认，我们门店看不了这个，不能耽误。"</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <div class="note"><b>两条补充规则：</b>①<b>"就低不就高"原则</b>——拿不准时按更严重的一档处理（宁可多提醒，不可漏提醒）。②<b>"双hit 原则"</b>——单一指标轻度异常多为关注档；<b>两个及以上相关指标同时异常</b>（如眼压高+杯盘比大），直接按"转诊提示"处理。</div>
   </div>
 
   <h2 class="sec">一、视力</h2>
   <h3 class="sub">1.1 不同年龄的视力参考（单眼）</h3>
-  <table>
-    <thead><tr><th style="width:14%">年龄</th><th style="width:24%">参考下限（小数记录 / 五分记录）</th><th style="width:20%">关注</th><th style="width:20%">异常/转诊提示</th><th style="width:22%">备注</th></tr></thead>
+  <div class="tsc w5"><table>
+    <thead><tr><th style="width:14%">年龄</th><th style="width:33%">参考下限（小数记录 / 五分记录）</th><th style="width:9%">关注</th><th style="width:15%">异常/转诊提示</th><th style="width:29%">备注</th></tr></thead>
     <tbody>
       <tr><td>3 岁</td><td>0.5 / 4.7</td><td>0.4</td><td>≤0.3</td><td>配合度影响大，图形视力表测</td></tr>
       <tr><td>4 岁</td><td>0.6 / 4.8</td><td>0.5</td><td>≤0.4</td><td>双眼视力相差 ≥2 行需查</td></tr>
@@ -318,22 +376,22 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>中老年（45+）</td><td>0.8~1.0 / 4.9~5.0</td><td>0.6</td><td>矫正视力＜0.6</td><td>老视为看近下降，看远应正常</td></tr>
       <tr><td>70 岁+</td><td>0.6~0.8 / 4.8~4.9</td><td>0.5</td><td>矫正视力＜0.5</td><td>矫正后仍不达标需到院排查白内障、眼底病</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <h3 class="sub">1.2 裸眼视力与矫正视力</h3>
-  <table>
-    <thead><tr><th style="width:22%">项目</th><th style="width:20%">正常</th><th style="width:20%">关注</th><th style="width:22%">异常 / 转诊提示</th><th style="width:16%">备注</th></tr></thead>
+  <div class="tsc w5"><table>
+    <thead><tr><th style="width:14%">项目</th><th style="width:14%">正常</th><th style="width:9%">关注</th><th style="width:27%">异常 / 转诊提示</th><th style="width:36%">备注</th></tr></thead>
     <tbody>
       <tr><td>裸眼远视力</td><td>≥1.0</td><td>0.6~0.8</td><td>&lt;0.6 需查屈光</td><td>结合年龄上限综合看</td></tr>
       <tr><td>矫正远视力</td><td>达年龄对应上限</td><td>欠矫一行</td><td><b>矫正不达标（&lt;0.8）→ 必须查明原因</b></td><td>足矫仍不达标，<b>转诊</b>（排查弱视、白内障、眼底病）</td></tr>
       <tr><td>双眼视力差</td><td>≤1 行</td><td>2 行</td><td>≥2 行且一眼矫正不达标</td><td>儿童提示弱视风险</td></tr>
       <tr><td>近视力（成人）</td><td>≥1.0（33cm）</td><td>0.8</td><td>&lt;0.6（45岁以上先考虑老视）</td><td>45岁以下看近明显差需查调节</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="good"><b>通俗讲法：</b>"矫正视力就是戴上最合适的眼镜以后能看到的最好水平。如果连戴上眼镜都看不清 1.0，那就不是'度数配不准'这么简单，眼睛本身可能有问题，需要到爱眼城眼科查一下。"</div>
 
   <h2 class="sec">二、屈光度</h2>
-  <table>
-    <thead><tr><th style="width:20%">项目</th><th style="width:26%">正常 / 参考</th><th style="width:18%">关注</th><th style="width:20%">异常 / 转诊提示</th><th style="width:16%">备注</th></tr></thead>
+  <div class="tsc w5"><table>
+    <thead><tr><th style="width:14%">项目</th><th style="width:27%">正常 / 参考</th><th style="width:19%">关注</th><th style="width:22%">异常 / 转诊提示</th><th style="width:18%">备注</th></tr></thead>
     <tbody>
       <tr><td>球镜 S（等效球镜 SE）</td><td>正视：-0.50 ~ +0.50D</td><td>±0.50~0.75D</td><td>见下方分级</td><td>SE = 球镜 + 1/2 柱镜</td></tr>
       <tr><td>近视分级</td><td>—</td><td>低度 -0.50~-3.00D<br>中度 -3.00~-6.00D</td><td><b>高度 &lt;-6.00D</b>（每年查眼底）</td><td>高度近视需关注眼底周边与眼轴</td></tr>
@@ -345,11 +403,11 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>年增加量（近视儿童）</td><td>&lt;0.50D/年</td><td>0.50~0.75D/年</td><td><b>&gt;1.00D/年 控制不佳</b></td><td>与眼轴年增长结合判断</td></tr>
       <tr><td>老视（近附加 ADD）</td><td>45岁约 +1.00D；50岁约 +1.50D；55岁约 +2.00D；60岁约 +2.50D</td><td>明显偏离同龄经验值</td><td>ADD &gt;+3.00D 或短期快速上升</td><td>经验参考，必须主觉验光确认</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <h3 class="sub">2.1 儿童远视储备参考（睫状肌麻痹/散瞳验光为准）</h3>
-  <table>
-    <thead><tr><th style="width:16%">年龄</th><th style="width:26%">参考远视储备</th><th style="width:29%">偏低 / 关注</th><th style="width:29%">提示</th></tr></thead>
+  <div class="tsc w4"><table>
+    <thead><tr><th style="width:16%">年龄</th><th style="width:26%">参考远视储备</th><th style="width:23%">偏低 / 关注</th><th style="width:35%">提示</th></tr></thead>
     <tbody>
       <tr><td>3 岁</td><td>约 +2.00 ~ +3.00D</td><td>&lt;+1.50D</td><td>储备偏低，近视风险上升</td></tr>
       <tr><td>4-5 岁</td><td>约 +1.50 ~ +2.50D</td><td>&lt;+1.25D</td><td>加强户外，3-6 个月复查</td></tr>
@@ -358,12 +416,12 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>10-11 岁</td><td>约 +0.25 ~ +0.75D</td><td>≤0.00D</td><td>已到临界，任何近视都需管理</td></tr>
       <tr><td>12 岁及以上</td><td>接近正视（0 ~ +0.50D）</td><td>已近视</td><td>进入近视进展管理阶段</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="note"><b>注意：</b>未散瞳的电脑验光会<b>高估近视、低估远视</b>，尤其儿童调节力强。凡涉及儿童远视储备判断，必须以<b>散瞳（睫状肌麻痹）验光结果</b>为准，门店不具备散瞳条件时应提醒家长到爱眼城眼科做。<b>不得凭不散瞳的电脑验光单给家长下"储备不足"的结论。</b></div>
 
   <h2 class="sec">三、眼轴长度与角膜曲率（眼生物测量）</h2>
-  <table>
-    <thead><tr><th style="width:20%">项目</th><th style="width:26%">参考区间</th><th style="width:18%">关注</th><th style="width:20%">异常 / 转诊提示</th><th style="width:16%">备注</th></tr></thead>
+  <div class="tsc w5"><table>
+    <thead><tr><th style="width:14%">项目</th><th style="width:20%">参考区间</th><th style="width:16%">关注</th><th style="width:28%">异常 / 转诊提示</th><th style="width:22%">备注</th></tr></thead>
     <tbody>
       <tr><td>眼轴 AL（成人正视）</td><td>约 23.0 ~ 24.0mm</td><td>24.0~25.0mm</td><td><b>&gt;26.0mm（高度近视眼底风险）</b></td><td>与身高体型、种族相关</td></tr>
       <tr><td>眼轴 AL（儿童参考均值）</td><td>3岁 21.5~22.0；6岁 22.0~22.5；8岁 22.5~23.0；10岁 23.0左右；12岁 23.5左右</td><td>高于同龄均值 0.5mm 以上</td><td>高于同龄均值 1.0mm 以上</td><td>个体差异大，<b>看增长速率更重要</b></td></tr>
@@ -376,12 +434,12 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>前房深度 ACD</td><td>2.5 ~ 3.5mm</td><td>2.0~2.5mm（偏浅）</td><td>&lt;2.0mm 伴眼压偏高 → 转诊评估</td><td>远视眼/老年人偏浅</td></tr>
       <tr><td>角膜厚度 CCT</td><td>500 ~ 560μm</td><td>&gt;580 或 &lt;480μm</td><td>&lt;450μm（圆锥风险）；CCT 异常时眼压读数需校正</td><td>戴隐形眼镜/做过屈光手术者需说明</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="good"><b>通俗讲法（眼轴）：</b>"眼球的前后长度叫眼轴。孩子长个子时会穿不上去年的裤子，眼球也是——眼轴每长 1 毫米，近视大概增加 250-300 度左右（个体有差异）。所以<b>我们不只看眼镜多少度，更要看这条'生长曲线'的斜率。</b>"</div>
 
   <h2 class="sec">四、眼压</h2>
-  <table>
-    <thead><tr><th style="width:20%">项目</th><th style="width:24%">参考区间</th><th style="width:18%">关注</th><th style="width:24%">异常 / 转诊提示</th><th style="width:14%">备注</th></tr></thead>
+  <div class="tsc w5"><table>
+    <thead><tr><th style="width:14%">项目</th><th style="width:20%">参考区间</th><th style="width:16%">关注</th><th style="width:28%">异常 / 转诊提示</th><th style="width:22%">备注</th></tr></thead>
     <tbody>
       <tr><td>非接触眼压 NCT</td><td>10 ~ 21mmHg</td><td>21 ~ 24mmHg（复查）</td><td><b>&gt;24mmHg → 转诊</b>；伴视野/视神经改变者<b>即刻转诊</b></td><td>受配合、屏气、角膜厚度影响</td></tr>
       <tr><td>双眼眼压差</td><td>&lt;4mmHg</td><td>4~5mmHg</td><td><b>&gt;5mmHg → 转诊排查</b></td><td>左右眼差是重要预警</td></tr>
@@ -389,12 +447,12 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>24小时波动</td><td>&lt;5mmHg</td><td>5~8mmHg</td><td>&gt;8mmHg → 转诊</td><td>门诊单次筛查有限</td></tr>
       <tr><td>角膜厚度校正</td><td>CCT 500~560 偏差小</td><td>薄角膜（&lt;500）会低估眼压</td><td>厚角膜（&gt;580）会高估眼压</td><td>解读时须提示医生</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="warn"><b>解读纪律：</b>眼压偏高<b>只是筛查提示</b>，绝不能说成"你可能是青光眼"。标准说法："这个压力值超出了正常范围，它只是一个提示，很多因素都会影响它。为了保险，我建议您到<b>爱眼城眼科</b>做一个更全面的检查确认，我们会把今天的数据帮您整理好带过去。"</div>
 
   <h2 class="sec">五、眼底</h2>
-  <table>
-    <thead><tr><th style="width:20%">项目</th><th style="width:28%">正常表现</th><th style="width:22%">关注 / 异常</th><th style="width:30%">转诊提示</th></tr></thead>
+  <div class="tsc w4"><table>
+    <thead><tr><th style="width:18%">项目</th><th style="width:29%">正常表现</th><th style="width:29%">关注 / 异常</th><th style="width:24%">转诊提示</th></tr></thead>
     <tbody>
       <tr><td>视盘（视神经乳头）</td><td>边界清晰、色淡红、C/D ≤0.3、双眼对称</td><td>C/D 0.4~0.6，边界欠清</td><td><b>C/D &gt;0.6，或双眼差 &gt;0.2，或盘沿切迹、出血</b></td></tr>
       <tr><td>视网膜血管</td><td>走行自然、动静脉比约 2:3、无渗出</td><td>动脉变细、反光增强、交叉压迹（高血压眼底改变）</td><td>血管白线样、闭塞、出血、新生血管</td></tr>
@@ -403,12 +461,12 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>近视性眼底改变</td><td>无</td><td>豹纹状眼底、近视弧（轻度）</td><td>后极部弥漫萎缩、漆裂纹、Fuchs 斑、脉络膜新生血管</td></tr>
       <tr><td>糖尿病视网膜病变相关</td><td>无微血管瘤</td><td>散在点状出血、微血管瘤（需血糖管理+定期复查）</td><td>出血渗出增多、黄斑水肿、新生血管 → <b>立即转诊</b></td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="note"><b>门店能力边界：</b>眼底照相和 AI 辅助阅片只能作为<b>筛查与转诊依据</b>，门店人员不得据此下诊断。凡照片中出现上述"转诊提示"列任一项，标准动作是：①保存/打印图像给顾客；②书面写明"建议至爱眼城眼科进一步检查"；③登记并 72 小时回访。</div>
 
   <h2 class="sec">六、双眼视功能</h2>
-  <table>
-    <thead><tr><th style="width:20%">项目</th><th style="width:26%">参考区间</th><th style="width:24%">关注 / 异常</th><th style="width:30%">备注</th></tr></thead>
+  <div class="tsc w4"><table>
+    <thead><tr><th style="width:18%">项目</th><th style="width:25%">参考区间</th><th style="width:31%">关注 / 异常</th><th style="width:26%">备注</th></tr></thead>
     <tbody>
       <tr><td>远距隐斜</td><td>约 1△ 外隐斜（±2△）</td><td>外隐斜 &gt;6△ 或内隐斜 &gt;2△</td><td>需结合症状（视疲劳、重影）</td></tr>
       <tr><td>近距隐斜</td><td>约 3△ 外隐斜（±3△）</td><td>外隐斜 &gt;10△ 或内隐斜 &gt;4△</td><td>集合不足常见</td></tr>
@@ -425,11 +483,11 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>Worth 四点</td><td>看到 4 个点（双眼同时视）</td><td><b>看到 2 或 3 个点 → 存在单眼抑制</b></td><td>意义与斜视/弱视相关</td></tr>
       <tr><td>眼位 / 遮盖试验</td><td>正位，无显斜</td><td><b>任何显性斜视 → 转诊</b></td><td>儿童斜视需尽早到爱眼城眼科评估</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="good"><b>通俗讲法（双眼视）：</b>"看东西不是一只眼的事，是两只眼睛像两台相机同时拍，再由大脑合成一张图。这两台相机要'对得齐''调得动''合得起来'，哪一项弱了，人就容易头疼、串行、看久了酸胀。我们现在测的就是这三项能力。"</div>
 
   <h2 class="sec">七、眼前节、晶体与干眼相关</h2>
-  <table>
+  <div class="tsc w4"><table>
     <thead><tr><th style="width:20%">项目</th><th style="width:24%">正常</th><th style="width:24%">关注 / 异常</th><th style="width:32%">备注</th></tr></thead>
     <tbody>
       <tr><td>泪膜破裂时间 BUT</td><td>≥10 秒</td><td>5~10 秒（干眼倾向）；<b>&lt;5 秒（明显异常）</b></td><td>最常见干眼筛查项</td></tr>
@@ -443,12 +501,12 @@ body p:lang(en),body p.en{text-indent:0}
       <tr><td>色觉</td><td>正常</td><td>色弱（多为先天）</td><td>后天色觉改变需就医</td></tr>
       <tr><td>眼压 + 前房角（浅前房）</td><td>房角开放</td><td><b>浅前房 + 眼压高 + 眼胀痛 → 急诊</b></td><td>警惕闭角型青光眼急性发作</td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <h2 class="sec">八、查表常见错误与纠正</h2>
   <div class="card">
-    <table>
-      <thead><tr><th style="width:34%">常见错误</th><th style="width:33%">为什么错</th><th style="width:33%">正确做法</th></tr></thead>
+    <div class="tsc"><table>
+      <thead><tr><th style="width:30%">常见错误</th><th style="width:31%">为什么错</th><th style="width:39%">正确做法</th></tr></thead>
       <tbody>
         <tr><td>把电脑验光单直接当度数判异常</td><td>电脑验光偏倚大，尤其儿童</td><td>以主觉验光结果为准；儿童以散瞳结果为准</td></tr>
         <tr><td>只看一次眼轴绝对值就下结论</td><td>个体差异大，绝对值意义有限</td><td>看<b>年化增长速率</b>与 AL/CR 趋势</td></tr>
@@ -458,7 +516,7 @@ body p:lang(en),body p.en{text-indent:0}
         <tr><td>凭单一指标判"有病"</td><td>筛查≠诊断</td><td>组合判断 + 复查 + 转诊流程</td></tr>
         <tr><td>不同设备数值直接对比历史</td><td>设备间存在系统差异</td><td>同一台设备、同一条件下的前后对比才有意义</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </div>
 
   <div class="knife">
@@ -476,5 +534,28 @@ body p:lang(en),body p.en{text-indent:0}
   <b>模块 03 · 常见检查指标参考区间与异常判定表</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
   本表参考数值来源于视光学教材与行业通行筛查标准的整理，仅供门店健康宣教与转诊提示使用，不构成任何医疗诊断依据。数值如与国家最新诊疗指南不一致，以指南和接诊医疗机构意见为准。
 </footer>
+<script>
+/* SMART-STICKY-V1 : 智能表头吸顶 */
+(function(){
+  var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
+  function calc(){
+    var vh = window.innerHeight || 800;
+    var wide = (window.innerWidth || 1280) > WIDE;
+    var tabs = document.querySelectorAll('table'), i, t, on;
+    for(i = 0; i < tabs.length; i++){
+      t = tabs[i];
+      if(!t.tHead) continue;
+      on = wide && t.rows.length >= MIN_ROWS && t.getBoundingClientRect().height >= vh * MIN_H;
+      if(on) { t.className += ' sticky-on'; } else { t.className = t.className.replace(/\s*sticky-on\b/g, ''); }
+    }
+  }
+  function defer(){ if(tm) clearTimeout(tm); tm = setTimeout(calc, 120); }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', calc); } else { calc(); }
+  window.addEventListener('load', calc);
+  window.addEventListener('resize', defer);
+  var ds = document.querySelectorAll('details'), j;
+  for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
 </body>
 </html>
