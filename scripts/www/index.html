@@ -326,6 +326,27 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- GRID3-V1 : 模块卡片三列栅格（幂等注入，勿手改） -->
+<style>
+/* ---------- GRID3-V1 : 模块卡片 5 行 × 3 列（15 张卡片） ---------- */
+body .grid{grid-template-columns:repeat(3,1fr);gap:calc(16px * var(--fs))}
+body .grid > a.card{min-width:0}
+/* 窄屏逐级降级：宽屏 3 列 → 平板竖屏 3 列 → 小平板 2 列 → 手机 1 列 */
+@media screen and (max-width:1024px){
+  body .grid{grid-template-columns:repeat(3,1fr) !important;gap:calc(12px * var(--fs))}
+}
+@media screen and (max-width:940px){
+  body .grid{grid-template-columns:repeat(2,1fr) !important}
+}
+@media screen and (max-width:560px){
+  body .grid{grid-template-columns:1fr !important}
+}
+/* 打印：A4 纸宽约 794px，2 列最舒适 */
+@media print{
+  body .grid{grid-template-columns:repeat(2,1fr) !important;gap:10px}
+}
+</style>
+
 
 <!-- COLBAL-V1 -->
 <!-- COLFIT-V1 -->
