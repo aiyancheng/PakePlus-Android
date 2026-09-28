@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>模块02 · 七步标准解读SOP | 永州爱眼城 检查报告解读标准化方案</title>
+<title>模块02 · 七步标准解读 SOP | 永州爱眼城 检查报告解读标准化方案</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.75;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
@@ -438,6 +438,23 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+
 
 
 <!-- COLBAL-V1 -->
@@ -447,13 +464,13 @@ body table.sticky-on>thead>tr>th{
 <body>
 <div class="topbar">
   <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块 02 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+  <div class="meta">模块02 / 15 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
 <div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="01_方案总览与目标.html">01 方案总览与目标</a> ｜ 下一模块：<a href="03_指标参考区间与异常判定表.html">03 指标参考区间与判定表</a></div>
 
 <div class="wrap">
-  <h1 class="t">模块 02 · 七步标准解读 SOP</h1>
-  <p class="lead">门店每一次正式报告解读，都必须按"①检查数据梳理 → ②异常值识别 → ③异常原因 → ④异常影响 → ⑤解决方案 → ⑥科普宣教 → ⑦案例佐证"七个环节依次完成，每步给出明确的<b>核心目标、关键动作、输入产出、验收标准与注意事项</b>，并标明上下步衔接。顺序不能颠倒：顾客听懂原因才会接受方案，听过方案，科普和案例才有落脚点。<b>本模块已合并各环节标准话术</b>，每步在标准动作之后给出可照念的话术。</p>
+  <h1 class="t">模块02 · 七步标准解读 SOP</h1>
+  <p class="lead">每一次正式解读，都必须按七步依次完成：<b>①数据梳理 → ②异常识别 → ③原因 → ④影响 → ⑤方案 → ⑥科普 → ⑦案例</b>。顺序不能颠倒——顾客听懂原因才会接受方案，听过方案，科普和案例才有落脚点。<b>每步已配可照念话术</b>，各步给出目标、动作、输入产出与验收标准。</p>
 
   <h2 class="sec">流程总览与建议时间分配（与下方各步骤卡片一致）</h2>
   <div class="card">
@@ -502,12 +519,8 @@ body table.sticky-on>thead>tr>th{
         <tr><td><b>⑦ 案例</b></td><td>同类真实案例 + 讲完回到顾客本人</td><td>第⑤步方案 + 第⑥步科普动作</td><td>"我也可以试试"的心理认同</td><td>《记录表》案例来源编号（对应模块08）</td></tr>
       </tbody>
     </table></div>
-    <div class="note"><b>追溯三条规则：</b><br>
-      ① <b>缺输入就回退。</b>第②步的档位是第③④⑤步的唯一依据。<br>
-      ② <b>交付物必须落纸。</b>落到《记录表》或《方案建议书》；<b>没留痕视为没完成</b>。<br>
-      ③ <b>店长按交付物倒查。</b>抽查只查"交付物在不在"。</div>
-    <div class="note"><b>判定档位口径：</b>四个档位为 <b>正常 / 关注 / 异常 / 转诊提示</b>，定义以模块03《指标参考区间与异常判定表》"查表规则：四档判定怎么标"为准。<br>
-      <b>贯穿案例：</b>第①～⑦步共用一个演练案例（小宇，8 岁）；对顾客讲的案例<b>必须取自模块08《案例库》，严禁现编</b>。</div>
+    <div class="note"><b>追溯三条规则：</b>① <b>缺输入就回退</b>，第②步档位是③④⑤步的唯一依据；② <b>交付物必须落纸</b>（《记录表》或建议书），没留痕视为没完成；③ <b>店长按交付物倒查</b>，抽查只查"交付物在不在"。<br>
+      <b>档位口径与贯穿案例：</b>四档定义以模块03 查表规则为准；①～⑦步共用演练案例（小宇，8 岁）；对顾客讲的案例<b>必须取自模块08，严禁现编</b>。</div>
   </div>
 
   <!-- ===================== 开场话术 ===================== -->
@@ -549,9 +562,9 @@ body table.sticky-on>thead>tr>th{
       <div style="color:#7a8799;font-size:calc(13.5px * var(--fs))">说明：教学演示数据（非真实顾客）。</div>
     </div>
     <h3 class="sub">话术模板 · 第①步 检查数据梳理（过渡句）—— 用一句话建立"我在认真比对"的印象</h3>
-    <div class="line">"我先调一下您上次的数据——上次是<span class="hl">3月</span>做的，眼轴<span class="hl">23.62</span>，这次<span class="hl">23.77</span>。<b>这些变化我都会标出来，一会儿重点说。</b>"</div>
+    <div class="line">"我先调一下您上次的数据——上次是<span class="hl">3 月</span>做的，眼轴<span class="hl">23.62</span>，这次<span class="hl">23.77</span>。<b>这些变化我都会标出来，一会儿重点说。</b>"</div>
     <div class="line">"您之前没在咱们这边做过眼轴检查，这次的数据就作为<b>基线</b>留档，下次来就有自己的曲线可以比对了。"</div>
-    <div class="line"><span class="tagx">需补查</span>"有<span class="hl">两项</span>建议今天补一下再讲，不然结论不准。大概多花<span class="hl">5分钟</span>，可以吗？"</div>
+    <div class="line"><span class="tagx">需补查</span>"有<span class="hl">两项</span>建议今天补一下再讲，不然结论不准。大概多花<span class="hl">5 分钟</span>，可以吗？"</div>
     <div class="line badx"><span class="tagx">忌</span>直接拿起单子就念："裸眼视力零点三，矫正一点零，右眼负二点七五……"（顾客瞬间关闭耳朵）</div>
   </div>
 
@@ -610,7 +623,7 @@ body table.sticky-on>thead>tr>th{
       <div class="row"><div class="k">交付物</div><div>①带档位标注的报告（顾客那份做记号）；②本次讲哪 2-3 项；③是否触发转诊。</div></div>
       <div class="row"><div class="k">验收标准</div><div>实际检查项目均已查表判定（不凭印象）；异常项已可视标记；红线项已按流程处理。</div></div>
       <div class="row"><div class="k">注意事项</div><div>只看度数不看眼轴；漏掉眼压 24mmHg；把"关注"说成"正常"；因怕顾客跑掉而隐瞒眼底异常。</div></div>
-      <div class="warn"><b>红线提示：</b>眼压&gt;21mmHg、双眼眼压差&gt;5mmHg、杯盘比（C/D）&gt;0.6 或双眼差&gt;0.2、角膜曲率&gt;47D 或双眼差&gt;1D、晶体明显混浊、视网膜出血/渗出/裂孔/脱离迹象、突发视力下降、视野缺损、眼红剧痛、糖尿病/高血压患者眼底改变——以上任一情况，<b>必须先走转诊提醒</b>，详见模块11。</div>
+      <div class="warn"><b>红线提示：</b>眼压&gt;24mmHg（或 21~24mmHg 复测仍高）、双眼眼压差&gt;5mmHg、杯盘比（C/D）&gt;0.6 或双眼差&gt;0.2、角膜曲率&gt;47D 或双眼差&gt;1D、晶状体明显混浊、视网膜出血/渗出/裂孔/脱离迹象、突发视力下降、视野缺损、眼红剧痛、糖尿病/高血压顾客眼底改变——以上任一情况，<b>必须先走转诊提醒</b>，详见模块11。</div>
     </div>
     <div class="eg">
       <div class="egh">现场示例 ｜ 承接同一位顾客：全项打档，本次只讲 2 项</div>
@@ -652,7 +665,7 @@ body table.sticky-on>thead>tr>th{
     <div class="bd">
       <div class="row"><div class="k">核心目标</div><div><b>目标：</b>把每项异常讲成顾客听得懂的 1-2 条生活化原因——讲"可能""常见"，不下定论。<br><b>衔接：</b>上承第②步档位，下接第④步"影响"。</div></div>
       <div class="row"><div class="k">输入 · 承接</div><div>第②步重点讲解项；模块04"可能原因"列；年龄、职业/学业、用眼习惯、家族史。</div></div>
-      <div class="row"><div class="k">关键动作</div><div><b>1. 归因三问：</b>变化<b>是结构带来的</b>（眼轴变长、角膜变陡、晶体混浊）？<b>用眼/习惯带来的</b>（长时间近距离、户外少、睡眠不足）？<b>发育/年龄带来的</b>（远视储备消耗、老视）？<br>
+      <div class="row"><div class="k">关键动作</div><div><b>1. 归因三问：</b>变化<b>是结构带来的</b>（眼轴变长、角膜变陡、晶状体混浊）？<b>用眼/习惯带来的</b>（长时间近距离、户外少、睡眠不足）？<b>发育/年龄带来的</b>（远视储备消耗、老视）？<br>
         <b>2. 只选一两条：</b>最多讲两条，优先选与顾客生活直接相关的那条。<br>
         <b>3. 用比喻翻译：</b>每个专业原因配一个生活化说法（见下表）。<br>
         <b>4. 口径克制：</b>讲"可能""常见"，不下定论——说"最常见的原因是……"，不说"就是因为……"。</div></div>
@@ -824,7 +837,7 @@ body table.sticky-on>thead>tr>th{
     <h3 class="sub">通用结尾（收口必用的三句话）</h3>
     <div class="line">"能不能用您自己的话说一下，今天主要讲了哪两件事？"（能说出＝听懂了）</div>
     <div class="line"><span class="tagx">落地</span>"那我们就按这个来：<b>先做 xxx，三个月后再看数据决定下一步</b>。"</div>
-    <div class="line">"今天说的都写在这张建议书上了，您带回去。复查定在<span class="hl">12月20日</span>左右，到时候让客服提前给您打电话。"</div>
+    <div class="line">"今天说的都写在这张建议书上了，您带回去。复查定在<span class="hl">12 月 20 日</span>左右，到时候让客服提前给您打电话。"</div>
     <div class="note"><b>两人配合时的分工：</b>一人主讲解读（视光师），一人在旁记录并补充生活化提问。记录人<b>记下顾客原话</b>，跟进与异议处理都靠它。</div>
   </div>
 
@@ -871,7 +884,7 @@ body table.sticky-on>thead>tr>th{
       <li><b>重复两次关键信息：</b>最重要的那条，开头讲一次、结尾再复述一次。</li>
       <li><b>记录顾客原话：</b>跟进与异议处理的最好素材。</li>
     </ul>
-    <div class="good"><b>练习方法：</b>①两人一组角色扮演并录音，回听术语量与停顿次数；②每周晨会用 5 分钟轮流念"转诊专用话术"；③新人前 20 场允许照念，第 21 场起脱稿。</div>
+    <div class="good"><b>练习方法：</b>录音回听 + 晨会轮念转诊话术 + 新人前 20 场允许照念；训练安排与考核见模块09。</div>
   </div>
 
   <h2 class="sec">不同场景下的七步侧重</h2>
@@ -916,7 +929,7 @@ body table.sticky-on>thead>tr>th{
 </div>
 
 <footer>
-  <b>模块 02 · 七步标准解读 SOP</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  <b>模块02 · 七步标准解读 SOP</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
   本流程为门店服务流程，其中任何涉及疾病判断的内容均为"提醒就医"，不构成诊断。执行中如遇红线指标，一律以医疗机构诊断为准。<br>
   话术部分涉及疾病判断与医疗干预的内容均为就医提醒，不含诊断与治疗承诺；执行时员工可根据个人语气调整表达，但不得改变语义与立场。
 </footer>
