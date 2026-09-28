@@ -346,6 +346,49 @@ body .grid > a.card{min-width:0}
   body .grid{grid-template-columns:repeat(2,1fr) !important;gap:10px}
 }
 </style>
+<!-- HEADER-STICKY-V1 : 顶部标题栏居中吸顶（幂等注入，勿手改） -->
+<style>
+/* ---------- HEADER-STICKY-V1 : 顶部标题栏居中 + 滚动吸顶 ---------- */
+body .topbar{
+  position:sticky;top:0;z-index:60;
+  flex-direction:column;justify-content:center;text-align:center;
+  gap:2px;padding:11px var(--wpx) 12px;
+  box-shadow:0 2px 12px rgba(22,119,255,.18);
+  transition:padding .2s ease,box-shadow .2s ease;
+}
+body .topbar .brand{text-align:center;line-height:1.35;transition:font-size .2s ease}
+body .topbar .brand span{display:block;margin-left:0;margin-top:3px;
+  font-size:calc(11.5px * var(--fs));letter-spacing:.3px;transition:opacity .2s ease}
+body .topbar .meta{text-align:center}
+body .hero .tags{justify-content:center}
+/* 滚动后的紧凑态 */
+body .topbar.tb-compact{padding:6px var(--wpx) 7px;gap:0}
+body .topbar.tb-compact .brand{font-size:calc(16px * var(--fs))}
+body .topbar.tb-compact .brand span{display:none}
+body .topbar.tb-compact .meta{font-size:calc(11.5px * var(--fs));opacity:.85}
+@media print{
+  body .topbar{position:static;box-shadow:none;padding:10px var(--wpx)}
+  body .topbar .brand span{display:block}
+}
+</style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+
+
 
 
 <!-- COLBAL-V1 -->
@@ -360,9 +403,9 @@ body .grid > a.card{min-width:0}
 <div class="hero">
   <h1>检查报告解读，是门店最容易被忽视、也最容易拉开差距的一步</h1>
   <p>验光单打完、报告打印出来，顾客往往只看两行：「多少度」「涨没涨」。剩下的指标——眼轴、角膜曲率、眼压、眼底、双眼视功能——顾客看不懂，员工讲不清，结果是：<b>顾客不信、配镜犹豫、复查不来、干预方案推不动。</b></p>
-  <p>本方案把"报告解读"从一个人的临场发挥，变成一套<b>所有人都能复制的标准动作</b>：七步 SOP、三张对照表、三类人群话术、两套表单、一套科普清单、一套案例库、一套培训考核与推广节奏。目标只有一个——<b>让顾客听懂、听进去、肯行动。</b></p>
+  <p>本方案把"报告解读"从一个人的临场发挥，变成一套<b>所有人都能复制的标准动作</b>：一套七步 SOP、判定与异常两张对照表、三类人群话术、一套表单与建议书模板、一条合规红线，外加科普清单、案例库、情景卡库与培训考核、推广节奏的整套配套。目标只有一个——<b>让顾客听懂、听进去、肯行动。</b></p>
   <div class="tags">
-    <em>15家门店统一口径</em><em>7步标准解读流程</em><em>3类人群差异化话术</em><em>4项核心考核指标</em><em>明确医疗边界</em>
+    <em>15 家门店统一口径</em><em>7 步标准解读流程</em><em>3 类人群差异化话术</em><em>4 项核心考核指标</em><em>明确医疗边界</em>
   </div>
 </div>
 
@@ -372,12 +415,12 @@ body .grid > a.card{min-width:0}
   <div class="tsc"><table>
     <thead><tr><th style="width:16%">当前痛点</th><th style="width:40%">典型表现</th><th style="width:44%">本方案的对应解法</th></tr></thead>
     <tbody>
-      <tr><td>口径不统一</td><td>同一个"-2.00D、眼轴年增0.4mm"的报告，A店说"稍微注意"，B店说"必须马上干预"，顾客互相打听后不信任品牌</td><td>统一<b>参考区间表 + 异常判定表 + 异常对照表</b>（<a href="03_指标参考区间与异常判定表.html" style="color:#1677ff;font-weight:600">模块03</a>、04），同一份报告在任何门店得到同一套判定结论</td></tr>
-      <tr><td>讲得太多听不懂</td><td>一开口就是"轴率比""调节滞后""AC/A比值"，顾客点头但没记住任何东西</td><td>七步流程里每一步只讲一个点；话术采用<b>"先共情→再讲数据→后给方案"</b>结构，数据一律翻译成生活语言（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>）</td></tr>
-      <tr><td>只讲度数，忽视风险</td><td>眼压偏高、眼底杯盘比大、屈光参差等提示被漏掉，既坑顾客也有合规风险</td><td>SOP 第②步强制做<b>异常值全项扫描</b>，凡属"红线清单"必须转诊并记录（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>、12）</td></tr>
-      <tr><td>方案推不动</td><td>讲了半小时，顾客还是"回去考虑考虑"，离焦/渐进/视觉训练接受率低</td><td>第⑤⑥⑦步用<b>方案分级（必做/建议做/可选）+ 科普 + 同类案例</b>三线并进，把"我要卖"变成"你需要"（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>、08、09）</td></tr>
+      <tr><td>口径不统一</td><td>同一个"-2.00D、眼轴年增 0.4mm"的报告，A 店说"稍微注意"，B 店说"必须马上干预"，顾客互相打听后不信任品牌</td><td>统一<b>参考区间表 + 异常判定表 + 异常对照表</b>（<a href="03_指标参考区间与异常判定表.html" style="color:#1677ff;font-weight:600">模块03</a>、04），同一份报告在任何门店得到同一套判定结论</td></tr>
+      <tr><td>讲得太多听不懂</td><td>一开口就是"轴率比""调节滞后""AC/A 比值"，顾客点头但没记住任何东西</td><td>七步流程里每一步只讲一个点；话术采用<b>"先共情→再讲数据→后给方案"</b>结构，数据一律翻译成生活语言（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>）</td></tr>
+      <tr><td>只讲度数，忽视风险</td><td>眼压偏高、眼底杯盘比大、屈光参差等提示被漏掉，既坑顾客也有合规风险</td><td>SOP 第②步强制做<b>异常值全项扫描</b>，凡属"红线清单"必须转诊并记录（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>、<a href="11_医疗边界与合规红线.html" style="color:#1677ff;font-weight:600">模块11</a>）</td></tr>
+      <tr><td>方案推不动</td><td>讲了半小时，顾客还是"回去考虑考虑"，离焦/渐进/视觉训练接受率低</td><td>第⑤⑥⑦步用<b>方案分级（必做/建议做/可选）+ 科普 + 同类案例</b>三线并进，把"我要卖"变成"你需要"（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>、<a href="07_科普知识点清单.html" style="color:#1677ff;font-weight:600">07 科普清单</a>、<a href="08_案例库选取与讲述.html" style="color:#1677ff;font-weight:600">08 案例库</a>）</td></tr>
       <tr><td>没有记录、无法追踪</td><td>讲了什么没留痕，下次换人接待，顾客要重讲一遍</td><td>《报告解读记录表》《方案建议书》两张表固化，进顾客档案，可查、可追、可交接（<a href="06_记录表与方案建议书.html" style="color:#1677ff;font-weight:600">模块06</a>）</td></tr>
-      <tr><td>新人不敢讲</td><td>入职3个月只会念数字，遇到家长提问就答不上来</td><td>培训—演练—认证—考核闭环，L1/L2/L3三级资质，配带教跟诊（<a href="09_培训演练与考核指标.html" style="color:#1677ff;font-weight:600">模块09</a>）</td></tr>
+      <tr><td>新人不敢讲</td><td>入职 3 个月只会念数字，遇到家长提问就答不上来</td><td>培训—演练—认证—考核闭环，L1/L2/L3 三级资质，配备带教跟诊（<a href="09_培训演练与考核指标.html" style="color:#1677ff;font-weight:600">模块09</a>）</td></tr>
     </tbody>
   </table></div>
 
@@ -400,14 +443,14 @@ body .grid > a.card{min-width:0}
     <a class="card" href="03_指标参考区间与异常判定表.html">
       <h3><i>03</i>参考区间与异常判定表</h3>
       <div class="desc">门店版的"字典"，查到指标就知道是否正常。</div>
-      <ul><li>视力、屈光度、眼轴、角膜曲率、眼压、眼底</li><li>双眼视功能（调节/聚散/隐斜/立体视）</li><li>泪膜、干眼、色觉、晶体等</li><li>每项给"正常 / 关注 / 异常 / 转诊"四档判定</li></ul>
+      <ul><li>视力、屈光度、眼轴、角膜曲率、眼压、眼底</li><li>双眼视功能（调节/聚散/隐斜/立体视）</li><li>泪膜、干眼、色觉、晶状体等</li><li>每项给"正常 / 关注 / 异常 / 转诊"四档判定</li></ul>
       <div class="who"><b>谁用：</b>解读前后必查，建议打印成桌垫/台卡</div>
       <div class="go">打开完整内容 →</div>
     </a>
     <a class="card" href="04_异常值对照表.html">
       <h3><i>04</i>异常值对照表</h3>
       <div class="desc">从"发现异常"直接跳到"说什么、做什么"。</div>
-      <ul><li>异常值 → 可能原因 → 潜在影响 → 应对对策</li><li>覆盖16类高频异常场景</li><li>每条附"是否需转诊"标记</li></ul>
+      <ul><li>异常值 → 可能原因 → 潜在影响 → 应对对策</li><li>覆盖 20 类高频异常场景</li><li>每条附"是否需转诊"标记</li></ul>
       <div class="who"><b>谁用：</b>视光师现场对照使用</div>
       <div class="go">打开完整内容 →</div>
     </a>
@@ -427,7 +470,7 @@ body .grid > a.card{min-width:0}
     </a>
     <a class="card" href="07_科普知识点清单.html">
       <h3><i>07</i>科普知识点清单</h3>
-      <div class="desc">解读第⑥步的弹药库，30条随时能讲。</div>
+      <div class="desc">解读第⑥步的弹药库，30 条随时能讲。</div>
       <ul><li>近视成因 / 户外活动 / 眼轴与度数</li><li>20-20-20 / 读写姿势 / 灯光与睡眠</li><li>干眼 / 老视 / 白内障 / 青光眼 / 糖网</li><li>每条给"一句话讲法 + 常见误区"</li></ul>
       <div class="who"><b>谁用：</b>视光师、客服回访、短视频选题</div>
       <div class="go">打开完整内容 →</div>
@@ -442,13 +485,13 @@ body .grid > a.card{min-width:0}
     <a class="card" href="09_培训演练与考核指标.html">
       <h3><i>09</i>培训演练与考核</h3>
       <div class="desc">把标准变成习惯，把习惯变成业绩。</div>
-      <ul><li>3天集训 + 每日晨会15分钟演练（教案见模块14、卡片见模块13）</li><li>角色扮演 / 情景卡 / 录音复盘 / 带教跟诊</li><li>四项核心指标：解读覆盖率、顾客理解度、方案接受率、复诊率</li><li>L1-L3 三级认证与月度复盘会</li></ul>
+      <ul><li>3 天集训 + 每日晨会 15 分钟演练（教案见模块14、卡片见模块13）</li><li>角色扮演 / 情景卡 / 录音复盘 / 带教跟诊</li><li>四项核心指标：解读覆盖率、顾客理解度、方案接受率、复诊率</li><li>L1-L3 三级认证与月度复盘会</li></ul>
       <div class="who"><b>谁用：</b>店长、内训师、区域督导</div>
       <div class="go">打开完整内容 →</div>
     </a>
     <a class="card" href="10_试点复盘与全门店推广.html">
       <h3><i>10</i>试点复盘与全门店推广</h3>
-      <div class="desc">先跑通3家，再复制12家。</div>
+      <div class="desc">先跑通 3 家，再复制 12 家。</div>
       <ul><li>试点门店选择标准</li><li>T+30 准备 / T+60 试点 / T+75 复盘 / T+120 推广 / T+180 固化 五阶段</li><li>每阶段任务、责任人、交付物、验收标准</li><li>常见问题与纠偏机制</li></ul>
       <div class="who"><b>谁用：</b>项目负责人、区域经理</div>
       <div class="go">打开完整内容 →</div>
@@ -482,7 +525,7 @@ body .grid > a.card{min-width:0}
       <div class="go">打开完整内容 →</div>
     </a>
     <a class="card" href="15_12岁近视学生近视防控全流程情景还原.html">
-      <h3><i>15</i>12岁近视学生防控全流程情景还原</h3>
+      <h3><i>15</i>12 岁近视学生防控全流程情景还原</h3>
       <div class="desc">以 12 岁学生就诊为主线，八幕还原视光师与家长的真实沟通过程。</div>
       <ul><li>角色设定：学生用眼档案、家长画像、视光师能力职责</li><li>八幕推进：问诊 → 检查 → 解读 → 风险 → 方案 → 异议 → 指导 → 复查</li><li>每幕四项：场景背景、标准动作清单、即时反应、逐句对话（标沟通意图）</li><li>可切换焦虑型／质疑型／配合型家长，查看策略与话术差异</li></ul>
       <div class="who"><b>谁用：</b>新人（跟诊预习）· 内训师（演练）· 店长（考核）</div>
@@ -493,7 +536,7 @@ body .grid > a.card{min-width:0}
   <h2 class="sec">三、门店怎么用这套方案（三步上手）</h2>
   <div class="good">
     <b>第一步（第1周）：先记流程。</b>所有人把<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>的七步顺序背下来，做到"不跳过、不颠倒"。打印<a href="03_指标参考区间与异常判定表.html" style="color:#1677ff;font-weight:600">模块03</a>的判定表压在验光台玻璃下，遇到拿不准的指标先查表，不查不许开口。<br><br>
-    <b>第二步（第2-4周）：照着话术讲。</b><a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>的七步话术打印成卡片随身携带，新人允许照念。每场解读后填写<a href="06_记录表与方案建议书.html" style="color:#1677ff;font-weight:600">模块06</a>的记录表，店长每天抽查2份。<br><br>
+    <b>第二步（第2-4 周）：照着话术讲。</b><a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>的七步话术打印成卡片随身携带，新人允许照念。每场解读后填写<a href="06_记录表与方案建议书.html" style="color:#1677ff;font-weight:600">模块06</a>的记录表，店长每天抽查 2 份。<br><br>
     <b>第三步（第2个月起）：讲出自己的味道。</b>熟悉后用<a href="07_科普知识点清单.html" style="color:#1677ff;font-weight:600">模块07</a>的科普点、<a href="08_案例库选取与讲述.html" style="color:#1677ff;font-weight:600">模块08</a>的案例替换进去，形成个人讲述风格。每月用<a href="09_培训演练与考核指标.html" style="color:#1677ff;font-weight:600">模块09</a>的考核表自评一次，接受公司抽查。
   </div>
 
@@ -520,7 +563,7 @@ body .grid > a.card{min-width:0}
 
 <footer>
   <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0</b><br>
-  编制：闫胜君整理 ｜ 适用门店：零陵8家、冷水滩2家、祁阳5家（共15家）｜ 归口部门：视光运营部<br>
+  编制：闫胜君整理 ｜ 适用门店：零陵 8 家、冷水滩 2 家、祁阳 5 家（共 15 家）｜ 归口部门：视光运营部<br>
   说明：本方案为门店内部服务标准文件，所有参考数值仅供健康宣教与转诊提示使用，不构成医疗诊断意见。表中数值如与国家最新诊疗指南不一致，以指南和接诊医疗机构意见为准。使用者上岗前须通读<a href="11_医疗边界与合规红线.html" style="color:#1677ff;font-weight:600">模块11</a>《医疗边界与合规红线》并签字确认。
 </footer>
 <div id="top"></div>
@@ -545,6 +588,28 @@ body .grid > a.card{min-width:0}
   window.addEventListener('resize', defer);
   var ds = document.querySelectorAll('details'), j;
   for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+
+<!-- HEADER-STICKY-V1 : 标题栏吸顶紧凑态（幂等注入，勿手改） -->
+<script>
+(function(){
+  var tb = document.querySelector('.topbar');
+  if(!tb) return;
+  var timer = null;
+  function pos(){
+    return (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+  }
+  function sync(){
+    tb.classList.toggle('tb-compact', pos() > 80);
+  }
+  function onScroll(){
+    if(timer) return;
+    timer = setTimeout(function(){ timer = null; sync(); }, 80);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  sync();
 })();
 </script>
 </body>
