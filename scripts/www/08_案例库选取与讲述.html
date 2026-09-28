@@ -333,6 +333,57 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+<!-- MARK : ROW0803-V1 : 四标准一行4列 / 六段式一行6列 -->
+<style>
+/* ===== ROW0803-V1 : 保证「四标准」单行四列、「六段式」单行六列 ===== */
+/* ① 宽屏：四标准强制一行四列（避免 auto-fill 在 <1150px 时回落为三列） */
+@media screen and (min-width:901px){
+  body .std{grid-template-columns:repeat(4,minmax(0,1fr))}
+  body .std .box{min-width:0}
+}
+/* ② 中段平板竖屏：两列两行，保持可读（上界须为 900，不能越过 ① 的下界） */
+@media screen and (min-width:641px) and (max-width:900px){
+  body .std{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ③ 宽屏：六段式强制一行六列（禁换行 + 取消最小宽，段间由箭头连接）
+      下界取 1001px：低于此值每段不足 130px，中文会碎成单字换行 */
+@media screen and (min-width:1001px){
+  body .story{flex-wrap:nowrap;gap:6px}
+  body .story .s{flex:1 1 0;min-width:0;overflow-wrap:break-word}
+  body .story .arrow{flex:0 0 auto;padding:0 1px;font-size:calc(15px * var(--fs))}
+}
+/* ④ 中段平板竖屏：六段式改为「三列 × 两行」网格，箭头让位，编号保持顺序可读 */
+@media screen and (min-width:641px) and (max-width:1000px){
+  body .story{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  body .story .arrow{display:none}
+  body .story .s{flex:initial;min-width:0}
+}
+/* ⑤ 窄屏：六段式回流为一屏两列，不挤成一条线 */
+@media screen and (max-width:640px){
+  body .story{display:flex;flex-wrap:wrap;gap:8px}
+  body .story .s{flex:1 1 calc(50% - 12px);min-width:calc(132px * var(--fs))}
+  body .story .arrow{display:none}
+}
+</style>
+
+
 
 <!-- COLBAL-V1 -->
 <!-- COLFIT-V1 -->
@@ -340,22 +391,17 @@ body table.sticky-on>thead>tr>th{
 <body>
 <div class="topbar">
   <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块 08 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+  <div class="meta">模块08 / 15 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
 <div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="07_科普知识点清单.html">07 科普知识点清单</a> ｜ 下一模块：<a href="09_培训演练与考核指标.html">09 培训演练与考核</a></div>
 
 <div class="wrap">
-  <h1 class="t">模块 08 · 案例库：选取标准与讲述结构</h1>
+  <h1 class="t">模块08 · 案例库：选取标准与讲述结构</h1>
   <p class="lead">SOP 第七步"案例佐证"用的就是这里的材料。<b>原理再好，顾客也会想："真的有人做成过吗？"</b>一个贴切的真实案例，能同时解决<u>可信度</u>和<u>行动意愿</u>两个问题。但案例也是最容易出事的一环——编造、夸大、泄露隐私、承诺疗效，都会把门店置于风险中。因此本模块同时给出<b>选取标准</b>与<b>禁用行为</b>。</p>
 
   <h2 class="sec">一、为什么案例有效</h2>
   <div class="card">
-    <ul>
-      <li><b>降低不确定性：</b>顾客最大的犹豫是"我不知道有没有用"。案例给出了一个已完成的样本。</li>
-      <li><b>提供社会证明：</b>"和我差不多的人也这么做了"——这比任何论证都有效。</li>
-      <li><b>把抽象变具体：</b>"半年只涨了 25 度"比"效果不错"具体一百倍。</li>
-      <li><b>建立情感连接：</b>故事比数据更容易被记住，也更容易被转述给家人。</li>
-    </ul>
+    <p class="ni" style="margin:0">一句话：<b>案例给顾客一个"已完成样本"</b>——"和我差不多的人这么做了、有效"，比任何论证都有说服力；故事比数据更具体，也更容易被顾客转述给家人。<b>但它同时是最容易出事的一环，所以下面的标准和红线必须先守住。</b></p>
   </div>
 
   <h2 class="sec">二、案例选取四标准</h2>
@@ -363,7 +409,7 @@ body table.sticky-on>thead>tr>th{
     <div class="box">
       <h4>① 真实</h4>
       <p>必须是本门店真实发生、有<b>留档数据</b>可查的顾客经历。所有数值来自检查记录，不得记忆杜撰、不得四舍五入地"美化"。</p>
-      <span class="no">✕ 否决：凭印象编故事、把两个案例混成一个、使用网上看到的案例冒充本店案例。</span>
+      <span class="no">✕ 否决：凭印象编故事、把两个案例混成一个、使用网上看到的案例冒充本店案例（对应第六节禁用①）。</span>
     </div>
     <div class="box">
       <h4>② 同类</h4>
@@ -408,7 +454,7 @@ body table.sticky-on>thead>tr>th{
         <tr><td><b>启示</b></td><td>把故事拉回眼前这位顾客</td><td>"我不是说您孩子一定一样，每个人不同。我是想说这种情况是可以管的。"</td><td><b>这一段绝不能省</b>，省了就变成吹牛</td></tr>
       </tbody>
     </table></div>
-    <div class="warn"><b>讲述纪律：</b>①每讲完一个案例<b>必须做"个体差异"声明</b>；②不加"也就是说你也能……"这类推论；③出现"治好""恢复""根除"等词即刻纠正；④顾客追问具体人物信息时，礼貌拒绝："这个不方便透露，人家也没同意，不过数据是真实的。"</div>
+    <div class="warn"><b>讲述纪律：</b>完整红线见下方第六节《禁用行为清单》（个体差异声明、禁推论、禁治愈类词，均在其中）。现场唯一要记的补充：<b>顾客追问具体是谁时，礼貌拒绝</b>——"这个不方便透露，人家也没同意，不过数据是真实的。"</div>
   </div>
 
   <h2 class="sec">四、十个标准案例（可直接讲，也可按此格式新增）</h2>
@@ -512,9 +558,9 @@ body table.sticky-on>thead>tr>th{
       <thead><tr><th style="width:17%">字段</th><th style="width:42%">填写要求</th><th style="width:41%">示例</th></tr></thead>
       <tbody>
         <tr><td>案例编号</td><td>C + 两位序号（分人群可加后缀 K/A/E）</td><td>C01-K（儿童）</td></tr>
-        <tr><td>适用人群/场景</td><td>明确对应到 SOP 场景 A-E 及人群类型</td><td>6-12岁近视进展期 / 场景B</td></tr>
+        <tr><td>适用人群/场景</td><td>明确对应到 SOP 场景 A-E 及人群类型</td><td>6-12 岁近视进展期 / 场景 B</td></tr>
         <tr><td>起点数据</td><td>真实数值，注明来源日期</td><td>2025-09：SE -1.25D，AL 23.40mm</td></tr>
-        <tr><td>干预措施</td><td>产品+行为+服务，写全</td><td>离焦镜 + 户外2h + 3个月复查</td></tr>
+        <tr><td>干预措施</td><td>产品+行为+服务，写全</td><td>离焦镜 + 户外 2h + 3 个月复查</td></tr>
         <tr><td>复查数据</td><td>与起点同口径的数值</td><td>2026-03：SE -1.50D，AL 23.52mm</td></tr>
         <tr><td>生活化结果</td><td>顾客自述的改变（一句话）</td><td>"上课不用眯眼了"</td></tr>
         <tr><td>隐私处理</td><td>是否已隐去姓名、学校、住址等</td><td>已脱敏</td></tr>
@@ -547,7 +593,7 @@ body table.sticky-on>thead>tr>th{
 </div>
 
 <footer>
-  <b>模块 08 · 案例库选取标准与讲述结构</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  <b>模块08 · 案例库选取标准与讲述结构</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
   所有案例须为本门店真实服务记录并经脱敏处理；案例仅作服务过程与趋势说明，不构成疗效证明或医疗建议。
 </footer>
 <script>
