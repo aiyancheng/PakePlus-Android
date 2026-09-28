@@ -331,19 +331,36 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+
 
 <!-- COLBAL-V1 -->
 </head>
 <body>
 <div class="topbar">
   <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块 06 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+  <div class="meta">模块06 / 15 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
 <div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="05_三类人群差异化解读.html">05 三类人群差异化解读</a> ｜ 下一模块：<a href="07_科普知识点清单.html">07 科普知识点清单</a> ｜ 关联：<a href="12_方案建议书标准模板集.html">12 建议书模板集</a></div>
 
 <div class="wrap">
-  <h1 class="t">模块 06 · 报告解读记录表 与 方案建议书模板</h1>
-  <p class="lead">讲得再好，不留痕迹就等于没讲。<b>这套表单有两个作用：</b>对内，它是服务质量的凭证、异常发现的保护伞、下一次接待的交接单；对外，它是顾客带回家的"说明书"，决定了他的家人会不会认可我们的专业度。<b>记录表门店留存，建议书交给顾客。</b></p>
+  <h1 class="t">模块06 · 报告解读记录表 与 方案建议书模板</h1>
+  <p class="lead">讲得再好，不留痕迹就等于没讲。<b>这套表单对内是质量凭证与交接单，对外是顾客带回家的"说明书"。</b>记录表门店留存，建议书交给顾客。</p>
 
   <div class="note"><b>使用规则：</b>①<b>当场填写，不得事后补录</b>；②两张表编号一致，便于对照；③纸质件按月度归档，电子件录入顾客档案系统；④保存期限不少于 2 年（涉及转诊提醒的建议永久保存）；⑤凡顾客签字处不得代签。</div>
 
@@ -398,7 +415,7 @@ body table.sticky-on>thead>tr>th{
             <tr><td>眼底（照相/杯盘比）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
             <tr><td>双眼视功能</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
             <tr><td>干眼相关（BUT/泪液）</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
-            <tr><td>眼前节/晶体</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
+            <tr><td>眼前节/晶状体</td><td class="c">□</td><td></td><td></td><td></td><td>□店检□外院</td></tr>
           </tbody>
         </table></div>
         <div class="line2"><label>缺失项说明：</label><span class="fill"></span></div>
@@ -406,7 +423,7 @@ body table.sticky-on>thead>tr>th{
         <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
       </div>
 
-      <div class="sec-title">三、②异常项登记（照模块03、04判定）</div>
+      <div class="sec-title">三、②异常项登记（照模块03、04 判定）</div>
       <div class="blk">
         <div class="tsc w6"><table class="now1 now4 now5">
           <thead><tr><th class="c" style="width:6%">序</th><th style="width:19%">指标名称</th><th style="width:19%">本次值</th><th style="width:12%">判定档位</th><th style="width:10%">是否转诊</th><th style="width:34%">处理方式（简要）</th></tr></thead>
@@ -432,14 +449,14 @@ body table.sticky-on>thead>tr>th{
       <div class="blk">
         <div class="line2"><label>顾客主诉/在意的问题：</label></div>
         <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
-        <div class="line2"><label>讲的原因（≤2条）：</label></div>
+        <div class="line2"><label>讲的原因（≤2 条）：</label></div>
         <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
         <div class="line2"><label>讲的影响（关联生活场景）：</label></div>
         <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
         <div class="line2"><label>⑤解决方案：必做项：</label></div>
         <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
         <div class="line2"><label>建议项：</label><span class="fill"></span><label>&nbsp;&nbsp;可选项：</label><span class="fill"></span></div>
-        <div class="line2"><label>⑥科普点（≤3条）：</label><span class="fill"></span></div>
+        <div class="line2"><label>⑥科普点（≤3 条）：</label><span class="fill"></span></div>
         <div class="line2"><label>⑦使用的案例编号（模块08）：</label><span class="fill" style="max-width:calc(120px * var(--fs))"></span></div>
         <div class="line2"><label>顾客顾虑 / 拒绝原因：</label></div>
         <div style="border-bottom:1px solid #7a8799;height:2.2em;margin-bottom:8px"></div>
@@ -455,7 +472,7 @@ body table.sticky-on>thead>tr>th{
           <span class="check"><input type="checkbox"> 完全听懂</span>
           <span class="check"><input type="checkbox"> 基本听懂</span>
           <span class="check"><input type="checkbox"> 仍有疑问</span>
-          <label>&nbsp;&nbsp;顾客评分（1-5分）：</label><span class="fill" style="max-width:calc(80px * var(--fs))"></span>
+          <label>&nbsp;&nbsp;顾客评分（1-5 分）：</label><span class="fill" style="max-width:calc(80px * var(--fs))"></span>
         </div>
       </div>
 
@@ -580,7 +597,7 @@ body table.sticky-on>thead>tr>th{
   <div class="card">
     <h3 class="sub">六条填写规范</h3>
     <ol>
-      <li><b>当场填，不补填。</b>顾客离店后凭记忆补写，等于没写。</li>
+      <li><b>当场填，不补填</b>（同页首使用规则①）。凭记忆补写等于没写。</li>
       <li><b>不写"感觉""好像"。</b>数值一律写实客观：写"眼压 24mmHg"，不写"眼压偏高一点"。</li>
       <li><b>写顾客原话。</b>"孩子每天写作业到十点半""看手机要把手机拿得很近才舒服"——原话是最有价值的跟进素材。</li>
       <li><b>每一栏都要有内容。</b>没有的写"/"，不得留空（留空＝无法证明做过）。</li>
@@ -601,7 +618,7 @@ body table.sticky-on>thead>tr>th{
     </table></div>
   </div>
 
-  <div class="good"><b>编号规则（建议）：</b>门店代码 + 年月 + 流水号，如"<b>LL03-202609-018</b>"表示零陵区第 3 家门店 2026 年 9 月第 18 份解读记录。<b>记录表与建议书使用同一编号</b>，便于对照查询。可通过修改文件后直接打印使用。</div>
+  <div class="good"><b>编号规则（建议）：</b>门店代码 + 年月 + 流水号，如"<b>LL03-202609-018</b>"表示零陵区第 3 家门店 2026 年 9 月第 18 份解读记录。<b>记录表与建议书使用同一编号</b>，便于对照查询。</div>
 
   <div class="btnwrap">
     <button class="btn" onclick="window.print()">打印本模块（含空白表单）</button>
@@ -611,7 +628,7 @@ body table.sticky-on>thead>tr>th{
 </div>
 
 <footer>
-  <b>模块 06 · 报告解读记录表与方案建议书模板</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  <b>模块06 · 报告解读记录表与方案建议书模板</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
   表单中涉及的所有检查数值与健康建议均为门店服务留痕用途，不构成医疗诊断；涉及就医建议的部分以医疗机构意见为最终依据。
 </footer>
 <script>
