@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>模块13 · 情景卡库（30张演练卡）| 永州爱眼城 检查报告解读标准化方案</title>
+<title>模块13 · 情景卡库（30 张演练卡）| 永州爱眼城 检查报告解读标准化方案</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.72;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
@@ -337,32 +337,125 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+<!-- MARK : DRAW13-V1 : 卡库总览折叠 + 30 张电子抽卡器 -->
+<style>
+/* ===== DRAW13-V1 : ① 卡库总览折叠  ② 电子抽卡器 ===== */
+/* ① 折叠组：标题可点，正文默认收起 */
+body .foldgrp{margin:0}
+body .fold-h{cursor:pointer;user-select:none;display:flex;align-items:center;gap:9px}
+body .fold-h .fold-ic{margin-left:auto;font-size:calc(15px * var(--fs));color:#1677ff;
+  transition:transform .18s;line-height:1}
+body .fold-h .fold-tip{font-size:calc(12.5px * var(--fs));font-style:normal;color:#7a8799;
+  border:1px solid #dae3f5;border-radius:20px;padding:2px 10px;background:#f7faff}
+body .fold-h[aria-expanded="true"] .fold-ic{transform:rotate(180deg)}
+body .fold-body{display:none}
+body .foldgrp.open .fold-body{display:block}
+body .fold-h:focus-visible{outline:2px solid #1677ff;outline-offset:3px;border-radius:6px}
+
+/* ② 抽卡器 */
+body .dbox{border:1px solid #c9dfff;background:linear-gradient(180deg,#f7fbff 0%,#fff 46%)}
+body .dtitle{margin:0 0 6px;font-size:calc(17px * var(--fs));color:#1677ff;
+  display:flex;align-items:center;gap:8px}
+body .dtitle::before{content:"";width:4px;height:calc(16px * var(--fs));background:#e07b39;border-radius:2px}
+body .dtip{margin:0 0 12px;font-size:calc(13.2px * var(--fs));color:#5b6b7d;line-height:1.7}
+body .dbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-bottom:12px}
+body .dlabel{font-size:calc(13px * var(--fs));color:#45596e;font-weight:700}
+body .dchips{display:inline-flex;flex-wrap:wrap;gap:6px}
+body .dchip{font:inherit;font-size:calc(13px * var(--fs));color:#45596e;background:#fff;
+  border:1px solid #dae3f5;border-radius:20px;padding:6px 14px;min-height:36px;cursor:pointer;
+  transition:all .15s}
+body .dchip:hover{border-color:#69b1ff;color:#1677ff}
+body .dchip.on{background:#1677ff;border-color:#1677ff;color:#fff}
+body .dact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
+body .dbtn{font:inherit;font-size:calc(14px * var(--fs));color:#45596e;background:#fff;
+  border:1px solid #dae3f5;border-radius:9px;padding:8px 16px;min-height:42px;cursor:pointer}
+body .dbtn:hover{border-color:#69b1ff;color:#1677ff}
+body .dbtn.primary{background:#1677ff;border-color:#1677ff;color:#fff;font-weight:700;
+  box-shadow:0 2px 6px rgba(22,119,255,.25)}
+body .dbtn.primary:hover{background:#4096ff;border-color:#4096ff;color:#fff}
+body .dsw{display:inline-flex;align-items:center;gap:6px;font-size:calc(13px * var(--fs));color:#45596e}
+body .dcount{font-size:calc(12.5px * var(--fs));color:#7a8799;margin-left:auto}
+body .dresult{display:flex;gap:16px;align-items:stretch;border:1px solid #bcd9ff;border-radius:12px;
+  background:#fff;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(22,119,255,.08)}
+body .dresult[hidden]{display:none}
+body .dnum{flex:0 0 auto;min-width:calc(96px * var(--fs));display:flex;align-items:center;justify-content:center;
+  font-size:calc(30px * var(--fs));font-weight:800;color:#fff;letter-spacing:1px;
+  background:linear-gradient(160deg,#1677ff,#69b1ff);border-radius:10px;padding:10px 8px}
+body .dnum.roll{animation:dpop .18s ease}
+@keyframes dpop{0%{transform:scale(.92);opacity:.6}100%{transform:scale(1);opacity:1}}
+body .dbody{flex:1;min-width:0}
+body .dtags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+body .dtags .dt{font-size:calc(12px * var(--fs));border-radius:4px;padding:2px 9px;border:1px solid #dae3f5;color:#45596e;background:#f7faff}
+body .dtags .dt.g{color:#1677ff;border-color:#c9dfff;background:#f1f6ff}
+body .dtags .dt.p{color:#b32727;border-color:#f3c4c4;background:#fdecec}
+body .dtags .dt.s{margin-left:auto;color:#e07b39;border-color:#f4d3b0;background:#fdf1e7;letter-spacing:1px}
+body .dtopic{font-size:calc(15.5px * var(--fs));font-weight:700;color:#1f2b3d;line-height:1.55;margin-bottom:4px}
+body .dkey{font-size:calc(13.4px * var(--fs));color:#45596e;line-height:1.7}
+body .djump{display:inline-block;margin-top:8px;font-size:calc(13.5px * var(--fs));color:#1677ff;
+  text-decoration:none;border-bottom:1px dashed #69b1ff}
+body .djump:hover{color:#0b3d91;border-bottom-style:solid}
+body .dhist{font-size:calc(12.5px * var(--fs));color:#7a8799;line-height:1.9}
+body .dhist b{color:#45596e;margin-right:6px}
+body .dhist .hn{display:inline-block;border:1px solid #dae3f5;border-radius:5px;background:#fff;
+  color:#45596e;padding:1px 7px;margin:0 4px 4px 0}
+body .dhist .hn.cur{background:#1677ff;border-color:#1677ff;color:#fff}
+/* 抽中卡高亮 */
+body .scard.flash{outline:3px solid #1677ff;outline-offset:2px;background:#f5f9ff}
+@media screen and (max-width:640px){
+  body .dresult{flex-direction:column}
+  body .dnum{min-width:0;width:100%}
+  body .dcount{margin-left:0}
+}
+@media print{
+  body .fold-body{display:block !important}
+  body .fold-h .fold-ic,body .fold-h .fold-tip{display:none}
+  body .dbox{display:none !important}
+}
+</style>
+
+
 
 <!-- COLFIT-V1 -->
 </head>
 <body>
 <div class="topbar">
   <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块 13 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+  <div class="meta">模块13 / 15 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
 <div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="12_方案建议书标准模板集.html">12 建议书模板集</a> ｜ 下一模块：<a href="14_新人三天集训执行方案.html">14 新人三天集训方案</a> ｜ 关联：<a href="09_培训演练与考核指标.html">09 培训演练与考核</a></div>
 
 <div class="wrap">
-  <h1 class="t">模块 13 · 情景卡库（30 张演练卡）</h1>
-  <p class="lead">这是模块09「角色扮演」的弹药箱。30 张卡＝30 个真实顾客，把门店最常遇到、也最容易讲砸的局面全部演一遍：<b>顾客方照着卡演，视光师照着七步讲，旁观者照着卡打分</b>。卡片可以直接打印裁剪，一卡一人一场，全员轮完再进压力题。</p>
+  <h1 class="t">模块13 · 情景卡库（30 张演练卡）</h1>
+  <p class="lead">这是模块09「角色扮演」的弹药箱。30 张卡＝30 个真实顾客，把门店最常遇到、也最容易讲砸的局面全部演一遍：<b>顾客方照着卡演，视光师照着七步讲，旁观者照着卡打分</b>。卡片可以打印裁剪成纸质卡，也可以直接用本页<b>电子抽卡器</b>随机抽号（见第二部分），两种用法编号完全一致；一卡一人一场，全员轮完再进压力题。</p>
 
   <h2 class="sec">一、这套卡怎么用（演练四步法）</h2>
   <div class="steps">
-    <div class="box"><h4>① 抽卡</h4><p>从本模块抽 1 张（常规题优先，压力题需先通过常规题）。抽卡人只把「场景+顾客设定+参考数据」给顾客方看，视光师事先不看。</p></div>
+    <div class="box"><h4>① 抽卡</h4><p>用下方<b>电子抽卡器</b>随机抽 1 张（默认抽常规题，压力题须先通过常规题；也可用纸质卡盒手工抽卡）。抽卡人只把「场景+顾客设定+参考数据」给顾客方看，<b>考察重点与难度不示人</b>，视光师事先不看，也不得由本人自选卡片。</p></div>
     <div class="box"><h4>② 演</h4><p>顾客方按卡上的设定提问、质疑、给压力，不得自由发挥加戏。视光师完整走一遍七步，允许查模块03判定表。</p></div>
     <div class="box"><h4>③ 评</h4><p>第三人持《实操考评表》（模块09）打分，重点看本卡「考察重点」是否全部命中，出现「否决项」即整场不合格。</p></div>
     <div class="box"><h4>④ 复盘</h4><p>当场给 3 条反馈：做对 1 条 / 可改 1 条 / 下次重点 1 条。不合格者一周内换同人群另一张卡重考，不得重复抽同一张。</p></div>
   </div>
-  <div class="note"><b>使用的三条纪律：</b>① 卡片数据均为<b>演练用虚构数据</b>，不得作为真实案例对外讲述，也不得写进宣传物料；② 演练中出现的错误话术（如"保证不涨"）必须在复盘时当场纠正并记录在《晨会演练记录本》；③ 卡片属于内部培训资料，不外借、不上传网络。</div>
+  <div class="note"><b>使用的两条纪律：</b>① 卡片数据均为<b>演练用虚构数据</b>，不得当作真实案例对外讲述或写进宣传物料；卡片属内部资料，不外借、不上传网络；② 演练中出现的错误话术（如"保证不涨"）必须当场纠正并记录在《晨会演练记录本》。</div>
 
   <h2 class="sec">二、抽卡规则与评分标准</h2>
   <div class="tsc w4"><table>
-    <thead><tr><th style="width:10%">项目</th><th style="width:33%">常规题（S-01 ~ S-21 中的常规卡）</th><th style="width:28%">压力题（标注「压力」的 10 张）</th><th style="width:29%">说明</th></tr></thead>
+    <thead><tr><th style="width:10%">项目</th><th style="width:33%">常规题（标注「常规」的 20 张）</th><th style="width:28%">压力题（标注「压力」的 10 张）</th><th style="width:29%">说明</th></tr></thead>
     <tbody>
       <tr><td><b>通过线</b></td><td>≥ 85 分</td><td>≥ 80 分即可通过</td><td>压力题的难点在"扛住"，不在"说服"</td></tr>
       <tr><td><b>七步完整</b></td><td>七步缺一步即扣 10 分</td><td>允许简化第⑥⑦步，但第①②步不得跳过</td><td>第②步异常值扫描是硬指标</td></tr>
@@ -370,52 +463,96 @@ body table.sticky-on>thead>tr>th{
       <tr><td><b>一票否决</b></td><td colspan="2">出现卡片「否决项」任一条 = 本场 0 分，记录在案</td><td>否决项均涉及合规红线，无商量余地</td></tr>
       <tr><td><b>重考</b></td><td colspan="2">不合格者 7 日内重考，换卡不换人群；连续两次不合格暂停独立解读，跟诊 2 周</td><td>同人群换卡，避免背答案</td></tr>
       <tr><td><b>抽考</b></td><td colspan="2">每周五晨会抽查 1 张，全员轮流；店长记录，月度汇总</td><td>对接模块09 常态化训练</td></tr>
+      <tr><td><b>抽卡方式</b></td><td colspan="2">门店二选一：① 本页电子抽卡器随机出号（可按人群、题型筛选，默认抽过的不再抽）；② 纸质卡盒手工抽卡。两种方式编号一致，抽到哪张演哪张</td><td>由本人自选卡片＝背答案，本场无效</td></tr>
     </tbody>
   </table></div>
 
-  <h2 class="sec">三、卡库总览（30 张索引）</h2>
-  <div class="card">
-    <div class="tsc w6"><table class="now1 now2 now3 now6">
-      <thead><tr><th style="width:6%">编号</th><th style="width:10%">人群</th><th style="width:6%">题型</th><th style="width:29%">情景主题</th><th style="width:42%">核心考察点</th><th style="width:7%">难度</th></tr></thead>
-      <tbody>
-        <tr><td>S-01</td><td>儿童青少年</td><td>常规</td><td>首次配镜，家长不认"近视"</td><td>共情开场；不下"假性近视"结论；建立眼轴档案</td><td>★★</td></tr>
-        <tr><td>S-02</td><td>儿童青少年</td><td>常规</td><td>一年涨 100 度</td><td>用年化增速切入，而不是单次度数；讲"控速"不讲"不涨"</td><td>★★★</td></tr>
-        <tr><td>S-03</td><td>儿童青少年</td><td>常规</td><td>远视储备不足</td><td>解释储备概念；不渲染恐慌；给户外与用眼方案</td><td>★★★</td></tr>
-        <tr><td>S-04</td><td>儿童青少年</td><td>常规</td><td>家长问"能不能只靠滴眼液/中医调理"</td><td>不碰药品；不做疗效评价；转到可执行的行为方案</td><td>★★</td></tr>
-        <tr><td>S-05</td><td>儿童青少年</td><td>常规</td><td>孩子不肯戴镜，怕同学笑</td><td>儿童心理沟通；把戴镜讲成"看得清才学得动"</td><td>★★</td></tr>
-        <tr><td>S-06</td><td>儿童青少年</td><td>常规</td><td>家长问要不要配角膜塑形镜 / 离焦镜</td><td>讲适用条件与前置检查；只讲项目不讲疗效承诺</td><td>★★★★</td></tr>
-        <tr><td>S-07</td><td>儿童青少年</td><td>常规</td><td>度数够了看近仍累（双眼视功能异常）</td><td>解释"度数不是唯一原因"；先排斜弱视再谈训练</td><td>★★★★</td></tr>
-        <tr><td>S-08</td><td>儿童青少年</td><td>压力</td><td>母亲要求"保证不涨，否则退款"</td><td>守住边界；把承诺改为可控目标与复查节奏</td><td>★★★★</td></tr>
-        <tr><td>S-09</td><td>儿童青少年</td><td>压力</td><td>外婆说"长大做个手术就行"</td><td>讲清手术解决度数、不解决眼底风险；不冒犯长辈</td><td>★★★</td></tr>
-        <tr><td>S-10</td><td>儿童青少年</td><td>压力</td><td>家长拿网上文章质疑"眼轴检查没必要"</td><td>不反驳顾客；用自家历史数据说明价值</td><td>★★★★</td></tr>
-        <tr><td>S-11</td><td>儿童青少年</td><td>压力</td><td>家长认定"你们就是推销"，全程录像</td><td>情绪稳定；先问需求；不推高单价；规范留痕</td><td>★★★★</td></tr>
-        <tr><td>S-12</td><td>成年人</td><td>常规</td><td>度数没变，要不要换镜</td><td>区分屈光度未变与镜片磨损、瞳距、镜架变形</td><td>★★</td></tr>
-        <tr><td>S-13</td><td>成年人</td><td>常规</td><td>长期电脑工作，重度视疲劳</td><td>先查视功能与泪膜，而不是简单加度数</td><td>★★★</td></tr>
-        <tr><td>S-14</td><td>成年人</td><td>常规</td><td>眼干、异物感、早上睁不开眼</td><td>区分筛查与诊断；不推荐药品；说明就诊时机</td><td>★★★</td></tr>
-        <tr><td>S-15</td><td>成年人</td><td>常规</td><td>夜间开车眩光、看不清路牌</td><td>散光矫正与镜片光学质量；必要时提示就诊</td><td>★★★</td></tr>
-        <tr><td>S-16</td><td>成年人</td><td>常规</td><td>隐形眼镜配戴十年，近期红眼</td><td>识别角膜缺氧信号并转诊；不鼓励继续戴</td><td>★★★★</td></tr>
-        <tr><td>S-17</td><td>成年人</td><td>常规</td><td>双眼度数差 200 度（屈光参差）</td><td>不等像、易疲劳、双眼视与驾驶安全</td><td>★★★</td></tr>
-        <tr><td>S-18</td><td>成年人</td><td>常规</td><td>高度近视，眼底提示需定期随访</td><td>讲清高度近视眼底风险与随访间隔；转诊边界</td><td>★★★★</td></tr>
-        <tr><td>S-19</td><td>成年人</td><td>压力</td><td>"你们就是想卖东西"</td><td>只讲数据不给压力；给"什么都可以不选"的选项</td><td>★★★★</td></tr>
-        <tr><td>S-20</td><td>成年人</td><td>压力</td><td>"我只有 5 分钟"</td><td>时间不够时的取舍：宁少讲不跳步；留记录表下次接</td><td>★★★</td></tr>
-        <tr><td>S-21</td><td>成年人</td><td>压力</td><td>反复比价，要求照抄别家度数</td><td>不贬低同行；说明验光流程价值；不承诺价格</td><td>★★★</td></tr>
-        <tr><td>S-22</td><td>中老年</td><td>常规</td><td>55 岁看近模糊，是老花还是度数加深</td><td>老视与近视加深的区分；ADD 与用眼距离</td><td>★★★</td></tr>
-        <tr><td>S-23</td><td>中老年</td><td>常规</td><td>首次配渐进镜</td><td>提前讲清适应期、边缘变形、瞳高瞳距与退换规则</td><td>★★★★</td></tr>
-        <tr><td>S-24</td><td>中老年</td><td>常规</td><td>配了渐进头晕，要求退货</td><td>先查配戴问题（瞳高、镜架下滑、通道）再谈方案</td><td>★★★★</td></tr>
-        <tr><td>S-25</td><td>中老年</td><td>常规</td><td>"我配镜就行，用不用查眼底"</td><td>说明眼底检查的必要性与转诊流程</td><td>★★★</td></tr>
-        <tr><td>S-26</td><td>中老年</td><td>常规</td><td>白内障早期，视力 0.6</td><td>眼镜能改善视物质量但不治病；最终以医疗机构意见为准</td><td>★★★★</td></tr>
-        <tr><td>S-27</td><td>中老年</td><td>常规</td><td>糖尿病十年，眼底有可疑改变</td><td>识别糖网风险；尽快转诊；配镜不能替代治疗</td><td>★★★★</td></tr>
-        <tr><td>S-28</td><td>中老年</td><td>压力</td><td>眼压 25mmHg</td><td>医疗边界；立即转诊话术；不得提诊断名词、不得借机推销</td><td>★★★★★</td></tr>
-        <tr><td>S-29</td><td>中老年</td><td>压力</td><td>"不用去医院，你给我配就行"</td><td>坚持转诊、不出产品方案、留痕并做回访</td><td>★★★★★</td></tr>
-        <tr><td>S-30</td><td>中老年</td><td>压力</td><td>本人不愿配、子女坚持要配</td><td>尊重知情选择；不夹在中间销售；签字留痕</td><td>★★★★</td></tr>
-      </tbody>
-    </table></div>
+  
+  <div class="card dbox">
+    <h3 class="dtitle">电子抽卡器 · 随机抽取编号（S-01 ~ S-30）</h3>
+    <p class="dtip">选定人群与题型后点击抽卡，系统随机给出 1 个卡号，右侧计数按<b>所选范围</b>统计（例如只选中老年即显示"0 / 9 张"）。默认「抽过的不再抽」（对应演练四步法④：不得重复抽同一张）；需要反复练同一张时取消勾选即可。<b>两条使用提醒：</b>① 压力题须在员工通过常规题之后才可抽取，未通过者题型只勾选「常规题」；② 抽到卡号后由抽卡人翻到下方对应卡片正文，只把「场景+顾客设定+参考数据」交给顾客方，屏幕上的考察重点与难度不要给顾客方看。</p>
+    <div class="dbar">
+      <span class="dlabel">人群</span>
+      <span class="dchips" data-k="grp">
+        <button type="button" class="dchip on" data-v="">全部</button>
+        <button type="button" class="dchip" data-v="儿童青少年">儿童青少年</button>
+        <button type="button" class="dchip" data-v="成年人">成年人</button>
+        <button type="button" class="dchip" data-v="中老年">中老年</button>
+      </span>
+      <span class="dlabel">题型</span>
+      <span class="dchips" data-k="type">
+        <button type="button" class="dchip on" data-v="">全部</button>
+        <button type="button" class="dchip" data-v="常规">常规题</button>
+        <button type="button" class="dchip" data-v="压力">压力题</button>
+      </span>
+    </div>
+    <div class="dact">
+      <button type="button" class="dbtn primary" id="dPick">随机抽 1 张</button>
+      <label class="dsw"><input type="checkbox" id="dNoRepeat" checked>抽过的不再抽</label>
+      <button type="button" class="dbtn" id="dReset">重置记录</button>
+      <span class="dcount" id="dCount">本轮已抽 0 / 30 张</span>
+    </div>
+    <div class="dresult" id="dResult" hidden>
+      <div class="dnum" id="dNum">S--</div>
+      <div class="dbody">
+        <div class="dtags" id="dTags"></div>
+        <div class="dtopic" id="dTopic"></div>
+        <div class="dkey" id="dKey"></div>
+        <a class="djump" id="dJump" href="#">查看该卡完整内容 →</a>
+      </div>
+    </div>
+    <div class="dhist" id="dHist"></div>
   </div>
+
+<div class="foldgrp">
+  <h2 class="sec fold-h" role="button" tabindex="0" aria-expanded="false">三、卡库总览（30 张索引）<span class="fold-ic">&#9662;</span><em class="fold-tip">展开</em></h2>
+  <div class="fold-body">
+  <div class="card">
+      <div class="tsc w6" id="idx13"><table class="now1 now2 now3 now6">
+        <thead><tr><th style="width:6%">编号</th><th style="width:10%">人群</th><th style="width:6%">题型</th><th style="width:29%">情景主题</th><th style="width:42%">核心考察点</th><th style="width:7%">难度</th></tr></thead>
+        <tbody>
+          <tr><td>S-01</td><td>儿童青少年</td><td>常规</td><td>首次配镜，家长不认"近视"</td><td>共情开场；不下"假性近视"结论；建立眼轴档案</td><td>★★</td></tr>
+          <tr><td>S-02</td><td>儿童青少年</td><td>常规</td><td>一年涨 100 度</td><td>用年化增速切入，而不是单次度数；讲"控速"不讲"不涨"</td><td>★★★</td></tr>
+          <tr><td>S-03</td><td>儿童青少年</td><td>常规</td><td>远视储备不足</td><td>解释储备概念；不渲染恐慌；给户外与用眼方案</td><td>★★★</td></tr>
+          <tr><td>S-04</td><td>儿童青少年</td><td>常规</td><td>家长问"能不能只靠滴眼液/中医调理"</td><td>不碰药品；不做疗效评价；转到可执行的行为方案</td><td>★★</td></tr>
+          <tr><td>S-05</td><td>儿童青少年</td><td>常规</td><td>孩子不肯戴镜，怕同学笑</td><td>儿童心理沟通；把戴镜讲成"看得清才学得动"</td><td>★★</td></tr>
+          <tr><td>S-06</td><td>儿童青少年</td><td>常规</td><td>家长问要不要配角膜塑形镜 / 离焦镜</td><td>讲适用条件与前置检查；只讲项目不讲疗效承诺</td><td>★★★★</td></tr>
+          <tr><td>S-07</td><td>儿童青少年</td><td>常规</td><td>度数够了看近仍累（双眼视功能异常）</td><td>解释"度数不是唯一原因"；先排斜弱视再谈训练</td><td>★★★★</td></tr>
+          <tr><td>S-08</td><td>儿童青少年</td><td>压力</td><td>母亲要求"保证不涨，否则退款"</td><td>守住边界；把承诺改为可控目标与复查节奏</td><td>★★★★</td></tr>
+          <tr><td>S-09</td><td>儿童青少年</td><td>压力</td><td>外婆说"长大做个手术就行"</td><td>讲清手术解决度数、不解决眼底风险；不冒犯长辈</td><td>★★★</td></tr>
+          <tr><td>S-10</td><td>儿童青少年</td><td>压力</td><td>家长拿网上文章质疑"眼轴检查没必要"</td><td>不反驳顾客；用自家历史数据说明价值</td><td>★★★★</td></tr>
+          <tr><td>S-11</td><td>儿童青少年</td><td>压力</td><td>家长认定"你们就是推销"，全程录像</td><td>情绪稳定；先问需求；不推高单价；规范留痕</td><td>★★★★</td></tr>
+          <tr><td>S-12</td><td>成年人</td><td>常规</td><td>度数没变，要不要换镜</td><td>区分屈光度未变与镜片磨损、瞳距、镜架变形</td><td>★★</td></tr>
+          <tr><td>S-13</td><td>成年人</td><td>常规</td><td>长期电脑工作，重度视疲劳</td><td>先查视功能与泪膜，而不是简单加度数</td><td>★★★</td></tr>
+          <tr><td>S-14</td><td>成年人</td><td>常规</td><td>眼干、异物感、早上睁不开眼</td><td>区分筛查与诊断；不推荐药品；说明就诊时机</td><td>★★★</td></tr>
+          <tr><td>S-15</td><td>成年人</td><td>常规</td><td>夜间开车眩光、看不清路牌</td><td>散光矫正与镜片光学质量；必要时提示就诊</td><td>★★★</td></tr>
+          <tr><td>S-16</td><td>成年人</td><td>常规</td><td>隐形眼镜配戴十年，近期红眼</td><td>识别角膜缺氧信号并转诊；不鼓励继续戴</td><td>★★★★</td></tr>
+          <tr><td>S-17</td><td>成年人</td><td>常规</td><td>双眼度数差 200 度（屈光参差）</td><td>不等像、易疲劳、双眼视与驾驶安全</td><td>★★★</td></tr>
+          <tr><td>S-18</td><td>成年人</td><td>常规</td><td>高度近视，眼底提示需定期随访</td><td>讲清高度近视眼底风险与随访间隔；转诊边界</td><td>★★★★</td></tr>
+          <tr><td>S-19</td><td>成年人</td><td>压力</td><td>"你们就是想卖东西"</td><td>只讲数据不给压力；给"什么都可以不选"的选项</td><td>★★★★</td></tr>
+          <tr><td>S-20</td><td>成年人</td><td>压力</td><td>"我只有 5 分钟"</td><td>时间不够时的取舍：宁少讲不跳步；留记录表下次接</td><td>★★★</td></tr>
+          <tr><td>S-21</td><td>成年人</td><td>压力</td><td>反复比价，要求照抄别家度数</td><td>不贬低同行；说明验光流程价值；不承诺价格</td><td>★★★</td></tr>
+          <tr><td>S-22</td><td>中老年</td><td>常规</td><td>55 岁看近模糊，是老花还是度数加深</td><td>老视与近视加深的区分；ADD 与用眼距离</td><td>★★★</td></tr>
+          <tr><td>S-23</td><td>中老年</td><td>常规</td><td>首次配渐进镜</td><td>提前讲清适应期、边缘变形、瞳高瞳距与退换规则</td><td>★★★★</td></tr>
+          <tr><td>S-24</td><td>中老年</td><td>常规</td><td>配了渐进头晕，要求退货</td><td>先查配戴问题（瞳高、镜架下滑、通道）再谈方案</td><td>★★★★</td></tr>
+          <tr><td>S-25</td><td>中老年</td><td>常规</td><td>"我配镜就行，用不用查眼底"</td><td>说明眼底检查的必要性与转诊流程</td><td>★★★</td></tr>
+          <tr><td>S-26</td><td>中老年</td><td>常规</td><td>白内障早期，视力 0.6</td><td>眼镜能改善视物质量但不治病；最终以医疗机构意见为准</td><td>★★★★</td></tr>
+          <tr><td>S-27</td><td>中老年</td><td>常规</td><td>糖尿病十年，眼底有可疑改变</td><td>识别糖网风险；尽快转诊；配镜不能替代治疗</td><td>★★★★</td></tr>
+          <tr><td>S-28</td><td>中老年</td><td>压力</td><td>眼压 25mmHg</td><td>医疗边界；立即转诊话术；不得提诊断名词、不得借机推销</td><td>★★★★★</td></tr>
+          <tr><td>S-29</td><td>中老年</td><td>压力</td><td>"不用去医院，你给我配就行"</td><td>坚持转诊、不出产品方案、留痕并做回访</td><td>★★★★★</td></tr>
+          <tr><td>S-30</td><td>中老年</td><td>压力</td><td>本人不愿配、子女坚持要配</td><td>尊重知情选择；不夹在中间销售；签字留痕</td><td>★★★★</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+
 
   <h2 class="sec">四、A 组 · 儿童青少年（11 张）</h2>
   <div class="scards">
 
-    <div class="scard">
+    <div class="scard" id="s01">
       <div class="schead"><span class="no">S-01</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★</span></div>
       <p class="ni"><b>场景：</b>学校体检说视力有问题，家长带孩子来看，第一句话是"我们家没有近视的，是不是眼睛累了"。</p>
       <p class="ni"><b>顾客设定：</b>7 岁男孩，母亲陪同，语气平和但明显不想接受"近视"这个结论，会反复问"能不能恢复"。</p>
@@ -424,7 +561,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>说"假性近视，休息休息就能好"；承诺"能恢复到 1.0"；未提出建档复查时间。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s02">
       <div class="schead"><span class="no">S-02</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>一年后复查，家长拿着两次单子问"是不是涨了 100 度，怎么这么快"。</p>
       <p class="ni"><b>顾客设定：</b>10 岁女孩，父亲陪同，工作忙、说话快，希望"一句话说清到底要不要紧"。</p>
@@ -433,7 +570,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>出现"保证不涨""一定控制住"；只讲度数不讲眼轴；未给复查时间。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s03">
       <div class="schead"><span class="no">S-03</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>学校筛查提示"远视储备不足"，家长第一次听到这个词，问"这是要近视了吗"。</p>
       <p class="ni"><b>顾客设定：</b>6 岁男孩，母亲陪同，焦虑型家长，会追问"是不是现在就得配眼镜"。</p>
@@ -442,7 +579,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>凭小瞳验光单下"储备不足"的结论；用"马上要近视了"制造恐慌促成下单。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s04">
       <div class="schead"><span class="no">S-04</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★</span></div>
       <p class="ni"><b>场景：</b>家长听说某种滴眼液或调理方法能控制近视，问"你们这儿有没有，能不能不做别的"。</p>
       <p class="ni"><b>顾客设定：</b>9 岁男孩，母亲陪同，明显已经打听过多家机构，对"行为管理"兴趣不高，想要一个"省事的方法"。</p>
@@ -451,7 +588,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>推荐、代购或评价任何药品；承诺任何方法的效果。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s05">
       <div class="schead"><span class="no">S-05</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★</span></div>
       <p class="ni"><b>场景：</b>孩子明确说不想戴眼镜，理由是"同学会笑我"，家长在旁边催"你别管他，你就说配哪种"。</p>
       <p class="ni"><b>顾客设定：</b>11 岁男孩，低头、话少、回避眼神；母亲强势，替孩子做决定。</p>
@@ -460,7 +597,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>当着孩子的面贬低他（如"不戴就是学习差"）；全程只对家长讲、无视孩子。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s06">
       <div class="schead"><span class="no">S-06</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>家长直接问"要不要配角膜塑形镜，还是配那个离焦的"，并在手机里存好了几个产品名。</p>
       <p class="ni"><b>顾客设定：</b>12 岁男孩，母亲陪同，做过功课、术语能说对一半，会追问"哪个效果更好、能差多少"。</p>
@@ -469,7 +606,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>承诺控制效果或"多少度以内都没问题"；在门店自行承诺验配角膜塑形镜。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s07">
       <div class="schead"><span class="no">S-07</span><span class="tg tg-child">儿童青少年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>家长说"度数配够了，孩子还是说看近累、看书跳行、写作业半小时就趴下"。</p>
       <p class="ni"><b>顾客设定：</b>8 岁女孩，母亲陪同，已经换过两次镜仍不满意，带着情绪，怀疑"是不是你们验得不准"。</p>
@@ -478,7 +615,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>承诺训练效果或恢复时间；未提排除斜视、弱视；把问题全部归结为"用眼习惯差"。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s08">
       <div class="schead"><span class="no">S-08</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>讲到方案时，家长打断："你就直说，保证不涨我就买，不保证我不做，回头涨了你退款吗？"</p>
       <p class="ni"><b>顾客设定：</b>母亲，教师，逻辑清晰，会把你的每一句话是否许诺都记下来，语气强硬但并非恶意。</p>
@@ -487,7 +624,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>任何形式的承诺或变相承诺（如"基本不会涨""我们做过的都没涨"）；为留客答应退费承诺。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s09">
       <div class="schead"><span class="no">S-09</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>外婆陪孩子来，全程一句"现在别配那么认真，长大做个手术就行了，我邻居家孩子就是"。母亲在旁边犹豫。</p>
       <p class="ni"><b>顾客设定：</b>外婆，60 多岁，说话多、爱举例，不接受被"教育"；母亲中间派。</p>
@@ -496,7 +633,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>与长辈争执、使用"你不懂""别听人乱说"等否定性话语；宣称手术有害或效果不佳。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s10">
       <div class="schead"><span class="no">S-10</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>家长掏手机读一段网上文章："说眼轴检查没必要，孩子长个子眼轴也会变长，你们是不是多收钱？"</p>
       <p class="ni"><b>顾客设定：</b>父亲，工程师，习惯用资料说话，语气不算冲但明显在考验专业度。</p>
@@ -505,7 +642,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>贬低顾客的信息来源或用"你不懂"打发；为迎合顾客而承诺减免指标检查。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s11">
       <div class="schead"><span class="no">S-11</span><span class="tg tg-child">儿童青少年</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>家长一进门就打开手机录像，说"上次你们也是这么讲的，最后就是让我买贵的，今天我自己留个记录"。</p>
       <p class="ni"><b>顾客设定：</b>母亲，有过不愉快经历，全程防备，每讲一个方案就问"这个多少钱、是不是必须买"。</p>
@@ -518,7 +655,7 @@ body table.sticky-on>thead>tr>th{
   <h2 class="sec">五、B 组 · 成年人（10 张）</h2>
   <div class="scards">
 
-    <div class="scard">
+    <div class="scard" id="s12">
       <div class="schead"><span class="no">S-12</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★</span></div>
       <p class="ni"><b>场景：</b>顾客说"我度数好几年没变了，眼镜还能戴，为什么你们说该换了"。</p>
       <p class="ni"><b>顾客设定：</b>32 岁男性，上班族，实用主义，认为换镜是"多花钱"，不排斥沟通但需要理由。</p>
@@ -527,7 +664,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>只讲"该换了"而不给任何可验证依据；为提高单值硬说度数变了。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s13">
       <div class="schead"><span class="no">S-13</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>顾客说"每天看电脑十小时，下午眼睛就胀、看字发虚，是不是度数不够了"。</p>
       <p class="ni"><b>顾客设定：</b>29 岁女性，设计岗，加班多，明确提出"想加度数"或"想配防蓝光的"。</p>
@@ -536,16 +673,16 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>仅靠加度数解决；把视疲劳解释为"用眼过度"一句话带过；推荐药品。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s14">
       <div class="schead"><span class="no">S-14</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>顾客说"眼睛干、有异物感，早上起来睁眼困难，你们有没有那种治干眼的眼药水"。</p>
       <p class="ni"><b>顾客设定：</b>41 岁女性，长期在空调办公室，已经自行买过几种滴眼液。</p>
       <p class="ni"><b>参考数据：</b>泪膜破裂时间 4 秒；角膜上皮点状着色（提示）；睑缘轻度充血；Schirmer 试验 8mm/5min；屈光度稳定。</p>
       <p class="ni"><b>考察重点：</b>①说明门店做的是眼表筛查与症状评估，不能做诊断；②明确不推荐、不代购、不评价任何滴眼液，涉及用药建议到眼科门诊；③讲清持续干眼与角膜上皮改变需要就医评估，给出建议就诊的时机（症状持续加重、视力波动、明显疼痛畏光）；④门店端可做的是用眼环境与习惯的调整，并说明复查时间。</p>
-      <p class="kill ni"><b>否决项：</b>推荐或用门店自有名义销售任何滴眼液；对症状下"干眼症"诊断性结论。</p>
+      <p class="kill ni"><b>否决项：</b>推荐或用门店自有名义销售任何滴眼液；对干眼症状下诊断性结论。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s15">
       <div class="schead"><span class="no">S-15</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>顾客说"白天都还行，就是晚上开车看不清路牌、对面车灯特别晃，是不是夜盲"。</p>
       <p class="ni"><b>顾客设定：</b>45 岁男性，跑业务，开车多，自己猜测"可能是缺维生素"。</p>
@@ -554,7 +691,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>下"夜盲""视网膜病变"等诊断性结论；把症状简单归因于营养缺乏并推荐购买保健品。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s16">
       <div class="schead"><span class="no">S-16</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>老顾客戴隐形眼镜十年，最近"眼睛红、怕光、戴着不舒服"，问"是不是该换一副新的隐形"。</p>
       <p class="ni"><b>顾客设定：</b>27 岁女性，图方便，不愿戴框架镜，希望"换一副就好"。</p>
@@ -563,7 +700,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>在角膜有明显异常提示的情况下继续推荐或交付隐形眼镜；对顾客宣称"没事，换新的就行"。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s17">
       <div class="schead"><span class="no">S-17</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>顾客说"我一只眼睛清楚一只眼睛模糊，平时也还行，就是看久了累"。</p>
       <p class="ni"><b>顾客设定：</b>38 岁男性，长期单眼视物习惯，未戴镜，不确定是否需要处理。</p>
@@ -572,7 +709,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>宣称可"治好"参差或提升视力；只讲配镜价格不讲参差带来的影响。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s18">
       <div class="schead"><span class="no">S-18</span><span class="tg tg-adult">成年人</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>高度近视顾客复查，眼底照相提示需定期随访，顾客认为"我每年都配镜，眼睛没问题"。</p>
       <p class="ni"><b>顾客设定：</b>34 岁女性，高度近视多年，对"眼底"概念模糊，担心被吓。</p>
@@ -581,7 +718,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>以眼底话题恐吓下单；下"视网膜变性""黄斑病变"等诊断性结论；未交代需立即就医的警示信号。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s19">
       <div class="schead"><span class="no">S-19</span><span class="tg tg-adult">成年人</span><span class="tg">压力题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>刚开始讲第二组数据，顾客打断："不用讲了，我知道你们就是想卖东西，直接说多少钱吧。"</p>
       <p class="ni"><b>顾客设定：</b>35 岁男性，曾被其他机构过度推销过，语气不客气，但不拒绝听，如果讲得有理也会松口。</p>
@@ -590,7 +727,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>用限时优惠、赠品等方式施压；因顾客态度差而草率结束解读、跳过异常值扫描。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s20">
       <div class="schead"><span class="no">S-20</span><span class="tg tg-adult">成年人</span><span class="tg">压力题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>顾客进门就说"我只有 5 分钟，你快点，能配就配"。此时检查已完成，报告刚出，其中一项眼压偏高需复测。</p>
       <p class="ni"><b>顾客设定：</b>40 岁女性，赶时间，频繁看表，明确表示不想听讲解。</p>
@@ -599,7 +736,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>因赶时间跳过异常值处理直接成交；对偏高眼压不做任何提示与交代。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s21">
       <div class="schead"><span class="no">S-21</span><span class="tg tg-adult">成年人</span><span class="tg">压力题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>顾客拿着别家的验光单："你就照这个度数给我配，网上便宜一半，我就是来比个价。"</p>
       <p class="ni"><b>顾客设定：</b>26 岁男性，价格敏感，已跑过两三家，对验光流程没有概念。</p>
@@ -612,16 +749,16 @@ body table.sticky-on>thead>tr>th{
   <h2 class="sec">六、C 组 · 中老年（9 张）</h2>
   <div class="scards">
 
-    <div class="scard">
+    <div class="scard" id="s22">
       <div class="schead"><span class="no">S-22</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>55 岁顾客说"看手机要拿远才行，是不是近视加深了"。</p>
       <p class="ni"><b>顾客设定：</b>55 岁女性，有轻度近视史，怕"度数一直涨"，对戴两副镜有抵触。</p>
-      <p class="ni"><b>参考数据：</b>远用 OD −1.50D / OS −1.25D；近距离需要加正镜；调节幅度下降；眼压正常；晶体轻度混浊（提示）；眼底未见明显异常。</p>
-      <p class="ni"><b>考察重点：</b>①先区分"看远度数的变化"与"看近需要助视"，说明老视是调节能力下降，不是度数加深；②用生活场景确认用眼距离（手机、看书、电脑）再定加光度；③讲清两副镜与渐进镜的差别，不强推；④对晶体轻度混浊只描述观察到的现象，建议到爱眼城眼科进一步评估，不做诊断。</p>
-      <p class="kill ni"><b>否决项：</b>把老视说成近视加深或"眼睛老化没办法"；对晶体改变下诊断性结论。</p>
+      <p class="ni"><b>参考数据：</b>远用 OD −1.50D / OS −1.25D；近距离需要加正镜；调节幅度下降；眼压正常；晶状体轻度混浊（提示）；眼底未见明显异常。</p>
+      <p class="ni"><b>考察重点：</b>①先区分"看远度数的变化"与"看近需要助视"，说明老视是调节能力下降，不是度数加深；②用生活场景确认用眼距离（手机、看书、电脑）再定加光度；③讲清两副镜与渐进镜的差别，不强推；④对晶状体轻度混浊只描述观察到的现象，建议到爱眼城眼科进一步评估，不做诊断。</p>
+      <p class="kill ni"><b>否决项：</b>把老视说成近视加深或"眼睛老化没办法"；对晶状体改变下诊断性结论。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s23">
       <div class="schead"><span class="no">S-23</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>顾客第一次听说渐进镜，问"这个一副顶两副，是不是戴上就方便了"。</p>
       <p class="ni"><b>顾客设定：</b>58 岁男性，退休教师，阅读多、也开车，期望值偏高。</p>
@@ -630,7 +767,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>宣称"戴上就和年轻时一样""完全没有适应期"；未测量瞳高即交付渐进镜。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s24">
       <div class="schead"><span class="no">S-24</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>顾客戴渐进镜一周后回来，情绪激动："头晕、走路不稳，退了，你们这镜不行。"</p>
       <p class="ni"><b>顾客设定：</b>62 岁女性，已投诉到店里，要求全额退货，但并非完全不接受解释。</p>
@@ -639,7 +776,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>把问题全部推给顾客"不适应"；未经排查即承诺全额退货或拒绝处理。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s25">
       <div class="schead"><span class="no">S-25</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★</span></div>
       <p class="ni"><b>场景：</b>顾客说"我就是来配镜的，你们给我拍眼底干嘛，多此一举"。</p>
       <p class="ni"><b>顾客设定：</b>57 岁男性，务实、怕麻烦，对额外检查有戒心。</p>
@@ -648,16 +785,16 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>把额外检查说成必须购买的服务并加价捆绑；为促成检查夸大风险。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s26">
       <div class="schead"><span class="no">S-26</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>顾客说"医院说我有白内障，还不到做手术的时候，那你给我配副镜能看清就行吧"。</p>
       <p class="ni"><b>顾客设定：</b>66 岁男性，已就诊，拿得出医院记录，想让门店"解决视力问题"。</p>
-      <p class="ni"><b>参考数据：</b>OD 0.5 / OS 0.6（矫正视力）；晶体混浊（提示）；屈光度有变化；眼底可窥见度欠佳；眼压正常。</p>
-      <p class="ni"><b>考察重点：</b>①明确配镜能在一定程度上改善视物质量，但不能解决晶体混浊本身，手术时机由医疗机构判断；②不评价医院方案、不催顾客做或不做手术；③说明矫正视力受限与配镜能改善的部分在哪，管理预期，避免"配了还看不清"的投诉；④约定复查时间，并提示视力快速下降时及时就医。</p>
+      <p class="ni"><b>参考数据：</b>OD 0.5 / OS 0.6（矫正视力）；晶状体混浊（提示）；屈光度有变化；眼底可窥见度欠佳；眼压正常。</p>
+      <p class="ni"><b>考察重点：</b>①明确配镜能在一定程度上改善视物质量，但不能解决晶状体混浊本身，手术时机由医疗机构判断；②不评价医院方案、不催顾客做或不做手术；③说明矫正视力受限与配镜能改善的部分在哪，管理预期，避免"配了还看不清"的投诉；④约定复查时间，并提示视力快速下降时及时就医。</p>
       <p class="kill ni"><b>否决项：</b>宣称配镜能"治好白内障""不用手术了"；建议顾客推迟或放弃手术。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s27">
       <div class="schead"><span class="no">S-27</span><span class="tg tg-old">中老年</span><span class="tg">常规题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>顾客有 10 年糖尿病史，配镜时说"我血糖控制得还行，眼睛不用查"。</p>
       <p class="ni"><b>顾客设定：</b>59 岁女性，慢性病长期管理，对并发症认识不足，不排斥沟通。</p>
@@ -666,7 +803,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>下"糖尿病视网膜病变"诊断；配镜后不提示就医；用"血糖好就没问题"安抚顾客。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s28">
       <div class="schead"><span class="no">S-28</span><span class="tg tg-old">中老年</span><span class="tg tg-p">压力题</span><span class="st">★★★★★</span></div>
       <p class="ni"><b>场景：</b>眼压初测 25mmHg，你用眼压计复测仍偏高。顾客说"我又不疼不痒，你别吓我，赶紧给我配镜"。</p>
       <p class="ni"><b>顾客设定：</b>61 岁男性，无明显不适，对"去医院"有强烈抵触，情绪开始不耐烦。</p>
@@ -675,7 +812,7 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>说出"青光眼"等诊断名词；推荐任何所谓降眼压的药品或器械；因顾客抵触而放弃提示或不留痕。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s29">
       <div class="schead"><span class="no">S-29</span><span class="tg tg-old">中老年</span><span class="tg tg-p">压力题</span><span class="st">★★★★★</span></div>
       <p class="ni"><b>场景：</b>眼底照相提示可疑改变，你建议到爱眼城眼科就诊。顾客说"去医院排队一整天，不用了，你给我配就行，我自己负责"。</p>
       <p class="ni"><b>顾客设定：</b>64 岁女性，行动不便、子女不在身边，怕麻烦、怕花钱，态度坚决但并非不信任门店。</p>
@@ -684,17 +821,17 @@ body table.sticky-on>thead>tr>th{
       <p class="kill ni"><b>否决项：</b>因顾客坚持而配镜并出具常规方案；在疑似眼底病变情况下推荐高单价产品。</p>
     </div>
 
-    <div class="scard">
+    <div class="scard" id="s30">
       <div class="schead"><span class="no">S-30</span><span class="tg tg-old">中老年</span><span class="tg tg-p">压力题</span><span class="st">★★★★</span></div>
       <p class="ni"><b>场景：</b>子女陪着来，坚持要给父亲配渐进镜，"钱我出"。老人全程说"我不用、我看得见"。</p>
       <p class="ni"><b>顾客设定：</b>老人 70 岁，抗拒戴镜，对陌生事物有抵触；女儿 40 岁，主导沟通，明显着急。</p>
-      <p class="ni"><b>参考数据：</b>远用 OD +1.00D / OS +0.75D；近加光 +2.50D；矫正视力 0.7 / 0.8；眼压正常；眼底未见明显异常提示项；晶体轻度混浊（提示）。</p>
+      <p class="ni"><b>参考数据：</b>远用 OD +1.00D / OS +0.75D；近加光 +2.50D；矫正视力 0.7 / 0.8；眼压正常；眼底未见明显异常提示项；晶状体轻度混浊（提示）。</p>
       <p class="ni"><b>考察重点：</b>①把老人作为主要沟通对象，先问他的实际困扰，不跳过本人意愿；②向女儿说明配镜的需求判断以老人的用眼习惯与实际需求为准，避免替顾客做决定；③若老人有需求但担心操作复杂，给出降低使用门槛的方案与适应支持；④明确知情选择与签字留痕，说清"可先配、可用后再调整"的处理方式。</p>
       <p class="kill ni"><b>否决项：</b>只与家属谈、无视本人意愿；用"子女孝顺你就得配"这类话语施压；将不情愿的顾客当作成交对象。</p>
     </div>
   </div>
 
-  <div class="warn"><b>压力题使用提醒：</b>标注「压力题」的 10 张（S-08、S-09、S-10、S-11、S-19、S-20、S-21、S-28、S-29、S-30）必须在员工通过常规题之后才可抽取。压力题评分时，<b>"拒绝了不合理要求"与"坚持了转诊建议"得分高于"说服了顾客"</b>；如果员工为了成交而放弃转诊或做出承诺，即使顾客当场满意也判不合格。</div>
+  <div class="warn"><b>压力题使用提醒：</b>索引表中标注「压力题」的 10 张，必须在员工通过常规题之后才可抽取。评分时<b>"拒绝了不合理要求"与"坚持了转诊建议"得分高于"说服了顾客"</b>；如果员工为成交而放弃转诊或做出承诺，即使顾客当场满意也判不合格。电子抽卡器同样适用这条门槛：未通过常规题的员工，题型只勾选「常规题」。</div>
 
   <h2 class="sec">七、组合扩题法（30 张怎么变成 90 张）</h2>
   <div class="card">
@@ -708,20 +845,20 @@ body table.sticky-on>thead>tr>th{
         <tr><td><b>顾客态度</b></td><td>配合 / 焦虑 / 抗拒 / 已就诊过 / 已被其他机构推销过</td><td>共情难度升级，考察情绪处理与边界守持</td></tr>
       </tbody>
     </table></div>
-    <div class="good"><b>换档规则：</b>每次只换一档，保持卡片结构不变；换档后的卡片应重新登记编号（如 S-07-2），并在卡片右下角注明"由 S-07 换档生成"，避免演练内容反复使用。门店也可根据当季实际客群，把真实高频问题（去掉可识别信息后）写成新卡，报区域督导审核后入库。</div>
+    <div class="good"><b>换档规则：</b>每次只换一档、卡片结构不变；换档后重新登记编号（如 S-07-2），右下角注明"由 S-07 换档生成"，避免反复使用同一内容。换档卡不进入本页电子抽卡器，由店长手动登记排练。门店也可把当季真实高频问题（去掉可识别信息）写成新卡，报区域督导审核后入库。</div>
   </div>
 
   <h2 class="sec">八、印制、保管与更新</h2>
   <div class="card">
     <ul>
-      <li><b>印制：</b>A4 双面、157g 以上铜版纸或卡纸，按本模块打印后沿卡片边框裁剪；建议按人群分色装订——儿童青少年（蓝边）、成年人（绿边）、中老年（橙边），压力题在正面右上角盖红色"压力题"章。</li>
+      <li><b>印制：</b>A4 双面、157g 以上铜版纸或卡纸，按本模块打印后沿卡片边框裁剪；建议按人群分色装订——儿童青少年（蓝边）、成年人（绿边）、中老年（橙边），压力题在正面右上角盖红色"压力题"章。<b>电子版与纸质卡并行：</b>本页电子抽卡器负责随机出号，纸质卡负责现场交给顾客方扮演，两者编号一一对应；抽卡器当前只覆盖 S-01 ~ S-30。</li>
       <li><b>配套：</b>每套卡配一本《演练记录本》、一张《实操考评表》（模块09），三者同放一个卡盒，盒面写明门店名与卡片版本号。</li>
-      <li><b>编号唯一：</b>全连锁统一使用 S-01 ~ S-30 编号，门店自建卡片从 S-31 起顺序编号，不得复用已有编号。</li>
+      <li><b>编号唯一：</b>全连锁统一使用 S-01 ~ S-30 编号，门店自建卡片从 S-31 起顺序编号，不得复用已有编号。门店自建卡（S-31 起）与换档卡（如 S-07-2）暂不进入电子抽卡器，由店长在《演练记录本》上手动登记抽练。</li>
       <li><b>保管：</b>卡盒由店长保管，晨会与演练时发放，用后当场收回，不得由员工个人带走；卡片属于内部培训资料，不得拍摄外传、不得用于对外宣传或短视频素材。</li>
       <li><b>更新：</b>每半年（1 月、7 月）由区域督导组织复核一次：淘汰已不符合当前流程的卡、把门店高频新问题补入、把被误用的卡（顾客方加戏过多）重写。每次复核后更新版本号与修订日期，旧版收回销毁。</li>
       <li><b>与考核挂钩：</b>每季度至少完成 6 张卡的演练（其中儿童青少年 3 张、成人 2 张、中老年 1 张），记录在《演练记录本》，纳入 L1/L2/L3 认证的实操分（模块09）。</li>
     </ul>
-    <div class="note"><b>内容一致性要求：</b>调整卡片数据时，必须同步检查三处——① 判定结论是否符合模块03《指标参考区间与异常判定表》；② 应对对策是否符合模块04《异常值对照表》；③ 是否触及模块11《医疗边界与合规红线》的 12 类转诊情形。三者不一致时，以模块03、04、12 为准，先改卡片再演练。</div>
+    <div class="note"><b>内容一致性要求：</b>调整卡片数据时，必须同步检查三处——① 判定结论是否符合模块03《指标参考区间与异常判定表》；② 应对对策是否符合模块04《异常值对照表》；③ 是否触及模块11《医疗边界与合规红线》的 12 类转诊情形。三者不一致时，以模块03、04、11 为准，先改卡片再演练。</div>
   </div>
 
   <div class="btnwrap">
@@ -735,7 +872,7 @@ body table.sticky-on>thead>tr>th{
 
 <footer>
   <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 · 模块13 情景卡库</b><br>
-  编制：闫胜君整理 ｜ 适用门店：零陵8家、冷水滩2家、祁阳5家（共15家）｜ 归口部门：视光运营部<br>
+  编制：闫胜君整理 ｜ 适用门店：零陵 8 家、冷水滩 2 家、祁阳 5 家（共 15 家）｜ 归口部门：视光运营部<br>
   说明：本模块卡片为门店内部培训演练用具，卡片中的人物、数据均为虚构示例，不得作为真实案例对外讲述或用于宣传。演练中的判定标准以模块03《指标参考区间与异常判定表》为准，涉及需转诊情形一律按模块11《医疗边界与合规红线》执行。
 </footer>
 <script>
@@ -759,6 +896,165 @@ body table.sticky-on>thead>tr>th{
   window.addEventListener('resize', defer);
   var ds = document.querySelectorAll('details'), j;
   for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+
+<!-- MARK : DRAW13-V1 : 卡库总览折叠 + 30 张电子抽卡器 -->
+<script>
+(function(){
+  var CARDS = [], drawn = [], cur = null;
+  var F = {grp:'', type:''};
+
+  /* 1) 从索引表解析 30 张卡 */
+  var host = document.getElementById('idx13');
+  if(host){
+    var rows = host.querySelectorAll('tbody tr'), i, td;
+    for(i = 0; i < rows.length; i++){
+      td = rows[i].getElementsByTagName('td');
+      if(td.length < 6) continue;
+      CARDS.push({no:td[0].textContent.trim(), grp:td[1].textContent.trim(),
+                  type:td[2].textContent.trim(), topic:td[3].textContent.trim(),
+                  key:td[4].textContent.trim(), diff:td[5].textContent.trim()});
+    }
+  }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var num = $('dNum'), res = $('dResult'), tags = $('dTags'), topic = $('dTopic'),
+      key = $('dKey'), jump = $('dJump'), hist = $('dHist'), cnt = $('dCount');
+  if(!num || !CARDS.length) return;
+
+  function renderHist(){
+    var h = '', i;
+    if(!drawn.length){ hist.innerHTML = '<b>抽卡记录</b>暂无，点上方按钮开始。'; return; }
+    h += '<b>抽卡记录（按先后）</b>';
+    for(i = 0; i < drawn.length; i++){
+      h += '<span class="hn' + (cur && drawn[i] === cur ? ' cur' : '') + '">' + drawn[i] + '</span>';
+    }
+    var p = pool(), k, left = 0;
+    for(k = 0; k < p.length; k++){ if(drawn.indexOf(p[k].no) < 0) left++; }
+    h += '<br><b>剩余可用</b>' + left + ' 张'
+      + ((F.grp || F.type) ? '（当前筛选范围内）' : '');
+    hist.innerHTML = h;
+  }
+  /* 当前筛选范围内的卡池：计数、剩余、滚动闪号都以它为准 */
+  function pool(){
+    var i, p = [];
+    for(i = 0; i < CARDS.length; i++){
+      if(F.grp && CARDS[i].grp !== F.grp) continue;
+      if(F.type && CARDS[i].type !== F.type) continue;
+      p.push(CARDS[i]);
+    }
+    return p;
+  }
+  function renderCount(){
+    if(!cnt) return;
+    var p = pool(), i, n = 0;
+    for(i = 0; i < p.length; i++){ if(drawn.indexOf(p[i].no) >= 0) n++; }
+    cnt.textContent = '本轮已抽 ' + n + ' / ' + p.length + ' 张'
+      + ((F.grp || F.type) ? '（按当前筛选范围统计）' : '');
+  }
+  function show(c){
+    cur = c.no;
+    num.textContent = c.no;
+    num.className = 'dnum roll';
+    var t = '';
+    t += '<span class="dt g">' + c.grp + '</span>';
+    t += '<span class="dt' + (c.type === '压力' ? ' p' : '') + '">' + c.type + '题</span>';
+    t += '<span class="dt s">' + c.diff + '</span>';
+    tags.innerHTML = t;
+    topic.textContent = '情景主题：' + c.topic;
+    key.textContent = '核心考察点：' + c.key;
+    jump.setAttribute('href', '#' + c.no.replace('S-', 's'));
+    res.hidden = false;
+  }
+  var busy = false;
+  function pick(){
+    if(busy) return;              /* 滚动动画未落定前忽略重复点击，避免一次抽多张 */
+    busy = true;
+    var i, cands = [], c;
+    for(i = 0; i < CARDS.length; i++){
+      c = CARDS[i];
+      if(F.grp && c.grp !== F.grp) continue;
+      if(F.type && c.type !== F.type) continue;
+      if($('dNoRepeat').checked && drawn.indexOf(c.no) >= 0) continue;
+      cands.push(c);
+    }
+    if(!cands.length){
+      busy = false;
+      res.hidden = false;
+      num.textContent = '--';
+      tags.innerHTML = '';
+      topic.textContent = drawn.length
+        ? '当前范围内所有卡都抽过了，点「重置记录」开始新一轮。'
+        : '当前筛选条件下没有可用卡片，请放宽范围。';
+      key.textContent = '';
+      jump.setAttribute('href', '#');
+      return;
+    }
+    /* 滚动动画：先快速闪 7 个随机号，再落定 */
+    var n = 0, total = 7;
+    (function roll(){
+      if(n++ < total){
+        var pp = pool(), src = pp.length ? pp : CARDS;
+        num.textContent = src[Math.floor(Math.random() * src.length)].no;
+        setTimeout(roll, 55);
+        return;
+      }
+      c = cands[Math.floor(Math.random() * cands.length)];
+      if(drawn.indexOf(c.no) < 0) drawn.push(c.no);
+      show(c);
+      renderHist(); renderCount();
+      busy = false;
+    })();
+  }
+
+  /* 筛选芯片 */
+  var chips = document.querySelectorAll('.dbox .dchip'), j;
+  for(j = 0; j < chips.length; j++){
+    chips[j].addEventListener('click', function(){
+      var box = this.parentNode, k = box.getAttribute('data-k'), v = this.getAttribute('data-v');
+      var sibs = box.getElementsByClassName('dchip'), m;
+      for(m = 0; m < sibs.length; m++) sibs[m].className = 'dchip';
+      this.className = 'dchip on';
+      F[k] = v;
+      renderCount();   /* 切换范围后计数立刻跟上，避免仍显示 /30 */
+    });
+  }
+  $('dPick').addEventListener('click', pick);
+  $('dReset').addEventListener('click', function(){
+    drawn = []; cur = null; res.hidden = true;
+    renderHist(); renderCount();
+  });
+  /* 跳转并高亮目标卡 */
+  jump.addEventListener('click', function(){
+    var id = this.getAttribute('href').replace('#', '');
+    var el = document.getElementById(id);
+    if(!el) return;
+    var olds = document.getElementsByClassName('flash'), k;
+    for(k = 0; k < olds.length; k++) olds[k].className = olds[k].className.replace(/\s*flash\b/g, '');
+    el.className += ' flash';
+    setTimeout(function(){ el.className = el.className.replace(/\s*flash\b/g, ''); }, 2400);
+  });
+
+  /* 折叠：卡库总览 */
+  var heads = document.querySelectorAll('.foldgrp .fold-h'), g;
+  function toggle(hd){
+    var g = hd.parentNode, open = g.className.indexOf('open') >= 0;
+    if(open){ g.className = g.className.replace(/\s*open\b/g, ''); hd.setAttribute('aria-expanded', 'false'); }
+    else    { g.className += ' open'; hd.setAttribute('aria-expanded', 'true'); }
+    var tip = hd.querySelector('.fold-tip');
+    if(tip) tip.textContent = open ? '展开' : '收起';
+  }
+  for(g = 0; g < heads.length; g++){
+    heads[g].addEventListener('click', function(){ toggle(this); });
+    heads[g].addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){
+        e.preventDefault(); toggle(this);
+      }
+    });
+  }
+
+  renderHist(); renderCount();
 })();
 </script>
 </body>
