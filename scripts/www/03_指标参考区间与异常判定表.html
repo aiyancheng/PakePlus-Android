@@ -325,6 +325,23 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+
 
 <!-- COLBAL-V1 -->
 <!-- COLFIT-V1 -->
@@ -332,13 +349,13 @@ body table.sticky-on>thead>tr>th{
 <body>
 <div class="topbar">
   <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块 03 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+  <div class="meta">模块03 / 15 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
 <div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="02_七步标准解读SOP.html">02 七步标准解读 SOP</a> ｜ 下一模块：<a href="04_异常值对照表.html">04 异常值对照表</a></div>
 
 <div class="wrap">
-  <h1 class="t">模块 03 · 常见检查指标参考区间与异常判定表</h1>
-  <p class="lead">这一模块是门店的"字典"。<b>建议打印成台卡压在验光台玻璃下，或做成两页塑封夹随身携带。</b>查到指标就知道属于哪一档，判定结论在零陵、冷水滩、祁阳任何一家门店都保持一致——这正是标准化的意义。使用时务必先看下面的"查表规则"。</p>
+  <h1 class="t">模块03 · 常见检查指标参考区间与异常判定表</h1>
+  <p class="lead">本模块是门店的"字典"：<b>查到指标，就知道属于哪一档</b>——任何一家门店判定结论一致。建议打印成台卡压在验光台下，或塑封两页随身携带。使用前先看下面的"查表规则"。</p>
 
   <div class="warn">
     <b>四条使用前必读：</b><br>
@@ -359,7 +376,7 @@ body table.sticky-on>thead>tr>th{
         <tr><td><span class="tag r">转诊提示</span></td><td>可能提示眼病，超出门店服务范围</td><td><b>停止推销</b>；书面+口头转诊提醒；登记；72 小时回访；留存记录</td><td>"这一项我建议尽快到爱眼城眼科做个检查确认，我们门店看不了这个，不能耽误。"</td></tr>
       </tbody>
     </table></div>
-    <div class="note"><b>两条补充规则：</b>①<b>"就低不就高"原则</b>——拿不准时按更严重的一档处理（宁可多提醒，不可漏提醒）。②<b>"双hit 原则"</b>——单一指标轻度异常多为关注档；<b>两个及以上相关指标同时异常</b>（如眼压高+杯盘比大），直接按"转诊提示"处理。</div>
+    <div class="note"><b>两条补充规则（口令版见本页末）：</b>①<b>就低不就高</b>——拿不准按更严重一档处理；②<b>双 hit</b>——两个及以上相关指标同时异常（如眼压高+杯盘比大），直接按"转诊提示"处理。</div>
   </div>
 
   <h2 class="sec">一、视力</h2>
@@ -384,7 +401,7 @@ body table.sticky-on>thead>tr>th{
       <tr><td>裸眼远视力</td><td>≥1.0</td><td>0.6~0.8</td><td>&lt;0.6 需查屈光</td><td>结合年龄上限综合看</td></tr>
       <tr><td>矫正远视力</td><td>达年龄对应上限</td><td>欠矫一行</td><td><b>矫正不达标（&lt;0.8）→ 必须查明原因</b></td><td>足矫仍不达标，<b>转诊</b>（排查弱视、白内障、眼底病）</td></tr>
       <tr><td>双眼视力差</td><td>≤1 行</td><td>2 行</td><td>≥2 行且一眼矫正不达标</td><td>儿童提示弱视风险</td></tr>
-      <tr><td>近视力（成人）</td><td>≥1.0（33cm）</td><td>0.8</td><td>&lt;0.6（45岁以上先考虑老视）</td><td>45岁以下看近明显差需查调节</td></tr>
+      <tr><td>近视力（成人）</td><td>≥1.0（33cm）</td><td>0.8</td><td>&lt;0.6（45 岁以上先考虑老视）</td><td>45 岁以下看近明显差需查调节</td></tr>
     </tbody>
   </table></div>
   <div class="good"><b>通俗讲法：</b>"矫正视力就是戴上最合适的眼镜以后能看到的最好水平。如果连戴上眼镜都看不清 1.0，那就不是'度数配不准'这么简单，眼睛本身可能有问题，需要到爱眼城眼科查一下。"</div>
@@ -397,11 +414,11 @@ body table.sticky-on>thead>tr>th{
       <tr><td>近视分级</td><td>—</td><td>低度 -0.50~-3.00D<br>中度 -3.00~-6.00D</td><td><b>高度 &lt;-6.00D</b>（每年查眼底）</td><td>高度近视需关注眼底周边与眼轴</td></tr>
       <tr><td>远视（儿童）</td><td>生理性远视（远视储备，见下表）</td><td>低于同龄下限</td><td>储备过早消耗完毕</td><td>储备不足是近视预警信号</td></tr>
       <tr><td>散光 C</td><td>≤0.50D（生理性）</td><td>0.75~1.50D</td><td><b>&gt;2.00D 需排查</b>（尤其伴角膜曲率异常）</td><td>规则散光常见，不规则散光注意圆锥角膜</td></tr>
-      <tr><td>散光度数快速增加</td><td>年变化 ≤0.50D</td><td>年增加 0.50~1.00D</td><td>年增加 &gt;1.00D 或角膜散光&gt;2.50D → 转诊排查</td><td>警惕圆锥角膜</td></tr>
+      <tr><td>散光度数快速增加</td><td>年变化 ≤0.50D</td><td>年增加 0.50~1.00D</td><td>年增加 &gt;1.00D 或角膜散光&gt;2.00D → 转诊排查</td><td>警惕圆锥角膜</td></tr>
       <tr><td>屈光参差（球镜差）</td><td>&lt;1.00D</td><td>1.00~1.50D</td><td><b>≥1.50D</b>（儿童 ≥1.00D 即关注）</td><td>影响双眼单视，儿童警惕弱视</td></tr>
       <tr><td>屈光参差（柱镜差）</td><td>&lt;0.75D</td><td>0.75~1.00D</td><td>≥1.00D</td><td>同上</td></tr>
       <tr><td>年增加量（近视儿童）</td><td>&lt;0.50D/年</td><td>0.50~0.75D/年</td><td><b>&gt;1.00D/年 控制不佳</b></td><td>与眼轴年增长结合判断</td></tr>
-      <tr><td>老视（近附加 ADD）</td><td>45岁约 +1.00D；50岁约 +1.50D；55岁约 +2.00D；60岁约 +2.50D</td><td>明显偏离同龄经验值</td><td>ADD &gt;+3.00D 或短期快速上升</td><td>经验参考，必须主觉验光确认</td></tr>
+      <tr><td>老视（近附加 ADD）</td><td>45 岁约 +1.00D；50 岁约 +1.50D；55 岁约 +2.00D；60 岁约 +2.50D</td><td>明显偏离同龄经验值</td><td>ADD &gt;+3.00D 或短期快速上升</td><td>经验参考，必须主觉验光确认</td></tr>
     </tbody>
   </table></div>
 
@@ -417,14 +434,14 @@ body table.sticky-on>thead>tr>th{
       <tr><td>12 岁及以上</td><td>接近正视（0 ~ +0.50D）</td><td>已近视</td><td>进入近视进展管理阶段</td></tr>
     </tbody>
   </table></div>
-  <div class="note"><b>注意：</b>未散瞳的电脑验光会<b>高估近视、低估远视</b>，尤其儿童调节力强。凡涉及儿童远视储备判断，必须以<b>散瞳（睫状肌麻痹）验光结果</b>为准，门店不具备散瞳条件时应提醒家长到爱眼城眼科做。<b>不得凭不散瞳的电脑验光单给家长下"储备不足"的结论。</b></div>
+  <div class="note"><b>注意：</b>未散瞳电脑验光会<b>高估近视、低估远视</b>（儿童调节力强）。儿童远视储备判断必须以<b>散瞳验光结果</b>为准；门店不具备条件时提醒家长到爱眼城眼科做。<b>不得凭未散瞳的电脑验光单给家长下"储备不足"结论。</b></div>
 
   <h2 class="sec">三、眼轴长度与角膜曲率（眼生物测量）</h2>
   <div class="tsc w5"><table>
     <thead><tr><th style="width:14%">项目</th><th style="width:20%">参考区间</th><th style="width:16%">关注</th><th style="width:28%">异常 / 转诊提示</th><th style="width:22%">备注</th></tr></thead>
     <tbody>
       <tr><td>眼轴 AL（成人正视）</td><td>约 23.0 ~ 24.0mm</td><td>24.0~25.0mm</td><td><b>&gt;26.0mm（高度近视眼底风险）</b></td><td>与身高体型、种族相关</td></tr>
-      <tr><td>眼轴 AL（儿童参考均值）</td><td>3岁 21.5~22.0；6岁 22.0~22.5；8岁 22.5~23.0；10岁 23.0左右；12岁 23.5左右</td><td>高于同龄均值 0.5mm 以上</td><td>高于同龄均值 1.0mm 以上</td><td>个体差异大，<b>看增长速率更重要</b></td></tr>
+      <tr><td>眼轴 AL（儿童参考均值）</td><td>3 岁 21.5~22.0；6 岁 22.0~22.5；8 岁 22.5~23.0；10 岁 23.0 左右；12 岁 23.5 左右</td><td>高于同龄均值 0.5mm 以上</td><td>高于同龄均值 1.0mm 以上</td><td>个体差异大，<b>看增长速率更重要</b></td></tr>
       <tr><td>眼轴年增长（未近视儿童）</td><td>&lt;0.20mm/年</td><td>0.20~0.30mm/年</td><td>&gt;0.30mm/年</td><td>生理性增长</td></tr>
       <tr><td>眼轴年增长（近视儿童）</td><td><b>控制目标：≤0.20~0.30mm/年</b></td><td>0.30~0.40mm/年</td><td><b>&gt;0.40mm/年为控制不佳</b>，需调整方案并考虑就医评估</td><td>核心控近指标</td></tr>
       <tr><td>轴率比 AL/CR</td><td>约 3.00</td><td>3.00~3.10</td><td>&gt;3.10 提示近视化明显</td><td>比单独看眼轴更能反映"结构匹配"</td></tr>
@@ -444,11 +461,11 @@ body table.sticky-on>thead>tr>th{
       <tr><td>非接触眼压 NCT</td><td>10 ~ 21mmHg</td><td>21 ~ 24mmHg（复查）</td><td><b>&gt;24mmHg → 转诊</b>；伴视野/视神经改变者<b>即刻转诊</b></td><td>受配合、屏气、角膜厚度影响</td></tr>
       <tr><td>双眼眼压差</td><td>&lt;4mmHg</td><td>4~5mmHg</td><td><b>&gt;5mmHg → 转诊排查</b></td><td>左右眼差是重要预警</td></tr>
       <tr><td>低眼压</td><td>—</td><td>&lt;10mmHg</td><td>&lt;8mmHg 或有外伤/术后史 → 转诊</td><td>可能提示睫状体/视网膜问题</td></tr>
-      <tr><td>24小时波动</td><td>&lt;5mmHg</td><td>5~8mmHg</td><td>&gt;8mmHg → 转诊</td><td>门诊单次筛查有限</td></tr>
+      <tr><td>24 小时波动</td><td>&lt;5mmHg</td><td>5~8mmHg</td><td>&gt;8mmHg → 转诊</td><td>门诊单次筛查有限</td></tr>
       <tr><td>角膜厚度校正</td><td>CCT 500~560 偏差小</td><td>薄角膜（&lt;500）会低估眼压</td><td>厚角膜（&gt;580）会高估眼压</td><td>解读时须提示医生</td></tr>
     </tbody>
   </table></div>
-  <div class="warn"><b>解读纪律：</b>眼压偏高<b>只是筛查提示</b>，绝不能说成"你可能是青光眼"。标准说法："这个压力值超出了正常范围，它只是一个提示，很多因素都会影响它。为了保险，我建议您到<b>爱眼城眼科</b>做一个更全面的检查确认，我们会把今天的数据帮您整理好带过去。"</div>
+  <div class="warn"><b>解读纪律：</b>眼压偏高只是筛查提示，绝不能说"你可能是青光眼"。标准说法："这个压力值超出了正常范围，它只是一个提示，很多因素都会影响它。为了保险，我建议您到<b>爱眼城眼科</b>做一个更全面的检查确认，我们会把今天的数据帮您整理好带过去。"</div>
 
   <h2 class="sec">五、眼底</h2>
   <div class="tsc w4"><table>
@@ -462,7 +479,7 @@ body table.sticky-on>thead>tr>th{
       <tr><td>糖尿病视网膜病变相关</td><td>无微血管瘤</td><td>散在点状出血、微血管瘤（需血糖管理+定期复查）</td><td>出血渗出增多、黄斑水肿、新生血管 → <b>立即转诊</b></td></tr>
     </tbody>
   </table></div>
-  <div class="note"><b>门店能力边界：</b>眼底照相和 AI 辅助阅片只能作为<b>筛查与转诊依据</b>，门店人员不得据此下诊断。凡照片中出现上述"转诊提示"列任一项，标准动作是：①保存/打印图像给顾客；②书面写明"建议至爱眼城眼科进一步检查"；③登记并 72 小时回访。</div>
+  <div class="note"><b>门店能力边界：</b>眼底照相与 AI 辅助阅片只作<b>筛查与转诊依据</b>，不得据此下诊断。照片命中"转诊提示"列任一项，标准动作三步：①保存/打印图像给顾客；②书面写明"建议至爱眼城眼科进一步检查"；③登记并 72 小时回访。</div>
 
   <h2 class="sec">六、双眼视功能</h2>
   <div class="tsc w4"><table>
@@ -486,7 +503,7 @@ body table.sticky-on>thead>tr>th{
   </table></div>
   <div class="good"><b>通俗讲法（双眼视）：</b>"看东西不是一只眼的事，是两只眼睛像两台相机同时拍，再由大脑合成一张图。这两台相机要'对得齐''调得动''合得起来'，哪一项弱了，人就容易头疼、串行、看久了酸胀。我们现在测的就是这三项能力。"</div>
 
-  <h2 class="sec">七、眼前节、晶体与干眼相关</h2>
+  <h2 class="sec">七、眼前节、晶状体与干眼相关</h2>
   <div class="tsc w4"><table>
     <thead><tr><th style="width:20%">项目</th><th style="width:24%">正常</th><th style="width:24%">关注 / 异常</th><th style="width:32%">备注</th></tr></thead>
     <tbody>
@@ -494,7 +511,7 @@ body table.sticky-on>thead>tr>th{
       <tr><td>泪液分泌试验 Schirmer I</td><td>≥10mm/5min</td><td>5~10mm（干眼倾向）；<b>≤5mm（明显异常）</b></td><td>无表麻条件下测</td></tr>
       <tr><td>角膜荧光素染色</td><td>无着染或偶见 1-2 点</td><td>&gt;5 个点状着染或融合成片</td><td>结合 BUT 综合判断</td></tr>
       <tr><td>睑板腺形态</td><td>腺体结构清晰，缺失 &lt;1/3</td><td>缺失 1/3~1/2；<b>&gt;1/2 明显异常</b></td><td>与干眼、睑缘炎相关</td></tr>
-      <tr><td>晶体透明度</td><td>透明</td><td>皮质/核轻度混浊</td><td><b>明显混浊影响视力 → 转诊到爱眼城眼科评估</b></td></tr>
+      <tr><td>晶状体透明度</td><td>透明</td><td>皮质/核轻度混浊</td><td><b>明显混浊影响视力 → 转诊到爱眼城眼科评估</b></td></tr>
       <tr><td>眼前节（结膜/角膜/房水）</td><td>无充血、透明、房水清</td><td>充血、分泌物、角膜白斑、房水闪辉</td><td><b>急性红痛 + 视力下降 → 立即就医</b></td></tr>
       <tr><td>瞳孔与 RAPD</td><td>等大等圆，直径 2.5-4mm，对光反应灵敏</td><td>不等大、反应迟钝、<b>RAPD 阳性</b></td><td>RAPD 阳性提示视神经或视网膜病变，<b>必须转诊</b></td></tr>
       <tr><td>玻璃体</td><td>透明或轻度飞蚊（长期稳定）</td><td><b>突然增多、伴闪光感、幕样遮挡 → 急诊</b></td><td>飞蚊突然变化是视网膜脱离预警</td></tr>
@@ -531,7 +548,7 @@ body table.sticky-on>thead>tr>th{
 </div>
 
 <footer>
-  <b>模块 03 · 常见检查指标参考区间与异常判定表</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  <b>模块03 · 常见检查指标参考区间与异常判定表</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
   本表参考数值来源于视光学教材与行业通行筛查标准的整理，仅供门店健康宣教与转诊提示使用，不构成任何医疗诊断依据。数值如与国家最新诊疗指南不一致，以指南和接诊医疗机构意见为准。
 </footer>
 <script>
