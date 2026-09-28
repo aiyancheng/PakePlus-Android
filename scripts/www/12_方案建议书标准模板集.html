@@ -339,6 +339,23 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+
 
 <!-- COLBAL-V1 -->
 <!-- COLFIT-V1 -->
@@ -346,24 +363,24 @@ body table.sticky-on>thead>tr>th{
 <body>
 <div class="topbar">
   <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块 12 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+  <div class="meta">模块12 / 15 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
-<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="11_医疗边界与合规红线.html">11 医疗边界与合规</a> ｜ 下一模块：<a href="13_情景卡库30张演练卡.html">13 情景卡库（30张）</a> ｜ 关联模块：<a href="06_记录表与方案建议书.html">06 记录表与建议书</a></div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="11_医疗边界与合规红线.html">11 医疗边界与合规</a> ｜ 下一模块：<a href="13_情景卡库30张演练卡.html">13 情景卡库（30 张）</a> ｜ 关联模块：<a href="06_记录表与方案建议书.html">06 记录表与建议书</a></div>
 
 <div class="wrap">
-  <h1 class="t">模块 12 · 《个性化处理方案建议书》标准模板集</h1>
+  <h1 class="t">模块12 · 《个性化处理方案建议书》标准模板集</h1>
   <p class="lead">模块06给出的是<b>通用版</b>建议书。实际门店里，儿童家长、上班族、老人关心的事完全不同，一份通用模板讲不透。本模块按<b>六类高频场景</b>各做一份专用模板：预置了该人群最常出现的异常项、最该讲的影响、最对口的管理动作，视光师只要<b>勾选项 + 填数字 + 填时间</b>就能出一份完整建议书，顾客带走一份、门店存档一份。</p>
 
   <h2 class="sec">一、六份模板怎么选</h2>
   <div class="tsc w4"><table class="now1">
     <thead><tr><th style="width:6%">模板</th><th style="width:17%">适用场景</th><th style="width:39%">触发信号（出现其一即可选用）</th><th style="width:38%">本模板的重点</th></tr></thead>
     <tbody>
-      <tr><td class="c"><b>A</b></td><td>儿童青少年近视管理</td><td>18岁以下；近视前期或已近视；眼轴年增长 ≥0.3mm；家长关注"涨得快不快"</td><td>以眼轴年化增长为核心证据，方案围绕"控制发展速度"，强调户外活动与复查周期</td></tr>
+      <tr><td class="c"><b>A</b></td><td>儿童青少年近视管理</td><td>18 岁以下；近视前期或已近视；眼轴年增长 ≥0.3mm；家长关注"涨得快不快"</td><td>以眼轴年化增长为核心证据，方案围绕"控制发展速度"，强调户外活动与复查周期</td></tr>
       <tr><td class="c"><b>B</b></td><td>成人视疲劳与干眼</td><td>长时间近距离用眼；眼干、异物感、眨眼频繁；BUT&lt;5s；下午视物模糊</td><td>把"度数不高但不舒服"讲清楚，方案以用眼节奏、环境、泪膜管理为主</td></tr>
-      <tr><td class="c"><b>C</b></td><td>中老年老视与渐进</td><td>40岁以上；看近需拿远；看近久头晕；原有近用镜不匹配</td><td>以"远近切换需求"为主线，讲清适应期与使用场景，降低退换风险</td></tr>
+      <tr><td class="c"><b>C</b></td><td>中老年老视与渐进</td><td>40 岁以上；看近需拿远；看近久头晕；原有近用镜不匹配</td><td>以"远近切换需求"为主线，讲清适应期与使用场景，降低退换风险</td></tr>
       <tr><td class="c"><b>D</b></td><td>双眼视功能异常 / 视觉训练</td><td>阅读串行、跳行；看近易疲劳；调节或集合指标异常；训练前后复测</td><td>用具体指标说明问题所在，方案以训练周期 + 阶段性复测为主，明确不承诺疗效</td></tr>
-      <tr><td class="c"><b>E</b></td><td>角膜塑形镜 / 接触镜验配</td><td>OK镜或RGP/软镜验配、复查；需说明护理与复诊要求</td><td>以安全佩戴为核心，护理规范、复查节点、停戴信号三项必写</td></tr>
-      <tr><td class="c"><b>F</b></td><td>转诊提示型</td><td>出现模块11所列12类红线指标中的任一项</td><td><b>不做任何产品推荐</b>，只讲异常项、紧迫程度、就诊建议与回访安排</td></tr>
+      <tr><td class="c"><b>E</b></td><td>角膜塑形镜 / 接触镜验配</td><td>OK 镜或 RGP/软镜验配、复查；需说明护理与复诊要求</td><td>以安全佩戴为核心，护理规范、复查节点、停戴信号三项必写</td></tr>
+      <tr><td class="c"><b>F</b></td><td>转诊提示型</td><td>出现模块11所列 12 类红线指标中的任一项</td><td><b>不做任何产品推荐</b>，只讲异常项、紧迫程度、就诊建议与回访安排</td></tr>
     </tbody>
   </table></div>
   <div class="warn"><b>选型原则：</b>一位顾客可能同时适用两份模板（例如"近视儿童 + 需转诊"）。此时<b>一律以 F 模板为主</b>，转诊提示必须写在最前面，其余内容待爱眼城眼科诊断后再补充。<b>转诊情形下不得出具任何产品方案。</b></div>
@@ -374,7 +391,7 @@ body table.sticky-on>thead>tr>th{
       <li><b>数据只填本次实测值。</b>所有数字必须能在《报告解读记录表》或档案中查到，不得估算、不得沿用上次。</li>
       <li><b>变化量必须算出来。</b>有历史数据的必须写差值（度数变化、眼轴年化增长），只写"本次值"的建议书视为不合格。</li>
       <li><b>方案分三档勾。</b>必做项 / 建议做项 / 可选项分开列，每档不超过 3 条；一档写太多等于没重点。</li>
-      <li><b>复查时间写具体日期。</b>不写"三个月后"，写"2026年12月20日前后"，并注明复查项目。</li>
+      <li><b>复查时间写具体日期。</b>不写"三个月后"，写"2026 年 12 月 20 日前后"，并注明复查项目。</li>
       <li><b>影响要落到生活。</b>写"看黑板吃力""看近半小时就胀"，不写"调节滞后 +0.75D"（术语留在记录表里）。</li>
       <li><b>顾客带走一份、门店存一份。</b>底联与《报告解读记录表》同号归档，便于下次接待直接调阅。</li>
     </ol>
@@ -386,7 +403,7 @@ body table.sticky-on>thead>tr>th{
   <div class="form">
     <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（近视管理）</h3><span class="no">编号 A｜适用 18 岁以下</span></div>
     <div class="fbody">
-      <div class="fnote"><b>填写要点：</b>①"眼轴"一栏必填，并算出年化增长；②影响部分只写生活场景（看黑板、运动、眯眼）；③方案必做项不得超过3条，家长记不住；④复查日期必须写死。<br><b>配套话术：</b>"度数只是结果，眼轴才是原因。我们这次的建议就是围绕怎么让眼轴长得慢一点。"</div>
+      <div class="fnote"><b>填写要点：</b>①"眼轴"一栏必填，并算出年化增长；②影响部分只写生活场景（看黑板、运动、眯眼）；③方案必做项不得超过 3 条，家长记不住；④复查日期必须写死。<br><b>配套话术：</b>"度数只是结果，眼轴才是原因。我们这次的建议就是围绕怎么让眼轴长得慢一点。"</div>
 
       <div class="sec-title">一、基本信息</div>
       <div class="blk">
@@ -542,9 +559,9 @@ body table.sticky-on>thead>tr>th{
             <tr><td>远用矫正视力</td><td class="c"></td><td class="c"></td><td>不达标需查明原因，勿直接归因老视</td></tr>
             <tr><td>远用屈光度</td><td class="c"></td><td class="c"></td><td></td></tr>
             <tr><td>近附加 ADD</td><td class="c"></td><td class="c"></td><td></td></tr>
-            <tr><td>近用视力（含ADD）</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>近用视力（含 ADD）</td><td class="c"></td><td class="c"></td><td></td></tr>
             <tr><td>眼压</td><td class="c"></td><td class="c"></td><td>&gt;21 mmHg 需提示就医</td></tr>
-            <tr><td>裂隙灯（晶体）</td><td class="c"></td><td class="c"></td><td></td></tr>
+            <tr><td>裂隙灯（晶状体）</td><td class="c"></td><td class="c"></td><td></td></tr>
             <tr><td>眼底照相</td><td class="c"></td><td class="c"></td><td></td></tr>
             <tr><td>瞳距 / 瞳高</td><td class="c"></td><td class="c"></td><td></td></tr>
           </tbody>
@@ -555,7 +572,7 @@ body table.sticky-on>thead>tr>th{
       <div class="blk">
         <div><span class="check"><input type="checkbox">看近需要拿远、光线暗时更明显（老视表现）</span><span class="check"><input type="checkbox">远近切换频繁，现用眼镜顾此失彼</span></div>
         <div><span class="check"><input type="checkbox">原有近用镜度数与本次检查有偏差</span><span class="check"><input type="checkbox">矫正视力未达应有水平，<b>需进一步查明原因</b></span></div>
-        <div><span class="check"><input type="checkbox">晶体透明度有改变，建议由医生评估</span><span class="check"><input type="checkbox">眼底/眼压项目建议由医生评估</span></div>
+        <div><span class="check"><input type="checkbox">晶状体透明度有改变，建议由医生评估</span><span class="check"><input type="checkbox">眼底/眼压项目建议由医生评估</span></div>
         <div><span class="check"><input type="checkbox">干涩、异物感，影响配戴舒适度</span><span class="check"><input type="checkbox">其他：__________________</span></div>
         <div class="line2" style="margin-top:8px"><label>对日常的影响：</label><span class="fill"></span></div>
       </div>
@@ -647,14 +664,14 @@ body table.sticky-on>thead>tr>th{
   <!-- ==================== 模板 E ==================== -->
   <h2 class="sec">模板 E · 角膜塑形镜 / 接触镜验配型</h2>
   <div class="form">
-    <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（接触镜验配）</h3><span class="no">编号 E｜OK镜 / RGP / 软镜</span></div>
+    <div class="fhead"><h3>永州爱眼城 · 个性化处理方案建议书（接触镜验配）</h3><span class="no">编号 E｜OK 镜 / RGP / 软镜</span></div>
     <div class="fbody">
       <div class="fnote"><b>填写要点：</b>①护理规范与复查节点必写，这是安全底线；②"停戴信号"必须让顾客或家长能复述；③配适评估结论写客观描述，不写疗效承诺。<br><b>配套话术：</b>"戴这一类镜片，护理比镜片本身更重要。这三条停戴信号您记住了，基本就安全了。"</div>
 
       <div class="sec-title">一、基本信息</div>
       <div class="blk">
         <div class="line2"><label>顾客姓名：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>年龄：</label><span class="fill" style="max-width:calc(60px * var(--fs))"></span><label>门店：</label><span class="fill" style="max-width:calc(140px * var(--fs))"></span><label>视光师：</label><span class="fill" style="max-width:calc(110px * var(--fs))"></span><label>日期：</label><span class="fill" style="max-width:calc(130px * var(--fs))"></span></div>
-        <div class="line2"><label>镜片类型：</label><span class="check"><input type="checkbox">角膜塑形镜（OK镜）</span><span class="check"><input type="checkbox">RGP</span><span class="check"><input type="checkbox">软性接触镜</span><span class="check"><input type="checkbox">其他：______</span></div>
+        <div class="line2"><label>镜片类型：</label><span class="check"><input type="checkbox">角膜塑形镜（OK 镜）</span><span class="check"><input type="checkbox">RGP</span><span class="check"><input type="checkbox">软性接触镜</span><span class="check"><input type="checkbox">其他：______</span></div>
         <div class="line2"><label>状态：</label><span class="check"><input type="checkbox">首次验配</span><span class="check"><input type="checkbox">换片</span><span class="check"><input type="checkbox">定期复查</span><label>戴镜时长：</label><span class="fill" style="max-width:calc(100px * var(--fs))"></span></div>
       </div>
 
@@ -708,7 +725,7 @@ body table.sticky-on>thead>tr>th{
   <div class="form">
     <div class="fhead" style="background:#d94b4b"><h3>永州爱眼城 · 转诊提示与就诊建议书</h3><span class="no">编号 F｜出现红线指标时使用</span></div>
     <div class="fbody">
-      <div class="fnote"><b>使用规则：</b>凡触发模块11所列12类情况之一，<b>本表优先于任何其他模板</b>，且<b>不得同时出具产品推荐</b>。填写后当场交顾客，3 日内电话回访是否就诊。<br><b>配套话术：</b>"这一项我不能给您下结论，必须让医生看。我已经帮您写在单子上了，您这两天就去，别拖。"</div>
+      <div class="fnote"><b>使用规则：</b>凡触发模块11所列 12 类情况之一，<b>本表优先于任何其他模板</b>，且<b>不得同时出具产品推荐</b>。填写后当场交顾客，3 日内电话回访是否就诊。<br><b>配套话术：</b>"这一项我不能给您下结论，必须让医生看。我已经帮您写在单子上了，您这两天就去，别拖。"</div>
 
       <div class="sec-title">一、基本信息</div>
       <div class="blk">
@@ -777,8 +794,8 @@ body table.sticky-on>thead>tr>th{
 </div>
 
 <footer>
-  <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 模块 12</b><br>
-  编制：闫胜君整理 ｜ 适用门店：零陵8家、冷水滩2家、祁阳5家 ｜ 归口部门：视光运营部<br>
+  <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 模块12</b><br>
+  编制：闫胜君整理 ｜ 适用门店：零陵 8 家、冷水滩 2 家、祁阳 5 家 ｜ 归口部门：视光运营部<br>
   说明：本模板集用于门店验配服务与健康宣教，<b>不构成医疗诊断</b>；模板中勾选项为常见情形提示，实际填写以顾客本次检查数据为准；凡涉及红线指标一律使用 F 模板并转诊。
 </footer>
 <script>
