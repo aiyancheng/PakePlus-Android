@@ -324,24 +324,89 @@ body table.sticky-on>thead>tr>th{
   body table.sticky-on>thead>tr>th{position:static}
 }
 </style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+<!-- MARK : FOLD07-V1 : 分组内容折叠收放 -->
+<style>
+/* ---------- 分组折叠收放 ---------- */
+body .foldgrp{margin:0}
+body .fold-h{
+  cursor:pointer;position:relative;padding-right:calc(104px * var(--fs));
+  -webkit-user-select:none;user-select:none;transition:color .15s;
+}
+body .fold-h:hover{color:#4096ff}
+body .fold-h:focus-visible{outline:2px solid #1677ff;outline-offset:2px;border-radius:4px}
+body .fold-h .fold-ic{
+  position:absolute;right:calc(46px * var(--fs));top:50%;transform:translateY(-50%);
+  font-size:calc(13px * var(--fs));color:#e07b39;font-weight:700;transition:transform .18s;
+}
+body .foldgrp.open .fold-h .fold-ic{transform:translateY(-50%) rotate(180deg)}
+body .fold-h .fold-tip{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font-style:normal;font-weight:400;font-size:calc(12.5px * var(--fs));color:#7a8799;
+  border:1px solid #dae3f5;border-radius:12px;padding:0 calc(9px * var(--fs));line-height:calc(22px * var(--fs));
+  background:#f5f8fd;
+}
+body .foldgrp.open .fold-h .fold-tip{color:#1677ff;border-color:#c7ddff;background:#e8f1ff}
+body .fold-body{display:none}
+body .foldgrp.open .fold-body{display:block}
+body .foldbar{display:flex;flex-wrap:wrap;align-items:center;gap:calc(9px * var(--fs));margin:16px 0 4px}
+body .foldbar .fb{
+  font-family:inherit;cursor:pointer;border-radius:8px;border:1px solid #1677ff;background:#1677ff;color:#fff;
+  font-size:calc(13.5px * var(--fs));padding:calc(6px * var(--fs)) calc(14px * var(--fs));min-height:calc(34px * var(--fs));
+}
+body .foldbar .fb.ghost{background:#fff;color:#1677ff}
+body .foldbar .fb:hover{filter:brightness(1.06)}
+body .foldbar .fbinfo{
+  font-style:normal;font-size:calc(12.8px * var(--fs));color:#7a8799;line-height:1.6;
+}
+@media screen and (max-width:640px){
+  body .fold-h{padding-right:calc(84px * var(--fs))}
+  body .fold-h .fold-ic{right:calc(40px * var(--fs))}
+}
+@media print{
+  body .fold-body{display:block !important}
+  body .fold-ic,body .fold-tip,body .foldbar{display:none !important}
+  body .fold-h{padding-right:0}
+}
+</style>
+
+
 
 <!-- COLFIT-V1 -->
 </head>
 <body>
 <div class="topbar">
   <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块 07 / 15 ｜ V1.0 ｜ 2026-09-21</div>
+  <div class="meta">模块07 / 15 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
 <div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="06_记录表与方案建议书.html">06 记录表与方案建议书</a> ｜ 下一模块：<a href="08_案例库选取与讲述.html">08 案例库选取与讲述</a></div>
 
 <div class="wrap">
-  <h1 class="t">模块 07 · 可复用科普知识点清单（30 条）</h1>
+  <h1 class="t">模块07 · 可复用科普知识点清单（30 条）</h1>
   <p class="lead">这是 SOP 第⑥步的弹药库。<b>每条都是"能一句话讲完 + 顾客今晚就能做"的程度。</b>解读时只挑 2-3 条讲透，其余配合书面材料带走。<b>本清单同时可作为门店短视频选题、微信推文、回访话术的素材库。</b></p>
 
   <div class="note"><b>使用规则：</b>①<b>一次不超过 3 条</b>；②每条必须落到具体动作（"回家把台灯挪到左手边"），不能停留在笼统口号；③每条都可以配合"常见误区"讲——<b>纠正一个误区，专业感立刻提升</b>；④所有内容属于健康常识宣教，<b>不涉及疾病诊断与治疗承诺</b>。</div>
 
-  <h2 class="sec">A 组 · 近视、眼轴与户外（6 条）</h2>
+  <div class="foldbar"><button class="fb" type="button" id="fbOpen">全部展开</button><button class="fb ghost" type="button" id="fbClose">全部收起</button><em class="fbinfo">共 6 组 30 条科普；点击组标题可单独收放。需要页内搜索或打印时，先点「全部展开」。</em></div>
 
+<div class="foldgrp">
+  <h2 class="sec fold-h" aria-expanded="false">A 组 · 近视、眼轴与户外（6 条）<span class="fold-ic">&#9662;</span><em class="fold-tip">展开</em></h2>
+  <div class="fold-body">
   <div class="item">
     <div class="ttl"><span>A01</span>户外活动是最有效、也最省钱的一条<span class="grp">儿童必讲</span></div>
     <div class="row"><b>一句话讲法：</b>"每天户外活动两小时，是目前公认预防近视效果最好、最省钱的办法。不需要运动，在户外待着就有效。"</div>
@@ -380,8 +445,13 @@ body table.sticky-on>thead>tr>th{
     <div class="row"><b>参考：</b>小学生建议每天睡 10 小时，初中生 9 小时，高中生 8 小时。<b>熄灯后不再看手机。</b></div>
   </div>
 
-  <h2 class="sec">B 组 · 读写习惯与环境（6 条）</h2>
+  
+  </div>
+</div>
 
+<div class="foldgrp">
+  <h2 class="sec fold-h" aria-expanded="false">B 组 · 读写习惯与环境（6 条）<span class="fold-ic">&#9662;</span><em class="fold-tip">展开</em></h2>
+  <div class="fold-body">
   <div class="item">
     <div class="ttl"><span>B01</span>20-20-20 法则<span class="grp">通用</span></div>
     <div class="row"><b>一句话讲法：</b>"看近 20 分钟，抬头看看 20 英尺（差不多 6 米）以外的地方，坚持 20 秒。简单说就是每二三十分钟，抬个头。"</div>
@@ -417,8 +487,13 @@ body table.sticky-on>thead>tr>th{
     <div class="row"><b>一句话讲法：</b>"关灯看手机，瞳孔放得很大，屏幕的强光直接刺激眼睛，既容易疲劳，也不利于眼底健康。要留一盏小夜灯。"</div>
   </div>
 
-  <h2 class="sec">C 组 · 配镜与镜片常识（5 条）</h2>
+  
+  </div>
+</div>
 
+<div class="foldgrp">
+  <h2 class="sec fold-h" aria-expanded="false">C 组 · 配镜与镜片常识（5 条）<span class="fold-ic">&#9662;</span><em class="fold-tip">展开</em></h2>
+  <div class="fold-body">
   <div class="item">
     <div class="ttl"><span>C01</span>儿童配镜为什么要散瞳<span class="grp">信任建立</span></div>
     <div class="row"><b>一句话讲法：</b>"孩子的调节能力特别强，不散瞳测出来的度数常常会'虚高'。散瞳是为了让眼部肌肉放松下来，量出真实的度数。"</div>
@@ -449,8 +524,13 @@ body table.sticky-on>thead>tr>th{
     <div class="row"><b>适用：</b>夏季强光、雪地、水面、高原等场景；儿童同样需要。</div>
   </div>
 
-  <h2 class="sec">D 组 · 干眼与视疲劳（4 条）</h2>
+  
+  </div>
+</div>
 
+<div class="foldgrp">
+  <h2 class="sec fold-h" aria-expanded="false">D 组 · 干眼与视疲劳（4 条）<span class="fold-ic">&#9662;</span><em class="fold-tip">展开</em></h2>
+  <div class="fold-body">
   <div class="item">
     <div class="ttl"><span>D01</span>眨眼是最简单的护眼动作<span class="grp">成人</span></div>
     <div class="row"><b>一句话讲法：</b>"盯着屏幕的时候，人的眨眼次数会下降到平时的三分之一左右。有意识地<b>多眨几次、眨到位</b>（上下眼皮要真的合上），比什么都管用。"</div>
@@ -473,8 +553,13 @@ body table.sticky-on>thead>tr>th{
     <div class="row"><b>提醒：</b>含防腐剂的眼药水长期频繁使用可能损伤眼表；"网红"眼药水尤其要谨慎。</div>
   </div>
 
-  <h2 class="sec">E 组 · 年龄相关（5 条）</h2>
+  
+  </div>
+</div>
 
+<div class="foldgrp">
+  <h2 class="sec fold-h" aria-expanded="false">E 组 · 年龄相关（5 条）<span class="fold-ic">&#9662;</span><em class="fold-tip">展开</em></h2>
+  <div class="fold-body">
   <div class="item">
     <div class="ttl"><span>E01</span>老花是正常现象，不是病<span class="grp">中老年</span></div>
     <div class="row"><b>一句话讲法：</b>"就像头发会变白一样，眼睛里的'镜头'用几十年弹性会下降，看近变得吃力，这是每个人都会有的变化。解决办法很多。"</div>
@@ -500,13 +585,18 @@ body table.sticky-on>thead>tr>th{
   </div>
 
   <div class="item">
-    <div class="ttl"><span>E05</span>糖尿病和高血压患者的眼底管理<span class="grp">重要</span></div>
+    <div class="ttl"><span>E05</span>糖尿病和高血压人群的眼底管理<span class="grp">重要</span></div>
     <div class="row"><b>一句话讲法：</b>"血糖血压控制得好不好，眼底是'看得见的窗口'。这两类朋友建议<b>每年至少查一次眼底</b>，即使眼睛没有任何不舒服。"</div>
     <div class="row"><b>强调：</b><b>管理好原病比任何护眼手段都重要。</b>门店发现眼底异常一律转诊。</div>
   </div>
 
-  <h2 class="sec">F 组 · 安全与急救信号（4 条）</h2>
+  
+  </div>
+</div>
 
+<div class="foldgrp">
+  <h2 class="sec fold-h" aria-expanded="false">F 组 · 安全与急救信号（4 条）<span class="fold-ic">&#9662;</span><em class="fold-tip">展开</em></h2>
+  <div class="fold-body">
   <div class="item">
     <div class="ttl"><span>F01</span>三个"立刻就医"的信号<span class="grp">救命</span></div>
     <div class="row"><b>一句话讲法：</b>"记住三个字：<b>闪、飞、幕</b>——眼前有闪光感、飞蚊突然大量增加、某个方向像有一块幕布遮挡。出现任意一个，<b>当天就去</b>，不要等。"</div>
@@ -529,7 +619,11 @@ body table.sticky-on>thead>tr>th{
     <div class="row"><b>提醒：</b>斜视和弱视都有<b>发育窗口期</b>，拖延会影响一生。</div>
   </div>
 
-  <h2 class="sec">科普怎么讲才有效（四个技巧）</h2>
+  
+  </div>
+</div>
+
+<h2 class="sec">科普怎么讲才有效（四个技巧）</h2>
   <div class="card">
     <ol>
       <li><b>先问再讲。</b>"您家孩子每天大概看多久手机？"——先了解现状，科普才有针对性。</li>
@@ -537,7 +631,7 @@ body table.sticky-on>thead>tr>th{
       <li><b>纠正误区。</b>主动打破一个常见误解（如"戴眼镜会加深"），最容易建立专业形象。</li>
       <li><b>给书面材料。</b>口头的容易忘，能带走的科普卡/建议书才是真正会发挥作用的那一份。</li>
     </ol>
-    <div class="warn"><b>表达红线：</b>科普中禁止使用"治疗""治愈""根治""保证""最有效""一定不会"等词汇；不推荐任何药品、保健品或医疗器械；不贬低同行或网上的健康信息，只用"说法不同，我们看数据"来回应。</div>
+    <div class="warn"><b>表达红线：</b>禁语口径一律以<a href="11_医疗边界与合规红线.html" style="color:#7d2b2b;font-weight:700">模块11</a>为准——科普中禁用"治疗/治愈/根治/保证/最有效/一定不会"等词，不推荐药品、保健品或医疗器械，不贬低其他信息源，只用"说法不同，我们看数据"回应。</div>
   </div>
 
   <h2 class="sec">门店月度科普主题轮换表（可直接排班）</h2>
@@ -566,7 +660,7 @@ body table.sticky-on>thead>tr>th{
 </div>
 
 <footer>
-  <b>模块 07 · 可复用科普知识点清单（30 条）</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+  <b>模块07 · 可复用科普知识点清单（30 条）</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
   本清单内容为眼健康常识宣教，不涉及疾病诊断与治疗建议；涉及就医判断的内容，一律以医疗机构意见为准。
 </footer>
 <script>
@@ -590,6 +684,35 @@ body table.sticky-on>thead>tr>th{
   window.addEventListener('resize', defer);
   var ds = document.querySelectorAll('details'), j;
   for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+
+<!-- MARK : FOLD07-V1 : 分组内容折叠收放 -->
+<script>
+(function(){
+  var gs=[].slice.call(document.querySelectorAll('.foldgrp'));
+  if(!gs.length) return;
+  function setOpen(g,open){
+    g.classList.toggle('open',!!open);
+    var h=g.querySelector('.fold-h');
+    if(h) h.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var t=g.querySelector('.fold-tip');
+    if(t) t.textContent = open ? '收起' : '展开';
+  }
+  gs.forEach(function(g){
+    var h=g.querySelector('.fold-h');
+    if(!h) return;
+    h.setAttribute('role','button');
+    h.setAttribute('tabindex','0');
+    h.addEventListener('click',function(){ setOpen(g, !g.classList.contains('open')); });
+    h.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){ e.preventDefault(); h.click(); }
+    });
+    setOpen(g, g.classList.contains('open'));
+  });
+  var b1=document.getElementById('fbOpen'), b2=document.getElementById('fbClose');
+  if(b1) b1.addEventListener('click',function(){ gs.forEach(function(g){ setOpen(g,true); }); });
+  if(b2) b2.addEventListener('click',function(){ gs.forEach(function(g){ setOpen(g,false); }); });
 })();
 </script>
 </body>
