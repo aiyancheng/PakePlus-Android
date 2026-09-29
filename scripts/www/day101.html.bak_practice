@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第101天 | 高峰期快速接待策略 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 101 天</div>
+            <h1 class="page-title">高峰期快速接待策略</h1>
+            <div class="page-subtitle">模块二：销售技巧 · 第15周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>101/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 27.67%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、什么是高峰期？为什么要快速接待？</h3>
+                <p>眼镜门店的<strong>高峰期</strong>通常出现在：周末下午、节假日、学校开学前、打折促销活动期间。高峰期的特点是<strong>顾客多、员工少、等待时间长</strong>。</p>
+                
+                <div class="tip-box">
+                    <strong>真实案例：</strong>某门店周末下午，3个顾客同时进店，只有1个销售员。销售员按标准流程接待第一个顾客，结果第2、3个顾客等了10分钟没人理，直接走了。损失了2个潜在成交。<br><br>
+                    <strong>教训：</strong>高峰期不能按"标准流程"慢慢来，必须"快速接待"——让每个顾客都感受到被关注，哪怕只是说一句"请稍等，我马上来"。
+                </div>
+
+                <p><strong>高峰期快速接待的核心目标：</strong></p>
+                <ul>
+                    <li><strong>不让顾客等待超过3分钟</strong>（否则会走）</li>
+                    <li><strong>同时服务多个顾客</strong>（并行，不是串行）</li>
+                    <li><strong>快速判断需求</strong>（紧急的优先，不急的稍等）</li>
+                    <li><strong>提高成交效率</strong>（推现货、快速决策）</li>
+                </ul>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、高峰期接待的"三步法"</h3>
+                <p>高峰期接待，不能按标准七步流程走，而要按<strong>"三步法"</strong>快速处理：</p>
+
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>步骤</th>
+                                <th>名称</th>
+                                <th>核心动作</th>
+                                <th>时长</th>
+                                <th>关键话术</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>第1步</strong></td>
+                                <td>快速响应</td>
+                                <td>微笑、问候、安排等待</td>
+                                <td>30秒/人</td>
+                                <td>"请稍等，我马上来"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>第2步</strong></td>
+                                <td>并行服务</td>
+                                <td>同时服务2-3人（验光+选框）</td>
+                                <td>15-20分钟</td>
+                                <td>"您先验光，您先看镜框"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>第3步</strong></td>
+                                <td>快速成交</td>
+                                <td>推现货、促单、快速结账</td>
+                                <td>5-10分钟/人</td>
+                                <td>"这款有现货，今天取"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="warn-box">
+                    ⚠️ <strong>重要提醒：</strong>高峰期最容易犯的错误是"冷落后来顾客"。正确做法是：哪怕你正忙着，也要对后来的顾客说一句"请稍等，我马上来"，让他们知道"被看到了"。沉默=顾客走人。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、具体策略与技巧</h3>
+
+                <h4>1. 快速响应策略</h4>
+                <p><strong>场景：</strong>你正在接待顾客A，顾客B、C同时进店。</p>
+                <p><strong>错误做法：</strong>只顾A，不理B/C → B/C走了。</p>
+                <p><strong>正确做法：</strong></p>
+                <ul>
+                    <li>对A说："不好意思，您先看看这款，我招呼下新来的顾客。"（30秒）</li>
+                    <li>对B/C微笑+问候："您好！请稍等，我马上来。"（10秒）</li>
+                    <li>快速问B/C："您是配眼镜还是看看？"（10秒）→ 判断紧急程度</li>
+                    <li>安排：紧急的优先，不急的给事做（如"您先看看镜框，我忙完就来"）</li>
+                </ul>
+
+                <h4>2. 并行服务策略</h4>
+                <p><strong>场景：</strong>你有2个顾客同时需要服务。</p>
+                <p><strong>错误做法：</strong>先服务A（20分钟），再服务B（20分钟）→ B等太久走了。</p>
+                <p><strong>正确做法：</strong></p>
+                <ul>
+                    <li><strong>分流：</strong>让A去验光（验光师服务），你服务B选镜框 → 同时进行</li>
+                    <li><strong>交叉：</strong>A验光完，让A试戴镜框；同时B去验光 → 你始终在"衔接"，不让任何人闲着</li>
+                    <li><strong>工具：</strong>用"取号系统"或"排队牌"让顾客知道"谁是下一个"，减少焦虑</li>
+                </ul>
+
+                <h4>3. 快速成交策略</h4>
+                <p><strong>场景：</strong>高峰期顾客想快点搞定。</p>
+                <p><strong>策略要点：</strong></p>
+                <ul>
+                    <li><strong>推现货：</strong>优先推荐有现货的镜框+镜片（今天/明天取）</li>
+                    <li><strong>给选择：</strong>只给2个选项（A或B），不要给5个（会犹豫）</li>
+                    <li><strong>打包：</strong>"镜框+镜片一起，优惠XX元" → 快速决策</li>
+                    <li><strong>快速结账：</strong>用移动支付（微信/支付宝），别让顾客等找零</li>
+                </ul>
+
+                <div class="tip-box">
+                    💡 <strong>高效心法：</strong>高峰期你的角色是"调度员"，不是"服务员"。你要调度顾客（谁先谁后）、调度资源（验光师/镜框库存），而不是事事亲为。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>四、高峰期常见问题与应对</h3>
+
+                <p><strong>问题1：顾客抱怨"怎么等这么久？"</strong><br>
+                <span style="color: #FF4D4F;"><strong>错误回应：</strong></span>"没办法，今天人多。"（理由，不是解决方案）<br>
+                <span style="color: #52C41A;"><strong>正确回应：</strong></span>"真不好意思让您久等了！我帮您优先安排，您看这款镜框喜欢吗？我一边给您介绍，一边让验光师准备。"（道歉+立即行动）</p>
+
+                <p><strong>问题2：顾客同时要试5副眼镜，来不及服务别人</strong><br>
+                <span style="color: #FF4D4F;"><strong>错误做法：</strong></span>陪他试5副（20分钟），别人等不及走了。<br>
+                <span style="color: #52C41A;"><strong>正确做法：</strong></span>"您先试这2副，我帮那位顾客安排下验光，5分钟后回来帮您看第3副。"（设定边界，并行处理）</p>
+
+                <p><strong>问题3：验光师只有一个，排队太长</strong><br>
+                <span style="color: #FF4D4F;"><strong>错误做法：</strong></span>让所有人排队等验光师 → 前面的人验光时，后面的人干等。<br>
+                <span style="color: #52C41A;"><strong>正确做法：</strong></span>"您先选镜框，选好了再验光，不耽误时间。"（让顾客在等待验光时先做其他事）</p>
+
+                <p><strong>问题4：顾客抱怨"你们服务太差了"</strong><br>
+                <span style="color: #FF4D4F;"><strong>错误回应：</strong></span>"今天人多，你嫌差别来。"（对抗）<br>
+                <span style="color: #52C41A;"><strong>正确回应：</strong></span>"真抱歉让您有不好的体验。这样吧，我给您申请个95折，算是赔礼，您看行吗？"（道歉+补偿，化解情绪）</p>
+
+                <div class="tip-box">
+                    🏆 <strong>高手心法：</strong>高峰期是检验"真功夫"的时候。平时按标准流程谁都会，高峰期能不乱、能高效、能让大多数顾客满意，才是真正的高手。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li>高峰期特点：顾客多、员工少、等待时间长 → 需要快速接待策略</li>
+                    <li>高峰期三步法：快速响应（30秒/人）→ 并行服务（同时2-3人）→ 快速成交（推现货、促单）</li>
+                    <li>快速响应关键：哪怕忙着，也要对后来顾客说"请稍等，我马上来"（不能沉默）</li>
+                    <li>并行服务关键：分流（验光+选框同时进行）、交叉（A验光完试戴，B去验光）</li>
+                    <li>快速成交关键：推现货、给2个选项、打包优惠、快速结账</li>
+                </ul>
+            </div>
+        </div>
+
+                <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 1. 高峰期你正忙着接待顾客A，顾客B进店，你应该先？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 2. 高峰期想要快速成交，最有效的策略是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 3. 高峰期顾客抱怨"怎么等这么久？"，最佳回应是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题部分需要手动调整 -->
+        </div>
+<!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day100.html" class="nav-arrow">← 第100天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day102.html" class="nav-arrow">第102天 →</a>
+        </div>
+    </div>
+
+    <script>
+        // ========== 选择题数据 ==========
+        const choiceQuestions = [
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '高峰期你正忙着接待顾客A，顾客B进店，正确做法是：对A说'稍等'，对B微笑说'请稍等，我马上来'。关键是不能沉默——要让B知道'被看到了'，否则B会走。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '高峰期快速成交的关键是'推现货'——优先推荐有现货的镜框+镜片，这样顾客能今天/明天取货，快速决策。如果推荐没现货的，要等3-5天，顾客可能犹豫或走人。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [0],
+                score: 10,
+                explanation: '高峰期顾客抱怨'怎么等这么久'，正确回应是'真不好意思让您久等了！我帮您优先安排...'（道歉+立即行动）。错误回应是'没办法，今天人多'（只给理由，不给解决方案）或'你嫌差别来'（对抗）。'
+            },
+        ];
+
+        // ========== 初始化选择题 ==========
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                const optionsList = container.querySelector('.options-list');
+                const isMulti = q.type === 'multi';
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.dataset.qidx = idx;
+                    li.dataset.optidx = optIdx;
+                    const marker = document.createElement('div');
+                    marker.className = 'option-marker';
+                    marker.textContent = String.fromCharCode(65 + optIdx);
+                    const text = document.createElement('span');
+                    text.className = 'option-text';
+                    text.textContent = opt.text;
+                    li.appendChild(marker);
+                    li.appendChild(text);
+                    li.addEventListener('click', () => toggleOption(idx, optIdx, isMulti));
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        function toggleOption(qIdx, optIdx, isMulti) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const item = container.querySelectorAll('.option-item')[optIdx];
+            if (isMulti) { item.classList.toggle('selected'); }
+            else { container.querySelectorAll('.option-item').forEach(li => li.classList.remove('selected')); item.classList.add('selected'); }
+        }
+
+        function getSelectedIndices(qIdx) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const selected = [];
+            container.querySelectorAll('.option-item.selected').forEach(li => selected.push(parseInt(li.dataset.optidx)));
+            return selected.sort((a, b) => a - b);
+        }
+
+        // ========== 提交判分 ==========
+        function submitAll() {
+            let totalScore = 0;
+            choiceQuestions.forEach((q, qIdx) => {
+                const container = document.querySelectorAll('.choice-question')[qIdx];
+                const selected = getSelectedIndices(qIdx);
+                const correct = q.answer.slice().sort((a, b) => a - b);
+                const isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+                container.querySelectorAll('.option-item').forEach(li => li.classList.remove('correct', 'wrong'));
+                container.querySelector('.feedback')?.classList.remove('show');
+                q.options.forEach((opt, optIdx) => {
+                    const li = container.querySelectorAll('.option-item')[optIdx];
+                    if (correct.includes(optIdx)) li.classList.add('correct');
+                    if (selected.includes(optIdx) && !correct.includes(optIdx)) li.classList.add('wrong');
+                });
+                const feedback = container.querySelector('.feedback');
+                if (feedback) {
+                    feedback.classList.add('show');
+                    if (isCorrect) {
+                        feedback.className = 'feedback correct-feedback show';
+                        feedback.innerHTML = '✅ 回答正确！' + (q.explanation || '');
+                        totalScore += q.score || 10;
+                    } else {
+                        feedback.className = 'feedback wrong-feedback show';
+                        const correctLetters = correct.map(i => String.fromCharCode(65 + i)).join('、');
+                        feedback.innerHTML = '❌ 回答错误。正确答案：' + correctLetters + '。' + (q.explanation || '');
+                    }
+                } else { if (isCorrect) totalScore += q.score || 10; }
+            });
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const scoreNumber = document.getElementById('scoreNumber');
+            const maxScore = choiceQuestions.reduce((sum, q) => sum + (q.score || 10), 0);
+            scoreDisplay.classList.add('show');
+            scoreNumber.textContent = totalScore + '/' + maxScore + '分';
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+
+    </script>
+
+
+    <!-- 底部技术支持署名 -->
+    
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
