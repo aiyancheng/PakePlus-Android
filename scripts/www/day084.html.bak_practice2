@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第84天 | 特殊用途眼镜销售要点 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 84 天</div>
+            <h1 class="page-title">特殊用途眼镜销售要点</h1>
+            <div class="page-subtitle">模块一：产品知识 · 第12周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>84/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 23.01%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、特殊用途眼镜市场概述</h3>
+                <p>特殊用途眼镜是指针对特定场景、特定人群设计的专业眼镜，包括防护、运动、电竞、医疗等细分市场。这个市场增长迅速，利润率高，是眼镜店转型升级的重要方向。</p>
+                
+                <p><strong>1. 市场规模与增长</strong><br>
+                - <strong>全球市场</strong>：2025年特殊用途眼镜市场规模约800亿美元，年增长率8-12%<br>
+                - <strong>中国市场</strong>：2025年约600亿人民币，年增长率15-20%（高于全球）<br>
+                - <strong>细分占比</strong>：防护眼镜35%、运动眼镜30%、电竞眼镜20%、其他15%</p>
+                
+                <p><strong>2. 利润率分析</strong><br>
+                特殊用途眼镜的利润率通常比普通光学眼镜高：<br>
+                - <strong>普通光学镜</strong>：毛利率40-60%<br>
+                - <strong>防护眼镜</strong>：毛利率50-70%<br>
+                - <strong>运动眼镜</strong>：毛利率60-80%<br>
+                - <strong>电竞眼镜</strong>：毛利率70-90%</p>
+                
+                <div class="tip-box">
+                    <strong>💡 商机提醒：</strong>特殊用途眼镜市场正在从"专业小众"向"大众消费"转型。抓住这个趋势，可以吸引年轻客群，提升门店科技感和专业形象。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、各类特殊用途眼镜销售要点总结</h3>
+                
+                <p><strong>1. 老花镜调整（Day 076）</strong><br>
+                - <strong>核心卖点</strong>：专业调整服务（镜眼距、倾斜角）<br>
+                - <strong>目标客群</strong>：40+岁老花人群，尤其是首次配镜者<br>
+                - <strong>销售话术</strong>："我们不只卖镜框，更提供专业调整，确保您戴得舒服、看得清楚。"<br>
+                - <strong>成交关键</strong>：现场调整演示，让顾客感受"三贴五对称"标准</p>
+                
+                <p><strong>2. 防护眼镜（Day 077）</strong><br>
+                - <strong>核心卖点</strong>：ANSI Z87.1认证、防冲击等级<br>
+                - <strong>目标客群</strong>：工厂、实验室、建筑工地采购负责人<br>
+                - <strong>销售话术</strong>："这款通过Z87+认证，150ft/s冲击测试，能避免一次工伤赔偿。"<br>
+                - <strong>成交关键</strong>：强调认证等级、防工伤价值、批量采购+定期更换服务</p>
+                
+                <p><strong>3. 游泳镜（Day 078）</strong><br>
+                - <strong>核心卖点</strong>：防雾技术、近视度数选择<br>
+                - <strong>目标客群</strong>：近视游泳者、铁人三项爱好者<br>
+                - <strong>销售话术</strong>："游泳镜度数要减0.5-1.00D，直接按验光度数买会头晕。"<br>
+                - <strong>成交关键</strong>：现场防雾测试、推荐"隐形+平光"方案给高度数者</p>
+                
+                <p><strong>4. 滑雪护目镜（Day 079）</strong><br>
+                - <strong>核心卖点</strong>：双层镜片防雾、通风系统<br>
+                - <strong>目标客群</strong>：滑雪爱好者、滑雪教练<br>
+                - <strong>销售话术</strong>："双层镜片2-4小时不起雾，现场呼吸测试给您看。"<br>
+                - <strong>成交关键</strong>：现场呼吸测试演示防雾效果</p>
+                
+                <div class="tip-box">
+                    <strong>✅ 销售黄金法则：</strong>所有特殊用途眼镜都要"现场演示"！防护镜测防冲击、游泳镜测防雾、滑雪镜测呼吸、骑行镜测通风。演示比说辞有效10倍。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、特殊用途眼镜销售流程SOP</h3>
+                <p>特殊用途眼镜的销售流程与普通光学镜不同，需要更专业的咨询和演示。</p>
+                
+                <p><strong>1. 需求深度挖掘（5分钟）</strong><br>
+                - <strong>问场景</strong>：您主要用在什么环境？（工厂/滑雪/游泳/游戏？）<br>
+                - <strong>问频率</strong>：每周用几次？每次多久？（判断专业度需求）<br>
+                - <strong>问痛点</strong>：之前用的有什么不满意？（找改进点）<br>
+                - <strong>问预算</strong>：您大概预算多少？（筛选推荐档次）</p>
+                
+                <p><strong>2. 专业方案推荐（10分钟）</strong><br>
+                - <strong>讲原理</strong>：用简单语言解释技术原理（如防雾、防冲击）<br>
+                - <strong>讲标准</strong>：提及ANSI/EN标准，建立专业信任<br>
+                - <strong>讲对比</strong>：对比普通款与专业款的差异（表格或图示）<br>
+                - <strong>讲案例</strong>：分享类似顾客的成功案例</p>
+                
+                <p><strong>3. 现场演示验证（5分钟）</strong><br>
+                - <strong>功能演示</strong>：防雾→呼气测试；防冲击→压力测试；防雾→热水杯测试<br>
+                - <strong>佩戴体验</strong>：让顾客戴10分钟，感受重量和舒适度<br>
+                - <strong>效果对比</strong>：用仪器或APP展示防护效果（如UV测试卡）</p>
+                
+                <p><strong>4. 成交与跟进（5分钟）</strong><br>
+                - <strong>促单话术</strong>："今天订的话，我们可以提供免费调整/刻字/保养服务。"<br>
+                - <strong>增值服务</strong>：保养套餐、定期更换提醒、以旧换新<br>
+                - <strong>跟进计划</strong>：3天后电话回访使用感受，1个月后提醒保养</p>
+                
+                <div class="warn-box">
+                    <strong>❌ 常见错误：</strong>把特殊用途眼镜当普通商品卖！只讲价格不讲价值、只展示不演示、只卖产品不卖服务。这样永远只能做低价竞争。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>市场规模</strong>：2025年中国600亿，年增长15-20%，利润率60-90%</li>
+                    <li><strong>销售要点</strong>：现场演示、讲标准认证、卖服务不卖产品</li>
+                    <li><strong>销售流程</strong>：需求挖掘5分钟→方案推荐10分钟→演示验证5分钟→成交跟进5分钟</li>
+                    <li><strong>核心话术</strong>：强调"专业认证""防事故价值""现场演示效果"</li>
+                    <li><strong>增值服务</strong>：保养套餐、定期更换、以旧换新、3天回访</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 特殊用途眼镜市场中，哪个细分品类利润率最高？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 特殊用途眼镜销售流程中，哪个环节最重要？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 特殊用途眼镜销售中，哪些做法是正确的？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请设计一段针对"工厂采购负责人"的防护眼镜销售话术，要突出价值而非价格。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>"张经理，您的工人操作角磨机，火花和金属屑风险很高。普通眼镜破碎后碎片可能致盲，一旦发生工伤，赔偿+停工损失至少10万。这款3M防护镜通过ANSI Z87+认证，150ft/s冲击测试通过，而且有防雾涂层，工人戴着8小时也不会起雾。比普通防护镜贵30块，但能避免一次工伤赔偿，您算算哪个划算？我们还可以提供年度采购+定期更换服务，确保工人始终用合格装备。"
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day083.html" class="nav-arrow">← 第83天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day085.html" class="nav-arrow">第85天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持署名 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [{
+                type: 'single',
+                options: [
+                    { text: 'A. 防护眼镜（毛利率50-70%）', correct: false },
+                    , correct: false },
+                    { text: 'B. 运动眼镜（毛利率60-80%）', correct: true },
+                    , correct: false },
+                    { text: 'C. 电竞眼镜（毛利率70-90%）', correct: false },
+                    , correct: false },
+                    { text: 'D. 医疗防护（毛利率50-60%）', correct: false }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '电竞眼镜利润率最高，毛利率70-90%，因为目标客群（年轻人）对价格不敏感，更看重性能和品牌。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 需求挖掘', correct: false },
+                    , correct: false },
+                    { text: 'B. 方案推荐', correct: true },
+                    , correct: false },
+                    { text: 'C. 现场演示验证', correct: false },
+                    , correct: false },
+                    { text: 'D. 成交与跟进', correct: false }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '现场演示验证最重要！特殊用途眼镜必须"眼见为实"，演示比说辞有效10倍。顾客亲眼看到防雾/防冲击效果，才会相信你的专业推荐。'
+            },
+            
+{
+                type: 'multi',
+                options: [
+                    { text: 'A. 只讲价格优势，打价格战', correct: false },
+                    , correct: true },
+                    { text: 'B. 现场演示功能效果', correct: true },
+                    , correct: true },
+                    { text: 'C. 强调专业认证和标准', correct: false },
+                    , correct: false },
+                    { text: 'D. 提供增值服务（保养、回访）', correct: false }
+                ],
+                answer: [1, 2, 3],
+                score: 10,
+                explanation: '正确做法：现场演示、强调认证、提供增值服务。A错误：打价格战利润低，且无法建立专业形象。'
+            }
+        
+    ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
