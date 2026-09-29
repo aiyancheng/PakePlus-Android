@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第80天 | 骑行镜：空气动力学与偏光 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 80 天</div>
+            <h1 class="page-title">骑行镜：空气动力学与偏光</h1>
+            <div class="page-subtitle">模块一：产品知识 · 第12周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>80/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 21.92%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、骑行镜的空气动力学设计</h3>
+                <p>专业骑行镜不仅要保护眼睛，还要减少风阻。空气动力学设计可以节省骑行者2-5%的体力消耗。</p>
+                
+                <p><strong>1. 风阻来源分析</strong><br>
+                骑行时面部承受的风阻主要来自：<br>
+                - <strong>镜框正面</strong>：迎风面积大，产生直接阻力<br>
+                - <strong>镜腿缝隙</strong>：气流进入后产生湍流<br>
+                - <strong>镜片边缘</strong>：尖锐边缘产生风噪和阻力</p>
+                
+                <p><strong>2. 空气动力学优化方案</strong><br>
+                - <strong>流线型镜框</strong>：镜框截面呈翼型，引导气流平顺通过<br>
+                - <strong>无框/半框设计</strong>：减少迎风面积（如Oakley Jawbreaker）<br>
+                - <strong>镜腿导流槽</strong>：镜腿内侧开槽，引导气流快速通过<br>
+                - <strong>贴合面部曲线</strong>：镜框弧度与面部完美贴合，无气流进入缝隙</p>
+                
+                <div class="tip-box">
+                    <strong>⚠️ 专业提示：</strong>空气动力学设计的骑行镜价格通常比普通运动镜贵2-3倍。只有竞技骑行者才需要这种级别的专业装备，业余爱好者选择普通骑行镜即可。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、偏光技术在骑行中的应用</h3>
+                <p>骑行时路面反光、汽车玻璃反光会严重影响视线，偏光镜片是骑行者的必备选择。</p>
+                
+                <p><strong>1. 骑行中的反光问题</strong><br>
+                - <strong>路面反光</strong>：柏油路面在阳光下产生刺眼水平反光<br>
+                - <strong>汽车玻璃反光</strong>：前方车辆的后视镜、侧窗反光<br>
+                - <strong>水面反光</strong>：雨天骑行时积水路面反光<br>
+                - <strong>金属护栏反光</strong>：高速公路金属护栏强烈反光</p>
+                
+                <p><strong>2. 偏光镜片的优势</strong><br>
+                - <strong>滤除水平反光</strong>：只让垂直光线通过，消除眩光<br>
+                - <strong>提升对比度</strong>：路面细节更清晰，坑洼、碎石更容易识别<br>
+                - <strong>减轻眼疲劳</strong>：不用眯眼对抗强光，长距离骑行更舒适</p>
+                
+                <p><strong>3. 偏光骑行的注意事项</strong><br>
+                - <strong>LCD屏幕问题</strong>：偏光镜看不清楚手机导航、骑行电脑（需倾斜头部）<br>
+                - <strong>阴天效果差</strong>：阴天无强烈反光，偏光优势不明显<br>
+                - <strong>成本较高</strong>：偏光镜片比普通染色镜片贵50-100%</p>
+                
+                <div class="warn-box">
+                    <strong>❌ 重要提醒：</strong>偏光镜片会导致骑行者看不清LCD屏幕（如手机导航、Garmin骑行电脑）。如果顾客依赖电子设备导航，推荐"可更换镜片系统"（偏光+非偏光两副镜片），根据需求切换。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、骑行镜的镜片颜色选择</h3>
+                
+                <p><strong>1. 不同颜色的骑行表现</strong></p>
+                <table class="comparison-table" style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;">
+                    <thead>
+                        <tr style="background: #1677FF; color: white;">
+                            <th style="padding: 8px; border: 1px solid #ddd;">镜片颜色</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">适用场景</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">对比度</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">推荐指数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">灰色</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">全天通用、强光</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">中等</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">⭐⭐⭐⭐⭐</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">茶色</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">阴天、雾霾、树林</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">高</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">⭐⭐⭐⭐</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">黄色</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">夜晚、隧道、黎明</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">极高</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">⭐⭐⭐</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">透明</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">夜晚、雨战</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">无</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">⭐⭐</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>2. 可更换镜片系统</strong><br>
+                高端骑行镜配备多副镜片，根据天气切换：<br>
+                - <strong>Oakley Radar EV</strong>：3副镜片（灰/茶/黄）<br>
+                - <strong>100% Speedcraft</strong>：5副镜片（灰/茶/黄/透明/彩虹）<br>
+                - <strong>Shimano S-Phyre</strong>：2副镜片（偏光灰/茶色）</p>
+                
+                <p><strong>3. 销售话术示例</strong><br>
+                "您平时骑行主要在什么时间段？如果是上午和下午，灰色偏光最合适，全天候都能用。如果经常夜骑或晨骑，建议选可换镜片款，配一副黄色镜片专门晚上用。虽然贵200块，但一副顶三副，长远看更划算。"</p>
+                
+                <div class="tip-box">
+                    <strong>✅ 增值服务：</strong>提供"骑行镜保养套餐"——免费清洗镜片、更换鼻托、调整镜腿松紧。骑行者出汗多，镜腿硅胶套容易老化，半年更换一次能显著提升佩戴舒适度。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>空气动力学</strong>：流线型镜框、无框设计、镜腿导流槽，节省2-5%体力</li>
+                    <li><strong>偏光技术</strong>：滤除路面/玻璃反光，提升对比度，但看不清LCD屏幕</li>
+                    <li><strong>镜片颜色</strong>：灰色（全天）、茶色（阴天）、黄色（夜骑）、透明（雨战）</li>
+                    <li><strong>可换镜片</strong>：高端款配多副镜片，适应不同天气，性价比高</li>
+                    <li><strong>增值服务</strong>：提供保养套餐（清洗、换鼻托、调镜腿）</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 空气动力学设计的骑行镜可以节省多少体力消耗？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 偏光镜片对骑行者的主要缺点是什么？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 以下哪些情况适合推荐茶色镜片？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请为一位经常在山区骑行、需要看导航的骑行爱好者推荐合适的骑行镜方案。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>推荐可更换镜片骑行镜（如Oakley Radar EV）+灰色偏光镜片+黄色夜骑镜片。理由：1）山区骑行需要应对多变天气，可换镜片系统最灵活；2）灰色偏光适合白天强光，滤除路面反光；3）黄色镜片适合晨骑/夜骑/隧道，增强对比度；4）顾客需要看导航，偏光镜片看LCD屏幕有彩虹纹，需倾斜头部或换非偏光镜片（如黄色镜片无偏光）；5）空气动力学设计减少风阻，适合山区爬坡。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day079.html" class="nav-arrow">← 第79天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day081.html" class="nav-arrow">第81天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持署名 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [{
+                type: 'single',
+                options: [
+                    { text: 'A. 0.5-1%', correct: false },
+                    , correct: true },
+                    { text: 'B. 2-5%', correct: false },
+                    , correct: false },
+                    { text: 'C. 10-15%', correct: false },
+                    , correct: false },
+                    { text: 'D. 20%以上', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '空气动力学设计的骑行镜可以节省骑行者2-5%的体力消耗，在长距离比赛中可能决定胜负。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 重量太重', correct: false },
+                    , correct: true },
+                    { text: 'B. 看不清LCD屏幕（导航、骑行电脑）', correct: false },
+                    , correct: false },
+                    { text: 'C. 容易破碎', correct: false },
+                    , correct: false },
+                    { text: 'D. 防雾效果差', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '偏光镜片会导致LCD屏幕出现彩虹纹或完全看不清，影响骑行者查看导航和骑行数据。'
+            },
+            
+{
+                type: 'multi',
+                options: [
+                    { text: 'A. 阴天骑行', correct: true },
+                    , correct: true },
+                    { text: 'B. 雾霾天气', correct: false },
+                    , correct: false },
+                    { text: 'C. 夜晚骑行', correct: false },
+                    , correct: false },
+                    { text: 'D. 强光晴天', correct: false }
+                ],
+                answer: [0, 1],
+                score: 10,
+                explanation: '茶色镜片增强对比度，适合阴天、雾霾、树林等低对比度环境。夜晚应选黄色，强光晴天应选灰色。'
+            }
+        
+    ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
