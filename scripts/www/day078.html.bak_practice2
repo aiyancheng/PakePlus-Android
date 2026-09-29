@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第78天 | 游泳镜：防雾、近视、平光选择 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 78 天</div>
+            <h1 class="page-title">游泳镜：防雾、近视、平光选择</h1>
+            <div class="page-subtitle">模块一：产品知识 · 第12周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>78/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 21.37%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、游泳镜的防雾技术</h3>
+                <p>防雾是游泳镜的核心功能。水下温差导致镜片内壁结雾，严重影响视线。防雾技术分为物理防雾和化学防雾两大类。</p>
+                
+                <p><strong>1. 物理防雾原理</strong><br>
+                通过镜片内侧的亲水涂层或微结构，使水汽形成水膜而非水珠：<br>
+                - <strong>亲水涂层</strong>：聚氯乙烯（PVC）或聚氨酯（PU）材料本身亲水<br>
+                - <strong>微结构表面</strong>：激光蚀刻微米级凹槽，破坏水珠形成条件<br>
+                - <strong>通风设计</strong>：镜框开小孔，让空气流通（竞赛镜禁用）</p>
+                
+                <p><strong>2. 化学防雾原理</strong><br>
+                在镜片内侧涂覆表面活性剂，降低水的表面张力：<br>
+                - <strong>甘油类</strong>：最常见，效果持续2-4周<br>
+                - <strong>硅酮类</strong>：更持久，但成本高<br>
+                - <strong>纳米涂层</strong>：最新技术，效果可维持3-6个月</p>
+                
+                <p><strong>3. 防雾产品使用指南</strong><br>
+                当内置防雾失效后，可使用防雾剂：<br>
+                1. <strong>清洗镜片</strong>：用清水冲洗，勿用毛巾擦拭<br>
+                2. <strong>涂抹防雾剂</strong>：挤1-2滴在镜片内侧，用指腹均匀涂抹<br>
+                3. <strong>静置活化</strong>：等待30秒，让防雾剂充分吸附<br>
+                4. <strong>冲洗多余</strong>：用清水冲掉浮液，保留吸附层<br>
+                ❌ <strong>禁忌</strong>：禁止用唾液涂抹（含细菌，损伤涂层）！</p>
+                
+                <div class="tip-box">
+                    <strong>⚠️ 保养秘籍：</strong>每次游泳后，用清水冲洗泳镜（勿用热水），自然晾干（勿暴晒）。防雾涂层的天敌是：氯水、热水、手指擦拭。善待它，防雾效果才能持久！
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、近视游泳镜的度数选择</h3>
+                <p>近视人群在水下需要清晰的远视力，选配近视游泳镜有严格的原则。</p>
+                
+                <p><strong>1. 水下屈光力变化原理</strong><br>
+                水的折射率（1.33）与空气（1.0）不同，导致水下视物屈光力改变：<br>
+                - <strong>近视</strong>：水下"度数变浅"（约‑1.00D效应）<br>
+                - <strong>远视</strong>：水下"度数变深"（更加远视）<br>
+                - <strong>公式</strong>：F水下 ≈ F空气 × (1.33/1.0) ‑ 1.00D（简化）</p>
+                
+                <p><strong>2. 近视游泳镜选配原则</strong><br>
+                选择比验光度数<strong>低50-100度</strong>的泳镜：<br>
+                - <strong>验光‑3.00D</strong> → 选泳镜‑2.50D或‑2.00D<br>
+                - <strong>验光‑6.00D</strong> → 选泳镜‑5.00D或‑4.50D<br>
+                - <strong>验光>‑8.00D</strong>：建议配<strong>近视隐形+平光泳镜</strong></p>
+                
+                <p><strong>3. 度数选择的容错范围</strong><br>
+                水下对模糊的容忍度比陆地高：<br>
+                - <strong>±0.50D</strong>：完全可接受<br>
+                - <strong>±1.00D</strong>：轻微模糊，但不影响游泳<br>
+                - <strong>>±1.50D</strong>：明显模糊，不建议</p>
+                
+                <div class="warn-box">
+                    <strong>❌ 致命错误：</strong>直接按验光度数买游泳镜！这会导致水下过度矫正，头晕、无法聚焦。记住口诀：<strong>"游泳镜度数 = 验光度数 ‑ 0.50~1.00D"</strong>。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、平光游泳镜与光学游泳镜的选择</h3>
+                <p>根据视力情况，游泳镜分为平光（无度数）、近视、远视、散光四大类。</p>
+                
+                <p><strong>1. 平光游泳镜（Plano）</strong><br>
+                适合视力正常或轻度近视（<‑1.00D）人群：<br>
+                - <strong>优点</strong>：视野广、无畸变、价格低<br>
+                - <strong>缺点</strong>：无法矫正中度以上近视<br>
+                - <strong>推荐</strong>：休闲游泳、铁人三项（游泳段很短）</p>
+                
+                <p><strong>2. 近视游泳镜（Near‑sighted）</strong><br>
+                镜片为负度数，矫正近视：<br>
+                - <strong>成品近视镜</strong>：度数固定（‑2.00/‑3.00/‑4.00/‑5.00/‑6.00），价格便宜<br>
+                - <strong>定制近视镜</strong>：任意度数（‑1.00~‑10.00），价格高但精准<br>
+                - <strong>左右不等</strong>：可选左右不同度数（如左‑3.00右‑4.00）</p>
+                
+                <p><strong>3. 散光游泳镜（Toric）</strong><br>
+                有散光的游泳者需要：<br>
+                - <strong>轻度散光（<‑1.50D）</strong>：可忽略，用球镜代偿<br>
+                - <strong>中重度散光（>‑1.50D）</strong>：需定制Toric镜片（昂贵且罕见）<br>
+                - <strong>替代方案</strong>：配戴<strong>散光隐形眼镜 + 平光泳镜</strong></p>
+                
+                <div class="tip-box">
+                    <strong>✅ 销售技巧：</strong>遇到高度数（>‑8.00D）或高散光（>‑2.00D）顾客，不要硬推光学游泳镜！推荐"隐形眼镜 + 平光泳镜"方案，成本低、效果好、舒适度高，顾客满意度更高。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>防雾技术</strong>：物理（亲水涂层）、化学（表面活性剂）、保养（清水冲、勿擦拭）</li>
+                    <li><strong>近视选配</strong>：泳镜度数 = 验光度数 ‑ 0.50~1.00D（水下屈光力变化）</li>
+                    <li><strong>平光泳镜</strong>：适合视力正常或轻度近视，视野广、价格低</li>
+                    <li><strong>近视泳镜</strong>：成品（固定度数）或定制（精准），可选左右不等</li>
+                    <li><strong>高度数方案</strong>：隐形眼镜 + 平光泳镜（>‑8.00D或>‑2.00D散光）</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 验光‑5.00D的顾客，应该选择多少度的近视游泳镜？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 游泳镜防雾涂层失效后，正确的处理方法是什么？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 以下哪些情况适合推荐"隐形眼镜+平光泳镜"方案？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：一位‑9.00D的高度近视顾客想买游泳镜，请设计专业推荐方案并说明原因。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>推荐方案：日抛隐形眼镜（‑9.00D）+ 平光泳镜（防UV款）。原因：1）‑9.00D远超成品近视泳镜范围（通常‑6.00为止），定制价格极高（>1000元）且效果差；2）隐形眼镜水下矫正精准，视野无畸变；3）平光泳镜保护隐形眼镜不被水冲走，且防UV保护眼睛；4）日抛卫生方便，游完即弃无需保养。总成本约300-500元，性价比远高于定制近视泳镜。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day077.html" class="nav-arrow">← 第77天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day079.html" class="nav-arrow">第79天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持署名 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [{
+                type: 'single',
+                options: [
+                    { text: 'A. ‑5.00D（直接用验光度数）', correct: false },
+                    , correct: true },
+                    { text: 'B. ‑4.50D（减0.50D）', correct: false },
+                    , correct: false },
+                    { text: 'C. ‑4.00D（减1.00D）', correct: false },
+                    , correct: false },
+                    { text: 'D. ‑3.50D（减1.50D）', correct: false }
+                ],
+                answer: [1],  // -5.00 + 0.50 = -4.50 或 -5.00 + 1.00 = -4.00，选B最接近
+                score: 10,
+                explanation: '原则：泳镜度数 = 验光度数 - 0.50~1.00D。-5.00D应选-4.50D或-4.00D，选项中-4.50D最合适。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 用唾液涂抹镜片内侧', correct: false },
+                    , correct: true },
+                    { text: 'B. 用防雾剂涂抹后冲洗', correct: false },
+                    , correct: false },
+                    { text: 'C. 用毛巾用力擦拭镜片', correct: false },
+                    , correct: false },
+                    { text: 'D. 用热水冲洗镜片', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '正确处理：用防雾剂涂抹→静置30秒→清水冲掉浮液→保留吸附层。A（唾液）含细菌损伤涂层，C（擦拭）破坏涂层，D（热水）加速涂层脱落。'
+            },
+            
+{
+                type: 'multi',
+                options: [
+                    { text: 'A. 近视>‑8.00D', correct: true },
+                    , correct: true },
+                    { text: 'B. 散光>‑2.00D', correct: false },
+                    , correct: false },
+                    { text: 'C. 轻度近视‑1.00D', correct: false },
+                    , correct: false },
+                    { text: 'D. 老花+2.00D', correct: false }
+                ],
+                answer: [0, 1],
+                score: 10,
+                explanation: '高度数（>‑8.00D）或高散光（>‑2.00D）时，定制光学泳镜效果差且昂贵，隐形+平光方案更优。轻度近视无需 special 方案，老花不影响游泳（看远为主）。'
+            }
+        
+    ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
