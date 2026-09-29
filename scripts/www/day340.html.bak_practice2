@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第340天 | 协作工具：企业微信/钉钉 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 340 天</div>
+            <h1 class="page-title">协作工具：企业微信/钉钉</h1>
+            <div class="page-subtitle">模块十五：团队协作与沟通 · 第4周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>340/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 93.15%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">💬</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、协作工具的价值与选择</h3>
+                <p>企业微信和钉钉是门店协作的"数字基础设施"。没有协作工具，信息传递靠"喊"、文件共享靠"U盘"、任务跟进靠"记忆"——效率低、易出错。用好协作工具，能大幅提升团队效率。</p>
+                
+                <p><strong>1. 企业微信 vs 钉钉：选哪个？</strong><br>
+                • <strong>企业微信</strong>：优势是与个人微信互通（顾客也在用微信），适合"对外沟通+对内协作"；劣势是功能相对简单（项目管理/审批流程不如钉钉强）。<br>
+                • <strong>钉钉</strong>：优势是功能强大（项目管理/审批/打卡/视频会议全产业链）；劣势是与个人支付宝/淘宝绑定深，顾客不一定用钉钉（对外沟通不如企微）。<br>
+                • <strong>选择建议</strong>：如果顾客主要用微信→选企业微信；如果更看重内部管理功能→选钉钉；也可以"企微对外+钉钉对内"双轨运行。</p>
+                
+                <p><strong>2. 协作工具的核心价值</strong><br>
+                • <strong>信息集中</strong>：所有沟通记录都在平台上，不会"人走了，信息也走了"。 <br>
+                • <strong>任务可追踪</strong>：任务分配给谁、截止时间、完成状态，一目了然，不会"忘了"。 <br>
+                • <strong>文件可共享</strong>：产品资料、培训课件、顾客档案，都存在平台上，随时随地可查。 <br>
+                • <strong>流程可自动化</strong>：审批/打卡/汇报，都可以设置自动提醒，减少人工跟进。</p>
+                
+                <div class="tip-box">
+                    💡 <strong>实战技巧</strong>：工具是"器"，用法是"术"。企业微信和钉钉都只是工具，关键在于"怎么用"。很多门店装了企微/钉钉，但只用來"聊天"，其他功能没用起来——这就浪费了。要全面启用核心功能（任务/文件/审批/会议），才能真正提升效率。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、企业微信的核心功能与使用</h3>
+                <p>企业微信是门店协作的常用工具。以下是核心功能及使用要点：</p>
+                
+                <p><strong>1. 沟通功能：群聊+单聊</strong><br>
+                • <strong>外部群</strong>：可以拉顾客进来（顾客用个人微信即可），适合"顾客服务群"（比如：配镜跟进群、售后跟进群）。 <br>
+                • <strong>内部群</strong>：门店群、部门群、项目群，适合"工作讨论"。 <br>
+                • <strong>群公告</strong>：重要通知要发"群公告"（所有人必须看，且能查看已读/未读）。 <br>
+                • <strong>群待办</strong>：把任务发到群里，标记"待办"，成员完成后标记"已完成"，避免遗漏。</p>
+                
+                <p><strong>2. 客户联系功能：顾客档案管理</strong><br>
+                • <strong>添加顾客为联系人</strong>：销售可以添加顾客为"企业微信联系人"，查看顾客档案、发送消息、打标签。 <br>
+                • <strong>顾客标签</strong>：给顾客打标签（如"高潜力""已成交""需跟进"），便于分类管理和群发消息。 <br>
+                • <strong>欢迎语</strong>：设置自动欢迎语（顾客加好友后自动发送），提升专业感。 <br>
+                • <strong>聊天侧边栏</strong>：聊天时右侧显示顾客档案（历史购买/服务记录），不用切换系统。</p>
+                
+                <p><strong>3. 会议功能：视频会议+直播</strong><br>
+                • <strong>视频会议</strong>：支持多人视频，适合"跨店会议""培训会议"。 <br>
+                • <strong>屏幕共享</strong>：可以共享屏幕（演示PPT/系统操作），适合"远程培训""远程指导"。 <br>
+                • <strong>会议录制</strong>：会议可以录制，会后发给没参会的员工，或作为培训资料留存。</p>
+                
+                <p><strong>4. 审批功能：请假/报销/出库</strong><br>
+                • <strong>请假审批</strong>：员工提交请假申请→店长审批→HR备案，全程在线上，不用纸质单。 <br>
+                • <strong>报销审批</strong>：员工提交报销申请（附发票照片）→店长审批→财务付款，全程可追踪。 <br>
+                • <strong>出库审批</strong>：仓库出库商品，需要在系统提交"出库申请"→店长审批→仓库执行，避免"随便拿货"。</p>
+                
+                <div class="warn-box">
+                    ⚠️ <strong>注意事项</strong>：企业微信的"客户联系"功能需要"认证企业"才能用（个人版不能用）。门店要提前完成企业认证（提交营业执照/对公账户验证），才能添加顾客为联系人。否则只能用"外部群"功能（顾客用个人微信进群，但不算"客户联系"）。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、钉钉的核心功能与使用</h3>
+                <p>钉钉的功能比企业微信更丰富，特别适合"内部管理"。以下是核心功能及使用要点：</p>
+                
+                <p><strong>1. 沟通功能：已读/未读+DING</strong><br>
+                • <strong>已读未读</strong>：消息发送后，可以看到谁已读谁未读，避免"发了但不知道对方看没看"。 <br>
+                • <strong>DING一下</strong>：重要消息可以"DING"（对方会收到电话/短信提醒），确保对方看到。适合"紧急通知"。 <br>
+                • <strong>钉钉打卡</strong>：支持WiFi打卡/GPS打卡/人脸识别打卡，自动生成考勤报表，不用手动统计。</p>
+                
+                <p><strong>2. 项目功能：任务分配+进度跟踪</strong><br>
+                • <strong>创建项目</strong>：可以为"门店装修""促销活动""培训计划"创建项目，邀请相关人员加入。 <br>
+                • <strong>任务分配</strong>：项目下创建任务，分配给具体人员，设置截止时间、优先级、子任务。 <br>
+                • <strong>进度跟踪</strong>：项目看板显示所有任务状态（未开始/进行中/已完成/已逾期），一目了然。 <br>
+                • <strong>项目文档</strong>：项目相关资料（合同/图纸/方案）都存在项目空间，随时可查。</p>
+                
+                <p><strong>3. 审批功能：更丰富的审批模板</strong><br>
+                • <strong>自定义审批</strong>：钉钉支持自定义审批模板（企业微信的审批模板相对固定），门店可以设计自己的审批流程（如"镜片出库审批""顾客投诉处理审批"）。 <br>
+                • <strong>审批数据</strong>：审批数据可以导出Excel，用于分析（如"哪类审批最多？""平均审批时长？"）。</p>
+                
+                <p><strong>4. 日历功能：会议安排+提醒</strong><br>
+                • <strong>创建日程</strong>：可以为"店长会议""培训安排""顾客回访"创建日程，邀请相关人员，设置提醒。 <br>
+                • <strong>日历共享</strong>：团队成员可以看彼此的日历，避免"约会议时间冲突"。 <br>
+                • <strong>会议链接</strong>：日程可以附加"视频会议链接"（钉钉自带），一键发起会议。</p>
+                
+                <div class="tip-box">
+                    💡 <strong>实战技巧</strong>：钉钉的"项目"功能特别适合"跨门店协作"——比如区域经理要推动"所有门店完成库存盘点"，可以创建一个"库存盘点项目"，给每个门店店长分配任务，实时看进度。这比"微信群里催进度"高效多了！
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>四、协作工具使用中的常见问题与解决</h3>
+                <p>协作工具使用过程中经常出现问题，提前识别并准备解决方案，才能让工具真正发挥作用。</p>
+                
+                <p><strong>问题1：员工不用协作工具（还是用微信/电话）</strong><br>
+                <strong>原因</strong>：员工觉得"企微/钉钉不方便"，或者"习惯了微信，不想换"。 <br>
+                <strong>解决</strong>：①强制使用（规定"工作沟通必须用企微/钉钉，不能用个人微信"）②培训使用（教会员工怎么用，特别是"不方便"的点怎么解决）③激励使用（用得好的员工给奖励，不用的给批评）。</p>
+                
+                <p><strong>问题2：群里消息太多，重要信息被淹没</strong><br>
+                <strong>原因</strong>：群里有人闲聊、发广告、说与工作无关的话，导致重要通知被刷屏。 <br>
+                <strong>解决</strong>：①群规明确（规定"禁言时间""话题范围"，违反者移出群）②使用"群公告"（重要通知发群公告，不用普通消息）③使用"群待办"（任务发群待办，不依赖群聊）。</p>
+                
+                <p><strong>问题3：任务分配了，但没人跟进（工具成了摆设）</strong><br>
+                <strong>原因</strong>：任务分配后，员工忘了，或者"看不到任务"。 <br>
+                <strong>解决</strong>：①设置"任务提醒"（系统在任务截止前1天/1小时自动提醒）②定期"任务复盘"（每周例会看"哪些任务逾期了？为什么？"）③"任务考核"（任务完成情况纳入绩效考核，影响奖金）。</p>
+                
+                <p><strong>问题4：信息太多，员工"信息过载"（焦虑）</strong><br>
+                <strong>原因</strong>：员工加入了太多群、收到太多消息，不知道哪些重要、哪些不重要，导致焦虑。 <br>
+                <strong>解决</strong>：①"群精简"（只保留必要的群，退出无关群）②"消息免打扰"（非紧急群设置免打扰，有空再看）③"重要消息标记"（重要消息标记"星标"，优先处理）。</p>
+                
+                <div class="warn-box">
+                    ⚠️ <strong>警告</strong>：协作工具是"双刃剑"——用得好提升效率，用不好变成"数字牢笼"（员工24小时在线，焦虑不堪）。门店要规定"离线时间"（如下班后可以不回消息，除非紧急），保护员工工作生活平衡。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>工具选择</strong>：顾客用微信多→企业微信；看重内部管理→钉钉；也可"企微对外+钉钉对内"</li>
+                    <li><strong>企微核心功能</strong>：沟通（外部群/内部群/群公告/群待办）、客户联系（添加顾客/标签/欢迎语/侧边栏）、会议（视频/共享/录制）、审批（请假/报销/出库）</li>
+                    <li><strong>钉钉核心功能</strong>：沟通（已读未读/DING/打卡）、项目（任务分配/进度跟踪/项目文档）、审批（自定义模板/数据导出）、日历（日程/共享/会议链接）</li>
+                    <li><strong>常见问题</strong>：员工不用/群消息太多/任务无人跟进/信息过载——每个问题都有解决方案</li>
+                    <li><strong>使用原则</strong>：工具是"器"，用法是"术"；要全面启用核心功能；要规定"离线时间"保护员工</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 企业微信和钉钉的主要区别是什么？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 关于企业微信的"客户联系"功能，以下说法正确的是？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 如果员工不用协作工具（还是用个人微信沟通），最有效的解决方案是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请比较企业微信和钉钉在"沟通功能""项目管理""审批功能"三个方面的异同，并说明各自适合什么场景？</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" onclick="showReference('essayBtnref1', 'ref1')">查看参考答案</button>
+                <div class="reference-answer" id="ref1">
+                    <strong>参考答案：</strong><br>
+                    <strong>沟通功能</strong>：企业微信优势是"外部沟通"（顾客用个人微信即可，不需要装企微）；钉钉优势是"已读未读+DING"（确保消息送达，适合内部管理）。<br><br>
+                    <strong>项目管理</strong>：企业微信的项目功能相对简单；钉钉的项目功能强大（任务分配/进度跟踪/项目文档/看板视图），适合复杂项目（跨门店协作/促销活动）。<br><br>
+                    <strong>审批功能</strong>：企业微信审批模板相对固定；钉钉支持自定义审批模板，更灵活。<br><br>
+                    <strong>适用场景</strong>：企业微信适合"对外沟通为主"的门店（顾客主要用微信）；钉钉适合"内部管理为主"的门店（需要强项目管理/审批流程）。也可以"企微对外+钉钉对内"双轨运行。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交并查看成绩</button>
+            </div>
+
+            <!-- 成绩显示 -->
+            <div class="score-display" id="scoreDisplay" style="display:none;">
+                <div class="score-number" id="scoreNumber">0</div>
+                <div class="score-label">您的得分</div>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="nav-bottom">
+            <a href="day339.html" class="nav-arrow">← 第339天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day341.html" class="nav-arrow">第341天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [
+            {
+                type: "single",
+                options: [
+                    { text: "A. 企业微信功能更强大，钉钉功能更简单", correct: false },
+                    { text: "B. 企业微信适合对外沟通（顾客用微信），钉钉适合内部管理（功能强大）", correct: true },
+                    { text: "C. 企业微信和钉钉完全一样，没区别", correct: false },
+                    { text: "D. 企业微信免费，钉钉收费", correct: false }
+                ],
+                explanation: "企业微信的优势是与个人微信互通（顾客也在用微信），适合'对外沟通+对内协作'；钉钉的优势是功能强大（项目管理/审批流程/打卡/视频会议全产业链），适合'内部管理'。两者定位不同，不是谁好谁坏的问题。"
+            },
+            {
+                type: "multi",
+                options: [
+                    { text: "A. 添加顾客为联系人前，需要完成企业认证", correct: true },
+                    { text: "B. 可以给顾客打标签（如'高潜力''已成交'），便于分类管理", correct: true },
+                    { text: "C. 聊天时右侧可以显示顾客档案（历史购买/服务记录）", correct: true },
+                    { text: "D. 顾客必须用企业微信才能被添加为联系人", correct: false }
+                ],
+                explanation: "A正确：企业微信的'客户联系'功能需要认证企业才能用。B正确：顾客标签是核心功能，便于分类管理。C正确：聊天侧边栏显示顾客档案，是企微的独特优势。D错误：顾客用个人微信即可（不需要装企微），这是企微的优势。"
+            },
+            {
+                type: "single",
+                options: [
+                    { text: "A. 不管员工，让他们自己选择用不用", correct: false },
+                    { text: "B. 强制使用+培训使用+激励使用（用得好奖励，不用批评）", correct: true },
+                    { text: "C. 取消个人微信，只允许用企微/钉钉", correct: false },
+                    { text: "D. 不管了，员工爱用啥用啥", correct: false }
+                ],
+                explanation: "最有效的解决方案是：强制使用（规定'工作沟通必须用企微/钉钉'）+培训使用（教会员工怎么用）+激励使用（用得好的奖励，不用的批评）。不能'不管'，否则员工会继续用个人微信，协作工具成了摆设。"
+            }
+        ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // 显示参考答案
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            if (answerDiv.style.display === 'block') {
+                answerDiv.style.display = 'none';
+                btn.textContent = '查看参考答案';
+            } else {
+                answerDiv.style.display = 'block';
+                btn.textContent = '隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
