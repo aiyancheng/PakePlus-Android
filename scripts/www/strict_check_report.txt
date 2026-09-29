@@ -1,0 +1,24 @@
+day009.html	009	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices
+day010.html	010	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices
+day117.html	117	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices
+day118.html	118	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices
+day154.html	154	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+day155.html	155	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+day156.html	156	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+day157.html	157	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, submitAll, showReference
+day158.html	158	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+day159.html	159	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+day160.html	160	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+day161.html	161	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+day176.html	176	缺少标准JavaScript函数: initChoiceQuestions, toggleOption, getSelectedIndices, submitAll, showReference
+day178.html	178	缺少标准JavaScript函数: showReference
+day179.html	179	缺少标准JavaScript函数: showReference
+day180.html	180	缺少标准JavaScript函数: showReference
+day181.html	181	缺少标准JavaScript函数: showReference
+day182.html	182	缺少标准JavaScript函数: showReference
+day183.html	183	缺少标准JavaScript函数: showReference
+day184.html	184	缺少标准JavaScript函数: showReference
+day185.html	185	缺少标准JavaScript函数: showReference
+day186.html	186	缺少标准JavaScript函数: showReference
+day187.html	187	缺少标准JavaScript函数: showReference
+day188.html	188	缺少标准JavaScript函数: showReference
