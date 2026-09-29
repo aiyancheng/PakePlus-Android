@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第79天 | 滑雪护目镜：双层镜片与通风 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 79 天</div>
+            <h1 class="page-title">滑雪护目镜：双层镜片与通风</h1>
+            <div class="page-subtitle">模块一：产品知识 · 第12周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>79/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 21.64%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、滑雪护目镜的特殊环境挑战</h3>
+                <p>滑雪环境对护目镜有极高要求：低温（-20°C以下）、强紫外线（雪地反射）、高速风雪、温差导致起雾。专业滑雪护目镜必须解决"防雾+保暖+视野"三大难题。</p>
+                
+                <p><strong>1. 雪地环境的光学挑战</strong><br>
+                - <strong>紫外线强度</strong>：雪地反射90% UV，是海边的1.5倍，易致"雪盲症"<br>
+                - <strong>亮度过高</strong>：白雪反射强光，导致视疲劳、流泪<br>
+                - <strong>对比度低</strong>：阴天雪地一片白茫茫，难以判断地形起伏</p>
+                
+                <p><strong>2. 体温与环境温差问题</strong><br>
+                面部温度30°C，环境温度-20°C，温差50°C：<br>
+                - <strong>起雾机制</strong>：呼气+面部湿气→遇冷镜片→凝结成雾<br>
+                - <strong>通风需求</strong>：必须让湿气排出，但不能进冷风<br>
+                - <strong>保暖需求</strong>：不能让-20°C冷风直吹面部</p>
+                
+                <div class="tip-box">
+                    <strong>⚠️ 专业提示：</strong>滑雪护目镜不能单独使用！必须配合滑雪头盔，且护目镜上缘要与头盔下缘紧密贴合，否则冷风会从缝隙灌入，导致面部冻伤。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、双层镜片技术解析</h3>
+                <p>双层镜片是滑雪护目镜的核心技术，通过"空气隔热层"实现防雾+保暖双重功能。</p>
+                
+                <p><strong>1. 双层镜片结构</strong><br>
+                由外镜片、空气层、内镜片三部分组成：<br>
+                - <strong>外镜片</strong>：硬质材料（PC或Trivex），防撞击、防紫外线<br>
+                - <strong>空气层</strong>：厚度8-12mm，隔热+防雾（类似双层玻璃窗原理）<br>
+                - <strong>内镜片</strong>：柔软材料（PU或软PC），防雾涂层+贴合面部</p>
+                
+                <p><strong>2. 防雾原理</strong><br>
+                双层镜片防雾靠"温度隔离+空气流通"：<br>
+                - <strong>温度隔离</strong>：外镜片冷（-20°C），内镜片温度接近体温，不结雾<br>
+                - <strong>空气流通</strong>：镜片间有通风道，湿气可从上部排出<br>
+                - <strong>防雾涂层</strong>：内镜片内侧涂亲水涂层，即使有湿气也成膜不结雾</p>
+                
+                <p><strong>3. 单层 vs 双层对比</strong></p>
+                <table class="comparison-table" style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;">
+                    <thead>
+                        <tr style="background: #1677FF; color: white;">
+                            <th style="padding: 8px; border: 1px solid #ddd;">特性</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">单层镜片</th>
+                            <th style="padding: 8px; border: 1px solid #ddd;">双层镜片</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">防雾效果</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">差（5-10分钟起雾）</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">优（2-4小时不起雾）</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">保暖性</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">差（冷风直吹眼睛）</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">优（空气层隔热）</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">重量</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">轻（80-100g）</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">重（120-150g）</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">价格</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">低（200-500元）</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">高（800-3000元）</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="warn-box">
+                    <strong>❌ 重要提醒：</strong>双层镜片护目镜绝对不能用于"高速俯冲"（>80km/h）！风压可能压扁空气层，导致镜片变形甚至破裂。高速竞技请选单层竞技镜。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、通风系统设计</h3>
+                <p>通风是滑雪护目镜防雾的关键，但通风设计必须平衡"排湿"与"保暖"。</p>
+                
+                <p><strong>1. 通风口布局</strong><br>
+                专业护目镜有多个通风口：<br>
+                - <strong>上通风口</strong>：顶部（额头位置），排出热气（热气上升原理）<br>
+                - <strong>下通风口</strong>：底部（鼻梁位置），进新鲜空气<br>
+                - <strong>侧通风口</strong>：两侧（鬓角位置），辅助对流</p>
+                
+                <p><strong>2. 通风控制技术</strong><br>
+                高端护目镜有可调节通风：<br>
+                - <strong>手动调节</strong>：滑杆控制通风口开合（如Oakley Flight Deck）<br>
+                - <strong>自动调节</strong>：温度传感器自动控制（如Smith I/O Mag）<br>
+                - <strong>固定通风</strong>：低端款无法调节，靠物理设计</p>
+                
+                <p><strong>3. 通风与防雾的平衡</strong><br>
+                通风太强→冷风灌入→面部冻伤；通风太弱→湿气排不出→起雾：<br>
+                - <strong>最佳方案</strong>：上进下出+间接通风（有遮挡不直接吹脸）<br>
+                - <strong>使用技巧</strong>：上坡慢速时开大通风，下坡快速时关小通风</p>
+                
+                <div class="tip-box">
+                    <strong>✅ 销售技巧：</strong>向顾客演示"呼吸测试"：戴上护目镜，用力呼气，如果镜片不起雾，说明通风设计好。当场测试比任何说辞都有说服力！
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>环境挑战</strong>：UV强度是海边1.5倍、温差50°C、易起雾</li>
+                    <li><strong>双层镜片</strong>：外镜片（防撞）+空气层（隔热）+内镜片（防雾）</li>
+                    <li><strong>防雾原理</strong>：温度隔离+空气流通+防雾涂层，2-4小时不起雾</li>
+                    <li><strong>通风设计</strong>：上进下出+间接通风，可手动/自动调节</li>
+                    <li><strong>销售演示</strong>：“呼吸测试”当场验证防雾效果</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 雪地环境的紫外线强度是海边的多少倍？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 双层镜片滑雪护目镜的防雾时长约为？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 滑雪护目镜通风口的最佳布局是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请为一位初次滑雪的顾客推荐滑雪护目镜，并说明理由。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>推荐双层镜片护目镜（防雾2-4小时）+柱面镜片（视野宽）+可调节通风+茶色镜片（阴天清晰）。理由：1）初次滑雪易出汗，双层镜片防雾效果好；2）柱面镜片左右视野宽，易观察周围滑雪者；3）可调节通风适应上坡/下坡不同速度；4）茶色镜片增强对比度，阴天也能看清雪地起伏。预算1000-1500元可选Smith Range或Oakley Line Miner。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day078.html" class="nav-arrow">← 第78天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day080.html" class="nav-arrow">第80天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持署名 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [{
+                type: 'single',
+                options: [
+                    { text: 'A. 相同', correct: false },
+                    , correct: false },
+                    { text: 'B. 1.2倍', correct: true },
+                    , correct: false },
+                    { text: 'C. 1.5倍', correct: false },
+                    , correct: false },
+                    { text: 'D. 2倍', correct: false }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '雪地反射90% UV，是海边的1.5倍。海边沙滩反射约60% UV。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 30分钟', correct: false },
+                    , correct: false },
+                    { text: 'B. 1小时', correct: true },
+                    , correct: false },
+                    { text: 'C. 2-4小时', correct: false },
+                    , correct: false },
+                    { text: 'D. 8小时', correct: false }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '双层镜片护目镜通过温度隔离+空气流通+防雾涂层，可实现2-4小时不起雾。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 下进上出', correct: false },
+                    , correct: true },
+                    { text: 'B. 上进下出', correct: false },
+                    , correct: false },
+                    { text: 'C. 前进后出', correct: false },
+                    , correct: false },
+                    { text: 'D. 后进前出', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '正确布局是"上进下出"：顶部排出热气（热气上升），底部进新鲜空气，形成对流。'
+            }
+        
+    ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
