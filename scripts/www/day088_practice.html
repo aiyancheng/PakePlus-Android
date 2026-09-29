@@ -1,0 +1,75 @@
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+            
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 当顾客说"网上比你们便宜很多"时，最佳应对方法是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 竞品对比时，最重要的禁忌是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 价格谈判中，应该避免的做法是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 请设计一个"竞品对比"的实战训练方案，包括训练目标、方法、评判标准。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong><br>
+                    <strong>"竞品对比"实战训练方案</strong><br><br>
+                    <strong>训练目标：</strong>让新员工掌握竞品对比的正确方法，避免常见错误。<br><br>
+                    <strong>训练方法：</strong><br><br>
+                    <strong>第一步：理论学习（1天）</strong><br>
+                    学习竞品对比的原则、禁忌、话术。<br><br>
+                    <strong>第二步：角色扮演（3天）</strong><br>
+                    老员工扮演顾客，提出竞品对比问题，新员工应对。<br><br>
+                    <strong>第三步：实战观察（1周）</strong><br>
+                    观察老员工如何处理竞品对比，记录要点。<br><br>
+                    <strong>评判标准：</strong><br>
+                    - 不贬低竞品<br>
+                    - 突出自身优势<br>
+                    - 用数据说话
+                </div>
+            </div>
+
+            <!-- 问答题2 -->
+            <div class="essay-question">
+                <div class="question-text">5. 描述一个你遇到的"价格谈判"案例，当时你是如何处理的？如果重来，你会如何改进？</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn2" onclick="showReference('essayBtn2', 'essayAnswer2')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer2">
+                    <strong>参考答案：</strong><br>
+                    （开放式问题，无标准答案。以下是示例回答）<br><br>
+                    <strong>我的案例：</strong><br>
+                    一位顾客说"网上只要500元，你们要800元"，我当时直接说"网上质量不好"。顾客不高兴走了。<br><br>
+                    <strong>改进方案：</strong><br>
+                    如果重来，我会："您在网上看到的是哪款？我帮您对比一下。我们这里是正品保证，售后有保障..."
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-section">
+                <button class="submit-btn" onclick="submitAll()">📝 提交全部答案</button>
+                <div class="score-display" id="scoreDisplay">
+                    <span>您的得分：</span>
+                    <span class="score-number" id="scoreNumber">0/30分</span>
+                </div>
+            </div>
+        </div>
