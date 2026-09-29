@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第334天 | 交接班管理：信息不遗漏 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 334 天</div>
+            <h1 class="page-title">交接班管理：信息不遗漏</h1>
+            <div class="page-subtitle">模块十五：团队协作与沟通 · 第2周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>334/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 91.51%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">🔄</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、交接班管理的重要性</h3>
+                <p>交接班是门店运营的"薄弱环节"——早班员工下班，晚班员工接手，如果信息交接不清，就会出现"顾客来了没人管""订单状态不清楚""顾客投诉没人跟进"等问题。</p>
+                
+                <p><strong>1. 交接班失误的后果</strong><br>
+                • <strong>顾客体验差</strong>：早班接待的顾客，晚班不知道情况，顾客重复说明（浪费时间+感觉不被重视）<br>
+                • <strong>订单延误</strong>：早班下的订单，晚班忘记跟进，导致交货延期<br>
+                • <strong>投诉处理中断</strong>：早班处理的投诉，晚班不知道进展，顾客再次投诉时无人回应<br>
+                • <strong>库存错误</strong>：早班销售的库存，晚班不知道已扣减，导致超卖</p>
+                
+                <p><strong>2. 交接班管理的目标</strong><br>
+                "让晚班员工像早班员工一样了解门店状态"——顾客情况、订单状态、投诉进展、库存变化，都要清清楚楚地交接。交接班不是"说再见"，而是"传递责任"。</p>
+                
+                <div class="tip-box">
+                    💡 <strong>案例分享</strong>：某门店因交接班不清，导致一位顾客的渐进片订单延误了3天，顾客投诉到总部。事后发现：早班销售下了订单，但忘记在交接本上记录，晚班不知道有这个订单，没人跟进。这个事故让门店赔偿了顾客2000元，还影响了品牌声誉。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、交接班的标准流程</h3>
+                <p>交接班要遵循"书面交接+口头说明+确认无误"的标准流程。不能只靠"口头说"，必须"写下来"。</p>
+                
+                <p><strong>步骤1：早班员工填写交接本（下班前30分钟）</strong><br>
+                早班员工在下班前30分钟，开始填写"交接本"（纸质或电子）。交接本要记录以下内容：<br>
+                • <strong>顾客情况</strong>：今天接待了哪些重要顾客？有哪些未成交顾客？有哪些投诉顾客？<br>
+                • <strong>订单状态</strong>：今天下了哪些订单？哪些已付款？哪些待付款？哪些待发货？<br>
+                • <strong>投诉进展</strong>：今天处理了哪些投诉？进展如何？需要晚班跟进什么？<br>
+                • <strong>库存变化</strong>：今天销售了哪些商品？库存还剩多少？有哪些商品快断货了？<br>
+                • <strong>设备状况</strong>：验光设备是否正常？维修工具是否齐全？有什么需要晚班注意的？</p>
+                
+                <p><strong>步骤2：早班店长审核交接本（下班前15分钟）</strong><br>
+                早班店长要审核交接本：信息是否完整？有没有遗漏？重要事项是否突出了？审核完后签字确认。<br>
+                <strong>审核要点</strong>：①是否有"紧急事项"（需要晚班立即处理）②是否有"待跟进事项"（需要晚班持续跟进）③是否有"异常事项"（库存异常、设备异常、顾客异常）</p>
+                
+                <p><strong>步骤3：早晚班面对面交接（下班时，10-15分钟）</strong><br>
+                早班员工（特别是店长）要和晚班员工（特别是店长）面对面交接：早班口头说明交接本上的重点事项，晚班确认理解无误。<br>
+                <strong>交接话术</strong>："李店长，今天有几个重要事项跟您交待一下：第一，张阿姨的渐进片订单，已经下了，供应商说明天到货，您明天记得跟进一下；第二，王先生的投诉（镜片脱膜），我已经联系了供应商，他们说后天回复，您帮忙盯一下；第三，依视路1.56的库存只剩3副了，您看看要不要补货。"</p>
+                
+                <p><strong>步骤4：晚班员工确认并签字（交接完成后）</strong><br>
+                晚班员工确认理解无误后，在交接本上签字："已交接，确认无误"。签字代表"责任转移"——从这一刻起，门店运营的责任由晚班承担。<br>
+                <strong>重要提醒</strong>：如果晚班发现交接不清（有遗漏或错误），要立即提出，让早班补充或更正，不能"签了再说"。</p>
+                
+                <p><strong>步骤5：晚班员工执行并跟进（接班后）</strong><br>
+                晚班员工根据交接本的内容，执行和跟进相关事项。如果有新问题，要记录在交接本上，留给明天早班。<br>
+                <strong>跟进要点</strong>：晚班要"主动跟进"，不能等事情找上门。比如：交接本说"张阿姨的订单明天到货"，晚班第二天上午要主动联系供应商确认"到货了没？"</p>
+                
+                <div class="warn-box">
+                    ⚠️ <strong>注意事项</strong>：交接班最忌讳"交接本流于形式"——早班随便写几句，晚班随便签个字，结果重要事项被遗漏。交接本要"写得详细、看得明白、跟得彻底"，才能发挥作用。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、交接本的标准格式</h3>
+                <p>交接本是交接班的"书面凭证"，格式要规范、内容要完整。以下是交接本的标准格式模板：</p>
+                
+                <p><strong>【交接本模板】</strong></p>
+                <div style="background:#f5f5f5; padding:15px; border-radius:8px; font-family:monospace; font-size:14px; line-height:1.8;">
+                    <strong>日期：2026年5月25日（星期一）</strong><br>
+                    <strong>早班人员：</strong>张三（销售）、李四（验光师）、王五（店长）<br>
+                    <strong>晚班人员：</strong>赵六（销售）、钱七（验光师）、孙八（店长）<br><br>
+                    
+                    <strong>一、重要顾客情况</strong><br>
+                    1. 张阿姨（138xxxx1234）：今天来试戴镜框，看中一款钛合金的，价格1800元，说要跟女儿商量，明天回复。需要晚班明天电话跟进。<br>
+                    2. 李先生（139xxxx5678）：今天来修眼镜，镜腿断裂，我们免费换了镜腿。顾客很满意，可能介绍朋友来。<br><br>
+                    
+                    <strong>二、订单状态</strong><br>
+                    1. 订单号20260525001：张女士，依视路1.56防蓝光，金额1280元，已付款，待发货（供应商说明天到货）。<br>
+                    2. 订单号20260525002：王先生，蔡司1.67变色片，金额2680元，已付款，待发货（供应商说3天到货）。<br><br>
+                    
+                    <strong>三、投诉处理进展</strong><br>
+                    1. 刘女士投诉（镜片脱膜）：已联系供应商，对方说2天后回复。需要晚班跟进。<br>
+                    2. 陈先生投诉（镜框掉色）：已答应换新品，新品明天到货，需要晚班通知顾客来换。<br><br>
+                    
+                    <strong>四、库存变化</strong><br>
+                    1. 依视路1.56库存：早班销售5副，剩余3副（预警：低于安全库存5副）。<br>
+                    2. 蔡司1.67库存：早班销售2副，剩余8副（正常）。<br><br>
+                    
+                    <strong>五、设备状况</strong><br>
+                    1. 综合验光仪：正常，但右眼镜片有点松动，需要晚班注意。<br>
+                    2. 焦度计：正常。<br><br>
+                    
+                    <strong>早班交接人签字：</strong>_________ <strong>时间：</strong>18:00<br>
+                    <strong>晚班接收人签字：</strong>_________ <strong>时间：</strong>18:10<br>
+                    <strong>早班店长审核签字：</strong>_________ <strong>时间：</strong>17:50
+                </div>
+                
+                <div class="tip-box">
+                    💡 <strong>实战技巧</strong>：交接本可以用"电子表格"或"企业微信文档"代替纸质本，这样晚班可以在手机上查看，还能搜索历史记录。但要注意：电子版也要有"签字确认"功能（比如电子签名或确认按钮），否则法律责任不清。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>四、交接班中的常见问题与解决</h3>
+                <p>交接班中经常出现问题，提前识别并准备解决方案，才能确保交接质量。</p>
+                
+                <p><strong>问题1：早班员工忘记填写交接本（太忙了）</strong><br>
+                <strong>原因：</strong>早班下班前太忙（正好有顾客来），忘记填交接本，直接下班了。<br>
+                <strong>解决：</strong>①"交接本填写时间固定化"——早班员工下午5:30（下班前30分钟）必须开始填交接本，不管多忙（可以让晚班先来帮忙）②"交接本填写提醒"——系统每天下午5:30自动发消息提醒"请填写交接本"③"店长监督"——早班店长负责监督交接本填写，没填完不让下班。</p>
+                
+                <p><strong>问题2：交接本写得太简略（晚班看不懂）</strong><br>
+                <strong>原因：</strong>早班员工嫌麻烦，只写"有顾客投诉""有订单要跟进"，不写具体内容。<br>
+                <strong>解决：</strong>①"交接本格式标准化"（用模板，每项都要填）②"交接本质量考核"（晚班给早班评分：交接是否清楚？有没有遗漏？）③"交接本抽查"（区域经理每周抽查交接本，发现不合格的要整改）。</p>
+                
+                <p><strong>问题3：晚班员工不认真看交接本（以为不重要）</strong><br>
+                <strong>原因：</strong>晚班员工觉得"交接本都是废话"，不认真看，结果漏掉重要事项。<br>
+                <strong>解决：</strong>①"交接本必读制度"——晚班接班后第一件事：读交接本，并在"已读"栏签字②"交接本问答"——晚班店长要问晚班员工"交接本上说今天有哪些重要事项？"答不出来要重读③"交接本失误追责"——如果晚班因为没看交接本导致失误，要承担责任。</p>
+                
+                <p><strong>问题4：交接本丢了/坏了（无法追溯历史）</strong><br>
+                <strong>原因：</strong>纸质交接本容易丢、容易坏（水洒了、撕破了），电子版如果没备份也会丢。<br>
+                <strong>解决：</strong>①"交接本双备份"——纸质本+电子版（每天下班前扫描纸质本上传到云盘）②"交接本归档"——每月把交接本归档到档案柜，保存至少1年（应对顾客投诉追溯）③"交接本电子化"——直接用电子交接本（企业微信文档/钉钉文档），自动保存历史版本。</p>
+                
+                <div class="warn-box">
+                    ⚠️ <strong>警告</strong>：交接本是法律凭证——如果顾客投诉"你们没给我打电话"，交接本上写了"已电话联系顾客，无人接听"，就是证据。所以交接本一定要"写清楚、保存好"，不能马虎！
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>交接班重要性</strong>：避免顾客体验差、订单延误、投诉中断、库存错误</li>
+                    <li><strong>交接流程</strong>：早班填交接本→早班店长审核→面对面交接→晚班确认签字→晚班执行跟进</li>
+                    <li><strong>交接本内容</strong>：顾客情况、订单状态、投诉进展、库存变化、设备状况——5项缺一不可</li>
+                    <li><strong>交接本标准</strong>：格式规范、内容完整、签字确认、双备份归档</li>
+                    <li><strong>常见问题</strong>：忘记填写、写得太简略、不认真看、丢失损坏——每个问题都有解决方案</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 交接班管理的核心目标是什么？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 关于交接本的内容，以下哪些是必须记录的？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 如果晚班员工发现交接本有重要事项遗漏，应该怎么做？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请描述交接班的"五步流程"，并说明每一步的关键动作和注意事项。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" onclick="showReference('essayBtnref1', 'ref1')">查看参考答案</button>
+                <div class="reference-answer" id="ref1">
+                    <strong>参考答案：</strong><br>
+                    <strong>步骤1：早班填写交接本（下班前30分钟）</strong><br>
+                    关键动作：记录顾客情况、订单状态、投诉进展、库存变化、设备状况<br>
+                    注意事项：不能太简略，要写清楚具体内容<br><br>
+                    <strong>步骤2：早班店长审核（下班前15分钟）</strong><br>
+                    关键动作：检查信息是否完整、突出紧急事项和待跟进事项<br>
+                    注意事项：审核完后签字确认，没审完不让早班下班<br><br>
+                    <strong>步骤3：面对面交接（下班时，10-15分钟）</strong><br>
+                    关键动作：早班口头说明重点事项，晚班确认理解无误<br>
+                    注意事项：不能只交不接，晚班要提问确认<br><br>
+                    <strong>步骤4：晚班确认签字（交接完成后）</strong><br>
+                    关键动作：晚班签字"已交接，确认无误"，责任转移给晚班<br>
+                    注意事项：发现遗漏要立即提出，不能"签了再说"<br><br>
+                    <strong>步骤5：晚班执行跟进（接班后）</strong><br>
+                    关键动作：根据交接本执行和跟进，有新问题记录给明天<br>
+                    注意事项：要主动跟进，不能等事情找上门
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交并查看成绩</button>
+            </div>
+
+            <!-- 成绩显示 -->
+            <div class="score-display" id="scoreDisplay" style="display:none;">
+                <div class="score-number" id="scoreNumber">0</div>
+                <div class="score-label">您的得分</div>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="nav-bottom">
+            <a href="day333.html" class="nav-arrow">← 第333天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day335.html" class="nav-arrow">第335天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [
+            {
+                type: "single",
+                options: [
+                    { text: "A. 让早班员工早点下班", correct: false },
+                    { text: "B. 让晚班员工像早班员工一样了解门店状态", correct: true },
+                    { text: "C. 完成公司规定的交接流程", correct: false },
+                    { text: "D. 让店长知道谁上班了", correct: false }
+                ],
+                explanation: "交接班管理的核心目标是让晚班员工像早班员工一样了解门店状态——顾客情况、订单状态、投诉进展、库存变化，都要清清楚楚地交接。交接班不是'说再见'，而是'传递责任'。"
+            },
+            {
+                type: "multi",
+                options: [
+                    { text: "A. 顾客情况（重要顾客、未成交顾客、投诉顾客）", correct: true },
+                    { text: "B. 订单状态（已付款、待付款、待发货）", correct: true },
+                    { text: "C. 投诉进展（已处理、待跟进、待回复）", correct: true },
+                    { text: "D. 员工心情（今天开心不开心）", correct: false }
+                ],
+                explanation: "交接本必须记录的内容包括：顾客情况（重要顾客、未成交顾客、投诉顾客）、订单状态（已付款、待付款、待发货）、投诉进展（已处理、待跟进、待回复）、库存变化、设备状况。员工心情不需要记录。"
+            },
+            {
+                type: "single",
+                options: [
+                    { text: "A. 先签字再说，反正已经接班了", correct: false },
+                    { text: "B. 立即提出，让早班补充或更正", correct: true },
+                    { text: "C. 不签字，直接下班", correct: false },
+                    { text: "D. 自己猜早班的意思", correct: false }
+                ],
+                explanation: "如果晚班发现交接本有重要事项遗漏，要立即提出，让早班补充或更正，不能'签了再说'。签字代表责任转移，签了再发现遗漏就晚了。"
+            }
+        ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // 显示参考答案
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            if (answerDiv.style.display === 'block') {
+                answerDiv.style.display = 'none';
+                btn.textContent = '查看参考答案';
+            } else {
+                answerDiv.style.display = 'block';
+                btn.textContent = '隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
