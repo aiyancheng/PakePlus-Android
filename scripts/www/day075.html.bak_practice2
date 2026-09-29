@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第75天 | 防蓝光眼镜深度：波段、阻断率、色偏 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 75 天</div>
+            <h1 class="page-title">防蓝光眼镜深度：波段、阻断率、色偏</h1>
+            <div class="page-subtitle">模块一：产品知识 · 第11周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>75/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 20.55%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、蓝光的波段与危害</h3>
+                <p>蓝光是可见光的一部分，波长范围380-500nm。根据对眼睛的影响，可分为"有害蓝光"和"有益蓝光"。</p>
+                
+                <p><strong>1. 有害蓝光（385-455nm）</strong><br>
+                这部分蓝光能量高、穿透力强，长期暴露会导致：<br>
+                - <strong>视网膜损伤</strong>：蓝光可穿透晶状体直达视网膜，引起视网膜色素上皮细胞退化，增加黄斑变性风险<br>
+                - <strong>视疲劳</strong>：蓝光散射严重，眼睛需要更用力对焦，导致疲劳<br>
+                - <strong>睡眠障碍</strong>：蓝光抑制褪黑素分泌，影响睡眠质量</p>
+                
+                <p><strong>2. 有益蓝光（455-500nm）</strong><br>
+                这部分蓝光对人体有益：<br>
+                - <strong>调节昼夜节律</strong>：帮助大脑保持清醒，提高注意力<br>
+                - <strong>情绪调节</strong>：促进血清素分泌，改善情绪<br>
+                - <strong>视力发育</strong>：儿童期需要适量蓝光刺激视觉系统发育</p>
+                
+                <div class="tip-box">
+                    <strong>专业提示：</strong>优质防蓝光镜片应该"选择性阻断"——阻断有害蓝光（385-455nm），透过有益蓝光（455-500nm）。劣质镜片"全波段阻断"，会导致色彩失真和昼夜节律紊乱。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、阻断率与透光率平衡</h3>
+                <p>防蓝光镜片的核心指标是"阻断率"（Blocking Rate），即阻挡多少比例的蓝光。阻断率不是越高越好，需要平衡防护效果和视觉质量。</p>
+                
+                <p><strong>1. 常见阻断率规格</strong><br>
+                - <strong>轻度防护（20-30%）</strong>：适合偶尔使用电子设备的人群，色偏轻微<br>
+                - <strong>中度防护（30-40%）</strong>：适合每天使用电子设备4-8小时的人群，色偏可接受<br>
+                - <strong>重度防护（40-50%）</strong>：适合长时间使用电子设备（>8小时）的人群，色偏明显<br>
+                - <strong>极致防护（>50%）</strong>：适合特殊职业（程序员、设计师），但色偏严重，不推荐日常使用</p>
+                
+                <p><strong>2. 透光率考量</strong><br>
+                防蓝光镜片在阻挡蓝光的同时，也会降低总体透光率。优质镜片的透光率应≥90%，否则会导致视野变暗，加重视疲劳。<br>
+                - <strong>透光率<85%</strong>：视野明显变暗，不推荐<br>
+                - <strong>透光率85-90%</strong>：可接受，但长时间使用会疲劳<br>
+                - <strong>透光率>90%</strong>：优质标准，视野明亮清晰</p>
+                
+                <p><strong>3. 如何判断阻断率是否合理</strong><br>
+                让顾客戴上防蓝光眼镜看白色背景（如手机屏幕）：<br>
+                - <strong>轻微发黄</strong>：阻断率20-30%，适合大多数人<br>
+                - <strong>明显发黄</strong>：阻断率30-40%，适合重度使用者<br>
+                - <strong>严重发黄</strong>：阻断率>40%，仅适合特殊需求</p>
+                
+                <div class="warn-box">
+                    <strong>注意：</strong>不要盲目追求高阻断率！阻断率越高，色偏越严重，色彩失真越大。对于从事设计、摄影、视频剪辑等需要准确辨色的工作，建议选择低阻断率（20-30%）的防蓝光镜片。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、色偏问题与解决方案</h3>
+                <p>防蓝光镜片不可避免的会产生"色偏"（Color Shift），即看到的颜色与实际颜色有偏差，通常表现为"发黄"或"发绿"。</p>
+                
+                <p><strong>1. 色偏的成因</strong><br>
+                防蓝光镜片通过基片着色或镀膜反射来阻挡蓝光。基片着色的镜片会呈现淡黄色（因为吸收了蓝光），镀膜反射的镜片会呈现淡蓝色或淡绿色（因为反射了蓝光）。</p>
+                
+                <p><strong>2. 不同技术的色偏表现</strong><br>
+                - <strong>基片吸收式</strong>：镜片发黄，看白色物体呈暖黄色，色彩还原度中等<br>
+                - <strong>膜层反射式</strong>：镜片表面有淡蓝反光，看白色物体略有发蓝，色彩还原度较好<br>
+                - <strong>嵌入式技术</strong>：在基片中嵌入防蓝光因子，色偏最小，色彩还原度最好（如依视路钻晶A4）</p>
+                
+                <p><strong>3. 如何向顾客解释色偏</strong><br>
+                话术："防蓝光镜片有点色偏是正常的，就像 sunglasses 会变色一样。这款镜片的色偏很小，戴一周就习惯了。而且它保护的是您的视网膜，这点色偏完全可以接受。"</p>
+                
+                <p><strong>4. 严重色偏的处理</strong><br>
+                如果顾客对色偏特别敏感，可以：<br>
+                - 推荐"防蓝光夹片"（看电子屏幕时夹上，平时取下）<br>
+                - 推荐"防蓝光镀膜"（色偏更小，但防护效果略差）<br>
+                - 推荐"夜间使用型"（阻断率20%，白天几乎无色偏）</p>
+                
+                <div class="tip-box">
+                    <strong>销售技巧：</strong>让顾客现场对比"戴防蓝光镜"和"不戴"看手机屏幕的区别。大部分人会说"有点黄，但能接受"。如果顾客说"太黄了"，就推荐更低阻断率的产品。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>有害蓝光</strong>：385-455nm，导致视网膜损伤、视疲劳、睡眠障碍</li>
+                    <li><strong>有益蓝光</strong>：455-500nm，调节昼夜节律、情绪、视力发育</li>
+                    <li><strong>阻断率选择</strong>：20-30%（轻度）、30-40%（中度）、40-50%（重度），不是越高越好</li>
+                    <li><strong>透光率标准</strong>：应≥90%，否则视野变暗加重视疲劳</li>
+                    <li><strong>色偏问题</strong>：不可避免，嵌入式技术色偏最小，严重色偏可推荐夹片或低阻断率产品</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 有害蓝光的波长范围是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 防蓝光镜片的透光率应不低于多少？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 以下哪些人群适合选择低阻断率（20-30%）的防蓝光镜片？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请为一位每天使用电脑6小时的平面设计师推荐防蓝光镜片，并说明理由。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>推荐低阻断率（20-30%）的防蓝光镜片，最好选择嵌入式技术（色偏最小）。理由：1）平面设计师需要准确辨色，高阻断率会导致严重色偏，影响工作；2）每天6小时属于中度使用，20-30%阻断率足够防护；3）嵌入式技术色偏最小，色彩还原度最好，适合专业需求。可以推荐依视路钻晶A4或类似产品。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="nav-bottom">
+            <a href="day074.html" class="nav-arrow">← 第74天</a>
+            <a href="index.html" class="nav-home">🏠 目录</a>
+            <a href="day076.html" class="nav-arrow">第76天 →</a>
+        </div>
+
+        <!-- 页脚 -->
+    </div>
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [{
+                type: 'single',
+                options: [
+                    { text: 'A. 380-455nm', correct: true },
+                    , correct: false },
+                    { text: 'B. 455-500nm', correct: false },
+                    , correct: false },
+                    { text: 'C. 500-550nm', correct: false },
+                    , correct: false },
+                    { text: 'D. 550-600nm', correct: false }
+                ],
+                answer: [0],
+                score: 10,
+                explanation: '有害蓝光的波长范围是380-455nm，这部分蓝光能量高、穿透力强，会导致视网膜损伤。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 80%', correct: false },
+                    , correct: false },
+                    { text: 'B. 85%', correct: true },
+                    , correct: false },
+                    { text: 'C. 90%', correct: false },
+                    , correct: false },
+                    { text: 'D. 95%', correct: false }
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '防蓝光镜片的透光率应不低于90%，否则会导致视野变暗，加重视疲劳。'
+            },
+            
+{
+                type: 'multi',
+                options: [
+                    { text: 'A. 平面设计师', correct: true },
+                    , correct: false },
+                    { text: 'B. 程序员', correct: true },
+                    , correct: false },
+                    { text: 'C. 视频剪辑师', correct: false },
+                    , correct: false },
+                    { text: 'D. 长时间刷手机的人', correct: false }
+                ],
+                answer: [0, 2],
+                score: 10,
+                explanation: '平面设计师和视频剪辑师需要准确辨色，应选择低阻断率（20-30%）的防蓝光镜片。程序员和长时间刷手机的人可以选择中等阻断率。'
+            }
+        
+    ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+
+    <!-- 底部技术支持署名 -->
+    
+</div>
+
+    <!-- 底部导航按钮区 -->
+    <div class="nav-bottom">
+        <a href="day074.html" class="nav-arrow">← 第74天</a>
+        <a href="index.html" class="nav-home">🏠 返回首页</a>
+        <a href="day076.html" class="nav-arrow">第76天 →</a>
+    </div>
+    <!-- 底部技术支持署名 -->
+    <div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
+
+</body>
+</html>
