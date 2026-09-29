@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第104天 | 特殊需求：低视力/色盲/斜视 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 104 天</div>
+            <h1 class="page-title">特殊需求：低视力/色盲/斜视</h1>
+            <div class="page-subtitle">模块二：销售技巧 · 第15周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>104/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 28.49%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、特殊需求顾客概述</h3>
+                <p>在眼镜门店，大多数顾客是<strong>普通近视/远视/散光</strong>患者。但也有一部分顾客有<strong>特殊需求</strong>：低视力（视力极低，普通眼镜无法矫正）、色盲/色弱（无法分辨某些颜色）、斜视（眼球位置不正）。接待这类顾客，需要<strong>特殊的知识和技巧</strong>。</p>
+                
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>特殊需求类型</th>
+                                <th>定义</th>
+                                <th>人群占比</th>
+                                <th>核心需求</th>
+                                <th>你能提供的帮助</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>低视力</strong></td>
+                                <td>视力≤0.3，普通眼镜无法矫正到正常</td>
+                                <td>约1-2%</td>
+                                <td>助视器、放大设备</td>
+                                <td>推荐助视器、低视力眼镜</td>
+                            </tr>
+                            <tr>
+                                <td><strong>色盲/色弱</strong></td>
+                                <td>无法分辨某些颜色（红绿色盲最常见）</td>
+                                <td>男性8%，女性0.5%</td>
+                                <td>色盲眼镜（增强对比）</td>
+                                <td>推荐色盲眼镜、提供检测</td>
+                            </tr>
+                            <tr>
+                                <td><strong>斜视</strong></td>
+                                <td>眼球位置不正，可能伴弱视</td>
+                                <td>约2-4%</td>
+                                <td>矫正斜视、治疗弱视</td>
+                                <td>推荐棱镜、转诊眼科</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tip-box">
+                    💡 <strong>重要提醒：</strong>特殊需求顾客往往<strong>被普通眼镜店忽视</strong>——因为大多数店员不懂如何服务他们。如果你能掌握这些知识，就能<strong>差异化竞争</strong>，成为"别人做不了你能做"的门店。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、低视力顾客接待</h3>
+                <p><strong>低视力</strong>指<strong>最佳矫正视力≤0.3</strong>（即使戴了最合适的眼镜，视力也达不到0.8以上）。常见于：高度近视（>-10.00D）、白内障术后、视网膜病变、青光眼晚期等。</p>
+
+                <h4>1. 低视力顾客的特点</h4>
+                <ul>
+                    <li><strong>视力极差：</strong>看不清普通视力表，需要大字号/放大镜</li>
+                    <li><strong>普通眼镜无效：</strong>再怎么换镜片，视力也提不高</li>
+                    <li><strong>心理自卑：</strong>很多低视力患者长期被忽视，有自卑心理</li>
+                    <li><strong>需求特殊：</strong>需要助视器（放大镜、电子助视器）、大字号读物</li>
+                </ul>
+
+                <h4>2. 接待流程（低视力版）</h4>
+                <p><strong>第1步：评估视力状况</strong><br>
+                先问："您现在戴眼镜能看清多少？"（0.1？0.3？）如果≤0.3，属于低视力，普通眼镜帮助有限。</p>
+
+                <p><strong>第2步：介绍低视力解决方案</strong><br>
+                告诉顾客："您的情况属于低视力，普通眼镜效果有限。我们有<strong>助视器</strong>可以帮您——比如这个<strong>手持放大镜</strong>（5倍放大），或者这个<strong>电子助视器</strong>（可以放大30倍，还能调对比度）。"</p>
+
+                <p><strong>第3步：让顾客试用</strong><br>
+                低视力顾客最需要的是"<strong>看到</strong>"——拿一张报纸/菜单，让他用助视器看，他能看到字的那一刻，会非常感动。</p>
+
+                <p><strong>第4步：推荐合适的助视器</strong><br>
+                根据顾客需求推荐：<br>
+                - <strong>手持放大镜</strong>（便宜，5-10倍，适合看近处小字）<br>
+                - <strong>台式放大镜</strong>（带灯，适合长时间阅读）<br>
+                - <strong>电子助视器</strong>（贵但功能强，可放大+调对比度+拍照保存）</p>
+
+                <div class="warn-box">
+                    ⚠️ <strong>注意：</strong>低视力顾客往往以为"配副新眼镜就能看清"，你要<strong>诚实告知</strong>："普通眼镜效果有限，但助视器可以帮您看到更多。"不要为了卖眼镜而误导顾客。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、色盲/色弱顾客接待</h3>
+                <p><strong>色盲/色弱</strong>指<strong>无法分辨某些颜色</strong>。最常见的是<strong>红绿色盲</strong>（分不清红色和绿色），男性发病率约8%，女性约0.5%。</p>
+
+                <h4>1. 色盲/色弱顾客的特点</h4>
+                <ul>
+                    <li><strong>分不清某些颜色：</strong>红绿色盲最常见（红绿灯、红绿衣服分不清）</li>
+                    <li><strong>不影响视力：</strong>色盲患者视力通常正常，只是颜色分辨有问题</li>
+                    <li><strong>有隐瞒倾向：</strong>很多人不知道自己色盲，或知道了不想让别人知道（怕被歧视）</li>
+                    <li><strong>需求：</strong>色盲眼镜（增强红绿对比度，帮助分辨颜色）</li>
+                </ul>
+
+                <h4>2. 色盲检测与接待流程</h4>
+                <p><strong>第1步：色盲检测（可选）</strong><br>
+                如果你有<strong>色盲检测图册</strong>（如石原色盲本），可以请顾客看几张图："您看这张图里是什么数字？"如果看不出，可能是色盲。</p>
+
+                <p><strong>第2步：介绍色盲眼镜</strong><br>
+                告诉顾客："您的情况是红绿色盲，分不清红色和绿色。我们有<strong>色盲眼镜</strong>，戴上后可以增强红绿对比度，帮您分辨红绿灯和红绿衣服。不过它不能'治愈'色盲，只是辅助。"</p>
+
+                <p><strong>第3步：让顾客试戴</strong><br>
+                拿一副色盲眼镜让顾客试戴，然后用色盲检测图测试："您现在看这张图，能看到数字了吗？"（大多数人能看到了，会很惊喜）</p>
+
+                <p><strong>第4步：推荐与成交</strong><br>
+                色盲眼镜价格通常500-2000元。告诉顾客："这副眼镜不能'治愈'您的色盲，但<strong>日常生活会方便很多</strong>——过马路看红绿灯、买衣服分颜色，都更自信。"</p>
+
+                <div class="tip-box">
+                    🎯 <strong>话术示例：</strong><br>
+                    "先生，我帮您检测了一下，您是红绿色盲，分不清红色和绿色。不过没关系，我们有色盲眼镜，戴上后可以帮您分辨红绿灯。您试试这副——现在看这张图，数字是'8'对吗？这就是效果！这副眼镜XXX元，戴上后过马路、买衣服都更方便。"
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>四、斜视顾客接待</h3>
+                <p><strong>斜视</strong>指<strong>双眼不能同时注视同一目标</strong>，表现为"斗鸡眼"（内斜视）或"白眼珠多"（外斜视）。斜视常伴<strong>弱视</strong>（视力发育不良），需要<strong>早期治疗</strong>。</p>
+
+                <h4>1. 斜视顾客的特点</h4>
+                <ul>
+                    <li><strong>外观异常：</strong>别人能看出眼睛不正，患者可能有心理负担</li>
+                    <li><strong>视力问题：</strong>常伴弱视（尤其儿童），需要治疗而不仅仅是配镜</li>
+                    <li><strong>配镜需求：</strong>可能需要<strong>棱镜</strong>（矫正复视）或<strong>特殊镜片</strong>（治疗弱视）</li>
+                    <li><strong>转诊需求：</strong>斜视/弱视需要<strong>眼科医生</strong>治疗（手术/遮盖疗法），眼镜店只能辅助</li>
+                </ul>
+
+                <h4>2. 斜视顾客的接待原则</h4>
+                <p><strong>原则1：先做完整验光</strong><br>
+                斜视患者往往有<strong>弱视</strong>（尤其儿童），必须先验光，确定度数，再判断是否需要特殊镜片。</p>
+
+                <p><strong>原则2：判断是否需要棱镜</strong><br>
+                如果斜视导致<strong>复视</strong>（看东西重影），可能需要<strong>棱镜</strong>来矫正。棱镜是特殊镜片，需要<strong>专业验配</strong>，不是普通眼镜店能随便做的。</p>
+
+                <p><strong>原则3：必要时转诊眼科</strong><br>
+                如果顾客是<strong>儿童斜视+弱视</strong>，或者<strong>突然出现的斜视</strong>（可能是神经系统问题），你应该说："您这个情况需要看眼科医生，我们这边可以验光，但治疗需要医生来做。"（不要越界）</p>
+
+                <p><strong>原则4：推荐合适的镜框</strong><br>
+                斜视患者（尤其儿童）需要<strong>稳定、不易滑落</strong>的镜框，因为眼镜位置不正会影响治疗效果。推荐<strong>防滑耳钩</strong>或<strong>运动镜框</strong>。</p>
+
+                <div class="warn-box">
+                    ⚠️ <strong>红线提醒：</strong>斜视/弱视属于<strong>医疗范畴</strong>，眼镜店不能"治疗"，只能"辅助验配"。如果顾客问你"戴这副眼镜能治好斜视吗"，你要诚实说"不能，这需要医生治疗。眼镜只能帮您看得清楚一些"。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>五、特殊需求接待的核心心法</h3>
+                
+                <p><strong>1. 诚实第一，不夸大效果</strong><br>
+                低视力、色盲、斜视都不是"配副眼镜就能好"的问题。你要诚实告知局限性，不要为了卖产品而误导顾客。信任比成交更重要。</p>
+
+                <p><strong>2. 同理心，不歧视</strong><br>
+                特殊需求顾客往往有<strong>心理负担</strong>（自卑、被歧视）。你要用<strong>平常心</strong>对待他们，不要表现出"你跟别人不一样"的态度。</p>
+
+                <p><strong>3. 专业为本，不越界</strong><br>
+                眼镜店是<strong>视光服务机构</strong>，不是医疗机构。遇到需要医生治疗的情况（如儿童斜视弱视、突发斜视），要<strong>转诊</strong>，不要"包治百病"。</p>
+
+                <div class="tip-box">
+                    🏆 <strong>高手心法：</strong>特殊需求顾客是<strong>蓝海市场</strong>——大多数眼镜店不懂如何服务他们，如果你能懂，就能吸引这部分顾客专门来找你。这是<strong>差异化竞争</strong>的重要方向。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li>特殊需求顾客：低视力（≤0.3）、色盲/色弱（红绿色盲最常见）、斜视（眼球不正，伴弱视）</li>
+                    <li>低视力接待：评估视力→介绍助视器（放大镜/电子助视器）→让顾客试用→推荐合适产品</li>
+                    <li>色盲接待：色盲检测→介绍色盲眼镜（增强对比度）→让顾客试戴→推荐成交</li>
+                    <li>斜视接待：完整验光→判断是否需要棱镜→必要时转诊眼科→推荐稳定镜框</li>
+                    <li>核心心法：诚实第一（不夸大效果）、同理心（不歧视）、专业为本（不越界）</li>
+                </ul>
+            </div>
+        </div>
+
+                <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 1. 低视力顾客的最佳矫正视力通常是多少？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 2. 色盲眼镜的主要作用是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 3. 斜视伴弱视的儿童，最应该建议家长做什么？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题部分需要手动调整 -->
+        </div>
+<!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day103.html" class="nav-arrow">← 第103天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day105.html" class="nav-arrow">第105天 →</a>
+        </div>
+    </div>
+
+    <script>
+        // ========== 选择题数据 ==========
+        const choiceQuestions = [
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '低视力指最佳矫正视力≤0.3，普通眼镜无法矫正到正常。低视力顾客需要助视器（放大镜、电子助视器）而不是普通眼镜。色盲不影响视力，斜视不一定导致低视力。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '色盲眼镜的作用是增强红绿对比度，帮助色盲患者分辨颜色，但不能'治愈'色盲。色盲是先天性的，目前无法治愈，眼镜只是辅助工具。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [0],
+                score: 10,
+                explanation: '斜视伴弱视的儿童的黄金治疗期是3-6岁，超过6岁治疗效果很差。眼镜店遇到这种情况应该转诊眼科，因为弱视治疗需要医生指导（遮盖疗法、视觉训练等），眼镜店只能辅助验配。'
+            },
+        ];
+
+        // ========== 初始化选择题 ==========
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                const optionsList = container.querySelector('.options-list');
+                const isMulti = q.type === 'multi';
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.dataset.qidx = idx;
+                    li.dataset.optidx = optIdx;
+                    const marker = document.createElement('div');
+                    marker.className = 'option-marker';
+                    marker.textContent = String.fromCharCode(65 + optIdx);
+                    const text = document.createElement('span');
+                    text.className = 'option-text';
+                    text.textContent = opt.text;
+                    li.appendChild(marker);
+                    li.appendChild(text);
+                    li.addEventListener('click', () => toggleOption(idx, optIdx, isMulti));
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        function toggleOption(qIdx, optIdx, isMulti) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const item = container.querySelectorAll('.option-item')[optIdx];
+            if (isMulti) { item.classList.toggle('selected'); }
+            else { container.querySelectorAll('.option-item').forEach(li => li.classList.remove('selected')); item.classList.add('selected'); }
+        }
+
+        function getSelectedIndices(qIdx) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const selected = [];
+            container.querySelectorAll('.option-item.selected').forEach(li => selected.push(parseInt(li.dataset.optidx)));
+            return selected.sort((a, b) => a - b);
+        }
+
+        // ========== 提交判分 ==========
+        function submitAll() {
+            let totalScore = 0;
+            choiceQuestions.forEach((q, qIdx) => {
+                const container = document.querySelectorAll('.choice-question')[qIdx];
+                const selected = getSelectedIndices(qIdx);
+                const correct = q.answer.slice().sort((a, b) => a - b);
+                const isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+                container.querySelectorAll('.option-item').forEach(li => li.classList.remove('correct', 'wrong'));
+                container.querySelector('.feedback')?.classList.remove('show');
+                q.options.forEach((opt, optIdx) => {
+                    const li = container.querySelectorAll('.option-item')[optIdx];
+                    if (correct.includes(optIdx)) li.classList.add('correct');
+                    if (selected.includes(optIdx) && !correct.includes(optIdx)) li.classList.add('wrong');
+                });
+                const feedback = container.querySelector('.feedback');
+                if (feedback) {
+                    feedback.classList.add('show');
+                    if (isCorrect) {
+                        feedback.className = 'feedback correct-feedback show';
+                        feedback.innerHTML = '✅ 回答正确！' + (q.explanation || '');
+                        totalScore += q.score || 10;
+                    } else {
+                        feedback.className = 'feedback wrong-feedback show';
+                        const correctLetters = correct.map(i => String.fromCharCode(65 + i)).join('、');
+                        feedback.innerHTML = '❌ 回答错误。正确答案：' + correctLetters + '。' + (q.explanation || '');
+                    }
+                } else { if (isCorrect) totalScore += q.score || 10; }
+            });
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const scoreNumber = document.getElementById('scoreNumber');
+            const maxScore = choiceQuestions.reduce((sum, q) => sum + (q.score || 10), 0);
+            scoreDisplay.classList.add('show');
+            scoreNumber.textContent = totalScore + '/' + maxScore + '分';
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+
+    </script>
+
+
+    <!-- 底部技术支持署名 -->
+    
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
