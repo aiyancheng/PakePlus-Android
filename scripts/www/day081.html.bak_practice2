@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第81天 | 电竞眼镜：蓝光+防眩光 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 81 天</div>
+            <h1 class="page-title">电竞眼镜：蓝光+防眩光</h1>
+            <div class="page-subtitle">模块一：产品知识 · 第12周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>81/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 22.19%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、电竞眼镜的市场需求</h3>
+                <p>电竞（电子竞技）已成为全球热门产业，职业选手和游戏爱好者每天面对屏幕6-12小时，眼睛承受巨大压力。电竞眼镜是新兴细分市场，增长迅速。</p>
+                
+                <p><strong>1. 电竞人群的眼部问题</strong><br>
+                - <strong>数字眼疲劳（DES）</strong>：长时间盯屏导致眼干、酸胀、视力模糊<br>
+                - <strong>蓝光伤害</strong>：屏幕蓝光抑制褪黑素，影响睡眠质量<br>
+                - <strong>眩光刺眼</strong>：高对比度游戏画面（如爆炸、闪光）产生强烈眩光<br>
+                - <strong>眨眼次数减少</strong>：专注游戏时眨眼次数从15次/分降至5次/分</p>
+                
+                <p><strong>2. 电竞眼镜的目标人群</strong><br>
+                - <strong>职业电竞选手</strong>：每天训练10+小时，对性能要求极高<br>
+                - <strong>游戏主播</strong>：直播6-8小时，需要保持清醒和眼部舒适<br>
+                - <strong>硬核玩家</strong>：周末马拉松式游戏，眼睛容易疲劳<br>
+                - <strong>游戏开发者</strong>：长时间盯着代码和屏幕，需要防蓝光</p>
+                
+                <div class="tip-box">
+                    <strong>💡 市场机会：</strong>电竞眼镜是2023-2025年增长最快的眼镜细分市场，年增长率超过30%。抓住这个市场，可以吸引年轻客群，提升门店科技感形象。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、电竞眼镜的核心技术：防蓝光</h3>
+                <p>防蓝光是电竞眼镜的最基本功能，技术路径与"防蓝光镜片"类似，但有特殊优化。</p>
+                
+                <p><strong>1. 蓝光危害与电竞特殊性</strong><br>
+                - <strong>普通办公</strong>：每天面对屏幕4-6小时，蓝光伤害中等<br>
+                - <strong>电竞场景</strong>：每天面对屏幕8-12小时，且画面亮度高、对比度高<br>
+                - <strong>夜间游戏</strong>：晚上10点后游戏，蓝光抑制褪黑素最严重<br>
+                - <strong>睡眠影响</strong>：职业选手因蓝光导致失眠、训练状态下降</p>
+                
+                <p><strong>2. 电竞防蓝光镜片的技术特点</strong><br>
+                - <strong>高阻断率</strong>：阻断40-50%蓝光（普通镜片20-30%）<br>
+                - <strong>精准阻断</strong>：只阻断有害蓝光（415-455nm），保留有益蓝光（455-500nm）<br>
+                - <strong>低色偏</strong>：电竞需要准确识别颜色（如敌人衣服颜色），色偏不能太大<br>
+                - <strong>多层镀膜</strong>：防反光+防水防油污，适合长时间佩戴</p>
+                
+                <p><strong>3. 主流电竞防蓝光产品</strong><br>
+                - <strong>GUNNAR</strong>：电竞眼镜鼻祖，琥珀色镜片，阻断65%蓝光<br>
+                - <strong>HyperX</strong>：电竞外设品牌，与GUNNAR合作，性价比高<br>
+                - <strong>BenQ Eye-Care</strong>：明基推出的电竞眼镜，偏光+防蓝光<br>
+                - <strong>国内品牌</strong>：小米、雷蛇（Razer）、黑鲨也有电竞眼镜</p>
+                
+                <div class="warn-box">
+                    <strong>⚠️ 注意：</strong>电竞防蓝光镜片阻断率不能太高（>60%），否则色偏严重，影响游戏体验。职业选手通常选择阻断率40-50%的镜片，平衡防护与色彩准确性。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、电竞眼镜的第二核心技术：防眩光</h3>
+                <p>游戏画面中的爆炸、闪光、激光等特效会产生强烈眩光，导致短暂"致盲"和影响反应速度。</p>
+                
+                <p><strong>1. 游戏眩光的特点</strong><br>
+                - <strong>高亮度</strong>：HDR游戏画面亮度可达1000尼特（普通SDR为300尼特）<br>
+                - <strong>高对比度</strong>：暗部极暗、亮部极亮，眼睛不断调节<br>
+                - <strong>频闪效应</strong>：某些游戏特效有频闪，加重视疲劳</p>
+                
+                <p><strong>2. 防眩光技术方案</strong><br>
+                - <strong>偏光技术</strong>：滤除水平方向眩光（适合户外游戏，室内效果有限）<br>
+                - <strong>灰度镜片</strong>：降低整体亮度，类似太阳镜效果（但会看不清暗部）<br>
+                - <strong>选择性滤光</strong>：只滤除刺眼波长（如黄色眩光），保留其他颜色<br>
+                - <strong>电致变色</strong>：根据画面亮度自动调节镜片深浅（高端技术，成本高）</p>
+                
+                <p><strong>3. 电竞眼镜的镜框设计特点</strong><br>
+                - <strong>包裹式设计</strong>：大弧度镜框，阻挡侧面杂光<br>
+                - <strong>可调节鼻托</strong>：长时间佩戴不压鼻梁<br>
+                - <strong>轻量化</strong>：重量<20g，减少鼻梁负担<br>
+                - <strong>兼容耳机</strong>：镜腿不能太粗，避免与电竞耳机冲突</p>
+                
+                <div class="tip-box">
+                    <strong>🎯 销售要点：</strong>向电竞人群销售时，不要只谈"护眼"，要谈"提升游戏表现"。防眩光可以让你在爆炸场景中更快识别敌人，防蓝光可以让你训练到深夜依然保持清醒。这是"装备升级"，不是"医疗护眼"。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>电竞市场</strong>：年增长率30%+，职业选手/主播/硬核玩家是目标客群</li>
+                    <li><strong>防蓝光</strong>：阻断率40-50%，精准阻断有害蓝光，低色偏，多层镀膜</li>
+                    <li><strong>防眩光</strong>：滤除游戏特效眩光，可选偏光/灰度/选择性滤光/电致变色</li>
+                    <li><strong>镜框设计</strong>：包裹式、轻量化(<20g)、兼容耳机、可调节鼻托</li>
+                    <li><strong>销售话术</strong>：强调"提升游戏表现"而非"护眼"，定位"装备升级"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 电竞场景下面临蓝光伤害比普通办公更严重的主要原因是什么？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 电竞防蓝光镜片的推荐阻断率是多少？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 电竞眼镜的镜框设计需要考虑哪些因素？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：请为一位每天训练10小时的《英雄联盟》职业选手推荐电竞眼镜方案，并说明理由。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>推荐GUNNAR或HyperX电竞眼镜，防蓝光阻断率40-50%，镜片颜色琥珀色（保留色彩准确性），镜框轻量化<20g且兼容耳机。理由：1）职业选手每天训练10小时，蓝光伤害严重，需要高阻断率镜片；2）不能阻断率太高（>60%），否则色偏影响识别敌人；3）轻量化减少鼻梁负担，长时间训练不累；4）兼容耳机是电竞眼镜刚需，镜腿不能太粗；5）琥珀色镜片是电竞标准色，护眼同时不影响反应速度。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day080.html" class="nav-arrow">← 第80天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day082.html" class="nav-arrow">第82天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持署名 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [{
+                type: 'single',
+                options: [
+                    { text: 'A. 屏幕亮度更高', correct: false },
+                    , correct: true },
+                    { text: 'B. 每天面对屏幕时间更长（8-12小时）', correct: false },
+                    , correct: false },
+                    { text: 'C. 游戏画面颜色更鲜艳', correct: false },
+                    , correct: false },
+                    { text: 'D. 玩家距离屏幕更近', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '电竞场景每天面对屏幕8-12小时，比普通办公（4-6小时）长得多，蓝光累积伤害更严重。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 20-30%', correct: false },
+                    , correct: true },
+                    { text: 'B. 40-50%', correct: false },
+                    , correct: false },
+                    { text: 'C. 60-70%', correct: false },
+                    , correct: false },
+                    { text: 'D. 80%以上', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '电竞防蓝光镜片推荐阻断率40-50%，平衡防护与色彩准确性。太高（>60%）色偏严重，影响游戏体验。'
+            },
+            
+{
+                type: 'multi',
+                options: [
+                    { text: 'A. 轻量化（<20g）', correct: true },
+                    , correct: true },
+                    { text: 'B. 兼容耳机（镜腿不能太粗）', correct: true },
+                    , correct: false },
+                    { text: 'C. 包裹式设计（阻挡侧面杂光）', correct: false },
+                    , correct: false },
+                    { text: 'D. 金属镜框（耐用）', correct: false }
+                ],
+                answer: [0, 1, 2],
+                score: 10,
+                explanation: '电竞眼镜镜框需要轻量化(<20g)、兼容耳机、包裹式设计。金属镜框太重且不舒适，电竞眼镜通常选TR90或板材。'
+            }
+        
+    ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
