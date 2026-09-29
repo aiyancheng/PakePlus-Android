@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第103天 | 儿童顾客：安抚与引导 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 103 天</div>
+            <h1 class="page-title">儿童顾客：安抚与引导</h1>
+            <div class="page-subtitle">模块二：销售技巧 · 第15周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>103/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 28.22%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、儿童顾客的特殊性</h3>
+                <p>儿童（通常指<strong>3-12岁</strong>）是眼镜门店的<strong>特殊顾客群体</strong>。他们不是自己来的，而是<strong>由家长带来</strong>。接待儿童顾客，实际上是<strong>服务两个人</strong>：孩子（使用者）和家长（决策者/付款者）。</p>
+                
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>维度</th>
+                                <th>成人顾客</th>
+                                <th>儿童顾客</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>决策者</strong></td>
+                                <td>自己决策</td>
+                                <td>家长决策（孩子影响）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>配合度</strong></td>
+                                <td>高（主动配合）</td>
+                                <td>低（可能哭闹/不配合）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>关注点</strong></td>
+                                <td>外观、舒适、价格</td>
+                                <td>孩子喜欢、耐用、安全</td>
+                            </tr>
+                            <tr>
+                                <td><strong>验光难度</strong></td>
+                                <td>低（能准确表达）</td>
+                                <td>高（表达不清/不配合）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>后续服务</strong></td>
+                                <td>调整、清洗</td>
+                                <td>定期复查、度数变化快</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tip-box">
+                    💡 <strong>核心原则：</strong>接待儿童顾客，要<strong>搞定孩子，更要搞定家长</strong>。孩子说"不喜欢"可能就黄了；家长说"太贵了"也可能黄了。两者都要照顾到。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、儿童顾客接待流程（特殊版）</h3>
+                <p>儿童顾客的接待流程，要<strong>在标准流程基础上调整</strong>——增加"安抚孩子"环节，并始终把家长纳入沟通过程。</p>
+
+                <h4>第1步：热情迎接，但要蹲下来</h4>
+                <p><strong>核心动作：</strong></p>
+                <ul>
+                    <li>先跟<strong>家长</strong>打招呼："您好！是给孩子检查视力吗？"（确认来意）</li>
+                    <li>再跟<strong>孩子</strong>打招呼：<strong>蹲下来</strong>，视线与孩子平齐，微笑说"小朋友你好！你叫什么名字呀？"（建立亲近感）</li>
+                    <li>观察孩子状态：是害怕（躲妈妈身后）？还是好奇（东张西望）？</li>
+                </ul>
+
+                <p><strong>话术示例：</strong><br>
+                "您好！是给小朋友检查视力吗？……（蹲下）小朋友你好！你叫什么名字呀？几岁啦？"（先家长，后孩子，蹲下来）</p>
+
+                <h4>第2步：安抚孩子，消除恐惧</h4>
+                <p><strong>如果孩子害怕：</strong>（常见，尤其3-6岁）</p>
+                <ul>
+                    <li>用<strong>玩具/贴纸</strong>吸引注意力："你看，这是什么？"（转移注意力）</li>
+                    <li>用<strong>游戏化语言</strong>："我们来玩个游戏，看看谁能看清那个字母！"（不说是"检查"，说是"游戏"）</li>
+                    <li>让家长<strong>陪同</strong>：孩子害怕时，让妈妈抱着，你再操作（安全感）</li>
+                </ul>
+
+                <p><strong>如果孩子好奇：</strong>（好现象，配合度高）</p>
+                <ul>
+                    <li>让他<strong>参与</strong>："你想不想看看这个机器？它像太空船一样！"（激发兴趣）</li>
+                    <li>给<strong>小任务</strong>："你帮阿姨/叔叔指一指，那个字母是向上还是向下？"（让他有成就感）</li>
+                </ul>
+
+                <h4>第3步：与家长沟通需求</h4>
+                <p><strong>核心问题：</strong></p>
+                <ul>
+                    <li>"孩子最近说看不清吗？是学校老师反映还是他自己说的？"（了解问题背景）</li>
+                    <li>"之前戴过眼镜吗？度数多少？"（了解历史）</li>
+                    <li>"您希望配什么样的眼镜？轻便的？耐摔的？"（了解家长关注点）</li>
+                </ul>
+
+                <p><strong>注意：</strong>沟通时，<strong>不要避开孩子</strong>。孩子能听到你们说话，如果你说"他度数很高啊"，孩子会害怕。要用<strong>积极的语言</strong>："你的度数有点变化，换个新眼镜会更清楚哦！"</p>
+
+                <h4>第4步：验光（由验光师主导，你协助）</h4>
+                <p><strong>你的角色：</strong>协助验光师，<strong>安抚孩子</strong>，让家长<strong>了解情况</strong>。</p>
+                <ul>
+                    <li>孩子哭闹时：用玩具/贴纸安抚，或让家长抱</li>
+                    <li>孩子不配合时：说"我们再试一次，你真棒！"（鼓励，不批评）</li>
+                    <li>家长焦虑时：解释"没关系，孩子第一次验光都这样，多试几次就好了"（缓解家长焦虑）</li>
+                </ul>
+
+                <h4>第5步：推荐镜框（让孩子选，但家长把关）</h4>
+                <p><strong>策略：</strong>让孩子先选（3款），家长再把关（舒适性/耐用性）。</p>
+                <ul>
+                    <li><strong>让孩子选：</strong>"小朋友，这3款你最喜欢哪个？"（让孩子有参与感）</li>
+                    <li><strong>家长把关：</strong>"这款孩子喜欢，但我觉得这款更耐摔/更轻，您觉得呢？"（给专业建议）</li>
+                    <li><strong>强调安全：</strong>"这款是TR90材料，摔不坏，弹簧 hinge 不怕掰断。"（家长最关心安全/耐用）</li>
+                </ul>
+
+                <h4>第6步：成交（向家长解释价值）</h4>
+                <p><strong>核心话术：</strong>"这款眼镜虽然价格XX元，但材料安全（TR90）、耐摔（弹簧铰链）、度数精准（医学验光），对孩子眼睛发育很重要。便宜的眼镜如果度数不准，会加重近视。"（讲价值，不只用价格吸引）</p>
+
+                <h4>第7步：送客（交代复查时间）</h4>
+                <p><strong>核心动作：</strong>告诉家长"孩子度数变化快，建议<strong>每3-6个月复查一次</strong>。这是我们的复查卡，到期我会提醒您。"（建立长期关系）</p>
+
+                <div class="warn-box">
+                    ⚠️ <strong>不要犯的错误：</strong>只顾跟家长聊天，忽略孩子——孩子可能趁你不注意跑了/哭了/把东西弄坏了。正确做法是：<strong>眼里有孩子，嘴上跟家长</strong>——用余光观察孩子，嘴上跟家长说话。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、儿童顾客的沟通技巧</h3>
+
+                <h4>1. 与孩子沟通：蹲下来，用他们听得懂的话</h4>
+                <p><strong>错误说法：</strong>"小朋友，你能看清视标吗？"（太专业）</p>
+                <p><strong>正确说法：</strong>"小朋友，你能看清那个'E'吗？它是指向上、下、左、还是右呀？"（用孩子的语言）</p>
+
+                <p><strong>技巧：</strong></p>
+                <ul>
+                    <li>用<strong>游戏化</strong>语言："我们来玩个游戏""你像小侦探一样找出那个字母"</li>
+                    <li>用<strong>鼓励</strong>语言："你真棒！""你比刚才厉害多了！"</li>
+                    <li>用<strong>奖励</strong>：验光完给个小贴纸/糖果（提前问家长"可以给孩子吃糖吗？"）</li>
+                </ul>
+
+                <h4>2. 与家长沟通：专业+同理心，强调"孩子眼睛发育"</h4>
+                <p><strong>家长最担心的是：</strong>眼镜度数准不准？材料安全吗？会不会加重近视？</p>
+                <p><strong>你要强调：</strong></p>
+                <ul>
+                    <li>"孩子眼睛还在发育，度数不准会<strong>加重近视</strong>，所以我们用医学验光，确保精准。"</li>
+                    <li>"这款镜框是<strong>TR90材料</strong>，安全无毒，摔不坏，弹簧铰链不怕孩子掰。"</li>
+                    <li>"我们提供<strong>定期复查</strong>，每3-6个月检查一次，及时调整度数。"</li>
+                </ul>
+
+                <div class="tip-box">
+                    🏆 <strong>高手心法：</strong>接待儿童顾客，<strong>70%精力在孩子，30%精力在家长</strong>——孩子开心了，家长会更容易成交；但家长的钱包和决策权，也不能忽视。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li>儿童顾客特殊性：服务两个人（孩子+家长），配合度低，验光难</li>
+                    <li>接待流程：热情迎接（蹲下来）→安抚孩子→与家长沟通→验光协助→推荐镜框（孩子选+家长把关）→成交（讲价值）→送客（交代复查）</li>
+                    <li>与孩子沟通：蹲下来，用游戏化语言，多鼓励，给奖励</li>
+                    <li>与家长沟通：强调"孩子眼睛发育""度数精准""材料安全""定期复查"</li>
+                    <li>常见错误：只顾跟家长聊天忽略孩子；用专业术语跟孩子说话；不解释价值只谈价格</li>
+                </ul>
+            </div>
+        </div>
+
+                <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 1. 接待儿童顾客时，第一步应该怎么做？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 2. 孩子害怕验光，哭闹不止，最佳应对是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 3. 向家长推荐儿童眼镜时，最应该强调的价值是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题部分需要手动调整 -->
+        </div>
+<!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day102.html" class="nav-arrow">← 第102天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day104.html" class="nav-arrow">第104天 →</a>
+        </div>
+    </div>
+
+    <script>
+        // ========== 选择题数据 ==========
+        const choiceQuestions = [
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '接待儿童顾客时，正确做法是先跟家长打招呼确认来意，再蹲下来跟孩子打招呼建立亲近感。只顾跟家长聊天（忽略孩子）或只顾逗孩子（忽略家长）都是错误的。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '孩子害怕验光时，正确做法是让家长陪同（抱着），用玩具/贴纸转移注意力，并说'我们来玩个游戏'（游戏化语言）。强行验光或不管他都会让孩子更害怕。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [0],
+                score: 10,
+                explanation: '向家长解释价值时，应该强调'孩子眼睛发育''度数精准''材料安全''定期复查'。只谈价格便宜（容易让家长怀疑质量）或说'孩子喜欢就行'（忽略家长对安全的关注）都是错误的。'
+            },
+        ];
+
+        // ========== 初始化选择题 ==========
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                const optionsList = container.querySelector('.options-list');
+                const isMulti = q.type === 'multi';
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.dataset.qidx = idx;
+                    li.dataset.optidx = optIdx;
+                    const marker = document.createElement('div');
+                    marker.className = 'option-marker';
+                    marker.textContent = String.fromCharCode(65 + optIdx);
+                    const text = document.createElement('span');
+                    text.className = 'option-text';
+                    text.textContent = opt.text;
+                    li.appendChild(marker);
+                    li.appendChild(text);
+                    li.addEventListener('click', () => toggleOption(idx, optIdx, isMulti));
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        function toggleOption(qIdx, optIdx, isMulti) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const item = container.querySelectorAll('.option-item')[optIdx];
+            if (isMulti) { item.classList.toggle('selected'); }
+            else { container.querySelectorAll('.option-item').forEach(li => li.classList.remove('selected')); item.classList.add('selected'); }
+        }
+
+        function getSelectedIndices(qIdx) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const selected = [];
+            container.querySelectorAll('.option-item.selected').forEach(li => selected.push(parseInt(li.dataset.optidx)));
+            return selected.sort((a, b) => a - b);
+        }
+
+        // ========== 提交判分 ==========
+        function submitAll() {
+            let totalScore = 0;
+            choiceQuestions.forEach((q, qIdx) => {
+                const container = document.querySelectorAll('.choice-question')[qIdx];
+                const selected = getSelectedIndices(qIdx);
+                const correct = q.answer.slice().sort((a, b) => a - b);
+                const isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+                container.querySelectorAll('.option-item').forEach(li => li.classList.remove('correct', 'wrong'));
+                container.querySelector('.feedback')?.classList.remove('show');
+                q.options.forEach((opt, optIdx) => {
+                    const li = container.querySelectorAll('.option-item')[optIdx];
+                    if (correct.includes(optIdx)) li.classList.add('correct');
+                    if (selected.includes(optIdx) && !correct.includes(optIdx)) li.classList.add('wrong');
+                });
+                const feedback = container.querySelector('.feedback');
+                if (feedback) {
+                    feedback.classList.add('show');
+                    if (isCorrect) {
+                        feedback.className = 'feedback correct-feedback show';
+                        feedback.innerHTML = '✅ 回答正确！' + (q.explanation || '');
+                        totalScore += q.score || 10;
+                    } else {
+                        feedback.className = 'feedback wrong-feedback show';
+                        const correctLetters = correct.map(i => String.fromCharCode(65 + i)).join('、');
+                        feedback.innerHTML = '❌ 回答错误。正确答案：' + correctLetters + '。' + (q.explanation || '');
+                    }
+                } else { if (isCorrect) totalScore += q.score || 10; }
+            });
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const scoreNumber = document.getElementById('scoreNumber');
+            const maxScore = choiceQuestions.reduce((sum, q) => sum + (q.score || 10), 0);
+            scoreDisplay.classList.add('show');
+            scoreNumber.textContent = totalScore + '/' + maxScore + '分';
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+
+    </script>
+
+
+    <!-- 底部技术支持署名 -->
+    
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
