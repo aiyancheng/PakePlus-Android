@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第76天 | 老花镜调整：镜眼距与倾斜角 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 76 天</div>
+            <h1 class="page-title">老花镜调整：镜眼距与倾斜角</h1>
+            <div class="page-subtitle">模块一：产品知识 · 第11周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>76/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 20.82%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、镜眼距（Vertex Distance）的重要性</h3>
+                <p>镜眼距是指镜片后表面到角膜顶点的距离，通常为10-12mm。镜眼距的微小变化会显著影响镜片的实际屈光力，尤其是高度数镜片。</p>
+                
+                <p><strong>1. 镜眼距对屈光力的影响</strong><br>
+                根据顶点距离效应公式：F有效 = F / (1 - d×F)，其中d是镜眼距（米）。<br>
+                - <strong>近视镜片</strong>：镜眼距增大→屈光力减弱（度数"变浅"）<br>
+                - <strong>远视镜片</strong>：镜眼距增大→屈光力增强（度数"变深"）<br>
+                - <strong>影响幅度</strong>：每变化2mm，屈光力变化约0.25D（高度数时更明显）</p>
+                
+                <p><strong>2. 老花镜的镜眼距要求</strong><br>
+                老花镜通常是正镜片（+ADD），镜眼距过大导致实际度数偏高，易引起调节疲劳：<br>
+                - <strong>最佳镜眼距</strong>：10-12mm（贴近眼睛但不直接接触）<br>
+                - <strong>调整方法</strong>：调整镜腿弧度、鼻托高度，使镜框正确定位<br>
+                - <strong>检查方法</strong>：从侧面观察，镜片后表面距睫毛约10mm</p>
+                
+                <div class="tip-box">
+                    <strong>⚠️ 关键提示：</strong>渐进多焦点镜片对镜眼距极其敏感！镜眼距误差2mm可能导致通道位置偏移，严重影响中近视力。必须使用瞳距仪精确测量并调整。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、倾斜角（Pantoscopic Angle）的调整</h3>
+                <p>倾斜角是指镜片平面与垂直面之间的夹角，通常为8-12°。倾斜角影响散光分量和视觉质量。</p>
+                
+                <p><strong>1. 倾斜角的影响机制</strong><br>
+                当倾斜角增大时，镜片会产生额外的"有效散光"：<br>
+                - <strong>球面镜片</strong>：倾斜角→有效散光（Oblique Astigmatism）<br>
+                - <strong>非球面镜片</strong>：倾斜角影响较小，但仍需控制<br>
+                - <strong>渐进镜片</strong>：倾斜角错误会破坏通道设计，导致视力模糊</p>
+                
+                <p><strong>2. 老花镜的倾斜角标准</strong><br>
+                - <strong>单光老花镜</strong>：8-10°，舒适且光学质量好<br>
+                - <strong>双光镜</strong>：10-12°，确保下方近用区视线垂直<br>
+                - <strong>渐进镜</strong>：必须精确控制在8-12°，且左右对称</p>
+                
+                <p><strong>3. 倾斜角调整工具与步骤</strong><br>
+                使用专业调整钳和倾角仪：<br>
+                1. <strong>加热镜框</strong>：用电热烘枪加热镜腿连接处（5-10秒）<br>
+                2. <strong>弯曲镜腿</strong>：用调整钳改变镜腿与镜框的夹角<br>
+                3. <strong>测量验证</strong>：用倾角仪检查，确保左右差&lt;2°<br>
+                4. <strong>试戴确认</strong>：让顾客戴上，检查是否下滑或压鼻</p>
+                
+                <div class="warn-box">
+                    <strong>❌ 禁止操作：</strong>严禁在未加热的情况下强行弯曲钛合金或合金镜框！这会导致材料断裂或永久变形。必须充分加热后再调整。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、镜框调整的标准流程（SOP）</h3>
+                <p>老花镜调整后必须达到"三贴五对称"的标准，确保佩戴舒适和光学性能。</p>
+                
+                <p><strong>"三贴"标准</strong>：<br>
+                1. <strong>贴鼻</strong>：鼻托紧贴鼻梁两侧，无悬空<br>
+                2. <strong>贴耳</strong>：镜腿紧贴耳廓后方，不松动<br>
+                3. <strong>贴额</strong>：镜框上缘贴靠前额（倾斜角正确时无间隙）</p>
+                
+                <p><strong>"五对称"标准</strong>：<br>
+                1. <strong>鼻托对称</strong>：左右鼻托高度、角度一致<br>
+                2. <strong>镜腿对称</strong>：左右镜腿长度、弧度一致<br>
+                3. <strong>倾斜角对称</strong>：左右镜片倾斜角差值&lt;2°<br>
+                4. <strong>镜眼距对称</strong>：左右镜眼距差值&lt;1mm<br>
+                5. <strong>面弯对称</strong>：镜框弧度贴合脸型，左右压力均匀</p>
+                
+                <div class="tip-box">
+                    <strong>✅ 验收技巧：</strong>调整后让顾客做"点头、摇头、大笑"三个动作。如果镜框不滑落、不夹痛，说明调整到位。这是检验调整质量的"金标准"！
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li><strong>镜眼距</strong>：10-12mm，影响屈光力±0.25D/2mm，渐进镜尤其敏感</li>
+                    <li><strong>倾斜角</strong>：8-12°，影响有效散光，必须左右对称（差&lt;2°）</li>
+                    <li><strong>调整工具</strong>：电热烘枪、调整钳、倾角仪、瞳距仪</li>
+                    <li><strong>三贴标准</strong>：贴鼻、贴耳、贴额（确保不滑落）</li>
+                    <li><strong>五对称标准</strong>：鼻托、镜腿、倾斜角、镜眼距、面弯均需对称</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 镜眼距增大2mm，对-6.00D近视镜片的实际屈光力影响约为？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 老花镜（正镜片）的镜眼距过大，会导致实际度数如何变化？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 镜框调整的"三贴"标准包括哪些？（多选）</div>
+                <div class="question-meta">多选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题1 -->
+            <div class="essay-question">
+                <div class="question-text">4. 简答题：一位顾客配了渐进多焦点镜片，戴上后总觉得"看近不清楚"，请分析可能的调整问题及解决方法。</div>
+                <textarea placeholder="请在此输入您的答案..."></textarea>
+                <button class="answer-btn" id="essayBtn1" onclick="showReference('essayBtn1', 'essayAnswer1')">📖 查看参考答案</button>
+                <div class="reference-answer" id="essayAnswer1">
+                    <strong>参考答案：</strong>可能原因：1）镜眼距过大（&gt;12mm）→渐进通道位置后移，近用区偏高；2）倾斜角过小（&lt;8°）→通道变短，近用区视野不足；3）镜框下滑→实际镜眼距增大。解决方法：用瞳距仪重新测量镜眼距（应10-12mm），调整鼻托降低镜框；用倾角仪检查倾斜角（应8-12°），加热后调整镜腿；让顾客做"点头"动作，确认镜框不滑落。
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitAll()">📝 提交答案查看成绩</button>
+            </div>
+
+            <!-- 得分显示 -->
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0分</div>
+                <div class="score-text" id="scoreText">本次练习成绩</div>
+            </div>
+        </div>
+
+        <!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day075.html" class="nav-arrow">← 第75天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day077.html" class="nav-arrow">第77天 →</a>
+        </div>
+    </div>
+
+    <!-- 底部技术支持署名 -->
+    
+
+            <script>
+        // 选择题数据
+        const choiceQuestions = [{
+                type: 'single',
+                options: [
+                    { text: 'A. 变深约0.25D', correct: false },
+                    , correct: true },
+                    { text: 'B. 变浅约0.25D', correct: false },
+                    , correct: false },
+                    { text: 'C. 无变化', correct: false },
+                    , correct: false },
+                    { text: 'D. 变深约0.50D', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '近视镜片（负镜片）镜眼距增大→屈光力减弱（变浅）。公式是F有效=F/(1-d×F)，d增大则分母增大，F有效减小。'
+            },
+            
+{
+                type: 'single',
+                options: [
+                    { text: 'A. 变浅', correct: false },
+                    , correct: true },
+                    { text: 'B. 变深', correct: false },
+                    , correct: false },
+                    { text: 'C. 无变化', correct: false },
+                    , correct: false },
+                    { text: 'D. 先变浅后变深', correct: false }
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '老花镜是正镜片，镜眼距过大→实际度数变深（偏强），易引起调节疲劳。必须控制在10-12mm。'
+            },
+            
+{
+                type: 'multi',
+                options: [
+                    { text: 'A. 贴鼻（鼻托紧贴鼻梁）', correct: true },
+                    , correct: true },
+                    { text: 'B. 贴耳（镜腿紧贴耳廓）', correct: true },
+                    , correct: false },
+                    { text: 'C. 贴额（镜框上缘贴靠前额）', correct: false },
+                    , correct: false },
+                    { text: 'D. 贴脸颊（镜框下缘贴脸颊）', correct: false }
+                ],
+                answer: [0, 1, 2],
+                score: 10,
+                explanation: '"三贴"是贴鼻、贴耳、贴额。贴脸颊不是标准，镜框下缘应该悬空2-3mm避免压迫脸颊。'
+            }
+        
+    ];
+
+        // 初始化选择题
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const optionsList = container.querySelector('.options-list');
+                optionsList.innerHTML = '';
+                
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.textContent = opt.text;
+                    li.setAttribute('data-index', optIdx);
+                    li.onclick = () => toggleOption(li, idx, optIdx);
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        // 切换选项
+        function toggleOption(li, qIdx, optIdx) {
+            const container = li.parentElement.parentElement;
+            const q = choiceQuestions[qIdx];
+            
+            if (q.type === 'single') {
+                container.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+                li.classList.add('selected');
+            } else {
+                li.classList.toggle('selected');
+            }
+        }
+
+        // 获取选中的索引
+        function getSelectedIndices(container) {
+            return Array.from(container.querySelectorAll('.option-item.selected'))
+                .map(el => parseInt(el.getAttribute('data-index')))
+                .sort();
+        }
+
+        // 提交判分
+        function submitAll() {
+            let totalScore = 0;
+            const containers = document.querySelectorAll('.choice-question');
+            
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                
+                const selected = getSelectedIndices(container);
+                const correct = [...q.answer].sort();
+                const feedback = container.querySelector('.feedback');
+                
+                if (JSON.stringify(selected) === JSON.stringify(correct)) {
+                    feedback.innerHTML = '<div class="feedback-correct">回答正确！得分 +' + q.score + '分</div>';
+                    totalScore += q.score;
+                } else {
+                    const correctText = q.answer.map(i => q.options[i].text).join('、');
+                    feedback.innerHTML = `<div class="feedback-wrong">回答错误。正确答案：${correctText}<br>解析：${q.explanation}</div>`;
+                }
+            });
+            
+            const totalScoreElement = document.getElementById('scoreDisplay');
+            if (totalScoreElement) {
+                totalScoreElement.innerHTML = `<h3>总分：${totalScore} / 30 分</h3><p>选择题正确率：${totalScore / 30 * 100}%</p>`;
+            }
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+    </script>
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
