@@ -1,0 +1,314 @@
+========== 练习题结构检查报告 ==========\n检查时间: 2026/5/25 14:03:56\n总文件数: 365\n有问题文件数: 60\n\n========== 问题文件列表 ==========\n
+day016.html (第16天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day071.html (第71天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day072.html (第72天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day073.html (第73天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day074.html (第74天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day075.html (第75天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day076.html (第76天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day077.html (第77天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day078.html (第78天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day079.html (第79天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day080.html (第80天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day081.html (第81天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day082.html (第82天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day083.html (第83天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day084.html (第84天):
+  - 缺少标准 JavaScript 函数: getSelectedIndices
+
+day085.html (第85天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day086.html (第86天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 10 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day087.html (第87天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day088.html (第88天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day089.html (第89天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day090.html (第90天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day091.html (第91天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day092.html (第92天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day093.html (第93天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day094.html (第94天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day095.html (第95天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day096.html (第96天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day097.html (第97天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day098.html (第98天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day099.html (第99天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day100.html (第100天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day101.html (第101天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day102.html (第102天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day103.html (第103天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day104.html (第104天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 使用 question-card (不是标准结构，应该是 choice-question 或 essay-question)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 使用静态 input radio/checkbox (day001.html 使用动态生成选项)
+  - 有 3 个独立提交按钮 (应该是统一提交按钮 submitAll())
+
+day177.html (第177天):
+  - 缺少标准 JavaScript 函数: initChoiceQuestions, toggleOption, getSelectedIndices, showReference
+
+day178.html (第178天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day179.html (第179天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day180.html (第180天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day181.html (第181天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day182.html (第182天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day183.html (第183天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day184.html (第184天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day185.html (第185天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day186.html (第186天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day187.html (第187天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day188.html (第188天):
+  - 使用 choice-questions (应该是 choice-question 单数)
+  - 使用 essay-questions (应该是 essay-question 单数)
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+  - 缺少标准 JavaScript 函数: showReference
+
+day212.html (第212天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day213.html (第213天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day214.html (第214天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day215.html (第215天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day216.html (第216天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day217.html (第217天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day218.html (第218天):
+  - 练习题区有 h4 标题 (day001.html 没有 h4)
+
+day332.html (第332天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day333.html (第333天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day334.html (第334天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day335.html (第335天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day339.html (第339天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
+day340.html (第340天):
+  - 缺少标准 JavaScript 函数: toggleOption, getSelectedIndices
+
