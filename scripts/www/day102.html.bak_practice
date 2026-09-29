@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第102天 | 团体顾客：家庭/企业接待 - 365天眼镜门店员工晋级培训</title>
+    <link rel="stylesheet" href="training-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题区 -->
+        <div class="page-header">
+            <div class="day-number">第 102 天</div>
+            <h1 class="page-title">团体顾客：家庭/企业接待</h1>
+            <div class="page-subtitle">模块二：销售技巧 · 第15周</div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-bar-container">
+            <div class="progress-bar-label">
+                <span>培训进度</span>
+                <span>102/365</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 27.95%"></div>
+            </div>
+        </div>
+
+        <!-- ===== 学习内容区 ===== -->
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📚</div>
+                <div class="card-title">学习内容</div>
+            </div>
+
+            <div class="learning-section">
+                <h3>一、什么是团体顾客？</h3>
+                <p><strong>团体顾客</strong>指一次性为<strong>多人配镜</strong>的顾客，分为两大类：</p>
+                
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>类型</th>
+                                <th>典型场景</th>
+                                <th>人数</th>
+                                <th>客单价特点</th>
+                                <th>决策方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>家庭团体</strong></td>
+                                <td>一家三口/四口配镜</td>
+                                <td>2-5人</td>
+                                <td>中高（捆绑销售机会大）</td>
+                                <td>家长决策为主</td>
+                            </tr>
+                            <tr>
+                                <td><strong>企业团体</strong></td>
+                                <td>公司员工福利配镜</td>
+                                <td>10-100人+</td>
+                                <td>高（批量折扣）</td>
+                                <td>HR/行政决策</td>
+                            </tr>
+                            <tr>
+                                <td><strong>学校团体</strong></td>
+                                <td>学生体检+配镜</td>
+                                <td>50-500人+</td>
+                                <td>中（单价低但量大）</td>
+                                <td>学校/家委会决策</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tip-box">
+                    💡 <strong>团体顾客的价值：</strong>一次接待=多笔成交，效率高。家庭团体客单价通常是单人2-3倍；企业团体虽然单价有折扣，但量大稳定，是门店重要收入来源。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>二、家庭团体接待策略</h3>
+                <p>家庭团体（如一家三口）是最常见的团体顾客。接待核心是<strong>同时满足多人需求，提高效率</strong>。</p>
+
+                <h4>1. 接待流程（家庭团体版）</h4>
+                <p><strong>第1步：识别主导者</strong><br>
+                家庭中通常有一个"决策者"（一般是出钱的人，如父亲或母亲）。先跟决策者沟通，了解整体需求和预算。</p>
+                
+                <p><strong>第2步：分流服务</strong><br>
+                不要 everyone挤在一起。可以：<br>
+                - 让一部分人先验光（验光师服务）<br>
+                - 另一部分人先选镜框（你服务）<br>
+                - 孩子在玩的，安排玩具/视频（减少干扰）</p>
+
+                <p><strong>第3步：捆绑销售</strong><br>
+                家庭团体最大的机会是<strong>捆绑销售</strong>：<br>
+                - "您们3位都配镜的话，可以打9折，相当于省了XX元"<br>
+                - "孩子配了，您自己不换一副吗？一起配更划算"</p>
+
+                <p><strong>第4步：分别成交</strong><br>
+                每个人的需求不同，要<strong>分别推荐、分别成交</strong>。不要试图"一次性搞定所有人"，容易混乱。</p>
+
+                <div class="tip-box">
+                    🎯 <strong>话术示例：</strong><br>
+                    "先生，您是帮全家人配镜对吧？我先了解一下——您自己需要配吗？夫人呢？孩子呢？预算大概多少？我帮您们安排一下，先让夫人和孩子验光，您先看看镜框。"<br>
+                    （先了解全局→分流服务→分别成交）
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>三、企业团体接待策略</h3>
+                <p>企业团体（如公司员工福利）是<strong>高价值客户</strong>，但决策流程复杂，需要专门策略。</p>
+
+                <h4>1. 企业团体的特点</h4>
+                <ul>
+                    <li><strong>决策链长：</strong>HR/行政提出→领导审批→采购流程（可能需要1-3个月）</li>
+                    <li><strong>价格敏感：</strong>企业有预算限制，需要"批量折扣"（如8折）</li>
+                    <li><strong>服务要求高：</strong>需要上门验光、团体预约、统一结算等</li>
+                    <li><strong>长期价值大：</strong>一次合作=几十甚至几百个客户，后续还有复购</li>
+                </ul>
+
+                <h4>2. 企业团体销售流程</h4>
+                <p><strong>第1步：找到关键人</strong><br>
+                企业配镜的关键人是<strong>HR（人力资源）或行政部</strong>。你要先联系到他们，了解需求（多少人？预算多少？时间要求？）。</p>
+
+                <p><strong>第2步：出方案</strong><br>
+                根据企业需求，出一个<strong>团体配镜方案</strong>：<br>
+                - 套餐A：基础款（XX元/人，包含验光+镜框+镜片）<br>
+                - 套餐B：升级款（XX元/人，更薄镜片+品牌镜框）<br>
+                - 服务：上门验光、团体预约、统一结算</p>
+
+                <p><strong>第3步：谈判与签约</strong><br>
+                企业会讨价还价。你要准备：<br>
+                - <strong>折扣空间：</strong>团体订单可以给到8-8.5折（量大）<br>
+                - <strong>增值服务：</strong>免费验光、免费调整、1年保修<br>
+                - <strong>付款方式：</strong>可以月结、季结（企业喜欢）</p>
+
+                <p><strong>第4步：执行服务</strong><br>
+                签约后，要<strong>高效执行</strong>：<br>
+                - 安排团体验光日（如周六全天）<br>
+                - 现场服务（你+验光师去企业）<br>
+                - 跟进取镜、调整、售后</p>
+
+                <div class="warn-box">
+                    ⚠️ <strong>注意：</strong>企业团体销售周期长（1-3个月），不要急于求成。保持跟进（每周一个电话/微信），但不要催太紧。关键是<strong>建立信任</strong>——让HR觉得你靠谱、专业、服务好。
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h3>四、团体接待的沟通技巧</h3>
+                
+                <p><strong>1. 对家庭团体：强调"一起更划算"</strong><br>
+                家庭顾客最关心的是<strong>性价比</strong>。你要强调"一起配更划算"：<br>
+                - "您们3位一起配，总价XX元，比分开配便宜XX元"<br>
+                - "孩子配了，您自己的保险（指旧眼镜）也到期了，一起换吧"</p>
+
+                <p><strong>2. 对企业团体：强调"员工福利+专业服务"</strong><br>
+                企业顾客最关心的是<strong>员工满意度+成本控制</strong>。你要强调：<br>
+                - "这个方案能让员工感受到公司关怀，提升满意度"<br>
+                - "我们提供上门验光，员工不用请假，不耽误工作"</p>
+
+                <p><strong>3. 处理"决策慢"的问题</strong><br>
+                团体决策比个人决策慢（要商量、要审批）。你要：<br>
+                - <strong>给时间：</strong>不要催"今天决定吗"，而是说"您考虑一下，我下周再联系您"<br>
+                - <strong>给资料：</strong>留下方案书/宣传册，让他们内部讨论<br>
+                - <strong>给优惠：</strong>"如果本周签约，可以额外98折"（制造紧迫感）</p>
+
+                <div class="tip-box">
+                    🏆 <strong>高手心法：</strong>团体销售的核心是<strong>耐心+专业</strong>。家庭团体要"快准狠"（当场成交）；企业团体要"慢工细活"（建立信任，长期跟进）。
+                </div>
+            </div>
+
+            <!-- 小结 -->
+            <div class="summary-card">
+                <div class="summary-title">📝 今日小结</div>
+                <ul>
+                    <li>团体顾客分为家庭团体（2-5人）、企业团体（10-100人+）、学校团体（50-500人+）</li>
+                    <li>家庭团体接待：识别主导者→分流服务→捆绑销售→分别成交</li>
+                    <li>企业团体销售：找到关键人（HR/行政）→出方案→谈判签约→执行服务</li>
+                    <li>家庭团体沟通：强调"一起更划算"；企业团体沟通：强调"员工福利+专业服务"</li>
+                    <li>团体销售核心：家庭要"快准狠"，企业要"慢工细活"</li>
+                </ul>
+            </div>
+        </div>
+
+                <!-- ===== 练习题区 ===== -->
+        <div class="practice-section">
+            <div class="section-title">练习题</div>
+            <!-- 选择题1 -->
+            <div class="choice-question">
+                <div class="question-text">1. 1. 接待一家三口的家庭团体时，最佳策略是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题2 -->
+            <div class="choice-question">
+                <div class="question-text">2. 2. 企业团体销售，第一步应该做什么？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+            <!-- 选择题3 -->
+            <div class="choice-question">
+                <div class="question-text">3. 3. 对家庭团体顾客，最适合的沟通重点是？</div>
+                <div class="question-meta">单选题 · 10分</div>
+                <ul class="options-list"></ul>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 问答题部分需要手动调整 -->
+        </div>
+<!-- 底部导航按钮区 -->
+        <div class="nav-bottom">
+            <a href="day101.html" class="nav-arrow">← 第101天</a>
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+            <a href="day103.html" class="nav-arrow">第103天 →</a>
+        </div>
+    </div>
+
+    <script>
+        // ========== 选择题数据 ==========
+        const choiceQuestions = [
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [1],
+                score: 10,
+                explanation: '家庭团体接待的核心是'分流服务'——让一部分人先验光，另一部分人先选镜框，提高效率。不要 everyone挤在一起，那样效率低且混乱。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [2],
+                score: 10,
+                explanation: '企业团体销售的第一步是'找到关键人'——通常是HR（人力资源）或行政部，因为他们负责员工福利。找到关键人才能推进后续流程。'
+            },
+            {
+                type: 'single',
+                options: [
+                ],
+                answer: [0],
+                score: 10,
+                explanation: '家庭团体沟通要强调'一起更划算'（捆绑销售，总价更便宜）。企业团体沟通要强调'员工福利+专业服务'（上门验光、员工满意度）。'
+            },
+        ];
+
+        // ========== 初始化选择题 ==========
+        function initChoiceQuestions() {
+            const containers = document.querySelectorAll('.choice-question');
+            containers.forEach((container, idx) => {
+                const q = choiceQuestions[idx];
+                if (!q) return;
+                const optionsList = container.querySelector('.options-list');
+                const isMulti = q.type === 'multi';
+                q.options.forEach((opt, optIdx) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    li.dataset.qidx = idx;
+                    li.dataset.optidx = optIdx;
+                    const marker = document.createElement('div');
+                    marker.className = 'option-marker';
+                    marker.textContent = String.fromCharCode(65 + optIdx);
+                    const text = document.createElement('span');
+                    text.className = 'option-text';
+                    text.textContent = opt.text;
+                    li.appendChild(marker);
+                    li.appendChild(text);
+                    li.addEventListener('click', () => toggleOption(idx, optIdx, isMulti));
+                    optionsList.appendChild(li);
+                });
+            });
+        }
+
+        function toggleOption(qIdx, optIdx, isMulti) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const item = container.querySelectorAll('.option-item')[optIdx];
+            if (isMulti) { item.classList.toggle('selected'); }
+            else { container.querySelectorAll('.option-item').forEach(li => li.classList.remove('selected')); item.classList.add('selected'); }
+        }
+
+        function getSelectedIndices(qIdx) {
+            const container = document.querySelectorAll('.choice-question')[qIdx];
+            const selected = [];
+            container.querySelectorAll('.option-item.selected').forEach(li => selected.push(parseInt(li.dataset.optidx)));
+            return selected.sort((a, b) => a - b);
+        }
+
+        // ========== 提交判分 ==========
+        function submitAll() {
+            let totalScore = 0;
+            choiceQuestions.forEach((q, qIdx) => {
+                const container = document.querySelectorAll('.choice-question')[qIdx];
+                const selected = getSelectedIndices(qIdx);
+                const correct = q.answer.slice().sort((a, b) => a - b);
+                const isCorrect = JSON.stringify(selected) === JSON.stringify(correct);
+                container.querySelectorAll('.option-item').forEach(li => li.classList.remove('correct', 'wrong'));
+                container.querySelector('.feedback')?.classList.remove('show');
+                q.options.forEach((opt, optIdx) => {
+                    const li = container.querySelectorAll('.option-item')[optIdx];
+                    if (correct.includes(optIdx)) li.classList.add('correct');
+                    if (selected.includes(optIdx) && !correct.includes(optIdx)) li.classList.add('wrong');
+                });
+                const feedback = container.querySelector('.feedback');
+                if (feedback) {
+                    feedback.classList.add('show');
+                    if (isCorrect) {
+                        feedback.className = 'feedback correct-feedback show';
+                        feedback.innerHTML = '✅ 回答正确！' + (q.explanation || '');
+                        totalScore += q.score || 10;
+                    } else {
+                        feedback.className = 'feedback wrong-feedback show';
+                        const correctLetters = correct.map(i => String.fromCharCode(65 + i)).join('、');
+                        feedback.innerHTML = '❌ 回答错误。正确答案：' + correctLetters + '。' + (q.explanation || '');
+                    }
+                } else { if (isCorrect) totalScore += q.score || 10; }
+            });
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const scoreNumber = document.getElementById('scoreNumber');
+            const maxScore = choiceQuestions.reduce((sum, q) => sum + (q.score || 10), 0);
+            scoreDisplay.classList.add('show');
+            scoreNumber.textContent = totalScore + '/' + maxScore + '分';
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // ========== 问答题：显示参考答案 ==========
+        function showReference(btnId, answerId) {
+            const answerDiv = document.getElementById(answerId);
+            const btn = document.getElementById(btnId);
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                btn.textContent = '📖 查看参考答案';
+            } else {
+                answerDiv.classList.add('show');
+                btn.textContent = '🙈 隐藏参考答案';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { initChoiceQuestions(); });
+
+    </script>
+
+
+    <!-- 底部技术支持署名 -->
+    
+</body>
+</html>
+<div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
