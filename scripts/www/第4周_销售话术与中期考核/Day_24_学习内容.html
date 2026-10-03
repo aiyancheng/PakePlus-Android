@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 24 - 价格异议处理话术</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Microsoft YaHei', sans-serif; background: #f5f7fa; color: #333; }
+  .header { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); color: white; padding: 30px 40px; }
+  .header .week-badge { background: rgba(0,0,0,0.12); display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 13px; margin-bottom: 10px; }
+  .header h1 { font-size: 28px; margin-bottom: 8px; }
+  .header .subtitle { opacity: 0.9; font-size: 15px; }
+  .meta-bar { background: white; padding: 15px 40px; display: flex; gap: 30px; border-bottom: 1px solid #e8ecf0; flex-wrap: wrap; }
+  .meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #666; }
+  .meta-item span.dot { width: 8px; height: 8px; border-radius: 50%; background: #f7971e; display: inline-block; }
+  .container { max-width: 960px; margin: 30px auto; padding: 0 20px; }
+  .card { background: white; border-radius: 12px; padding: 30px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .card h2 { font-size: 20px; color: #333; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid #f7971e; display: flex; align-items: center; gap: 10px; }
+  .card h3 { font-size: 16px; color: #444; margin: 18px 0 10px; }
+  .card p { line-height: 1.8; color: #555; margin-bottom: 12px; }
+  .card ul, .card ol { padding-left: 20px; }
+  .card li { line-height: 1.9; color: #555; margin-bottom: 4px; }
+  .highlight-box { background: #fff9f0; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+  .highlight-box.green { background: #f0fdf4; }
+  .highlight-box.blue { background: #f0f4ff; }
+  .dialogue-box { border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .dialogue-row { display: flex; }
+  .dialogue-row .role { padding: 12px 16px; min-width: 80px; text-align: center; font-weight: bold; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .dialogue-row .role.staff { background: #f7971e; color: white; }
+  .dialogue-row .role.customer { background: #f5f5f5; color: #666; }
+  .dialogue-row .content { padding: 12px 16px; font-size: 14px; color: #444; line-height: 1.7; flex: 1; }
+  .dialogue-row:last-child .content { }
+  .method-box { background: #fff9f0; border-radius: 10px; padding: 20px; margin: 16px 0; }
+  .method-box .method-title { font-weight: bold; color: #c05200; font-size: 15px; margin-bottom: 10px; }
+  .method-box p { margin: 0; font-size: 14px; color: #555; line-height: 1.8; }
+  .summary-box { background: linear-gradient(135deg, #f7971e, #ffd200); color: white; border-radius: 12px; padding: 24px; margin-top: 8px; }
+  .summary-box h3 { font-size: 18px; margin-bottom: 14px; }
+  .summary-box ul { padding-left: 20px; }
+  .summary-box li { line-height: 2; }
+  .footer { text-align: center; padding: 30px; color: #aaa; font-size: 13px; }
+  .nav-footer { display: flex; justify-content: space-between; margin: 20px 0 40px; gap: 12px; }
+  .nav-btn { background: linear-gradient(135deg, #fa709a, #fee140); color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-size: 0.95em; font-weight: 600; transition: all 0.2s; }
+  .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .nav-btn.outline { background: white; color: #fa709a; border: 2px solid #fa709a; }
+  .nav-btn.outline:hover { background: #fff5f8; }
+  .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .structure-table th,.rule-table th{background:#2196F3;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
+
+  /* ══════════════════════════════════════════════
+     红米平板响应式适配（横屏1100px / 竖屏900px）
+     ══════════════════════════════════════════════ */
+
+  /* 平板横屏：内容区微调 */
+  @media (max-width: 1100px) {
+    .container { padding: 28px 24px !important; }
+    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+
+  /* 平板竖屏：核心适配断点 */
+  @media (max-width: 900px) {
+    body { padding: 12px !important; font-size: 15px; }
+    .container { padding: 20px 16px !important; border-radius: 10px !important; }
+    /* 学习内容：各类2列/3列网格折叠为1列 */
+    .value-cards, .material-grid, .face-grid,
+    .norm-grid, .salary-grid, .do-dont, .image-standard,
+    .safety-grid, .role-cards, .review-grid, .equipment-grid,
+    .lens-grid, .coating-grid, .term-grid, .display-rules,
+    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
+    .review-grid, .zone-grid, .test-info, .method-grid,
+    .question-type, .fab-grid, .form-grid, .wrong-right,
+    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
+    .achieve-grid, .product-card, .sign-area, .wish-cards,
+    .eval-row,
+    [class*="-grid"], [class*="grid-"],
+    .two-col { grid-template-columns: 1fr !important; }
+    /* 3列→2列特殊处理（不完全折叠，保留2列） */
+    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 导航按钮：允许换行，防止溢出 */
+    .nav-footer, .nav-bar {
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .nav-btn {
+      font-size: 0.88em !important;
+      padding: 10px 18px !important;
+      text-align: center !important;
+    }
+    /* 标题字号适配 */
+    .header h1, h1 { font-size: 1.4em !important; }
+    .header .subtitle, .header .week-badge { font-size: 13px !important; }
+    /* 表格横向滚动（防溢出） */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* meta-bar 换行 */
+    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
+    /* 首页时间轴横向滚动 */
+    .timeline { overflow-x: auto; }
+  }
+
+  /* 手机 / 平板极窄竖屏 */
+  @media (max-width: 600px) {
+    body { padding: 8px !important; }
+    .container { padding: 16px 12px !important; }
+    .header h1, h1 { font-size: 1.2em !important; }
+    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .container { padding: 16px !important; }
+  }
+
+/* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1080px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+}
+
+  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 参考 / 自测 / 阶段复盘） ═══════ */
+  .lm-block{border-radius:14px;padding:20px 24px;margin:24px 0;line-height:1.85}
+  .lm-block h3{margin:0 0 14px;font-size:1.1em;font-weight:700;letter-spacing:.3px}
+  .lm-list{margin:0;padding-left:22px}
+  .lm-list li{margin-bottom:9px}
+  .lm-goal{background:#e8f5e9;color:#1b5e20}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:#fff8e1;color:#4e342e}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:#f3e5f5;color:#4a148c}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-ref{background:#e3f2fd;color:#0d3c61}
+  .lm-ref h3{color:#1565c0}
+  .lm-quiz{background:#fce4ec;color:#880e4f}
+  .lm-quiz h3{color:#c2185b}
+  .lm-review{background:#ede7f6;color:#311b92}
+  .lm-review h3{color:#4527a0}
+  .lm-meta{margin:12px 0 0;font-size:.9em;opacity:.92}
+  .lm-pr{margin:0 0 14px;padding:14px 16px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:700;margin-bottom:6px}
+  .lm-pr-d{margin-bottom:6px}
+  .lm-pr-o{font-size:.92em;font-weight:600}
+  .lm-q{margin:0 0 10px;padding:10px 14px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:600;line-height:1.7}
+  .lm-q[open] summary{margin-bottom:8px}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.8}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  .lm-sub{font-weight:700;margin:14px 0 8px;font-size:1em}
+  @media(max-width:900px){
+    .lm-block{padding:16px 14px;margin:18px 0;line-height:1.75}
+    .lm-block h3{font-size:1.02em}
+    .lm-list{padding-left:18px}
+  }
+
+/* ══ HOME-BAR：顶部返回首页入口 ══ */
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+
+/* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
+  .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
+  .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
+  .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
+  .flow-hook b{color:#1a3a6b}
+  .flow-sub{margin:0 0 18px;font-size:.9em;color:#556}
+  .flow-sub strong{color:#1a3a6b}
+  .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .flow-col{border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 4px rgba(26,58,107,.05)}
+  .flow-h{font-weight:800;font-size:.98em;margin-bottom:10px;color:#1a3a6b;display:flex;align-items:center;gap:6px}
+  .flow-h .fh-tag{font-size:.7em;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px;letter-spacing:.5px}
+  .flow-std .flow-h{color:#2c5aa0}.flow-std .fh-tag{background:#2c5aa0}
+  .flow-teach .flow-h{color:#2e7d5b}.flow-teach .fh-tag{background:#2e7d5b}
+  .flow-check .flow-h{color:#c47f17}.flow-check .fh-tag{background:#c47f17}
+  .flow-opt .flow-h{color:#8e44ad}.flow-opt .fh-tag{background:#8e44ad}
+  .flow-say{font-size:.88em;color:#37475e;background:#f6f9ff;border-radius:8px;padding:10px 12px;margin-bottom:12px;line-height:1.7;border-left:3px solid #cdd9ec}
+  .flow-say b{color:#1a3a6b}
+  .flow-do-t{font-size:.82em;font-weight:800;color:#556;margin:12px 0 6px}
+  .flow-do{margin:0;padding-left:19px}
+  .flow-do li{font-size:.85em;line-height:1.7;margin-bottom:6px;color:#4a5568}
+  .flow-standard{font-size:.84em;color:#2e7d32;background:#eef8f0;border-radius:7px;padding:9px 12px;margin-top:12px;line-height:1.65}
+  .flow-standard b{color:#1b5e20}
+  .flow-pit{font-size:.84em;color:#b3541e;background:#fdf3ea;border-radius:7px;padding:9px 12px;margin-top:8px;line-height:1.65}
+  .flow-pit b{color:#8a3d0a}
+  .flow-meta{margin:18px 0 0;font-size:.84em;color:#5a6478;background:#eef3fb;border-radius:8px;padding:12px 16px;line-height:1.7}
+  .flow-meta b{color:#1a3a6b}
+  @media(max-width:900px){
+    .flow-grid{grid-template-columns:1fr;gap:12px}
+    .flow-block{padding:18px 16px}
+    .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
+  }
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <div class="week-badge">第4周 · 销售话术与中期考核</div>
+  <h1>Day 24 — 价格异议处理话术</h1>
+  <div class="subtitle">话术模块 · 学会应对"太贵了"，让顾客感受到真正的价值</div>
+</div>
+<div class="meta-bar">
+  <div class="meta-item"><span class="dot"></span>学习时长：约3.5小时</div>
+  <div class="meta-item"><span class="dot"></span>模块：话术（Scripts）</div>
+  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
+  <div class="meta-item"><span class="dot"></span>核心挑战：价格谈判心理</div>
+</div>
+<div class="container">
+
+<div class="lm-block lm-goal">
+  <h3>🎯 今日学习目标（学完你应该能做到）</h3>
+  <ul class="lm-list">
+      <li>能拆解「太贵了」背后的 4 种真实含义：超预算、不值这个价、比价、只是犹豫借口</li>
+      <li>掌握 5 种价格异议处理方法：价值重塑、对比法、拆分法、降阶推荐、限时优惠</li>
+      <li>能完成一次完整价格谈判并守住底线，不靠一味降价成交</li>
+      <li>掌握价格异议四大禁忌：立刻降价、贬低同行、敷衍应付、直接翻脸</li>
+      <li>能用「每日成本」把高价说低，用「使用年限」把价值说高</li>
+  </ul>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
+</div>
+
+  <div class="card">
+    <h2><span>🧠</span>一、顾客说"太贵了"的真实含义</h2>
+    <p>当顾客说"太贵了"时，<strong>大多数情况下并不是真的买不起</strong>，而是：</p>
+    <ul>
+      <li>① <strong>没感受到产品的价值</strong>（"我不知道为什么这么贵"）</li>
+      <li>② <strong>在砍价试探底线</strong>（"我看你能不能给我优惠"）</li>
+      <li>③ <strong>在货比三家</strong>（"我还没决定在哪买"）</li>
+      <li>④ <strong>预算确实有限</strong>（真的价格敏感）</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>关键：</strong>先判断顾客属于哪种情况，再用对应策略回应。不要一听"贵"就直接降价，这是最常见的新手错误，会让顾客认为你的定价是虚高的，反而失去信任。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span>💡</span>二、5种价格异议处理方法</h2>
+
+    <div class="method-box">
+      <div class="method-title">方法1：认同 + 价值重塑（最常用）</div>
+      <p>先认同顾客的感受，再把价格转化为"投资"和"价值"。<br>
+      <br><strong>话术示例：</strong><br>
+      顾客："这副眼镜也太贵了，1200块？"<br>
+      员工："确实，1200元不是小数目。不过您换个角度算一下，这副镜架用3-5年是完全没问题的，平均下来每天不到1块钱，但这期间您每天的视觉清晰度和佩戴舒适度都得到了保障，您觉得值不值？"</p>
+    </div>
+
+    <div class="method-box">
+      <div class="method-title">方法2：对比法（价值对比）</div>
+      <p>通过与同类产品或生活支出对比，让顾客感受到相对价值。<br>
+      <br><strong>话术示例：</strong><br>
+      "您看，一顿普通的商务午餐可能就要好几百，而这副每天陪您16小时、帮您清晰看世界的眼镜，同样的钱，您觉得哪个更值得？当然，我们也有不同价位的选择，我帮您看看有没有更适合您的。"</p>
+    </div>
+
+    <div class="method-box">
+      <div class="method-title">方法3：拆分法（化大为小）</div>
+      <p>把总价拆分成更小的单位，降低心理负担。<br>
+      <br><strong>话术示例：</strong><br>
+      "这款1.74超薄镜片是1080元，但它的使用寿命在2-3年，您算一下，每个月才三十多块，相当于每天1块钱，买的是2年的清晰舒适视觉，其实非常划算。"</p>
+    </div>
+
+    <div class="method-box">
+      <div class="method-title">方法4：降阶推荐（真心实意地推荐平价款）</div>
+      <p>如果顾客预算确实有限，诚心推荐适合价位的产品，不要强推。<br>
+      <br><strong>话术示例：</strong><br>
+      "好的，我完全理解。那我给您看看这款，品质同样很好，价格在600元左右，很多顾客都很满意。这个价位您觉得舒适吗？"</p>
+    </div>
+
+    <div class="method-box">
+      <div class="method-title">方法5：限时优惠法（配合活动使用）</div>
+      <p>在有促销活动时，用限时优惠创造紧迫感。但要真实，不能虚假。<br>
+      <br><strong>话术示例：</strong><br>
+      "刚好这周我们有个活动，这款镜片可以享受8折优惠，算下来比平时省了200多块。活动到本周日结束，您今天决定的话价格是最合适的。"</p>
+    </div>
+
+    <div class="highlight-box green">
+      <strong>黄金原则：</strong>不轻易打折降价。先用方法1-3塑造价值，顾客仍然坚持时再考虑优惠。主动降价会让顾客认为产品本来就不值这个价，反而损害信任。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span>🎭</span>三、完整情景对话示例</h2>
+    <div class="dialogue-box">
+      <div class="dialogue-row">
+        <div class="role customer">顾客</div>
+        <div class="content">这副钛合金架子要2000多，也太贵了吧，网上同款才几百块。</div>
+      </div>
+      <div class="dialogue-row">
+        <div class="role staff">员工</div>
+        <div class="content">您说的网上价格我理解，确实看起来差距挺大的。不过我想和您分享一个重要的区别：眼镜的核心价值不在镜架，而在镜片的配适和调整服务。网上买的镜架需要您自己配镜片，配出来的度数误差、镜片中心是否对准您的瞳孔、佩戴舒适度，这些都直接影响您的视力健康。我们提供的是包括专业验光、精准加工、售后调整的完整服务。（停顿）您现在戴的眼镜是自己网上配的还是在实体店配的？</div>
+      </div>
+      <div class="dialogue-row">
+        <div class="role customer">顾客</div>
+        <div class="content">上次网上配的，确实戴了一段时间头有点晕。</div>
+      </div>
+      <div class="dialogue-row">
+        <div class="role staff">员工</div>
+        <div class="content">那这个体验说明了问题所在。头晕很可能就是瞳距误差或度数不准导致的。这副钛合金架2000多，配上我们专业的镜片，加上免费的售后调整服务，是一个完整的视力解决方案，不只是一副框架。您觉得有没有道理？如果您有预算考量，我可以帮您在镜片上找一个平衡点。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span>⚠️</span>四、处理价格异议的禁忌</h2>
+    <ul>
+      <li>❌ 立即降价："行行行，给你打9折。"（主动贬值）</li>
+      <li>❌ 强行比较："你比比看，外面都是这个价！"（让顾客反感）</li>
+      <li>❌ 否定顾客："这已经很便宜了。"（不认同顾客感受）</li>
+      <li>❌ 沉默尴尬：顾客说贵，员工不知道说什么（准备不足）</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">
+    <h3>📋 今日知识小结</h3>
+    <ul>
+      <li>顾客说"太贵"有4种原因，先判断原因再回应</li>
+      <li>5种方法：价值重塑 / 对比法 / 拆分法 / 降阶推荐 / 限时优惠</li>
+      <li>黄金原则：先塑造价值，不轻易主动降价</li>
+      <li>4大禁忌：立即降价、强行比较、否定感受、沉默无言</li>
+    </ul>
+  </div>
+
+  <div class="footer">Day 24 · 眼镜门店新员工8周成才培训计划 · 第4周 销售话术与中期考核</div>
+
+    <div class="card">
+    <h2>🎯 话术优化对比练习</h2>
+    <p>同样的内容，不同的表达方式，效果差距巨大：</p>
+    <table class="structure-table" style="width:100%;border-collapse:collapse;margin:14px 0">
+      <thead><tr style="background:#43e97b;color:#fff"><th style="padding:10px 14px;text-align:left">情景</th><th style="padding:10px 14px;text-align:left">弱话术（❌）</th><th style="padding:10px 14px;text-align:left">强话术（✅）</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 14px;border-bottom:1px solid #e0f0e0">客户嫌贵</td><td style="padding:10px 14px;border-bottom:1px solid #e0f0e0">"这个价格已经很便宜了"</td><td style="padding:10px 14px;border-bottom:1px solid #e0f0e0">"这副镜片您至少用3年，平均每天只要X元，而且用的是XX品牌，质量有保障"</td></tr>
+        <tr style="background:#f0fff0"><td style="padding:10px 14px;border-bottom:1px solid #e0f0e0">客户问能否打折</td><td style="padding:10px 14px;border-bottom:1px solid #e0f0e0">"打折是不行的"</td><td style="padding:10px 14px;border-bottom:1px solid #e0f0e0">"价格这边已经是最优惠了，不过我可以帮您申请一个专属礼品，另外我们有2年免费保养服务"</td></tr>
+        <tr><td style="padding:10px 14px">客户说要考虑</td><td style="padding:10px 14px">"好的，您慢慢考虑"</td><td style="padding:10px 14px">"我理解，这是大事。有什么顾虑我帮您解答？这款库存不多，我帮您暂时预留一下？"</td></tr>
+      </tbody>
+    </table>
+    <div style="background:#e8f5e9;border-left:4px solid #43e97b;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px">
+      💡 好的话术不是背稿，而是真心站在客户角度，找到对他们最有价值的角度来表达。
+    </div>
+  </div>
+<!-- LM-START -->
+<div class="lm-block lm-practice">
+  <h3>🔧 动手实践任务（今日必做）</h3>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 1：五法逐条演练（约 25 分钟）</div>
+      <div class="lm-pr-d">对同一个价格异议（「这副 2000 太贵了」），分别用 5 种方法各回应一次，体会语气与效果差异。</div>
+      <div class="lm-pr-o">✅ 完成标准：5 种方法都能独立说出，并能判断哪种适合当前的顾客类型。</div>
+    </div>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 2：完整谈判模拟（约 25 分钟）</div>
+      <div class="lm-pr-d">请师傅扮演强压价顾客，你从价格异议到最终成交（或礼貌送客）完整走一遍，全程不擅自承诺折扣。</div>
+      <div class="lm-pr-o">✅ 完成标准：守住价格底线，顾客感受到被尊重；未成交时也能留下后续机会（加微信/记账需求）。</div>
+    </div>
+</div>
+<div class="lm-block lm-faq">
+  <h3>⚠️ 常见问题与注意事项</h3>
+    <details class="lm-q">
+      <summary>❓ 顾客说贵，我第一句该说什么？</summary>
+      <div class="lm-a">不要解释、不要降价，先确认：「您是觉得超出预算了，还是觉得这个价格不值？」一句话就能分清是钱的问题还是信任的问题，处理方式完全不同。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客说「对面同款便宜 300」，怎么办？</summary>
+      <div class="lm-a">不贬低同行，比「同不同」：「价格差可能来自版本或膜层。您方便说下对面是哪个系列吗？我帮您逐项对比，避免买了不一样的还多花钱。」</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 实在要降价才能成交，怎么办？</summary>
+      <div class="lm-a">先申请、后承诺。你可以做的：请示店长争取赠品或服务（清洗、备用镜布、免费调整），而不是自己拍板改价。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客一直压价、态度也不好，怎么办？</summary>
+      <div class="lm-a">保持礼貌，明确底线：「这个价格我确实没法再动了，但我可以帮您把这部分服务做到最好。」如果仍然不行，礼貌送客+留联系方式，不用为了单子丢原则。</div>
+    </details>
+</div>
+<div class="lm-block lm-quiz">
+  <h3>📝 今日自测（先做完再看答案）</h3>
+    <details class="lm-q">
+      <summary>第 1 题：「太贵了」通常有哪 4 种真实含义？</summary>
+      <div class="lm-a"><b>参考答案：</b>超出预算、觉得不值这个价、在别处比过价、只是习惯性砍价或还在犹豫。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 2 题：价格拆分法怎么用？</summary>
+      <div class="lm-a"><b>参考答案：</b>把总价拆到使用周期上：「这副 1800 元，正常能戴两年，算下来一天 2.5 元，比一杯水还便宜，换来的是每天看得清、戴着舒服。」</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 3 题：价格异议的四大禁忌是什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>立刻降价（越降越不像好货）、贬低同行、敷衍应付（「都这样」）、直接翻脸或冷处理。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 4 题：价值重塑法的核心思路是什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>把话题从「花多少钱」转到「得到什么」：视觉舒适、耐用年限、售后保障、外观提升，让顾客自己算出值不值。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 5 题：情景：顾客说「我在网上看到一样的才 600」，你怎么回应？</summary>
+      <div class="lm-a"><b>参考答案：</b>不否认网购价格，讲清差别：「网上那款很可能不是同一个膜层和版本。您配镜最怕的是装到度数上不合适还要扯皮。我们这里是原厂正品、当场验度数、有质保，加起来这部分服务值这个价。」</div>
+    </details>
+</div>
+<!-- LM-END -->
+
+<!-- FLOW-START -->
+<div class="lm-block flow-block">
+  <h3>🔗 四大流程落地衔接 — 本日内容如何进入门店培训体系</h3>
+  <div class="flow-hook">💡 <b>今天你只要记住这一句：</b>今天学怎么应对‘太贵了’——记住：不贬低、不硬推、给台阶。</div>
+  <p class="flow-sub">本日内容对应：<strong>价格异议处理话术</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
+  <div class="flow-grid">
+<div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>掌握价格异议的类型与应对框架，做到不贬低竞品、不硬推销、给顾客台阶。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>掌握常见异议类型：太贵、再看看、网上更便宜、我不需要</li><li>学会应对框架：认同感受→价值拆解→给选择/给台阶</li><li>准备三种应对：拆解价值、对比方案、延后决策</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>处理 3 类价格异议，应对流程达标。</div><div class="flow-pit"><b>⚠ 常见坑：</b>最大的坑是‘跟顾客争价格’——越辩越僵，正确做法是把话题引回价值。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>训练员扮演‘嫌贵顾客’，新人实战应对，复盘每次应对。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>训练员扮演不同‘嫌贵顾客’，新人实战应对</li><li>每轮复盘，点出可改进处</li><li>重点纠正‘争辩’‘贬低竞品’等错误应对</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>新人能从容应对 3 类价格异议，即完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>角色扮演要‘够狠’——训练员演得越像真顾客，新人成长越快。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>通过情景考核检验异议处理能力。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>情景考核：处理 3 类价格异议</li><li>应对流程达标</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>3 类异议均回应得当、无争辩，即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>考核要‘随机出题’——防止新人只准备固定剧本。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>统计高发异议类型，更新异议处理话术库。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>统计顾客最常提的价格异议</li><li>更新异议处理话术库，补充应对话术</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>更新话术库，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>异议库要按‘类型’归档——顾客问法百变，但核心异议就那么几类。</div></div>
+  </div>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+</div>
+<!-- FLOW-END -->
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_23_练习题.html">← Day 23 练习题</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    
+    <a class="nav-btn" href="Day_24_练习题.html">Day 24 练习题 →</a>
+  </div>
+</div>
+</body>
+</html>
