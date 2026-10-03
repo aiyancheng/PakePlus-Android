@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>② 工作站检查表 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+<style>
+  .ws-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .ws-nav a{
+    text-decoration:none;font-size:.8em;font-weight:700;color:#2c5aa0;background:#fff;
+    border:1.5px solid var(--line);border-radius:20px;padding:7px 15px;transition:.18s;
+  }
+  .ws-nav a:hover{border-color:#2c5aa0;background:#eef3fb}
+  .ws-badge{
+    display:inline-flex;align-items:center;gap:7px;background:#eef3fb;color:#2c5aa0;
+    border-radius:8px;padding:4px 12px;font-size:.82em;font-weight:700;margin-bottom:6px;
+  }
+  .ck-all{font-size:.8em;color:#667;margin-top:10px;display:flex;align-items:center;gap:8px}
+  .ck-all button{
+    border:1.3px solid var(--line);background:#fff;color:#456;font-size:.85em;font-weight:700;
+    padding:4px 12px;border-radius:8px;cursor:pointer;font-family:inherit;transition:.15s;
+  }
+  .ck-all button:hover{border-color:#2c5aa0;color:#2c5aa0;background:#eef3fb}
+</style>
+</head>
+<body data-page="tool02">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">② 工作站检查表</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:.3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('② 工作站检查表')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ②</div>
+    <h1>✅ 工作站检查表</h1>
+    <p>把标准拆成可打勾的检查项，用于新人自检、训练员抽检、值班经理周检。以下覆盖门店 8 个核心工作站，逐项打勾确认，不达标项当场记录并跟进整改。</p>
+  </div>
+
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店名称：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>岗位：</label><input data-save="post" placeholder="请填写"></div>
+    <div class="fm-row"><label>检查人：</label><input data-save="checker" placeholder="请填写"></div>
+    <div class="fm-row"><label>检查日期：</label><input data-save="cdate" placeholder="如 2026-10-08"></div>
+    <div class="fm-row"><label>检查类型：</label><input data-save="ctype" placeholder="新人自检 / 训练员抽检 / 值班经理周检"></div>
+    <div class="fm-row"><label>班次：</label><input data-save="shift" placeholder="早班 / 中班 / 晚班"></div>
+  </div>
+
+  <div class="ws-nav">
+    <a href="#ws1">1. 迎宾接待</a>
+    <a href="#ws2">2. 产品认知</a>
+    <a href="#ws3">3. 问诊沟通</a>
+    <a href="#ws4">4. 验光操作</a>
+    <a href="#ws5">5. 处方解读与选镜</a>
+    <a href="#ws6">6. 加工调整</a>
+    <a href="#ws7">7. 收银结算</a>
+    <a href="#ws8">8. 取镜回访与售后</a>
+  </div>
+
+  <div class="sec" id="ws1">
+    <div class="sec-h"><span class="sn">1</span>工作站 1：迎宾接待</div>
+    <div class="ws-badge">📖 对应课程：Day 22 · 顾客接待与开场话术</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>顾客进店 3 秒内抬头注视并微笑问好</td><td class="ck"><input type="checkbox" data-save="ck_yingbin_1"></td><td><input data-save="note_yingbin_1" placeholder="留空即达标"></td><td><input data-save="dl_yingbin_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>主动询问顾客需求，不冷场、不尾随</td><td class="ck"><input type="checkbox" data-save="ck_yingbin_2"></td><td><input data-save="note_yingbin_2" placeholder="留空即达标"></td><td><input data-save="dl_yingbin_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>引导顾客入座或在展示区自然停留</td><td class="ck"><input type="checkbox" data-save="ck_yingbin_3"></td><td><input data-save="note_yingbin_3" placeholder="留空即达标"></td><td><input data-save="dl_yingbin_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>递送镜架时说明材质与特点</td><td class="ck"><input type="checkbox" data-save="ck_yingbin_4"></td><td><input data-save="note_yingbin_4" placeholder="留空即达标"></td><td><input data-save="dl_yingbin_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>接待全程使用服务用语，无禁忌语</td><td class="ck"><input type="checkbox" data-save="ck_yingbin_5"></td><td><input data-save="note_yingbin_5" placeholder="留空即达标"></td><td><input data-save="dl_yingbin_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>顾客离店时致谢并送至门口</td><td class="ck"><input type="checkbox" data-save="ck_yingbin_6"></td><td><input data-save="note_yingbin_6" placeholder="留空即达标"></td><td><input data-save="dl_yingbin_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('yingbin', true)">全部达标</button>
+      <button onclick="setAllWs('yingbin', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec" id="ws2">
+    <div class="sec-h"><span class="sn">2</span>工作站 2：产品认知</div>
+    <div class="ws-badge">📖 对应课程：Day 09–11 · 镜架镜片与功能片知识</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>能准确指认镜架 6 大部件</td><td class="ck"><input type="checkbox" data-save="ck_chanpin_1"></td><td><input data-save="note_chanpin_1" placeholder="留空即达标"></td><td><input data-save="dl_chanpin_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>能说出 6 种镜架材质及适用人群</td><td class="ck"><input type="checkbox" data-save="ck_chanpin_2"></td><td><input data-save="note_chanpin_2" placeholder="留空即达标"></td><td><input data-save="dl_chanpin_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>能按度数推荐合适折射率（1.50–1.74）</td><td class="ck"><input type="checkbox" data-save="ck_chanpin_3"></td><td><input data-save="note_chanpin_3" placeholder="留空即达标"></td><td><input data-save="dl_chanpin_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>能说出 4 种镀膜各自解决什么问题</td><td class="ck"><input type="checkbox" data-save="ck_chanpin_4"></td><td><input data-save="note_chanpin_4" placeholder="留空即达标"></td><td><input data-save="dl_chanpin_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>能说出功能镜片（变色/渐进/偏光/离焦）适用人群</td><td class="ck"><input type="checkbox" data-save="ck_chanpin_5"></td><td><input data-save="note_chanpin_5" placeholder="留空即达标"></td><td><input data-save="dl_chanpin_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>讲解产品时不夸大功效（不承诺防近视、越贵越护眼）</td><td class="ck"><input type="checkbox" data-save="ck_chanpin_6"></td><td><input data-save="note_chanpin_6" placeholder="留空即达标"></td><td><input data-save="dl_chanpin_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('chanpin', true)">全部达标</button>
+      <button onclick="setAllWs('chanpin', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec" id="ws3">
+    <div class="sec-h"><span class="sn">3</span>工作站 3：问诊沟通</div>
+    <div class="ws-badge">📖 对应课程：Day 30 · 主动问询与需求挖掘</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>按用眼场景提问（办公/学习/驾驶/户外）</td><td class="ck"><input type="checkbox" data-save="ck_wenzhen_1"></td><td><input data-save="note_wenzhen_1" placeholder="留空即达标"></td><td><input data-save="dl_wenzhen_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>询问旧镜佩戴情况与不适感</td><td class="ck"><input type="checkbox" data-save="ck_wenzhen_2"></td><td><input data-save="note_wenzhen_2" placeholder="留空即达标"></td><td><input data-save="dl_wenzhen_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>了解顾客预算区间，不直接问“要多少钱的”</td><td class="ck"><input type="checkbox" data-save="ck_wenzhen_3"></td><td><input data-save="note_wenzhen_3" placeholder="留空即达标"></td><td><input data-save="dl_wenzhen_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>开放式与封闭式提问组合使用</td><td class="ck"><input type="checkbox" data-save="ck_wenzhen_4"></td><td><input data-save="note_wenzhen_4" placeholder="留空即达标"></td><td><input data-save="dl_wenzhen_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>能根据回答做出初步产品方向判断</td><td class="ck"><input type="checkbox" data-save="ck_wenzhen_5"></td><td><input data-save="note_wenzhen_5" placeholder="留空即达标"></td><td><input data-save="dl_wenzhen_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>全程倾听，不打断、不抢话</td><td class="ck"><input type="checkbox" data-save="ck_wenzhen_6"></td><td><input data-save="note_wenzhen_6" placeholder="留空即达标"></td><td><input data-save="dl_wenzhen_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('wenzhen', true)">全部达标</button>
+      <button onclick="setAllWs('wenzhen', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec" id="ws4">
+    <div class="sec-h"><span class="sn">4</span>工作站 4：验光操作</div>
+    <div class="ws-badge">📖 对应课程：Day 15 / 32 · 验光辅助与实操</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>验光前完成设备清洁与归位</td><td class="ck"><input type="checkbox" data-save="ck_yanguang_1"></td><td><input data-save="note_yanguang_1" placeholder="留空即达标"></td><td><input data-save="dl_yanguang_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>正确引导顾客就位、说明验光流程</td><td class="ck"><input type="checkbox" data-save="ck_yanguang_2"></td><td><input data-save="note_yanguang_2" placeholder="留空即达标"></td><td><input data-save="dl_yanguang_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>配合验光师完成数据记录，无错记漏记</td><td class="ck"><input type="checkbox" data-save="ck_yanguang_3"></td><td><input data-save="note_yanguang_3" placeholder="留空即达标"></td><td><input data-save="dl_yanguang_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>验光室保持整洁、消毒到位</td><td class="ck"><input type="checkbox" data-save="ck_yanguang_4"></td><td><input data-save="note_yanguang_4" placeholder="留空即达标"></td><td><input data-save="dl_yanguang_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>验光后向顾客简单说明结果</td><td class="ck"><input type="checkbox" data-save="ck_yanguang_5"></td><td><input data-save="note_yanguang_5" placeholder="留空即达标"></td><td><input data-save="dl_yanguang_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>遇到异常数据及时反馈验光师</td><td class="ck"><input type="checkbox" data-save="ck_yanguang_6"></td><td><input data-save="note_yanguang_6" placeholder="留空即达标"></td><td><input data-save="dl_yanguang_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('yanguang', true)">全部达标</button>
+      <button onclick="setAllWs('yanguang', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec" id="ws5">
+    <div class="sec-h"><span class="sn">5</span>工作站 5：处方解读与选镜</div>
+    <div class="ws-badge">📖 对应课程：Day 12 · 验光处方解读与产品搭配</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>能准确读出 OD/OS/SPH/CYL/AX/PD/ADD</td><td class="ck"><input type="checkbox" data-save="ck_chufang_1"></td><td><input data-save="note_chufang_1" placeholder="留空即达标"></td><td><input data-save="dl_chufang_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>能按处方推荐镜片类型与折射率</td><td class="ck"><input type="checkbox" data-save="ck_chufang_2"></td><td><input data-save="note_chufang_2" placeholder="留空即达标"></td><td><input data-save="dl_chufang_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>能规避高度数/高散光的镜框禁区</td><td class="ck"><input type="checkbox" data-save="ck_chufang_3"></td><td><input data-save="note_chufang_3" placeholder="留空即达标"></td><td><input data-save="dl_chufang_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>能给出「满足 / 升级 / 高端」三档方案</td><td class="ck"><input type="checkbox" data-save="ck_chufang_4"></td><td><input data-save="note_chufang_4" placeholder="留空即达标"></td><td><input data-save="dl_chufang_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>方案推荐有依据，说明理由而非硬推</td><td class="ck"><input type="checkbox" data-save="ck_chufang_5"></td><td><input data-save="note_chufang_5" placeholder="留空即达标"></td><td><input data-save="dl_chufang_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>核对处方与实际订单一致，无差错</td><td class="ck"><input type="checkbox" data-save="ck_chufang_6"></td><td><input data-save="note_chufang_6" placeholder="留空即达标"></td><td><input data-save="dl_chufang_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('chufang', true)">全部达标</button>
+      <button onclick="setAllWs('chufang', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec" id="ws6">
+    <div class="sec-h"><span class="sn">6</span>工作站 6：加工调整</div>
+    <div class="ws-badge">📖 对应课程：Day 16 · 镜架调整与整形技术</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>正确使用调架钳、螺丝刀等工具</td><td class="ck"><input type="checkbox" data-save="ck_jiagong_1"></td><td><input data-save="note_jiagong_1" placeholder="留空即达标"></td><td><input data-save="dl_jiagong_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>能调整镜腿、鼻托、桩头，佩戴舒适</td><td class="ck"><input type="checkbox" data-save="ck_jiagong_2"></td><td><input data-save="note_jiagong_2" placeholder="留空即达标"></td><td><input data-save="dl_jiagong_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>能识别镜架变形并现场矫正</td><td class="ck"><input type="checkbox" data-save="ck_jiagong_3"></td><td><input data-save="note_jiagong_3" placeholder="留空即达标"></td><td><input data-save="dl_jiagong_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>调整后达到「戴正、平贴、不压鼻、不滑动」</td><td class="ck"><input type="checkbox" data-save="ck_jiagong_4"></td><td><input data-save="note_jiagong_4" placeholder="留空即达标"></td><td><input data-save="dl_jiagong_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>注意镜片保护，操作不划伤镜片</td><td class="ck"><input type="checkbox" data-save="ck_jiagong_5"></td><td><input data-save="note_jiagong_5" placeholder="留空即达标"></td><td><input data-save="dl_jiagong_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>交付前做最后佩戴确认</td><td class="ck"><input type="checkbox" data-save="ck_jiagong_6"></td><td><input data-save="note_jiagong_6" placeholder="留空即达标"></td><td><input data-save="dl_jiagong_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('jiagong', true)">全部达标</button>
+      <button onclick="setAllWs('jiagong', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec" id="ws7">
+    <div class="sec-h"><span class="sn">7</span>工作站 7：收银结算</div>
+    <div class="ws-badge">📖 对应课程：Day 18 · 收银操作与库存管理</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>熟练操作收银系统，结算准确无误</td><td class="ck"><input type="checkbox" data-save="ck_shouyin_1"></td><td><input data-save="note_shouyin_1" placeholder="留空即达标"></td><td><input data-save="dl_shouyin_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>正确使用各类支付方式并开票</td><td class="ck"><input type="checkbox" data-save="ck_shouyin_2"></td><td><input data-save="note_shouyin_2" placeholder="留空即达标"></td><td><input data-save="dl_shouyin_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>规范完成会员登记、积分与优惠券</td><td class="ck"><input type="checkbox" data-save="ck_shouyin_3"></td><td><input data-save="note_shouyin_3" placeholder="留空即达标"></td><td><input data-save="dl_shouyin_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>核对商品与订单信息后再收款</td><td class="ck"><input type="checkbox" data-save="ck_shouyin_4"></td><td><input data-save="note_shouyin_4" placeholder="留空即达标"></td><td><input data-save="dl_shouyin_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>规范交接班，账实相符</td><td class="ck"><input type="checkbox" data-save="ck_shouyin_5"></td><td><input data-save="note_shouyin_5" placeholder="留空即达标"></td><td><input data-save="dl_shouyin_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>现金与票据管理符合规定</td><td class="ck"><input type="checkbox" data-save="ck_shouyin_6"></td><td><input data-save="note_shouyin_6" placeholder="留空即达标"></td><td><input data-save="dl_shouyin_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('shouyin', true)">全部达标</button>
+      <button onclick="setAllWs('shouyin', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec" id="ws8">
+    <div class="sec-h"><span class="sn">8</span>工作站 8：取镜回访与售后</div>
+    <div class="ws-badge">📖 对应课程：Day 19 / 41 · 售后服务与客户维护</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th>检查项（标准要求）</th><th class="center" style="width:60px">是否达标</th><th style="width:190px">不达标情况记录</th><th style="width:110px">整改时限</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td>取镜时完成试戴确认与调整</td><td class="ck"><input type="checkbox" data-save="ck_shouhou_1"></td><td><input data-save="note_shouhou_1" placeholder="留空即达标"></td><td><input data-save="dl_shouhou_1" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">2</td><td>交期延误主动告知并致歉</td><td class="ck"><input type="checkbox" data-save="ck_shouhou_2"></td><td><input data-save="note_shouhou_2" placeholder="留空即达标"></td><td><input data-save="dl_shouhou_2" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">3</td><td>按计划做好售后回访（电话/微信）</td><td class="ck"><input type="checkbox" data-save="ck_shouhou_3"></td><td><input data-save="note_shouhou_3" placeholder="留空即达标"></td><td><input data-save="dl_shouhou_3" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">4</td><td>能独立处理常见维修（螺丝、鼻托、镜腿）</td><td class="ck"><input type="checkbox" data-save="ck_shouhou_4"></td><td><input data-save="note_shouhou_4" placeholder="留空即达标"></td><td><input data-save="dl_shouhou_4" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">5</td><td>能判断质量/使用/人为问题并合规答复</td><td class="ck"><input type="checkbox" data-save="ck_shouhou_5"></td><td><input data-save="note_shouhou_5" placeholder="留空即达标"></td><td><input data-save="dl_shouhou_5" placeholder="如 当日内"></td></tr>
+          <tr><td class="center">6</td><td>客诉按「倾听-共情-解决-跟进」四步处理</td><td class="ck"><input type="checkbox" data-save="ck_shouhou_6"></td><td><input data-save="note_shouhou_6" placeholder="留空即达标"></td><td><input data-save="dl_shouhou_6" placeholder="如 当日内"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ck-all">
+      快捷操作：
+      <button onclick="setAllWs('shouhou', true)">全部达标</button>
+      <button onclick="setAllWs('shouhou', false)">全部取消</button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">9</span>总体检查结论</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:200px">项目</th><th>填写</th></tr></thead>
+        <tbody>
+          <tr><td>本次检查工作站</td><td><input data-save="g_ws" placeholder="如 迎宾接待 / 验光操作（可多个）"></td></tr>
+          <tr><td>达标项数 / 总项数</td><td><input data-save="g_ok_total" placeholder="如 5 / 6"></td></tr>
+          <tr><td>整体判定</td><td><input data-save="g_verdict" placeholder="达标 / 限期整改 / 立即整改"></td></tr>
+          <tr><td>主要问题</td><td><input data-save="g_main_issue" placeholder="概括最突出的问题"></td></tr>
+          <tr><td>整改要求</td><td><input data-save="g_fix_req" placeholder="明确下一步动作与时限"></td></tr>
+          <tr><td>复查安排</td><td><input data-save="g_review" placeholder="复查日期与责任人"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">✍</span>签字确认</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">受检人签字：</span><span class="ln"><input data-save="sg_a" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">检查人签字：</span><span class="ln"><input data-save="sg_b" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_c" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">日期：</span><span class="ln"><input data-save="sg_d" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+
+  <div class="note">💡 <b>使用建议</b>：新人自检每天一次，训练员抽检每周 2 次，值班经理周检每周 1 次。同一工作站连续 2 次出现同类不达标，应升级为「立即整改」并回溯带教环节。</div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="模板03_训练员认证标准表.html">下一工具：训练员认证标准表 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+<script>
+/* 一键全部达标 / 全部取消（针对单个工作站） */
+function setAllWs(wsId, val){
+  document.querySelectorAll('[data-save^="ck_' + wsId + '_"]').forEach(function(el){ el.checked = val; });
+  document.dispatchEvent(new Event('change', {bubbles:true}));
+}
+</script>
+</body>
+</html>
