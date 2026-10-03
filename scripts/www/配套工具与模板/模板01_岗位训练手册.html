@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>① 岗位训练手册 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+<style>.tool-body{font-size:.85em;color:#445;line-height:1.75}</style>
+</head>
+<body data-page="tool01">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">① 岗位训练手册</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:opacity .3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('① 岗位训练手册')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ①</div>
+    <h1>📘 岗位训练手册</h1>
+    <p>承载全部工作站操作标准，是新员工学习的主教材，入职发放、随学随查。按工作站逐项固化「操作步骤 — 关键要点 — 达标标准」，新员工对照学习，训练员对照带教与考核。</p>
+  </div>
+
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店名称：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>岗位名称：</label><input data-save="post" placeholder="如：销售顾问 / 验光助理"></div>
+    <div class="fm-row"><label>员工姓名：</label><input data-save="name" placeholder="请填写"></div>
+    <div class="fm-row"><label>入职日期：</label><input data-save="joindate" placeholder="如 2026-10-08"></div>
+    <div class="fm-row"><label>训练员：</label><input data-save="trainer" placeholder="请填写"></div>
+    <div class="fm-row"><label>手册版本：</label><input data-save="ver" placeholder="如 V1.0 / 2026-10"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">1</span>工作站一览与学习顺序</div>
+    <div class="sec-desc">连锁眼镜门店共 8 个核心工作站。请按「学习顺序」逐个攻克，前一个工作站达标后方可进入下一个。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th style="width:52px">顺序</th><th>工作站名称</th><th>核心能力</th><th>对应课程</th><th class="center" style="width:110px">达标日期</th><th class="center" style="width:110px">训练员签字</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="center">1</td><td>迎宾接待</td><td>迎宾、破冰、需求初判</td><td>Day 22</td><td><input data-save="s1d" placeholder="年/月/日"></td><td><input data-save="s1s" placeholder="签字"></td></tr>
+          <tr><td class="center">2</td><td>产品认知</td><td>镜架、镜片、功能片知识</td><td>Day 09–11</td><td><input data-save="s2d" placeholder="年/月/日"></td><td><input data-save="s2s" placeholder="签字"></td></tr>
+          <tr><td class="center">3</td><td>问诊沟通</td><td>需求挖掘、用眼场景分析</td><td>Day 30</td><td><input data-save="s3d" placeholder="年/月/日"></td><td><input data-save="s3s" placeholder="签字"></td></tr>
+          <tr><td class="center">4</td><td>验光操作</td><td>验光辅助、数据记录</td><td>Day 15 / 32</td><td><input data-save="s4d" placeholder="年/月/日"></td><td><input data-save="s4s" placeholder="签字"></td></tr>
+          <tr><td class="center">5</td><td>处方解读与选镜</td><td>读单、按处方推荐方案</td><td>Day 12</td><td><input data-save="s5d" placeholder="年/月/日"></td><td><input data-save="s5s" placeholder="签字"></td></tr>
+          <tr><td class="center">6</td><td>加工调整</td><td>镜架调整、整形、验收</td><td>Day 16</td><td><input data-save="s6d" placeholder="年/月/日"></td><td><input data-save="s6s" placeholder="签字"></td></tr>
+          <tr><td class="center">7</td><td>收银结算</td><td>收银、开票、会员登记</td><td>Day 18</td><td><input data-save="s7d" placeholder="年/月/日"></td><td><input data-save="s7s" placeholder="签字"></td></tr>
+          <tr><td class="center">8</td><td>取镜回访与售后</td><td>交付、回访、维修、客诉</td><td>Day 19 / 41</td><td><input data-save="s8d" placeholder="年/月/日"></td><td><input data-save="s8s" placeholder="签字"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">2</span>工作站操作标准卡</div>
+    <div class="sec-desc">每个工作站填写一张标准卡。由训练员与门店负责人共同制定，作为带教与考核的统一依据。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th style="width:130px">项目</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>工作站名称</b></td><td><input data-save="ws_name" placeholder="如：迎宾接待"></td></tr>
+          <tr><td><b>操作步骤</b></td><td><textarea data-save="ws_steps" placeholder="1. ……&#10;2. ……&#10;3. ……"></textarea></td></tr>
+          <tr><td><b>关键要点</b></td><td><textarea data-save="ws_key" placeholder="容易出错或最影响顾客体验的 2–3 个点"></textarea></td></tr>
+          <tr><td><b>达标标准</b></td><td><textarea data-save="ws_std" placeholder="可观察、可考核的完成标准（如：3 秒内迎宾、30 秒内问到需求）"></textarea></td></tr>
+          <tr><td><b>常见错误</b></td><td><textarea data-save="ws_err" placeholder="新人最容易犯的错误及纠正方法"></textarea></td></tr>
+          <tr><td><b>配套工具/物料</b></td><td><input data-save="ws_tool" placeholder="如：验光仪、调架钳、会员系统"></td></tr>
+          <tr><td><b>达标用时参考</b></td><td><input data-save="ws_time" placeholder="如：3 天 / 10 次实操"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">💡 <b>填写建议</b>：操作步骤要写成「动作指令」，而不是名词罗列。例如不写"接待顾客"，而写"顾客进店 3 秒内抬头注视并微笑问好"。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">3</span>新员工学习确认</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">员工签字：</span><span class="ln"><input data-save="sg_emp" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">训练员签字：</span><span class="ln"><input data-save="sg_tr" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_mgr" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">日期：</span><span class="ln"><input data-save="sg_date" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="模板02_工作站检查表.html">下一工具：工作站检查表 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+</body>
+</html>
