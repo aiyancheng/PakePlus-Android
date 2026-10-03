@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>④ 实操考核评分表 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+</head>
+<body data-page="tool04">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">④ 实操考核评分表</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:opacity .3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('④ 实操考核评分表')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ④</div>
+    <h1>📊 实操考核评分表</h1>
+    <p>统一各工作站考核评分尺度，每次考核逐项打分、考后归档。用于新员工实操考核、阶段评估与转正依据。</p>
+  </div>
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店名称：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>被考核人：</label><input data-save="name" placeholder="请填写"></div>
+    <div class="fm-row"><label>考核工作站：</label><input data-save="ws" placeholder="如 验光操作 / 加工调整"></div>
+    <div class="fm-row"><label>考核日期：</label><input data-save="cdate" placeholder="如 2026-10-08"></div>
+    <div class="fm-row"><label>考核类型：</label><input data-save="ctype" placeholder="日常考核 / 周测 / 中期 / 结业"></div>
+    <div class="fm-row"><label>考核人：</label><input data-save="examiner" placeholder="请填写"></div>
+  </div>  <div class="sec">
+    <div class="sec-h"><span class="sn">1</span>评分明细</div>
+    <div class="sec-desc">六项共 100 分，70 分及格。低于 70 分者需复训后重考，考核记录归入新人成长档案。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th style="width:110px">评分项</th><th>评分要点</th><th class="center" style="width:64px">满分</th><th class="center" style="width:80px">得分</th><th style="width:150px">扣分说明</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td><b>操作规范性</b></td><td>按标准流程操作，步骤完整、顺序正确</td><td class="center">25</td><td class="center"><input data-save="sc0" placeholder="0"></td><td><input data-save="scn0" placeholder=""></td></tr>
+          <tr><td class="center">2</td><td><b>熟练度</b></td><td>动作流畅、不犹豫、不反复，无明显停顿</td><td class="center">20</td><td class="center"><input data-save="sc1" placeholder="0"></td><td><input data-save="scn1" placeholder=""></td></tr>
+          <tr><td class="center">3</td><td><b>准确度</b></td><td>数据 / 结果准确，无差错</td><td class="center">20</td><td class="center"><input data-save="sc2" placeholder="0"></td><td><input data-save="scn2" placeholder=""></td></tr>
+          <tr><td class="center">4</td><td><b>安全意识</b></td><td>工具使用规范，无安全隐患</td><td class="center">15</td><td class="center"><input data-save="sc3" placeholder="0"></td><td><input data-save="scn3" placeholder=""></td></tr>
+          <tr><td class="center">5</td><td><b>顾客体验</b></td><td>过程中照顾顾客感受，沟通得体</td><td class="center">10</td><td class="center"><input data-save="sc4" placeholder="0"></td><td><input data-save="scn4" placeholder=""></td></tr>
+          <tr><td class="center">6</td><td><b>应变与复盘</b></td><td>遇到问题能应对，并能说明改进点</td><td class="center">10</td><td class="center"><input data-save="sc5" placeholder="0"></td><td><input data-save="scn5" placeholder=""></td></tr>
+          <tr style="background:#eef3fb"><td class="center" colspan="3"><b>合计</b></td><td class="center"><b>100</b></td><td class="center"><input data-save="sc_total" placeholder="总分"></td><td class="center">70 分及格</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">2</span>考核结论</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:190px">项目</th><th>填写</th></tr></thead>
+        <tbody>
+          <tr><td>考核结果</td><td><input data-save="result" placeholder="合格 / 不合格"></td></tr>
+          <tr><td>主要薄弱点</td><td><input data-save="weak" placeholder="需加强的具体环节"></td></tr>
+          <tr><td>复训安排</td><td><input data-save="retrain" placeholder="不合格时填写复训内容与时间"></td></tr>
+          <tr><td>是否准予进入下一阶段</td><td><input data-save="next" placeholder="是 / 否"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">✍</span>签字确认</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">被考核人签字：</span><span class="ln"><input data-save="sg_a" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">考核人签字：</span><span class="ln"><input data-save="sg_b" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_c" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">日期：</span><span class="ln"><input data-save="sg_d" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="模板05_带教计划记录表.html">下一工具：带教计划/记录表 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+</body>
+</html>
