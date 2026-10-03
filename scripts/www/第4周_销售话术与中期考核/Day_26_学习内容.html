@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 26 | 连带销售与会员维护</title>
+<style>
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;margin:0;padding:0}
+  .header{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:30px 40px;text-align:center}
+  .header h1{margin:0;font-size:28px}
+  .header p{margin:8px 0 0;opacity:.85;font-size:14px}
+  .container{max-width:900px;margin:30px auto;padding:0 20px 40px}
+  .card{background:#fff;border-radius:12px;padding:28px 32px;margin-bottom:24px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+  .card h2{color:#764ba2;font-size:20px;border-left:4px solid #764ba2;padding-left:12px;margin-top:0}
+  .card h3{color:#444;font-size:16px;margin:20px 0 8px}
+  .tip{background:#f3f0ff;border-radius:6px;padding:12px 16px;margin:12px 0;font-size:14px;line-height:1.8}
+  .warn{background:#fff7e6;border-left:4px solid #fa8c16;border-radius:6px;padding:12px 16px;margin:12px 0;font-size:14px;line-height:1.8}
+  .success{background:#f6ffed;border-left:4px solid #52c41a;border-radius:6px;padding:12px 16px;margin:12px 0;font-size:14px;line-height:1.8}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th{background:#764ba2;color:#fff;padding:10px 14px;text-align:left}
+  td{padding:9px 14px;border-bottom:1px solid #eee}
+  tr:hover td{background:#faf8ff}
+  .step{display:flex;align-items:flex-start;margin:12px 0;padding:14px 16px;background:#fafafa;border-radius:8px}
+  .step-num{background:#764ba2;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;margin-right:14px;margin-top:2px}
+  .step-content{flex:1;font-size:14px;line-height:1.8}
+  .badge{display:inline-block;background:#764ba2;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;margin-right:4px}
+  ul{padding-left:20px;line-height:1.9;font-size:14px}
+  li{margin-bottom:4px}
+  .dialog{background:#e8f4fd;border-radius:8px;padding:12px 16px;margin:8px 0;font-size:14px;line-height:1.8;font-style:italic}
+  .dialog strong{color:#1890ff;font-style:normal}
+  .summary-box{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:10px;padding:20px 24px;margin-top:8px}
+  .summary-box h3{margin:0 0 12px;font-size:17px}
+  .summary-box ul{margin:0;padding-left:20px}
+  .summary-box li{margin-bottom:6px;font-size:14px}
+  .nav-footer { display: flex; justify-content: space-between; margin: 20px 0 40px; gap: 12px; }
+  .nav-btn { background: linear-gradient(135deg, #fa709a, #fee140); color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-size: 0.95em; font-weight: 600; transition: all 0.2s; }
+  .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .nav-btn.outline { background: white; color: #fa709a; border: 2px solid #fa709a; }
+  .nav-btn.outline:hover { background: #fff5f8; }
+  .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .structure-table th,.rule-table th{background:#2196F3;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
+
+  /* ══════════════════════════════════════════════
+     红米平板响应式适配（横屏1100px / 竖屏900px）
+     ══════════════════════════════════════════════ */
+
+  /* 平板横屏：内容区微调 */
+  @media (max-width: 1100px) {
+    .container { padding: 28px 24px !important; }
+    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+
+  /* 平板竖屏：核心适配断点 */
+  @media (max-width: 900px) {
+    body { padding: 12px !important; font-size: 15px; }
+    .container { padding: 20px 16px !important; border-radius: 10px !important; }
+    /* 学习内容：各类2列/3列网格折叠为1列 */
+    .value-cards, .material-grid, .face-grid,
+    .norm-grid, .salary-grid, .do-dont, .image-standard,
+    .safety-grid, .role-cards, .review-grid, .equipment-grid,
+    .lens-grid, .coating-grid, .term-grid, .display-rules,
+    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
+    .review-grid, .zone-grid, .test-info, .method-grid,
+    .question-type, .fab-grid, .form-grid, .wrong-right,
+    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
+    .achieve-grid, .product-card, .sign-area, .wish-cards,
+    .eval-row,
+    [class*="-grid"], [class*="grid-"],
+    .two-col { grid-template-columns: 1fr !important; }
+    /* 3列→2列特殊处理（不完全折叠，保留2列） */
+    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 导航按钮：允许换行，防止溢出 */
+    .nav-footer, .nav-bar {
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .nav-btn {
+      font-size: 0.88em !important;
+      padding: 10px 18px !important;
+      text-align: center !important;
+    }
+    /* 标题字号适配 */
+    .header h1, h1 { font-size: 1.4em !important; }
+    .header .subtitle, .header .week-badge { font-size: 13px !important; }
+    /* 表格横向滚动（防溢出） */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* meta-bar 换行 */
+    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
+    /* 首页时间轴横向滚动 */
+    .timeline { overflow-x: auto; }
+  }
+
+  /* 手机 / 平板极窄竖屏 */
+  @media (max-width: 600px) {
+    body { padding: 8px !important; }
+    .container { padding: 16px 12px !important; }
+    .header h1, h1 { font-size: 1.2em !important; }
+    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .container { padding: 16px !important; }
+  }
+
+/* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1080px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+}
+
+  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 参考 / 自测 / 阶段复盘） ═══════ */
+  .lm-block{border-radius:14px;padding:20px 24px;margin:24px 0;line-height:1.85}
+  .lm-block h3{margin:0 0 14px;font-size:1.1em;font-weight:700;letter-spacing:.3px}
+  .lm-list{margin:0;padding-left:22px}
+  .lm-list li{margin-bottom:9px}
+  .lm-goal{background:#e8f5e9;color:#1b5e20}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:#fff8e1;color:#4e342e}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:#f3e5f5;color:#4a148c}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-ref{background:#e3f2fd;color:#0d3c61}
+  .lm-ref h3{color:#1565c0}
+  .lm-quiz{background:#fce4ec;color:#880e4f}
+  .lm-quiz h3{color:#c2185b}
+  .lm-review{background:#ede7f6;color:#311b92}
+  .lm-review h3{color:#4527a0}
+  .lm-meta{margin:12px 0 0;font-size:.9em;opacity:.92}
+  .lm-pr{margin:0 0 14px;padding:14px 16px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:700;margin-bottom:6px}
+  .lm-pr-d{margin-bottom:6px}
+  .lm-pr-o{font-size:.92em;font-weight:600}
+  .lm-q{margin:0 0 10px;padding:10px 14px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:600;line-height:1.7}
+  .lm-q[open] summary{margin-bottom:8px}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.8}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  .lm-sub{font-weight:700;margin:14px 0 8px;font-size:1em}
+  @media(max-width:900px){
+    .lm-block{padding:16px 14px;margin:18px 0;line-height:1.75}
+    .lm-block h3{font-size:1.02em}
+    .lm-list{padding-left:18px}
+  }
+
+/* ══ HOME-BAR：顶部返回首页入口 ══ */
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+
+/* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
+  .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
+  .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
+  .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
+  .flow-hook b{color:#1a3a6b}
+  .flow-sub{margin:0 0 18px;font-size:.9em;color:#556}
+  .flow-sub strong{color:#1a3a6b}
+  .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .flow-col{border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 4px rgba(26,58,107,.05)}
+  .flow-h{font-weight:800;font-size:.98em;margin-bottom:10px;color:#1a3a6b;display:flex;align-items:center;gap:6px}
+  .flow-h .fh-tag{font-size:.7em;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px;letter-spacing:.5px}
+  .flow-std .flow-h{color:#2c5aa0}.flow-std .fh-tag{background:#2c5aa0}
+  .flow-teach .flow-h{color:#2e7d5b}.flow-teach .fh-tag{background:#2e7d5b}
+  .flow-check .flow-h{color:#c47f17}.flow-check .fh-tag{background:#c47f17}
+  .flow-opt .flow-h{color:#8e44ad}.flow-opt .fh-tag{background:#8e44ad}
+  .flow-say{font-size:.88em;color:#37475e;background:#f6f9ff;border-radius:8px;padding:10px 12px;margin-bottom:12px;line-height:1.7;border-left:3px solid #cdd9ec}
+  .flow-say b{color:#1a3a6b}
+  .flow-do-t{font-size:.82em;font-weight:800;color:#556;margin:12px 0 6px}
+  .flow-do{margin:0;padding-left:19px}
+  .flow-do li{font-size:.85em;line-height:1.7;margin-bottom:6px;color:#4a5568}
+  .flow-standard{font-size:.84em;color:#2e7d32;background:#eef8f0;border-radius:7px;padding:9px 12px;margin-top:12px;line-height:1.65}
+  .flow-standard b{color:#1b5e20}
+  .flow-pit{font-size:.84em;color:#b3541e;background:#fdf3ea;border-radius:7px;padding:9px 12px;margin-top:8px;line-height:1.65}
+  .flow-pit b{color:#8a3d0a}
+  .flow-meta{margin:18px 0 0;font-size:.84em;color:#5a6478;background:#eef3fb;border-radius:8px;padding:12px 16px;line-height:1.7}
+  .flow-meta b{color:#1a3a6b}
+  @media(max-width:900px){
+    .flow-grid{grid-template-columns:1fr;gap:12px}
+    .flow-block{padding:18px 16px}
+    .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
+  }
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <h1>Day 26 · 连带销售与会员维护</h1>
+  <p>第4周 · 销售话术与中期考核 | 提升客单价 · 建立长期顾客关系</p>
+</div>
+<div class="container">
+
+<div class="lm-block lm-goal">
+  <h3>🎯 今日学习目标（学完你应该能做到）</h3>
+  <ul class="lm-list">
+      <li>理解连带销售的意义与最佳时机：不是硬推，而是在需求链上补位</li>
+      <li>掌握 4 类连带方向：配件（镜盒/镜布/护理液）、第二副（备用/太阳镜）、家庭（父母/孩子）、服务（保养/复查）</li>
+      <li>能说清会员制度的价值与基础规则（积分、等级、权益、生日礼等）</li>
+      <li>掌握顾客跟进话术：取镜回访、节点提醒、活动通知，做到不打扰但有存在感</li>
+      <li>建立顾客档案意识：记录度数、镜架型号、佩戴习惯与偏好，为复购打基础</li>
+  </ul>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
+</div>
+
+  <div class="card">
+    <h2>📦 一、连带销售的意义与时机</h2>
+    <h3>1. 什么是连带销售？</h3>
+    <p style="font-size:14px;line-height:1.9">连带销售是指在顾客购买主要商品的同时，顺势推荐相关配套商品，从而提升客单价和顾客满意度。它不是"硬推销"，而是基于顾客需求的贴心服务。</p>
+
+    <div class="tip">💡 <strong>数据参考：</strong>成功连带销售可使单笔订单金额提升 30%～60%，是提升门店业绩最高效的方式之一。</div>
+
+    <h3>2. 连带销售的黄金时机</h3>
+    <table class="structure-table">
+      <tr><th>时机</th><th>具体场景</th><th>连带商品推荐</th></tr>
+      <tr><td>验光结束后</td><td>顾客确认度数，准备选镜</td><td>防蓝光镜片、渐进镜片升级</td></tr>
+      <tr><td>选好镜架时</td><td>顾客对镜架满意，进入选片阶段</td><td>镀膜升级、变色镜片</td></tr>
+      <tr><td>等待取镜时</td><td>顾客在门店等候或来取镜</td><td>镜布、眼镜盒、清洁液、太阳镜</td></tr>
+      <tr><td>成交付款后</td><td>顾客完成购买</td><td>护理套装、第二副备用镜</td></tr>
+      <tr><td>日常保养时</td><td>顾客来免费调整</td><td>更换鼻托、镜腿、清洗服务升级</td></tr>
+    </table>
+
+    <h3>3. 连带销售话术模板</h3>
+    <div class="dialog">
+      <strong>场景：</strong>顾客已选好镜架和镜片，准备付款<br>
+      <strong>话术：</strong>"您选的这款镜片非常好，建议再配一套专用清洁套装——我们这款是无醇型清洁液，不伤镀膜，搭配超细纤维镜布，每天擦拭镜片可以延长镀膜寿命2～3年，才38元，相当于给镜片买了个'保险'，要不要顺便带一套？"
+    </div>
+    <div class="dialog">
+      <strong>场景：</strong>顾客配了近视镜，夏天快到了<br>
+      <strong>话术：</strong>"您平时开车或者户外活动多吗？我们有一款夹片式太阳镜，专门为近视顾客设计，直接夹在您的眼镜上，防UV400、防眩光，今天配镜有优惠，您需要了解一下吗？"
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>👑 二、会员制度与积分体系</h2>
+    <h3>1. 会员制度的价值</h3>
+    <ul>
+      <li><strong>对顾客：</strong>享受专属折扣、积分兑换、生日礼品、优先服务</li>
+      <li><strong>对门店：</strong>建立顾客数据库、提高复购率、促进口碑传播</li>
+      <li><strong>对员工：</strong>会员转化率是业绩考核指标，做好会员即做好长期业绩</li>
+    </ul>
+
+    <h3>2. 会员邀请话术</h3>
+    <div class="dialog">
+      <strong>基础版：</strong>"您今天配的这副眼镜，如果注册成我们会员，可以获得200积分，下次消费可以直接抵扣20元，而且每年免费享受两次镜片清洗和调整服务，要不要帮您开通？只需要手机号就可以，一分钟搞定。"
+    </div>
+    <div class="dialog">
+      <strong>生日营销版：</strong>"我们会员生日当月可享受全场9折，而且会收到专属礼品，您的生日是哪个月？我帮您备注一下，到时候我们会主动联系您。"
+    </div>
+
+    <h3>3. 会员档案管理要点</h3>
+    <table class="structure-table">
+      <tr><th>档案内容</th><th>重要性</th><th>用途</th></tr>
+      <tr><td>姓名 + 手机号</td><td>⭐⭐⭐⭐⭐ 必填</td><td>联系通知、积分管理</td></tr>
+      <tr><td>验光度数档案</td><td>⭐⭐⭐⭐⭐ 必填</td><td>复配眼镜时对比度数变化</td></tr>
+      <tr><td>消费记录</td><td>⭐⭐⭐⭐ 重要</td><td>分析消费习惯，精准推荐</td></tr>
+      <tr><td>生日 / 职业</td><td>⭐⭐⭐ 较重要</td><td>个性化关怀，节日营销</td></tr>
+      <tr><td>佩戴偏好</td><td>⭐⭐⭐ 较重要</td><td>新品推荐时有针对性</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📱 三、顾客跟进与复购维护</h2>
+    <h3>1. 取镜后跟进（黄金48小时）</h3>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>取镜后第2天：</strong>发送关怀短信/微信 → "您好，昨天配的眼镜戴着适应吗？有任何不舒服随时告知，我们提供免费调整服务～"</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>取镜后第7天：</strong>再次跟进适应情况 → "一周了，眼镜适应得怎么样？度数有没有偏差感？如果方便的话可以来店里验证一下～"</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>1个月后：</strong>发送护理提醒 → "您的眼镜配好一个月啦！记得定期清洗镜片，欢迎来店免费超声波清洗，只要5分钟～"</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><strong>6个月后：</strong>提醒复查视力 → "距离您上次验光已满6个月，建议来做一次免费视力复查，了解度数是否有变化～"</div>
+    </div>
+
+    <h3>2. 转介绍话术</h3>
+    <div class="dialog">
+      <strong>时机：</strong>顾客满意取镜后<br>
+      <strong>话术：</strong>"谢谢您对我们的信任！如果您身边有朋友也需要配镜，欢迎介绍来我们门店，凭您的推荐他们可以享受9.5折优惠，同时您也会获得100积分，相当于我们送您10元现金～"
+    </div>
+
+    <div class="warn">⚠️ <strong>注意：</strong>发送微信/短信时要控制频率，每月不超过2次主动联系，避免让顾客产生骚扰感。内容要有实际价值（优惠、提醒、关怀），不要发无意义广告。</div>
+  </div>
+
+  <div class="card">
+    <h2>💡 四、实战技巧汇总</h2>
+    <h3>连带销售三不原则</h3>
+    <ul>
+      <li>🚫 <strong>不强推：</strong>推荐一次，顾客拒绝后不再重复推同款</li>
+      <li>🚫 <strong>不夸大：</strong>商品效果据实介绍，不过度渲染</li>
+      <li>🚫 <strong>不捆绑：</strong>连带商品是建议，顾客有权拒绝，不影响主购体验</li>
+    </ul>
+    <h3>提升复购的关键习惯</h3>
+    <ul>
+      <li>✅ 记住老顾客的姓名和上次配镜情况</li>
+      <li>✅ 每次服务后主动添加微信，建立长期联系</li>
+      <li>✅ 门店有新品时，第一时间通知可能感兴趣的会员</li>
+      <li>✅ 节假日发送简短祝福（内容简洁，勿变群发广告）</li>
+    </ul>
+  </div>
+
+    <div class="section">
+    <h2>🎁 连带销售实战技巧</h2>
+    <h3>📌 连带销售时机识别</h3>
+    <ul>
+      <li>客户成单后心情好的时刻——是推荐的最佳时机</li>
+      <li>客户提到其他场景需求（开车、运动、户外）</li>
+      <li>客户子女或同伴在场，可顺势服务</li>
+    </ul>
+    <h3>📌 会员积分运用技巧</h3>
+    <p>在结账时自然引入会员：</p>
+    <p><em>"您今天消费满XX元，如果成为我们会员，可以获得XXX积分，下次使用相当于优惠了XX元。您今天就开通吗？只需要手机号就可以。"</em></p>
+    <div style="background:#e8f5e9;border-left:4px solid #4CAF50;padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px">
+      💡 会员不只是打折工具，更是建立客户档案、实现精准回访的重要手段。每位建档会员的价值远超一次性消费。
+    </div>
+  </div>
+
+    <!-- 补充 -->
+  <div class="section">
+    <h2>📝 今日要点总结</h2>
+    <ul>
+      <li>✅ 连带销售的5大黄金时机：验光后、选架时、等待时、成交后、保养时；客户成单后心情好时是最佳推荐时机</li>
+      <li>✅ 连带的本质是发现客户未被满足的需求，坚守三不原则：不强推、不夸大、不捆绑</li>
+      <li>✅ 会员建档是积累复购资源的核心手段：记录度数、手机号、消费记录，每单必须引导开通</li>
+      <li>✅ 取镜后48小时内发关怀跟进，提升满意度和复购；转介绍有折扣奖励，让传播有动力</li>
+    </ul>
+  </div>
+<!-- LM-START -->
+<div class="lm-block lm-practice">
+  <h3>🔧 动手实践任务（今日必做）</h3>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 1：连带组合设计（约 20 分钟）</div>
+      <div class="lm-pr-d">给 3 类顾客（学生、开车族、中老年）各设计一套连带方案，说明推荐顺序与话术。</div>
+      <div class="lm-pr-o">✅ 完成标准：每套方案有 2～3 项连带，且都能说出「为什么这位顾客需要它」。</div>
+    </div>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 2：跟进话术演练（约 20 分钟）</div>
+      <div class="lm-pr-d">演练 3 段跟进：取镜后 3 天回访、3 个月复查提醒、活动通知；注意时间点与不打扰原则。</div>
+      <div class="lm-pr-o">✅ 完成标准：3 段话术都简短清楚（1 分钟内），不刷屏、不推销腔。</div>
+    </div>
+</div>
+<div class="lm-block lm-faq">
+  <h3>⚠️ 常见问题与注意事项</h3>
+    <details class="lm-q">
+      <summary>❓ 连带销售会不会让顾客反感？</summary>
+      <div class="lm-a">取决于动机与时机。在顾客已经决定购买之后、以「使用便利」为理由推荐配件，一般不会被反感；如果在顾客犹豫时还叠加推荐，就是压力。原则：先成交主单，再做连带。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客说「不用了，家里有很多镜布」，怎么办？</summary>
+      <div class="lm-a">立刻收住，不要纠缠：「好的，那我不给您加了。您家里的镜布如果发硬或者洗过很多次，建议换——这东西容易藏灰划伤镜片。」点到为止，留个印象即可。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 回访频率多少合适？</summary>
+      <div class="lm-a">取镜后 3 天回访一次（问佩戴是否舒适），3 个月提醒复查，半年到一年提醒验光。有活动再通知。总原则：有由头、有间隔、有价值，不是每天问好。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客不愿意留手机号怎么办？</summary>
+      <div class="lm-a">尊重意愿，换成替代方式（加微信、留门店电话回拨）。可以说明用途：「只用于通知取镜和复查提醒，不群发广告。」顾客仍然拒绝就不强求。</div>
+    </details>
+</div>
+<div class="lm-block lm-quiz">
+  <h3>📝 今日自测（先做完再看答案）</h3>
+    <details class="lm-q">
+      <summary>第 1 题：连带销售的最佳时机是什么时候？</summary>
+      <div class="lm-a"><b>参考答案：</b>顾客主单已确认（或已付定金）之后，理由是从「使用便利」出发补位，而不是在顾客还没决定时加压力。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 2 题：列举 4 类连带方向。</summary>
+      <div class="lm-a"><b>参考答案：</b>配件类（镜盒/镜布/护理液）、第二副（备用镜/太阳镜）、家庭成员（父母/孩子）、服务类（保养/复查/延保）。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 3 题：会员制度对顾客的核心价值是什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>省钱（积分/折扣）、省心（记录度数、复购方便）、有保障（专属服务与提醒），而不是单纯一张卡。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 4 题：取镜后回访应该在多久内、问什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>一般 3 天内，问佩戴是否舒适、有没有头晕或压鼻，是否需要到店免费调整；不要在这个电话里推销新产品。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 5 题：情景：顾客刚配完一副，你想推荐太阳镜，怎么开口？</summary>
+      <div class="lm-a"><b>参考答案：</b>「您平时开车吗？开车时普通镜片挡不住强光和眩光，配一副偏光太阳镜会明显舒服，也能当备用。要不下次来取镜的时候顺便看看？」——先问场景，再给理由，不硬推。</div>
+    </details>
+</div>
+<!-- LM-END -->
+
+<!-- FLOW-START -->
+<div class="lm-block flow-block">
+  <h3>🔗 四大流程落地衔接 — 本日内容如何进入门店培训体系</h3>
+  <div class="flow-hook">💡 <b>今天你只要记住这一句：</b>今天学两件事：怎么让顾客多买一件、怎么让顾客下次还来。</div>
+  <p class="flow-sub">本日内容对应：<strong>连带销售与会员维护</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
+  <div class="flow-grid">
+<div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>掌握连带销售时机与搭配逻辑，规范会员登记与维护，掌握老客触达节奏。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>掌握连带时机：主产品成交后、顾客提到痛点时、促销节点</li><li>掌握搭配逻辑：镜架+镜片、功能镜片升级、配件+养护</li><li>掌握会员维护：登记、权益讲解、复购提醒</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>完成一次连带推荐 + 会员维护讲解，达标即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>最容易‘硬连带’——顾客刚买完就急着推第二件，会让人反感，要顺势而为。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>训练员示范连带推荐，新人演练，模拟会员权益讲解全过程。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>训练员示范连带推荐，讲清时机与话术</li><li>新人演练连带推荐，训练员点评</li><li>模拟会员权益讲解全过程</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>新人能独立完成连带推荐 + 会员讲解，即完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>连带要‘顺’——从顾客已买的延伸出去，而不是凭空推不相干的。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>通过情景考核检验连带与会员维护能力。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>情景考核：完成一次连带推荐 + 会员维护讲解</li><li>达标即通过</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>推荐自然、会员讲解清晰，即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>考核看‘顾客是否接受’——强推式的连带，即使卖出去也扣分。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>如果连带率低、会员流失高，回流优化会员运营标准。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>分析连带率与会员复购数据</li><li>优化会员运营与连带销售标准</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成会员运营优化项，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>会员流失高，多在‘买了就没人管’——回访和权益触达是关键。</div></div>
+  </div>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+</div>
+<!-- FLOW-END -->
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_25_练习题.html">← Day 25 练习题</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    
+    <a class="nav-btn" href="Day_26_练习题.html">Day 26 练习题 →</a>
+  </div>
+
+</div>
+</body>
+</html>
