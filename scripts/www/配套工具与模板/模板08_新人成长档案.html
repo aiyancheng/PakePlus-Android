@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>⑧ 新人成长档案 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+</head>
+<body data-page="tool08">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">⑧ 新人成长档案</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:opacity .3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('⑧ 新人成长档案')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ⑧</div>
+    <h1>📂 新人成长档案</h1>
+    <p>汇总入职到转正的全部培训与考核记录，一人一档，用于转正与晋升参考。新人的每一步成长都有据可查。</p>
+  </div>
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店名称：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>员工姓名：</label><input data-save="name" placeholder="请填写"></div>
+    <div class="fm-row"><label>性别 / 年龄：</label><input data-save="sex" placeholder="请填写"></div>
+    <div class="fm-row"><label>学历 / 专业：</label><input data-save="edu" placeholder="请填写"></div>
+    <div class="fm-row"><label>入职日期：</label><input data-save="jdate" placeholder="如 2026-10-08"></div>
+    <div class="fm-row"><label>档案编号：</label><input data-save="fno" placeholder="如 YY-A-2026-008"></div>
+  </div>  <div class="sec">
+    <div class="sec-h"><span class="sn">1</span>基本信息与培训轨迹</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:170px">项目</th><th>填写</th></tr></thead>
+        <tbody>
+          <tr><td>培训周期</td><td><input data-save="period" placeholder="共 8 周（56 天），起止日期"></td></tr>
+          <tr><td>带教训练员</td><td><input data-save="trainer" placeholder="姓名"></td></tr>
+          <tr><td>应完成考核节点</td><td><input data-save="nodes" placeholder="D7 / D14 / D21 / D28 / D35 / D42 / D49 / D55 / D56"></td></tr>
+          <tr><td>实际通过节点</td><td><input data-save="passed" placeholder="逐项填写通过日期"></td></tr>
+          <tr><td>结业考核成绩</td><td><input data-save="final_score" placeholder="理论 / 实操 / 合计"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">2</span>历次考核记录</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:46px">序号</th><th class="center" style="width:190px">考核节点</th><th class="center" style="width:96px">日期</th><th class="center" style="width:90px">成绩</th><th class="center" style="width:150px">结论</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>第 1 周周测</td><td><input data-save="e1d" placeholder="月/日"></td><td><input data-save="e1s" placeholder="分"></td><td><input data-save="e1r" placeholder="通过/补考"></td></tr>
+          <tr><td>2</td><td>第 2 周周测</td><td><input data-save="e2d" placeholder="月/日"></td><td><input data-save="e2s" placeholder="分"></td><td><input data-save="e2r" placeholder="通过/补考"></td></tr>
+          <tr><td>3</td><td>第 3 周周测</td><td><input data-save="e3d" placeholder="月/日"></td><td><input data-save="e3s" placeholder="分"></td><td><input data-save="e3r" placeholder="通过/补考"></td></tr>
+          <tr><td>4</td><td>中期考核（D28）</td><td><input data-save="e4d" placeholder="月/日"></td><td><input data-save="e4s" placeholder="分"></td><td><input data-save="e4r" placeholder="通过/补考"></td></tr>
+          <tr><td>5</td><td>第 5 周评估</td><td><input data-save="e5d" placeholder="月/日"></td><td><input data-save="e5s" placeholder="分"></td><td><input data-save="e5r" placeholder="通过/补考"></td></tr>
+          <tr><td>6</td><td>独立接单评估（D42）</td><td><input data-save="e6d" placeholder="月/日"></td><td><input data-save="e6s" placeholder="分"></td><td><input data-save="e6r" placeholder="通过/补考"></td></tr>
+          <tr><td>7</td><td>结业模拟考（D55）</td><td><input data-save="e7d" placeholder="月/日"></td><td><input data-save="e7s" placeholder="分"></td><td><input data-save="e7r" placeholder="通过/补考"></td></tr>
+          <tr><td>8</td><td>正式结业考核（D56）</td><td><input data-save="e8d" placeholder="月/日"></td><td><input data-save="e8s" placeholder="分"></td><td><input data-save="e8r" placeholder="通过/准予结业"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">3</span>能力评价与转正意见</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:170px">评价维度</th><th>评价</th></tr></thead>
+        <tbody>
+          <tr><td>产品与专业知识</td><td><input data-save="a1" placeholder="优秀 / 良好 / 合格 / 待提升"></td></tr>
+          <tr><td>实操与服务技能</td><td><input data-save="a2" placeholder=""></td></tr>
+          <tr><td>销售与沟通能力</td><td><input data-save="a3" placeholder=""></td></tr>
+          <tr><td>学习态度与责任心</td><td><input data-save="a4" placeholder=""></td></tr>
+          <tr><td>团队协作</td><td><input data-save="a5" placeholder=""></td></tr>
+          <tr><td>综合评定</td><td><input data-save="a6" placeholder="建议转正 / 延长试用 / 不予转正"></td></tr>
+          <tr><td>后续培养建议</td><td><input data-save="a7" placeholder="如 加强渐进片验配 / 培养带教能力"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">✍</span>归档签字</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">员工本人签字：</span><span class="ln"><input data-save="sg_a" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">训练员签字：</span><span class="ln"><input data-save="sg_b" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_c" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">归档日期：</span><span class="ln"><input data-save="sg_d" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="index.html">返回工具清单 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+</body>
+</html>
