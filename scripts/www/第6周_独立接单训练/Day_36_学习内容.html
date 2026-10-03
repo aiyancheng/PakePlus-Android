@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 36 学习内容 — 独立接单第一天：标准接待流程</title>
+<style>
+  body{font-family:'Microsoft YaHei',sans-serif;background:#f5f7fa;margin:0;padding:20px;color:#333}
+  .container{max-width:860px;margin:0 auto;background:#fff;border-radius:12px;padding:36px;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+  h1{color:#2980b9;font-size:1.6rem;border-bottom:3px solid #2980b9;padding-bottom:10px}
+  h2{color:#1a5276;font-size:1.15rem;margin-top:32px;padding-left:10px;border-left:4px solid #2980b9}
+  h3{color:#2980b9;font-size:1rem;margin-top:18px}
+  .card{background:#eaf4fc;border-radius:10px;padding:18px 22px;margin:14px 0}
+  .tip{background:#d1ecf1;padding:10px 14px;border-radius:0 8px 8px 0;color:#0c5460;margin:10px 0;font-size:.95rem}
+  .warn{background:#fff3cd;border-left:4px solid #ffc107;padding:10px 14px;border-radius:0 8px 8px 0;color:#856404;margin:10px 0}
+  .step{display:flex;align-items:flex-start;margin:14px 0;gap:14px}
+  .step-num{background:#2980b9;color:#fff;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:1rem;flex-shrink:0}
+  .dialogue{background:#f8f9fa;border-radius:10px;padding:16px 20px;margin:12px 0}
+  .dialogue .staff{color:#2980b9;font-weight:600}
+  .dialogue .customer{color:#e67e22;font-weight:600}
+  table{width:100%;border-collapse:collapse;margin:14px 0}
+  th{background:#2980b9;color:#fff;padding:10px 14px;text-align:left}
+  td{padding:10px 14px;border-bottom:1px solid #d0e8f5}
+  tr:nth-child(even) td{background:#eaf4fc}
+  .nav-footer { display: flex; justify-content: space-between; margin: 24px 0 8px; gap: 12px; }
+  .nav-btn { background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-size: 0.95em; font-weight: 600; transition: all 0.2s; }
+  .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .nav-btn.outline { background: white; color: #43e97b; border: 2px solid #43e97b; }
+  .nav-btn.outline:hover { background: #f0fff8; }
+  .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .structure-table th,.rule-table th{background:#2196F3;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
+
+  /* ══════════════════════════════════════════════
+     红米平板响应式适配（横屏1100px / 竖屏900px）
+     ══════════════════════════════════════════════ */
+
+  /* 平板横屏：内容区微调 */
+  @media (max-width: 1100px) {
+    .container { padding: 28px 24px !important; }
+    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+
+  /* 平板竖屏：核心适配断点 */
+  @media (max-width: 900px) {
+    body { padding: 12px !important; font-size: 15px; }
+    .container { padding: 20px 16px !important; border-radius: 10px !important; }
+    /* 学习内容：各类2列/3列网格折叠为1列 */
+    .value-cards, .material-grid, .face-grid,
+    .norm-grid, .salary-grid, .do-dont, .image-standard,
+    .safety-grid, .role-cards, .review-grid, .equipment-grid,
+    .lens-grid, .coating-grid, .term-grid, .display-rules,
+    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
+    .review-grid, .zone-grid, .test-info, .method-grid,
+    .question-type, .fab-grid, .form-grid, .wrong-right,
+    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
+    .achieve-grid, .product-card, .sign-area, .wish-cards,
+    .eval-row,
+    [class*="-grid"], [class*="grid-"],
+    .two-col { grid-template-columns: 1fr !important; }
+    /* 3列→2列特殊处理（不完全折叠，保留2列） */
+    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 导航按钮：允许换行，防止溢出 */
+    .nav-footer, .nav-bar {
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .nav-btn {
+      font-size: 0.88em !important;
+      padding: 10px 18px !important;
+      text-align: center !important;
+    }
+    /* 标题字号适配 */
+    .header h1, h1 { font-size: 1.4em !important; }
+    .header .subtitle, .header .week-badge { font-size: 13px !important; }
+    /* 表格横向滚动（防溢出） */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* meta-bar 换行 */
+    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
+    /* 首页时间轴横向滚动 */
+    .timeline { overflow-x: auto; }
+  }
+
+  /* 手机 / 平板极窄竖屏 */
+  @media (max-width: 600px) {
+    body { padding: 8px !important; }
+    .container { padding: 16px 12px !important; }
+    .header h1, h1 { font-size: 1.2em !important; }
+    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .container { padding: 16px !important; }
+  }
+
+/* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1080px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+}
+
+  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 参考 / 自测 / 阶段复盘） ═══════ */
+  .lm-block{border-radius:14px;padding:20px 24px;margin:24px 0;line-height:1.85}
+  .lm-block h3{margin:0 0 14px;font-size:1.1em;font-weight:700;letter-spacing:.3px}
+  .lm-list{margin:0;padding-left:22px}
+  .lm-list li{margin-bottom:9px}
+  .lm-goal{background:#e8f5e9;color:#1b5e20}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:#fff8e1;color:#4e342e}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:#f3e5f5;color:#4a148c}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-ref{background:#e3f2fd;color:#0d3c61}
+  .lm-ref h3{color:#1565c0}
+  .lm-quiz{background:#fce4ec;color:#880e4f}
+  .lm-quiz h3{color:#c2185b}
+  .lm-review{background:#ede7f6;color:#311b92}
+  .lm-review h3{color:#4527a0}
+  .lm-meta{margin:12px 0 0;font-size:.9em;opacity:.92}
+  .lm-pr{margin:0 0 14px;padding:14px 16px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:700;margin-bottom:6px}
+  .lm-pr-d{margin-bottom:6px}
+  .lm-pr-o{font-size:.92em;font-weight:600}
+  .lm-q{margin:0 0 10px;padding:10px 14px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:600;line-height:1.7}
+  .lm-q[open] summary{margin-bottom:8px}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.8}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  .lm-sub{font-weight:700;margin:14px 0 8px;font-size:1em}
+  @media(max-width:900px){
+    .lm-block{padding:16px 14px;margin:18px 0;line-height:1.75}
+    .lm-block h3{font-size:1.02em}
+    .lm-list{padding-left:18px}
+  }
+
+/* ══ HOME-BAR：顶部返回首页入口 ══ */
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+
+/* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
+  .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
+  .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
+  .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
+  .flow-hook b{color:#1a3a6b}
+  .flow-sub{margin:0 0 18px;font-size:.9em;color:#556}
+  .flow-sub strong{color:#1a3a6b}
+  .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .flow-col{border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 4px rgba(26,58,107,.05)}
+  .flow-h{font-weight:800;font-size:.98em;margin-bottom:10px;color:#1a3a6b;display:flex;align-items:center;gap:6px}
+  .flow-h .fh-tag{font-size:.7em;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px;letter-spacing:.5px}
+  .flow-std .flow-h{color:#2c5aa0}.flow-std .fh-tag{background:#2c5aa0}
+  .flow-teach .flow-h{color:#2e7d5b}.flow-teach .fh-tag{background:#2e7d5b}
+  .flow-check .flow-h{color:#c47f17}.flow-check .fh-tag{background:#c47f17}
+  .flow-opt .flow-h{color:#8e44ad}.flow-opt .fh-tag{background:#8e44ad}
+  .flow-say{font-size:.88em;color:#37475e;background:#f6f9ff;border-radius:8px;padding:10px 12px;margin-bottom:12px;line-height:1.7;border-left:3px solid #cdd9ec}
+  .flow-say b{color:#1a3a6b}
+  .flow-do-t{font-size:.82em;font-weight:800;color:#556;margin:12px 0 6px}
+  .flow-do{margin:0;padding-left:19px}
+  .flow-do li{font-size:.85em;line-height:1.7;margin-bottom:6px;color:#4a5568}
+  .flow-standard{font-size:.84em;color:#2e7d32;background:#eef8f0;border-radius:7px;padding:9px 12px;margin-top:12px;line-height:1.65}
+  .flow-standard b{color:#1b5e20}
+  .flow-pit{font-size:.84em;color:#b3541e;background:#fdf3ea;border-radius:7px;padding:9px 12px;margin-top:8px;line-height:1.65}
+  .flow-pit b{color:#8a3d0a}
+  .flow-meta{margin:18px 0 0;font-size:.84em;color:#5a6478;background:#eef3fb;border-radius:8px;padding:12px 16px;line-height:1.7}
+  .flow-meta b{color:#1a3a6b}
+  @media(max-width:900px){
+    .flow-grid{grid-template-columns:1fr;gap:12px}
+    .flow-block{padding:18px 16px}
+    .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
+  }
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="container">
+  <div style="background:linear-gradient(135deg,#2980b9,#1a5276);color:#fff;border-radius:10px;padding:20px 24px;margin-bottom:24px">
+    <div style="font-size:.9rem;opacity:.85">第6周 · Day 36 · 独立接单训练</div>
+    <h1 style="color:#fff;border:none;padding:0;margin:8px 0">🎯 独立接单第一天：标准接待流程</h1>
+    <p style="margin:4px 0;opacity:.9">今天你将独立完成完整的客户接待，师傅在旁观察</p>
+  </div>
+
+<div class="lm-block lm-goal">
+  <h3>🎯 今日学习目标（学完你应该能做到）</h3>
+  <ul class="lm-list">
+      <li>能独立完整走完标准接待流程 7 步，不需师傅提示</li>
+      <li>掌握独立接单的 4 个卡壳点及解决方案：忘词、被拒、问不倒的问题、顾客沉默</li>
+      <li>能完成一次独立接单记录，写清接待过程、结果与自己的不足</li>
+      <li>知道哪些环节必须请师傅兜底（度数判定、折扣审批、投诉升级）</li>
+      <li>建立「流程优先」的稳定感：紧张时回到流程，就不会乱</li>
+  </ul>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
+</div>
+
+  <h2>🌟 本周目标</h2>
+  <div class="card">
+    <p>经过5周的学习和跟岗，你已经掌握了基本技能。第6周的核心任务是：</p>
+    <ul>
+      <li>✅ 独立完成客户接待（从进门到成单）</li>
+      <li>✅ 独立处理90%以上的日常问题</li>
+      <li>✅ 遇到超出权限问题，及时上报并协作处理</li>
+      <li>✅ 完成每日至少2单独立接待记录</li>
+    </ul>
+  </div>
+
+  <h2>📋 标准接待流程全解析</h2>
+  <p>今天我们重点梳理完整的标准接待流程，让你在独立接单时有章可循：</p>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div>
+      <strong>迎宾问候（0-30秒）</strong>
+      <p>客户踏入门店1米内，主动起身迎接，微笑问候。</p>
+      <div class="dialogue">
+        <span class="staff">员工：</span>"您好，欢迎光临！请问今天是来配眼镜还是来检查视力呢？"<br>
+        <span class="customer">客户：</span>"我想配一副近视眼镜。"<br>
+        <span class="staff">员工：</span>"好的，请这边坐，我来为您服务。"
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div>
+      <strong>需求了解（2-5分钟）</strong>
+      <p>用开放式问题了解客户的使用场景、视力历史、预算倾向等。</p>
+      <div class="dialogue">
+        <span class="staff">员工：</span>"请问您上一副眼镜大概什么时候配的？现在戴起来有什么不舒服的地方吗？"<br>
+        <span class="staff">员工：</span>"您平时主要在哪些场合戴眼镜？工作用电脑多，还是开车多？"<br>
+        <span class="staff">员工：</span>"对眼镜的材质或样式有什么偏好吗？"
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div>
+      <strong>验光检查（10-20分钟）</strong>
+      <p>引导客户进行电脑验光，再进行主观验光，确认最终处方。</p>
+      <div class="tip">💡 要点：验光前告知流程，消除客户紧张感；验光中保持沟通，随时回应疑问。</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div>
+      <strong>方案推荐（10-15分钟）</strong>
+      <p>根据处方和需求，推荐1-3款镜框+镜片组合方案。用FAB法则介绍。</p>
+      <table class="structure-table">
+        <tr><th>方案</th><th>定位</th><th>特点</th><th>适合人群</th></tr>
+        <tr><td>基础款</td><td>经济实惠</td><td>球面单光，价格亲民</td><td>度数较低，预算有限</td></tr>
+        <tr><td>主推款</td><td>性价比高</td><td>非球面，视野更清晰</td><td>大多数近视客户</td></tr>
+        <tr><td>高端款</td><td>品质首选</td><td>1.74超薄+防蓝光</td><td>高度数，对视觉要求高</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div>
+      <strong>试戴选定（5-10分钟）</strong>
+      <p>引导客户试戴镜框，调整鼻托和镜腿，确认舒适度和美观度。</p>
+      <div class="dialogue">
+        <span class="staff">员工：</span>"这款tr90材质的镜框非常轻，戴着没有压鼻感，您戴上试试看？"<br>
+        <span class="staff">员工：</span>"我帮您调整一下鼻托的高度……好，这样是不是更舒适了？"
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div>
+      <strong>制单确认（5分钟）</strong>
+      <p>向客户确认所有信息：处方数据、所选镜框型号、镜片品牌规格、价格、取镜时间。</p>
+      <div class="warn">⚠️ 必须当面核对！错误一旦制作完成，后续补救成本极高。</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">7</div>
+    <div>
+      <strong>送客告别（1分钟）</strong>
+      <p>告知取镜时间，留下联系方式，礼貌送客。</p>
+      <div class="dialogue">
+        <span class="staff">员工：</span>"您的眼镜大约3个工作日可以取，我们会短信通知您。取镜时带上这张工单，有任何问题随时联系我们。感谢您的光临，慢走！"
+      </div>
+    </div>
+  </div>
+
+  <h2>🔑 独立接单常见卡壳点及解决方案</h2>
+  <div class="card">
+    <h3>卡壳1：客户问的技术问题不会回答</h3>
+    <p><strong>解决方案：</strong>"这个问题非常专业，我帮您查一下更准确的数据，或者请我们的验光师为您解答。"（不要猜测，及时请教）</p>
+
+    <h3>卡壳2：客户对价格有异议</h3>
+    <p><strong>解决方案：</strong>先了解客户预算范围，再从中档产品开始介绍，强调性价比和长期使用价值。不要急于降价，先强化产品价值。</p>
+
+    <h3>卡壳3：客户比较犹豫不肯下单</h3>
+    <p><strong>解决方案：</strong>用假设成交法："如果您今天确定下来，我可以帮您预约优先制作，这样周末就能取镜了。"</p>
+
+    <h3>卡壳4：同时来了两位客户</h3>
+    <p><strong>解决方案：</strong>先向等待的客户致歉并提供宣传资料或请其自由试戴，尽快完成当前服务。如排队过长，及时呼叫同事协助。</p>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#eaf4fc,#d0e8f5);border-radius:10px;padding:20px;margin-top:24px">
+    <strong style="color:#1a5276">🚀 今日任务</strong><br>
+    完成至少2次完整的客户接待（全流程），并填写独立接单记录表，明天与师傅复盘。
+  </div>
+
+    <h2 style="color:#1a5276;font-size:1.15rem;margin-top:32px;padding-left:10px;border-left:4px solid #2980b9">⚡ 独立接单常见卡壳点与应对</h2>
+  <div style="background:#eaf4fc;border-radius:10px;padding:18px 22px;margin:14px 0;border:1px solid #d0e8f5">
+    <h3 style="color:#2980b9;font-size:1rem;margin-top:18px">卡壳点1：不知道怎么开口</h3>
+    <p style="line-height:1.8;color:#555;margin-bottom:12px">最简单有效的开场：微笑+眼神接触+<em>"您好，今天是配镜还是来保养一下？"</em>——一个简单问题打开对话。</p>
+
+    <h3 style="color:#2980b9;font-size:1rem;margin-top:18px">卡壳点2：客户沉默，不知道下一步</h3>
+    <p style="line-height:1.8;color:#555;margin-bottom:12px">用开放式问题持续挖掘：<em>"您现在戴的是什么款式的眼镜？戴多久了？"</em>或<em>"您平时主要是近视镜用得多，还是太阳镜？"</em></p>
+
+    <h3 style="color:#2980b9;font-size:1rem;margin-top:18px">卡壳点3：不知道推荐哪个镜片</h3>
+    <p style="line-height:1.8;color:#555;margin-bottom:12px">记住基本原则：度数决定折射率，需求决定功能（防蓝光/变色/偏光）。不确定时请教师傅，或说：<em>"我帮您请我们的验光师来进一步建议。"</em></p>
+
+    <h3 style="color:#2980b9;font-size:1rem;margin-top:18px">卡壳点4：被客户问到不会的问题</h3>
+    <p style="line-height:1.8;color:#555;margin-bottom:12px">正直说：<em>"这个问题我了解不够深入，我帮您请我们的验光师来解答，他在这方面更专业。"</em>——诚实比乱答要好得多。</p>
+    <div style="background:#d1ecf1;border-left:4px solid #17a2b8;padding:10px 14px;border-radius:0 8px 8px 0;color:#0c5460;margin:10px 0">
+      💡 独立接单初期，流程比技巧更重要。先确保每一步都做到，再逐步提升每一步的质量。
+    </div>
+  </div>
+
+  <h2 style="color:#1a5276;font-size:1.15rem;margin-top:32px;padding-left:10px;border-left:4px solid #2980b9">📋 今日首次独立接单记录表</h2>
+  <div style="background:#eaf4fc;border-radius:10px;padding:18px 22px;margin:14px 0;border:1px solid #d0e8f5">
+    <p style="line-height:1.8;color:#555;margin-bottom:12px">记录今天的独立接单情况（每位客户一条）：</p>
+    <table class="structure-table" style="width:100%;border-collapse:collapse;margin:14px 0">
+      <tr style="background:#2980b9;color:#fff"><th style="padding:10px 14px;text-align:left">序号</th><th style="padding:10px 14px;text-align:left">客户需求</th><th style="padding:10px 14px;text-align:left">成单/未成单</th><th style="padding:10px 14px;text-align:left">最大挑战</th></tr>
+      <tr><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5">1</td><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5"></td><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5">□成单 □未成单</td><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5"></td></tr>
+      <tr style="background:#eaf4fc"><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5">2</td><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5"></td><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5">□成单 □未成单</td><td style="padding:10px 14px;border-bottom:1px solid #d0e8f5"></td></tr>
+      <tr><td style="padding:10px 14px">3</td><td style="padding:10px 14px"></td><td style="padding:10px 14px">□成单 □未成单</td><td style="padding:10px 14px"></td></tr>
+    </table>
+    <div style="background:#d4edda;border-left:4px solid #28a745;padding:10px 14px;border-radius:0 8px 8px 0;color:#155724;margin:10px 0">
+      ✅ 今天迈出了最重要的一步——独立面对客户。无论结果如何，每一次尝试都是宝贵的成长！
+    </div>
+  </div>
+
+
+    <p style="text-align:center;color:#2980b9;font-weight:600;margin:12px 0">独立接单，是从学徒走向专业人的关键一步。勇敢迈出，每天进步一点点。</p>
+  <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:4px">— Day 36 · 独立接单第一天 · 完成 —</p>
+  <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:16px">积累每一次接单经验，成为值得客户信赖的眼镜顾问。</p>
+<!-- LM-START -->
+<div class="lm-block lm-practice">
+  <h3>🔧 动手实践任务（今日必做）</h3>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 1：独立接待一位顾客（约 40 分钟）</div>
+      <div class="lm-pr-d">在师傅可见范围内独立完成一次完整接待（迎宾 → 问需求 → 推荐 → 试戴 → 报价 → 送客/成交），师傅只观察不插话。</div>
+      <div class="lm-pr-o">✅ 完成标准：7 步无遗漏，能自己发现 2 个做得不好的地方。</div>
+    </div>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 2：填写接单记录表（约 15 分钟）</div>
+      <div class="lm-pr-d">记录本次顾客类型、需求、你的推荐、顾客反应、结果（成交/未成交及原因）。</div>
+      <div class="lm-pr-o">✅ 完成标准：记录完整，能说出「如果重来一次我会改哪一句」。</div>
+    </div>
+</div>
+<div class="lm-block lm-faq">
+  <h3>⚠️ 常见问题与注意事项</h3>
+    <details class="lm-q">
+      <summary>❓ 第一次独立接单，紧张到忘词怎么办？</summary>
+      <div class="lm-a">准备「三句兜底话」：①「您先坐，我了解一下您的情况」②「我确认一下您的需求，稍等」③「这个我请师傅帮您确认一下」。有兜底话就不会僵场，紧张会在第三次接待后明显缓解。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客的问题我答不上来，是不是很丢脸？</summary>
+      <div class="lm-a">不丢脸，装作懂才丢脸。标准动作：「我帮您确认一下，马上答复您。」然后立刻找师傅或查资料。顾客更在意你有没有认真对待他。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客全程沉默、只点头，怎么办？</summary>
+      <div class="lm-a">改用选择题和体验式动作：递上镜架让他试戴、给两副做对比、问「这副还是那副更舒服」。沉默的顾客不是没需求，是不习惯回答开放问题。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 接单没成交，会不会影响考核？</summary>
+      <div class="lm-a">第 6 周看的是「流程完成度」而不是「成交率」。规范走完流程、记录清楚原因，就是达标；如果为了成交而乱承诺、乱降价，反而是不合格。</div>
+    </details>
+</div>
+<div class="lm-block lm-quiz">
+  <h3>📝 今日自测（先做完再看答案）</h3>
+    <details class="lm-q">
+      <summary>第 1 题：标准接待流程的 7 步是什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>迎宾问候 → 需求询问 → 产品推荐 → 试戴体验 → 报价说明 → 成交/开单 → 送客与售后说明。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 2 题：独立接单最常见的 4 个卡壳点是什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>紧张忘词、被顾客拒绝（自己看）、遇到答不上来的问题、顾客沉默不回应。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 3 题：哪些环节必须请师傅兜底？</summary>
+      <div class="lm-a"><b>参考答案：</b>度数判定与处方解释、折扣与价格特批、投诉与赔付处理、复杂加工或特殊镜架改装。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 4 题：情景：顾客直接问「你们这儿最好的镜片是哪个」，你怎么接？</summary>
+      <div class="lm-a"><b>参考答案：</b>「最好的不一定最适合您。您度数多少、平时主要看电脑还是开车？我先按您的用途排个序，再告诉您哪个最合适。」用「最合适」替代「最好」，既专业又留住了对话。</div>
+    </details>
+</div>
+<!-- LM-END -->
+
+<!-- FLOW-START -->
+<div class="lm-block flow-block">
+  <h3>🔗 四大流程落地衔接 — 本日内容如何进入门店培训体系</h3>
+  <div class="flow-hook">💡 <b>今天你只要记住这一句：</b>从今天起，师傅退到一边，顾客交给你——按标准流程，独立走完一次接待。</div>
+  <p class="flow-sub">本日内容对应：<strong>独立接单训练 · 标准接待流程</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
+  <div class="flow-grid">
+<div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>独立完成‘迎宾—问诊—推荐—成交’标准流程，全程符合服务标准，无遗漏环节。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>独立完成完整接待流程：迎宾→问诊→推荐→成交</li><li>全程符合服务标准，不遗漏关键环节</li><li>独立处理顾客常见问题，不依赖师傅</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>完成一次完整独立接待，按接待评分表 ≥ 85 分达标。</div><div class="flow-pit"><b>⚠ 常见坑：</b>最容易‘紧张忘步骤’——把流程记成口诀（先迎、再问、后推、终成），心里有底就不慌。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>训练员退到‘影子位置’观察，不主动介入，结束后一对一复盘。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>训练员退到侧后方观察，不主动介入</li><li>记录新人遗漏或出错的环节</li><li>结束后一对一复盘，点出关键改进</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>新人独立完成一次接待且训练员认可，即完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>带教关键是‘忍住不帮’——新人卡住也别急着上，让他自己想办法。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>通过独立接待考核检验综合接待能力。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>独立接待考核：完成一次完整接待</li><li>按接待评分表 ≥ 85 分达标</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>流程完整、服务规范，评分 85 分以上即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>考核要‘真实顾客’——模拟的再好，也不如在真顾客面前的表现。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>统计独立接待中的失误点，回流优化接待标准。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>统计新人独立接待的失误点</li><li>回流优化接待标准与话术</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成接待标准优化项，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>独立期失误最有价值——它暴露的是‘学到的东西’和‘真实需求’之间的差距。</div></div>
+  </div>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+</div>
+<!-- FLOW-END -->
+
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="../第5周_实战跟岗训练/Day_35_练习题.html">← 第5周周测</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    
+    <a class="nav-btn" href="Day_36_练习题.html">Day 36 练习题 →</a>
+  </div>
+</div>
+</body>
+<!-- Day 36 完成 -->
+</html>
