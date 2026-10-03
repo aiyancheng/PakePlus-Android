@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>③ 训练员认证标准表 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+</head>
+<body data-page="tool03">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">③ 训练员认证标准表</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:opacity .3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('③ 训练员认证标准表')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ③</div>
+    <h1>🎓 训练员认证标准表</h1>
+    <p>规范训练员选拔与认证，实操示范 + 试讲 + 主管评价，80 分以上持证上岗。用于评估员工是否具备带教新人的资格与能力。</p>
+  </div>
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店名称：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>被认证人：</label><input data-save="name" placeholder="请填写"></div>
+    <div class="fm-row"><label>现任岗位：</label><input data-save="post" placeholder="请填写"></div>
+    <div class="fm-row"><label>入职年限：</label><input data-save="years" placeholder="如 2 年"></div>
+    <div class="fm-row"><label>认证日期：</label><input data-save="cdate" placeholder="如 2026-10-08"></div>
+    <div class="fm-row"><label>认证人 / 主考：</label><input data-save="examiner" placeholder="请填写"></div>
+  </div>  <div class="sec">
+    <div class="sec-h"><span class="sn">1</span>认证评分</div>
+    <div class="sec-desc">六项共 100 分，80 分及以上为通过，准予持证上岗。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:48px">序号</th><th style="width:120px">评估维度</th><th>评估标准</th><th class="center" style="width:64px">满分</th><th class="center" style="width:80px">得分</th><th style="width:150px">评语</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td><b>业务熟练度</b></td><td>本岗位各工作站操作规范、熟练，无明显短板</td><td class="center">25</td><td class="center"><input data-save="cs0" placeholder="0"></td><td><input data-save="cm0" placeholder=""></td></tr>
+          <tr><td class="center">2</td><td><b>实操示范</b></td><td>能标准、完整地示范一项工作站操作，动作规范</td><td class="center">20</td><td class="center"><input data-save="cs1" placeholder="0"></td><td><input data-save="cm1" placeholder=""></td></tr>
+          <tr><td class="center">3</td><td><b>讲解能力</b></td><td>能把操作要点讲清楚，会用「为什么」讲原理</td><td class="center">20</td><td class="center"><input data-save="cs2" placeholder="0"></td><td><input data-save="cm2" placeholder=""></td></tr>
+          <tr><td class="center">4</td><td><b>试讲/带教演练</b></td><td>试讲一节训练课，逻辑清晰、重点突出</td><td class="center">15</td><td class="center"><input data-save="cs3" placeholder="0"></td><td><input data-save="cm3" placeholder=""></td></tr>
+          <tr><td class="center">5</td><td><b>耐心与沟通</b></td><td>能根据新人特点调整节奏，不厌烦、不打击</td><td class="center">10</td><td class="center"><input data-save="cs4" placeholder="0"></td><td><input data-save="cm4" placeholder=""></td></tr>
+          <tr><td class="center">6</td><td><b>责任与配合</b></td><td>认同培训制度，愿意配合考核与数据回流</td><td class="center">10</td><td class="center"><input data-save="cs5" placeholder="0"></td><td><input data-save="cm5" placeholder=""></td></tr>
+          <tr style="background:#eef3fb"><td class="center" colspan="3"><b>合计</b></td><td class="center"><b>100</b></td><td class="center"><input data-save="cs_total" placeholder="总分"></td><td class="center">80 分及以上通过</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">2</span>认证结论</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:170px">项目</th><th>填写</th></tr></thead>
+        <tbody>
+          <tr><td>认证结果</td><td><input data-save="result" placeholder="通过 / 暂缓通过 / 不通过"></td></tr>
+          <tr><td>证书编号</td><td><input data-save="cert_no" placeholder="如 YY-TR-2026-001"></td></tr>
+          <tr><td>有效期</td><td><input data-save="valid" placeholder="如 2026-10 至 2027-10"></td></tr>
+          <tr><td>待提升项</td><td><input data-save="improve" placeholder="未通过时填写具体改进方向"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">✍</span>签字确认</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">被认证人签字：</span><span class="ln"><input data-save="sg_a" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">主考人签字：</span><span class="ln"><input data-save="sg_b" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_c" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">日期：</span><span class="ln"><input data-save="sg_d" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+  <div class="note warn">⚠ <b>注意</b>：训练员认证每 12 个月复评一次。带教质量不达标（新人考核通过率持续偏低）的，应暂停带教资格并重新认证。</div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="模板04_实操考核评分表.html">下一工具：实操考核评分表 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+</body>
+</html>
