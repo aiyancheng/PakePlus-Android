@@ -1,0 +1,210 @@
+/* ═══════════════════════════════════════════
+   永州爱眼城 · 门店新员工培训配套工具模板
+   公共样式（tool-common.css）
+   ═══════════════════════════════════════════ */
+:root{
+  --brand:#2c5aa0;
+  --brand-d:#1a237e;
+  --brand-l:#eef3fb;
+  --ok:#2e7d32;
+  --warn:#ef6c00;
+  --bad:#c62828;
+  --text:#22303f;
+  --muted:#667;
+  --line:#e3eaf3;
+  --radius:14px;
+  --shadow:0 2px 14px rgba(26,58,107,.07);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:linear-gradient(180deg,#f4f7fc 0%,#eef3fa 100%);
+  color:var(--text);line-height:1.75;-webkit-text-size-adjust:100%;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:26px 22px 80px}
+
+/* ── 顶部条 ── */
+.topbar{
+  display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;
+}
+.topbar .home-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#fff;border:1.5px solid var(--line);color:var(--brand);
+  text-decoration:none;font-size:.82em;font-weight:700;padding:8px 16px;border-radius:22px;transition:.2s;
+}
+.topbar .home-btn:hover{border-color:var(--brand);background:var(--brand-l)}
+.topbar .crumb{font-size:.82em;color:var(--muted)}
+.topbar .spacer{flex:1}
+.topbar .tool-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1.5px solid var(--line);background:#fff;color:#456;
+  font-size:.8em;font-weight:700;padding:8px 15px;border-radius:20px;cursor:pointer;transition:.18s;font-family:inherit;
+}
+.topbar .tool-btn:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-l)}
+.topbar .tool-btn.primary{background:linear-gradient(135deg,#2c5aa0,#1a237e);color:#fff;border-color:transparent}
+.topbar .tool-btn.primary:hover{filter:brightness(1.12)}
+.topbar .tool-btn.danger:hover{border-color:var(--bad);color:var(--bad);background:#fdeeee}
+
+/* ── 文档头 ── */
+.doc-head{
+  background:linear-gradient(135deg,#2c5aa0 0%,#1a237e 100%);
+  color:#fff;border-radius:18px;padding:28px 30px;margin-bottom:20px;
+  box-shadow:0 8px 26px rgba(26,35,126,.2);position:relative;overflow:hidden;
+}
+.doc-head::after{content:"";position:absolute;right:-50px;top:-50px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.07)}
+.doc-head .dh-no{
+  display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);
+  border-radius:20px;padding:4px 14px;font-size:.76em;font-weight:700;margin-bottom:10px;position:relative;
+}
+.doc-head h1{margin:0 0 8px;font-size:1.5em;position:relative}
+.doc-head p{margin:0;font-size:.88em;opacity:.92;line-height:1.75;position:relative}
+
+/* ── 通用字段（可填写） ── */
+.fill-meta{
+  background:#fff;border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow);
+  margin-bottom:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px;
+}
+.fm-row{display:flex;align-items:center;gap:9px;flex-wrap:nowrap}
+.fm-row label{font-size:.84em;color:#456;font-weight:700;white-space:nowrap}
+.fm-row input,.fm-row select{
+  flex:1;min-width:0;padding:7px 11px;border:1.5px solid var(--line);border-radius:8px;
+  font-size:.84em;font-family:inherit;color:var(--text);background:#fbfdff;outline:none;transition:.15s;
+}
+.fm-row input:focus,.fm-row select:focus{border-color:var(--brand);background:#fff}
+
+/* ── 区块 ── */
+.sec{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin-bottom:18px}
+.sec-h{
+  display:flex;align-items:center;gap:10px;font-size:1.02em;font-weight:800;color:var(--brand-d);
+  padding-bottom:11px;margin:0 0 14px;border-bottom:2px solid var(--brand-l);
+}
+.sec-h .sn{
+  display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;
+  background:var(--brand);color:#fff;font-size:.8em;font-weight:800;flex-shrink:0;
+}
+.sec-desc{font-size:.85em;color:var(--muted);margin:-6px 0 14px;line-height:1.7}
+
+/* ── 表格 ── */
+.tbl{width:100%;border-collapse:collapse;font-size:.85em}
+.tbl th,.tbl td{border:1px solid #dfe8f4;padding:8px 10px;text-align:left;vertical-align:top}
+.tbl th{background:var(--brand-l);color:var(--brand-d);font-weight:700;text-align:center;font-size:.94em;white-space:nowrap}
+.tbl td{color:#445}
+.tbl tbody tr:nth-child(even) td{background:#fafcfe}
+.tbl td input,.tbl td textarea{
+  width:100%;border:none;background:transparent;font-family:inherit;font-size:1em;color:var(--text);
+  padding:3px 2px;outline:none;resize:vertical;
+}
+.tbl td input:focus,.tbl td textarea:focus{background:#f4f9ff;border-radius:4px}
+.tbl td textarea{min-height:38px;line-height:1.5}
+.tbl .center{text-align:center}
+.tbl .ck{width:22px;text-align:center}
+.tbl .ck input{width:17px;height:17px;cursor:pointer;accent-color:var(--brand)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* 三态选择（评分/掌握程度） */
+.tri{display:inline-flex;gap:4px}
+.tri button{
+  border:1.3px solid var(--line);background:#fff;color:#8a97a8;font-size:.72em;font-weight:700;
+  padding:4px 9px;border-radius:7px;cursor:pointer;transition:.15s;font-family:inherit;white-space:nowrap;
+}
+.tri button:hover{border-color:#bcd0ee}
+.tri button.on[data-v="2"],.tri button.on[data-v="full"]{background:#e8f5e9;border-color:#4caf50;color:#2e7d32}
+.tri button.on[data-v="1"],.tri button.on[data-v="part"]{background:#fff4e5;border-color:#ffb74d;color:#ef6c00}
+.tri button.on[data-v="0"],.tri button.on[data-v="none"]{background:#fdeeee;border-color:#ef9a9a;color:#c62828}
+
+/* ── 提示框 ── */
+.note{
+  background:var(--brand-l);border-radius:10px;padding:12px 16px;font-size:.83em;color:#33507a;line-height:1.75;margin-top:14px;
+}
+.note b{color:var(--brand-d)}
+.note.warn{background:#fff7ec;color:#8a5a1e}
+.note.warn b{color:#a3550a}
+
+/* ── 统计块 ── */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:14px}
+.stat{background:#f8fafd;border:1px solid var(--line);border-radius:11px;padding:13px 12px;text-align:center}
+.stat .n{font-size:1.6em;font-weight:800;color:var(--brand);line-height:1.2}
+.stat .l{font-size:.75em;color:var(--muted);margin-top:3px}
+
+/* ── 签名栏 ── */
+.sign-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 26px;margin-top:8px}
+.sign{display:flex;align-items:flex-end;gap:8px;font-size:.85em;color:#456}
+.sign .lb{font-weight:700;white-space:nowrap}
+.sign .ln{flex:1;border-bottom:1px solid #c9d5e6;height:26px}
+.sign .dt{color:var(--muted);white-space:nowrap;font-size:.92em}
+
+/* ── 底部导航 ── */
+.nav-foot{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap;
+}
+.nav-foot a{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:.84em;font-weight:700;
+  padding:10px 20px;border-radius:24px;transition:.2s;
+}
+.nav-foot a.ghost{border:1.5px solid var(--line);background:#fff;color:var(--brand)}
+.nav-foot a.ghost:hover{border-color:var(--brand);background:var(--brand-l)}
+.nav-foot a.solid{background:linear-gradient(135deg,#2c5aa0,#1a237e);color:#fff;box-shadow:0 4px 14px rgba(26,35,126,.2)}
+.nav-foot a.solid:hover{filter:brightness(1.12);transform:translateY(-1px)}
+
+/* ── 索引页专用 ── */
+.index-hero{
+  background:linear-gradient(135deg,#2c5aa0 0%,#1a237e 100%);color:#fff;border-radius:20px;
+  padding:34px 34px 30px;margin-bottom:24px;box-shadow:0 8px 30px rgba(26,35,126,.22);position:relative;overflow:hidden;
+}
+.index-hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.index-hero h1{margin:0 0 10px;font-size:1.65em;position:relative}
+.index-hero p{margin:0;font-size:.92em;opacity:.92;line-height:1.8;position:relative}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.tool-card{
+  background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;
+  display:flex;flex-direction:column;transition:.2s;border:1px solid var(--line);
+}
+.tool-card:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(26,58,107,.13);border-color:#c5d8f2}
+.tool-card .tc-top{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.tool-card .tc-no{
+  flex-shrink:0;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#2c5aa0,#1a237e);color:#fff;font-size:1.05em;font-weight:800;
+}
+.tool-card .tc-name{font-weight:800;color:var(--brand-d);font-size:1em}
+.tool-card .tc-use{font-size:.83em;color:#556;line-height:1.7;flex:1;margin-bottom:14px}
+.tool-card .tc-link{
+  align-self:flex-start;display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  font-size:.82em;font-weight:700;color:#fff;background:linear-gradient(135deg,#2c5aa0,#1a237e);
+  padding:9px 18px;border-radius:20px;transition:.2s;
+}
+.tool-card .tc-link:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.tool-card.current{border-color:#ffb74d;background:#fffbf5}
+.tool-card.current .tc-no{background:linear-gradient(135deg,#ef6c00,#c1440e)}
+
+/* ── 响应式 ── */
+@media(max-width:900px){
+  .wrap{padding:20px 16px 70px}
+  .doc-head{padding:22px 22px}
+  .doc-head h1{font-size:1.3em}
+  .sec{padding:16px 16px}
+  .index-hero{padding:26px 22px}
+  .index-hero h1{font-size:1.35em}
+}
+@media(max-width:600px){
+  .wrap{padding:16px 12px 60px}
+  .fill-meta{grid-template-columns:1fr}
+  .fm-row{flex-wrap:wrap}
+  .tbl{font-size:.78em}
+  .tbl th,.tbl td{padding:6px 7px}
+  .topbar .crumb{display:none}
+}
+
+/* ── 打印 ── */
+@media print{
+  body{background:#fff}
+  .topbar,.nav-foot{display:none!important}
+  .wrap{max-width:100%;padding:0}
+  .doc-head{box-shadow:none;border-radius:0;background:#1a237e!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sec{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+  .index-grid{display:block}
+  .tool-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc;margin-bottom:12px}
+  .tbl th,.tbl td{border:1px solid #999}
+  .tbl th{background:#e8eef8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  input,textarea{background:transparent!important}
+}
