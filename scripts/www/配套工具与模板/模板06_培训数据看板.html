@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>⑥ 培训数据看板 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+</head>
+<body data-page="tool06">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">⑥ 培训数据看板</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:opacity .3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('⑥ 培训数据看板')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ⑥</div>
+    <h1>📈 培训数据看板</h1>
+    <p>集中呈现考核通过率、QSC 得分、客诉量等指标，为优化提供数据支撑。建议每月更新一次，作为门店培训优化的决策依据。</p>
+  </div>
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店名称：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>统计周期：</label><input data-save="period" placeholder="如 2026 年 10 月"></div>
+    <div class="fm-row"><label>填表人：</label><input data-save="filler" placeholder="请填写"></div>
+    <div class="fm-row"><label>填表日期：</label><input data-save="fdate" placeholder="如 2026-10-31"></div>
+    <div class="fm-row"><label>本期在训新人：</label><input data-save="n_new" placeholder="人数"></div>
+    <div class="fm-row"><label>本期训练员：</label><input data-save="n_tr" placeholder="人数"></div>
+  </div>  <div class="sec">
+    <div class="sec-h"><span class="sn">1</span>核心指标</div>
+    <div class="sec-desc">每月统计一次，与上期对比，识别培训效果的变化趋势。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th style="width:150px">指标</th><th>口径说明</th><th class="center" style="width:64px">单位</th><th class="center" style="width:100px">本期数值</th><th class="center" style="width:100px">上期数值</th><th style="width:150px">趋势 / 分析</th></tr></thead>
+        <tbody>
+          <tr><td><b>考核通过率</b></td><td>新人考核一次通过人数 ÷ 参考人数</td><td class="center">%</td><td><input data-save="k0" placeholder=""></td><td><input data-save="kprev0" placeholder=""></td><td><input data-save="kt0" placeholder="↑ / ↓ / 持平"></td></tr>
+          <tr><td><b>平均考核得分</b></td><td>本期新人考核平均分</td><td class="center">分</td><td><input data-save="k1" placeholder=""></td><td><input data-save="kprev1" placeholder=""></td><td><input data-save="kt1" placeholder="↑ / ↓ / 持平"></td></tr>
+          <tr><td><b>按时结业率</b></td><td>按期完成 8 周培训人数 ÷ 应结业人数</td><td class="center">%</td><td><input data-save="k2" placeholder=""></td><td><input data-save="kprev2" placeholder=""></td><td><input data-save="kt2" placeholder="↑ / ↓ / 持平"></td></tr>
+          <tr><td><b>QSC 得分</b></td><td>门店服务质量检查平均分</td><td class="center">分</td><td><input data-save="k3" placeholder=""></td><td><input data-save="kprev3" placeholder=""></td><td><input data-save="kt3" placeholder="↑ / ↓ / 持平"></td></tr>
+          <tr><td><b>客诉量</b></td><td>本期顾客投诉件数</td><td class="center">件</td><td><input data-save="k4" placeholder=""></td><td><input data-save="kprev4" placeholder=""></td><td><input data-save="kt4" placeholder="↑ / ↓ / 持平"></td></tr>
+          <tr><td><b>客诉闭环率</b></td><td>已处理完毕投诉 ÷ 总投诉</td><td class="center">%</td><td><input data-save="k5" placeholder=""></td><td><input data-save="kprev5" placeholder=""></td><td><input data-save="kt5" placeholder="↑ / ↓ / 持平"></td></tr>
+          <tr><td><b>新人留存率</b></td><td>仍在岗新人 ÷ 入职新人</td><td class="center">%</td><td><input data-save="k6" placeholder=""></td><td><input data-save="kprev6" placeholder=""></td><td><input data-save="kt6" placeholder="↑ / ↓ / 持平"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">2</span>问题与优化</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:190px">项目</th><th>填写</th></tr></thead>
+        <tbody>
+          <tr><td>失分最集中的环节</td><td><input data-save="weakest" placeholder="如 处方解读 / 异议处理"></td></tr>
+          <tr><td>反映的带教问题</td><td><input data-save="teach_issue" placeholder="如 某工作站缺少教具/视频"></td></tr>
+          <tr><td>需补充的带教素材</td><td><input data-save="material" placeholder="如 加工调整演示视频"></td></tr>
+          <tr><td>下期优化动作</td><td><input data-save="action" placeholder="明确责任人与完成时限"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">✍</span>填报与审核</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">填表人签字：</span><span class="ln"><input data-save="sg_a" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">审核人签字：</span><span class="ln"><input data-save="sg_b" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_c" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">日期：</span><span class="ln"><input data-save="sg_d" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+  <div class="note">💡 <b>数据闭环</b>：看板数据不是用来"考核谁"，而是用来回答一个问题——<b>下一步该给哪批新人补什么素材</b>。哪里失分多，就给哪里补教具。</div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="模板07_标准修订记录表.html">下一工具：标准修订记录表 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+</body>
+</html>
