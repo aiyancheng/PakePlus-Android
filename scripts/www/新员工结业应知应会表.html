@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>新员工结业应知应会表 · 8周成才培训体系</title>
+<style>
+:root{
+  --brand:#2c5aa0;
+  --brand-d:#1a237e;
+  --brand-l:#eef3fb;
+  --ok:#2e7d32;
+  --ok-l:#558b2f;
+  --mid:#f57f17;
+  --part:#ef6c00;
+  --no:#c62828;
+  --text:#22303f;
+  --muted:#667;
+  --line:#e3eaf3;
+  --radius:14px;
+  --shadow:0 2px 14px rgba(26,58,107,.07);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:linear-gradient(180deg,#f4f7fc 0%,#eef3fa 100%);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 22px 90px}
+
+/* ── 顶部 ── */
+.hero{
+  background:linear-gradient(135deg,#2c5aa0 0%,#1a237e 100%);
+  color:#fff;border-radius:20px;padding:34px 34px 30px;margin-bottom:24px;
+  box-shadow:0 8px 30px rgba(26,35,126,.22);position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero h1{margin:0 0 10px;font-size:1.72em;letter-spacing:.5px;position:relative}
+.hero p{margin:0;font-size:.94em;opacity:.92;line-height:1.8;position:relative}
+.hero .badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;position:relative}
+.hero .badges span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:5px 14px;border-radius:20px;font-size:.79em;font-weight:600}
+.hero-back{
+  position:absolute;top:20px;right:24px;z-index:3;
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
+  color:#fff;text-decoration:none;font-size:.82em;font-weight:700;
+  padding:8px 16px;border-radius:22px;transition:.2s;backdrop-filter:blur(4px);
+}
+.hero-back:hover{background:rgba(255,255,255,.32);transform:translateY(-1px)}
+.foot-back{
+  display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  background:linear-gradient(135deg,#2c5aa0,#1a237e);color:#fff;text-decoration:none;
+  font-size:.86em;font-weight:700;padding:11px 26px;border-radius:26px;transition:.2s;
+  box-shadow:0 4px 14px rgba(26,35,126,.22);
+}
+.foot-back:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.foot-back-wrap{text-align:center;margin-top:26px}
+
+/* ── 说明卡 ── */
+.intro{background:#fff;border-radius:var(--radius);padding:22px 26px;box-shadow:var(--shadow);margin-bottom:22px}
+.intro h2{margin:0 0 10px;font-size:1.08em;color:var(--brand-d)}
+.intro ul{margin:8px 0 0;padding-left:22px}
+.intro li{font-size:.87em;color:#455;line-height:1.85;margin-bottom:3px}
+.intro .tip{margin-top:12px;background:var(--brand-l);border-radius:9px;padding:11px 15px;font-size:.84em;color:#33507a;line-height:1.7}
+
+/* ── 统计面板 ── */
+.stats-panel{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(8px);
+  border-radius:var(--radius);box-shadow:0 4px 22px rgba(26,58,107,.12);
+  padding:18px 24px;margin-bottom:22px;border:1px solid var(--line);
+}
+.stats-top{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+.stats-title{font-weight:800;color:var(--brand-d);font-size:1.02em;display:flex;align-items:center;gap:8px}
+.stats-btns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{
+  border:1.5px solid var(--line);background:#fff;color:#456;font-size:.79em;font-weight:600;
+  padding:6px 14px;border-radius:19px;cursor:pointer;transition:.18s;font-family:inherit;
+}
+.sbtn:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-l)}
+.sbtn.primary{background:linear-gradient(135deg,#2c5aa0,#1a237e);color:#fff;border-color:transparent}
+.sbtn.primary:hover{filter:brightness(1.12)}
+.sbtn.danger:hover{border-color:var(--no);color:var(--no);background:#fdeeee}
+.assign-wrap{display:none;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.assign-wrap.on{display:flex}
+.assign-wrap input{
+  flex:1;min-width:160px;padding:8px 13px;border:1.5px solid var(--line);border-radius:9px;
+  font-size:.85em;font-family:inherit;color:var(--text);outline:none;
+}
+.assign-wrap input:focus{border-color:var(--brand)}
+.stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px}
+.sc{background:#f8fafd;border-radius:11px;padding:13px 6px;text-align:center;border:1px solid var(--line)}
+.sc .n{font-size:1.5em;font-weight:800;line-height:1.2}
+.sc .l{font-size:.74em;color:var(--muted);margin-top:2px}
+.sc.total .n{color:var(--brand)}
+.sc.l4 .n{color:var(--ok)}
+.sc.l3 .n{color:var(--ok-l)}
+.sc.l2 .n{color:var(--mid)}
+.sc.l1 .n{color:var(--part)}
+.sc.l0 .n{color:var(--no)}
+/* 进度条 */
+.bar-wrap{margin-top:16px}
+.bar-outer{height:22px;border-radius:12px;background:#e9eef6;overflow:hidden;display:flex;box-shadow:inset 0 1px 3px rgba(0,0,0,.06)}
+.bar-4{background:linear-gradient(90deg,#43a047,#1b5e20);transition:width .4s ease}
+.bar-3{background:linear-gradient(90deg,#9ccc65,#558b2f);transition:width .4s ease}
+.bar-2{background:linear-gradient(90deg,#ffd54f,#f9a825);transition:width .4s ease}
+.bar-1{background:linear-gradient(90deg,#ffb74d,#ef6c00);transition:width .4s ease}
+.bar-0{background:linear-gradient(90deg,#ef9a9a,#c62828);transition:width .4s ease}
+.bar-legend{display:flex;justify-content:space-between;margin-top:8px;font-size:.76em;color:var(--muted);flex-wrap:wrap;gap:6px}
+.bar-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+
+/* ── 周区块 ── */
+.week-sec{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:20px;overflow:hidden;border:1px solid var(--line)}
+.week-head{
+  display:flex;align-items:center;gap:13px;padding:16px 22px;cursor:pointer;
+  background:linear-gradient(135deg,#f7faff,#eef3fb);border-bottom:1px solid var(--line);
+  user-select:none;
+}
+.week-head:hover{background:linear-gradient(135deg,#eef3fb,#e5edfa)}
+.week-no{
+  flex-shrink:0;width:44px;height:44px;border-radius:12px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.68em;line-height:1.15;
+  background:linear-gradient(135deg,#2c5aa0,#1a237e);text-align:center;
+}
+.week-no b{font-size:1.55em;display:block;margin-bottom:-2px}
+.week-meta{flex:1;min-width:0}
+.week-meta .wt{font-weight:800;color:var(--brand-d);font-size:1.02em}
+.week-meta .wd{font-size:.79em;color:var(--muted);margin-top:2px}
+.wk-progress{flex-shrink:0;text-align:right;min-width:96px}
+.wk-progress .pct{font-weight:800;color:var(--brand);font-size:1.02em}
+.wk-progress .cnt{font-size:.74em;color:var(--muted)}
+.wk-progress .mini{height:6px;border-radius:4px;background:#e3eaf3;margin-top:5px;overflow:hidden}
+.wk-progress .mini i{display:block;height:100%;background:linear-gradient(90deg,#43a047,#2e7d32);width:0;transition:width .4s}
+.arrow{flex-shrink:0;color:#9ab;font-size:1.1em;transition:transform .25s}
+.week-sec.collapsed .arrow{transform:rotate(-90deg)}
+.week-body{padding:6px 22px 20px}
+.week-sec.collapsed .week-body{display:none}
+
+/* ── 天分组 ── */
+.day-group{margin-top:16px;border-left:3px solid #dbe6f7;padding-left:15px}
+.day-group-h{display:flex;align-items:center;gap:9px;font-weight:700;color:#33507a;font-size:.9em;margin-bottom:9px}
+.day-tag{background:var(--brand-l);color:var(--brand);border-radius:6px;padding:2px 9px;font-size:.82em;font-weight:700;flex-shrink:0}
+.day-group-h .dnote{font-size:.82em;color:var(--muted);font-weight:400}
+
+/* ── 条目 ── */
+.item{
+  display:flex;align-items:flex-start;gap:12px;padding:11px 14px;border-radius:10px;
+  border:1px solid var(--line);background:#fff;margin-bottom:8px;transition:.16s;
+}
+.item:hover{border-color:#bcd0ee;background:#fbfdff}
+.item .idx{
+  flex-shrink:0;min-width:34px;height:24px;border-radius:6px;background:#f0f5fc;color:#5b7aa8;
+  font-size:.74em;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.item .content{flex:1;min-width:0}
+.item .it-title{font-size:.9em;font-weight:600;color:var(--text);line-height:1.6}
+.item .it-desc{font-size:.79em;color:var(--muted);margin-top:3px;line-height:1.6}
+.item .it-src{font-size:.72em;color:#9ab;margin-top:3px}
+
+/* 五级选择 */
+.choices{display:flex;flex-shrink:0;gap:5px;align-self:center}
+.ch{
+  border:1.5px solid var(--line);background:#fff;color:#8a97a8;font-size:.72em;font-weight:700;
+  padding:5px 9px;border-radius:8px;cursor:pointer;transition:.15s;white-space:nowrap;font-family:inherit;
+}
+.ch:hover{border-color:#bcd0ee}
+.ch.active[data-v="4"]{background:#e8f5e9;border-color:#4caf50;color:#2e7d32}
+.ch.active[data-v="3"]{background:#f1f8e9;border-color:#aed581;color:#558b2f}
+.ch.active[data-v="2"]{background:#fffde7;border-color:#ffe082;color:#b26a00}
+.ch.active[data-v="1"]{background:#fff4e5;border-color:#ffb74d;color:#ef6c00}
+.ch.active[data-v="0"]{background:#fdeeee;border-color:#ef9a9a;color:#c62828}
+
+/* 状态边框 */
+.item.s4{border-left:4px solid #4caf50;background:#f7fdf8}
+.item.s3{border-left:4px solid #aed581;background:#fafdf3}
+.item.s2{border-left:4px solid #ffe082;background:#fffef5}
+.item.s1{border-left:4px solid #ffb74d;background:#fffcf5}
+.item.s0{border-left:4px solid #ef9a9a;background:#fef8f8}
+
+/* 文档内分区（周内小结/流程衔接） */
+.doc-note{
+  background:var(--brand-l);border-radius:10px;padding:12px 16px;margin-top:14px;
+  font-size:.82em;color:#33507a;line-height:1.75;border-left:3px solid var(--brand);
+}
+.doc-note b{color:var(--brand-d)}
+
+/* ── 底部漏斗 ── */
+.funnel{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px;margin-top:26px;border:1px solid var(--line)}
+.funnel h2{margin:0 0 6px;font-size:1.1em;color:var(--brand-d)}
+.funnel .fsub{font-size:.85em;color:var(--muted);margin-bottom:18px}
+.funnel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fc{border-radius:12px;padding:16px 16px;border:1.5px solid var(--line);background:#f8fafd}
+.fc.hi{border-color:#a5d6a7;background:#f2fbf3}
+.fc.mid{border-color:#ffcc80;background:#fffaf1}
+.fc.low{border-color:#ef9a9a;background:#fef7f7}
+.fc .fn{font-weight:800;font-size:.92em;margin-bottom:5px}
+.fc.hi .fn{color:#2e7d32}.fc.mid .fn{color:#ef6c00}.fc.low .fn{color:#c62828}
+.fc .fd{font-size:.8em;color:#556;line-height:1.65}
+.fc .fnum{font-size:1.5em;font-weight:800;margin-top:8px}
+.fc.hi .fnum{color:#2e7d32}.fc.mid .fnum{color:#ef6c00}.fc.low .fnum{color:#c62828}
+/* 薄弱项清单 */
+.weak-list{margin-top:20px}
+.weak-list h3{font-size:.95em;color:var(--brand-d);margin:0 0 10px;display:flex;align-items:center;gap:7px}
+.weak-list ol{margin:0;padding-left:22px}
+.weak-list li{font-size:.84em;color:#455;line-height:1.7;margin-bottom:5px}
+.weak-list li .wl-src{font-size:.85em;color:#9ab;margin-left:6px}
+.weak-empty{font-size:.84em;color:var(--ok);background:#f2fbf3;border-radius:9px;padding:12px 16px}
+
+/* ── 落款 ── */
+.signoff{text-align:center;margin-top:34px;font-size:.82em;color:#9ab;line-height:2}
+.signoff .auth{color:var(--brand);font-weight:700;font-size:1.02em}
+
+/* 打印 */
+@media print{
+  body{background:#fff}
+  .stats-panel{position:static;box-shadow:none;border:1px solid #ccc}
+  .stats-btns,.assign-wrap{display:none!important}
+  .week-sec{break-inside:avoid;box-shadow:none;border:1px solid #ddd}
+  .week-body{display:block!important}
+  .arrow{display:none}
+  .item{break-inside:avoid}
+  .ch{cursor:default}
+}
+
+/* 响应式 */
+@media(max-width:1100px){
+  .wrap{max-width:100%;padding:24px 18px 80px}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  .hero{padding:26px 22px}
+  .hero h1{font-size:1.45em}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .funnel-grid{grid-template-columns:1fr}
+  .item{flex-wrap:wrap}
+  .choices{width:100%;justify-content:flex-start;margin-top:8px}
+  .ch{flex:1;text-align:center;padding:5px 6px}
+}
+@media(max-width:600px){
+  .wrap{padding:18px 13px 70px}
+  .hero{padding:22px 18px}
+  .hero h1{font-size:1.28em}
+  .stats-panel{padding:14px 16px}
+  .week-head{padding:13px 15px;gap:10px}
+  .week-no{width:38px;height:38px}
+  .week-body{padding:4px 15px 16px}
+  .wk-progress{min-width:76px}
+  .item{padding:10px 11px}
+  .intro{padding:18px 18px}
+  .funnel{padding:18px 18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ═══ 顶部 ═══ -->
+  <div class="hero">
+    <a class="hero-back" href="index.html">🏠 返回首页</a>
+    <h1>📋 新员工结业应知应会表</h1>
+    <p>依据《8周成才 · 新员工培训课程》56 天全部学习内容梳理而成。逐项判断自己的掌握程度，系统实时统计整体掌握情况，并自动列出需要补强的薄弱项——这是你结业前最后一次全面自检，也是训练员与门店负责人评估转正的依据。</p>
+    <div class="badges">
+      <span>📅 覆盖 56 天</span>
+      <span>🗂 8 大周主题</span>
+      <span>✅ 五级自评</span>
+      <span>📊 实时统计</span>
+      <span>💾 自动保存</span>
+    </div>
+  </div>
+
+  <!-- ═══ 使用说明 ═══ -->
+  <div class="intro">
+    <h2>怎么用这张表</h2>
+    <ul>
+      <li><b>逐项自评</b>：每个条目右侧有「知道 / 理解 / 运用 / 熟练 / 卓越」五档按钮（对应销售能力金字塔 L1-L5），凭真实情况勾选，不夸大、不遗漏。</li>
+      <li><b>五级标准</b>：<b style="color:#c62828">知道</b>＝听说过/学过，但不熟，翻笔记才能找到；<b style="color:#ef6c00">理解</b>＝能解释给别人听；<b style="color:#b26a00">运用</b>＝能独立使用，但需要想一想、偶尔卡壳；<b style="color:#558b2f">熟练</b>＝自然流畅、脱口而出；<b style="color:#2e7d32">卓越</b>＝灵活变通，面对不同顾客有不同策略。</li>
+      <li><b>达标线</b>：结业考核要求每项至少达到「运用」，优秀员工应达到「熟练」及以上；「卓越」是标杆。</li>
+      <li><b>实时统计</b>：顶部面板自动汇总总数、五档数量与掌握率（运用及以上），并按周给出进度（熟练及以上占比），一目了然。</li>
+      <li><b>薄弱项定位</b>：底部「结业自检结论」会自动列出所有「知道 / 理解 / 运用」档的条目及其出处，方便你回原课补课、固化动作。</li>
+      <li><b>自动保存</b>：选项保存在本机浏览器中，关闭页面再打开仍会保留。可随时「导出结果」用手机拍屏或打印。</li>
+    </ul>
+    <div class="tip">💡 <b>建议怎么排</b>：先整体过一遍（约 15 分钟）→ 看底部结论定位薄弱项 → 回到对应天数重学 → 再回来复评。全部条目达到「熟练 / 卓越」即为你结业的理想状态。</div>
+  </div>
+
+  <!-- ═══ 统计面板 ═══ -->
+  <div class="stats-panel">
+    <div class="stats-top">
+      <div class="stats-title">📊 整体掌握情况</div>
+      <div class="stats-btns">
+        <button class="sbtn" onclick="expandAll(true)">全部展开</button>
+        <button class="sbtn" onclick="expandAll(false)">全部收起</button>
+        <button class="sbtn" onclick="toggleAssign()">📝 填写信息</button>
+        <button class="sbtn primary" onclick="exportResult()">📤 导出结果</button>
+        <button class="sbtn danger" onclick="resetAll()">🗑 重置</button>
+      </div>
+    </div>
+
+    <div class="assign-wrap" id="assignWrap">
+      <input id="pName" placeholder="姓名" oninput="saveAssign()">
+      <input id="pStore" placeholder="所属门店" oninput="saveAssign()">
+      <input id="pDate" placeholder="自评日期（如 2026-10-02）" oninput="saveAssign()">
+    </div>
+
+    <div class="stats-grid">
+      <div class="sc total"><div class="n" id="nTotal">0</div><div class="l">应会总项</div></div>
+      <div class="sc l4"><div class="n" id="nL4">0</div><div class="l">卓越</div></div>
+      <div class="sc l3"><div class="n" id="nL3">0</div><div class="l">熟练</div></div>
+      <div class="sc l2"><div class="n" id="nL2">0</div><div class="l">运用</div></div>
+      <div class="sc l1"><div class="n" id="nL1">0</div><div class="l">理解</div></div>
+      <div class="sc l0"><div class="n" id="nL0">0</div><div class="l">知道</div></div>
+    </div>
+
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-4" id="bar4" style="width:0"></div>
+        <div class="bar-3" id="bar3" style="width:0"></div>
+        <div class="bar-2" id="bar2" style="width:0"></div>
+        <div class="bar-1" id="bar1" style="width:0"></div>
+        <div class="bar-0" id="bar0" style="width:0"></div>
+      </div>
+      <div class="bar-legend">
+        <span><i style="background:#2e7d32"></i>卓越 <b id="lgL4">0%</b></span>
+        <span><i style="background:#7cb342"></i>熟练 <b id="lgL3">0%</b></span>
+        <span><i style="background:#fbc02d"></i>运用 <b id="lgL2">0%</b></span>
+        <span><i style="background:#ef6c00"></i>理解 <b id="lgL1">0%</b></span>
+        <span><i style="background:#c62828"></i>知道 <b id="lgL0">0%</b></span>
+        <span>掌握率（运用及以上）<b id="lgAll" style="color:#2c5aa0">0%</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 条目区（脚本生成） ═══ -->
+  <div id="sheet"></div>
+
+  <!-- ═══ 结业自检结论 ═══ -->
+  <div class="funnel">
+    <h2>🎯 结业自检结论</h2>
+    <div class="fsub">基于你当前的自评结果自动生成。建议达成标准：全部条目「熟练 / 卓越」；若存在「知道 / 理解」档条目（未达运用线），请优先回到对应天数补课后再评。</div>
+    <div class="funnel-grid">
+      <div class="fc hi"><div class="fn">🟢 达标（熟练 · 卓越）</div><div class="fd">自然流畅、脱口而出，能灵活变通应对不同顾客，可放心独立上岗。</div><div class="fnum" id="fHi">0</div></div>
+      <div class="fc mid"><div class="fn">🟡 基本达标（运用）</div><div class="fd">能独立使用，但需要想一想、偶尔卡壳。已到结业考核底线，建议在师傅监督下多练几次，向「熟练」固化。</div><div class="fnum" id="fMid">0</div></div>
+      <div class="fc low"><div class="fn">🔴 待补课（知道 · 理解）</div><div class="fd">仅停留在听说过或能讲出来，还不能独立运用。未达结业考核底线，需回到对应天数重学并实操，结业前必须清零。</div><div class="fnum" id="fLow">0</div></div>
+    </div>
+
+    <div class="weak-list">
+      <h3>📌 需要补强的条目（知道 / 理解 / 运用）</h3>
+      <div id="weakBox"><div class="weak-empty">目前没有薄弱项——非常棒！继续保持，结业考核稳了。</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ 返回首页 ═══ -->
+  <div class="foot-back-wrap">
+    <a class="foot-back" href="index.html">🏠 返回首页 · 8周成才课程总览 →</a>
+  </div>
+
+  <!-- ═══ 落款 ═══ -->
+  <div class="signoff">
+    <div>本表依据《8周成才 · 新员工培训课程》56 天学习内容整理</div>
+    <div class="auth">闫胜君 整理</div>
+    <div>永州爱眼城眼镜连锁 · 门店新员工培训体系</div>
+  </div>
+
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   数据：8 周 · 56 天 · 全部应知应会条目
+   结构：WEEKS = [{no,name,sub,days:[{day,title,note,items:[{t,d,src}]}]}]
+   ═══════════════════════════════════════════════ */
+const WEEKS = [
+{
+  no:1, name:"文化与制度启蒙", sub:"融入团队 · 懂规矩 · 立形象",
+  days:[
+    { day:"Day 01", title:"企业文化与使命愿景", note:"认同企业、明确方向",
+      items:[
+        {t:"能说出公司名称、成立背景与发展历程", d:"准确复述，能向顾客/新人介绍", src:"Day 01"},
+        {t:"理解企业使命、愿景与核心价值观", d:"能用自己的话说出并联系日常工作", src:"Day 01"},
+        {t:"知道公司门店分布与主要服务区域", d:"了解所在区域门店与客群特点", src:"Day 01"},
+        {t:"明白眼镜门店的社会价值与行业意义", d:"能说明「帮人看清世界」的职业意义", src:"Day 01"}
+      ]},
+    { day:"Day 02", title:"职业形象与服务理念", note:"先立形象、再谈服务",
+      items:[
+        {t:"掌握仪容仪表规范（着装、发型、妆容、饰品）", d:"上班前自查到位，无违规项", src:"Day 02"},
+        {t:"掌握站姿、坐姿、走姿与微笑标准", d:"能标准示范，自然不做作", src:"Day 02"},
+        {t:"理解「以顾客为中心」的服务理念", d:"能举例说明如何在接待中落地", src:"Day 02"},
+        {t:"掌握门店服务用语规范与禁忌语", d:"熟练使用服务用语，杜绝禁忌语", src:"Day 02"}
+      ]},
+    { day:"Day 03", title:"考勤制度与薪酬福利", note:"守时守规、心里有底",
+      items:[
+        {t:"掌握上下班时间、排班与请假流程", d:"清楚本店排班规则与请假审批路径", src:"Day 03"},
+        {t:"了解考勤方式与迟到/早退/旷工处理", d:"知道违规后果，自觉遵守", src:"Day 03"},
+        {t:"了解薪酬结构与发放方式", d:"理解基本工资、提成、奖金的构成", src:"Day 03"},
+        {t:"了解社保、福利与内部员工优惠", d:"知道自身可享福利及申请方式", src:"Day 03"}
+      ]},
+    { day:"Day 04", title:"行为规范与职场礼仪", note:"把规矩变成习惯",
+      items:[
+        {t:"掌握员工行为规范红线（禁止事项）", d:"清楚哪些绝对不能做", src:"Day 04"},
+        {t:"掌握同事相处与上下级沟通礼仪", d:"能得体沟通，不越级、不传谣", src:"Day 04"},
+        {t:"掌握电话接听、微信沟通的职场礼仪", d:"语气、话术、回复时效均达标", src:"Day 04"},
+        {t:"掌握店内手机使用与私事处理规范", d:"接待时段不玩手机、不办私事", src:"Day 04"}
+      ]},
+    { day:"Day 05", title:"奖惩制度与安全规定", note:"知奖惩、保安全",
+      items:[
+        {t:"了解奖励情形与评定方式", d:"知道哪些表现会受奖、如何申报", src:"Day 05"},
+        {t:"了解违规处罚情形与处理流程", d:"清楚后果，主动规避", src:"Day 05"},
+        {t:"掌握门店消防安全与用电安全常识", d:"会使用灭火器、知道疏散路线", src:"Day 05"},
+        {t:"掌握突发事件（火情、顾客晕倒等）应对流程", d:"能按预案处置并上报", src:"Day 05"}
+      ]},
+    { day:"Day 06", title:"岗位职责与工作流程初识", note:"清楚自己该干什么",
+      items:[
+        {t:"明确本岗位的职责范围与工作内容", d:"能逐条说明自己的岗位职责", src:"Day 06"},
+        {t:"了解门店整体组织架构与岗位分工", d:"知道店长、验光师、销售、加工各岗职责", src:"Day 06"},
+        {t:"掌握门店一天的营业流程节奏", d:"清楚开店准备、营业高峰、闭店收尾节点", src:"Day 06"},
+        {t:"了解各岗位协作关系与配合要求", d:"知道遇到问题找谁、如何衔接", src:"Day 06"}
+      ]},
+    { day:"Day 07", title:"第 1 周周测", note:"文化制度与职业素养综合",
+      items:[
+        {t:"通过第 1 周周测（≥70 分）", d:"文化制度、职业素养综合卷达标", src:"Day 07"},
+        {t:"能连贯复述企业文化与制度要点", d:"不看资料即可完整复述", src:"Day 07"}
+      ]}
+  ]
+},
+{
+  no:2, name:"光学与产品知识", sub:"看懂眼睛 · 认识产品 · 会讲会配",
+  days:[
+    { day:"Day 08", title:"眼睛的结构与视觉原理", note:"一切验配的根",
+      items:[
+        {t:"掌握眼球主要结构（角膜、晶状体、视网膜等）", d:"能准确指认并说明作用", src:"Day 08"},
+        {t:"理解近视、远视、散光的光学成因", d:"能不用术语向顾客讲清", src:"Day 08"},
+        {t:"理解老视（老花）与调节力的关系", d:"能说明「看近模糊」的原因", src:"Day 08"},
+        {t:"理解眼轴变长不可逆与近视不可治愈", d:"能合规、诚实地向顾客说明", src:"Day 08"}
+      ]},
+    { day:"Day 09", title:"镜架基础知识", note:"认得全、搭得对",
+      items:[
+        {t:"掌握镜架 6 大部件及名称", d:"能准确指认：镜圈、鼻梁、桩头、镜腿、鼻托、铰链", src:"Day 09"},
+        {t:"掌握镜架主要材质及特点", d:"能说出 6 种材质的优缺点与适用人群", src:"Day 09"},
+        {t:"能读懂镜架尺寸标识（如 52□18-145）", d:"正确解释镜圈宽、鼻梁距、镜腿长", src:"Day 09"},
+        {t:"掌握脸型与镜架搭配技巧", d:"能按脸型给出 2 款推荐", src:"Day 09"}
+      ]},
+    { day:"Day 10", title:"镜片材质与折射率", note:"薄厚有讲究",
+      items:[
+        {t:"掌握镜片材质（树脂 / 玻璃 / PC）特点", d:"能对比说明并推荐", src:"Day 10"},
+        {t:"掌握 4 档折射率（1.50/1.56/1.60/1.67-1.74）适用度数", d:"能按度数准确推荐折射率", src:"Day 10"},
+        {t:"掌握镜片四种镀膜功能（加硬、减反、防蓝光、防污等）", d:"能各说出解决什么问题", src:"Day 10"},
+        {t:"理解阿贝数与镜片清晰度的关系", d:"能解释高折射率与成像质量的关系", src:"Day 10"}
+      ]},
+    { day:"Day 11", title:"功能性镜片", note:"卖的是解决方案",
+      items:[
+        {t:"掌握变色镜片的原理与适用人群", d:"能说明优缺点与注意事项", src:"Day 11"},
+        {t:"掌握渐进多焦点镜片的原理与验配要点", d:"能说清适用人群与适应期", src:"Day 11"},
+        {t:"掌握太阳镜 / 偏光镜片的区别与场景", d:"能按用眼场景准确推荐", src:"Day 11"},
+        {t:"掌握近视防控镜片（离焦类）原理与话术", d:"能合规讲解，不夸大疗效", src:"Day 11"}
+      ]},
+    { day:"Day 12", title:"验光处方解读与产品搭配", note:"从处方到方案的桥梁",
+      items:[
+        {t:"能读懂处方单符号：OD/OS/SPH/CYL/AX/PD/ADD", d:"准确读出并换算度数", src:"Day 12"},
+        {t:"能根据处方推荐镜片类型与折射率", d:"给出有依据的推荐及理由", src:"Day 12"},
+        {t:"能根据处方选择合适镜框（避免禁区）", d:"知道高度数、高散光的镜框限制", src:"Day 12"},
+        {t:"能按「需求 → 处方 → 产品」顺序给出三档方案", d:"满足 / 升级 / 高端各一套并说明", src:"Day 12"}
+      ]},
+    { day:"Day 13", title:"品牌知识与产品陈列认知", note:"会讲品牌、懂陈列",
+      items:[
+        {t:"了解门店主营品牌及定位分层", d:"能按高 / 中高 / 中端介绍品牌", src:"Day 13"},
+        {t:"掌握商品陈列 4 大原则", d:"能说明并现场应用", src:"Day 13"},
+        {t:"能以顾客需求为中心做推荐", d:"不硬推高价，按需求匹配", src:"Day 13"},
+        {t:"掌握主推产品与核心卖点", d:"能熟练说出 3-5 款主推卖点", src:"Day 13"}
+      ]},
+    { day:"Day 14", title:"第 2 周周测", note:"光学与产品知识综合",
+      items:[
+        {t:"通过第 2 周周测（≥70 分）", d:"光学基础 + 镜架镜片 + 处方解读综合卷达标", src:"Day 14"},
+        {t:"能连贯复述「眼睛原理 → 镜架 → 镜片 → 处方搭配」知识链", d:"不看资料完整串讲", src:"Day 14"}
+      ]}
+  ]
+},
+{
+  no:3, name:"专业技能训练", sub:"从「认产品」到「会动手」",
+  days:[
+    { day:"Day 15", title:"验光辅助操作入门", note:"验光台边的第一助手",
+      items:[
+        {t:"了解电脑验光仪的基本操作与注意事项", d:"能正确开关机、引导顾客、记录数据", src:"Day 15"},
+        {t:"掌握验光前的准备工作（清洁、归位、调试）", d:"按标准流程完成准备", src:"Day 15"},
+        {t:"掌握验光过程中的协助配合要点", d:"能配合验光师完成接待与引导", src:"Day 15"},
+        {t:"掌握验光室清洁消毒与设备保养常识", d:"按规范执行日常维护", src:"Day 15"}
+      ]},
+    { day:"Day 16", title:"镜架调整与整形技术", note:"让眼镜「合脸」",
+      items:[
+        {t:"掌握常用调整工具（螺丝刀、调架钳等）使用", d:"能安全熟练使用", src:"Day 16"},
+        {t:"能进行镜腿、鼻托、桩头的调整", d:"调整后佩戴舒适、不夹不滑", src:"Day 16"},
+        {t:"掌握镜架变形判断与矫正方法", d:"能识别常见变形并现场矫正", src:"Day 16"},
+        {t:"掌握调整后的验收标准", d:"戴正、平贴、不压鼻、不滑动", src:"Day 16"}
+      ]},
+    { day:"Day 17", title:"商品陈列与货区管理", note:"陈列即销售",
+      items:[
+        {t:"掌握货区划分与陈列原则", d:"按价格带 / 功能 / 品牌合理分区", src:"Day 17"},
+        {t:"掌握商品补货、理货与库存流转", d:"知道缺货上报与补货流程", src:"Day 17"},
+        {t:"掌握价签、标签与展示规范", d:"信息准确、摆放整齐", src:"Day 17"},
+        {t:"能进行每日陈列自查与维护", d:"按检查表逐项确认", src:"Day 17"}
+      ]},
+    { day:"Day 18", title:"收银操作与库存管理", note:"一分都不能错",
+      items:[
+        {t:"掌握收银流程与常用支付方式操作", d:"能独立完成收银、开票", src:"Day 18"},
+        {t:"掌握会员登记、积分与优惠券使用", d:"能正确操作会员系统", src:"Day 18"},
+        {t:"掌握库存盘点流程与差异处理", d:"能按规范盘库并上报差异", src:"Day 18"},
+        {t:"掌握日结、交班与现金管理规范", d:"账实相符、交接清楚", src:"Day 18"}
+      ]},
+    { day:"Day 19", title:"售后服务与维修技能", note:"卖出只是开始",
+      items:[
+        {t:"掌握常见镜架维修（螺丝、鼻托、镜腿更换）", d:"能独立完成基础维修", src:"Day 19"},
+        {t:"掌握镜片划痕、脱膜等问题的判断与处理", d:"能判断是否可修、是否需换", src:"Day 19"},
+        {t:"掌握售后接待流程与责任界定", d:"区分质量 / 使用 / 人为问题", src:"Day 19"},
+        {t:"掌握保修政策与免单 / 收费判断标准", d:"能按政策准确答复顾客", src:"Day 19"}
+      ]},
+    { day:"Day 20", title:"综合技能实战演练", note:"把技能串起来",
+      items:[
+        {t:"能完整走通「接待 → 验光协助 → 选配 → 调整 → 收银」全流程", d:"各环节衔接顺畅、不卡顿", src:"Day 20"},
+        {t:"能在演练中正确使用工具与设备", d:"动作规范、安全无误", src:"Day 20"},
+        {t:"能处理演练中的突发小状况", d:"冷静应对、及时求助", src:"Day 20"}
+      ]},
+    { day:"Day 21", title:"第 3 周综合周测", note:"技能综合检验",
+      items:[
+        {t:"通过第 3 周综合周测（≥70 分）", d:"验光辅助、调整、陈列、收银、售后综合达标", src:"Day 21"}
+      ]}
+  ]
+},
+{
+  no:4, name:"销售话术与中期考核", sub:"会开口 · 会讲解 · 会成交",
+  days:[
+    { day:"Day 22", title:"顾客接待与开场话术", note:"第一句决定成败",
+      items:[
+        {t:"掌握迎宾礼仪与开场话术", d:"自然、热情、不冰冷、不推销式", src:"Day 22"},
+        {t:"掌握破冰与需求询问技巧", d:"3 句话内问到关键需求", src:"Day 22"},
+        {t:"能判断顾客类型（随意看 / 有需求 / 陪购）", d:"区别应对，节奏得当", src:"Day 22"},
+        {t:"掌握引导顾客入座、试戴的流程", d:"流程顺畅、不显得刻意", src:"Day 22"}
+      ]},
+    { day:"Day 23", title:"产品介绍话术", note:"把参数翻译成好处",
+      items:[
+        {t:"掌握 FAB 法则（特性-优势-利益）", d:"能把镜片参数转成顾客听得懂的好处", src:"Day 23"},
+        {t:"掌握不同品类产品的介绍逻辑", d:"镜架、镜片、功能片各有话术", src:"Day 23"},
+        {t:"能针对顾客需求做针对性讲解", d:"不背课文、不对着库存讲", src:"Day 23"},
+        {t:"掌握产品体验式演示技巧", d:"能引导顾客动手感受", src:"Day 23"}
+      ]},
+    { day:"Day 24", title:"价格异议处理话术", note:"不降价也能成交",
+      items:[
+        {t:"掌握「太贵了」等常见异议的应答思路", d:"认同-价值-方案三步法", src:"Day 24"},
+        {t:"能通过价值重塑化解价格异议", d:"讲清品质、工艺、售后价值", src:"Day 24"},
+        {t:"掌握三档方案对比促成法", d:"用满足/升级/高端引导选择", src:"Day 24"},
+        {t:"掌握不贬低低价产品、不硬推高价的尺度", d:"尊重顾客预算", src:"Day 24"}
+      ]},
+    { day:"Day 25", title:"促成成交话术", note:"临门一脚",
+      items:[
+        {t:"掌握识别购买信号的技巧", d:"能捕捉犹豫、点头、反复试戴等信号", src:"Day 25"},
+        {t:"掌握常用促成技巧（假定成交、二选一、限时优惠）", d:"自然运用、不显强推", src:"Day 25"},
+        {t:"掌握未成交顾客的留资与跟进", d:"加微信、留电话并做回访", src:"Day 25"},
+        {t:"掌握下单、验光、交期确认全流程", d:"信息准确、交代清楚", src:"Day 25"}
+      ]},
+    { day:"Day 26", title:"连带销售与会员维护", note:"一单变两单",
+      items:[
+        {t:"掌握连带销售时机与话术（镜布、镜盒、备用片等）", d:"自然推荐、不招人反感", src:"Day 26"},
+        {t:"掌握会员开卡、积分与权益讲解", d:"能说清会员价值", src:"Day 26"},
+        {t:"掌握顾客资料登记与分类管理", d:"信息完整、分类清晰", src:"Day 26"},
+        {t:"掌握老客回访与复购唤醒技巧", d:"有节奏、有话题、不打扰", src:"Day 26"}
+      ]},
+    { day:"Day 27", title:"投诉处理与危机公关", note:"把火苗灭在早期",
+      items:[
+        {t:"掌握投诉处理的「倾听-共情-解决-跟进」四步法", d:"能按步骤化解情绪", src:"Day 27"},
+        {t:"掌握常见投诉类型（质量、交期、服务）的应对", d:"能区分责任并给出方案", src:"Day 27"},
+        {t:"掌握情绪激动顾客的安抚技巧", d:"能降温、控场、不激化", src:"Day 27"},
+        {t:"掌握超出权限问题的上报流程", d:"及时上报、不擅自承诺", src:"Day 27"}
+      ]},
+    { day:"Day 28", title:"中期考核", note:"入职中期综合检验",
+      items:[
+        {t:"通过中期综合考核（理论与实操）", d:"成绩达标，具备进入实战阶段的基础", src:"Day 28"},
+        {t:"能系统回顾前 4 周所学并指出自身短板", d:"形成中期成长评估", src:"Day 28"}
+      ]}
+  ]
+},
+{
+  no:5, name:"实战跟岗训练", sub:"在真实岗位上练",
+  days:[
+    { day:"Day 29", title:"跟岗实战：全流程观摩与记录", note:"先看明白，再动手",
+      items:[
+        {t:"能完整观摩一次接待并做出记录", d:"记录要点清晰、有复盘思考", src:"Day 29"},
+        {t:"掌握师傅接待的动作与话术要点", d:"能提炼可模仿的标准动作", src:"Day 29"},
+        {t:"能对比自己的差距并制定改进点", d:"列出 2-3 条改进项", src:"Day 29"}
+      ]},
+    { day:"Day 30", title:"主动问询：需求挖掘实战", note:"问到点上",
+      items:[
+        {t:"能独立完成一次需求问询", d:"问到用眼场景、旧镜情况、预算", src:"Day 30"},
+        {t:"掌握开放式与封闭式提问的组合运用", d:"灵活切换、不问卷式盘问", src:"Day 30"},
+        {t:"能根据顾客回答做出初步产品判断", d:"方向基本正确", src:"Day 30"}
+      ]},
+    { day:"Day 31", title:"产品讲解实战：FAB 法则演练", note:"讲得有说服力",
+      items:[
+        {t:"能独立完成一次产品讲解", d:"逻辑清晰、有亮点、能打动人", src:"Day 31"},
+        {t:"能熟练运用 FAB 法则讲透 3 款主推产品", d:"不看稿即兴讲解", src:"Day 31"},
+        {t:"能应对讲解中的常见提问", d:"回答准确、不卡壳", src:"Day 31"}
+      ]},
+    { day:"Day 32", title:"验光流程实操：协助验光师接待", note:"站在正确的位置",
+      items:[
+        {t:"能独立完成验光接待准备与引导", d:"流程标准、顾客体验好", src:"Day 32"},
+        {t:"掌握验光过程中的协助与记录要点", d:"配合默契、记录准确", src:"Day 32"},
+        {t:"能从验光结果中理解处方走向", d:"能预判配镜方向", src:"Day 32"}
+      ]},
+    { day:"Day 33", title:"制单与交付：加工单与取镜流程", note:"单据就是承诺",
+      items:[
+        {t:"掌握加工单填写规范（度数、参数、特殊要求）", d:"填写完整、准确、可执行", src:"Day 33"},
+        {t:"掌握眼镜交付验收与试戴确认流程", d:"能让顾客满意签字", src:"Day 33"},
+        {t:"掌握交期沟通与延迟处理", d:"主动告知、及时沟通", src:"Day 33"}
+      ]},
+    { day:"Day 34", title:"客诉处理实战：化危为机", note:"真场景真处理",
+      items:[
+        {t:"能独立处理一次真实客诉", d:"处理得体、顾客认可", src:"Day 34"},
+        {t:"能在压力下保持情绪稳定与专业", d:"不辩解、不推诿、不激化", src:"Day 34"},
+        {t:"能总结经验并改进服务动作", d:"形成个人案例记录", src:"Day 34"}
+      ]},
+    { day:"Day 35", title:"跟岗总结与成长复盘", note:"把经验变能力",
+      items:[
+        {t:"能系统总结本周跟岗收获与不足", d:"形成书面或口头复盘", src:"Day 35"},
+        {t:"能针对薄弱环节制定提升计划", d:"计划具体可执行", src:"Day 35"}
+      ]}
+  ]
+},
+{
+  no:6, name:"独立接单训练", sub:"自己独立做一单",
+  days:[
+    { day:"Day 36", title:"独立接单第一天：标准接待流程", note:"完整走一遍",
+      items:[
+        {t:"能独立完成标准接待全流程", d:"迎宾→问询→验光→选配→成交→交付不遗漏", src:"Day 36"},
+        {t:"能独立完成验光前接待与配合", d:"流程规范、无障碍", src:"Day 36"},
+        {t:"能独立完成配镜方案推荐", d:"方案合理、有产能", src:"Day 36"},
+        {t:"能独立完成收银与交付", d:"准确无误、顾客满意", src:"Day 36"}
+      ]},
+    { day:"Day 37", title:"价格异议处理与成交技巧", note:"独立议价不慌",
+      items:[
+        {t:"能独立应对顾客价格异议", d:"不慌、能说服、能成交", src:"Day 37"},
+        {t:"能灵活运用三档方案促成成交", d:"自然引导、成功率高", src:"Day 37"},
+        {t:"能处理议价与优惠的边界问题", d:"不越权、不乱承诺", src:"Day 37"}
+      ]},
+    { day:"Day 38", title:"儿童配镜专项服务", note:"家长最在意专业",
+      items:[
+        {t:"掌握儿童验光与配镜的特殊要求", d:"懂散瞳、懂配合度、懂复查", src:"Day 38"},
+        {t:"掌握儿童镜架、镜片的选择要点", d:"安全、耐用、合适为主要考量", src:"Day 38"},
+        {t:"掌握近视防控的合规讲解话术", d:"不承诺「治愈/摘镜」，只讲防控", src:"Day 38"},
+        {t:"掌握与家长沟通的要点与注意事项", d:"耐心、专业、给方法不急推", src:"Day 38"}
+      ]},
+    { day:"Day 39", title:"老视配镜与中老年服务", note:"把舒适放第一",
+      items:[
+        {t:"掌握老视验配与渐进片验配要点", d:"懂 ADD、通道、适应期", src:"Day 39"},
+        {t:"掌握中老年顾客的沟通与服务特点", d:"耐心、语速适中、反复确认", src:"Day 39"},
+        {t:"掌握渐进片适应期指导与售后跟进", d:"能提前说明、及时回访", src:"Day 39"},
+        {t:"能处理中老年常见的佩戴不适问题", d:"会判断、会调整、会安抚", src:"Day 39"}
+      ]},
+    { day:"Day 40", title:"太阳镜与功能性眼镜销售", note:"应季、应景、应人",
+      items:[
+        {t:"掌握太阳镜的分类、功能与适用场景", d:"能按场景准确推荐", src:"Day 40"},
+        {t:"掌握偏光、变色等功能片的销售要点", d:"讲清差异与价值", src:"Day 40"},
+        {t:"能结合顾客职业 / 场景做组合推荐", d:"推荐有针对性", src:"Day 40"},
+        {t:"掌握夏季防晒 / 户外用眼健康科普话术", d:"专业、不生硬", src:"Day 40"}
+      ]},
+    { day:"Day 41", title:"售后服务与客户维护", note:"做长期生意",
+      items:[
+        {t:"掌握售后回访的标准流程与话术", d:"有节奏、有温度", src:"Day 41"},
+        {t:"掌握客户分级维护与复购唤醒", d:"能按分层做维护", src:"Day 41"},
+        {t:"掌握转介绍引导技巧", d:"自然、不勉强", src:"Day 41"},
+        {t:"能处理售后常见问题并留存记录", d:"记录清晰、可追溯", src:"Day 41"}
+      ]},
+    { day:"Day 42", title:"第 6 周总结与独立接单能力评估", note:"能不能独立干活",
+      items:[
+        {t:"能独立完成一单完整接单（含考核）", d:"从接待到交付无重大失误", src:"Day 42"},
+        {t:"通过独立接单能力评估", d:"评估达标，具备独立上岗基础", src:"Day 42"}
+      ]}
+  ]
+},
+{
+  no:7, name:"综合提升训练", sub:"从会做 到 做得好",
+  days:[
+    { day:"Day 43", title:"验光技能深化：主觉验光全流程", note:"更专业",
+      items:[
+        {t:"了解主觉验光的完整流程与原理", d:"能说清各步骤作用", src:"Day 43"},
+        {t:"掌握验光中常见问题的判断与处理", d:"能识别异常并及时反馈", src:"Day 43"},
+        {t:"掌握验光数据的记录与复核", d:"数据准确、复核到位", src:"Day 43"},
+        {t:"能配合验光师完成更复杂的验配场景", d:"配合熟练、不添乱", src:"Day 43"}
+      ]},
+    { day:"Day 44", title:"高端产品知识与品牌销售", note:"卖好贵的那副",
+      items:[
+        {t:"掌握高端镜架 / 镜片的品牌故事与卖点", d:"讲得出、讲得动", src:"Day 44"},
+        {t:"掌握高端产品的销售逻辑与话术", d:"先价值后价格、有礼有节", src:"Day 44"},
+        {t:"能识别有高端需求的顾客并匹配方案", d:"判断准、推荐对", src:"Day 44"},
+        {t:"掌握高端顾客的服务标准（专属、私密、尊贵）", d:"服务体验到位", src:"Day 44"}
+      ]},
+    { day:"Day 45", title:"店面数据管理与业绩分析", note:"用数据看经营",
+      items:[
+        {t:"掌握门店核心经营数据（进店、成交、客单价等）", d:"能看懂、能说清", src:"Day 45"},
+        {t:"掌握基础业绩分析方法", d:"能从数据中发现机会与问题", src:"Day 45"},
+        {t:"能看懂个人与门店的业绩报表", d:"清楚自己的职责与贡献", src:"Day 45"},
+        {t:"了解数据如何反哺服务与销售改进", d:"能提出改进建议", src:"Day 45"}
+      ]},
+    { day:"Day 46", title:"团队协作与门店日常管理", note:"不是一个人在战斗",
+      items:[
+        {t:"掌握门店日常管理的重点环节", d:"懂排班、卫生、备货、交接", src:"Day 46"},
+        {t:"掌握跨岗位协作与沟通要点", d:"交接清晰、配合顺畅", src:"Day 46"},
+        {t:"掌握班前会 / 班后会的内容与作用", d:"积极参与、明确当日目标", src:"Day 46"},
+        {t:"能主动补位、支持团队完成目标", d:"有团队意识", src:"Day 46"}
+      ]},
+    { day:"Day 47", title:"顾客心理与消费行为分析", note:"看透顾客",
+      items:[
+        {t:"掌握常见顾客类型与应对策略", d:"能快速识别并调整策略", src:"Day 47"},
+        {t:"理解消费者决策心理与购买动机", d:"能顺应顾客心理做引导", src:"Day 47"},
+        {t:"掌握非语言信号（表情、动作）的解读", d:"能捕捉真实需求", src:"Day 47"},
+        {t:"能针对不同心理类型精准推荐", d:"推荐命中率高", src:"Day 47"}
+      ]},
+    { day:"Day 48", title:"门店营销活动策划与执行", note:"自己会搞活动",
+      items:[
+        {t:"了解门店常见营销活动类型", d:"能说出适用场景与目标", src:"Day 48"},
+        {t:"掌握活动策划的基本要素（目标、人群、方案、预算）", d:"能写出简单方案", src:"Day 48"},
+        {t:"掌握活动执行与现场配合要点", d:"执行到位、不手忙脚乱", src:"Day 48"},
+        {t:"能进行活动效果复盘", d:"能总结成效与不足", src:"Day 48"}
+      ]},
+    { day:"Day 49", title:"第 7 周综合复盘与能力提升", note:"查漏补缺",
+      items:[
+        {t:"能全面复盘 7 周学习成果", d:"形成清晰的个人能力画像", src:"Day 49"},
+        {t:"能找出仍存在的短板并制定补强方案", d:"方向明确、可执行", src:"Day 49"}
+      ]}
+  ]
+},
+{
+  no:8, name:"结业冲刺与毕业考核", sub:"冲刺 · 应战 · 毕业",
+  days:[
+    { day:"Day 50", title:"8 周成长复盘与全流程回顾", note:"把 8 周串成一条线",
+      items:[
+        {t:"能完整回顾 8 周学习内容与关键节点", d:"能系统串讲、不遗漏", src:"Day 50"},
+        {t:"能提炼个人成长与能力提升点", d:"形成个人总结", src:"Day 50"}
+      ]},
+    { day:"Day 51", title:"全流程综合演练", note:"全真模拟",
+      items:[
+        {t:"能独立完成一次完整的全流程演练", d:"各环节达到标准要求", src:"Day 51"},
+        {t:"能在演练中稳定发挥、无明显短板", d:"综合表现达标", src:"Day 51"}
+      ]},
+    { day:"Day 52", title:"极端情境挑战与高难度应对", note:"应付「刁难」顾客",
+      items:[
+        {t:"能应对高难度顾客场景（挑刺、压价、比价）", d:"能稳住局面、化解矛盾", src:"Day 52"},
+        {t:"能处理多任务并行的现场状况", d:"忙而不乱、有条理", src:"Day 52"},
+        {t:"能维持专业态度与情绪管理能力", d:"不失控、不情绪化", src:"Day 52"}
+      ]},
+    { day:"Day 53", title:"视光学知识精讲", note:"查缺补强",
+      items:[
+        {t:"掌握视光学重点知识的系统串联", d:"能融会贯通、举一反三", src:"Day 53"},
+        {t:"能识别必须建议就医而非配镜的情况", d:"如实告知、不越权诊断", src:"Day 53"},
+        {t:"能针对性补强个人视光薄弱知识点", d:"补强有效、可验证", src:"Day 53"}
+      ]},
+    { day:"Day 54", title:"销售综合强化与结业前准备", note:"临门一脚",
+      items:[
+        {t:"掌握销售全流程的系统化梳理", d:"形成个人销售流程框架", src:"Day 54"},
+        {t:"掌握销售技巧的系统整合与灵活运用", d:"能按场景自如调用", src:"Day 54"},
+        {t:"完成结业考核前的知识与心理准备", d:"状态稳定、信心充足", src:"Day 54"}
+      ]},
+    { day:"Day 55", title:"结业综合模拟考", note:"实战彩排",
+      items:[
+        {t:"通过结业综合模拟考", d:"成绩达标，找出待补点", src:"Day 55"},
+        {t:"能针对模拟考暴露的问题进行专项补强", d:"考前完成查漏", src:"Day 55"}
+      ]},
+    { day:"Day 56", title:"正式结业考核暨毕业总结", note:"毕业",
+      items:[
+        {t:"通过正式结业考核（理论 + 实操）", d:"成绩合格，准予结业", src:"Day 56"},
+        {t:"能独立胜任门店日常岗位工作", d:"具备独立上岗能力", src:"Day 56"}
+      ]}
+  ]
+}
+];
+
+/* ═══════════════════════════════════════════════
+   状态管理
+   ═══════════════════════════════════════════════ */
+const LS_KEY = 'eye8w_final_sheet_v2';   // v2：五级制（0知道 1理解 2运用 3熟练 4卓越）
+const LS_ASSIGN = 'eye8w_final_sheet_assign_v1';
+let STATE = {};       // {itemId: 0|1|2|3|4}
+const LV_NAMES = ['知道','理解','运用','熟练','卓越'];
+const LV_EMOJI = ['🔴','🟠','🟡','🟢','🟩'];
+let EXPANDED = {};    // {weekNo: true/false}
+let ALL_ITEMS = [];   // 扁平化缓存
+
+/* 生成唯一 id 并扁平化 */
+(function flatten(){
+  WEEKS.forEach(w=>{
+    EXPANDED[w.no] = true;
+    w.days.forEach(d=>{
+      d.items.forEach((it,idx)=>{
+        it._id = 'w'+w.no+'_'+d.day.replace(/[^0-9]/g,'')+'_'+idx;
+        it._week = w.no; it._dayTitle = d.title; it._dayName = d.day;
+        ALL_ITEMS.push(it);
+      });
+    });
+  });
+})();
+
+/* 读取本地 */
+function load(){
+  try{ const s = localStorage.getItem(LS_KEY); if(s) STATE = JSON.parse(s); }catch(e){ STATE={}; }
+  try{
+    const a = localStorage.getItem(LS_ASSIGN);
+    if(a){ const o=JSON.parse(a);
+      if(o.name) document.getElementById('pName').value=o.name;
+      if(o.store) document.getElementById('pStore').value=o.store;
+      if(o.date) document.getElementById('pDate').value=o.date;
+    }
+  }catch(e){}
+}
+function save(){
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(STATE)); }catch(e){}
+}
+function saveAssign(){
+  try{
+    localStorage.setItem(LS_ASSIGN, JSON.stringify({
+      name:document.getElementById('pName').value,
+      store:document.getElementById('pStore').value,
+      date:document.getElementById('pDate').value
+    }));
+  }catch(e){}
+}
+
+/* ═══════════════════════════════════════════════
+   渲染条目
+   ═══════════════════════════════════════════════ */
+function render(){
+  const box = document.getElementById('sheet');
+  let globalIdx = 0;
+  let html = '';
+  WEEKS.forEach(w=>{
+    html += '<div class="week-sec" id="week'+w.no+'">';
+    html += '<div class="week-head" onclick="toggleWeek('+w.no+')">';
+    html += '<div class="week-no"><b>'+w.no+'</b>周</div>';
+    html += '<div class="week-meta"><div class="wt">第 '+w.no+' 周 · '+w.name+'</div><div class="wd">'+w.sub+'</div></div>';
+    html += '<div class="wk-progress"><div class="pct" id="wkPct'+w.no+'">0%</div><div class="cnt" id="wkCnt'+w.no+'">0 / 0</div><div class="mini"><i id="wkBar'+w.no+'"></i></div></div>';
+    html += '<div class="arrow">▾</div>';
+    html += '</div>';
+    html += '<div class="week-body">';
+    w.days.forEach(d=>{
+      html += '<div class="day-group">';
+      html += '<div class="day-group-h"><span class="day-tag">'+d.day+'</span><span>'+d.title+'</span><span class="dnote">· '+d.note+'</span></div>';
+      d.items.forEach(it=>{
+        globalIdx++;
+        html += '<div class="item" id="it_'+it._id+'">';
+        html += '<div class="idx">'+globalIdx+'</div>';
+        html += '<div class="content">';
+        html += '<div class="it-title">'+it.t+'</div>';
+        if(it.d) html += '<div class="it-desc">'+it.d+'</div>';
+        html += '<div class="it-src">📖 出处：'+it.src+' · '+d.title+'</div>';
+        html += '</div>';
+        html += '<div class="choices">';
+        for(let v=0; v<=4; v++){
+          html += '<button class="ch" data-v="'+v+'" onclick="setState(\''+it._id+'\','+v+')">'+LV_NAMES[v]+'</button>';
+        }
+        html += '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+    });
+    html += '</div></div>';
+  });
+  box.innerHTML = html;
+  document.getElementById('nTotal').textContent = ALL_ITEMS.length;
+}
+
+/* ═══════════════════════════════════════════════
+   交互
+   ═══════════════════════════════════════════════ */
+function setState(id, v){
+  STATE[id] = v;
+  save();
+  applyOne(id);
+  updateStats();
+}
+function applyOne(id){
+  const el = document.getElementById('it_'+id);
+  if(!el) return;
+  const v = STATE[id];
+  el.classList.remove('s0','s1','s2','s3','s4');
+  el.querySelectorAll('.ch').forEach(b=>{
+    const bv = parseInt(b.getAttribute('data-v'),10);
+    b.classList.toggle('active', bv===v);
+  });
+  if(v>=0 && v<=4) el.classList.add('s'+v);
+}
+function applyAll(){
+  ALL_ITEMS.forEach(it=>applyOne(it._id));
+}
+function toggleWeek(no){
+  EXPANDED[no] = !EXPANDED[no];
+  const el = document.getElementById('week'+no);
+  el.classList.toggle('collapsed', !EXPANDED[no]);
+}
+function expandAll(open){
+  WEEKS.forEach(w=>{
+    EXPANDED[w.no] = open;
+    document.getElementById('week'+w.no).classList.toggle('collapsed', !open);
+  });
+}
+function toggleAssign(){
+  document.getElementById('assignWrap').classList.toggle('on');
+}
+
+/* ═══════════════════════════════════════════════
+   统计
+   ═══════════════════════════════════════════════ */
+function updateStats(){
+  const lv = [0,0,0,0,0];          // L0知道 ~ L4卓越
+  const wk = {};                   // {no:{l:[五档],t,lv3plus}}
+  WEEKS.forEach(w=>wk[w.no]={l:[0,0,0,0,0],t:0});
+
+  ALL_ITEMS.forEach(it=>{
+    const v = STATE[it._id];
+    const cell = wk[it._week];
+    cell.t++;
+    if(v>=0 && v<=4){ lv[v]++; cell.l[v]++; }
+    // 未评不计入五档，但仍计入总数
+  });
+
+  document.getElementById('nL0').textContent = lv[0];
+  document.getElementById('nL1').textContent = lv[1];
+  document.getElementById('nL2').textContent = lv[2];
+  document.getElementById('nL3').textContent = lv[3];
+  document.getElementById('nL4').textContent = lv[4];
+
+  const total = ALL_ITEMS.length;
+  const pct = i => total? Math.round(lv[i]/total*100):0;
+
+  document.getElementById('bar4').style.width = pct(4)+'%';
+  document.getElementById('bar3').style.width = pct(3)+'%';
+  document.getElementById('bar2').style.width = pct(2)+'%';
+  document.getElementById('bar1').style.width = pct(1)+'%';
+  document.getElementById('bar0').style.width = pct(0)+'%';
+
+  document.getElementById('lgL4').textContent = pct(4)+'%';
+  document.getElementById('lgL3').textContent = pct(3)+'%';
+  document.getElementById('lgL2').textContent = pct(2)+'%';
+  document.getElementById('lgL1').textContent = pct(1)+'%';
+  document.getElementById('lgL0').textContent = pct(0)+'%';
+  document.getElementById('lgAll').textContent = (total? Math.round((lv[2]+lv[3]+lv[4])/total*100):0)+'%';
+
+  // 周进度（熟练及以上占比）
+  WEEKS.forEach(w=>{
+    const c = wk[w.no];
+    const rated = c.l[0]+c.l[1]+c.l[2]+c.l[3]+c.l[4];
+    const lv3 = c.l[3]+c.l[4];
+    const p = c.t? Math.round(lv3/c.t*100):0;
+    document.getElementById('wkPct'+w.no).textContent = p+'%';
+    document.getElementById('wkCnt'+w.no).textContent = lv3+' / '+c.t+'（已评 '+rated+'）';
+    document.getElementById('wkBar'+w.no).style.width = p+'%';
+  });
+
+  // 底部漏斗：达标=熟练+卓越；基本达标=运用；待补课=知道+理解
+  document.getElementById('fHi').textContent = lv[3]+lv[4];
+  document.getElementById('fMid').textContent = lv[2];
+  document.getElementById('fLow').textContent = lv[0]+lv[1];
+
+  // 薄弱项清单（知道/理解/运用）
+  const weak = ALL_ITEMS.filter(it=> STATE[it._id]>=0 && STATE[it._id]<=2);
+  const weakBox = document.getElementById('weakBox');
+  if(weak.length===0){
+    weakBox.innerHTML = '<div class="weak-empty">目前没有薄弱项——非常棒！继续保持，结业考核稳了。</div>';
+  }else{
+    // 等级低的排前面
+    weak.sort((a,b)=> (STATE[a._id]||0) - (STATE[b._id]||0));
+    let h='<ol>';
+    weak.forEach(it=>{
+      const v = STATE[it._id];
+      const tag = LV_EMOJI[v]+' '+LV_NAMES[v];
+      h += '<li>'+tag+'：'+it.t+'<span class="wl-src">（'+it.src+' · '+it._dayTitle+'）</span></li>';
+    });
+    h+='</ol>';
+    weakBox.innerHTML = h;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   导出 / 重置
+   ═══════════════════════════════════════════════ */
+function exportResult(){
+  const name = document.getElementById('pName').value.trim() || '（未填写）';
+  const store = document.getElementById('pStore').value.trim() || '（未填写）';
+  const date = document.getElementById('pDate').value.trim() || new Date().toLocaleDateString('zh-CN');
+  const lv = [0,0,0,0,0];
+  ALL_ITEMS.forEach(it=>{const v=STATE[it._id]; if(v>=0&&v<=4) lv[v]++;});
+  const total = ALL_ITEMS.length;
+  const pc = i => (total? Math.round(lv[i]/total*100):0);
+  const lines=[];
+  lines.push('═══════════════════════════════');
+  lines.push('   新员工结业应知应会表 · 自评结果');
+  lines.push('═══════════════════════════════');
+  lines.push('姓名：'+name);
+  lines.push('门店：'+store);
+  lines.push('日期：'+date);
+  lines.push('───────────────────────────────');
+  lines.push('应会总项：'+total);
+  lines.push('🟩 卓越：'+lv[4]+'（'+pc(4)+'%）');
+  lines.push('🟢 熟练：'+lv[3]+'（'+pc(3)+'%）');
+  lines.push('🟡 运用：'+lv[2]+'（'+pc(2)+'%）');
+  lines.push('🟠 理解：'+lv[1]+'（'+pc(1)+'%）');
+  lines.push('🔴 知道：'+lv[0]+'（'+pc(0)+'%）');
+  lines.push('掌握率（运用及以上）：'+(total? Math.round((lv[2]+lv[3]+lv[4])/total*100):0)+'%');
+  lines.push('熟练及以上（理想状态）：'+(total? Math.round((lv[3]+lv[4])/total*100):0)+'%');
+  lines.push('───────────────────────────────');
+  lines.push('');
+  lines.push('【需要补强的条目】');
+  const weak = ALL_ITEMS.filter(it=>STATE[it._id]>=0&&STATE[it._id]<=2);
+  if(weak.length===0){
+    lines.push('  无 —— 全部条目已达到「熟练 / 卓越」。');
+  }else{
+    weak.sort((a,b)=>(STATE[a._id]||0)-(STATE[b._id]||0));
+    weak.forEach((it,i)=>{
+      const v = STATE[it._id];
+      lines.push('  '+(i+1)+'. ['+LV_EMOJI[v]+LV_NAMES[v]+'] '+it.t+' —— '+it.src);
+    });
+  }
+  lines.push('');
+  lines.push('═══════════════════════════════');
+  lines.push('永州爱眼城眼镜连锁 · 闫胜君 整理');
+
+  const txt = lines.join('\n');
+  // 优先复制到剪贴板
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>{
+      alert('✅ 自评结果已复制到剪贴板，可直接粘贴到文档或微信发送给师傅。\n\n' + txt);
+    }).catch(()=>{
+      alert('自评结果如下（请手动复制）：\n\n' + txt);
+    });
+  }else{
+    alert('自评结果如下（请手动复制）：\n\n' + txt);
+  }
+}
+function resetAll(){
+  if(!confirm('确定要清空全部自评结果吗？此操作不可撤销。')) return;
+  STATE = {};
+  save();
+  applyAll();
+  updateStats();
+}
+
+/* ═══════════════════════════════════════════════
+   初始化
+   ═══════════════════════════════════════════════ */
+(function init(){
+  load();
+  render();
+  applyAll();
+  updateStats();
+  if(document.getElementById('pName').value || document.getElementById('pStore').value){
+    document.getElementById('assignWrap').classList.add('on');
+  }
+})();
+</script>
+</body>
+</html>
