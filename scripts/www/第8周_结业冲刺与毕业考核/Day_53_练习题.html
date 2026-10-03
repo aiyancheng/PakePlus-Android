@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 53 练习题：视光学知识精讲测验</title>
+<style>
+  body { font-family: 'Microsoft YaHei', sans-serif; background: #f0f5ff; margin: 0; padding: 20px; }
+  .container { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  h1 { color: #2c3e50; border-bottom: 3px solid #2980b9; padding-bottom: 12px; }
+  .info-bar { background: #eaf4ff; border-radius: 8px; padding: 12px 20px; margin: 16px 0; display: flex; gap: 24px; font-size: 14px; color: #1a5c98; flex-wrap: wrap; }
+  h2 { color: #2980b9; margin-top: 30px; }
+  .question { background: #f0f7ff; border: 1px solid #d6eaf8; border-radius: 8px; padding: 20px; margin: 16px 0; }
+  .question-num { font-weight: bold; color: #2980b9; font-size: 15px; }
+  .option { padding: 8px 12px; margin: 6px 0; background: #eaf4ff; border-radius: 6px; cursor: pointer; border: 1px solid #aed6f1; }
+  .option:hover { background: #c8e0f5; }
+  .fill-input { width: 100%; padding: 10px; border: 1px solid #aed6f1; border-radius: 6px; font-size: 14px; margin-top: 8px; box-sizing: border-box; }
+  .answer-box { background: #eafaf1; border-radius: 8px; padding: 14px 18px; margin-top: 10px; display: none; color: #1a5c38; }
+  .btn { background: #2980b9; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; margin: 4px; }
+  .btn:hover { background: #1f6fa8; }
+  .btn-show { background: #27ae60; }
+  .btn-show:hover { background: #1e8449; }
+  .section-tag { background: #2980b9; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: bold; margin-right: 8px; }
+  .day-tag { background: #8e44ad; color: #fff; padding: 2px 10px; border-radius: 10px; font-size: 12px; margin-right: 6px; }
+  .nav-footer{display:flex;justify-content:space-between;margin:28px 0 10px;gap:12px}
+  .nav-btn{background:linear-gradient(135deg,#2c3e50,#1a252f);color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;font-size:.95em;font-weight:600;transition:all .2s;text-align:center}
+  .nav-btn:hover{opacity:.85;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+  .nav-btn.outline{background:#fff;color:#2c3e50;border:2px solid #2c3e50}
+
+  /* interactive-options-type-d */
+  .option { cursor: pointer; transition: all 0.2s; }
+  .option.opt-correct { background: #d4edda !important; border-color: #28a745 !important; color: #155724 !important; font-weight: 600; pointer-events:none; }
+  .option.opt-wrong   { background: #f8d7da !important; border-color: #dc3545 !important; color: #721c24 !important; pointer-events:none; }
+  .option.opt-reveal  { background: #fff3cd !important; border-color: #ffc107 !important; color: #856404 !important; pointer-events:none; }
+  .option.answered    { pointer-events: none !important; cursor: default !important; }
+
+  /* ══════════════════════════════════════════════
+     红米平板响应式适配（横屏1100px / 竖屏900px）
+     ══════════════════════════════════════════════ */
+
+  /* 平板横屏：内容区微调 */
+  @media (max-width: 1100px) {
+    .container { padding: 28px 24px !important; }
+    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+
+  /* 平板竖屏：核心适配断点 */
+  @media (max-width: 900px) {
+    body { padding: 12px !important; font-size: 15px; }
+    .container { padding: 20px 16px !important; border-radius: 10px !important; }
+    /* 学习内容：各类2列/3列网格折叠为1列 */
+    .value-cards, .material-grid, .face-grid,
+    .norm-grid, .salary-grid, .do-dont, .image-standard,
+    .safety-grid, .role-cards, .review-grid, .equipment-grid,
+    .lens-grid, .coating-grid, .term-grid, .display-rules,
+    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
+    .review-grid, .zone-grid, .test-info, .method-grid,
+    .question-type, .fab-grid, .form-grid, .wrong-right,
+    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
+    .achieve-grid, .product-card, .sign-area, .wish-cards,
+    .eval-row,
+    [class*="-grid"], [class*="grid-"],
+    .two-col { grid-template-columns: 1fr !important; }
+    /* 3列→2列特殊处理（不完全折叠，保留2列） */
+    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 导航按钮：允许换行，防止溢出 */
+    .nav-footer, .nav-bar {
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .nav-btn {
+      font-size: 0.88em !important;
+      padding: 10px 18px !important;
+      text-align: center !important;
+    }
+    /* 标题字号适配 */
+    .header h1, h1 { font-size: 1.4em !important; }
+    .header .subtitle, .header .week-badge { font-size: 13px !important; }
+    /* 表格横向滚动（防溢出） */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* meta-bar 换行 */
+    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
+    /* 首页时间轴横向滚动 */
+    .timeline { overflow-x: auto; }
+  }
+
+  /* 手机 / 平板极窄竖屏 */
+  @media (max-width: 600px) {
+    body { padding: 8px !important; }
+    .container { padding: 16px 12px !important; }
+    .header h1, h1 { font-size: 1.2em !important; }
+    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .container { padding: 16px !important; }
+  }
+
+/* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1080px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+}
+
+/* ══ HOME-BAR：顶部返回首页入口 ══ */
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="container">
+  <h1>📝 Day 53 练习题：视光学知识精讲测验</h1>
+  <div class="info-bar">
+    <span>📅 第8周 第4天</span>
+    <span>⏱ 建议用时：35分钟</span>
+    <span>📚 范围：视光学知识</span>
+    <span>💯 总分：100分</span>
+  </div>
+
+  <h2><span class="section-tag">A</span>视光学单选题（每题7分，共35分）</h2>
+
+  <div class="question">
+    <div class="question-num">1. <span class="day-tag">D53</span>电脑验光仪（自动验光仪）的主要作用是？</div>
+    <div class="option">A. 最终确认处方，可直接配镜</div>
+    <div class="option">B. 提供客观屈光参考数据，需结合主觉验光才能确认处方</div>
+    <div class="option">C. 检测眼压</div>
+    <div class="option">D. 测量瞳距</div>
+    <button class="btn btn-show" onclick="toggleAnswer('a1')">查看答案</button>
+    <div class="answer-box" id="a1">✅ <strong>答案：B</strong> — 电脑验光只是初步参考，因为存在调节干扰、角膜形状等变量，必须结合主觉验光（顾客主观感受）才能确定最终处方。</div>
+  </div>
+
+  <div class="question">
+    <div class="question-num">2. <span class="day-tag">D53</span>顾客看散光表时，说"12点方向那条线最清楚"，散光轴向大约是？</div>
+    <div class="option">A. 12点方向（90°）</div>
+    <div class="option">B. 3点方向（180°）</div>
+    <div class="option">C. 最清晰线方向+90° = 90° + 90° = 180°</div>
+    <div class="option">D. 6点方向（90°）</div>
+    <button class="btn btn-show" onclick="toggleAnswer('a2')">查看答案</button>
+    <div class="answer-box" id="a2">✅ <strong>答案：C</strong> — 散光轴向 = 最清晰线方向 + 90°。12点方向对应90°，90°+90°=180°，所以散光轴向约为180°（水平轴散光，即顺规散光）。</div>
+  </div>
+
+  <div class="question">
+    <div class="question-num">3. <span class="day-tag">D53</span>顾客度数700度，应推荐哪个折射率的镜片？</div>
+    <div class="option">A. 1.50（标准）</div>
+    <div class="option">B. 1.56（经济）</div>
+    <div class="option">C. 1.67或1.74（超薄）</div>
+    <div class="option">D. 任意折射率都可以</div>
+    <button class="btn btn-show" onclick="toggleAnswer('a3')">查看答案</button>
+    <div class="answer-box" id="a3">✅ <strong>答案：C</strong> — 700度属于高度近视，建议1.67或1.74折射率，可以将镜片做得更薄，外观更好看，减少"厚镜片"的尴尬。</div>
+  </div>
+
+  <div class="question">
+    <div class="question-num">4. <span class="day-tag">D53</span>关于老花眼，以下哪种说法正确？</div>
+    <div class="option">A. 老花是疾病，需要手术治疗</div>
+    <div class="option">B. 有近视的人不会得老花</div>
+    <div class="option">C. 老花是正常生理现象，晶状体老化调节力下降，用凸透镜矫正</div>
+    <div class="option">D. 老花眼配了眼镜就会越来越严重</div>
+    <button class="btn btn-show" onclick="toggleAnswer('a4')">查看答案</button>
+    <div class="answer-box" id="a4">✅ <strong>答案：C</strong> — 老花是正常生理老化，不是疾病。有近视的人同样会老花（近视+老花并存是常见情况）。配眼镜不会加重老花，只是帮助矫正视力。</div>
+  </div>
+
+  <div class="question">
+    <div class="question-num">5. <span class="day-tag">D53</span>验光时"雾视法"的目的是？</div>
+    <div class="option">A. 让顾客放松心情</div>
+    <div class="option">B. 通过加正镜片使视力降低，松弛眼睛调节肌，消除假性近视影响</div>
+    <div class="option">C. 测试顾客是否有老花</div>
+    <div class="option">D. 检测最大视力</div>
+    <button class="btn btn-show" onclick="toggleAnswer('a5')">查看答案</button>
+    <div class="answer-box" id="a5">✅ <strong>答案：B</strong> — 雾视法通过加适量正镜片（通常+1.00到+1.50），使视力下降到0.1-0.3，强迫调节肌放松，从而消除调节性近视的干扰，得到更准确的屈光度数。</div>
+  </div>
+
+  <h2><span class="section-tag">B</span>视光学应用题（共65分）</h2>
+
+  <div class="question">
+    <div class="question-num">6. <span class="day-tag">D53</span>处方解读与通俗解释（22分）</div>
+    <p>顾客带着处方来配镜：OD −1.50 DS −0.75 DC × 90°，OS −2.00 DS。请完成：</p>
+    <p>①解读处方（每只眼的球镜/柱镜/轴向含义）；②用通俗语言向顾客解释；③给出你建议的镜片方案及理由。</p>
+    <textarea class="fill-input" rows="8" placeholder="①处方解读：...
+②向顾客解释：...
+③推荐镜片方案及理由：..."></textarea>
+    <button class="btn btn-show" onclick="toggleAnswer('a6')">查看答案</button>
+    <div class="answer-box" id="a6">✅ <strong>参考答案：</strong><br><br>
+    <strong>①处方解读：</strong>右眼(OD)：近视150度 + 散光75度，散光轴向90°（顺规散光）；左眼(OS)：近视200度，无散光。<br><br>
+    <strong>②向顾客解释：</strong>"您的右眼有150度近视，另外还有75度散光——散光就是角膜表面有一点点不规则，镜片里需要加一个修正，这很常见。左眼只有200度近视，很简单。整体度数不高，属于轻度近视。"<br><br>
+    <strong>③镜片推荐：</strong>度数较低（最高−2.00），选折射率 1.56–1.60 的非球面镜片即可（1.74 超薄对低度数意义不大、性价比不高）；如经常用电脑可加防蓝光膜。参考价格区间 400–800 元的中端镜片已满足需求。</div>
+  </div>
+
+  <div class="question">
+    <div class="question-num">7. <span class="day-tag">D53</span>顾客眼部问题辨析（22分）</div>
+    <p>顾客说："我眼睛总觉得有东西磨着，还有些干，是不是配副眼镜就好了？"请回答：</p>
+    <p>①这类症状能不能靠配镜解决？②你的正确应对是什么？③列出至少 4 种必须建议顾客就医（而非配镜）的情况。</p>
+    <textarea class="fill-input" rows="8" placeholder="①能否配镜解决：...
+②正确应对：...
+③必须就医的4种情况：..."></textarea>
+    <button class="btn btn-show" onclick="toggleAnswer('a7')">查看答案</button>
+    <div class="answer-box" id="a7">✅ <strong>参考答案：</strong><br><br>
+    <strong>①不能：</strong>"磨""干"多半是眼表或眼睑问题（如睑板腺、干眼），配镜解决不了根本问题。<br><br>
+    <strong>②正确应对：</strong>如实告知、不做诊断，建议先到医院检查确定原因；如顾客需要，可先做视力检查作参考。<br><br>
+    <strong>③必须就医的情况：</strong>视力突然下降；眼痛/头痛剧烈；飞蚊突然增多伴闪光；视野遮挡（像拉窗帘）；分泌物异常增多；外伤后视物异常等（答出任意 4 种即可）。</div>
+  </div>
+
+  <div class="question">
+    <div class="question-num">8. <span class="day-tag">D53</span>验光参数与镜片选择（21分）</div>
+    <p>请回答：①MPMVA 的含义是什么？②散光表的"最清晰线+90°"怎么用？③红绿测试如何判断过矫与欠矫？④阿贝数越高代表什么？</p>
+    <textarea class="fill-input" rows="8" placeholder="①MPMVA：...
+②散光轴向：...
+③红绿测试：...
+④阿贝数：..."></textarea>
+    <button class="btn btn-show" onclick="toggleAnswer('a8')">查看答案</button>
+    <div class="answer-box" id="a8">✅ <strong>参考答案：</strong><br><br>
+    <strong>①MPMVA：</strong>Maximum Plus to Maximum Visual Acuity，即"最大正镜化至最佳视力"——在保证最佳视力的前提下取最大正度数（最小负度数），避免过矫。<br><br>
+    <strong>②散光轴向：</strong>顾客看散光表时最清晰的那条线的方向 + 90°，即为散光轴向。例：12点（90°）最清晰 → 轴向约 180°。<br><br>
+    <strong>③红绿测试：</strong>红清=欠矫（需加负镜）；绿清=过矫（需加正镜）；红绿等清为球镜终点。<br><br>
+    <strong>④阿贝数：</strong>色散指数，越高色差越小、成像越清晰纯净（一般 ≥40 为佳）。</div>
+  </div>
+
+  <div style="text-align:center; margin-top:30px;">
+    <button class="btn" onclick="showAllAnswers()">📖 展示全部答案</button>
+    <button class="btn" style="background:#e74c3c;" onclick="resetAll()">🔄 重置练习</button>
+  </div>
+</div>
+
+<script>
+function toggleAnswer(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+function showAllAnswers() {
+  document.querySelectorAll('.answer-box').forEach(el => el.style.display = 'block');
+}
+function resetAll() {
+  document.querySelectorAll('.answer-box').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.fill-input').forEach(el => el.value = '');
+}
+</script>
+<div class="nav-footer" style="max-width:960px;margin:28px auto 10px;padding:0 20px">
+  <a href="Day_53_学习内容.html" class="nav-btn outline">← 返回学习内容</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    
+  <a href="Day_54_学习内容.html" class="nav-btn">Day 54 学习内容 →</a>
+</div>
+
+<script>
+/* interactive-options-type-d-js */
+(function(){
+  document.querySelectorAll('.question').forEach(function(qBlock){
+    // 收集该题所有 .option
+    var opts = Array.from(qBlock.querySelectorAll(':scope > .option, :scope > .options > .option'));
+    if(opts.length === 0) return;
+
+    // 找答案框：answer-box
+    var ansBox = qBlock.querySelector('.answer-box');
+    if(!ansBox) return;
+
+    // 从 answer-box 提取答案字母，支持多种格式：
+    // ✅ 正确答案：B / ✅ 答案：B / ✅ <strong>答案：B</strong>
+    var txt = ansBox.textContent || '';
+    var m = txt.match(/(?:\u6b63\u786e)?\u7b54\u6848[:\uff1a]\s*([A-Da-d])/i);
+    if(!m) return;
+    var correct = m[1].toUpperCase();
+    var answered = false;
+
+    opts.forEach(function(opt){
+      var letter = (opt.textContent.trim().match(/^([A-Da-d])[\.\uff0e\u3001\s]/) || [])[1];
+      if(!letter) return;
+      letter = letter.toUpperCase();
+      opt.classList.add('opt-clickable');
+      opt.addEventListener('click', function(){
+        if(answered) return;
+        answered = true;
+        opts.forEach(function(o){ o.classList.add('answered'); });
+        if(letter === correct){
+          opt.classList.add('opt-correct');
+          opt.textContent = '\u2705 ' + opt.textContent;
+        } else {
+          opt.classList.add('opt-wrong');
+          opt.textContent = '\u274c ' + opt.textContent;
+          opts.forEach(function(o){
+            var raw = o.textContent.replace(/^[\u2705\u274c\ud83d\udc49]\s*/,'');
+            var oL = (raw.match(/^([A-Da-d])[\.\uff0e\u3001\s]/) || [])[1];
+            if(oL && oL.toUpperCase() === correct){ o.classList.add('opt-reveal'); o.textContent = '\ud83d\udc49 ' + o.textContent; }
+          });
+        }
+        ansBox.style.display = 'block';
+        var btn = qBlock.querySelector('.btn-show, .show-answer-btn');
+        if(btn) btn.style.display = 'none';
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
