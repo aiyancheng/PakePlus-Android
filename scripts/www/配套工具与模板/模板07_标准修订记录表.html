@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>⑦ 标准修订记录表 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+</head>
+<body data-page="tool07">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">⑦ 标准修订记录表</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:opacity .3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('⑦ 标准修订记录表')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ⑦</div>
+    <h1>📝 标准修订记录表</h1>
+    <p>记录每次标准修订的内容、原因与生效时间，确保全员使用最新版。让培训标准随实战持续进化，避免"用了三年还是老一套"。</p>
+  </div>
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店 / 部门：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>记录人：</label><input data-save="recorder" placeholder="请填写"></div>
+    <div class="fm-row"><label>起始记录日期：</label><input data-save="sdate" placeholder="如 2026-10-01"></div>
+    <div class="fm-row"><label>当前标准版本：</label><input data-save="ver" placeholder="如 V1.2"></div>
+  </div>  <div class="sec">
+    <div class="sec-h"><span class="sn">1</span>修订明细</div>
+    <div class="sec-desc">每条修订都应有明确原因，来源可以是考核数据、客诉复盘或一线反馈。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:44px">序号</th><th class="center" style="width:96px">修订日期</th><th style="width:190px">修订内容</th><th style="width:190px">修订原因</th><th class="center" style="width:96px">生效日期</th><th style="width:96px">版本号</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td><input data-save="vd0" placeholder="月/日"></td><td><input data-save="vc0" placeholder="改了哪一条"></td><td><input data-save="vr0" placeholder="为什么改（数据/客诉/实操反馈）"></td><td><input data-save="ve0" placeholder="月/日"></td><td><input data-save="vv0" placeholder="V1.3"></td></tr>
+          <tr><td class="center">2</td><td><input data-save="vd1" placeholder="月/日"></td><td><input data-save="vc1" placeholder="改了哪一条"></td><td><input data-save="vr1" placeholder="为什么改（数据/客诉/实操反馈）"></td><td><input data-save="ve1" placeholder="月/日"></td><td><input data-save="vv1" placeholder="V1.3"></td></tr>
+          <tr><td class="center">3</td><td><input data-save="vd2" placeholder="月/日"></td><td><input data-save="vc2" placeholder="改了哪一条"></td><td><input data-save="vr2" placeholder="为什么改（数据/客诉/实操反馈）"></td><td><input data-save="ve2" placeholder="月/日"></td><td><input data-save="vv2" placeholder="V1.3"></td></tr>
+          <tr><td class="center">4</td><td><input data-save="vd3" placeholder="月/日"></td><td><input data-save="vc3" placeholder="改了哪一条"></td><td><input data-save="vr3" placeholder="为什么改（数据/客诉/实操反馈）"></td><td><input data-save="ve3" placeholder="月/日"></td><td><input data-save="vv3" placeholder="V1.3"></td></tr>
+          <tr><td class="center">5</td><td><input data-save="vd4" placeholder="月/日"></td><td><input data-save="vc4" placeholder="改了哪一条"></td><td><input data-save="vr4" placeholder="为什么改（数据/客诉/实操反馈）"></td><td><input data-save="ve4" placeholder="月/日"></td><td><input data-save="vv4" placeholder="V1.3"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">2</span>通知与培训</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:170px">项目</th><th>填写</th></tr></thead>
+        <tbody>
+          <tr><td>需知会人员</td><td><input data-save="notify" placeholder="如 全体销售 + 训练员"></td></tr>
+          <tr><td>宣达方式</td><td><input data-save="how" placeholder="班前会 / 微信群 / 一对一带教"></td></tr>
+          <tr><td>宣达日期</td><td><input data-save="ndate" placeholder="月/日"></td></tr>
+          <tr><td>旧版回收确认</td><td><input data-save="recycle" placeholder="是 / 否"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">✍</span>签字确认</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">修订人签字：</span><span class="ln"><input data-save="sg_a" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">审核人签字：</span><span class="ln"><input data-save="sg_b" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_c" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">日期：</span><span class="ln"><input data-save="sg_d" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+  <div class="note warn">⚠ <b>版本纪律</b>：新标准生效后，旧版纸质/电子文件必须同步回收或标注「已废止」，避免新人与老员工各用一套标准。</div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="模板08_新人成长档案.html">下一工具：新人成长档案 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+</body>
+</html>
