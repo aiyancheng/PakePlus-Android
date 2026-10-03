@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>⑤ 带教计划 / 记录表 · 配套工具模板</title>
+<link rel="stylesheet" href="tool-common.css">
+</head>
+<body data-page="tool05">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home-btn" href="../index.html">🏠 首页</a>
+    <a class="home-btn" href="index.html">🧰 工具清单</a>
+    <span class="crumb">⑤ 带教计划 / 记录表</span>
+    <span class="spacer"></span>
+    <span id="saveTip" style="font-size:.76em;color:#2e7d32;font-weight:700;opacity:0;transition:opacity .3s">✓ 已自动保存</span>
+    <button class="tool-btn" onclick="printTool()">🖨 打印</button>
+    <button class="tool-btn primary" onclick="exportTool('⑤ 带教计划 / 记录表')">📤 导出</button>
+    <button class="tool-btn danger" onclick="clearTool()">🗑 清空</button>
+  </div>
+
+  <div class="doc-head">
+    <div class="dh-no">配套工具 ⑤</div>
+    <h1>🤝 带教计划 / 记录表</h1>
+    <p>首日填写计划，每次带教后记录学习内容与掌握程度，作为考核依据。一人一表，贯穿 8 周带教全程。</p>
+  </div>
+  <div class="fill-meta">
+    <div class="fm-row"><label>门店名称：</label><input data-save="store" placeholder="请填写"></div>
+    <div class="fm-row"><label>新人姓名：</label><input data-save="name" placeholder="请填写"></div>
+    <div class="fm-row"><label>带教训练员：</label><input data-save="trainer" placeholder="请填写"></div>
+    <div class="fm-row"><label>入职日期：</label><input data-save="jdate" placeholder="如 2026-10-08"></div>
+    <div class="fm-row"><label>计划带教周期：</label><input data-save="period" placeholder="如 8 周（56 天）"></div>
+    <div class="fm-row"><label>计划完成日期：</label><input data-save="pdate" placeholder="如 2026-12-03"></div>
+  </div>  <div class="sec">
+    <div class="sec-h"><span class="sn">1</span>带教计划（首日填写）</div>
+    <div class="sec-desc">由训练员与新人共同商定，明确 8 周带教节奏、方式与重点。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:110px">周次</th><th style="width:190px">主题</th><th style="width:110px">课程范围</th><th>带教重点 / 计划安排</th></tr></thead>
+        <tbody>
+          <tr><td class="center">第 1 周</td><td>文化与制度启蒙</td><td class="center">Day 01–07</td><td><input data-save="plan0" placeholder="写明本周带教方式、频次与重点"></td></tr>
+          <tr><td class="center">第 2 周</td><td>光学与产品知识</td><td class="center">Day 08–14</td><td><input data-save="plan1" placeholder="写明本周带教方式、频次与重点"></td></tr>
+          <tr><td class="center">第 3 周</td><td>专业技能训练</td><td class="center">Day 15–21</td><td><input data-save="plan2" placeholder="写明本周带教方式、频次与重点"></td></tr>
+          <tr><td class="center">第 4 周</td><td>销售话术与中期考核</td><td class="center">Day 22–28</td><td><input data-save="plan3" placeholder="写明本周带教方式、频次与重点"></td></tr>
+          <tr><td class="center">第 5 周</td><td>实战跟岗训练</td><td class="center">Day 29–35</td><td><input data-save="plan4" placeholder="写明本周带教方式、频次与重点"></td></tr>
+          <tr><td class="center">第 6 周</td><td>独立接单训练</td><td class="center">Day 36–42</td><td><input data-save="plan5" placeholder="写明本周带教方式、频次与重点"></td></tr>
+          <tr><td class="center">第 7 周</td><td>综合提升训练</td><td class="center">Day 43–49</td><td><input data-save="plan6" placeholder="写明本周带教方式、频次与重点"></td></tr>
+          <tr><td class="center">第 8 周</td><td>结业冲刺与毕业考核</td><td class="center">Day 50–56</td><td><input data-save="plan7" placeholder="写明本周带教方式、频次与重点"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">2</span>带教记录（每次带教后填写）</div>
+    <div class="sec-desc">每次带教结束即时记录，是阶段考核与转正评估的一手材料。可另附续页。</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:44px">序号</th><th class="center" style="width:96px">日期</th><th style="width:210px">本次带教内容</th><th style="width:96px">用时</th><th>掌握程度与备注</th></tr></thead>
+        <tbody>
+          <tr><td class="center">1</td><td><input data-save="rd0" placeholder="月/日"></td><td><input data-save="rc0" placeholder="带教了哪些内容"></td><td><input data-save="rt0" placeholder="如 45 分钟"></td><td><input data-save="rm0" placeholder="熟练 / 生疏 / 需再练"></td></tr>
+          <tr><td class="center">2</td><td><input data-save="rd1" placeholder="月/日"></td><td><input data-save="rc1" placeholder="带教了哪些内容"></td><td><input data-save="rt1" placeholder="如 45 分钟"></td><td><input data-save="rm1" placeholder="熟练 / 生疏 / 需再练"></td></tr>
+          <tr><td class="center">3</td><td><input data-save="rd2" placeholder="月/日"></td><td><input data-save="rc2" placeholder="带教了哪些内容"></td><td><input data-save="rt2" placeholder="如 45 分钟"></td><td><input data-save="rm2" placeholder="熟练 / 生疏 / 需再练"></td></tr>
+          <tr><td class="center">4</td><td><input data-save="rd3" placeholder="月/日"></td><td><input data-save="rc3" placeholder="带教了哪些内容"></td><td><input data-save="rt3" placeholder="如 45 分钟"></td><td><input data-save="rm3" placeholder="熟练 / 生疏 / 需再练"></td></tr>
+          <tr><td class="center">5</td><td><input data-save="rd4" placeholder="月/日"></td><td><input data-save="rc4" placeholder="带教了哪些内容"></td><td><input data-save="rt4" placeholder="如 45 分钟"></td><td><input data-save="rm4" placeholder="熟练 / 生疏 / 需再练"></td></tr>
+          <tr><td class="center">6</td><td><input data-save="rd5" placeholder="月/日"></td><td><input data-save="rc5" placeholder="带教了哪些内容"></td><td><input data-save="rt5" placeholder="如 45 分钟"></td><td><input data-save="rm5" placeholder="熟练 / 生疏 / 需再练"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-h"><span class="sn">3</span>阶段性小结</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th class="center" style="width:130px">阶段</th><th>带教效果与调整</th></tr></thead>
+        <tbody>
+          <tr><td>首周小结</td><td><input data-save="w1" placeholder="新人适应情况、带教方式是否需调整"></td></tr>
+          <tr><td>首月小结</td><td><input data-save="w2" placeholder="掌握情况、进度是否正常"></td></tr>
+          <tr><td>结业前小结</td><td><input data-save="w3" placeholder="是否具备独立上岗能力"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="sn">✍</span>签字确认</div>
+    <div class="sign-grid">
+      <div class="sign"><span class="lb">新人签字：</span><span class="ln"><input data-save="sg_a" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">训练员签字：</span><span class="ln"><input data-save="sg_b" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">门店负责人签字：</span><span class="ln"><input data-save="sg_c" style="border:none;width:100%"></span></div>
+      <div class="sign"><span class="lb">日期：</span><span class="ln"><input data-save="sg_d" style="border:none;width:100%"></span></div>
+    </div>
+  </div>
+
+  <div class="nav-foot">
+    <a class="ghost" href="index.html">← 返回工具清单</a>
+    <a class="solid" href="模板06_培训数据看板.html">下一工具：培训数据看板 →</a>
+  </div>
+
+</div>
+<script src="tool-common.js"></script>
+</body>
+</html>
