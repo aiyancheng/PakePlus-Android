@@ -104,7 +104,7 @@
 
 /* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
 @media (min-width:901px) and (max-width:1400px){
-  .container{max-width:1080px!important;padding:26px 24px!important}
+  .container{max-width:1300px!important;padding:26px 24px!important}
   body{font-size:16px}
   .header{padding:34px 28px!important}
   .header h1{font-size:1.8em!important}
@@ -174,7 +174,7 @@
 .home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
 .home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
 .home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
-@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1300px}}
 @media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
 
 /* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
@@ -208,6 +208,53 @@
     .flow-block{padding:18px 16px}
     .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
   }
+/*@@ LAYOUT-UNIFY @@*/
+/* ═══════ 布局统一：标题框 = 内容框等宽 · 红米12.1寸平板完美适配 ═══════
+   横屏≈1280px → 统一 1300px；竖屏≤900px → 自适应留白
+   标题框(.header)与内容框(.container)使用完全相同的宽度规则 */
+.home-topbar .ht-inner{width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;margin:0 auto!important}
+.header{
+  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+  margin:18px auto 0!important;padding:34px 30px!important;
+  border:0!important;border-radius:14px!important;
+  box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+}
+.container{
+  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+  margin-left:auto!important;margin-right:auto!important;
+  padding-left:0!important;padding-right:0!important;
+}
+@media(max-width:900px){
+  .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+}
+@media(max-width:600px){
+  .header{padding:20px 15px!important}
+}
+/*@@ LAYOUT-UNIFY-2 @@*/
+/* ═══ meta-bar（学习时长/配套练习条）与标题框/内容框同宽 ═══ */
+.meta-bar{
+  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+  margin:14px auto 0!important;padding:14px 30px!important;
+  border:0!important;border-radius:12px!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.06)!important;
+}
+@media(max-width:900px){
+  .meta-bar{padding:12px 16px!important;margin-top:12px!important}
+}
+/*@@ LAYOUT-UNIFY-3 @@*/
+/* ═══ 修正：box-sizing 兜底 + 容器内 header 自适应 + 表格竖屏防溢出 ═══ */
+.header,.container,.meta-bar,.home-topbar .ht-inner{box-sizing:border-box!important}
+.container > .header{width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+@media(max-width:900px){
+  table{max-width:100%!important}
+}
+
+/*@@ LAYOUT-UNIFY-4 @@*/
+body{padding:0!important;margin:0!important}
+
+/*@@ FLOW-GRID-2X2 @@*/
+.flow-grid{grid-template-columns:repeat(2,1fr)!important}
+@media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
 </style>
 </head>
 <body>
