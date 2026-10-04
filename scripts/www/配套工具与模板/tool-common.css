@@ -22,7 +22,7 @@ body{
   background:linear-gradient(180deg,#f4f7fc 0%,#eef3fa 100%);
   color:var(--text);line-height:1.75;-webkit-text-size-adjust:100%;
 }
-.wrap{max-width:1080px;margin:0 auto;padding:26px 22px 80px}
+.wrap{width:min(1300px,calc(100% - 32px));max-width:1300px;margin:0 auto;padding:26px 22px 80px}
 
 /* ── 顶部条 ── */
 .topbar{
