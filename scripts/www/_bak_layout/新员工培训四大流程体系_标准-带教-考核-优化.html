@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>连锁眼镜门店新员工培训四大流程体系 | 标准—带教—考核—优化</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Microsoft YaHei', Arial, sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+  .header { background: linear-gradient(135deg, #1a3a6b, #2c5aa0); padding: 46px 30px 38px; color: #fff; }
+  .header .tag { background: rgba(255,255,255,0.18); color: #fff; display: inline-block; padding: 5px 18px; border-radius: 20px; font-size: 0.85em; margin-bottom: 14px; letter-spacing: 1px; }
+  .header h1 { font-size: 2.1em; margin-bottom: 10px; font-weight: 700; }
+  .header .subtitle { color: #cfe0f5; font-size: 1.02em; }
+  .header .meta { margin-top: 18px; font-size: 0.88em; color: #b8cdea; }
+
+  .container { max-width: 960px; margin: 30px auto 60px; padding: 0 20px; }
+
+  .lead { background: #fff; border-radius: 12px; padding: 26px 30px; margin-bottom: 26px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 5px solid #2c5aa0; }
+  .lead p { color: #555; font-size: 0.96em; margin-bottom: 10px; }
+  .lead p:last-child { margin-bottom: 0; }
+
+  .toc { background: #fff; border-radius: 12px; padding: 24px 30px; margin-bottom: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .toc h3 { color: #1a3a6b; font-size: 1.05em; margin-bottom: 14px; }
+  .toc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 26px; }
+  .toc-item { font-size: 0.9em; color: #2c5aa0; }
+
+  .chapter { background: #fff; border-radius: 12px; padding: 30px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .chapter-head { display: flex; align-items: center; gap: 16px; padding-bottom: 16px; margin-bottom: 22px; border-bottom: 2px solid #eef2f7; }
+  .chapter-num { width: 54px; height: 54px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4em; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .c1 { background: #2c5aa0; } .c2 { background: #2e7d5b; } .c3 { background: #c47f17; } .c4 { background: #8e44ad; } .c5 { background: #c0392b; }
+  .chapter-head .titles h2 { font-size: 1.35em; color: #1a3a6b; margin-bottom: 4px; }
+  .chapter-head .titles .oneline { font-size: 0.88em; color: #888; }
+
+  h3 { font-size: 1.1em; color: #1a3a6b; margin: 26px 0 12px; padding-left: 12px; border-left: 4px solid #2c5aa0; }
+  h4 { font-size: 0.98em; color: #333; margin: 18px 0 8px; }
+  p { color: #555; font-size: 0.94em; margin-bottom: 12px; }
+  ul, ol { padding-left: 22px; margin-bottom: 14px; }
+  li { color: #555; font-size: 0.93em; margin-bottom: 6px; }
+  strong { color: #1a3a6b; }
+  em { font-style: normal; color: #c0392b; font-weight: 600; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th { background: #eef3fa; color: #1a3a6b; padding: 11px 13px; text-align: left; font-size: 0.88em; border-bottom: 2px solid #d6e0ee; }
+  td { padding: 10px 13px; border-bottom: 1px solid #f0f2f5; font-size: 0.87em; color: #555; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafbfc; }
+
+  .position-box { background: linear-gradient(135deg, #eef3fa, #f7faff); border-radius: 10px; padding: 18px 22px; margin: 16px 0 22px; border-left: 4px solid #2c5aa0; }
+  .position-box .lbl { font-size: 0.8em; color: #2c5aa0; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; }
+  .position-box .txt { font-size: 1em; color: #1a3a6b; font-weight: 600; }
+
+  .flow-box { background: #f7f9fc; border-radius: 10px; padding: 20px 24px; margin: 18px 0; }
+  .flow-box .flow-title { font-weight: 700; color: #1a3a6b; font-size: 0.95em; margin-bottom: 10px; }
+  .flow-line { font-size: 0.9em; color: #444; line-height: 2.1; }
+
+  .highlight { background: #fff8e1; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+  .highlight .lbl { color: #c47f17; font-weight: 700; font-size: 0.83em; margin-bottom: 6px; }
+  .highlight p { margin-bottom: 6px; font-size: 0.9em; }
+
+  .tool-card { background: #f8fafc; border: 1px solid #e8eef5; border-radius: 10px; padding: 18px 22px; margin: 14px 0; }
+  .tool-card .tool-name { font-weight: 700; color: #2c5aa0; font-size: 0.96em; margin-bottom: 6px; }
+  .tool-card .tool-line { font-size: 0.88em; color: #555; margin-bottom: 4px; }
+  .tool-card .tool-line span { color: #888; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+  .stat { background: #f7f9fc; border-radius: 10px; padding: 16px; text-align: center; }
+  .stat .num { font-size: 1.5em; font-weight: 700; color: #2c5aa0; }
+  .stat .txt { font-size: 0.8em; color: #777; margin-top: 4px; }
+
+  .closed-loop { background: #f7f9fc; border-radius: 10px; padding: 22px; margin: 20px 0; }
+  .loop-step { display: flex; gap: 14px; margin-bottom: 14px; align-items: flex-start; }
+  .loop-step:last-child { margin-bottom: 0; }
+  .loop-num { width: 28px; height: 28px; border-radius: 50%; background: #2c5aa0; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: 700; flex-shrink: 0; }
+  .loop-text { font-size: 0.9em; color: #555; padding-top: 3px; }
+
+  .summary { background: linear-gradient(135deg, #1a3a6b, #2c5aa0); border-radius: 12px; padding: 30px; margin-top: 30px; color: #fff; }
+  .summary h3 { color: #fff; border-left-color: #7fb3ff; }
+  .summary p, .summary li { color: #dbe8f8; }
+  .summary strong { color: #ffd97a; }
+
+  .footer-note { text-align: center; color: #9aa7b8; font-size: 0.82em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5eaf0; }
+
+  @media (max-width: 820px) {
+    .header h1 { font-size: 1.5em; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  }
+  @media (max-width: 600px) {
+    .container { padding: 0 12px; }
+    .chapter, .lead, .toc { padding: 20px 16px; }
+    .header { padding: 30px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="tag">连锁眼镜门店 · 内部培训体系</div>
+  <h1>新员工培训四大流程体系</h1>
+  <div class="subtitle">标准 — 带教 — 考核 — 优化：一套可直接落地的门店人才生产线</div>
+  <div class="meta">适用对象：新入职员工 ｜ 门店训练员 ｜ 值班经理 ｜ 门店负责人 &nbsp;·&nbsp; 整理：闫胜君</div>
+</div>
+
+<div class="container">
+
+  <div class="lead">
+    <p>本体系借鉴连锁餐饮成熟培训框架（标准—带教—考核—优化），结合连锁眼镜门店"专业门槛高、接待周期长、单品价值大"的行业特征进行本地化设计，形成一条从入职到转正、从在岗到晋升的完整人才生产线。</p>
+    <p>核心理念：<strong>标准解决"教什么"，带教解决"怎么教"，考核解决"是否达标"，优化解决"如何越做越好"。</strong>四大流程首尾相接、循环往复，任何一次培训的结束，都是下一轮标准升级的开始。</p>
+  </div>
+
+  <div class="toc">
+    <h3>文档结构</h3>
+    <div class="toc-grid">
+      <div class="toc-item">一、总览：四大流程逻辑关系</div>
+      <div class="toc-item">二、流程一：标准（教什么）</div>
+      <div class="toc-item">三、流程二：带教（怎么教）</div>
+      <div class="toc-item">四、流程三：考核（是否达标）</div>
+      <div class="toc-item">五、流程四：优化（持续迭代）</div>
+      <div class="toc-item">六、配套工具与模板清单</div>
+      <div class="toc-item">七、新员工培训路径与里程碑</div>
+      <div class="toc-item">八、工作站学习顺序与晋级规则</div>
+      <div class="toc-item">九、复训机制与在职发展考核</div>
+      <div class="toc-item">十、闭环运行机制与四流程总结</div>
+    </div>
+  </div>
+
+  <!-- ══════════════ 一、总览 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c1">01</div>
+      <div class="titles">
+        <h2>总览：四大流程的逻辑关系</h2>
+        <div class="oneline">一句话定位：四步闭环，把"新人"变成"标准化的专业服务者"</div>
+      </div>
+    </div>
+
+    <p>眼镜门店的服务链条长——从迎宾、问诊、验光、选镜、加工到取镜回访，每个环节都直接决定顾客体验与复购。因此新员工培训不能靠"师傅带徒弟口口相传"，必须靠四大流程把经验固化为标准、把标准变成能力、把能力验证为达标、再把实战问题回流为新的标准。</p>
+
+    <div class="flow-box">
+      <div class="flow-title">四流程逻辑关系</div>
+      <div class="flow-line">
+        <strong>标准（教什么）</strong> → 沉淀岗位知识与操作要求，是所有培训的起点与依据；<br>
+        <strong>带教（怎么教）</strong> → 用认证训练员把标准"喂"给新员工，把知识变成动作；<br>
+        <strong>考核（是否达标）</strong> → 用统一尺子检验能力，决定能否上岗、转正、晋级；<br>
+        <strong>优化（持续迭代）</strong> → 把考核数据、客诉、新品问题回流，修订标准，重新进入下一轮循环。
+      </div>
+    </div>
+
+    <table>
+      <tr><th style="width:16%">流程</th><th style="width:22%">一句话定位</th><th style="width:30%">核心目标</th><th>关键产出</th></tr>
+      <tr><td><strong>标准</strong></td><td>教什么——把经验变教材</td><td>让每个岗位都有清晰、可复制的操作规范</td><td>岗位训练手册、工作站检查表</td></tr>
+      <tr><td><strong>带教</strong></td><td>怎么教——把教材变能力</td><td>用认证训练员实现"教得对、学得快"</td><td>带教计划、带教记录、认证训练员名单</td></tr>
+      <tr><td><strong>考核</strong></td><td>是否达标——把能力变数据</td><td>客观检验新员工是否具备独立上岗能力</td><td>实操考核评分表、考核成绩档案</td></tr>
+      <tr><td><strong>优化</strong></td><td>如何更好——把数据变标准</td><td>用实战反馈持续修订标准与带教方法</td><td>月度培训复盘报告、标准修订记录</td></tr>
+    </table>
+
+    <div class="highlight">
+      <div class="lbl">核心原则</div>
+      <p>• 没有标准，不带教 —— 标准未明确的内容，不得进入带教环节；</p>
+      <p>• 没有考核，不算达标 —— 未通过考核的员工不得独立接待顾客；</p>
+      <p>• 没有复盘，不叫优化 —— 每次考核结束必须产出可执行的改进项，否则流程不算闭环。</p>
+    </div>
+  </div>
+
+  <!-- ══════════════ 二、标准 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c1">02</div>
+      <div class="titles">
+        <h2>流程一：标准（教什么）</h2>
+        <div class="oneline">一句话定位：把所有"应该怎么做"写成看得懂、学得会、查得到的文件</div>
+      </div>
+    </div>
+
+    <div class="position-box">
+      <div class="lbl">一句话定位</div>
+      <div class="txt">标准 = 教什么。把门店优秀员工的经验，固化为新人可照着做的操作规范。</div>
+    </div>
+
+    <h3>2.1 目标</h3>
+    <ul>
+      <li>让门店每一个岗位（迎宾、验光、选镜顾问、加工、收银、回访）都有明确的操作标准与达标要求。</li>
+      <li>把"老员工凭感觉做"变成"新人照标准做"，降低服务质量波动，缩短新员工上手周期。</li>
+      <li>为带教、考核、优化提供统一依据——所有动作都以标准为准绳。</li>
+    </ul>
+
+    <h3>2.2 关键动作</h3>
+    <table>
+      <tr><th style="width:6%">序号</th><th style="width:30%">关键动作</th><th>具体内容</th></tr>
+      <tr><td>1</td><td>岗位梳理</td><td>列出门店全部工作站（迎宾接待、问诊沟通、验光操作、选镜配镜、加工调整、收银结算、取镜回访、售后处理），按顾客进店动线排序。</td></tr>
+      <tr><td>2</td><td>标准拆解</td><td>将每个工作站拆成"步骤 + 动作要点 + 常见错误 + 达标标准"四要素，颗粒度细化到可观察、可考核。</td></tr>
+      <tr><td>3</td><td>编制手册</td><td>形成《岗位训练手册》和《工作站检查表》，图文并茂，关键动作配示意图或视频二维码。</td></tr>
+      <tr><td>4</td><td>定稿审批</td><td>由门店负责人组织资深员工、验光师评审，确认标准科学、可执行后签字发布。</td></tr>
+      <tr><td>5</td><td>版本管理</td><td>统一编号与版本号（如 SL-01-V2.0），任何修订留痕，旧版本归档，确保全员使用同一版本。</td></tr>
+    </table>
+
+    <h3>2.3 责任角色分工</h3>
+    <table>
+      <tr><th style="width:22%">角色</th><th>在"标准"环节的职责</th></tr>
+      <tr><td><strong>新员工</strong></td><td>接收并学习标准，理解每条标准背后的原因，提出看不懂、做不到的地方反馈。</td></tr>
+      <tr><td><strong>训练员</strong></td><td>参与标准编制与修订，提供一线实操经验，确保标准贴近实际。</td></tr>
+      <tr><td><strong>值班经理</strong></td><td>审核标准的完整性，组织内部试讲验证，收集执行中的问题。</td></tr>
+      <tr><td><strong>门店负责人</strong></td><td>最终审批发布标准，对标准的科学性、统一性负责，决定修订时机。</td></tr>
+    </table>
+
+    <h3>2.4 时间节点与交付物</h3>
+    <table>
+      <tr><th style="width:24%">时间节点</th><th style="width:34%">动作</th><th>交付物</th></tr>
+      <tr><td>体系启动前</td><td>完成岗位梳理与标准拆解</td><td>岗位清单、标准拆解表</td></tr>
+      <tr><td>启动前 1 周</td><td>编制并内部评审手册</td><td>《岗位训练手册》初稿</td></tr>
+      <tr><td>启动前 3 天</td><td>负责人审批发布</td><td>正式版手册、工作站检查表</td></tr>
+      <tr><td>持续进行</td><td>版本维护与修订</td><td>标准修订记录表</td></tr>
+    </table>
+
+    <div class="highlight">
+      <div class="lbl">眼镜门店标准示例：验光接待工作站</div>
+      <p><strong>步骤：</strong>迎宾问候 → 需求问诊 → 旧镜检测 → 电脑验光 → 综合验光仪精调 → 试戴调整 → 处方解读</p>
+      <p><strong>达标标准：</strong>全程使用礼貌用语，验光时长不低于 15 分钟，主动询问用眼场景与旧镜不适，试戴不少于 5 分钟并记录反馈。</p>
+      <p><strong>常见错误：</strong>跳过问诊直接验光、试戴时间不足、处方解读只报度数不解释用途。</p>
+    </div>
+  </div>
+
+  <!-- ══════════════ 三、带教 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c2">03</div>
+      <div class="titles">
+        <h2>流程二：带教（怎么教）</h2>
+        <div class="oneline">一句话定位：用认证训练员，把"标准文件"翻译成新员工的实际动作</div>
+      </div>
+    </div>
+
+    <div class="position-box">
+      <div class="lbl">一句话定位</div>
+      <div class="txt">带教 = 怎么教。选对训练员、用对方法，让新人"看得懂、学得会、做得对"。</div>
+    </div>
+
+    <h3>3.1 目标</h3>
+    <ul>
+      <li>实现"一对一或一对多"的标准化带教，杜绝"老员工随口教、新人凭感觉学"。</li>
+      <li>把带教过程结构化（示范—共做—他做—反馈），让新员工按可复制的节奏掌握技能。</li>
+      <li>通过训练员认证，保证带教质量稳定，带教经验能沉淀、能传承。</li>
+    </ul>
+
+    <h3>3.2 关键动作</h3>
+    <ul>
+      <li><strong>训练员选拔与认证：</strong>从在岗员工中选拔业务扎实、表达清晰、愿意带人的员工，通过"考核 + 试讲 + 实操示范"三重认证后持证上岗。</li>
+      <li><strong>制定带教计划：</strong>入职第一天即为新员工量身制定带教计划，明确每周学哪些工作站、达到什么标准、由谁带教。</li>
+      <li><strong>四步带教法：</strong>
+        <ol>
+          <li><strong>我做你看（示范）：</strong>训练员完整演示标准动作，边做边讲解要点。</li>
+          <li><strong>我做你帮（共做）：</strong>新员工参与其中，训练员从旁提示，降低上手难度。</li>
+          <li><strong>你做我看（独立）：</strong>新员工独立操作，训练员观察并记录，不打断。</li>
+          <li><strong>你练我评（反馈）：</strong>现场给出具体反馈，肯定做得对的、指出要改的，再练一遍。</li>
+        </ol>
+      </li>
+      <li><strong>填写带教记录：</strong>每次带教后记录学习内容、掌握程度、待改进点，作为考核与调整的依据。</li>
+      <li><strong>阶段总结与交接：</strong>每个工作站学完后由训练员签字确认"已掌握"，方可进入下一个工作站。</li>
+    </ul>
+
+    <h3>3.3 责任角色分工</h3>
+    <table>
+      <tr><th style="width:22%">角色</th><th>在"带教"环节的职责</th></tr>
+      <tr><td><strong>新员工</strong></td><td>主动跟学、认真练习、勤做记录，如实反馈学习困难，配合训练员完成练习计划。</td></tr>
+      <tr><td><strong>训练员</strong></td><td>核心执行者。按带教计划与四步带教法施教，填写带教记录，对新人掌握程度负责。</td></tr>
+      <tr><td><strong>值班经理</strong></td><td>统筹带教排班，检查带教记录，抽查带教质量，协调解决带教中的资源问题。</td></tr>
+      <tr><td><strong>门店负责人</strong></td><td>审定带教计划，认定训练员资格，定期巡店观察带教效果，把控整体节奏。</td></tr>
+    </table>
+
+    <h3>3.4 时间节点与交付物</h3>
+    <table>
+      <tr><th style="width:24%">时间节点</th><th style="width:34%">动作</th><th>交付物</th></tr>
+      <tr><td>入职第 1 天</td><td>分配训练员、制定带教计划</td><td>《带教计划表》</td></tr>
+      <tr><td>每个工作站学习期间</td><td>按四步带教法施教</td><td>《带教记录表》</td></tr>
+      <tr><td>每周结束</td><td>周度带教小结</td><td>《周带教小结》</td></tr>
+      <tr><td>工作站学完</td><td>训练员签字确认掌握</td><td>工作站掌握确认单</td></tr>
+      <tr><td>训练员认证周期</td><td>训练员选拔与认证</td><td>《训练员认证评分表》</td></tr>
+    </table>
+
+    <div class="highlight">
+      <div class="lbl">训练员认证标准（示例）</div>
+      <p><strong>硬性条件：</strong>在本岗位独立上岗满 6 个月，本人考核成绩连续 3 个月达良好及以上，无重大客诉。</p>
+      <p><strong>能力要求：</strong>能完整、准确讲解工作站标准；能做出规范示范动作；能发现新人操作中的问题并给出改进建议。</p>
+      <p><strong>认证方式：</strong>实操示范（40%）+ 试讲（30%）+ 主管评价（30%），总分 80 分以上通过。</p>
+    </div>
+  </div>
+
+  <!-- ══════════════ 四、考核 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c3">04</div>
+      <div class="titles">
+        <h2>流程三：考核（是否达标）</h2>
+        <div class="oneline">一句话定位：用统一标准检验能力，决定能不能上岗、转正、晋级</div>
+      </div>
+    </div>
+
+    <div class="position-box">
+      <div class="lbl">一句话定位</div>
+      <div class="txt">考核 = 是否达标。用同一把尺子量所有人，让"达标"这件事说得清、看得见。</div>
+    </div>
+
+    <h3>4.1 目标</h3>
+    <ul>
+      <li>客观、公正地检验新员工是否真正掌握标准，避免"带教过了就当会了"的假达标。</li>
+      <li>把考核结果数据化，为转正、晋级、复训提供依据。</li>
+      <li>通过考核暴露标准与带教中的问题，反向推动优化。</li>
+    </ul>
+
+    <h3>4.2 考核层次与方式</h3>
+    <table>
+      <tr><th style="width:20%">考核类型</th><th style="width:16%">时机</th><th style="width:34%">考核方式</th><th>达标标准</th></tr>
+      <tr><td>工作站考核</td><td>每站学完</td><td>实操演示 + 口述要点</td><td>评分 80 分以上</td></tr>
+      <tr><td>首周考核</td><td>入职第 7 天</td><td>基础理论 + 迎宾接待实操</td><td>合格，可进入下一阶段</td></tr>
+      <tr><td>月度考核</td><td>入职第 30 天</td><td>综合实操 + 情景模拟（接待完整顾客）</td><td>85 分以上，准予转正</td></tr>
+      <tr><td>转正考核</td><td>试用期满</td><td>独立接待 + 主管评价 + 顾客反馈</td><td>综合评定合格</td></tr>
+      <tr><td>晋升考核</td><td>晋级申请时</td><td>进阶技能 + 带教能力 + 业绩指标</td><td>按岗位晋级标准</td></tr>
+    </table>
+
+    <h3>4.3 关键动作</h3>
+    <ul>
+      <li><strong>统一评分标准：</strong>每类考核都使用《实操考核评分表》，评分为标准化打分，减少主观随意性。</li>
+      <li><strong>现场考核 + 记录：</strong>考核过程留痕（实操记录、评分表、顾客反馈），成绩归档。</li>
+      <li><strong>结果反馈：</strong>考核结束后 1 个工作日内向新员工反馈结果与改进点，明确下一步。</li>
+      <li><strong>未通过处理：</strong>详见第八章复训机制，安排针对性补强后重考。</li>
+    </ul>
+
+    <h3>4.4 责任角色分工</h3>
+    <table>
+      <tr><th style="width:22%">角色</th><th>在"考核"环节的职责</th></tr>
+      <tr><td><strong>新员工</strong></td><td>按时参加考核，独立完成考核内容，正视结果，按反馈改进。</td></tr>
+      <tr><td><strong>训练员</strong></td><td>参与实操类考核评分，提供平时表现记录，协助分析薄弱项。</td></tr>
+      <tr><td><strong>值班经理</strong></td><td>组织考核实施，担任主考或监考，汇总成绩，把控考核公平性。</td></tr>
+      <tr><td><strong>门店负责人</strong></td><td>审批考核结果，裁定争议，决定转正与晋级，对考核整体质量负责。</td></tr>
+    </table>
+
+    <h3>4.5 时间节点与交付物</h3>
+    <table>
+      <tr><th style="width:24%">时间节点</th><th style="width:34%">动作</th><th>交付物</th></tr>
+      <tr><td>第 7 天</td><td>首周考核</td><td>首周考核评分表</td></tr>
+      <tr><td>第 30 天</td><td>月度综合考核</td><td>月度考核成绩单</td></tr>
+      <tr><td>试用期满</td><td>转正考核</td><td>转正评定表</td></tr>
+      <tr><td>每季度</td><td>在岗复训考核</td><td>复训考核记录</td></tr>
+      <tr><td>晋级申请时</td><td>晋升考核</td><td>晋升评定表</td></tr>
+    </table>
+  </div>
+
+  <!-- ══════════════ 五、优化 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c4">05</div>
+      <div class="titles">
+        <h2>流程四：优化（持续迭代）</h2>
+        <div class="oneline">一句话定位：让实战数据回流，把好的固化、把差的改掉，循环升级</div>
+      </div>
+    </div>
+
+    <div class="position-box">
+      <div class="lbl">一句话定位</div>
+      <div class="txt">优化 = 持续迭代。用数据说话，把考核、客诉、新品问题变成下一版标准的修改清单。</div>
+    </div>
+
+    <h3>5.1 目标</h3>
+    <ul>
+      <li>让培训体系不是"一锤子买卖"，而是随门店经营不断进化的活体系统。</li>
+      <li>把考核通过率、QSC 得分、客诉、新品落地问题等真实数据，转化为可执行的标准修订项。</li>
+      <li>形成"数据采集 → 分析问题 → 修订标准 → 重新培训"的闭环，让每一轮培训都比上一轮更好。</li>
+    </ul>
+
+    <h3>5.2 关键动作</h3>
+    <table>
+      <tr><th style="width:6%">序号</th><th style="width:28%">关键动作</th><th>具体内容</th></tr>
+      <tr><td>1</td><td>数据采集</td><td>归集考核通过率、QSC 检查得分、客诉记录、新品推广效果、员工流失率等数据。</td></tr>
+      <tr><td>2</td><td>月度复盘</td><td>值班经理组织月度培训复盘会，分析数据找问题：哪些标准没人达标？哪些客诉反复出现？</td></tr>
+      <tr><td>3</td><td>定位根因</td><td>区分问题来源——是标准不合理、带教不到位，还是员工执行不严，针对性处理。</td></tr>
+      <tr><td>4</td><td>标准修订</td><td>对确认有问题的标准进行修订，更新版本号，填写《标准修订记录表》。</td></tr>
+      <tr><td>5</td><td>重新培训</td><td>修订后的标准立即纳入下一轮带教与在岗复训，确保全员同步更新。</td></tr>
+      <tr><td>6</td><td>效果验证</td><td>下一周期用同样指标验证优化效果，形成"改了就看得见"的正反馈。</td></tr>
+    </table>
+
+    <h3>5.3 数据回流到优化的路径</h3>
+    <div class="closed-loop">
+      <div class="loop-step"><div class="loop-num">1</div><div class="loop-text"><strong>考核通过率偏低</strong> → 说明该工作站标准太难懂或带教方法不到位 → 拆解标准、增加示范、调整带教节奏。</div></div>
+      <div class="loop-step"><div class="loop-num">2</div><div class="loop-text"><strong>QSC 得分下滑</strong> → 说明服务标准执行走样 → 补充检查表条目、加强现场督导、纳入复训重点。</div></div>
+      <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><strong>客诉重复出现</strong> → 说明标准有漏洞或员工理解偏差 → 修订标准细节，增加情景模拟考核。</div></div>
+      <div class="loop-step"><div class="loop-num">4</div><div class="loop-text"><strong>新品落地问题</strong> → 说明新品话术/知识未及时进标准 → 新品上市同步更新标准，7 日内完成全员培训。</div></div>
+      <div class="loop-step"><div class="loop-num">5</div><div class="loop-text"><strong>员工流失/晋升需求</strong> → 说明职业路径设计需调整 → 优化晋级规则与在职培养内容。</div></div>
+    </div>
+
+    <h3>5.4 责任角色分工</h3>
+    <table>
+      <tr><th style="width:22%">角色</th><th>在"优化"环节的职责</th></tr>
+      <tr><td><strong>新员工</strong></td><td>如实反馈学习难点与标准不合理之处，参与反馈收集。</td></tr>
+      <tr><td><strong>训练员</strong></td><td>反馈带教中发现的共性问题，参与标准修订讨论，提出改进建议。</td></tr>
+      <tr><td><strong>值班经理</strong></td><td>数据采集与分析的执行者，组织月度复盘会，起草标准修订建议。</td></tr>
+      <tr><td><strong>门店负责人</strong></td><td>审批标准修订，决定优化方向，对体系健康度负总责。</td></tr>
+    </table>
+
+    <h3>5.5 时间节点与交付物</h3>
+    <table>
+      <tr><th style="width:24%">时间节点</th><th style="width:34%">动作</th><th>交付物</th></tr>
+      <tr><td>每月末</td><td>月度培训复盘会</td><td>《月度培训复盘报告》</td></tr>
+      <tr><td>每季度</td><td>标准全面审视</td><td>季度标准修订清单</td></tr>
+      <tr><td>新品上市 / 重大客诉后</td><td>专项标准更新</td><td>专项修订记录</td></tr>
+      <tr><td>每半年</td><td>体系健康度评估</td><td>培训数据看板年度报告</td></tr>
+    </table>
+  </div>
+
+  <!-- ══════════════ 六、配套工具 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c1">06</div>
+      <div class="titles">
+        <h2>配套工具与模板清单</h2>
+        <div class="oneline">每件工具都有明确用途和使用方式，让四大流程"有抓手、能落地"</div>
+      </div>
+    </div>
+
+    <p>四大流程要跑起来，必须依靠一整套标准化工具承载。以下工具贯穿标准—带教—考核—优化全链条，建议统一编号、集中存放于门店培训文件夹，并指定专人维护。</p>
+
+    <h3>6.1 工具清单</h3>
+    <div class="tool-card">
+      <div class="tool-name">① 岗位训练手册</div>
+      <div class="tool-line"><span>用途：</span>承载全部工作站的操作标准，是新员工学习的"主教材"。</div>
+      <div class="tool-line"><span>使用方式：</span>入职当天发放，带教期间随身携带，每个工作站学习前先通读、学习中对照、学完后签字确认。</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">② 工作站检查表</div>
+      <div class="tool-line"><span>用途：</span>把工作站标准拆成可打勾的检查项，用于自检与督导。</div>
+      <div class="tool-line"><span>使用方式：</span>新员工每日自查，训练员随时抽检，值班经理每周定期检查并记录。</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">③ 训练员认证标准表</div>
+      <div class="tool-line"><span>用途：</span>规范训练员选拔与认证，保证带教质量。</div>
+      <div class="tool-line"><span>使用方式：</span>员工申请带教资格时使用，按实操示范、试讲、主管评价三部分打分，80 分以上持证上岗。</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">④ 实操考核评分表</div>
+      <div class="tool-line"><span>用途：</span>统一考核评分尺度，让各工作站考核客观可比。</div>
+      <div class="tool-line"><span>使用方式：</span>每次考核时由主考逐项打分，包含动作要点、沟通表现、顾客体验等维度，考后归档。</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">⑤ 带教计划表 / 带教记录表</div>
+      <div class="tool-line"><span>用途：</span>规划并记录带教过程，让带教有始有终、可追溯。</div>
+      <div class="tool-line"><span>使用方式：</span>入职首日填写计划，每次带教后记录学习内容与掌握程度，作为考核与调整依据。</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">⑥ 培训数据看板</div>
+      <div class="tool-line"><span>用途：</span>集中呈现考核通过率、QSC 得分、客诉量等关键指标，为优化提供数据支撑。</div>
+      <div class="tool-line"><span>使用方式：</span>值班经理每月更新，门店负责人在复盘会上查看，作为标准修订决策依据。</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">⑦ 标准修订记录表</div>
+      <div class="tool-line"><span>用途：</span>记录每一次标准修订的内容、原因、生效时间。</div>
+      <div class="tool-line"><span>使用方式：</span>标准变更时填写，与旧版本一并归档，确保全员使用最新版。</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">⑧ 新人成长档案</div>
+      <div class="tool-line"><span>用途：</span>汇总新员工从入职到转正的全部培训与考核记录，一人一档。</div>
+      <div class="tool-line"><span>使用方式：</span>由训练员与值班经理共同维护，用于转正评定、晋升参考与后续培养。</div>
+    </div>
+
+    <h3>6.2 工具与流程对应关系</h3>
+    <table>
+      <tr><th style="width:20%">流程</th><th>核心工具</th></tr>
+      <tr><td><strong>标准</strong></td><td>岗位训练手册、工作站检查表、标准修订记录表</td></tr>
+      <tr><td><strong>带教</strong></td><td>带教计划表、带教记录表、训练员认证标准表</td></tr>
+      <tr><td><strong>考核</strong></td><td>实操考核评分表、新人成长档案</td></tr>
+      <tr><td><strong>优化</strong></td><td>培训数据看板、月度复盘报告、标准修订记录表</td></tr>
+    </table>
+  </div>
+
+  <!-- ══════════════ 七、培训路径 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c2">07</div>
+      <div class="titles">
+        <h2>新员工培训路径与里程碑</h2>
+        <div class="oneline">首日 → 首周 → 首月 → 转正，四个里程碑清晰可控</div>
+      </div>
+    </div>
+
+    <p>新员工入职后按"首日适应—首周入门—首月上岗—转正独立"四个阶段推进，每个阶段设明确的里程碑与达成标准，未达标者进入复训流程。</p>
+
+    <h3>7.1 培训路径总览</h3>
+    <div class="stats">
+      <div class="stat"><div class="num">Day 1</div><div class="txt">首日：融入与认知</div></div>
+      <div class="stat"><div class="num">Day 7</div><div class="txt">首周：基础入门</div></div>
+      <div class="stat"><div class="num">Day 30</div><div class="txt">首月：独立上岗</div></div>
+      <div class="stat"><div class="num">试用期满</div><div class="txt">转正：正式员工</div></div>
+    </div>
+
+    <h3>7.2 各阶段里程碑</h3>
+    <table>
+      <tr><th style="width:14%">阶段</th><th style="width:24%">主要任务</th><th style="width:30%">里程碑（达成标志）</th><th>考核方式</th></tr>
+      <tr>
+        <td><strong>首日</strong></td>
+        <td>入职欢迎、企业文化、制度规范、门店环境熟悉、分配训练员</td>
+        <td>完成入职手续，认识团队，了解门店基本运作，明确带教计划</td>
+        <td>入职确认签字</td>
+      </tr>
+      <tr>
+        <td><strong>首周</strong></td>
+        <td>学习迎宾接待、基础产品知识、门店动线，跟随训练员观察</td>
+        <td>能独立完成迎宾与简单接待，掌握基础术语与产品分类</td>
+        <td>首周考核（≥合格）</td>
+      </tr>
+      <tr>
+        <td><strong>首月</strong></td>
+        <td>系统学习各工作站，完成验光接待、选镜配镜、收银结算等核心流程</td>
+        <td>能独立完成一个完整顾客接待流程，各工作站考核达标</td>
+        <td>月度综合考核（≥85 分）</td>
+      </tr>
+      <tr>
+        <td><strong>转正</strong></td>
+        <td>独立接待顾客，稳定输出服务质量，参与门店日常运营</td>
+        <td>独立接待无重大差错，顾客反馈良好，主管综合评定合格</td>
+        <td>转正考核</td>
+      </tr>
+    </table>
+
+    <h3>7.3 里程碑达成与推进规则</h3>
+    <ul>
+      <li>每个里程碑设"通过 / 待改进 / 未通过"三档结论，未通过者不得进入下一阶段。</li>
+      <li>首周考核未通过 → 延长带教 3–5 天，针对性补强后重考。</li>
+      <li>月度考核未通过 → 进入复训流程（见第九章），原则上 1 个月内完成补考。</li>
+      <li>转正考核未通过 → 视情况延长试用期 1 个月，仍不达标则不予转正。</li>
+    </ul>
+  </div>
+
+  <!-- ══════════════ 八、工作站顺序与晋级 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c2">08</div>
+      <div class="titles">
+        <h2>工作站学习顺序与晋级规则</h2>
+        <div class="oneline">由易到难、由简单到复杂，按顺序学、按标准晋级</div>
+      </div>
+    </div>
+
+    <h3>8.1 工作站学习顺序</h3>
+    <p>按照顾客进店动线与技能难度，新员工依次学习以下工作站，前一站考核通过方可进入下一站：</p>
+    <table>
+      <tr><th style="width:10%">顺序</th><th style="width:24%">工作站</th><th style="width:36%">核心内容</th><th>难度</th></tr>
+      <tr><td>第 1 站</td><td>迎宾接待</td><td>问候用语、迎宾礼仪、引导入座、初步需求了解</td><td>★</td></tr>
+      <tr><td>第 2 站</td><td>产品认知</td><td>镜架镜片分类、品牌知识、材质特性、价格区间</td><td>★★</td></tr>
+      <tr><td>第 3 站</td><td>问诊沟通</td><td>用眼场景询问、旧镜不适排查、需求判断</td><td>★★</td></tr>
+      <tr><td>第 4 站</td><td>验光操作</td><td>电脑验光、综合验光仪操作、试戴调整</td><td>★★★★</td></tr>
+      <tr><td>第 5 站</td><td>处方解读与选镜</td><td>处方讲解、镜架镜片推荐、功能镜片引导</td><td>★★★</td></tr>
+      <tr><td>第 6 站</td><td>加工调整</td><td>镜架调整、装配验收、佩戴舒适度处理</td><td>★★★</td></tr>
+      <tr><td>第 7 站</td><td>收银结算</td><td>系统操作、会员登记、售后政策说明</td><td>★★</td></tr>
+      <tr><td>第 8 站</td><td>取镜回访与售后</td><td>取镜指导、佩戴回访、售后处理流程</td><td>★★★</td></tr>
+    </table>
+
+    <h3>8.2 晋级规则</h3>
+    <table>
+      <tr><th style="width:20%">职级</th><th style="width:34%">晋级条件</th><th>对应权限</th></tr>
+      <tr><td><strong>见习员工</strong></td><td>入职首月，处于学习期</td><td>在训练员指导下参与接待，不得独立完成核心流程</td></tr>
+      <tr><td><strong>正式员工</strong></td><td>转正考核通过，各工作站达标</td><td>可独立完成完整顾客接待流程</td></tr>
+      <tr><td><strong>资深员工</strong></td><td>独立上岗满 6 个月，考核良好，掌握全岗位技能</td><td>可处理复杂顾客需求，参与新人辅助带教</td></tr>
+      <tr><td><strong>训练员</strong></td><td>通过训练员认证，具备示范与讲解能力</td><td>可独立带教新员工，参与标准编制</td></tr>
+      <tr><td><strong>值班经理</strong></td><td>具备训练员资格 + 管理能力 + 考核达标</td><td>负责班次运营、组织考核、统筹带教</td></tr>
+      <tr><td><strong>门店负责人</strong></td><td>具备全面运营管理与培训体系管理能力</td><td>审批标准、决定晋升、对门店整体负责</td></tr>
+    </table>
+
+    <div class="highlight">
+      <div class="lbl">晋级通用要求</div>
+      <p>• 晋级需"技能达标 + 考核合格 + 在职时长满足"三者同时具备；</p>
+      <p>• 每次晋级均需提交申请、参加考核、由门店负责人审批；</p>
+      <p>• 晋级后设 1 个月观察期，观察期内若明显不适应新职级要求，可回调原岗。</p>
+    </div>
+  </div>
+
+  <!-- ══════════════ 九、复训与在职发展 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c3">09</div>
+      <div class="titles">
+        <h2>复训机制与在职发展考核</h2>
+        <div class="oneline">未通过不放弃，用复训补强；在岗不停学，用复训保持水准</div>
+      </div>
+    </div>
+
+    <h3>9.1 考核未通过的复训机制</h3>
+    <table>
+      <tr><th style="width:18%">情形</th><th style="width:34%">复训安排</th><th>时间节点</th></tr>
+      <tr><td>工作站考核未通过</td><td>训练员针对薄弱项重讲、重示范，练习后 3 日内重考</td><td>3 个工作日内</td></tr>
+      <tr><td>首周考核未通过</td><td>延长带教 3–5 天，重点补强基础接待与产品知识</td><td>5 个工作日内</td></tr>
+      <tr><td>月度考核未通过</td><td>制定专项补强计划，由训练员一对一辅导，1 个月内补考</td><td>1 个月内</td></tr>
+      <tr><td>转正考核未通过</td><td>延长试用期 1 个月，重点辅导后再评</td><td>延长 1 个月</td></tr>
+      <tr><td>连续两次未通过</td><td>由门店负责人约谈，评估岗位匹配度，必要时调整岗位</td><td>评估后确定</td></tr>
+    </table>
+
+    <div class="highlight">
+      <div class="lbl">复训原则</div>
+      <p>• 复训是补强手段，不是惩罚措施，目的是让员工真正具备达标能力；</p>
+      <p>• 复训必须有针对性——先定位薄弱环节，再安排对应练习，避免"重学一遍"；</p>
+      <p>• 复训过程记入新人成长档案，作为后续培养参考。</p>
+    </div>
+
+    <h3>9.2 在职复训要求</h3>
+    <table>
+      <tr><th style="width:22%">复训类型</th><th style="width:20%">周期</th><th>内容与要求</th></tr>
+      <tr><td>日常on-the-job复训</td><td>每月</td><td>结合班前会/班后会，回顾近期服务问题，强化易错工作站</td></tr>
+      <tr><td>季度技能复训</td><td>每季度</td><td>针对 QSC 得分、客诉集中的环节进行专项演练与考核</td></tr>
+      <tr><td>新品专项培训</td><td>新品上市时</td><td>7 日内完成全员培训，考试合格后方可向顾客推荐</td></tr>
+      <tr><td>新标准贯标培训</td><td>标准修订后</td><td>新版标准发布后 3 日内完成全员宣贯与确认签字</td></tr>
+      <tr><td>全岗技能轮训</td><td>每半年</td><td>确保员工熟练掌握多工作站技能，提升排班灵活性</td></tr>
+    </table>
+
+    <h3>9.3 晋升考核要求</h3>
+    <table>
+      <tr><th style="width:20%">晋升方向</th><th style="width:38%">考核内容</th><th>达标要求</th></tr>
+      <tr><td>正式员工 → 资深员工</td><td>全工作站技能考核 + 服务案例答辩</td><td>综合评分 85 分以上</td></tr>
+      <tr><td>资深员工 → 训练员</td><td>训练员认证（实操示范 + 试讲 + 主管评价）</td><td>认证总分 80 分以上</td></tr>
+      <tr><td>训练员 → 值班经理</td><td>带教成果 + 班次管理 + 综合考评</td><td>带教新人转正率达标，管理能力优秀</td></tr>
+      <tr><td>值班经理 → 门店负责人</td><td>全面运营能力 + 培训体系管理 + 业绩指标</td><td>经门店/区域综合评定合格</td></tr>
+    </table>
+  </div>
+
+  <!-- ══════════════ 十、闭环与总结 ══════════════ -->
+  <div class="chapter">
+    <div class="chapter-head">
+      <div class="chapter-num c4">10</div>
+      <div class="titles">
+        <h2>闭环运行机制与四流程总结</h2>
+        <div class="oneline">四大流程首尾相接，数据回流，标准化升级，循环不停</div>
+      </div>
+    </div>
+
+    <h3>10.1 数据回流闭环</h3>
+    <p>四大流程不是线性的一次性动作，而是一个持续转动的飞轮。关键数据从考核环节和门店实际运营中产生，回流到优化环节，推动标准修订，再重新进入下一轮培训循环。</p>
+
+    <table>
+      <tr><th style="width:24%">回流数据</th><th style="width:32%">反映的问题</th><th>优化动作</th></tr>
+      <tr><td>考核通过率</td><td>标准难度或带教质量</td><td>调整标准颗粒度、优化带教方法、补充示范素材</td></tr>
+      <tr><td>QSC 得分</td><td>服务标准执行情况</td><td>补充检查表条目、加强督导、纳入复训重点</td></tr>
+      <tr><td>顾客投诉</td><td>标准漏洞或执行偏差</td><td>修订标准细节、增加情景模拟考核、专项培训</td></tr>
+      <tr><td>新品落地问题</td><td>新品知识未及时进标准</td><td>新品上市同步更新标准，7 日内完成培训</td></tr>
+      <tr><td>员工流失率 / 晋升需求</td><td>职业路径吸引力</td><td>优化晋级规则与在岗培养内容</td></tr>
+    </table>
+
+    <h3>10.2 完整闭环示意图</h3>
+    <div class="closed-loop">
+      <div class="loop-step"><div class="loop-num">1</div><div class="loop-text"><strong>标准</strong>：编制/修订岗位标准与训练手册（教什么）</div></div>
+      <div class="loop-step"><div class="loop-num">2</div><div class="loop-text">↓ 标准进入带教环节</div></div>
+      <div class="loop-step"><div class="loop-num">3</div><div class="loop-text"><strong>带教</strong>：认证训练员按四步带教法施教（怎么教）</div></div>
+      <div class="loop-step"><div class="loop-num">4</div><div class="loop-text">↓ 带教成果进入考核环节</div></div>
+      <div class="loop-step"><div class="loop-num">5</div><div class="loop-text"><strong>考核</strong>：工作站/首周/月度/转正/晋升考核（是否达标）</div></div>
+      <div class="loop-step"><div class="loop-num">6</div><div class="loop-text">↓ 未通过→复训；考核数据 + 客诉 + QSC + 新品问题进入优化环节</div></div>
+      <div class="loop-step"><div class="loop-num">7</div><div class="loop-text"><strong>优化</strong>：月度复盘、根因分析、标准修订（持续迭代）</div></div>
+      <div class="loop-step"><div class="loop-num">8</div><div class="loop-text">↓ 修订后的标准回归"标准"环节，开启下一轮循环</div></div>
+    </div>
+
+    <h3>10.3 四流程逻辑关系总结</h3>
+    <div class="summary">
+      <h3>一句话记住四大流程</h3>
+      <p><strong>标准</strong>是地基——<strong>教什么</strong>，把所有"应该怎么做"写清楚；</p>
+      <p><strong>带教</strong>是通道——<strong>怎么教</strong>，用认证训练员把标准变成新人的实际动作；</p>
+      <p><strong>考核</strong>是标尺——<strong>是否达标</strong>，用统一标准检验能力，决定上岗与晋级；</p>
+      <p><strong>优化</strong>是引擎——<strong>持续迭代</strong>，把实战数据变回新标准，让体系越跑越顺。</p>
+      <p style="margin-top:14px;">四者首尾相连：<strong>标准 → 带教 → 考核 → 优化 → 新标准 → ……</strong></p>
+      <p>每一轮循环，都让门店的服务品质、员工能力、顾客满意度向上一个台阶。新员工培训，从此不再是"能不能碰上好师傅"的运气，而是一条稳定、可复制、能进化的人才生产线。</p>
+    </div>
+
+    <div class="footer-note">
+      连锁眼镜门店新员工培训四大流程体系 &nbsp;|&nbsp; 标准—带教—考核—优化 &nbsp;|&nbsp; 闫胜君整理 &nbsp;|&nbsp; 内部培训资料 · 请勿外传
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
