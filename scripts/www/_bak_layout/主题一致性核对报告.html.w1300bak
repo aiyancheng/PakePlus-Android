@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全站 55 天「主题 vs 内容」逐日核对报告</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Microsoft YaHei","PingFang SC",sans-serif;
+    background:#f5f7fa; color:#2c3e50; line-height:1.75;
+    padding:24px 16px; font-size:15px;
+  }
+  .wrap { max-width:1080px; margin:0 auto; }
+  header {
+    background:linear-gradient(135deg,#2c3e50,#34495e);
+    color:#fff; border-radius:14px; padding:28px 32px; margin-bottom:22px;
+  }
+  header h1 { font-size:24px; margin-bottom:8px; }
+  header p { opacity:.85; font-size:14px; }
+  .stat-row { display:flex; gap:14px; flex-wrap:wrap; margin:18px 0 26px; }
+  .stat {
+    flex:1 1 160px; background:#fff; border-radius:12px; padding:18px 20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05); border-left:4px solid #3498db;
+  }
+  .stat .n { font-size:26px; font-weight:700; color:#2980b9; }
+  .stat .t { font-size:13px; color:#7f8c8d; margin-top:2px; }
+  .stat.green { border-color:#27ae60; } .stat.green .n { color:#27ae60; }
+  .stat.orange { border-color:#e67e22; } .stat.orange .n { color:#e67e22; }
+  h2.sec {
+    font-size:18px; margin:30px 0 14px; padding-left:12px;
+    border-left:5px solid #2980b9; color:#1a5276;
+  }
+  .card {
+    background:#fff; border-radius:12px; padding:20px 24px; margin-bottom:16px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+  }
+  .day-head {
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    padding-bottom:10px; margin-bottom:12px; border-bottom:1px dashed #e0e6ed;
+  }
+  .day-tag {
+    background:#2980b9; color:#fff; font-size:13px; font-weight:700;
+    padding:3px 12px; border-radius:20px;
+  }
+  .day-head .file { font-size:13px; color:#7f8c8d; }
+  .theme-line { margin:6px 0; font-size:14px; }
+  .theme-line .k { color:#7f8c8d; display:inline-block; min-width:76px; }
+  .old { color:#c0392b; }
+  .new { color:#27ae60; }
+  .badge {
+    display:inline-block; font-size:12px; padding:2px 10px; border-radius:6px;
+    margin-left:6px; vertical-align:middle;
+  }
+  .badge.out { background:#fdecea; color:#c0392b; }
+  .badge.dup { background:#fff4e5; color:#e67e22; }
+  .badge.ok  { background:#eafaf1; color:#27ae60; }
+  table { width:100%; border-collapse:collapse; margin:10px 0; font-size:14px; }
+  th,td { padding:10px 12px; text-align:left; border-bottom:1px solid #eef2f6; }
+  th { background:#f0f4f8; color:#34495e; font-weight:600; }
+  tr:hover td { background:#fafcfe; }
+  .strike { text-decoration:line-through; color:#c0392b; }
+  .keep { color:#27ae60; }
+  .note {
+    background:#eef6fb; border-left:4px solid #3498db; border-radius:0 8px 8px 0;
+    padding:12px 16px; font-size:13.5px; color:#2874a6; margin:10px 0;
+  }
+  footer { text-align:center; color:#95a5a6; font-size:13px; margin:34px 0 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📋 全站 55 天「主题 vs 内容」逐日核对报告</h1>
+    <p>眼镜门店新员工 8 周成才培训课程 · 逐日核对学习内容是否与当天设定主题一致并修正偏差</p>
+  </header>
+
+  <div class="stat-row">
+    <div class="stat"><div class="n">55</div><div class="t">核对的学习内容文件</div></div>
+    <div class="stat orange"><div class="n">8</div><div class="t">发现主题偏差的日期</div></div>
+    <div class="stat"><div class="n">3</div><div class="t">主题越界类</div></div>
+    <div class="stat"><div class="n">5</div><div class="t">同主题重复类</div></div>
+    <div class="stat green"><div class="n">108</div><div class="t">全站文件 div 校验通过</div></div>
+  </div>
+
+  <div class="note">
+    <strong>核对方法：</strong>对每个学习内容文件提取 <code>&lt;title&gt;</code>、副标题、正文 h2 章节（仅取 LM 区之前），逐日交叉比对主题与章节内容；
+    对偏差章节定位其容器（向上找最近 &lt;div&gt; + depth 配平）整体删除或合并。
+  </div>
+
+  <h2 class="sec">一、主题越界类（章节内容属于其他天的主题）</h2>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 11</span>
+      <span class="file">第2周/Day_11_学习内容.html</span>
+      <span class="badge out">主题越界</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>镜片基础知识（二）：功能性镜片</div>
+    <div class="theme-line"><span class="k">问题所在：</span>文末附带「🔬 补充内容：验配流程全貌预览」「🔧 仪器设备日常维护」两章，讲的是<b>验光流程与设备维护</b>，与"功能性镜片"无关，且与 Day 15（验光辅助操作入门）主题重叠。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="new">删除上述 2 章</span>，保留「四大功能性镜片详解」「渐进镜片重点详解」，章节 5→<b>2</b> 章。</div>
+  </div>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 12</span>
+      <span class="file">第2周/Day_12_学习内容.html</span>
+      <span class="badge out">主题越界 + 重复</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>验光处方解读与产品搭配</div>
+    <div class="theme-line"><span class="k">问题所在：</span>文末「🔬 补充：渐进镜与功能镜详解」重述<b>渐进多焦点镜片原理与防蓝光销售技巧</b>，与 Day 11 内容重复，越出"处方解读与搭配"主题。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="new">删除该章</span>，保留「验光处方单解读」「根据处方推荐方案」「镜片推荐决策树」（决策树属处方搭配的合理延伸），章节 4→<b>3</b> 章。</div>
+  </div>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 13</span>
+      <span class="file">第2周/Day_13_学习内容.html</span>
+      <span class="badge out">主题越界</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>品牌知识与产品陈列认知</div>
+    <div class="theme-line"><span class="k">问题所在：</span>末尾「📝 补充：配镜处方解读练习」讲<b>处方解读</b>（属 Day 12 主题）、「📐 瞳距测量方法」讲<b>验光操作</b>（属 Day 15 主题），均越出"品牌与陈列"主题。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="new">删除上述 2 章</span>，保留「镜架品牌认知」「镜片品牌认知」「产品陈列规则」，章节 5→<b>3</b> 章。</div>
+  </div>
+
+  <h2 class="sec">二、同主题重复类（缩水版重述，冗余）</h2>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 16</span>
+      <span class="file">第3周/Day_16_学习内容.html</span>
+      <span class="badge dup">同主题重复</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>镜架调整与整形技术</div>
+    <div class="theme-line"><span class="k">问题所在：</span>文末「🔧 常见镜架问题与解决方案」表格与前面「第二部分：常见配戴问题与调整方法」内容重叠（镜架歪斜/压鼻/夹耳均已讲过）。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="new">删除重复表格章</span>，保留「调整工具认知」「常见配戴问题与调整方法」「标准调整流程」，章节 4→<b>3</b> 章。</div>
+  </div>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 23</span>
+      <span class="file">第4周/Day_23_学习内容.html</span>
+      <span class="badge dup">同主题重复</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>产品介绍话术</div>
+    <div class="theme-line"><span class="k">问题所在：</span>footer 之后又出现「🎭 FAB话术练习场景」，把 FAB 三要素用缩水版重讲一遍，与「一、FABE法则」完全重复。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="new">删除 footer 后的重复章</span>，保留「FABE法则」「FABE实战案例」「根据需求选择卖点」「今日必背话术框架」，章节 5→<b>4</b> 章。</div>
+  </div>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 26</span>
+      <span class="file">第4周/Day_26_学习内容.html</span>
+      <span class="badge dup">同主题重复</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>连带销售与会员维护</div>
+    <div class="theme-line"><span class="k">问题所在：</span>文末「🎁 连带销售实战技巧」中的"连带销售时机识别""会员积分运用技巧"，与前面「一、连带销售的意义与时机」「二、会员制度与积分体系」重复。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="new">删除重复章</span>，保留「连带销售的意义与时机」「会员制度与积分体系」「顾客跟进与复购维护」「实战技巧汇总」，章节 5→<b>4</b> 章。</div>
+  </div>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 36</span>
+      <span class="file">第6周/Day_36_学习内容.html</span>
+      <span class="badge dup">同主题重复</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>独立接单第一天：标准接待流程</div>
+    <div class="theme-line"><span class="k">问题所在：</span>同一文件出现<b>两套"卡壳点"</b>——「🔑 独立接单常见卡壳点及解决方案」与「⚡ 独立接单常见卡壳点与应对」，主题完全一致。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="new">删除内容偏弱的第一套</span>（技术问题/价格异议/犹豫/两位客户），保留更实操的第二套（怎么开口/客户沉默/推荐镜片/不会的问题），章节 5→<b>4</b> 章。</div>
+  </div>
+
+  <div class="card">
+    <div class="day-head">
+      <span class="day-tag">Day 41</span>
+      <span class="file">第6周/Day_41_学习内容.html</span>
+      <span class="badge dup">同主题重复 → 合并</span>
+    </div>
+    <div class="theme-line"><span class="k">原主题：</span>售后服务与客户维护</div>
+    <div class="theme-line"><span class="k">问题所在：</span>「📞 回访话术设计」与前面「📞 取镜后回访话术」标题近似、主题重叠。</div>
+    <div class="theme-line"><span class="k">修正后：</span><span class="keep">合并不删</span>——把该章的 3 段话术（<b>3天适应回访 / 6个月复查提醒 / 节日关怀回访</b>）移入「📞 取镜后回访话术」card 内，再删除独立章（保留其独有价值，不丢内容），章节 8→<b>7</b> 章。</div>
+  </div>
+
+  <h2 class="sec">三、核对后判定为"主题一致、无需修改"的日期</h2>
+  <div class="card">
+    <p style="font-size:14px;color:#7f8c8d;margin-bottom:10px;">以下情形经核对属<b>合理的同主题延伸</b>或<b>设计结构</b>，予以保留：</p>
+    <table>
+      <thead><tr><th>日期 / 章节</th><th>判定理由</th></tr></thead>
+      <tbody>
+        <tr><td>Day 31「🎭 FAB实战升级：情感化表达」</td><td class="keep">FAB 主题的进阶深化（技术FAB→情感FAB），不重复，保留</td></tr>
+        <tr><td>Day 27 多个"投诉"章节</td><td class="keep">当天主题即"投诉处理与危机公关"，各章属正常分节</td></tr>
+        <tr><td>Day 48 多个"活动"章节</td><td class="keep">当天主题即"营销活动策划与执行"，各章属正常分节</td></tr>
+        <tr><td>Day 20/29/30~34 的「🎯 今日目标」</td><td class="keep">各文件统一的"今日目标"引导块，属设计结构</td></tr>
+        <tr><td>Day 39「渐进多焦点镜片深度解析 + 验配步骤」</td><td class="keep">当天主题"老视配镜与中老年服务"下的合理内容</td></tr>
+        <tr><td>Day 07/14/21/35/42/49/50/55/56</td><td class="keep">周测日 / 结业考核日，结构与主题一致</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sec">四、修正汇总表</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Day</th><th>原主题</th><th>问题类型</th><th>删除/处理的章节</th><th>章节数变化</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>镜片基础知识（二）</td><td>主题越界</td><td class="strike">验配流程全貌预览 / 仪器设备日常维护</td><td>5 → 2</td></tr>
+        <tr><td>12</td><td>验光处方解读与产品搭配</td><td>越界+重复</td><td class="strike">补充：渐进镜与功能镜详解</td><td>4 → 3</td></tr>
+        <tr><td>13</td><td>品牌知识与产品陈列认知</td><td>主题越界</td><td class="strike">配镜处方解读练习 / 瞳距测量方法</td><td>5 → 3</td></tr>
+        <tr><td>16</td><td>镜架调整与整形技术</td><td>同主题重复</td><td class="strike">常见镜架问题与解决方案</td><td>4 → 3</td></tr>
+        <tr><td>23</td><td>产品介绍话术</td><td>同主题重复</td><td class="strike">FAB话术练习场景</td><td>5 → 4</td></tr>
+        <tr><td>26</td><td>连带销售与会员维护</td><td>同主题重复</td><td class="strike">连带销售实战技巧</td><td>5 → 4</td></tr>
+        <tr><td>36</td><td>独立接单第一天</td><td>同主题重复</td><td class="strike">第一套"卡壳点及解决方案"</td><td>5 → 4</td></tr>
+        <tr><td>41</td><td>售后服务与客户维护</td><td>重复→合并</td><td class="strike">回访话术设计（话术移入前章）</td><td>8 → 7</td></tr>
+      </tbody>
+    </table>
+    <div class="note">校验结果：108 个 HTML 文件 <b>div 全部配平</b>、正文 <b>无重复章节标题</b>；修改前文件已备份至 <code>_bak_theme/</code>。</div>
+  </div>
+
+  <footer>闫胜君整理 · 眼镜门店新员工8周成才培训课程 · 主题一致性核对报告</footer>
+</div>
+</body>
+</html>
