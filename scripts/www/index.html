@@ -410,6 +410,29 @@
   .container{padding:14px 10px!important}
   .header h1{font-size:1.25em!important}
 }
+
+/*@@ HOME-HERO-UNIFY @@*/
+/* ═══════ 标题框(Hero)与正文框等宽 · 与日期页统一 1300px ═══════
+   横屏≈1280px → 1300px；竖屏≤900px → 自适应留白 16px */
+.hero{
+  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+  margin:16px auto 0!important;
+  padding:44px 36px 38px!important;
+  border-radius:16px!important;
+  box-shadow:0 8px 26px rgba(21,101,192,.18)!important;
+}
+.container{
+  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+  margin-left:auto!important;margin-right:auto!important;
+  padding-left:0!important;padding-right:0!important;
+}
+@media(max-width:900px){
+  .hero{padding:30px 20px 26px!important;margin-top:12px!important;border-radius:14px!important}
+  .container{margin-top:14px!important}
+}
+@media(max-width:600px){
+  .hero{padding:24px 14px 22px!important;border-radius:12px!important}
+}
 </style>
 </head>
 <body>
@@ -1185,7 +1208,6 @@
 
   <!-- ─── 学习建议 ─── -->
   <div class="tip-box" style="margin-top:40px">
-    <div class="icon">💡</div>
     <div>
       <h3>学习建议 · 按四大流程走完全程</h3>
       <p>每天按顺序完成当天的<strong>学习内容</strong>和<strong>练习题</strong>，两者之间可通过底部导航按钮一键切换。学习内容建议早班前或午休时阅读，练习题当天完成。每份学习内容末尾的「<strong>四大流程落地衔接</strong>」模块，会告诉你今天学的知识对应当哪个工作站、怎么带教、怎么考核、如何回流优化——请配合训练员逐项落实。<br>📌 <strong>中期考核（Day 28）</strong>和<strong>结业考核（Day 56）</strong>是阶段性检验，请认真对待，考核结果将作为转正评定的重要参考依据。</p>
