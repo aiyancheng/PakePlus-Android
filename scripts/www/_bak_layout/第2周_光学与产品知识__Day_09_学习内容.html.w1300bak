@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 09 | 镜架基础知识</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#e3f2fd,#bbdefb);padding:40px 30px;border-bottom:3px solid #2196F3;}
+  .day-tag{background:#2196F3;color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;color:#1565c0;margin-bottom:8px;}
+  .header .subtitle{color:#555;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}  .section{background:white;border-radius:12px;padding:28px;margin-bottom:24px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .section h2{font-size:1.3em;color:#1565c0;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid #e3f2fd;}
+  .section h3{font-size:1.05em;color:#333;margin:18px 0 10px;}
+  .section p{line-height:1.8;color:#555;margin-bottom:12px;font-size:0.95em;}
+  .section ul,.section ol{padding-left:20px;margin-bottom:14px;}
+  .section li{line-height:1.8;color:#555;font-size:0.95em;margin-bottom:4px;}
+  .material-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+  .material-card{background:#f5f5f5;border-radius:10px;padding:16px;}
+  .material-card .name{font-weight:700;color:#1565c0;margin-bottom:8px;}
+  .material-card .pros{color:#2e7d32;font-size:0.82em;margin-bottom:4px;}
+  .material-card .cons{color:#c62828;font-size:0.82em;}
+  .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .structure-table th,.rule-table th{background:#2196F3;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
+  .face-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;}
+  .face-card{background:#fff8e1;border-radius:10px;padding:16px;}
+  .face-card h4{color:#e65100;margin-bottom:8px;}
+  .face-card p{font-size:0.88em;color:#555;line-height:1.6;}
+  .highlight-box{background:#fff8e1;border-radius:8px;padding:16px 20px;margin:16px 0;}
+  .highlight-box .label{color:#F57F17;font-weight:700;font-size:0.85em;margin-bottom:6px;}
+  .summary-box{background:linear-gradient(135deg,#e3f2fd,#e8f5ff);border-radius:12px;padding:24px;margin-top:30px;}
+  .summary-box h3{color:#1565c0;margin-bottom:14px;}
+  .summary-box li{margin-bottom:8px;font-size:0.95em;}
+  .nav-footer{display:flex;justify-content:space-between;margin:30px 0 40px;}
+  .nav-btn{background:#2196F3;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#2196F3;border:2px solid #2196F3;}
+  @media(max-width:600px){.material-grid,.face-grid{grid-template-columns:1fr;}}
+
+  /* ══════════════════════════════════════════════
+     红米平板响应式适配（横屏1100px / 竖屏900px）
+     ══════════════════════════════════════════════ */
+
+  /* 平板横屏：内容区微调 */
+  @media (max-width: 1100px) {
+    .container { padding: 28px 24px !important; }
+    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+
+  /* 平板竖屏：核心适配断点 */
+  @media (max-width: 900px) {
+    body { padding: 12px !important; font-size: 15px; }
+    .container { padding: 20px 16px !important; border-radius: 10px !important; }
+    /* 学习内容：各类2列/3列网格折叠为1列 */
+    .value-cards, .material-grid, .face-grid,
+    .norm-grid, .salary-grid, .do-dont, .image-standard,
+    .safety-grid, .role-cards, .review-grid, .equipment-grid,
+    .lens-grid, .coating-grid, .term-grid, .display-rules,
+    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
+    .review-grid, .zone-grid, .test-info, .method-grid,
+    .question-type, .fab-grid, .form-grid, .wrong-right,
+    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
+    .achieve-grid, .product-card, .sign-area, .wish-cards,
+    .eval-row,
+    [class*="-grid"], [class*="grid-"],
+    .two-col { grid-template-columns: 1fr !important; }
+    /* 3列→2列特殊处理（不完全折叠，保留2列） */
+    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 导航按钮：允许换行，防止溢出 */
+    .nav-footer, .nav-bar {
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .nav-btn {
+      font-size: 0.88em !important;
+      padding: 10px 18px !important;
+      text-align: center !important;
+    }
+    /* 标题字号适配 */
+    .header h1, h1 { font-size: 1.4em !important; }
+    .header .subtitle, .header .week-badge { font-size: 13px !important; }
+    /* 表格横向滚动（防溢出） */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* meta-bar 换行 */
+    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
+    /* 首页时间轴横向滚动 */
+    .timeline { overflow-x: auto; }
+  }
+
+  /* 手机 / 平板极窄竖屏 */
+  @media (max-width: 600px) {
+    body { padding: 8px !important; }
+    .container { padding: 16px 12px !important; }
+    .header h1, h1 { font-size: 1.2em !important; }
+    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .container { padding: 16px !important; }
+  }
+
+/* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1080px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+  .material-grid {
+    grid-template-columns:repeat(2,1fr)!important;gap:12px!important
+  }
+  .face-grid {
+    grid-template-columns:repeat(2,1fr)!important;gap:12px!important
+  }
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+  .material-grid,
+  .face-grid {
+    grid-template-columns:1fr!important
+  }
+}
+
+  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 参考 / 自测 / 阶段复盘） ═══════ */
+  .lm-block{border-radius:14px;padding:20px 24px;margin:24px 0;line-height:1.85}
+  .lm-block h3{margin:0 0 14px;font-size:1.1em;font-weight:700;letter-spacing:.3px}
+  .lm-list{margin:0;padding-left:22px}
+  .lm-list li{margin-bottom:9px}
+  .lm-goal{background:#e8f5e9;color:#1b5e20}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:#fff8e1;color:#4e342e}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:#f3e5f5;color:#4a148c}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-ref{background:#e3f2fd;color:#0d3c61}
+  .lm-ref h3{color:#1565c0}
+  .lm-quiz{background:#fce4ec;color:#880e4f}
+  .lm-quiz h3{color:#c2185b}
+  .lm-review{background:#ede7f6;color:#311b92}
+  .lm-review h3{color:#4527a0}
+  .lm-meta{margin:12px 0 0;font-size:.9em;opacity:.92}
+  .lm-pr{margin:0 0 14px;padding:14px 16px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:700;margin-bottom:6px}
+  .lm-pr-d{margin-bottom:6px}
+  .lm-pr-o{font-size:.92em;font-weight:600}
+  .lm-q{margin:0 0 10px;padding:10px 14px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:600;line-height:1.7}
+  .lm-q[open] summary{margin-bottom:8px}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.8}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  .lm-sub{font-weight:700;margin:14px 0 8px;font-size:1em}
+  @media(max-width:900px){
+    .lm-block{padding:16px 14px;margin:18px 0;line-height:1.75}
+    .lm-block h3{font-size:1.02em}
+    .lm-list{padding-left:18px}
+  }
+
+/* ══ HOME-BAR：顶部返回首页入口 ══ */
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+
+/* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
+  .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
+  .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
+  .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
+  .flow-hook b{color:#1a3a6b}
+  .flow-sub{margin:0 0 18px;font-size:.9em;color:#556}
+  .flow-sub strong{color:#1a3a6b}
+  .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .flow-col{border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 4px rgba(26,58,107,.05)}
+  .flow-h{font-weight:800;font-size:.98em;margin-bottom:10px;color:#1a3a6b;display:flex;align-items:center;gap:6px}
+  .flow-h .fh-tag{font-size:.7em;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px;letter-spacing:.5px}
+  .flow-std .flow-h{color:#2c5aa0}.flow-std .fh-tag{background:#2c5aa0}
+  .flow-teach .flow-h{color:#2e7d5b}.flow-teach .fh-tag{background:#2e7d5b}
+  .flow-check .flow-h{color:#c47f17}.flow-check .fh-tag{background:#c47f17}
+  .flow-opt .flow-h{color:#8e44ad}.flow-opt .fh-tag{background:#8e44ad}
+  .flow-say{font-size:.88em;color:#37475e;background:#f6f9ff;border-radius:8px;padding:10px 12px;margin-bottom:12px;line-height:1.7;border-left:3px solid #cdd9ec}
+  .flow-say b{color:#1a3a6b}
+  .flow-do-t{font-size:.82em;font-weight:800;color:#556;margin:12px 0 6px}
+  .flow-do{margin:0;padding-left:19px}
+  .flow-do li{font-size:.85em;line-height:1.7;margin-bottom:6px;color:#4a5568}
+  .flow-standard{font-size:.84em;color:#2e7d32;background:#eef8f0;border-radius:7px;padding:9px 12px;margin-top:12px;line-height:1.65}
+  .flow-standard b{color:#1b5e20}
+  .flow-pit{font-size:.84em;color:#b3541e;background:#fdf3ea;border-radius:7px;padding:9px 12px;margin-top:8px;line-height:1.65}
+  .flow-pit b{color:#8a3d0a}
+  .flow-meta{margin:18px 0 0;font-size:.84em;color:#5a6478;background:#eef3fb;border-radius:8px;padding:12px 16px;line-height:1.7}
+  .flow-meta b{color:#1a3a6b}
+  @media(max-width:900px){
+    .flow-grid{grid-template-columns:1fr;gap:12px}
+    .flow-block{padding:18px 16px}
+    .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
+  }
+/*@@ LAYOUT-UNIFY @@*/
+/* ═══════ 布局统一：标题框 = 内容框等宽 · 红米12.1寸平板完美适配 ═══════
+   横屏≈1280px → 统一 1080px；竖屏≤900px → 自适应留白
+   标题框(.header)与内容框(.container)使用完全相同的宽度规则 */
+.home-topbar .ht-inner{width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;margin:0 auto!important}
+.header{
+  width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;
+  margin:18px auto 0!important;padding:34px 30px!important;
+  border:0!important;border-radius:14px!important;
+  box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+}
+.container{
+  width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;
+  margin-left:auto!important;margin-right:auto!important;
+  padding-left:0!important;padding-right:0!important;
+}
+@media(max-width:900px){
+  .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+}
+@media(max-width:600px){
+  .header{padding:20px 15px!important}
+}
+/*@@ LAYOUT-UNIFY-2 @@*/
+/* ═══ meta-bar（学习时长/配套练习条）与标题框/内容框同宽 ═══ */
+.meta-bar{
+  width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;
+  margin:14px auto 0!important;padding:14px 30px!important;
+  border:0!important;border-radius:12px!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.06)!important;
+}
+@media(max-width:900px){
+  .meta-bar{padding:12px 16px!important;margin-top:12px!important}
+}
+/*@@ LAYOUT-UNIFY-3 @@*/
+/* ═══ 修正：box-sizing 兜底 + 容器内 header 自适应 + 表格竖屏防溢出 ═══ */
+.header,.container,.meta-bar,.home-topbar .ht-inner{box-sizing:border-box!important}
+.container > .header{width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+@media(max-width:900px){
+  table{max-width:100%!important}
+}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第2周 · Day 09</span>
+  <h1>🕶️ 镜架基础知识</h1>
+  <div class="subtitle">模块：知识 Knowledge | 今日主题：镜架材质 · 结构部件 · 脸型匹配</div>
+</div>
+<div class="container">
+
+<div class="lm-block lm-goal">
+  <h3>🎯 今日学习目标（学完你应该能做到）</h3>
+  <ul class="lm-list">
+      <li>能说出 4 类主流镜架材质（板材、TR90、金属/钛、记忆合金）的特点与适用人群</li>
+      <li>能拆解镜架 6 个部件：镜圈、镜腿、鼻托、桩头、铰链、鼻梁，并说出各自可能出现的故障</li>
+      <li>看懂镜架尺寸标注（如 52□18-145），能解释每个数字代表什么</li>
+      <li>能根据脸型给出 2 款以上镜架推荐，并说出推荐理由</li>
+      <li>会做一次基础试戴调整判断：镜架是否压鼻、夹脸、滑动</li>
+  </ul>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
+</div>
+
+  <div class="section">
+    <h2>🔧 第一部分：镜架材质大全</h2>
+    <p>材质决定了镜架的重量、强度、皮肤适应性和价格区间，是推荐时的重要依据。</p>
+    <div class="material-grid">
+      <div class="material-card">
+        <div class="name">钛合金（Titanium）</div>
+        <div class="pros">✅ 极轻、耐腐蚀、强度高、抗过敏</div>
+        <div class="cons">⚠️ 价格较高，焊接工艺要求高</div>
+      </div>
+      <div class="material-card">
+        <div class="name">板材（Acetate）</div>
+        <div class="pros">✅ 色彩丰富、质感强、可调整性好</div>
+        <div class="cons">⚠️ 较重，受热易变形</div>
+      </div>
+      <div class="material-card">
+        <div class="name">TR-90（记忆板材）</div>
+        <div class="pros">✅ 极轻、弹性好、抗摔、价格亲民</div>
+        <div class="cons">⚠️ 色彩相对单调，高档感不足</div>
+      </div>
+      <div class="material-card">
+        <div class="name">不锈钢（Stainless）</div>
+        <div class="pros">✅ 耐用、价格实惠、款式多</div>
+        <div class="cons">⚠️ 重量稍重，部分人群可能过敏</div>
+      </div>
+      <div class="material-card">
+        <div class="name">β钛（Beta Titanium）</div>
+        <div class="pros">✅ 弹性极佳、超轻、不易变形</div>
+        <div class="cons">⚠️ 价格高，修理成本高</div>
+      </div>
+      <div class="material-card">
+        <div class="name">纯钛（Pure Titanium）</div>
+        <div class="pros">✅ 最轻的金属材质、低过敏风险</div>
+        <div class="cons">⚠️ 价格最高，焊接较难</div>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <div class="label">💡 销售场景提示</div>
+      <p>顾客问"有没有轻一点的框？" → 推荐钛合金/纯钛/TR-90<br>
+      顾客问"有没有皮肤不过敏的？" → 推荐钛合金/板材/TR-90<br>
+      顾客预算有限 → TR-90、不锈钢是高性价比选择</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔩 第二部分：镜架结构与部件</h2>
+    <table class="structure-table">
+      <thead><tr><th>部件名称</th><th>位置</th><th>功能说明</th></tr></thead>
+      <tbody>
+        <tr><td><strong>镜圈（框）</strong></td><td>正面，包围镜片的环形结构</td><td>固定和保护镜片，决定镜架外观</td></tr>
+        <tr><td><strong>鼻梁（桥）</strong></td><td>连接两个镜圈的中间部分</td><td>支撑镜架在鼻子上的重量和位置</td></tr>
+        <tr><td><strong>鼻托（托叶）</strong></td><td>鼻梁两侧，直接接触鼻翼</td><td>调节镜架高低位置，减少鼻部压力</td></tr>
+        <tr><td><strong>铰链（合页）</strong></td><td>连接镜框与镜腿的活动部件</td><td>实现镜腿开合，是最易损坏的部件</td></tr>
+        <tr><td><strong>镜腿</strong></td><td>从铰链延伸至耳后</td><td>支撑整副眼镜，耳后弯曲部分叫"腿弯"</td></tr>
+        <tr><td><strong>腿弯（弯头）</strong></td><td>镜腿末端弯曲部分</td><td>勾住耳朵，防止眼镜滑落</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.88em;color:#888;">📌 带教师傅请结合实物镜架，逐个指认部件，加深印象。</p>
+  </div>
+
+  <div class="section">
+    <h2>📐 第三部分：镜架尺寸标注</h2>
+    <p>镜架内侧或镜腿上通常印有类似 <strong>54□18-140</strong> 的数字，含义如下：</p>
+    <ul>
+      <li><strong>54</strong>：镜片直径（毫米），即镜圈内径</li>
+      <li><strong>18</strong>：鼻梁宽度（毫米），两镜圈之间的距离</li>
+      <li><strong>140</strong>：镜腿长度（毫米）</li>
+    </ul>
+    <p>数字越大表示对应部位越宽/越长。推荐时参考顾客脸宽和鼻梁高低来选择合适尺寸。</p>
+  </div>
+
+  <div class="section">
+    <h2>😊 第四部分：脸型与镜架匹配</h2>
+    <div class="face-grid">
+      <div class="face-card">
+        <h4>🥚 椭圆形脸（鹅蛋脸）</h4>
+        <p>几乎适合所有款式。方框、圆框均可。推荐任何时髦款式，是最好搭配的脸型。</p>
+      </div>
+      <div class="face-card">
+        <h4>🔷 方形脸</h4>
+        <p>适合圆框、椭圆框、猫眼框。圆润形状可以柔化脸部线条，避免选方框加重方感。</p>
+      </div>
+      <div class="face-card">
+        <h4>❤️ 心形脸（宽额窄下颌）</h4>
+        <p>适合下半部分较宽的镜框，如飞行员款、底边较重的款式，平衡上宽下窄感。</p>
+      </div>
+      <div class="face-card">
+        <h4>🔺 三角形脸（窄额宽颌）</h4>
+        <p>适合上半部分较宽或有装饰的镜框，如猫眼框、眉框，增加额部视觉重量。</p>
+      </div>
+      <div class="face-card">
+        <h4>🔵 圆形脸</h4>
+        <p>适合有棱角的方形或长方形框，增加脸部线条感，拉长脸型视觉效果。避免选圆框。</p>
+      </div>
+      <div class="face-card">
+        <h4>🟤 长形脸</h4>
+        <p>适合高度较高、宽度较宽的镜框，视觉上"填充"脸部，减少长度感。避免选窄框。</p>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <div class="label">💡 销售实战技巧</div>
+      <p>不要直接说顾客"脸圆"或"脸方"，可以说："您的脸型很有特点，这种款式特别适合您……"<br>让顾客多试戴，试出感觉比推荐理论更有说服力。</p>
+    </div>
+  </div>
+
+<!-- LM-START -->
+<div class="lm-block lm-practice">
+  <h3>🔧 动手实践任务（今日必做）</h3>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 1：镜架拆解与尺寸识读（约 20 分钟）</div>
+      <div class="lm-pr-d">拿 3 副不同材质的镜架，逐副向师傅指出 6 个部件名称；找到镜腿内侧的尺寸标注，读出镜圈宽、鼻梁距、镜腿长并解释含义。</div>
+      <div class="lm-pr-o">✅ 完成标准：3 副都能准确指出部件，能正确读并解释一组 52□18-145 的数字。</div>
+    </div>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 2：脸型配镜实战（约 20 分钟）</div>
+      <div class="lm-pr-d">请同事当顾客，按脸型（圆脸、方脸、长脸、鹅蛋脸）各挑 2 副镜架，说出「为什么这副适合您」的理由，再问对方戴着是否舒服。</div>
+      <div class="lm-pr-o">✅ 完成标准：每组能说出 2 条理由（视觉修饰 + 佩戴舒适），对方认可不夹脸。</div>
+    </div>
+</div>
+<div class="lm-block lm-faq">
+  <h3>⚠️ 常见问题与注意事项</h3>
+    <details class="lm-q">
+      <summary>❓ 顾客只按价格选，不看材质，要不要劝？</summary>
+      <div class="lm-a">先问用途再建议：「您是天天戴还是备用？有没有过敏史？工作环境会不会出汗多？」用需求把话题从价格引到合适度，而不是直接否定顾客的选择。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 金属镜架会不会过敏？</summary>
+      <div class="lm-a">镍等金属可能引起接触性皮炎。对过敏体质顾客优先推荐纯钛、β钛、TR90 或带防过敏处理的产品，并如实告知材质。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 镜架越贵越好吗？</summary>
+      <div class="lm-a">不是。镜架的核心是「合适 + 舒适 + 耐用」。高度数顾客要选小镜圈以减轻边缘厚度和重量；爱运动的人优先轻便抗冲击材质。贵在合适，不在标价。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客拿着网上买的镜架来配镜片，可以吗？</summary>
+      <div class="lm-a">多数门店可以加工，但要先检查：镜架是否变形、镜圈是否能装下所选镜片、是否适合开槽或打孔。不能加工的必须提前告知，别等做坏再解释。</div>
+    </details>
+</div>
+<div class="lm-block lm-quiz">
+  <h3>📝 今日自测（先做完再看答案）</h3>
+    <details class="lm-q">
+      <summary>第 1 题：镜架尺寸标注「52□18-145」中，52、18、145 分别代表什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>52 = 单侧镜圈水平内宽（mm）；18 = 鼻梁距（两镜圈之间距离）；145 = 镜腿总长度。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 2 题：TR90 材质的主要优点是什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>超轻、柔韧、抗冲击、不易变形，适合运动人群与儿童；缺点是耐高温较差，不能长时间放车内暴晒。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 3 题：圆脸顾客选镜架的方向是？</summary>
+      <div class="lm-a"><b>参考答案：</b>选有棱角、带一定高度的方框或眉线框，增加脸部线条与纵向比例，避免再戴圆框、小圆镜片让脸更圆。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 4 题：高度数（如 -8.00D）顾客选镜架要注意什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>镜圈尽量小、镜架要稳（减少边缘厚度与重量），配合高折射率镜片；镜架太大不仅厚，还会因边缘畸变影响视觉舒适度。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 5 题：情景：顾客试戴 5 副都说「还行」，你怎么帮他决定？</summary>
+      <div class="lm-a"><b>参考答案：</b>用对比法帮顾客聚焦：「这三副里，A 最轻、B 最修饰脸型、C 最耐用。您最在意哪一点？」把选择从「好不好看」引导到「最在意什么」，决策立刻就清晰了。</div>
+    </details>
+</div>
+<div class="summary-box">
+    <h3>📝 今日学习要点回顾</h3>
+    <ul>
+      <li>✅ 常见材质：钛合金（轻/抗敏）、板材（美观）、TR-90（弹性轻便）、不锈钢（实惠）</li>
+      <li>✅ 六大部件：镜圈、鼻梁、鼻托、铰链、镜腿、腿弯</li>
+      <li>✅ 尺寸标注：镜片直径□鼻梁宽-腿长（如54□18-140）</li>
+      <li>✅ 脸型匹配：圆脸配方框、方脸配圆框、椭圆脸百搭</li>
+    </ul>
+    <p style="margin-top:14px; color:#1565c0; font-weight:600;">🎯 今日任务：拿起3副不同材质的镜架，对照部件表逐一指认，并向师傅说明各部件功能</p>
+  </div>
+<!-- LM-END -->
+
+<!-- FLOW-START -->
+<div class="lm-block flow-block">
+  <h3>🔗 四大流程落地衔接 — 本日内容如何进入门店培训体系</h3>
+  <div class="flow-hook">💡 <b>今天你只要记住这一句：</b>今天你就是‘镜架专家’：材质、部件、尺寸、脸型推荐，一次全掌握。</div>
+  <p class="flow-sub">本日内容对应：<strong>产品认知工作站（第 2 站）· 镜架</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
+  <div class="flow-grid">
+<div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>掌握 4 类镜架材质、6 大部件、尺寸标注读法，并能根据脸型推荐。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>记住 4 类主流材质（钛、板材、TR-90、不锈钢）的特点与适用人群</li><li>拆解 6 大部件：镜圈、镜梁、鼻托、铰链、镜腿、腿弯</li><li>读懂尺寸标注‘54□18-140’，会按脸型给出推荐</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>3 副镜架都能准确指认部件、读出尺寸，即达标。</div><div class="flow-pit"><b>⚠ 常见坑：</b>最容易错的是‘鼻梁’和‘鼻托’混淆——鼻梁是中间的连接，鼻托是贴鼻翼的部分。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>拿实物镜架逐个指认部件，示范推荐后再让新人反过来推荐给训练员。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>拿 3 副不同材质镜架，逐个指认 6 大部件，新人跟指</li><li>训练员示范一次脸型推荐，再让新人反向推荐给训练员</li><li>纠正推荐理由，强调‘视觉修饰 + 佩戴舒适’两条</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>新人能独立完成一次脸型推荐并说出 2 条理由，即完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>推荐演练要‘换位’——让新人当销售给训练员推荐，比只听讲解记得牢。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>用真实镜架做实操考核，检验识读与推荐能力。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>实操：3 副镜架指认部件 + 读出尺寸标注</li><li>按《镜架识读评分表》打分，80 分达标</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>部件指认与尺寸识读均正确，80 分以上即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>考核要动手——只看笔试分数，无法判断新人是否真的能对实物指认。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>若某类材质识读错误率高，补充实物对比教具。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>统计各材质/部件的识读错误率</li><li>对高频错误补充实物对比教具（如钛 vs 不锈钢手感对比）</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>补充至少 1 项教具或对比例子，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>错误率高往往不是‘难’，而是缺实物对比——补教具比反复讲更有效。</div></div>
+  </div>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+</div>
+<!-- FLOW-END -->
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_08_学习内容.html">← Day 08</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    
+    <a class="nav-btn" href="Day_09_练习题.html">今日练习题 →</a>
+  </div>
+</div>
+</body>
+</html>
