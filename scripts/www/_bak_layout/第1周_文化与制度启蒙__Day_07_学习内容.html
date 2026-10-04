@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 07 | 第1周周测 — 文化制度与职业素养综合</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#2e7d32,#1b5e20);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.9;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;}
+  .review-card{background:white;border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.07);}
+  .review-card h4{color:#2e7d32;margin-bottom:8px;font-size:0.92em;}
+  .review-card ul{padding-left:16px;}
+  .review-card li{font-size:0.8em;line-height:1.7;color:#555;}
+  .section-title{font-size:1.2em;color:#2e7d32;font-weight:700;margin:32px 0 14px;padding-left:12px;border-left:4px solid #4CAF50;}
+  .question-card{background:white;border-radius:12px;padding:26px;margin-bottom:22px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .q-num{background:#4CAF50;color:white;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9em;flex-shrink:0;}
+  .q-type{background:#e8f5e9;color:#2e7d32;padding:3px 12px;border-radius:12px;font-size:0.8em;font-weight:600;}
+  .q-score{color:#999;font-size:0.82em;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.6;margin-bottom:16px;}
+  .options{list-style:none;padding:0;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+  .options li:hover{background:#f0f7ff;border-color:#90caf9;}
+  .options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+  .options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+  .options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+  .options li.done{cursor:default;}
+  .answer-area{width:100%;min-height:90px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#666;display:none;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .score-box{background:linear-gradient(135deg,#e8f5e9,#f1f8f2);border-radius:12px;padding:20px;margin:24px 0;}
+  .score-box h3{color:#2e7d32;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#4CAF50;color:white;padding:8px 12px;text-align:left;font-size:0.88em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.86em;}
+  .nav-footer{display:flex;justify-content:space-between;margin:30px 0 50px;}
+  .nav-btn{background:#4CAF50;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#4CAF50;border:2px solid #4CAF50;}
+  .scenario-box{background:#f0f9f1;border-radius:8px;padding:16px;margin:12px 0;font-size:0.9em;line-height:1.7;}
+  @media(max-width:600px){.review-grid{grid-template-columns:1fr;}}
+  .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .structure-table th,.rule-table th{background:#2196F3;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
+
+  @media (max-width: 900px) {
+  }
+/* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1080px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+  .review-grid {
+    grid-template-columns:repeat(2,1fr)!important;gap:12px!important
+  }
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+  .review-grid {
+    grid-template-columns:1fr!important
+  }
+}
+
+/* ══ HOME-BAR：顶部返回首页入口 ══ */
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+
+/* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
+  .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
+  .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
+  .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
+  .flow-hook b{color:#1a3a6b}
+  .flow-sub{margin:0 0 18px;font-size:.9em;color:#556}
+  .flow-sub strong{color:#1a3a6b}
+  .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .flow-col{border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 4px rgba(26,58,107,.05)}
+  .flow-h{font-weight:800;font-size:.98em;margin-bottom:10px;color:#1a3a6b;display:flex;align-items:center;gap:6px}
+  .flow-h .fh-tag{font-size:.7em;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px;letter-spacing:.5px}
+  .flow-std .flow-h{color:#2c5aa0}.flow-std .fh-tag{background:#2c5aa0}
+  .flow-teach .flow-h{color:#2e7d5b}.flow-teach .fh-tag{background:#2e7d5b}
+  .flow-check .flow-h{color:#c47f17}.flow-check .fh-tag{background:#c47f17}
+  .flow-opt .flow-h{color:#8e44ad}.flow-opt .fh-tag{background:#8e44ad}
+  .flow-say{font-size:.88em;color:#37475e;background:#f6f9ff;border-radius:8px;padding:10px 12px;margin-bottom:12px;line-height:1.7;border-left:3px solid #cdd9ec}
+  .flow-say b{color:#1a3a6b}
+  .flow-do-t{font-size:.82em;font-weight:800;color:#556;margin:12px 0 6px}
+  .flow-do{margin:0;padding-left:19px}
+  .flow-do li{font-size:.85em;line-height:1.7;margin-bottom:6px;color:#4a5568}
+  .flow-standard{font-size:.84em;color:#2e7d32;background:#eef8f0;border-radius:7px;padding:9px 12px;margin-top:12px;line-height:1.65}
+  .flow-standard b{color:#1b5e20}
+  .flow-pit{font-size:.84em;color:#b3541e;background:#fdf3ea;border-radius:7px;padding:9px 12px;margin-top:8px;line-height:1.65}
+  .flow-pit b{color:#8a3d0a}
+  .flow-meta{margin:18px 0 0;font-size:.84em;color:#5a6478;background:#eef3fb;border-radius:8px;padding:12px 16px;line-height:1.7}
+  .flow-meta b{color:#1a3a6b}
+  @media(max-width:900px){
+    .flow-grid{grid-template-columns:1fr;gap:12px}
+    .flow-block{padding:18px 16px}
+    .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
+  }
+
+  /* ═══════ Day_07 分区标题与考卷容器（排版优化） ═══════ */
+  .day-part{margin:34px 0 18px;padding:16px 20px;background:linear-gradient(135deg,#eef3fa,#f7faff);border-radius:12px}
+  .day-part .day-part-h{font-size:1.08em;font-weight:800;color:#1a3a6b;display:flex;align-items:center;gap:10px}
+  .day-part .dp-no{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#2c5aa0;color:#fff;font-size:.9em;font-weight:800;flex-shrink:0}
+  .day-part .day-part-d{margin:8px 0 0;font-size:.88em;color:#667;line-height:1.7}
+  .exam-paper{background:#fff;border:1px solid #e6ebf3;border-radius:14px;padding:22px 24px;margin:14px 0 24px;box-shadow:0 2px 10px rgba(26,58,107,.05)}
+  @media(max-width:900px){
+    .day-part{margin:26px 0 14px;padding:14px 16px}
+    .exam-paper{padding:16px 14px}
+  }
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第1周 · Day 07 — 周测日</span>
+  <h1>🏆 第1周周测：文化制度与职业素养综合</h1>
+  <div class="subtitle">内容覆盖：Day 01–06 全部学习内容 | 总分：100分 | 及格：70分</div>
+</div>
+<div class="container">
+
+<div class="lm-block lm-goal">
+  <h3>🎯 今日学习目标（学完你应该能做到）</h3>
+  <ul class="lm-list">
+      <li>完成第 1 周周测，检验文化制度与职业素养掌握情况</li>
+      <li>能复述本周 6 个知识模块的要点，做到前后连贯不混淆</li>
+      <li>能对照检查点自评，找出 2 个最薄弱的环节并当天补上</li>
+      <li>把本周学到的规矩转化成 3 条自己的「每日上班动作」</li>
+      <li>了解第 2 周学什么，并做好心理准备（从「认人认规矩」转向「认产品认原理」）</li>
+  </ul>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
+</div>
+
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">①</span>本周知识速览</div>
+    <p class="day-part-d">先用 3 分钟把本周 6 天的内容过一遍，形成整体印象，再进入周测。</p>
+  </div>
+  <h2 style="font-size:1.2em;color:#333;margin:24px 0 14px;">📚 本周学习内容速览</h2>
+  <div class="review-grid">
+    <div class="review-card"><h4>Day 01 企业文化</h4><ul><li>使命愿景与核心价值观</li><li>门店发展历程与荣誉</li><li>我们为什么做眼镜行业</li></ul></div>
+    <div class="review-card"><h4>Day 02 职业形象</h4><ul><li>仪容仪表 4 条硬标准</li><li>服务理念与接待礼仪</li><li>语言规范与微笑服务</li></ul></div>
+    <div class="review-card"><h4>Day 03 考勤薪酬</h4><ul><li>出勤规定与请假流程</li><li>薪酬结构与发薪日</li><li>试用期及转正条件</li></ul></div>
+    <div class="review-card"><h4>Day 04 行为规范</h4><ul><li>职场禁止行为清单</li><li>顾客投诉处理原则</li><li>同事相处与团队协作</li></ul></div>
+    <div class="review-card"><h4>Day 05 奖惩安全</h4><ul><li>奖励条件与晋升通道</li><li>处罚标准与申诉机制</li><li>门店安全操作规程</li></ul></div>
+    <div class="review-card"><h4>Day 06 岗位职责</h4><ul><li>各岗位核心职责</li><li>营业前中后工作流程</li><li>交班与卫生标准</li></ul></div>
+  </div>
+
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">②</span>周测考核卷</div>
+    <p class="day-part-d">独立完成，不翻资料。共 100 分，70 分及格 —— 这是第 1 周能否进入下一阶段的依据。</p>
+  </div>
+  <div class="exam-paper">
+  <div class="section-title">第一部分：综合选择题（每题8分，共40分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">1</div><span class="q-type">文化制度</span><span class="q-score">8分</span></div>
+    <div class="question-text">新员工小李上班第三天，因为前一晚下雨路滑迟到了8分钟，他应该怎么处理最妥当？</div>
+    <ul class="options">
+      <li>A. 悄悄进店，假装没有迟到</li>
+      <li>B. 进店后立刻主动找主管说明原因并致歉，填写迟到说明</li>
+      <li>C. 发微信给主管说一下就行，不用当面说</li>
+      <li>D. 等主管来问再解释，不用主动说</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：B。遇到突发情况导致迟到，应第一时间主动说明，体现责任心和诚信意识。悄悄进店或等待被问都不符合职业规范。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">2</div><span class="q-type">职业形象</span><span class="q-score">8分</span></div>
+    <div class="question-text">顾客刚进门，以下哪种接待方式最符合眼镜门店的服务标准？</div>
+    <ul class="options">
+      <li>A. 继续整理货架，等顾客自己开口</li>
+      <li>B. 立刻停下手头工作，向顾客微笑并说"您好，欢迎光临！"</li>
+      <li>C. 远远点个头示意</li>
+      <li>D. 大声喊"你好，随便看！"</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：B。顾客进门第一时间主动问候，面带微笑，站姿得体，是服务标准的基本要求，体现门店专业形象。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">3</div><span class="q-type">行为规范</span><span class="q-score">8分</span></div>
+    <div class="question-text">下列哪种行为违反了眼镜门店的职场行为规范？</div>
+    <ul class="options">
+      <li>A. 营业时间在前台整理个人手机，刷短视频</li>
+      <li>B. 主动帮顾客擦拭试戴过的镜架</li>
+      <li>C. 遇到自己不懂的问题，及时请教老员工</li>
+      <li>D. 下班前完成卫生清洁再离岗</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：A。营业时间在前台刷手机，严重影响服务质量和门店形象，属于明确禁止行为。其余选项均为正确行为。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">4</div><span class="q-type">奖惩制度</span><span class="q-score">8分</span></div>
+    <div class="question-text">关于门店奖励制度，以下说法正确的是？</div>
+    <ul class="options">
+      <li>A. 只有月销售冠军才能获得奖励</li>
+      <li>B. 奖励只有金钱，没有其他形式</li>
+      <li>C. 服务好、零投诉、主动帮助同事等行为也可能获得表扬或奖励</li>
+      <li>D. 试用期内不参与任何奖励评定</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：C。门店奖励机制多元，除销售业绩外，服务质量、团队协作、零投诉等表现均在奖励范围内，鼓励全方位优秀表现。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">5</div><span class="q-type">岗位职责</span><span class="q-score">8分</span></div>
+    <div class="question-text">营业前准备工作中，"开店流程"的正确顺序是？</div>
+    <ul class="options">
+      <li>A. 开门迎客 → 清洁卫生 → 检查设备 → 陈列整理</li>
+      <li>B. 清洁卫生 → 检查设备 → 陈列整理 → 开门迎客</li>
+      <li>C. 陈列整理 → 开门迎客 → 清洁卫生 → 检查设备</li>
+      <li>D. 检查设备 → 开门迎客 → 清洁卫生 → 陈列整理</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：B。正确的开店顺序是先完成内部准备（清洁→设备检查→陈列整理），确认一切就绪后再开门迎客，保证顾客进入时看到最佳状态。</div>
+  </div>
+
+  <div class="section-title">第二部分：情景应对题（30分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">6</div><span class="q-type">情景应对</span><span class="q-score">30分</span></div>
+    <div class="scenario-box">
+      <strong>📋 情景描述：</strong><br>
+      顾客王先生进店后，一边试戴镜架一边抱怨说："你们这里的价格比网上贵多了，网上同款才一半的价格！你们是不是在宰客？"旁边还有其他顾客在场。此时你是刚入职的新员工，带教师傅在后台。
+    </div>
+    <div class="question-text">请回答以下三个问题：<br>① 面对这种当众质疑，你的第一反应和处理步骤是什么？（10分）<br>② 如何解释门店价格与网购的差异，让顾客感到合理？（10分）<br>③ 如果顾客仍然不满，你应该如何收场？（10分）</div>
+    <textarea class="answer-area" style="min-height:140px;" placeholder="请写出你的应对方案……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考答案：<br>①第一反应：保持微笑、不慌乱，先真诚道歉："王先生，非常理解您的感受，让您有这样的顾虑是我们没有提前做好说明，非常抱歉。"避免当众辩解。<br>②价格差异解释：实体眼镜店提供验光服务（专业仪器+验光师时间）、试戴调试、售后保修、正品保障，网购无法提供个性化验配和现场调整服务；眼镜是医疗器具，需精准适配，这是实体店的核心价值所在。<br>③收场：若顾客仍不满，诚恳说"您的反馈非常宝贵，我帮您请我们的主管来进一步沟通"，及时请出带教师傅介入，切勿与顾客争论，也不能擅自承诺折扣。</div>
+  </div>
+
+  <div class="section-title">第三部分：制度知识填空（30分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">7</div><span class="q-type">制度知识</span><span class="q-score">10分</span></div>
+    <div class="question-text">请写出门店请假的正确流程（至少包含4个步骤）：</div>
+    <textarea class="answer-area" placeholder="请写出请假流程……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考流程：①提前（至少提前1天，急病除外）向直接主管提出申请；②说明请假原因和时长；③获得主管口头或书面审批；④填写请假单/OA系统登记；⑤安排好岗位工作交接（如影响上班不能空岗）；⑥返岗后销假确认。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">8</div><span class="q-type">制度知识</span><span class="q-score">10分</span></div>
+    <div class="question-text">我们门店的核心价值观/服务理念是什么？请写出并举例说明如何在工作中体现：</div>
+    <textarea class="answer-area" placeholder="写出核心价值观并举例……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考答案：六大核心价值观——专业精准、真诚用心、持续成长、团队协作、追求卓越、诚信守正。体现示例：专业精准——用专业知识为顾客推荐适合的配镜方案，而非只推高价品；真诚用心——记住常客姓名和配镜习惯，主动提醒复查时间；诚信守正——如实告知镜片特性和局限性，不夸大功能。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">9</div><span class="q-type">制度知识</span><span class="q-score">10分</span></div>
+    <div class="question-text">门店安全操作规程中，以下设备/场景的注意事项各写出至少2条：① 验光设备；② 消毒设备；③ 收银台</div>
+    <textarea class="answer-area" placeholder="请写出安全操作要点……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考答案：①验光设备：使用前检查仪器是否清洁/校准；顾客离开后用酒精棉片擦拭额托和下颌托；不得擅自调节仪器内部参数；发现故障及时报修，不强行使用。②消毒设备：紫外线消毒灯开启时人员离开，避免直接照射皮肤和眼睛；酒精等消毒品远离明火；定期检查消毒液有效期。③收银台：现金当面点清，有异议当场提出；下班前核对账目，交接班须双人清点；发现假币按流程上报，不擅自处理。</div>
+  </div>
+
+  <div class="score-box">
+    <h3>📊 第1周周测评分记录</h3>
+    <table class="score-table">
+      <thead><tr><th>部分</th><th>满分</th><th>得分</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td>第一部分：综合选择题（第1-5题）</td><td>40分</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分</td><td></td></tr>
+        <tr><td>第二部分：情景应对题（第6题）</td><td>30分</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分</td><td></td></tr>
+        <tr><td>第三部分：制度知识填空（第7-9题）</td><td>30分</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分</td><td></td></tr>
+        <tr style="background:#e8f5e9;"><td><strong>合计</strong></td><td><strong>100分</strong></td><td><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分</strong></td><td>及格线70分</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:#666;font-size:0.88em;margin-top:8px;">📝 带教师傅签字确认：___________________&nbsp;&nbsp; 日期：___________</p>
+  </div>
+  <!-- exam-paper 结束 -->
+
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">③</span>考后巩固与复盘</div>
+    <p class="day-part-d">考完不是结束 —— 当天把错题弄懂、把要点复述给师傅，再对照检查点确认过关。</p>
+  </div>
+
+<!-- LM-START -->
+<div class="lm-block lm-practice">
+  <h3>🔧 动手实践任务（今日必做）</h3>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 1：周测 + 错题订正（约 30 分钟）</div>
+      <div class="lm-pr-d">独立完成周测（不翻资料），做完后对答案，把错题在纸上重写一遍并注明错因（没记住 / 记混了 / 不会）。</div>
+      <div class="lm-pr-o">✅ 完成标准：错题全部订正完毕，能说出每道错题的正确知识点。</div>
+    </div>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 2：向师傅复述本周要点（约 15 分钟）</div>
+      <div class="lm-pr-d">用 3 分钟向师傅讲：我们的使命和价值观是什么、职业形象有哪些硬标准、考勤请假怎么走、行为红线有哪些、安全要查什么、一天流程分几段。</div>
+      <div class="lm-pr-o">✅ 完成标准：师傅听完能给出「基本清楚」的评价；遗漏的部分当场补充。</div>
+    </div>
+</div>
+<div class="lm-block lm-faq">
+  <h3>⚠️ 常见问题与注意事项</h3>
+    <details class="lm-q">
+      <summary>❓ 周测没考好，会不会影响后面的学习？</summary>
+      <div class="lm-a">不会直接扣分，但会暴露漏洞。第 1 周的制度内容是后面所有行为的地基，错的题一定要当天补，不要留到第 2 周——第 2 周开始是新内容，旧账一起背着会很累。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 每天都要写实践记录吗？</summary>
+      <div class="lm-a">建议写，两三行就够（做了什么、学到什么、哪里卡住）。第 5 周跟岗、第 8 周复盘都要用到这些记录，临时回想会很吃力。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 下决心要坚持，但怕坚持不下来怎么办？</summary>
+      <div class="lm-a">把目标缩小到「今天这一天」：完成今日目标和 1 个实践任务就算过关。8 周是 56 个小目标拼出来的，不是靠一次爆发。</div>
+    </details>
+</div>
+<div class="lm-block lm-quiz">
+  <h3>📝 今日自测（先做完再看答案）</h3>
+    <details class="lm-q">
+      <summary>第 1 题：本周学到的 6 大模块是？</summary>
+      <div class="lm-a"><b>参考答案：</b>门店文化与价值观、职业形象与服务理念、考勤与薪酬福利、行为规范与职场礼仪、奖惩与安全规定、岗位职责与工作流程。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 2 题：上班前必须完成的「三查」是？</summary>
+      <div class="lm-a"><b>参考答案：</b>查发型、查工装、查妆容与鞋袜（含指甲、口气）。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 3 题：顾客资料能不能带出店外？</summary>
+      <div class="lm-a"><b>参考答案：</b>不能。顾客资料、验光数据、消费记录都属于隐私与门店商业信息，不得外传、拍照、发社交平台。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 4 题：情景：周一早上你身体不适，需要请假半天，正确做法是？</summary>
+      <div class="lm-a"><b>参考答案：</b>第一时间电话报备师傅/店长，说明情况与预计返岗时间，按流程提交请假申请并按要求提供证明，不要在群里发一句就消失。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 5 题：用一句话说出你这周最大的收获。</summary>
+      <div class="lm-a"><b>参考答案：</b>开放题，标准是：能具体说出一个行为变化（例如「顾客进门我会先放下手里的活迎上去」），而不是「学到很多」这种空话。</div>
+    </details>
+</div>
+<div class="summary" style="background:linear-gradient(135deg,#e3f2fd,#e8f5ff);border-radius:12px;padding:24px;margin-top:30px">
+    <h3 style="margin:0 0 12px 0;color:#1565c0">📝 今日学习要点回顾</h3>
+    <ul style="padding-left:20px;line-height:2">
+      <li>第1周六大模块：企业文化、职业形象、考勤薪酬、行为规范、奖惩安全、岗位职责与工作流程</li>
+      <li>使命愿景与核心价值观是行为的总纲，六大价值观：专业精准、真诚用心、持续成长、团队协作、追求卓越、诚信守正</li>
+      <li>职业形象「三查」：查发型、查工装、查妆容与鞋袜；服务理念落到微笑与语言规范</li>
+      <li>考勤请假流程：提前申请→说明原因时长→主管审批→登记销假；行为红线与安全操作规程必须牢记</li>
+      <li>周测检验的不只是记忆，更是「知道→做到」的转化：错题当天订正，把要点复述给师傅</li>
+    </ul>
+    <p style="margin-top:14px;color:#1565c0;font-weight:600">🎯 今日任务：完成第1周周测，订正全部错题并注明错因；用 3 分钟向师傅复述本周 6 大模块要点。</p>
+  </div>
+<div class="lm-block lm-review">
+  <h3>🗓️ 本周回顾小结与阶段检查点</h3>
+  <div class="lm-sub">① 本周知识串讲（前后衔接）</div>
+  <ul class="lm-list">
+      <li>文化打底：门店使命、愿景、6 条价值观 —— 决定了后面所有行为的判断标准，遇到拿不准的事，回到「对顾客是否诚实、是否专业」来想。</li>
+      <li>形象与规矩：职业形象 4 条硬标准、服务用语 5 句、工作区域五不准 —— 这是顾客对你的第一判断，也是门店对你的第一步要求。</li>
+      <li>制度与边界：考勤打卡、请假流程、薪资构成、奖惩红线、保密义务 —— 知道什么能做、什么绝对不能碰，做事才有底气。</li>
+      <li>安全与流程：安全自查 5 项、应急上报顺序、一天工作分「开店—营业—交接—闭店」四段，各岗位分工明确。</li>
+      <li>承上启下：本周解决「你是谁、在哪儿、按什么规矩做事」；下周开始解决「你卖的东西到底是什么」——从人的规矩，转向眼睛和产品的知识。</li>
+  </ul>
+  <div class="lm-sub">② 阶段检查点（达到才算过关，未达标先补这天的内容）</div>
+  <table class="rule-table">
+    <thead><tr><th>检查点</th><th>达标标准</th></tr></thead>
+    <tbody>
+        <tr><td>门店使命与 6 条价值观</td><td>能用自己的话复述使命，说出至少 4 条价值观并各举 1 个具体行为</td></tr>
+        <tr><td>职业形象标准</td><td>上班前能独立完成三查，仪容仪表符合要求，无需他人提醒</td></tr>
+        <tr><td>服务用语</td><td>5 句基础服务用语能脱稿、自然说出，语速与语气被师傅认可</td></tr>
+        <tr><td>考勤与请假</td><td>能说出打卡规定、迟到与忘打卡的处理方式、请假四步流程</td></tr>
+        <tr><td>行为红线与保密</td><td>能列出五不准和至少 3 条保密范围，知道违规后果</td></tr>
+        <tr><td>安全应急</td><td>知道灭火器位置，能口述顾客受伤 / 火情的处理顺序，安全自查 5 项能背</td></tr>
+        <tr><td>工作流程</td><td>能写出开店 5 件事、闭店 5 件事，说明自己岗位的「可独立做」与「必须确认」清单</td></tr>
+    </tbody>
+  </table>
+  <p class="lm-meta">💡 自检方式：逐项打勾 → 有 2 项以上未达标，先把对应天的自测题重做一遍，再请师傅复评。</p>
+</div>
+<!-- LM-END -->
+
+<div class="day-part">
+    <div class="day-part-h"><span class="dp-no">④</span>四大流程落地衔接</div>
+    <p class="day-part-d">周测不只是打分 —— 它检验的是标准、带教、考核、优化整条链路的效果。</p>
+  </div>
+<!-- FLOW-START -->
+<div class="lm-block flow-block">
+  <h3>🔗 四大流程落地衔接 — 本日内容如何进入门店培训体系</h3>
+  <div class="flow-hook">💡 <b>今天你只要记住这一句：</b>今天做一次阶段测验：前 6 天学的文化、制度、流程，检查你到底掌握了没有。</div>
+  <p class="flow-sub">本日内容对应：<strong>第 1 周考核节点（首周考核）</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
+  <div class="flow-grid">
+<div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>把第 1 周的文化制度、职业素养、基础流程纳入周测，明确‘合格才能进入下一阶段’。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>复习范围：企业文化、职业形象、制度规范、安全奖惩、岗位流程</li><li>明白周测成绩与能否进入第 2 周的对应关系（合格才放行）</li><li>清楚考核形式：以理论 + 情景问答为主</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>清楚考核范围与合格标准，即‘备考标准’达标。</div><div class="flow-pit"><b>⚠ 常见坑：</b>别指望‘混过去’——周测是筛选机制，不合格要延长带教重考，认真复习最省事。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>考前系统回顾一周要点，集中答疑，把薄弱项补上再考。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>训练员带新人系统回顾一周知识，逐条过重点</li><li>集中答疑，针对新人没弄懂的地方专项讲解</li><li>针对薄弱项做一轮‘错题式’补强练习</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>新人完成一轮系统回顾且无疑问遗留，即带教完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>复盘别只念要点——让新人先自己复述，讲不出来的地方才是真正要补的。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>统一试卷、统一评分，客观判定是否达到进入下一阶段的标准。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>组织周测：文化制度与职业素养综合卷</li><li>按统一评分标准打分，≥ 合格线方可通过</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>周测 ≥ 合格线，方可进入第 2 周；未达标者延长带教 3–5 天后重考。</div><div class="flow-pit"><b>⚠ 常见坑：</b>未通过不要直接‘劝退’——先按复训机制补强，多数是没学透而非学不会。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>统计本批新人失分集中点，回流修订第 1 周的带教重点。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>汇总周测失分集中知识点</li><li>分析是‘标准没讲清’还是‘带教没到位’，针对性调整</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>产出第 1 周培训优化建议，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>失分点要区分‘个别没学好’和‘普遍没学懂’——后者才需要改标准。</div></div>
+  </div>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+</div>
+<!-- FLOW-END -->
+
+  <!-- 第1周完成标记 -->
+  <p style="text-align:center;color:#3949ab;font-weight:600;margin:24px 0 6px">🎉 恭喜完成第1周学习！下周将进入光学与产品知识阶段。</p>
+  <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:20px">— 第1周 · 文化与制度启蒙 · 全部完成 —</p>
+
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_06_学习内容.html">← Day 06</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    
+    <a class="nav-btn" href="../第2周_光学与产品知识/Day_08_学习内容.html">进入第2周 →</a>
+  </div>
+</div>
+
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+.options li:hover{background:#f0f7ff;border-color:#90caf9;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:none!important;}
+
+  /* ══════════════════════════════════════════════
+     红米平板响应式适配（横屏1100px / 竖屏900px）
+     ══════════════════════════════════════════════ */
+
+  /* 平板横屏：内容区微调 */
+  @media (max-width: 1100px) {
+    .container { padding: 28px 24px !important; }
+    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+
+  /* 平板竖屏：核心适配断点 */
+  @media (max-width: 900px) {
+    body { padding: 12px !important; font-size: 15px; }
+    .container { padding: 20px 16px !important; border-radius: 10px !important; }
+    /* 学习内容：各类2列/3列网格折叠为1列 */
+    .value-cards, .material-grid, .face-grid,
+    .norm-grid, .salary-grid, .do-dont, .image-standard,
+    .safety-grid, .role-cards, .review-grid, .equipment-grid,
+    .lens-grid, .coating-grid, .term-grid, .display-rules,
+    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
+    .review-grid, .zone-grid, .test-info, .method-grid,
+    .question-type, .fab-grid, .form-grid, .wrong-right,
+    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
+    .achieve-grid, .product-card, .sign-area, .wish-cards,
+    .eval-row,
+    [class*="-grid"], [class*="grid-"],
+    .two-col { grid-template-columns: 1fr !important; }
+    /* 3列→2列特殊处理（不完全折叠，保留2列） */
+    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 导航按钮：允许换行，防止溢出 */
+    .nav-footer, .nav-bar {
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .nav-btn {
+      font-size: 0.88em !important;
+      padding: 10px 18px !important;
+      text-align: center !important;
+    }
+    /* 标题字号适配 */
+    .header h1, h1 { font-size: 1.4em !important; }
+    .header .subtitle, .header .week-badge { font-size: 13px !important; }
+    /* 表格横向滚动（防溢出） */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* meta-bar 换行 */
+    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
+    /* 首页时间轴横向滚动 */
+    .timeline { overflow-x: auto; }
+  }
+
+  /* 手机 / 平板极窄竖屏 */
+  @media (max-width: 600px) {
+    body { padding: 8px !important; }
+    .container { padding: 16px 12px !important; }
+    .header h1, h1 { font-size: 1.2em !important; }
+    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .container { padding: 16px !important; }
+  }
+
+  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 自测 / 阶段复盘） ═══════ */
+  .lm-block{
+    position:relative;border-radius:16px;padding:22px 26px 20px;margin:22px 0;
+    line-height:1.85;border:1px solid transparent;box-shadow:0 2px 12px rgba(26,58,107,.06);
+  }
+  .lm-block::before{
+    content:"";position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:4px;
+    background:currentColor;opacity:.55;
+  }
+  .lm-block h3{
+    margin:0 0 16px;font-size:1.12em;font-weight:800;letter-spacing:.3px;
+    display:flex;align-items:center;gap:9px;padding-bottom:12px;
+    border-bottom:1px dashed rgba(0,0,0,.12);
+  }
+  .lm-list{margin:0;padding-left:0;list-style:none}
+  .lm-list li{
+    position:relative;margin-bottom:11px;padding-left:24px;line-height:1.8;
+  }
+  .lm-list li::before{
+    content:"✓";position:absolute;left:2px;top:0;font-weight:800;font-size:.92em;
+    color:currentColor;opacity:.7;
+  }
+  .lm-list li:last-child{margin-bottom:0}
+  .lm-goal{background:linear-gradient(135deg,#eaf7ec,#f4fbf5);color:#1b5e20;border-color:#c8e6c9}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:linear-gradient(135deg,#fff6e0,#fffcf3);color:#4e342e;border-color:#ffe0a3}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:linear-gradient(135deg,#f6e9f9,#fbf5fd);color:#4a148c;border-color:#e6ccf0}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-ref{background:#e3f2fd;color:#0d3c61}
+  .lm-ref h3{color:#1565c0}
+  .lm-quiz{background:linear-gradient(135deg,#fde8ef,#fef6f9);color:#880e4f;border-color:#f8cddc}
+  .lm-quiz h3{color:#c2185b}
+  .lm-review{background:linear-gradient(135deg,#ece6f8,#f7f4fc);color:#311b92;border-color:#d9cdf0}
+  .lm-review h3{color:#4527a0}
+  .lm-meta{
+    margin:14px 0 0;font-size:.88em;opacity:.94;background:rgba(255,255,255,.65);
+    border-radius:9px;padding:10px 14px;line-height:1.7;
+  }
+  .lm-pr{
+    margin:0 0 14px;padding:15px 18px;background:rgba(255,255,255,.82);border-radius:12px;
+    border-left:3px solid #ffb74d;box-shadow:0 1px 5px rgba(0,0,0,.04);
+  }
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:800;margin-bottom:7px;font-size:1.01em;color:#bf360c}
+  .lm-pr-d{margin-bottom:8px;font-size:.96em;line-height:1.75}
+  .lm-pr-o{
+    font-size:.9em;font-weight:700;color:#2e7d32;background:#eef8ef;border-radius:7px;
+    padding:7px 12px;display:block;
+  }
+  .lm-q{
+    margin:0 0 10px;padding:12px 16px;background:rgba(255,255,255,.82);border-radius:11px;
+    border-left:3px solid rgba(0,0,0,.14);transition:.18s;
+  }
+  .lm-q:hover{border-left-color:currentColor}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:700;line-height:1.7;outline:none;list-style:none;position:relative;padding-right:26px}
+  .lm-q summary::-webkit-details-marker{display:none}
+  .lm-q summary::after{
+    content:"+";position:absolute;right:2px;top:-1px;font-weight:800;font-size:1.15em;
+    color:currentColor;opacity:.6;transition:.2s;
+  }
+  .lm-q[open] summary::after{content:"−"}
+  .lm-q[open] summary{margin-bottom:10px;padding-bottom:9px;border-bottom:1px dashed rgba(0,0,0,.1)}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.82;padding-left:2px}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  .lm-sub{
+    font-weight:800;margin:16px 0 10px;font-size:1em;display:flex;align-items:center;gap:8px;
+  }
+  .lm-sub::before{content:"";width:4px;height:15px;border-radius:3px;background:currentColor;opacity:.7}
+  @media(max-width:900px){
+    .lm-block{padding:17px 16px 15px;margin:16px 0;line-height:1.75;border-radius:13px}
+    .lm-block h3{font-size:1.02em;margin-bottom:13px}
+    .lm-list{padding-left:0}
+    .lm-pr{padding:13px 14px}
+  }
+  </style>
+<script id="interactive-options-type-a-js">
+(function(){
+  document.querySelectorAll('.question-card').forEach(function(card){
+    var opts=card.querySelectorAll('.options li');
+    if(!opts.length) return;
+    var hint=card.querySelector('.answer-hint');
+    var answered=false;
+    function getCorrect(){
+      if(!hint) return null;
+      var t=hint.innerHTML||hint.textContent;
+      var m=t.match(/正确答案[:：][\s]*(?:<strong>)?([A-Da-d])/i);
+      return m?m[1].toUpperCase():null;
+    }
+    opts.forEach(function(li,idx){
+      li.addEventListener('click',function(){
+        if(answered)return;
+        answered=true;
+        var letters=['A','B','C','D','E'];
+        var chosen=letters[idx];
+        var correct=getCorrect();
+        opts.forEach(function(o){o.classList.add('done');});
+        if(correct&&chosen===correct){
+          li.classList.add('correct');
+          li.textContent='✅ '+li.textContent;
+        } else {
+          li.classList.add('wrong');
+          li.textContent='❌ '+li.textContent;
+          if(correct){
+            var ci=letters.indexOf(correct);
+            if(ci>=0&&opts[ci]){opts[ci].classList.add('highlight');opts[ci].textContent='👉 '+opts[ci].textContent;}
+          }
+        }
+        if(hint){hint.style.display='block';hint.style.marginTop='12px';}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
