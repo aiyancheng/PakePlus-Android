@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 05 | 奖惩制度与安全规定</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);padding:40px 30px;border-bottom:3px solid #4CAF50;}
+  .day-tag{background:#4CAF50;color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;color:#2e7d32;margin-bottom:8px;}
+  .header .subtitle{color:#555;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}  .section{background:white;border-radius:12px;padding:28px;margin-bottom:24px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .section h2{font-size:1.3em;color:#2e7d32;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid #e8f5e9;}
+  .section h3{font-size:1.05em;color:#333;margin:18px 0 10px;}
+  .section p{line-height:1.8;color:#555;margin-bottom:12px;font-size:0.95em;}
+  .section ul,.section ol{padding-left:20px;margin-bottom:14px;}
+  .section li{line-height:1.8;color:#555;font-size:0.95em;margin-bottom:4px;}
+  .reward-table,.penalty-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .reward-table th{background:#4CAF50;color:white;padding:10px 14px;text-align:left;font-size:0.9em;}
+  .penalty-table th{background:#f44336;color:white;padding:10px 14px;text-align:left;font-size:0.9em;}
+  .reward-table td,.penalty-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .reward-table tr:nth-child(even) td,.penalty-table tr:nth-child(even) td{background:#f9f9f9;}
+  .safety-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+  .safety-card{background:#fff8e1;border-radius:10px;padding:16px;}
+  .safety-card .icon{font-size:1.8em;margin-bottom:8px;}
+  .safety-card .name{font-weight:700;font-size:0.9em;margin-bottom:6px;}
+  .safety-card .desc{font-size:0.82em;color:#666;line-height:1.5;}
+  .emergency-box{background:#ffebee;border-radius:10px;padding:18px;margin:14px 0;}
+  .emergency-box h4{color:#c62828;margin-bottom:10px;}
+  .summary-box{background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border-radius:12px;padding:24px;margin-top:30px;}
+  .summary-box h3{color:#2e7d32;margin-bottom:14px;}
+  .summary-box li{margin-bottom:8px;font-size:0.95em;}
+  .nav-footer{display:flex;justify-content:space-between;margin:30px 0 40px;}
+  .nav-btn{background:#4CAF50;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#4CAF50;border:2px solid #4CAF50;}
+  @media(max-width:600px){.safety-grid{grid-template-columns:1fr;}}
+  .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .structure-table th,.rule-table th{background:#2196F3;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
+
+  /* ══════════════════════════════════════════════
+     红米平板响应式适配（横屏1100px / 竖屏900px）
+     ══════════════════════════════════════════════ */
+
+  /* 平板横屏：内容区微调 */
+  @media (max-width: 1100px) {
+    .container { padding: 28px 24px !important; }
+    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+
+  /* 平板竖屏：核心适配断点 */
+  @media (max-width: 900px) {
+    body { padding: 12px !important; font-size: 15px; }
+    .container { padding: 20px 16px !important; border-radius: 10px !important; }
+    /* 学习内容：各类2列/3列网格折叠为1列 */
+    .value-cards, .material-grid, .face-grid,
+    .norm-grid, .salary-grid, .do-dont, .image-standard,
+    .safety-grid, .role-cards, .review-grid, .equipment-grid,
+    .lens-grid, .coating-grid, .term-grid, .display-rules,
+    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
+    .review-grid, .zone-grid, .test-info, .method-grid,
+    .question-type, .fab-grid, .form-grid, .wrong-right,
+    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
+    .achieve-grid, .product-card, .sign-area, .wish-cards,
+    .eval-row,
+    [class*="-grid"], [class*="grid-"],
+    .two-col { grid-template-columns: 1fr !important; }
+    /* 3列→2列特殊处理（不完全折叠，保留2列） */
+    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 导航按钮：允许换行，防止溢出 */
+    .nav-footer, .nav-bar {
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+    .nav-btn {
+      font-size: 0.88em !important;
+      padding: 10px 18px !important;
+      text-align: center !important;
+    }
+    /* 标题字号适配 */
+    .header h1, h1 { font-size: 1.4em !important; }
+    .header .subtitle, .header .week-badge { font-size: 13px !important; }
+    /* 表格横向滚动（防溢出） */
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    /* meta-bar 换行 */
+    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
+    /* 首页时间轴横向滚动 */
+    .timeline { overflow-x: auto; }
+  }
+
+  /* 手机 / 平板极窄竖屏 */
+  @media (max-width: 600px) {
+    body { padding: 8px !important; }
+    .container { padding: 16px 12px !important; }
+    .header h1, h1 { font-size: 1.2em !important; }
+    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .container { padding: 16px !important; }
+  }
+
+  @media (max-width: 900px) {
+  }
+/* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1080px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+  .safety-grid {
+    grid-template-columns:repeat(2,1fr)!important;gap:12px!important
+  }
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+  .safety-grid {
+    grid-template-columns:1fr!important
+  }
+}
+
+  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 参考 / 自测 / 阶段复盘） ═══════ */
+  .lm-block{border-radius:14px;padding:20px 24px;margin:24px 0;line-height:1.85}
+  .lm-block h3{margin:0 0 14px;font-size:1.1em;font-weight:700;letter-spacing:.3px}
+  .lm-list{margin:0;padding-left:22px}
+  .lm-list li{margin-bottom:9px}
+  .lm-goal{background:#e8f5e9;color:#1b5e20}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:#fff8e1;color:#4e342e}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:#f3e5f5;color:#4a148c}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-ref{background:#e3f2fd;color:#0d3c61}
+  .lm-ref h3{color:#1565c0}
+  .lm-quiz{background:#fce4ec;color:#880e4f}
+  .lm-quiz h3{color:#c2185b}
+  .lm-review{background:#ede7f6;color:#311b92}
+  .lm-review h3{color:#4527a0}
+  .lm-meta{margin:12px 0 0;font-size:.9em;opacity:.92}
+  .lm-pr{margin:0 0 14px;padding:14px 16px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:700;margin-bottom:6px}
+  .lm-pr-d{margin-bottom:6px}
+  .lm-pr-o{font-size:.92em;font-weight:600}
+  .lm-q{margin:0 0 10px;padding:10px 14px;background:rgba(255,255,255,.75);border-radius:10px}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:600;line-height:1.7}
+  .lm-q[open] summary{margin-bottom:8px}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.8}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  .lm-sub{font-weight:700;margin:14px 0 8px;font-size:1em}
+  @media(max-width:900px){
+    .lm-block{padding:16px 14px;margin:18px 0;line-height:1.75}
+    .lm-block h3{font-size:1.02em}
+    .lm-list{padding-left:18px}
+  }
+
+/* ══ HOME-BAR：顶部返回首页入口 ══ */
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1080px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+
+/* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
+  .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
+  .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
+  .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
+  .flow-hook b{color:#1a3a6b}
+  .flow-sub{margin:0 0 18px;font-size:.9em;color:#556}
+  .flow-sub strong{color:#1a3a6b}
+  .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .flow-col{border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 4px rgba(26,58,107,.05)}
+  .flow-h{font-weight:800;font-size:.98em;margin-bottom:10px;color:#1a3a6b;display:flex;align-items:center;gap:6px}
+  .flow-h .fh-tag{font-size:.7em;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px;letter-spacing:.5px}
+  .flow-std .flow-h{color:#2c5aa0}.flow-std .fh-tag{background:#2c5aa0}
+  .flow-teach .flow-h{color:#2e7d5b}.flow-teach .fh-tag{background:#2e7d5b}
+  .flow-check .flow-h{color:#c47f17}.flow-check .fh-tag{background:#c47f17}
+  .flow-opt .flow-h{color:#8e44ad}.flow-opt .fh-tag{background:#8e44ad}
+  .flow-say{font-size:.88em;color:#37475e;background:#f6f9ff;border-radius:8px;padding:10px 12px;margin-bottom:12px;line-height:1.7;border-left:3px solid #cdd9ec}
+  .flow-say b{color:#1a3a6b}
+  .flow-do-t{font-size:.82em;font-weight:800;color:#556;margin:12px 0 6px}
+  .flow-do{margin:0;padding-left:19px}
+  .flow-do li{font-size:.85em;line-height:1.7;margin-bottom:6px;color:#4a5568}
+  .flow-standard{font-size:.84em;color:#2e7d32;background:#eef8f0;border-radius:7px;padding:9px 12px;margin-top:12px;line-height:1.65}
+  .flow-standard b{color:#1b5e20}
+  .flow-pit{font-size:.84em;color:#b3541e;background:#fdf3ea;border-radius:7px;padding:9px 12px;margin-top:8px;line-height:1.65}
+  .flow-pit b{color:#8a3d0a}
+  .flow-meta{margin:18px 0 0;font-size:.84em;color:#5a6478;background:#eef3fb;border-radius:8px;padding:12px 16px;line-height:1.7}
+  .flow-meta b{color:#1a3a6b}
+  @media(max-width:900px){
+    .flow-grid{grid-template-columns:1fr;gap:12px}
+    .flow-block{padding:18px 16px}
+    .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
+  }
+/*@@ LAYOUT-UNIFY @@*/
+/* ═══════ 布局统一：标题框 = 内容框等宽 · 红米12.1寸平板完美适配 ═══════
+   横屏≈1280px → 统一 1080px；竖屏≤900px → 自适应留白
+   标题框(.header)与内容框(.container)使用完全相同的宽度规则 */
+.home-topbar .ht-inner{width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;margin:0 auto!important}
+.header{
+  width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;
+  margin:18px auto 0!important;padding:34px 30px!important;
+  border:0!important;border-radius:14px!important;
+  box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+}
+.container{
+  width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;
+  margin-left:auto!important;margin-right:auto!important;
+  padding-left:0!important;padding-right:0!important;
+}
+@media(max-width:900px){
+  .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+}
+@media(max-width:600px){
+  .header{padding:20px 15px!important}
+}
+/*@@ LAYOUT-UNIFY-2 @@*/
+/* ═══ meta-bar（学习时长/配套练习条）与标题框/内容框同宽 ═══ */
+.meta-bar{
+  width:min(1080px,calc(100% - 32px))!important;max-width:1080px!important;
+  margin:14px auto 0!important;padding:14px 30px!important;
+  border:0!important;border-radius:12px!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.06)!important;
+}
+@media(max-width:900px){
+  .meta-bar{padding:12px 16px!important;margin-top:12px!important}
+}
+/*@@ LAYOUT-UNIFY-3 @@*/
+/* ═══ 修正：box-sizing 兜底 + 容器内 header 自适应 + 表格竖屏防溢出 ═══ */
+.header,.container,.meta-bar,.home-topbar .ht-inner{box-sizing:border-box!important}
+.container > .header{width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+@media(max-width:900px){
+  table{max-width:100%!important}
+}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第1周 · Day 05</span>
+  <h1>🏆 奖惩制度与安全规定</h1>
+  <div class="subtitle">模块：制度 Policies | 今日主题：激励机制 · 纪律处罚 · 安全守则</div>
+</div>
+<div class="container">
+
+<div class="lm-block lm-goal">
+  <h3>🎯 今日学习目标（学完你应该能做到）</h3>
+  <ul class="lm-list">
+      <li>知道奖励机制：销售提成、服务之星、顾客好评等怎么拿</li>
+      <li>记住纪律红线：欺骗顾客、私自改价收款、旷工、泄漏资料等的处理标准</li>
+      <li>掌握安全规定：用电用火、设备操作、地面防滑、消防通道要保持畅通</li>
+      <li>会处理突发情况：设备异常、顾客晕厥/划伤、火情，第一时间找谁、说什么</li>
+      <li>理解奖惩的目的：奖励正向行为、约束高风险行为，保护顾客也保护自己</li>
+  </ul>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
+</div>
+
+  <div class="section">
+    <h2>🏆 第一部分：奖励机制</h2>
+    <p>好的工作值得被认可。门店建立了以下激励机制，鼓励每位员工积极进步：</p>
+    <table class="reward-table">
+      <thead><tr><th>奖励类型</th><th>触发条件</th><th>奖励内容</th></tr></thead>
+      <tbody>
+        <tr><td>月度优秀员工</td><td>服务评分高、销售达标、出勤完整、无投诉</td><td>奖状 + 奖金 + 表彰公告</td></tr>
+        <tr><td>销售冠军</td><td>当月个人销售额第一</td><td>奖金 + 优先排班权</td></tr>
+        <tr><td>服务之星</td><td>顾客主动表扬或好评截图</td><td>积分奖励，积累兑换礼品</td></tr>
+        <tr><td>学习达人</td><td>培训考核全部优秀，主动学习</td><td>晋升优先考虑</td></tr>
+        <tr><td>创新建议奖</td><td>提出被采纳的改善建议</td><td>奖金 + 通报表扬</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>⚠️ 第二部分：纪律处罚标准</h2>
+    <p>纪律不是为了惩罚，而是为了保护每一位员工和顾客。以下是主要违规处理标准：</p>
+    <table class="penalty-table">
+      <thead><tr><th>违规行为</th><th>轻度处理</th><th>严重处理</th></tr></thead>
+      <tbody>
+        <tr><td>迟到/早退（当月累计3次）</td><td>书面警告，扣绩效</td><td>连续违规降级</td></tr>
+        <tr><td>在服务区使用私人手机</td><td>口头提醒</td><td>累计3次书面警告</td></tr>
+        <tr><td>泄露顾客信息</td><td>书面警告，道歉</td><td>即时解除劳动合同</td></tr>
+        <tr><td>私自修改价签/挪用货款</td><td>—</td><td>即时解除，追究责任</td></tr>
+        <tr><td>与顾客发生争吵/冲突</td><td>道歉，书面反省</td><td>停职处理</td></tr>
+        <tr><td>代人打卡</td><td>双方均罚款</td><td>累计两次解除合同</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🛡️ 第三部分：门店安全规定</h2>
+    <div class="safety-grid">
+      <div class="safety-card">
+        <div class="icon">🔥</div>
+        <div class="name">消防安全</div>
+        <div class="desc">了解灭火器位置和使用方法；禁止在非指定区域使用明火；下班前检查电器是否关闭</div>
+      </div>
+      <div class="safety-card">
+        <div class="icon">🔐</div>
+        <div class="name">防盗安全</div>
+        <div class="desc">留意可疑行为，高价商品须锁回陈列柜；顾客试戴须全程关注；下班锁门双人确认</div>
+      </div>
+      <div class="safety-card">
+        <div class="icon">⚡</div>
+        <div class="name">设备安全</div>
+        <div class="desc">不随意拆卸设备；发现设备故障立即上报；不用湿手操作电器；验光仪使用须培训后操作</div>
+      </div>
+    </div>
+
+    <div class="emergency-box">
+      <h4>🚨 紧急情况处置（必须牢记）</h4>
+      <ol style="padding-left:18px;">
+        <li style="margin-bottom:8px;"><strong>火警</strong>：立即启动烟雾报警器，疏散顾客从安全出口撤离，不乘电梯，拨打119</li>
+        <li style="margin-bottom:8px;"><strong>盗窃</strong>：不正面对抗，记住特征，在安全情况下立即报警（110），通知店长</li>
+        <li style="margin-bottom:8px;"><strong>顾客受伤</strong>：立即通知店长，协助处理，记录事件经过，根据情况拨打120</li>
+        <li style="margin-bottom:8px;"><strong>设备故障</strong>：立即停止使用，粘贴"故障"标识，通知店长联系维修</li>
+      </ol>
+    </div>
+  </div>
+
+  
+
+    <div class="section">
+    <h2>🔒 第四部分：门店安全管理</h2>
+        <h3>📌 财务安全</h3>
+    <ul>
+      <li>收款后立即进行POS机确认，不接受私下转账（除非门店有明文规定）</li>
+      <li>发现收银差额，及时上报，不自行处理</li>
+      <li>每日收款登记，与系统记录核对</li>
+      <li>不得将顾客资料（手机号、购买记录）用于私人用途</li>
+    </ul>
+
+    <h3>📌 商品安全</h3>
+    <table class="rule-table">
+      <thead><tr><th>场景</th><th>安全要求</th></tr></thead>
+      <tbody>
+        <tr><td>高价值陈列品</td><td>试戴时全程陪同，不离视线</td></tr>
+        <tr><td>库存领取</td><td>按需领取，做好出库记录</td></tr>
+        <tr><td>配镜工单</td><td>核对无误再制作，避免废镜纠纷</td></tr>
+        <tr><td>成品镜存储</td><td>分类摆放，配件齐全，避免混淆</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📌 消防与应急</h3>
+    <ul>
+      <li>了解门店消防设备位置（灭火器、应急出口）</li>
+      <li>熟悉紧急疏散路线，不堵塞通道</li>
+      <li>遇到可疑人员或紧急状况，立即报告店长</li>
+    </ul>
+
+  </div>
+  <div class="section">
+    <h2>🏆 第五部分：奖励制度的积极运用</h2>
+        <p>了解奖励制度的目的，不只是为了"拿奖金"，而是用它指导自己每天的工作重点：</p>
+    <div class="tip-box"><div class="label">💡 利用制度提升自我</div>
+    <ul style="margin-top:8px;">
+      <li>每月初查看门店本月的重点KPI（销售额目标、服务评分等）</li>
+      <li>把KPI分解到每天：每天至少完成多少才能达到月目标？</li>
+      <li>找到与自己差距最大的指标，重点改进</li>
+      <li>主动向优秀同事请教，而不是等待培训</li>
+    </ul>
+    </div>
+    <p style="margin-top:14px;">优秀员工和普通员工的差距，往往不在于能力，而在于是否<strong>主动把握每一次成长机会</strong>。</p>
+
+  </div>
+
+    <div class="section">
+    <h2>💼 实际操作：安全风险自查清单</h2>
+    <p>每日开店前，进行以下安全自查：</p>
+    <table class="rule-table">
+      <thead><tr><th>检查项目</th><th>正常状态</th><th>发现问题时</th></tr></thead>
+      <tbody>
+        <tr><td>展示柜锁闭状态</td><td>全部上锁，无异常</td><td>立即告知店长，不私自处理</td></tr>
+        <tr><td>收银机备用金</td><td>与前日记录一致</td><td>立即上报，等待核查</td></tr>
+        <tr><td>消防通道</td><td>无遮挡，通畅</td><td>清理遮挡物，告知店长</td></tr>
+        <tr><td>设备运行状态</td><td>验光仪器正常开机</td><td>联系技术维修，勿自行拆装</td></tr>
+      </tbody>
+    </table>
+  </div>
+<!-- LM-START -->
+<div class="lm-block lm-practice">
+  <h3>🔧 动手实践任务（今日必做）</h3>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 1：安全自查走查（约 20 分钟）</div>
+      <div class="lm-pr-d">拿一张纸，按清单走一圈：①消防器材位置和有效期；②电源插排是否超载、线是否有破损；③地面是否有水渍/杂物；④加工设备防护罩是否在位；⑤应急通道是否被货物挡住。</div>
+      <div class="lm-pr-o">✅ 完成标准：记录发现的问题并报给师傅，能说出灭火器的存放位置。</div>
+    </div>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 2：应急流程口述（约 10 分钟）</div>
+      <div class="lm-pr-d">向师傅口述三个场景的处理顺序：顾客晕倒、顾客被镜架划伤、加工设备异味冒烟。</div>
+      <div class="lm-pr-o">✅ 完成标准：每个场景都能说出「先做什么、再报告谁、怎么记录」，重点是不慌、先保人。</div>
+    </div>
+</div>
+<div class="lm-block lm-faq">
+  <h3>⚠️ 常见问题与注意事项</h3>
+    <details class="lm-q">
+      <summary>❓ 犯了小错会不会被扣钱？</summary>
+      <div class="lm-a">看性质。疏忽类小错（记错单、摆放不整）一般先提醒、纠正；涉及诚信、顾客利益、安全的错误（私收款、欺客、违规操作设备）处理会重得多。核心判断标准：是否损害顾客利益和门店信誉。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 发现安全隐患但我只是新人，要不要说？</summary>
+      <div class="lm-a">一定要说。安全问题没有新老之分，越早发现损失越小。可以直接告诉师傅或店长，哪怕只是「地上有水，我怕有人滑倒」。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客在店里摔倒/划伤，我第一句应该说什么？</summary>
+      <div class="lm-a">先看人：「您有没有受伤？需要我扶您坐下吗？」——先处理人，再处理事。随后立刻报告店长，并按门店流程记录经过，不要私自承诺赔偿。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 安全规定为什么这么细？</summary>
+      <div class="lm-a">因为门店是「人、设备、化学品」混在一起的场所：验光设备有电、加工设备有高速转头、清洁剂有腐蚀性。每一条规定的背后都对应过真实事故。</div>
+    </details>
+</div>
+<div class="lm-block lm-quiz">
+  <h3>📝 今日自测（先做完再看答案）</h3>
+    <details class="lm-q">
+      <summary>第 1 题：门店常见的安全风险点有哪些？</summary>
+      <div class="lm-a"><b>参考答案：</b>用电（插排超载、线材破损）、地面湿滑、设备操作（防护罩、转头）、化学品（清洁剂、酒精）、消防通道被堵、货架倾倒。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 2 题：发生顾客受伤，第一步做什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>先确认人是否受伤并做必要安抚与简单处理，同时立刻报告店长，不擅自承诺赔偿、不隐瞒。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 3 题：以下哪项属于严重违纪？A. 忘记补卡  B. 私自收顾客现金不入账  C. 一次迟到 5 分钟  D. 货架摆放不整齐</summary>
+      <div class="lm-a"><b>参考答案：</b>B。私自收款属于诚信问题，通常直接按严重违纪处理。</div>
+    </details>
+    <details class="lm-q">
+      <summary>第 4 题：奖励机制想鼓励的核心行为是什么？</summary>
+      <div class="lm-a"><b>参考答案：</b>把顾客服务好、把业绩做起来、把团队带起来——即「顾客满意 + 业绩结果 + 正向协作」。</div>
+    </details>
+</div>
+<div class="summary-box">
+    <h3>📝 今日学习要点回顾</h3>
+    <ul>
+      <li>✅ 月度优秀员工、服务之星等多种奖励，积极努力才有回报</li>
+      <li>✅ 泄露顾客信息、挪用货款等严重违规直接解除合同</li>
+      <li>✅ 了解灭火器、安全出口位置，知道紧急情况处置步骤</li>
+      <li>✅ 安全规定是保护大家的底线，不是束缚</li>
+    </ul>
+    <p style="margin-top:14px; color:#2e7d32; font-weight:600;">🎯 今日任务：找到门店灭火器和安全出口的位置，告诉师傅</p>
+  </div>
+<!-- LM-END -->
+
+<!-- FLOW-START -->
+<div class="lm-block flow-block">
+  <h3>🔗 四大流程落地衔接 — 本日内容如何进入门店培训体系</h3>
+  <div class="flow-hook">💡 <b>今天你只要记住这一句：</b>今天记住两件事：哪些红线绝对不能碰，遇到突发情况第一反应该做什么。</div>
+  <p class="flow-sub">本日内容对应：<strong>制度认知 · 安全与奖惩</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
+  <div class="flow-grid">
+<div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>把奖惩红线和安全处置流程讲透，让你知道边界在哪、危险来了怎么办。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>记住 3 条奖惩红线（如私收货款、与顾客争执、违规操作设备）</li><li>记住突发处置：火情→断电报警疏散；顾客晕倒→呼救拨打 120；失窃→保护现场上报</li><li>现金与贵重物品管理：交接、锁柜、双人确认</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>能说出 3 条红线和 2 条安全处置动作，即达标。</div><div class="flow-pit"><b>⚠ 常见坑：</b>安全知识最怕‘以为记得’——真要出事时脑子空白，所以必须反复演练形成条件反射。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>用真实案例 + 现场指认，把安全知识变成‘身体记忆’。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>结合门店真实安全案例讲解，说清‘如果当时怎么做就能避免’</li><li>模拟一次突发处置，让新人完整走一遍流程</li><li>带新人指认消防器材、断电总闸、安全出口位置</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>新人能独立指认消防器材位置并口述一次处置流程，即完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>安全演练不能走过场——要真的让新人‘做一遍’，而不是‘听一遍’。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>通过口述抽查确认安全知识已掌握，这是保命的底线，必须人人过关。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>口述抽查：说出 3 条奖惩红线和 2 条安全处置动作</li><li>安全知识小测合格，成绩记入档案</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>口述与小测均合格，即达标；不合格者当天补考。</div><div class="flow-pit"><b>⚠ 常见坑：</b>安全考核必须 100% 通过——这条不能‘差不多就行’。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>若客诉或事故暴露了安全标准的盲区，第一时间补进培训条目。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>复盘任何安全事故或顾客投诉，找出标准漏洞</li><li>将新发现的隐患补充进安全培训清单</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成安全标准补充条目，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>安全事故没有‘偶然’——每次都要问‘标准里是不是没写清楚’，而不是只怪员工。</div></div>
+  </div>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+</div>
+<!-- FLOW-END -->
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_04_学习内容.html">← Day 04</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    
+    <a class="nav-btn" href="Day_05_练习题.html">今日练习题 →</a>
+  </div>
+</div>
+</body>
+</html>
