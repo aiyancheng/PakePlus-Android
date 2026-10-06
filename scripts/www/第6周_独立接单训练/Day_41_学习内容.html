@@ -242,6 +242,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -403,7 +429,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-
   <h2 style="color:#1a5276;font-size:1.15rem;margin-top:32px;padding-left:10px;border-left:4px solid #2980b9">🔧 常见售后问题处理</h2>
   <div style="background:#eaf4fc;border-radius:10px;padding:18px 22px;margin:14px 0;border:1px solid #d0e8f5">
     <table class="structure-table" style="width:100%;border-collapse:collapse;margin:14px 0">
@@ -416,7 +441,6 @@ body{padding:0!important;margin:0!important}
     </table>
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -450,38 +474,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">讲三句就够：①用清水冲 + 中性洗手液 + 镜布吸干；②不用热水、酒精、衣服干擦；③不戴时镜片朝上放镜盒。讲完可让顾客复述一遍。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：标准售后服务项目有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>免费清洗、镜架调整、螺丝紧固、鼻托更换、佩戴复查、保养指导、复查与活动提醒。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：取镜后回访的标准结构是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>问候自我介绍 → 确认佩戴感受（是否舒适、有无头晕压鼻）→ 提醒保养要点 → 约定复查/下次到店服务。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：顾客档案应该记录哪些信息？</summary>
-      <div class="lm-a"><b>参考答案：</b>基本信息与联系方式、验光数据与变化、配镜记录（产品/参数/日期）、佩戴习惯与偏好、售后与回访记录。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：为什么说售后服务是最划算的营销？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为老顾客复购与转介绍几乎不花获客成本，而一次免费清洗、一次准确回访带来的信任，往往直接转化为下一次成交和家庭客源。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客说「这副眼镜我戴了三年，还能来清洗吗」，你怎么回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>热情欢迎：「当然可以，随时来，这些都是免费服务。」清洗时顺便检查镜架状态与度数是否还合适，如发现膜层老化或度数变化，在顾客离开前自然地提一句，不强推。</div>
-    </details>
-</div>
-<div style="background:linear-gradient(135deg,#eaf4fc,#d0e8f5);border-radius:10px;padding:20px 24px;margin-top:24px">
-    <strong style="color:#1a5276">📝 今日学习要点回顾</strong>
-    <ul style="margin-top:10px;padding-left:18px;line-height:2">
-      <li>完善的客户档案是长期经营的基础，每次接单就要记录</li>
-      <li>主动回访是建立信任、促进复购的关键动作</li>
-      <li>售后服务的核心是"快速响应+解决问题+留住客户"</li>
-      <li>口碑转介绍往往来自售后体验，不仅仅是产品本身</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -498,7 +491,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
   <div class="nav-footer">
     <a href="Day_40_练习题.html" class="nav-btn outline">← Day 40 练习题</a>
