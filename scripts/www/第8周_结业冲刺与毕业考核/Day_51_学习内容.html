@@ -251,6 +251,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -421,7 +447,6 @@ body{padding:0!important;margin:0!important}
     </table>
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -455,35 +480,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">三个标准：无遗漏环节、无自我卡顿、顾客在流程里始终知道下一步会发生什么（有掌控感）。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：配镜黄金标准流程的 8 步是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>迎宾问候 → 需求询问 → 验光/数据确认 → 产品推荐 → 试戴体验 → 报价与异议处理 → 成交开单 → 交付说明与送客（含售后承诺）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：「一单到底」的服务意识指什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>由同一个人负责顾客从进店到取镜、售后的完整过程，避免信息在交接中丢失，顾客不用反复说明需求。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：全流程演练合格的三个标准是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>无遗漏环节、无自我卡顿、顾客全程有掌控感（知道下一步做什么）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：顾客在试戴阶段突然说「我先去别家看看」，你怎么收尾？</summary>
-      <div class="lm-a"><b>参考答案：</b>不拦不留怨气：「可以的，我把您试过的这两款型号和价格写在单页上，您对比更方便。方便留个微信吗？如果别家没有这个型号，我这边帮您查库存。」留下信息与通道，为二次到店铺路。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>配镜全流程8步：迎客→需求挖掘→验光引导→结果解读→产品推荐→异议处理→开单→取镜售后</li>
-      <li>每个环节都有标准话术和"忌讳做法"，避免低级失误</li>
-      <li>三种演练方法：双人角色扮演/录像自我复盘/话术默写，选最适合自己的方式练习</li>
-      <li>流程环节按 100 分制评分（见上表），对应结业考核"销售情景模拟"模块（该模块满分 50 分，按比例折算计入）</li>
-    </ul>
-    <p style="margin-top:14px; color:#fff3c0; font-weight:bold;">🎯 <strong>今日行动：</strong>找一位同事进行一次完整的角色扮演演练，把8个流程环节完整走一遍，互相打分。</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
