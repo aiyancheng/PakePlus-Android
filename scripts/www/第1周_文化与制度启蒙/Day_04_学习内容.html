@@ -259,6 +259,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -276,7 +289,9 @@ body{padding:0!important;margin:0!important}
   <ul class="lm-list">
       <li>能列出工作区域「五不准」：不玩手机、不聚堆闲聊、不在顾客面前吃东西、不趴柜台、不打闹</li>
       <li>学会基本职场礼仪：称呼、请示、交接、道歉的标准说法</li>
-      <li>理解保密义务：顾客资料、价格政策、内部数据哪些不能外传</li>
+      <li>理解保密义务：顾客资料、价格政策、内部数据哪些不能外传；<strong>离职后义务仍然有效</strong></li>
+      <li>守住廉洁底线：不接受礼品馈赠、不与同事/顾客/供应商发生借贷、不从事利益冲突的业务</li>
+      <li>会用汇报规则：一般只向直接上级汇报，24 小时无反馈可越级</li>
       <li>建立主动服务意识：不等叫、先观察、早一步（递试镜架、拉凳子、开门）</li>
       <li>识别 4 个常见职场礼仪误区：打断对方、当面议论顾客、情绪外露、背后抱怨</li>
   </ul>
@@ -349,22 +364,48 @@ body{padding:0!important;margin:0!important}
   </div>
 
   <div class="section">
-    <h2>🔒 第三部分：保密义务</h2>
+    <h2>🔒 第三部分：保密义务与廉洁要求</h2>
     <p>员工在工作中会接触到以下保密信息，<strong>禁止向外部任何人透露</strong>：</p>
     <ul>
       <li>顾客个人信息（姓名、电话、地址、视力档案）</li>
       <li>门店进货价、利润结构、销售数据</li>
-      <li>同事薪资情况</li>
+      <li>同事薪资情况、公司财务经营数据、人事政策</li>
       <li>门店经营策略、供应商信息</li>
     </ul>
+    <div class="tip-box">
+      <div class="label">💡 保密义务的三个要点（《员工手册》P5.2）</div>
+      <ul style="padding-left:18px;">
+        <li><strong>范围广</strong>：不仅是经营情报，你的工资、其他同事的信息、公司财务经营数据、人事政策等同样有义务保密</li>
+        <li><strong>期限长</strong>：保密义务不限于合同期内——<strong>无论在职还是离职，离开公司后仍将承担保密义务</strong></li>
+        <li><strong>后果重</strong>：有意泄露公司情报的，公司将根据遭受损失的大小追究过失并要求赔偿经济损失</li>
+      </ul>
+    </div>
     <div class="scenario-card">
       <div class="title">⚠️ 案例警示</div>
       <p>员工小王在朋友圈发布了一张门店后台系统截图（含顾客信息），被顾客发现投诉，门店面临处罚，小王被立即解除劳动合同。</p>
-      <div class="right">💡 启示：无论何时何地，顾客信息都是隐私，严禁泄露。</div>
+      <div class="right">💡 启示：无论何时何地，顾客信息都是隐私，严禁泄露——离职后同样如此。</div>
     </div>
-  </div>
 
-  
+    <h3>🎁 禁止接受礼品和利益</h3>
+    <p>在频繁的商业活动中，你难免遇到赠送礼品、现金的供应商、承包商、业主以及客人。作为公司的工作伙伴，你应<strong>拒绝接受任何馈赠，并主动向有关部门反应</strong>——这是保护你自己，也是保护公司利益。</p>
+
+    <h3>⚖️ 利益冲突与借贷关系</h3>
+    <ul>
+      <li>聘用期间，<strong>非经公司同意</strong>，不得参与与你职业有冲突的工作和业务，不可与公司及其供应商或客户企图发生商业关系——<strong>违者一经发现立即开除</strong></li>
+      <li>公司提倡<strong>亲、清、友、善</strong>的人际关系，从简处理人情往来，<strong>礼金金额提倡在 200 元以内</strong></li>
+      <li><strong>员工和员工、和客户、和供应商之间，禁止发生借贷关系与资金往来</strong></li>
+    </ul>
+
+    <h3>📇 个人资料更改</h3>
+    <p>为使公司档案准确、真实，以下情况发生更改时，请<strong>立即通知你的人事部主管</strong>：住址、联系电话、发生意外或病痛时的联系人、本人姓名、婚姻状况、工作经历、民族等。<strong>否则将被视为虚报资料，按情节轻重给予处分。</strong></p>
+
+    <h3>📢 汇报规则：一般不越级，特殊情况允许</h3>
+    <ul>
+      <li>一般情况下，工作汇报、请示、沟通<strong>只与直接上级</strong>进行，无特殊情况不允许越级汇报</li>
+      <li><strong>允许越级汇报的情形</strong>：逐级汇报工作后 <strong>24 小时没有得到直属主管反馈</strong>，可越级汇报至上一级主管</li>
+      <li>如违反汇报规则（如无事由随意越级），可能会受到处罚</li>
+    </ul>
+  </div>
 
     <div class="section">
     <h2>🌟 第四部分：主动服务意识培养</h2>
@@ -443,35 +484,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">绝对不行。顾客资料、验光数据、消费记录都属于隐私和门店商业信息，泄漏属于严重违纪，甚至要承担法律责任。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：工作区域「五不准」包含哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>不玩手机、不聚堆闲聊、不在顾客面前吃东西、不趴/倚柜台、不打闹嬉戏（以门店制度原文为准）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：以下哪种做法属于礼仪误区？A. 顾客说话时不打断  B. 当着顾客的面议论上一位顾客  C. 交接时复述确认  D. 犯了错先道歉再补救</summary>
-      <div class="lm-a"><b>参考答案：</b>B。当面议论顾客是服务大忌，一旦被听到会直接失去信任，还可能引发投诉。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：「主动服务意识」最核心的三个字是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>早一步——在顾客开口之前看到需求：主动开门、让座、递试镜架、告知等待时间。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：顾客问的产品参数你不确定，旁边同事正闲着，你怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>先稳住顾客：「我请我们同事帮您确认一下，马上给您答复。」再请同事协助，自己在旁听并记下来——下次就是你自己能答的问题了。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 工作时间禁止在服务区玩私人手机</li>
-      <li>✅ 与顾客、同事、上级都有对应的相处礼仪</li>
-      <li>✅ 顾客信息、门店数据等属于保密内容，严禁外泄</li>
-      <li>✅ 遇到问题先解决，不推卸、不争辩</li>
-    </ul>
-    <p style="margin-top:14px; color:#2e7d32; font-weight:600;">🎯 今日任务：背会3条顾客称呼礼仪，并向师傅演示顾客离店送别场景</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
