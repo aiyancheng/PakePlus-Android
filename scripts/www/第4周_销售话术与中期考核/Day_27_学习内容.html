@@ -257,6 +257,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -388,7 +401,6 @@ body{padding:0!important;margin:0!important}
     </table>
   </div>
 
-    
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -422,40 +434,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">记录（时间、问题、处理、结果）+ 复盘（根因是流程问题还是人的问题）+ 回访确认顾客满意。同样的问题出现两次，就是流程该改了。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：HEARD 五步法的内容是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>Hear 倾听（不打断）、Empathize 共情（认同情绪）、Apologize 道歉（为体验道歉）、Resolve 解决（给方案与时限）、Diagnose 复盘（事后分析原因、跟进确认满意）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：投诉的本质是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>顾客要的是「被重视」和「问题被真正解决」，情绪背后是没有被满足的期待。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：处理网络差评的三条原则是？</summary>
-      <div class="lm-a"><b>参考答案：</b>快速公开回应（表明重视与联系渠道）、线下解决（不在评论区争论）、用行动改进（解决根因），不删评对抗、不私信施压。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：投诉预防可以从哪四个源头下手？</summary>
-      <div class="lm-a"><b>参考答案：</b>沟通（讲清效果与适应期）、复述确认（需求/度数/交期）、记录（售后与顾客档案）、交期管理（不随意承诺、及时告知变更）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客取镜后第二天来说「戴着头晕」，情绪很急，你怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>先安抚让他坐下，复述确认：「您是昨天取镜后一直有点晕，对吗？」随后立刻安排复查（度数、瞳距、镜架位置、适应期沟通），能现场调整就调整，不能解决按流程升级给验光师/店长，并承诺反馈时间。</div>
-    </details>
-</div>
-<div class="section">
-    <h2>📝 今日学习要点回顾</h2>
-    <ul>
-      <li>✅ 投诉是礼物——能收到投诉，说明客户还愿意与你沟通；处理好的投诉顾客忠诚度高于从未投诉的顾客</li>
-      <li>✅ HEARD五步法：倾听→共情→道歉→解决→复盘；第一步是控制情绪，不要让自己也变得激动</li>
-      <li>✅ 四大禁忌：争辩、推责、忽视情绪、公开讨论</li>
-      <li>✅ 常见投诉应对：度数不适→立即重验；镜框损坏→先检查判断；延误→道歉+给具体可执行的方案</li>
-      <li>✅ 投诉处理好后主动跟进客户确认满意度；差评24小时回复，引导私信，态度诚恳</li>
-    </ul>
-    <p style="margin-top:12px;color:#4CAF50;font-weight:600">🎯 今日任务：与师傅模拟一次投诉场景，练习完整的处理流程。</p>
-  </div>
+
 <div class="lm-block lm-review">
   <h3>🗓️ 本周回顾小结与阶段检查点</h3>
   <div class="lm-sub">① 本周知识串讲（前后衔接）</div>
