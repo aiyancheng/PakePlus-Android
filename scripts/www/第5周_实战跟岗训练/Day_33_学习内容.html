@@ -278,6 +278,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -287,10 +300,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">📍 第5周 · 实战跟岗训练</div>
   <h1>Day 33 · 制单与交付：加工单填写与取镜流程</h1>
   <div class="subtitle">细节决定品质——一张完整的加工单是对顾客的承诺</div>
-</div>
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：3小时</div>
-  <div class="meta-item"><span class="dot"></span>重点能力：制单规范 · 质检流程 · 取镜服务</div>
 </div>
 <div class="container">
 
@@ -461,38 +470,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">第一时间告知，不要等到约定当天才说。给出准确的新时间 + 原因 + 补救方案（如加急、临时借戴），并记录在单据上。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：加工单必须包含哪些关键信息？</summary>
-      <div class="lm-a"><b>参考答案：</b>顾客姓名与联系方式、镜架型号与颜色、镜片品种与参数（球镜/柱镜/轴位）、瞳距（必要时含瞳高）、特殊要求、下单日期与约定交期、经办人。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：填单的「三核对」是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>填完自己核对一遍、下料前与处方核对一遍、交付时与顾客再核对一遍。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：出货质检主要检查哪些项？</summary>
-      <div class="lm-a"><b>参考答案：</b>度数是否与处方一致、散光轴位是否正确、光学中心位置与瞳距、膜层有无瑕疵、镜片有无划痕崩边、镜架外观与开合是否正常、螺丝紧固与鼻托。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：取镜服务应包含哪几个动作？</summary>
-      <div class="lm-a"><b>参考答案：</b>当面校验（度数/外观）→ 试戴与调整 → 保养说明（怎么洗怎么放）→ 售后告知（质保与复查）→ 加微信/建档并约定回访。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：质检时发现轴位偏差 10 度，顾客还在等，你怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>不交付不合格品。立刻告知师傅并说明情况，按门店流程返工或重做；同时向顾客如实说明需要延期的原因与新时间，给一个诚实的解释比交一副戴不舒服的眼镜强得多。</div>
-    </details>
-</div>
-<div class="summary-box">
-      <h3>📝 今日学习要点回顾</h3>
-      <ul>
-        <li>加工单必填项（6项）：顾客信息、镜架型号、镜片参数、瞳距瞳高、特殊要求、约定交期（联系方式与验光数据左右不能填反）</li>
-        <li>制单完成后当场与顾客复核确认所有信息</li>
-        <li>出货前必做质检，不合格产品绝不交付</li>
-        <li>取镜是服务的收官，双手递镜、试戴、调整、叮嘱、送客缺一不可</li>
-      </ul>
-    </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -509,7 +487,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
 <div class="nav-bar">
   <a href="Day_32_练习题.html" class="nav-btn prev">← Day 32 练习题</a>
