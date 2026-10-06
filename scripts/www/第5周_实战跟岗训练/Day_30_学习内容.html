@@ -269,6 +269,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -278,12 +291,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">📍 第5周 · 实战跟岗训练</div>
   <h1>Day 30 · 主动问询：需求挖掘实战练习</h1>
   <div class="subtitle">从"问问题"到"挖需求"——学会聆听顾客真正的声音</div>
-</div>
-
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：3-4小时</div>
-  <div class="meta-item"><span class="dot"></span>学习方式：理论学习 + 角色扮演演练</div>
-  <div class="meta-item"><span class="dot"></span>重点能力：问询技巧 · 需求分析</div>
 </div>
 
 <div class="container">
@@ -410,7 +417,6 @@ body{padding:0!important;margin:0!important}
     
   </div>
 
-
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -444,39 +450,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">当场复述一遍确认：「我确认一下，您主要是看电脑、预算 800 以内、旧镜戴着有点晕，对吧？」复述既是记忆手段，也是专业感的体现。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：开放式提问和封闭式提问分别适合什么时候用？</summary>
-      <div class="lm-a"><b>参考答案：</b>开放式用于了解全局与真实想法（「平时用眼多吗」）；封闭式用于确认细节与推进（「是开车的时候觉得晃眼，对吗」）。两者交替使用，先开后闭。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：漏斗式提问的四层结构是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>第一层：了解来意（谁来的？为什么来？）；第二层：了解使用场景（什么时候戴？在哪里戴？）；第三层：了解使用习惯/问题（有没有之前的用眼习惯和问题？）；第四层：确认关键需求（最重要的是哪几点？）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：必须问出的 3 个关键信息是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>用途与用眼场景、预算区间、旧镜情况与不适点。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：提问的三个常见误区是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>连珠炮式连续发问、只问不答（不做回应与分享）、问隐私或用质问语气（「您这度数怎么这么高」）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客说「就配副便宜的」，你怎么追问？</summary>
-      <div class="lm-a"><b>参考答案：</b>「可以的，性价比高的我们有不少。您这副主要是备用，还是天天戴？如果天天戴，我建议在膜层上别省太多，耐用度差别挺明显。」——接受诉求，再引出关键差异。</div>
-    </details>
-</div>
-<div class="summary-box">
-      <h3>📝 今日学习要点回顾</h3>
-      <ul>
-        <li>开放式问题用于"打开话匣子"，封闭式问题用于"锁定关键"</li>
-        <li>漏斗式提问：来意→场景→习惯/问题→确认核心需求</li>
-        <li>最后主动总结顾客需求，获得确认，是问询环节的终点</li>
-        <li>今日目标：独立完成 1-2 次完整的需求问询</li>
-        <li>遇到不配合的顾客，换策略而不是放弃</li>
-      </ul>
-    </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -493,7 +467,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
 <div class="nav-bar">
   <a href="Day_29_练习题.html" class="nav-btn prev">← Day 29 练习题</a>
