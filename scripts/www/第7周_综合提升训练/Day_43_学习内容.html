@@ -243,6 +243,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -431,7 +457,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -465,38 +490,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">作为验光配镜顾问：能讲清流程、能配合操作、能识别异常信号、能准确记录与衔接，不需要独立出具处方。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：主觉验光的主要步骤有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>雾视（放松调节）→ 逐步去雾 → 确定球镜（近视/远视度数）→ 确定柱镜度数与轴位（散光）→ 双眼平衡与试戴确认。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：为什么要先「雾视」？</summary>
-      <div class="lm-a"><b>参考答案：</b>为了放松眼睛的调节，避免因过度调节得到偏高的近视（或偏低的远视）结果，让验光更真实。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：常见验光误差来源有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>调节未放松、顾客头位不正或眯眼、回答随意不专注、设备未校准、环境光线不当、疲劳状态。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：遇到顾客对处方有疑问时，你的正确做法是？</summary>
-      <div class="lm-a"><b>参考答案：</b>安抚 + 转交：「我理解您担心，这个度数问题让验光师给您详细解释一下，更准确。」同时做好记录与衔接，不自行下结论。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客试戴时说「左眼比右眼模糊」，你怎么办？</summary>
-      <div class="lm-a"><b>参考答案：</b>立即记录并报告验光师，请师傅复核双眼平衡与轴位；同时请顾客稍等，安抚说明「我们帮您复查一下」。绝不自行调整或说「再适应适应就好」。</div>
-    </details>
-</div>
-<div style="background:linear-gradient(135deg,#f5eef8,#e8daef);border-radius:10px;padding:20px 24px;margin-top:24px">
-    <strong style="color:#6c3483">📝 今日学习要点回顾</strong>
-    <ul style="margin-top:10px;padding-left:18px;line-height:2">
-      <li>主觉验光7步骤要熟练，每步都有其目的和注意事项</li>
-      <li>雾视是关键步骤，特别对青少年，不可省略</li>
-      <li>散光轴向比度数更重要，要耐心精确确认</li>
-      <li>验光记录规范填写，是专业性的体现</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -513,8 +507,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="../第6周_独立接单训练/Day_42_练习题.html" class="nav-btn outline">← Day 42 练习题</a>
