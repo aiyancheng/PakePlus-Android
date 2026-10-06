@@ -242,6 +242,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -415,7 +441,6 @@ body{padding:0!important;margin:0!important}
     <div class="tip">💡 角色扮演后互相给出反馈：哪句话最有说服力？哪里还可以改进？</div>
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -449,38 +474,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">先不争论价格，统一口径：「这个价格由店长审批，我帮您确认。」同时记下问题，事后和团队对齐价格沟通规则，避免顾客利用内部不一致压价。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：顾客产生价格异议的常见心理动因有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>怕被坑（不信任价格）、预算确实有限、习惯性砍价、正在和别家比较、对价值还不认可。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：「对比法」怎么用才不会贬低同行？</summary>
-      <div class="lm-a"><b>参考答案：</b>只比可核对的项目（品牌/系列/折射率/膜层/售后），把选择权还给顾客：「您方便说下对面是哪一款吗？我帮您逐项对比，您自己判断更放心。」</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：成交促进的三类方法是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>选择法（二选一推进）、理由法（给一个正当理由，如活动最后一天/库存只剩一副）、确认法（总结已定内容后收口开单）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：价格谈判中的底线纪律是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>不擅自改价、不贬低同行、不贬低自家产品、不做无法兑现的承诺；超权限一律请示。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客说「你要是能便宜 200 我马上买」，你怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>不立刻松口，先确认：「您要是今天定，我帮您去申请一个更好的方案——可能是延保或赠配件，价格上我确实没有这个权限。您先坐一下，我去问一下店长。」回来后无论结果如何，都要给出明确答复。</div>
-    </details>
-</div>
-<div style="background:linear-gradient(135deg,#eaf4fc,#d0e8f5);border-radius:10px;padding:20px 24px;margin-top:24px">
-    <strong style="color:#1a5276">📝 今日学习要点回顾</strong>
-    <ul style="margin-top:10px;padding-left:18px;line-height:2">
-      <li>价格异议的本质是价值感知不足，而非真实价格问题</li>
-      <li>六大技巧灵活运用，核心都是"转移焦点，从价格到价值"</li>
-      <li>成交促进要自然，不是强迫，是帮助客户做出对他有利的决定</li>
-      <li>每次异议处理都是练习机会，记录下来，不断优化话术</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -497,7 +491,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
   <div class="nav-footer">
     <a href="Day_36_练习题.html" class="nav-btn outline">← Day 36 练习题</a>
