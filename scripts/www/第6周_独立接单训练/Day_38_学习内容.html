@@ -244,6 +244,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -422,7 +448,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -456,38 +481,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">孩子眼轴在发育，度数变化快，一般建议每半年复查一次（发展快的 3 个月）。复查才知道防控有没有效果，也才能及时调整方案。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：儿童首次验光为什么通常需要散瞳？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为儿童调节力强，容易因调节紧张而出现「假性近视」，散瞳能放松调节，得到真实的屈光状态。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：儿童镜架选择的 5 个要点是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>轻（减少鼻梁负担）、稳（不易滑落）、抗冲击（TR90/硅胶鼻托等）、尺寸合适（不压脸不夹头）、不追求大框（避免镜片厚与光学中心偏移）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：与家长沟通的三条原则是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>用事实不用恐吓、讲清后果与可逆性、给可执行的日常建议（户外 2 小时、控制近距离时长、定期复查）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：近视防控的核心指标是什么，为什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>眼轴长度。眼轴一旦变长不可逆，度数随眼轴增长而增加，控制眼轴增速才能真正控制度数发展。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：家长说「网上说戴眼镜会越戴越深，所以我不想给孩子配」，你怎么回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>「这个说法不准确。孩子度数变深是眼轴在长，跟戴不戴眼镜没关系；反而不戴眼镜、看东西一直模糊，眼睛更累，可能加深更快。我们能做的是足矫配镜 + 每天户外 2 小时 + 定期查眼轴，把速度压下来。」</div>
-    </details>
-</div>
-<div style="background:linear-gradient(135deg,#eaf4fc,#d0e8f5);border-radius:10px;padding:20px 24px;margin-top:24px">
-    <strong style="color:#1a5276">📝 今日学习要点回顾</strong>
-    <ul style="margin-top:10px;padding-left:18px;line-height:2">
-      <li>儿童配镜核心：准确判断真性/假性近视，建议散瞳验光</li>
-      <li>了解视力发育规律和远视储量概念，能有效引导家长正确认知</li>
-      <li>近视防控产品知识是儿童配镜的核心竞争力</li>
-      <li>家长沟通要专业、有耐心，多用科学依据增强说服力</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -504,7 +498,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
   <div class="nav-footer">
     <a href="Day_37_练习题.html" class="nav-btn outline">← Day 37 练习题</a>
