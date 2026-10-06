@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 35 周测卷 | 第5周 · 跟岗实战综合</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#26a69a,#00695c);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.92;line-height:1.7;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+
+  .exam-info{background:#fff;border:1px solid #e6ebf3;border-radius:14px;padding:22px 24px;margin:22px 0;box-shadow:0 2px 10px rgba(26,58,107,.06)}
+  .ei-title{font-size:1.12em;font-weight:800;color:#00695c;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .ei-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .ei-item{background:#e8f6f4;border:1px solid #c5e8e3;border-radius:10px;padding:10px 12px;text-align:center}
+  .ei-k{display:block;font-size:.78em;color:#5f7a76;margin-bottom:4px}
+  .ei-v{display:block;font-size:1.02em;font-weight:800;color:#00695c}
+  .ei-h{font-weight:800;color:#26a69a;font-size:.95em;margin:16px 0 8px;display:flex;align-items:center;gap:7px}
+  .ei-h::before{content:"";width:4px;height:14px;border-radius:3px;background:#4db6ac}
+  .ei-table{width:100%;border-collapse:collapse;margin:2px 0 6px}
+  .ei-table th{background:#26a69a;color:#fff;padding:8px 12px;text-align:left;font-size:.86em}
+  .ei-table td{padding:8px 12px;border-bottom:1px solid #eef2f6;font-size:.86em;color:#445}
+  .ei-table tr:nth-child(even) td{background:#f5fbfa}
+  .ei-req{margin:2px 0 0;padding-left:20px}
+  .ei-req li{font-size:.88em;line-height:1.85;color:#445}
+
+  .section-title{font-size:1.15em;color:#00695c;font-weight:800;margin:32px 0 14px;padding-left:12px;border-left:4px solid #26a69a}
+  .sub-title{font-size:1em;font-weight:800;color:#26a69a;margin:20px 0 10px}
+
+  .question-card{background:white;border-radius:12px;padding:22px 24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+  .q-num{background:#26a69a;color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.86em;flex-shrink:0;}
+  .q-type{background:#e0f2f1;color:#00695c;padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:600;}
+  .q-level{padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:700;}
+  .lv-base{background:#e8f5e9;color:#2e7d32;}
+  .lv-mid{background:#fff4e0;color:#c47f17;}
+  .lv-up{background:#fdeaea;color:#c0392b;}
+  .q-score{color:#999;font-size:0.8em;margin-left:auto;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.7;margin-bottom:14px;}
+  .options{list-style:none;padding:0;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+  .options li:hover{background:#e8f6f4;border-color:#80cbc4;}
+  .options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+  .options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+  .options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+  .options li.done{cursor:default;}
+  .answer-area{width:100%;min-height:88px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#555;display:none;line-height:1.8;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .scenario-box{background:#eefaf8;border-left:4px solid #26a69a;border-radius:8px;padding:14px 16px;margin:2px 0 12px;font-size:0.9em;line-height:1.8;}
+
+  .score-box{background:linear-gradient(135deg,#e0f2f1,#f2fbfa);border-radius:12px;padding:20px;margin:26px 0 10px;}
+  .score-box h3{color:#00695c;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#26a69a;color:white;padding:8px 12px;text-align:left;font-size:0.86em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.85em;}
+  .sign-line{color:#666;font-size:0.88em;margin-top:10px;}
+
+  .nav-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 50px;}
+  .nav-btn{background:#26a69a;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#00695c;border:2px solid #26a69a;}
+
+  .home-topbar{background:#fff;padding:10px 0}
+  .home-topbar .ht-inner{width:min(1300px,calc(100% - 32px));max-width:1300px;margin:0 auto}
+  .home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;}
+  .home-topbar a:hover{background:#e6eaf6;color:#283593;}
+
+  .header{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin:18px auto 0!important;padding:34px 30px!important;
+    border-radius:14px!important;box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+  }
+  .container{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin-left:auto!important;margin-right:auto!important;
+    padding-left:0!important;padding-right:0!important;
+  }
+  @media(max-width:900px){
+    .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+    .header h1{font-size:1.5em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important}
+    .container{padding-left:0!important;padding-right:0!important}
+  }
+  @media(max-width:600px){
+    .header{padding:20px 15px!important}
+    .header h1{font-size:1.3em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+    .question-card{padding:16px 14px}
+    .exam-info{padding:16px 14px}
+  }
+  @media(max-width:1100px){
+    table{display:table!important;width:100%!important;max-width:100%!important;table-layout:auto!important;border-collapse:collapse!important}
+    th,td{overflow-wrap:break-word!important;word-break:break-word!important}
+  }
+  @media(max-width:900px){th,td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}}
+  @media(max-width:600px){th,td{padding:6px 5px!important;font-size:11px!important}}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第5周 · Day 35 — 周测卷</span>
+  <h1>🏆 第5周周测卷 · 跟岗实战综合</h1>
+  <div class="subtitle">覆盖 Day 29–34 全部学习内容 ｜ 满分 100 分（理论 60 + 实操 40）｜ 及格 70 分</div>
+</div>
+
+<div class="container">
+
+  <div class="exam-info">
+    <div class="ei-title">📋 考试说明（开考前请先阅读）</div>
+    <div class="ei-grid">
+      <div class="ei-item"><span class="ei-k">满分</span><span class="ei-v">100 分</span></div>
+      <div class="ei-item"><span class="ei-k">及格线</span><span class="ei-v">70 分</span></div>
+      <div class="ei-item"><span class="ei-k">建议时长</span><span class="ei-v">45 分钟</span></div>
+      <div class="ei-item"><span class="ei-k">考试形式</span><span class="ei-v">闭卷·独立作答</span></div>
+    </div>
+
+    <div class="ei-h">一、题型、题量与分值</div>
+    <table class="ei-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题量</th><th>分值</th><th>小计</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题<br>（60 分）</td><td>单项选择</td><td>10 题</td><td>每题 3 分</td><td>30 分</td></tr>
+        <tr><td>判断</td><td>5 题</td><td>每题 2 分</td><td>10 分</td></tr>
+        <tr><td>简答</td><td>2 题</td><td>每题 10 分</td><td>20 分</td></tr>
+        <tr><td>二、实操题<br>（40 分）</td><td>情景应对 / 动手操作</td><td>2 题</td><td>每题 20 分</td><td>40 分</td></tr>
+        <tr><td colspan="4"><strong>合计</strong></td><td><strong>100 分</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">二、难度分布</div>
+    <table class="ei-table">
+      <thead><tr><th>难度层级</th><th>考查重点</th><th>占比</th><th>对应题目</th></tr></thead>
+      <tbody>
+        <tr><td>基础</td><td>记忆与理解（流程步骤、数据含义、规范）</td><td>约 60%</td><td>单选 1–4、6、8、判断 11–12、14、简答 16、实操 19</td></tr>
+        <tr><td>中等</td><td>简单应用与判断（问题定位、场景应对）</td><td>约 30%</td><td>单选 5、7、9、判断 13、15、实操 18</td></tr>
+        <tr><td>提升</td><td>综合情境、迁移应用（权限边界、全流程整合）</td><td>约 10%</td><td>单选 10、简答 17</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">三、作答要求</div>
+    <ul class="ei-req">
+      <li>理论题独立完成，<strong>不得翻阅资料、不得相互讨论</strong>；选择题与判断题均为<strong>点击选项即可即时判定对错</strong>，点击后自动显示解析。</li>
+      <li>简答题按要点作答，条理清楚、分点书写，答对要点即得分。</li>
+      <li>实操题由带教师傅现场观察评分，按「流程是否完整、处理是否得当」给分。</li>
+      <li>满分 100 分，<strong>70 分为及格</strong>；未及格者按本页底部说明复训后重考。</li>
+    </ul>
+  </div>
+
+  <div class="section-title">一、理论题（共 60 分）</div>
+
+  <div class="sub-title">（一）单项选择（共 10 题，每题 3 分，共 30 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">1</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">电脑验光仪（客观验光）测出的结果，正确用途是？</div>
+    <ul class="options">
+      <li>A. 直接作为配镜处方使用</li>
+      <li>B. 作为主觉验光的初始参考数据</li>
+      <li>C. 用来判断是否有眼病</li>
+      <li>D. 用来评估镜片磨损程度</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。电脑验光获得的是初始参考数据，存在误差，必须经综合（主觉）验光由验光师确认后才能作为配镜处方。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">2</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">FAB 法则中，「B（Benefit）」指的是？</div>
+    <ul class="options">
+      <li>A. 产品本身的物理特征</li>
+      <li>B. 产品相比竞品的优势</li>
+      <li>C. 产品能给顾客带来的具体好处</li>
+      <li>D. 产品的价格优惠</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。F＝特征（是什么）、A＝优势（好在哪）、B＝利益（对顾客有什么用）。B 最重要——要结合顾客的具体情况和需求来说。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">3</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">客诉处理「黄金 5 步」的第一步是？</div>
+    <ul class="options">
+      <li>A. 先共情</li>
+      <li>B. 倾听、不打断</li>
+      <li>C. 先道歉</li>
+      <li>D. 先给解决方案</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。黄金 5 步＝倾听（不打断）→ 共情（认可感受）→ 道歉（真诚）→ 解决（给方案）→ 跟进（回访确认满意）。顾客没说完就急着解释，是最容易激化冲突的做法。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">4</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">漏斗式提问法的正确顺序是？</div>
+    <ul class="options">
+      <li>A. 确认需求 → 了解来意 → 使用场景 → 使用习惯</li>
+      <li>B. 了解来意 → 使用场景 → 使用习惯/问题 → 确认关键需求</li>
+      <li>C. 问预算 → 问款式 → 问颜色 → 问价格</li>
+      <li>D. 随便问，想到哪问到哪</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。漏斗式提问「从宽到窄」：先了解来意，再问使用场景、使用习惯与问题，最后主动总结并确认关键需求（让顾客说「对」）。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">5</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">协助验光时的「三条纪律」<strong>不包括</strong>下列哪一项？</div>
+    <ul class="options">
+      <li>A. 不干扰验光师操作</li>
+      <li>B. 不替顾客下达结论</li>
+      <li>C. 不擅自调整设备</li>
+      <li>D. 主动替顾客决定镜片折射率与度数</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>D</strong>。三条纪律是：不干扰验光师、不替顾客下结论、不擅自调整设备。D 属越界（涉及度数判定），须由验光师负责。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">6</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">当处方有散光（CYL）数据时，加工单上必须同时填写？</div>
+    <ul class="options">
+      <li>A. PD（瞳距）</li>
+      <li>B. AXIS（轴位）</li>
+      <li>C. ADD（近附加）</li>
+      <li>D. 镜架货号</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。有 CYL（散光度数）就必须同时填 AXIS（散光轴位），否则散光镜片无法定向加工，会导致佩戴不适。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">7</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">出货质检中，球镜度数、散光轴位的允许偏差分别是？</div>
+    <ul class="options">
+      <li>A. ±0.25D、±10°</li>
+      <li>B. ±0.50D、±20°</li>
+      <li>C. ±1.00D、±30°</li>
+      <li>D. 没有偏差要求</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A</strong>。球镜度数偏差在 ±0.25D 以内、散光度数与轴位偏差在 ±10° 以内为合格（参考国标）。质检不合格应直接返工，不将就交付。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">8</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">取镜服务中，「当面校验」最关键的一步是？</div>
+    <ul class="options">
+      <li>A. 快速包装好直接交给顾客</li>
+      <li>B. 用焦度计测量核对度数，并请顾客试戴确认</li>
+      <li>C. 只告知顾客保修期限</li>
+      <li>D. 让顾客自己回家检查</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。「我看着没问题」不是专业，用焦度计测量数据、当面试戴确认清晰与舒适，才是专业，也是防止后续纠纷的关键。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">9</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客说「新眼镜头晕，是不是度数配错了」，正确的第一反应是？</div>
+    <ul class="options">
+      <li>A. 「新眼镜头晕很正常，适应几天就好了」</li>
+      <li>B. 「我们度数肯定没错，是您自己没适应」</li>
+      <li>C. 先表示理解，问清症状（远看/近看、走动/静止时），再帮顾客重新检测核对</li>
+      <li>D. 直接答应免费重做一副</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。先共情、先核查原因（是度数有误、适应期还是渐进片不适），再对症处理；一口断定「正常」或「没错」都会激化投诉。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">10</div><span class="q-type">单选</span><span class="q-level lv-up">提升</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客提出大额退款等<strong>超出你权限</strong>的要求时，正确做法是？</div>
+    <ul class="options">
+      <li>A. 直接拒绝：「定制加工不支持退款」</li>
+      <li>B. 为了息事宁人，立刻全款退还</li>
+      <li>C. 先安抚情绪，说明需请店长沟通，同时立即联系店长、做好桥梁</li>
+      <li>D. 说「这个我处理不了」然后不管了</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。超权限时不硬扛、不空承诺：先安抚，再说明升级流程，快速行动联系店长。绝不能让顾客在不满意的状态下离开。</div>
+  </div>
+
+  <div class="sub-title">（二）判断题（共 5 题，每题 2 分，共 10 分。点击「正确 / 错误」即时判定）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">11</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">电脑验光仪测出的结果可以直接作为配镜处方。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。电脑验光只是初始参考数据，必须经主觉验光确认；直接当处方会因调节干扰等造成度数偏差。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">12</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">接待初期应多用开放式提问让顾客多说，需要确认信息或推进决策时改用封闭式提问。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。开放式用于了解全局、建立气氛，封闭式用于确认细节、缩小范围、推进决策，两者要灵活搭配。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">13</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">取镜验收环节可以省略，凭经验目测「看着没问题」就可以交付。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。取镜验收必须做：核对工单、外观检查、焦度计测度数、镜架检查、客户试戴、使用说明，一步都不能省。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">14</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">处理顾客投诉时，应先处理情绪，再处理问题。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。情绪激动时顾客听不进解释；先用共情让顾客感到被听见，情绪稳定后才能进入问题解决。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">15</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">遇到超出权限的投诉要求，应先安抚并说明升级流程，绝不能让顾客带着不满离开。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。不硬扛、不空承诺：先安抚、说明请店长沟通、立即联系店长，做好「桥梁」，让顾客感到问题正在被跟进。</div>
+  </div>
+
+  <div class="sub-title">（三）简答题（共 2 题，每题 10 分，共 20 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">16</div><span class="q-type">简答</span><span class="q-level lv-base">基础</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请写出客诉处理「黄金 5 步」，并说明每一步的关键动作。</div>
+    <textarea class="answer-area" placeholder="5 步 + 每步关键动作……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点（每步 2 分）：① <strong>倾听</strong>——让顾客把话说完，不打断、不辩解；② <strong>共情</strong>——认可顾客感受（「我非常理解，换我也会着急」）；③ <strong>道歉</strong>——真诚致歉，不找借口（不等于承认全部责任）；④ <strong>解决</strong>——给出具体可行、最好超出预期的方案，讲清时限；⑤ <strong>跟进</strong>——事后回访，确认顾客满意。核心：先处理情绪，再处理问题。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">17</div><span class="q-type">简答</span><span class="q-level lv-up">提升</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请说明眼镜加工单的「三核对」是什么，并列出至少 4 项出货质检内容。</div>
+    <textarea class="answer-area" placeholder="三核对 + 4 项以上质检内容……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点：<strong>三核对</strong>（3 分）——核对「单、镜、人」一致：加工单、实物镜片镜架、顾客本人及处方信息三者一致。常见错误：左右眼数据填反、散光轴位漏填、瞳距填错、镜片型号未确认、联系方式漏填。<strong>出货质检（答对 4 项以上给 7 分）</strong>：① 外观检查（无气泡、划痕、水迹；镜架无变形裂纹）；② 中心检测（焦度计测光学中心与处方一致）；③ 度数核对（球镜 ±0.25D、散光与轴位 ±10° 以内）；④ 装配检查（镜片牢固、无松动倾斜）；⑤ 瞳距核对；⑥ 整体平整（镜架对称、镜腿开合顺畅）。质检不合格直接返工，不将就交付。</div>
+  </div>
+
+  <div class="section-title">二、实操题（共 40 分 · 由带教师傅现场观察评分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">18</div><span class="q-type">情景应对</span><span class="q-level lv-mid">中等</span><span class="q-score">20 分</span></div>
+    <div class="scenario-box">
+      <strong>📋 情景：</strong>一位顾客来取镜，试戴后说："看电脑久了眼睛很酸，而且镜框歪歪的、有点夹脸。"带教师傅在旁观察。请现场处理。
+    </div>
+    <div class="question-text">请说明你的处理步骤与关键话术，并现场完成为顾客调整镜架、解释情况。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 4–5 分）：</strong><br>
+      ① <strong>先共情、不辩解</strong>：认可顾客感受「不好意思让您有这样的体验，我马上帮您看」；<br>
+      ② <strong>先做验收核查</strong>：用焦度计复核度数、轴向、瞳距与工单是否一致，排除度数问题；<br>
+      ③ <strong>处理镜架问题</strong>：判断是水平不平还是过紧，现场微调（板材先加热软化，小步微调），请顾客再戴确认；<br>
+      ④ <strong>解释眼酸原因</strong>：结合度数/用眼场景给出建议（如用眼 40 分钟休息、远处放松、必要时加防蓝光或调整处方），不夸大、不乱承诺；<br>
+      ⑤ <strong>跟进与送客</strong>：说明免费调整、售后政策，请顾客不适随时回来，留下好印象。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">19</div><span class="q-type">动手操作</span><span class="q-level lv-base">基础</span><span class="q-score">20 分</span></div>
+    <div class="question-text">请带教师傅扮演顾客，现场考核：① 用漏斗式提问法完成一次需求问询（问到<strong>用途、预算区间、旧镜问题</strong>至少 3 项并总结）；② 用 FAB 介绍一款镜片；③ 独立走完客诉处理黄金 5 步（处理一次镜架变形投诉）。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 5 分）：</strong><br>
+      ① <strong>需求问询</strong>：开放式与封闭式灵活搭配，按「来意→场景→习惯/问题→确认需求」四层推进，2 分钟内问到 3 项关键信息，最后主动总结并请顾客确认；<br>
+      ② <strong>FAB 介绍</strong>：按 F→A→B 结构介绍，B 落到顾客切身利益，语言自然、有画面感，不堆砌参数；<br>
+      ③ <strong>客诉 5 步</strong>：倾听不打断 → 共情 → 真诚道歉 → 给出具体方案 → 说明跟进，全程不跳步、不辩解；<br>
+      ④ <strong>规范与态度</strong>：流程完整、表述专业，知道何时该升级（超权限及时上报），不擅自承诺。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="score-box">
+    <h3>📊 第5周周测成绩记录</h3>
+    <table class="score-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题号</th><th>满分</th><th>得分</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题</td><td>单项选择</td><td>1–10</td><td>30 分</td><td>　　　分</td></tr>
+        <tr><td>判断</td><td>11–15</td><td>10 分</td><td>　　　分</td></tr>
+        <tr><td>简答</td><td>16–17</td><td>20 分</td><td>　　　分</td></tr>
+        <tr><td>二、实操题</td><td>情景应对 / 动手操作</td><td>18–19</td><td>40 分</td><td>　　　分</td></tr>
+        <tr style="background:#e0f2f1;"><td colspan="3"><strong>合计</strong></td><td><strong>100 分</strong></td><td><strong>　　　分</strong>（及格线 70 分）</td></tr>
+      </tbody>
+    </table>
+    <p class="sign-line">📝 带教师傅签字确认：___________________　　日期：____________</p>
+    <p class="sign-line">🔁 未达 70 分：由训练员针对失分集中项复训 1–2 天，重考合格后方可进入第 6 周。</p>
+  </div>
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_35_学习内容.html">← 返回第5周总结复盘</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    <a class="nav-btn" href="../第6周_独立接单训练/Day_36_学习内容.html">进入第6周 →</a>
+  </div>
+</div>
+
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background .2s,border-color .2s;}
+.options li:hover{background:#e8f6f4;border-color:#80cbc4;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:inline-block!important;}
+</style>
+<script id="interactive-options-type-a-js">
+(function(){
+  document.querySelectorAll('.question-card').forEach(function(card){
+    var opts=card.querySelectorAll('.options li');
+    if(!opts.length) return;
+    var hint=card.querySelector('.answer-hint');
+    var answered=false;
+    function getCorrect(){
+      if(!hint) return null;
+      var t=hint.innerHTML||hint.textContent;
+      var m=t.match(/正确答案[:：][\s]*(?:<strong>)?([A-Da-d])/i);
+      return m?m[1].toUpperCase():null;
+    }
+    opts.forEach(function(li,idx){
+      li.addEventListener('click',function(){
+        if(answered)return;
+        answered=true;
+        var letters=['A','B','C','D','E'];
+        var chosen=letters[idx];
+        var correct=getCorrect();
+        opts.forEach(function(o){o.classList.add('done');});
+        if(correct&&chosen===correct){
+          li.classList.add('correct');
+          li.textContent='✅ '+li.textContent;
+        } else {
+          li.classList.add('wrong');
+          li.textContent='❌ '+li.textContent;
+          if(correct){
+            var ci=letters.indexOf(correct);
+            if(ci>=0&&opts[ci]){opts[ci].classList.add('highlight');opts[ci].textContent='👉 '+opts[ci].textContent;}
+          }
+        }
+        if(hint){hint.style.display='block';hint.style.marginTop='12px';}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
