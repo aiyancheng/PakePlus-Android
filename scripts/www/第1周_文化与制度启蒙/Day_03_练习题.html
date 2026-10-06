@@ -176,6 +176,19 @@
 
 /*@@ LAYOUT-UNIFY-4 @@*/
 body{padding:0!important;margin:0!important}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -214,12 +227,15 @@ body{padding:0!important;margin:0!important}
 
   <div class="question-card">
     <div class="q-header"><div class="q-num">3</div><span class="q-type">单选题</span><span class="q-score">15分</span></div>
-    <div class="question-text">试用期底薪是正式底薪的多少比例？</div>
+    <div class="question-text">按《员工手册》规定，公司发放工资的时间是？</div>
     <ul class="options">
-      <li>A. 60%</li><li>B. 70%</li><li>C. 80%</li><li>D. 90%</li>
+      <li>A. 每月 5 日发放当月工资</li>
+      <li>B. 每月 10 日/25 日分两次发放</li>
+      <li>C. 每月 15 日发放上月薪资，遇节假日提前或延后 1 天</li>
+      <li>D. 每月月底最后一天发放</li>
     </ul>
     <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
-    <div class="answer-hint">✅ 正确答案：C（80%）。试用期满转正后按正式标准重新核算。</div>
+    <div class="answer-hint">✅ 正确答案：C。公司按月发放工资，每月 15 日发放上月薪资；如遇节假日提前或延后 1 天发放。另按手册规定：入职前三至六个月为试用期（享试用工资待遇），工作表现评估为"良好或以上"即转正；具体薪酬标准见《薪资制度》。</div>
   </div>
 
   <div class="question-card">
@@ -239,19 +255,19 @@ body{padding:0!important;margin:0!important}
 
   <div class="question-card">
     <div class="q-header"><div class="q-num">5</div><span class="q-type">情景题</span><span class="q-score">20分</span></div>
-    <div class="scenario-box">📍 小张本月已经迟到了2次，今天早上堵车，预计要迟到20分钟。他应该怎么处理？</div>
-    <div class="question-text">请写出小张正确的处理步骤（至少3步）。</div>
+    <div class="scenario-box">📍 小张本月已经迟到了4次（每次都在30分钟以内），今天早上堵车，预计又要迟到20分钟。他应该怎么处理？</div>
+    <div class="question-text">请写出小张正确的处理步骤（至少3步），并说明按手册规定他本月迟到会带来什么后果。</div>
     <textarea class="answer-area" placeholder="请写出处理步骤……"></textarea>
     <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
-    <div class="answer-hint">✅ 参考步骤：①马上电话通知店长，说明情况和预计到达时间 ②到岗后主动向店长说明并道歉 ③当天工作中用良好表现弥补 ④注意本月已是第3次，会影响绩效，以后规划好出行时间</div>
+    <div class="answer-hint">✅ 参考步骤：①马上电话通知店长/师傅，说明情况和预计到达时间 ②到岗后主动向店长说明并道歉 ③当天用良好表现弥补 ④以后规划好出行时间。<br><strong>后果（手册规定）：</strong>迟到 30 分钟以内虽不按旷工处理，但<strong>不予发放当月全勤</strong>；今天将是本月第 5 次迟到，达到"一月内累计迟到、早退 5 次（含）以上"，将<strong>按旷工一日论处</strong>（扣基本薪 3 倍且无全勤奖）。若累计达 20 次（含）以上，将按自动离职论处。</div>
   </div>
 
   <div class="question-card">
     <div class="q-header"><div class="q-num">6</div><span class="q-type">简答题</span><span class="q-score">20分</span></div>
-    <div class="question-text">除了底薪，门店还提供哪些福利？请列举4项以上并简要说明。</div>
+    <div class="question-text">除了基本薪资，正式员工还能享受哪些福利保障？请列举4项以上。</div>
     <textarea class="answer-area" placeholder="请列举福利……"></textarea>
     <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
-    <div class="answer-hint">✅ 参考：①销售提成②绩效奖金③节日福利（礼金/实物）④员工及家属配镜折扣⑤培训/考证学习补贴⑥调休制度</div>
+    <div class="answer-hint">✅ 参考（按《员工手册》）：①国家规定的社会保险（正式员工入职后均享受）②节日福利 ③生日关怀 ④周年关怀 ⑤旅游 ⑥员工福利配镜；另法定节假日加班享日工资三倍、法定假日以外加班可调休。</div>
   </div>
 
   <div class="nav-footer">
