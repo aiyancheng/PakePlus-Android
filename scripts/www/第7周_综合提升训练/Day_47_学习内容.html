@@ -256,6 +256,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -412,8 +438,6 @@ body{padding:0!important;margin:0!important}
     ✅ 或者："这款黑色款和棕色款都很适合您，您更常穿什么颜色的衣服？我帮您建议一个更搭的。"（通过提问引导继续互动）
   </div>
 
-  
-
     <h2 style="color:#8e44ad;margin-top:32px">🎭 不同性格客户的接待策略</h2>
   <table class="structure-table" style="width:100%;border-collapse:collapse;margin:16px 0">
     <tr style="background:#8e44ad;color:#fff"><th style="padding:10px 14px;text-align:left">性格类型</th><th style="padding:10px 14px;text-align:left">识别特征</th><th style="padding:10px 14px;text-align:left">接待策略</th></tr>
@@ -466,39 +490,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">把他当成「需求表达方式不同的人」而不是「针对你的人」。做完这一单，找同事喝口水、说两句，把情绪留在服务区之外——这是长期做服务的必修课。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：顾客消费决策的五个阶段是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>注意（看到）→ 兴趣（想了解）→ 评估（比较）→ 决策（决定买）→ 购后（用完的感受与复购）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：列举 4 种典型顾客类型及应对重点。</summary>
-      <div class="lm-a"><b>参考答案：</b>果断型（直接给方案、少废话）、研究型（给数据给证据、允许比较）、犹豫型（给选项帮决策、减少信息量）、社交型（多互动、给情感认同，另还有价格敏感型与经济型）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：四大消费心理规律是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>锚定效应（先高后中显划算）、稀缺心理（限量/最后一件）、从众心理（销量与口碑）、互惠原则（先给予、增回报感）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：看到哪些信号说明可以推进成交？</summary>
-      <div class="lm-a"><b>参考答案：</b>问交期、问售后、问能不能优惠、反复试戴同一款、让同伴看、开始认真看价签或单据。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客反复比较三副镜架、迟迟不定，你怎么帮他做决定？</summary>
-      <div class="lm-a"><b>参考答案：</b>帮他减负：「我们先把范围缩到两副——A 更轻、B 更修饰脸型。您最在意戴得轻还是看起来有精神？」把三选一变成二选一，再给一个明确建议，决策立刻变快。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>消费决策五阶段：需求觉醒→信息搜集→方案评估→购买决策→购后评估，每阶段策略不同</li>
-      <li>六种典型顾客：目的明确/犹豫不决/价格敏感/品质至上/他人影响/随意浏览，识别后精准应对</li>
-      <li>四大消费心理规律：锚定效应/稀缺心理/从众心理/互惠原则，合理运用提升成交</li>
-      <li>识别购买信号，在顾客有意向时果断用"二选一"等技巧引导成交，而非简单问"买不买"</li>
-    </ul>
-    <p style="margin-top:14px; color:#e8d5ff;">🎯 <strong>今日行动：</strong>观察今天接待的每位顾客，尝试判断他/她属于哪种类型，并记录你用了什么方法，效果如何。</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -515,8 +507,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="Day_46_练习题.html" class="nav-btn outline">← Day 46 练习题</a>
