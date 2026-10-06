@@ -264,6 +264,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -344,7 +357,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-
     <div class="section">
     <h2>📊 镜片推荐决策树</h2>
     <p>面对客户时，用以下逻辑快速确定推荐方向：</p>
@@ -394,44 +406,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">说明差异与风险，建议新度数；顾客仍坚持则如实记录、请其在单据上确认，并提醒适应期可能出现的不适。不隐瞒、不代签。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：OD 和 OS 分别代表哪只眼？</summary>
-      <div class="lm-a"><b>参考答案：</b>OD = 右眼（Oculus Dexter），OS = 左眼（Oculus Sinister）。OU 表示双眼。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：「-2.50 / -0.75 × 180」怎么读、什么意思？</summary>
-      <div class="lm-a"><b>参考答案：</b>近视 250 度、散光 75 度、轴位 180°（散光所在方向）。SPH 是球镜（近视/远视），CYL 是柱镜（散光），AX 是散光轴位。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：PD 是什么？测量不准会怎样？</summary>
-      <div class="lm-a"><b>参考答案：</b>瞳距，两眼瞳孔中心距离。瞳距偏差会造成棱镜效应，出现眼胀、头晕、看久了累，高度数时影响更明显。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：推荐的正确顺序是？</summary>
-      <div class="lm-a"><b>参考答案：</b>问需求（用途、时长、场景）→ 看处方（度数、散光、参差）→ 选镜片（折射率、膜层）→ 配镜架（尺寸、材质、舒适）→ 确认售后与交期。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客处方 -7.00，却想选一副大框时尚镜架，你怎么建议？</summary>
-      <div class="lm-a"><b>参考答案：</b>先认可审美再讲影响：「这款确实好看，不过您度数偏高，框太大边缘会明显偏厚、也更重。我们试试这款同风格但框型小一点的，看起来一样时尚，戴着更轻更薄。」用对比试戴让顾客自己感受差别。</div>
-    </details>
-</div>
-<div class="summary-box" style="background:linear-gradient(135deg,#e3f2fd,#e8f5ff)">
-    <h3 style="color:#1565c0">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 处方单参数：S=球镜度数（-近视/+远视），C=散光度，A=散光轴向，ADD=老花度，PD=瞳距</li>
-      <li>✅ 度数越高 → 需要更高折射率，镜片才够薄</li>
-      <li>✅ 高度近视/高度散光对镜框选择有限制，渐进片要求镜框高度≥28mm，需提前告知顾客</li>
-      <li>✅ 镜片推荐的核心：了解客户需求+度数，给出针对性方案</li>
-      <li>✅ 渐进镜适合老视，重点是测量瞳高和适应期指导</li>
-      <li>✅ 防蓝光针对特定人群，用数据说话更有说服力</li>
-      <li>✅ 不确定时求助专业人员，而不是猜测</li>
-    </ul>
-    <p style="margin-top:14px;color:#1565c0;font-weight:600">
-      🎯 今日任务：找一张实际处方单，向师傅完整解读各项数据并给出镜片和镜框的推荐意见；再找出门店内销量最好的3款镜片，记录它们各自的核心卖点。
-    </p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
