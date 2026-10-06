@@ -3,117 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Day 21 - 第3周综合周测</title>
+<title>Day 21 | 第3周总结复盘 — 专业技能训练</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Microsoft YaHei', sans-serif; background: #f5f7fa; color: #333; }
-  .header { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); color: white; padding: 30px 40px; }
-  .header .week-badge { background: rgba(255,255,255,0.2); display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 13px; margin-bottom: 10px; }
-  .header h1 { font-size: 28px; margin-bottom: 8px; }
-  .header .subtitle { opacity: 0.9; font-size: 15px; }
-  .meta-bar { background: white; padding: 15px 40px; display: flex; gap: 30px; border-bottom: 1px solid #e8ecf0; flex-wrap: wrap; }
-  .meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #666; }
-  .meta-item span.dot { width: 8px; height: 8px; border-radius: 50%; background: #a18cd1; display: inline-block; }
-  .container { max-width: 960px; margin: 30px auto; padding: 0 20px; }
-  .card { background: white; border-radius: 12px; padding: 30px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-  .card h2 { font-size: 20px; color: #333; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid #a18cd1; display: flex; align-items: center; gap: 10px; }
-  .card h3 { font-size: 16px; color: #444; margin: 18px 0 10px; }
-  .card p { line-height: 1.8; color: #555; margin-bottom: 12px; }
-  .card ul, .card ol { padding-left: 20px; }
-  .card li { line-height: 1.9; color: #555; margin-bottom: 4px; }
-  .highlight-box { background: #f6f2ff; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
-  .highlight-box.green { background: #f0fdf4; }
-  .highlight-box.yellow { background: #fffbf0; }
-  .highlight-box.red { background: #fff5f5; }
-  .table-wrap { overflow-x: auto; margin: 16px 0; }
-  table { width: 100%; border-collapse: collapse; }
-  th { background: #a18cd1; color: white; padding: 10px 14px; text-align: left; font-size: 14px; }
-  td { padding: 10px 14px; border-bottom: 1px solid #e8ecf0; font-size: 14px; color: #555; }
-  tr:nth-child(even) { background: #f8f9fc; }
-  .test-info { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin: 16px 0; }
-  .info-card { background: #f6f2ff; border-radius: 10px; padding: 16px; text-align: center; }
-  .info-card .num { font-size: 28px; font-weight: bold; color: #a18cd1; }
-  .info-card .label { font-size: 13px; color: #777; margin-top: 4px; }
-  .week-summary { background: linear-gradient(135deg, #a18cd1, #fbc2eb); border-radius: 12px; padding: 24px; color: white; margin: 16px 0; }
-  .week-summary h3 { font-size: 18px; margin-bottom: 14px; }
-  .week-summary ul { padding-left: 20px; }
-  /* 底部导航 */
-  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 20px 0 30px; gap: 12px; }
-  .nav-btn { display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 30px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.25s; color: white; background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
-  .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-  .nav-btn.outline { background: white; color: #a18cd1; border: 2px solid #a18cd1; }
-  .nav-btn.outline:hover { background: #f6f2ff; }
-  .week-summary li { line-height: 2; opacity: 0.95; }
-  .next-week { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; margin: 16px 0; }
-  .next-week h3 { color: #166534; margin-bottom: 12px; }
-  .next-week ul { padding-left: 20px; }
-  .next-week li { line-height: 1.9; color: #166534; }
-  .footer { text-align: center; padding: 30px; color: #aaa; font-size: 13px; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#7e57c2,#5e35b1);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.9;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;}
+  .review-card{background:white;border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.07);}
+  .review-card h4{color:#5e35b1;margin-bottom:8px;font-size:0.92em;}
+  .review-card ul{padding-left:16px;}
+  .review-card li{font-size:0.8em;line-height:1.7;color:#555;}
+  .section-title{font-size:1.2em;color:#5e35b1;font-weight:700;margin:32px 0 14px;padding-left:12px;border-left:4px solid #7e57c2;}
+  .question-card{background:white;border-radius:12px;padding:26px;margin-bottom:22px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .q-num{background:#7e57c2;color:white;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9em;flex-shrink:0;}
+  .q-type{background:#ede7f6;color:#5e35b1;padding:3px 12px;border-radius:12px;font-size:0.8em;font-weight:600;}
+  .q-score{color:#999;font-size:0.82em;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.6;margin-bottom:16px;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;list-style:none;}
+  .answer-area{width:100%;min-height:90px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#666;display:none;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .rx-box{background:#f5f5f5;border-radius:8px;padding:16px;margin:12px 0;font-size:0.9em;}
+  .score-box{background:linear-gradient(135deg,#ede7f6,#f6f2ff);border-radius:12px;padding:20px;margin:24px 0;}
+  .score-box h3{color:#5e35b1;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#7e57c2;color:white;padding:8px 12px;text-align:left;font-size:0.88em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.86em;}
+  .nav-footer{display:flex;justify-content:space-between;margin:30px 0 50px;gap:12px;flex-wrap:wrap;}
+  .nav-btn{background:#7e57c2;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#5e35b1;border:2px solid #7e57c2;}
+  @media(max-width:600px){.review-grid{grid-template-columns:1fr;}}
   .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
-  .structure-table th,.rule-table th{background:#2196F3;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table th,.rule-table th{background:#7e57c2;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
   .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
   .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
-
-  /* ══════════════════════════════════════════════
-     红米平板响应式适配（横屏1100px / 竖屏900px）
-     ══════════════════════════════════════════════ */
-
-  /* 平板横屏：内容区微调 */
-  @media (max-width: 1100px) {
-    .container { padding: 28px 24px !important; }
-    .days-grid { grid-template-columns: repeat(4,1fr) !important; }
-    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
-  }
-
-  /* 平板竖屏：核心适配断点 */
-  @media (max-width: 900px) {
-    body { padding: 12px !important; font-size: 15px; }
-    .container { padding: 20px 16px !important; border-radius: 10px !important; }
-    /* 学习内容：各类2列/3列网格折叠为1列 */
-    .value-cards, .material-grid, .face-grid,
-    .norm-grid, .salary-grid, .do-dont, .image-standard,
-    .safety-grid, .role-cards, .review-grid, .equipment-grid,
-    .lens-grid, .coating-grid, .term-grid, .display-rules,
-    .problem-grid, .fabe-grid, .compare-grid, .signal-grid,
-    .review-grid, .zone-grid, .test-info, .method-grid,
-    .question-type, .fab-grid, .form-grid, .wrong-right,
-    .step-grid, .card-grid, .card-row, .grid2, .do-dont,
-    .achieve-grid, .product-card, .sign-area, .wish-cards,
-    .eval-row,
-    [class*="-grid"], [class*="grid-"],
-    .two-col { grid-template-columns: 1fr !important; }
-    /* 3列→2列特殊处理（不完全折叠，保留2列） */
-    .exam-info { grid-template-columns: repeat(2,1fr) !important; }
-    /* 导航按钮：允许换行，防止溢出 */
-    .nav-footer, .nav-bar {
-      flex-wrap: wrap !important;
-      gap: 10px !important;
-    }
-    .nav-btn {
-      font-size: 0.88em !important;
-      padding: 10px 18px !important;
-      text-align: center !important;
-    }
-    /* 标题字号适配 */
-    .header h1, h1 { font-size: 1.4em !important; }
-    .header .subtitle, .header .week-badge { font-size: 13px !important; }
-    /* 表格横向滚动（防溢出） */
-    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    /* meta-bar 换行 */
-    .meta-bar { padding: 12px 16px !important; gap: 14px !important; flex-wrap: wrap !important; }
-    /* 首页时间轴横向滚动 */
-    .timeline { overflow-x: auto; }
-  }
-
-  /* 手机 / 平板极窄竖屏 */
-  @media (max-width: 600px) {
-    body { padding: 8px !important; }
-    .container { padding: 16px 12px !important; }
-    .header h1, h1 { font-size: 1.2em !important; }
-    .days-grid { grid-template-columns: repeat(2,1fr) !important; }
-    .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
-    .container { padding: 16px !important; }
-  }
 
 /* ═══════ 红米12.1寸平板适配（横屏≈1280px ｜ 竖屏≈800px）═══════ */
 @media (min-width:901px) and (max-width:1400px){
@@ -132,55 +60,19 @@
   .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
   h2{font-size:1.2em!important}
   h3{font-size:1.08em!important}
-  .meta-bar{padding:12px 14px!important;gap:14px!important;flex-wrap:wrap!important}
   .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
   .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
   table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
   img,svg,video{max-width:100%!important}
   p,li,td,th{overflow-wrap:break-word}
   [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+  .review-grid{grid-template-columns:repeat(2,1fr)!important;gap:12px!important}
 }
 @media (max-width:600px){
   .container{padding:14px 10px!important}
   .header h1{font-size:1.25em!important}
+  .review-grid{grid-template-columns:1fr!important}
 }
-
-  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 参考 / 自测 / 阶段复盘） ═══════ */
-  .lm-block{border-radius:14px;padding:20px 24px;margin:24px 0;line-height:1.85}
-  .lm-block h3{margin:0 0 14px;font-size:1.1em;font-weight:700;letter-spacing:.3px}
-  .lm-list{margin:0;padding-left:22px}
-  .lm-list li{margin-bottom:9px}
-  .lm-goal{background:#e8f5e9;color:#1b5e20}
-  .lm-goal h3{color:#2e7d32}
-  .lm-practice{background:#fff8e1;color:#4e342e}
-  .lm-practice h3{color:#e65100}
-  .lm-faq{background:#f3e5f5;color:#4a148c}
-  .lm-faq h3{color:#7b1fa2}
-  .lm-ref{background:#e3f2fd;color:#0d3c61}
-  .lm-ref h3{color:#1565c0}
-  .lm-quiz{background:#fce4ec;color:#880e4f}
-  .lm-quiz h3{color:#c2185b}
-  .lm-review{background:#ede7f6;color:#311b92}
-  .lm-review h3{color:#4527a0}
-  .lm-meta{margin:12px 0 0;font-size:.9em;opacity:.92}
-  .lm-pr{margin:0 0 14px;padding:14px 16px;background:rgba(255,255,255,.75);border-radius:10px}
-  .lm-pr:last-child{margin-bottom:0}
-  .lm-pr-t{font-weight:700;margin-bottom:6px}
-  .lm-pr-d{margin-bottom:6px}
-  .lm-pr-o{font-size:.92em;font-weight:600}
-  .lm-q{margin:0 0 10px;padding:10px 14px;background:rgba(255,255,255,.75);border-radius:10px}
-  .lm-q:last-child{margin-bottom:0}
-  .lm-q summary{cursor:pointer;font-weight:600;line-height:1.7}
-  .lm-q[open] summary{margin-bottom:8px}
-  .lm-a{font-size:.95em;color:#212121;line-height:1.8}
-  .lm-a b{color:#c2185b}
-  .lm-faq .lm-a b{color:#7b1fa2}
-  .lm-sub{font-weight:700;margin:14px 0 8px;font-size:1em}
-  @media(max-width:900px){
-    .lm-block{padding:16px 14px;margin:18px 0;line-height:1.75}
-    .lm-block h3{font-size:1.02em}
-    .lm-list{padding-left:18px}
-  }
 
 /* ══ HOME-BAR：顶部返回首页入口 ══ */
 .home-topbar{background:#fff;padding:10px 0}
@@ -190,7 +82,7 @@
 @media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1300px}}
 @media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
 
-/* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
+/* ═══════ 四大流程落地衔接模块 ═══════ */
   .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
   .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
   .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
@@ -221,10 +113,54 @@
     .flow-block{padding:18px 16px}
     .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
   }
-/*@@ LAYOUT-UNIFY @@*/
-/* ═══════ 布局统一：标题框 = 内容框等宽 · 红米12.1寸平板完美适配 ═══════
-   横屏≈1280px → 统一 1300px；竖屏≤900px → 自适应留白
-   标题框(.header)与内容框(.container)使用完全相同的宽度规则 */
+
+  /* ═══════ Day_21 分区标题 ═══════ */
+  .day-part{margin:34px 0 18px;padding:16px 20px;background:linear-gradient(135deg,#f3eefc,#faf8fe);border-radius:12px}
+  .day-part .day-part-h{font-size:1.08em;font-weight:800;color:#4a2d80;display:flex;align-items:center;gap:10px}
+  .day-part .dp-no{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#7e57c2;color:#fff;font-size:.9em;font-weight:800;flex-shrink:0}
+  .day-part .day-part-d{margin:8px 0 0;font-size:.88em;color:#667;line-height:1.7}
+  @media(max-width:900px){.day-part{margin:26px 0 14px;padding:14px 16px}}
+
+  /* ═══════ 每日学习标准模块（目标 / 实践 / FAQ / 自测） ═══════ */
+  .lm-block{position:relative;border-radius:16px;padding:22px 26px 20px;margin:22px 0;line-height:1.85;border:1px solid transparent;box-shadow:0 2px 12px rgba(26,58,107,.06);}
+  .lm-block::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:4px;background:currentColor;opacity:.55;}
+  .lm-block h3{margin:0 0 16px;font-size:1.12em;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:9px;padding-bottom:12px;border-bottom:1px dashed rgba(0,0,0,.12);}
+  .lm-list{margin:0;padding-left:0;list-style:none}
+  .lm-list li{position:relative;margin-bottom:11px;padding-left:24px;line-height:1.8;}
+  .lm-list li::before{content:"✓";position:absolute;left:2px;top:0;font-weight:800;font-size:.92em;color:currentColor;opacity:.7;}
+  .lm-list li:last-child{margin-bottom:0}
+  .lm-goal{background:linear-gradient(135deg,#eaf7ec,#f4fbf5);color:#1b5e20;border-color:#c8e6c9}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:linear-gradient(135deg,#fff6e0,#fffcf3);color:#4e342e;border-color:#ffe0a3}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:linear-gradient(135deg,#f6e9f9,#fbf5fd);color:#4a148c;border-color:#e6ccf0}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-quiz{background:linear-gradient(135deg,#fde8ef,#fef6f9);color:#880e4f;border-color:#f8cddc}
+  .lm-quiz h3{color:#c2185b}
+  .lm-meta{margin:14px 0 0;font-size:.88em;opacity:.94;background:rgba(255,255,255,.65);border-radius:9px;padding:10px 14px;line-height:1.7;}
+  .lm-pr{margin:0 0 14px;padding:15px 18px;background:rgba(255,255,255,.82);border-radius:12px;border-left:3px solid #ffb74d;box-shadow:0 1px 5px rgba(0,0,0,.04);}
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:800;margin-bottom:7px;font-size:1.01em;color:#bf360c}
+  .lm-pr-d{margin-bottom:8px;font-size:.96em;line-height:1.75}
+  .lm-pr-o{font-size:.9em;font-weight:700;color:#2e7d32;background:#eef8ef;border-radius:7px;padding:7px 12px;display:block;}
+  .lm-q{margin:0 0 10px;padding:12px 16px;background:rgba(255,255,255,.82);border-radius:11px;border-left:3px solid rgba(0,0,0,.14);transition:.18s;}
+  .lm-q:hover{border-left-color:currentColor}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:700;line-height:1.7;outline:none;list-style:none;position:relative;padding-right:26px}
+  .lm-q summary::-webkit-details-marker{display:none}
+  .lm-q summary::after{content:"+";position:absolute;right:2px;top:-1px;font-weight:800;font-size:1.15em;color:currentColor;opacity:.6;transition:.2s;}
+  .lm-q[open] summary::after{content:"−"}
+  .lm-q[open] summary{margin-bottom:10px;padding-bottom:9px;border-bottom:1px dashed rgba(0,0,0,.1)}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.82;padding-left:2px}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  @media(max-width:900px){
+    .lm-block{padding:17px 16px 15px;margin:16px 0;line-height:1.75;border-radius:13px}
+    .lm-block h3{font-size:1.02em;margin-bottom:13px}
+    .lm-pr{padding:13px 14px}
+  }
+
+  /*@@ LAYOUT-UNIFY @@*/
 .home-topbar .ht-inner{width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;margin:0 auto!important}
 .header{
   width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
@@ -243,205 +179,149 @@
 @media(max-width:600px){
   .header{padding:20px 15px!important}
 }
-/*@@ LAYOUT-UNIFY-2 @@*/
-/* ═══ meta-bar（学习时长/配套练习条）与标题框/内容框同宽 ═══ */
-.meta-bar{
-  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
-  margin:14px auto 0!important;padding:14px 30px!important;
-  border:0!important;border-radius:12px!important;
-  box-shadow:0 4px 14px rgba(0,0,0,.06)!important;
-}
-@media(max-width:900px){
-  .meta-bar{padding:12px 16px!important;margin-top:12px!important}
-}
 /*@@ LAYOUT-UNIFY-3 @@*/
-/* ═══ 修正：box-sizing 兜底 + 容器内 header 自适应 + 表格竖屏防溢出 ═══ */
 .header,.container,.meta-bar,.home-topbar .ht-inner{box-sizing:border-box!important}
 .container > .header{width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
-@media(max-width:900px){
-  table{max-width:100%!important}
-}
-
 /*@@ LAYOUT-UNIFY-4 @@*/
 body{padding:0!important;margin:0!important}
 
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
+
+/*@@ REVIEW-GRID-2x3 @@*/
+.review-grid{grid-template-columns:repeat(3,1fr)!important;gap:14px!important}
+.review-grid>.review-card{min-width:0}
+@media(max-width:900px){
+  .review-grid{grid-template-columns:repeat(3,1fr)!important;gap:9px!important}
+  .review-grid>.review-card{padding:12px 11px!important}
+  .review-grid>.review-card h4{font-size:.82em!important;margin-bottom:6px!important}
+  .review-grid>.review-card ul{padding-left:14px!important}
+  .review-grid>.review-card li{font-size:.72em!important;line-height:1.6!important}
+}
+@media(max-width:600px){
+  .review-grid{grid-template-columns:repeat(3,1fr)!important;gap:6px!important}
+  .review-grid>.review-card{padding:9px 8px!important;border-radius:8px!important}
+  .review-grid>.review-card h4{font-size:.74em!important;margin-bottom:5px!important}
+  .review-grid>.review-card ul{padding-left:12px!important}
+  .review-grid>.review-card li{font-size:.66em!important;line-height:1.55!important}
+}
 </style>
 </head>
 <body>
 <div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
 
 <div class="header">
-  <div class="week-badge">第3周 · 专业技能训练</div>
-  <h1>Day 21 — 第3周综合周测</h1>
-  <div class="subtitle">周测日 · 全面检验技能掌握程度，为第4周销售话术学习奠定基础</div>
+  <span class="day-tag">📅 第3周 · Day 21 — 总结复盘</span>
+  <h1>📋 第3周总结复盘：专业技能训练</h1>
+  <div class="subtitle">覆盖 Day 15–20 ｜ 本周学习要点 · 重点难点 · 掌握情况 · 改进方向</div>
 </div>
-
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约4小时（含理论测试+实操考核）</div>
-  <div class="meta-item"><span class="dot"></span>性质：阶段性考核</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>形式：笔试 + 实操 + 复盘</div>
-</div>
-
 <div class="container">
-
-  <div class="card">
 
 <div class="lm-block lm-goal">
   <h3>🎯 今日学习目标（学完你应该能做到）</h3>
   <ul class="lm-list">
-      <li>完成第 3 周综合周测（知识 + 实操），检验专业技能掌握情况</li>
-      <li>能在师傅打分下完成实操考核项目，达到合格标准</li>
-      <li>与师傅共同完成本周成长复盘，明确下阶段重点</li>
-      <li>能复述第 3 周 5 项技能的关键动作与禁忌</li>
-      <li>了解第 4 周内容（销售话术），做好从「会做事」到「会沟通」的准备</li>
+      <li>系统复盘本周 5 大专业技能，做到流程串联、动作不遗漏</li>
+      <li>能连贯复述「验光辅助 → 镜架调整 → 商品陈列 → 收银库存 → 售后维修」这条技能链</li>
+      <li>明确本周的<strong>重点与难点</strong>，知道哪些环节最容易出错、怎么破</li>
+      <li>对照自评表客观评估<strong>掌握情况</strong>，找出 2 个最薄弱的技能点</li>
+      <li>完成独立周测卷（理论 60 分 + 实操 40 分），检验「知道 → 会做」的转化</li>
   </ul>
-  <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>1.5 小时</strong> —— 复盘梳理 45 分钟 ｜ 周测作答 45 分钟 ｜ 错题订正 30 分钟</p>
 </div>
 
-    <h2><span>📋</span>周测基本信息</h2>
-    <div class="test-info">
-      <div class="info-card"><div class="num">60</div><div class="label">分钟（笔试）</div></div>
-      <div class="info-card"><div class="num">60</div><div class="label">分钟（实操）</div></div>
-      <div class="info-card"><div class="num">100</div><div class="label">满分</div></div>
-      <div class="info-card"><div class="num">70</div><div class="label">合格线</div></div>
-    </div>
-    <div class="highlight-box yellow">
-      <strong>考核说明：</strong>本周测分为理论笔试（50分）和实操考核（50分）两部分。理论笔试由员工独立完成，实操考核由师傅打分。两项分数合计即为最终成绩。
-    </div>
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">①</span>本周总结复盘</div>
+    <p class="day-part-d">按「学习要点 → 重点难点 → 掌握情况 → 改进方向」四步完成复盘，把本周练过的真正变成能上手的技能。</p>
   </div>
 
-  <!-- 理论回顾 -->
-  <div class="card">
-    <h2><span>📚</span>一、第3周知识体系回顾</h2>
-    <p>在周测前，请用20分钟快速回顾本周重点知识：</p>
-
-    <h3>Day 15 · 验光辅助</h3>
-    <ul>
-      <li>电脑验光仪的基本操作步骤</li>
-      <li>验光数据的基本解读（球镜/柱镜/轴位）</li>
-      <li>如何向顾客解释验光流程</li>
-    </ul>
-
-    <h3>Day 16 · 镜架调整与整形</h3>
-    <ul>
-      <li>标准佩戴状态的六要素（水平/角度/鼻距等）</li>
-      <li>各类问题的调整工具和手法</li>
-      <li>热整形的操作要点和注意事项</li>
-    </ul>
-
-    <h3>Day 17 · 商品陈列</h3>
-    <ul>
-      <li>六大功能区及其陈列目的</li>
-      <li>五大陈列原则（分类/整齐/颜色/价格/信息）</li>
-      <li>三时段日常维护SOP</li>
-    </ul>
-
-    <h3>Day 18 · 收银与库存</h3>
-    <ul>
-      <li>收银6步标准流程</li>
-      <li>四大支付方式的操作要点</li>
-      <li>库存管理四大原则及异常处理</li>
-    </ul>
-
-    <h3>Day 19 · 售后维修</h3>
-    <ul>
-      <li>常见维修操作（螺丝/鼻托/整形）</li>
-      <li>超声波清洗流程</li>
-      <li>投诉处理5步流程</li>
-    </ul>
+  <div class="section-title">① 本周学习要点</div>
+  <div class="review-grid">
+    <div class="review-card"><h4>Day 15 验光辅助</h4><ul><li>5 台设备与用途</li><li>验光前准备 5 件事</li><li>视力表引导 + 记录</li></ul></div>
+    <div class="review-card"><h4>Day 16 镜架调整</h4><ul><li>6 件工具用途</li><li>5 类佩戴问题判断</li><li>4 原则 + 材质差异</li></ul></div>
+    <div class="review-card"><h4>Day 17 商品陈列</h4><ul><li>功能区分区标准</li><li>陈列五大原则</li><li>三时段维护 SOP</li></ul></div>
+    <div class="review-card"><h4>Day 18 收银库存</h4><ul><li>收银 6 步流程</li><li>支付方式与差错预防</li><li>库存 4 原则 + 盘点</li></ul></div>
+    <div class="review-card"><h4>Day 19 售后维修</h4><ul><li>螺丝/鼻托/热整形</li><li>超声波清洗保养</li><li>投诉处理 5 步</li></ul></div>
+    <div class="review-card"><h4>Day 20 综合实战</h4><ul><li>5 个场景角色扮演</li><li>师傅评分标准</li><li>全流程串联演练</li></ul></div>
   </div>
 
-  <!-- 实操考核标准 -->
-  <div class="card">
-    <h2><span>🛠️</span>二、实操考核项目（师傅打分，50分）</h2>
-    <div class="table-wrap">
-      <table class="structure-table">
-        <tr>
-          <th>考核项目</th>
-          <th>分值</th>
-          <th>考核方式</th>
-          <th>合格标准</th>
-        </tr>
-        <tr>
-          <td>镜架调整操作</td>
-          <td>15分</td>
-          <td>给一副轻微变形的镜架，要求在5分钟内完成调整</td>
-          <td>调整后两侧平衡，佩戴舒适，无损坏镜架</td>
-        </tr>
-        <tr>
-          <td>收银操作模拟</td>
-          <td>15分</td>
-          <td>模拟一笔含折扣的交易，选择任意支付方式完成</td>
-          <td>6步流程完整，金额准确，话术规范</td>
-        </tr>
-        <tr>
-          <td>售后维修处理</td>
-          <td>10分</td>
-          <td>处理一副螺丝松动的眼镜</td>
-          <td>操作正确，力度适当，完成后检验合格</td>
-        </tr>
-        <tr>
-          <td>投诉情景模拟</td>
-          <td>10分</td>
-          <td>师傅扮演不满顾客，员工处理投诉</td>
-          <td>5步流程执行到位，顾客情绪安抚成功</td>
-        </tr>
-      </table>
-    </div>
+  <div class="section-title">② 本周重点难点</div>
+  <table class="rule-table">
+    <thead><tr><th>重点 / 难点</th><th>容易出错的地方</th><th>破解方法</th></tr></thead>
+    <tbody>
+      <tr><td>操作边界的把握（易越界）</td><td>销售顾问擅自给顾客下度数结论，或乱碰综合验光仪、裂隙灯</td><td>记牢：可<strong>协助、引导、记录</strong>；不可<strong>判定结论、操作专业设备</strong>。顾客问起就说「由验光师为您操作」</td></tr>
+      <tr><td>材质决定调整手法（易掰坏）</td><td>板材/TR-90 不加热就硬掰，导致镜架断裂</td><td>口诀「板 TR 先加热、金属可冷调、钛架回弹大」；小步微调、随时试戴，贵重镜架先问师傅</td></tr>
+      <tr><td>收银差错预防与红线（易踩线）</td><td>不唱收唱付、未到账就放行、私自改价或绕系统收钱</td><td>背熟「唱收唱付 + 当面点清 + 未到账不放行」；折扣按权限、超权限请示店长并留痕</td></tr>
+      <tr><td>投诉处理的顺序（易激化）</td><td>一上来就解释辩解、擅自承诺赔偿、独自处理复杂纠纷</td><td>五步顺序不能乱：先<strong>倾听（不打断）</strong>→ 共情致歉 → 确认问题 → 给方案 → 跟进满意；搞不定的立即请主管介入</td></tr>
+      <tr><td>库存实物与系统一致（易瞒报）</td><td>盘点对不上不吭声，或自己改系统数字掩盖差异</td><td>差异立即上报、如实登记，由有权限的人核查；能说出至少 2 种原因（漏录/损耗/错拿）</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">③ 掌握情况自评</div>
+  <p style="color:#667;font-size:.9em;margin:0 0 10px;">逐项自评并写出依据，做到「心里有数」；自评后请师傅确认。</p>
+  <table class="rule-table">
+    <thead><tr><th>复盘项目</th><th>自评等级</th><th>判断依据（举一个具体行为）</th></tr></thead>
+    <tbody>
+      <tr><td>验光辅助与设备认知</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>镜架调整与整形</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>商品陈列与货区维护</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>收银操作与差错预防</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>库存管理与盘点</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>售后服务与投诉处理</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">④ 改进方向</div>
+  <ul style="padding-left:22px;line-height:2;color:#445;font-size:.95em">
+    <li><strong>练手感</strong>：每天在一副旧镜架上练 1～2 处调整，做到「小步微调、随时试戴」，动作越练越稳。</li>
+    <li><strong>背流程</strong>：把收银 6 步、投诉 5 步、陈列 5 原则、调整 4 原则贴在工位，每天上班过一遍。</li>
+    <li><strong>守边界</strong>：验光辅助不越界给结论；贵重镜架、焊接断裂、涂层镜架先报告师傅再动手。</li>
+    <li><strong>抠细节</strong>：唱收唱付、当面点清、调整后必让顾客试戴确认——分数往往差在这些细节上。</li>
+    <li><strong>清错题</strong>：把本周周测错题整理成错题卡，3 天后自测一遍，直到全部答对。</li>
+    <li><strong>备下周</strong>：从「会做事」转向「会沟通」，提前熟悉接待开场、FABE 产品介绍与异议处理框架。</li>
+  </ul>
+
+    <div class="section">
+    <h2>🚀 进入第4周：销售话术与中期考核预览</h2>
+        <p>第3周，你练就了门店日常运营的动手技能。第4周将进入话术训练，把技能和沟通结合，形成独立服务顾客的完整能力：</p>
+    <table class="rule-table">
+      <thead><tr><th>第4周主题</th><th>学习目标</th></tr></thead>
+      <tbody>
+        <tr><td>顾客接待与开场话术</td><td>能自然开场、快速问清需求，不冷场</td></tr>
+        <tr><td>产品介绍话术（FABE）</td><td>把参数翻译成顾客听得懂的好处</td></tr>
+        <tr><td>价格异议处理话术</td><td>面对「太贵了」能从容应对，不慌不乱</td></tr>
+        <tr><td>促成成交话术</td><td>抓住时机临门一脚，提高成交率</td></tr>
+        <tr><td>服务延伸话术</td><td>提升客单价与顾客满意度</td></tr>
+        <tr><td>Day 28 中期综合考核</td><td>前 4 周知识 + 话术全面检验</td></tr>
+      </tbody>
+    </table>
+    <div class="tip-box"><div class="label">💡 第4周心理准备</div><p>从动手到开口，很多人会「不好意思说」。别怕说错——话术是练出来的，不是天生的。先在同事面前练顺，再面对顾客就自然了。</p></div>
   </div>
 
-  <!-- 周总结 -->
-  <div class="week-summary">
-    <h3>🏆 第3周学习成就总结</h3>
-    <ul>
-      <li>完成了验光辅助、镜架调整、商品陈列、收银操作、售后维修5大技能的系统学习</li>
-      <li>从"只有理论"升级为"动手实操"，是从学员到员工的关键跨越</li>
-      <li>掌握了门店日常运营所需的全部基础技能</li>
-      <li>已具备独立处理常见顾客需求的能力</li>
-    </ul>
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">②</span>考后巩固与订正</div>
+    <p class="day-part-d">做完周测卷不是结束 —— 当天把错题弄懂、把动作复现给师傅看。</p>
   </div>
-
-  <!-- 下周预告 -->
-  <div class="next-week">
-    <h3>🚀 第4周预告：销售话术与中期考核</h3>
-    <ul>
-      <li>Day 22：顾客接待与开场话术（如何开门见山打招呼）</li>
-      <li>Day 23：产品介绍话术（如何让顾客爱上你推荐的产品）</li>
-      <li>Day 24：价格异议处理话术（"太贵了"怎么办？）</li>
-      <li>Day 25：促成成交话术（临门一脚的技巧）</li>
-      <li>Day 26：服务延伸话术（如何提升客单价与顾客满意度）</li>
-      <li>Day 27：综合话术演练（全流程角色扮演）</li>
-      <li>Day 28：<strong>第4周周测 + 中期综合考核</strong>（前4周全面考核）</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2><span>💬</span>三、本周成长复盘（与师傅共同完成）</h2>
-    <p>请诚实回答以下问题，这是你持续成长的关键：</p>
-    <ol>
-      <li style="margin-bottom:12px;"><strong>本周最大的收获是什么？</strong>（写下1-2个最有价值的学习）</li>
-      <li style="margin-bottom:12px;"><strong>本周最大的挑战是什么？</strong>（哪个技能点让你最头疼？）</li>
-      <li style="margin-bottom:12px;"><strong>如果重来一遍，你会怎样改变学习方式？</strong></li>
-      <li><strong>下周最想提升的能力是什么？</strong>（说出具体目标）</li>
-    </ol>
-    <div class="highlight-box green">
-      <strong>师傅寄语建议：</strong>恭喜你完成了第3周的技能训练！这一周你从"知道"走向了"能做"，这是整个培训中最重要的跨越之一。下周你将进入话术训练阶段，有了技能加上话术，你就具备了独立服务顾客的全套能力。加油！
-    </div>
-  </div>
-
-  <div class="footer">Day 21 · 眼镜门店新员工8周成才培训计划 · 第3周 专业技能训练 — 圆满结束</div>
 
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
     <div class="lm-pr">
       <div class="lm-pr-t">任务 1：实操考核 + 复盘（约 40 分钟）</div>
-      <div class="lm-pr-d">按周测要求完成实操考核项目（陈列整理 / 调整 / 收银 / 售后任选或指定），随后与师傅逐项复盘：哪里做对了、哪里还不稳。</div>
-      <div class="lm-pr-o">✅ 完成标准：实操项目完成度达到合格标准；能自己说出 2 个待改进点及改进方法。</div>
+      <div class="lm-pr-d">按周测要求完成实操考核项目（镜架调整 / 收银模拟 / 售后维修 / 投诉情景任选或指定），随后与师傅逐项复盘：哪里做对了、哪里还不稳。</div>
+      <div class="lm-pr-o">✅ 完成标准：实操项目达到合格标准；能自己说出 2 个待改进点及改进方法。</div>
     </div>
     <div class="lm-pr">
       <div class="lm-pr-t">任务 2：知识错题补漏（约 20 分钟）</div>
@@ -464,63 +344,13 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">难在「说人话」：把参数翻译成顾客能感知的好处，并且在被拒绝时不慌。第 4 周会给出固定框架（FABE、异议处理五法），照着练就能上手。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：验光辅助时，你能做的和不能做的分别是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>能做：设备准备与清洁、视力表引导与记录、顾客沟通、资料整理。不能做：给出度数结论、解释处方判定、代替验光师操作关键步骤。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：镜架调整的四条原则是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>先看再问、先软后硬、小步微调、随时试戴。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：收银与售后的两条关键纪律是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>收银：唱收唱付、不得私自改价或代收不入账；售后：不擅自承诺赔偿、不隐瞒问题、必须留记录。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：顾客取镜时说「戴着有点夹脸」，你正在收银，应该怎么安排？</summary>
-      <div class="lm-a"><b>参考答案：</b>先安排顾客坐下，收银请同事接手或稍后处理；自己立刻带顾客做调整并试戴确认。顾客的佩戴舒适优先于手上的流程性工作。</div>
-    </details>
-</div>
-<div class="summary" style="background:linear-gradient(135deg,#e8f5e9,#d4edda);border-radius:12px;padding:24px;margin-top:30px">
-    <h3 style="margin:0 0 12px 0;color:#2e7d32">📝 今日学习要点回顾</h3>
-    <ul style="padding-left:20px;line-height:2">
-      <li>第3周五大技能回顾：验光辅助、镜架调整与整形、商品陈列、收银与库存、售后维修</li>
-      <li>验光数据解读：球镜（SPH）、柱镜（CYL）、轴位（AXIS）的含义与记录规范</li>
-      <li>镜架调整六要素与热整形要点；陈列五大原则与三时段维护 SOP；收银六步流程与差错预防</li>
-      <li>周测结构：理论笔试 50 分 + 实操考核 50 分，合格线 70 分；实操考核由师傅当场打分</li>
-      <li>本周是从「知道」走向「能做」的关键跨越，下周进入话术训练，技能+话术=独立服务能力</li>
-    </ul>
-    <p style="margin-top:14px;color:#2e7d32;font-weight:600">🎯 今日任务：完成第3周周测（笔试+实操），与师傅完成成长复盘，回答 4 个复盘问题。</p>
-  </div>
-<div class="lm-block lm-review">
-  <h3>🗓️ 本周回顾小结与阶段检查点</h3>
-  <div class="lm-sub">① 本周知识串讲（前后衔接）</div>
-  <ul class="lm-list">
-      <li>验光辅助：认识 5 台设备 → 验光前准备 5 项 → 清洁消毒规范 → 视力表引导与记录，核心是「会准备、会协助、不越界」。</li>
-      <li>镜架调整：6 件工具 → 5 类常见佩戴问题 → 标准调整流程（先看再问 / 先软后硬 / 小步微调 / 随时试戴），材质决定调整手法。</li>
-      <li>货区管理：陈列五大原则 + 日常维护 SOP + 5 类常见错误，位置决定视线、视线决定试戴、试戴决定成交。</li>
-      <li>收银库存：6 步收银流程 + 差错预防（唱收唱付）+ 库存进销存与盘点 + 三条红线（不改价、不入私账、不留凭证）。</li>
-      <li>售后服务：维修三件套 + 清洗保养 + 投诉处理五步（倾听/共情/确认/处理/反馈），售后是最划算的营销。</li>
-      <li>承上启下：本周解决「手会做」；下周解决「嘴会说」——从流程动作，转向需求挖掘与话术表达。</li>
-  </ul>
-  <div class="lm-sub">② 阶段检查点（达到才算过关，未达标先补这天的内容）</div>
-  <table class="rule-table">
-    <thead><tr><th>检查点</th><th>达标标准</th></tr></thead>
-    <tbody>
-        <tr><td>验光辅助</td><td>能独立完成设备开机自检与清洁、视力表引导记录，不越界给结论</td></tr>
-        <tr><td>镜架调整</td><td>能识别 5 类佩戴问题并独立完成 1～2 处调整，调整后顾客佩戴明显改善</td></tr>
-        <tr><td>陈列管理</td><td>能按五大原则独立整理一个展柜，找出并纠正 5 处以上问题</td></tr>
-        <tr><td>收银操作</td><td>能完整走完 6 步流程，做到唱收唱付，金额/商品/单据三处一致</td></tr>
-        <tr><td>库存管理</td><td>能正确填写盘点表，对差异说出至少 2 个原因</td></tr>
-        <tr><td>售后服务</td><td>能独立完成螺丝/鼻托/清洗三项操作，按五步流程接待一次投诉</td></tr>
-        <tr><td>流程衔接</td><td>5 个场景连贯演练无遗漏环节，师傅评分达到合格线</td></tr>
-    </tbody>
-  </table>
-  <p class="lm-meta">💡 自检方式：逐项打勾 → 有 2 项以上未达标，先把对应天的自测题重做一遍，再请师傅复评。</p>
-</div>
+
 <!-- LM-END -->
+
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">③</span>四大流程落地衔接</div>
+    <p class="day-part-d">周测不只是打分 —— 它检验的是标准、带教、考核、优化整条链路的效果。</p>
+  </div>
 
 <!-- FLOW-START -->
 <div class="lm-block flow-block">
@@ -529,26 +359,33 @@ body{padding:0!important;margin:0!important}
   <p class="flow-sub">本日内容对应：<strong>第 3 周考核节点（周测）</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
   <div class="flow-grid">
 <div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>把专业技能 5 大工作站纳入考核，明确与进入销售话术阶段的对应关系。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>复习范围：验光辅助、镜架调整、陈列货区、收银、售后维修</li><li>明白周测合格才能进入第 4 周销售话术阶段</li><li>熟练运用各站技能完成实操</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>清楚考核范围与合格标准，即备考达标。</div><div class="flow-pit"><b>⚠ 常见坑：</b>第 3 周全是实操技能，光背理论没用——要动手练熟每个站。</div></div>
-<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>考前工作站逐一复盘，集中答疑，薄弱站专项补练。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>按工作站逐一复盘，逐个过操作要点</li><li>集中答疑，薄弱工作站安排专项补练</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>各站操作要点均已过一遍，即带教完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>补练要‘定点’——哪一站不熟就专练哪站，不要从头再学一遍。</div></div>
-<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>周测 + 实操双重考核，客观判定技能达标情况。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>组织周测 + 各站实操考核</li><li>周测与实操均 ≥ 合格线方可进入第 4 周</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>周测 + 实操合格方可进入第 4 周；未达标者分站复训后重考。</div><div class="flow-pit"><b>⚠ 常见坑：</b>理论过、实操不过很常见——技能考核以‘动手能力’为准。</div></div>
-<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>汇总各站通过率，低通过率工作站回流加强带教。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>统计各工作站考核通过率</li><li>对低通过率工作站回流加强带教与练习时长</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成低通过率站点的带教强化方案，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>某站通过率特别低，先怀疑‘带教方法’——换种教法往往立竿见影。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>考前工作站逐一复盘，集中答疑，薄弱站专项补练。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>按工作站逐一复盘，逐个过操作要点</li><li>集中答疑，薄弱工作站安排专项补练</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>各站操作要点均已过一遍，即带教完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>补练要「定点」——哪一站不熟就专练哪站，不要从头再学一遍。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>周测 + 实操双重考核，客观判定技能达标情况。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>组织周测 + 各站实操考核</li><li>周测与实操均 ≥ 合格线方可进入第 4 周</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>周测 + 实操合格方可进入第 4 周；未达标者分站复训后重考。</div><div class="flow-pit"><b>⚠ 常见坑：</b>理论过、实操不过很常见——技能考核以「动手能力」为准。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>汇总各站通过率，低通过率工作站回流加强带教。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>统计各工作站考核通过率</li><li>对低通过率工作站回流加强带教与练习时长</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成低通过率站点的带教强化方案，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>某站通过率特别低，先怀疑「带教方法」——换种教法往往立竿见影。</div></div>
   </div>
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
 
   <!-- 第3周完成标记 -->
-  <p style="text-align:center;color:#00897b;font-weight:600;margin:24px 0 6px">🎉 恭喜完成第3周学习！下周将进入销售话术与中期考核阶段。</p>
+  <p style="text-align:center;color:#7e57c2;font-weight:600;margin:24px 0 6px">🎉 恭喜完成第3周学习！下周将进入销售话术与中期考核阶段。</p>
   <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:20px">— 第3周 · 专业技能训练 · 全部完成 —</p>
 
-
   <div class="nav-footer">
-    <a class="nav-btn outline" href="Day_20_练习题.html">← 返回 Day 20 练习题</a>
+    <a class="nav-btn outline" href="Day_20_练习题.html">← Day 20 练习题</a>
     <a class="nav-btn outline" href="../index.html">🏠 首页</a>
-    
-    <a class="nav-btn" href="../第4周_销售话术与中期考核/Day_22_学习内容.html">Day 22 学习内容 →</a>
+    <a class="nav-btn" href="Day_21_周测卷.html">第3周周测卷 →</a>
   </div>
 </div>
 
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+.options li:hover{background:#f6f2ff;border-color:#b39ddb;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:none!important;}
+</style>
 </body>
 </html>
