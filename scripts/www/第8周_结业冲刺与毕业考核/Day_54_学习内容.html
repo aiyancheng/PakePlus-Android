@@ -250,6 +250,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -415,7 +441,6 @@ body{padding:0!important;margin:0!important}
     写完之后收好，一年后再打开读。
   </div>
 
-  
     <h2 style="color:#2c3e50;margin-top:32px">🎓 结业考核准备清单</h2>
   <div style="background:#f0f4f8;border-radius:10px;padding:18px 22px;margin:16px 0">
     <p style="line-height:1.8;color:#555;margin-bottom:12px">考核前最后确认，确保万无一失：</p>
@@ -478,38 +503,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">按流程走完，不中途放弃。发挥失常通常出现在「不会的题」上，先把会的全部答完拿满；情景题保持礼貌与流程完整，分数不会低。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：销售能力金字塔的五个层级是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>L1 知道（学过但不熟）→ L2 理解（能解释给别人听）→ L3 运用（想一想才能用）→ L4 熟练（自然流畅、脱口而出）→ L5 卓越（灵活变通、因人而异）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：结业考核前一天的复习重点应该是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>高频场景与话术（接待/推荐/价格/售后）+ 错题回顾 + 流程默述；不做新内容的攻坚，保证睡眠与状态。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：结业后 3 个月的合理目标是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>稳住独立接单能力（流程不遗漏、话术不卡壳）、积累一定订单量、掌握至少一类专项客群（儿童/中老年/高端），并养成每周复盘习惯。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：考核当天遇到一道完全不会的题，你怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>先跳过，把会做的做完拿满分数，最后再回来作答；如果确实不会，写清你知道的相关内容（哪怕只是一部分原理或流程），不要留空白或用编造的数据。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>销售能力5级金字塔：知道→理解→运用→熟练→卓越，目标至少达到L3-L4</li>
-      <li>8句核心销售话术模板（开场/引导验光/高端推荐/价格异议/犹豫/成交/陪同者/送别），背到脱口而出</li>
-      <li>4大必知模块各5个核心知识点，是结业考核的主要考查范围</li>
-      <li>考前准备清单已经为你列好，按步骤执行，不遗漏</li>
-      <li>通过结业考核只是起点，后续的职业发展需要持续投入</li>
-    </ul>
-    <p style="margin-top:14px; color:#c8f7d4; font-size:16px; font-weight:bold; text-align:center;">
-      🌟 明天就是结业模拟考了！你已经为此准备了8周，相信自己！
-    </p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -526,8 +520,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="Day_53_练习题.html" class="nav-btn outline">← Day 53 练习题</a>
