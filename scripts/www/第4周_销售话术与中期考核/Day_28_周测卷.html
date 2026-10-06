@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 28 周测卷 | 第4周 · 销售话术综合</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#e91e63,#ad1457);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.92;line-height:1.7;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+
+  .exam-info{background:#fff;border:1px solid #e6ebf3;border-radius:14px;padding:22px 24px;margin:22px 0;box-shadow:0 2px 10px rgba(26,58,107,.06)}
+  .ei-title{font-size:1.12em;font-weight:800;color:#ad1457;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .ei-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .ei-item{background:#fdeef3;border:1px solid #f7cddc;border-radius:10px;padding:10px 12px;text-align:center}
+  .ei-k{display:block;font-size:.78em;color:#8c6a76;margin-bottom:4px}
+  .ei-v{display:block;font-size:1.02em;font-weight:800;color:#ad1457}
+  .ei-h{font-weight:800;color:#e91e63;font-size:.95em;margin:16px 0 8px;display:flex;align-items:center;gap:7px}
+  .ei-h::before{content:"";width:4px;height:14px;border-radius:3px;background:#f06292}
+  .ei-table{width:100%;border-collapse:collapse;margin:2px 0 6px}
+  .ei-table th{background:#e91e63;color:#fff;padding:8px 12px;text-align:left;font-size:.86em}
+  .ei-table td{padding:8px 12px;border-bottom:1px solid #eef2f6;font-size:.86em;color:#445}
+  .ei-table tr:nth-child(even) td{background:#fdf6f9}
+  .ei-req{margin:2px 0 0;padding-left:20px}
+  .ei-req li{font-size:.88em;line-height:1.85;color:#445}
+
+  .section-title{font-size:1.15em;color:#ad1457;font-weight:800;margin:32px 0 14px;padding-left:12px;border-left:4px solid #e91e63}
+  .sub-title{font-size:1em;font-weight:800;color:#e91e63;margin:20px 0 10px}
+
+  .question-card{background:white;border-radius:12px;padding:22px 24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+  .q-num{background:#e91e63;color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.86em;flex-shrink:0;}
+  .q-type{background:#fce4ec;color:#ad1457;padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:600;}
+  .q-level{padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:700;}
+  .lv-base{background:#e8f5e9;color:#2e7d32;}
+  .lv-mid{background:#fff4e0;color:#c47f17;}
+  .lv-up{background:#fdeaea;color:#c0392b;}
+  .q-score{color:#999;font-size:0.8em;margin-left:auto;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.7;margin-bottom:14px;}
+  .options{list-style:none;padding:0;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+  .options li:hover{background:#fdeef3;border-color:#f48fb1;}
+  .options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+  .options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+  .options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+  .options li.done{cursor:default;}
+  .answer-area{width:100%;min-height:88px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#555;display:none;line-height:1.8;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .scenario-box{background:#fdf1f5;border-left:4px solid #e91e63;border-radius:8px;padding:14px 16px;margin:2px 0 12px;font-size:0.9em;line-height:1.8;}
+
+  .score-box{background:linear-gradient(135deg,#fce4ec,#fdf6f9);border-radius:12px;padding:20px;margin:26px 0 10px;}
+  .score-box h3{color:#ad1457;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#e91e63;color:white;padding:8px 12px;text-align:left;font-size:0.86em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.85em;}
+  .sign-line{color:#666;font-size:0.88em;margin-top:10px;}
+
+  .nav-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 50px;}
+  .nav-btn{background:#e91e63;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#ad1457;border:2px solid #e91e63;}
+
+  .home-topbar{background:#fff;padding:10px 0}
+  .home-topbar .ht-inner{width:min(1300px,calc(100% - 32px));max-width:1300px;margin:0 auto}
+  .home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;}
+  .home-topbar a:hover{background:#e6eaf6;color:#283593;}
+
+  .header{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin:18px auto 0!important;padding:34px 30px!important;
+    border-radius:14px!important;box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+  }
+  .container{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin-left:auto!important;margin-right:auto!important;
+    padding-left:0!important;padding-right:0!important;
+  }
+  @media(max-width:900px){
+    .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+    .header h1{font-size:1.5em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important}
+    .container{padding-left:0!important;padding-right:0!important}
+  }
+  @media(max-width:600px){
+    .header{padding:20px 15px!important}
+    .header h1{font-size:1.3em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+    .question-card{padding:16px 14px}
+    .exam-info{padding:16px 14px}
+  }
+  @media(max-width:1100px){
+    table{display:table!important;width:100%!important;max-width:100%!important;table-layout:auto!important;border-collapse:collapse!important}
+    th,td{overflow-wrap:break-word!important;word-break:break-word!important}
+  }
+  @media(max-width:900px){th,td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}}
+  @media(max-width:600px){th,td{padding:6px 5px!important;font-size:11px!important}}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第4周 · Day 28 — 周测卷</span>
+  <h1>🏆 第4周周测卷 · 销售话术综合</h1>
+  <div class="subtitle">覆盖 Day 22–27 全部学习内容 ｜ 满分 100 分（理论 60 + 实操 40）｜ 及格 70 分</div>
+</div>
+
+<div class="container">
+
+  <div class="exam-info">
+    <div class="ei-title">📋 考试说明（开考前请先阅读）</div>
+    <div class="ei-grid">
+      <div class="ei-item"><span class="ei-k">满分</span><span class="ei-v">100 分</span></div>
+      <div class="ei-item"><span class="ei-k">及格线</span><span class="ei-v">70 分</span></div>
+      <div class="ei-item"><span class="ei-k">建议时长</span><span class="ei-v">45 分钟</span></div>
+      <div class="ei-item"><span class="ei-k">考试形式</span><span class="ei-v">闭卷·独立作答</span></div>
+    </div>
+
+    <div class="ei-h">一、题型、题量与分值</div>
+    <table class="ei-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题量</th><th>分值</th><th>小计</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题<br>（60 分）</td><td>单项选择</td><td>10 题</td><td>每题 3 分</td><td>30 分</td></tr>
+        <tr><td>判断</td><td>5 题</td><td>每题 2 分</td><td>10 分</td></tr>
+        <tr><td>简答</td><td>2 题</td><td>每题 10 分</td><td>20 分</td></tr>
+        <tr><td>二、实操题<br>（40 分）</td><td>情景应对 / 动手操作</td><td>2 题</td><td>每题 20 分</td><td>40 分</td></tr>
+        <tr><td colspan="4"><strong>合计</strong></td><td><strong>100 分</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">二、难度分布</div>
+    <table class="ei-table">
+      <thead><tr><th>难度层级</th><th>考查重点</th><th>占比</th><th>对应题目</th></tr></thead>
+      <tbody>
+        <tr><td>基础</td><td>记忆与理解（模型定义、原则、禁忌）</td><td>约 60%</td><td>单选 1–4、6、8、判断 11–12、14、简答 16、实操 19</td></tr>
+        <tr><td>中等</td><td>简单应用与判断（场景应对、话术选择）</td><td>约 30%</td><td>单选 5、7、9、判断 13、15、实操 18</td></tr>
+        <tr><td>提升</td><td>综合情境、迁移应用（场景识别与整合应对）</td><td>约 10%</td><td>单选 10、简答 17</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">三、作答要求</div>
+    <ul class="ei-req">
+      <li>理论题独立完成，<strong>不得翻阅资料、不得相互讨论</strong>；选择题与判断题均为<strong>点击选项即可即时判定对错</strong>，点击后自动显示解析。</li>
+      <li>简答题按要点作答，条理清楚、分点书写，答对要点即得分。</li>
+      <li>实操题由带教师傅现场观察评分，按「话术是否得体、应对是否得当」给分。</li>
+      <li>满分 100 分，<strong>70 分为及格</strong>；未及格者按本页底部说明复训后重考。</li>
+    </ul>
+  </div>
+
+  <div class="section-title">一、理论题（共 60 分）</div>
+
+  <div class="sub-title">（一）单项选择（共 10 题，每题 3 分，共 30 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">1</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">「7 秒定律」中，构成第一印象的三个要素里，占比<strong>最大</strong>的是？</div>
+    <ul class="options">
+      <li>A. 语言内容（说什么）</li>
+      <li>B. 声音（语气语调）</li>
+      <li>C. 肢体语言（表情、姿势、距离）</li>
+      <li>D. 三者比例相同</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。第一印象中语言内容仅占 7%、声音占 38%、肢体语言占 55%——「怎么说」比「说什么」更重要。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">2</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">FABE 产品介绍法中，「B」代表？</div>
+    <ul class="options">
+      <li>A. Brand（品牌）</li>
+      <li>B. Benefit（利益，对顾客有什么用）</li>
+      <li>C. Buy（购买）</li>
+      <li>D. Better（更好）</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。FABE＝Feature 特征（是什么）→ Advantage 优势（好在哪）→ Benefit 利益（对您有什么用）→ Evidence 证据（凭什么信）。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">3</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客进店后随意走动、眼神游移（没有明确目的），最恰当的接待方式是？</div>
+    <ul class="options">
+      <li>A. 紧跟其后，不断介绍商品</li>
+      <li>B. 先给空间不打扰，待其停留后再适时邀请试戴</li>
+      <li>C. 大声询问「买不买？」</li>
+      <li>D. 完全不理会，等顾客开口</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。随意浏览型顾客最怕被「盯着、追着问」；给足空间，在其停留 3 秒以上时主动靠近并给出具体邀请（如试戴）效果最好。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">4</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">处理顾客投诉的 HEARD 五步法，第一步是？</div>
+    <ul class="options">
+      <li>A. 先道歉</li>
+      <li>B. 先倾听、不打断</li>
+      <li>C. 先给解决方案</li>
+      <li>D. 先做复盘记录</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。HEARD＝Hear 倾听 → Empathize 共情 → Apologize 道歉 → Resolve 解决 → Diagnose 复盘。先倾听是化解情绪的关键。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">5</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客说「这副 2000 太贵了」，下列属于<strong>正确</strong>处理做法的是？</div>
+    <ul class="options">
+      <li>A. 立刻降价，先留住顾客</li>
+      <li>B. 贬低网上同款，抬高自己</li>
+      <li>C. 用价值重塑 / 拆分法说明「贵在哪」，把价格翻译成价值</li>
+      <li>D. 认为顾客无理取闹，直接翻脸</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。异议处理方法：价值重塑、对比法、拆分法、降阶推荐、限时优惠；禁忌：立刻降价、贬低同行、敷衍应付、直接翻脸。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">6</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">连带销售的「三不原则」是？</div>
+    <ul class="options">
+      <li>A. 不强推、不夸大、不捆绑</li>
+      <li>B. 不推荐、不联系、不登记</li>
+      <li>C. 不降价、不赠品、不保修</li>
+      <li>D. 不承诺、不试戴、不留客</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A</strong>。连带销售三不原则：不强推、不夸大、不捆绑——以顾客真实需要为前提，才能既提客单价又不伤客情。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">7</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">下列哪一组属于「促成成交」阶段应当避免的禁忌？</div>
+    <ul class="options">
+      <li>A. 二选一法、假设成交法</li>
+      <li>B. 逼单、夸大承诺、成交后冷淡</li>
+      <li>C. 直接推进法、限时优惠</li>
+      <li>D. 最后一个理由法、试用体验</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。促成技巧可用直接推进、二选一、假设成交、最后的理由、紧迫感等；禁忌是逼单、夸大承诺、成交后马上冷淡。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">8</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">取镜之后的顾客跟进，「黄金期」是指？</div>
+    <ul class="options">
+      <li>A. 24 小时内</li>
+      <li>B. 48 小时内</li>
+      <li>C. 一周内</li>
+      <li>D. 一个月内</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。取镜后黄金 48 小时内跟进，询问佩戴感受，是提升满意度、催生复购与转介绍的关键动作。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">9</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客说「我再考虑考虑」时，最有效的回应是？</div>
+    <ul class="options">
+      <li>A. 「好的，想好了再来找我」</li>
+      <li>B. 询问顾虑所在，针对性解决后再次促成</li>
+      <li>C. 立刻降价吸引顾客</li>
+      <li>D. 谎称「这款快卖完了」制造紧迫感</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。「再考虑」多是托词，真正原因常是价格/款式/信任的顾虑；先问清顾虑再解决，才能真正促成。谎称缺货属夸大、不可取。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">10</div><span class="q-type">单选</span><span class="q-level lv-up">提升</span><span class="q-score">3 分</span></div>
+    <div class="question-text">三种进店场景中，「寻求帮助型」顾客的识别特征与应对策略是？</div>
+    <ul class="options">
+      <li>A. 目光游移、随意走动 → 给足空间不打扰</li>
+      <li>B. 步伐较快、目的明确 → 不拦截，在其停下时搭话</li>
+      <li>C. 四处张望找人、主动说「我想问一下」→ 快速响应，不让其等待</li>
+      <li>D. 以上都不对</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。主动进店型（B）不拦截、停下再搭话；随意浏览型（A）给空间；寻求帮助型要快速响应、主动接话，避免让顾客等待。</div>
+  </div>
+
+  <div class="sub-title">（二）判断题（共 5 题，每题 2 分，共 10 分。点击「正确 / 错误」即时判定）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">11</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">顾客进店前 7 秒形成的第一印象中，肢体语言（表情、姿势）的影响大于说话内容。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。肢体语言占 55%、声音占 38%、语言内容仅占 7%，所以微笑、眼神、站姿比背话术更重要。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">12</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">接待顾客时，直接问「你的预算是多少？」是得体、专业的问法。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。直接问钱会让顾客不舒服；应说「我这边有几个不同价位的系列，帮您介绍，您选最适合的」。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">13</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">处理价格异议时，为促成成交可以立刻降价，并贬低网上同款来抬高自己。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。立刻降价、贬低同行都是异议处理的四大禁忌，既伤利润又伤信任，应以价值重塑等正面方式应对。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">14</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">投诉如果被妥善解决，顾客的忠诚度可能不降反升。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。投诉的顾客是还愿意给你机会的顾客；处理得当，信任与忠诚度反而会提升——这也是售后的价值所在。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">15</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">连带销售时，顾客第一次拒绝后就应继续反复推荐，直到顾客接受。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。连带销售遵循「不强推」原则：顾客明确拒绝就尊重其选择，反复硬推既伤客情又违反三不原则。</div>
+  </div>
+
+  <div class="sub-title">（三）简答题（共 2 题，每题 10 分，共 20 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">16</div><span class="q-type">简答</span><span class="q-level lv-base">基础</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请写出 FABE 法则四个字母的含义，并各用一句话说明它在产品介绍中的作用。</div>
+    <textarea class="answer-area" placeholder="F／A／B／E 分别代表什么，各用一句话说明……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点（每项 2.5 分）：<strong>F＝Feature 特征</strong>——说清产品是什么（如 1.74 高折射率、钛合金材质）；<strong>A＝Advantage 优势</strong>——相比同类好在哪（更薄、更轻、更耐用）；<strong>B＝Benefit 利益</strong>——对顾客有什么用、带来什么好处（戴着更美观、更舒适）；<strong>E＝Evidence 证据</strong>——凭什么让顾客信（专利、检测报告、真实案例、工艺说明）。核心：每句话都要落脚在顾客利益（B）上，而不是只罗列参数（F）。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">17</div><span class="q-type">简答</span><span class="q-level lv-up">提升</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请写出处理顾客投诉的 HEARD 五步法，并说明每一步的关键动作或话术要点。</div>
+    <textarea class="answer-area" placeholder="H／E／A／R／D 五步 + 每步关键动作……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点（每步 2 分）：<strong>H＝Hear 倾听</strong>——让顾客把话说完，全程不打断、不辩解；<strong>E＝Empathize 共情</strong>——「我非常理解，换我也会着急」，认可顾客感受；<strong>A＝Apologize 道歉</strong>——真诚致歉，不推卸责任；<strong>R＝Resolve 解决</strong>——给出具体可行的方案（如免费复查、重做、调整），讲清时限；<strong>D＝Diagnose 复盘</strong>——记录投诉详情、上报店长、追踪结果并优化流程，从源头减少同类投诉。</div>
+  </div>
+
+  <div class="section-title">二、实操题（共 40 分 · 由带教师傅现场观察评分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">18</div><span class="q-type">情景应对</span><span class="q-level lv-mid">中等</span><span class="q-score">20 分</span></div>
+    <div class="scenario-box">
+      <strong>📋 情景：</strong>一位顾客看中一副 1680 元的钛合金镜架，犹豫地说："网上同款才几百块，你们这也太贵了吧？"带教师傅在旁观察。请现场应对。
+    </div>
+    <div class="question-text">请说明你的应对步骤与关键话术，并现场演练给带教师傅看。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 4–5 分）：</strong><br>
+      ① <strong>先共情、不辩解</strong>：认可顾客感受「您的顾虑很正常，价格确实要比较」，避免争辩或贬低同行；<br>
+      ② <strong>价值重塑</strong>：说明实体店的价值——正品保障、专业验配、免费调整与售后、钛合金材质与工艺（FABE 讲清优点与利益）；<br>
+      ③ <strong>拆分 / 对比法</strong>：把价格拆到「每天几分钱」或对比同材质正品的合理区间，让顾客感到物有所值；<br>
+      ④ <strong>不擅自承诺</strong>：不随口降价、不贬低网上同款；必要时用降阶推荐（介绍更适合预算的款）代替硬压价；<br>
+      ⑤ <strong>给台阶、顺势促成</strong>：如「要不您先试戴感受一下？」把焦点从价格拉回体验，礼貌收尾。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">19</div><span class="q-type">动手操作</span><span class="q-level lv-base">基础</span><span class="q-score">20 分</span></div>
+    <div class="question-text">请带教师傅扮演顾客，现场考核：① 完成一次开场接待 + 需求探测（漏斗式提问，问到<strong>至少 3 项</strong>需求信息）；② 用 FABE 介绍一款镜片或镜架；③ 完成一次得体不硬推的连带销售推荐。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 5 分）：</strong><br>
+      ① <strong>开场接待</strong>：主动问候、微笑得体，识别场景并用恰当开场话术（不背台词、不打量、不紧跟）；<br>
+      ② <strong>需求探测</strong>：用开放→具体的漏斗式提问（如是否首次配镜、佩戴不适、最看重价格/品质/款式/功能），至少问到 3 项；<br>
+      ③ <strong>FABE 介绍</strong>：按 F→A→B→E 结构介绍，落脚在顾客利益上，不堆砌参数；<br>
+      ④ <strong>连带销售</strong>：结合需求自然推荐（如镜布/镜盒/护理液/备用镜），不强推、不夸大、不捆绑，被拒绝即尊重顾客。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="score-box">
+    <h3>📊 第4周周测成绩记录</h3>
+    <table class="score-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题号</th><th>满分</th><th>得分</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题</td><td>单项选择</td><td>1–10</td><td>30 分</td><td>　　　分</td></tr>
+        <tr><td>判断</td><td>11–15</td><td>10 分</td><td>　　　分</td></tr>
+        <tr><td>简答</td><td>16–17</td><td>20 分</td><td>　　　分</td></tr>
+        <tr><td>二、实操题</td><td>情景应对 / 动手操作</td><td>18–19</td><td>40 分</td><td>　　　分</td></tr>
+        <tr style="background:#fce4ec;"><td colspan="3"><strong>合计</strong></td><td><strong>100 分</strong></td><td><strong>　　　分</strong>（及格线 70 分）</td></tr>
+      </tbody>
+    </table>
+    <p class="sign-line">📝 带教师傅签字确认：___________________　　日期：____________</p>
+    <p class="sign-line">🔁 未达 70 分：由训练员针对失分集中项复训 1–2 天，重考合格后方可进入第 5 周。</p>
+  </div>
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_28_学习内容.html">← 返回第4周总结复盘</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    <a class="nav-btn" href="Day_28_中期考核.html">🎓 中期考核 →</a>
+    <a class="nav-btn outline" href="../第5周_实战跟岗训练/Day_29_学习内容.html">进入第5周 →</a>
+  </div>
+</div>
+
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background .2s,border-color .2s;}
+.options li:hover{background:#fdeef3;border-color:#f48fb1;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:inline-block!important;}
+</style>
+<script id="interactive-options-type-a-js">
+(function(){
+  document.querySelectorAll('.question-card').forEach(function(card){
+    var opts=card.querySelectorAll('.options li');
+    if(!opts.length) return;
+    var hint=card.querySelector('.answer-hint');
+    var answered=false;
+    function getCorrect(){
+      if(!hint) return null;
+      var t=hint.innerHTML||hint.textContent;
+      var m=t.match(/正确答案[:：][\s]*(?:<strong>)?([A-Da-d])/i);
+      return m?m[1].toUpperCase():null;
+    }
+    opts.forEach(function(li,idx){
+      li.addEventListener('click',function(){
+        if(answered)return;
+        answered=true;
+        var letters=['A','B','C','D','E'];
+        var chosen=letters[idx];
+        var correct=getCorrect();
+        opts.forEach(function(o){o.classList.add('done');});
+        if(correct&&chosen===correct){
+          li.classList.add('correct');
+          li.textContent='✅ '+li.textContent;
+        } else {
+          li.classList.add('wrong');
+          li.textContent='❌ '+li.textContent;
+          if(correct){
+            var ci=letters.indexOf(correct);
+            if(ci>=0&&opts[ci]){opts[ci].classList.add('highlight');opts[ci].textContent='👉 '+opts[ci].textContent;}
+          }
+        }
+        if(hint){hint.style.display='block';hint.style.marginTop='12px';}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
