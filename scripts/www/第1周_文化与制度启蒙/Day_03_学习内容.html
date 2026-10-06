@@ -265,6 +265,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -280,11 +293,12 @@ body{padding:0!important;margin:0!important}
 <div class="lm-block lm-goal">
   <h3>🎯 今日学习目标（学完你应该能做到）</h3>
   <ul class="lm-list">
-      <li>记住作息：上下班时间、午休时长、每周排休规则，能自己排出一周作息</li>
-      <li>掌握打卡规则：什么时候打卡、忘记打卡怎么补、迟到早退如何认定</li>
-      <li>会走请假流程：提前多久申请、找谁审批、病假/事假分别要什么证明</li>
-      <li>看懂薪资结构：基本工资 + 提成 + 全勤/绩效等，知道每月发薪日与查询方式</li>
-      <li>知道社保与福利范围：社保缴纳、工服、员工内购等</li>
+      <li>记住作息：各岗位上下班时间、排班规则（每月 27 日前出次月排班）、5–10 月街边店营业时间顺延 30 分钟</li>
+      <li>掌握打卡规则：企业微信一日两次打卡、因公外出打卡要求、补卡的 3 次机会与截止时间</li>
+      <li>背准考勤红线：迟到 30 分钟以内/以上的区别、月累计迟到早退 5/10/20 次的处理、旷工扣薪 3 倍与自动离职情形</li>
+      <li>会走请假流程：提前多久申请、找谁审批、事假/丧假/婚假/产假/陪产假各多少天、需要什么材料</li>
+      <li>看懂薪酬福利：发薪日（每月 15 日发上月薪资）、公司福利范围、社保缴纳</li>
+      <li>清楚试用期：3–6 个月试用期、转正标准、试用期离职通知期 3 天</li>
   </ul>
   <p class="lm-meta">⏱ 学习量控制：约 <strong>2 小时</strong> —— 精读讲解 60 分钟 ｜ 动手实践 45 分钟 ｜ 自测与订正 15 分钟</p>
 </div>
@@ -292,51 +306,129 @@ body{padding:0!important;margin:0!important}
   <div class="section">
     <h2>⏰ 第一部分：考勤制度</h2>
     <h3>📌 工作时间安排</h3>
+    <p>上班时间因工作岗位、工作性质而不同，具体如下（<strong>以公司最新通知和门店排班为准</strong>）：</p>
     <table class="rule-table">
-      <thead><tr><th>班次</th><th>上班时间</th><th>下班时间</th><th>备注</th></tr></thead>
+      <thead><tr><th>岗位/班次</th><th>工作时间</th><th>备注</th></tr></thead>
       <tbody>
-        <tr><td>早班</td><td>08:30</td><td>18:00</td><td>1小时午休</td></tr>
-        <tr><td>晚班</td><td>12:00</td><td>21:00</td><td>1小时晚餐时间</td></tr>
-        <tr><td>全天班</td><td>09:00</td><td>21:00</td><td>轮换安排，1小时休息</td></tr>
+        <tr><td>后勤职能部（办公室）</td><td>8:30 – 17:30</td><td>标准办公作息</td></tr>
+        <tr><td>后勤仓库、加工</td><td>8:30 – 18:00</td><td>含工间休息</td></tr>
+        <tr><td>营运片区 · 行政班</td><td>≥9 小时</td><td>中餐、晚餐各半小时</td></tr>
+        <tr><td>营运片区 · 全天班</td><td>8:30 – 20:30</td><td>中餐 1 小时、晚餐 0.5 小时</td></tr>
+        <tr><td>商场及其他渠道</td><td>—</td><td>按所在场所时间执行</td></tr>
       </tbody>
     </table>
-    <p style="font-size:0.88em;color:#888;">※ 具体排班由店长统一安排，以实际通知为准。</p>
+    <div class="tip-box">
+      <div class="label">💡 排班与季节调整（手册明确规定）</div>
+      <ul style="padding-left:18px;">
+        <li><strong>每月 27 日前</strong>会制订出你次月的工作排班，所有职员均要求准时上班</li>
+        <li><strong>5 月 1 日 – 10 月 31 日</strong>期间，街边门店营业时间参照以上时间<strong>顺延 30 分钟</strong></li>
+        <li>工作时间由公司根据营业需要和门店实际运营需求定期排班决定；如有改变，公司将提前通知</li>
+        <li><strong>因病缺席应提供二级及以上医院证明</strong>；未按规定办理的，按事假处理</li>
+      </ul>
+    </div>
 
-    <h3>📌 打卡规定</h3>
+    <h3>📌 打卡规定（企业微信考勤）</h3>
     <ul>
-      <li>上下班均需打卡，忘记打卡需在当日下班前向店长报备</li>
-      <li>提前10分钟到岗做开班准备（开灯、陈列整理、设备检查）</li>
+      <li>公司实行<strong>上、下班企业微信考勤打卡制度</strong>；实行不定时工作制的员工按岗位要求打卡</li>
+      <li><strong>打卡次数：一日两次</strong>——上班、下班分别打卡一次</li>
+      <li><strong>打卡时间</strong>＝上班到岗时间 + 下班离岗时间</li>
+      <li>上班时间内外出，<strong>须向上级请假</strong>；否则视为擅离职守，按外出时间计算旷工时间</li>
+      <li><strong>因公外出打卡</strong>：打卡时须注明外出事由，并附现场照片</li>
       <li>不得代人打卡，一经发现，双方均受处罚</li>
     </ul>
 
-    <h3>📌 迟到/早退处理</h3>
+    <h3>📌 忘记打卡怎么办？——补卡规则</h3>
     <table class="rule-table">
-      <thead><tr><th>情况</th><th>标准</th><th>处理方式</th></tr></thead>
+      <thead><tr><th>项目</th><th>规定</th></tr></thead>
       <tbody>
-        <tr><td>迟到</td><td>超出规定时间1-30分钟</td><td>书面提醒，当月累计3次扣绩效</td></tr>
-        <tr><td>严重迟到</td><td>超出规定时间30分钟以上</td><td>按半天旷工处理</td></tr>
-        <tr><td>早退</td><td>未到规定时间提前离岗</td><td>同迟到处理标准</td></tr>
-        <tr><td>旷工</td><td>无故缺勤，未请假</td><td>扣当日工资，累计3天警告/解除</td></tr>
+        <tr><td>适用情形</td><td>忘记打卡，但在正常上班时间已到岗</td></tr>
+        <tr><td>证据材料</td><td>找上级调取规定上班时间前已进入门店的<strong>监控截屏</strong>作为证据</td></tr>
+        <tr><td>办理方式</td><td>上传至企业微信走<strong>补卡流程审批</strong>（下班补卡同理）</td></tr>
+        <tr><td>次数与期限</td><td>可享受 <strong>3 次</strong>补卡机会，且须在<strong>下周三（周 3）前</strong>完成补卡</td></tr>
+        <tr><td>纪律要求</td><td><strong>严禁虚假证明和谎报</strong>——一经查实按违纪处理</td></tr>
       </tbody>
     </table>
 
+    <h3>📌 迟到、早退、旷工处理（重点，必须背准）</h3>
+    <table class="rule-table">
+      <thead><tr><th>情形</th><th>界定标准</th><th>处理方式</th></tr></thead>
+      <tbody>
+        <tr><td>全勤</td><td>每月除公司规定休假外，无病假、事假、旷工、缺考、迟到、早退</td><td>享受全勤</td></tr>
+        <tr><td>迟到/早退（30 分钟以内）</td><td>超出（早于）规定时间未达 30 分钟</td><td><strong>不予发放当月全勤</strong></td></tr>
+        <tr><td>迟到/早退（≥30 分钟）</td><td>在规定时间未到（离）岗达 30 分钟及以上</td><td><strong>当天按旷工论处</strong></td></tr>
+        <tr><td>月累计迟到/早退 5 次（含）以上</td><td>一月内累计计算</td><td>按<strong>旷工一日</strong>论处</td></tr>
+        <tr><td>月累计迟到/早退 10 次以上</td><td>一月内累计计算</td><td>按<strong>旷工两日</strong>论处</td></tr>
+        <tr><td>月累计迟到/早退 20 次（含）以上</td><td>一月内累计计算</td><td>按<strong>自动离职</strong>论处</td></tr>
+        <tr><td>旷工</td><td>未经批准未到岗、不参加会议/培训等</td><td>按基本薪的 <strong>3 倍</strong>扣薪，且无全勤奖</td></tr>
+        <tr><td>连续旷工 3 天及以上</td><td>连续计算</td><td>以<strong>自动离职</strong>论处</td></tr>
+      </tbody>
+    </table>
     <div class="warning-box">
       <div class="label">⚠️ 特别提醒</div>
-      <p>如遇突发状况无法按时到岗，必须提前电话或微信通知店长，不能仅发消息后等待回复。有任何变故，<strong>主动沟通是关键</strong>。</p>
+      <p>① <strong>1 个月内累计旷工达 3 个工作日，视为自动离职</strong>（见假期制度部分）。② 未经允许未到岗、不参加会议、不参加培训等，都属旷工行为。③ 如遇突发状况无法按时到岗，必须<strong>提前电话或微信通知</strong>店长/师傅，不能只发消息后等回复——主动沟通是关键。</p>
     </div>
+
+    <h3>📌 加班规定</h3>
+    <ul>
+      <li>公司<strong>不鼓励加班</strong>，但有时因经营和工作需要不得不加班</li>
+      <li><strong>国家法定假日以外的加班</strong>：由部门主管采用<strong>调休</strong>方式补偿；无法调休的，按加班工资结算</li>
+      <li><strong>法定节假日加班</strong>：可享受<strong>日工资三倍</strong>的待遇</li>
+    </ul>
   </div>
 
   <div class="section">
-    <h2>🏖️ 第二部分：假期制度</h2>
+    <h2>🏖️ 第二部分：假期制度（按《员工手册》P15 整理）</h2>
+
+    <h3>📌 休假与调班</h3>
+    <ul>
+      <li>员工应<strong>按排班表轮休</strong>；如遇特殊情况，<strong>每月可享有一次调休</strong></li>
+      <li>调班需经领导同意，<strong>不得擅自私下调班</strong></li>
+    </ul>
+
+    <h3>📌 事假（重点掌握）</h3>
+    <ul>
+      <li><strong>申请方式</strong>：需<strong>提前三天</strong>通过<strong>企业微信</strong>提交请假表并上传附件，同时将纸质请假单提交至人事部门</li>
+      <li><strong>紧急情况</strong>：无法提前通知的，必须<strong>事前电话请假</strong>，并在<strong>事后 24 小时内</strong>补办请假手续；未获批准即休息视为旷工</li>
+      <li><strong>扣薪计算</strong>：请假天数 ≤3 天：底薪 ÷ 月规定上班天数 × N；请假天数 &gt;3 天：基本薪 ÷ 月规定上班天数 × N（N＝事假天数）</li>
+    </ul>
+
+    <h3>📌 请假审批权限（谁申请、谁批）</h3>
     <table class="rule-table">
-      <thead><tr><th>假期类型</th><th>天数/规定</th><th>申请方式</th></tr></thead>
+      <thead><tr><th>类型</th><th>假期长短</th><th>申请</th><th>审核</th><th>批准</th></tr></thead>
       <tbody>
-        <tr><td>病假</td><td>凭医院证明，按规定发放病假工资</td><td>当日通知，事后补交证明</td></tr>
-        <tr><td>事假</td><td>不超过3天/次，不发工资</td><td>提前1天申请</td></tr>
-        <tr><td>婚假/产假</td><td>按国家规定执行</td><td>提前告知HR/店长</td></tr>
-        <tr><td>调休</td><td>节假日上班可申请调休</td><td>当月内使用</td></tr>
+        <tr><td>统一安排假期</td><td>不论长短</td><td>行政人事统一申请</td><td>—</td><td>总经理</td></tr>
+        <tr><td rowspan="3">个人申请假期<br><span style="font-size:.85em">（婚假、产假、事假、病假）</span></td><td>1 天以内</td><td>个人提前一天申请</td><td>直接上司</td><td>直接上司</td></tr>
+        <tr><td>1 – 3 天</td><td>个人提前一天申请</td><td>直接上司 → 区域经理</td><td>营运经理</td></tr>
+        <tr><td>3 天以上</td><td>个人提前三天申请</td><td>直接上司 → 区域经理</td><td>营运经理</td></tr>
       </tbody>
     </table>
+    <table class="rule-table">
+      <thead><tr><th>假期类型</th><th>需准备的资料</th><th>审核</th><th>批准</th></tr></thead>
+      <tbody>
+        <tr><td>婚假</td><td>首次合法结婚证</td><td>直接上司、营运经理</td><td>总经理</td></tr>
+        <tr><td>丧假</td><td>死亡证明或火化证明</td><td>直接上司、营运经理</td><td>总经理</td></tr>
+        <tr><td>产假</td><td>婴儿出生医学证明</td><td>直接上司、营运经理</td><td>总经理</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📌 各类假期天数一览</h3>
+    <table class="rule-table">
+      <thead><tr><th>假期</th><th>天数/标准</th><th>关键条件</th></tr></thead>
+      <tbody>
+        <tr><td>丧假</td><td><strong>连续 3 个工作日</strong>，带薪</td><td>正式员工；直系亲属亡故（配偶、父母、子女、祖父母、外祖父母）；可电话申请、事后补交假条</td></tr>
+        <tr><td>婚假</td><td><strong>3 天</strong>，带薪</td><td>通过试用期；首次合法结婚；<strong>提前一个月</strong>提出申请并获批准；试用期未满不享有</td></tr>
+        <tr><td>产假</td><td><strong>98 天</strong>（日历天数），产前可提前 15 天享受</td><td>正式员工且合法婚姻关系；产假期间<strong>按底薪核算</strong>，<strong>按时复工三个月后发放</strong>；试用期不享受（按一般事假处理）；超出规定时间未到岗须<strong>提前十五天</strong>申请停薪留职，否则按旷工处理</td></tr>
+        <tr><td>陪产假</td><td><strong>7 天</strong>，带薪</td><td>男职工；<strong>试用期内不享受</strong></td></tr>
+        <tr><td>哺乳假</td><td>每天 <strong>1 小时</strong>，有薪</td><td>女职工，婴儿<strong>周岁前</strong></td></tr>
+        <tr><td>病假</td><td>按公司规定执行</td><td>须提供<strong>二级及以上医院证明</strong>；未按规定办理按事假处理</td></tr>
+        <tr><td>累计积假</td><td>以 <strong>5 天</strong>为限</td><td>因公超出额定时间的积假予以累积，超出部分给予结算</td></tr>
+        <tr><td>停薪留职</td><td><strong>不超过两年</strong></td><td>因病假超出一个月，或因特殊原因不能上班，可申请</td></tr>
+      </tbody>
+    </table>
+    <div class="warning-box">
+      <div class="label">⚠️ 旷工与自动离职（红线）</div>
+      <p><strong>旷工</strong>＝强行休息未经批准的假期，或无故缺岗，属严重违反公司制度。<strong>1 个月内累计旷工达 3 个工作日，视为自动离职</strong>。旷工扣薪（天）＝基本薪 ÷ 月规定上班天数 × N × 3。</p>
+    </div>
   </div>
 
   <div class="section">
@@ -344,57 +436,57 @@ body{padding:0!important;margin:0!important}
     <div class="salary-grid">
       <div class="salary-card">
         <div class="icon">💵</div>
-        <div class="name">底薪</div>
-        <div class="desc">按岗位级别固定发放，试用期底薪按所属岗位正式标准的 80% 执行（由区域负责人核定）</div>
+        <div class="name">基本薪资</div>
+        <div class="desc">按岗位与职级确定；公司实行独特的、不受外界影响和干扰的工资政策，具体标准见《薪资制度》</div>
       </div>
       <div class="salary-card">
         <div class="icon">📈</div>
         <div class="name">销售提成</div>
-        <div class="desc">按个人销售额的一定比例提成，完成目标后比例上升</div>
+        <div class="desc">按个人销售业绩核算，具体比例以入职约定和门店现行方案为准</div>
       </div>
       <div class="salary-card">
         <div class="icon">🏆</div>
         <div class="name">绩效奖金</div>
-        <div class="desc">月度/季度综合评估后发放，包括业绩完成度、服务评分、出勤、团队贡献</div>
+        <div class="desc">综合评估后发放；奖惩制度中的行政扣款在绩效奖金中体现，款项全部用于公司团建等员工福利</div>
       </div>
       <div class="salary-card">
         <div class="icon">🎂</div>
-        <div class="name">节日福利</div>
-        <div class="desc">春节、中秋等重要节日发放节日礼金或实物</div>
+        <div class="name">员工福利</div>
+        <div class="desc">正式伙伴享有公司福利待遇：节日、生日、周年关怀、旅游、员工福利配镜等</div>
       </div>
       <div class="salary-card">
-        <div class="icon">👓</div>
-        <div class="name">员工折扣</div>
-        <div class="desc">员工本人及直系家属配镜享受内部优惠价</div>
+        <div class="icon">🛡️</div>
+        <div class="name">社会保险</div>
+        <div class="desc">正式员工入职后均享受国家规定的社会保险</div>
       </div>
       <div class="salary-card">
-        <div class="icon">📚</div>
-        <div class="name">学习补贴</div>
-        <div class="desc">参加经批准的外部培训/考证，门店给予费用补贴</div>
+        <div class="icon">📊</div>
+        <div class="name">工资调整</div>
+        <div class="desc">公司不定期做市场工资水平调查，结合调查结果、公司承受能力与个人能力评价，公正合理地调整工资标准</div>
       </div>
     </div>
 
     <div class="tip-box">
-      <div class="label">💡 薪资发放说明</div>
+      <div class="label">💡 薪资发放说明（手册明确规定）</div>
       <ul style="padding-left:18px;">
-        <li>发薪日：每月10日/25日（遇节假日提前发放）</li>
-        <li>工资条通过企业微信发送，如有疑问请及时向店长/HR核实</li>
-        <li>试用期满转正后，薪酬按正式标准重新核算</li>
+        <li><strong>发薪日：每月 15 日发放上月薪资</strong>；如遇节假日提前或延后 1 天发放</li>
+        <li>工资如有疑问，请及时向店长/人事核实，不要私下猜测或与同事攀比打听</li>
+        <li><strong>试用期享受试用工资待遇</strong>；转正后按正式标准执行</li>
+        <li>员工工资、公司财务经营数据、人事政策等均属保密信息，不得对外泄露</li>
       </ul>
     </div>
   </div>
 
-  
-
     <div class="section">
     <h2>💡 第四部分：新员工常见疑问解答</h2>
         <h3>📌 Q1：试用期有多长，转正需要满足什么条件？</h3>
-    <p>试用期通常为1-3个月（视岗位而定），转正需满足：</p>
+    <p>按《员工手册》规定：<strong>入职前三至六个月为试用期</strong>（具体以劳动合同约定为准），试用期享受试用工资待遇。转正标准：</p>
     <ul>
-      <li>通过门店规定的培训考核（笔试+实操）</li>
-      <li>出勤无重大违规记录</li>
-      <li>由带教师傅/店长综合评估服务表现</li>
-      <li>客户投诉记录清零或在可接受范围内</li>
+      <li><strong>核心标准：试用期工作表现评估为"良好或以上"，试用期就此结束并转正</strong></li>
+      <li>试用期内，你的主管和部门经理会与你讨论工作表现；在试用期末进行评估</li>
+      <li>若你工作勤奋、掌握工作要领及时适当、表现突出，主管有权<strong>缩短</strong>你的试用期，但<strong>最短不应少于一个月</strong></li>
+      <li>试用期内，无论你或公司提出终止合约，<strong>通知期均为三天</strong></li>
+      <li>配合本培训体系：第 4 周中期考核（Day 28）与第 8 周结业考核（Day 56）的成绩，是转正评定的重要参考</li>
     </ul>
     <div class="tip-box"><div class="label">💡 小贴士</div><p>转正面谈前，主动整理试用期的工作亮点和学习收获，展示你的成长，会给店长留下好印象。</p></div>
 
@@ -402,26 +494,27 @@ body{padding:0!important;margin:0!important}
     <p>提成通常基于个人确认的销售单据，系统记录清晰。有疑问时：</p>
     <ul>
       <li>每月发薪前可查看自己的销售记录</li>
-      <li>发现差异及时与店长/HR核对，当月内解决</li>
+      <li>发现差异及时与店长/人事核对，当月内解决</li>
       <li>新员工前期提成可能较低，随熟练度和客单价提升会明显增长</li>
     </ul>
 
     <h3>📌 Q3：节假日要上班吗？</h3>
-    <p>眼镜门店属于零售行业，节假日通常是客流高峰，需要正常营业。相应的：</p>
+    <p>眼镜门店属于零售行业，节假日通常是客流高峰，需要正常营业。按手册规定，相应的补偿是明确的：</p>
     <ul>
-      <li>法定节假日上班享有调休或加班补贴</li>
-      <li>排班由店长统筹，尽量照顾员工需求</li>
-      <li>春节等重要节假日，提前与店长沟通假期安排</li>
+      <li><strong>法定节假日上班：享受日工资三倍待遇</strong></li>
+      <li><strong>法定假日以外的加班</strong>：由部门主管采用调休方式补偿，无法调休的按加班工资结算</li>
+      <li>排班由公司根据营业需要和门店实际运营需求决定，每月 27 日前公布次月排班，如确有困难提前与店长沟通</li>
     </ul>
 
   </div>
   <div class="summary-box" style="margin-top:24px">
     <h3>🔑 今日行动清单</h3>
     <ul>
-      <li>□ 确认本门店的打卡方式（APP/指纹/刷卡）</li>
-      <li>□ 记下店长的联系方式，了解紧急联系流程</li>
-      <li>□ 询问师傅：本店目前的销售提成计算方式</li>
-      <li>□ 了解试用期转正的具体考核内容</li>
+      <li>□ 确认本门店的打卡方式（企业微信），并完成当天上下班各一次打卡</li>
+      <li>□ 记下店长/师傅的联系方式，了解紧急联系流程</li>
+      <li>□ 确认自己的班次：行政班还是全天班，几点到岗、几点离岗</li>
+      <li>□ 背准三个数字：迟到 30 分钟、月累计 5 次、旷工扣薪 3 倍</li>
+      <li>□ 了解试用期转正的具体考核内容（中期考核 + 结业考核）</li>
       <li>□ 如果存在和实际情况不符时，以公司最新制度为基准</li>
     </ul>
   </div>
@@ -447,46 +540,18 @@ body{padding:0!important;margin:0!important}
     </details>
     <details class="lm-q">
       <summary>❓ 忘记打卡了怎么办？</summary>
-      <div class="lm-a">当天或次日及时提出补卡申请，写明时间、原因，由店长确认。不要拖到月底，跨月补卡通常更麻烦。具体以门店考勤制度为准。</div>
+      <div class="lm-a">按手册补卡规则办理：因忘记打卡但正常时间已到岗的，可找上级调取规定上班时间前<strong>已进入门店的监控截屏</strong>作证据，上传企业微信走补卡审批流程（下班补卡同理）。注意两个限制：可享受 <strong>3 次</strong>补卡机会、须在<strong>下周三前</strong>完成补卡；<strong>严禁虚假证明和谎报</strong>。</div>
     </details>
     <details class="lm-q">
       <summary>❓ 临时有事来不及提前请假呢？</summary>
-      <div class="lm-a">先电话报备（不要只发消息），说明情况，能赶到就先赶到；确实来不了，尽快补办请假手续。事后再补救也可以，但一定要主动说明。</div>
+      <div class="lm-a">必须<strong>事前电话请假</strong>（不要只发消息），说明情况，能赶到就先赶到；事后再在 <strong>24 小时内补办请假手续</strong>。未获批准即休息＝旷工，一定不要"先斩后奏"。</div>
     </details>
     <details class="lm-q">
       <summary>❓ 加班有加班费吗？调休怎么算？</summary>
-      <div class="lm-a">按门店制度执行：有的是加班费，有的是调休。关键动作是：加班前/后和店长确认清楚怎么算、什么时候调休，别自己猜。</div>
+      <div class="lm-a">手册规定得很明确：<strong>法定节假日上班＝日工资三倍</strong>；法定假日以外的加班由部门主管安排<strong>调休</strong>补偿，实在无法调休的按加班工资结算。关键动作是：加班前/后和主管确认清楚怎么算，别自己猜。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：打卡的两次时间点一般是？</summary>
-      <div class="lm-a"><b>参考答案：</b>上班到店打卡、下班离店打卡。中途外出（如外出办事、吃饭若需登记）按门店规定执行。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：请假的正确顺序是？</summary>
-      <div class="lm-a"><b>参考答案：</b>①尽量提前申请（急事第一时间电话报备）→ ②向直属上级/店长申请 → ③按规定走表单或系统 → ④按要求提供证明材料。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：薪资通常由哪几部分构成？</summary>
-      <div class="lm-a"><b>参考答案：</b>一般包含基本工资 + 岗位/绩效 + 销售提成 + 全勤奖等，减去社保个人部分与个人所得税，具体比例以入职约定和门店制度为准。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：早上出门发现自行车坏了，预计要迟到 20 分钟，你第一步做什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>立刻打电话给师傅或店长报备：说明原因 + 预计到达时间，并问清是否需要调整早班接待安排。到店后主动说明，不要等人来问。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 上下班必须打卡，不得代打，忘打卡当日主动报备</li>
-      <li>✅ 迟到/早退三次以上影响绩效，旷工有严重后果</li>
-      <li>✅ 薪酬 = 底薪 + 销售提成 + 绩效奖金，有多种福利</li>
-      <li>✅ 有任何问题主动沟通，而不是等待</li>
-    </ul>
-    <p style="margin-top:14px; color:#2e7d32; font-weight:600;">🎯 今日任务：向师傅确认本门店的具体打卡方式和薪资核算方法</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
