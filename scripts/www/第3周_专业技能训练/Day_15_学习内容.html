@@ -266,6 +266,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -380,8 +393,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
-
     <div class="section">
     <h2>🔬 电脑验光仪操作详解</h2>
     <h3>📌 操作前准备</h3>
@@ -448,39 +459,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">讲清价值：「验光不是走过场，是确认现在的度数还合适不合适。度数变了却照旧配，戴着会累、甚至会伤眼。」并说明复查只需十来分钟。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：门店常用的 5 台验光相关设备是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>电脑验光仪（快速客观验光）、综合验光仪（主觉验光）、视力表（视力检查）、瞳距仪（测瞳距）、焦度计（测镜片度数）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：验光前准备要做哪 5 件事？</summary>
-      <div class="lm-a"><b>参考答案：</b>环境准备（光线、座椅高度）、设备准备（开机自检、卫生）、资料准备（旧镜、病史、用眼习惯）、顾客沟通（讲清流程）、记录表准备。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：电脑验光结果为什么不能直接开处方？</summary>
-      <div class="lm-a"><b>参考答案：</b>它是客观参考值，受调节与疲劳等影响，误差可能较大；必须经主觉验光确认与调整，才能作为处方依据。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：设备清洁时哪一类部位绝对不能直接喷液体、用力擦？</summary>
-      <div class="lm-a"><b>参考答案：</b>屏幕、镜头、光学镜面等精密部位——容易渗液或划伤，须用专用工具按规范轻擦。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客做完电脑验光后着急地问「我多少度」，你怎么答？</summary>
-      <div class="lm-a"><b>参考答案：</b>「刚才这个是初步参考值，接下来师傅会给您做一次完整验光，那个结果才是准确的度数。」把结论交给验光师，不要让顾客拿着电脑单去比较。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 电脑验光仪给初步参考，综合验光仪由专业验光师操作</li>
-      <li>✅ 销售顾问负责：信息收集、引导顾客、等候维护、消毒</li>
-      <li>✅ 验光前需了解顾客基本情况（是否首次、眼部病史等）</li>
-      <li>✅ 每次使用后消毒是基本规范，不可省略</li>
-    </ul>
-    <p style="margin-top:14px; color:#e65100; font-weight:600;">🎯 今日任务：在师傅带领下完整走一遍验光前的准备流程，包括填表、引导和设备消毒</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
