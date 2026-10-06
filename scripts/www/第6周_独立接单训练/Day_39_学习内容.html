@@ -243,6 +243,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -398,8 +424,6 @@ body{padding:0!important;margin:0!important}
     </ul>
   </div>
 
-  
-
     <h2 style="color:#1a5276;font-size:1.15rem;margin-top:32px;padding-left:10px;border-left:4px solid #2980b9">🧓 老年人特殊眼病知识</h2>
   <div style="background:#eaf4fc;border-radius:10px;padding:18px 22px;margin:14px 0;border:1px solid #d0e8f5">
     <p style="line-height:1.8;color:#555;margin-bottom:12px;font-size:0.95em">眼镜店员工需了解常见老年眼病，以便及时建议客户就医，同时体现专业性：</p>
@@ -459,38 +483,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">降低语速、提高音量但不用喊、面向顾客说话（让他看到口型）、关键信息写下来给他看（度数、交期、保养要点）。耐心是这个客群最大的竞争力。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：老视和远视有什么本质区别？</summary>
-      <div class="lm-a"><b>参考答案：</b>远视是屈光状态问题（光聚焦在视网膜后，多与眼轴偏短有关），多见于儿童；老视是晶状体调节力随年龄下降的生理老化，40 岁后自然出现。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：三类老花镜的特点分别是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>单光老花镜：只解决看近，便宜但摘下才能看远；双光镜：远近两区，中间有跳跃线；渐进多焦点：远中近过渡自然、外观无分界，但需要适应期。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：中老年沟通的 4 个要点是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>语速放慢、吐字清楚（面向对方）、耐心不催促、关键信息复述并用文字确认。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：为什么中老年顾客更需要跟进回访？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为渐进镜有适应期、老花度数会变化，且他们对佩戴不适更敏感。主动回访能及时调整，也最容易建立长期信任与家庭客源。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：60 岁顾客说「我要一副能开车又能看手机、还不用摘的眼镜」，你怎么推荐？</summary>
-      <div class="lm-a"><b>参考答案：</b>推荐渐进多焦点：「一副就能覆盖远、中、近三个距离，开车看路、看仪表、看手机都不用来回换。需要 3～7 天适应，上下楼梯记得低头用上方看。」同时确认镜架稳定、瞳高参数准确。</div>
-    </details>
-</div>
-<div style="background:linear-gradient(135deg,#eaf4fc,#d0e8f5);border-radius:10px;padding:20px 24px;margin-top:24px">
-    <strong style="color:#1a5276">📝 今日学习要点回顾</strong>
-    <ul style="margin-top:10px;padding-left:18px;line-height:2">
-      <li>老视是生理现象，40岁后普遍发生，度数随年龄增长</li>
-      <li>渐进镜是最优解，核心在于精准测量瞳高和详细适应指导</li>
-      <li>中老年客户重视信任感，专业+耐心+关怀是成交的关键</li>
-      <li>口碑效应强：服务好一位老年客户，往往能带来多位亲友转介绍</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -507,8 +500,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="Day_38_练习题.html" class="nav-btn outline">← Day 38 练习题</a>
