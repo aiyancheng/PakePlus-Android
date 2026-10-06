@@ -263,6 +263,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -278,9 +291,10 @@ body{padding:0!important;margin:0!important}
 <div class="lm-block lm-goal">
   <h3>🎯 今日学习目标（学完你应该能做到）</h3>
   <ul class="lm-list">
-      <li>知道奖励机制：销售提成、服务之星、顾客好评等怎么拿</li>
-      <li>记住纪律红线：欺骗顾客、私自改价收款、旷工、泄漏资料等的处理标准</li>
-      <li>掌握安全规定：用电用火、设备操作、地面防滑、消防通道要保持畅通</li>
+      <li>背准嘉奖体系五级：口头表扬→通报表扬→嘉奖（50元）→小功（100元）→大功（300元），三次进一级</li>
+      <li>背准惩处体系五级：口头警告→通报批评→申诫（50元）→小过（100元）→大过（300元）→开除，三次进一级</li>
+      <li>记住纪律红线：欺骗顾客、私自改价收款、泄露资料、简历造假等直接关联解除劳动合同</li>
+      <li>掌握安全规定：下班关电源门窗锁抽屉、用电用火、设备操作、消防通道保持畅通</li>
       <li>会处理突发情况：设备异常、顾客晕厥/划伤、火情，第一时间找谁、说什么</li>
       <li>理解奖惩的目的：奖励正向行为、约束高风险行为，保护顾客也保护自己</li>
   </ul>
@@ -288,38 +302,84 @@ body{padding:0!important;margin:0!important}
 </div>
 
   <div class="section">
-    <h2>🏆 第一部分：奖励机制</h2>
-    <p>好的工作值得被认可。门店建立了以下激励机制，鼓励每位员工积极进步：</p>
+    <h2>🏆 第一部分：奖励机制（《员工手册》嘉奖体系）</h2>
+    <p>好的工作值得被认可。公司设有一套<strong>五级嘉奖体系</strong>，奖励从口头表扬到大功逐级递进：</p>
     <table class="reward-table">
-      <thead><tr><th>奖励类型</th><th>触发条件</th><th>奖励内容</th></tr></thead>
+      <thead><tr><th>奖励等级</th><th>触发条件</th><th>奖励内容</th></tr></thead>
       <tbody>
-        <tr><td>月度优秀员工</td><td>服务评分高、销售达标、出勤完整、无投诉</td><td>奖状 + 奖金 + 表彰公告</td></tr>
-        <tr><td>销售冠军</td><td>当月个人销售额第一</td><td>奖金 + 优先排班权</td></tr>
-        <tr><td>服务之星</td><td>顾客主动表扬或好评截图</td><td>积分奖励，积累兑换礼品</td></tr>
-        <tr><td>学习达人</td><td>培训考核全部优秀，主动学习</td><td>晋升优先考虑</td></tr>
-        <tr><td>创新建议奖</td><td>提出被采纳的改善建议</td><td>奖金 + 通报表扬</td></tr>
+        <tr><td>口头表扬</td><td>个人表现积极，起到表率作用</td><td>当众口头表扬</td></tr>
+        <tr><td>通报表扬</td><td>对公司产生正向影响</td><td>全公司通报表扬</td></tr>
+        <tr><td>嘉奖</td><td>对公司产生正向影响，并避免损失价值 2000 元以下</td><td>奖励 50 元</td></tr>
+        <tr><td>小功</td><td>对公司产生正向影响，并避免损失价值 5000 元以下</td><td>奖励 100 元</td></tr>
+        <tr><td>大功</td><td>对公司产生正向影响，并避免损失价值 5000 元以上</td><td>奖励 300 元</td></tr>
       </tbody>
     </table>
+    <div class="tip-box">
+      <div class="label">💡 累进规则（三次进一级）</div>
+      <p>三次口头表扬记通报表扬一次；三次通报表扬记嘉奖一次；三次嘉奖记小功一次；三次小功记大功一次。<strong>日常点滴的好表现会持续累积、逐级放大</strong>——这也是新人快速被认可的方式。</p>
+    </div>
   </div>
 
   <div class="section">
-    <h2>⚠️ 第二部分：纪律处罚标准</h2>
-    <p>纪律不是为了惩罚，而是为了保护每一位员工和顾客。以下是主要违规处理标准：</p>
+    <h2>⚠️ 第二部分：纪律处罚标准（《员工手册》惩处体系）</h2>
+    <p>纪律不是为了惩罚，而是为了保护每一位员工和顾客。惩处同样分五级，与奖励体系一一对应：</p>
     <table class="penalty-table">
-      <thead><tr><th>违规行为</th><th>轻度处理</th><th>严重处理</th></tr></thead>
+      <thead><tr><th>惩处等级</th><th>适用情形</th><th>处理内容</th></tr></thead>
       <tbody>
-        <tr><td>迟到/早退（当月累计3次）</td><td>书面警告，扣绩效</td><td>连续违规降级</td></tr>
-        <tr><td>在服务区使用私人手机</td><td>口头提醒</td><td>累计3次书面警告</td></tr>
-        <tr><td>泄露顾客信息</td><td>书面警告，道歉</td><td>即时解除劳动合同</td></tr>
-        <tr><td>私自修改价签/挪用货款</td><td>—</td><td>即时解除，追究责任</td></tr>
-        <tr><td>与顾客发生争吵/冲突</td><td>道歉，书面反省</td><td>停职处理</td></tr>
-        <tr><td>代人打卡</td><td>双方均罚款</td><td>累计两次解除合同</td></tr>
+        <tr><td>口头警告</td><td>违反公司管理规定，情节较轻</td><td>口头警告</td></tr>
+        <tr><td>通报批评</td><td>违反公司管理规定，情节较重</td><td>全公司通报批评</td></tr>
+        <tr><td>申诫</td><td>违反公司管理制度给公司造成影响，情节较重，造成严重不良影响</td><td>扣款 50 元</td></tr>
+        <tr><td>小过</td><td>违反公司管理制度，情节严重，产生经济损失 2000 元以下</td><td>扣款 100 元</td></tr>
+        <tr><td>大过</td><td>违反公司管理制度，情节恶劣，产生经济损失 5000 元以下</td><td>扣款 300 元</td></tr>
+        <tr><td>开除</td><td>故意违反公司管理制度，情节特别恶劣或产生经济损失 5000 元以上</td><td>开除，并承担相应经济损失</td></tr>
       </tbody>
     </table>
+    <div class="tip-box">
+      <div class="label">💡 累进与后续影响（必须知道）</div>
+      <ul style="padding-left:18px;">
+        <li>三次警告记通报批评一次；三次通报批评记申诫一次；三次申诫记小过一次；三次小过记大过一次；<strong>三次大过直接开除</strong></li>
+        <li><strong>通报批评及以上处分，计入个人档案，并在一个评定周期内取消晋升及评优资格</strong></li>
+        <li>所有行政扣款在绩效奖金中体现，款项将全部用于公司团建等员工福利</li>
+      </ul>
+    </div>
+    <div class="warning-box">
+      <div class="label">🚨 直接关联"解除劳动合同"的高压线（手册 P12）</div>
+      <p>以下情形公司有权解除合同且无需承担经济补偿：①试用期内连续 2 次考核不合格、累计 3 次或以上违反店规店纪、消极怠工违反上级指令；②简历造假被查实；③违反奖惩制度达到开除条件；④违反宪法被追究刑事责任；⑤同时与其他用人单位建立劳动关系。另外：泄露顾客信息、私自收款/改价/挪用货款，均属于诚信红线，一经查实按开除处理。</p>
+    </div>
   </div>
 
   <div class="section">
     <h2>🛡️ 第三部分：门店安全规定</h2>
+
+    <h3>📌 防盗（《员工手册》P5.1）</h3>
+    <ul>
+      <li>下班时<strong>关闭你所使用的任何电源和门窗，锁好有关抽屉</strong>，防止文件及其它物品遗失或被盗</li>
+      <li>公司不希望你将<strong>非常贵重的私人物品、钱财</strong>带入公司，避免发生不必要的麻烦</li>
+      <li>门店管理人员有责任督促大家采取措施防止公司和员工财物被盗，并在发生时<strong>立即通知有关单位</strong>，保护公司和员工的利益</li>
+      <li>留意可疑行为，高价商品须锁回陈列柜；顾客试戴须全程关注；下班锁门双人确认</li>
+    </ul>
+
+    <h3>📌 财务安全</h3>
+    <ul>
+      <li>收款后立即进行POS机确认，不接受私下转账（除非门店有明文规定）</li>
+      <li>发现收银差额，及时上报，不自行处理</li>
+      <li>每日收款登记，与系统记录核对</li>
+      <li>不得将顾客资料（手机号、购买记录）用于私人用途</li>
+    </ul>
+
+    <h3>📌 商品与设备安全</h3>
+    <table class="rule-table">
+      <thead><tr><th>场景</th><th>安全要求</th></tr></thead>
+      <tbody>
+        <tr><td>高价值陈列品</td><td>试戴时全程陪同，不离视线</td></tr>
+        <tr><td>库存领取</td><td>按需领取，做好出库记录</td></tr>
+        <tr><td>配镜工单</td><td>核对无误再制作，避免废镜纠纷</td></tr>
+        <tr><td>成品镜存储</td><td>分类摆放，配件齐全，避免混淆</td></tr>
+        <tr><td>设备使用</td><td>不随意拆卸设备；发现故障立即上报；不用湿手操作电器；验光仪须经培训后操作</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📌 消防与应急</h3>
     <div class="safety-grid">
       <div class="safety-card">
         <div class="icon">🔥</div>
@@ -327,14 +387,14 @@ body{padding:0!important;margin:0!important}
         <div class="desc">了解灭火器位置和使用方法；禁止在非指定区域使用明火；下班前检查电器是否关闭</div>
       </div>
       <div class="safety-card">
-        <div class="icon">🔐</div>
-        <div class="name">防盗安全</div>
-        <div class="desc">留意可疑行为，高价商品须锁回陈列柜；顾客试戴须全程关注；下班锁门双人确认</div>
+        <div class="icon">🚪</div>
+        <div class="name">疏散通道</div>
+        <div class="desc">熟悉紧急疏散路线，不堵塞通道；发现遮挡物立即清理并报告店长</div>
       </div>
       <div class="safety-card">
         <div class="icon">⚡</div>
-        <div class="name">设备安全</div>
-        <div class="desc">不随意拆卸设备；发现设备故障立即上报；不用湿手操作电器；验光仪使用须培训后操作</div>
+        <div class="name">用电安全</div>
+        <div class="desc">插排不超载、线材无破损；湿手不碰电器；下班断电检查</div>
       </div>
     </div>
 
@@ -349,39 +409,8 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
-
-    <div class="section">
-    <h2>🔒 第四部分：门店安全管理</h2>
-        <h3>📌 财务安全</h3>
-    <ul>
-      <li>收款后立即进行POS机确认，不接受私下转账（除非门店有明文规定）</li>
-      <li>发现收银差额，及时上报，不自行处理</li>
-      <li>每日收款登记，与系统记录核对</li>
-      <li>不得将顾客资料（手机号、购买记录）用于私人用途</li>
-    </ul>
-
-    <h3>📌 商品安全</h3>
-    <table class="rule-table">
-      <thead><tr><th>场景</th><th>安全要求</th></tr></thead>
-      <tbody>
-        <tr><td>高价值陈列品</td><td>试戴时全程陪同，不离视线</td></tr>
-        <tr><td>库存领取</td><td>按需领取，做好出库记录</td></tr>
-        <tr><td>配镜工单</td><td>核对无误再制作，避免废镜纠纷</td></tr>
-        <tr><td>成品镜存储</td><td>分类摆放，配件齐全，避免混淆</td></tr>
-      </tbody>
-    </table>
-
-    <h3>📌 消防与应急</h3>
-    <ul>
-      <li>了解门店消防设备位置（灭火器、应急出口）</li>
-      <li>熟悉紧急疏散路线，不堵塞通道</li>
-      <li>遇到可疑人员或紧急状况，立即报告店长</li>
-    </ul>
-
-  </div>
   <div class="section">
-    <h2>🏆 第五部分：奖励制度的积极运用</h2>
+    <h2>🏆 第四部分：奖励制度的积极运用</h2>
         <p>了解奖励制度的目的，不只是为了"拿奖金"，而是用它指导自己每天的工作重点：</p>
     <div class="tip-box"><div class="label">💡 利用制度提升自我</div>
     <ul style="margin-top:8px;">
@@ -441,35 +470,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">因为门店是「人、设备、化学品」混在一起的场所：验光设备有电、加工设备有高速转头、清洁剂有腐蚀性。每一条规定的背后都对应过真实事故。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：门店常见的安全风险点有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>用电（插排超载、线材破损）、地面湿滑、设备操作（防护罩、转头）、化学品（清洁剂、酒精）、消防通道被堵、货架倾倒。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：发生顾客受伤，第一步做什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>先确认人是否受伤并做必要安抚与简单处理，同时立刻报告店长，不擅自承诺赔偿、不隐瞒。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：以下哪项属于严重违纪？A. 忘记补卡  B. 私自收顾客现金不入账  C. 一次迟到 5 分钟  D. 货架摆放不整齐</summary>
-      <div class="lm-a"><b>参考答案：</b>B。私自收款属于诚信问题，通常直接按严重违纪处理。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：奖励机制想鼓励的核心行为是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>把顾客服务好、把业绩做起来、把团队带起来——即「顾客满意 + 业绩结果 + 正向协作」。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 月度优秀员工、服务之星等多种奖励，积极努力才有回报</li>
-      <li>✅ 泄露顾客信息、挪用货款等严重违规直接解除合同</li>
-      <li>✅ 了解灭火器、安全出口位置，知道紧急情况处置步骤</li>
-      <li>✅ 安全规定是保护大家的底线，不是束缚</li>
-    </ul>
-    <p style="margin-top:14px; color:#2e7d32; font-weight:600;">🎯 今日任务：找到门店灭火器和安全出口的位置，告诉师傅</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
