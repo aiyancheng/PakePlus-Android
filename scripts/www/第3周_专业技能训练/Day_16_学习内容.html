@@ -263,6 +263,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -394,8 +407,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
-
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -429,39 +440,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">避免加热过度导致褪色、起皮，夹持处必须垫布或垫片，防止留下压痕。贵重镜架建议先问师傅再动手。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：镜架调整的四条基本原则是？</summary>
-      <div class="lm-a"><b>参考答案：</b>先看再问（搞清哪里不舒服）、先软后硬（能调鼻托镜腿就不掰镜圈）、小步微调（每次只改一点）、随时试戴（边调边确认）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：板材、TR90 与金属镜架在调整上有什么差别？</summary>
-      <div class="lm-a"><b>参考答案：</b>板材与 TR90 需加热软化后调整，冷却后定型；普通金属可小幅冷调；钛架弹性大、回弹强，调整要更慢更耐心。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：顾客说「眼镜老是往下滑」，可能的原因有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>镜腿过松或耳弯位置不对、鼻托间距过大或角度不对、镜架过重或镜圈过大、出汗多摩擦减少。需要逐项排查后再调整。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：哪些情况必须交给师傅处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>焊接断裂、配件缺失、贵重/限量款、镜片已有裂纹或崩边、涉及较大幅度变形等。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客要求「把镜腿掰得能夹住头、怎么甩都不掉」，你怎么回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>「夹太紧会压太阳穴，戴久了会头晕头痛。我给您调到一个既稳又不压的松紧度，正常低头不会滑就行。」先讲清后果，再按标准调。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 板材/TR-90必须加热后调整，金属架可直接用钳</li>
-      <li>✅ 6种常见问题：下滑/压鼻偏/耳后痛/歪斜/太宽/太紧</li>
-      <li>✅ 调整流程：询问→观察→加热（如需）→调整→试戴确认→清洁归还</li>
-      <li>✅ 小幅度多次调整，不可一次用力过大</li>
-    </ul>
-    <p style="margin-top:14px; color:#e65100; font-weight:600;">🎯 今日任务：在师傅指导下，调整一副镜架的鼻托（解决下滑问题），完成全流程</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
