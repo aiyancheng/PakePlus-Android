@@ -289,6 +289,28 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ COMPARE-2COL @@*/
+/* ═══ 正反对比模块（应该做到/需要避免 · 正确/错误 · 正确话术/错误话术）固定 1 行 2 列 ═══ */
+.do-dont,.wrong-right,.compare-grid{grid-template-columns:repeat(2,1fr)!important}
+.do-dont>*,.wrong-right>*,.compare-grid>*{min-width:0;overflow-wrap:break-word}
+@media(max-width:640px){
+  .do-dont,.wrong-right,.compare-grid{gap:10px!important}
+  .do-box,.dont-box,.do,.dont,.wrong-box,.right-box,.compare-card{padding:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -300,18 +322,12 @@ body{padding:0!important;margin:0!important}
   <div class="subtitle">模块：文化 Culture | 今日主题：外在形象标准 · 服务心态 · 顾客体验</div>
 </div>
 
-<div class="meta-bar">
-  <div class="meta-item">⏱ <strong>建议学习时长：</strong>2小时</div>
-  <div class="meta-item">🎯 <strong>学习方式：</strong>阅读 + 镜前练习 + 实践</div>
-  <div class="meta-item">📝 <strong>配套练习：</strong>Day_02_练习题.html</div>
-</div>
-
 <div class="container">
 
 <div class="lm-block lm-goal">
   <h3>🎯 今日学习目标（学完你应该能做到）</h3>
   <ul class="lm-list">
-      <li>掌握上班前「三查」：查发型、查工装、查妆容与鞋袜，能独立完成并互检</li>
+      <li>掌握上班前「四查」：查发型、查工装、查妆容、查鞋袜与配饰，能独立完成并互检</li>
       <li>能说出眼镜门店职业形象 4 条硬标准：头发不遮眼不披散、工装整洁无褶皱、不戴夸张饰品、身体无异味</li>
       <li>能演示标准站姿与手势（不抱臂、不倚柜、不在顾客面前双手插兜）</li>
       <li>能自然说出 5 句基础服务用语：迎宾、询问、引导、说明、结束</li>
@@ -435,13 +451,12 @@ body{padding:0!important;margin:0!important}
     </ol>
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
     <div class="lm-pr">
-      <div class="lm-pr-t">任务 1：镜前「三查」演练（约 20 分钟）</div>
-      <div class="lm-pr-d">对着镜子逐项检查：①头发是否遮眼、是否披散；②工装是否干净平整、工牌是否端正；③妆容是否清爽、指甲是否修短、鞋袜是否干净。请同事帮你互检。</div>
+      <div class="lm-pr-t">任务 1：镜前「四查」演练（约 20 分钟）</div>
+      <div class="lm-pr-d">对着镜子逐项检查：①发型是否遮眼、是否披散；②工装是否干净平整、工牌是否端正；③妆容是否清爽、指甲是否修短、口气是否清新；④鞋袜是否干净、饰品是否简洁低调。请同事帮你互检。</div>
       <div class="lm-pr-o">✅ 完成标准：写出 2 条今天要改的地方（如「刘海有点长」「工牌歪了」），并当天改掉。</div>
     </div>
     <div class="lm-pr">
@@ -469,35 +484,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">可以寒暄，但要在工作范围内，不议论其他顾客、不泄露门店内部信息、不在顾客面前长时间闲聊。熟人更要把服务做标准，这是最好的口碑来源。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：上班前的「三查」具体查什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>查发型（不遮眼、不披散）、查工装（整洁平整、工牌端正）、查妆容与鞋袜（清爽干净、指甲修短、无异味）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：以下哪种做法不符合门店职业形象要求？A. 头发扎好不遮眼  B. 戴长吊坠耳环  C. 工装每天更换保持平整  D. 站立时不倚靠柜台</summary>
-      <div class="lm-a"><b>参考答案：</b>B。长吊坠耳环属于夸张饰品，配镜操作时还可能刮到顾客，属于禁止项。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：顾客说「我先随便看看」，你的第一句应答应该是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>先接纳、再引导：「好的，您随便看，我就在旁边，需要试戴随时叫我。」——不逼单，但留在顾客视线范围内，为后续介入留机会。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：用一句话解释：顾客真正想解决的是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>不是「买一副眼镜」，而是「看东西清楚、戴着舒服、样子好看、花钱值」——你的服务要围绕这四件事，而不只是把货卖出去。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 职业形象标准：头发、工装、妆容、仪态四个维度，专业整洁</li>
-      <li>✅ 服务三层次：基础服务→满意服务→感动服务</li>
-      <li>✅ 5个关键服务时刻：第一印象、需求了解、专业建议、等候体验、送别服务</li>
-      <li>✅ 好服务不只是态度，更要读懂需求、提供真正有帮助的解决方案</li>
-    </ul>
-    <p style="margin-top:14px; color:#2e7d32; font-weight:600;">🎯 今日任务：在师傅面前完整练习一次迎客问候语和规范站姿</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
