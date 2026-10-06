@@ -263,6 +263,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -386,39 +399,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">差异来自品牌、膜层工艺、设计（球面/非球面/自由曲面）、原厂或代工、售后政策。介绍时讲清「贵在哪」，让顾客知道自己在为什么付钱。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：-5.00D 的顾客，通常推荐哪一档折射率？</summary>
-      <div class="lm-a"><b>参考答案：</b>1.67（-4.00～-6.00 区间）；追求更薄可选 1.74，但要如实说明厚度改善有限、价格更高。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：PC 镜片最大的特点和主要缺点是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>抗冲击性极强（适合儿童、运动、安全防护），但表面较软、光学阿贝数较低，一般必须加硬涂层，且对高度数偏厚。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：减反射膜（AR 膜）解决什么问题？</summary>
-      <div class="lm-a"><b>参考答案：</b>减少镜片表面反光与眩光，提高透光率，让对面看你的眼睛更清楚、拍照不反光，同时提升夜间视觉清晰度。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：顾客说「镜片越贵越护眼」，你怎么回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>「贵在工艺和轻薄度，不是‘护眼’程度。您的度数和用法，用这一档就够清楚了，多花的部分您可能感受不到。」——把预算引导到真正能感知的地方。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客想给孩子配防蓝光镜片「防近视」，你怎么说？</summary>
-      <div class="lm-a"><b>参考答案：</b>「防蓝光主要是看屏幕更舒服，不能防近视。真正对控制近视有用的是：足矫配镜、每天户外 2 小时、控制近距离用眼时长、定期复查眼轴。镜片建议优先考虑抗冲击和耐磨。」</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 折射率越高 = 镜片越薄，但价格越高</li>
-      <li>✅ 常规推荐：低度数选1.56，中度选1.60，高度选1.67或1.74</li>
-      <li>✅ 现今主流为树脂镜片，轻便安全</li>
-      <li>✅ 五大常见镀膜：加硬膜、减反射膜、防污膜、防蓝光膜、防雾膜</li>
-    </ul>
-    <p style="margin-top:14px; color:#1565c0; font-weight:600;">🎯 今日任务：练习向师傅说出近视400度顾客的折射率推荐方案，并解释理由</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
