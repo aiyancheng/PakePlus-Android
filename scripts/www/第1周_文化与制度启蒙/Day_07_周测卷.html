@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 07 周测卷 | 第1周 · 文化制度与职业素养综合</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#2e7d32,#1b5e20);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.92;line-height:1.7;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+
+  /* 考试说明 */
+  .exam-info{background:#fff;border:1px solid #e6ebf3;border-radius:14px;padding:22px 24px;margin:22px 0;box-shadow:0 2px 10px rgba(26,58,107,.06)}
+  .ei-title{font-size:1.12em;font-weight:800;color:#1b5e20;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .ei-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .ei-item{background:#f1f8f2;border:1px solid #d6ead9;border-radius:10px;padding:10px 12px;text-align:center}
+  .ei-k{display:block;font-size:.78em;color:#6b7f70;margin-bottom:4px}
+  .ei-v{display:block;font-size:1.02em;font-weight:800;color:#1b5e20}
+  .ei-h{font-weight:800;color:#2e7d32;font-size:.95em;margin:16px 0 8px;display:flex;align-items:center;gap:7px}
+  .ei-h::before{content:"";width:4px;height:14px;border-radius:3px;background:#4CAF50}
+  .ei-table{width:100%;border-collapse:collapse;margin:2px 0 6px}
+  .ei-table th{background:#4CAF50;color:#fff;padding:8px 12px;text-align:left;font-size:.86em}
+  .ei-table td{padding:8px 12px;border-bottom:1px solid #eef2f6;font-size:.86em;color:#445}
+  .ei-table tr:nth-child(even) td{background:#f8fbf9}
+  .ei-req{margin:2px 0 0;padding-left:20px}
+  .ei-req li{font-size:.88em;line-height:1.85;color:#445}
+
+  .section-title{font-size:1.15em;color:#1b5e20;font-weight:800;margin:32px 0 14px;padding-left:12px;border-left:4px solid #4CAF50}
+  .sub-title{font-size:1em;font-weight:800;color:#2e7d32;margin:20px 0 10px}
+
+  .question-card{background:white;border-radius:12px;padding:22px 24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+  .q-num{background:#4CAF50;color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.86em;flex-shrink:0;}
+  .q-type{background:#e8f5e9;color:#2e7d32;padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:600;}
+  .q-level{padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:700;}
+  .lv-base{background:#e8f5e9;color:#2e7d32;}
+  .lv-mid{background:#fff4e0;color:#c47f17;}
+  .lv-up{background:#fdeaea;color:#c0392b;}
+  .q-score{color:#999;font-size:0.8em;margin-left:auto;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.7;margin-bottom:14px;}
+  .options{list-style:none;padding:0;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+  .options li:hover{background:#f0f7ff;border-color:#90caf9;}
+  .options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+  .options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+  .options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+  .options li.done{cursor:default;}
+  .answer-area{width:100%;min-height:88px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#555;display:none;line-height:1.8;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .scenario-box{background:#f0f9f1;border-left:4px solid #4CAF50;border-radius:8px;padding:14px 16px;margin:2px 0 12px;font-size:0.9em;line-height:1.8;}
+
+  .score-box{background:linear-gradient(135deg,#e8f5e9,#f1f8f2);border-radius:12px;padding:20px;margin:26px 0 10px;}
+  .score-box h3{color:#2e7d32;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#4CAF50;color:white;padding:8px 12px;text-align:left;font-size:0.86em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.85em;}
+  .sign-line{color:#666;font-size:0.88em;margin-top:10px;}
+
+  .nav-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 50px;}
+  .nav-btn{background:#4CAF50;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#4CAF50;border:2px solid #4CAF50;}
+
+  /* ═══ 返回首页 ═══ */
+  .home-topbar{background:#fff;padding:10px 0}
+  .home-topbar .ht-inner{width:min(1300px,calc(100% - 32px));max-width:1300px;margin:0 auto}
+  .home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;}
+  .home-topbar a:hover{background:#e6eaf6;color:#283593;}
+
+  /* ═══════ 布局统一：标题框 = 内容框等宽（红米12.1寸平板适配） ═══════ */
+  .header{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin:18px auto 0!important;padding:34px 30px!important;
+    border-radius:14px!important;box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+  }
+  .container{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin-left:auto!important;margin-right:auto!important;
+    padding-left:0!important;padding-right:0!important;
+  }
+  @media(max-width:900px){
+    .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+    .header h1{font-size:1.5em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important}
+    .container{padding-left:0!important;padding-right:0!important}
+  }
+  @media(max-width:600px){
+    .header{padding:20px 15px!important}
+    .header h1{font-size:1.3em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+    .question-card{padding:16px 14px}
+    .exam-info{padding:16px 14px}
+  }
+  /* ═══ 窄屏表格自适应屏宽 ═══ */
+  @media(max-width:1100px){
+    table{display:table!important;width:100%!important;max-width:100%!important;table-layout:auto!important;border-collapse:collapse!important}
+    th,td{overflow-wrap:break-word!important;word-break:break-word!important}
+  }
+  @media(max-width:900px){th,td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}}
+  @media(max-width:600px){th,td{padding:6px 5px!important;font-size:11px!important}}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第1周 · Day 07 — 周测卷</span>
+  <h1>🏆 第1周周测卷 · 文化制度与职业素养综合</h1>
+  <div class="subtitle">覆盖 Day 01–06 全部学习内容 ｜ 满分 100 分（理论 60 + 实操 40）｜ 及格 70 分</div>
+</div>
+
+<div class="container">
+
+  <!-- ══════ 考试说明 ══════ -->
+  <div class="exam-info">
+    <div class="ei-title">📋 考试说明（开考前请先阅读）</div>
+    <div class="ei-grid">
+      <div class="ei-item"><span class="ei-k">满分</span><span class="ei-v">100 分</span></div>
+      <div class="ei-item"><span class="ei-k">及格线</span><span class="ei-v">70 分</span></div>
+      <div class="ei-item"><span class="ei-k">建议时长</span><span class="ei-v">45 分钟</span></div>
+      <div class="ei-item"><span class="ei-k">考试形式</span><span class="ei-v">闭卷·独立作答</span></div>
+    </div>
+
+    <div class="ei-h">一、题型、题量与分值</div>
+    <table class="ei-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题量</th><th>分值</th><th>小计</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题<br>（60 分）</td><td>单项选择</td><td>10 题</td><td>每题 3 分</td><td>30 分</td></tr>
+        <tr><td>判断</td><td>5 题</td><td>每题 2 分</td><td>10 分</td></tr>
+        <tr><td>简答</td><td>2 题</td><td>每题 10 分</td><td>20 分</td></tr>
+        <tr><td>二、实操题<br>（40 分）</td><td>情景应对 / 动手操作</td><td>2 题</td><td>每题 20 分</td><td>40 分</td></tr>
+        <tr><td colspan="4"><strong>合计</strong></td><td><strong>100 分</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">二、难度分布</div>
+    <table class="ei-table">
+      <thead><tr><th>难度层级</th><th>考查重点</th><th>占比</th><th>对应题目</th></tr></thead>
+      <tbody>
+        <tr><td>基础</td><td>记忆与理解（制度、规范、理念）</td><td>约 60%</td><td>单选 1–6、判断 11–13、简答 16、实操 19</td></tr>
+        <tr><td>中等</td><td>简单应用与判断（情景处置、规则运用）</td><td>约 30%</td><td>单选 7–9、判断 14–15、实操 18</td></tr>
+        <tr><td>提升</td><td>综合情境、迁移应用（应变、整合）</td><td>约 10%</td><td>单选 10、简答 17</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">三、作答要求</div>
+    <ul class="ei-req">
+      <li>理论题独立完成，<strong>不得翻阅资料、不得相互讨论</strong>；选择题与判断题均为<strong>点击选项即可即时判定对错</strong>，点击后自动显示解析。</li>
+      <li>简答题按要点作答，条理清楚、分点书写，答对要点即得分。</li>
+      <li>实操题由带教师傅现场观察评分，按「要点是否齐全、动作是否规范」给分。</li>
+      <li>满分 100 分，<strong>70 分为及格</strong>；未及格者按本页底部说明复训后重考。</li>
+    </ul>
+  </div>
+
+  <!-- ══════ 一、理论题 ══════ -->
+  <div class="section-title">一、理论题（共 60 分）</div>
+
+  <div class="sub-title">（一）单项选择（共 10 题，每题 3 分，共 30 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">1</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">我们公司的价值观是以下哪一句？</div>
+    <ul class="options">
+      <li>A. 利益至上，业绩优先</li>
+      <li>B. 坚持做难而正确之事</li>
+      <li>C. 低价竞争，以价格取胜</li>
+      <li>D. 多销快卖，不问需求</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。公司价值观是「坚持做难而正确之事」——短期看费劲、长期看正确的事（如把问诊做细、按需求推荐而非只推高价）。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">2</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">下列<strong>不属于</strong>公司四条「品牌理念」的是？</div>
+    <ul class="options">
+      <li>A. 诚实守信</li>
+      <li>B. 勇于承担</li>
+      <li>C. 深耕专业</li>
+      <li>D. 快速扩张</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>D</strong>。品牌理念四条为：诚实守信、勇于承担、深耕专业、引领创新。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">3</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客推门进店时，最符合眼镜门店服务标准的第一反应是？</div>
+    <ul class="options">
+      <li>A. 继续整理货架，等顾客自己开口</li>
+      <li>B. 立即停下手中工作，微笑问候「您好，欢迎光临！」</li>
+      <li>C. 远远点个头示意即可</li>
+      <li>D. 大声喊「随便看啊！」</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。顾客进门第一时间主动问候、面带微笑、站姿得体，是服务标准的基本要求。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">4</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">新员工小李上班途中突遇堵车，预计要迟到 8 分钟，最妥当的处理是？</div>
+    <ul class="options">
+      <li>A. 悄悄进店，假装没有迟到</li>
+      <li>B. 第一时间电话或微信报备直属上级，说明情况与预计到岗时间</li>
+      <li>C. 只发一条消息，然后等对方回复再说</li>
+      <li>D. 到店后等主管来问再解释</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。迟到、突发状况要主动、第一时间沟通，体现责任心与诚信意识；等待被问或隐瞒都不符合职业规范。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">5</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">关于门店考勤打卡，下列说法正确的是？</div>
+    <ul class="options">
+      <li>A. 忘记打卡不用处理，不影响考勤</li>
+      <li>B. 用企业微信一日两次打卡；忘记打卡可申请补卡，每人有一定次数机会且须在规定时间前提交</li>
+      <li>C. 可以请同事帮忙代打卡，省事</li>
+      <li>D. 只要不迟到就无需打卡</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。打卡、补卡均有明确规定与机会次数限制，代打卡属严重违规，不能图省事。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">6</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">关于请假，下列做法正确的是？</div>
+    <ul class="options">
+      <li>A. 临时在工作群里说一句便离开</li>
+      <li>B. 提前向直接上级申请，说明原因与时长，经审批并登记后再休假</li>
+      <li>C. 先休假，回来再补办申请</li>
+      <li>D. 请假只需告知身边同事即可</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。请假应提前申请、说明原因时长、经审批并登记；突发情况须第一时间报备、事后补办。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">7</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">下列哪一项属于门店工作区域明确禁止的行为？</div>
+    <ul class="options">
+      <li>A. 主动向进店顾客问好</li>
+      <li>B. 在服务区玩私人手机、聚堆闲聊、当顾客面吃东西、趴柜台</li>
+      <li>C. 遇到不懂的问题及时请教师傅</li>
+      <li>D. 下班前整理好工位与货架</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。在服务区玩手机、聚堆闲聊、当顾客面吃东西等属于明令禁止的行为，严重影响服务与门店形象。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">8</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">关于廉洁与利益冲突，下列说法正确的是？</div>
+    <ul class="options">
+      <li>A. 收受供应商的小礼品无伤大雅，可以照收</li>
+      <li>B. 不得收受礼品礼金，特殊情况价值须严格受限并报备；严禁与同事、顾客、供应商发生借贷关系</li>
+      <li>C. 应急时可以向顾客借钱周转</li>
+      <li>D. 逢年过节可以暗示顾客送点礼物</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。廉洁条款对收受礼品、利益冲突、借贷等均有明确界定，一律从严；违规可能面临解除劳动合同。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">9</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客的姓名、电话、验光数据等资料，正确的做法是？</div>
+    <ul class="options">
+      <li>A. 可以拍照发朋友圈当服务案例</li>
+      <li>B. 属于隐私与商业信息，不得外传、拍照、发社交平台，离职后仍负有保密义务</li>
+      <li>C. 离职后即可随意使用这些资料</li>
+      <li>D. 私下和同行分享客户名单没关系</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。顾客资料属于保密信息，泄露将面临相应后果；保密义务离职后依然延续。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">10</div><span class="q-type">单选</span><span class="q-level lv-up">提升</span><span class="q-score">3 分</span></div>
+    <div class="question-text">店内一位顾客试戴时突然身体不适、站立不稳，你首先应当？</div>
+    <ul class="options">
+      <li>A. 先拍照留证再说</li>
+      <li>B. 立即上前搀扶、让顾客平坐，第一时间呼叫店长/必要时拨打120，同时疏散围观、保持通风</li>
+      <li>C. 继续服务其他顾客，等同事处理</li>
+      <li>D. 用验光仪帮顾客检查一下</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。人身安全优先：先扶稳、平坐、保持通风、及时上报与求助，切勿擅自处置或围观。</div>
+  </div>
+
+  <div class="sub-title">（二）判断题（共 5 题，每题 2 分，共 10 分。点击「正确 / 错误」即时判定）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">11</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">代人打卡只处罚被代打卡的人，代人打卡者不受处罚。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。代打卡属严重违规，双方均要受处罚，累计多次将被解除劳动合同。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">12</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">试用期一般为 3–6 个月；表现优秀可缩短，但最短不少于 1 个月。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。试用期 3–6 个月，转正需评估达到「良好或以上」；表现突出可缩短，最短 1 个月。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">13</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">员工离职后，对本公司顾客资料与经营信息的保密义务随即终止。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。保密义务不因离职而终止，离职后仍应继续履行。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">14</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">加班原则上优先安排调休；法定节假日加班的，按规定支付加班工资。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。加班以调休为主，法定节假日加班按国家规定支付加班工资。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">15</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">工作中遇到问题应先找直属上级；若直属上级在合理时间内未反馈，可越级向上一级反映。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。正常走逐级沟通；当直属上级在合理时间内未回应时，允许越级反映。</div>
+  </div>
+
+  <div class="sub-title">（三）简答题（共 2 题，每题 10 分，共 20 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">16</div><span class="q-type">简答</span><span class="q-level lv-base">基础</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请写出门店请假的正确流程（至少包含 4 个步骤）。</div>
+    <textarea class="answer-area" placeholder="请分点写出请假流程……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点（答对 4 点以上给满分）：① 尽量<strong>提前</strong>（如事假建议提前申请）向直接上级提出；② 说明<strong>请假原因与时长</strong>；③ 获得<strong>审批</strong>；④ 按规定<strong>填写/登记</strong>请假单（企业微信或纸质单）；⑤ 安排好<strong>岗位工作交接</strong>，避免空岗；⑥ 返岗后及时<strong>销假</strong>。突发情况须第一时间电话报备、事后补办。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">17</div><span class="q-type">简答</span><span class="q-level lv-up">提升</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请写出公司「品牌理念」四条，并各举一个门店中的具体行为示例。</div>
+    <textarea class="answer-area" placeholder="四条 + 各一个行为示例……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考答案：四条为——<strong>诚实守信、勇于承担、深耕专业、引领创新</strong>。行为示例：诚实守信——如实告知镜片的特性与局限，不夸大功能；勇于承担——出了差错先解决顾客的事、主动复盘不推诿；深耕专业——用专业知识按需推荐，而非只推高价品；引领创新——主动学习新产品新技术、分享给同事。</div>
+  </div>
+
+  <!-- ══════ 二、实操题 ══════ -->
+  <div class="section-title">二、实操题（共 40 分 · 由带教师傅现场观察评分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">18</div><span class="q-type">情景应对</span><span class="q-level lv-mid">中等</span><span class="q-score">20 分</span></div>
+    <div class="scenario-box">
+      <strong>📋 情景：</strong>顾客王先生当众说："你们这儿比网上贵了一倍，是不是宰客？"——旁边还有其他顾客在场，带教师傅在后台。请你现场应对。
+    </div>
+    <div class="question-text">请说明你的应对步骤与关键话术，并现场演练给带教师傅看。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 5 分）：</strong><br>
+      ① <strong>先共情、不辩解</strong>：诚恳回应「非常理解您的感受，让您有这样的顾虑是我们没提前说明，很抱歉」，避免当众争论；<br>
+      ② <strong>讲清门店价值</strong>：说明实体门店提供专业验光、试戴调试、售后保修与正品保障，这些是网购无法替代的；<br>
+      ③ <strong>不擅自承诺</strong>：不随口答应折扣或贬低同行；<br>
+      ④ <strong>及时求助</strong>：如顾客仍不满，礼貌请出带教师傅/主管进一步沟通，做好情绪安抚。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">19</div><span class="q-type">动手操作</span><span class="q-level lv-base">基础</span><span class="q-score">20 分</span></div>
+    <div class="question-text">请完成上班「四查」自检，并按标准向师傅演示一次迎宾接待：<strong>问候 → 引导 → 请坐 → 询问需求</strong>。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 5 分）：</strong><br>
+      ① <strong>四查到位</strong>：查发型、查工装、查妆容、查鞋袜与配饰（含指甲、口气、饰品）；<br>
+      ② <strong>问候主动自然</strong>：顾客进门立即停下手中事务、微笑问候，语速语气得体；<br>
+      ③ <strong>引导规范</strong>：主动侧身引路、手势自然、请顾客入座；<br>
+      ④ <strong>询问得体</strong>：用开放式问题了解需求（如「您是想配近视镜还是想换副新的？」），不打断顾客。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <!-- ══════ 评分记录 ══════ -->
+  <div class="score-box">
+    <h3>📊 第1周周测成绩记录</h3>
+    <table class="score-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题号</th><th>满分</th><th>得分</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题</td><td>单项选择</td><td>1–10</td><td>30 分</td><td>　　　分</td></tr>
+        <tr><td>判断</td><td>11–15</td><td>10 分</td><td>　　　分</td></tr>
+        <tr><td>简答</td><td>16–17</td><td>20 分</td><td>　　　分</td></tr>
+        <tr><td>二、实操题</td><td>情景应对 / 动手操作</td><td>18–19</td><td>40 分</td><td>　　　分</td></tr>
+        <tr style="background:#e8f5e9;"><td colspan="3"><strong>合计</strong></td><td><strong>100 分</strong></td><td><strong>　　　分</strong>（及格线 70 分）</td></tr>
+      </tbody>
+    </table>
+    <p class="sign-line">📝 带教师傅签字确认：___________________　　日期：____________</p>
+    <p class="sign-line">🔁 未达 70 分：由训练员针对失分集中项复训 1–2 天，重考合格后方可进入第 2 周。</p>
+  </div>
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_07_学习内容.html">← 返回第1周总结复盘</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    <a class="nav-btn" href="../第2周_光学与产品知识/Day_08_学习内容.html">进入第2周 →</a>
+  </div>
+</div>
+
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background .2s,border-color .2s;}
+.options li:hover{background:#f0f7ff;border-color:#90caf9;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:inline-block!important;}
+</style>
+<script id="interactive-options-type-a-js">
+(function(){
+  document.querySelectorAll('.question-card').forEach(function(card){
+    var opts=card.querySelectorAll('.options li');
+    if(!opts.length) return;
+    var hint=card.querySelector('.answer-hint');
+    var answered=false;
+    function getCorrect(){
+      if(!hint) return null;
+      var t=hint.innerHTML||hint.textContent;
+      var m=t.match(/正确答案[:：][\s]*(?:<strong>)?([A-Da-d])/i);
+      return m?m[1].toUpperCase():null;
+    }
+    opts.forEach(function(li,idx){
+      li.addEventListener('click',function(){
+        if(answered)return;
+        answered=true;
+        var letters=['A','B','C','D','E'];
+        var chosen=letters[idx];
+        var correct=getCorrect();
+        opts.forEach(function(o){o.classList.add('done');});
+        if(correct&&chosen===correct){
+          li.classList.add('correct');
+          li.textContent='✅ '+li.textContent;
+        } else {
+          li.classList.add('wrong');
+          li.textContent='❌ '+li.textContent;
+          if(correct){
+            var ci=letters.indexOf(correct);
+            if(ci>=0&&opts[ci]){opts[ci].classList.add('highlight');opts[ci].textContent='👉 '+opts[ci].textContent;}
+          }
+        }
+        if(hint){hint.style.display='block';hint.style.marginTop='12px';}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
