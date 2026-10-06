@@ -18,8 +18,8 @@
   .section p{line-height:1.8;color:#555;margin-bottom:12px;font-size:0.95em;}
   .section ul,.section ol{padding-left:20px;margin-bottom:14px;}
   .section li{line-height:1.8;color:#555;font-size:0.95em;margin-bottom:4px;}
-  .role-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0;}
-  .role-card{background:#f5f5f5;border-radius:10px;padding:18px;}
+  .role-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0;align-items:stretch;}
+  .role-card{background:#f5f5f5;border-radius:10px;padding:16px;}
   .role-card h4{color:#2e7d32;margin-bottom:10px;}
   .role-card li{font-size:0.88em;line-height:1.7;margin-bottom:3px;}
   .flow-steps{margin:16px 0;}
@@ -71,6 +71,8 @@
     .two-col { grid-template-columns: 1fr !important; }
     /* 3列→2列特殊处理（不完全折叠，保留2列） */
     .exam-info { grid-template-columns: repeat(2,1fr) !important; }
+    /* 岗位分工：4列 → 平板竖屏收为2列 */
+    .role-cards { grid-template-columns: repeat(2,1fr) !important; }
     /* 导航按钮：允许换行，防止溢出 */
     .nav-footer, .nav-bar {
       flex-wrap: wrap !important;
@@ -99,6 +101,7 @@
     .header h1, h1 { font-size: 1.2em !important; }
     .days-grid { grid-template-columns: repeat(2,1fr) !important; }
     .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .role-cards { grid-template-columns: 1fr !important; }
     .container { padding: 16px !important; }
   }
 
@@ -263,6 +266,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -278,8 +294,10 @@ body{padding:0!important;margin:0!important}
 <div class="lm-block lm-goal">
   <h3>🎯 今日学习目标（学完你应该能做到）</h3>
   <ul class="lm-list">
-      <li>能说出门店 5 个岗位（店长、验光师、销售顾问、加工师、收银/店务）分别负责什么</li>
+      <li>能说出门店 4 个岗位（店长、验光师、销售顾问、收银/店务）分别负责什么</li>
       <li>能按时间轴复述一天的工作流程：开店准备 → 营业接待 → 交接 → 闭店收尾</li>
+      <li>能说出公司组织架构：总部有哪些职能部门、公司覆盖哪几个片区</li>
+      <li>知道晋升通道：从新学员到资深配镜师/店长经理的路径与评定周期</li>
       <li>明确自己岗位的职责边界：该做什么、遇到什么必须交出去</li>
       <li>知道每项工作交接给谁、用什么方式交接（口头 + 单据 + 系统）</li>
       <li>能为第 2 周学习做准备：知道下一周要学眼睛结构和产品知识</li>
@@ -315,15 +333,6 @@ body{padding:0!important;margin:0!important}
           <li>推荐镜架和镜片方案</li>
           <li>协助配镜、收银、取镜</li>
           <li>处理日常售后、调整维修</li>
-        </ul>
-      </div>
-      <div class="role-card">
-        <h4>🔧 加工/技术岗（如有）</h4>
-        <ul>
-          <li>按验光处方磨制加工镜片</li>
-          <li>镜架调整、整形、螺丝紧固</li>
-          <li>检验成品镜质量</li>
-          <li>维护加工设备</li>
         </ul>
       </div>
       <div class="role-card">
@@ -370,26 +379,33 @@ body{padding:0!important;margin:0!important}
       <div class="flow-step">
         <div class="flow-num">4</div>
         <div class="flow-content">
+          <div class="title">📋 处方解读（视光师主导）</div>
+          <div class="desc">由视光师解读验光处方，说明球镜、柱镜、轴位、瞳距等参数的含义，给出配镜建议并解答顾客疑问</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <div class="flow-content">
           <div class="title">🕶️ 选镜/配镜环节</div>
           <div class="desc">根据验光结果推荐合适的镜架和镜片，解答顾客问题，完成选购决策</div>
         </div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">5</div>
+        <div class="flow-num">6</div>
         <div class="flow-content">
           <div class="title">💳 收银/下单</div>
           <div class="desc">核对订单信息，完成收银，告知取镜时间，开具凭证</div>
         </div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">6</div>
+        <div class="flow-num">7</div>
         <div class="flow-content">
           <div class="title">🔧 取镜/售后</div>
           <div class="desc">检查成品、调整配戴、讲解保养方法、解答售后问题</div>
         </div>
       </div>
       <div class="flow-step">
-        <div class="flow-num">7</div>
+        <div class="flow-num">8</div>
         <div class="flow-content">
           <div class="title">⬇️ 闭店整理（下班前20分钟）</div>
           <div class="desc">整理陈列、清点库存、关闭设备、打扫卫生、记录当日情况、做好交接</div>
@@ -398,10 +414,47 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
+  <div class="section">
+    <h2>🏢 第三部分：公司架构与你的晋升通道</h2>
 
-    <div class="section">
-    <h2>🚀 第三部分：第2周学习预览与准备</h2>
+    <h3>📌 公司组织架构（你在哪一环）</h3>
+    <table class="rule-table">
+      <thead><tr><th>层级</th><th>构成</th><th>与你日常工作的关系</th></tr></thead>
+      <tbody>
+        <tr><td>总经理 / 营运部</td><td>公司最高管理层</td><td>制定经营方向与管理制度</td></tr>
+        <tr><td>总部职能部门</td><td>财务部、人事部、培训部、市场部、仓储物流部</td><td>请假审批、薪资核算、培训组织、货品调拨都会与这些部门打交道</td></tr>
+        <tr><td>片区</td><td>零陵片区、冷水滩片区、祁阳片区（及蓝山门店）</td><td>直接管理门店日常运营；请假 3 天以上需经区域经理审核、营运经理批准</td></tr>
+        <tr><td>门店</td><td>店长 + 各岗位伙伴</td><td>你日常工作的地方，直接上级是店长/带教师傅</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📌 员工晋升通道（《员工手册》P23）</h3>
+    <p>公司有清晰的双通道晋升路径，<strong>每一级都有明确的评定周期</strong>：</p>
+    <table class="rule-table">
+      <thead><tr><th>通道</th><th>职级路径</th><th>评定周期</th></tr></thead>
+      <tbody>
+        <tr><td><strong>配镜师专业线</strong></td><td>新学员 → 五级配镜师 → 四级配镜师 → 三级配镜师 → 二级配镜师 → 一级配镜师 → 资深配镜师</td><td>新学员 3 个月、五级 6 个月，四级起每级 1 年</td></tr>
+        <tr><td><strong>店长/经理管理线</strong></td><td>储干 → 四级店长 → 三级店长 → 二级店长 → 一级店长 → 三级经理 → 二级经理 → 一级经理</td><td>每级 1 年</td></tr>
+      </tbody>
+    </table>
+    <div class="tip-box">
+      <div class="label">💡 对新学员意味着什么</div>
+      <ul style="padding-left:18px;">
+        <li>你的第一个职级目标：<strong>3 个月后从"新学员"晋升"五级配镜师"</strong>，再 6 个月晋升四级</li>
+        <li>本 8 周培训正是晋升的第一块跳板：结业考核合格是独立上岗的前提</li>
+        <li>注意：<strong>通报批评及以上处分会在一个评定周期内取消晋升及评优资格</strong>——遵守纪律也是保护自己的晋升机会</li>
+      </ul>
+    </div>
+
+    <h3>📌 人事异动（调动与服从）</h3>
+    <ul>
+      <li>因公司经营需要，公司有权决定将员工<strong>临时或长期调任其它职位或地区</strong>，届时需要无条件配合执行</li>
+      <li>如果你<strong>希望调动工作岗位</strong>，可向主管提出，主管会在可能的情况下按公司需要安排调动</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🚀 第四部分：第2周学习预览与准备</h2>
         <p>第1周，你了解了门店文化、制度规范和职场礼仪——这是成为合格员工的"地基"。</p>
     <p>从第2周开始，你将进入眼镜行业的专业知识学习：</p>
     <table class="rule-table">
@@ -452,35 +505,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">交接口。顾客的需求从销售传给验光、再传给加工，任何一次口头转述漏掉信息（比如「要超薄」「左眼要加散光」），最后都要顾客承担。所以交接必须复述确认。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：门店通常有哪 5 类岗位？</summary>
-      <div class="lm-a"><b>参考答案：</b>店长（统筹与决策）、验光师（检查与处方）、销售顾问（接待与选镜推荐）、加工师（配装与调整）、收银/店务（结算与库存）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：开店准备一般要做哪些事？</summary>
-      <div class="lm-a"><b>参考答案：</b>卫生与形象整理、设备开机自检、现金与单据准备、陈列与价签检查、查看当日预约与重点顾客（以门店清单为准）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：交接时必须做到什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>复述确认：把需求、度数、交期、特殊要求重复一遍给对方，并落到单据或系统上，不只靠记忆。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：顾客问你「这副镜片要多久能取」，你不确定具体工期，怎么回？</summary>
-      <div class="lm-a"><b>参考答案：</b>给区间 + 去确认：「一般 2～3 天，我现在帮您确认下具体时间。」随后问加工/师傅确认，再回复准确时间。宁可稍微慢一点答，也别给错时间。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 门店五大岗位：店长、验光师、销售顾问/配镜师、加工/技术岗、收银/店务岗</li>
-      <li>✅ 一天工作7步流程：开店→接待→验光→选镜→收银→取镜→闭店</li>
-      <li>✅ 各岗位紧密协作，共同为顾客提供完整服务</li>
-      <li>✅ 本周先了解框架，第5周将深入掌握每个流程的标准操作</li>
-    </ul>
-    <p style="margin-top:14px; color:#2e7d32; font-weight:600;">🎯 今日任务：跟着师傅完整观察一次顾客从进店到离店的全流程</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
