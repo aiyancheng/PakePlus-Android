@@ -270,6 +270,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -364,8 +377,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-
-
     
 <!-- LM-START -->
 <div class="lm-block lm-practice">
@@ -400,45 +411,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">部分可以（如防蓝光 + 变色）。叠加会让镜片颜色偏深、价格上升，也可能影响透光。要按顾客真实使用场景取舍，不要为了提价硬叠。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：渐进多焦点镜片有哪三个功能区？</summary>
-      <div class="lm-a"><b>参考答案：</b>上方远用区、中间渐变走廊（中距离）、下方近用区，两侧为像散区。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：渐进镜初次佩戴的标准引导是哪几条？</summary>
-      <div class="lm-a"><b>参考答案：</b>①前 3～7 天适应期；②上下楼梯低头、用远用区看；③看近处要低头用下方，不要只转眼球；④左右看用转头代替转眼睛。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：偏光镜片解决的核心问题是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>过滤水面、雪面、路面等反射的眩光，适合驾驶、钓鱼、户外运动，比普通染色太阳镜更能减少刺眼反光。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：以下哪类顾客不建议首推渐进镜？A. 40 岁以上看近吃力的人  B. 需要远中近三距离切换的人  C. 想用一副眼镜解决开车+看手机的人  D. 期望「一戴上就和年轻时一样」且不愿适应的人</summary>
-      <div class="lm-a"><b>参考答案：</b>D。渐进镜需要适应期，期望值管理不到位会直接变成投诉，宜先充分沟通或改推荐双光/单光加镜方案。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客问「渐进镜和普通老花镜有什么区别？」</summary>
-      <div class="lm-a"><b>参考答案：</b>「老花镜只能看近，摘下才能看远；渐进镜一副就能远、中、近都看清，外观和普通眼镜一样。代价是需要几天适应，看两侧会有点变形。」——一句话讲清价值与代价。</div>
-    </details>
-</div>
-<div class="summary-box" style="background:linear-gradient(135deg,#e3f2fd,#e8f5ff)">
-    <h3 style="color:#1565c0">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 变色片：感光变色，户外活动/室内外切换适用，车内效果弱</li>
-      <li>✅ 渐进片：度数渐变，适合老花人群，需1~2周适应期</li>
-      <li>✅ 偏光太阳镜：消除眩光，驾驶首选</li>
-      <li>✅ 近视防控镜片：延缓青少年近视加深</li>
-      <li>✅ 验配流程9步骤要熟悉，每步都有其关键意义</li>
-      <li>✅ 仪器维护是日常工作的一部分，不可忽视</li>
-      <li>✅ 遇到复杂案例及时请教，不轻易自行判断</li>
-      <li>✅ 记录规范是保障服务质量和处理纠纷的基础</li>
-    </ul>
-    <p style="margin-top:14px;color:#1565c0;font-weight:600">
-      🎯 今日任务：向师傅解释渐进镜片的工作原理并说出2点使用注意事项；跟随师傅完整观察一次验配流程，记录你注意到的细节。
-    </p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
