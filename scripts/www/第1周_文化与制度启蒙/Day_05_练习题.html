@@ -151,6 +151,19 @@
 
 /*@@ LAYOUT-UNIFY-4 @@*/
 body{padding:0!important;margin:0!important}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -159,7 +172,7 @@ body{padding:0!important;margin:0!important}
 <div class="header"><span class="day-tag">📝 第1周 · Day 05 练习题</span><h1>奖惩制度与安全规定 — 巩固测评</h1><div style="color:#555;">总分：100分</div></div>
 <div class="container">
   <div class="section-title">选择题（每题15分，共45分）</div>
-  <div class="question-card"><div class="q-header"><div class="q-num">1</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">门店"服务之星"奖励的触发条件是？</div><ul class="options"><li>A. 当月销售额最高</li><li>B. 顾客主动表扬或留下好评截图</li><li>C. 全月无迟到</li><li>D. 提出改善建议被采纳</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：B。服务之星由顾客主动表扬触发，体现服务质量。</div></div>
+  <div class="question-card"><div class="q-header"><div class="q-num">1</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">按《员工手册》，"避免损失价值 5000 元以下"的正面行为对应的奖励是？</div><ul class="options"><li>A. 口头表扬</li><li>B. 通报表扬</li><li>C. 嘉奖（奖励 50 元）</li><li>D. 小功（奖励 100 元）</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：D。嘉奖体系五级：口头表扬→通报表扬→嘉奖（避免损失 2000 元以下，奖 50 元）→小功（避免损失 5000 元以下，奖 100 元）→大功（避免损失 5000 元以上，奖 300 元）；三次进一级。</div></div>
   <div class="question-card"><div class="q-header"><div class="q-num">2</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">发现门店内验光仪设备出现异常故障，应该怎么处理？</div><ul class="options"><li>A. 自己尝试修复，省得麻烦店长</li><li>B. 继续使用，等到明显影响工作再说</li><li>C. 立即停止使用，粘贴故障标识，通知店长联系维修</li><li>D. 告知顾客设备坏了，让顾客改天再来</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：C。设备故障要立即停用、标注、上报，不可自行拆修或继续使用。</div></div>
   <div class="question-card"><div class="q-header"><div class="q-num">3</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">以下哪种行为会导致即时解除劳动合同？</div><ul class="options"><li>A. 迟到3次</li><li>B. 工作时间使用私人手机2次</li><li>C. 私自修改价签或挪用货款</li><li>D. 忘记打卡1次</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：C。私自修改价签或挪用货款属于最严重违规，即时解除并追究责任。</div></div>
 
@@ -172,10 +185,10 @@ body{padding:0!important;margin:0!important}
   <div class="answer-hint">✅ 参考步骤：①保持冷静，不要在顾客面前慌乱②立即通知店长并查看烟味来源③告知顾客有异常情况，请顾客先向安全出口方向移动④检查是否真实起火——如确认火情，启动报警、疏散顾客、拨打119⑤所有人从安全出口撤离，不乘电梯</div></div>
 
   <div class="question-card"><div class="q-header"><div class="q-num">5</div><span class="q-type">简答题</span><span class="q-score">30分</span></div>
-  <div class="question-text">请列举门店3种奖励类型，并说明各自的触发条件。</div>
+  <div class="question-text">请写出嘉奖体系从低到高的 5 个等级及对应奖励，并说明"三次进一级"的累进规则。</div>
   <textarea class="answer-area" placeholder="请列举……"></textarea>
   <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
-  <div class="answer-hint">✅ 参考答案（举其中3种即可）：①月度优秀员工：服务评分高、销售达标、出勤完整、无投诉 ②销售冠军：当月个人销售额第一 ③服务之星：顾客主动表扬或好评截图 ④学习达人：培训考核全部优秀 ⑤创新建议奖：提出被采纳的改善建议</div></div>
+  <div class="answer-hint">✅ 参考答案（按《员工手册》P20.1）：①口头表扬：个人表现积极、起到表率作用 ②通报表扬：对公司产生正向影响 ③嘉奖：正向影响并避免损失 2000 元以下，奖励 50 元 ④小功：避免损失 5000 元以下，奖励 100 元 ⑤大功：避免损失 5000 元以上，奖励 300 元。<br><strong>累进规则</strong>：三次口头表扬＝通报表扬一次；三次通报表扬＝嘉奖一次；三次嘉奖＝小功一次；三次小功＝大功一次。</div></div>
 
   <div class="nav-footer">
     <a class="nav-btn outline" href="Day_05_学习内容.html">← 返回学习内容</a>
