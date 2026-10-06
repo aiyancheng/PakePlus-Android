@@ -379,7 +379,8 @@
   <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:20px">— 第4周 · 销售话术与中期考核 · 全部完成 —</p>
 
   <div class="nav-footer">
-    <a href="Day_27_练习题.html" class="nav-btn outline">← 返回Day27练习题</a>
+    <a href="Day_28_学习内容.html" class="nav-btn outline">← 第4周总结复盘</a>
+    <a class="nav-btn outline" href="Day_28_周测卷.html">📝 第4周周测卷</a>
     <a class="nav-btn outline" href="../index.html">🏠 首页</a>
     <a href="../第5周_实战跟岗训练/Day_29_学习内容.html" class="nav-btn">第5周 Day 29 →</a>
   </div>
@@ -540,6 +541,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 <script id="d28-interactive-js">
 (function(){
