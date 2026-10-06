@@ -245,6 +245,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -411,8 +437,6 @@ body{padding:0!important;margin:0!important}
     </table>
   </div>
 
-  
-
     <p style="text-align:center;color:#2980b9;font-weight:600;margin:12px 0">太阳镜与功能镜不只是附加品，更是提升客单价和关怀客户的绝佳机会。</p>
   <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:12px">— Day 40 · 太阳镜与功能性眼镜销售 · 完成 —</p>
 <!-- LM-START -->
@@ -448,39 +472,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">「日常镜片确实有一定防 UV 效果，但太阳镜还解决另一个问题——刺眼和眩光。您开车或到户外，会觉得眼睛发酸、睁不开眼吗？那就是眩光，偏光镜片专门解决这个。」</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：太阳镜的防护能力主要取决于什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>紫外线（UV）阻隔能力，标准为 UV400（阻隔 100% 的 UVA 与 UVB），与镜片颜色深浅无关。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：偏光镜片解决什么问题？</summary>
-      <div class="lm-a"><b>参考答案：</b>过滤水面、雪地、路面等反射产生的眩光，减少刺眼与视觉疲劳，特别适合驾驶与户外。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：染色、变色、偏光、镀膜四类镜片的适用场景分别是？</summary>
-      <div class="lm-a"><b>参考答案：</b>染色（日常遮光）、变色（室内外往来）、偏光（驾驶/水上/雪地抗眩光）、镀膜镜面（强光与时尚造型）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：交叉销售的三个原则是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>基于真实场景需求、在主单成交后推荐、理由清楚不夸张；不做与需求无关的硬推。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客买完近视镜后准备离开，你怎么自然引出太阳镜？</summary>
-      <div class="lm-a"><b>参考答案：</b>「您平时开车或者外出多吗？取镜那天可以顺便试试偏光太阳镜——夏天开车眩光特别难受，一副备用也方便。」用取镜日做理由，不占顾客当下的时间压力。</div>
-    </details>
-</div>
-<div style="background:linear-gradient(135deg,#eaf4fc,#d0e8f5);border-radius:10px;padding:20px 24px;margin-top:24px">
-    <strong style="color:#1a5276">📝 今日学习要点回顾</strong>
-    <ul style="margin-top:10px;padding-left:18px;line-height:2">
-      <li>太阳镜核心功能是防紫外线，颜色深浅≠防护效果</li>
-      <li>偏光镜适合驾驶和户外，掌握现场演示偏光效果的方法</li>
-      <li>镜片颜色不同，适用场景不同，根据客户用途精准推荐</li>
-      <li>防蓝光眼镜针对长时间屏幕用户，蓝光危害和益处都要了解</li>
-      <li>交叉销售最佳时机：客户成单后心情最好的那一刻</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -497,8 +489,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="Day_39_练习题.html" class="nav-btn outline">← Day 39 练习题</a>
