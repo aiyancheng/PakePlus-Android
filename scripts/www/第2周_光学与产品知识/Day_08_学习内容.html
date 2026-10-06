@@ -269,6 +269,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -296,6 +309,13 @@ body{padding:0!important;margin:0!important}
   <div class="section">
     <h2>👁️ 第一部分：眼睛的主要结构</h2>
     <p>要向顾客解释视力问题，首先要了解眼睛本身。眼睛就像一台精密的照相机——有镜头（角膜+晶状体）、光圈（瞳孔）、感光胶片（视网膜）。</p>
+    <figure style="margin:18px 0;text-align:center;">
+      <img src="images/801.png" alt="眼睛的主要结构示意图" loading="lazy"
+           style="max-width:min(100%,780px);height:auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.12);"
+           onerror="this.style.display='none';document.getElementById('eyeFigFallback').style.display='block'">
+      <figcaption style="font-size:.85em;color:#888;margin-top:10px;">▲ 眼球的主要结构示意图：角膜、瞳孔、晶状体、玻璃体、视网膜、视神经</figcaption>
+      <div id="eyeFigFallback" style="display:none;padding:26px 16px;background:#f5f5f5;border-radius:12px;color:#888;font-size:.9em;">🖼️ 眼球结构示意图（images/801.png 未找到，请将图片放到本页同级 images 文件夹）</div>
+    </figure>
     <div class="eye-structure">
       <div class="eye-part">
         <div class="name">🔵 角膜（Cornea）</div>
@@ -402,7 +422,6 @@ body{padding:0!important;margin:0!important}
 老花弹力减，近处看不清，正镜来补偿。</p></div>
   </div>
 
-    
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -436,43 +455,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">散光本质是角膜或晶状体不够「圆」，不同方向的光聚在前后不同位置，所以点会拖成线或糊成团。用「镜片不圆，各方向对不上焦」来解释最直观。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：眼睛的调焦功能主要由哪个结构完成？</summary>
-      <div class="lm-a"><b>参考答案：</b>晶状体（配合睫状肌）。睫状肌收缩放松改变晶状体曲率，从而把远近的光都聚到视网膜上。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：近视的本质是？</summary>
-      <div class="lm-a"><b>参考答案：</b>远处物体的光聚焦在视网膜之前，导致远处看不清；多数与眼轴过长或角膜曲率过大有关。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：用一句顾客能听懂的话解释散光。</summary>
-      <div class="lm-a"><b>参考答案：</b>「您的镜片不太圆，一个方向对上了，另一个方向没对上，所以看东西会有重影、发虚。」</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：为什么青少年的近视防控重点是「控制眼轴」？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为眼轴一旦变长就缩不回去，度数只会往上涨。控制眼轴增长速度，才能把度数压住，避免发展成高度近视及其眼底风险。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：家长问「孩子去年 200 度，今年 300 度，是不是眼镜戴坏了？」</summary>
-      <div class="lm-a"><b>参考答案：</b>先安抚再解释：孩子处在发育期，眼轴随身高增长而变长，度数增加是常见现象，不是戴眼镜造成的；反而足矫配戴、控制用眼、增加户外、定期复查，才能减慢加深速度。建议尽快做一次完整验光。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 眼睛=精密相机：角膜（主要折射）+晶状体（调节）是镜头，视网膜是感光片</li>
-      <li>✅ 屈光原理：光线需精确聚焦在视网膜上才能看清</li>
-      <li>✅ 近视：眼轴长，光聚在视网膜前，用凹透镜矫正；远视：眼轴短，光聚在视网膜后，用凸透镜矫正</li>
-      <li>✅ 散光：角膜曲率不均，各方向焦点不同，用柱镜矫正</li>
-      <li>✅ 老花：晶状体弹性减退、调节力下降，与近视是两回事，用正镜补偿</li>
-      <li>✅ 能用通俗语言向客户解释视力问题，是专业服务的关键能力</li>
-    </ul>
-    <p style="margin-top:14px;color:#1565c0;font-weight:600">
-      🎯 今日任务：用自己的话向师傅解释"近视是如何形成的"，并说出矫正近视的镜片类型，听取反馈。
-    </p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
