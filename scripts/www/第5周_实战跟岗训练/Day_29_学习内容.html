@@ -267,6 +267,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -276,12 +289,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">📍 第5周 · 实战跟岗训练</div>
   <h1>Day 29 · 跟岗实战：全流程观摩与记录</h1>
   <div class="subtitle">从旁观者到参与者——用眼睛学习，用笔记固化</div>
-</div>
-
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：4-5小时（含跟岗）</div>
-  <div class="meta-item"><span class="dot"></span>学习方式：现场观摩 + 笔记记录</div>
-  <div class="meta-item"><span class="dot"></span>重点能力：观察力 · 学习力</div>
 </div>
 
 <div class="container">
@@ -471,7 +478,6 @@ body{padding:0!important;margin:0!important}
     
   </div>
 
-
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -505,39 +511,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">先按课程规范执行，同时问清师傅为什么那样做（可能是顾客特殊、门店习惯）。搞清楚原理后再灵活运用——不懂原理的「灵活」就是乱来。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：跟岗准备的四件事是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>看排班（跟谁、在哪个时段）、备记录本、定观察重点、提前想好要问的问题。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：跟岗记录的 6 个关键节点是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>顾客进门 → 需求询问 → 产品推荐 → 试戴体验 → 价格沟通 → 成交或离店。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：为什么跟岗要记录「没成交」的顾客？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为失败样本比成功样本信息量更大：能看出哪一步丢了信任、价格卡在哪、顾客真实顾虑是什么，这些是话术练习的方向。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：跟岗中遇到顾客提问而你答不出，正确做法是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>大方请师傅解答，同时记下问题，事后必须问清答案，不能含糊过去。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：跟岗时你发现师傅在整个接待中很少主动提价格，为什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为价格未建立价值前提出，只会引发比价与砍价。师傅是在用需求与产品价值把「价格」变成「算账」，等到顾客认可价值后再谈价格，阻力最小。</div>
-    </details>
-</div>
-<div class="summary-box">
-      <h3>📝 今日学习要点回顾</h3>
-      <ul>
-        <li>以"学习者"心态全程观摩，不打断正常接待流程</li>
-        <li>按流程环节系统记录，每接待一位顾客完成一份简版档案</li>
-        <li>重点观察老师的非语言技巧（站位、节奏、工具使用）</li>
-        <li>特别关注"危机时刻"的处理方式——这是最难得的学习内容</li>
-        <li>当天整理复盘，趁热打铁固化当日收获</li>
-      </ul>
-    </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -554,7 +528,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
 <div class="nav-bar">
   <a href="../第4周_销售话术与中期考核/Day_28_中期考核.html" class="nav-btn prev">← Day 28 中期考核</a>
