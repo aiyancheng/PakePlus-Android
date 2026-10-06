@@ -264,6 +264,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -425,39 +438,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">多数门店可以加工，但要先检查：镜架是否变形、镜圈是否能装下所选镜片、是否适合开槽或打孔。不能加工的必须提前告知，别等做坏再解释。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：镜架尺寸标注「52□18-145」中，52、18、145 分别代表什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>52 = 单侧镜圈水平内宽（mm）；18 = 鼻梁距（两镜圈之间距离）；145 = 镜腿总长度。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：TR90 材质的主要优点是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>超轻、柔韧、抗冲击、不易变形，适合运动人群与儿童；缺点是耐高温较差，不能长时间放车内暴晒。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：圆脸顾客选镜架的方向是？</summary>
-      <div class="lm-a"><b>参考答案：</b>选有棱角、带一定高度的方框或眉线框，增加脸部线条与纵向比例，避免再戴圆框、小圆镜片让脸更圆。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：高度数（如 -8.00D）顾客选镜架要注意什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>镜圈尽量小、镜架要稳（减少边缘厚度与重量），配合高折射率镜片；镜架太大不仅厚，还会因边缘畸变影响视觉舒适度。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客试戴 5 副都说「还行」，你怎么帮他决定？</summary>
-      <div class="lm-a"><b>参考答案：</b>用对比法帮顾客聚焦：「这三副里，A 最轻、B 最修饰脸型、C 最耐用。您最在意哪一点？」把选择从「好不好看」引导到「最在意什么」，决策立刻就清晰了。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 常见材质：钛合金（轻/抗敏）、板材（美观）、TR-90（弹性轻便）、不锈钢（实惠）</li>
-      <li>✅ 六大部件：镜圈、鼻梁、鼻托、铰链、镜腿、腿弯</li>
-      <li>✅ 尺寸标注：镜片直径□鼻梁宽-腿长（如54□18-140）</li>
-      <li>✅ 脸型匹配：圆脸配方框、方脸配圆框、椭圆脸百搭</li>
-    </ul>
-    <p style="margin-top:14px; color:#1565c0; font-weight:600;">🎯 今日任务：拿起3副不同材质的镜架，对照部件表逐一指认，并向师傅说明各部件功能</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
