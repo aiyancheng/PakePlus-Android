@@ -272,6 +272,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -281,13 +294,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">第3周 · 专业技能训练</div>
   <h1>Day 18 — 收银操作与库存管理</h1>
   <div class="subtitle">技能模块 · 掌握收银流程与库存盘点，保障门店运营数据准确</div>
-</div>
-
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约3小时</div>
-  <div class="meta-item"><span class="dot"></span>模块：技能（Skills）+ 流程（Process）</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>实操要求：必须在师傅监督下操作</div>
 </div>
 
 <div class="container">
@@ -456,9 +462,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
-
-  <div class="footer">Day 18 · 眼镜门店新员工8周成才培训计划 · 第3周 专业技能训练</div>
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -492,39 +495,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">常见：销售未及时录入、调货未登记、试戴样品与库存混放、损耗未报、盘点漏记。要定位到具体环节，而不是笼统说「盘错了」。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：收银的标准流程是哪 6 步？</summary>
-      <div class="lm-a"><b>参考答案：</b>确认商品与金额 → 告知应付金额 → 收款（唱收）→ 系统录入开单 → 交付凭证（唱付）→ 送客并说明取镜时间。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：「唱收唱付」是什么意思？</summary>
-      <div class="lm-a"><b>参考答案：</b>收款时说出金额（如「收您 500 元」），找零时也说清（如「找您 32 元」），双方确认，避免金额争议。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：收银四大红线是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>不私下收钱、不代顾客输入支付密码、不在未到账时放行商品、发现差错必须立即上报（不得自行处理）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：库存出现缺货或滞销，分别该怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>缺货：登记并通知补货，给顾客替代方案或承诺时间；滞销：分析原因（价位/款式/陈列位置），调整陈列或申请促销，而不是继续压着。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：一位顾客买了 2680 元的镜架，要求「不开票少 100」，你怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>礼貌拒绝并说明：「价格和票据都要按店里规定来，我这边不能改。开票对您的售后和保修都有保障。」如顾客坚持，请店长出面，不要自己承诺。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>收银标准6步：核对商品→开单→告知金额→收款→打印小票→更新库存</li>
-      <li>四大收款方式各有操作要点，扫码支付必须确认到账才能放行</li>
-      <li>收银4大红线：不私下收钱、不代输密码、不未到账放行、差错立即上报</li>
-      <li>库存管理核心：先进先出、实物与系统一致、每笔进出有记录</li>
-      <li>发现库存异常不要自行处理，立即上报主管</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
