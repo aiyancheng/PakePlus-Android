@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 49 周测卷 | 第7周 · 综合提升</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#8e44ad,#6c3483);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.92;line-height:1.7;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+
+  .exam-info{background:#fff;border:1px solid #e6ebf3;border-radius:14px;padding:22px 24px;margin:22px 0;box-shadow:0 2px 10px rgba(26,58,107,.06)}
+  .ei-title{font-size:1.12em;font-weight:800;color:#6c3483;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .ei-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .ei-item{background:#f5eef8;border:1px solid #e8daef;border-radius:10px;padding:10px 12px;text-align:center}
+  .ei-k{display:block;font-size:.78em;color:#7a6a86;margin-bottom:4px}
+  .ei-v{display:block;font-size:1.02em;font-weight:800;color:#6c3483}
+  .ei-h{font-weight:800;color:#8e44ad;font-size:.95em;margin:16px 0 8px;display:flex;align-items:center;gap:7px}
+  .ei-h::before{content:"";width:4px;height:14px;border-radius:3px;background:#b57edc}
+  .ei-table{width:100%;border-collapse:collapse;margin:2px 0 6px}
+  .ei-table th{background:#8e44ad;color:#fff;padding:8px 12px;text-align:left;font-size:.86em}
+  .ei-table td{padding:8px 12px;border-bottom:1px solid #eef2f6;font-size:.86em;color:#445}
+  .ei-table tr:nth-child(even) td{background:#faf6fc}
+  .ei-req{margin:2px 0 0;padding-left:20px}
+  .ei-req li{font-size:.88em;line-height:1.85;color:#445}
+
+  .section-title{font-size:1.15em;color:#6c3483;font-weight:800;margin:32px 0 14px;padding-left:12px;border-left:4px solid #8e44ad}
+  .sub-title{font-size:1em;font-weight:800;color:#8e44ad;margin:20px 0 10px}
+
+  .question-card{background:white;border-radius:12px;padding:22px 24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+  .q-num{background:#8e44ad;color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.86em;flex-shrink:0;}
+  .q-type{background:#f0e4f6;color:#6c3483;padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:600;}
+  .q-level{padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:700;}
+  .lv-base{background:#e8f5e9;color:#2e7d32;}
+  .lv-mid{background:#fff4e0;color:#c47f17;}
+  .lv-up{background:#fdeaea;color:#c0392b;}
+  .q-score{color:#999;font-size:0.8em;margin-left:auto;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.7;margin-bottom:14px;}
+  .options{list-style:none;padding:0;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+  .options li:hover{background:#f5eef8;border-color:#d2b4de;}
+  .options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+  .options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+  .options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+  .options li.done{cursor:default;}
+  .answer-area{width:100%;min-height:88px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#555;display:none;line-height:1.8;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .scenario-box{background:#faf6fc;border-left:4px solid #8e44ad;border-radius:8px;padding:14px 16px;margin:2px 0 12px;font-size:0.9em;line-height:1.8;}
+
+  .score-box{background:linear-gradient(135deg,#f5eef8,#faf6fc);border-radius:12px;padding:20px;margin:26px 0 10px;}
+  .score-box h3{color:#6c3483;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#8e44ad;color:white;padding:8px 12px;text-align:left;font-size:0.86em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.85em;}
+  .sign-line{color:#666;font-size:0.88em;margin-top:10px;}
+
+  .nav-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 50px;}
+  .nav-btn{background:#8e44ad;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#6c3483;border:2px solid #8e44ad;}
+
+  .home-topbar{background:#fff;padding:10px 0}
+  .home-topbar .ht-inner{width:min(1300px,calc(100% - 32px));max-width:1300px;margin:0 auto}
+  .home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;}
+  .home-topbar a:hover{background:#e6eaf6;color:#283593;}
+
+  .header{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin:18px auto 0!important;padding:34px 30px!important;
+    border-radius:14px!important;box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+  }
+  .container{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin-left:auto!important;margin-right:auto!important;
+    padding-left:0!important;padding-right:0!important;
+  }
+  @media(max-width:900px){
+    .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+    .header h1{font-size:1.5em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important}
+    .container{padding-left:0!important;padding-right:0!important}
+  }
+  @media(max-width:600px){
+    .header{padding:20px 15px!important}
+    .header h1{font-size:1.3em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+    .question-card{padding:16px 14px}
+    .exam-info{padding:16px 14px}
+  }
+  @media(max-width:1100px){
+    table{display:table!important;width:100%!important;max-width:100%!important;table-layout:auto!important;border-collapse:collapse!important}
+    th,td{overflow-wrap:break-word!important;word-break:break-word!important}
+  }
+  @media(max-width:900px){th,td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}}
+  @media(max-width:600px){th,td{padding:6px 5px!important;font-size:11px!important}}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第7周 · Day 49 — 周测卷</span>
+  <h1>🏆 第7周周测卷 · 综合提升</h1>
+  <div class="subtitle">覆盖 Day 43–48 全部学习内容 ｜ 满分 100 分（理论 60 + 实操 40）｜ 及格 70 分</div>
+</div>
+
+<div class="container">
+
+  <div class="exam-info">
+    <div class="ei-title">📋 考试说明（开考前请先阅读）</div>
+    <div class="ei-grid">
+      <div class="ei-item"><span class="ei-k">满分</span><span class="ei-v">100 分</span></div>
+      <div class="ei-item"><span class="ei-k">及格线</span><span class="ei-v">70 分</span></div>
+      <div class="ei-item"><span class="ei-k">建议时长</span><span class="ei-v">45 分钟</span></div>
+      <div class="ei-item"><span class="ei-k">考试形式</span><span class="ei-v">闭卷·独立作答</span></div>
+    </div>
+
+    <div class="ei-h">一、题型、题量与分值</div>
+    <table class="ei-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题量</th><th>分值</th><th>小计</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题<br>（60 分）</td><td>单项选择</td><td>10 题</td><td>每题 3 分</td><td>30 分</td></tr>
+        <tr><td>判断</td><td>5 题</td><td>每题 2 分</td><td>10 分</td></tr>
+        <tr><td>简答</td><td>2 题</td><td>每题 10 分</td><td>20 分</td></tr>
+        <tr><td>二、实操题<br>（40 分）</td><td>情景应对 / 动手操作</td><td>2 题</td><td>每题 20 分</td><td>40 分</td></tr>
+        <tr><td colspan="4"><strong>合计</strong></td><td><strong>100 分</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">二、难度分布</div>
+    <table class="ei-table">
+      <thead><tr><th>难度层级</th><th>考查重点</th><th>占比</th><th>对应题目</th></tr></thead>
+      <tbody>
+        <tr><td>基础</td><td>记忆与理解（流程步骤、公式定义、术语概念）</td><td>约 60%</td><td>单选 1、2、3、5、7、判断 12–14、简答 16、实操 19</td></tr>
+        <tr><td>中等</td><td>简单应用与判断（场景应对、数据计算）</td><td>约 30%</td><td>单选 4、6、8、9、判断 11、实操 18</td></tr>
+        <tr><td>提升</td><td>综合情境、迁移应用（异常诊断、跨模块整合）</td><td>约 10%</td><td>单选 10、判断 15、简答 17</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">三、作答要求</div>
+    <ul class="ei-req">
+      <li>理论题独立完成，<strong>不得翻阅资料、不得相互讨论</strong>；选择题与判断题均为<strong>点击选项即可即时判定对错</strong>，点击后自动显示解析。</li>
+      <li>简答题按要点作答，条理清楚、分点书写，答对要点即得分。</li>
+      <li>实操题由带教师傅现场观察评分，按「流程是否完整、分析是否到位」给分。</li>
+      <li>满分 100 分，<strong>70 分为及格</strong>；未及格者按本页底部说明复训后重考。</li>
+    </ul>
+  </div>
+
+  <div class="section-title">一、理论题（共 60 分）</div>
+
+  <div class="sub-title">（一）单项选择（共 10 题，每题 3 分，共 30 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">1</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">主觉验光中「雾视（Fogging）」的主要目的是？</div>
+    <ul class="options">
+      <li>A. 让顾客暂时看不清，方便操作</li>
+      <li>B. 增加约 +0.75D～+1.00D，使眼放松调节，消除调节紧张以保证验光准确</li>
+      <li>C. 测出顾客的散光轴向</li>
+      <li>D. 提高电脑验光仪的速度</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。雾视是在可接受度数上增加 +0.75D～+1.00D，使视力模糊到约 0.3，让眼睛放松调节（尤其青少年调节力强），从而消除调节紧张、保证验光结果准确。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">2</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">主觉验光的关键原则是？</div>
+    <ul class="options">
+      <li>A. 尽可能给足负度数，看得越清楚越好</li>
+      <li>B. 在达到最佳视力（通常 1.0）的前提下，给予最少的负度数（最大正镜 / 最小负镜）</li>
+      <li>C. 以电脑验光结果为准</li>
+      <li>D. 度数越高越专业</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。「最大正镜 / 最小负镜达到最佳视力」是核心原则——在能看清的前提下给最少的负度数，避免过矫引发眼疲劳、头晕。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">3</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客一进门就问「你们最便宜的多少钱」，频繁讲价、对折扣很感兴趣。这类顾客属于？</div>
+    <ul class="options">
+      <li>A. 目的明确型</li>
+      <li>B. 品质至上型</li>
+      <li>C. 价格敏感型</li>
+      <li>D. 随意浏览型</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。属「价格敏感型」——注重性价比、害怕花冤枉钱，但并非不愿意花钱。应对：先认同「物有所值」的需求，再用「价值分解法」引导关注长期使用成本。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">4</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">面对「犹豫不决型」顾客（反复看、拿不定主意，总说「再考虑考虑」），最有效的策略是？</div>
+    <ul class="options">
+      <li>A. 让他继续慢慢比较，不打扰</li>
+      <li>B. 帮他缩小选择范围，并给出明确的推荐与理由</li>
+      <li>C. 直接报最低价逼单</li>
+      <li>D. 告诉他「过了今天就涨价」</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。犹豫型顾客担心选错、需要外力帮他确定。应帮他缩小范围（「在这两款里，我推荐这一款，原因是……」），给出明确建议，而不是让他继续无休止地比较。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">5</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">门店指标「连带率」的计算公式是？</div>
+    <ul class="options">
+      <li>A. 成交单数 ÷ 接待人数 × 100%</li>
+      <li>B. 总销售额 ÷ 成交单数</li>
+      <li>C. 总销售件数 ÷ 成交单数</li>
+      <li>D. 回头客数 ÷ 总顾客数 × 100%</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。连带率＝总销售件数 ÷ 成交单数（行业参考 1.3～2.0），衡量一单平均卖出多少件；A 是成交率，B 是客单价，D 是复购率。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">6</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">某门店某日进店 68 人、成交 29 单，则当日成交率约为？</div>
+    <ul class="options">
+      <li>A. 29%</li>
+      <li>B. 42.6%</li>
+      <li>C. 58%</li>
+      <li>D. 235%</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。成交率＝成交单数 ÷ 接待人数 × 100%＝29 ÷ 68 × 100% ≈ 42.6%，属偏低（参考值 40～60% 的下沿），需重点提升接待技能与需求挖掘。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">7</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">高端产品「三步推介法」的正确顺序是？</div>
+    <ul class="options">
+      <li>A. 先报价 → 再讲品牌 → 最后请他考虑</li>
+      <li>B. 了解痛点 → 引出解决方案 → 价值背书并邀请体验</li>
+      <li>C. 堆砌技术术语 → 对比竞品 → 打折</li>
+      <li>D. 直接推荐最贵的 → 强调限量 → 逼单</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。三步推介法：① 了解痛点（先问出顾客的不适）；② 引出解决方案（对应推荐产品并讲清价值）；③ 价值背书 + 主动邀请体验（品牌背书 + 对比试戴，让差异「一戴就知道」）。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">8</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">同事正在为一位阿姨介绍渐进镜，阿姨的老伴在旁边等候，你发现老伯也在看展柜上的眼镜。正确的做法是？</div>
+    <ul class="options">
+      <li>A. 装作没看见，避免打扰同事的顾客</li>
+      <li>B. 主动上前向老伯问好，询问是否也有需要，捕捉陪购者商机而不打断同事</li>
+      <li>C. 把老伯拉到另一张桌子从头接待</li>
+      <li>D. 大声提醒同事「你还有一位顾客」</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。团队协作要「灵活补位」又「不打断同事」：主动向陪购者问好、了解其需求，既改善等候体验，又捕捉潜在商机，同时不干扰同事正在进行的服务。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">9</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">消费心理中的「锚定效应」，在门店销售里的典型应用是？</div>
+    <ul class="options">
+      <li>A. 先介绍最低价产品，让顾客觉得便宜</li>
+      <li>B. 先介绍最高端款，再推荐目标款，让目标款显得合理实惠</li>
+      <li>C. 只报一个价格，不给顾客比较的机会</li>
+      <li>D. 反复强调库存紧张</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。锚定效应——先看到的数字会成为判断基准。先介绍旗舰/高端款，再推荐目标款，顾客会觉得目标款「合理、划算」；D 属于稀缺心理。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">10</div><span class="q-type">单选</span><span class="q-level lv-up">提升</span><span class="q-score">3 分</span></div>
+    <div class="question-text">某门店客单价持续下滑，最可能的原因与最合适的应对是？</div>
+    <ul class="options">
+      <li>A. 客流太少 → 加大外部引流</li>
+      <li>B. 低价品销售占比高、连带销售意识弱 → 设置销售目标、培训套餐推荐技巧</li>
+      <li>C. 员工人数过多 → 裁减人员</li>
+      <li>D. 验光仪坏了 → 立刻更换设备</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。客单价＝总销售额 ÷ 成交单数，持续下滑多为「低价品占比高、连带销售弱」。应对：设置客单价目标、培训向上销售（Upsell）与连带销售（Cross-sell）、设计基础/进阶/尊享套餐引导中高档。</div>
+  </div>
+
+  <div class="sub-title">（二）判断题（共 5 题，每题 2 分，共 10 分。点击「正确 / 错误」即时判定）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">11</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">电脑验光的结果可以直接作为最终配镜处方。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。电脑验光只是初始参考，通常偏近视化，必须经主觉验光（含雾视、JCC 等）确认后才能作为处方；电脑与主觉结果差异在 ±0.50D 以内属正常。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">12</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">客单价的计算公式是「总销售额 ÷ 成交单数」。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。客单价＝总销售额 ÷ 成交单数（参考值 600～1500 元/单），反映每单的平均价值，提升方向为产品升级与连带销售。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">13</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">服务体验型活动（如免费验光日）应抓住机会当场尽量多推销产品。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。服务体验型活动的目的是<strong>引流和建立信任</strong>，不要急于当场推销，重点在于留下顾客信息，为后续转化做铺垫。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">14</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">高端客户往往更在意「值不值」而不是「贵不贵」，应多讲技术差异与使用体验。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。高端客户重视专业建议、解决方案与品牌背书，不以价格为核心。应多讲技术差异、用数字说话（如「镀膜硬度是普通的 3 倍」）、邀请对比试戴，而非一味打折。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">15</div><span class="q-type">判断</span><span class="q-level lv-up">提升</span><span class="q-score">2 分</span></div>
+    <div class="question-text">对工作安排有异议时，应当着顾客的面与店长当场争论，把问题说清楚。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。团队沟通应「不当众指责、有分歧先私下沟通」：选非忙碌时段私下与店长沟通，先理解原因再表达想法，绝不在顾客面前争论或互相推责。</div>
+  </div>
+
+  <div class="sub-title">（三）简答题（共 2 题，每题 10 分，共 20 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">16</div><span class="q-type">简答</span><span class="q-level lv-base">基础</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请写出主觉验光的主要步骤（至少 5 步），并说明「雾视」的作用。</div>
+    <textarea class="answer-area" placeholder="主觉验光步骤 + 雾视作用……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点：<strong>主觉验光步骤（答对 5 步得 6 分）</strong>：① 初始球镜确认（以电脑验光为参考，先右眼后左眼）；② 雾视（Fogging）；③ 逐步去雾找最佳球镜（每次 -0.25D，直到清楚度不再提升）；④ 散光确认（JCC 法，先定轴向再定度数）；⑤ 再次精调球镜；⑥ 双眼平衡（交替遮盖法 / 棱镜分离法）；⑦ 试戴主观确认（走动、看远看近）。<strong>雾视作用（4 分）</strong>：在可接受度数上增加 +0.75D～+1.00D，使视力模糊到约 0.3，让眼睛放松调节、消除调节紧张（尤其青少年调节力强），从而避免「过矫」、保证验光结果准确可靠。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">17</div><span class="q-type">简答</span><span class="q-level lv-up">提升</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请写出顾客消费决策的五个阶段，并任选其中两个阶段各写出一条销售对策。</div>
+    <textarea class="answer-area" placeholder="五个阶段 + 对策……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点：<strong>五个阶段（每阶段 1.2 分，共 6 分）</strong>：① 需求觉醒（感到需要配镜）；② 信息搜集（搜索门店/品牌/价格、问朋友）；③ 方案评估（比较价格/品质/服务/品牌，最关键节点）；④ 购买决策（顾虑「买贵了/不合适」）；⑤ 购后评估（满意→复购推荐，不满意→投诉差评）。<strong>对策（任选两个，各 2 分）</strong>：需求觉醒→用社区宣传/朋友圈/免费验光降低行动门槛；信息搜集→提供清晰产品说明与优质评价，不催促；方案评估→用专业知识帮顾客建立评估标准，引导关注真正重要的因素；购买决策→强调售后保障与退换政策，减少等候；购后评估→取镜时教适应方法、定期回访，把购后互动变成下次购买的铺垫。</div>
+  </div>
+
+  <div class="section-title">二、实操题（共 40 分 · 由带教师傅现场观察评分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">18</div><span class="q-type">情景应对</span><span class="q-level lv-mid">中等</span><span class="q-score">20 分</span></div>
+    <div class="scenario-box">
+      <strong>📋 情景：</strong>门店某日数据——进店 68 人，成交 29 单，销售总额 35,480 元，当日目标 38,000 元。店长让你分析并给出改进建议。
+    </div>
+    <div class="question-text">请现场计算成交率与客单价，说明数据反映的问题，并提出至少 2 条改进动作。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 4–5 分）：</strong><br>
+      ① <strong>成交率</strong>＝29 ÷ 68 × 100% ≈ 42.6%（略低，参考 40～60%），需提升接待技能与需求挖掘；<br>
+      ② <strong>客单价</strong>＝35,480 ÷ 29 ≈ 1,223 元/单（中上水平），说明单价表现不错；<br>
+      ③ <strong>达成率</strong>＝35,480 ÷ 38,000 × 100% ≈ 93.4%，差约 1,520 元未达标；<br>
+      ④ <strong>问题定位</strong>：主要短板在成交率，而非客单价；<br>
+      ⑤ <strong>改进动作（答对 2 条以上）</strong>：如「加强接待话术与 SPIN 需求挖掘训练」「丰富中档产品、减少价格敏感流失」「高峰期增派人手缩短等候」「用试戴/对比降低顾客顾虑」等。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">19</div><span class="q-type">动手操作</span><span class="q-level lv-base">基础</span><span class="q-score">20 分</span></div>
+    <div class="question-text">请带教师傅扮演一位「品质至上型」高端客户，现场考核：① 用<strong>三步推介法</strong>完成一次高端镜片推介；② 用<strong>对比试戴</strong>让顾客感受差异；③ 解释至少 1 个高端技术术语的销售价值。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 5 分）：</strong><br>
+      ① <strong>三步推介法</strong>：先了解痛点（「您之前戴普通镜片有没有边缘模糊、眼睛易酸？」）→ 引出解决方案（对应推荐高端产品并讲清价值）→ 价值背书 + 邀请体验；<br>
+      ② <strong>对比试戴</strong>：提前告知差异点，先戴普通款再换高端款，陪同引导（往左看、往右看、转头看远），试戴后主动询问感受，用「假设成交法」收口；<br>
+      ③ <strong>术语的销售价值</strong>：如「非球面设计→整片清晰」「高折射率 1.67/1.74→更薄更美观」「高硬度镀膜→耐磨耐用」「超级疏水疏油膜→易清洁」，要讲成顾客听得懂的利益；<br>
+      ④ <strong>用数字说话</strong>：避免「这款很好」的模糊表述，改用「镀膜硬度是普通镜片的 3 倍、寿命延长 2 年以上」这类具体证据；<br>
+      ⑤ <strong>规范与态度</strong>：不堆术语、不一味谈价格、不忘售后承诺（品牌防雾/防划、季度免费保养、适应期保障），体现专业顾问感。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="score-box">
+    <h3>📊 第7周周测成绩记录</h3>
+    <table class="score-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题号</th><th>满分</th><th>得分</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题</td><td>单项选择</td><td>1–10</td><td>30 分</td><td>　　　分</td></tr>
+        <tr><td>判断</td><td>11–15</td><td>10 分</td><td>　　　分</td></tr>
+        <tr><td>简答</td><td>16–17</td><td>20 分</td><td>　　　分</td></tr>
+        <tr><td>二、实操题</td><td>情景应对 / 动手操作</td><td>18–19</td><td>40 分</td><td>　　　分</td></tr>
+        <tr style="background:#f5eef8;"><td colspan="3"><strong>合计</strong></td><td><strong>100 分</strong></td><td><strong>　　　分</strong>（及格线 70 分）</td></tr>
+      </tbody>
+    </table>
+    <p class="sign-line">📝 带教师傅签字确认：___________________　　日期：____________</p>
+    <p class="sign-line">🔁 未达 70 分：由训练员针对失分集中项复训 1–2 天，重考合格后方可进入第 8 周。</p>
+  </div>
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_49_学习内容.html">← 返回第7周总结复盘</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    <a class="nav-btn" href="../第8周_结业冲刺与毕业考核/Day_50_学习内容.html">进入第8周 →</a>
+  </div>
+</div>
+
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background .2s,border-color .2s;}
+.options li:hover{background:#f5eef8;border-color:#d2b4de;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:inline-block!important;}
+</style>
+<script id="interactive-options-type-a-js">
+(function(){
+  document.querySelectorAll('.question-card').forEach(function(card){
+    var opts=card.querySelectorAll('.options li');
+    if(!opts.length) return;
+    var hint=card.querySelector('.answer-hint');
+    var answered=false;
+    function getCorrect(){
+      if(!hint) return null;
+      var t=hint.innerHTML||hint.textContent;
+      var m=t.match(/正确答案[:：][\s]*(?:<strong>)?([A-Da-d])/i);
+      return m?m[1].toUpperCase():null;
+    }
+    opts.forEach(function(li,idx){
+      li.addEventListener('click',function(){
+        if(answered)return;
+        answered=true;
+        var letters=['A','B','C','D','E'];
+        var chosen=letters[idx];
+        var correct=getCorrect();
+        opts.forEach(function(o){o.classList.add('done');});
+        if(correct&&chosen===correct){
+          li.classList.add('correct');
+          li.textContent='✅ '+li.textContent;
+        } else {
+          li.classList.add('wrong');
+          li.textContent='❌ '+li.textContent;
+          if(correct){
+            var ci=letters.indexOf(correct);
+            if(ci>=0&&opts[ci]){opts[ci].classList.add('highlight');opts[ci].textContent='👉 '+opts[ci].textContent;}
+          }
+        }
+        if(hint){hint.style.display='block';hint.style.marginTop='12px';}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
