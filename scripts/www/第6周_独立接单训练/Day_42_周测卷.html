@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 42 周测卷 | 第6周 · 独立接单综合</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#2980b9,#1a5276);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.92;line-height:1.7;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+
+  .exam-info{background:#fff;border:1px solid #e6ebf3;border-radius:14px;padding:22px 24px;margin:22px 0;box-shadow:0 2px 10px rgba(26,58,107,.06)}
+  .ei-title{font-size:1.12em;font-weight:800;color:#1a5276;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .ei-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  .ei-item{background:#eaf4fc;border:1px solid #cfe3f2;border-radius:10px;padding:10px 12px;text-align:center}
+  .ei-k{display:block;font-size:.78em;color:#5f7286;margin-bottom:4px}
+  .ei-v{display:block;font-size:1.02em;font-weight:800;color:#1a5276}
+  .ei-h{font-weight:800;color:#2980b9;font-size:.95em;margin:16px 0 8px;display:flex;align-items:center;gap:7px}
+  .ei-h::before{content:"";width:4px;height:14px;border-radius:3px;background:#5dade2}
+  .ei-table{width:100%;border-collapse:collapse;margin:2px 0 6px}
+  .ei-table th{background:#2980b9;color:#fff;padding:8px 12px;text-align:left;font-size:.86em}
+  .ei-table td{padding:8px 12px;border-bottom:1px solid #eef2f6;font-size:.86em;color:#445}
+  .ei-table tr:nth-child(even) td{background:#f5faff}
+  .ei-req{margin:2px 0 0;padding-left:20px}
+  .ei-req li{font-size:.88em;line-height:1.85;color:#445}
+
+  .section-title{font-size:1.15em;color:#1a5276;font-weight:800;margin:32px 0 14px;padding-left:12px;border-left:4px solid #2980b9}
+  .sub-title{font-size:1em;font-weight:800;color:#2980b9;margin:20px 0 10px}
+
+  .question-card{background:white;border-radius:12px;padding:22px 24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+  .q-num{background:#2980b9;color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.86em;flex-shrink:0;}
+  .q-type{background:#e3f0fa;color:#1a5276;padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:600;}
+  .q-level{padding:3px 11px;border-radius:12px;font-size:0.78em;font-weight:700;}
+  .lv-base{background:#e8f5e9;color:#2e7d32;}
+  .lv-mid{background:#fff4e0;color:#c47f17;}
+  .lv-up{background:#fdeaea;color:#c0392b;}
+  .q-score{color:#999;font-size:0.8em;margin-left:auto;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.7;margin-bottom:14px;}
+  .options{list-style:none;padding:0;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+  .options li:hover{background:#eaf4fc;border-color:#a9cce3;}
+  .options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+  .options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+  .options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+  .options li.done{cursor:default;}
+  .answer-area{width:100%;min-height:88px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#555;display:none;line-height:1.8;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .scenario-box{background:#eef6fd;border-left:4px solid #2980b9;border-radius:8px;padding:14px 16px;margin:2px 0 12px;font-size:0.9em;line-height:1.8;}
+
+  .score-box{background:linear-gradient(135deg,#e8f4fb,#f2f9fe);border-radius:12px;padding:20px;margin:26px 0 10px;}
+  .score-box h3{color:#1a5276;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#2980b9;color:white;padding:8px 12px;text-align:left;font-size:0.86em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.85em;}
+  .sign-line{color:#666;font-size:0.88em;margin-top:10px;}
+
+  .nav-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 50px;}
+  .nav-btn{background:#2980b9;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#1a5276;border:2px solid #2980b9;}
+
+  .home-topbar{background:#fff;padding:10px 0}
+  .home-topbar .ht-inner{width:min(1300px,calc(100% - 32px));max-width:1300px;margin:0 auto}
+  .home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;}
+  .home-topbar a:hover{background:#e6eaf6;color:#283593;}
+
+  .header{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin:18px auto 0!important;padding:34px 30px!important;
+    border-radius:14px!important;box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+  }
+  .container{
+    width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+    margin-left:auto!important;margin-right:auto!important;
+    padding-left:0!important;padding-right:0!important;
+  }
+  @media(max-width:900px){
+    .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+    .header h1{font-size:1.5em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important}
+    .container{padding-left:0!important;padding-right:0!important}
+  }
+  @media(max-width:600px){
+    .header{padding:20px 15px!important}
+    .header h1{font-size:1.3em!important}
+    .ei-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+    .question-card{padding:16px 14px}
+    .exam-info{padding:16px 14px}
+  }
+  @media(max-width:1100px){
+    table{display:table!important;width:100%!important;max-width:100%!important;table-layout:auto!important;border-collapse:collapse!important}
+    th,td{overflow-wrap:break-word!important;word-break:break-word!important}
+  }
+  @media(max-width:900px){th,td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}}
+  @media(max-width:600px){th,td{padding:6px 5px!important;font-size:11px!important}}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第6周 · Day 42 — 周测卷</span>
+  <h1>🏆 第6周周测卷 · 独立接单综合</h1>
+  <div class="subtitle">覆盖 Day 36–41 全部学习内容 ｜ 满分 100 分（理论 60 + 实操 40）｜ 及格 70 分</div>
+</div>
+
+<div class="container">
+
+  <div class="exam-info">
+    <div class="ei-title">📋 考试说明（开考前请先阅读）</div>
+    <div class="ei-grid">
+      <div class="ei-item"><span class="ei-k">满分</span><span class="ei-v">100 分</span></div>
+      <div class="ei-item"><span class="ei-k">及格线</span><span class="ei-v">70 分</span></div>
+      <div class="ei-item"><span class="ei-k">建议时长</span><span class="ei-v">45 分钟</span></div>
+      <div class="ei-item"><span class="ei-k">考试形式</span><span class="ei-v">闭卷·独立作答</span></div>
+    </div>
+
+    <div class="ei-h">一、题型、题量与分值</div>
+    <table class="ei-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题量</th><th>分值</th><th>小计</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题<br>（60 分）</td><td>单项选择</td><td>10 题</td><td>每题 3 分</td><td>30 分</td></tr>
+        <tr><td>判断</td><td>5 题</td><td>每题 2 分</td><td>10 分</td></tr>
+        <tr><td>简答</td><td>2 题</td><td>每题 10 分</td><td>20 分</td></tr>
+        <tr><td>二、实操题<br>（40 分）</td><td>情景应对 / 动手操作</td><td>2 题</td><td>每题 20 分</td><td>40 分</td></tr>
+        <tr><td colspan="4"><strong>合计</strong></td><td><strong>100 分</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">二、难度分布</div>
+    <table class="ei-table">
+      <thead><tr><th>难度层级</th><th>考查重点</th><th>占比</th><th>对应题目</th></tr></thead>
+      <tbody>
+        <tr><td>基础</td><td>记忆与理解（流程步骤、概念、参数含义）</td><td>约 60%</td><td>单选 1、2、5、6、7、9、判断 11–12、14、简答 16、实操 19</td></tr>
+        <tr><td>中等</td><td>简单应用与判断（场景应对、技巧选择）</td><td>约 30%</td><td>单选 3、4、8、判断 13、15、实操 18</td></tr>
+        <tr><td>提升</td><td>综合情境、迁移应用（客群差异化服务、全流程整合）</td><td>约 10%</td><td>单选 10、简答 17</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ei-h">三、作答要求</div>
+    <ul class="ei-req">
+      <li>理论题独立完成，<strong>不得翻阅资料、不得相互讨论</strong>；选择题与判断题均为<strong>点击选项即可即时判定对错</strong>，点击后自动显示解析。</li>
+      <li>简答题按要点作答，条理清楚、分点书写，答对要点即得分。</li>
+      <li>实操题由带教师傅现场观察评分，按「流程是否完整、处理是否得当」给分。</li>
+      <li>满分 100 分，<strong>70 分为及格</strong>；未及格者按本页底部说明复训后重考。</li>
+    </ul>
+  </div>
+
+  <div class="section-title">一、理论题（共 60 分）</div>
+
+  <div class="sub-title">（一）单项选择（共 10 题，每题 3 分，共 30 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">1</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">标准接待流程 7 步中，第 6 步「制单确认」必须做到的是？</div>
+    <ul class="options">
+      <li>A. 由顾客自己填写工单</li>
+      <li>B. 当面与顾客逐项核对处方数据、镜框型号、镜片规格、价格与取镜时间</li>
+      <li>C. 先收款再核对</li>
+      <li>D. 让顾客回家后电话确认</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。制单确认必须<strong>当面逐项核对</strong>（处方数据、镜框型号、镜片品牌规格、价格、取镜时间）；错误一旦进入加工，后续补救成本极高。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">2</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客说「太贵了」，约 70% 的情况其实属于下列哪一类？</div>
+    <ul class="options">
+      <li>A. 顾客真的完全没钱</li>
+      <li>B. 感知价值不足或习惯性还价</li>
+      <li>C. 顾客马上要退货</li>
+      <li>D. 顾客视力有问题</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。价格异议的三种成因：①真实预算不够、②感知价值不足、③习惯性还价。其中约 70% 属于②③——<strong>只需提升感知价值，无需真正降价</strong>。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">3</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">顾客明确表示「预算只有 800 元左右」，最合适的处理技巧是？</div>
+    <ul class="options">
+      <li>A. 继续强推 2000 元的高端款</li>
+      <li>B. 诚恳推荐更实惠的高性价比方案，先把客户留住</li>
+      <li>C. 直接说「那没有适合您的了」</li>
+      <li>D. 私自把高价款的标价改成 800 元</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。这属于「降档推荐法」：当客户预算确实有限时，诚恳推荐更实惠的方案（如 680 元非球面镜片），先把客户留住，建立长期关系，而不是硬推高价或擅自改价。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">4</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">价格谈判中，下列哪种做法是<strong>严重损害产品信誉</strong>的错误做法？</div>
+    <ul class="options">
+      <li>A. 先认同客户感受，再解释价值</li>
+      <li>B. 客户一说「贵」就立刻降价</li>
+      <li>C. 用价值和场景重新定义价格</li>
+      <li>D. 报价时坦然不主动降价</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。客户刚说贵就立刻降价，会让顾客怀疑「本来就虚高」，严重损害产品信誉。正确顺序是：<strong>先认同 → 再用价值/场景重新定义价格 → 给出方案后沉默等待</strong>。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">5</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">12 岁以下儿童首次配镜，正确的做法是？</div>
+    <ul class="options">
+      <li>A. 直接用电脑验光结果配镜</li>
+      <li>B. 建议家长先到眼科医院做散瞳验光，再凭处方来配镜</li>
+      <li>C. 按成人标准验光即可</li>
+      <li>D. 不用验光，直接按其旧镜度数配</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。儿童睫状肌调节能力强，不散瞳的电脑验光偏差大；儿童近视中约 20–30% 是假性近视，不散瞳直接配镜会「把假近视配成真近视」。因此首次配镜应到眼科医院<strong>散瞳验光</strong>。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">6</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">儿童镜架选择「安全性第一」，优先推荐的材质是？</div>
+    <ul class="options">
+      <li>A. 带金属锐角的全框</li>
+      <li>B. TR-90 弹性材质</li>
+      <li>C. 尽量大框</li>
+      <li>D. 越重越结实越好</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。儿童镜架优先推荐 <strong>TR-90 弹性材质</strong>（耐摔、不易伤人），避免金属锐角；鼻托要适合亚洲儿童低鼻梁，镜腿长度合适，不追求大框。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">7</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">关于老视（老花），下列说法正确的是？</div>
+    <ul class="options">
+      <li>A. 老视是一种眼科疾病，需要手术治疗</li>
+      <li>B. 老视是晶状体弹性下降、调节力减退的自然衰老现象，不是疾病</li>
+      <li>C. 老视就是远视，两者完全一样</li>
+      <li>D. 老视度数会随年龄减小</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。老视是随年龄增长、晶状体弹性下降、调节能力减退导致看近困难的<strong>自然衰老现象，不是疾病</strong>；且度数随年龄缓慢递增（约每 5 年 +0.50D）。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">8</div><span class="q-type">单选</span><span class="q-level lv-mid">中等</span><span class="q-score">3 分</span></div>
+    <div class="question-text">渐进多焦点镜片验配中，最关键的参数、也是导致佩戴不适最常见的原因是？</div>
+    <ul class="options">
+      <li>A. 镜框颜色</li>
+      <li>B. 瞳孔高度（瞳高）</li>
+      <li>C. 镜片品牌</li>
+      <li>D. 镜盒款式</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。渐进镜必须让客户戴上镜架、直视前方，由验光师精确标注<strong>瞳孔高度</strong>。瞳高测量不准是渐进镜不舒适的最常见原因。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">9</div><span class="q-type">单选</span><span class="q-level lv-base">基础</span><span class="q-score">3 分</span></div>
+    <div class="question-text">太阳镜最基本的防护功能是防紫外线，正规产品应达到的标准是？</div>
+    <ul class="options">
+      <li>A. UV100</li>
+      <li>B. UV400（阻隔波长 ≤400nm 的紫外线）</li>
+      <li>C. 镜片颜色越深越好</li>
+      <li>D. 镜片越贵越好</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B</strong>。应选 <strong>UV400</strong> 标准。注意：防 UV 能力取决于镜片材质与镀膜，<strong>与颜色深浅无关</strong>；劣质深色镜片会让瞳孔散大，反而放进更多紫外线。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">10</div><span class="q-type">单选</span><span class="q-level lv-up">提升</span><span class="q-score">3 分</span></div>
+    <div class="question-text">关于售后回访与交叉销售，下列做法<strong>不恰当</strong>的是？</div>
+    <ul class="options">
+      <li>A. 取镜后 3 天做首次回访，询问佩戴感受</li>
+      <li>B. 交叉销售的最佳时机是客户刚成单、心情最好的时候</li>
+      <li>C. 回访时以关怀为主，尽量多推荐高价产品以提升业绩</li>
+      <li>D. 配镜后 6 个月提醒复查视力</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>C</strong>。回访的目的是<strong>关怀与维护关系</strong>，保持简短（1–2 分钟），<strong>不要硬推销</strong>；硬推只会让客户反感。交叉销售应在客户刚成单、心情最好时自然提一句，不在犹豫期增加决策负担。</div>
+  </div>
+
+  <div class="sub-title">（二）判断题（共 5 题，每题 2 分，共 10 分。点击「正确 / 错误」即时判定）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">11</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">太阳镜镜片颜色越深，防紫外线效果就越好。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。防 UV 能力取决于镜片材质与镀膜，与颜色深浅无关。劣质深色镜片会让瞳孔散大，反而放进更多紫外线，造成更大伤害。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">12</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">儿童配镜的决策者通常是家长，因此沟通对象主要是家长。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。儿童配镜需要家长全程参与，决策者是家长，所以要理解家长最关心的痛点（怕度数加深、怕戴镜不便、怕浪费），用「专业不吓人、讲清后果、给可执行建议」的方式沟通。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">13</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">单光老花镜只能看近、不能看远，而渐进多焦点镜片可以一副镜同时兼顾远、中、近。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。单光老花镜只有近用视力补偿；渐进多焦点镜片从远到近连续变焦，一副镜兼顾远近，外观与普通眼镜相同、无分界线，是目前最受欢迎的老花镜方案。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">14</div><span class="q-type">判断</span><span class="q-level lv-base">基础</span><span class="q-score">2 分</span></div>
+    <div class="question-text">交叉销售的最佳时机是客户刚成单、心情最好的时候。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong>。客户刚成单时心情最好，此时自然提一句（如「您刚配了近视镜，户外开车没有太阳镜眩光会很强……」）最容易被接受；不要在客户犹豫期介绍更多产品。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">15</div><span class="q-type">判断</span><span class="q-level lv-mid">中等</span><span class="q-score">2 分</span></div>
+    <div class="question-text">取镜后回访的主要目的是推销更多产品，所以应抓住机会多推荐。</div>
+    <ul class="options">
+      <li>A. 正确</li>
+      <li>B. 错误</li>
+    </ul>
+    <div class="answer-hint">✅ 正确答案：<strong>B（错误）</strong>。回访以<strong>关怀和关系维护</strong>为主，保持简短（1–2 分钟），不要在回访中硬推销。满意度高时，客户自然会带来复购与转介绍。</div>
+  </div>
+
+  <div class="sub-title">（三）简答题（共 2 题，每题 10 分，共 20 分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">16</div><span class="q-type">简答</span><span class="q-level lv-base">基础</span><span class="q-score">10 分</span></div>
+    <div class="question-text">请按顺序写出独立接单「标准接待流程」的 7 个步骤。</div>
+    <textarea class="answer-area" placeholder="7 步，按顺序书写……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点（每步约 1.4 分，顺序错误酌情扣分）：① <strong>迎宾问候</strong>（1 米内主动起身、微笑问候）；② <strong>需求了解</strong>（开放式提问使用场景、视力历史、预算）；③ <strong>验光检查</strong>（电脑验光 + 主觉验光确认处方）；④ <strong>方案推荐</strong>（按需推荐 1–3 款，用 FAB 介绍）；⑤ <strong>试戴选定</strong>（调整鼻托镜腿，确认舒适与美观）；⑥ <strong>制单确认</strong>（当面逐项核对处方、镜框、镜片、价格、取镜时间）；⑦ <strong>送客告别</strong>（告知取镜时间、留联系方式、礼貌送客）。核心：紧张时回到流程，就不会乱。</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">17</div><span class="q-type">简答</span><span class="q-level lv-up">提升</span><span class="q-score">10 分</span></div>
+    <div class="question-text">儿童配镜与成人配镜有哪些主要区别？请至少写出 3 点，并说明与家长沟通应注意的要点。</div>
+    <textarea class="answer-area" placeholder="3 点以上区别 + 家长沟通要点……"></textarea>
+    <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button>
+    <div class="answer-hint">✅ 参考要点：<strong>主要区别（答对 3 点得 6 分）</strong>：① <strong>验光方式</strong>——12 岁以下（尤其首次）需散瞳验光，不适用成人标准，且需复验；② <strong>镜架选择</strong>——安全性第一，优先 TR-90 弹性材质、防锐角、适合低鼻梁，不追求大框；③ <strong>镜片功能</strong>——推荐防蓝光、离焦镜片等近视防控产品，按度数增长速度推荐；④ <strong>沟通对象</strong>——决策者是家长，需向家长解释而非孩子；⑤ <strong>后续管理</strong>——需建立视力档案，提醒每 3–6 个月复查。<strong>家长沟通要点（4 分）</strong>：遵循「专业不吓人、讲清后果、给可执行建议」三条原则——如家长担心「配镜会越戴越深」，应说明「不配镜才会加深更快，科学配镜 + 用眼卫生才是关键」，并给出「每学习 40 分钟休息 10 分钟、多户外活动」等可执行建议。</div>
+  </div>
+
+  <div class="section-title">二、实操题（共 40 分 · 由带教师傅现场观察评分）</div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">18</div><span class="q-type">情景应对</span><span class="q-level lv-mid">中等</span><span class="q-score">20 分</span></div>
+    <div class="scenario-box">
+      <strong>📋 情景：</strong>一位顾客看上一副 1680 元的镜片，说："网上同款才 900 元，你们凭什么卖这么贵？"带教师傅在旁观察。请现场处理。
+    </div>
+    <div class="question-text">请说明你的处理步骤与关键话术，完成一次「报价—异议—处理」的完整应对。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 4–5 分）：</strong><br>
+      ① <strong>先认同、不争辩</strong>：先认可顾客感受「您会对比价格很正常，我帮您把差别讲清楚」；<br>
+      ② <strong>竞品对比法</strong>：客观对比——说明本店是代理价、可提供 2 年免费清洗保养等服务，突出「综合更划算」，<strong>不贬低同行</strong>；<br>
+      ③ <strong>价值强化 / 拆分成本法</strong>：把价格从「成本」转化为「投资」，如「这副眼镜至少用 2 年，平摊每天不到 2 块钱，还保护您每天用电脑 8 小时的眼睛」；<br>
+      ④ <strong>守住价格底线</strong>：不擅自降价、不贬低产品；如顾客仍犹豫，可用「降档推荐法」诚恳推荐更实惠方案，先把客户留住；<br>
+      ⑤ <strong>收口与态度</strong>：语言专业、有耐心，不过度催促，最后自然收口（假设成交 / 二择一），并说明可请师傅进一步确认。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header"><div class="q-num">19</div><span class="q-type">动手操作</span><span class="q-level lv-base">基础</span><span class="q-score">20 分</span></div>
+    <div class="question-text">请带教师傅扮演顾客，现场考核：① 完整走一遍<strong>独立接单标准接待流程（7 步）</strong>；② 针对一位「45 岁、看手机/看书近了模糊、平时也开车」的顾客，推荐并解释<strong>渐进多焦点镜片</strong>（讲清远、中、近三个区域及适应期）。</div>
+    <div class="answer-hint" style="display:none">
+      ✅ <strong>评分要点（每点约 5 分）：</strong><br>
+      ① <strong>流程完整性</strong>：7 步无遗漏（迎宾→问需求→验光→推荐→试戴→制单确认→送客），重点是「制单确认当面核对」与「送客交代取镜时间」；<br>
+      ② <strong>需求识别</strong>：能听懂「近了模糊 + 开车」= 老视 + 远近都需要，推荐渐进镜而非单光老花镜；<br>
+      ③ <strong>产品解释</strong>：讲清渐进镜<strong>远用区（上看远/开车）、中间区（中距离看电脑）、近用区（下看近/看书手机）</strong>三区，一镜兼顾远近；<br>
+      ④ <strong>适应期说明</strong>：主动告知需 1–2 周适应、初戴可能轻微头晕属正常，并给出分步适应建议（先坐着看→再走动→正常使用），同时说明瞳高测量的重要性；<br>
+      ⑤ <strong>规范与态度</strong>：流程完整、表述专业、有耐心；遇到不会的问题诚实说「我请验光师帮您确认」，不擅自承诺、不越界。
+    </div>
+    <button class="show-answer-btn" onclick="this.previousElementSibling.style.display='block';this.style.display='none'">查看评分要点</button>
+  </div>
+
+  <div class="score-box">
+    <h3>📊 第6周周测成绩记录</h3>
+    <table class="score-table">
+      <thead><tr><th>部分</th><th>题型</th><th>题号</th><th>满分</th><th>得分</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">一、理论题</td><td>单项选择</td><td>1–10</td><td>30 分</td><td>　　　分</td></tr>
+        <tr><td>判断</td><td>11–15</td><td>10 分</td><td>　　　分</td></tr>
+        <tr><td>简答</td><td>16–17</td><td>20 分</td><td>　　　分</td></tr>
+        <tr><td>二、实操题</td><td>情景应对 / 动手操作</td><td>18–19</td><td>40 分</td><td>　　　分</td></tr>
+        <tr style="background:#e8f4fb;"><td colspan="3"><strong>合计</strong></td><td><strong>100 分</strong></td><td><strong>　　　分</strong>（及格线 70 分）</td></tr>
+      </tbody>
+    </table>
+    <p class="sign-line">📝 带教师傅签字确认：___________________　　日期：____________</p>
+    <p class="sign-line">🔁 未达 70 分：由训练员针对失分集中项复训 1–2 天，重考合格后方可进入第 7 周。</p>
+  </div>
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_42_学习内容.html">← 返回第6周总结复盘</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    <a class="nav-btn" href="../第7周_综合提升训练/Day_43_学习内容.html">进入第7周 →</a>
+  </div>
+</div>
+
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background .2s,border-color .2s;}
+.options li:hover{background:#eaf4fc;border-color:#a9cce3;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:inline-block!important;}
+</style>
+<script id="interactive-options-type-a-js">
+(function(){
+  document.querySelectorAll('.question-card').forEach(function(card){
+    var opts=card.querySelectorAll('.options li');
+    if(!opts.length) return;
+    var hint=card.querySelector('.answer-hint');
+    var answered=false;
+    function getCorrect(){
+      if(!hint) return null;
+      var t=hint.innerHTML||hint.textContent;
+      var m=t.match(/正确答案[:：][\s]*(?:<strong>)?([A-Da-d])/i);
+      return m?m[1].toUpperCase():null;
+    }
+    opts.forEach(function(li,idx){
+      li.addEventListener('click',function(){
+        if(answered)return;
+        answered=true;
+        var letters=['A','B','C','D','E'];
+        var chosen=letters[idx];
+        var correct=getCorrect();
+        opts.forEach(function(o){o.classList.add('done');});
+        if(correct&&chosen===correct){
+          li.classList.add('correct');
+          li.textContent='✅ '+li.textContent;
+        } else {
+          li.classList.add('wrong');
+          li.textContent='❌ '+li.textContent;
+          if(correct){
+            var ci=letters.indexOf(correct);
+            if(ci>=0&&opts[ci]){opts[ci].classList.add('highlight');opts[ci].textContent='👉 '+opts[ci].textContent;}
+          }
+        }
+        if(hint){hint.style.display='block';hint.style.marginTop='12px';}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
