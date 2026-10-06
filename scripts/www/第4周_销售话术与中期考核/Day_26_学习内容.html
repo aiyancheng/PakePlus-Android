@@ -256,6 +256,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -381,7 +394,6 @@ body{padding:0!important;margin:0!important}
     </ul>
   </div>
 
-
     <!-- 补充 -->
   
 <!-- LM-START -->
@@ -417,38 +429,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">尊重意愿，换成替代方式（加微信、留门店电话回拨）。可以说明用途：「只用于通知取镜和复查提醒，不群发广告。」顾客仍然拒绝就不强求。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：连带销售的最佳时机是什么时候？</summary>
-      <div class="lm-a"><b>参考答案：</b>顾客主单已确认（或已付定金）之后，理由是从「使用便利」出发补位，而不是在顾客还没决定时加压力。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：列举 4 类连带方向。</summary>
-      <div class="lm-a"><b>参考答案：</b>配件类（镜盒/镜布/护理液）、第二副（备用镜/太阳镜）、家庭成员（父母/孩子）、服务类（保养/复查/延保）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：会员制度对顾客的核心价值是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>省钱（积分/折扣）、省心（记录度数、复购方便）、有保障（专属服务与提醒），而不是单纯一张卡。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：取镜后回访应该在多久内、问什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>一般 3 天内，问佩戴是否舒适、有没有头晕或压鼻，是否需要到店免费调整；不要在这个电话里推销新产品。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客刚配完一副，你想推荐太阳镜，怎么开口？</summary>
-      <div class="lm-a"><b>参考答案：</b>「您平时开车吗？开车时普通镜片挡不住强光和眩光，配一副偏光太阳镜会明显舒服，也能当备用。要不下次来取镜的时候顺便看看？」——先问场景，再给理由，不硬推。</div>
-    </details>
-</div>
-<div class="section">
-    <h2>📝 今日学习要点回顾</h2>
-    <ul>
-      <li>✅ 连带销售的5大黄金时机：验光后、选架时、等待时、成交后、保养时；客户成单后心情好时是最佳推荐时机</li>
-      <li>✅ 连带的本质是发现客户未被满足的需求，坚守三不原则：不强推、不夸大、不捆绑</li>
-      <li>✅ 会员建档是积累复购资源的核心手段：记录度数、手机号、消费记录，每单必须引导开通</li>
-      <li>✅ 取镜后48小时内发关怀跟进，提升满意度和复购；转介绍有折扣奖励，让传播有动力</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
