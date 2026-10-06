@@ -266,6 +266,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -275,10 +288,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">📍 第5周 · 实战跟岗训练</div>
   <h1>Day 32 · 验光流程实操：协助验光师接待</h1>
   <div class="subtitle">从销售角色切换到验光辅助——做好顾客全程的陪伴者</div>
-</div>
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：4小时</div>
-  <div class="meta-item"><span class="dot"></span>重点能力：验光流程配合 · 数据初步解读</div>
 </div>
 <div class="container">
 
@@ -387,8 +396,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-    
-
   <div class="card" style="background:white;border-radius:12px;padding:30px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
     <h2 style="font-size:20px;color:#333;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #11998e">📋 跟岗观察清单</h2>
     <p>在协助验光师接待时，记录以下观察点，有助于快速提升：</p>
@@ -436,39 +443,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">只能做你培训过的动作（如更换颌托纸、记录、指引坐姿）。度数相关的调整、镜片更换等必须由验光师操作。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：验光流程的主要步骤有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>问诊（旧镜与用眼习惯）→ 电脑验光（客观参考）→ 检影/主觉验光（球镜、柱镜、轴位）→ 双眼平衡 → 试戴确认 → 出具处方（含瞳距）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：验光单上 SPH、CYL、AX、PD 分别代表什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>SPH 球镜（近视/远视度数）、CYL 柱镜（散光度数）、AX 轴位（散光方向）、PD 瞳距。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：协助验光的三条纪律是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>不干扰验光师操作、不替顾客解释或承诺结论、不擅自调整与操作设备。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：验光结束后，如何自然衔接到选镜？</summary>
-      <div class="lm-a"><b>参考答案：</b>先用一句话总结结果（度数 + 是否有散光 + 变化情况），再据此提出镜片建议（折射率、膜层），最后邀请试戴镜架，让推荐有依据而不是硬推。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客验光后听到度数涨了 100 度，情绪低落，你怎么说？</summary>
-      <div class="lm-a"><b>参考答案：</b>先共情再给方向：「度数变化不少，您心里可能也有点意外。好消息是及时配到合适的度数，看东西会明显轻松。我们这次把镜片选薄一点、戴着轻一些，再定期复查就好。」</div>
-    </details>
-</div>
-<div class="card" style="background:white;border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-    <h2 style="font-size:18px;color:#333;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #11998e">📝 今日学习要点回顾</h2>
-    <ul style="padding-left:20px;line-height:1.8">
-      <li>验光流程5步：迎接→电脑验光→综合验光→试戴确认→解读衔接；你的核心角色：陪伴者、信息传递者、流程衔接者</li>
-      <li>验光单基本数据：SPH=度数、CYL=散光、PD=瞳距、AXIS=轴位，会用简单话术向顾客解释</li>
-      <li>验光后用开放式问题自然引入选镜环节</li>
-      <li>协助验光不只是打下手，更是学习专业技能的宝贵机会——主觉验光的7个步骤，跟岗中仔细观察每一步的目的</li>
-      <li>记录每次跟岗的观察，积累属于自己的学习笔记；结束后主动向验光师请教：今天这个案例有什么特殊之处？</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -485,7 +460,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
 <div class="nav-bar">
   <a href="Day_31_练习题.html" class="nav-btn prev">← Day 31 练习题</a>
