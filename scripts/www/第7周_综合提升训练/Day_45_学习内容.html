@@ -263,6 +263,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -423,7 +449,6 @@ body{padding:0!important;margin:0!important}
     <div class="step">每周末：整理周汇总，分析本周亮点与不足，制定下周改进点</div>
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -457,40 +482,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">抓最短板：试戴率低→加强试戴邀约；成交率低→价值说明与促成；客单价低→连带能力；复购低→售后跟进。每次只改一项，连续观察一周。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：门店常用的 6 个核心数据指标是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>进店率、成交率、客单价、连带率、复购率、人效（另有坪效等辅助指标）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：成交率、客单价分别怎么算？</summary>
-      <div class="lm-a"><b>参考答案：</b>成交率 = 成交单数 ÷ 接待顾客数；客单价 = 销售总金额 ÷ 成交单数。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：「进店多、成交少」的常见原因有哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>接待不及时或过于紧逼、需求挖掘不足（推荐不对路）、价值说明不清、价格谈太早、没有主动促成、人员技能不匹配。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：发现自己的连带率明显偏低，下一步该练什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>练连带时机与话术：主单成交后从配件/第二副/家庭成员/服务四个方向找切入点，每次只加一项并说明理由。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：这个月你的成交率从 40% 掉到 25%，你会怎么排查？</summary>
-      <div class="lm-a"><b>参考答案：</b>按链条排查：接待量是否骤增（忙起来服务变糙）？接待客群是否变化？试戴率是否也下降？再看自己最近的话术有没有偷懒、促成是否缺失。找 1～2 个最可能的原因，用记录验证而不是猜。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>门店核心指标：进店率、成交率、客单价、连带率、复购率、人效</li>
-      <li>日报月报解读：用ABCD法（目标达成→拆解→对比→方向）系统分析</li>
-      <li>业绩提升三路径：提升客流 × 提升成交率 × 提升客单价</li>
-      <li>数据异常要结合实际情况综合判断，不能孤立看单一数字</li>
-      <li>培养每日记录、每周复盘的数据管理习惯</li>
-    </ul>
-    <p style="margin-top:14px; color:#ffe0b2;">🎯 <strong>今日行动：</strong>向店长要一份本周日报，尝试用今天学到的方法分析其中一个数据指标，并写出自己的判断和建议。</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -507,7 +499,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
   <div class="nav-footer">
     <a href="Day_44_练习题.html" class="nav-btn outline">← Day 44 练习题</a>
