@@ -263,6 +263,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -272,12 +285,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">第4周 · 销售话术与中期考核</div>
   <h1>Day 24 — 价格异议处理话术</h1>
   <div class="subtitle">话术模块 · 学会应对"太贵了"，让顾客感受到真正的价值</div>
-</div>
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约3.5小时</div>
-  <div class="meta-item"><span class="dot"></span>模块：话术（Scripts）</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>核心挑战：价格谈判心理</div>
 </div>
 <div class="container">
 
@@ -383,10 +390,6 @@ body{padding:0!important;margin:0!important}
     </ul>
   </div>
 
-  
-
-  <div class="footer">Day 24 · 眼镜门店新员工8周成才培训计划 · 第4周 销售话术与中期考核</div>
-
     <div class="card">
     <h2>🎯 话术优化对比练习</h2>
     <p>同样的内容，不同的表达方式，效果差距巨大：</p>
@@ -435,38 +438,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">保持礼貌，明确底线：「这个价格我确实没法再动了，但我可以帮您把这部分服务做到最好。」如果仍然不行，礼貌送客+留联系方式，不用为了单子丢原则。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：「太贵了」通常有哪 4 种真实含义？</summary>
-      <div class="lm-a"><b>参考答案：</b>超出预算、觉得不值这个价、在别处比过价、只是习惯性砍价或还在犹豫。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：价格拆分法怎么用？</summary>
-      <div class="lm-a"><b>参考答案：</b>把总价拆到使用周期上：「这副 1800 元，正常能戴两年，算下来一天 2.5 元，比一杯水还便宜，换来的是每天看得清、戴着舒服。」</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：价格异议的四大禁忌是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>立刻降价（越降越不像好货）、贬低同行、敷衍应付（「都这样」）、直接翻脸或冷处理。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：价值重塑法的核心思路是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>把话题从「花多少钱」转到「得到什么」：视觉舒适、耐用年限、售后保障、外观提升，让顾客自己算出值不值。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客说「我在网上看到一样的才 600」，你怎么回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>不否认网购价格，讲清差别：「网上那款很可能不是同一个膜层和版本。您配镜最怕的是装到度数上不合适还要扯皮。我们这里是原厂正品、当场验度数、有质保，加起来这部分服务值这个价。」</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>顾客说"太贵"有4种原因，先判断原因再回应</li>
-      <li>5种方法：价值重塑 / 对比法 / 拆分法 / 降阶推荐 / 限时优惠</li>
-      <li>黄金原则：先塑造价值，不轻易主动降价</li>
-      <li>4大禁忌：立即降价、强行比较、否定感受、沉默无言</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
