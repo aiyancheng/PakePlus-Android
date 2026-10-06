@@ -196,6 +196,19 @@
 
 /*@@ LAYOUT-UNIFY-4 @@*/
 body{padding:0!important;margin:0!important}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -239,15 +252,15 @@ body{padding:0!important;margin:0!important}
       <span class="q-type">单选题</span>
       <span class="q-score">10分</span>
     </div>
-    <div class="question-text">下列哪一项不属于我们门店的核心价值观？</div>
+    <div class="question-text">下列哪一条<strong>不属于</strong>我们「诚实守信、勇于承担、深耕专业、引领创新」这套品牌理念？</div>
     <ul class="options">
-      <li>A. 专业精准</li>
-      <li>B. 真诚用心</li>
-      <li>C. 低价竞争</li>
-      <li>D. 团队协作</li>
+      <li>A. 诚实守信</li>
+      <li>B. 勇于承担</li>
+      <li>C. 深耕专业</li>
+      <li>D. 低价竞争</li>
     </ul>
     <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">查看参考答案</button>
-    <div class="answer-hint">✅ 正确答案：<strong>C</strong><br>解析：门店六大核心价值观是：专业精准、真诚用心、持续成长、团队协作、追求卓越、诚信守正。"低价竞争"不在其中，且与价值观理念相悖。</div>
+    <div class="answer-hint">✅ 正确答案：<strong>D</strong><br>解析：公司价值观是"坚持做难而正确之事"，品牌理念四条为：诚实守信、勇于承担、深耕专业、引领创新。"低价竞争"不在其中，且与我们的经营理念相悖。</div>
   </div>
 
   <div class="question-card">
@@ -291,13 +304,13 @@ body{padding:0!important;margin:0!important}
       <span class="q-type">判断题</span>
       <span class="q-score">10分</span>
     </div>
-    <div class="question-text">"诚信守正"这一价值观要求我们对顾客诚实，不夸大产品效果，不欺骗顾客。（ ）</div>
+    <div class="question-text">"诚实守信"这一品牌理念要求我们对顾客诚实，不夸大产品效果，不欺骗顾客。（ ）</div>
     <ul class="options">
       <li>A. 正确</li>
       <li>B. 错误</li>
     </ul>
     <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">查看参考答案</button>
-    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong><br>解析：诚信守正就是说到做到，对顾客诚实，不夸大、不欺骗。这是建立长期信任关系的基础。</div>
+    <div class="answer-hint">✅ 正确答案：<strong>A（正确）</strong><br>解析：诚实守信就是说到做到，对顾客诚实，不夸大、不欺骗。这是建立长期信任关系的基础。</div>
   </div>
 
   <div class="question-card">
@@ -324,13 +337,13 @@ body{padding:0!important;margin:0!important}
       <span class="q-type">简答题</span>
       <span class="q-score">20分</span>
     </div>
-    <div class="question-text">请用自己的话写出：<br>① 门店使命是什么？（5分）<br>② 你对哪一条核心价值观印象最深？为什么？（10分）<br>③ 你觉得这份工作对顾客的意义是什么？（5分）</div>
+    <div class="question-text">请用自己的话写出：<br>① 门店使命是什么？（5分）<br>② 你对哪一条品牌理念（诚实守信/勇于承担/深耕专业/引领创新）印象最深？为什么？（10分）<br>③ 你觉得这份工作对顾客的意义是什么？（5分）</div>
     <textarea class="answer-area" placeholder="请在这里写下你的答案……"></textarea>
     <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">查看参考答案</button>
     <div class="answer-hint">
       ✅ 参考答案要点：<br>
       ① 使命：用专业守护视觉健康，用真诚服务每一双眼睛（要点完整，5分）<br>
-      ② 价值观任选一条（专业精准/真诚用心/持续成长/团队协作/追求卓越/诚信守正），需结合自己的理解和实际工作场景说明，言之成理即可（10分）<br>
+      ② 品牌理念任选一条（诚实守信/勇于承担/深耕专业/引领创新），需结合自己的理解和实际工作场景说明，言之成理即可（10分）<br>
       ③ 意义：帮助顾客获得更清晰的视觉，改善生活品质，守护眼睛健康（言之成理即可，5分）
     </div>
   </div>
@@ -348,11 +361,11 @@ body{padding:0!important;margin:0!important}
       <div class="scene-label">📍 场景描述</div>
       <p>今天是你上班第一天，你的同学小李也在另一家眼镜店工作。小李告诉你："眼镜店其实很简单，顾客来了就推销贵的给他，完成业绩就行。"</p>
     </div>
-    <div class="question-text">如果你认同我们门店的价值观，你会怎么回应小李的话？请写出你的想法（至少3句话）。</div>
+    <div class="question-text">如果你认同我们公司的价值观，你会怎么回应小李的话？请写出你的想法（至少3句话）。</div>
     <textarea class="answer-area" placeholder="请在这里写下你的回应……"></textarea>
     <div class="task-card">
       <div class="task-title">🎭 实操任务（由带教师傅评分）</div>
-      <p>请向带教师傅口头复述门店使命和至少3条核心价值观，并说明你对其中一条的理解。</p>
+      <p>请向带教师傅口头复述门店使命和至少3条品牌理念，并说明你对其中一条的理解。</p>
       <p class="score-hint">带教师傅评分要点：语言流畅（5分）+ 内容准确（10分）+ 有自己的理解（5分）= 20分</p>
     </div>
     <button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">查看参考思路</button>
