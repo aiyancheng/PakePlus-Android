@@ -267,6 +267,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -276,12 +289,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">第4周 · 销售话术与中期考核</div>
   <h1>Day 25 — 促成成交话术</h1>
   <div class="subtitle">话术模块 · 识别成交信号，掌握临门一脚的技巧，把"想买"变成"我要买"</div>
-</div>
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约3.5小时</div>
-  <div class="meta-item"><span class="dot"></span>模块：话术（Scripts）</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>核心能力：识别成交信号</div>
 </div>
 <div class="container">
 
@@ -407,9 +414,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
-
-  <div class="footer">Day 25 · 眼镜门店新员工8周成才培训计划 · 第4周 销售话术与中期考核</div>
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -443,38 +447,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">先了解原因（价格、家人意见、发现别家更便宜），能解决就解决，不能解决按门店退换规则处理并如实说明。不要用「已经下料了」之类的话去逼迫顾客。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：列举 4 种典型的成交信号。</summary>
-      <div class="lm-a"><b>参考答案：</b>问交期（什么时候能取）、问售后（保修多久）、反复试戴同款、问能不能优惠、让同伴看/征求意见、沉默翻看价签。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：二选一法怎么用？</summary>
-      <div class="lm-a"><b>参考答案：</b>把「要不要买」换成「选哪个」：「镜片您要防污的还是防蓝光的？」「今天取还是明天取方便？」——两个选项都指向成交。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：总结确认法的标准句式是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>把已确认的内容复述一遍再收口：「您的度数是左右各 -3.00，选的 1.60 非球面加防污膜，镜架是这款钛架——都齐了，我现在给您开单，明天下午就能取。」</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：促成阶段的三条禁忌是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>强行逼单、夸大承诺（如保证绝对不坏）、成交后态度立刻转冷。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客犹豫要回家和爱人商量，你怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>不施压，给证据+留通道：「可以的。我把这两套方案的差别写清楚，您带回去一起看。方便的话加个微信，我帮您把镜架留着，三天内有效。」</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>顾客"看了不买"的三个原因：没推动、时机不对、顾虑没消除</li>
-      <li>6种成交信号：查看细节、反复试戴、问售后、问支付、问家人、讨论颜色</li>
-      <li>5种成交方法：直接推进、二选一、假设成交、消除最后顾虑、紧迫感</li>
-      <li>成交后推荐附加产品要以顾客需求为出发点，不强迫</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
