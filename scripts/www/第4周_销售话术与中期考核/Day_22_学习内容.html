@@ -276,6 +276,28 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ COMPARE-2COL @@*/
+/* ═══ 正反对比模块（应该做到/需要避免 · 正确/错误 · 正确话术/错误话术）固定 1 行 2 列 ═══ */
+.do-dont,.wrong-right,.compare-grid{grid-template-columns:repeat(2,1fr)!important}
+.do-dont>*,.wrong-right>*,.compare-grid>*{min-width:0;overflow-wrap:break-word}
+@media(max-width:640px){
+  .do-dont,.wrong-right,.compare-grid{gap:10px!important}
+  .do-box,.dont-box,.do,.dont,.wrong-box,.right-box,.compare-card{padding:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -285,13 +307,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">第4周 · 销售话术与中期考核</div>
   <h1>Day 22 — 顾客接待与开场话术</h1>
   <div class="subtitle">话术模块 · 掌握不同场景下的开场接待技巧，给顾客留下完美的第一印象</div>
-</div>
-
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约3.5小时</div>
-  <div class="meta-item"><span class="dot"></span>模块：话术（Scripts）</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>要求：背诵5条核心话术</div>
 </div>
 
 <div class="container">
@@ -450,9 +465,6 @@ body{padding:0!important;margin:0!important}
     </ol>
   </div>
 
-  
-
-  <div class="footer">Day 22 · 眼镜门店新员工8周成才培训计划 · 第4周 销售话术与中期考核</div>
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -486,39 +498,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">不会。被拒是常态，回应要大方：「好的，我在旁边，有问题随时叫我。」转身去做其他工作，不要僵在原地或反复追问——给空间才是专业。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：「7 秒定律」说的是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>顾客进店后 7 秒内就会形成对你的第一印象（是否专业、是否热情、店是否靠谱），这个印象直接影响他愿不愿意接受你的推荐。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：三种进店场景分别是什么，接待策略各是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>目标明确型（快速响应、直接给方案）、随意浏览型（给空间、适时介入）、陪同闲逛型（照顾陪同者、不冷落）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：漏斗式提问的顺序是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>先问开放式大问题（今天想解决什么问题）→ 再问具体问题（用途、时长、旧镜情况、预算）→ 最后确认（所以您最在意的是……对吧）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：接待四大禁忌是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>上下打量顾客、紧跟不放（贴身式跟随）、背台词式讲话、打断顾客说话。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客进店后径直走向高价柜台，你怎么开场？</summary>
-      <div class="lm-a"><b>参考答案：</b>不要第一时间谈价格。先认可眼光+切入用途：「您看这款是我们的高端系列，镜架做工很细。您是给自己配还是送人？平时主要看电脑还是开车多？」先建立对话，再谈参数。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>7秒定律：第一印象55%来自肢体语言，38%来自声音，7%来自内容</li>
-      <li>三种进店类型：主动型（快速定位需求）/ 浏览型（给空间再邀请）/ 求助型（快速响应）</li>
-      <li>禁忌：立即推销、直接问预算、语气敷衍</li>
-      <li>开场后用SPIN思维了解顾客的情况、痛点和需求</li>
-      <li>5条核心话术必须流利背诵，配合真实场景演练</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
