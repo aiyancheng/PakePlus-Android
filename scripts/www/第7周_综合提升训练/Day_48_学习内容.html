@@ -255,6 +255,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -390,8 +416,6 @@ body{padding:0!important;margin:0!important}
     ④ 活动结束不复盘，下次还是一样的错误 → 解决：每次活动必有书面总结
   </div>
 
-  
-
     <h2 style="color:#e74c3c;margin-top:32px">📊 活动效果评估指标</h2>
   <div style="background:#fff0ec;border-radius:10px;padding:18px 22px;margin:14px 0">
     <p style="line-height:1.8;color:#555;margin-bottom:12px">活动结束后，需要评估效果以优化下次活动：</p>
@@ -450,40 +474,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">看四个数：到店量变化、成交率变化、客单价与连带率变化、投入产出比。只看到店涨、不看质量，容易做出「赔本赚吆喝」的活动。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：营销活动策划七步法是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>定目标（拉新/复购/清库）→ 定客群 → 设计机制（优惠/赠品/服务）→ 传播渠道 → 内部分工 → 现场执行 → 数据复盘。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：为什么不建议长期打折？</summary>
-      <div class="lm-a"><b>参考答案：</b>长期打折会让顾客只等降价、不再认可原价，伤害利润与品牌；且容易引发老顾客不满（我刚买就降价），因此宜以服务与赠品为主、折扣限时。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：活动执行中最容易出问题的三个环节是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>价格与系统未同步、员工话术不统一（承诺不一致）、现场人手不足导致服务体验下降。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：活动效果要看哪四个数据？</summary>
-      <div class="lm-a"><b>参考答案：</b>到店量、成交率、客单价/连带率、投入产出比。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：活动第一天就发现赠品不够、顾客排长队，你怎么应急？</summary>
-      <div class="lm-a"><b>参考答案：</b>立刻做三件事：①按流程上报店长补货或调整赠品；②引导顾客先做免费检查/清洗，避免干等流失；③把「先登记、赠品后续补领」作为方案并承诺明确时间。同时记录问题，活动后写进复盘。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>活动本质：降低顾客行动门槛，推动"本来要做但还没做"的购买决定</li>
-      <li>四种活动类型：节日促销/服务体验/社群裂变/套餐升级，各有适用场景</li>
-      <li>策划七步法：目标→主题→利益点→规则→传播→执行→复盘，缺一不可</li>
-      <li>执行关键：话术统一、物料到位、备货充足、规则简单、数据必记</li>
-      <li>常见误区：让利不够、规则太复杂、只做不传播、活动不复盘</li>
-    </ul>
-    <p style="margin-top:14px; color:#fcd6d0;">🎯 <strong>今日作业：</strong>为你们门店设计一个下个月可执行的小活动方案（不超过一页），包含目标、主题、利益点和推广方式，交给店长审阅。</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -500,8 +491,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="Day_47_练习题.html" class="nav-btn outline">← Day 47 练习题</a>
