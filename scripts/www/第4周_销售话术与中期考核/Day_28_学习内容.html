@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 28 | 第4周总结复盘 — 销售话术</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f7fa;color:#333;}
+  .header{background:linear-gradient(135deg,#e91e63,#ad1457);padding:40px 30px;color:white;}
+  .day-tag{background:rgba(255,255,255,0.2);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:0.85em;margin-bottom:12px;}
+  .header h1{font-size:2em;margin-bottom:8px;}
+  .header .subtitle{opacity:0.9;}
+  .container{max-width:900px;margin:30px auto;padding:0 20px;}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;}
+  .review-card{background:white;border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.07);}
+  .review-card h4{color:#ad1457;margin-bottom:8px;font-size:0.92em;}
+  .review-card ul{padding-left:16px;}
+  .review-card li{font-size:0.8em;line-height:1.7;color:#555;}
+  .section-title{font-size:1.2em;color:#ad1457;font-weight:700;margin:32px 0 14px;padding-left:12px;border-left:4px solid #e91e63;}
+  .question-card{background:white;border-radius:12px;padding:26px;margin-bottom:22px;box-shadow:0 2px 10px rgba(0,0,0,0.07);}
+  .q-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .q-num{background:#e91e63;color:white;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9em;flex-shrink:0;}
+  .q-type{background:#fce4ec;color:#ad1457;padding:3px 12px;border-radius:12px;font-size:0.8em;font-weight:600;}
+  .q-score{color:#999;font-size:0.82em;}
+  .question-text{font-size:1em;color:#333;font-weight:600;line-height:1.6;margin-bottom:16px;}
+  .options li{padding:10px 16px;border:2px solid #e0e0e0;border-radius:8px;margin-bottom:8px;font-size:0.93em;list-style:none;}
+  .answer-area{width:100%;min-height:90px;border:2px solid #e0e0e0;border-radius:8px;padding:12px;font-family:inherit;font-size:0.93em;resize:vertical;}
+  .answer-hint{background:#f9f9f9;padding:10px 14px;margin-top:12px;font-size:0.85em;color:#666;display:none;}
+  .show-answer-btn{background:none;border:1px solid #9E9E9E;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:0.82em;margin-top:10px;}
+  .rx-box{background:#f5f5f5;border-radius:8px;padding:16px;margin:12px 0;font-size:0.9em;}
+  .score-box{background:linear-gradient(135deg,#fce4ec,#fdf6f9);border-radius:12px;padding:20px;margin:24px 0;}
+  .score-box h3{color:#ad1457;margin-bottom:12px;}
+  .score-table{width:100%;border-collapse:collapse;}
+  .score-table th{background:#e91e63;color:white;padding:8px 12px;text-align:left;font-size:0.88em;}
+  .score-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-size:0.86em;}
+  .nav-footer{display:flex;justify-content:space-between;margin:30px 0 50px;gap:12px;flex-wrap:wrap;}
+  .nav-btn{background:#e91e63;color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:0.9em;}
+  .nav-btn.outline{background:white;color:#ad1457;border:2px solid #e91e63;}
+  @media(max-width:600px){.review-grid{grid-template-columns:1fr;}}
+  .structure-table,.rule-table{width:100%;border-collapse:collapse;margin:14px 0;}
+  .structure-table th,.rule-table th{background:#e91e63;color:white;padding:10px 14px;text-align:center;font-size:0.9em;}
+  .structure-table td,.rule-table td{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:0.88em;}
+  .structure-table tr:nth-child(even) td,.rule-table tr:nth-child(even) td{background:#f9f9f9;}
+
+@media (min-width:901px) and (max-width:1400px){
+  .container{max-width:1300px!important;padding:26px 24px!important}
+  body{font-size:16px}
+  .header{padding:34px 28px!important}
+  .header h1{font-size:1.8em!important}
+  img{max-width:100%;height:auto}
+  table{max-width:100%}
+}
+@media (max-width:900px){
+  body{font-size:15px;overflow-x:hidden}
+  .container{max-width:100%!important;padding:18px 14px!important;margin:16px auto!important}
+  .header{padding:24px 16px!important}
+  .header h1{font-size:1.45em!important;line-height:1.35!important}
+  .header .subtitle,.header .day-tag,.header .week-badge{font-size:13px!important}
+  h2{font-size:1.2em!important}
+  h3{font-size:1.08em!important}
+  .nav-footer,.nav-bar{flex-wrap:wrap!important;gap:10px!important}
+  .nav-btn,.nav-footer a,.nav-bar a{font-size:.9em!important;padding:10px 16px!important;text-align:center!important}
+  table{display:block!important;overflow-x:auto!important;width:max-content!important;min-width:100%!important;-webkit-overflow-scrolling:touch}
+  img,svg,video{max-width:100%!important}
+  p,li,td,th{overflow-wrap:break-word}
+  [class*="-row"]:not(.nav-footer):not(.nav-bar),[class*="-cards"],[class*="-list"]{flex-wrap:wrap!important}
+  .review-grid{grid-template-columns:repeat(2,1fr)!important;gap:12px!important}
+}
+@media (max-width:600px){
+  .container{padding:14px 10px!important}
+  .header h1{font-size:1.25em!important}
+  .review-grid{grid-template-columns:1fr!important}
+}
+
+.home-topbar{background:#fff;padding:10px 0}
+.home-topbar .ht-inner{max-width:900px;margin:0 auto;padding:0 30px}
+.home-topbar a{display:inline-flex;align-items:center;gap:6px;font-size:.86em;font-weight:700;color:#4a5270;text-decoration:none;background:#f1f3f9;border-radius:20px;padding:7px 18px;transition:background .2s,color .2s,transform .2s}
+.home-topbar a:hover{background:#e6eaf6;color:#283593;transform:translateX(-2px)}
+@media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1300px}}
+@media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
+
+  .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
+  .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
+  .flow-hook{background:#eaf1fb;border-left:4px solid #2c5aa0;border-radius:8px;padding:13px 16px;margin:0 0 14px;font-size:.93em;color:#2c3e50;line-height:1.75}
+  .flow-hook b{color:#1a3a6b}
+  .flow-sub{margin:0 0 18px;font-size:.9em;color:#556}
+  .flow-sub strong{color:#1a3a6b}
+  .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .flow-col{border-radius:12px;padding:16px 18px;background:#fff;box-shadow:0 1px 4px rgba(26,58,107,.05)}
+  .flow-h{font-weight:800;font-size:.98em;margin-bottom:10px;color:#1a3a6b;display:flex;align-items:center;gap:6px}
+  .flow-h .fh-tag{font-size:.7em;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px;letter-spacing:.5px}
+  .flow-std .flow-h{color:#2c5aa0}.flow-std .fh-tag{background:#2c5aa0}
+  .flow-teach .flow-h{color:#2e7d5b}.flow-teach .fh-tag{background:#2e7d5b}
+  .flow-check .flow-h{color:#c47f17}.flow-check .fh-tag{background:#c47f17}
+  .flow-opt .flow-h{color:#8e44ad}.flow-opt .fh-tag{background:#8e44ad}
+  .flow-say{font-size:.88em;color:#37475e;background:#f6f9ff;border-radius:8px;padding:10px 12px;margin-bottom:12px;line-height:1.7;border-left:3px solid #cdd9ec}
+  .flow-say b{color:#1a3a6b}
+  .flow-do-t{font-size:.82em;font-weight:800;color:#556;margin:12px 0 6px}
+  .flow-do{margin:0;padding-left:19px}
+  .flow-do li{font-size:.85em;line-height:1.7;margin-bottom:6px;color:#4a5568}
+  .flow-standard{font-size:.84em;color:#2e7d32;background:#eef8f0;border-radius:7px;padding:9px 12px;margin-top:12px;line-height:1.65}
+  .flow-standard b{color:#1b5e20}
+  .flow-pit{font-size:.84em;color:#b3541e;background:#fdf3ea;border-radius:7px;padding:9px 12px;margin-top:8px;line-height:1.65}
+  .flow-pit b{color:#8a3d0a}
+  .flow-meta{margin:18px 0 0;font-size:.84em;color:#5a6478;background:#eef3fb;border-radius:8px;padding:12px 16px;line-height:1.7}
+  .flow-meta b{color:#1a3a6b}
+  @media(max-width:900px){
+    .flow-grid{grid-template-columns:1fr;gap:12px}
+    .flow-block{padding:18px 16px}
+    .flow-say,.flow-do li,.flow-standard,.flow-pit{font-size:.86em}
+  }
+
+  .day-part{margin:34px 0 18px;padding:16px 20px;background:linear-gradient(135deg,#fdeef3,#fdf8fa);border-radius:12px}
+  .day-part .day-part-h{font-size:1.08em;font-weight:800;color:#8c1d43;display:flex;align-items:center;gap:10px}
+  .day-part .dp-no{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e91e63;color:#fff;font-size:.9em;font-weight:800;flex-shrink:0}
+  .day-part .day-part-d{margin:8px 0 0;font-size:.88em;color:#667;line-height:1.7}
+  @media(max-width:900px){.day-part{margin:26px 0 14px;padding:14px 16px}}
+
+  .lm-block{position:relative;border-radius:16px;padding:22px 26px 20px;margin:22px 0;line-height:1.85;border:1px solid transparent;box-shadow:0 2px 12px rgba(26,58,107,.06);}
+  .lm-block::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:4px;background:currentColor;opacity:.55;}
+  .lm-block h3{margin:0 0 16px;font-size:1.12em;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:9px;padding-bottom:12px;border-bottom:1px dashed rgba(0,0,0,.12);}
+  .lm-list{margin:0;padding-left:0;list-style:none}
+  .lm-list li{position:relative;margin-bottom:11px;padding-left:24px;line-height:1.8;}
+  .lm-list li::before{content:"✓";position:absolute;left:2px;top:0;font-weight:800;font-size:.92em;color:currentColor;opacity:.7;}
+  .lm-list li:last-child{margin-bottom:0}
+  .lm-goal{background:linear-gradient(135deg,#eaf7ec,#f4fbf5);color:#1b5e20;border-color:#c8e6c9}
+  .lm-goal h3{color:#2e7d32}
+  .lm-practice{background:linear-gradient(135deg,#fff6e0,#fffcf3);color:#4e342e;border-color:#ffe0a3}
+  .lm-practice h3{color:#e65100}
+  .lm-faq{background:linear-gradient(135deg,#f6e9f9,#fbf5fd);color:#4a148c;border-color:#e6ccf0}
+  .lm-faq h3{color:#7b1fa2}
+  .lm-quiz{background:linear-gradient(135deg,#fde8ef,#fef6f9);color:#880e4f;border-color:#f8cddc}
+  .lm-quiz h3{color:#c2185b}
+  .lm-meta{margin:14px 0 0;font-size:.88em;opacity:.94;background:rgba(255,255,255,.65);border-radius:9px;padding:10px 14px;line-height:1.7;}
+  .lm-pr{margin:0 0 14px;padding:15px 18px;background:rgba(255,255,255,.82);border-radius:12px;border-left:3px solid #ffb74d;box-shadow:0 1px 5px rgba(0,0,0,.04);}
+  .lm-pr:last-child{margin-bottom:0}
+  .lm-pr-t{font-weight:800;margin-bottom:7px;font-size:1.01em;color:#bf360c}
+  .lm-pr-d{margin-bottom:8px;font-size:.96em;line-height:1.75}
+  .lm-pr-o{font-size:.9em;font-weight:700;color:#2e7d32;background:#eef8ef;border-radius:7px;padding:7px 12px;display:block;}
+  .lm-q{margin:0 0 10px;padding:12px 16px;background:rgba(255,255,255,.82);border-radius:11px;border-left:3px solid rgba(0,0,0,.14);transition:.18s;}
+  .lm-q:hover{border-left-color:currentColor}
+  .lm-q:last-child{margin-bottom:0}
+  .lm-q summary{cursor:pointer;font-weight:700;line-height:1.7;outline:none;list-style:none;position:relative;padding-right:26px}
+  .lm-q summary::-webkit-details-marker{display:none}
+  .lm-q summary::after{content:"+";position:absolute;right:2px;top:-1px;font-weight:800;font-size:1.15em;color:currentColor;opacity:.6;transition:.2s;}
+  .lm-q[open] summary::after{content:"−"}
+  .lm-q[open] summary{margin-bottom:10px;padding-bottom:9px;border-bottom:1px dashed rgba(0,0,0,.1)}
+  .lm-a{font-size:.95em;color:#212121;line-height:1.82;padding-left:2px}
+  .lm-a b{color:#c2185b}
+  .lm-faq .lm-a b{color:#7b1fa2}
+  @media(max-width:900px){
+    .lm-block{padding:17px 16px 15px;margin:16px 0;line-height:1.75;border-radius:13px}
+    .lm-block h3{font-size:1.02em;margin-bottom:13px}
+    .lm-pr{padding:13px 14px}
+  }
+
+/*@@ LAYOUT-UNIFY @@*/
+.home-topbar .ht-inner{width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;margin:0 auto!important}
+.header{
+  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+  margin:18px auto 0!important;padding:34px 30px!important;
+  border:0!important;border-radius:14px!important;
+  box-shadow:0 6px 22px rgba(0,0,0,.08)!important;
+}
+.container{
+  width:min(1300px,calc(100% - 32px))!important;max-width:1300px!important;
+  margin-left:auto!important;margin-right:auto!important;
+  padding-left:0!important;padding-right:0!important;
+}
+@media(max-width:900px){
+  .header{padding:24px 18px!important;margin-top:14px!important;border-radius:12px!important}
+}
+@media(max-width:600px){
+  .header{padding:20px 15px!important}
+}
+/*@@ LAYOUT-UNIFY-3 @@*/
+.header,.container,.meta-bar,.home-topbar .ht-inner{box-sizing:border-box!important}
+.container > .header{width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+/*@@ LAYOUT-UNIFY-4 @@*/
+body{padding:0!important;margin:0!important}
+
+/*@@ FLOW-GRID-2X2 @@*/
+.flow-grid{grid-template-columns:repeat(2,1fr)!important}
+@media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
+
+/*@@ REVIEW-GRID-2x3 @@*/
+.review-grid{grid-template-columns:repeat(3,1fr)!important;gap:14px!important}
+.review-grid>.review-card{min-width:0}
+@media(max-width:900px){
+  .review-grid{grid-template-columns:repeat(3,1fr)!important;gap:9px!important}
+  .review-grid>.review-card{padding:12px 11px!important}
+  .review-grid>.review-card h4{font-size:.82em!important;margin-bottom:6px!important}
+  .review-grid>.review-card ul{padding-left:14px!important}
+  .review-grid>.review-card li{font-size:.72em!important;line-height:1.6!important}
+}
+@media(max-width:600px){
+  .review-grid{grid-template-columns:repeat(3,1fr)!important;gap:6px!important}
+  .review-grid>.review-card{padding:9px 8px!important;border-radius:8px!important}
+  .review-grid>.review-card h4{font-size:.74em!important;margin-bottom:5px!important}
+  .review-grid>.review-card ul{padding-left:12px!important}
+  .review-grid>.review-card li{font-size:.66em!important;line-height:1.55!important}
+}
+</style>
+</head>
+<body>
+<div class="home-topbar"><div class="ht-inner"><a href="../index.html">🏠 返回首页</a></div></div>
+
+<div class="header">
+  <span class="day-tag">📅 第4周 · Day 28 — 总结复盘</span>
+  <h1>📋 第4周总结复盘：销售话术</h1>
+  <div class="subtitle">覆盖 Day 22–27 ｜ 本周学习要点 · 重点难点 · 掌握情况 · 改进方向</div>
+</div>
+<div class="container">
+
+<div class="lm-block lm-goal">
+  <h3>🎯 今日学习目标（学完你应该能做到）</h3>
+  <ul class="lm-list">
+      <li>系统复盘本周 6 个话术模块，做到「接待 → 介绍 → 异议 → 促成 → 连带 → 投诉」全程串得起来</li>
+      <li>能脱稿运用 FABE 与 HEARD 两个核心模型，并说清各自的适用场景</li>
+      <li>明确本周的<strong>重点与难点</strong>，知道哪一步最容易说错、怎么破</li>
+      <li>对照自评表客观评估<strong>掌握情况</strong>，找出 2 个最薄弱的话术环节</li>
+      <li>完成独立周测卷（理论 60 分 + 实操 40 分），检验「敢说 → 说对」的转化</li>
+  </ul>
+  <p class="lm-meta">⏱ 学习量控制：约 <strong>1.5 小时</strong> —— 复盘梳理 45 分钟 ｜ 周测作答 45 分钟 ｜ 错题订正 30 分钟</p>
+</div>
+
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">①</span>本周总结复盘</div>
+    <p class="day-part-d">按「学习要点 → 重点难点 → 掌握情况 → 改进方向」四步完成复盘，把背下来的话术真正变成能脱口而出的能力。</p>
+  </div>
+
+  <div class="section-title">① 本周学习要点</div>
+  <div class="review-grid">
+    <div class="review-card"><h4>Day 22 顾客接待</h4><ul><li>7 秒定律（肢体 55%）</li><li>三种进店场景应对</li><li>SPIN 需求探测</li></ul></div>
+    <div class="review-card"><h4>Day 23 产品介绍</h4><ul><li>FABE 法则</li><li>参数 → 利益翻译</li><li>证据增强说服力</li></ul></div>
+    <div class="review-card"><h4>Day 24 价格异议</h4><ul><li>异议处理 5 法</li><li>异议四大禁忌</li><li>几类常见异议应对</li></ul></div>
+    <div class="review-card"><h4>Day 25 促成成交</h4><ul><li>促成 5 法</li><li>促成 3 禁忌</li><li>看时机收单</li></ul></div>
+    <div class="review-card"><h4>Day 26 连带会员</h4><ul><li>连带三不原则</li><li>黄金 48h 跟进</li><li>转介绍与会员</li></ul></div>
+    <div class="review-card"><h4>Day 27 投诉处理</h4><ul><li>HEARD 五步法</li><li>投诉三大根因</li><li>投诉预防思维</li></ul></div>
+  </div>
+
+  <div class="section-title">② 本周重点难点</div>
+  <table class="rule-table">
+    <thead><tr><th>重点 / 难点</th><th>容易出错的地方</th><th>破解方法</th></tr></thead>
+    <tbody>
+      <tr><td>「怎么说」比「说什么」更重要（易忽略）</td><td>只背话术文字，表情、语气、站姿僵硬，顾客仍觉冷淡</td><td>记住 7 秒定律：肢体 55% + 声音 38% + 内容 7%；对着镜子练微笑、眼神与语调</td></tr>
+      <tr><td>三种进店场景的识别与切换（易一刀切）</td><td>对随意浏览型顾客紧跟猛推，把顾客「推」走</td><td>先看后判：目的明确→不拦截、停下搭话；随意浏览→给空间、适时邀请；寻求帮助→快速响应</td></tr>
+      <tr><td>FABE 的「B」要落到顾客身上（易只堆参数）</td><td>一直讲折射率、材质参数，顾客听不懂也不关心</td><td>每讲一个特征，接一句「对您来说就是……」，把参数翻译成美观、舒适、耐用等切身好处</td></tr>
+      <tr><td>异议处理要守住底线（易乱阵脚）</td><td>一被说「贵」就立刻降价、贬低网上同款，越说越被动</td><td>先共情，再用价值重塑 / 拆分法把价格讲成价值；记住四大禁忌：立刻降价、贬低同行、敷衍应付、直接翻脸</td></tr>
+      <tr><td>投诉先倾听再解释（易急着辩）</td><td>顾客一开口就解释撇清，火上浇油</td><td>HEARD 顺序不能乱：先<strong>倾听（不打断）</strong>→ 共情 → 道歉 → 解决 → 复盘；不擅自承诺、不推责</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">③ 掌握情况自评</div>
+  <p style="color:#667;font-size:.9em;margin:0 0 10px;">逐项自评并写出依据，做到「心里有数」；自评后请师傅确认。</p>
+  <table class="rule-table">
+    <thead><tr><th>复盘项目</th><th>自评等级</th><th>判断依据（举一个具体行为）</th></tr></thead>
+    <tbody>
+      <tr><td>开场接待与需求探测</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>FABE 产品介绍</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>价格异议处理</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>促成成交</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>连带销售与会员维护</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+      <tr><td>投诉处理与危机公关</td><td>□ 熟练　□ 掌握　□ 待加强</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">④ 改进方向</div>
+  <ul style="padding-left:22px;line-height:2;color:#445;font-size:.95em">
+    <li><strong>练「怎么说」</strong>：每天对着镜子练 5 分钟微笑、眼神与语调，录一段自己听——语气比文字更打动人。</li>
+    <li><strong>背两个模型</strong>：FABE 与 HEARD 必须张口就来，先讲清框架，再练到自然。</li>
+    <li><strong>存异议库</strong>：把「太贵了 / 再看看 / 网上更便宜 / 我不需要」归类，每类备 2～3 句得体的回应。</li>
+    <li><strong>抓促成信号</strong>：多观察顾客「问细节、反复试戴、问交期」等兴趣信号，练「看到信号就收单」的时机判断。</li>
+    <li><strong>守三条底线</strong>：不硬推、不夸大、不贬低同行——守住底线，话术才立得住。</li>
+    <li><strong>备下周</strong>：进入实战跟岗训练，把话术用在真实顾客身上，多录音回听、请师傅点评。</li>
+  </ul>
+
+    <div class="section">
+    <h2>🚀 进入第5周：实战跟岗训练预览</h2>
+        <p>第4周，你练就了「会沟通」的话术能力。第5周将进入实战跟岗，把技能与话术用到真实顾客身上：</p>
+    <table class="rule-table">
+      <thead><tr><th>第5周主题</th><th>学习目标</th></tr></thead>
+      <tbody>
+        <tr><td>跟岗观察与协助</td><td>在师傅身边观察真实接待，学习处理细节</td></tr>
+        <tr><td>独立接待流程实操</td><td>在师傅监督下独立完成一次完整接待</td></tr>
+        <tr><td>真实顾客服务</td><td>把话术用到真实顾客，练临场应变</td></tr>
+        <tr><td>门店日常运营参与</td><td>参与陈列、收银、售后等日常运营</td></tr>
+        <tr><td>客诉处理实操</td><td>在指导下处理真实客诉，积累经验</td></tr>
+        <tr><td>Day 35 第5周总结与评估</td><td>跟岗总结与成长复盘</td></tr>
+      </tbody>
+    </table>
+    <div class="tip-box"><div class="label">💡 第5周心理准备</div><p>真实顾客和在练习中扮演的不一样，会有意外和突发。别怕犯错——把每一次真实接待都当成最好的练习，问题当场记下、当天请教。</p></div>
+  </div>
+
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">②</span>考后巩固与订正</div>
+    <p class="day-part-d">做完周测卷不是结束 —— 当天把错题弄懂、把话术再说给师傅听一遍。</p>
+  </div>
+
+<!-- LM-START -->
+<div class="lm-block lm-practice">
+  <h3>🔧 动手实践任务（今日必做）</h3>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 1：话术实操考核 + 复盘（约 40 分钟）</div>
+      <div class="lm-pr-d">请师傅扮演顾客，完成「接待 → 需求探测 → FABE 介绍 → 异议处理 → 促成 → 连带」的完整演练，随后逐项复盘。</div>
+      <div class="lm-pr-o">✅ 完成标准：流程完整、话术得体、无硬推与夸大；能自己说出 2 个待改进点。</div>
+    </div>
+    <div class="lm-pr">
+      <div class="lm-pr-t">任务 2：知识错题补漏（约 20 分钟）</div>
+      <div class="lm-pr-d">完成理论部分并订正错题，把每个错题对应的原章节找出来重读一遍。</div>
+      <div class="lm-pr-o">✅ 完成标准：错题全部订正，能说出对应知识点所在天的内容。</div>
+    </div>
+</div>
+<div class="lm-block lm-faq">
+  <h3>⚠️ 常见问题与注意事项</h3>
+    <details class="lm-q">
+      <summary>❓ 话术背得很熟，面对顾客却说不出来，怎么办？</summary>
+      <div class="lm-a">这是「知识」和「能力」的差距。办法只有一个：多练、多讲。先对同事讲，再对师傅讲，最后对真实顾客讲。讲顺 20 遍，就成自己的话了。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 顾客一直砍价、明显低于成本，怎么办？</summary>
+      <div class="lm-a">守住权限与底线：先共情、再讲价值，可用降阶推荐替代硬压价；确实超权限就请示店长。绝不私自降价或贬低同行。</div>
+    </details>
+    <details class="lm-q">
+      <summary>❓ 下周进入真实跟岗，要注意什么？</summary>
+      <div class="lm-a">三件事：① 少说多看，先观察师傅怎么处理细节；② 遇到不会的当场记下、当天问；③ 安全与诚信底线不能破（不改价、不夸大、不擅自承诺）。</div>
+    </details>
+</div>
+
+<!-- LM-END -->
+
+  <div class="day-part">
+    <div class="day-part-h"><span class="dp-no">③</span>四大流程落地衔接</div>
+    <p class="day-part-d">周测不只是打分 —— 它检验的是标准、带教、考核、优化整条链路的效果。</p>
+  </div>
+
+<!-- FLOW-START -->
+<div class="lm-block flow-block">
+  <h3>🔗 四大流程落地衔接 — 本日内容如何进入门店培训体系</h3>
+  <div class="flow-hook">💡 <b>今天你只要记住这一句：</b>今天检验第 4 周成果：接待、介绍、异议、促成、连带、投诉六段话术，一起过。</div>
+  <p class="flow-sub">本日内容对应：<strong>第 4 周考核节点（周测）</strong>　｜　把今天学的，直接接入「标准—带教—考核—优化」闭环。</p>
+  <div class="flow-grid">
+<div class="flow-col flow-std"><div class="flow-h">① 标准 <span class="fh-tag">教什么</span></div><div class="flow-say"><b>一句话：</b>把本组话术模块纳入考核，明确与进入实战跟岗阶段的对应关系。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>复习范围：接待、FABE 介绍、异议处理、促成、连带、投诉</li><li>明白周测合格才能进入第 5 周实战跟岗</li><li>熟练运用话术完成情景应答</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>清楚考核范围与合格标准，即备考达标。</div><div class="flow-pit"><b>⚠ 常见坑：</b>话术考核看「用得对不对」，不是背得熟不熟——要结合情景练。</div></div>
+<div class="flow-col flow-teach"><div class="flow-h">② 带教 <span class="fh-tag">怎么教</span></div><div class="flow-say"><b>一句话：</b>考前逐段复盘话术，角色扮演 PK，薄弱环节专项练。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>按话术模块逐段复盘，过一遍关键话术</li><li>组织角色扮演，集中纠正语气与时机问题</li><li>对薄弱环节安排专项补练</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>各段话术要点均已过一遍并演练，即带教完成。</div><div class="flow-pit"><b>⚠ 常见坑：</b>练话术要「对真人」——对空气背没用，角色扮演才有感觉。</div></div>
+<div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>理论 + 情景实操双重考核，客观判定话术达标情况。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>组织周测 + 情景话术实操考核</li><li>周测与实操均 ≥ 合格线方可进入第 5 周</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>周测 + 实操合格方可进入第 5 周；未达标者分段复训后重考。</div><div class="flow-pit"><b>⚠ 常见坑：</b>话术考核以「应对是否得体」为准——别背得滚瓜烂熟却答非所问。</div></div>
+<div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>汇总情景失分点，回流补充典型异议与讲解素材。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>统计各话术场景的表现</li><li>补充典型异议案例与讲解素材</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成话术库补充清单，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>把真实遇到的「难答问题」都记下来，是最好的素材来源。</div></div>
+  </div>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+</div>
+<!-- FLOW-END -->
+
+  <p style="text-align:center;color:#e91e63;font-weight:600;margin:24px 0 6px">🎉 恭喜完成第4周学习！完成周测后可参加中期考核，检验前 4 周成果。</p>
+  <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:20px">— 第4周 · 销售话术与中期考核 · 全部完成 —</p>
+
+  <div class="nav-footer">
+    <a class="nav-btn outline" href="Day_27_练习题.html">← Day 27 练习题</a>
+    <a class="nav-btn outline" href="../index.html">🏠 首页</a>
+    <a class="nav-btn" href="Day_28_周测卷.html">第4周周测卷 →</a>
+  </div>
+</div>
+
+<style id="interactive-options-style">
+.options li{cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+.options li:hover{background:#fdeef3;border-color:#f48fb1;}
+.options li.correct{background:#e8f5e9!important;border-color:#4caf50!important;color:#2e7d32;font-weight:600;}
+.options li.wrong{background:#ffebee!important;border-color:#ef9a9a!important;color:#b71c1c;}
+.options li.highlight{background:#fff9c4!important;border-color:#f9a825!important;}
+.options li.done{cursor:default;}
+.show-answer-btn{display:none!important;}
+</style>
+</body>
+</html>
