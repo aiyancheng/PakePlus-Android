@@ -282,6 +282,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -514,36 +540,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">常见路径：验光配镜顾问（深耕销售与客户维护）→ 高级顾问/带教师傅 → 店长/店务管理；或向验光技术方向深化（考证、专项客群），也可以往高端定制、儿童防控等专业方向发展。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：8 大核心能力大致包括哪些？</summary>
-      <div class="lm-a"><b>参考答案：</b>职业素养与制度执行、眼视光基础认知、产品知识与推荐、验光配合与技能操作、顾客接待与沟通话术、销售成交与异议处理、售后与客户维护、协作与数据意识。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：结业后第一个月最该做好的三件事是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>稳住标准流程（不掉环节）、积累真实接待量（形成手感）、坚持每周复盘（用记录和数据改进）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：上岗后遇到不确定的问题，正确做法是？</summary>
-      <div class="lm-a"><b>参考答案：</b>立刻请教并如实告知顾客「我帮您确认一下」。宁可多问一句，不可猜测承诺。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：上岗第一周，一位顾客的问题你答不上来，你会怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>如实说「这个我帮您找我们师傅确认，马上答复您」，随后立刻请教并把答案记在笔记本上。事后复盘：这个问题以后我应该怎么答，避免第二次卡壳。</div>
-    </details>
-</div>
-<div class="summary" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-radius:12px;padding:24px;margin-top:30px">
-    <h3 style="margin:0 0 12px 0;color:#283593">📝 今日学习要点回顾</h3>
-    <ul style="padding-left:20px;line-height:2">
-      <li>8 周成长里程碑：行业认知 → 光学基础 → 验光入门 → 产品销售 → 实战跟岗 → 独立接单 → 综合提升 → 结业冲刺</li>
-      <li>8 大核心能力：眼视光学理论、验光操作技能、产品专业知识、全流程销售服务、客诉处理、数据分析管理、团队协作、职业素养</li>
-      <li>结业考核成绩登记：知识笔试、验光实操、销售模拟、客诉处理、综合评定，总评按分数段对应等级与评语</li>
-      <li>结业后职业发展路径：新人成长期 → 独立骨干期 → 技术精进期 → 晋升发展期 → 职业卓越期</li>
-      <li>正式结业考核暨毕业总结：8 周课程全部完成，具备独立开展门店专业服务的综合能力</li>
-    </ul>
-    <p style="margin-top:14px;color:#283593;font-weight:600">🎉 恭喜完成《眼镜门店新员工8周成才》全部课程！带着专业与真诚，服务好每一位顾客。</p>
-  </div>
+
 <div class="lm-block lm-review">
   <h3>🗓️ 本周回顾小结与阶段检查点</h3>
   <div class="lm-sub">① 本周知识串讲（前后衔接）</div>
@@ -590,12 +587,11 @@ body{padding:0!important;margin:0!important}
 </div>
 <!-- FLOW-END -->
 
-
   <div class="nav-footer">
     <a href="Day_55_练习题.html" class="nav-btn outline">← Day 55 练习题</a>
     <a class="nav-btn outline" href="../index.html">🏠 首页</a>
-    
-    <a href="Day_56_练习题.html" class="nav-btn">结业考核 →</a>
+    <a href="Day_56_周测卷.html" class="nav-btn">📝 结业考核卷 →</a>
+    <a href="Day_56_练习题.html" class="nav-btn outline">结业自评问卷 →</a>
   </div>
   </div>
 </div>
