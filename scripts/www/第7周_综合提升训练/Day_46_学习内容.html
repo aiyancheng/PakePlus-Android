@@ -266,6 +266,41 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ COMPARE-2COL @@*/
+/* ═══ 正反对比模块（应该做到/需要避免 · 正确/错误 · 正确话术/错误话术）固定 1 行 2 列 ═══ */
+.do-dont,.wrong-right,.compare-grid{grid-template-columns:repeat(2,1fr)!important}
+.do-dont>*,.wrong-right>*,.compare-grid>*{min-width:0;overflow-wrap:break-word}
+@media(max-width:640px){
+  .do-dont,.wrong-right,.compare-grid{gap:10px!important}
+  .do-box,.dont-box,.do,.dont,.wrong-box,.right-box,.compare-card{padding:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -427,7 +462,6 @@ body{padding:0!important;margin:0!important}
     <strong>正确做法：</strong>选择合适时机（非忙碌时段）私下与店长沟通，先理解安排的原因，再表达自己的想法："店长，我理解清洁工作很重要，我也会做好。我想跟您反馈一下，下午2-4点通常是我们的客流高峰，如果我在这个时候做清洁，可能会影响接待效率。您看能不能调整一下时间安排，或者我们轮换一下？"——有建设性，不是简单抱怨，让对方感受到你是在解决问题。
   </div>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -461,40 +495,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">用固定清单：订单、待取镜、现金与票据、设备状态、特殊顾客嘱咐、当日待办。逐项打勾而不是凭记忆，漏项率会立刻下降。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：团队协作的四个核心要素是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>分工明确、信息共享、互相补位、统一对外（口径一致）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：交接班必须交接哪些内容？</summary>
-      <div class="lm-a"><b>参考答案：</b>未完成订单与进度、待取镜顾客、现金票据、设备与工具状态、特殊顾客嘱咐、当日待办与提醒。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：内部沟通的三条原则是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>复述确认（重要信息重复一遍）、及时反馈（不拖延不隐瞒）、有分歧私下沟通（不当众指责）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：高峰期最有效的三个补位动作是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>引导顾客就座并告知等待时间、递上试戴或茶水做缓冲、接手简单环节（清洗、取镜、递单）让核心环节不堵。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：你正在接待顾客，同事临时被叫去加工区，他的顾客在等，你怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>先对自己顾客说「您稍坐一下，我马上回来」，再向等待顾客说明「同事在给您配镜片，我先帮您看看需要什么」。两头都打招呼，比闷头只顾一边强得多。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>团队协作的四核心：共同目标、及时沟通、灵活补位、正向氛围</li>
-      <li>门店各岗位（店长/验光师/销售/技师）职责清晰，协作界面明确</li>
-      <li>开班6步：仪容→清洁→陈列→设备→数据→早会</li>
-      <li>收班6步：收银→库存→日报→整理→设备关→环境清</li>
-      <li>沟通的核心：说清楚事实，带着方案，当面确认，避免情绪化</li>
-    </ul>
-    <p style="margin-top:14px; color:#cce5ff;">🎯 <strong>今日行动：</strong>观察今天与同事的协作情况，找出一个可以改善的协作环节，并主动跟店长分享你的想法。</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -511,7 +512,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
   <div class="nav-footer">
     <a href="Day_45_练习题.html" class="nav-btn outline">← Day 45 练习题</a>
