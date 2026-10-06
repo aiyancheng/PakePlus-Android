@@ -253,6 +253,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -369,7 +395,6 @@ body{padding:0!important;margin:0!important}
     <strong>💡 事后释放：</strong>处理完高压情境后，及时和同事交流、倾诉，把情绪释放出来，不要把负面情绪带到下一位顾客身上。
   </div>
 
-  
     <h2 style="color:#c0392b;margin-top:32px">📋 极端情境处理复盘表</h2>
   <div style="background:#fef0ef;border-radius:10px;padding:18px 22px;margin:16px 0">
     <p style="line-height:1.8;color:#555;margin-bottom:12px">每次遇到高难度场景后，建议用此表复盘：</p>
@@ -394,7 +419,6 @@ body{padding:0!important;margin:0!important}
       <li style="line-height:1.8;color:#555;font-size:0.95em;margin-bottom:8px"><strong>及时求援</strong>：超出自己权限时，第一时间请示上级，不要拖</li>
     </ul>
   </div>
-
 
     <h2 style="color:#c0392b;margin-top:32px">🛡️ 高难度场景中的自我保护</h2>
   <div style="background:#fef0ef;border-radius:10px;padding:18px 22px;margin:16px 0">
@@ -446,40 +470,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">涉及赔付、退货、威胁投诉或曝光、顾客人身安全、超出你权限的价格让步、以及你已经处理两轮仍未解决的投诉。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：面对暴怒顾客的三步处理顺序是？</summary>
-      <div class="lm-a"><b>参考答案：</b>先隔离与安抚（请到安静处、递水、请坐）→ 再倾听不打断 → 最后给方案与时限，必要时引入店长。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：如何应对「极度不信任」的顾客？</summary>
-      <div class="lm-a"><b>参考答案：</b>用透明度建立信任：出示处方与参数、解释依据、允许带走资料、请验光师或店长当面说明；不谈情绪只谈证据。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：高难度处方（高度数/高散光/屈光参差）配镜的注意要点？</summary>
-      <div class="lm-a"><b>参考答案：</b>选小框型 + 高折射率减薄、保证瞳距与光学中心精准、注意双眼平衡与适应期沟通、必要时分阶段调整度数。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：自我情绪管理的「暂停三步」是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>深呼吸 → 说缓冲话 → 短暂离开 30 秒，再以平静状态回到对话。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客当场要求全额退款并威胁发视频，你怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>先安抚情绪并请其坐下，如实说明需要请示（给出明确答复时间），立刻请店长介入；全程不阻拦顾客拍摄、不争执、不承诺退款。事后按门店流程记录并复盘。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>暴怒投诉：HEAT法（倾听→同理→道歉→行动），不还击，降温后解决问题</li>
-      <li>不信任型：不辩解，用行动和事实建立信任（对比验光/公开流程/无条件保障）</li>
-      <li>特殊处方：提前告知特殊性，推荐合适方案，说明加工周期</li>
-      <li>各类投诉场景：核心原则是先接住情绪，后解决问题，超越顾客预期</li>
-      <li>自我情绪管理：3秒规则、角色切换、事后释放</li>
-    </ul>
-    <p style="margin-top:14px; color:#f5c6c6; font-weight:bold;">🎯 <strong>今日行动：</strong>把本页所有情境的应对话术再读一遍，用自己的语言表述出来。想象自己站在顾客面前说这些话，感受专业应对的自信。</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -496,7 +487,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
 <div class="nav-footer">
     <a href="Day_51_练习题.html" class="nav-btn outline">← Day 51 练习题</a>
