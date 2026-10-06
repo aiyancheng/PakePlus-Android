@@ -262,6 +262,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -444,7 +470,6 @@ body{padding:0!important;margin:0!important}
     <tr><td>（填写）</td><td>（填写）</td><td>（填写）</td><td>（填写）</td></tr>
   </table>
 
-  
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -478,38 +503,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">要，但重点从「背」转向「应变」：第 51 天练全流程、第 52 天练极端情境。能把标准流程和常见异常都处理顺，就达到独立上岗要求。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：8 周课程的能力模块大致分为哪几类？</summary>
-      <div class="lm-a"><b>参考答案：</b>文化制度与职业素养、眼视光与产品知识、专业技能操作、销售与沟通话术、实战跟岗与独立接单、综合提升（数据/团队/心理/营销）、结业考核。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：冲刺期复习的正确顺序是？</summary>
-      <div class="lm-a"><b>参考答案：</b>先考后补：做一套模拟考找出漏洞 → 只补错题对应模块 → 高频话术反复练到脱口而出 → 考前 1 天只做轻复习与状态调整。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：结业考核的两个主要形式是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>知识与笔试（选择/填空/简答）+ 情景应对与实操（模拟顾客场景、流程操作、话术表现）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：自评时你发现自己「价格异议处理」只有 2 分，冲刺期怎么补？</summary>
-      <div class="lm-a"><b>参考答案：</b>三道动作：①重做第 24、37 天的自测题；②背熟六大技巧并各写一个自己门店的真实案例；③找师傅扮演强压价顾客连练 5 遍，直到不慌不改价。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>回顾了8周完整学习历程：行业认知→光学基础→验光技能→产品知识→实战跟岗→独立接单→综合提升→结业冲刺</li>
-      <li>梳理了8大核心能力的掌握情况，找到需要重点复习的薄弱环节</li>
-      <li>明确了第8周每日安排和结业考核的完整评分体系</li>
-      <li>制定了个人冲刺计划，目标有方向，努力有焦点</li>
-    </ul>
-    <p style="margin-top:14px; color:#bdc3c7; font-size:15px; font-weight:bold;">
-      🚀 <strong>今日行动：</strong>完成能力自评表，写出3个最需要冲刺的薄弱点，制定本周每天的复习计划。
-      距离结业只有6天，全力以赴！
-    </p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
