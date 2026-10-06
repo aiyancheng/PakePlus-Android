@@ -276,6 +276,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -285,10 +298,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">📍 第5周 · 实战跟岗训练</div>
   <h1>Day 31 · 产品讲解实战：FAB法则演练</h1>
   <div class="subtitle">让产品介绍有逻辑、有温度、有说服力</div>
-</div>
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：3-4小时</div>
-  <div class="meta-item"><span class="dot"></span>重点能力：产品讲解 · FAB技巧</div>
 </div>
 <div class="container">
 
@@ -400,7 +409,6 @@ body{padding:0!important;margin:0!important}
   </div>
 
     <!-- 补充 -->
-  
 
   <div class="card" style="background:white;border-radius:12px;padding:30px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
     <h2 style="font-size:20px;color:#333;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #11998e">🎭 FAB实战升级：情感化表达</h2>
@@ -447,39 +455,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">要主动说明适用边界：「这款偏光镜片开车很舒服，但看车内仪表和手机屏会有点暗，这是它的特点。」提前说明比事后解释成本低得多。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：F、A、B 三要素分别是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>F 特性（产品是什么/有什么参数）、A 优点（相比同类好在哪）、B 利益（对顾客带来什么好处）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：把「镜片加了防污膜」改写成情感化表达。</summary>
-      <div class="lm-a"><b>参考答案：</b>「您以后擦眼镜会省事很多——指纹和油污不容易附着，用镜布轻轻一擦就干净，不用天天洗镜片。」</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：介绍的「讲—试—问」节奏是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>讲一个卖点 → 递上试戴 → 问一句顾客的感受，用顾客的反馈决定下一句讲什么。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：产品介绍的三个常见问题是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>参数堆砌（顾客听不懂）、语速过快（信息过载）、只讲优点不提适用边界（容易导致售后纠纷）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客试戴后说「没感觉出什么不一样」，你怎么接？</summary>
-      <div class="lm-a"><b>参考答案：</b>不要争辩，用对比让顾客自己感受：「那我拿另一副常规镜片给您对比一下，您看边缘厚度和清晰度有没有差别。」把「说」变成「看」，说服力立刻提升。</div>
-    </details>
-</div>
-<div class="card" style="background:white;border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-    <h2 style="font-size:18px;color:#333;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #11998e">📝 今日学习要点回顾</h2>
-    <ul style="padding-left:20px;line-height:1.8">
-      <li>FAB法则：特征→优势→利益，顾客最关心的是B（利益），B要与顾客具体需求精准对接，而不是背诵通用话术</li>
-      <li>每个产品推介前，先想：客户最在乎什么？</li>
-      <li>讲解时语速适中，说完一个FAB后停顿，观察顾客反应再继续</li>
-      <li>FAB是产品介绍的骨架，情感化表达是灵魂</li>
-      <li>🎯 今日任务：准备2-3款产品的FAB，完成至少1次实战讲解——今天就找机会向一位客户完整演练一遍</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -496,7 +472,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
 <div class="nav-bar">
   <a href="Day_30_练习题.html" class="nav-btn prev">← Day 30 练习题</a>
