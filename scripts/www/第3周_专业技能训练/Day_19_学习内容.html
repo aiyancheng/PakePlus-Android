@@ -272,6 +272,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -281,13 +294,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">第3周 · 专业技能训练</div>
   <h1>Day 19 — 售后服务与维修技能</h1>
   <div class="subtitle">技能模块 · 掌握常见眼镜维修技能，提供专业售后，赢得顾客信任与复购</div>
-</div>
-
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约3.5小时</div>
-  <div class="meta-item"><span class="dot"></span>模块：技能（Skills）+ 话术（Scripts）</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>实操要求：工具使用需师傅现场指导</div>
 </div>
 
 <div class="container">
@@ -481,9 +487,6 @@ body{padding:0!important;margin:0!important}
     </ol>
   </div>
 
-  
-
-  <div class="footer">Day 19 · 眼镜门店新员工8周成才培训计划 · 第3周 专业技能训练</div>
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -517,39 +520,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">非常有必要。记录顾客姓名、购买时间、问题、处理方式、结果，既能追溯责任，也是复购回访的依据——第 6 周的回访话术就靠这些记录。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：投诉处理的五步流程是？</summary>
-      <div class="lm-a"><b>参考答案：</b>倾听（不打断、让对方说完）→ 共情（认同情绪）→ 确认（复述问题）→ 处理（给方案与时限）→ 反馈（跟进结果）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：清洗眼镜的正确做法是？</summary>
-      <div class="lm-a"><b>参考答案：</b>常温清水冲洗 → 滴中性洗手液轻揉 → 冲净 → 用专用镜布吸干（不要来回干擦，不要用热水、酒精、衣角）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：为什么说售后服务其实是最划算的营销？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为老顾客复购与推荐的成本远低于获取新客。一次到位的售后（免费清洗、调整、回访）能直接带来复购和口碑，而成本只是一点时间和工费。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：螺丝松动、鼻托老化这类小修，应该怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>一般免费快速处理，顺手做清洁与调整——这是低成本高好感的机会，也是与顾客建立长期关系的最佳触点。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客带着别家店买的眼镜来求清洗调整，你怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>热情接待、免费做基础清洗与调整，不区别对待。顾客愿意进你的店，就是机会；做完递上名片或加个微信，很多人下一次就会在你这里配镜。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>售后服务是赢得顾客忠诚的最强武器，优质售后直接带来复购和口碑</li>
-      <li>常见维修：螺丝紧固（不可过紧）、鼻托更换（选同规格）、热整形（温度适中）</li>
-      <li>超声波清洗4步：检查水量→放入眼镜→启动→取出擦干</li>
-      <li>投诉处理5步：倾听→致歉→确认→提方案→跟进</li>
-      <li>复杂投诉立即请主管介入，不独自处理纠纷</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
