@@ -152,6 +152,19 @@
 
 /*@@ LAYOUT-UNIFY-4 @@*/
 body{padding:0!important;margin:0!important}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -159,18 +172,19 @@ body{padding:0!important;margin:0!important}
 
 <div class="header"><span class="day-tag">📝 第1周 · Day 06 练习题</span><h1>岗位职责与工作流程 — 巩固测评</h1><div style="color:#555;">总分：100分</div></div>
 <div class="container">
-  <div class="section-title">选择题（每题15分，共45分）</div>
+  <div class="section-title">选择题（每题15分，共60分）</div>
   <div class="question-card"><div class="q-header"><div class="q-num">1</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">顾客进店希望配一副近视眼镜，应该由谁先接待？</div><ul class="options"><li>A. 直接带到镜架区选框架</li><li>B. 先由销售顾问接待了解需求，根据情况安排验光</li><li>C. 让顾客自己先看看，有问题再过来</li><li>D. 直接告知验光师名单，让顾客等候</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：B。销售顾问先接待、了解需求，再安排验光，这是标准服务流程。</div></div>
   <div class="question-card"><div class="q-header"><div class="q-num">2</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">开店准备应该在正式营业前多少分钟完成？</div><ul class="options"><li>A. 准时开门前完成即可</li><li>B. 提前30分钟</li><li>C. 提前10分钟</li><li>D. 开门后第一个小时内完成</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：C。提前10分钟到岗完成开店准备，确保顾客进店就能获得良好体验。</div></div>
   <div class="question-card"><div class="q-header"><div class="q-num">3</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">销售顾问/配镜师的主要职责不包括以下哪项？</div><ul class="options"><li>A. 接待顾客，了解配镜需求</li><li>B. 为顾客进行专业视力检查，出具验光处方</li><li>C. 推荐镜架和镜片，完成销售</li><li>D. 处理日常售后、镜架调整</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：B。出具验光处方是验光师的专业职责，销售顾问不负责验光。</div></div>
-  <div class="section-title">简答题（55分）</div>
-  <div class="question-card"><div class="q-header"><div class="q-num">4</div><span class="q-type">简答题</span><span class="q-score">25分</span></div><div class="question-text">请按顺序列出一天工作的7个基本流程步骤，并简述每步的核心任务。</div><textarea class="answer-area" placeholder="请按顺序列出……"></textarea><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 参考答案：①开店准备（开灯整理陈列）②顾客接待（迎接了解需求）③验光环节（配合验光师）④选镜配镜（推荐方案）⑤收银下单（核对收款）⑥取镜售后（调整讲解保养）⑦闭店整理（清点打扫交接）</div></div>
-  <div class="question-card"><div class="q-header"><div class="q-num">5</div><span class="q-type">实操任务</span><span class="q-score">30分</span></div><div class="question-text">向带教师傅口头描述今天你观察到的一次完整顾客服务流程，包括：顾客进店→验光→选镜→离店，说出每个环节你注意到的关键动作。</div><textarea class="answer-area" placeholder="写下你的观察……"></textarea></div>
+  <div class="question-card"><div class="q-header"><div class="q-num">4</div><span class="q-type">单选题</span><span class="q-score">15分</span></div><div class="question-text">按《员工手册》晋升通道，"新学员"晋升"五级配镜师"的评定周期是多久？</div><ul class="options"><li>A. 1 个月</li><li>B. 3 个月</li><li>C. 6 个月</li><li>D. 1 年</li></ul><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 正确答案：B。配镜师专业线：新学员 3 个月 → 五级配镜师 6 个月 → 四级起每级 1 年，直至资深配镜师；另有店长/经理管理线（储干→四级店长→…→一级经理，每级 1 年）。</div></div>
+  <div class="section-title">简答题（40分）</div>
+  <div class="question-card"><div class="q-header"><div class="q-num">5</div><span class="q-type">简答题</span><span class="q-score">20分</span></div><div class="question-text">请按顺序列出一天工作的7个基本流程步骤，并简述每步的核心任务。</div><textarea class="answer-area" placeholder="请按顺序列出……"></textarea><button class="show-answer-btn" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">查看参考答案</button><div class="answer-hint">✅ 参考答案：①开店准备（开灯整理陈列）②顾客接待（迎接了解需求）③验光环节（配合验光师）④选镜配镜（推荐方案）⑤收银下单（核对收款）⑥取镜售后（调整讲解保养）⑦闭店整理（清点打扫交接）</div></div>
+  <div class="question-card"><div class="q-header"><div class="q-num">6</div><span class="q-type">实操任务</span><span class="q-score">20分</span></div><div class="question-text">向带教师傅口头描述今天你观察到的一次完整顾客服务流程，包括：顾客进店→验光→选镜→离店，说出每个环节你注意到的关键动作。</div><textarea class="answer-area" placeholder="写下你的观察……"></textarea></div>
   <div class="nav-footer">
     <a class="nav-btn outline" href="Day_06_学习内容.html">← 返回学习内容</a>
     <a class="nav-btn outline" href="../index.html">🏠 首页</a>
     
-    <a class="nav-btn" href="Day_07_学习内容.html">Day 07（第1周周测）→</a>
+    <a class="nav-btn" href="Day_07_学习内容.html">Day 07 总结复盘 →</a>
   </div>
 </div>
 
