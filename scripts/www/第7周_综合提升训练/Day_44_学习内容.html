@@ -244,6 +244,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -387,9 +413,6 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  
-
-
     <h2 style="color:#6c3483;font-size:1.15rem;margin-top:32px;padding-left:10px;border-left:4px solid #8e44ad">💼 试戴营销法：让产品自己说话</h2>
   <div style="background:#f5eef8;border-radius:10px;padding:18px 22px;margin:14px 0;border:1px solid #e8daef">
     <p style="line-height:1.8;color:#555;margin-bottom:12px">研究表明，让客户试戴高端镜片15分钟，成交率提升60%以上。试戴的关键步骤：</p>
@@ -446,38 +469,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">时间效率（不啰嗦、一次搞定）、专业判断（你替他做减法和决策）、隐私与尊重、后续服务的确定性。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：高端产品推介的四步框架是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>识别需求（用眼场景与痛点）→ 讲技术价值（工艺/设计/材料）→ 提供证据（样品对比/案例/溯源）→ 给决策理由（限时权益/售后保障/搭配方案）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：用顾客语言解释「自由曲面/个性化定制」。</summary>
-      <div class="lm-a"><b>参考答案：</b>「普通镜片是按统一规格做的，定制是根据您的度数、瞳距、镜架弯度单独设计加工，看边缘时会变形更小、视野更宽，尤其适合度数高或散光大的情况。」</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：高端客户的三个核心诉求是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>品质与专业、时间效率、被尊重与隐私感。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：高端销售的两个典型误区是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>只谈价格不谈价值；堆砌专业术语让顾客听不懂。两者都会让顾客觉得「你在卖贵的东西」而不是「你在解决我的问题」。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客说「我在网上查了，这个品牌没你说的那么贵」，你怎么回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>不辩论价格，回到方案本身：「网上价格确实有差别，可能是渠道和版本不同。您既然看重品质，更关键的是装到您的度数上是否合适、出了问题谁负责。我们这边有原厂质保和随时到店的售后，这点对您更有价值。」</div>
-    </details>
-</div>
-<div style="background:linear-gradient(135deg,#f5eef8,#e8daef);border-radius:10px;padding:20px 24px;margin-top:24px">
-    <strong style="color:#6c3483">📝 今日学习要点回顾</strong>
-    <ul style="margin-top:10px;padding-left:18px;line-height:2">
-      <li>高端品牌各有特色，蔡司（个性化定制）、依视路（渐进技术）、豪雅（性价比高）</li>
-      <li>三步推介法：痛点→解决方案→体验邀请</li>
-      <li>数字和品牌背书是最有说服力的工具</li>
-      <li>识别高端消费信号，主动升级推荐，提升客单价</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -494,8 +486,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="Day_43_练习题.html" class="nav-btn outline">← Day 43 练习题</a>
