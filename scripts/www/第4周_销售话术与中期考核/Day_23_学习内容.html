@@ -287,6 +287,19 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -296,12 +309,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">第4周 · 销售话术与中期考核</div>
   <h1>Day 23 — 产品介绍话术</h1>
   <div class="subtitle">话术模块 · 用FABE法则让产品介绍有说服力，让顾客主动爱上你的推荐</div>
-</div>
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约3.5小时</div>
-  <div class="meta-item"><span class="dot"></span>模块：话术（Scripts）</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>核心方法：FABE法则</div>
 </div>
 <div class="container">
 
@@ -408,10 +415,6 @@ body{padding:0!important;margin:0!important}
     <p>练习方法：选3款门店产品，各写一段FABE介绍词，背诵并演练给师傅听。</p>
   </div>
 
-  
-
-  <div class="footer">Day 23 · 眼镜门店新员工8周成才培训计划 · 第4周 销售话术与中期考核</div>
-
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -445,38 +448,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">可以用体验式证据：现场对比试戴、用水滴演示防污、用灯光演示减反射、老顾客案例。不要编数据，也不要用「很多客人都说」这类无根据的话。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：FABE 四个字母分别代表什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>F=Feature 特性（是什么）；A=Advantage 优点（相比同类好在哪）；B=Benefit 利益（对顾客有什么用）；E=Evidence 证据（凭什么相信）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：为什么 B（利益）最重要？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为顾客买的是结果不是参数。只有把参数翻译成「您会得到什么」（更轻、更清楚、更耐用、更好看），顾客才会心动。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：把「阿贝数 42」翻译成顾客能懂的话。</summary>
-      <div class="lm-a"><b>参考答案：</b>「这个数字代表成像的清晰纯净度，数字越高，看细小字和边缘时越不容易出现彩色边上，长时间用眼更舒服。」</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：没有检测报告时可以用哪些证据？</summary>
-      <div class="lm-a"><b>参考答案：</b>现场对比试戴、演示实验（防污、减反射）、老顾客使用反馈与案例、品牌官方资料，绝不用编造数据。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客问「你们这个镜片凭什么比网上贵一倍」，你如何用 FABE 回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>F：这是原厂正品镜片，有溯源可查；A：膜层工艺和品控标准不同；B：装到您的度数上更清晰、更耐用，出问题我们当场负责调整和质保；E：可以扫溯源验证，也可以给您看顾客用了两年的实际状态。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>FABE = 特征(F) + 优势(A) + 顾客利益(B) + 证据(E)，B是核心</li>
-      <li>不要只说参数，要把每个特征转化成顾客能感受到的实际好处</li>
-      <li>同款产品面对不同顾客需求，要强调不同卖点</li>
-      <li>先探需求，再精准推荐，事半功倍</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
