@@ -272,6 +272,38 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
+
+/*@@ ZONE-GRID-4COL @@*/
+/* ═══ 「一、为什么陈列如此重要」四卡固定 1 行 4 列 ═══ */
+.zone-grid{grid-template-columns:repeat(4,1fr)!important;gap:16px!important}
+.zone-grid>.zone-card{min-width:0;background:#f7f8fd!important;padding:16px 12px!important}
+@media(max-width:900px){
+  .zone-grid{grid-template-columns:repeat(4,1fr)!important;gap:10px!important}
+  .zone-grid>.zone-card{padding:12px 8px!important}
+  .zone-grid .zone-icon{font-size:26px!important;margin-bottom:6px!important}
+  .zone-grid h4{font-size:13.5px!important;margin-bottom:5px!important}
+  .zone-grid p{font-size:11.5px!important;line-height:1.45!important}
+}
+@media(max-width:600px){
+  .zone-grid{grid-template-columns:repeat(4,1fr)!important;gap:6px!important}
+  .zone-grid>.zone-card{padding:9px 5px!important;border-radius:8px!important}
+  .zone-grid .zone-icon{font-size:20px!important;margin-bottom:4px!important}
+  .zone-grid h4{font-size:11.5px!important;margin-bottom:4px!important}
+  .zone-grid p{font-size:10px!important;line-height:1.4!important}
+}
 </style>
 </head>
 <body>
@@ -281,13 +313,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">第3周 · 专业技能训练</div>
   <h1>Day 17 — 商品陈列与货区管理</h1>
   <div class="subtitle">技能模块 · 让每一件商品"会说话"，打造有吸引力的门店视觉环境</div>
-</div>
-
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：约3小时</div>
-  <div class="meta-item"><span class="dot"></span>模块：技能（Skills）</div>
-  <div class="meta-item"><span class="dot"></span>重要性：⭐⭐⭐⭐</div>
-  <div class="meta-item"><span class="dot"></span>实操要求：必须现场演练</div>
 </div>
 
 <div class="container">
@@ -540,9 +565,7 @@ body{padding:0!important;margin:0!important}
   </div>
 
   <!-- 七、知识小结 -->
-  
 
-  <div class="footer">Day 17 · 眼镜门店新员工8周成才培训计划 · 第3周 专业技能训练</div>
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -576,39 +599,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">先做减法：清走破损、过季、无价签的样品，再按「品类 → 价位/风格 → 尺寸」三层归位。陈列乱往往不是摆得不好，是东西太多。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：镜架陈列的五大原则是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>分区清晰、正面朝外、黄金位放主推、间距均匀、一物一签（价签与商品一一对应）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：为什么「黄金位」要放主推款？</summary>
-      <div class="lm-a"><b>参考答案：</b>因为黄金位（顾客进门视线高度与正对位置）是视线停留时间最长的地方，主推款放这里试戴率最高，成交概率自然最大。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：营业中货区维护的要求是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>随拿随整：顾客试戴完立即归位、镜架朝向摆正、发现价签错位即刻纠正、镜面有指纹随手擦。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：以下哪项属于必须立刻纠正的高风险陈列问题？A. 镜架朝向不统一  B. 价签与商品价格不符  C. 柜台有一点灰  D. 间距不完全相等</summary>
-      <div class="lm-a"><b>参考答案：</b>B。价签错位会导致结算争议与投诉，属高风险，必须立即纠正并复盘原因。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：你发现展柜里少了一副样品，怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>先自查是否被移到别处（试戴区、收银台、加工区），确认丢失后立即报告师傅/店长，按门店流程登记处理，不隐瞒、不自行补位了事。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>陈列是无声的销售员，直接影响顾客的购买决策</li>
-      <li>门店分为橱窗区、入口区、主力区、镜片区、验光区、收银区六大功能区</li>
-      <li>镜架陈列遵守：分类清晰、整齐统一、颜色渐变、价格梯度、信息完整五大原则</li>
-      <li>每日分开店前、营业中、闭店前三个时段维护货区</li>
-      <li>常见错误：排列混乱、标签缺失、展架倒伏、展柜空位多等</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
