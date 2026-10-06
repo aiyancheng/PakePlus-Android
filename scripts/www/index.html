@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -142,8 +144,41 @@
   .sys-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:linear-gradient(135deg,#2c5aa0,#1a237e);color:#fff;font-size:.88em;font-weight:700;padding:11px 24px;border-radius:26px;transition:.2s}
   .sys-link:hover{filter:brightness(1.1);transform:translateY(-2px)}
 
+  /* ── 学 · 练 · 考 ── */
+  .slk-sec{background:#fff;border-radius:18px;padding:28px 30px;box-shadow:var(--shadow);margin-bottom:34px}
+  .slk-intro{font-size:.93em;color:#55607a;line-height:1.9;margin:0 0 22px}
+  .slk-intro strong{color:#c1440e}
+  .slk-bar{display:flex;width:100%;border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(26,35,126,.14);margin-bottom:10px}
+  .slk-seg{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;padding:14px 6px;text-align:center;min-width:0}
+  .slk-seg .sg-name{font-size:.88em;font-weight:800;letter-spacing:2px}
+  .slk-seg .sg-pct{font-size:1.8em;font-weight:800;line-height:1.15}
+  .slk-seg .sg-hint{font-size:.7em;opacity:.9;letter-spacing:.5px}
+  .sg-learn{flex:30;background:linear-gradient(135deg,#3f6fbf,#2c5aa0)}
+  .sg-practice{flex:50;background:linear-gradient(135deg,#f59250,#d9601a);box-shadow:inset 0 0 0 3px rgba(255,255,255,.6)}
+  .sg-exam{flex:20;background:linear-gradient(135deg,#8e44ad,#6a1b9a)}
+  .slk-scaleline{display:flex;font-size:.72em;color:#b3b8c6;letter-spacing:.5px;margin:0 0 24px 2px}
+  .slk-grid{display:grid;grid-template-columns:repeat(3,1fr)!important;gap:14px;align-items:stretch}
+  .slk-card{background:#f8fafd;border-radius:14px;padding:18px;border:1.5px solid transparent;display:flex;flex-direction:column;min-width:0}
+  .slk-card .sk-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+  .slk-card .sk-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.05em;color:#fff;flex-shrink:0}
+  .slk-card .sk-name{font-size:1.02em;font-weight:800;color:#1a237e}
+  .slk-card .sk-ratio{font-size:.74em;font-weight:800;color:#fff;border-radius:20px;padding:3px 10px;margin-left:auto;white-space:nowrap}
+  .slk-card .sk-sub{font-size:.76em;font-weight:700;color:#8a93a8;margin-bottom:7px}
+  .slk-card .sk-desc{font-size:.82em;color:#556;line-height:1.75}
+  .slk-card .sk-list{font-size:.79em;color:#667;line-height:1.8;margin-top:9px;list-style:none}
+  .slk-card .sk-list li{position:relative;padding-left:14px}
+  .slk-card .sk-list li::before{content:'▸';position:absolute;left:0;color:#9aa6c4}
+  .sk-learn .sk-icon,.sk-learn .sk-ratio{background:#2c5aa0}
+  .sk-practice{background:#fff8f2;border-color:#ffd9bd;box-shadow:0 10px 24px rgba(232,114,44,.16)}
+  .sk-practice .sk-icon,.sk-practice .sk-ratio{background:linear-gradient(135deg,#f59250,#d9601a)}
+  .sk-practice .sk-name{color:#c1440e}
+  .sk-exam .sk-icon,.sk-exam .sk-ratio{background:#6a1b9a}
+  .slk-note{margin-top:20px;background:#f6f8ff;border-left:4px solid #e8722c;border-radius:0 12px 12px 0;padding:15px 18px;font-size:.85em;color:#4a5570;line-height:1.85}
+  .slk-note b{color:#c1440e}
+  .slk-note .nt-t{font-weight:800;color:#1a237e;display:block;margin-bottom:4px}
+
   @media(max-width:640px){
-    .flow-sec,.mile-sec,.tool-sec{padding:20px 16px}
+    .flow-sec,.mile-sec,.tool-sec,.slk-sec{padding:20px 16px}
   }
 
   /* ── Timeline ── */
@@ -322,6 +357,12 @@
     .container{padding:22px 16px}
     .tip-box{flex-direction:column;gap:12px}
     .timeline{padding:20px 18px}
+    .slk-grid{gap:8px}
+    .slk-card{padding:12px 11px}
+    .slk-card .sk-name{font-size:.92em}
+    .slk-card .sk-desc{font-size:.76em}
+    .slk-card .sk-list{font-size:.74em}
+    .slk-card .sk-sub{font-size:.7em}
   }
   @media(max-width:600px){
     .hero{padding:34px 18px 30px}
@@ -329,6 +370,21 @@
     .hero .subtitle{font-size:.95em}
     .badge{font-size:.78em;padding:6px 13px}
     .container{padding:18px 12px}
+    .slk-seg{padding:10px 4px}
+    .slk-seg .sg-name{font-size:.74em;letter-spacing:1px}
+    .slk-seg .sg-pct{font-size:1.32em}
+    .slk-seg .sg-hint{font-size:.6em}
+    .slk-sec{padding:18px 12px}
+    .slk-grid{gap:6px}
+    .slk-card{padding:10px 8px}
+    .slk-card .sk-head{gap:5px;margin-bottom:7px}
+    .slk-card .sk-icon{width:26px;height:26px;font-size:.85em}
+    .slk-card .sk-name{font-size:.82em}
+    .slk-card .sk-ratio{font-size:.62em;padding:2px 6px;white-space:normal;text-align:center;line-height:1.3}
+    .slk-card .sk-sub{font-size:.64em}
+    .slk-card .sk-desc{font-size:.7em}
+    .slk-card .sk-list{font-size:.68em;line-height:1.65}
+    .slk-card .sk-list li{padding-left:11px}
   }
 
   /* 每周 7 天：固定一行 7 列 */
@@ -433,6 +489,19 @@
 @media(max-width:600px){
   .hero{padding:24px 14px 22px!important;border-radius:12px!important}
 }
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -526,59 +595,84 @@
     </div>
   </div>
 
-  <!-- ─── 配套工具清单 ─── -->
-  <div class="tool-sec">
+  <!-- ─── 学 · 练 · 考 ─── -->
+  <div class="slk-sec">
     <div class="section-title" style="margin-top:0">
-      <div class="icon-circle">🧰</div>
-      配套工具与模板清单
+      <div class="icon-circle">🎯</div>
+      学 · 练 · 考 — 以练为主的能力结构
     </div>
-    <div class="tool-grid">
-      <div class="tool-item"><div class="ti-name">① 岗位训练手册</div><div class="ti-use">承载全部工作站操作标准，是新员工学习的主教材，入职发放、随学随查。<a href="配套工具与模板/模板01_岗位训练手册.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">② 工作站检查表</div><div class="ti-use">把标准拆成可打勾的检查项，用于新人自检、训练员抽检、值班经理周检（覆盖 8 个工作站）。<a href="配套工具与模板/模板02_工作站检查表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">③ 训练员认证标准表</div><div class="ti-use">规范训练员选拔与认证，实操示范+试讲+主管评价，80 分以上持证上岗。<a href="配套工具与模板/模板03_训练员认证标准表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline">→</a></div></div>
-      <div class="tool-item"><div class="ti-name">④ 实操考核评分表</div><div class="ti-use">统一各工作站考核评分尺度，每次考核逐项打分、考后归档。<a href="配套工具与模板/模板04_实操考核评分表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑤ 带教计划/记录表</div><div class="ti-use">首日填写计划，每次带教后记录学习内容与掌握程度，作为考核依据。<a href="配套工具与模板/模板05_带教计划记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑥ 培训数据看板</div><div class="ti-use">集中呈现考核通过率、QSC 得分、客诉量等指标，为优化提供数据支撑。<a href="配套工具与模板/模板06_培训数据看板.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑦ 标准修订记录表</div><div class="ti-use">记录每次标准修订的内容、原因与生效时间，确保全员使用最新版。<a href="配套工具与模板/模板07_标准修订记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑧ 新人成长档案</div><div class="ti-use">汇总入职到转正的全部培训与考核记录，一人一档，用于转正与晋升参考。<a href="配套工具与模板/模板08_新人成长档案.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item" style="background:#fff7f0;border:1.5px solid #ffd9bd"><div class="ti-name" style="color:#c1440e">⑨ 结业应知应会表</div><div class="ti-use">把 56 天全部知识点与技能项整理成一张可交互自检表，三档标记掌握程度、自动统计，结业前逐项过关。<a href="新员工结业应知应会表.html" style="color:#c1440e;font-weight:700;text-decoration:underline"> →</a></div></div>
-    </div>
-    <a class="sys-link" href="配套工具与模板/index.html">🧰 《配套工具与模板》 →</a>
-    <a class="sys-link" href="新员工培训四大流程体系_标准-带教-考核-优化.html">📄 《四大流程体系》 →</a>
-    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#e8722c,#c1440e)" href="新员工结业应知应会表.html">📋 《新员工结业应知应会表》→</a>
-  </div>
+    <p class="slk-intro">这套课程不靠"听会"，靠"练会"。56 天的学习时间按 <strong>学 30% : 练 60% : 考 10%</strong> 的比例分配——<strong>练的比重最大</strong>，因为从"知道"到"会做"，中间只隔着一件事：重复动手。学是输入、考是检验，真正决定你能不能独立上岗的，是练。</p>
 
-  <!-- ─── 数据统计 ─── -->
-  <div class="stats-grid">
-    <div class="stat-card" style="--accent:#e91e63;--icon:'📅'">
-      <div class="stat-number">8</div>
-      <div class="stat-label">完整训练周数</div>
+    <div class="slk-bar">
+      <div class="slk-seg sg-learn">
+        <span class="sg-name">学</span>
+        <span class="sg-pct">30%</span>
+        <span class="sg-hint">看 · 理解</span>
+      </div>
+      <div class="slk-seg sg-practice">
+        <span class="sg-name">练</span>
+        <span class="sg-pct">60%</span>
+        <span class="sg-hint">动手 · 反复</span>
+      </div>
+      <div class="slk-seg sg-exam">
+        <span class="sg-name">考</span>
+        <span class="sg-pct">10%</span>
+        <span class="sg-hint">检验 · 纠偏</span>
+      </div>
     </div>
-    <div class="stat-card" style="--accent:#3949ab;--icon:'📖'">
-      <div class="stat-number">56</div>
-      <div class="stat-label">每日学习天数</div>
-    </div>
-    <div class="stat-card" style="--accent:#00897b;--icon:'🧩'">
-      <div class="stat-number">6</div>
-      <div class="stat-label">核心能力模块</div>
-    </div>
-    <div class="stat-card" style="--accent:#6a1b9a;--icon:'🏆'">
-      <div class="stat-number">2</div>
-      <div class="stat-label">阶段性考核</div>
-    </div>
-  </div>
+    <div class="slk-scaleline"><span style="flex:30">0%</span><span>50%</span><span style="flex:10;text-align:right">100%</span></div>
 
-  <!-- ─── 时间轴 ─── -->
-  <div class="timeline">
-    <div class="tl-track">
-      <div class="tl-week w1"><div class="tl-bar" style="background:#e91e63">第1周</div><div class="tl-label">文化与制度</div><div class="tl-days">Day 1–7</div></div>
-      <div class="tl-week w2"><div class="tl-bar" style="background:#9c27b0">第2周</div><div class="tl-label">光学与产品</div><div class="tl-days">Day 8–14</div></div>
-      <div class="tl-week w3"><div class="tl-bar" style="background:#3949ab">第3周</div><div class="tl-label">专业技能</div><div class="tl-days">Day 15–21</div></div>
-      <div class="tl-week w4"><div class="tl-bar" style="background:#764ba2">第4周</div><div class="tl-label">销售 &amp; 中考</div><div class="tl-days">Day 22–28</div></div>
-      <div class="tl-week w5"><div class="tl-bar" style="background:#00897b">第5周</div><div class="tl-label">实战跟岗</div><div class="tl-days">Day 29–35</div></div>
-      <div class="tl-week w6"><div class="tl-bar" style="background:#0277bd">第6周</div><div class="tl-label">独立接单</div><div class="tl-days">Day 36–42</div></div>
-      <div class="tl-week w7"><div class="tl-bar" style="background:#e65100">第7周</div><div class="tl-label">综合提升</div><div class="tl-days">Day 43–49</div></div>
-      <div class="tl-week w8"><div class="tl-bar" style="background:#6a1b9a">第8周</div><div class="tl-label">结业冲刺</div><div class="tl-days">Day 50–56</div></div>
+    <div class="slk-grid">
+      <div class="slk-card sk-learn">
+        <div class="sk-head">
+          <div class="sk-icon">📖</div>
+          <div class="sk-name">学</div>
+          <div class="sk-ratio">30%</div>
+        </div>
+        <div class="sk-sub">每天约 27 分钟 · 输入知识</div>
+        <div class="sk-desc">读当天的「学习内容」，把原理、产品、话术框架和制度标准先弄明白。够用就好，不追求背得多。</div>
+        <ul class="sk-list">
+          <li>每日 1 份学习内容 </li>
+          <li>光学原理 · 产品知识 · 制度标准 · 话术框架</li>
+          <li>边看边勾重点，看完立刻进入练</li>
+        </ul>
+      </div>
+
+      <div class="slk-card sk-practice">
+        <div class="sk-head">
+          <div class="sk-icon">🛠️</div>
+          <div class="sk-name">练</div>
+          <div class="sk-ratio">60% · 练为主</div>
+        </div>
+        <div class="sk-sub">每天约 54 分钟 · 全课重心</div>
+        <div class="sk-desc">占全部学习时间的六成，是这套课程真正的重心。做题、对练、上手操作，把"看懂"变成"做得出"。</div>
+        <ul class="sk-list">
+          <li>每日「练习题」：选择自动评分 + 填空/问答对答案</li>
+          <li>当天动手实践任务：话术演练、验光协助、镜架调整、开单收银</li>
+          <li>第 5–6 周跟岗实战与独立接单，在真实客流中反复练</li>
+          <li>每份材料末尾「四大流程落地衔接」指引练什么、练到什么标准</li>
+        </ul>
+      </div>
+
+      <div class="slk-card sk-exam">
+        <div class="sk-head">
+          <div class="sk-icon">📝</div>
+          <div class="sk-name">考</div>
+          <div class="sk-ratio">10%</div>
+        </div>
+        <div class="sk-sub">每周 + 2 次阶段性 · 检验纠偏</div>
+        <div class="sk-desc">考不是终点，而是"体检查漏"——把没练到位的地方找出来，再送回练里补。</div>
+        <ul class="sk-list">
+          <li>每周日测：每 7 天一次周测卷，当周内容现场检验</li>
+          <li>中期考核 Day 28 · 结业考核 Day 56</li>
+          <li>结业应知应会表：五档自评，自动列出薄弱项</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slk-note">
+      <span class="nt-t">📌 为什么"练"要占六成？</span>
+      《四大流程体系》里，"带教"和"考核"环节都建立在"练"之上：讲一遍只能记住 10%，自己动手做一遍能记住 70%。所以每天的安排都是<b>先学 30% 打底 → 再用 60% 反复练 → 最后用 10% 考出来</b>。练得越多，结业考核越轻松；练得越少，考场上越容易卡壳。
     </div>
   </div>
 
@@ -674,9 +768,10 @@
         <div class="day-col">
           <div class="day-num special">Day 07</div>
           <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🏆 第1周周测：文化制度综合</div>
+          <div class="day-topic">📋 第1周总结复盘 · 周测</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第1周_文化与制度启蒙/Day_07_学习内容.html">📝 周测卷</a>
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_07_学习内容.html">📋 总结复盘</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_07_周测卷.html">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -748,9 +843,10 @@
         <div class="day-col">
           <div class="day-num special">Day 14</div>
           <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🏆 第2周周测：光学产品综合</div>
+          <div class="day-topic">📋 第2周总结复盘 · 周测</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第2周_光学与产品知识/Day_14_学习内容.html">📝 周测卷</a>
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_14_学习内容.html">📋 总结复盘</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_14_周测卷.html">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -822,9 +918,10 @@
         <div class="day-col">
           <div class="day-num special">Day 21</div>
           <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🏆 第3周周测：专业技能综合</div>
+          <div class="day-topic">📋 第3周总结复盘 · 周测</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第3周_专业技能训练/Day_21_学习内容.html">📝 周测卷</a>
+            <a class="day-link learn" href="第3周_专业技能训练/Day_21_学习内容.html">📋 总结复盘</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_21_周测卷.html">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -896,9 +993,11 @@
         <div class="day-col">
           <div class="day-num exam">Day 28</div>
           <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🎓 中期综合考核</div>
+          <div class="day-topic">📋 第4周总结复盘 · 周测 · 中期考核</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第4周_销售话术与中期考核/Day_28_中期考核.html">📝 中期考核</a>
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_28_学习内容.html">📋 总结复盘</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_28_周测卷.html">📝 周测卷</a>
+            <a class="day-link exam-link" href="第4周_销售话术与中期考核/Day_28_中期考核.html">🎓 中期考核</a>
           </div>
         </div>
       </div>
@@ -972,8 +1071,8 @@
           <div class="flow-tag check">考核节点</div>
           <div class="day-topic">🏆 跟岗总结与成长复盘</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第5周_实战跟岗训练/Day_35_学习内容.html">📖 复盘总结</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_35_练习题.html">✏️ 周测</a>
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_35_学习内容.html">📋 总结复盘</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_35_周测卷.html">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -1047,8 +1146,8 @@
           <div class="flow-tag check">考核节点</div>
           <div class="day-topic">🏆 第6周总结与接单能力评估</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第6周_独立接单训练/Day_42_学习内容.html">📖 复盘总结</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_42_练习题.html">✏️ 周测</a>
+            <a class="day-link learn" href="第6周_独立接单训练/Day_42_学习内容.html">📋 总结复盘</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_42_周测卷.html">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -1122,8 +1221,8 @@
           <div class="flow-tag check">考核节点</div>
           <div class="day-topic">🏆 第7周综合复盘与能力提升</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第7周_综合提升训练/Day_49_学习内容.html">📖 复盘总结</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_49_练习题.html">✏️ 周测</a>
+            <a class="day-link learn" href="第7周_综合提升训练/Day_49_学习内容.html">📋 总结复盘</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_49_周测卷.html">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -1198,7 +1297,8 @@
           <div class="flow-tag check">考核节点</div>
           <div class="day-topic">🎓 正式结业考核暨毕业总结</div>
           <div class="day-links">
-            <a class="day-link exam-link" href="第8周_结业冲刺与毕业考核/Day_56_学习内容.html">📝 结业考核</a>
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_56_学习内容.html">📋 毕业总结</a>
+            <a class="day-link exam-link" href="第8周_结业冲刺与毕业考核/Day_56_周测卷.html">🎓 结业考核卷</a>
             <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_56_练习题.html">✏️ 自评问卷</a>
           </div>
         </div>
@@ -1206,11 +1306,36 @@
     </div>
   </div>
 
+  <!-- ─── 配套工具清单 ─── -->
+  <div class="tool-sec">
+    <div class="section-title" style="margin-top:0">
+      <div class="icon-circle">🧰</div>
+      配套工具与模板清单
+    </div>
+    <div class="tool-grid">
+      <div class="tool-item"><div class="ti-name">① 岗位训练手册</div><div class="ti-use">承载全部工作站操作标准，是新员工学习的主教材，入职发放、随学随查。<a href="配套工具与模板/模板01_岗位训练手册.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item"><div class="ti-name">② 工作站检查表</div><div class="ti-use">把标准拆成可打勾的检查项，用于新人自检、训练员抽检、值班经理周检（覆盖 8 个工作站）。<a href="配套工具与模板/模板02_工作站检查表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item"><div class="ti-name">③ 训练员认证标准表</div><div class="ti-use">规范训练员选拔与认证，实操示范+试讲+主管评价，80 分以上持证上岗。<a href="配套工具与模板/模板03_训练员认证标准表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline">→</a></div></div>
+      <div class="tool-item"><div class="ti-name">④ 实操考核评分表</div><div class="ti-use">统一各工作站考核评分尺度，每次考核逐项打分、考后归档。<a href="配套工具与模板/模板04_实操考核评分表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item"><div class="ti-name">⑤ 带教计划/记录表</div><div class="ti-use">首日填写计划，每次带教后记录学习内容与掌握程度，作为考核依据。<a href="配套工具与模板/模板05_带教计划记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item"><div class="ti-name">⑥ 培训数据看板</div><div class="ti-use">集中呈现考核通过率、QSC 得分、客诉量等指标，为优化提供数据支撑。<a href="配套工具与模板/模板06_培训数据看板.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item"><div class="ti-name">⑦ 标准修订记录表</div><div class="ti-use">记录每次标准修订的内容、原因与生效时间，确保全员使用最新版。<a href="配套工具与模板/模板07_标准修订记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item"><div class="ti-name">⑧ 新人成长档案</div><div class="ti-use">汇总入职到转正的全部培训与考核记录，一人一档，用于转正与晋升参考。<a href="配套工具与模板/模板08_新人成长档案.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item" style="background:#fff7f0;border:1.5px solid #ffd9bd"><div class="ti-name" style="color:#c1440e">⑨ 结业应知应会表</div><div class="ti-use">把 56 天全部知识点与技能项整理成一张可交互自检表，三档标记掌握程度、自动统计，结业前逐项过关。<a href="新员工结业应知应会表.html" style="color:#c1440e;font-weight:700;text-decoration:underline"> →</a></div></div>
+      <div class="tool-item" style="background:#f0fbf7;border:1.5px solid #bfe8d9"><div class="ti-name" style="color:#0b6e4f">⑩ 技能实操模拟演练安排表</div><div class="ti-use">8 大工作站 + 卖场运营，49 项技能、630+ 次实操演练：每项技能明确演练次数、演练形式（空演/对练/模拟/真岗）与熟练掌握要求，练到过关才上岗。<a href="技能实操模拟演练安排表.html" style="color:#0b6e4f;font-weight:700;text-decoration:underline"> →</a></div></div>
+    </div>
+    <a class="sys-link" href="配套工具与模板/index.html">《配套工具与模板》</a>
+    <a class="sys-link" href="新员工培训四大流程体系_标准-带教-考核-优化.html">《四大流程体系》</a>
+    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#e8722c,#c1440e)" href="新员工结业应知应会表.html">《新员工应知应会表》</a>
+    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#26a69a,#0b6e4f)" href="技能实操模拟演练安排表.html">《技能实操模拟演练安排表》</a>
+    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#3949ab,#1a237e)" href="新员工试用期解除情形与判断标准.html">《试用期解除情形与判断标准》</a>
+  </div>
+
   <!-- ─── 学习建议 ─── -->
   <div class="tip-box" style="margin-top:40px">
     <div>
       <h3>学习建议 · 按四大流程走完全程</h3>
-      <p>每天按顺序完成当天的<strong>学习内容</strong>和<strong>练习题</strong>，两者之间可通过底部导航按钮一键切换。学习内容建议早班前或午休时阅读，练习题当天完成。每份学习内容末尾的「<strong>四大流程落地衔接</strong>」模块，会告诉你今天学的知识对应当哪个工作站、怎么带教、怎么考核、如何回流优化——请配合训练员逐项落实。<br>📌 <strong>中期考核（Day 28）</strong>和<strong>结业考核（Day 56）</strong>是阶段性检验，请认真对待，考核结果将作为转正评定的重要参考依据。</p>
+      <p>每天按顺序完成当天的<strong>学习内容</strong>和<strong>练习题</strong>，两者之间可通过底部导航按钮一键切换。学习内容建议早班前或午休时阅读，练习题当天完成。每份学习内容末尾的「<strong>四大流程落地衔接</strong>」模块，会告诉你今天学的知识对应当哪个工作站、怎么带教、怎么考核、如何回流优化——请配合训练员逐项落实。<br>📌 <strong>中期考核（Day 28）</strong>和<strong>结业考核（Day 56）</strong>是阶段性检验，请认真对待，考核结果将作为转正评定的重要参考依据。<br>📕 关于试用期<strong>转正与解除</strong>的具体情形、判断标准与依据（考核不达标、严重违纪、个人意愿离职等），详见 <a href="新员工试用期解除情形与判断标准.html" style="color:#ffd9a8;font-weight:700;text-decoration:underline">《新员工试用期解除情形与判断标准》</a>。</p>
     </div>
   </div>
 
