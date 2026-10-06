@@ -248,6 +248,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -353,7 +379,6 @@ body{padding:0!important;margin:0!important}
     <tr><td>10</td><td>渐进镜的适应期通常是多长？</td><td>1-2周</td></tr>
   </table>
 
-  
     <h2 style="color:#2c3e50;margin-top:32px">🔗 视光学与销售的内在联系</h2>
   <div style="background:#f0f4f8;border-radius:10px;padding:18px 22px;margin:16px 0">
     <p style="line-height:1.8;color:#555;margin-bottom:12px">优秀的眼镜顾问不是"卖眼镜的"，而是"用专业解决视觉问题的人"：</p>
@@ -418,40 +443,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">情景题更重要。视光知识是判断依据，但顾客只看你的现场反应。所以复习时：视光知识过一遍，情景反复练。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：四类屈光不正的成因与表现分别是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>近视（光聚焦在视网膜前，远模糊）、远视（聚焦在后，近处吃力易疲劳）、散光（各方向聚焦不一致，重影变形）、老视（调节力下降，看近困难）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：镜片关键参数有哪些？各自的适用原则是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>折射率（度数越高选越高）、阿贝数（越高越清晰纯净）、膜层（按场景选防污/减反/防蓝光/防雾）、设计（球面/非球面/自由曲面）。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：哪些眼部症状必须建议就医而非配镜解决？</summary>
-      <div class="lm-a"><b>参考答案：</b>视力突然下降、眼痛/头痛剧烈、飞蚊突然增多伴闪光、视野遮挡、分泌物异常增多、外伤后视物异常等。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：视光学知识如何转化为销售能力？</summary>
-      <div class="lm-a"><b>参考答案：</b>屈光不正原理 → 解释"为什么需要配镜"，建立信任；镜片光学特性 → 用技术差异支撑高端产品价格；儿童视力发育 → 促成近视防控产品；老视机理 → 作为渐进镜推荐的专业依据。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客说「我眼睛总觉得有东西磨着，配副眼镜是不是就好了」，你怎么回应？</summary>
-      <div class="lm-a"><b>参考答案：</b>「磨的感觉多半是眼睛表面或眼睑的问题，配眼镜解决不了。这种情况建议您先去医院看一下，确定了原因再配镜更靠谱。如果您现在需要，我也可以帮您先做个视力检查参考。」——如实告知，不做诊断。</div>
-    </details>
-</div>
-<div class="summary">
-    <h3 style="margin:0 0 12px 0;">📝 今日学习要点回顾</h3>
-    <ul>
-      <li>视光学核心：近视/远视/散光/老花的成因与矫正原理，是笔试高频考点</li>
-      <li>验光工具：电脑验光（参考）→综合验光仪（主觉验光）→散光表/JCC（精确散光）→红绿测试（判定终点）</li>
-      <li>镜片参数：折射率（薄）、阿贝数（清）、球面/非球面（像差）、透光率（亮）</li>
-      <li>顾客常见眼部问题：如实解释、不越权诊断，该转诊的坚决转诊</li>
-      <li>进入结业考核前，重点攻克自评分数≤3分的视光知识模块</li>
-    </ul>
-    <p style="margin-top:14px; color:#aed6f1; font-weight:bold;">🎯 <strong>今日行动：</strong>做完10道自测题，找出答不出的3道，今晚重点复习这3道的知识点！</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -468,8 +460,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
-
 
   <div class="nav-footer">
     <a href="Day_52_练习题.html" class="nav-btn outline">← Day 52 练习题</a>
