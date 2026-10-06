@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Day 01 | 欢迎加入 · 企业文化与使命愿景</title>
+<title>Day 01 | 欢迎加入 · 行业特性与企业文化</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Microsoft YaHei', Arial, sans-serif; background: #f5f7fa; color: #333; }
@@ -189,7 +189,6 @@
 @media (min-width:901px) and (max-width:1400px){.home-topbar .ht-inner{max-width:1300px}}
 @media (max-width:900px){.home-topbar{padding:8px 0}.home-topbar .ht-inner{max-width:100%;padding:0 14px}.home-topbar a{font-size:.82em;padding:6px 14px}}
 
-
 /* ═══════ 四大流程落地衔接模块（增强版） ═══════ */
   .flow-block{background:#f5f8fd;border:1px solid #dbe6f5;border-radius:14px;padding:24px 26px;margin:26px 0}
   .flow-block h3{margin:0 0 12px;font-size:1.12em;color:#1a3a6b;font-weight:700}
@@ -268,6 +267,38 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
+
+/*@@ VALUE-CARDS-4COL @@*/
+/* ═══ 品牌理念（四条）固定 1 行 4 列 ═══ */
+.value-cards{grid-template-columns:repeat(4,1fr)!important;gap:14px!important}
+.value-cards>.value-card{min-width:0}
+@media(max-width:900px){
+  .value-cards{grid-template-columns:repeat(4,1fr)!important;gap:8px!important}
+  .value-cards>.value-card{padding:11px 7px!important}
+  .value-cards .icon{font-size:1.5em!important;margin-bottom:6px!important}
+  .value-cards .name{font-size:.9em!important}
+  .value-cards .desc{font-size:.74em!important;line-height:1.45!important}
+}
+@media(max-width:600px){
+  .value-cards{grid-template-columns:repeat(4,1fr)!important;gap:5px!important}
+  .value-cards>.value-card{padding:9px 5px!important;border-radius:8px!important}
+  .value-cards .icon{font-size:1.25em!important;margin-bottom:4px!important}
+  .value-cards .name{font-size:.78em!important}
+  .value-cards .desc{font-size:.68em!important;line-height:1.4!important}
+}
 </style>
 </head>
 <body>
@@ -276,14 +307,7 @@ body{padding:0!important;margin:0!important}
 <div class="header">
   <span class="day-tag">📅 第1周 · Day 01</span>
   <h1>🎉 欢迎加入我们的大家庭</h1>
-  <div class="subtitle">模块：文化 Culture | 今日主题：企业文化 · 使命愿景 · 我们是谁</div>
-</div>
-
-<div class="meta-bar">
-  <div class="meta-item">⏱ <strong>建议学习时长：</strong>2小时</div>
-  <div class="meta-item">🎯 <strong>学习方式：</strong>阅读 + 带教讲解 + 讨论</div>
-  <div class="meta-item">📝 <strong>配套练习：</strong>Day_01_练习题.html</div>
-  <div class="meta-item">👤 <strong>带教师傅：</strong>店长/资深员工</div>
+  <div class="subtitle">模块：文化 Culture | 今日主题：行业特性 · 企业文化 · 使命愿景 · 我们是谁</div>
 </div>
 
 <div class="container">
@@ -292,8 +316,10 @@ body{padding:0!important;margin:0!important}
   <h3>🎯 今日学习目标（学完你应该能做到）</h3>
   <ul class="lm-list">
       <li>认识门店：能说出门店名称、主营项目，并指出接待区、验光区、选镜区、加工区、取镜区分别在哪儿</li>
-      <li>理解使命：能用自己的话（不必逐字）讲清门店使命的核心意思</li>
-      <li>记住价值观：能说出 6 条核心价值观中的至少 4 条，并各举 1 个门店里的具体做法</li>
+      <li>看懂行业：能说出眼镜行业「半医半商、刚需长期、需求升级、竞争激烈」四个特性中的至少两个，理解它为什么既要做专业、又要做服务</li>
+      <li>理解使命：能用自己的话（不必逐字）讲清公司使命的核心意思</li>
+      <li>记住理念：能说出公司价值观「坚持做难而正确之事」，并背出 4 条品牌理念（诚实守信、勇于承担、深耕专业、引领创新）中的至少 3 条</li>
+      <li>了解公司：能说出公司的创立年份、覆盖区域，以及总部有哪些职能部门</li>
       <li>认识伙伴：知道带教师傅是谁、当班同事怎么称呼，遇到问题先找谁</li>
       <li>看懂路径：说清 8 周里你要学会什么、第 8 周结业要达到什么水平</li>
   </ul>
@@ -317,13 +343,83 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  <!-- 第二部分：企业使命 -->
+  <!-- 第二部分：行业特性 -->
   <div class="section">
-    <h2>🎯 第二部分：我们的使命 — 为什么存在</h2>
-    
-    <h3>📌 门店使命宣言</h3>
+    <h2>🔍 第二部分：行业特性 — 我们身处一个怎样的行业</h2>
+
+    <p>在讲"我们的公司和门店"之前，先弄明白一件事：<strong>眼镜零售，到底是一个什么样的行业？</strong>它不像卖衣服、卖手机那样简单——一头连着医疗，一头连着零售；一半靠专业，一半靠服务。看清这个行业的特性，你才会明白我们每天的工作为什么这样要求，价值又在哪里。</p>
+
+    <h3>⚕️ 特性一：半医半商 ——「专业」是立身之本</h3>
+    <p>眼镜行业最特殊的地方，在于它同时具备<strong>医疗</strong>与<strong>商业</strong>两重属性。验光、视功能检查、近视防控，本质上是"眼健康服务"，容不得半点马虎；而镜架镜片的挑选、搭配与售后，又是"零售服务"，讲究体验和沟通。这意味着：我们既是服务员，也是半个"健康守门人"。</p>
     <div class="highlight-box">
-      <div class="label">🌟 我们的使命</div>
+      <div class="label">💡 一句话记住：</div>
+      <p style="margin:6px 0;">普通零售卖错了可以退换；<strong>眼镜要是配错了，损害的是顾客的眼睛。</strong>这就是"半医"二字的分量，也是我们把每一项参数都验准的原因。</p>
+    </div>
+
+    <h3>🔄 特性二：刚需长期 —— 需求稳定，客群全覆盖</h3>
+    <p>"看不清"是刚需。近视一旦发生就不可逆、老视（老花）随年龄必然到来、孩子的度数还在发育期……只要有人需要看清世界，眼镜就有市场。所以这个行业<strong>不太受经济波动影响，复购稳定、客群极广</strong>——从几岁的孩子到七八十岁的老人，都是我们的服务对象。</p>
+
+    <h3>📈 特性三：需求升级 —— 从「卖一副眼镜」到「管一生眼健康」</h3>
+    <p>这几年行业发生了明显变化，三个趋势尤其值得新人了解：</p>
+    <ul>
+      <li><strong>近视低龄化、高发化</strong>：我国青少年近视率长期居高不下，近视防控已上升为国家战略，"科学验配 + 近视管理"成为门店的核心竞争力。</li>
+      <li><strong>人口老龄化</strong>：中老年人口比例持续上升，老视、白内障术后、眼底健康等问题，带来了大量中老年配镜与护眼需求。</li>
+      <li><strong>从"配镜"走向"全周期眼健康管理"</strong>：顾客要的不再只是"一副镜片"，而是一套能长期跟踪、科学干预的方案——这正是专业连锁门店的机会所在。</li>
+    </ul>
+
+    <h3>🏆 特性四：竞争激烈 —— 靠「专业 + 信任」建护城河</h3>
+    <p>街边眼镜店随处可见，价格战也很常见。但真正能留住顾客的，从来不是最低价，而是<strong>验得准、讲得清、服务好、信得过</strong>。谁更专业、更诚实、更愿意为顾客的长期视觉健康负责，谁就能在竞争中站稳脚跟。</p>
+
+    <div class="story-box">
+      <div class="story-title">📖 想一想：顾客为什么愿意多花几分钟听你讲？</div>
+      <p>因为在这个行业里，顾客买的不只是一件商品，而是一份"看得清、看得久"的安心。当你能把"度数为什么涨、这副镜片为什么适合他"讲明白时，你就不再只是一个"卖眼镜的"，而是一个值得托付的<strong>视觉健康顾问</strong>。理解了行业的这些特性，接下来"我们的使命"就顺理成章了。</p>
+    </div>
+  </div>
+
+  <!-- 第三部分：公司与门店 -->
+  <div class="section">
+    <h2>🏪 第三部分：我们的公司与门店</h2>
+
+    <h3>📖 公司历程（一分钟了解我们是谁）</h3>
+    <ul>
+      <li><strong>1999 年创立</strong>：创始人林邦多先生从温州入行、辗转多地来到永州，1998 年开拓冷水滩市场，1999 年在零陵区至善路创立第一家爱眼城眼镜。从一间小店、靠"手磨镜片"起家，逐步引进综合验光仪、半自动磨边机等专业设备。</li>
+      <li><strong>连锁发展</strong>：如今已发展为覆盖<strong>零陵、冷水滩、祁阳、蓝山</strong>两区两县的眼镜连锁企业。</li>
+      <li><strong>专家团队</strong>：以一级、二级验光技师组成核心技术团队，坚持"专业配眼镜"的立店之本，"以始为终"持续提升专业水平与服务质量。</li>
+    </ul>
+
+    <h3>🏢 公司组织架构（知道自己属于哪一环）</h3>
+    <table class="structure-table">
+      <thead><tr><th>层级</th><th>构成</th><th>主要职能</th></tr></thead>
+      <tbody>
+        <tr><td>总经理 / 营运部</td><td>公司最高管理层</td><td>统筹公司整体经营与发展方向</td></tr>
+        <tr><td>总部职能部门</td><td>财务部、人事部、培训部、市场部、仓储物流部</td><td>为各片区门店提供专业支持与保障</td></tr>
+        <tr><td>片区</td><td>零陵片区、冷水滩片区、祁阳片区（及蓝山门店）</td><td>门店日常运营、销售与服务</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.9em;color:#666;">💡 记住这条链路：你在门店工作，遇到需要公司层面支持的事项（如人事、培训、货品调拨），会经由片区 → 总部对应部门处理。</p>
+
+    <h3>📍 门店基本信息</h3>
+    <p>（此处由带教师傅结合实际门店情况补充：门店成立时间、地址、主要服务项目、主要顾客群体、门店运转等）</p>
+
+    <h3>🛎️ 我们提供的服务</h3>
+    <ul>
+      <li><strong>专业视力检查</strong>：电脑验光 + 综合验光 + 视功能检查</li>
+      <li><strong>眼镜配制服务</strong>：近视镜、老花镜、太阳镜、功能性镜片</li>
+      <li><strong>镜架调整整形</strong>：免费调整，确保配戴舒适</li>
+      <li><strong>售后维护服务</strong>：清洗、螺丝紧固、镜腿更换</li>
+      <li><strong>视觉健康咨询</strong>：青少年近视防控、老视管理等</li>
+    </ul>
+
+    <h3>👥 团队构成</h3>
+    <p>（带教师傅结合门店实际情况介绍：店长、验光师、配镜师、销售顾问等岗位分工）</p>
+  </div>
+
+  <!-- 第四部分：企业使命 -->
+  <div class="section">
+    <h2>🎯 第四部分：我们的使命 — 为什么存在</h2>
+    
+    <h3>📌 我们的使命</h3>
+    <div class="highlight-box">
       <p style="font-size:1.15em; font-weight:700; color:#2e7d32; margin:8px 0;">
         "我们将用臻于至善的工匠精神，为客户打造一流的视觉健康解决方案"
       </p>
@@ -346,76 +442,51 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
-  <!-- 第三部分：愿景与核心价值观 -->
+  <!-- 第五部分：愿景与核心价值观 -->
   <div class="section">
-    <h2>🌈 第三部分：愿景与核心价值观</h2>
+    <h2>🌈 第五部分：愿景、价值观与品牌理念</h2>
 
-    <h3>🔭 门店愿景</h3>
+    <h3>🔭 我们的愿景</h3>
     <div class="highlight-box">
-      <div class="label">🚀 我们的愿景</div>
       <p style="font-size:1.1em; font-weight:700; color:#1565c0;">"让客户更加满意，让员工更有尊严，让企业更受尊重"</p>
     </div>
 
     <p>愿景是我们努力的方向。不是最大，而是<strong>满意、尊严、尊重</strong>。每位员工的每一次用心服务，都在帮助门店靠近这个目标。</p>
 
-    <h3>💎 核心价值观</h3>
+    <h3>💎 价值观</h3>
+    <div class="highlight-box">
+      <p style="font-size:1.1em; font-weight:700; color:#6a1b9a; margin:8px 0;">"坚持做难而正确之事"</p>
+    </div>
+    <p>什么是"难而正确之事"？就是<strong>短期看费劲、长期看正确</strong>的事：多花 10 分钟把验光问诊做细，而不是应付了事；顾客预算不够时推荐更实惠的方案，而不是推最贵的；发现配镜参数有疑问，宁可重验一次也不心存侥幸。选择"难"的那条路，正是我们区别于普通眼镜店的地方。</p>
+
+    <h3>🏷️ 品牌理念（四条，请背下来）</h3>
     <div class="value-cards">
       <div class="value-card">
-        <div class="icon">🎯</div>
-        <div class="name">专业精准</div>
-        <div class="desc">用科学和技术为顾客提供精准的视觉解决方案，不猜测，不马虎</div>
-      </div>
-      <div class="value-card">
-        <div class="icon">❤️</div>
-        <div class="name">真诚用心</div>
-        <div class="desc">把顾客当家人，用真心换信任，不为业绩牺牲顾客利益</div>
-      </div>
-      <div class="value-card">
-        <div class="icon">📈</div>
-        <div class="name">持续成长</div>
-        <div class="desc">不断学习新知识、新技能，和行业一起进步</div>
-      </div>
-      <div class="value-card">
         <div class="icon">🤝</div>
-        <div class="name">团队协作</div>
-        <div class="desc">互相支持，知识共享，团队的成功才是真正的成功</div>
+        <div class="name">诚实守信</div>
+        <div class="desc">说到做到，对顾客诚实，不夸大、不欺骗、不以次充好</div>
       </div>
       <div class="value-card">
-        <div class="icon">⭐</div>
-        <div class="name">追求卓越</div>
-        <div class="desc">不满足于"及格"，每一件事都做到最好</div>
+        <div class="icon">🛡️</div>
+        <div class="name">勇于承担</div>
+        <div class="desc">出了问题不推诿、不找借口，先解决顾客的事，再复盘自己的错</div>
       </div>
       <div class="value-card">
-        <div class="icon">🌱</div>
-        <div class="name">诚信守正</div>
-        <div class="desc">说到做到，对顾客诚实，不夸大、不欺骗</div>
+        <div class="icon">🔬</div>
+        <div class="name">深耕专业</div>
+        <div class="desc">把验光、配镜、视光知识学深学透，用专业赢得顾客信任</div>
+      </div>
+      <div class="value-card">
+        <div class="icon">💡</div>
+        <div class="name">引领创新</div>
+        <div class="desc">不满足于"一直这么做"，主动学习新技术、新方法，带动门店进步</div>
       </div>
     </div>
   </div>
 
-  <!-- 第四部分：门店简介 -->
+  <!-- 第六部分：我的角色 -->
   <div class="section">
-    <h2>🏪 第四部分：我们的门店</h2>
-
-    <h3>📍 门店基本信息</h3>
-    <p>（此处由带教师傅结合实际门店情况补充：门店成立时间、地址、主要服务项目、主要顾客群体、门店业绩等）</p>
-
-    <h3>🛎️ 我们提供的服务</h3>
-    <ul>
-      <li><strong>专业视力检查</strong>：电脑验光 + 综合验光 + 视功能检查</li>
-      <li><strong>眼镜配制服务</strong>：近视镜、老花镜、太阳镜、功能性镜片</li>
-      <li><strong>镜架调整整形</strong>：免费调整，确保配戴舒适</li>
-      <li><strong>售后维护服务</strong>：清洗、螺丝紧固、镜腿更换</li>
-      <li><strong>视觉健康咨询</strong>：青少年近视防控、老视管理等</li>
-    </ul>
-
-    <h3>👥 团队构成</h3>
-    <p>（带教师傅结合门店实际情况介绍：店长、验光师、配镜师、销售顾问等岗位分工）</p>
-  </div>
-
-  <!-- 第五部分：我的角色 -->
-  <div class="section">
-    <h2>🙋 第五部分：我在团队中的角色</h2>
+    <h2>🙋 第六部分：我在团队中的角色</h2>
 
     <h3>📌 你的岗位职责（销售顾问/配镜师）</h3>
     <ul>
@@ -470,47 +541,14 @@ body{padding:0!important;margin:0!important}
     </details>
     <details class="lm-q">
       <summary>❓ 顾客问我一个我不知道的问题，怎么办？</summary>
-      <div class="lm-a">不能猜、不能瞎编。标准回答：「这个问题我帮您确认一下，马上请我们师傅给您答复。」然后立刻去找师傅——这叫「不欺客」，也是价值观里「诚信守正」的要求。</div>
+      <div class="lm-a">不能猜、不能瞎编。标准回答：「这个问题我帮您确认一下，马上请我们师傅给您答复。」然后立刻去找师傅——这叫「不欺客」，也是品牌理念里「诚实守信」的要求。</div>
     </details>
     <details class="lm-q">
       <summary>❓ 门店里什么是绝对的红线？</summary>
       <div class="lm-a">四条：不欺骗顾客、不私自收钱/改价、不泄露顾客资料、不在店里做与工作无关的私事（含长时间玩手机）。具体条款在第 4、5 天会讲。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：用你自己的话说，门店使命的核心意思是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>用专业的本事、认真的态度，帮客户把「看得清、看得舒服」这件事解决好——我们卖的不只是眼镜，是视觉健康。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：顾客进店后的正确服务动线顺序是？</summary>
-      <div class="lm-a"><b>参考答案：</b>迎宾问候 → 接待区问清需求 → 验光区检查 → 选镜区挑镜架镜片 → 收银开单 → 取镜与售后。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：六大核心价值观中，要求「不以次充好、不夸大产品效果」的是哪一条？</summary>
-      <div class="lm-a"><b>参考答案：</b>诚信守正。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：情景：顾客进门后没人招呼，站在门口左右张望，你正在整理货架，该怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>先放下手上的活，3 秒内抬头、微笑、迎上去：「您好，欢迎光临！需要配眼镜还是先看看？」——顾客优先于手上工作，这是第一印象，也是后面「7 秒定律」的基础。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：你所在岗位在整条服务流程里承担什么角色？</summary>
-      <div class="lm-a"><b>参考答案：</b>顾客接触时间最长的一环：负责问清需求、陪同选镜、解释方案、跟进售后，是顾客和验光师、加工师之间的桥梁。</div>
-    </details>
-</div>
-<div class="summary-box">
-    <h3>📝 今日学习要点回顾</h3>
-    <ul>
-      <li>✅ 公司使命："我们将用臻于至善的工匠精神，为客户打造一流的视觉健康解决方案"</li>
-      <li>✅ 六大核心价值观：专业精准、真诚用心、持续成长、团队协作、追求卓越、诚信守正</li>
-      <li>✅ 愿景：让客户更加满意，让员工更有尊严，让企业更受尊重</li>
-      <li>✅ 你的成长路径：8周从零基础到独立上岗</li>
-      <li>✅ 我们做的不只是卖眼镜——我们在守护人们看世界的权利</li>
-    </ul>
-    <p style="margin-top:14px; color:#2e7d32; font-weight:600;">🎯 今日实践任务：用自己的话向带教师傅复述门店使命和3条以上价值观</p>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
