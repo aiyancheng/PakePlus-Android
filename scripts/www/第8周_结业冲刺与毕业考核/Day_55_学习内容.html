@@ -251,6 +251,32 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+/*@@ LAYOUT-UNIFY-5 @@*/
+/* ═══ 修正：container 自身即白卡片的页面 —— 恢复左右内边距 + 顶部留白 ═══
+   （透明包装型页面 container 内层是自带内边距的卡片，不需此规则） */
+.container{
+  padding-left:30px!important;padding-right:30px!important;
+  margin-top:16px!important;
+}
+@media(max-width:900px){
+  .container{padding-left:16px!important;padding-right:16px!important;margin-top:14px!important}
+}
+@media(max-width:600px){
+  .container{padding-left:12px!important;padding-right:12px!important;margin-top:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
 </style>
 </head>
 <body>
@@ -513,7 +539,6 @@ body{padding:0!important;margin:0!important}
     <p style="margin-top:16px; color:#a9dfbf; font-size:14px;">（请认真对照参考答案，找出每道题的扣分点，最后复习一遍）</p>
   </div>
 
-
 <script>
 function toggleAnswer(id) {
   const el = document.getElementById(id);
@@ -532,17 +557,7 @@ function resetAll() {
   document.getElementById('scoreBox').style.display = 'none';
 }
 </script>
-<div class="summary" style="background:linear-gradient(135deg,#fff8e1,#ffecb3);border-radius:12px;padding:24px;margin-top:30px">
-    <h3 style="margin:0 0 12px 0;color:#f57f17">📝 今日学习要点回顾</h3>
-    <ul style="padding-left:20px;line-height:2">
-      <li>结业综合模拟考：满分 200 分，及格线 140 分（70%），优秀线 160 分（80%），考试时长 90 分钟</li>
-      <li>题型与分值：单选题 40 分、填空与简答 20 分、情景应对题（含全流程综合演练 50 分）</li>
-      <li>核心考点：近视矫正原理、渐进镜使用、客单价指标、老视成因、价值分解法、全流程接待方案设计</li>
-      <li>全流程接待方案要覆盖：接待 → 需求挖掘 → 验光解读 → 产品推荐 → 异议处理 → 成交 → 售后</li>
-      <li>模拟考的目的不是分数，而是找出最后 1-2 个知识漏洞，考前补齐、调整状态</li>
-    </ul>
-    <p style="margin-top:14px;color:#f57f17;font-weight:600">🎯 今日任务：按真实考核要求完成结业综合模拟考，对照参考答案找出每道题的扣分点，最后复习一遍薄弱模块。</p>
-  </div>
+
 <!-- LM-START -->
 <div class="lm-block lm-faq">
   <h3>⚠️ 常见问题与注意事项</h3>
