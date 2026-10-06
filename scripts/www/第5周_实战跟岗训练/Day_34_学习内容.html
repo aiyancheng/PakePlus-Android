@@ -275,6 +275,47 @@ body{padding:0!important;margin:0!important}
 /*@@ FLOW-GRID-2X2 @@*/
 .flow-grid{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:600px){.flow-grid{gap:10px}.flow-col{padding:12px}}
+
+/*@@ COMPARE-2COL @@*/
+/* ═══ 正反对比模块（应该做到/需要避免 · 正确/错误 · 正确话术/错误话术）固定 1 行 2 列 ═══ */
+.do-dont,.wrong-right,.compare-grid{grid-template-columns:repeat(2,1fr)!important}
+.do-dont>*,.wrong-right>*,.compare-grid>*{min-width:0;overflow-wrap:break-word}
+@media(max-width:640px){
+  .do-dont,.wrong-right,.compare-grid{gap:10px!important}
+  .do-box,.dont-box,.do,.dont,.wrong-box,.right-box,.compare-card{padding:12px!important}
+}
+
+/*@@ TABLE-FIT @@*/
+/* ═══ 窄屏/竖屏表格自适应屏宽（取消横向滚动，列宽随屏宽收缩、长内容自动换行） ═══ */
+@media(max-width:1100px){
+  table:not(.no-fit){display:table!important;width:100%!important;max-width:100%!important;min-width:0!important;table-layout:auto!important;overflow:visible!important;border-collapse:collapse!important}
+  table:not(.no-fit) th,table:not(.no-fit) td{overflow-wrap:break-word!important;word-break:break-word!important}
+}
+@media(max-width:900px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:8px 6px!important;font-size:12px!important;line-height:1.5!important}
+}
+@media(max-width:600px){
+  table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
+}
+
+/*@@ STEP-GRID-5COL @@*/
+/* ═══ 客诉处理黄金5步：固定 1 行 5 列（覆盖 3列/2列/1列 的响应式塌缩） ═══ */
+.step-grid{grid-template-columns:repeat(5,1fr)!important}
+.step-grid>*{min-width:0}
+@media(max-width:900px){
+  .step-grid{gap:6px!important}
+  .step-box{padding:12px 6px!important}
+  .step-box .num{font-size:19px!important}
+  .step-box .name{font-size:13px!important}
+  .step-box .sub{font-size:11px!important;line-height:1.35!important}
+}
+@media(max-width:600px){
+  .step-grid{gap:4px!important}
+  .step-box{padding:10px 4px!important}
+  .step-box .num{font-size:16px!important}
+  .step-box .name{font-size:11px!important}
+  .step-box .sub{font-size:10px!important;line-height:1.3!important}
+}
 </style>
 </head>
 <body>
@@ -284,10 +325,6 @@ body{padding:0!important;margin:0!important}
   <div class="week-badge">📍 第5周 · 实战跟岗训练</div>
   <h1>Day 34 · 客诉处理实战：化危为机的沟通艺术</h1>
   <div class="subtitle">投诉不是麻烦，是建立深度信任的最好机会</div>
-</div>
-<div class="meta-bar">
-  <div class="meta-item"><span class="dot"></span>学习时长：3-4小时</div>
-  <div class="meta-item"><span class="dot"></span>重点能力：投诉处理 · 情绪管理 · 危机公关</div>
 </div>
 <div class="container">
 
@@ -400,9 +437,7 @@ body{padding:0!important;margin:0!important}
     </table>
   </div>
 
-
     
-
 
     <p style="text-align:center;color:#2980b9;font-weight:600;margin:12px 0">每一次成功处理投诉，都是你赢得终身客户的机会。</p>
   <p style="text-align:center;color:#aaa;font-size:.85rem;margin-bottom:12px">— Day 34 · 客诉处理实战 · 完成 —</p>
@@ -439,39 +474,7 @@ body{padding:0!important;margin:0!important}
       <div class="lm-a">完成线下解决 + 如实记录 + 复盘根因。差评本身不可怕，可怕的是同样的问题反复发生。事后可礼貌询问顾客的真实顾虑，但绝不要求删评换条件。</div>
     </details>
 </div>
-<div class="lm-block lm-quiz">
-  <h3>📝 今日自测（先做完再看答案）</h3>
-    <details class="lm-q">
-      <summary>第 1 题：客诉处理黄金 5 步是什么？</summary>
-      <div class="lm-a"><b>参考答案：</b>稳定情绪（请坐/递水）→ 倾听不打断 → 复述确认问题 → 给出方案与时限 → 跟进反馈并确认满意。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 2 题：「先处理情绪、再处理事情」为什么重要？</summary>
-      <div class="lm-a"><b>参考答案：</b>人在情绪里听不进道理。情绪没被接住就讲道理，只会被理解为推脱；先把情绪安抚下来，解决方案才可能被接受。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 3 题：超出权限时应该怎么做？</summary>
-      <div class="lm-a"><b>参考答案：</b>如实告知需要请示，给出明确的答复时间，然后按时回复。不擅自承诺、不推给顾客自己去找、不拖延。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 4 题：怎么把投诉顾客转化成忠实顾客？</summary>
-      <div class="lm-a"><b>参考答案：</b>问题解决得比预期更好（如免费调整 + 补偿 + 主动回访），让顾客感受到「出事时这家店靠得住」，信任往往比从没出过问题时更牢固。</div>
-    </details>
-    <details class="lm-q">
-      <summary>第 5 题：情景：顾客投诉「取镜当天没人通知我，白跑一趟」，你怎么处理？</summary>
-      <div class="lm-a"><b>参考答案：</b>先致歉并承认流程疏漏（不是「我们太忙了」）；立即查清取镜状态并当场办理；给出补救（优先服务/小礼品/延长保养服务）；最后自检提醒流程，把「到货必通知」落实到动作上。</div>
-    </details>
-</div>
-<div class="card" style="background:white;border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
-    <h2 style="font-size:18px;color:#333;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #11998e">📝 今日学习要点回顾</h2>
-    <ul style="padding-left:20px;line-height:1.8">
-      <li>客诉黄金5步：倾听→共情→道歉→解决→跟进；对应HEART原则：倾听→同理→致歉→解决→感谢</li>
-      <li>情绪管理是投诉处理的第一关，不要急于辩解，先让顾客感受到"被听见"</li>
-      <li>给出具体解决方案而非模糊承诺；超出权限时做好桥梁快速升级，不让顾客"晾着"</li>
-      <li>记录每次投诉案例，分析原因，防止同类问题再次发生</li>
-      <li>超预期解决投诉，是将投诉客户转化为忠实客户的最佳时机——化危为机</li>
-    </ul>
-  </div>
+
 <!-- LM-END -->
 
 <!-- FLOW-START -->
@@ -488,7 +491,6 @@ body{padding:0!important;margin:0!important}
   <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
-
 
 <div class="nav-bar">
   <a href="Day_33_练习题.html" class="nav-btn prev">← Day 33 练习题</a>
