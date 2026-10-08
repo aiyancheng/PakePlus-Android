@@ -276,6 +276,100 @@ body{padding:0!important;margin:0!important}
 @media(max-width:600px){
   table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
 }
+/*@@ DAY16-WF5 五维体系排版 @@*/
+.wf5-card h2{color:#4527a0;border-bottom:2px solid #ede7f6}
+.wf5-lead{line-height:1.85;color:#555;margin-bottom:16px}
+.wf5-lead strong{color:#5e35b1}
+
+/* 五维总览 */
+.wf5-overview{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0 8px}
+.wf5-ov-item{position:relative;border-radius:12px;padding:14px 8px 12px;text-align:center;color:#fff;box-shadow:0 3px 10px rgba(69,39,160,.12);overflow:hidden}
+.wf5-ov-item::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.22),transparent 60%);pointer-events:none}
+.wf5-ov-k{display:block;font-size:1.6em;font-weight:800;line-height:1;letter-spacing:1px;text-shadow:0 1px 3px rgba(0,0,0,.18)}
+.wf5-ov-n{display:block;font-size:.92em;font-weight:700;margin-top:4px}
+.wf5-ov-d{display:block;font-size:.72em;margin-top:5px;background:rgba(255,255,255,.22);border-radius:20px;padding:2px 6px;letter-spacing:.5px}
+.wf5-ov-a{background:linear-gradient(135deg,#3f8cff,#2662d9)}
+.wf5-ov-b{background:linear-gradient(135deg,#20b2aa,#0e8f88)}
+.wf5-ov-c{background:linear-gradient(135deg,#5e6ee0,#3d4bc0)}
+.wf5-ov-d{background:linear-gradient(135deg,#ff9f43,#e07b0e)}
+.wf5-ov-e{background:linear-gradient(135deg,#ef5b7b,#c93a5c)}
+.wf5-mnemonic{background:#faf7ff;border:1px solid #e6e1f6;border-radius:8px;padding:11px 15px;font-size:.92em;color:#4a3f6b;margin:12px 0 20px;line-height:1.7}
+.wf5-mnemonic strong{color:#5e35b1}
+
+/* 维度卡 */
+.wf5-dim{border-radius:14px;padding:18px 20px;margin:16px 0;border:1px solid #ece9f6;background:#fff}
+.wf5-dim-a{background:linear-gradient(180deg,#f5f9ff,#fff 90px)}
+.wf5-dim-b{background:linear-gradient(180deg,#f2fbfa,#fff 90px)}
+.wf5-dim-c{background:linear-gradient(180deg,#f4f5fd,#fff 90px)}
+.wf5-dim-d{background:linear-gradient(180deg,#fff8ee,#fff 90px)}
+.wf5-dim-e{background:linear-gradient(180deg,#fff5f7,#fff 90px)}
+.wf5-dim-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.wf5-badge{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:1.05em;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.14)}
+.wf5-dim-a .wf5-badge{background:#2662d9}.wf5-dim-b .wf5-badge{background:#0e8f88}
+.wf5-dim-c .wf5-badge{background:#3d4bc0}.wf5-dim-d .wf5-badge{background:#e07b0e}.wf5-dim-e .wf5-badge{background:#c93a5c}
+.wf5-dim-title{font-size:1.02em;font-weight:800;color:#333;letter-spacing:.2px}
+.wf5-count{margin-left:auto;font-size:.76em;font-weight:700;color:#7e57c2;background:#f1ecfb;border-radius:20px;padding:3px 12px;white-space:nowrap}
+.wf5-dim-tip{font-size:.9em;color:#5a6172;line-height:1.75;margin:8px 0 12px}
+.wf5-dim-tip strong{color:#4527a0}
+
+/* 统一表格 */
+.wf5-table{width:100%;border-collapse:collapse;margin:4px 0 0;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(69,39,160,.06)}
+.wf5-table th{background:#eae6f7;color:#4527a0;padding:10px 13px;text-align:left;font-size:.88em;font-weight:800;border-bottom:2px solid #ddd5f0}
+.wf5-table td{padding:10px 13px;font-size:.88em;color:#4a4a55;line-height:1.65;border-bottom:1px solid #f1eef9;vertical-align:top}
+.wf5-table tbody tr:nth-child(even) td{background:#faf9fe}
+.wf5-table tbody tr:last-child td{border-bottom:0}
+.wf5-table td strong{color:#333}
+.wf5-param{font-weight:800;color:#d84315!important;white-space:nowrap;font-size:.95em!important}
+
+/* B 线 */
+.wf5-lines{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+.wf5-line{background:#f2fbfa;border:1px solid #d6efec;border-radius:10px;padding:13px 15px}
+.wf5-line-t{font-weight:800;color:#0e7a74;margin-bottom:6px;font-size:.94em}
+.wf5-line-d{font-size:.87em;color:#4a5568;line-height:1.7}
+.wf5-line-d strong{color:#0e7a74}
+
+/* D 点 合格标准 */
+.wf5-criteria{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:10px;margin:4px 0 12px}
+.wf5-cri{border-radius:10px;padding:11px 13px;font-size:.85em;line-height:1.6}
+.wf5-cri-k{display:block;font-weight:800;margin-bottom:4px}
+.wf5-cri-ok{background:#eef8f0;color:#2e6b3d;border:1px solid #cfe9d6}.wf5-cri-ok .wf5-cri-k{color:#1b5e20}
+.wf5-cri-bad{background:#fdeef1;color:#a33248;border:1px solid #f6d4dc}.wf5-cri-bad .wf5-cri-k{color:#b3243c}
+.wf5-cri-warn{background:#fff8ea;color:#8a5b0a;border:1px solid #f4e0bb}.wf5-cri-warn .wf5-cri-k{color:#8a5b0a}
+
+/* E 七条 */
+.wf5-notes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.wf5-note{display:flex;gap:10px;align-items:flex-start;background:#fff5f7;border:1px solid #f6dbe2;border-radius:10px;padding:11px 13px}
+.wf5-note-i{font-size:1.15em;line-height:1.2;flex-shrink:0}
+.wf5-note-t{font-weight:800;color:#b3243c;font-size:.9em;margin-bottom:3px}
+.wf5-note-d{font-size:.84em;color:#5a5560;line-height:1.62}
+.wf5-note:last-child{grid-column:1/-1}
+
+/* 9 部曲 */
+.wf5-nine{margin-top:20px;background:#f7f5fd;border:1px solid #e6e1f6;border-radius:14px;padding:18px 20px}
+.wf5-nine-head{font-weight:800;color:#4527a0;font-size:1.02em;margin-bottom:8px}
+.wf5-nine-sub{font-size:.76em;font-weight:600;color:#8a7fc0;background:#eee9fa;border-radius:20px;padding:3px 11px;margin-left:8px}
+.wf5-steps{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}
+.wf5-step{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #ded6f2;border-radius:20px;padding:6px 13px 6px 6px;font-size:.83em;font-weight:700;color:#4a3f6b;box-shadow:0 1px 4px rgba(69,39,160,.06)}
+.wf5-step i{font-style:normal;width:20px;height:20px;border-radius:50%;background:#7e57c2;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.82em;font-weight:800}
+.wf5-nine .wf5-dim-tip{margin:0 0 8px}
+
+@media(max-width:900px){
+  .wf5-overview{grid-template-columns:repeat(5,1fr);gap:6px}
+  .wf5-ov-item{padding:10px 4px 9px}
+  .wf5-ov-k{font-size:1.3em}.wf5-ov-n{font-size:.82em}.wf5-ov-d{font-size:.66em}
+  .wf5-lines,.wf5-notes{grid-template-columns:1fr}
+  .wf5-criteria{grid-template-columns:1fr}
+  .wf5-dim{padding:15px 15px}
+  .wf5-badge{width:30px;height:30px;font-size:.95em}
+  .wf5-dim-title{font-size:.96em}
+  .wf5-step{font-size:.8em;padding:5px 11px 5px 5px}
+}
+@media(max-width:600px){
+  .wf5-overview{grid-template-columns:repeat(5,1fr);gap:4px}
+  .wf5-ov-k{font-size:1.1em}.wf5-ov-d{display:none}
+  .wf5-note:last-child{grid-column:auto}
+}
+
 </style>
 </head>
 <body>
@@ -407,6 +501,114 @@ body{padding:0!important;margin:0!important}
     </div>
   </div>
 
+  <div class="card wf5-card">
+    <h2>📐 第四部分：专业调校五维体系（A 面 · B 线 · C 角度 · D 点 · E 注意）</h2>
+    <p class="wf5-lead">门店《眼镜调校标准手册》把所有调校作业归纳为 <strong>A/B/C/D/E 五维体系</strong>——这是带教与考核的统一语言。先记住口诀，再逐维拆解：</p>
+
+    <!-- 五维总览 -->
+    <div class="wf5-overview">
+      <div class="wf5-ov-item wf5-ov-a"><span class="wf5-ov-k">A</span><span class="wf5-ov-n">面</span><span class="wf5-ov-d">看 3 面</span></div>
+      <div class="wf5-ov-item wf5-ov-b"><span class="wf5-ov-k">B</span><span class="wf5-ov-n">线</span><span class="wf5-ov-d">对 2 线</span></div>
+      <div class="wf5-ov-item wf5-ov-c"><span class="wf5-ov-k">C</span><span class="wf5-ov-n">角度</span><span class="wf5-ov-d">调 5 角</span></div>
+      <div class="wf5-ov-item wf5-ov-d"><span class="wf5-ov-k">D</span><span class="wf5-ov-n">点</span><span class="wf5-ov-d">找 1 点</span></div>
+      <div class="wf5-ov-item wf5-ov-e"><span class="wf5-ov-k">E</span><span class="wf5-ov-n">注意</span><span class="wf5-ov-d">记 7 注意</span></div>
+    </div>
+    <p class="wf5-mnemonic"><strong>口诀：</strong>A 看 3 面 · B 对 2 线 · C 调 5 角 · D 找 1 点 · E 记 7 注意</p>
+
+    <!-- A 面 -->
+    <section class="wf5-dim wf5-dim-a">
+      <div class="wf5-dim-head"><span class="wf5-badge">A</span><span class="wf5-dim-title">面 · 镜面的三向校验</span><span class="wf5-count">3 面</span></div>
+      <p class="wf5-dim-tip">口诀：<strong>正面看水平、平面对前后、侧面查扭曲</strong>。</p>
+      <table class="wf5-table">
+        <thead><tr><th style="width:120px">校验面</th><th style="width:130px">观察方向</th><th>合格标准</th></tr></thead>
+        <tbody>
+          <tr><td><strong>水平面</strong></td><td>正面观</td><td>左右镜框上缘等高，无一高一低</td></tr>
+          <tr><td><strong>垂直面</strong></td><td>平面观（俯视）</td><td>两镜片前后位置一致，无前后错位</td></tr>
+          <tr><td><strong>扭曲面</strong></td><td>侧面观</td><td>镜面无扭曲变形，两侧镜面弯对称</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- B 线 -->
+    <section class="wf5-dim wf5-dim-b">
+      <div class="wf5-dim-head"><span class="wf5-badge">B</span><span class="wf5-dim-title">线 · 镜腿的两条线</span><span class="wf5-count">2 线</span></div>
+      <div class="wf5-lines">
+        <div class="wf5-line">
+          <div class="wf5-line-t">📏 镜腿流线（展开观）</div>
+          <div class="wf5-line-d">两镜腿展开后，从铰链到脚套的流线应<strong>左右对称、等长等弧</strong>。</div>
+        </div>
+        <div class="wf5-line">
+          <div class="wf5-line-t">🔗 合拢叠线</div>
+          <div class="wf5-line-d">镜腿合拢后应<strong>重叠、不交叉</strong>，桩头无松动异响。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C 角度 -->
+    <section class="wf5-dim wf5-dim-c">
+      <div class="wf5-dim-head"><span class="wf5-badge">C</span><span class="wf5-dim-title">角度 · 五个关键角度</span><span class="wf5-count">5 角</span></div>
+      <table class="wf5-table">
+        <thead><tr><th style="width:130px">角度</th><th style="width:110px">标准参数</th><th>意义与调整要点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>镜面前弯弧度</strong></td><td class="wf5-param">170°–180°</td><td>镜面沿垂直轴的弯度，贴合面部曲线；过大压迫太阳穴，过小显呆板</td></tr>
+          <tr><td><strong>倾斜角（前倾角）</strong></td><td class="wf5-param">8°–15°</td><td>镜平面与垂直面的夹角，保证视线垂直入射镜片；过大镜片光学性能打折</td></tr>
+          <tr><td><strong>外张角</strong></td><td class="wf5-param">80°–100°</td><td>镜腿展开后与镜框平面的夹角；太紧夹头、太松下滑，按脸型调整</td></tr>
+          <tr><td><strong>脚套弯弧</strong></td><td class="wf5-param">135°±10°</td><td>耳勾（脚套）弯点弧度；<strong>冬季需加热后调整防断裂</strong></td></tr>
+          <tr><td><strong>内切度</strong></td><td class="wf5-param">25°–35°</td><td>脚套内收角度，使镜腿贴合头型两侧</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- D 点 -->
+    <section class="wf5-dim wf5-dim-d">
+      <div class="wf5-dim-head"><span class="wf5-badge">D</span><span class="wf5-dim-title">点 · 鼻托支撑点</span><span class="wf5-count">1 点</span></div>
+      <p class="wf5-dim-tip"><strong>鼻托的支撑点要服帖</strong>：鼻托面与鼻梁均匀贴合、不压迫。</p>
+      <div class="wf5-criteria">
+        <div class="wf5-cri wf5-cri-ok"><span class="wf5-cri-k">✔ 合格</span>贴合但不压出红印，托叶与皮肤间能插进一张纸</div>
+        <div class="wf5-cri wf5-cri-bad"><span class="wf5-cri-k">✖ 过紧</span>压出深红印</div>
+        <div class="wf5-cri wf5-cri-warn"><span class="wf5-cri-k">⚠ 过松</span>留缝晃动</div>
+      </div>
+      <p class="wf5-dim-tip">有独立鼻托的镜架可调鼻托<strong>上下、左右、前后的角度与间距</strong>。</p>
+    </section>
+
+    <!-- E 注意 -->
+    <section class="wf5-dim wf5-dim-e">
+      <div class="wf5-dim-head"><span class="wf5-badge">E</span><span class="wf5-dim-title">注意 · 调整七条</span><span class="wf5-count">7 条</span></div>
+      <p class="wf5-dim-tip">口诀：<strong>紧螺丝 · 先沟通 · 防老化 · 要垫布 · 先清洗 · 莫拧紧 · 讲保养</strong>。</p>
+      <div class="wf5-notes">
+        <div class="wf5-note"><span class="wf5-note-i">🔧</span><div><div class="wf5-note-t">紧螺丝</div><div class="wf5-note-d">调整前先检查并紧固桩头、铰链螺丝，避免带病作业。</div></div></div>
+        <div class="wf5-note"><span class="wf5-note-i">💬</span><div><div class="wf5-note-t">先沟通</div><div class="wf5-note-d">动手前先问清顾客哪里不舒服，对症调整，不凭感觉。</div></div></div>
+        <div class="wf5-note"><span class="wf5-note-i">⚠️</span><div><div class="wf5-note-t">防老化</div><div class="wf5-note-d">老化、脆化的板材严禁直接加热硬掰，易断裂。</div></div></div>
+        <div class="wf5-note"><span class="wf5-note-i">🧵</span><div><div class="wf5-note-t">要垫布</div><div class="wf5-note-d">钳具夹持处必须垫布或垫片，防止夹伤镀层、留压痕。</div></div></div>
+        <div class="wf5-note"><span class="wf5-note-i">💧</span><div><div class="wf5-note-t">先清洗</div><div class="wf5-note-d">调整前先清洗镜架，汗渍油污会影响判断与夹持。</div></div></div>
+        <div class="wf5-note"><span class="wf5-note-i">🚫</span><div><div class="wf5-note-t">莫拧紧</div><div class="wf5-note-d">螺丝拧到“不松动”即可，过度拧紧会滑丝、崩裂。</div></div></div>
+        <div class="wf5-note"><span class="wf5-note-i">📘</span><div><div class="wf5-note-t">讲保养</div><div class="wf5-note-d">调整后向顾客交代保养要点（双手摘戴、远离高温、定期清洗）。</div></div></div>
+      </div>
+    </section>
+
+    <!-- 9 部曲 -->
+    <section class="wf5-nine">
+      <div class="wf5-nine-head">🏆 标准整形 9 部曲 <span class="wf5-nine-sub">进阶 · 对齐《整形细节三十项》第 16 项</span></div>
+      <p class="wf5-dim-tip">熟练掌握 A–E 五维后，按门店标准整形 9 部曲完成一次完整整形。每一部都遵循“<strong>先看再动、小幅多次、随时试戴</strong>”。</p>
+      <div class="wf5-steps">
+        <span class="wf5-step"><i>1</i>熟悉镜架</span>
+        <span class="wf5-step"><i>2</i>检查螺丝</span>
+        <span class="wf5-step"><i>3</i>板材加热</span>
+        <span class="wf5-step"><i>4</i>调面弯</span>
+        <span class="wf5-step"><i>5</i>调外张角</span>
+        <span class="wf5-step"><i>6</i>调前倾角</span>
+        <span class="wf5-step"><i>7</i>调耳勾弯点</span>
+        <span class="wf5-step"><i>8</i>调鼻托</span>
+        <span class="wf5-step"><i>9</i>整体复检</span>
+      </div>
+      <p class="wf5-dim-tip">镜眼距标准：<strong>12MM</strong>（镜片后顶点至角膜前顶点距离），整形时同步核对光学中心位置。</p>
+    </section>
+
+    <div class="highlight-box blue">
+      <p><strong>材质调整边界</strong>：板材 / TR90 必须<strong>加热软化后</strong>再调，不可生硬弯折；金属架可小幅冷调但用力要均匀缓慢；<strong>纯钛架回弹大、更要耐心</strong>；贵重镜架、焊接断裂、镜片裂纹等情况必须报告师傅，不得自行处理。</p>
+    </div>
+  </div>
+
 <!-- LM-START -->
 <div class="lm-block lm-practice">
   <h3>🔧 动手实践任务（今日必做）</h3>
@@ -454,7 +656,7 @@ body{padding:0!important;margin:0!important}
 <div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>用真实调整实操检验手法规范度与复检意识。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>实操：完成 3 次镜架调整并通过佩戴复检</li><li>调整手法评分达标</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>3 次调整规范、复检到位，即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>考核重点是‘复检’——调完不复检，等于没调。</div></div>
 <div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>如果顾客反馈‘调完还不舒服’，复盘调整标准并补充案例。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>分析‘调整后仍不适’的反馈案例</li><li>针对性修订调整标准、补充典型案例</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成调整标准优化项，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>顾客说不舒服，可能是‘标准里只讲了怎么调，没讲怎么判断调到位’——这正是要补的。</div></div>
   </div>
-  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 区域经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
 
