@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="K1qrgBvBuGTDr44zagR2jp" data-dm-ref="1"><head data-page-node-id="vJucskxGi9fhTEhlgVePSb">
+<meta charset="UTF-8" data-page-node-id="rlbM2hBSRCbo67AmguvKOC">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="SKxBXQIDFUy7ZS5g5lfZkj">
+<title>爱眼城眼镜 · 青少年复查标准流程详解</title>
+<style>
+:root{
+  --brand:#0b6ab0;
+  --brand-d:#084f84;
+  --brand-l:#eaf3fb;
+  --accent:#c8102e;
+  --ink:#16232e;
+  --ink-2:#405060;
+  --ink-3:#7b8b9a;
+  --line:#dbe6f0;
+  --bg:#eef4f9;
+  --ok:#0d7a55;
+  --warn:#b45309;
+  --teal:#0b8f8f;
+  --violet:#6d4fc4;
+  --gold:#e0a52e;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);
+  line-height:1.72;font-size:14px;padding:20px 16px 56px;
+}
+.wrap{max-width:1240px;margin:0 auto;}
+
+/* ================= 页头 ================= */
+.banner{position:relative;
+  background:linear-gradient(120deg,#0b6ab0 0%,#0a5b98 55%,#084f84 100%);
+  color:#fff;border-radius:16px;padding:26px 34px 24px;
+  overflow:hidden;box-shadow:0 10px 28px rgba(8,79,132,.20);
+}
+.banner::after{content:"";position:absolute;right:-70px;top:-70px;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+}
+.banner::before{content:"";position:absolute;right:80px;bottom:-90px;
+  width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.10),transparent 70%);
+}
+.banner-in{position:relative;z-index:1;}
+.banner h1{font-size:27px;font-weight:700;letter-spacing:1.5px;line-height:1.35;}
+.banner .sub{margin-top:8px;font-size:14.5px;opacity:.92;}
+.banner .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;}
+.banner .chips span{font-size:12.5px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:999px;padding:4px 15px;
+}
+.banner .creed{margin-top:18px;padding-top:15px;
+  border-top:1px dashed rgba(255,255,255,.32);
+  font-size:14px;letter-spacing:.6px;
+}
+.banner .creed b{color:#ffe08a;font-weight:700;}
+
+/* ================= 通用小标题 ================= */
+.sec-title{display:flex;align-items:center;gap:10px;
+  margin:26px 0 14px;
+  font-size:17px;font-weight:700;color:var(--brand-d);
+}
+.sec-title em{font-style:normal;font-size:12.5px;font-weight:400;
+  color:var(--ink-3);margin-left:2px;
+}
+
+/* ================= 时间轴总览 ================= */
+.flowbar{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:18px 20px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+}
+.flowbar .fl{border:1px solid #cfe2f2;background:var(--brand-l);
+  border-radius:12px;padding:14px 12px 13px;text-align:center;position:relative;
+  overflow:hidden;
+}
+.flowbar .fl.s2{background:#e9fbfb;border-color:#bfeeef;}
+.flowbar .fl.s3{background:#f3f0fd;border-color:#d8cef6;}
+.flowbar .fl b{display:block;font-size:11.5px;color:var(--brand);letter-spacing:1px;}
+.flowbar .fl.s2 b{color:var(--teal);}
+.flowbar .fl.s3 b{color:var(--violet);}
+.flowbar .fl i{display:block;font-style:normal;font-size:14.5px;font-weight:700;margin-top:4px;color:var(--ink);}
+.flowbar .fl .tm{display:inline-block;margin-top:7px;font-size:11.5px;font-weight:600;
+  color:#fff;background:var(--brand);border-radius:999px;padding:1px 11px;}
+.flowbar .fl.s2 .tm{background:var(--teal);}
+.flowbar .fl.s3 .tm{background:var(--violet);}
+
+/* ================= 阶段卡 ================= */
+.stage{background:#fff;border:1px solid var(--line);border-radius:16px;
+  margin-top:18px;overflow:hidden;box-shadow:0 1px 3px rgba(20,60,100,.05);
+}
+.stage .sh{display:flex;align-items:center;gap:13px;
+  background:linear-gradient(90deg,#0b6ab0,#0a5b98);color:#fff;
+  padding:14px 22px;
+}
+.stage.s2 .sh{background:linear-gradient(90deg,#0b8f8f,#077272);}
+.stage.s3 .sh{background:linear-gradient(90deg,#6d4fc4,#553ba0);}
+.stage .sh .sn{font-family:"Segoe UI",Arial,sans-serif;font-size:26px;font-weight:800;
+  line-height:1;opacity:.55;}
+.stage .sh h3{font-size:17px;font-weight:700;letter-spacing:.5px;line-height:1.4;}
+.stage .sh .sh-t{margin-left:auto;font-size:12.5px;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;padding:3px 14px;white-space:nowrap;font-weight:600;}
+.stage .sb{padding:16px 20px 20px;}
+
+/* ================= 步骤表 ================= */
+.tblwrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  box-shadow:0 1px 3px rgba(20,60,100,.05);
+}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;}
+thead th{background:linear-gradient(180deg,#0e74bd,#0a5b98);
+  color:#fff;font-weight:700;font-size:13px;letter-spacing:.4px;
+  padding:11px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.18);
+  line-height:1.5;
+}
+.stage.s2 thead th{background:linear-gradient(180deg,#0fa3a3,#077272);}
+.stage.s3 thead th{background:linear-gradient(180deg,#7d5fd0,#553ba0);}
+thead th:last-child{border-right:none;}
+tbody td{padding:12px 12px;border-bottom:1px solid #eef3f8;border-right:1px solid #f2f6fa;
+  vertical-align:top;color:var(--ink-2);line-height:1.75;
+}
+tbody td:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:nth-child(even) td{background:#fafcfe;}
+tbody td.step{font-weight:700;color:var(--brand-d);font-size:13.5px;white-space:nowrap;
+  background:#f4f9fd;width:118px;}
+.stage.s2 tbody td.step{color:#077272;background:#f0fbfb;}
+.stage.s3 tbody td.step{color:#553ba0;background:#f6f3fd;}
+tbody tr:nth-child(even) td.step{background:#eef6fc;}
+.stage.s2 tbody tr:nth-child(even) td.step{background:#e9f8f8;}
+.stage.s3 tbody tr:nth-child(even) td.step{background:#f0ebfc;}
+tbody td .op{display:block;position:relative;padding-left:16px;margin-bottom:5px;}
+tbody td .op:last-child{margin-bottom:0;}
+tbody td .op::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:#9dc2df;}
+tbody td .say{color:var(--brand-d);font-weight:700;}
+tbody td .say::before{background:var(--brand);}
+tbody td .tool{color:var(--warn);font-weight:700;}
+tbody td .tool::before{background:var(--gold);}
+tbody td em{font-style:normal;color:var(--ink);font-weight:700;}
+tbody td .ck{display:block;position:relative;padding-left:16px;color:var(--ok);font-weight:600;}
+tbody td .ck::before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800;}
+
+/* ================= 提示条 ================= */
+.tipbar{border-radius:12px;background:#fffbeb;
+  border:1px solid #f2d99a;
+  padding:13px 20px;font-size:13.5px;color:#7a5309;line-height:1.85;
+  margin-top:16px;
+}
+.tipbar b{color:var(--warn);}
+.redline{border-radius:12px;background:#fdf2f4;
+  border:1px solid #f2c8ce;
+  padding:14px 20px;font-size:14px;color:#8c2436;line-height:1.85;
+  margin-top:16px;
+}
+.redline b{color:var(--accent);}
+
+/* ================= 说明面板 ================= */
+.panel{background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:18px 22px 20px;margin-top:16px;
+}
+.notelist{list-style:none;}
+.notelist li{position:relative;padding-left:18px;font-size:13.5px;color:var(--ink-2);margin-bottom:8px;line-height:1.8;}
+.notelist li:last-child{margin-bottom:0;}
+.notelist li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:#9dc2df;}
+.notelist li b{color:var(--brand-d);font-weight:700;}
+
+/* ================= 页脚 ================= */
+footer{margin-top:26px;text-align:center;font-size:12.5px;
+  color:var(--ink-3);line-height:2;
+}
+footer b{color:var(--brand-d);}
+
+/* ================= 响应式 ================= */
+@media (max-width:900px){
+  .flowbar{grid-template-columns:1fr;}
+  .banner h1{font-size:22px;}
+  table{font-size:12.5px;}
+  thead th{padding:9px 6px;font-size:12px;}
+  tbody td{padding:10px 8px;}
+  tbody td.step{width:96px;white-space:normal;}
+}
+@media (max-width:640px){
+  body{padding:12px 8px 40px;font-size:13.5px;}
+  .banner{padding:18px 16px;border-radius:12px;}
+  .banner h1{font-size:19px;letter-spacing:.5px;}
+  .stage .sh{padding:12px 15px;gap:9px;}
+  .stage .sh .sn{font-size:20px;}
+  .stage .sh h3{font-size:15px;}
+  .tblwrap{overflow-x:auto;}
+  table{min-width:720px;}
+}
+@media print{
+  @page{size:A4;margin:10mm 8mm;}
+  body{background:#fff;padding:0;font-size:9pt;}
+  .wrap{max-width:100%;}
+  .banner,.stage,.tblwrap,.panel,.flowbar{box-shadow:none;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .banner{border-radius:0;padding:14px 18px;}
+  .banner h1{font-size:16pt;}
+  .stage,.panel,.tblwrap{break-inside:avoid;}
+  tr,td,th{break-inside:avoid;}
+  thead{display:table-header-group;}
+}
+/*@@ HOME-BACK-BTN @@*/
+/* ═══ 返回首页：嵌入页头（banner / topbar）右上角 ═══ */
+.banner,.topbar{position:relative!important}
+.back-home{position:absolute;right:18px;top:16px;z-index:9;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.16);color:#fff!important;font-size:13px;font-weight:700;line-height:1;
+  padding:9px 16px;border-radius:22px;text-decoration:none!important;
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 3px 10px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:inherit;-webkit-tap-highlight-color:transparent}
+.back-home:hover{background:rgba(255,255,255,.30);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.back-home .bh-ico{font-size:14px;line-height:1}
+/* 页脚返回链接 */
+.foot-home{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#0b6ab0!important;
+  font-weight:700;font-size:13px;text-decoration:none!important;border-bottom:1px dashed rgba(11,106,176,.5);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.foot-home:hover{color:#095a96!important;border-bottom-color:#095a96}
+@media(max-width:700px){
+  .back-home{right:10px;top:10px;font-size:12px;padding:8px 13px;border-radius:20px}
+}
+@media print{.back-home{border-color:#0b6ab0;color:#0b6ab0!important;background:#fff}}
+/*@@ TABLE-COL-FIT @@*/
+/* ═══ 表格列宽优化：固定布局 + 智能换行 + 防溢出 ═══ */
+/* 1) 中文长串安全换行，避免撑宽或溢出容器 */
+th,td{overflow-wrap:break-word;word-break:break-word;}
+/* 2) 表头可换行，避免窄列被 nowrap 撑破 */
+thead th{white-space:normal;}
+/* 3) 短标签列（序号/数字）保持紧凑不换行：仅作用于极短首列 */
+table.fit-narrow td:first-child,
+table.fit-narrow th:first-child{white-space:nowrap;}
+/* 4) 宽屏（≥700px）启用固定布局：让声明的 width 真正生效，长文本列不再吞掉短列 */
+@media (min-width:700px){
+  table{table-layout:fixed;}
+}
+/* 5) 窄屏（<700px）恢复自动布局：表格随容器自适应，避免整页横向溢出 */
+@media (max-width:699px){
+  table{table-layout:auto;}
+}
+
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="lNNyUDmwAjlMD2UbJxRbsX" style="">
+<div class="wrap" data-page-node-id="HPr2mOufGKIB5KS7LaxHUO">
+
+  <!-- ============ 页头 ============ -->
+  <div class="banner" data-page-node-id="lwOoXZU33GsyqD1b9tccW2">
+    <a class="back-home" href="../index.html" title="返回课程首页" data-page-node-id="uurRGBi07tkiLqBqBuCa8N"><span class="bh-ico" data-page-node-id="3zaSv2GBRcRdqaiyXwtXbF">🏠</span>返回首页</a>
+    <div class="banner-in" data-page-node-id="G0QizZZPHFqgS6QyZ4lHJz">
+
+      <h1 data-page-node-id="J0Cn8FhlA6t2SQyEu9Ti41">爱眼城眼镜 · 青少年复查标准流程详解</h1>
+      <div class="sub" data-page-node-id="RHGaVAKiQhGzuGERSa0w7M">接待与准备 → 专业检查与评估 → 健康咨询与主动闭环 · 三阶段全程约 30–35 分钟</div>
+      <div class="chips" data-page-node-id="A4GNjQeEvnVChe0aqNNWHC">
+        
+        
+        
+        
+      </div>
+      <div class="creed" data-page-node-id="axkGHf4XWVK6fAI0utx5x1">
+        核心原则：<b data-page-node-id="LGW9xnDZdHBaiHUNpYAvUY">每一步都有标准动作、有话术、有检查点</b> ｜ 问诊须紧扣客观数据 ｜ <b data-page-node-id="FLZ0WQZ3uFP5bYGeRelLaB">未完成下次预约，流程不算结束</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 总览 ============ -->
+  <div class="sec-title" data-page-node-id="W6WBbWH5yhvsDcOA2freZ7">三阶段流程总览 <em data-page-node-id="3LsAdNIHtOES8QcA2KVTuM">时间有边界、动作有标准、结果有闭环——全程约 30–35 分钟</em></div>
+  <div class="flowbar" data-page-node-id="FeOZYiJeth1yT0aIVMoH1N">
+    <div class="fl" data-page-node-id="iFusQdeldbeIEsQwae5uyW">
+      <b data-page-node-id="hWuaYweZKFmprmmWTsJW16">PHASE 1</b><i data-page-node-id="DUnFr3W6KDLF5A9aZvyQ8v">接待与准备</i>
+      <span class="tm" data-page-node-id="9M2RdHsQ6RzglXF9cvz3Gg">≤ 5 分钟</span>
+    </div>
+    <div class="fl s2" data-page-node-id="0F6L9AeuDy9lHZtUEvxnHP">
+      <b data-page-node-id="4CQrSb9w3fVCpcFINZLhuL">PHASE 2</b><i data-page-node-id="h8yxLIEuN86sA43yYq2Npy">专业检查与评估</i>
+      <span class="tm" data-page-node-id="3Ow5tqHv1kj66fq6pMhcGL">15–20 分钟</span>
+    </div>
+    <div class="fl s3" data-page-node-id="wYNgWoKzWtaexWzxDfskGr">
+      <b data-page-node-id="GdZDb4eK0Grt6UPsLOeMYq">PHASE 3</b><i data-page-node-id="ODEFhTS4Ciz98mTHjYRXPE">健康咨询与主动闭环</i>
+      <span class="tm" data-page-node-id="xLyEVL78zdPObCuQTpvqPu">≥ 10 分钟</span>
+    </div>
+  </div>
+
+  <!-- ================= 第一阶段 ================= -->
+  <div class="stage s1" data-page-node-id="F2O507GVHlNfNhkHCs6iVu">
+    <div class="sh" data-page-node-id="ZSCtg3Vr6s1QJTIL5pN7zu">
+      <span class="sn" data-page-node-id="iWVTApaMNeOF00qnMB533E">01</span>
+      <h3 data-page-node-id="lC1VppCFrnmQiCCGNVxEV0">第一阶段：接待与准备</h3>
+      <span class="sh-t" data-page-node-id="AX0Gyoiz2Rf1SQpH1xVtY1">≤ 5 分钟</span>
+    </div>
+    <div class="sb" data-page-node-id="YqD6qvywGih4x8M0YD1oB1">
+      <div class="tblwrap" data-page-node-id="APE75DD6Y2zaOegldRc9D0">
+        <table data-page-node-id="xcVi7N42VmC2DOy4xg9uxj">
+          <thead data-page-node-id="K2zGRGiF4ENBWV7zOeOZ76">
+            <tr data-page-node-id="Q8nVS5UsIfBBMYlgS5XSHi">
+              <th style="width:118px;" data-page-node-id="qaSUEBhpoVDbkup4p7JGpO">步骤</th>
+              <th style="width:32%;" data-page-node-id="6MKvKFgn8spcOC4vmoX08X">标准操作</th>
+              <th data-page-node-id="OHzBqUojFIc3qJ6FSHCzw7">话术 / 工具指引</th>
+              <th style="width:22%;" data-page-node-id="iefRHLcbXUamtcTyxEH26F">关键检查点</th>
+            </tr>
+          </thead>
+          <tbody data-page-node-id="c6gkO9AqMrpLlxvGlt3bE5">
+            <tr data-page-node-id="QHPK2YoRiDRscp1zAEHXQ2">
+              <td class="step" data-page-node-id="XKzmicEIsj5IWj4E856nre">1.1 迎宾与登记</td>
+              <td data-page-node-id="Cj4Zqbv2byEK6jMP3XLivp">
+                <span class="op" data-page-node-id="oTXN74mwEXarv6wSo4qkUD">主动开门 / 微笑问候。</span>
+                <span class="op" data-page-node-id="N0oYh1IFmkgkn3rjqwi440">立即询问是否预约复查。</span>
+                <span class="op" data-page-node-id="ibEDIl1ZfaGrOZFF5A5YMd">填写复查登记表，获取客户姓名 / 电话。</span>
+              </td>
+              <td data-page-node-id="7w3qO2EU0bk5zaSozrr4d2">
+                <span class="op say" data-page-node-id="l4bdIZrLZ7a0HGiTvEO5g1"><em data-page-node-id="d8EAlhWygN70Dy6EzlWxDs">话术：</em>“上午好！爱眼城眼镜。请问您是预约了今天的视力复查吗？”</span>
+              </td>
+              <td data-page-node-id="fJiUGitA4FogxTUAYHqvYR"><span class="ck" data-page-node-id="lP4Y0C9WFoPl1hStCGAboc">客户到店 3 秒内获得响应。</span></td>
+            </tr>
+            <tr data-page-node-id="hpN3MTEXrQdyk5iPr5dcqd">
+              <td class="step" data-page-node-id="WMzKMZBQlOERMENI7SB2Z0">1.2 档案预调</td>
+              <td data-page-node-id="GiQgy8U9gFpwKxle0sxCBH">
+                <span class="op" data-page-node-id="6l87NY59gAoBSUHhawcADq">前台立即在 CRM 系统输入信息查询。</span>
+                <span class="op" data-page-node-id="QdvlmNqHpHs4KGGTbCMTvN">调出客户完整原始档案。</span>
+              </td>
+              <td data-page-node-id="GKE2ozWkEWbQ1YctwkXrsW">
+                <span class="op tool" data-page-node-id="SetTbTbIklBYF6weGFXCXL"><em data-page-node-id="gmDFQWjvjNWDTRmgWukXYJ">系统操作：</em>使用客户跟进表或美目软件。</span>
+              </td>
+              <td data-page-node-id="eb580KmtDUG4ASfcTW2d9y"><span class="ck" data-page-node-id="rpiRfYb0QAS7CGgypJ3n3l">档案完整调出。</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 第二阶段 ================= -->
+  <div class="stage s2" data-page-node-id="7eGByzZmFmiFUWEk3T33h3">
+    <div class="sh" data-page-node-id="coDKTtNYn8wYITYywM8fmm">
+      <span class="sn" data-page-node-id="oxKRDyYyWlFxSDb40jpHnE">02</span>
+      <h3 data-page-node-id="l8Ejv3yKw4C6PFEkO9XEHo">第二阶段：专业检查与评估</h3>
+      <span class="sh-t" data-page-node-id="Gb7LO070gJs34l7xNF0j1G">15–20 分钟</span>
+    </div>
+    <div class="sb" data-page-node-id="J8RryFk0brTucCxbu8kmzu">
+      <div class="tblwrap" data-page-node-id="p3j7LAg2qDjgqu05PmMxPN">
+        <table data-page-node-id="SrhUa3RuxSukHIgotL5Mak">
+          <thead data-page-node-id="ykMhXqP8RWTP48TfPUHBT2">
+            <tr data-page-node-id="CcyyEXLBwTK0GL83MqANJr">
+              <th style="width:140px;" data-page-node-id="MO7d1OB02cYwEgyPDe2QZD">步骤</th>
+              <th style="width:30%;" data-page-node-id="sw0DrZqsELuOjTSezx1lVW">标准操作</th>
+              <th data-page-node-id="kOQlvWzZA4hYSOuu4dwGv9">话术 / 工具指引</th>
+              <th style="width:20%;" data-page-node-id="QXFYxaPXvcRxrzr4R8gCar">关键检查点</th>
+            </tr>
+          </thead>
+          <tbody data-page-node-id="zx5Ubxja5rtMAyXI905FBT">
+            <tr data-page-node-id="sMR6LWBV5dAWqynq0qe6Ek">
+              <td class="step" data-page-node-id="EYx9FHJ7r1TFE6P3y4OoJx">2.1 客观检查</td>
+              <td data-page-node-id="zK052CbGwaXWWBX7w8zGIm">
+                <span class="op" data-page-node-id="PxLF3EszRfQcCUmM9pUySD">配镜顾问自我介绍，引导至检查区。</span>
+                <span class="op" data-page-node-id="BD9Ti3sIYz7M1TxDvVNfci">连续操作<em data-page-node-id="rnMRkrBp6wQ5NiaNCNeatv">电脑验光仪、生物测量仪</em>，打印结果。</span>
+              </td>
+              <td data-page-node-id="r2nBQNQfyJvYNRqNkEt95F">
+                <span class="op say" data-page-node-id="f4Fgl8ehnfu2N7UtvDkyE6"><em data-page-node-id="FQOM8byaG7BPlwbkQ0c9VZ">话术：</em>“李同学，我们先做两个快速的客观检查，就像给眼睛拍个‘快照’，请放松看着里面的图案。”</span>
+              </td>
+              <td data-page-node-id="LGMA0Q5TQRpm3Yo7yYEJSR"><span class="ck" data-page-node-id="Ia20sA1gwr9zMKoiLIzfh1">两项检查衔接流畅，无设备空档期。</span></td>
+            </tr>
+            <tr data-page-node-id="98oKrKLu2neauIGwgNSoC5">
+              <td class="step" data-page-node-id="kmYkJBeMm5O1tP3WDbVl1V">2.2 生理记录</td>
+              <td data-page-node-id="tPOQH3VwKfTfYTzcrSYC6T">
+                <span class="op" data-page-node-id="tOtO2A8GxuikV5vSB387aq">测量身高。</span>
+                <span class="op" data-page-node-id="3HMdcGpzjBYV3zzLMzvcxF">记录在《近视防控管理卡》中。</span>
+              </td>
+              <td data-page-node-id="SCPbFhZmay9bQ5XdQE6xRf">
+                <span class="op say" data-page-node-id="eBGiiOK3dwzcHfbzwsouPV"><em data-page-node-id="eXeorLrmOUxm7jE1En6zGl">互动话术：</em>“来，我们量一下身高，看看这半年长了多少！”</span>
+              </td>
+              <td data-page-node-id="ghM3w8C3VeHxghY6aASaDD"><span class="ck" data-page-node-id="FO2E8yVay1SNsklCHQ5DYL">将此步骤转化为轻松的、信息收集式的聊天。</span></td>
+            </tr>
+            <tr data-page-node-id="EynBM0tPfXZrCbHrbmOqll">
+              <td class="step" data-page-node-id="RM8SjIMDwfslwWD6AuB8Dm">2.3 专业问诊</td>
+              <td data-page-node-id="owLRjDPKN8B5TDs0bCzGNv">
+                <span class="op" data-page-node-id="Rt4DbOUBvAVDbDZXUYbb2E">验光师介入，携带《管理卡》及客观数据，进行针对性问诊。</span>
+                <span class="op" data-page-node-id="f3BQFJKnNSymXHVLN3CjUa">在表上详细记录客户主诉。</span>
+              </td>
+              <td data-page-node-id="Wk37qRQDifdShQ7Ce9pcql">
+                <span class="op say" data-page-node-id="rcXqopOSh72i55v4hTmfXX"><em data-page-node-id="fJFj1Drp3ciZS4kGi9RQxn">话术模板：</em>“李妈妈，刚才看到孩子的眼轴是 XX mm，比上次增长了 0.02mm。结合这个情况，最近孩子有没有反映黑板看不清、或者更容易疲劳？”</span>
+              </td>
+              <td data-page-node-id="KL2LMlDurnsAAFhuLLXb48"><span class="ck" data-page-node-id="mBaB9boTl6IetQZaT455QF">问诊问题必须与客观数据或历史记录相关联，体现专业性。</span></td>
+            </tr>
+            <tr data-page-node-id="yCTy7waDtZZQwYHuDGiFc3">
+              <td class="step" data-page-node-id="wrRqg01AfSXLJIDn7TsgKL">2.4 主观与视功能检查</td>
+              <td data-page-node-id="Y2UTT4TdWLoQrZlA9W3vsR">
+                <span class="op" data-page-node-id="TuyT0QdOVKhFpEl7iyFQXA">验光师主导综合验光仪检查。</span>
+                <span class="op" data-page-node-id="NrcTSlIDGsus9zzXGbZTVv">视功能检查。</span>
+                <span class="op" data-page-node-id="VtjmCEDI7E16pXvwWUIwB9">边检查边进行客户教育。</span>
+              </td>
+              <td data-page-node-id="RpdqiOKkByGEycbpjjEHXx">
+                <span class="op say" data-page-node-id="gP1MJQDlxPTTBMpUiKSQPp"><em data-page-node-id="pG3HtFgcIGcR84QYGqSROP">个性化选择：</em>若主诉“阅读串行”，侧重检查集合功能；若“远近切换慢”，侧重调节灵敏度。</span>
+                <span class="op say" data-page-node-id="30g6gnyQe3ozAUBYzQ2BDI"><em data-page-node-id="Wc7AQFNP5A1CUCN1Bt8AIF">话术：</em>“现在查的是眼睛的‘调焦’速度，对于看近看远切换很重要。”</span>
+              </td>
+              <td data-page-node-id="KOKn1BQexD7MsKI87nHn7n"><span class="ck" data-page-node-id="ut6EE9c27DSH0ANOONHdih">检查不是机械的，每一项操作都应有明确的评估目的。</span></td>
+            </tr>
+            <tr data-page-node-id="4LsW1083fk5TTk4ED5w47U">
+              <td class="step" data-page-node-id="FTsBVZD0nv7jqRZT8BTfYY">2.5 眼部放松</td>
+              <td data-page-node-id="wRjPn0zzwhMNvc6X3TVrDD">
+                <span class="op" data-page-node-id="IKBo4xiE2bPSSKt88wJLiv">眼贴。</span>
+                <span class="op" data-page-node-id="eGzXVQ3fgZFaWC3jUzIkAV">设备放松。</span>
+              </td>
+              <td data-page-node-id="Q2PUYCGV3AyGHYbxGaYKnS">
+                <span class="op say" data-page-node-id="EcesXHsR4G0lBtDLa3m1b2"><em data-page-node-id="nRWBwONGFncQRLsZfDKbSY">话术：</em>“孩子的眼睛现在处于比较紧张的状态，就像弹簧绷得太紧，适当的放松一下。”</span>
+              </td>
+              <td data-page-node-id="ffRmgqNy1y3pWyhGqMzD5M"><span class="ck" data-page-node-id="dKalZDvptyktui855iglQ1">此步骤是“增值专业服务”，非必选项；执行必须伴有专业解释。</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 第三阶段 ================= -->
+  <div class="stage s3" data-page-node-id="aEjhzTIBUZaibb66pfmzUQ">
+    <div class="sh" data-page-node-id="0GqyS7ERHdPRYJfbEsTvxo">
+      <span class="sn" data-page-node-id="bV6VNENySYarTxu5OLYo8x">03</span>
+      <h3 data-page-node-id="idAVEPINhv2uj98BEzmSwP">第三阶段：健康咨询与主动闭环</h3>
+      <span class="sh-t" data-page-node-id="3Cew4LOCd1QMhVDc5xtsMW">≥ 10 分钟</span>
+    </div>
+    <div class="sb" data-page-node-id="daIeV6v0ascSkmyOGkhxyC">
+      <div class="tblwrap" data-page-node-id="v4dcBTzSxaTjMOyl3atRSF">
+        <table data-page-node-id="DnNzZ3xTBnbfxcuOTS3kKQ">
+          <thead data-page-node-id="VrHATpA6z99KvIBgZG4doO">
+            <tr data-page-node-id="PaCCBBJ9bXMvWrB6fMfQ7V">
+              <th style="width:150px;" data-page-node-id="LqWwtKvDmki6msHvT5b48V">步骤</th>
+              <th style="width:30%;" data-page-node-id="6GtPPIwZyRzo0wqyz3DYra">标准操作</th>
+              <th data-page-node-id="4oQhQoyHYM5mF6CKZ2jhDg">话术 / 工具指引</th>
+              <th style="width:20%;" data-page-node-id="ljnlXRfQqkPGreiCQkC8Cv">关键检查点</th>
+            </tr>
+          </thead>
+          <tbody data-page-node-id="4JQx6lXauSvdlOnzojle90">
+            <tr data-page-node-id="paUp8vV2hFJt0y75ucJ8W2">
+              <td class="step" data-page-node-id="4ECgNauxNF9LmvFG2Mod5I">3.1 综合反馈</td>
+              <td data-page-node-id="hCEZA8SSTBsIeaWuluSarQ">
+                <span class="op" data-page-node-id="TjrMKUXVyPfZQpxsu9i1kw">邀客户至咨询台，利用可视化工具（对比图、模型）。</span>
+                <span class="op" data-page-node-id="ueoX5Gi4fp4Ca93E94BDaE">按“<em data-page-node-id="aA49A95WC4IIv1nXnmdWGp">数据对比 → 现状分析 → 解决方案</em>”三步讲解。</span>
+              </td>
+              <td data-page-node-id="z11a6ZCuQ2RALMJY3fAKf6">
+                <span class="op say" data-page-node-id="gT8wPDbJM03Y9rPsCfH65w"><em data-page-node-id="gU58ahtaFCAtrjNQEZjbPW">讲解结构：</em></span>
+                <span class="op say" data-page-node-id="PYGdr9zMJXfSPTDiICbnIp" style="">1. 看变化：“这是您三次复查的眼轴增长曲线，目前处于…水平。”​</span>
+                <span class="op say" data-page-node-id="b6ESQQ7fAKpdtzqQAwAvWl" style="">2. 看现在：“结合今天的检查，您的视力状况是…，调节功能有…优势 / 不足。”​</span>
+                <span class="op say" data-page-node-id="YmzYishBuB9KZ12U7KWHwA" style="">3. 看未来：“因此，我们建议接下来三个月…”​</span>
+              </td>
+              <td data-page-node-id="Y5SKcoSQel7GCtNXF60TDP"><span class="ck" data-page-node-id="alheAPJTqIKf7c4ZHeYEUG">客户能复述出核心结论和下一步行动；不使用难懂术语。</span></td>
+            </tr>
+            <tr data-page-node-id="q8KqYfOOXFK73bhmGhFOB4">
+              <td class="step" data-page-node-id="AOobScRgjKymhHKEQ9q0sQ">3.2 方案确认与预约</td>
+              <td data-page-node-id="04eyUrRiGL4BN4eMCrfeVh">
+                <span class="op" data-page-node-id="oWR3i3OnpaRwGJRnrKeWUD">解答客户疑问，确认方案。</span>
+                <span class="op" data-page-node-id="e0mVJryLhztAjB0kuvwBBE">当场操作 CRM 系统，预约下一次复查时间。</span>
+                <span class="op" data-page-node-id="7IoFhJ7Cb9SRtyW7NkPGEC">将预约信息同步至客户微信及店内日历。</span>
+              </td>
+              <td data-page-node-id="hTs5l7j8dwzt0yPgaOuMmw">
+                <span class="op say" data-page-node-id="7tK72kZ2q8U5DRmV8ahwVc"><em data-page-node-id="rz3N3PFUC0JEGCsCjFzvUe">话术：</em>“为了持续跟踪效果，我们现在就把下次复查时间定下来吧。您看 X 月 X 日这个时间方便吗？”</span>
+                <span class="op tool" data-page-node-id="EpmVoII93RVXDRBU6XGiXQ"><em data-page-node-id="9VOikOJvpDj2ZgIJnS7xNM">动作：</em>当面操作屏幕，让客户看到预约被录入。</span>
+              </td>
+              <td data-page-node-id="ynwrDaYqB7BHHQJmDJrexj"><span class="ck" data-page-node-id="Pu0Mn77HG21GyMFCN1rH9l">强制动作：未完成下次预约，流程不算结束；预约时间需精确到小时。</span></td>
+            </tr>
+            <tr data-page-node-id="4h1HBiddYFnrzCD6x1YVhh">
+              <td class="step" data-page-node-id="FaYu7uENhGiD5i3qrR7NUN">3.3 送客</td>
+              <td data-page-node-id="HBL2WCgYPCHjMOnWhnpNpU">
+                <span class="op" data-page-node-id="G4d3rW41WZLcNepLBjRV5x">赠送《个性化护眼提示卡》。</span>
+                <span class="op" data-page-node-id="akt5BNqmjCBRJ1GKUsbJVW">起身送客至门口，提醒预约时间。</span>
+                <span class="op" data-page-node-id="HQbbVmyZQzsKIPFyOz7eFc">24 小时内发送感谢及护眼贴士微信。</span>
+              </td>
+              <td data-page-node-id="PDuFZc1JBBJjS3feqEOasz">
+                <span class="op say" data-page-node-id="izPRZaBcNBbxUQityu6aJK"><em data-page-node-id="X0eWkc8jmQ8ch8BmK73Lok">话术：</em>“这是给您的护眼小贴士，里面有我们刚讨论的行动要点。我们已经约好了 X 月 X 日再见，期间有任何问题随时微信我！”</span>
+              </td>
+              <td data-page-node-id="Q4fGyuIO8hOXaFR7B1wWsn"><span class="ck" data-page-node-id="H6GH8s8kzy0GJeMYiD2186">客户离店时，《提示卡》（基于本次方案）。</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tipbar" data-page-node-id="zTEN7lApfEBBXuOqtoOq7j">
+    <b data-page-node-id="Rjnip1opcvzurpBrmy8be6">执行提示：</b>本流程三个阶段的时限分别是「≤5 分钟」「15–20 分钟」「≥10 分钟」——接待要快、检查要细、咨询要足。第二阶段每一项检查都必须有明确评估目的，避免机械操作；第三阶段的<b data-page-node-id="Q7EAONMhwXsx34Q2exaeaz">下次预约是强制动作</b>，未完成不算流程结束。
+  </div>
+
+  <!-- ============ 流程要点 ============ -->
+  <div class="sec-title" data-page-node-id="nj2q5fVHNWB7EXni9GMU5k">流程要点回顾 <em data-page-node-id="VkWqrsupN4gRD0XFklGeCg">把每一步的标准，变成肌肉记忆</em></div>
+  <div class="panel" data-page-node-id="DJcFTQWtWXHSOsqUpeI6t0">
+    <ul class="notelist" data-page-node-id="oriCQmFCtFJJ7JF7SFcCF1">
+      <li data-page-node-id="qk6EuLgFcmWS10INKA2vI1"><b data-page-node-id="7QKs68S5iEU0I01RUZE6Fe">响应要快：</b>客户到店 3 秒内获得响应；前台立即调取 CRM 原始档案，不等客户催问。</li>
+      <li data-page-node-id="YTkmEvrLQQLPDA3yfIFDmC"><b data-page-node-id="BhnXucy9ZdH0WK7hmu620u">问诊要准：</b>所有问诊问题必须与客观数据或历史记录挂钩（如眼轴变化），用数据说话体现专业性。</li>
+      <li data-page-node-id="7WibwrQ5gWCbTCpxcelJdq"><b data-page-node-id="t1mnr2M6Ui4Y820J94uOgj">检查要活：</b>根据客户主诉个性化选择检查侧重（阅读串行→集合功能；切换慢→调节灵敏度），每项操作都有评估目的。</li>
+      <li data-page-node-id="asxrwr2tqvF8F4unTFd6rD"><b data-page-node-id="M4PDUlU0dWnIhR1EwLPAlP">讲解要懂：</b>综合反馈按「数据对比→现状分析→解决方案」三步走，用可视化工具，不用难懂术语，确保客户能复述结论。</li>
+      <li data-page-node-id="iYCH3khdmUT2aow6904o1I"><b data-page-node-id="wm4D6pNDOejhDaB03LGayr">闭环要实：</b>当场在客户面前操作 CRM 完成下一次预约，并同步微信与店内日历；预约时间精确到小时。</li>
+      <li data-page-node-id="SoAnE89eNj0CrW2Halg9zt"><b data-page-node-id="YvwsQhSSV59f6MFdlCWL2V">收尾要暖：</b>赠送个性化护眼提示卡 + 起身送客至门口 + 24 小时内微信回访，把一次复查变成持续跟踪。</li>
+    </ul>
+  </div>
+
+  <div class="redline" data-page-node-id="XsmPFK0q4JaHD0ojDrHc75">
+    <b data-page-node-id="wAiQRTn0O4RxRS3j7y3btG">一句话记住：</b>复查不是"再验一次光"，而是一次<b data-page-node-id="Ud8n1gdyroDiQ9D9GzcKsC">用数据说话、用专业闭环</b>的健康管理服务——没约上下一次，这次复查就没做完。
+  </div>
+
+  <!-- ============ 页脚 ============ -->
+  <footer data-page-node-id="0TF9wzVhJbkNMnHWnw8qHq" style="">
+    <b data-page-node-id="BBRC6Rdd73ln4weGUOlDZu">永州爱眼城眼镜</b> · 门店标准作业手册 · 青少年复查标准流程详解<br data-page-node-id="Lc6irl4CY0JJwHSfPIoH76">
+    <a class="foot-home" href="../index.html" data-page-node-id="SQAEJ7UTfGSwqPdKDU3gZl">🏠 返回课程首页</a>
+  </footer>
+
+</div>
+
+
+</body></html>
