@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="eOthG5K0bSO13WVEG0yVap" data-dm-ref="5"><head data-page-node-id="PzFbQpdlQJ93JkxIUL0a3O">
+<meta charset="UTF-8" data-page-node-id="60ID91Jh1ptQHHiHhTBY4O">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="vBxCXjlRIt2rpIwHE9ImaJ">
+<title>爱眼城眼镜 · 渐进眼镜取镜服务标准流程</title>
+<style>
+:root{
+    --brand:#0b6ab0;
+    --brand-d:#084f84;
+    --brand-l:#eaf3fb;
+    --accent:#c8102e;
+    --ink:#16232e;
+    --ink-2:#405060;
+    --ink-3:#7b8b9a;
+    --line:#dbe6f0;
+    --bg:#eef4f9;
+    --say:#fffaf0;
+    --say-b:#e6cf9a;
+    --say-t:#8a6414;
+    --ok:#0d7a55;
+    --act:#0d7a55;
+    --act-l:#eafaf3;
+    --gold:#b8860b;
+    --gold-l:#fdf6e3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:15px;
+    padding:20px 16px 56px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  /* ================= 页头 ================= */
+
+  .banner{position:relative;
+    background:linear-gradient(120deg,#0b6ab0 0%,#0a5b98 55%,#084f84 100%);
+    color:#fff;border-radius:16px;
+    padding:30px 36px 26px;
+    overflow:hidden;
+    box-shadow:0 10px 28px rgba(8,79,132,.20);
+  }
+  .banner::after{content:"";position:absolute;right:-70px;top:-70px;
+    width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+  }
+  .banner::before{content:"";position:absolute;right:80px;bottom:-90px;
+    width:180px;height:180px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.09),transparent 70%);
+  }
+  .banner-in{position:relative;z-index:1;}
+  .banner .eyebrow{font-size:12.5px;letter-spacing:3px;opacity:.78;
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  .banner h1{font-size:27px;font-weight:700;letter-spacing:1.5px;line-height:1.35;}
+  .banner .sub{margin-top:8px;font-size:14.5px;opacity:.9;}
+  .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;}
+  .chips span{font-size:12.5px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);
+    border-radius:999px;padding:4px 15px;
+  }
+  .banner .creed{margin-top:18px;padding-top:15px;
+    border-top:1px dashed rgba(255,255,255,.32);
+    font-size:14px;letter-spacing:.6px;
+  }
+  .banner .creed b{color:#ffe08a;font-weight:700;}
+
+  /* ================= 通用小标题 ================= */
+
+  .sec-title{display:flex;align-items:center;gap:10px;
+    margin:26px 0 14px;
+    font-size:17px;font-weight:700;color:var(--brand-d);
+    flex-wrap:wrap;
+  }
+  .sec-title em{font-style:normal;font-size:12.5px;font-weight:400;
+    color:var(--ink-3);margin-left:2px;
+  }
+  .sec-title .order-note{margin-left:auto;font-size:12.5px;font-weight:600;
+    color:var(--act);background:var(--act-l);
+    border:1px solid #a8ddc7;border-radius:999px;padding:3px 13px;
+  }
+
+  /* ================= 总览流程轴 ================= */
+
+  .flowbar{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;
+    display:grid;grid-template-columns:repeat(5,1fr);gap:9px;
+  }
+  .flowbar .fl{border:1px solid #cfe2f2;background:var(--brand-l);
+    border-radius:10px;padding:8px 6px;text-align:center;
+  }
+  .flowbar .fl b{display:block;font-size:11.5px;color:var(--brand);letter-spacing:.6px;}
+  .flowbar .fl i{display:block;font-style:normal;font-size:13px;font-weight:600;margin-top:2px;color:var(--ink);}
+  .flowbar .fl.hot{border-color:#e9c46a;background:var(--gold-l);}
+  .flowbar .fl.hot b{color:var(--gold);}
+
+  /* ================= 步骤卡 ================= */
+
+  .steps{display:flex;flex-direction:column;gap:14px;}
+  .step{display:grid;
+    grid-template-columns:96px 1fr;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,60,100,.05);
+  }
+  .step .axis{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-d) 100%);
+    color:#fff;display:flex;flex-direction:column;
+    align-items:center;justify-content:flex-start;
+    padding:18px 8px 14px;text-align:center;
+  }
+  .step.hot .axis{background:linear-gradient(180deg,#c99a1e 0%,#a67708 100%);}
+  .step .axis .no{font-size:30px;font-weight:800;line-height:1;
+    font-family:"Segoe UI",Arial,sans-serif;letter-spacing:-1px;
+  }
+  .step .axis .lbl{margin-top:6px;font-size:11.5px;letter-spacing:2px;opacity:.8;
+  }
+  .step .axis .dotline{flex:1;width:0;border-left:1px dashed rgba(255,255,255,.42);
+    margin:12px 0 0;
+  }
+  .step .main{padding:15px 20px 17px;}
+  .step .head{display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+    padding-bottom:10px;border-bottom:1px solid #eef3f8;margin-bottom:12px;
+  }
+  .step .head h3{font-size:17.5px;font-weight:700;color:var(--brand-d);letter-spacing:.4px;}
+  .step.hot .head h3{color:#8a6414;}
+  .step .head .goal{font-size:12.5px;color:var(--ink-3);}
+  .step .head .tag{margin-left:auto;font-size:12px;color:var(--accent);
+    background:#fdf2f4;border:1px solid #f2c8ce;
+    border-radius:999px;padding:2px 12px;white-space:nowrap;
+  }
+  .step .head .tag.gold{color:#8a6414;background:var(--gold-l);border-color:#e9c46a;}
+
+  /* 动作 / 话术 双栏 */
+
+  .cols{display:grid;grid-template-columns:1.08fr 1fr;gap:14px;}
+  .pool{border:1px solid #e8eff6;background:#fbfdff;
+    border-radius:10px;padding:11px 14px 12px;
+  }
+  .pool.act{background:#f9fdfb;border-color:#cfeade;}
+  .pool h4{font-size:13.5px;font-weight:700;color:var(--brand-d);
+    margin-bottom:8px;display:flex;align-items:center;gap:7px;
+  }
+  .pool h4 .badge{font-size:11px;font-weight:700;letter-spacing:.5px;
+    border-radius:5px;padding:1px 7px;flex:0 0 auto;
+  }
+  .pool.act h4{color:#0a6a4a;}
+  .pool.act h4 .badge{background:var(--act);color:#fff;}
+  .pool.say h4{color:var(--brand-d);}
+  .pool.say h4 .badge{background:var(--brand);color:#fff;}
+  .pool ul{list-style:none;}
+  .pool li{position:relative;padding-left:14px;margin-bottom:5px;
+    font-size:13.5px;color:var(--ink-2);
+  }
+  .pool li:last-child{margin-bottom:0;}
+  .pool li::before{content:"";position:absolute;left:2px;top:9px;
+    width:5px;height:5px;border-radius:50%;background:#9dc2df;
+  }
+  .pool.act li::before{background:#8fcfb4;}
+  .say{display:inline-block;background:var(--say);
+    border:1px dashed var(--say-b);color:var(--say-t);
+    border-radius:7px;padding:1px 9px;font-size:13.5px;
+    margin:2px 0;
+  }
+  .k{color:var(--brand-d);font-weight:700;}
+  .ok{color:var(--ok);font-weight:700;}
+
+  /* 表格 */
+
+  .mini{width:100%;border-collapse:collapse;font-size:13px;margin-top:2px;
+  }
+  .mini th{background:var(--act-l);color:#0a6a4a;
+    font-weight:700;text-align:left;padding:7px 10px;
+    border:1px solid #cfeade;font-size:12.5px;
+  }
+  .mini td{padding:7px 10px;border:1px solid #e6eef6;color:var(--ink-2);
+    vertical-align:top;
+  }
+  .mini tr:nth-child(even) td{background:#fafcfe;}
+  .mini.plain th{background:var(--brand-l);color:var(--brand-d);border-color:#cfe2f2;}
+  .mini .kv{font-weight:700;color:var(--brand-d);white-space:nowrap;}
+
+  /* ================= 面板 / 卡片 ================= */
+
+  .panel{background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:20px 22px 22px;
+  }
+  .quad{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .fill{border:1px solid #e8eff6;border-radius:10px;
+    background:#fbfdff;padding:12px 16px 13px;
+  }
+  .fill h5{font-size:14px;color:var(--brand-d);font-weight:700;
+    margin-bottom:7px;display:flex;align-items:center;gap:7px;
+  }
+  .fill h5 .pip{width:20px;height:20px;border-radius:6px;flex:0 0 auto;
+    background:var(--brand);color:#fff;font-size:12px;
+    display:flex;align-items:center;justify-content:center;font-weight:700;
+  }
+  .fill h5 .pip.g{background:#0d7a55;}
+  .fill h5 .pip.r{background:var(--accent);}
+  .fill h5 .pip.y{background:var(--gold);}
+  .fill ol{padding-left:18px;}
+  .fill ol li,.fill p{font-size:13.5px;color:var(--ink-2);margin-bottom:3px;}
+  .fill ol li:last-child{margin-bottom:0;}
+  .redline{margin-top:16px;border-radius:10px;
+    background:#fdf2f4;border:1px solid #f2c8ce;
+    border-left:5px solid var(--accent);
+    padding:13px 18px;font-size:13.5px;color:#8c2436;line-height:1.8;
+  }
+  .redline b{color:var(--accent);}
+
+  /* 差异对比卡 */
+  .diff{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px;}
+  .diff-col{border-radius:12px;padding:14px 16px;border:1px solid var(--line);background:#fff;}
+  .diff-col.std{background:#fbfdff;border-color:#dbe6f0;}
+  .diff-col.prog{background:#fffdf5;border-color:#e9c46a;}
+  .diff-col h4{font-size:14.5px;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:8px;}
+  .diff-col.std h4{color:var(--brand-d);}
+  .diff-col.prog h4{color:#8a6414;}
+  .diff-col h4 .tagdot{font-size:11px;font-weight:700;border-radius:5px;padding:2px 8px;color:#fff;}
+  .diff-col.std h4 .tagdot{background:var(--brand);}
+  .diff-col.prog h4 .tagdot{background:var(--gold);}
+  .diff-col ul{list-style:none;}
+  .diff-col li{position:relative;padding-left:14px;margin-bottom:6px;font-size:13.5px;color:var(--ink-2);}
+  .diff-col li:last-child{margin-bottom:0;}
+  .diff-col li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:#9dc2df;}
+  .diff-col.prog li::before{background:#e0b64a;}
+
+  /* 适用对象 */
+  .who{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px;}
+  .who-card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff;}
+  .who-card h4{font-size:14px;color:var(--brand-d);font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:7px;}
+  .who-card p{font-size:13.5px;color:var(--ink-2);margin-bottom:4px;}
+  .who-card p:last-child{margin-bottom:0;}
+  .who-card .yes{color:var(--ok);font-weight:700;}
+  .who-card .no{color:var(--accent);font-weight:700;}
+
+  /* 提示条 */
+  .note{margin-top:14px;border-radius:10px;padding:13px 18px;font-size:13.5px;line-height:1.8;}
+  .note.gold{background:var(--gold-l);border:1px solid #e9c46a;border-left:5px solid var(--gold);color:#6f5510;}
+  .note.blue{background:var(--brand-l);border:1px solid #cfe2f2;border-left:5px solid var(--brand);color:#0d3c61;}
+  .note b{font-weight:700;}
+  .note.gold b{color:#8a6414;}
+  .note.blue b{color:var(--brand-d);}
+
+  /* FAQ */
+  .faq{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+  .faq details{border-bottom:1px solid #eef3f8;}
+  .faq details:last-child{border-bottom:0;}
+  .faq summary{cursor:pointer;list-style:none;padding:14px 18px;font-size:14px;font-weight:700;color:var(--brand-d);
+    display:flex;align-items:center;gap:9px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"Q";flex:0 0 auto;width:20px;height:20px;border-radius:6px;background:var(--brand);color:#fff;
+    font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:800;}
+  .faq details[open] summary{background:#fbfdff;}
+  .faq .ans{padding:0 18px 15px 47px;font-size:13.5px;color:var(--ink-2);line-height:1.85;}
+  .faq .ans b{color:var(--brand-d);}
+
+  footer{margin-top:24px;text-align:center;
+    font-size:12.5px;color:var(--ink-3);line-height:2;
+  }
+  footer b{color:var(--brand-d);}
+
+  /* ================= 响应式 ================= */
+
+  @media (max-width:860px){
+    .cols{grid-template-columns:1fr;}
+    .quad{grid-template-columns:1fr;}
+    .diff{grid-template-columns:1fr;}
+    .who{grid-template-columns:1fr;}
+  }
+  @media (max-width:700px){
+    body{padding:12px 9px 40px;font-size:14.5px;}
+    .banner{padding:20px 18px 18px;border-radius:12px;}
+    .banner h1{font-size:20px;letter-spacing:.5px;}
+    .banner .sub{font-size:13.5px;}
+    .flowbar{grid-template-columns:repeat(2,1fr);gap:6px;padding:14px 12px;}
+    .flowbar .fl{padding:7px 3px;}
+    .flowbar .fl i{font-size:12px;}
+    .step{grid-template-columns:62px 1fr;border-radius:12px;}
+    .step .axis{padding:12px 4px 10px;}
+    .step .axis .no{font-size:22px;}
+    .step .axis .lbl{font-size:9.5px;letter-spacing:1px;}
+    .step .main{padding:12px 13px 14px;}
+    .step .head h3{font-size:15.5px;}
+    .step .head .tag{margin-left:0;}
+    .step .head .goal{width:100%;}
+    .sec-title{font-size:15.5px;margin:20px 0 12px;flex-wrap:wrap;}
+    .sec-title .order-note{margin-left:0;}
+    .say{font-size:13px;}
+    .mini th,.mini td{padding:5px 7px;font-size:12px;}
+    .faq summary{font-size:13.5px;padding:12px 14px;}
+    .faq .ans{padding:0 14px 13px 40px;}
+  }
+
+  /* ================= 打印 ================= */
+
+  @media print{
+    @page{size:A4;margin:12mm 10mm;}
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .wrap{max-width:100%;}
+    .step,.panel,.flowbar,.banner,.faq{box-shadow:none;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;
+      break-inside:avoid;
+    }
+    .steps{gap:8px;}
+    .step .axis .dotline{display:none;}
+    .banner{border-radius:0;}
+    .faq details{break-inside:avoid;}
+    .faq details:not([open]) .ans{display:block;}
+  }
+/*@@ HOME-BACK-BTN @@*/
+/* ═══ 返回首页：嵌入页头（banner / topbar）右上角 ═══ */
+.banner,.topbar{position:relative!important}
+.back-home{position:absolute;right:18px;top:16px;z-index:9;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.16);color:#fff!important;font-size:13px;font-weight:700;line-height:1;
+  padding:9px 16px;border-radius:22px;text-decoration:none!important;
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 3px 10px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:inherit;-webkit-tap-highlight-color:transparent}
+.back-home:hover{background:rgba(255,255,255,.30);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.back-home .bh-ico{font-size:14px;line-height:1}
+.foot-home{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#0b6ab0!important;
+  font-weight:700;font-size:13px;text-decoration:none!important;border-bottom:1px dashed rgba(11,106,176,.5);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.foot-home:hover{color:#095a96!important;border-bottom-color:#095a96}
+@media(max-width:700px){
+  .back-home{right:10px;top:10px;font-size:12px;padding:8px 13px;border-radius:20px}
+}
+@media print{.back-home{border-color:#0b6ab0;color:#0b6ab0!important;background:#fff}}
+/*@@ TABLE-COL-FIT @@*/
+/* ═══ 表格列宽优化：固定布局 + 智能换行 + 防溢出 ═══ */
+th,td{overflow-wrap:break-word;word-break:break-word;}
+thead th{white-space:normal;}
+table.fit-narrow td:first-child,
+table.fit-narrow th:first-child{white-space:nowrap;}
+@media (min-width:700px){table{table-layout:fixed;}}
+@media (max-width:699px){table{table-layout:auto;}}
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="bHZybt0mVGNiFNWcUxZcBW" style="">
+<div class="wrap" data-page-node-id="m8YkXi1IGgTqs84rCBgE8Q">
+
+  <!-- ============ 页头 ============ -->
+  <div class="banner" data-page-node-id="UnyKuEdkpfxcoiOYqqSRrm">
+    <a class="back-home" href="../index.html" title="返回课程首页" data-page-node-id="rRnlkKvuAfiIFiLAu13bdr"><span class="bh-ico" data-page-node-id="iwEjybXciBS6JsjhLfCVcY">🏠</span>返回首页</a>
+    <div class="banner-in" data-page-node-id="Dc6IpE8C3uM6to1KHwCoBk">
+      
+      <h1 data-page-node-id="ltssb06GKU4fDcyzCQMst6">爱眼城眼镜 · 渐进眼镜取镜服务标准流程</h1>
+      <div class="sub" data-page-node-id="Yn1znhilhhTMkV0deVh8zP">常规取镜十步 + 渐进专项 · 验配差异 · 适应期指导 · 独立专册</div>
+      <div class="chips" data-page-node-id="0bb1QIzcJBkdGmptDTGgGm">
+        
+        
+        
+        
+      </div>
+      <div class="creed" data-page-node-id="evuHWsuDDFeGAjoJ6JBS0x">
+        核心原则：<b data-page-node-id="JEePCqavbjRBs6Kcw37CtA">先适应、后评价</b> ｜ 中心对准、姿势要对 ｜ 常规十步做扎实，渐进专项再叠加
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 一、适用对象与定位 ============ -->
+  <div class="sec-title" data-page-node-id="fbEJ1sY3RFH4D5LFnd46DY">一、适用对象与定位 <em data-page-node-id="tPfla2ixQ4roicciwFSpWm">本册在《取镜流程》十步基础上做渐进专项扩展，两册配套使用</em></div>
+  <div class="panel" data-page-node-id="1rqFKbU9IAYmSjbIdzIPgk">
+    <div class="who" data-page-node-id="Cy9Xe0KX6lIAm3DNZ9fnDC">
+      <div class="who-card" data-page-node-id="WLmflYGEMSpEdG4nwPmnly">
+        <h4 data-page-node-id="KJJiJ2z1OB7Pnr13wN8pqW">📌 本册适用于</h4>
+        <p data-page-node-id="f22V0C8eCggndEaIEAMflg">顾客所购镜片为 <span class="yes" data-page-node-id="MIbJsRG86I7RHngscxEoCh">渐进多焦点</span>（含成人渐进、青少年近视防控离焦渐进类）时的取镜交付环节。</p>
+        <p data-page-node-id="inuL1vbjY1LniCjCR1f2sU">执行人：接待 / 营业员主导，<span class="yes" data-page-node-id="vsHh6wJUFamqOiGArMsDjD">验光师配合复核</span>中心对位与度数。</p>
+      </div>
+      <div class="who-card" data-page-node-id="Wy7ZaCxXAu1Sb8iR3S6kHd">
+        <h4 data-page-node-id="peKyiC0Z5UAgKV5jRrI1VU">⛔ 本册不适用于</h4>
+        <p data-page-node-id="6VA6gTTaSTq0oxw8gEP0e3" style="cursor: text;">单光镜片——按《取镜流程》<span class="no" data-page-node-id="liBOmXOJMulXbCVisVZAqI">常规十步</span>执行即可。</p>
+        <p data-page-node-id="QhjiNix7fSM358hlxDRSFE">若顾客为 <span class="no" data-page-node-id="iHbVmzRb5g13BMC1dWNxZ8">初次配戴渐进</span>且有明显不适应史，须先由验光师评估能否取镜。</p>
+      </div>
+      <div class="who-card" data-page-node-id="lfTbQ72XP6T5DHBpprXUwY">
+        <h4 data-page-node-id="BKftWAR08Py9BCHjDxGH7H">🎯 交付目标</h4>
+        <p data-page-node-id="0O2YQNGQaNQeXi24DwMkYK">让顾客<span class="yes" data-page-node-id="5LvUblDFlo1xGO6IAU8UHK">当天就能正常使用</span>：看得清远、看得清近、走路不踩空。</p>
+        <p data-page-node-id="jxlCKKwQywyg2jfjb8eVel">把"适应期投诉"预防在柜台内，降低返工与退货率。</p>
+      </div>
+    </div>
+    <div class="note blue" data-page-node-id="4LiaVFtvuvO1nZkicTvyjb">
+      <b data-page-node-id="qeyBcYSUbhFUJVqhqxXC3r">为什么渐进要单独一册？</b>渐进镜片一副镜片上有远、中、近多个焦点，通道与像散区对 <b data-page-node-id="DjNzHFs6vwR8nyGSDT9lJT">镜框高度、瞳孔中心位置、镜眼距、前倾角</b> 极其敏感。取镜时"戴上就走"是渐进售后投诉的头号来源——同样的十步，渐进每一步都要多问一句、多量一次、多讲一段。
+    </div>
+  </div>
+
+  <!-- ============ 二、与常规取镜的核心差异 ============ -->
+  <div class="sec-title" data-page-node-id="gBiAV1P4XEsB3Wk0FFyFms">二、与常规取镜的核心差异 <em data-page-node-id="pdEemvOK9abmZWeM1eNDUT">同样十步，渐进这 6 处必须区别对待</em></div>
+  <div class="panel" data-page-node-id="BOIyCw3cuAl2IkmvcLC2bw">
+    <div class="diff" data-page-node-id="irFzm5fY01Ui6YOplo4ScH">
+      <div class="diff-col std" data-page-node-id="JDo2dacWJsgTtgOgwvmI0i">
+        <h4 data-page-node-id="a8LFPjJsdAKQUv5KgtXDPr"><span class="tagdot" data-page-node-id="NlA1ejuoQf71KnSpydjqx2">常规</span>单光 / 双光取镜</h4>
+        <ul data-page-node-id="sjtWyiXzwNVsw7hhJoZo7J">
+          <li data-page-node-id="ppxhqdXnvSFg1nFnNnMtiw">镜片仅一个焦点，戴上即清晰，无需通道对位</li>
+          <li data-page-node-id="CDzWTAIA7niARKUG3EON1w">镜框高度、瞳孔位置要求宽松，稍偏不影响使用</li>
+          <li data-page-node-id="gFWPS4YNyBsVQElbSvoDHI">试戴以"清晰、舒适"为主，无系统适应期指导</li>
+          <li data-page-node-id="aDmX6E03YZApF82lexGfMB">交代保养 7 条即可，无专项用眼姿势讲解</li>
+          <li data-page-node-id="xGArNHfTYyW3BrwpOnGTcO">核对项：度数 / 型号 / 装配（3 项）</li>
+          <li data-page-node-id="gRbzaT3lPePdz0MyZixZC9">一般可当天完成，无需二次随访</li>
+        </ul>
+      </div>
+      <div class="diff-col prog" data-page-node-id="ZVJDPIUzJvT3X1CtQHN6kk">
+        <h4 data-page-node-id="GZzjVACQTbeBcjFFLe5HLs"><span class="tagdot" data-page-node-id="fgOgeof8ABtIcmRIozGuPJ">渐进</span>渐进多焦点取镜</h4>
+        <ul data-page-node-id="H0YbMbfyBHP29VL9x13IPJ">
+          <li data-page-node-id="76hLLxpXivbx14Z8XysX7S">远 / 中 / 近多焦点，须确认<b data-page-node-id="g1sl6bChJkCWBFpKrzOxrT">瞳孔对准远用区</b></li>
+          <li data-page-node-id="2wWqoho2PeNKjH9hMmTtt3" style="white-space: pre-wrap; cursor: text;">镜框高度须满足通道需求（一般≥28mm 才可下单）​</li>
+          <li data-page-node-id="J2Q4HZRqkwSziE71MD6nsa">必须做<b data-page-node-id="XD8RphEVz1omk0aVX2TREL">适应期专项指导</b>（头动为主、眼动为辅）</li>
+          <li data-page-node-id="IogbaJ9pXhPOeJTZZInxEZ">必须讲<b data-page-node-id="2nXjR7sWzl9IJQYuVuC296">用眼姿势</b>：看远抬头、看近低头看通道</li>
+          <li data-page-node-id="NWZ6N7Ov6ag3FCukmZlwlA">核对项增加：通道高度 / 单眼瞳距 / 前倾角 / 镜眼距（7 项）</li>
+          <li data-page-node-id="8HkF9Y0kcw4U5EWwyFE21r">建议 7～15 天主动回访一次，确认适应情况</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note gold" data-page-node-id="uxteAHSZgjtZEMYWjDUZdy">
+      <b data-page-node-id="Akz6kMRQoHPkwp9cwQUtS5">一句话记住差异：</b>常规取镜解决"戴得上、看得清"；渐进取镜还要解决 <b data-page-node-id="KfY0BQqykBGjy5pByDNuK9">"用得对、适应快"</b>——多出来的时间，全花在中心对位、姿势指导和适应期说明上。
+    </div>
+  </div>
+
+  <!-- ============ 三、渐进取镜标准流程（十步 + 专项） ============ -->
+  <div class="sec-title" data-page-node-id="i5z7W0F5E1vGGpKoACQuRE">三、渐进取镜标准流程（十步 + 渐进专项） <em data-page-node-id="jzeJHpPprHa3SbdtubOzCy">前 4 步与常规一致，第 5～8 步叠加渐进专项动作</em></div>
+  <div class="flowbar" data-page-node-id="rkcLlH1EOWQSwUdHgnqL4G">
+    <div class="fl" data-page-node-id="cchbSxhEi1zH1cuW70PxVf"><b data-page-node-id="1WU1BQUeArtGBxyBdCYmLk">STEP 1</b><i data-page-node-id="NhaAo9dDr9Jf5W5835Fany">迎宾接待</i></div>
+    <div class="fl" data-page-node-id="Z5gHcNSrOp9E2sbN81bq3B"><b data-page-node-id="ioCVlYFrPg1QHDxJNugdsN">STEP 2</b><i data-page-node-id="jWIOCTQ3IiiZAwqi4OvBi5">引座倒水</i></div>
+    <div class="fl" data-page-node-id="OE4k0PvLuYGHi1DR8c91i6"><b data-page-node-id="YxWIPxqNjOng1wYFpJetbQ">STEP 3</b><i data-page-node-id="zorRKlcIgbFrblL1hlmlOI">核单取镜</i></div>
+    <div class="fl" data-page-node-id="LJeTvzJoUNcn6T9awjxRuF"><b data-page-node-id="efVL7le1htHFbKHNd93YlE">STEP 4</b><i data-page-node-id="bxJS1tEGAHvBDnQD6FoAYt">成镜检查</i></div>
+    <div class="fl hot" data-page-node-id="4YTuy6dmixHauYCySnIlGk"><b data-page-node-id="dMow4Mm7O6ubNAYFPVmFAx">STEP 5</b><i data-page-node-id="SHFucXZnZSpEmPfm4FWY8Q">试戴对位★</i></div>
+    <div class="fl hot" data-page-node-id="ingzYoVjcmlbgFoUZPySLL"><b data-page-node-id="hPBktH5PpVeE88F4Yq8tHe">STEP 6</b><i data-page-node-id="gT6o6UXRjFUkFKEmqVCXmI">渐进微调★</i></div>
+    <div class="fl hot" data-page-node-id="89Hcg40Gx0gEIUVQNdY8ri"><b data-page-node-id="zJQLNmWyhxEZUURFLG2kIN">STEP 7</b><i data-page-node-id="PkQbGdmbYO98yI3Ci46FwK">适应指导★</i></div>
+    <div class="fl hot" data-page-node-id="RUbBJyxGauAwlxA6auoMHe"><b data-page-node-id="wgo3wMHpsm6tshyf3krfT1">STEP 8</b><i data-page-node-id="xly8aur1bBX8vZ4qhutyY0">交代事项★</i></div>
+    <div class="fl" data-page-node-id="Z3IFH4NdAhQnnKNi9VZ5yl"><b data-page-node-id="JAy70goKTS81GlCJl3i5AM">STEP 9</b><i data-page-node-id="t4ADHInynzI15ld8mH2TJy">包装结款</i></div>
+    <div class="fl" data-page-node-id="PUPmcgZ6nRxWiSFWc98gk7"><b data-page-node-id="n1zqeMALNXTf705QnKJecp">STEP 10</b><i data-page-node-id="jm9WCSjOAdTyqI6cSmsmj0">礼送离店</i></div>
+  </div>
+  <p class="sec-title" style="font-size:13px;font-weight:400;color:var(--ink-3);margin:12px 0 14px;display:block" data-page-node-id="okpzErQdRe0EvJNOcycwvo">
+    标注 <b style="color:var(--gold)" data-page-node-id="SNSZcD6gcFaiHDNcq9oNB0">★</b> 的步骤为渐进专项步骤，执行要求高于常规。STEP 1～4 沿用《取镜流程》标准，差异点附于各步"渐进要点"。
+  </p>
+
+  <div class="steps" data-page-node-id="Rs5NNf4Bhi3TTCCB88xARB">
+
+    <!-- 1 -->
+    <section class="step" data-page-node-id="g1fEVWyP8DXON3YFBlK1Ni">
+      <div class="axis" data-page-node-id="SJapwyc0XY5vaH5fu71aCL"><div class="no" data-page-node-id="z0CGOml1HKWsQtxYeC0xsX">01</div><div class="lbl" data-page-node-id="MTOs17gAC5ONAvMlSRSBgY">接待</div><div class="dotline" data-page-node-id="m56TLcLBRwiMAfH87kldEs"></div></div>
+      <div class="main" data-page-node-id="NhaUYhwCHKbU884DO5VNu8">
+        <div class="head" data-page-node-id="WFxBhZaK8pX4d5BOw3AsFo">
+          <h3 data-page-node-id="eFNHlSeEzJ3DlLe7RD8lm4">迎宾接待</h3>
+          <span class="goal" data-page-node-id="Bi9tgzHa3eWtRqqQmq1ndM">目标：三秒之内被看见、被回应，确认顾客为渐进取镜</span>
+          <span class="tag" data-page-node-id="m61uxAJXUXy2vX7hTu2n3K">停留 ≤ 15 秒</span>
+        </div>
+        <div class="cols" data-page-node-id="HsqhsgBxmuw99bfkYlbfbo">
+          <div class="pool act" data-page-node-id="LvYtcXCmBmjpCjkefF8B3f">
+            <h4 data-page-node-id="BjaOsWvVrdbsblGcnynS6y"><span class="badge" data-page-node-id="yDFiEwqW4nFM20y4NZmZdb">动作</span>标准动作</h4>
+            <ul data-page-node-id="xvahdzmGqRwGrojHFjNIB6">
+              <li data-page-node-id="G2QE3pgGyqi3mvCksg76qk">顾客进门 <span class="k" data-page-node-id="EmFRdQKYzBxS01jxwjglAj">3 秒内</span>起身迎接，半弯腰 15° 致意</li>
+              <li data-page-node-id="MlAIfEaRTRZwUFi36bMLDA">确认来意时，<span class="k" data-page-node-id="0SupbysReWuEBqmqrwOsAj">同步在系统核对</span>该单是否为渐进镜片</li>
+              <li data-page-node-id="KYcI4CEghok9hLl6zrNREv">若为渐进，<span class="k" data-page-node-id="4h0j5ZPDsdLms6l3ovMpLG">提前预留取镜台</span>（需坐下、有镜子的位置）</li>
+              <li data-page-node-id="luSHlDHLZgk4hn9zkZ53Y8"><span class="k" data-page-node-id="I0pNTjEEGnVeHF0gMChacS">不得</span>让顾客站着等待，<span class="k" data-page-node-id="h2z7CdjFhSqzHm8vz45ccy">不得</span>让顾客自行寻找柜台</li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="ATQxgLsEUNMhMYmYn7tEEr">
+              <b data-page-node-id="4Dau9XanjfRGTkMHK8DREa">渐进要点：</b>渐进取镜耗时约为常规的 2 倍，接待时即要<b data-page-node-id="0qq74ntmReT2HQIQTxZMYK">调低顾客预期节奏</b>——"渐进要慢慢调，别着急"，避免顾客因等待而不耐烦。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="A7vAh3HU7jf5fnoEipCnHu">
+            <h4 data-page-node-id="67EDapCPxKKHeRunL78QT4"><span class="badge" data-page-node-id="3wE6uLnrpVa0QHKPcwsa4C">话术</span>标准话术</h4>
+            <ul data-page-node-id="t07LgROaFNGUPndsN5BPai">
+              <li data-page-node-id="kRq3Rqc6XBtC0REDB3oLiF"><span class="say" data-page-node-id="iuUrwiGOaXnL0r92bb2x5p">"您好，欢迎光临爱眼城眼镜，请问有什么可以帮您的？"</span></li>
+              <li data-page-node-id="kwbdzrjgUugFA45V8RQAOr"><span class="say" data-page-node-id="jZFPNFsZDtf3Yr1DUyRZ4U">"您是来取渐进眼镜的吧？这边请，我陪您过去，坐下慢慢试。"</span></li>
+              <li data-page-node-id="zLNTt1N7Fk76TYA7svAji1"><span class="say" data-page-node-id="T0sVRZGmrtiycvQwql5bAC">"渐进眼镜要花点时间帮您调到位，大概十几分钟，您先坐。"</span></li>
+              <li data-page-node-id="KrdoOVzPvHJ2LQEfWWMkwS">话术要点：明确告知"需要时间"，<b data-page-node-id="0nm1QMfUmC7zi1Y5qf2xUS">把等待说成"为您调到位"</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="step" data-page-node-id="MbqpL8pkuVvkeiHunFcHRJ">
+      <div class="axis" data-page-node-id="yy4TpbpAZNwdjCmrzXk61K"><div class="no" data-page-node-id="CtDEBQoARQEgGeua9z0Jor">02</div><div class="lbl" data-page-node-id="JxbsE7hRmEbRfQwn1GddQJ">引座</div><div class="dotline" data-page-node-id="6yxdX1pw65DLCxlGILGbEW"></div></div>
+      <div class="main" data-page-node-id="eVnJHidg97LXTWMZpaj71Y">
+        <div class="head" data-page-node-id="Ok1Y6S3go4l5R8ALz3jMRA">
+          <h3 data-page-node-id="Pp9ui8WrAHMPzQikXCrpIl">引座倒水</h3>
+          <span class="goal" data-page-node-id="xV1Gd8XP03mnxeEDn2u3ur">目标：让顾客坐下、喝上水，进入可安静试戴的状态</span>
+          <span class="tag" data-page-node-id="JZaT5SSrf6ZxXqVrQ2XTYl">必做动作</span>
+        </div>
+        <div class="cols" data-page-node-id="7S0CIP1MAUxVU2DBXOfN49">
+          <div class="pool act" data-page-node-id="rxJA4jYzurTDzz0Eie2rgI">
+            <h4 data-page-node-id="AdHtuG3alJFuB2DyRufEAV"><span class="badge" data-page-node-id="wVOHtCBWPnmflCAoQDds55">动作</span>标准动作</h4>
+            <ul data-page-node-id="ekVbFgOptGjNhCr2YBBOgS">
+              <li data-page-node-id="3LDz38DQPjTFWojM45SpXo">引导至取镜台侧位，<span class="k" data-page-node-id="Aqz7VtCVvtYkqBIMWKuKLd">主动拉出凳子</span>，护住凳面防磕碰</li>
+              <li data-page-node-id="rdeCwpZEeH19vL4CMROsrW">奉茶水位约半杯，杯耳朝顾客右手侧</li>
+              <li data-page-node-id="IFrKUmyAsZlA4iIxccKakH">提醒顾客把随身包放<b data-page-node-id="8tdhyu7Zi18NudFHwyCAJf">视线可达处</b>，勿挂凳背</li>
+              <li data-page-node-id="ozltjpRfid0PFvipizg8d6">若顾客为<b data-page-node-id="ib1xCRDqZaExtgfb6dtcHV">初次配渐进</b>，此时即可<span class="k" data-page-node-id="fxnAIrVAH5OUnWNT7LFCjt">轻声预告</span>适应过程</li>
+              <li data-page-node-id="6mkhpi6Z0VBk9bjdkdCrGl">顾客落座后再转身取镜，无空时由就近同事接力</li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="niScroK5i9PpiDGsvNP028">
+              <b data-page-node-id="ZI2RsiQDw3AyTrLuJnUR2G">渐进要点：</b>渐进试戴需要顾客<b data-page-node-id="7oCw1px3COs2YRTVxKi1Ov">多次抬头、低头、走动</b>，务必安排在<b data-page-node-id="FpXQZWCyFL89t1es3YQztz">有站立空间、有镜子、光线充足</b>的取镜台，不要在狭窄角落。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="yRYtqgtQ1FXGTBsvcokst9">
+            <h4 data-page-node-id="9p5GapuPkt6lILKxAPdh8j"><span class="badge" data-page-node-id="olD2ovHpSyLmOogLkLuxya">话术</span>标准话术</h4>
+            <ul data-page-node-id="0kwOCyS2ffVChPcKubNp5k">
+              <li data-page-node-id="c5tqktTa0dfs8FNhY4e5FY"><span class="say" data-page-node-id="iGMZq6dMBog2C9nnau288z">"先生/小姐，您好！请坐，我去给您倒杯水。"</span></li>
+              <li data-page-node-id="HtOJE9ASjLbmp0bCDW2Lme"><span class="say" data-page-node-id="XwGa5h0nUz9zLXdAoRabQ5">"渐进眼镜刚戴会有个适应过程，一会儿我教您怎么看远看近。"</span></li>
+              <li data-page-node-id="IOU2yVH5sFOYlyRS4hWaZt">话术要点：先照顾"坐"与"等"，<b data-page-node-id="xfGBloNHsFCwHjSVOStyyI">提前植入"适应"概念</b>，降低后面对"晃"的抵触</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="step" data-page-node-id="ulHjLs0uSqNaQrQqY0dums">
+      <div class="axis" data-page-node-id="9nGNXuKKuJ7vtNaW7UYm1l"><div class="no" data-page-node-id="2Q0Hy9IM7w3eG115swnUxU">03</div><div class="lbl" data-page-node-id="IZ4ANTRHHsA6bcSVQkrNZ5">核单</div><div class="dotline" data-page-node-id="UifA83f94WxghepLsuh6z7"></div></div>
+      <div class="main" data-page-node-id="Rx6bi4LHj3hm5xx5gRZ1B2">
+        <div class="head" data-page-node-id="O6GNmz58NFuoMzP12T6Mo9">
+          <h3 data-page-node-id="h0qtB8XOLzqDuTNqET5vMx">核单取镜</h3>
+          <span class="goal" data-page-node-id="VV39O7UkdzvtOyYnSjPXu6">目标：一次取对、件件不落，且确认是渐进镜片实物</span>
+          <span class="tag gold" data-page-node-id="5GqPCF934lf2OwDeBTxM7C">核对 7 项</span>
+        </div>
+        <div class="cols" data-page-node-id="TqDpgmIPZL12vpnUxpsivP">
+          <div class="pool act" data-page-node-id="sFRHcPaM6Hxa2Q6qFuVQsC">
+            <h4 data-page-node-id="bnb6FDEaAk0B4M9Kh3kEY1"><span class="badge" data-page-node-id="HBLkky6X4JuuO7WmEFAsux">动作</span>标准动作</h4>
+            <ul data-page-node-id="BCNCVwqTgwlsY1CEsH97B0">
+              <li data-page-node-id="qWP4tqPl2ApuPQWv3mAHxR">双手接单，核对顾客<span class="k" data-page-node-id="YSE0QATD2N7rNzDFVP0SkP">姓名 / 手机尾号 / 单号 / 门店</span>四项一致</li>
+              <li data-page-node-id="tq1ZEmkSQRTBp4dYHfNjzq">按单号定位取镜，<span class="k" data-page-node-id="EUcnqnzcKNRmyGpBZVzDpI">先看单、后开格</span></li>
+              <li data-page-node-id="rcZSiLREJdCaJa2256gjCR">验明实物为渐进镜片：<span class="k" data-page-node-id="GaFlpsWeh5q1bRIXDptK7p">镜片有远用区→通道→近用区的渐变标识</span></li>
+              <li data-page-node-id="AnG3QFZXQCu0NCptuAzSks">核对镜片包装袋标注：<span class="k" data-page-node-id="HfqxHqgDv5ZisEUYkxShzg">渐进品种 / 通道长度 / 折射率 / 加光 ADD</span></li>
+              <li data-page-node-id="YsyTnAYxG3B0aoADjIBvOq">确认加工单标注的<b data-page-node-id="S8fmRQ1IVN2ao0rGmQkkdq">通道高度</b>与<b data-page-node-id="wTXPVC5y5IO0c5Ww92zWkW">单眼瞳距</b>已按渐进要求定制</li>
+              <li data-page-node-id="ATAyxKlIXksJGJudxAXu3e">赠品（镜布 / 镜盒 / 保修凭证）<span class="ok" data-page-node-id="fYJA1XKiX51nOLCNVUttrn">一件不落</span>当面点清</li>
+            </ul>
+            <table class="mini plain" style="margin-top:10px" data-page-node-id="vqEZcnZJGSt8EG1117YIAF">
+              <thead data-page-node-id="FDsFDS9i6XysLAaCXL9Ui1"><tr data-page-node-id="t5FPpicTeS1Bl3hXjv1r36"><th style="width:38%" data-page-node-id="fTO8xz5uQnyD4khV7nEnri">核对项</th><th data-page-node-id="8zeqSxtFICPlHjJEEDu94R">渐进特别关注</th></tr></thead>
+              <tbody data-page-node-id="LnIXQnqYzx96KJLP13fG2T">
+                <tr data-page-node-id="aZHpGzo71TfFb5KWK9h8HR"><td class="kv" data-page-node-id="5Lki7PP5Z6ttvzFqR4euBr">镜片品种</td><td data-page-node-id="xQocMRuRtriXM24HIcE06Y">渐进（非单光）</td></tr>
+                <tr data-page-node-id="AN0l9dhyyasE67NILaBO45"><td class="kv" data-page-node-id="MaPJtKSE0WEffnRd2WtQV0">加光 ADD</td><td data-page-node-id="ZTTOHtNaOjiMB5H8GwuDoS">与处方一致，左右可不同</td></tr>
+                <tr data-page-node-id="V54lh06f3ifxsIExgz4p7j"><td class="kv" data-page-node-id="MJCFtcgUtksb8niEHKLFIQ">通道长度</td><td data-page-node-id="bsxVBFjtb9DUXW4KhSKEzk">短通道 / 标准通道，与镜框高度匹配</td></tr>
+                <tr data-page-node-id="i20eCHffuETGBx6B5mNs0h"><td class="kv" data-page-node-id="SdDgS5WHWnJGjGXypUI4fq">单眼瞳距</td><td data-page-node-id="3QLKbioMv8JnAzvFoBrPfP">渐进按单眼瞳距加工，不能用双眼均值</td></tr>
+                <tr data-page-node-id="AHvK8X7rXZuH6WSfYMBGx4"><td class="kv" data-page-node-id="vhkLrM6dmpvFVDfaA4WK6J">通道高度</td><td data-page-node-id="S7BNfnGjZNzzJKmTi3XizA">瞳孔中心至镜框下缘，≥18mm 为宜</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pool say" data-page-node-id="pvzlv1zJJi1d16mnk0Rjpl">
+            <h4 data-page-node-id="ekrDuxCeaPnPluW2bf27qG"><span class="badge" data-page-node-id="gn3q3Lo4vn55S5Z2PFDTGB">话术</span>标准话术</h4>
+            <ul data-page-node-id="Oq9YnQvj4PWgOOd34OUihD">
+              <li data-page-node-id="v9Ti2gVwCNituclQbtPbt5"><span class="say" data-page-node-id="rzcpVLgEKECSWUopWu6Iu9">"麻烦问一下，您预留的手机尾号是 XXXX，对吗？"</span></li>
+              <li data-page-node-id="Vujynv9lcBOX2rJ9gPHExj"><span class="say" data-page-node-id="GbRRY0UqkOX2fGDskpRxp4">"我按单号核对一下渐进品种和加光，您稍等一分钟。"</span></li>
+              <li data-page-node-id="KAIDZ18vxLs8ubQLuZ057A">取到后复述：<span class="say" data-page-node-id="jzXpQb9VjqXEHBxoYyHnEa">"这副就是您选的渐进镜片，加光 XX，镜片包装也给您留着。"</span></li>
+              <li data-page-node-id="sIEl2LgBNv6dL5bH7RCiXU">话术要点：<b data-page-node-id="rQHG7DZXTAwhDQkiVwJXZD">边点边报</b>，将"渐进"字样说出，强化顾客"这确实是渐进的确认感"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="step" data-page-node-id="lvCts1e6SLQ9mCyJH3w0Rz">
+      <div class="axis" data-page-node-id="Lpq286NRF39wfqGYsul3qA"><div class="no" data-page-node-id="0mdUOx144UPb4odETWvpDu">04</div><div class="lbl" data-page-node-id="70L311fdVYElRlppaYeOij">检查</div><div class="dotline" data-page-node-id="19S7Yh8rEVjTckvcqlcKDz"></div></div>
+      <div class="main" data-page-node-id="7OuvLn8qbxZzpW9RnfRReH">
+        <div class="head" data-page-node-id="GRA9wmhwfh3F5R27BJu18u">
+          <h3 data-page-node-id="KJvps23XGNlYjg8xELSXNu">成镜检查</h3>
+          <span class="goal" data-page-node-id="hH4ZCsv21PRQ0vF7Pr6Gdu">目标：交付前完成自检，尤其确认渐进加工标记与中心位置</span>
+          <span class="tag gold" data-page-node-id="EOeS7TiiK3fE4oauEqGosy">渐进加查 2 项</span>
+        </div>
+        <div class="cols" data-page-node-id="W6tinDWeuOHp68VoHB3uRM">
+          <div class="pool act" data-page-node-id="ed1dU0sq4rdumKzPUWGXsM">
+            <h4 data-page-node-id="cwbOr7oGpr5Y8R1y5zX6iy"><span class="badge" data-page-node-id="voE4PZOwInrEaukELT4BhZ">动作</span>标准动作（三查一看 + 渐进两看）</h4>
+            <ul data-page-node-id="w0XHUEEtiMjnSGnZ6CXdfr">
+              <li data-page-node-id="Vm0DPBxVD4ZViyvUDtFEGk"><span class="k" data-page-node-id="GRVpc1MF6oWcGGcEoosB3j">反面查</span>：放取镜板上，左右耳弯点均不翘起</li>
+              <li data-page-node-id="ErFKQE5rtWbHyoZXYyOAoO"><span class="k" data-page-node-id="YTVNVALa1e3tbgljH8Zjm2">正面查</span>：镜腿末端不翘起</li>
+              <li data-page-node-id="kDvgFWaIOA0U7A0K5KarrK"><span class="k" data-page-node-id="De4eBDFbhZC2WpHdE6u9rv">折叠查</span>：镜腿折叠重叠、不交叉，桩头无松动异响</li>
+              <li data-page-node-id="gKmnvIlaqcLfS1gGFvkhkE"><span class="k" data-page-node-id="O8P6Uv5qqqLFyGMMXsAyWG">一看</span>：对光看镜片有无划痕、崩边、气泡、装配缝隙</li>
+              <li data-page-node-id="b14qav0hG3l6anY4yK7Bp8"><span class="k" data-page-node-id="YCvRCHC3oZ5RlxvDXcl8f1">渐进看一</span>：核对镜片上的<b data-page-node-id="jvD4xbQdiQUTfXElKA93U6">临时标记（隐形渐变标识）</b>是否清晰可辨</li>
+              <li data-page-node-id="apicJrAmJmYYHPNvplfani"><span class="k" data-page-node-id="HRTXmfvWggpDDs63Zy7sZd">渐进看二</span>：用水准仪 / 目测确认<b data-page-node-id="41Q9KnDAsie3XrKNFTHUq2">远用区光学中心</b>与瞳孔高度对应，左右一致</li>
+              <li data-page-node-id="l1teGp8RUgsOuWuUTkZtiF">检查全程用<b data-page-node-id="jMfjt6IwCY4tqCLKDROgxc">专用镜布托底</b>，不直接捏拿镜片</li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="KLabrIA4qM1z8UDT9XJJNI">
+              <b data-page-node-id="9rfDSAQEy4Hr42QyyMvzsK">渐进要点：</b>渐进镜片一旦装配时<b data-page-node-id="D5wpvGgiOYSoXVYdaGG4rT">光学中心点错位</b>，戴上去会产生"晕、晃、看近发糊"，且无法靠后天调校补救。此步必须由<b data-page-node-id="JDBebgUDTsl2xOnhK0GLs9">验光师或有资质的加工人员</b>确认中心标记，异常立即返工，<b data-page-node-id="M1wzwAuoJf5OllKvaTC674">不得取镜交付</b>。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="0qUpWgR0aTA22zRyeHxUcF">
+            <h4 data-page-node-id="p975XpSsIOqc4j4lgc5n3D"><span class="badge" data-page-node-id="AywqBIZHkIMcfhy4GY0DID">话术</span>标准话术</h4>
+            <ul data-page-node-id="uJTVOI3N3LQdVd0i3foBFt">
+              <li data-page-node-id="u1CtRiaUjBR9dfVFfqeB1c"><span class="say" data-page-node-id="KbnP8NNqxUQFseiq5bESgM">"我先帮您做个交付前检查，看看镜片装配和中心点，一分钟就好。"</span></li>
+              <li data-page-node-id="0jQnpFuO3AL89mTmyILDU1">通过：<span class="say" data-page-node-id="tajsRna0wlqjh69mXquxiH">"检查好了，镜架平整、渐进中心位对准了，您放心戴。"</span></li>
+              <li data-page-node-id="AbDC0vcpq9hhjn17YmVMEz"><span class="say" data-page-node-id="RD1Hn0wSzngNV56CNAp71L">"渐进镜片对中心位置要求很高，这一步我们一定帮您核对到位。"</span></li>
+              <li data-page-node-id="GcImEmRTIujErku2WtRAi1">话术要点：把"检查"说成<b data-page-node-id="b24ZfDEZDQgHFBAeKkt8pq">为顾客把关</b>，同时传递"渐进很讲究"的专业感</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="step hot" data-page-node-id="Mk3aIrhILDnIC9WXGVEnAL">
+      <div class="axis" data-page-node-id="PouXlaUVRq7SU16hhfSEU8"><div class="no" data-page-node-id="qLkRzRIFmBXjJTHdrcS5G3">05</div><div class="lbl" data-page-node-id="Bke4ktEOQY6JdscQM54ZNq">对位</div><div class="dotline" data-page-node-id="oTlpuu7yHq0GEZsRWrh9bF"></div></div>
+      <div class="main" data-page-node-id="HzKMUel7PQd5DO5Tt4LAeh">
+        <div class="head" data-page-node-id="il16qRxZ07JB6lTkQwCeBB">
+          <h3 data-page-node-id="pEAK8DR1ukiBwqeWBmDywg">试戴对位 ★渐进专项</h3>
+          <span class="goal" data-page-node-id="2Scyiy10WQeSBiZoEM02Xm">目标：确认瞳孔对准远用区，戴姿正确，为适应期打好基础</span>
+          <span class="tag gold" data-page-node-id="5KlCtXmHXlWthWJSfgERME">渐进核心步骤</span>
+        </div>
+        <div class="cols" data-page-node-id="B4GrIFZt2AC8vnHLJj25EY">
+          <div class="pool act" data-page-node-id="fnt4zSpL5hBIYpfC5nRfzj">
+            <h4 data-page-node-id="3rFA96bA4tDHsMl7wawDjE"><span class="badge" data-page-node-id="TiYNDvuwRqYxvLPTBFEbw2">动作</span>标准动作（对位四步）</h4>
+            <ul data-page-node-id="nyw1LHjJUYMN80oe9FNS8P">
+              <li data-page-node-id="MLtDNflHL09oeAz0xnVKWE">引导坐下，<span class="k" data-page-node-id="muE8qhHDe6rqle9run7e02">镜子摆正、与视线等高</span>，双手打开镜框</li>
+              <li data-page-node-id="yROIKrD0FPuLwMV0r9abGm">递交时<span class="k" data-page-node-id="dEM8hBQgCP6ZL9rizSLCvx">捏桩头、开口朝顾客</span>，请顾客双手接镜腿</li>
+              <li data-page-node-id="ZDXus8A8ba2KJuWnsj6s7j"><span class="k" data-page-node-id="bt19yFABQIABlSWazoJQ3h">第一步 · 看远对位</span>：让顾客平视正前方，确认<b data-page-node-id="FUfHKRToV7GMF3J13QGYzg">瞳孔落在远用区</b>（镜框上 1/3 附近）</li>
+              <li data-page-node-id="M61N1IpDyVHMa93Hvlc13K"><span class="k" data-page-node-id="7moFDqzFG7S1XdsPgVPYw2">第二步 · 看近对位</span>：让顾客低头看近处文字，确认视线自然进入<b data-page-node-id="bLf55EGFpvja8pA52LVV6v">近用区</b>（镜框下 1/3）</li>
+              <li data-page-node-id="iDQSSbJ1JiicL8huZqFcMX"><span class="k" data-page-node-id="N3fXIsdUCXLKdyhcT8y4hc">第三步 · 通道居中</span>：确认双眼中线对准<b data-page-node-id="vjMYxQr22Xugo23a8Mtnlh">渐进通道</b>，不偏内、不偏外</li>
+              <li data-page-node-id="tdRTbau4Oyr1LqDIrAjndE"><span class="k" data-page-node-id="pQztNWWWsRrjGvDqBpSehw">第四步 · 角度复核</span>：量<b data-page-node-id="e8IEpR73KxCgHg4Xpuo5GU">镜眼距、前倾角（8°～15°）、镜框高度</b>四项是否达标</li>
+              <li data-page-node-id="BvLf2ZHBrmBj6FSbC3FJfd">看"三平"：镜框高低平、前后平、左右平</li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="PuHwqHFkxnc9LhQZqAGKsE">
+              <b data-page-node-id="oSZXU7DUHEevvLhH9lf4Sr">渐进要点：</b>渐进对位是<b data-page-node-id="gab51nydz1qhmsBAiZGAeb">"一次做对、终身受益"</b>的关键。中心差 1～2mm，顾客就会觉得"看近歪""走路晕"。此步务必<b data-page-node-id="dNxm5AJLEsKIyaUFFXofUo">边调边请顾客上下看</b>，让顾客自己确认"远清晰、近也清晰"。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="7uGSlxSj1ELxCpvQj1TFbI">
+            <h4 data-page-node-id="ERzrwWWbCJhW0BkYaEnrp9"><span class="badge" data-page-node-id="YvUywKbxMh8GiimCXo9Iqi">话术</span>标准话术</h4>
+            <ul data-page-node-id="FrD1W7vyp3ho5SHtM9bGTR">
+              <li data-page-node-id="JRzl3tQEpeygivSjbBAxcw">递镜：<span class="say" data-page-node-id="FQdrx7gFYKXSUI0yO5CED8">"您双手接一下镜腿，先轻轻戴上。"</span></li>
+              <li data-page-node-id="y1zRQGDU433F0WxypDjFZq">对位：<span class="say" data-page-node-id="Ftos6zQGpbSyFtIFARHCJw">"您平视前方，看远处那个目标——对，眼睛正好落在镜片上方的远用区。"</span></li>
+              <li data-page-node-id="Ta19ZbXAs1sZwQoQTNWKHl">看近：<span class="say" data-page-node-id="IRjHSHb2k6g2zBP11NP9a2">"现在低头看这张单子上的字，用镜片下方看，是不是清楚了？"</span></li>
+              <li data-page-node-id="yL2h8ZNyUHMPNW5fLYyTDB">适应预告：<span class="say" data-page-node-id="OTsnCU2XIMXG5lNEyPhMW2">"渐进要慢慢适应，头动为主、眼动为辅，我教您方法。"</span></li>
+              <li data-page-node-id="Sentzq7RBqU3D3n3FUwMqg">话术要点：<b data-page-node-id="CWuZvh4zc69vwaSxFgs4Rg">先说动作、再问感受</b>，让顾客亲手验证远/近都清晰</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="step hot" data-page-node-id="ri4WtXHQh7eVI0DCOFsVIu">
+      <div class="axis" data-page-node-id="7MVkujk82lOaIC1cTZPlpR"><div class="no" data-page-node-id="h27nDCMO9yMGLTVnqTc4oQ">06</div><div class="lbl" data-page-node-id="hTHOKyiRVM1CGAuWHpBiZD">微调</div><div class="dotline" data-page-node-id="CD3pUKmKe0qo2zAHDnIT61"></div></div>
+      <div class="main" data-page-node-id="kLAtCE642ew2vUZEUew7FN">
+        <div class="head" data-page-node-id="txDTthtfDAiAR8LJRzpQm8">
+          <h3 data-page-node-id="porvF54PF6wENxN6uDcHaL">渐进微调 ★渐进专项</h3>
+          <span class="goal" data-page-node-id="AO4DWoWEKJogcanY51wbj7">目标：按顾客真实感受当场调到位，确保中心不偏移</span>
+          <span class="tag gold" data-page-node-id="tMEgvrW2NYS78K64hTGIz8">当场解决</span>
+        </div>
+        <div class="cols" data-page-node-id="sdrj7bNUxg72azjrbnLe1N">
+          <div class="pool act" data-page-node-id="oj0LeHFXA7HZaskTeoiGic">
+            <h4 data-page-node-id="bLKt3gJ0ri1aVlr5lwhaHo"><span class="badge" data-page-node-id="CCQhc7JUIejxrZgB8sH5L1">动作</span>标准动作</h4>
+            <ul data-page-node-id="zDtSV2H0AfpFKqx1WQ8iVz">
+              <li data-page-node-id="dNOdlufflzS3Jyo7LYDzmY">按反馈逐项调：<span class="k" data-page-node-id="fxygD2xt26huiASWT6T8g3">镜腿外扩内收、鼻托上下左右、倾斜角</span></li>
+              <li data-page-node-id="mq2l5jsAVrfH8M4Rj94PvC">调整镜眼距：渐进<b data-page-node-id="mtCRIAf6DumYQAdFdu28cC">镜眼距过大</b>会放大像散区，须调至<b data-page-node-id="50Wnya9WOooxQQ8PzeVEJe">12～14mm</b></li>
+              <li data-page-node-id="wCH6b9MgAojuQvAqDlVVwq">调整前倾角至 <b data-page-node-id="NebaMpZhWs2ZJTIj34ied1">8°～15°</b>，过小看远费力、过大看近别扭</li>
+              <li data-page-node-id="wpBpaZsWmQNhU4RgAAgzBf">调校用<b data-page-node-id="jRKcFuYFKfm7GfoCd0rPu2">专业调校钳</b>，垫布防刮伤，力度轻缓、小幅多次</li>
+              <li data-page-node-id="DDZcwkvOXFTxW0gFpkJOSF">每调一次请顾客<b data-page-node-id="EP7QKJNrDLGT4Ghj4EyD4G">重新佩戴 + 抬头看远 + 低头看近 + 走两步</b></li>
+              <li data-page-node-id="Mm2epBjIHGKDBQEr2xULGR">确因度数或中心问题无法当场解决，<span class="k" data-page-node-id="zyaxl5HoLiPrdAFzHcg3wC">当场记录并承诺返店时间</span>，<b data-page-node-id="uxGjQKULvEO9ldYPNtIOUp">不得含糊</b></li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="vkx5BCiZldxYzEiMZ0Mg3p">
+              <b data-page-node-id="QwYH6GvxF1ZaCL1C4NORLB">渐进要点：</b>渐进微调要<b data-page-node-id="NLgGFDVMpT5tn4MRqHO3j9">区分"镜架问题"与"适应问题"</b>——戴得晃、看地面前方有变形，多为<b data-page-node-id="7yFqu9NX3uQNSKd6DIOiDf">正常适应现象</b>，不必反复调架；但若<b data-page-node-id="ak0expXEzQzb0CtF2PnNLt">看远不清晰、看近错位、双眼单眼不一致</b>，则多为<b data-page-node-id="0hTuBRwNfydkxFe1AvcpuV">中心或度数问题</b>，须请验光师复核。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="XNWV9eIjGLO9WSkGNNDD5y">
+            <h4 data-page-node-id="fCwCWOCvM7CHE275mNRdzY"><span class="badge" data-page-node-id="9gkzJhiJkyyxU8u5UXQAlJ">话术</span>标准话术</h4>
+            <ul data-page-node-id="GMcQUZIfUvVInBH9XBPHcn">
+              <li data-page-node-id="nxEr6dCKvVnkMJDqKGxW7W"><span class="say" data-page-node-id="DzJ0NpHLjGWBkhPS4HXqgk">"刚刚看您戴的时候镜眼距有点大，我帮您调近一点，渐进这样更清晰。"</span></li>
+              <li data-page-node-id="SXUKgoKvXY9bEmDO4FXv5r"><span class="say" data-page-node-id="kYIZ7wBIbZVwn6JzNdeFme">"两侧鼻托我做个微调，戴久了才不会往下滑。"</span></li>
+              <li data-page-node-id="MKJFjYFRwND1DYrQt9WU1j">区分现象：<span class="say" data-page-node-id="2dLJ0xDHWNx4DaKamasc7m">"刚戴有点晃是正常的，那是渐进的像散区；如果您看远一直发虚，我再帮您复核度数。"</span></li>
+              <li data-page-node-id="MNJ5yOXqNXBz5Xmi217ygv">复验：<span class="say" data-page-node-id="IP6je8A9CbQMQnsHvKpOpC">"您再抬头看远、低头看近试试，这次远和近都清楚了吗？"</span></li>
+              <li data-page-node-id="vTfG4JXBHVmLxSWnQwpkmS">话术要点：<b data-page-node-id="sNA7iuIC2SUtp8Pl4jB92m">先说现象、再说原因、后说处理</b>，让顾客把"晃"和"不清晰"分开判断</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="step hot" data-page-node-id="WF7JbsbFYolhcyPctGToxf">
+      <div class="axis" data-page-node-id="NdwQQxSisoftnXRfpybXKt"><div class="no" data-page-node-id="Y0VMb5CKqAmStdvUBGwhON">07</div><div class="lbl" data-page-node-id="wYgTZzRxXfXDySn5v8kVze">指导</div><div class="dotline" data-page-node-id="WJeXHGk1PXB7CAfa8RAClg"></div></div>
+      <div class="main" data-page-node-id="SgLExS6DhFwJh25eVtJu8q">
+        <div class="head" data-page-node-id="R8lrMQCOw7trMdnmEsVhIH">
+          <h3 data-page-node-id="z8L0DXZo3R8MlmgJQpidnB">适应期使用指导 ★渐进专项</h3>
+          <span class="goal" data-page-node-id="3BAqnql2JjXFaZQepXC6L3">目标：教会顾客正确用眼方式，把适应期投诉降到最低</span>
+          <span class="tag gold" data-page-node-id="A35FE6AjELZIEM3pLT7BqI">本册重点</span>
+        </div>
+        <div class="cols" data-page-node-id="rUVlOJWEy0YaDD93lwkDc6">
+          <div class="pool act" data-page-node-id="AOToaIs23KXIFbjnHrV5rH">
+            <h4 data-page-node-id="CbvNZpFGCThLrYknl9cpSI"><span class="badge" data-page-node-id="VW3cPGSWHZB8icLf4yNlGO">动作</span>标准动作（三段指导 + 必讲 5 条）</h4>
+            <ul data-page-node-id="MCijESVVtsZ66BVuqCzKNm">
+              <li data-page-node-id="QYxYpaC4B5rOpN7xohQXs3"><span class="k" data-page-node-id="kD1ZwvOD6V5u5sxBf2N2HE">三段式演示</span>：①看远——平视前方；②看中——看电脑屏幕，视线微降；③看近——低头看书报，视线入下方近用区</li>
+              <li data-page-node-id="sjrPpjsEAfIc16ybnFu0Va">强调<span class="k" data-page-node-id="hdNOMHh2RRy6eLuJZ7ZLX0">头动为主、眼动为辅</span>：换视物距离时，转<b data-page-node-id="zrC0tciwrObDeD7OkddeQz">头</b>而不是只转<b data-page-node-id="ko54OJ3hjMvtANWEwi4gNt">眼球</b></li>
+              <li data-page-node-id="eoAR70hFZlZYOVL3DGoCSk">告知<b data-page-node-id="TgMzk4R4uykdNlmDSCF24b">像散区</b>位置（镜片两侧），避免用余光从两侧看东西</li>
+              <li data-page-node-id="fAVYEMZLbljhVV9ZZozfUK">交代<b data-page-node-id="NbPw8r8vrb5fJc3ZBzGvDI">适应期与禁忌</b>（见下表），重点条目让顾客复述一遍</li>
+              <li data-page-node-id="zuOAkKoqYeFiytRmAHCOn9">建议先室内、后室外，先静坐、后走动，<b data-page-node-id="mex5R8n9FRePj6X7Ab1i9B">不要一出门就骑车/开车</b></li>
+            </ul>
+            <table class="mini" style="margin-top:10px" data-page-node-id="2Q8cl51bXhAoufPddv0Sfi">
+              <thead data-page-node-id="INs7U7pZexO5J3xhbnHmD6"><tr data-page-node-id="j7Av2wABAkxHFnLZZKTzTS"><th style="width:34%" data-page-node-id="GSp7LoePncUaFDDNBhg4NY">必讲要点</th><th data-page-node-id="U8GU3rsgr5ftsevUEOaKOX">说明与标准</th></tr></thead>
+              <tbody data-page-node-id="kPYaCoBCaC7am5bZNGiDcm">
+                <tr data-page-node-id="tvlY7nV0SqtVrKYXWOKlDa"><td class="kv" data-page-node-id="uF6LB7aHM3jlLUbySHqSXe">适应期</td><td data-page-node-id="j2QzYBEzLf1oBKqSh08G46">一般 3～7 天，个别需 2 周；越少换来换去越快适应</td></tr>
+                <tr data-page-node-id="CX2DtGoUsSUvngySSwXUZb"><td class="kv" data-page-node-id="gnh7h8SYvcpHd4DA2e2BcR">上下楼</td><td data-page-node-id="7ycyGzLMt32mvKzWxw3DG5">下楼低头看台阶最易踩空，务必扶扶手、慢行</td></tr>
+                <tr data-page-node-id="lvEUYJePtyfI8R1T98BTgT"><td class="kv" data-page-node-id="TYJwHAuUFsZOQIFn8fQBKc">驾驶</td><td data-page-node-id="PkWSa2EKRyBrZyuFmhMKBj">适应期内尽量不要开车；确需驾驶先确认看远清晰、侧视不晕</td></tr>
+                <tr data-page-node-id="3xaOjRnzBcreL44gTlJs1c"><td class="kv" data-page-node-id="9DDCDCvNE4FHAnJ78cehHs">用眼姿势</td><td data-page-node-id="BAcVDzHpsQjEBNAzOIOB8u">看远平视、看近低头；不躺着看书、不仰头看手机</td></tr>
+                <tr data-page-node-id="Y0Kj41fxgkvpemL1ZXMZkl"><td class="kv" data-page-node-id="9zKOeEKrrklal32ZM9Jc8H">旧镜处理</td><td data-page-node-id="HJ1Ii4lad9pcwEofdABn61">建议集中佩戴新镜，不要新旧频繁交替</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pool say" data-page-node-id="MnSSu0zZbCYF1ymVvlCn5U">
+            <h4 data-page-node-id="usgdtxVDiBCtMMpRXdphZh"><span class="badge" data-page-node-id="x1QJsTGF2oG4iWmC2Ny9Ms">话术</span>标准话术</h4>
+            <ul data-page-node-id="v2Q3YOJlR3QBOj4ISB4yhK">
+              <li data-page-node-id="GZHwMuboWZNEjkrPQew0Kc">演示：<span class="say" data-page-node-id="hGU2Ia9Cmh8YFKyv7JvzkC">"我教您三个方向：平视看远，微低头看电脑，再低头看书，视线自然就进入对应的区域。"</span></li>
+              <li data-page-node-id="eE5YDkpOY3lDgiceaDlSqF">方法：<span class="say" data-page-node-id="IztgVkCOBqsmSm9AhWEmZV">"换着看东西的时候，转头比转眼球更好用，头跟着视线走。"</span></li>
+              <li data-page-node-id="zppPejdvUE6fyZjCTAE5Cq">下楼：<span class="say" data-page-node-id="ROwMe78oxZuJ5yfaUYxQSq">"刚戴渐进下楼梯要慢一点、扶一下扶手，低头用下方区域看台阶。"</span></li>
+              <li data-page-node-id="xYKHlI35IjE0RR9px6moDE">禁忌：<span class="say" data-page-node-id="WrYmbtYYISfFDeMpCT4xrr">"适应期尽量别开车，等哪天您觉得远近都顺了再开，安全第一。"</span></li>
+              <li data-page-node-id="0a7nmyUWQqAiJRW6xusGCu">心态：<span class="say" data-page-node-id="InTouwNs96AChtdjAIR5J6">"一般三五天就适应了，别着急；实在不舒服随时回来，我们帮您看。"</span></li>
+              <li data-page-node-id="rzkWKSqzbcbK594DthDnep">话术要点：<b data-page-node-id="6UqvicmhOcF4fFPkMM4mja">把"晕"说成"正常适应"</b>，同时给出可执行的方法，顾客才敢坚持戴</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="step hot" data-page-node-id="osbUZFNmXk3Xs3SpRnkkkX">
+      <div class="axis" data-page-node-id="ml9kzZ14Zs3cImDLqakFos"><div class="no" data-page-node-id="KGOvGf1OkVI1y1NJYGr6lp">08</div><div class="lbl" data-page-node-id="lXX9X4EY5nfNUws6lfQKUi">交代</div><div class="dotline" data-page-node-id="5J9stG8ggWBUBIWNUlSGsl"></div></div>
+      <div class="main" data-page-node-id="W33SH1JLWAGLjcB02SInoD">
+        <div class="head" data-page-node-id="6kPKs54erhDW99gU6vBfMk">
+          <h3 data-page-node-id="9ykbo8STOglSU4hIJDDCyr">交代事项 ★渐进加强</h3>
+          <span class="goal" data-page-node-id="ehqT1Niw5AKNntliaWwGsZ">目标：保养 + 随访双交代，建立适应期跟踪</span>
+          <span class="tag gold" data-page-node-id="WsqrUFmMhK1nN6emYbPBV9">随访 + 保养</span>
+        </div>
+        <div class="cols" data-page-node-id="Mhlv4VOPS4cuuwJgMWUBM2">
+          <div class="pool act" data-page-node-id="ZJaojGg8QIyxFFlPC8Co2N">
+            <h4 data-page-node-id="9m7I20tBlwPoFXGpDFryXk"><span class="badge" data-page-node-id="FknXNrJBl7onAEaH0zGrtr">动作</span>标准动作</h4>
+            <ul data-page-node-id="SjmxsNOv57RFvbtgC6BEhc">
+              <li data-page-node-id="v1k3mZOulOEf1PUrFcUb1b">保养 7 条<b data-page-node-id="yQB7M6MRP1C4LOjHELv8j9">逐条手上演示</b>（双手摘戴、凸面朝上、先折左腿、清水冲 + 专用布擦、避高温、定期回店调校、小问题早处理）</li>
+              <li data-page-node-id="UVwHGHfhgevYFXnG75lBe3"><b data-page-node-id="n4yh8eccz9QVhnueuAZvbZ">留存临时渐变标记</b>：告知镜片上的临时标记可用清水轻擦或用专业笔复描，便于日后复核中心</li>
+              <li data-page-node-id="1OpACwlKn25P6Oyz66spGa">在服务卡上<b data-page-node-id="shoeCkcRTlPuznqbgWvrfz">标注渐进镜片型号、加光、取镜日期</b></li>
+              <li data-page-node-id="NU9EOQSNOZOeEYKp6cfLtX">约定<b data-page-node-id="jU5BAjF6WK7T3JpStzpzFD">适应期随访</b>：写入 <b data-page-node-id="LdBxv4RWFWcV2FWGuIJrZK">7～15 天主动回访</b>计划，登记顾客联系方式</li>
+              <li data-page-node-id="4dBmxmWRAHNF0AAdf3yU2U">邀请顾客扫码关注门店服务号，便于适应提醒与售后沟通</li>
+              <li data-page-node-id="K1AgAnTZg4tYry8Ew7WWSp">确认顾客记住 1～2 条关键项后再进入下一步</li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="3ZEEbNTWeD8zhWqpNeoqqI">
+              <b data-page-node-id="0ma2Z2NpUH439ffE4N3h7w">渐进要点：</b>渐进镜片的保养与单光略有不同——<b data-page-node-id="7FYrYMEwW7f7pOz5xQIBnC">不要用超声波清洗机长时间高频清洗</b>（部分膜层与标记受影响），<b data-page-node-id="cCC0ByIAcYGSRU75CBAHvi">不要干擦</b>以免损伤渐变膜层。同时<b data-page-node-id="OxcrjOQWn2LVQ3np5GozuO">随访不能省</b>：7～15 天主动回访是发现"适应不良"的黄金窗口。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="wvALfWpwoXDJyBm0snzC0k">
+            <h4 data-page-node-id="y5ysfIhlGgNDFziJC5Bvgp"><span class="badge" data-page-node-id="9l4q0iuJxyYifk1uIZgU6V">话术</span>标准话术</h4>
+            <ul data-page-node-id="94eyOHYLtNy22PoGYaoUuw">
+              <li data-page-node-id="W3TMzDJ6uNwi9n6IuMlVLm">保养：<span class="say" data-page-node-id="ctRnx6FsF8kireUxJYYR0G">"镜片脏了用清水冲、专用镜布吸干，千万别干擦、别用衣角，渐进的膜层怕划。"</span></li>
+              <li data-page-node-id="aqKPyJUYE1TdbRKQRl8TDC">标记：<span class="say" data-page-node-id="Ld43vjsvzSVG4mrCNyOFRI">"镜片上这两点淡淡的标记别刻意擦掉，是渐进的中心标记，方便以后我们帮您复核。"</span></li>
+              <li data-page-node-id="EKPT1QBoVkvLqAQs10y5ky">随访：<span class="say" data-page-node-id="AjovC3BApw587XANanwtiK">"一周左右我会给您打个电话，问问适应得怎么样，有任何不舒服随时回店。"</span></li>
+              <li data-page-node-id="n4hOU8bHpMP40L6B6RKlZV">避高温：<span class="say" data-page-node-id="Sq7rv0SpsfsirEVEBzTtzY">"渐进也一样怕高温，别放车内仪表台、暖气边，膜层会花。"</span></li>
+              <li data-page-node-id="grTzMGRAQVsZ5lLqYnA3rb">话术要点：把"保养 + 回访"说成<b data-page-node-id="fr1F2l5ZNGkV1D9gqwwXJf">持续服务</b>，让顾客感到"买了还有人在管"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="step" data-page-node-id="oJKbFXdAEAooDkGtdUE7Zb">
+      <div class="axis" data-page-node-id="9Qi4rr598awSwSNeiM2ztg"><div class="no" data-page-node-id="XmNxBBZE4BxEG29MimLwFY">09</div><div class="lbl" data-page-node-id="emniGyY1eAgk8GEAFR8OOs">结款</div><div class="dotline" data-page-node-id="O7Ye8IDeSpTx8JClKc03Vf"></div></div>
+      <div class="main" data-page-node-id="3pLSjEGyb6BwXA4jB3Oiwl">
+        <div class="head" data-page-node-id="vlw1rKnzRsfSl1LeeCMucF">
+          <h3 data-page-node-id="tIL860jPFxBf5jb4O89mRk">转介绍 · 包装 · 结款</h3>
+          <span class="goal" data-page-node-id="9XCoEHySY0ViGnKXRIOXxp">目标：礼貌请托转介绍，规范包装与尾款收取</span>
+          <span class="tag" data-page-node-id="MslwlFpBmOB0rkIXnIA9Lz">三项收尾</span>
+        </div>
+        <div class="cols" data-page-node-id="Qiy97GZKnuOBg99DHksTG7">
+          <div class="pool act" data-page-node-id="pZdMxZ0iKziFXquXmxDKCY">
+            <h4 data-page-node-id="p5ycSPdFQfWHLrWBxAmE8d"><span class="badge" data-page-node-id="Or3yjoBpR4iAvbYS2IdRCq">动作</span>标准动作</h4>
+            <ul data-page-node-id="b9CRg1kj1yLMYDFdzv1HCZ">
+              <li data-page-node-id="uynAoFPeBZKL1S65o3CGSg">包装：双手捏袋口两端递交；协助收好旧镜</li>
+              <li data-page-node-id="MgTXQR4YUgItX3zSCPsS4m">收款：当面<b data-page-node-id="fCwgxwaazCUnSqW36IiWhK">复述金额</b>，确认支付成功再放行，核实尾款与优惠一致</li>
+              <li data-page-node-id="5Ejw4lwAeVrSQKQ8k9OYVj">会员信息、积分、渐进服务记录<b data-page-node-id="6eDUG3AtEreGNeTLcLPJYO">当日录入系统</b></li>
+              <li data-page-node-id="o4cIHkNJ39tnzEr8tA5rsx">主动递交<b data-page-node-id="NYzD1CfjqgK0YF4L7BCDDW">发票 / 收据 / 保修凭证</b>，装箱前清点件数</li>
+              <li data-page-node-id="dXiJavP7QNZWIaUCFD2Nvv">转介绍请托放在结款之后，服务满意时提出成功率最高</li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="1Qrpw2INbtEvpPPase41Ew">
+              <b data-page-node-id="pYC2pNhbLJ6ID7gGOlt9fq">渐进要点：</b>结款前<b data-page-node-id="4UwFPlkKOr1BCZ9GEFlVyN">再次确认顾客当下无不适</b>（远清晰、近清晰、无明显头晕）。若顾客仍表示不适，<b data-page-node-id="bdTre7mnu7ocWNkDGxQZsc">先别急着结款放行</b>，请验光师复核，避免"带病交付"埋下退货隐患。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="MFwdAAKDU8Ti01QlQDTDkz">
+            <h4 data-page-node-id="12adDNFMW5lRR01bpC1AYS"><span class="badge" data-page-node-id="dnMYr8M6pIxEhj9hFGDNNf">话术</span>标准话术</h4>
+            <ul data-page-node-id="BNNKjLAhz6m4vrrWHHMa1P">
+              <li data-page-node-id="RROQNeYfj5K2x7XSBaONsL">确认：<span class="say" data-page-node-id="0tNRZtbGYtQBgiXBrVsWIp">"现在看远看近都还舒服吗？没问题我们再做收尾。"</span></li>
+              <li data-page-node-id="FQgOdcPStjF2DDsNT4JPjT">包装：<span class="say" data-page-node-id="qmC2R2zHgcnCUro5FdpeTs">"您的眼镜是先戴着走，还是我帮您包起来？"</span></li>
+              <li data-page-node-id="3Qn2vezn2cP6IwA9JVxR5p">尾款：<span class="say" data-page-node-id="2ysE9zpos4rl479A5JI7HB">"您这边还有 XX 元尾款，请问现金还是微信支付？"</span></li>
+              <li data-page-node-id="UzCENTw5spFhdnj29QR3Q2">凭证：<span class="say" data-page-node-id="9sOI5nF4htqx0gMMjHlmiD">"发票和保修卡都在袋子里，适应期有问题随时找我们。"</span></li>
+              <li data-page-node-id="AIybYF7uuaaAiUMjgEsUhM">转介绍：<span class="say" data-page-node-id="ExkhSDXUrlblyodfC6cpNW">"您对我们服务还满意吗？身边朋友要配眼镜，麻烦帮我们推荐一下。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="step" data-page-node-id="wGNGrNBl536XOTCehCapmu">
+      <div class="axis" data-page-node-id="ctt69Nj1DfmpPseIBYO7ei"><div class="no" data-page-node-id="6EpVKtZBZy2Ft1T1mStZtZ">10</div><div class="lbl" data-page-node-id="YVGZhqUPhokGs3ntAHlASD">礼送</div><div class="dotline" data-page-node-id="vHnc9QVlNlGtW6YmpcmR0x"></div></div>
+      <div class="main" data-page-node-id="J9yA15tB5puLCDDMS9M1QO">
+        <div class="head" data-page-node-id="gOij2jdkAF6YhS7pftGh7s">
+          <h3 data-page-node-id="7mgsw9ey1pSTQbyFvCKORV">礼送离店</h3>
+          <span class="goal" data-page-node-id="9nFsEW9uEBeOfTjJr79lZy">目标：以礼貌收尾，把顾客送出视线</span>
+          <span class="tag" data-page-node-id="0kGcWf3QmzEKDRvWLNjvv7">最后一公里</span>
+        </div>
+        <div class="cols" data-page-node-id="jGrALDu41zRibSkyKSUGNi">
+          <div class="pool act" data-page-node-id="Xsf6FPeNyxAkCY0L0WIJDM">
+            <h4 data-page-node-id="lVdEE3902VCnXdIgUUNRCB"><span class="badge" data-page-node-id="okAiVtrypp8DCmw6HPGYXi">动作</span>标准动作</h4>
+            <ul data-page-node-id="7EKvqbaNWddNMwFrxsAPPu">
+              <li data-page-node-id="NFX65A0DT3lQLMhdFNoFyp">送顾客至门口，<b data-page-node-id="Y9NQ8XjtdnPkBxckyuSnsu">侧身让出路</b>、主动拉门</li>
+              <li data-page-node-id="Kjcl6JtaT7dk3xY9Yz2wCh">目送顾客离店 <b data-page-node-id="NEOwr9zasnAm3DfDt5Jv9R">3 米以上</b>，直至走出视线，中途不转身、不看手机</li>
+              <li data-page-node-id="oO6h1zKCFOD4IRI1FDMoCv">顾客走后再整理取镜台、复位镜架与调校工具</li>
+              <li data-page-node-id="3OXQ7OCUFxCZYLzE5E4JpD">若有同行者，一并致意送别</li>
+            </ul>
+            <div class="note gold" style="margin-top:10px;font-size:13px" data-page-node-id="s0RCaMxNeOkHHCLC8HtYtO">
+              <b data-page-node-id="uaYrTBxA1n4NORQ0Rvsozf">渐进要点：</b>送别时<b data-page-node-id="4NfLVuDpi1ytTCK4H1PJT2">再叮嘱一句"上下楼梯慢一点"</b>——这是渐进顾客离店后最容易出事、也最容易怪到门店的场景。
+            </div>
+          </div>
+          <div class="pool say" data-page-node-id="FSWyyrvYleJtUnV7HyMc3w">
+            <h4 data-page-node-id="uJG7WKpvHMRJXQ5henRNjq"><span class="badge" data-page-node-id="ZqyqTSXw1zVZ4dCzNiVElK">话术</span>标准话术</h4>
+            <ul data-page-node-id="JpGf0LFbusobYQckUfGZ0F">
+              <li data-page-node-id="HmIBPYb5Axv5JWL0bMgsrz"><span class="say" data-page-node-id="pfZ1VoXV0n6DVdoWIQJWvm">"谢谢光临，请慢走！上下楼梯慢一点，扶好扶手。"</span></li>
+              <li data-page-node-id="iKdrtRYSPCYC3wYrR6kEzH"><span class="say" data-page-node-id="gkq5Yftovm8Uhjuz4nvc7k">"眼镜戴得不舒服，随时回来，我们免费帮您调。"</span></li>
+              <li data-page-node-id="dJNRTnQCr3C8SA3cR0hBDs"><span class="say" data-page-node-id="OPqmerIelzgZRwf1KrwIvz">"一周内我会电话问您适应情况，欢迎下次光临！"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ 四、特殊要求 ============ -->
+  <div class="sec-title" data-page-node-id="By2zvhZzHGBj9dBF4vj7fb">四、渐进的四项特殊要求 <em data-page-node-id="uheHI9udnYpWCao4wQufby">不满足即不得取镜交付</em></div>
+  <div class="panel" data-page-node-id="LpX7vAATVTU4imMQD2FUXe">
+    <div class="quad" data-page-node-id="n7a7gybtNAGdzGZAp4gXDt">
+      <div class="fill" data-page-node-id="9U2O8WQyMncUFbNO1p7sCo">
+        <h5 data-page-node-id="bq7igjB0bHgdmv6hu8wSHt"><span class="pip y" data-page-node-id="FzjRO7gFjYHC5IZeE6Mlwc">1</span>镜框高度要求</h5>
+        <p data-page-node-id="jR7ODHIWdbnAkYXN38ONZs">渐进需要足够垂直空间容纳远用区 + 通道 + 近用区，<b data-page-node-id="9gNBRQMQW5xVuAoEtFw2lk">镜框高度一般需 ≥ 28～30mm，通道有效高度 ≥ 18mm</b>。镜框过矮会导致通道被切、远近区域不足。</p>
+      </div>
+      <div class="fill" data-page-node-id="0aMJ4goN5rYYYX6NPGvJYg">
+        <h5 data-page-node-id="y2UQf5EsdvrhYIKGx17AZD"><span class="pip y" data-page-node-id="ywxHGGO4pHA9Xusj7fntaK">2</span>中心对位要求</h5>
+        <p data-page-node-id="WH5dFwGifP4Fuf0SCDYnOM">渐进按<b data-page-node-id="aQqC3dmUtnGcltRWviEmqC">单眼瞳距</b>加工，且<b data-page-node-id="S4u8bjvV0NwPLzSdSQCFkm">远用区光学中心</b>须对准瞳孔。取镜时须确认<b data-page-node-id="1rLQgZqRHMhgSdawxhHkkX">瞳孔落在远用区、通道居中</b>，左右对称，偏差应控制在 <b data-page-node-id="wLBmBMa33ddgu7B1iINARY">±1mm</b> 内。</p>
+      </div>
+      <div class="fill" data-page-node-id="OPI50wC0UcACKBos6CpCMs">
+        <h5 data-page-node-id="32ysKiIit8UmQTIJmltavU"><span class="pip y" data-page-node-id="HAbTal8XMEKyPG86vzfAkd">3</span>角度与距离要求</h5>
+        <p data-page-node-id="mhLBGV9JlPUN6tGzCFaacU"><b data-page-node-id="62oVxkCeUEeqkFv9DQ3Qei">镜眼距 12～14mm、前倾角 8°～15°</b>。镜眼距过大或前倾角不当，会放大像散、加剧"晃感"，必须用调校钳微调到标准范围。</p>
+      </div>
+      <div class="fill" data-page-node-id="6efD97wc5JYtnDDe3CSlqV">
+        <h5 data-page-node-id="CkKyBXWOs7yGV9dXK84K6o"><span class="pip y" data-page-node-id="zwOkEzCe2fwC4BtoC3DjBT">4</span>适应期服务要求</h5>
+        <p data-page-node-id="dvzEuIJ30sDojnzSXN53cF">渐进必须提供<b data-page-node-id="45FPaN9oa9ENASwO7dNC7T">适应期专项指导 + 7～15 天主动回访</b>。首次配戴者、高加光者（ADD≥2.00）、高度数者，随访更要主动、及时。</p>
+      </div>
+    </div>
+    <div class="redline" data-page-node-id="EDHUgeed5eLDWX5l7KCIpo">
+      <b data-page-node-id="ohPUuB2B1eA7BdC3CATwFG">红线提醒：</b>以下任一情形，<b data-page-node-id="RplYnfBqAHs2dwFWJWrscl">不得</b>按常规流程取镜交付，须请验光师复核或返工——① 镜片临时标记缺失、中心无法确认；② 镜框高度不足致通道被切；③ 顾客戴上后<b data-page-node-id="eFNBjbB0GHaXQfUPxDoeQT">看远持续不清晰</b>或<b data-page-node-id="43cgAy2I6d4RbnCHrtNGYW">双眼单眼明显不一致</b>；④ 顾客为初次配渐进且戴后出现明显头晕、恶心。宁可延后交付，也不带问题出门。
+    </div>
+  </div>
+
+  <!-- ============ 五、常见问题处理 ============ -->
+  <div class="sec-title" data-page-node-id="2c3oUVJCCDVBx4doOMImyU">五、常见问题处理 <em data-page-node-id="8v3mct00LNxHNPL74lva4j">渐进取镜现场高频问答，照着答即可</em></div>
+  <div class="faq" data-page-node-id="emcDc6aokGbzJi1GZBZbrT">
+    <details open="" data-page-node-id="F2u6dGXHogbFgoMBn9LG1f">
+      <summary data-page-node-id="aHEGDsxmcoDQJOMgVMWVxM">刚戴上觉得有点晕、走路有点晃，正常吗？</summary>
+      <div class="ans" data-page-node-id="QG1LH6T1wr0pa3r3Lq31SM">属<b data-page-node-id="7zysCGihuGXOA4tBWEC1Qa">正常适应现象</b>。渐进镜片两侧有像散区，视线扫过时会有轻微变形感，一般 <b data-page-node-id="REv842s44i7ATDBjsXgayq">3～7 天</b>逐渐适应。请顾客：① 换视物距离时<b data-page-node-id="0HKQl228u9HJXa6m35oftD">转头代替转眼球</b>；② 上下楼梯慢行、扶扶手；③ 尽量持续佩戴、不要新旧镜频繁交替。若 <b data-page-node-id="pMdrtu3piPa6MoxcZegH0b">2 周后仍明显不适</b>，回店由验光师复核。</div>
+    </details>
+    <details data-page-node-id="Hy2YkC3i2NUsLJTlOrkhlw">
+      <summary data-page-node-id="zHvcWjBsQjd6rkKQMtuqGJ">看远很清楚，但看近有点糊 / 对不上，怎么处理？</summary>
+      <div class="ans" data-page-node-id="sNJAUl831G2EyPgyHDsoyT">先区分两种情况：① 若顾客<b data-page-node-id="pEDLcbq2ul2K9qkbsi5f2x">低头看近时没有用镜片下方的近用区</b>，是使用姿势问题——当场演示"低头看书"的正确姿势即可；② 若姿势正确仍看近不清，可能是<b data-page-node-id="jSucLyiICmaFJSpd3GBqwQ">通道高度或加光/瞳距加工偏差</b>，须请验光师复核处方与镜片中心，<b data-page-node-id="mQMzKdImqDIHASUgaDdrXB">不得简单归结为"适应期"敷衍顾客</b>。</div>
+    </details>
+    <details data-page-node-id="blVwbSEQkYUYmVvy6D1HvI">
+      <summary data-page-node-id="hznMxg50WMaiVCe9CKYAde">顾客说"我朋友戴渐进头晕得厉害，我不敢戴"，怎么打消顾虑？</summary>
+      <div class="ans" data-page-node-id="8fxCn5keiCgL089CDU6npa">用"<b data-page-node-id="WDekWFNd3ARtVAzRNHtJUD">差异 + 方法 + 兜底</b>"三段回应：<span class="say" data-page-node-id="pS8v0LLvY1NLJkF503TfU0">"渐进和单光确实不同，所以我们会帮您把中心点、镜框高度都调到位；我再教您转头看的方法；真适应不了，我们按公司政策帮您处理，不会让您吃亏。"</span>把"风险"讲清、把"方法"给足、把"兜底"说明白，顾客才敢尝试。</div>
+    </details>
+    <details data-page-node-id="PsDVdqYsPuWNLFAjBaYYxt">
+      <summary data-page-node-id="CFfnRcgC6ZlhQce7WXoRyW">适应期内顾客要求退货，怎么办？</summary>
+      <div class="ans" data-page-node-id="ymryO1Q8kqC6GznwD9OwCC">先<b data-page-node-id="bbcPPNd4dg3EmYIfQ2YrYN">请验光师复查</b>：核对度数、单眼瞳距、通道高度、镜片中心标记是否符合加工标准。属<b data-page-node-id="TxQnqZ0l8I4jeoIRBrEahZ">加工/度数问题</b>——按门店保修政策免费返工；属<b data-page-node-id="uBJXVyZg2I5QA74AmwNkAF">尚未适应</b>——加强指导并约定再观察 1 周。全程<b data-page-node-id="faohk2PEupTyLQXq1pLQ6Y">留痕记录</b>（复查数据、沟通结果），并请主管 / 店长介入，不独自承诺退换。</div>
+    </details>
+    <details data-page-node-id="MtuRCNSBlVZKbIY8SbxTHi">
+      <summary data-page-node-id="9cwYmAMJWHPWWv8k0PJOr9">镜片上的临时标记需要擦掉吗？</summary>
+      <div class="ans" data-page-node-id="UTDEWxvMOamHSKFwq7kukO">那是渐进的<b data-page-node-id="onTrHDGbJ3zltYEUnbrhaP">中心参考标记</b>，是日后复核中心位置的依据，<b data-page-node-id="UT1OfpFtShp6Kh8cgiHAK6">不必刻意擦除</b>；日常佩戴用清水 + 专用镜布即可，它会随使用自然变淡。若顾客觉得影响美观，可告知其可用清水轻擦，但<b data-page-node-id="Rc5C1Gs9MswoORQXzGN0zx">建议保留到完全适应之后</b>。</div>
+    </details>
+    <details data-page-node-id="P18XBumT9HV7murIBhywLg">
+      <summary data-page-node-id="TP6E7aZrawCAXsxYVFrDoC">顾客同时买了单光和渐进，取镜有什么不同？</summary>
+      <div class="ans" data-page-node-id="jmaBNlcNo68P80AdcycLPq">两副分开交付、分开指导。单光按《取镜流程》常规十步即可；渐进按本册执行，<b data-page-node-id="bK6EOF5x8DdE18DrBfsD9h">两副不要同时上脸试戴</b>，避免顾客混淆"哪副晕"。建议先交付单光，再单独完成渐进的适应期指导。</div>
+    </details>
+  </div>
+
+  <!-- ============ 六、执行规范 ============ -->
+  <div class="sec-title" data-page-node-id="enBPlraten5cViP7XTZJFf">六、执行规范 · 质量控制</div>
+  <div class="panel" data-page-node-id="BT11aSw8D4e1XgxRcGq0CK">
+    <div class="quad" data-page-node-id="aIPbBDJC7RKDd2zYuRDZ65">
+      <div class="fill" data-page-node-id="VOD0wbldqbD0kET1bkXgOv">
+        <h5 data-page-node-id="o1ZIGTS1RHYHFx58HtNZ09"><span class="pip g" data-page-node-id="nx9NZEqA733JbYTWhpM3AM">✓</span>四个"必须"</h5>
+        <ol data-page-node-id="fdow5kYdjuydA0NiUDYP4U">
+          <li data-page-node-id="9A9ECoX3XGjKnGdnKSNTas">必须交付前确认渐进中心对位（临时标记 + 远用区）</li>
+          <li data-page-node-id="TyWShfUHTkwGL0U1uBkdgH">必须完成试戴对位四步（看远 / 看近 / 通道居中 / 角度复核）</li>
+          <li data-page-node-id="QdJsGDM7qxrvL4RkgCg8oc">必须做适应期指导（头动为主 + 上下楼 / 驾驶禁忌）</li>
+          <li data-page-node-id="LYvvvh2P0xXDbBIYJoGjEG">必须登记 7～15 天主动随访计划</li>
+        </ol>
+      </div>
+      <div class="fill" data-page-node-id="kqcsGWenINifr9MlS4rnAP">
+        <h5 data-page-node-id="BCcGLLpeCKkDLtHNByS8Yc"><span class="pip r" data-page-node-id="6U7rm0CnujqeHPjpwDhqQA">✕</span>四个"不得"</h5>
+        <ol data-page-node-id="tQgt5z4x4g1ywzhItxMmWc">
+          <li data-page-node-id="dtY181xgRp1ijT8q8Cv4FR">不得以"适应期"为名，掩盖看不清、看近错位等真实问题</li>
+          <li data-page-node-id="6v5P8Q3PLRjFX12fBucuFB">不得在中心标记缺失 / 无法确认时取镜交付</li>
+          <li data-page-node-id="x94TIcAT2SUUjsckqNC9em">不得让顾客"戴上就走"，跳过对位与适应指导</li>
+          <li data-page-node-id="leSvcEbJxzkMailCNcJYDz">不得省略适应期随访，让顾客"买了就没人管"</li>
+        </ol>
+      </div>
+      <div class="fill" data-page-node-id="YTdZZeCHRsgVKykFb1GHgL">
+        <h5 data-page-node-id="fsuwYDmoLkSUcAXEbdVnFU"><span class="pip" data-page-node-id="x7arA99kWcj1DLFNgwuRJM">⏱</span>时间标准</h5>
+        <p data-page-node-id="pzci4UfpSLC54KKVg8w7Cz">迎宾接待 ≤ 15 秒 → 引座倒水 ≤ 1 分钟 → 核对取镜 ≤ 2 分钟 → 成镜检查 1～2 分钟 → <b data-page-node-id="2RARUotxOpnkfCRcbqkL1I">试戴对位 + 微调 6～10 分钟</b> → <b data-page-node-id="5tIPqh5lCldLvLQVbQalQV">适应指导 + 交代 4～6 分钟</b> → 结款礼送 2～3 分钟。</p>
+        <p data-page-node-id="au2SWO7HELbh3uBdHgpIDF"><span class="k" data-page-node-id="HHUzFPb87tWz5x7NCrI2Jk">全程控制在 15～25 分钟</span>（渐进约为常规的 2 倍，属正常）。</p>
+      </div>
+      <div class="fill" data-page-node-id="lBjibQJhyB6zS46ghxV8KU">
+        <h5 data-page-node-id="5dXmuUjHOVajja5zsdO0he"><span class="pip r" data-page-node-id="MEAAfazUY0mhFek5mC3F3r">!</span>常见失误提醒</h5>
+        <ol data-page-node-id="h3TJIBTqM2R2PCM18fRSRm">
+          <li data-page-node-id="9HaQgEH55DajBv9hwWdUJ4">跳过对位直接交付，顾客看近错位却不知情</li>
+          <li data-page-node-id="XxpdJTA4txULHwDnE2Bd3r">不讲适应期禁忌，顾客下楼踩空、开车受惊后归咎门店</li>
+          <li data-page-node-id="xwhMZy5d0F4IPrr0wJKpta">把"加工中心偏差"误判为"正常适应"，延误返工</li>
+          <li data-page-node-id="YBRHfgIhVmnVvH4VtO6GhI">未留存随访计划，适应不良无法及时发现</li>
+          <li data-page-node-id="7u8aGFdhMpvdqRfmkca4Rh">结款前未再确认舒适度，带问题出门埋下退货隐患</li>
+        </ol>
+      </div>
+    </div>
+    <div class="redline" data-page-node-id="EbAhBSc7VnS0xut7iNiCjJ" style="">
+      <b data-page-node-id="Phq56hLGshzABpEXzA6aTV">本册定位：</b>《渐进眼镜取镜流程》是《取镜流程》的<b data-page-node-id="7wUuKBS1u5owBoaY3rL1Jv">渐进专项扩展册</b>，两册配套使用——十步框架一致，本册在 STEP 5～8 叠加了<b data-page-node-id="cNYBLfAtnN688JCHKOsFBn">对位、微调、适应指导、随访</b>四项渐进专项。技术问题（中心、度数、角度）在取镜台解决，情感价值（适应期陪伴、随访关怀）在话术中传递。渐进取镜做得好，顾客戴得顺，退货率与投诉率自然下降。
+    </div>
+  </div>
+
+  <footer data-page-node-id="wDfaJK08d6DIgBqhwobtMQ">
+    <b data-page-node-id="RnDiobHehbhuK7lQbpN1Ya">爱眼城眼镜</b> · 渐进眼镜取镜服务标准流程（2027 版）<br data-page-node-id="mOiwPhzkbFmNfhifQ7r96o">
+    本流程用于门店新人培训与在岗服务自检，配套《取镜流程》使用，具体保障政策以公司最新制度为准
+  <a class="foot-home" href="../index.html" data-page-node-id="FdBuIIFeAIAtge1TyTCfhG">← 返回课程首页</a><br data-page-node-id="YeKTxERs3JhieL4Saj63PB"></footer>
+
+</div>
+
+
+</body></html>
