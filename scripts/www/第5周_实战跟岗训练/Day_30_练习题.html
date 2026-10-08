@@ -283,10 +283,30 @@ body{padding:0!important;margin:0!important}
   <a href="Day_31_学习内容.html" class="nav-btn next">Day 31 →</a>
 </div>
 
+  <div class="card">
+    <h2>★ 补充巩固题（对齐门店标准手册）</h2>
+    <div class="q-block">
+      <div class="q-title"><span class="q-num">★</span>《消费者需求探寻表》把需求探寻分为七大类别，下列哪一项不属于？</div>
+          <ul class="options">
+<li>A. 用眼习惯</li><li>B. 旧镜问题</li><li>C. 顾客身高体重</li><li>D. 价格敏感度</li>    </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer('day30c1')">查看答案</button>
+      <div class="answer-hint" id="day30c1"><div class="label">✅ 正确答案：C</div><p>七大类别包括：结合场景提问、用眼习惯、旧镜问题、年龄与工作场景、犹豫点、价格敏感、家人需求。顾客身高体重不在其列。</p></div>
+    </div>
+    <div class="q-block">
+      <div class="q-title"><span class="q-num">★</span>需求探寻的“心法三步”正确顺序是？</div>
+          <ul class="options">
+<li>A. 给建议 → 找场景 → 提问题</li><li>B. 找场景 → 提问题 → 给建议</li><li>C. 提问题 → 给建议 → 找场景</li><li>D. 找场景 → 给建议 → 提问题</li>    </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer('day30c2')">查看答案</button>
+      <div class="answer-hint" id="day30c2"><div class="label">✅ 正确答案：B</div><p>探寻心法三步：先找场景（了解用眼情境）→ 再提问题（挖掘真实需求）→ 最后给建议（顺势推荐方案）。</p></div>
+    </div>
+  </div>
+
 <script>
 function toggleAnswer(id) {
   const box = document.getElementById(id);
-  box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  if (!box) return;
+  const shown = getComputedStyle(box).display !== 'none';
+  box.style.display = shown ? 'none' : 'block';
 }
 </script>
 
