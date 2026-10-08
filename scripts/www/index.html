@@ -1,14 +1,9 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>眼镜门店新员工8周成才 — 完整课程总览</title>
-<style>
+<html lang="zh-CN" data-page-node-id="ByRwgoMUxcs5vYAt9kbRDN" style=""><head data-page-node-id="pgVU13ZkdKRdK4vZq7Hqkv">
+<meta charset="UTF-8" data-page-node-id="wGxURLAaa5btzMVjBUVCkX">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="sxwiz9xQwD2pkpWoOXbZKB">
+<title data-page-node-id="zBMo9FzC5x9i67UsjRaZfy">眼镜门店新员工8周成才 — 完整课程总览</title>
+<style data-page-node-id="UCAd5qcB0Cg1fBrd00Q1Y1">
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
     --brand:#1a237e; --brand2:#3949ab; --ink:#2c3140; --muted:#7a8194;
@@ -141,6 +136,39 @@
   .tool-item{background:#f8fafd;border-radius:12px;padding:15px 16px}
   .tool-item .ti-name{font-weight:700;color:#2c5aa0;font-size:.9em;margin-bottom:6px}
   .tool-item .ti-use{font-size:.79em;color:#667;line-height:1.65}
+
+  /* ── 门店标准手册（工作流程）── */
+  .wf-intro{font-size:.9em;color:#55607a;line-height:1.85;margin:0 0 18px}
+  .wf-intro strong{color:#0b6ab0}
+  .wf-group{font-size:.82em;font-weight:800;color:#0b6ab0;letter-spacing:.5px;margin:18px 0 9px;padding-left:9px;border-left:4px solid #0b6ab0}
+  .wf-group:first-of-type{margin-top:0}
+  .wf-group em{font-style:normal;font-weight:600;color:#8a93a8;font-size:.9em;margin-left:6px}
+
+  /* ── 手册区块 展开 / 收起 ── */
+  .wf-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .wf-head .section-title{flex:1;margin:0 0 0 0!important;border-bottom:2px solid #e8eaf6;padding-bottom:12px}
+  .wf-toggle{
+    display:inline-flex;align-items:center;gap:7px;flex-shrink:0;
+    border:1.5px solid #c9e2f2;background:#f2f9ff;color:#0b6ab0;
+    font-family:inherit;font-size:.85em;font-weight:800;cursor:pointer;
+    padding:9px 18px;border-radius:24px;transition:.2s;white-space:nowrap;margin-bottom:12px
+  }
+  .wf-toggle:hover{background:#e2f2ff;border-color:#0b6ab0;transform:translateY(-2px)}
+  .wf-toggle .wft-arrow{font-size:.85em;transition:transform .28s;display:inline-block}
+  .wf-toggle[aria-expanded="false"] .wft-arrow{transform:rotate(-90deg)}
+
+  /* 内容折叠动画 */
+  .wf-body{overflow:hidden;transition:height .32s ease,opacity .28s ease}
+  .wf-body[hidden]{display:none}
+  .wf-sec.collapsed .wf-body{opacity:.001;height:0!important}
+  .wf-sec.collapsed .wf-body[hidden]{display:block}
+
+  .wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .wf-item{display:flex;flex-direction:column;background:#f5fbff;border:1.5px solid #dcecf8;border-radius:12px;padding:14px 16px;transition:.2s}
+  .wf-item:hover{background:#eaf6ff;border-color:#0b6ab0;transform:translateY(-3px);box-shadow:0 8px 20px rgba(11,106,176,.14)}
+  .wf-item .wi-name{font-weight:800;color:#0b6ab0;font-size:.9em;margin-bottom:6px}
+  .wf-item .wi-use{font-size:.78em;color:#667;line-height:1.65;flex:1}
+  .wf-item .wi-go{font-size:.76em;font-weight:800;color:#0b6ab0;margin-top:10px}
   .sys-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:linear-gradient(135deg,#2c5aa0,#1a237e);color:#fff;font-size:.88em;font-weight:700;padding:11px 24px;border-radius:26px;transition:.2s}
   .sys-link:hover{filter:brightness(1.1);transform:translateY(-2px)}
 
@@ -157,7 +185,7 @@
   .sg-practice{flex:50;background:linear-gradient(135deg,#f59250,#d9601a);box-shadow:inset 0 0 0 3px rgba(255,255,255,.6)}
   .sg-exam{flex:20;background:linear-gradient(135deg,#8e44ad,#6a1b9a)}
   .slk-scaleline{display:flex;font-size:.72em;color:#b3b8c6;letter-spacing:.5px;margin:0 0 24px 2px}
-  .slk-grid{display:grid;grid-template-columns:repeat(3,1fr)!important;gap:14px;align-items:stretch}
+  .slk-grid{display:grid;grid-template-columns:1fr 1.5fr 1fr!important;gap:14px;align-items:stretch}
   .slk-card{background:#f8fafd;border-radius:14px;padding:18px;border:1.5px solid transparent;display:flex;flex-direction:column;min-width:0}
   .slk-card .sk-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}
   .slk-card .sk-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.05em;color:#fff;flex-shrink:0}
@@ -340,9 +368,12 @@
   .to-top:hover{transform:translateY(-3px)}
 
   /* ── Footer ── */
+  /*@@ FOOTER-FRAME @@*/
   footer{
-    text-align:center;padding:30px 20px;color:#9aa0b4;font-size:.85em;
-    border-top:1px solid var(--line);background:#fff;margin-top:24px
+    width:min(1300px,calc(100% - 32px));margin:24px auto 0;
+    text-align:center;padding:26px 24px;color:#9aa0b4;font-size:.85em;
+    border:1px solid var(--line);border-radius:16px;background:#fff;
+    box-shadow:0 2px 10px rgba(21,101,192,.05);
   }
   footer strong{color:var(--brand2)}
 
@@ -395,14 +426,17 @@
   .flow-four,.mile-grid{grid-template-columns:repeat(4,1fr)!important}
   /* 配套工具清单：固定 3 行 3 列 */
   .tool-grid{grid-template-columns:repeat(3,1fr)!important}
+  /* 门店标准手册：固定 3 列 */
+  .wf-grid{grid-template-columns:repeat(3,1fr)!important}
 
   @media(max-width:1150px){
     .days-grid{gap:8px!important;padding:12px!important}
     .day-col{padding:12px 8px 14px}
     .day-topic{font-size:.75em;margin-bottom:9px}
     .day-link{font-size:.7em;padding:6px 7px;justify-content:center}
-    .flow-four,.mile-grid,.tool-grid{gap:8px!important}
+    .flow-four,.mile-grid,.tool-grid,.wf-grid{gap:8px!important}
     .flow-card,.mile-card,.tool-item{padding:13px 12px}
+    .wf-item{padding:12px 13px}
   }
   @media(max-width:900px){
     .days-grid{gap:6px!important;padding:10px!important}
@@ -433,7 +467,7 @@
   @media(max-width:430px){
     .days-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}
     .stats-grid{grid-template-columns:repeat(2,1fr)!important}
-    .flow-four,.mile-grid,.tool-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}
+    .flow-four,.mile-grid,.tool-grid,.wf-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}
     .day-topic{font-size:.78em}
     .day-link{font-size:.75em;padding:6px 8px}
   }
@@ -503,275 +537,275 @@
   table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
 }
 </style>
-</head>
-<body>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="VdENNkuYLm7oS0jCPtfcgq" style="position: relative;">
 
 <!-- ─── Hero ─── -->
-<div class="hero">
-  <div class="hero-inner">
-    <h1>永州爱眼城新员工8周成才</h1>
-    <p class="subtitle">从零基础到独立上岗的完整成长路径 · 56天系统训练</p>
-    <div class="badge-row">
-      <span class="badge">🔗 四大流程落地体系</span>
-      <span class="badge">📚 56天完整课程</span>
-      <span class="badge">🎯 理论 + 实操</span>
-      <span class="badge">✅ 每日练习 + 落地衔接</span>
+<div class="hero" data-page-node-id="wyOlY7qU8XLpnsFVODPESI">
+  <div class="hero-inner" data-page-node-id="mksfHRyB0l16X1CnSZDx31">
+    <h1 data-page-node-id="gOHGBmXbIditeEl6DBU7lM" style="font-size: 32px;">永州爱眼城新员工8周成才</h1>
+    <p class="subtitle" data-page-node-id="7w9DTjF0G3ZIDQHhgL3jNX" style="font-size: 14px; font-weight: 700;">从零基础到独立上岗的完整成长路径 · 56天系统训练</p>
+    <div class="badge-row" data-page-node-id="Ob9fnn7xBmIRUwYGTHPUxP">
+      <span class="badge" data-page-node-id="Cy94bLHTOfIvLnrbQjnMj0" style="font-size: 12px;">🔗 四大流程落地体系</span>
+      <span class="badge" data-page-node-id="B6QQFPaSbFrWoaolDNOs5J" style="font-size: 12px;">📚 56天完整课程</span>
+      <span class="badge" data-page-node-id="y8rkhIFDpFO1X0amGxL10g" style="font-size: 12px;">🎯 理论 + 实操</span>
+      <span class="badge" data-page-node-id="pTvHTMCs0Xy5Qe9OxXWBhv" style="font-size: 12px;">✅ 每日练习 + 落地衔接</span>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container" data-page-node-id="L0vv4pxrvJdzGrT2nXM3d6">
 
   <!-- ─── 培训体系总纲：四大流程 ─── -->
-  <div class="flow-sec">
-    <div class="section-title" style="margin-top:0">
-      <div class="icon-circle">🔗</div>
+  <div class="flow-sec" data-page-node-id="FwfdGdLKIaHDVtUNlEtsuh">
+    <div class="section-title" style="margin-top:0" data-page-node-id="xxoVaC4VfNgGpP4xTGPGOv">
+      <div class="icon-circle" data-page-node-id="w4162zKiTCxZEOE32ZmaPQ">🔗</div>
       培训落地总纲 — 四大流程体系
     </div>
-    <p class="flow-intro">整套 8 周课程，按连锁门店「<strong>标准—带教—考核—优化</strong>」四大流程设计。每一份每日学习材料都标注了它对应的<strong>工作站 / 阶段</strong>，并附有「四大流程落地衔接」模块，直接对接门店的带教、考核与复盘。<br><strong>标准</strong>解决“教什么”，<strong>带教</strong>解决“怎么教”，<strong>考核</strong>解决“是否达标”，<strong>优化</strong>解决“如何越做越好”——四步闭环，循环升级。</p>
-    <div class="flow-four">
-      <div class="flow-card fc1">
-        <div class="fc-step">01</div>
-        <div class="fc-tag">教什么</div>
-        <div class="fc-title">📘 标准</div>
-        <div class="fc-one">把经验变教材</div>
-        <div class="fc-body">为每个工作站固化操作规范
-          <b>课程对应</b>第 1–3 周：文化与制度、光学产品、专业技能，全部拆解为可观察、可考核的标准。</div>
+    <p class="flow-intro" data-page-node-id="14aJhEAPjFKppY709dHJc2" style="cursor: text; font-weight: 400;">&nbsp; &nbsp; &nbsp; &nbsp;整套 8 周课程，按连锁门店「<strong data-page-node-id="djBKxEFd8MQpDt4NTW1VHG">标准—带教—考核—优化</strong>」四大流程设计。每一份每日学习材料都标注了它对应的<strong data-page-node-id="BeacxPBLnr4eP4aiU4XgyB">工作站 / 阶段</strong>，并附有「四大流程落地衔接」模块，直接对接门店的带教、考核与复盘。<br data-page-node-id="G0JorRBZFcsI5iVZWK9ZH1"><strong data-page-node-id="p0heHob0lgWEe5Dosn8kH9">&nbsp; &nbsp; &nbsp; 标准</strong>解决“教什么”，<strong data-page-node-id="jDuwE4NzeBLNuWy5nSe2TS">带教</strong>解决“怎么教”，<strong data-page-node-id="Ov6SKbpyHyoWxaT2UPYc7D">考核</strong>解决“是否达标”，<strong data-page-node-id="2jqy7SwxyPkX9V8SLFQnRw">优化</strong>解决“如何越做越好”——四步闭环，循环升级。</p>
+    <div class="flow-four" data-page-node-id="P67535ToBXOD5WtjGaKGE0">
+      <div class="flow-card fc1" data-page-node-id="Bud7wUSNGlHCftbwVSh7U1">
+        <div class="fc-step" data-page-node-id="cwj3IEU4gjvagRE9wtTuFa">01</div>
+        <div class="fc-tag" data-page-node-id="dLEIAlwHAYBe3WrTNVjfJT">教什么</div>
+        <div class="fc-title" data-page-node-id="SvZVlcELr06fGARg9z2PrZ">📘 标准</div>
+        <div class="fc-one" data-page-node-id="dp2icE9ZdGcYbDEYtLhavF">把经验变教材</div>
+        <div class="fc-body" data-page-node-id="KcClFkC27UjYEWYHGzNqYh">为每个工作站固化操作规范
+          <b data-page-node-id="ELB9C0HNM0WnGoiLwToYGe">课程对应</b>第 1–3 周：文化与制度、光学产品、专业技能，全部拆解为可观察、可考核的标准。</div>
       </div>
-      <div class="flow-card fc2">
-        <div class="fc-step">02</div>
-        <div class="fc-tag">怎么教</div>
-        <div class="fc-title">🤝 带教</div>
-        <div class="fc-one">把教材变能力</div>
-        <div class="fc-body">认证训练员按四步带教法施教
-          <b>课程对应</b>第 5 周实战跟岗、第 7 周综合提升，由训练员/验光师一对一带教。</div>
+      <div class="flow-card fc2" data-page-node-id="OVe6c1cRuRIpIHcjW77zku">
+        <div class="fc-step" data-page-node-id="9OnymJFcocpvjYGicjNDuA">02</div>
+        <div class="fc-tag" data-page-node-id="trbl8C9sHugAXXUKVHpt23">怎么教</div>
+        <div class="fc-title" data-page-node-id="QfhZhYm9KI28cNlCKkcDKV">🤝 带教</div>
+        <div class="fc-one" data-page-node-id="JXfPqIXfqWrVUmmRy1bfGa">把教材变能力</div>
+        <div class="fc-body" data-page-node-id="ifGOBD29UsER3lX2z6nZHs">认证训练员按四步带教法施教
+          <b data-page-node-id="0jvgKBvDDa60z1wNJL1sT8">课程对应</b>第 5 周实战跟岗、第 7 周综合提升，由训练员/验光师一对一带教。</div>
       </div>
-      <div class="flow-card fc3">
-        <div class="fc-step">03</div>
-        <div class="fc-tag">是否达标</div>
-        <div class="fc-title">📊 考核</div>
-        <div class="fc-one">把能力变数据</div>
-        <div class="fc-body">用统一尺子检验能力
-          <b>课程对应</b>每周周测 + Day 28 中期考核 + Day 56 结业考核，结果关系转正与晋级。</div>
+      <div class="flow-card fc3" data-page-node-id="TwJIxpP7XlBSnWLcn32ekD">
+        <div class="fc-step" data-page-node-id="VA7v7KzJGWQDPTdA4gYVvC">03</div>
+        <div class="fc-tag" data-page-node-id="GJtVpV5zs3Jor9eFxhGNxd">是否达标</div>
+        <div class="fc-title" data-page-node-id="7Up4weZQQXzXNBAWvyuOuc">📊 考核</div>
+        <div class="fc-one" data-page-node-id="fpPJDW62Mi2g3S4Ia6Ti69">把能力变数据</div>
+        <div class="fc-body" data-page-node-id="HHzqRUfoHSXR1UcjFA22AB">用统一尺子检验能力
+          <b data-page-node-id="RZoM787BB0zcHLEg8mcxhS">课程对应</b>每周周测 + Day 28 中期考核 + Day 56 结业考核，结果关系转正与晋级。</div>
       </div>
-      <div class="flow-card fc4">
-        <div class="fc-step">04</div>
-        <div class="fc-tag">持续迭代</div>
-        <div class="fc-title">🔄 优化</div>
-        <div class="fc-one">把数据变标准</div>
-        <div class="fc-body">实战数据回流修订标准
-          <b>课程对应</b>每日材料末的落地衔接模块 + 每周复盘，把客诉、QSC、考核数据变成改进项。</div>
+      <div class="flow-card fc4" data-page-node-id="IRDwPJutPRxpPvFxvSVzmX">
+        <div class="fc-step" data-page-node-id="fD4Vy3RYqOTG4oeHZWIDGN">04</div>
+        <div class="fc-tag" data-page-node-id="ZBeo4ZaPUqb8lsktab6DpJ">持续迭代</div>
+        <div class="fc-title" data-page-node-id="gTXFWWS3pmxRdVXuGuEtNx">🔄 优化</div>
+        <div class="fc-one" data-page-node-id="jSnIAxjyQqCcBnl1oYsJ2L">把数据变标准</div>
+        <div class="fc-body" data-page-node-id="eu40GjSk3Dl6nS4i7TIQeL">实战数据回流修订标准
+          <b data-page-node-id="xfcFBpC1HzsMZscAFsyvYa">课程对应</b>每日材料末的落地衔接模块 + 每周复盘，把客诉、QSC、考核数据变成改进项。</div>
       </div>
     </div>
   </div>
 
   <!-- ─── 培训路径与里程碑 ─── -->
-  <div class="mile-sec">
-    <div class="section-title" style="margin-top:0">
-      <div class="icon-circle">📍</div>
+  <div class="mile-sec" data-page-node-id="5wuy5B4DAtnnWxRnMON6AM">
+    <div class="section-title" style="margin-top:0" data-page-node-id="ElFhW2pwZ7Grc6foBSVEuO">
+      <div class="icon-circle" data-page-node-id="AJmxg0eRJMFuINQHeoGf4y">📍</div>
       新员工培训路径与里程碑
     </div>
-    <div class="mile-grid">
-      <div class="mile-card">
-        <div class="mc-day">首日 · Day 01</div>
-        <div class="mc-name">融入与认知</div>
-        <div class="mc-txt">完成入职手续、熟悉门店环境、认识团队、分配训练员、明确带教计划。里程碑：入职确认签字。</div>
+    <div class="mile-grid" data-page-node-id="tzK7NkmDmDWB5GVKd5P0N1">
+      <div class="mile-card" data-page-node-id="HTvyEeBvUN6Y6bPoZjWPGB">
+        <div class="mc-day" data-page-node-id="x7PS4WQAOGHBWUVA8DMkQ8">首日 · Day 01</div>
+        <div class="mc-name" data-page-node-id="ebbSvhcJt7lRSO6DPmu6cT">融入与认知</div>
+        <div class="mc-txt" data-page-node-id="Mt9qPFeVa7XK36Pshs4JnY">完成入职手续、熟悉门店环境、认识团队、分配训练员、明确带教计划。里程碑：入职确认签字。</div>
       </div>
-      <div class="mile-card">
-        <div class="mc-day">首周 · Day 01–07</div>
-        <div class="mc-name">基础入门</div>
-        <div class="mc-txt">学迎宾接待、基础产品知识、门店动线，跟随训练员观察。里程碑：Day 07 周测合格，方可进入下一阶段。</div>
+      <div class="mile-card" data-page-node-id="9gRChlmtjxEAP2wvxsfU1u">
+        <div class="mc-day" data-page-node-id="me9OkMvcDHwWnlXHjQeH4q">首周 · Day 01–07</div>
+        <div class="mc-name" data-page-node-id="RXXftdrhzxqlRrI8uqFmeq">基础入门</div>
+        <div class="mc-txt" data-page-node-id="gn77Bp5uYm8ugfRuBcSU2I">学迎宾接待、基础产品知识、门店动线，跟随训练员观察。里程碑：Day 07 周测合格，方可进入下一阶段。</div>
       </div>
-      <div class="mile-card">
-        <div class="mc-day">首月 · Day 08–28</div>
-        <div class="mc-name">独立上岗</div>
-        <div class="mc-txt">系统学习各工作站，完成验光接待、选镜配镜、收银结算等核心流程。里程碑：Day 28 中期考核 ≥ 85 分。</div>
+      <div class="mile-card" data-page-node-id="waUTqoV24sE9XXrYOYfQCR">
+        <div class="mc-day" data-page-node-id="7ypktcIWuLPwcd1OvxDZVC">首月 · Day 08–28</div>
+        <div class="mc-name" data-page-node-id="C2ZDWNLWUS7GyDH4prsbov">独立上岗</div>
+        <div class="mc-txt" data-page-node-id="oLCAKQoYAkoTF3Y51uuXZE">系统学习各工作站，完成验光接待、选镜配镜、收银结算等核心流程。里程碑：Day 28 中期考核 ≥ 85 分。</div>
       </div>
-      <div class="mile-card">
-        <div class="mc-day">转正 · Day 29–56</div>
-        <div class="mc-name">独立与结业</div>
-        <div class="mc-txt">跟岗实战、独立接单、综合提升，最终通过 Day 56 结业考核。里程碑：结业考核合格，准予转正。</div>
+      <div class="mile-card" data-page-node-id="91lyVsOiwXhQpCwPRFgP3e">
+        <div class="mc-day" data-page-node-id="y3fU7Fyb4ltIXqJ4xSQtC8">转正 · Day 29–56</div>
+        <div class="mc-name" data-page-node-id="jsr8DGqhStfc6VEBWrnRLC">独立与结业</div>
+        <div class="mc-txt" data-page-node-id="nXHG8HzgX3OX4QoCnKszPO">跟岗实战、独立接单、综合提升，最终通过 Day 56 结业考核。里程碑：结业考核合格，准予转正。</div>
       </div>
     </div>
   </div>
 
   <!-- ─── 学 · 练 · 考 ─── -->
-  <div class="slk-sec">
-    <div class="section-title" style="margin-top:0">
-      <div class="icon-circle">🎯</div>
+  <div class="slk-sec" data-page-node-id="oyDURApiRlcEFHndkZ7E5d">
+    <div class="section-title" style="margin-top:0" data-page-node-id="cJUwSFX2bIBgfLrYZIZq2G">
+      <div class="icon-circle" data-page-node-id="LcuwDwn376KVsWyY0Xrflo">🎯</div>
       学 · 练 · 考 — 以练为主的能力结构
     </div>
-    <p class="slk-intro">这套课程不靠"听会"，靠"练会"。56 天的学习时间按 <strong>学 30% : 练 60% : 考 10%</strong> 的比例分配——<strong>练的比重最大</strong>，因为从"知道"到"会做"，中间只隔着一件事：重复动手。学是输入、考是检验，真正决定你能不能独立上岗的，是练。</p>
+    <p class="slk-intro" data-page-node-id="5R1RFEz9QdgLVLmUntnw0M">这套课程不靠"听会"，靠"练会"。56 天的学习时间按 <strong data-page-node-id="slkEpm3gn8QLsPpQMVGbXl">学 30% : 练 60% : 考 10%</strong> 的比例分配——<strong data-page-node-id="C8iTS33Mhu3DC9H07DbjWu">练的比重最大</strong>，因为从"知道"到"会做"，中间只隔着一件事：重复动手。学是输入、考是检验，真正决定你能不能独立上岗的，是练。</p>
 
-    <div class="slk-bar">
-      <div class="slk-seg sg-learn">
-        <span class="sg-name">学</span>
-        <span class="sg-pct">30%</span>
-        <span class="sg-hint">看 · 理解</span>
+    <div class="slk-bar" data-page-node-id="SA9GoYf8f4UemrcdndDgZ4" style="">
+      <div class="slk-seg sg-learn" data-page-node-id="2NKsbzvBOna1j3wkW41ytB">
+        <span class="sg-name" data-page-node-id="L2cCgtrOCkvorpXt9HYMdL">学</span>
+        <span class="sg-pct" data-page-node-id="j6Z36htDigWCpMg7F9rZ4S">30%</span>
+        <span class="sg-hint" data-page-node-id="g1GnrsmBD6K7BxFQfgxLAY">看 · 理解</span>
       </div>
-      <div class="slk-seg sg-practice">
-        <span class="sg-name">练</span>
-        <span class="sg-pct">60%</span>
-        <span class="sg-hint">动手 · 反复</span>
+      <div class="slk-seg sg-practice" data-page-node-id="HTx18yQdWYGmiCRbSgRByi">
+        <span class="sg-name" data-page-node-id="dqUHJlPZg6OzL3sxwf57ol">练</span>
+        <span class="sg-pct" data-page-node-id="Fqo13xh6yvv6a5B5r6t2Da">60%</span>
+        <span class="sg-hint" data-page-node-id="LSpw5H03DLbLpQTibDtQ9E" style="white-space: pre-wrap; cursor: text;">动口 · 动手 · 重复​​​</span>
       </div>
-      <div class="slk-seg sg-exam">
-        <span class="sg-name">考</span>
-        <span class="sg-pct">10%</span>
-        <span class="sg-hint">检验 · 纠偏</span>
+      <div class="slk-seg sg-exam" data-page-node-id="Zh8D76JLm9NohLWjPM0wAa">
+        <span class="sg-name" data-page-node-id="gPX754K4v4VITFY924OU5R">考</span>
+        <span class="sg-pct" data-page-node-id="w8OyptYTNh78db3kkeg18h">10%</span>
+        <span class="sg-hint" data-page-node-id="ZEOyRAK3Tkz9vqm0OCAaro">检验 · 纠偏</span>
       </div>
     </div>
-    <div class="slk-scaleline"><span style="flex:30">0%</span><span>50%</span><span style="flex:10;text-align:right">100%</span></div>
+    <div class="slk-scaleline" data-page-node-id="VDVWXaRHjznZ9iSzsBXkam"><span style="flex:30" data-page-node-id="3tHb5Qi9MsdyFN8Wuud4AA">0%</span><span style="flex:10;text-align:right" data-page-node-id="MGRRlUqdLZoGC4jv33yy4H">100%</span></div>
 
-    <div class="slk-grid">
-      <div class="slk-card sk-learn">
-        <div class="sk-head">
-          <div class="sk-icon">📖</div>
-          <div class="sk-name">学</div>
-          <div class="sk-ratio">30%</div>
+    <div class="slk-grid" data-page-node-id="dmA5Qs5eEKdNxDg7rSUJhS">
+      <div class="slk-card sk-learn" data-page-node-id="QidgJ6Venk6LztP9bauRfC">
+        <div class="sk-head" data-page-node-id="U1LuK5Wdqkz6ag3wPoEIOC">
+          <div class="sk-icon" data-page-node-id="MULSSXQBPZnWdMJkCVUCHi">📖</div>
+          <div class="sk-name" data-page-node-id="bTogMHl81qt8AqDn4uYWsS">学</div>
+          <div class="sk-ratio" data-page-node-id="pmIvso3JuSbLpgYwEpJbvQ">30%</div>
         </div>
-        <div class="sk-sub">每天约 27 分钟 · 输入知识</div>
-        <div class="sk-desc">读当天的「学习内容」，把原理、产品、话术框架和制度标准先弄明白。够用就好，不追求背得多。</div>
-        <ul class="sk-list">
-          <li>每日 1 份学习内容 </li>
-          <li>光学原理 · 产品知识 · 制度标准 · 话术框架</li>
-          <li>边看边勾重点，看完立刻进入练</li>
+        <div class="sk-sub" data-page-node-id="0n4pCboQjlEYQE78l25jYc">每天约 27 分钟 · 输入知识</div>
+        <div class="sk-desc" data-page-node-id="9V3aSKDxfSNnJvc0xmRE07">读当天的「学习内容」，把原理、产品、话术框架和制度标准先弄明白。够用就好，不追求背得多。</div>
+        <ul class="sk-list" data-page-node-id="iFGtmt6MROPPyPCq1o37Ew">
+          <li data-page-node-id="4yTBczHvlKNOSbO3seA231">每日 1 份学习内容 </li>
+          <li data-page-node-id="k0aYubXK403GPq5aXIRpqq">光学原理 · 产品知识 · 制度标准 · 话术框架</li>
+          <li data-page-node-id="Umm10a078plNjpQi31DoQW">边看边勾重点，看完立刻进入练</li>
         </ul>
       </div>
 
-      <div class="slk-card sk-practice">
-        <div class="sk-head">
-          <div class="sk-icon">🛠️</div>
-          <div class="sk-name">练</div>
-          <div class="sk-ratio">60% · 练为主</div>
+      <div class="slk-card sk-practice" data-page-node-id="FRXcyceLvRI7YFXmnbOZuz">
+        <div class="sk-head" data-page-node-id="HuCWj2HmoJhk0uKMq6nupA">
+          <div class="sk-icon" data-page-node-id="t8eFCo8fUBR2xEIbZF6nD7">🛠️</div>
+          <div class="sk-name" data-page-node-id="Vr9jfAV052uw3DdPi3Y3cs">练</div>
+          <div class="sk-ratio" data-page-node-id="N9GHzGSXL1wz8rouyvQOG6">60% · 练为主</div>
         </div>
-        <div class="sk-sub">每天约 54 分钟 · 全课重心</div>
-        <div class="sk-desc">占全部学习时间的六成，是这套课程真正的重心。做题、对练、上手操作，把"看懂"变成"做得出"。</div>
-        <ul class="sk-list">
-          <li>每日「练习题」：选择自动评分 + 填空/问答对答案</li>
-          <li>当天动手实践任务：话术演练、验光协助、镜架调整、开单收银</li>
-          <li>第 5–6 周跟岗实战与独立接单，在真实客流中反复练</li>
-          <li>每份材料末尾「四大流程落地衔接」指引练什么、练到什么标准</li>
+        <div class="sk-sub" data-page-node-id="MB9MbUirDWwW1KB8zHfy47">每天约 54 分钟 · 全课重心</div>
+        <div class="sk-desc" data-page-node-id="4RQl76K1QlnWVRsnIhSMFn">占全部学习时间的六成，是这套课程真正的重心。做题、对练、上手操作，把"看懂"变成"做得出"。</div>
+        <ul class="sk-list" data-page-node-id="XXvy4LUCMhuQRo1cDNqleF">
+          <li data-page-node-id="kFVCwUz8FvZRK1iNGzz5FY">每日「练习题」：选择自动评分 + 填空/问答对答案</li>
+          <li data-page-node-id="J8jslzYvz230HNbOWlfssz">当天动手实践任务：话术演练、验光协助、镜架调整、开单收银</li>
+          <li data-page-node-id="VWQpCxxK3EbdsPnX3ge0kx">第 5–6 周跟岗实战与独立接单，在真实客流中反复练</li>
+          <li data-page-node-id="CblTV5j74o7yAecrRuicbs">每份材料末尾「四大流程落地衔接」指引练什么、练到什么标准</li>
         </ul>
       </div>
 
-      <div class="slk-card sk-exam">
-        <div class="sk-head">
-          <div class="sk-icon">📝</div>
-          <div class="sk-name">考</div>
-          <div class="sk-ratio">10%</div>
+      <div class="slk-card sk-exam" data-page-node-id="bGVoc2aiYK2jMQjW2hT0ph">
+        <div class="sk-head" data-page-node-id="vJhuujYALQ0tbFH3eUTCyB">
+          <div class="sk-icon" data-page-node-id="dIBdfjl6rzcq1fa7WfACvP">📝</div>
+          <div class="sk-name" data-page-node-id="Wdp7CqynSm59C7hzjHopKp">考</div>
+          <div class="sk-ratio" data-page-node-id="BUBavJR7PHdvlPKQN2DS3p">10%</div>
         </div>
-        <div class="sk-sub">每周 + 2 次阶段性 · 检验纠偏</div>
-        <div class="sk-desc">考不是终点，而是"体检查漏"——把没练到位的地方找出来，再送回练里补。</div>
-        <ul class="sk-list">
-          <li>每周日测：每 7 天一次周测卷，当周内容现场检验</li>
-          <li>中期考核 Day 28 · 结业考核 Day 56</li>
-          <li>结业应知应会表：五档自评，自动列出薄弱项</li>
+        <div class="sk-sub" data-page-node-id="11uaBmjucWnJJOBvFWazub">每周 + 2 次阶段性 · 检验纠偏</div>
+        <div class="sk-desc" data-page-node-id="ij87XrlCImR8TUlsEC1jyB">考不是终点，而是"体检查漏"——把没练到位的地方找出来，再送回练里补。</div>
+        <ul class="sk-list" data-page-node-id="vO7zkB1Uz6gtnkZGJ6uTim">
+          <li data-page-node-id="kHvpSdB6uHZMPTTui9RrVQ">每周日测：每 7 天一次周测卷，当周内容现场检验</li>
+          <li data-page-node-id="99VxHA0AYi51KAJLBdtloR">中期考核 Day 28 · 结业考核 Day 56</li>
+          <li data-page-node-id="ST2or3TodgXA9CB87rHyrn">结业应知应会表：五档自评，自动列出薄弱项</li>
         </ul>
       </div>
     </div>
 
-    <div class="slk-note">
-      <span class="nt-t">📌 为什么"练"要占六成？</span>
-      《四大流程体系》里，"带教"和"考核"环节都建立在"练"之上：讲一遍只能记住 10%，自己动手做一遍能记住 70%。所以每天的安排都是<b>先学 30% 打底 → 再用 60% 反复练 → 最后用 10% 考出来</b>。练得越多，结业考核越轻松；练得越少，考场上越容易卡壳。
+    <div class="slk-note" data-page-node-id="QzfxN60GvfCTW5pXZJ4SWr">
+      <span class="nt-t" data-page-node-id="PN7lJVnDBrBgYC1hsU2jQr">📌 为什么"练"要占六成？</span>
+      《四大流程体系》里，"带教"和"考核"环节都建立在"练"之上：讲一遍只能记住 10%，自己动手做一遍能记住 70%。所以每天的安排都是<b data-page-node-id="7wjADTnkEJmA6d3sZAy6Id">先学 30% 打底 → 再用 60% 反复练 → 最后用 10% 考出来</b>。练得越多，结业考核越轻松；练得越少，考场上越容易卡壳。
     </div>
   </div>
 
   <!-- ─── 课程导航（每周展开，每天直连）─── -->
-  <div class="section-title">
-    <div class="icon-circle">📅</div>
+  <div class="section-title" data-page-node-id="BBCzic0ekxD62yjsOAJgqk">
+    <div class="icon-circle" data-page-node-id="hJQwgSCftB4pDULgvdqcU1">📅</div>
     每日课程导航 — 点击周标题展开
   </div>
 
-  <div class="course-toolbar">
-    <div class="tb-search">
-      <input id="searchInput" type="text" placeholder="搜索课程主题，如：镜片 / 投诉 / 考核 / Day 28">
+  <div class="course-toolbar" data-page-node-id="JVi6GgrFJFqL5WTzdpUDyP">
+    <div class="tb-search" data-page-node-id="M0cLNexb4d9mly22RPSRxd">
+      <input id="searchInput" type="text" placeholder="搜索课程主题，如：镜片 / 投诉 / 考核 / Day 28" data-page-node-id="U9tcPCqgupKZfPYSbSK0ee">
     </div>
-    <div class="tb-actions">
-      <button class="tb-btn" id="expandAll" type="button">⇩ 全部展开</button>
-      <button class="tb-btn" id="collapseAll" type="button">⇧ 全部收起</button>
-      <label class="tb-switch"><input type="checkbox" id="hideDone"> 隐藏已完成</label>
-      <button class="tb-btn" id="resetBtn" type="button">⟲ 清除记录</button>
+    <div class="tb-actions" data-page-node-id="RLqjj36jDMA8IJzFe2cRLn">
+      <button class="tb-btn" id="expandAll" type="button" data-page-node-id="TC0GzAyx6HxFOt0rbBjH0P">⇩ 全部展开</button>
+      <button class="tb-btn" id="collapseAll" type="button" data-page-node-id="gkbCwmPZ9OToVjFIA4vqFG">⇧ 全部收起</button>
+      <label class="tb-switch" data-page-node-id="4rM6qgXbPAQPjlWrOzWHWF"><input type="checkbox" id="hideDone" data-page-node-id="nwpbAEMWAwwvkk6Wiz9ApM"> 隐藏已完成</label>
+      <button class="tb-btn" id="resetBtn" type="button" data-page-node-id="ufOdJLCQHuC5MDqVqMOb4i">⟲ 清除记录</button>
     </div>
   </div>
 
-  <div class="legend">
-    <span><i style="background:#2e7d32"></i>学习内容</span>
-    <span><i style="background:#1565c0"></i>练习题</span>
-    <span><i style="background:#6a1b9a"></i>考核 / 周测</span>
-    <span><i style="background:#2e7d32;opacity:.35"></i>深底色 = 已学习</span>
+  <div class="legend" data-page-node-id="HlEOyqVS1wKt6BMR5HmqRV">
+    <span data-page-node-id="k1sQg9dRkcqE8MsvH1jKua"><i style="background:#2e7d32" data-page-node-id="9qa1mg4Xq4vVdyHG5kvIg5"></i>学习内容</span>
+    <span data-page-node-id="8HAktOZ7FmcGkqSAavA2TA"><i style="background:#1565c0" data-page-node-id="N5DweDwHrmu1mBy2kfmrdk"></i>练习题</span>
+    <span data-page-node-id="n4uwjVGxCZ63vhIXBTxNIy"><i style="background:#6a1b9a" data-page-node-id="tFjOlnduDjhUJMrVOg36cl"></i>考核 / 周测</span>
+    <span data-page-node-id="BVNHNGqR92MSCAzgXoPckS"><i style="background:#2e7d32;opacity:.35" data-page-node-id="rKxYq3mKadywKsBHx0pJWN"></i>深底色 = 已学习</span>
   </div>
 
-  <div class="no-result" id="noResult">😕 没有匹配的课程，换个关键词试试</div>
+  <div class="no-result" id="noResult" data-page-node-id="P9B19Ky3CkkrntzZca7Lfb">😕 没有匹配的课程，换个关键词试试</div>
 
   <!-- ══════ 第1周 ══════ -->
-  <div class="week-block w1" id="w1">
-    <button class="week-header-btn" onclick="toggleWeek('w1')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 01</span>
-        <div>
-          <div class="week-title">🌱 文化与制度启蒙</div>
-          <div class="week-days-info">Day 01–07 · 企业文化、职业素养、制度规范、岗位职责</div>
+  <div class="week-block w1" id="w1" data-page-node-id="EBSVxSDDGb8q7o3BQrTdxU">
+    <button class="week-header-btn" onclick="toggleWeek('w1')" data-page-node-id="mCcLU4Ud8DBnB3tDhLOAj3">
+      <div class="week-header-left" data-page-node-id="sObFDwTyoP9lTkCjMLVIGC">
+        <span class="week-num-badge" data-page-node-id="WG0HyPMix88PncbXZspx1k">WEEK 01</span>
+        <div data-page-node-id="svraIYn1ucmfn1Codj1lBr">
+          <div class="week-title" data-page-node-id="s9TrFkogg3ElW7nGrrMEE8">🌱 文化与制度启蒙</div>
+          <div class="week-days-info" data-page-node-id="Ci4HCk0hzAmOwe7DF0V23f">Day 01–07 · 企业文化、职业素养、制度规范、岗位职责</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="EVTKIgrf8OOIQmf971ypyu" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="nCw5gBX4YqFQNKmitQ6AFx">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 01</div>
-          <div class="day-topic">欢迎加入 · 企业文化与使命愿景</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_01_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_01_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="xVATQVSTItecagu0wcLvle">
+      <div class="days-grid" data-page-node-id="63s8aiizwrh92KdvSYF0Q4">
+        <div class="day-col" data-page-node-id="AtxLlSM6Kkh1dbTdyH4Lvk">
+          <div class="day-num" data-page-node-id="mm36dwXTdmWcdmfDwkpLJG">Day 01</div>
+          <div class="day-topic" data-page-node-id="0LvV0bYHyKSrF0fTuXHd6a">欢迎加入 · 企业文化与使命愿景</div>
+          <div class="day-links" data-page-node-id="aGxxKFCrCyYWpjYs9DS01g">
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_01_学习内容.html" data-page-node-id="NDwcvkLOc8xVXBEtTisDpR">📖 学习内容</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_01_练习题.html" data-page-node-id="XXRbswQOo1fV4kSUB09qlQ">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 02</div>
-          <div class="day-topic">职业形象与服务理念</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_02_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_02_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="I0XIZsrMwM2y3lknuVQWVv">
+          <div class="day-num" data-page-node-id="ykMWm0Qu2xCa0311jI3DWM">Day 02</div>
+          <div class="day-topic" data-page-node-id="fFzZkyX0jj1kSr5D8j51fg">职业形象与服务理念</div>
+          <div class="day-links" data-page-node-id="Vyj6fCAE1FC7r4ZGRgxpGg">
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_02_学习内容.html" data-page-node-id="N8Srh4OD8WlHckE4SLnWzN">📖 学习内容</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_02_练习题.html" data-page-node-id="PQnIGwARSxXcyDvNIKm53J">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 03</div>
-          <div class="day-topic">考勤制度与薪酬福利</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_03_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_03_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="h6enCCV1jCV18EE8HB0Auj">
+          <div class="day-num" data-page-node-id="5KfhNxOpR3YYuESDUnMREH">Day 03</div>
+          <div class="day-topic" data-page-node-id="ipjADvgZNRjrF6JO2OWGQ6">考勤制度与薪酬福利</div>
+          <div class="day-links" data-page-node-id="h3UNjJTMWDq4LilKdmL7j0">
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_03_学习内容.html" data-page-node-id="guGVQnlxgFu7z53bVmTF8u">📖 学习内容</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_03_练习题.html" data-page-node-id="BXSfBWiBkg7Ee546OAXjTQ">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 04</div>
-          <div class="day-topic">行为规范与职场礼仪</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_04_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_04_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="nIiu1FjeKfugxgqajvUBx0">
+          <div class="day-num" data-page-node-id="7O4UB9HwGgeG3GTNTVTCYV">Day 04</div>
+          <div class="day-topic" data-page-node-id="GlCuUA1KJPuE9iY8RmBGNK">行为规范与职场礼仪</div>
+          <div class="day-links" data-page-node-id="H3N3kb1i8R4soAaUApQi19">
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_04_学习内容.html" data-page-node-id="XhgDLb4cMzKb9gKttJjUpS">📖 学习内容</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_04_练习题.html" data-page-node-id="cOZfhKGDlAChBjKk1sxdG5">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 05</div>
-          <div class="day-topic">奖惩制度与安全规定</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_05_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_05_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="6LS2j5KsakJBaCj8LLs2wl">
+          <div class="day-num" data-page-node-id="GWqm12nXEksa8C5Mz9soaD">Day 05</div>
+          <div class="day-topic" data-page-node-id="vBub7DkjebFoZmkaOl5zV0">奖惩制度与安全规定</div>
+          <div class="day-links" data-page-node-id="JSWDE080zxeHtoZi1SotAB">
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_05_学习内容.html" data-page-node-id="IYuZM60lqf5iN6otxwfYqs">📖 学习内容</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_05_练习题.html" data-page-node-id="d1Gv1HcbnfU6lHZ5Mq48DH">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 06</div>
-          <div class="day-topic">岗位职责与工作流程初识</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_06_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_06_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="KklMB3yJRKCDYi6VyxWhJv">
+          <div class="day-num" data-page-node-id="D8TSExClmpW0xUfrV6cpn4">Day 06</div>
+          <div class="day-topic" data-page-node-id="5LUvFbNI3TsE2GQgNPeASx">岗位职责与工作流程初识</div>
+          <div class="day-links" data-page-node-id="evD2T7Lkds57ky9FvqKzIQ">
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_06_学习内容.html" data-page-node-id="nEnOROBfJLogPbMcVg5Mpl">📖 学习内容</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_06_练习题.html" data-page-node-id="H3C7KLurwTe1gnGUEj4Uou">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num special">Day 07</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">📋 第1周总结复盘 · 周测</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_07_学习内容.html">📋 总结复盘</a>
-            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_07_周测卷.html">📝 周测卷</a>
+        <div class="day-col" data-page-node-id="rboXcK9SSUpVgjB5JEc1Vq">
+          <div class="day-num special" data-page-node-id="o05RozdUMtOWRTmHwhvESF">Day 07</div>
+          <div class="flow-tag check" data-page-node-id="66xJCDB7OHyn55CeoTcGUS">考核节点</div>
+          <div class="day-topic" data-page-node-id="yCMSpH7kcOuqFHFcBoLP6V">📋 第1周总结复盘 · 周测</div>
+          <div class="day-links" data-page-node-id="eEK5KG57QihxuSrHID1whZ">
+            <a class="day-link learn" href="第1周_文化与制度启蒙/Day_07_学习内容.html" data-page-node-id="ImZ5T0ZgU98woXdjf6nmB3">📋 总结复盘</a>
+            <a class="day-link quiz" href="第1周_文化与制度启蒙/Day_07_周测卷.html" data-page-node-id="qHvmEQWx2guxCDV6ruW6Lf">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -779,74 +813,74 @@
   </div>
 
   <!-- ══════ 第2周 ══════ -->
-  <div class="week-block w2" id="w2">
-    <button class="week-header-btn" onclick="toggleWeek('w2')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 02</span>
-        <div>
-          <div class="week-title">🔬 光学与产品知识</div>
-          <div class="week-days-info">Day 08–14 · 眼睛结构、镜架镜片、处方解读、品牌陈列</div>
+  <div class="week-block w2" id="w2" data-page-node-id="vUAKSpDYOvj7WuNQbs6P9e">
+    <button class="week-header-btn" onclick="toggleWeek('w2')" data-page-node-id="e5pic40kI9p9kKZ3BeEtEi">
+      <div class="week-header-left" data-page-node-id="Z0nUvE5G6RJJI4mUQvS9dF">
+        <span class="week-num-badge" data-page-node-id="BraWYlEJNU5PoSKgF3X0rq">WEEK 02</span>
+        <div data-page-node-id="lyYrJydhl0beCkuF7OrAVE">
+          <div class="week-title" data-page-node-id="DBmaSPBxqmkys9yb7IPFhx">🔬 光学与产品知识</div>
+          <div class="week-days-info" data-page-node-id="Rm7j2GsnxKR8o6lkO3Ravg">Day 08–14 · 眼睛结构、镜架镜片、处方解读、品牌陈列</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="tqKaxAR2fTF8utNvqg3TFU" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="P5EepdQGkABz39Y52WvgBX">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 08</div>
-          <div class="day-topic">眼睛的结构与视觉原理</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第2周_光学与产品知识/Day_08_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第2周_光学与产品知识/Day_08_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="7ZDRqAwVUKbe3K5amidMHA">
+      <div class="days-grid" data-page-node-id="Lqhij4cu72mkYEgRJESwM9">
+        <div class="day-col" data-page-node-id="3ECvlzp2uDHyjiRlc1BFmO">
+          <div class="day-num" data-page-node-id="mGwcyhNzc8qjTv0AlH4qMm">Day 08</div>
+          <div class="day-topic" data-page-node-id="CFpgaCCV7DuSOZ8lGFwPbL">眼睛的结构与视觉原理</div>
+          <div class="day-links" data-page-node-id="9WGxEACcxcuTkqWjkGowj9">
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_08_学习内容.html" data-page-node-id="8xYKbSLTW7rCaxzZOG1qLR">📖 学习内容</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_08_练习题.html" data-page-node-id="esqbzhK5NI5DHxmjBMcmkV">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 09</div>
-          <div class="day-topic">镜架基础知识</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第2周_光学与产品知识/Day_09_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第2周_光学与产品知识/Day_09_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="HR2oybd3AIvWj3mydIHGlr">
+          <div class="day-num" data-page-node-id="l6PZNadNl5royqyelMzUaW">Day 09</div>
+          <div class="day-topic" data-page-node-id="vtlKsBGvPjn4LnigUYhU7W">镜架基础知识</div>
+          <div class="day-links" data-page-node-id="B2EMKogSY3VPfq2g8DmEfl">
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_09_学习内容.html" data-page-node-id="X3oeJpASGEkFDBC8r5BaWM">📖 学习内容</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_09_练习题.html" data-page-node-id="9R5ciKqjvHndtAcdC33fdC">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 10</div>
-          <div class="day-topic">镜片材质与折射率</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第2周_光学与产品知识/Day_10_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第2周_光学与产品知识/Day_10_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="bndil6sFljJV8zG8iajGZF">
+          <div class="day-num" data-page-node-id="m7AHaF4cOVsru1V3EwWwJb">Day 10</div>
+          <div class="day-topic" data-page-node-id="7Dy7GknClN9jlua5x20AxT">镜片材质与折射率</div>
+          <div class="day-links" data-page-node-id="p0FalXVkUIrxRW4hoAc3LG">
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_10_学习内容.html" data-page-node-id="4uPbmw4O2IUe1EmAKaIIo7">📖 学习内容</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_10_练习题.html" data-page-node-id="4Y3TKCjWWDUtKRFFBtXwxa">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 11</div>
-          <div class="day-topic">功能性镜片全解析</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第2周_光学与产品知识/Day_11_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第2周_光学与产品知识/Day_11_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="3zB0j0nMml3O1ksuVGL5Ai">
+          <div class="day-num" data-page-node-id="fA8WYkyXBJ7xD1xwno24HO">Day 11</div>
+          <div class="day-topic" data-page-node-id="PdBbjrfQaj6rp4pcisosW3">功能性镜片全解析</div>
+          <div class="day-links" data-page-node-id="4foNCBF1V1WR0YiRUzWAc9">
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_11_学习内容.html" data-page-node-id="9twPYClCiZ9oivK9lF1j3S">📖 学习内容</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_11_练习题.html" data-page-node-id="SKbzy3blF7nhe9ub05obMM">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 12</div>
-          <div class="day-topic">验光处方解读与产品搭配</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第2周_光学与产品知识/Day_12_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第2周_光学与产品知识/Day_12_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="PsMo7nB5iPOzBe39NbMrnn">
+          <div class="day-num" data-page-node-id="iEOB1QqeFHZlUb9djUJ5Tl">Day 12</div>
+          <div class="day-topic" data-page-node-id="BvVak2RF7fSHQBACh3nZAK">验光处方解读与产品搭配</div>
+          <div class="day-links" data-page-node-id="r7YTKpr8A5Uq3fD7ri0OyJ">
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_12_学习内容.html" data-page-node-id="lSjqKiNfIDimRWJoaylBBj">📖 学习内容</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_12_练习题.html" data-page-node-id="mLQaNIUIXzrGlNkoC4XVZH">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 13</div>
-          <div class="day-topic">品牌知识与产品陈列</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第2周_光学与产品知识/Day_13_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第2周_光学与产品知识/Day_13_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="eeY65X39Per7VfF9HjNkIU">
+          <div class="day-num" data-page-node-id="tbaaSxNPUBZwmVXYRChkEg">Day 13</div>
+          <div class="day-topic" data-page-node-id="TkJDWbCPWhJQKqG6ZuIZsA">品牌知识与产品陈列</div>
+          <div class="day-links" data-page-node-id="gfDzsBVFw0QMUHTnC40K9Q">
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_13_学习内容.html" data-page-node-id="cFkJSXljRVWCWPLU3O5Vg4">📖 学习内容</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_13_练习题.html" data-page-node-id="zVSXWruLsXXbY9VcYA8zkN">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num special">Day 14</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">📋 第2周总结复盘 · 周测</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第2周_光学与产品知识/Day_14_学习内容.html">📋 总结复盘</a>
-            <a class="day-link quiz" href="第2周_光学与产品知识/Day_14_周测卷.html">📝 周测卷</a>
+        <div class="day-col" data-page-node-id="ZpMmz9rzw4mQoxYTt49bv7">
+          <div class="day-num special" data-page-node-id="idgSnXCFdei6c9AZX8pbR9">Day 14</div>
+          <div class="flow-tag check" data-page-node-id="XFO1ofaqtfiJ5WC9Z2HSoq">考核节点</div>
+          <div class="day-topic" data-page-node-id="r5BfycBzPrJpFbLmKZql1J">📋 第2周总结复盘 · 周测</div>
+          <div class="day-links" data-page-node-id="19ucoENQOj2E2EZ1kSGstm">
+            <a class="day-link learn" href="第2周_光学与产品知识/Day_14_学习内容.html" data-page-node-id="IxonKu3G8l3PJwebW2wd0A">📋 总结复盘</a>
+            <a class="day-link quiz" href="第2周_光学与产品知识/Day_14_周测卷.html" data-page-node-id="Qrxol1VJQYm0vB6mvHD9LP">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -854,74 +888,74 @@
   </div>
 
   <!-- ══════ 第3周 ══════ -->
-  <div class="week-block w3" id="w3">
-    <button class="week-header-btn" onclick="toggleWeek('w3')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 03</span>
-        <div>
-          <div class="week-title">🔧 专业技能训练</div>
-          <div class="week-days-info">Day 15–21 · 验光辅助、镜架调整、陈列收银、售后维修</div>
+  <div class="week-block w3" id="w3" data-page-node-id="GVwFv1A7t56x0e3oGrcnQd">
+    <button class="week-header-btn" onclick="toggleWeek('w3')" data-page-node-id="LV7NSuB0bRfZQbKWAZi5kI">
+      <div class="week-header-left" data-page-node-id="yBnLSFix4GK4hojPtZbOQ0">
+        <span class="week-num-badge" data-page-node-id="w4ZJHo4lC4gfwLSwDjBDpj">WEEK 03</span>
+        <div data-page-node-id="pS2wCJQ3htHknAEHGDkAey">
+          <div class="week-title" data-page-node-id="qENIP0xfFgyqEvTgzdl0g5">🔧 专业技能训练</div>
+          <div class="week-days-info" data-page-node-id="uy57lpDqknw2DxxpO4ZMDg">Day 15–21 · 验光辅助、镜架调整、陈列收银、售后维修</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="x5oTBQHoeO642H635dF8W9" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="yQwGlkIgeI45VAjOhHEKfz">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 15</div>
-          <div class="day-topic">验光辅助操作入门</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第3周_专业技能训练/Day_15_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第3周_专业技能训练/Day_15_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="CLm7EjCRernEfeBeaHOw1b">
+      <div class="days-grid" data-page-node-id="ymSZD7wdIXWWAZ8VzcH7nf">
+        <div class="day-col" data-page-node-id="MZ5wzHBZI0fOmrcku2EUe7">
+          <div class="day-num" data-page-node-id="ha25yJJ5JTFywZMZg57kv9">Day 15</div>
+          <div class="day-topic" data-page-node-id="ylyMKgDbMz3AbK5xhm6c3m">验光辅助操作入门</div>
+          <div class="day-links" data-page-node-id="5ttB8YdAoZ6GIKA8jtrM8k">
+            <a class="day-link learn" href="第3周_专业技能训练/Day_15_学习内容.html" data-page-node-id="wQ6r2pHtLGRKiCI1SApJvK">📖 学习内容</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_15_练习题.html" data-page-node-id="BL3A5hESRG8sbhezf1GVvr">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 16</div>
-          <div class="day-topic">镜架调整与整形技术</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第3周_专业技能训练/Day_16_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第3周_专业技能训练/Day_16_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="vWw0BVNRyx0X9iwjELSppr">
+          <div class="day-num" data-page-node-id="VMwuJHFDGIOTWX1c9ognup">Day 16</div>
+          <div class="day-topic" data-page-node-id="1YgFBPMFOu5dPBfGRMZ03U">镜架调整与整形技术</div>
+          <div class="day-links" data-page-node-id="sC0CEpnNT8XIVgCXoqWkAv">
+            <a class="day-link learn" href="第3周_专业技能训练/Day_16_学习内容.html" data-page-node-id="OYMrAoCp2VRzuHbY0QXIio">📖 学习内容</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_16_练习题.html" data-page-node-id="QwGotjLaXIt4GVYtiDpbDX">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 17</div>
-          <div class="day-topic">商品陈列与货区管理</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第3周_专业技能训练/Day_17_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第3周_专业技能训练/Day_17_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="SGl6wbedkwOBhethfPlmYc">
+          <div class="day-num" data-page-node-id="0JBoQDYBegACgKvzwkfmS5">Day 17</div>
+          <div class="day-topic" data-page-node-id="1Aip1Jbr5woMZGm1V39yoX">商品陈列与货区管理</div>
+          <div class="day-links" data-page-node-id="F6QuIVD3gxHJooi46faKOT">
+            <a class="day-link learn" href="第3周_专业技能训练/Day_17_学习内容.html" data-page-node-id="kD2kSwu8bkrsLqpCh9GlVl">📖 学习内容</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_17_练习题.html" data-page-node-id="UQOBu5Fr3O0EGnHLGfagvZ">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 18</div>
-          <div class="day-topic">收银操作与库存管理</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第3周_专业技能训练/Day_18_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第3周_专业技能训练/Day_18_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="6PJVSMwynQrn1EIM9wzyZ6">
+          <div class="day-num" data-page-node-id="UoL8UiyPN8bdgMee3c6Rxb">Day 18</div>
+          <div class="day-topic" data-page-node-id="bTuWO1xTbgT0yUMk7cfmal">收银操作与库存管理</div>
+          <div class="day-links" data-page-node-id="QkkxdQ5OdfYQnraJydBybm">
+            <a class="day-link learn" href="第3周_专业技能训练/Day_18_学习内容.html" data-page-node-id="ErJI2JelD0ryYiYqR9YrAC">📖 学习内容</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_18_练习题.html" data-page-node-id="xBiBCcGU8iwTACEalQawGT">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 19</div>
-          <div class="day-topic">售后服务与维修技能</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第3周_专业技能训练/Day_19_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第3周_专业技能训练/Day_19_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="3dKAyO9ZrHoJCRN6Ta9Fha">
+          <div class="day-num" data-page-node-id="XKc3mmcks0MIghOZl6cuEh">Day 19</div>
+          <div class="day-topic" data-page-node-id="r1NbvOo6TQ0uq5TvI2vMBk">售后服务与维修技能</div>
+          <div class="day-links" data-page-node-id="MrIPi81vHTux4zRe6O6KFP">
+            <a class="day-link learn" href="第3周_专业技能训练/Day_19_学习内容.html" data-page-node-id="vOBmm8h65vEuKXxwWwvVs3">📖 学习内容</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_19_练习题.html" data-page-node-id="BqjXIqD6IozM6dAHGt29I5">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 20</div>
-          <div class="day-topic">综合技能实战演练</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第3周_专业技能训练/Day_20_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第3周_专业技能训练/Day_20_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="XkSvg8OMfe7MNSZHBiE7Qb">
+          <div class="day-num" data-page-node-id="Pw1VvXb9DvtEDz5INilrlp">Day 20</div>
+          <div class="day-topic" data-page-node-id="5MOcRmh8CtPxXdEexZcy76">综合技能实战演练</div>
+          <div class="day-links" data-page-node-id="MZRPPrfqYG2rHWu2g3RtOC">
+            <a class="day-link learn" href="第3周_专业技能训练/Day_20_学习内容.html" data-page-node-id="ZK7P0c2HCVAHIzkNFBwFtk">📖 学习内容</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_20_练习题.html" data-page-node-id="BuYNTETnewPr3OrXVYWaGW">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num special">Day 21</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">📋 第3周总结复盘 · 周测</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第3周_专业技能训练/Day_21_学习内容.html">📋 总结复盘</a>
-            <a class="day-link quiz" href="第3周_专业技能训练/Day_21_周测卷.html">📝 周测卷</a>
+        <div class="day-col" data-page-node-id="NCezopLKmQBbWXyHIgEhzD">
+          <div class="day-num special" data-page-node-id="S9W1WJqJ7xxGSBOErZ2x7e">Day 21</div>
+          <div class="flow-tag check" data-page-node-id="1WbnV9Y67EAMkzC2RM7JL7">考核节点</div>
+          <div class="day-topic" data-page-node-id="bQaDD8ZRLgSxHwEJAIAQly">📋 第3周总结复盘 · 周测</div>
+          <div class="day-links" data-page-node-id="NjGxoucvh6O3nCuobLQ9n6">
+            <a class="day-link learn" href="第3周_专业技能训练/Day_21_学习内容.html" data-page-node-id="EAvFtF6uvGH7e8gEOpGnA2">📋 总结复盘</a>
+            <a class="day-link quiz" href="第3周_专业技能训练/Day_21_周测卷.html" data-page-node-id="dQnAtm5FN4Ts05c2F8smUh">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -929,75 +963,75 @@
   </div>
 
   <!-- ══════ 第4周 ══════ -->
-  <div class="week-block w4" id="w4">
-    <button class="week-header-btn" onclick="toggleWeek('w4')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 04</span>
-        <div>
-          <div class="week-title">💬 销售话术与中期考核</div>
-          <div class="week-days-info">Day 22–28 · 接待话术、异议处理、连带销售、投诉处理、中期考核</div>
+  <div class="week-block w4" id="w4" data-page-node-id="16t5MnmcZnHaI3Sr6K061w">
+    <button class="week-header-btn" onclick="toggleWeek('w4')" data-page-node-id="nXVmIoxpHpTM0KPCq6UQ2l">
+      <div class="week-header-left" data-page-node-id="EeLEXPRXF0kieSn5LXEW1z">
+        <span class="week-num-badge" data-page-node-id="ObhZ2g4Tu5RDJWXIhLJkls">WEEK 04</span>
+        <div data-page-node-id="5dbqNBMjjxGfmY5OyP5wkr">
+          <div class="week-title" data-page-node-id="RIOh2QhVXYdYYL4gdLrtbC">💬 销售话术与中期考核</div>
+          <div class="week-days-info" data-page-node-id="tof8vkbbSUO4gbqKw4afqz">Day 22–28 · 接待话术、异议处理、连带销售、投诉处理、中期考核</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="OiZlHHsN8DFXDdxQJWxQ87" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="DHGE3WsiEud94iwmvTSSTd">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 22</div>
-          <div class="day-topic">顾客接待与开场话术</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_22_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_22_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="pwp130iIom07KAIVmkwfIZ">
+      <div class="days-grid" data-page-node-id="3si8PsaAHOXRcUgR9oIHpH">
+        <div class="day-col" data-page-node-id="mYittRyKm5JTlz3u9F5XSW">
+          <div class="day-num" data-page-node-id="kUjYlhABJG3Yi35XVd1KxB">Day 22</div>
+          <div class="day-topic" data-page-node-id="WjSVES9bviiUQdq8LyCrlD">顾客接待与开场话术</div>
+          <div class="day-links" data-page-node-id="WcPhH49BH8wvFSLtFUU7TU">
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_22_学习内容.html" data-page-node-id="2XGBC5BKxESDXs0ytOgxcW">📖 学习内容</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_22_练习题.html" data-page-node-id="fA98hHbtqEByvFn2yKVR0d">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 23</div>
-          <div class="day-topic">产品介绍话术</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_23_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_23_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="GmgnLTsa3QhHigBpmAK17C">
+          <div class="day-num" data-page-node-id="K2Hz0vsEvEYqntKrq91P7H">Day 23</div>
+          <div class="day-topic" data-page-node-id="BAfU2B52FHqclo6Dt4D3wJ">产品介绍话术</div>
+          <div class="day-links" data-page-node-id="XHBG4PcF5ypovTFFnm1tep">
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_23_学习内容.html" data-page-node-id="I0sZHwlO2t3U8iZTByNneh">📖 学习内容</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_23_练习题.html" data-page-node-id="hRjWSMEi6qb1Q5fRNl7NoV">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 24</div>
-          <div class="day-topic">价格异议处理话术</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_24_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_24_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="CUVoFCG81ySyu8p7OGsFEF">
+          <div class="day-num" data-page-node-id="RrgIgrGfwroTGB00ikYC6v">Day 24</div>
+          <div class="day-topic" data-page-node-id="PnjB7O24UPkGr5ACR7a3Tp">价格异议处理话术</div>
+          <div class="day-links" data-page-node-id="oQ1YFvXxCeoGaHvo8SGhsY">
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_24_学习内容.html" data-page-node-id="YXO86AAMD6r07FYx8JWMJ7">📖 学习内容</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_24_练习题.html" data-page-node-id="GqewoL7jNGpQ0MFZB5s6Mf">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 25</div>
-          <div class="day-topic">促成成交话术</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_25_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_25_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="EHK8fD02rHUM3JUor2YO0d">
+          <div class="day-num" data-page-node-id="BpTfOViXb7ps5IVuRlJxBl">Day 25</div>
+          <div class="day-topic" data-page-node-id="yudrOwqX7LfCttuMGGeFS7">促成成交话术</div>
+          <div class="day-links" data-page-node-id="RYsJjTMDHPkW8vAh2cfs6k">
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_25_学习内容.html" data-page-node-id="AALxVpiErqcetKjGljrrbr">📖 学习内容</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_25_练习题.html" data-page-node-id="GtFNwyvJXASTY2Kw2qpiOY">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 26</div>
-          <div class="day-topic">连带销售与会员维护</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_26_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_26_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="mMR2xZDQC4jnSY31SNAPb3">
+          <div class="day-num" data-page-node-id="7zReABDGsbEDsRB24hPzZZ">Day 26</div>
+          <div class="day-topic" data-page-node-id="o2iC3YBMDwEywdSASESzIg">连带销售与会员维护</div>
+          <div class="day-links" data-page-node-id="R4Bfd83bYhbBrhKXJEX9mC">
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_26_学习内容.html" data-page-node-id="3w9kWRAa0bUhMFp8dq6I6h">📖 学习内容</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_26_练习题.html" data-page-node-id="AFNbGqtf5HCh9HcoBeqXhp">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 27</div>
-          <div class="day-topic">投诉处理与危机公关</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_27_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_27_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="hOGvf9m4AXgvI0RPJfFLSx">
+          <div class="day-num" data-page-node-id="YNg5d5QfoV7khwgVRMTDlE">Day 27</div>
+          <div class="day-topic" data-page-node-id="qzo3kSPKEgYx6mrYvyk7JB">投诉处理与危机公关</div>
+          <div class="day-links" data-page-node-id="eLEY74tD53qPxNhRpixKQ2">
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_27_学习内容.html" data-page-node-id="C2a7H7D7kkZgy0N64EMoDl">📖 学习内容</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_27_练习题.html" data-page-node-id="JiERSlQKq1tCCCbtyyHBkv">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num exam">Day 28</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">📋 第4周总结复盘 · 周测 · 中期考核</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_28_学习内容.html">📋 总结复盘</a>
-            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_28_周测卷.html">📝 周测卷</a>
-            <a class="day-link exam-link" href="第4周_销售话术与中期考核/Day_28_中期考核.html">🎓 中期考核</a>
+        <div class="day-col" data-page-node-id="2WQhGfaA6lA9mlk8aljWGb">
+          <div class="day-num exam" data-page-node-id="VOSJUkao82CC2rLJfsDwAv">Day 28</div>
+          <div class="flow-tag check" data-page-node-id="HDF0k5nxSJb6F4ob2Eqzrw">考核节点</div>
+          <div class="day-topic" data-page-node-id="EfV3xFLeBwFdRwLWXyErlU">📋 第4周总结复盘 · 周测 · 中期考核</div>
+          <div class="day-links" data-page-node-id="Hlou0RLN5zTPqereAwHksS">
+            <a class="day-link learn" href="第4周_销售话术与中期考核/Day_28_学习内容.html" data-page-node-id="tZu5SgQ7BI20806XfNw3Kg">📋 总结复盘</a>
+            <a class="day-link quiz" href="第4周_销售话术与中期考核/Day_28_周测卷.html" data-page-node-id="9LzVkB36aYhT7gxHj53kbr">📝 周测卷</a>
+            <a class="day-link exam-link" href="第4周_销售话术与中期考核/Day_28_中期考核.html" data-page-node-id="sgYPyfid4VSRZbw7rxj5bI">🎓 中期考核</a>
           </div>
         </div>
       </div>
@@ -1005,74 +1039,74 @@
   </div>
 
   <!-- ══════ 第5周 ══════ -->
-  <div class="week-block w5" id="w5">
-    <button class="week-header-btn" onclick="toggleWeek('w5')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 05</span>
-        <div>
-          <div class="week-title">🏪 实战跟岗训练</div>
-          <div class="week-days-info">Day 29–35 · 跟岗观摩、需求挖掘、FAB讲解、验光实操、制单交付</div>
+  <div class="week-block w5" id="w5" data-page-node-id="4cYgnwChweHrk1rUTW67M7">
+    <button class="week-header-btn" onclick="toggleWeek('w5')" data-page-node-id="RA1dfWTwi3CH3aNI8PDqwo">
+      <div class="week-header-left" data-page-node-id="GWkcDKwXvQFdVCWnt1dZlo">
+        <span class="week-num-badge" data-page-node-id="Ld3rTM6s4l2ldHv2iOIXCM">WEEK 05</span>
+        <div data-page-node-id="IC15x7FtccCkDbvxh8dKWa">
+          <div class="week-title" data-page-node-id="2RiBDLMHjlc47zywQ9LLvQ">🏪 实战跟岗训练</div>
+          <div class="week-days-info" data-page-node-id="vLpeJwNXXz3LgOonrWZwTy">Day 29–35 · 跟岗观摩、需求挖掘、FAB讲解、验光实操、制单交付</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="jqHesSBIcLZNy5jKLWUzpM" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="qSpjE3tIRmGYrr7YD2RicF">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 29</div>
-          <div class="day-topic">跟岗实战：全流程观摩与记录</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第5周_实战跟岗训练/Day_29_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_29_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="SIhe92itl47Xo2yTVEhy0M">
+      <div class="days-grid" data-page-node-id="kjrrEUzDxBTxXooixftcqy">
+        <div class="day-col" data-page-node-id="WCyfF7aYxJON8DrdIyw9w8">
+          <div class="day-num" data-page-node-id="Pv73kWX8bN4HbzxE80JHPS">Day 29</div>
+          <div class="day-topic" data-page-node-id="nAhZsJipKNLqEeC2MG3OBZ">跟岗实战：全流程观摩与记录</div>
+          <div class="day-links" data-page-node-id="BM7VaiZqPZiGHn6gv10Wm6">
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_29_学习内容.html" data-page-node-id="3XWTql4ODHK6A87Cz70px7">📖 学习内容</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_29_练习题.html" data-page-node-id="qcIeYQJzzy3oEvr3npGqbq">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 30</div>
-          <div class="day-topic">主动问询：需求挖掘实战</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第5周_实战跟岗训练/Day_30_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_30_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="nsrv79euvCTKHYwYIKPR2Q">
+          <div class="day-num" data-page-node-id="r9Ov6gsATHOg6kjdes97HH">Day 30</div>
+          <div class="day-topic" data-page-node-id="fbdrVlujCI2HElUEJ88wjY">主动问询：需求挖掘实战</div>
+          <div class="day-links" data-page-node-id="L5CLnT2HuQ1612bvXOdvKu">
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_30_学习内容.html" data-page-node-id="RjfgaIhjoGBvKgbBTIAcIk">📖 学习内容</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_30_练习题.html" data-page-node-id="oJrcJyxFQvpNhdMqLS2Znc">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 31</div>
-          <div class="day-topic">产品讲解实战：FAB法则</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第5周_实战跟岗训练/Day_31_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_31_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="wDY0bcyUEGdsJXEWZhngPt">
+          <div class="day-num" data-page-node-id="ssSnJmefPvZ1kHVaD5xYln">Day 31</div>
+          <div class="day-topic" data-page-node-id="s177kAAKXyzlt9UawkFH6M">产品讲解实战：FAB法则</div>
+          <div class="day-links" data-page-node-id="02nOW1E1G7lg0CHGnItnFv">
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_31_学习内容.html" data-page-node-id="FltwIj4bSoJHJvpgEBhriG">📖 学习内容</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_31_练习题.html" data-page-node-id="gxcHLW6W3Dt8xxCDEaV8up">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 32</div>
-          <div class="day-topic">验光流程实操：协助接待</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第5周_实战跟岗训练/Day_32_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_32_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="anNscvWQquVu598ME5q21z">
+          <div class="day-num" data-page-node-id="nAz0GByGiXCcbyA3rr8I4l">Day 32</div>
+          <div class="day-topic" data-page-node-id="J3ZsaZQwUqj6GNudhvC8W2">验光流程实操：协助接待</div>
+          <div class="day-links" data-page-node-id="mLDBPqD5LFWeR7nwf5CdfL">
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_32_学习内容.html" data-page-node-id="vpqmPn4OlpC4XLdmYCndQu">📖 学习内容</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_32_练习题.html" data-page-node-id="EtKPRu4IYI01G9x5D0qXcE">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 33</div>
-          <div class="day-topic">制单与交付：加工单与取镜流程</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第5周_实战跟岗训练/Day_33_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_33_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="ahiVHbId0Iy3CsBgyWAKYZ">
+          <div class="day-num" data-page-node-id="DK9hsi61oBQcHA392PKh2W">Day 33</div>
+          <div class="day-topic" data-page-node-id="xXO1f5dA3slYeK6F6Futwm">制单与交付：加工单与取镜流程</div>
+          <div class="day-links" data-page-node-id="8N6NmHgtxQNkVywDrDFpYv">
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_33_学习内容.html" data-page-node-id="hfrvUU0K3fTLgo2jH0H5u9">📖 学习内容</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_33_练习题.html" data-page-node-id="d9cnaRyCnoeiAqZiFQGaBy">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 34</div>
-          <div class="day-topic">客诉处理实战：化危为机</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第5周_实战跟岗训练/Day_34_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_34_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="TwMLI19ABBm2E2wEoNjLoW">
+          <div class="day-num" data-page-node-id="H81NYbRDmkp5Ha2ntIT6Fb">Day 34</div>
+          <div class="day-topic" data-page-node-id="EZScYXaQtPtEPDiUkZHwTV">客诉处理实战：化危为机</div>
+          <div class="day-links" data-page-node-id="GZzEqJqQFeH6WgpFDaJ3Qo">
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_34_学习内容.html" data-page-node-id="VuPlvPqlw09lugFaEqkboh">📖 学习内容</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_34_练习题.html" data-page-node-id="uqZCCpxVLyN9e8bRwnKPa4">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num special">Day 35</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🏆 跟岗总结与成长复盘</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第5周_实战跟岗训练/Day_35_学习内容.html">📋 总结复盘</a>
-            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_35_周测卷.html">📝 周测卷</a>
+        <div class="day-col" data-page-node-id="80NLXCx9pFH0E4xaJiGZmA">
+          <div class="day-num special" data-page-node-id="rd0DkCDrg1cMs1wwRGxhLe">Day 35</div>
+          <div class="flow-tag check" data-page-node-id="p3qa2rtfQJQxCDDtiMHMlX">考核节点</div>
+          <div class="day-topic" data-page-node-id="edIgzRYq4qlSZeQSFiGH1g">🏆 跟岗总结与成长复盘</div>
+          <div class="day-links" data-page-node-id="I4YWtepmMs7ukqXhG4KiLx">
+            <a class="day-link learn" href="第5周_实战跟岗训练/Day_35_学习内容.html" data-page-node-id="l34vcf0YBGyoEhnE53Arwd">📋 总结复盘</a>
+            <a class="day-link quiz" href="第5周_实战跟岗训练/Day_35_周测卷.html" data-page-node-id="L3H583wtxH16GAGAjHBGhY">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -1080,74 +1114,74 @@
   </div>
 
   <!-- ══════ 第6周 ══════ -->
-  <div class="week-block w6" id="w6">
-    <button class="week-header-btn" onclick="toggleWeek('w6')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 06</span>
-        <div>
-          <div class="week-title">🎯 独立接单训练</div>
-          <div class="week-days-info">Day 36–42 · 标准接待、异议处理、儿童老视、太阳镜、售后维护</div>
+  <div class="week-block w6" id="w6" data-page-node-id="iRIq1RIZeXkQF5RZJD6zGv">
+    <button class="week-header-btn" onclick="toggleWeek('w6')" data-page-node-id="6CrzFfqxuYOEhV0tD3PBZk">
+      <div class="week-header-left" data-page-node-id="chA2rBNddNiat6NU7Ie3VE">
+        <span class="week-num-badge" data-page-node-id="ACVPFDBruMXC1iFVwAh1NX">WEEK 06</span>
+        <div data-page-node-id="6lo5Jg5OsDDV0N7F7op2G3">
+          <div class="week-title" data-page-node-id="5zmawWajGkzfBxGcePcEHs">🎯 独立接单训练</div>
+          <div class="week-days-info" data-page-node-id="iZhgFF1smH4UeVoESFn7Uw">Day 36–42 · 标准接待、异议处理、儿童老视、太阳镜、售后维护</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="f7M9f6DfYyeSBeXbRc1676" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="4aDvvtC2F7haAZzWVbquWC">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 36</div>
-          <div class="day-topic">独立接单：标准接待流程</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第6周_独立接单训练/Day_36_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_36_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="U5Z676eruTKcg2Kvth8cIF">
+      <div class="days-grid" data-page-node-id="9ypRjXtD7LfLcQV7ellFR3">
+        <div class="day-col" data-page-node-id="ZtVg1X7d77nziOktbnfcZZ">
+          <div class="day-num" data-page-node-id="QyM1fRGbWLTXs2IOODQtup">Day 36</div>
+          <div class="day-topic" data-page-node-id="TIk1BFlJRkpnRS2HiwDkqP">独立接单：标准接待流程</div>
+          <div class="day-links" data-page-node-id="HRcEsX4rDOQlfuIlBX8Vbd">
+            <a class="day-link learn" href="第6周_独立接单训练/Day_36_学习内容.html" data-page-node-id="bD3ZTngjjINwRSFBpCFapX">📖 学习内容</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_36_练习题.html" data-page-node-id="6k2eMVBZ5OIMKzS0S7xzFF">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 37</div>
-          <div class="day-topic">价格异议处理与成交技巧</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第6周_独立接单训练/Day_37_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_37_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="TUWRWdDDo9z5ARv3VDUKC2">
+          <div class="day-num" data-page-node-id="o4NBzu0yl2iFcmBQFONxCF">Day 37</div>
+          <div class="day-topic" data-page-node-id="2nqx09yxPl9L4NwbT8zsgH">价格异议处理与成交技巧</div>
+          <div class="day-links" data-page-node-id="w07PvOs7riVU6uSp8FvJNx">
+            <a class="day-link learn" href="第6周_独立接单训练/Day_37_学习内容.html" data-page-node-id="Md4WArs5S0IANj5EQzoELd">📖 学习内容</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_37_练习题.html" data-page-node-id="FWGLWuYF9PCQNf9ID9XQD3">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 38</div>
-          <div class="day-topic">儿童配镜专项服务</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第6周_独立接单训练/Day_38_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_38_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="HGsGTD9o2gjh4O4ypcmu16">
+          <div class="day-num" data-page-node-id="qqKoIDmERCT4K5WkFOSTH4">Day 38</div>
+          <div class="day-topic" data-page-node-id="UisIbu71lGmKT3rVqfUJq3">儿童配镜专项服务</div>
+          <div class="day-links" data-page-node-id="EUBSLaCgZD4B5W8Cys8doi">
+            <a class="day-link learn" href="第6周_独立接单训练/Day_38_学习内容.html" data-page-node-id="mTuaL7wkSIQACcbEL3agE3">📖 学习内容</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_38_练习题.html" data-page-node-id="FoRJXrd0aV8mkm299HmI7j">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 39</div>
-          <div class="day-topic">老视配镜与中老年服务</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第6周_独立接单训练/Day_39_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_39_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="Ebvv7aYNpZCEbjPDcDwOnl">
+          <div class="day-num" data-page-node-id="ltLHxtgw7PeElWZeiqv5b7">Day 39</div>
+          <div class="day-topic" data-page-node-id="sYR399BYK7operRn8uHL5y">老视配镜与中老年服务</div>
+          <div class="day-links" data-page-node-id="KLqyWyxaBXYTEAuyyXOIYp">
+            <a class="day-link learn" href="第6周_独立接单训练/Day_39_学习内容.html" data-page-node-id="qonFOgAU2OIFUwY9CdBCbq">📖 学习内容</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_39_练习题.html" data-page-node-id="Mboe3zhq6r0Q5M4YsTiTEf">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 40</div>
-          <div class="day-topic">太阳镜与功能性眼镜销售</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第6周_独立接单训练/Day_40_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_40_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="InLsjVrU3USN1C9myKQoJN">
+          <div class="day-num" data-page-node-id="QwGKlBaGFM71TAhyNojjpA">Day 40</div>
+          <div class="day-topic" data-page-node-id="mWrffFRme2YS6NPk5LvnP1">太阳镜与功能性眼镜销售</div>
+          <div class="day-links" data-page-node-id="lRmkYjEWZ2rXp8wJ3dDpae">
+            <a class="day-link learn" href="第6周_独立接单训练/Day_40_学习内容.html" data-page-node-id="I5SB44pnMT8kMGMmslxjYg">📖 学习内容</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_40_练习题.html" data-page-node-id="W2wpyLtDL67272e2OwBUp7">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 41</div>
-          <div class="day-topic">售后服务与客户维护</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第6周_独立接单训练/Day_41_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_41_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="yinUZGRR6MliLOj1Ltzi5K">
+          <div class="day-num" data-page-node-id="TaGk8YeWkFjtlWugjmEiM1">Day 41</div>
+          <div class="day-topic" data-page-node-id="ytASbsPpH61vsSo8If6aMn">售后服务与客户维护</div>
+          <div class="day-links" data-page-node-id="HIjR6K51I2AuZK1lpLbALR">
+            <a class="day-link learn" href="第6周_独立接单训练/Day_41_学习内容.html" data-page-node-id="A8nT4jYBirUQFrMwFLn3vH">📖 学习内容</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_41_练习题.html" data-page-node-id="CD4SlOCP1aTDiAxMjhMs6q">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num special">Day 42</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🏆 第6周总结与接单能力评估</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第6周_独立接单训练/Day_42_学习内容.html">📋 总结复盘</a>
-            <a class="day-link quiz" href="第6周_独立接单训练/Day_42_周测卷.html">📝 周测卷</a>
+        <div class="day-col" data-page-node-id="mSfBsi6Y9hyjNPBZUyA1wy">
+          <div class="day-num special" data-page-node-id="cEKxcptcX74sMaTmUiSiKR">Day 42</div>
+          <div class="flow-tag check" data-page-node-id="XZZc3HcRYU2EsCKGjvMk7z">考核节点</div>
+          <div class="day-topic" data-page-node-id="nXaSZL32GzsfQvmmKuW63w">🏆 第6周总结与接单能力评估</div>
+          <div class="day-links" data-page-node-id="r3MGLSmFTs8ucPCg1mdMk1">
+            <a class="day-link learn" href="第6周_独立接单训练/Day_42_学习内容.html" data-page-node-id="3pYRG23o2YKVBVPNPWiZ7i">📋 总结复盘</a>
+            <a class="day-link quiz" href="第6周_独立接单训练/Day_42_周测卷.html" data-page-node-id="YDRkbuPdhTUrrgXA0VoDI7">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -1155,74 +1189,74 @@
   </div>
 
   <!-- ══════ 第7周 ══════ -->
-  <div class="week-block w7" id="w7">
-    <button class="week-header-btn" onclick="toggleWeek('w7')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 07</span>
-        <div>
-          <div class="week-title">🚀 综合提升训练</div>
-          <div class="week-days-info">Day 43–49 · 主觉验光、高端品牌、数据管理、顾客心理、营销策划</div>
+  <div class="week-block w7" id="w7" data-page-node-id="mTwdyMpdCcRl2Yec0ExJlf">
+    <button class="week-header-btn" onclick="toggleWeek('w7')" data-page-node-id="pZuUYAoZ4mXfScguMAvb7V">
+      <div class="week-header-left" data-page-node-id="QD9O68vzt1jRycpberLf0g">
+        <span class="week-num-badge" data-page-node-id="7F56qSBQDPd1jB15NUox3z">WEEK 07</span>
+        <div data-page-node-id="ORXL8ydxEKeN8Zz67MTvHf">
+          <div class="week-title" data-page-node-id="IFZq7dgVnh9hfzLIvOmEgc">🚀 综合提升训练</div>
+          <div class="week-days-info" data-page-node-id="c0gvfBEtorRrCOOYdNHS9q">Day 43–49 · 主觉验光、高端品牌、数据管理、顾客心理、营销策划</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="eU0mfgJNugj3iFwQNFUohk" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="9klBQe7q1Tl1rDyAWHQ7Ok">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 43</div>
-          <div class="day-topic">验光技能深化：主觉验光全流程</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第7周_综合提升训练/Day_43_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_43_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="ENtJFJMtYFNhgtaCST7WMz">
+      <div class="days-grid" data-page-node-id="WdkYiutlFxHo0m126z7fS7">
+        <div class="day-col" data-page-node-id="HNZNn2zAfnWmGkC0xnNRwt">
+          <div class="day-num" data-page-node-id="y8iQhkvIhqwu8GCyHVq6jJ">Day 43</div>
+          <div class="day-topic" data-page-node-id="QF4dv6gPLevlaLtFbMP2Jt">验光技能深化：主觉验光全流程</div>
+          <div class="day-links" data-page-node-id="3BKeNSKp65446AIrZtDBQ7">
+            <a class="day-link learn" href="第7周_综合提升训练/Day_43_学习内容.html" data-page-node-id="NHP4zhuwe5O2I4EXlTLAMS">📖 学习内容</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_43_练习题.html" data-page-node-id="inswifVo9wsesnjceP0sC2">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 44</div>
-          <div class="day-topic">高端产品知识与品牌销售</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第7周_综合提升训练/Day_44_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_44_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="DRM88sfg39lLP2hUL7VyBa">
+          <div class="day-num" data-page-node-id="u5oZ0OClVk6XwjmR3CEoQ2">Day 44</div>
+          <div class="day-topic" data-page-node-id="V0G8NwBGz8w09Og9tTyUZA">高端产品知识与品牌销售</div>
+          <div class="day-links" data-page-node-id="GT2NU9uqFgKQLPWsMzljbw">
+            <a class="day-link learn" href="第7周_综合提升训练/Day_44_学习内容.html" data-page-node-id="IuhqKuptfDWKzPmh7IRbH1">📖 学习内容</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_44_练习题.html" data-page-node-id="R1xz2pIQSO4MPZ4HjOxk1A">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 45</div>
-          <div class="day-topic">店面数据管理与业绩分析</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第7周_综合提升训练/Day_45_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_45_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="BOm6y2tcNh93lM8q5tkMFm">
+          <div class="day-num" data-page-node-id="TyaUmWi7sPOqRYRt7Wkdjd">Day 45</div>
+          <div class="day-topic" data-page-node-id="qBdNoJbB1wyUZeE6s3hSHI">店面数据管理与业绩分析</div>
+          <div class="day-links" data-page-node-id="bKPMA7gR0aP7AuGXoQM0LB">
+            <a class="day-link learn" href="第7周_综合提升训练/Day_45_学习内容.html" data-page-node-id="hNJtC5DTpOiKyFfCHuGjGi">📖 学习内容</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_45_练习题.html" data-page-node-id="zHHxAaXr56ygLiMG3dcc6E">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 46</div>
-          <div class="day-topic">团队协作与门店日常管理</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第7周_综合提升训练/Day_46_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_46_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="2wvyi65r4BgbXajrydB09Q">
+          <div class="day-num" data-page-node-id="CHgzSbiZ7GOCXEvICUgEFv">Day 46</div>
+          <div class="day-topic" data-page-node-id="TQV5Qfjqg8VvbJdKawosw2">团队协作与门店日常管理</div>
+          <div class="day-links" data-page-node-id="5InKi8DNPecsmDiCDnKljR">
+            <a class="day-link learn" href="第7周_综合提升训练/Day_46_学习内容.html" data-page-node-id="tOYo4Fr2vGDRWQJhW8yRLS">📖 学习内容</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_46_练习题.html" data-page-node-id="aE2WjcA1V20rmuBUYirexD">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 47</div>
-          <div class="day-topic">顾客心理与消费行为分析</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第7周_综合提升训练/Day_47_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_47_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="FBbpm5000v6qtsyerFtoml">
+          <div class="day-num" data-page-node-id="J4JA5ZAA8qbdU60uAcqa42">Day 47</div>
+          <div class="day-topic" data-page-node-id="oJk7cMPCsTexYzGSVgBUIG">顾客心理与消费行为分析</div>
+          <div class="day-links" data-page-node-id="Vy3gWaXiHHYBcMFqDyM1vC">
+            <a class="day-link learn" href="第7周_综合提升训练/Day_47_学习内容.html" data-page-node-id="X9s6NsA2w2aPFSLas4KSV7">📖 学习内容</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_47_练习题.html" data-page-node-id="XI0cGBj14eh4cVZ9H7Dik8">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 48</div>
-          <div class="day-topic">门店营销活动策划与执行</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第7周_综合提升训练/Day_48_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_48_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="H0uBvO2kkMxUJHO8RHa8tQ">
+          <div class="day-num" data-page-node-id="CPjDt2MbFhtwy0Q55HqR6G">Day 48</div>
+          <div class="day-topic" data-page-node-id="1XHyZHPrWGXldq5QQHjGDA">门店营销活动策划与执行</div>
+          <div class="day-links" data-page-node-id="Zqq51Y4TazpHhkUj2MQS3H">
+            <a class="day-link learn" href="第7周_综合提升训练/Day_48_学习内容.html" data-page-node-id="5aG4UkM3jA8ylDBEIa1Zjl">📖 学习内容</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_48_练习题.html" data-page-node-id="R2ccp4qN6KWoPCLQ5T5gir">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num special">Day 49</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🏆 第7周综合复盘与能力提升</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第7周_综合提升训练/Day_49_学习内容.html">📋 总结复盘</a>
-            <a class="day-link quiz" href="第7周_综合提升训练/Day_49_周测卷.html">📝 周测卷</a>
+        <div class="day-col" data-page-node-id="aXq7mVglUziWGG4qb2YYKx">
+          <div class="day-num special" data-page-node-id="A9wTKHZ4KE4UNcPgxmvHQr">Day 49</div>
+          <div class="flow-tag check" data-page-node-id="dwYowDs16347mxctP5wkGo">考核节点</div>
+          <div class="day-topic" data-page-node-id="ajTBUnNlR4Qtamr6DsH4nu">🏆 第7周综合复盘与能力提升</div>
+          <div class="day-links" data-page-node-id="kf3FJEHz6vn1n60yVYODTE">
+            <a class="day-link learn" href="第7周_综合提升训练/Day_49_学习内容.html" data-page-node-id="kDAwv0y3VFihMEEjIHd4BB">📋 总结复盘</a>
+            <a class="day-link quiz" href="第7周_综合提升训练/Day_49_周测卷.html" data-page-node-id="Y0zqYZTjGXE6NzCL7DRDgb">📝 周测卷</a>
           </div>
         </div>
       </div>
@@ -1230,76 +1264,76 @@
   </div>
 
   <!-- ══════ 第8周 ══════ -->
-  <div class="week-block w8" id="w8">
-    <button class="week-header-btn" onclick="toggleWeek('w8')">
-      <div class="week-header-left">
-        <span class="week-num-badge">WEEK 08</span>
-        <div>
-          <div class="week-title">🏆 结业冲刺与毕业考核</div>
-          <div class="week-days-info">Day 50–56 · 全程复盘、综合演练、极端情境、结业模拟、毕业考核</div>
+  <div class="week-block w8" id="w8" data-page-node-id="ROqDVgFh3FD029Hri0vx8U">
+    <button class="week-header-btn" onclick="toggleWeek('w8')" data-page-node-id="eHBrgGQpJlgXIpn5g0hmpd">
+      <div class="week-header-left" data-page-node-id="C5sIuO509fYjZh4PIbDQam">
+        <span class="week-num-badge" data-page-node-id="meamOPPSmBCACGio6OGnbb">WEEK 08</span>
+        <div data-page-node-id="t33Ilb4LcbQ0kHzM82Be4r">
+          <div class="week-title" data-page-node-id="3HH152O9sdK6CmciL395he">🏆 结业冲刺与毕业考核</div>
+          <div class="week-days-info" data-page-node-id="ooIHYePH4uNF5F8bBhAE7G">Day 50–56 · 全程复盘、综合演练、极端情境、结业模拟、毕业考核</div>
         </div>
       </div>
-      <span class="week-chevron">▼</span>
+      <span class="week-prog" data-page-node-id="fFe9b5tkdGudwlQzHLCbOe" style="font-size: 12px;">0/7 天</span><span class="week-chevron" data-page-node-id="XaCGn3BdwVHqXuSN0seif7">▼</span>
     </button>
-    <div class="week-body">
-      <div class="days-grid">
-        <div class="day-col">
-          <div class="day-num">Day 50</div>
-          <div class="day-topic">8周成长复盘与全流程回顾</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_50_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_50_练习题.html">✏️ 练习题</a>
+    <div class="week-body" data-page-node-id="wnCRNZ5UvnKZCeOKdeTImC">
+      <div class="days-grid" data-page-node-id="iMuBI3xz6DirYXDLfI3WXm">
+        <div class="day-col" data-page-node-id="PS2OlHg3swwCbL6S9jTMsj">
+          <div class="day-num" data-page-node-id="bQTUyCUqenqS6AE781Myyg">Day 50</div>
+          <div class="day-topic" data-page-node-id="U7cKHdMCq2eproU7kwoJjl">8周成长复盘与全流程回顾</div>
+          <div class="day-links" data-page-node-id="6HlNvgWxzI8E4UIL1vlUrZ">
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_50_学习内容.html" data-page-node-id="1MAFT9oI1kXJMrjU5xgMYd">📖 学习内容</a>
+            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_50_练习题.html" data-page-node-id="t4hQhqabN1l3SykJ01LJkc">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 51</div>
-          <div class="day-topic">全流程综合演练</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_51_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_51_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="HJHzFfUS6HGotKjVVn4U4e">
+          <div class="day-num" data-page-node-id="afsx0PBuPvR6HoqQsJXDdH">Day 51</div>
+          <div class="day-topic" data-page-node-id="J073c5xyyXMznzvLLL6nEB">全流程综合演练</div>
+          <div class="day-links" data-page-node-id="jgugsrYIGNWjFgBXajAKLD">
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_51_学习内容.html" data-page-node-id="D7h39BALKUDXrTmCca73dc">📖 学习内容</a>
+            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_51_练习题.html" data-page-node-id="5HQAL5zpFpl3lf5Gad2ssG">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 52</div>
-          <div class="day-topic">极端情境挑战与高难度应对</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_52_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_52_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="8VtBHNVKMaOLhCWn8PfDaa">
+          <div class="day-num" data-page-node-id="cWH1cFvhwONDnnxWAgcdAY">Day 52</div>
+          <div class="day-topic" data-page-node-id="hlAyFytPsLUA1ltz5ymPoq">极端情境挑战与高难度应对</div>
+          <div class="day-links" data-page-node-id="RigSMvZv8GG5mDM3vldg7I">
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_52_学习内容.html" data-page-node-id="sCf7uA0KvDFfTgTPvof8Gr">📖 学习内容</a>
+            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_52_练习题.html" data-page-node-id="bpMSFtxFpqG3KCNRl2ZW5X">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 53</div>
-          <div class="day-topic">视光学知识精讲</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_53_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_53_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="nw9x04uXi2LIU3Iov46J8z">
+          <div class="day-num" data-page-node-id="wU7CQUtgEU1jC42iyJ7l2H">Day 53</div>
+          <div class="day-topic" data-page-node-id="pg5GREzmtekHAYdP7K7pkC">视光学知识精讲</div>
+          <div class="day-links" data-page-node-id="VOJavsYVR9vQx9bfQxettp">
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_53_学习内容.html" data-page-node-id="XQT8iYkvrcpqidbErQEvkL">📖 学习内容</a>
+            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_53_练习题.html" data-page-node-id="kbEAhaxwx2C40TBEVNMnIN">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 54</div>
-          <div class="day-topic">销售综合强化与结业前准备</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_54_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_54_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="pD91PQDGwpmQBLOpYx8vy0">
+          <div class="day-num" data-page-node-id="sEZTPW4miioxH2CQMlj13Z">Day 54</div>
+          <div class="day-topic" data-page-node-id="8j5OdbbFfkknl2hl9WXyZp">销售综合强化与结业前准备</div>
+          <div class="day-links" data-page-node-id="fb44sZ319MqI4sFFklSnwT">
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_54_学习内容.html" data-page-node-id="TkcacpXGPK4MdxCvXsfX1f">📖 学习内容</a>
+            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_54_练习题.html" data-page-node-id="Ve7jwIlQUyrrxBZ7eOxasW">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num">Day 55</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">结业综合模拟考试</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_55_学习内容.html">📖 学习内容</a>
-            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_55_练习题.html">✏️ 练习题</a>
+        <div class="day-col" data-page-node-id="5EqoHhgKupTxUVwtONXF64">
+          <div class="day-num" data-page-node-id="MdjXM8jxb4ivFSXzNyzJG7">Day 55</div>
+          <div class="flow-tag check" data-page-node-id="ll9EbmLFdbPaP9n9uCrCNX">考核节点</div>
+          <div class="day-topic" data-page-node-id="Y9kWxe50nLO0ijQEXLu0wD">结业综合模拟考试</div>
+          <div class="day-links" data-page-node-id="5mqPRpfiynl98y0MEcqpP0">
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_55_学习内容.html" data-page-node-id="enALdM0dGNTUv2KrOSJdll">📖 学习内容</a>
+            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_55_练习题.html" data-page-node-id="Z77BQYtR5pJMRKwQA44DAT">✏️ 练习题</a>
           </div>
         </div>
-        <div class="day-col">
-          <div class="day-num exam">Day 56</div>
-          <div class="flow-tag check">考核节点</div>
-          <div class="day-topic">🎓 正式结业考核暨毕业总结</div>
-          <div class="day-links">
-            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_56_学习内容.html">📋 毕业总结</a>
-            <a class="day-link exam-link" href="第8周_结业冲刺与毕业考核/Day_56_周测卷.html">🎓 结业考核卷</a>
-            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_56_练习题.html">✏️ 自评问卷</a>
+        <div class="day-col" data-page-node-id="P4BLDat87JtDoFkYcUX5Dd">
+          <div class="day-num exam" data-page-node-id="GRivLrCwXjx5ammwT073LA">Day 56</div>
+          <div class="flow-tag check" data-page-node-id="UKBjuLYk36Gh52VrbqE3bw">考核节点</div>
+          <div class="day-topic" data-page-node-id="l9hAg99Kb7jvn2ZhVv8Sxy">🎓 正式结业考核暨毕业总结</div>
+          <div class="day-links" data-page-node-id="KmHcJJpGkmRKQiCYnAG9iJ">
+            <a class="day-link learn" href="第8周_结业冲刺与毕业考核/Day_56_学习内容.html" data-page-node-id="yLcEWcW3lzdMocrhPsp6PZ">📋 毕业总结</a>
+            <a class="day-link exam-link" href="第8周_结业冲刺与毕业考核/Day_56_周测卷.html" data-page-node-id="TtxU2GweRsQpBoEsEqd0uT">🎓 结业考核卷</a>
+            <a class="day-link quiz" href="第8周_结业冲刺与毕业考核/Day_56_练习题.html" data-page-node-id="B3Zl7K4w9hhAF0Av34zUdl">✏️ 自评问卷</a>
           </div>
         </div>
       </div>
@@ -1307,47 +1341,136 @@
   </div>
 
   <!-- ─── 配套工具清单 ─── -->
-  <div class="tool-sec">
-    <div class="section-title" style="margin-top:0">
-      <div class="icon-circle">🧰</div>
-      配套工具与模板清单
+  <!--@@ TOOL-COLLAPSE @@-->
+  <div class="tool-sec wf-sec collapsed" id="toolSec" data-page-node-id="ybvQPW5oDF2yIHp0XzeANy">
+    <div class="wf-head" data-page-node-id="Of9bhBSHQQgEeyPDRGefTU">
+      <div class="section-title" style="margin-top:0" data-page-node-id="gICqaOqG8lQl3uH4WUuaOx">
+        <div class="icon-circle" data-page-node-id="TN58BBfzoFcHWLze0LEksR">🧰</div>
+        配套工具与模板清单
+      </div>
+      <button class="wf-toggle" id="toolToggle" type="button" aria-expanded="false" aria-controls="toolBody" onclick="toggleTool()" data-page-node-id="yJMzjMFVm6xeBGYz6oaur6">
+        <span class="wft-arrow" data-page-node-id="2P38etZCG6WDC5gz3CjmN5">▼</span><span class="wft-text" data-page-node-id="DZvPNFUlKSB8SvpW3QJnoG">展开</span>
+      </button>
     </div>
-    <div class="tool-grid">
-      <div class="tool-item"><div class="ti-name">① 岗位训练手册</div><div class="ti-use">承载全部工作站操作标准，是新员工学习的主教材，入职发放、随学随查。<a href="配套工具与模板/模板01_岗位训练手册.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">② 工作站检查表</div><div class="ti-use">把标准拆成可打勾的检查项，用于新人自检、训练员抽检、值班经理周检（覆盖 8 个工作站）。<a href="配套工具与模板/模板02_工作站检查表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">③ 训练员认证标准表</div><div class="ti-use">规范训练员选拔与认证，实操示范+试讲+主管评价，80 分以上持证上岗。<a href="配套工具与模板/模板03_训练员认证标准表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline">→</a></div></div>
-      <div class="tool-item"><div class="ti-name">④ 实操考核评分表</div><div class="ti-use">统一各工作站考核评分尺度，每次考核逐项打分、考后归档。<a href="配套工具与模板/模板04_实操考核评分表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑤ 带教计划/记录表</div><div class="ti-use">首日填写计划，每次带教后记录学习内容与掌握程度，作为考核依据。<a href="配套工具与模板/模板05_带教计划记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑥ 培训数据看板</div><div class="ti-use">集中呈现考核通过率、QSC 得分、客诉量等指标，为优化提供数据支撑。<a href="配套工具与模板/模板06_培训数据看板.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑦ 标准修订记录表</div><div class="ti-use">记录每次标准修订的内容、原因与生效时间，确保全员使用最新版。<a href="配套工具与模板/模板07_标准修订记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item"><div class="ti-name">⑧ 新人成长档案</div><div class="ti-use">汇总入职到转正的全部培训与考核记录，一人一档，用于转正与晋升参考。<a href="配套工具与模板/模板08_新人成长档案.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item" style="background:#fff7f0;border:1.5px solid #ffd9bd"><div class="ti-name" style="color:#c1440e">⑨ 结业应知应会表</div><div class="ti-use">把 56 天全部知识点与技能项整理成一张可交互自检表，三档标记掌握程度、自动统计，结业前逐项过关。<a href="新员工结业应知应会表.html" style="color:#c1440e;font-weight:700;text-decoration:underline"> →</a></div></div>
-      <div class="tool-item" style="background:#f0fbf7;border:1.5px solid #bfe8d9"><div class="ti-name" style="color:#0b6e4f">⑩ 技能实操模拟演练安排表</div><div class="ti-use">8 大工作站 + 卖场运营，49 项技能、630+ 次实操演练：每项技能明确演练次数、演练形式（空演/对练/模拟/真岗）与熟练掌握要求，练到过关才上岗。<a href="技能实操模拟演练安排表.html" style="color:#0b6e4f;font-weight:700;text-decoration:underline"> →</a></div></div>
+    <div class="wf-body" id="toolBody" hidden="" style="height: 0px;" data-page-node-id="kVNhiF883cnmf24qot4aIn">
+    <div class="tool-grid" data-page-node-id="Xoq0eA9QPMLFMllR1xJRvT">
+      <div class="tool-item" data-page-node-id="ClpvfMfcNDsKTDU01sKsJk"><div class="ti-name" data-page-node-id="aJgzQuC6G5Cwx9P0C7YPMj">① 岗位训练手册</div><div class="ti-use" data-page-node-id="c7AjV4MqhxT2CPm5BazUGv">承载全部工作站操作标准，是新员工学习的主教材，入职发放、随学随查。<a href="配套工具与模板/模板01_岗位训练手册.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="LdgKhGRohoX2au9CxaQIBa"> →</a></div></div>
+      <div class="tool-item" data-page-node-id="3qVaSERl9ZF0YeALOL5xOP"><div class="ti-name" data-page-node-id="NfHdf7VK0CNtumUfZNHwFS">② 工作站检查表</div><div class="ti-use" data-page-node-id="CS384JzfOsGIJt6630Xd3Y">把标准拆成可打勾的检查项，用于新人自检、训练员抽检、区域经理周检（覆盖 8 个工作站）。<a href="配套工具与模板/模板02_工作站检查表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="0Ft31MKUhHLBngsi84jWy0"> →</a></div></div>
+      <div class="tool-item" data-page-node-id="mWEyxfBFlUSLitFCqFDIVO"><div class="ti-name" data-page-node-id="MljI8kNv6EG0EMUK6wdNW0">③ 训练员认证标准表</div><div class="ti-use" data-page-node-id="CCBIUsq404G0Ofv0iod5WS">规范训练员选拔与认证，实操示范+试讲+主管评价，80 分以上持证上岗。<a href="配套工具与模板/模板03_训练员认证标准表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="sDUV5WkO9xDZRnenxfpku3">→</a></div></div>
+      <div class="tool-item" data-page-node-id="Y6gmBmkH8epD0KRTXtoYwn"><div class="ti-name" data-page-node-id="bxMhzDDIsp2oXkvYnuPu96">④ 实操考核评分表</div><div class="ti-use" data-page-node-id="MdgBatcXbAgs2Nzh2sDOss">统一各工作站考核评分尺度，每次考核逐项打分、考后归档。<a href="配套工具与模板/模板04_实操考核评分表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="wE9SOl0CrRh8lhx7eoGHz3"> →</a></div></div>
+      <div class="tool-item" data-page-node-id="VR57zAjDTkj42OSbGGtmNU"><div class="ti-name" data-page-node-id="36mdbCDJP641eL6H2NTlpp">⑤ 带教计划/记录表</div><div class="ti-use" data-page-node-id="jKe416lJvacvwY3AvPJp4D">首日填写计划，每次带教后记录学习内容与掌握程度，作为考核依据。<a href="配套工具与模板/模板05_带教计划记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="S1MY9N2iSjpMmjh3TogsqY"> →</a></div></div>
+      <div class="tool-item" data-page-node-id="6xiFCVhVayZyKmQ80x8kRp"><div class="ti-name" data-page-node-id="3dSK21Y8YG3s9dLkFCYFrq">⑥ 培训数据看板</div><div class="ti-use" data-page-node-id="1m7jUqmqrXQ9soiiFoWvGE">集中呈现考核通过率、QSC 得分、客诉量等指标，为优化提供数据支撑。<a href="配套工具与模板/模板06_培训数据看板.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="gqqZSZSaWOrUDko2tVxLGV"> →</a></div></div>
+      <div class="tool-item" data-page-node-id="ykVGdiCOVmK7Qufp8Ji3dw"><div class="ti-name" data-page-node-id="iIc0pDAbGhU0MEolizntep">⑦ 标准修订记录表</div><div class="ti-use" data-page-node-id="tJZSXBsBHanWyXJHB9FLQw">记录每次标准修订的内容、原因与生效时间，确保全员使用最新版。<a href="配套工具与模板/模板07_标准修订记录表.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="hf3H62eVxdi3HH4m4znrkz"> →</a></div></div>
+      <div class="tool-item" data-page-node-id="q9rpC3qcIiRcz0yeqd7KWH"><div class="ti-name" data-page-node-id="ukLpt6ZmauWohPBP2Ewiwf">⑧ 新人成长档案</div><div class="ti-use" data-page-node-id="S4CqFbIoJOMINzyt1ZPXDu">汇总入职到转正的全部培训与考核记录，一人一档，用于转正与晋升参考。<a href="配套工具与模板/模板08_新人成长档案.html" style="color:#2c5aa0;font-weight:700;text-decoration:underline" data-page-node-id="AZhV5W1z0zItClYAcOMEpy"> →</a></div></div>
+      <div class="tool-item" style="background:#fff7f0;border:1.5px solid #ffd9bd" data-page-node-id="gxCzxLjCtLBA37xw3XYRAY"><div class="ti-name" style="color:#c1440e" data-page-node-id="CYPaq5UO3I928cDrFpz6i2">⑨ 结业应知应会表</div><div class="ti-use" data-page-node-id="yRe33lGByl5f82DfnNRv0e">把 56 天全部知识点与技能项整理成一张可交互自检表，三档标记掌握程度、自动统计，结业前逐项过关。<a href="新员工结业应知应会表.html" style="color:#c1440e;font-weight:700;text-decoration:underline" data-page-node-id="CC06qhPKOcwPWZBfnB4KKh"> →</a></div></div>
+      <div class="tool-item" style="background:#f0fbf7;border:1.5px solid #bfe8d9" data-page-node-id="dRmfGoXyzMQVWtEmnOuqUE"><div class="ti-name" style="color:#0b6e4f" data-page-node-id="AQtDHxgjOMHBv2UmCIhYbF">⑩ 技能实操模拟演练安排表</div><div class="ti-use" data-page-node-id="jNEDhJgOhWGltlhzOXNHp8">8 大工作站 + 卖场运营，49 项技能、630+ 次实操演练：每项技能明确演练次数、演练形式（空演/对练/模拟/真岗）与熟练掌握要求，练到过关才上岗。<a href="技能实操模拟演练安排表.html" style="color:#0b6e4f;font-weight:700;text-decoration:underline" data-page-node-id="GUnjAfxWaKFoTCTWCZ4G00"> →</a></div></div>
     </div>
-    <a class="sys-link" href="配套工具与模板/index.html">《配套工具与模板》</a>
-    <a class="sys-link" href="新员工培训四大流程体系_标准-带教-考核-优化.html">《四大流程体系》</a>
-    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#e8722c,#c1440e)" href="新员工结业应知应会表.html">《新员工应知应会表》</a>
-    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#26a69a,#0b6e4f)" href="技能实操模拟演练安排表.html">《技能实操模拟演练安排表》</a>
-    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#3949ab,#1a237e)" href="新员工试用期解除情形与判断标准.html">《试用期解除情形与判断标准》</a>
+    <a class="sys-link" href="新员工培训四大流程体系_标准-带教-考核-优化.html" data-page-node-id="RHEQzFqDBOFVfGrjplweyu">《四大流程体系》</a>
+    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#b71c1c,#d32f2f)" href="新员工试用期解除情形与判断标准.html" data-page-node-id="yUnS1Ita1hEfBDDD99F6tv">《试用期解除情形与判断标准》</a>
+    <a class="sys-link" style="margin-left:12px;background:linear-gradient(135deg,#00695c,#00897b)" href="带教老师管理方案.html" data-page-node-id="2RODJcxvNkYWhAcCQVWBGy">《带教老师管理方案》</a>
+    </div>
+  </div>
+
+  <!-- ─── 门店标准手册（工作流程）─── -->
+  <div class="tool-sec wf-sec collapsed" id="wfSec" data-page-node-id="Z6JQOpmQpF2TnbNvvAClMi">
+    <div class="wf-head" data-page-node-id="DHSkDenCRQZKy2uAnjRT9s">
+      <div class="section-title" style="margin-top:0" data-page-node-id="L4XSzTRCJ4oyTXSnylA0m5">
+        <div class="icon-circle" data-page-node-id="p15b8SdOi6aod4XLfehLkl">📘</div>
+        门店标准作业标准流程
+      </div>
+      <button class="wf-toggle" id="wfToggle" type="button" aria-expanded="false" aria-controls="wfBody" onclick="toggleWf()" data-page-node-id="aKUTu6nJ1ueCs6hQernHOY">
+        <span class="wft-arrow" data-page-node-id="iiJYCsFL54cdgxew165BmE">▼</span><span class="wft-text" data-page-node-id="WltU5gHQMD8mF7WYfCuzgf">展开</span>
+      </button>
+    </div>
+    <div class="wf-body" id="wfBody" data-page-node-id="9QhRKrw7Nzs8D0xVo2wDUh" style="height: 0px;" hidden="">
+    <p class="wf-intro" data-page-node-id="IuAHindb34dJYTBEXU4LlF">课程解决"<strong data-page-node-id="vjFRjkvSOFiTt02RF94LE3">知道怎么做</strong>"，手册解决"<strong data-page-node-id="yBb0i2DQ8kElVEVddJEmGE">照着做、做到一致</strong>"。这十一本手册对应新员工上岗后每天真正要做的动作，全部来自门店实操沉淀，统一版式、可直接打印上墙；每日课程里学到的知识点，都能在手册中找到可照读的标准动作与标准话术。<br data-page-node-id="xiqb7HcaweYbQlechdfB6M">📌 配合建议：<strong data-page-node-id="S1MQDcG2EWAqP6zp3NxFv4">第 3–4 周</strong>学完专业技能与销售话术后，用《取镜流程》《渐进眼镜取镜流程》《标准验光流程》《销售服务流程》做对照演练；<strong data-page-node-id="5oJqsAZ3qUFRhvsHDgB3vA">第 5–6 周</strong>跟岗与独立接单，用《眼镜调校》《整形细节三十项》反复练手、用《眼镜质检流程与标准》把好交付关；<strong data-page-node-id="n6pHHWp3736LrvIrP3EfGK">第 7 周</strong>用《整形技能考核表》逐项自测打分。青少年近视防控相关岗位，请重点学习《青少年复查标准流程》，掌握三阶段复查服务闭环。</p>
+
+    <div class="wf-group" data-page-node-id="rRHqjz7ltLMldU1Ztd6erb">① 顾客服务主流程 <em data-page-node-id="wkCAtiH8aqd121v0qgROQP">柜台 → 验光室 → 交付，全链路三步</em></div>
+    <div class="wf-grid" data-page-node-id="NyiYubcVjShfNLA7sB9K4Q">
+      <a class="wf-item" href="工作流程/销售服务流程.html" data-page-node-id="Ir3CbT7VOd4Sudp3zOxdAm">
+        <div class="wi-name" data-page-node-id="ybJlD0JpUmkQbtGuGXm6Ao">销售服务流程</div>
+        <div class="wi-use" data-page-node-id="FZSxZBNr2aImVEFfz0WTY7">12 步骤四阶段：迎宾接待 → 需求探寻 → 处方解读 → 商品推荐 → 异议谈判 → 成交收银 → 送客离店，含标准动作与标准话术。</div>
+        <div class="wi-go" data-page-node-id="mVp2gebqEyCoyGBrE0kYME">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/标准验光流程.html" data-page-node-id="PwAFie3SuusVAgPo0Zp6ja">
+        <div class="wi-name" data-page-node-id="igHSftGKP0uK1tNSUwSvRm">标准验光流程</div>
+        <div class="wi-use" data-page-node-id="ZhDY074ufdCqF3BFtQ6Zuk">18 个环节分四阶段：开场与基础检查 → 主觉验光 → 散光精调 → 视力与双眼平衡，含验光三目的、三问句式与关键参数。</div>
+        <div class="wi-go" data-page-node-id="syVlzwpWHa4LPG5ZYg7Gxf">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/取镜流程.html" data-page-node-id="8IATO35xARxWwXPnECr2dt">
+        <div class="wi-name" data-page-node-id="8HxwGOleEYE4oyGObfJJ43">取镜流程</div>
+        <div class="wi-use" data-page-node-id="4Ln7IizcfNqbHYR8KBJIMt">十步标准作业：迎宾接待 → 引座倒水 → 核单取镜 → 成镜检查 → 试戴交接 → 观察微调 → 适度赞美 → 交代注意事项 → 转介绍包装结款 → 礼送离店。</div>
+        <div class="wi-go" data-page-node-id="FiTR34Z3IZ4Ano8wM4kSWq">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/渐进眼镜取镜流程.html" data-page-node-id="2FITgPRubqHCYjNVLqSUQv">
+        <div class="wi-name" data-page-node-id="meEt4B7mcaNfvZXlOFN4Y8">渐进眼镜取镜流程</div>
+        <div class="wi-use" data-page-node-id="2N2b0QErYhn6Oul48NEk3F">取镜流程的渐进专项扩展册：适用对象与差异对比、十步 + 四项渐进专项（试戴对位 / 渐进微调 / 适应指导 / 随访交代）、四项特殊要求与六类常见问题处理。</div>
+        <div class="wi-go" data-page-node-id="WuXHQfSTugawEXyw588pJn">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/消费者需求探寻表.html" data-page-node-id="21lEB5JmLxVv5h7plGOmci">
+        <div class="wi-name" data-page-node-id="jsVakntoqQ9nKCRkniCRvk">消费者需求探寻表</div>
+        <div class="wi-use" data-page-node-id="OgwiR9ybGD7w3V58I0TDfU">七大类别、十一种场景的探寻话术，可直接照读：结合场景提问、用眼习惯、旧镜问题、年龄与工作场景、犹豫点、价格敏感、家人需求。</div>
+        <div class="wi-go" data-page-node-id="Wk9iDwWPEAg5HE9rFNMqq9">打开手册 →</div>
+      </a>
+    </div>
+
+    <div class="wf-group" data-page-node-id="lbW2OHEPyfZeIZTrivYVpt">② 眼镜整形与调校 <em data-page-node-id="ZymCTpPAYNkG6BRIpN3A4z">手上真功夫，靠反复练</em></div>
+    <div class="wf-grid" data-page-node-id="78lqbncxRiwfmXDRQsvsJS">
+      <a class="wf-item" href="工作流程/眼镜调校.html" data-page-node-id="VYwqU80Gj53JFUX34LPfk3">
+        <div class="wi-name" data-page-node-id="On6kSz6QSXk3oSqklAFksc">眼镜调校标准手册</div>
+        <div class="wi-use" data-page-node-id="NBe57I11jb2nx0uyMQwVQm">A 面（水平/垂直/扭曲）、B 线（镜腿流线/合拢叠线）、C 角度（前弯弧/倾斜角/外张角/脚套弯弧/内切度）、D 点（鼻托服帖）、E 注意七条，五维作业体系。</div>
+        <div class="wi-go" data-page-node-id="zPmmCw4AytjE6OpD5yu2Ju">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/整形细节30项.html" data-page-node-id="j7UMxQcBWz5gG9WWk55Xal">
+        <div class="wi-name" data-page-node-id="5ZmBRFGWjdh9JsO5GMWQjD">整形细节三十项</div>
+        <div class="wi-use" data-page-node-id="D5QSKyABrsQitUpAuaEQBE">三十项实操基本功，按门店使用频次由高到低排列，附五档能力地图；全框 / 半框 / 无框 / 板材全覆盖。第 5–6 周练手主教材。</div>
+        <div class="wi-go" data-page-node-id="xPl858gnZz72Qk5iLORgqO">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/整形技能考核表.html" data-page-node-id="XjHmAX8Ru8AbECQiyIQ1ru">
+        <div class="wi-name" data-page-node-id="m0BSvVmMgRVlk75DQEGbgP">整形技能考核表</div>
+        <div class="wi-use" data-page-node-id="7A9ari4SVEqWwiwqBeuZUT">三十项逐项考核表：三档评分标准（优秀/合格/不合格）、分值合计 100 分、考生信息栏 + 评级标准 + 考核说明，可直接打印考核。</div>
+        <div class="wi-go" data-page-node-id="gIqKC8x6LowjgrTpo8xRz4">打开考核表 →</div>
+      </a>
+    </div>
+
+    <div class="wf-group" data-page-node-id="Bm4357ZlUazTD0FzjW3Xm0">③ 质量把控与专业输出 <em data-page-node-id="AEdRnyQ8ocA17c9jiR5ADz">把好最后一关，把数据讲明白</em></div>
+    <div class="wf-grid" data-page-node-id="gH1FP3Z5dvnrpLkZvG6liF">
+      <a class="wf-item" href="工作流程/眼镜质检流程与标准.html" data-page-node-id="YhhsADtqkhkWL3Df82EZF5">
+        <div class="wi-name" data-page-node-id="X1r2H9qf4dGgvwChtDL65D">眼镜质检流程与标准</div>
+        <div class="wi-use" data-page-node-id="nVorZBkOGOcnhcAd3hVVy1">成镜检查四步走：核对 → 外观检测十一项 → 装框数据检测七步 → 按《GB 13511.1-2011》四组允差表判定瞳距、水平互差、垂直互差、散光轴向，不合格立即退回加工区。</div>
+        <div class="wi-go" data-page-node-id="Hp1IlRnzqC7bxbrtfq9F7r">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/七步标准解读SOP.html" data-page-node-id="pKzHAGdOjthFqKdQMQaKbT">
+        <div class="wi-name" data-page-node-id="QhWbuGemlddY1oWr8ytnNN">七步标准解读 SOP</div>
+        <div class="wi-use" data-page-node-id="xJE30YAVCKWQK3zQL0H7r8">《检查报告解读标准化方案》模块 02：检查数据梳理 → 异常值识别 → 异常原因 → 异常影响 → 解决方案等七步解读法，附通用开场话术与话术模板。</div>
+        <div class="wi-go" data-page-node-id="UJMnQZlDEmKMHNNcx9l6Av">打开手册 →</div>
+      </a>
+      <a class="wf-item" href="工作流程/青少年复查标准流程.html" data-page-node-id="jFDuPyR1VqxIXf4pUpJGti">
+        <div class="wi-name" data-page-node-id="pHTXtAxq0Uc32pTpBMbBf6">青少年复查标准流程</div>
+        <div class="wi-use" data-page-node-id="cyHrPEJBoHbKY9qVa8oOsY">三阶段标准流程：接待与准备（≤5 分钟）→ 专业检查与评估（15–20 分钟）→ 健康咨询与主动闭环（≥10 分钟）。每步配标准操作、话术指引与关键检查点，强制当场完成下次预约。</div>
+        <div class="wi-go" data-page-node-id="uqEYUOiulG0JqiTqgJGa3W">打开手册 →</div>
+      </a>
+    </div>
+    </div><!-- /wf-body -->
   </div>
 
   <!-- ─── 学习建议 ─── -->
-  <div class="tip-box" style="margin-top:40px">
-    <div>
-      <h3>学习建议 · 按四大流程走完全程</h3>
-      <p>每天按顺序完成当天的<strong>学习内容</strong>和<strong>练习题</strong>，两者之间可通过底部导航按钮一键切换。学习内容建议早班前或午休时阅读，练习题当天完成。每份学习内容末尾的「<strong>四大流程落地衔接</strong>」模块，会告诉你今天学的知识对应当哪个工作站、怎么带教、怎么考核、如何回流优化——请配合训练员逐项落实。<br>📌 <strong>中期考核（Day 28）</strong>和<strong>结业考核（Day 56）</strong>是阶段性检验，请认真对待，考核结果将作为转正评定的重要参考依据。<br>📕 关于试用期<strong>转正与解除</strong>的具体情形、判断标准与依据（考核不达标、严重违纪、个人意愿离职等），详见 <a href="新员工试用期解除情形与判断标准.html" style="color:#ffd9a8;font-weight:700;text-decoration:underline">《新员工试用期解除情形与判断标准》</a>。</p>
+  <div class="tip-box" style="margin-top:40px" data-page-node-id="GvqC0bLvCAjHQQXoFEml5H">
+    <div data-page-node-id="7p1kh0ez1pEGRYcAYTJAKM">
+      <h3 data-page-node-id="1KNlobV4zBRdWElYpiij5E">学习建议 · 按四大流程走完全程</h3>
+      <p data-page-node-id="NCQnCUfBkHfn9pIHnMcqgr">每天按顺序完成当天的<strong data-page-node-id="jZKjHJDGYGBOCA0aOc6yQD">学习内容</strong>和<strong data-page-node-id="Veg49Byek58CKIZKXF1J9H">练习题</strong>，两者之间可通过底部导航按钮一键切换。学习内容建议早班前或午休时阅读，练习题当天完成。每份学习内容末尾的「<strong data-page-node-id="SDi2dUCdyfPmk6AlUVdcn8">四大流程落地衔接</strong>」模块，会告诉你今天学的知识对应当哪个工作站、怎么带教、怎么考核、如何回流优化——请配合训练员逐项落实。<br data-page-node-id="Rd88tkaFnsqugWcH1dDrhR">📌 <strong data-page-node-id="voLfDGZViNVTHlUOlswakb">中期考核（Day 28）</strong>和<strong data-page-node-id="0DAJF62GT2PqW21LPLABwb">结业考核（Day 56）</strong>是阶段性检验，请认真对待，考核结果将作为转正评定的重要参考依据。<br data-page-node-id="s8N3FgMIKhF77RTFders6d">📕 关于试用期<strong data-page-node-id="HOhvDJj3dBuEFrE8WomXCk">转正与解除</strong>的具体情形、判断标准与依据（考核不达标、严重违纪、个人意愿离职等），详见 <a href="新员工试用期解除情形与判断标准.html" style="color:#ffd9a8;font-weight:700;text-decoration:underline" data-page-node-id="AMKNm11jGNGOAFYTriMb35">《新员工试用期解除情形与判断标准》</a>。</p>
     </div>
   </div>
 
 </div>
 
-<button class="to-top" id="toTop" type="button" title="回到顶部">↑</button>
+<button class="to-top show" id="toTop" type="button" title="回到顶部" data-page-node-id="Wv590E74XO9tLgGA5PixHN">↑</button>
 
-<footer>
-  <strong>永州爱眼城新员工8周成才培训体系 · V1.0版本</strong> &nbsp;|&nbsp; 全套课程 · 共56天 · 108个学习文件
+<footer data-page-node-id="EyFqZTByhoRZ3YzzsGyrh4">
+  <strong data-page-node-id="p2fTKhcqiZgCFn160qRaWm">永州爱眼城新员工8周成才培训体系 · 闫胜君编撰</strong> &nbsp;|&nbsp; 全套课程 · 共56天 · 108个学习文件
 </footer>
 
-<script>
+<script data-page-node-id="sD3vAC3QoPtErADzMfH5c6">
 (function(){
   var KEY='eye8w_progress_v1', OPEN_KEY='eye8w_open_v1';
   var visited={};
@@ -1360,11 +1483,15 @@
   var hideDone=document.getElementById('hideDone');
   var noResult=document.getElementById('noResult');
 
-  /* ── 周进度标签 ── */
+  /* ── 周进度标签（幂等：编辑器回写会把标签固化进 HTML，此处复用已有节点，避免出现空白小胶囊）── */
   blocks.forEach(function(b){
-    var span=document.createElement('span');
-    span.className='week-prog';
-    b.querySelector('.week-header-btn').insertBefore(span, b.querySelector('.week-chevron'));
+    var btn=b.querySelector('.week-header-btn');
+    var span=btn.querySelector('.week-prog');
+    if(!span){
+      span=document.createElement('span');
+      span.className='week-prog';
+      btn.insertBefore(span, btn.querySelector('.week-chevron'));
+    }
   });
 
   function dayDone(col){
@@ -1442,6 +1569,59 @@
     refresh();
   };
 
+  /* ── 门店标准手册 展开 / 收起 ── */
+  var WF_KEY='eye8w_wf_open_v1';
+  var wfSec=document.getElementById('wfSec');
+  var wfBody=document.getElementById('wfBody');
+  var wfToggle=document.getElementById('wfToggle');
+
+  function wfApply(open, save){
+    wfSec.classList.toggle('collapsed', !open);
+    wfToggle.setAttribute('aria-expanded', open ? 'true':'false');
+    wfToggle.querySelector('.wft-text').textContent = open ? '收起' : '展开';
+    if(open){
+      wfBody.hidden=false;
+      wfBody.style.height='auto';
+    }else{
+      wfBody.style.height=wfBody.scrollHeight+'px';
+      void wfBody.offsetHeight;
+      wfBody.style.height='0px';
+      setTimeout(function(){ if(wfSec.classList.contains('collapsed')) wfBody.hidden=true; }, 340);
+    }
+    if(save){ try{ localStorage.setItem(WF_KEY, open?'1':'0'); }catch(e){} }
+  }
+  window.toggleWf=function(){
+    wfApply(wfSec.classList.contains('collapsed'), true);
+  };
+
+  var wfOpen=false;
+  try{ var sv=localStorage.getItem(WF_KEY); if(sv!==null) wfOpen=(sv==='1'); }catch(e){}
+  wfApply(wfOpen, false);
+
+  /*@@ TOOL-COLLAPSE @@*/ /* ── 配套工具与模板清单 展开 / 收起（初始始终为「收起」）── */
+  var toolSec=document.getElementById('toolSec');
+  var toolBody=document.getElementById('toolBody');
+  var toolToggle=document.getElementById('toolToggle');
+
+  function toolApply(open){
+    toolSec.classList.toggle('collapsed', !open);
+    toolToggle.setAttribute('aria-expanded', open ? 'true':'false');
+    toolToggle.querySelector('.wft-text').textContent = open ? '收起' : '展开';
+    if(open){
+      toolBody.hidden=false;
+      toolBody.style.height='auto';
+    }else{
+      toolBody.style.height=toolBody.scrollHeight+'px';
+      void toolBody.offsetHeight;
+      toolBody.style.height='0px';
+      setTimeout(function(){ if(toolSec.classList.contains('collapsed')) toolBody.hidden=true; }, 340);
+    }
+  }
+  window.toggleTool=function(){
+    toolApply(toolSec.classList.contains('collapsed'));
+  };
+  toolApply(false);   /* 初始状态：收起 */
+
   var toTop=document.getElementById('toTop');
   window.addEventListener('scroll', function(){
     toTop.classList.toggle('show', window.scrollY>420);
@@ -1454,5 +1634,10 @@
   refresh();
 })();
 </script>
-</body>
-</html>
+
+
+
+
+
+
+</body></html>
