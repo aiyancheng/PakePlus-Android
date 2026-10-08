@@ -285,6 +285,13 @@ body{padding:0!important;margin:0!important}
 @media(max-width:600px){
   table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
 }
+
+/*@@ DAY19-TBL-FIX @@*/
+/* ═══ 售后闭环表列宽修正：窄屏解除固定像素宽，按内容自适应分布（防末列被挤成 21px） ═══ */
+@media(max-width:700px){
+  .structure-table thead th[style*="width"]{width:auto!important}
+  .structure-table tbody td:first-child strong{white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -407,6 +414,30 @@ body{padding:0!important;margin:0!important}
     <div class="highlight-box">
       <strong>重要：</strong>热整形时温度不能过高，金属镜架不适合热整形（应用镜架整形钳），有镶钻或特殊涂层的镜架须向技师确认能否热整形，以免损坏。
     </div>
+  </div>
+
+  <!-- 二·补、售后闭环与保养标准（手册·销售服务流程 / 取镜流程） -->
+  <div class="card">
+    <h2><span>🔁</span>二·补、售后闭环三条链路与保养标准</h2>
+    <p style="line-height:1.9;color:#444;margin-bottom:14px">售后不是"修好了就完事"。手册把售后分成<strong>三条链路</strong>，每条都要形成闭环，并把结果回写到顾客档案。</p>
+    <table class="structure-table">
+      <thead><tr><th style="width:96px">链路</th><th style="width:300px">常见项目</th><th>闭环动作</th></tr></thead>
+      <tbody>
+        <tr><td><strong>即时处理</strong></td><td>清洗、调整松紧、更换鼻托、拧紧螺丝</td><td>当面完成、当面交付，讲清"这次做了什么、回去注意什么"。</td></tr>
+        <tr><td><strong>留店处理</strong></td><td>更换镜腿、焊接、无框加固、崩边修复</td><td>登记取镜单，明确预计时间与联系方式，处理完电话通知。</td></tr>
+        <tr><td><strong>返厂处理</strong></td><td>镜架不可修复、需原厂配件</td><td>说明周期与费用，征得同意后寄出，跟单到交付，闭环留痕。</td></tr>
+      </tbody>
+    </table>
+    <h3 style="margin:20px 0 10px">日常保养 7 条（交给顾客，提升复访）</h3>
+    <ol class="lm-list" style="line-height:1.95;color:#444">
+      <li>摘戴镜用<strong>双手</strong>，避免镜腿外张变形。</li>
+      <li>先放<strong>镜布垫手</strong>再拧桩头/调校，防止刮伤。</li>
+      <li>镜片不用时<strong>凸面朝上</strong>放镜盒，镜腿折好。</li>
+      <li>用清水冲 + 专用镜布擦，<strong>不干擦、不用衣服角</strong>。</li>
+      <li>远离高温（桑拿、车内仪表台），防止膜层龟裂、板材变形。</li>
+      <li>定期到店<strong>免费调校紧螺丝</strong>，建议每 1—2 个月一次。</li>
+      <li>出现松、歪、鼻托压痕等小问题<strong>尽早到店</strong>，小问题别拖成大问题。</li>
+    </ol>
   </div>
 
   <!-- 三、清洗保养 -->
@@ -534,7 +565,7 @@ body{padding:0!important;margin:0!important}
 <div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>通过售后受理与维修实操检验综合能力。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>实操：完成一次售后受理 + 一次基础维修</li><li>售后流程评分达标</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>受理规范、维修到位，即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>考核要含‘政策问答’——看新人是否清楚售后承诺的边界。</div></div>
 <div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>若售后返修率高，核对维修质量标准。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>统计售后返修案例</li><li>核对维修质量标准，找出‘修了又坏’的共性原因</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成维修标准优化项，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>反复返修说明‘修的标准’不清晰——是标准问题，不只是手法问题。</div></div>
   </div>
-  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 区域经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
 
