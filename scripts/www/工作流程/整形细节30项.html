@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="mD60zsDVS3lz6DMH3FPNT3"><head data-page-node-id="bh87T63tKdotA0Eg2gVj6L">
+<meta charset="UTF-8" data-page-node-id="IqeNoPRIuNyabQEs1l57Uy">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="m6xetvYzrz6wFejj2YLknR">
+<title>爱眼城眼镜 · 整形细节三十项</title>
+<style>
+:root{
+    --brand:#0b6ab0;
+    --brand-d:#084f84;
+    --brand-l:#eaf3fb;
+    --accent:#c8102e;
+    --ink:#16232e;
+    --ink-2:#405060;
+    --ink-3:#7b8b9a;
+    --line:#dbe6f0;
+    --bg:#eef4f9;
+    --say:#fffaf0;
+    --say-b:#e6cf9a;
+    --say-t:#8a6414;
+    --ok:#0d7a55;
+    --act:#0d7a55;
+    --act-l:#eafaf3;
+    --warn:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.7;font-size:15px;padding:20px 16px 56px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+  .banner{position:relative;
+    background:linear-gradient(120deg,#0b6ab0 0%,#0a5b98 55%,#084f84 100%);
+    color:#fff;border-radius:16px;padding:28px 36px 26px;
+    overflow:hidden;box-shadow:0 10px 28px rgba(8,79,132,.20);
+  }
+  .banner::after{content:"";position:absolute;right:-70px;top:-70px;
+    width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+  }
+  .banner::before{content:"";position:absolute;right:80px;bottom:-90px;
+    width:180px;height:180px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.09),transparent 70%);
+  }
+  .banner-in{position:relative;z-index:1;}
+  .logo-chip{display:inline-block;background:#fff;border-radius:10px;
+    padding:7px 14px;margin-bottom:14px;box-shadow:0 3px 10px rgba(0,0,0,.18);
+  }
+  .logo-chip img{display:block;height:40px;width:auto;}
+  .banner h1{font-size:27px;font-weight:700;letter-spacing:1.5px;line-height:1.35;}
+  .banner .sub{margin-top:8px;font-size:14.5px;opacity:.9;}
+  .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;}
+  .chips span{font-size:12.5px;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:4px 15px;
+  }
+  .banner .creed{margin-top:18px;padding-top:15px;
+    border-top:1px dashed rgba(255,255,255,.32);
+    font-size:14px;letter-spacing:.6px;
+  }
+  .banner .creed b{color:#ffe08a;font-weight:700;}
+  .sec-title{display:flex;align-items:center;gap:10px;
+    margin:26px 0 14px;font-size:17px;font-weight:700;color:var(--brand-d);
+  }
+  .sec-title em{font-style:normal;font-size:12.5px;font-weight:400;color:var(--ink-3);margin-left:2px;}
+  /* 能力地图 */
+
+  .maps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .map{background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;
+  }
+  .map h5{font-size:14px;color:var(--brand-d);font-weight:700;margin-bottom:6px;}
+  .map .n{font-size:11.5px;color:var(--brand);font-weight:700;letter-spacing:.5px;
+    margin-bottom:5px;
+  }
+  .map .items{font-size:12.5px;color:var(--ink-2);line-height:1.85;}
+  .map .items i{font-style:normal;display:inline-block;
+    background:var(--brand-l);border:1px solid #cfe2f2;border-radius:5px;
+    padding:0 6px;margin:0 3px 3px 0;
+  }
+  .map.m5 .n{color:#0b8f8f;}
+  .map.m5 .items i{background:#e9fbfb;border-color:#bfeeef;}
+  .map.m6 .n{color:#c8102e;}
+  .map.m6 .items i{background:#fdf2f4;border-color:#f2c8ce;}
+  /* 速查条 */
+
+  .quickbar{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;
+  }
+  .quickbar .qt{font-size:13px;color:var(--ink-3);margin-bottom:10px;}
+  .qgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;}
+  .qgrid .qi{border:1px solid #cfe2f2;background:var(--brand-l);border-radius:10px;
+    padding:9px 8px;text-align:center;
+  }
+  .qgrid .qi b{display:block;font-size:17px;color:var(--brand);
+    font-family:"Segoe UI",Arial,sans-serif;line-height:1.1;
+  }
+  .qgrid .qi i{font-style:normal;display:block;font-size:12px;color:var(--ink);margin-top:3px;font-weight:600;}
+  .qgrid .qi.new{border-color:#bfeeef;background:#e9fbfb;}
+  .qgrid .qi.new b{color:#0b8f8f;}
+  /* 步骤卡 */
+
+  .steps{display:flex;flex-direction:column;gap:12px;}
+  .step{display:grid;grid-template-columns:84px 1fr;background:#fff;
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,60,100,.05);
+  }
+  .step .axis{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-d) 100%);
+    color:#fff;display:flex;flex-direction:column;align-items:center;
+    justify-content:flex-start;padding:16px 6px 14px;text-align:center;
+  }
+  .step .axis .no{font-size:24px;font-weight:800;line-height:1;
+    font-family:"Segoe UI",Arial,sans-serif;letter-spacing:-1px;
+  }
+  .step .axis .lbl{margin-top:6px;font-size:11px;letter-spacing:1.5px;opacity:.82;}
+  .step .axis .dotline{flex:1;width:0;border-left:1px dashed rgba(255,255,255,.42);margin:12px 0 0;}
+  .step .main{padding:14px 18px 16px;}
+  .step .head{display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+    padding-bottom:9px;border-bottom:1px solid #eef3f8;margin-bottom:10px;
+  }
+  .step .head h3{font-size:16.5px;font-weight:700;color:var(--brand-d);letter-spacing:.3px;}
+  .step .head .cat{font-size:11.5px;color:var(--brand-d);background:var(--brand-l);
+    border:1px solid #c6dcf0;border-radius:999px;padding:2px 11px;white-space:nowrap;
+  }
+  .step .head .tag{margin-left:auto;font-size:12px;color:var(--accent);
+    background:#fdf2f4;border:1px solid #f2c8ce;
+    border-radius:999px;padding:2px 12px;white-space:nowrap;
+  }
+  .step .body{font-size:14px;color:var(--ink-2);}
+  .step .body p{margin-bottom:5px;}
+  .step .body p:last-child{margin-bottom:0;}
+  .k{color:var(--brand-d);font-weight:700;}
+  .r{color:var(--accent);font-weight:700;}
+  .sub{display:block;padding-left:4px;margin-top:3px;}
+  .chipsline{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+  .chipsline i{font-style:normal;font-size:13px;color:var(--ink-2);
+    background:#fbfdff;border:1px solid #e8eff6;border-radius:7px;padding:2px 10px;
+  }
+  .chipsline i b{color:var(--brand-d);}
+  /* 新增项标记 */
+
+  .step.added{border-color:#bfeeef;}
+  .step.added .head h3{color:#0b8f8f;}
+  .step.added .head .cat{color:#0b8f8f;background:#e9fbfb;border-color:#bfeeef;}
+  .badge-new{font-size:11px;color:#fff;background:#13c2c2;
+    border-radius:999px;padding:1px 9px;letter-spacing:.5px;font-weight:700;
+  }
+  /* 备注区 */
+
+  .panel{background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:20px 22px 22px;
+  }
+  .notelist{list-style:none;}
+  .notelist li{position:relative;padding-left:16px;font-size:13.5px;
+    color:var(--ink-2);margin-bottom:6px;
+  }
+  .notelist li::before{content:"";position:absolute;left:2px;top:9px;
+    width:5px;height:5px;border-radius:50%;background:#9dc2df;
+  }
+  .redline{margin-top:16px;border-radius:10px;background:#fdf2f4;
+    border:1px solid #f2c8ce;border-left:5px solid var(--accent);
+    padding:13px 18px;font-size:13.5px;color:#8c2436;line-height:1.8;
+  }
+  .redline b{color:var(--accent);}
+  .warnbar b{color:var(--warn);}
+  footer{margin-top:24px;text-align:center;font-size:12.5px;
+    color:var(--ink-3);line-height:2;
+  }
+  footer b{color:var(--brand-d);}
+  @media (max-width:980px){
+.maps{grid-template-columns:repeat(2,1fr);} .qgrid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:700px){
+body{padding:12px 9px 40px;font-size:14.5px;}
+    .banner{padding:18px 16px 18px;border-radius:12px;}
+    .logo-chip img{height:32px;}
+    .logo-chip{padding:5px 10px;margin-bottom:10px;}
+    .banner h1{font-size:20px;letter-spacing:.5px;}
+    .banner .sub{font-size:13.5px;}
+    .maps{grid-template-columns:1fr;}
+    .qgrid{grid-template-columns:repeat(2,1fr);}
+    .step{grid-template-columns:58px 1fr;border-radius:12px;}
+    .step .axis{padding:12px 3px 10px;}
+    .step .axis .no{font-size:18px;}
+    .step .axis .lbl{font-size:9px;letter-spacing:.5px;}
+    .step .main{padding:12px 13px 14px;}
+    .step .head h3{font-size:15px;}
+    .step .head .tag{margin-left:0;}
+    .sec-title{font-size:15.5px;margin:20px 0 12px;}
+    .step .body{font-size:13.5px;}
+  }
+  @media print{
+@page{size:A4;margin:12mm 10mm;}
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .wrap{max-width:100%;}
+    .step,.panel,.banner,.map,.quickbar{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact;
+      break-inside:avoid;
+    }
+    .steps{gap:7px;}
+    .step .axis .dotline{display:none;}
+    .banner{border-radius:0;}
+  }
+/*@@ HOME-BACK-BTN @@*/
+/* ═══ 返回首页：嵌入页头（banner / topbar）右上角 ═══ */
+.banner,.topbar{position:relative!important}
+.back-home{position:absolute;right:18px;top:16px;z-index:9;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.16);color:#fff!important;font-size:13px;font-weight:700;line-height:1;
+  padding:9px 16px;border-radius:22px;text-decoration:none!important;
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 3px 10px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:inherit;-webkit-tap-highlight-color:transparent}
+.back-home:hover{background:rgba(255,255,255,.30);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.back-home .bh-ico{font-size:14px;line-height:1}
+/* 页脚返回链接 */
+.foot-home{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#0b6ab0!important;
+  font-weight:700;font-size:13px;text-decoration:none!important;border-bottom:1px dashed rgba(11,106,176,.5);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.foot-home:hover{color:#095a96!important;border-bottom-color:#095a96}
+@media(max-width:700px){
+  .back-home{right:10px;top:10px;font-size:12px;padding:8px 13px;border-radius:20px}
+}
+@media print{.back-home{border-color:#0b6ab0;color:#0b6ab0!important;background:#fff}}
+/*@@ TABLE-COL-FIT @@*/
+/* ═══ 表格列宽优化：固定布局 + 智能换行 + 防溢出 ═══ */
+/* 1) 中文长串安全换行，避免撑宽或溢出容器 */
+th,td{overflow-wrap:break-word;word-break:break-word;}
+/* 2) 表头可换行，避免窄列被 nowrap 撑破 */
+thead th{white-space:normal;}
+/* 3) 短标签列（序号/数字）保持紧凑不换行：仅作用于极短首列 */
+table.fit-narrow td:first-child,
+table.fit-narrow th:first-child{white-space:nowrap;}
+/* 4) 宽屏（≥700px）启用固定布局：让声明的 width 真正生效，长文本列不再吞掉短列 */
+@media (min-width:700px){
+  table{table-layout:fixed;}
+}
+/* 5) 窄屏（<700px）恢复自动布局：表格随容器自适应，避免整页横向溢出 */
+@media (max-width:699px){
+  table{table-layout:auto;}
+}
+
+</style>
+</head>
+<body data-page-node-id="ltFNT8JumXdZAziDTJoudB">
+<div class="wrap" data-page-node-id="YIdbbFCV6PHUqfpTyWfN2x">
+
+  <div class="banner" data-page-node-id="IfaywtZJYnYWaFa1ql2kT9">
+    <a class="back-home" href="../index.html" title="返回课程首页"><span class="bh-ico">🏠</span>返回首页</a>
+    <div class="banner-in" data-page-node-id="czKapVKvhDp8rOZtf22Muo">
+
+      <h1 data-page-node-id="97imFn3Sl6DqAldviOoEZO">爱眼城眼镜 · 整形细节三十项</h1>
+      <div class="sub" data-page-node-id="HyZF3xm8K8WPxRlgq7teUO">眼镜加工整形与调校的三十项实操基本功 · 按门店实际使用频次由高到低排列 · 全框 / 半框 / 无框 / 板材 全覆盖</div>
+      <div class="chips" data-page-node-id="eGNR5KPFMNo0H6TwJJ6xK8">
+
+      </div>
+      <div class="creed" data-page-node-id="OYQM1rk1zf6e7hb8HJmjc7">
+        核心原则：<b data-page-node-id="mUMV8zyvdZewbDOvg6H6Jd">先熟悉结构，再动手拆装</b>——序号越靠前、门店越常遇到，先练高频、再攻疑难，每一项都要做到手法规范、力度可控、不留隐患。
+      </div>
+    </div>
+  </div>
+
+  <!-- 能力地图 -->
+  <div class="sec-title" data-page-node-id="9NRWBfrCqO9FFrEjkQJo8r">三十项能力地图 <em data-page-node-id="zIFADI4e4HthGdW0VdWzRr">按门店实际出现频次分为五档，序号越靠前越常用</em></div>
+  <div class="maps" data-page-node-id="H16praL8VraMYbyEIvNM3f">
+    <div class="map" data-page-node-id="okOnhNNygHWv8bGd3IsdfE">
+      <div class="n" data-page-node-id="zACnMoXEugaCrBS0ig061o">第一档 · 每日常用（1—6）</div>
+      <h5 data-page-node-id="ZZYj90XMEyvDtkirfN0tZ6">到店必调</h5>
+      <div class="items" data-page-node-id="eYcor8jf7pghE0Vaq1f874">
+        <i data-page-node-id="WBhnbdY3x5hkBFFx5Ry0Bw">1 鼻托三角度</i><i data-page-node-id="0vYx1QBXyzkSJUmRAPkArm">2 三平</i><i data-page-node-id="TjkhgfeyVkdVmaZikSsNwf">3 外张角</i><i data-page-node-id="0zQBkEfpjjcH7k4yPUo0zG">4 螺丝松紧疑难</i><i data-page-node-id="nZmaUcF9iF5CC6HgqECOpY">5 螺丝更换与滑丝</i><i data-page-node-id="ua48Az1vMawZoR4uoKz4qO">6 鼻托更换</i>
+      </div>
+    </div>
+    <div class="map" data-page-node-id="1QpGUGiqUId4WnbkdX4pws">
+      <div class="n" data-page-node-id="lqWmKN1uBWsbvncz0tQX3C">第二档 · 高频调校（7—12）</div>
+      <h5 data-page-node-id="UZwjSMLCulIcwJdwBe1K0g">佩戴舒适</h5>
+      <div class="items" data-page-node-id="euMMxEs59CcFoa9ZEvN4go">
+        <i data-page-node-id="4exBA3RZ0DeGbbI8rnz9LQ">7 前倾角</i><i data-page-node-id="VgqqPndyqdx03nNnKDKUAL">8 镜腿长度与对称</i><i data-page-node-id="aDgPHEzNEGzk8Q7CEP4zuY">9 耳勾（脚套）弯点</i><i data-page-node-id="MIIlSwpA9rVAzEMsGo6qQb">10 垂长/垂内/垂俯角</i><i data-page-node-id="BazkpYrbgVeXA4QnTasFmF">11 镜眼距与光学中心</i><i data-page-node-id="pbEdqc22K68DkApAYWzrNv">12 铰链（丁番）修护</i>
+      </div>
+    </div>
+    <div class="map" data-page-node-id="EHoGLvbuiQPeDpAdbbXB0Q">
+      <div class="n" data-page-node-id="Bw9yTvimb3fvQqBfRJCdv1">第三档 · 常见适配（13—18）</div>
+      <h5 data-page-node-id="64QFBErBf1OgOIDHmZAiRB">售后与交付</h5>
+      <div class="items" data-page-node-id="WDHTwxz5QbnFxYsE2mzudC">
+        <i data-page-node-id="9TcHKWlNyrkQb7CMNl4VKZ">13 塑胶镜脚固定</i><i data-page-node-id="cD0KLZ2lvP4EQiWUjFUITf">14 高低耳不对称适配</i><i data-page-node-id="TGQ0d4nVRgSnU23OfHaHze">15 镜面弯（面弯）</i><i data-page-node-id="vEWPF3KLoIwkkXf4tdPv3l">16 标准整形9部曲</i><i data-page-node-id="gNHfGGar3ZuqzzBHnK5haR">17 螺丝的辨认</i><i data-page-node-id="BSHrz7XPkJxUvpTQbJSpEE">18 熟悉眼镜架</i>
+      </div>
+    </div>
+    <div class="map m5" data-page-node-id="CqUbnmN2dcZDS8ukPvwCZA">
+      <div class="n" data-page-node-id="ysdwVHPiZSKr4PDUYMAtjW">第四档 · 加工常练（19—24）</div>
+      <h5 data-page-node-id="VD5BgIzIJsufn6QTV1PORV">加工装配</h5>
+      <div class="items" data-page-node-id="ytMnGSwhcB0EwU5gHJMERb">
+        <i data-page-node-id="muHw6wZ1s7Wjq1D442G5fV">19 板材架加热</i><i data-page-node-id="7nQzLYMaLHIVCqHOfZslsr">20 半框架拆镜片</i><i data-page-node-id="XaKdREYtcXAs7BY430fi7h">21 半框架装镜片</i><i data-page-node-id="wYw4f4DKo411Fr9ggqyZPm">22 板材镜架拆装</i><i data-page-node-id="MGJgH0DB9TaARD6oQEsFSe">23 半框外拉丝更换</i><i data-page-node-id="vqqCj2KVUR8kpYfJSnhKtU">24 半框内丝更换</i>
+      </div>
+    </div>
+    <div class="map m6" data-page-node-id="ZBAg838N9quxDsgznxLT0h">
+      <div class="n" data-page-node-id="rgZQW79ZpICjHN3KzoKiru">第五档 · 特殊低频（25—30）</div>
+      <h5 data-page-node-id="gAtvhRRUA2AwkX8xi2HlfZ">结构与修复</h5>
+      <div class="items" data-page-node-id="19smH9AG3bjuITsUZLT6Qf">
+        <i data-page-node-id="qHnzsTCq6ycgMV8Z3YxCha">25 无框架调整</i><i data-page-node-id="t0OobxDHwVvKDT9SIdTjsM">26 无框打孔/拉丝加固</i><i data-page-node-id="1qpqYM0FIfQSn46YxIrYQ8">27 纯钛架加垫圈</i><i data-page-node-id="uUnZn4dxQ18rY7PhrnMGKZ">28 弹簧镜腿螺丝</i><i data-page-node-id="7zInW8i55gCDNtxzHCWTWr">29 板材/TR90 修复</i><i data-page-node-id="nKwaiTUihNrosjSAf87k9S">30 金属镜架焊接</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- 速查 -->
+  <div class="sec-title" data-page-node-id="gln2peJofEKGDwtBR65XHi">三十项速览 <em data-page-node-id="fbKfmBwcBCyls7rQYQjlIz">1—30 项按使用频次排列，青底为本系列新增 10 项</em></div>
+  <div class="quickbar" data-page-node-id="MmP9dexHp6ZXV4ItgSr7NN">
+    <div class="qt" data-page-node-id="vTn4gJYth7euPcOmcStr0a">序号越靠前，门店出现频次越高。点击正文卡片可对照实操，速览表用于每日带教点名与技能考核打钩。</div>
+    <div class="qgrid" data-page-node-id="c9speo1lj5AGA1a0GQDsSD">
+      <div class="qi" data-page-node-id="4HgIBSG34khhPuxuomDQkc"><b data-page-node-id="LtaZB6gUFrpksgMVDou3if">1</b><i data-page-node-id="2K9cespOLiAJuaOo5V8t6Q">鼻托三角度调整</i></div>
+      <div class="qi" data-page-node-id="Noufi2pNrfW1NvcWFceu5z"><b data-page-node-id="vDjL92cxfjsf4gW0cbXtRW">2</b><i data-page-node-id="SNy0LQQ37W2o3MakTHgDOM">三平的调整</i></div>
+      <div class="qi" data-page-node-id="6cwc7RctBEhNz5i39GNRqd"><b data-page-node-id="tfhVF4Os9lFOYkxXMpSIVW">3</b><i data-page-node-id="je92ncAbZD50F8GkFd55JN">外张角观察调整</i></div>
+      <div class="qi" data-page-node-id="wVQjstgukEVcp00zyy9LrF"><b data-page-node-id="c3CxH7D8GSwVpCWZAMWr83">4</b><i data-page-node-id="90yz2DBem4GNWrZNzd5GQ9">螺丝松紧疑难</i></div>
+      <div class="qi new" data-page-node-id="FEtQ0EVYSNbW34IFjuocHH"><b data-page-node-id="n25DxF8uGrktKqVhBzUNdA">5</b><i data-page-node-id="2YdGYlJ7oWYiE7W0hoatyI">螺丝更换与滑丝</i></div>
+      <div class="qi new" data-page-node-id="z7abhGujKcpOTN5f8LzCv9"><b data-page-node-id="dZffGYUTniF671lBcPNAL7">6</b><i data-page-node-id="PErlaJi3Vg39fCcn0H4dTI">鼻托更换</i></div>
+      <div class="qi" data-page-node-id="iA9FF7xd8jr2OqSQV1N79g"><b data-page-node-id="uEkoP3n6fP0er4OdJVUlmj">7</b><i data-page-node-id="dnciDCeEkcZgTdvokPQq6Q">前倾角观察调整</i></div>
+      <div class="qi new" data-page-node-id="nqs9naQJPcamXlPM6bEcVZ"><b data-page-node-id="BJkytwT6q75S2LaFABA3AQ">8</b><i data-page-node-id="sBwQFhoyaAfGLhKEnAhqia">镜腿长度与对称</i></div>
+      <div class="qi new" data-page-node-id="YP61vpAWlZ6SdyP4H3M4GR"><b data-page-node-id="7CClRizj3zF7d2IH6VN9s0">9</b><i data-page-node-id="dpXA84V6PAYCZ8AlXCKA0S">耳勾（脚套）弯点</i></div>
+      <div class="qi" data-page-node-id="XqDpK1MgBNCrtYmGfLs5B4"><b data-page-node-id="fkc1Kj1CFmeDNEbdoUsmzS">10</b><i data-page-node-id="Yk0C6cCRI4CYIDVt1KLhy7">垂长/垂内/垂俯角</i></div>
+      <div class="qi new" data-page-node-id="wn1SkFVBBKEqdEJUoV3XHU"><b data-page-node-id="YKHF4quvObBGSDvOqxq5XL">11</b><i data-page-node-id="DwA2V9gSg3P4JJy3JEe7yl">镜眼距/光学中心</i></div>
+      <div class="qi new" data-page-node-id="t8C5i7AlGad0Ak8swVA5aI"><b data-page-node-id="VXZlQBMsLN5VNZM6mBaHcF">12</b><i data-page-node-id="GRpaM0207bHp4c6zuE199m">铰链（丁番）修护</i></div>
+      <div class="qi" data-page-node-id="On4lnex8nHrNs5NqVraQjk"><b data-page-node-id="wOwiBVSm5SuTSTEddlE0Tr">13</b><i data-page-node-id="4hYzCyO3TBLVUIm7WW6Ccz">塑胶镜脚固定</i></div>
+      <div class="qi new" data-page-node-id="7H7B79iomHK9BYQDXGM2VO"><b data-page-node-id="X1a1gFDXcySNZt1EynVlpA">14</b><i data-page-node-id="3gUn0Kg79DIxgnIBicKXAQ">高低耳不对称适配</i></div>
+      <div class="qi new" data-page-node-id="IKgJylIrc9SqM55NBLYeau"><b data-page-node-id="RbaHRBQ14rgi22re8RcZhK">15</b><i data-page-node-id="JcxkUMFNlZHox38wlEZlMJ">镜面弯（面弯）</i></div>
+      <div class="qi" data-page-node-id="jFmzIqJ2sRq84xNYzWJxoX"><b data-page-node-id="ivGDNlfdCsIwYBHy2G8Tqm">16</b><i data-page-node-id="rJhR5DeRPnv9CLcDDf4Ahw">标准整形9部曲</i></div>
+      <div class="qi" data-page-node-id="DEimMTLguQmZS74bKkFHQV"><b data-page-node-id="LojOdy2RpK6CCIwh4QCbSB">17</b><i data-page-node-id="hVky1nv3uujpc1lstETRSa">螺丝的辨认</i></div>
+      <div class="qi" data-page-node-id="wRFcurIW2DucL91aTIpqbw"><b data-page-node-id="kWXFMNksnjDkhClpFEzY9M">18</b><i data-page-node-id="8BoEiFnm7uqOZzoAaEyyIV">熟悉眼镜架</i></div>
+      <div class="qi" data-page-node-id="2POMZCG2ALhY2T4XBz0VEi"><b data-page-node-id="r7Ruwn4Y7DxmVGsStXdLbd">19</b><i data-page-node-id="P7HV0YDQtrT80fvYTdgeHS">板材架加热调整</i></div>
+      <div class="qi" data-page-node-id="3FeKrUcFdzmhNhwv0ZAKYq"><b data-page-node-id="9QQJVvemLMrFgEHmK23x5a">20</b><i data-page-node-id="uySgHxEHMq2r4vw4SQuVJP">半框架拆镜片</i></div>
+      <div class="qi" data-page-node-id="rD823cCNpKW2vcNbq8UkGO"><b data-page-node-id="VKomEoWYEvBdT6fySLu5Ii">21</b><i data-page-node-id="UWOiVgFAeCH4zof62SsYF3">半框架装镜片</i></div>
+      <div class="qi" data-page-node-id="Bji9NNQGy3GR7BFtDvR1eF"><b data-page-node-id="YhFubzo8OaWaFcWzezexop">22</b><i data-page-node-id="uHZiTflJ0P0ZIUEY62C31A">板材镜架拆装</i></div>
+      <div class="qi" data-page-node-id="uOhknzpA7t8kR6atWf7mnb"><b data-page-node-id="h3GXzRwWRaW55KrANT7JtM">23</b><i data-page-node-id="J7rE3YhUtaOmeUvJaFwpEr">半框外拉丝更换</i></div>
+      <div class="qi" data-page-node-id="MqdwkUn4yC2HqhHRM95rOU"><b data-page-node-id="oazWbh4aLn1DGHeCppMFFz">24</b><i data-page-node-id="E8LbsJIzJRYBoFcSyzUnDC">半框内丝更换</i></div>
+      <div class="qi" data-page-node-id="J2JeYyNcrgUTdGkWBKEHbp"><b data-page-node-id="gqBXWlUFv9QPz9cWJbtFGA">25</b><i data-page-node-id="4GPQcilHralVe3Ei3J0hFa">无框架的调整</i></div>
+      <div class="qi new" data-page-node-id="wXRuB4GR71fbiRBcgqz5mU"><b data-page-node-id="Jfc51wJaTFoCoOFPYLOk7X">26</b><i data-page-node-id="NucaAo0KjNWsdHqAHsQCjY">无框打孔/拉丝加固</i></div>
+      <div class="qi" data-page-node-id="Kf8VeoP7h1CgSi2SsHVe2o"><b data-page-node-id="8IOAtyMJNAmOmdWP2PblQ6">27</b><i data-page-node-id="IjblbWtSozME74zUxNjFHy">纯钛架铰链加垫圈</i></div>
+      <div class="qi" data-page-node-id="6T6QTOLeeYqmqpiBvEjIwz"><b data-page-node-id="JCLvTox3IULMd8Wg60G2rS">28</b><i data-page-node-id="lv8Uj7jgAoBYiQ1vykZM4N">弹簧镜腿螺丝</i></div>
+      <div class="qi new" data-page-node-id="ExQ2M9uhIAJ5olVHsnEVGK"><b data-page-node-id="bcCJiXLy5qbABbKr81osOT">29</b><i data-page-node-id="wL8iX8jyTKPOymnRQUuGUM">板材/TR90 修复</i></div>
+      <div class="qi" data-page-node-id="KPErmJGDO6vGgydPafwGev"><b data-page-node-id="hLQqzpxOeKkmPxPqBVifhs">30</b><i data-page-node-id="fz2pejV5ap9Omjj2l5PxqP">金属镜架焊接</i></div>
+    </div>
+  </div>
+
+  <!-- 逐项详解 -->
+  <div class="sec-title" data-page-node-id="gmwLjCV4D7f58kSed8D1uT">三十项逐项要点 <em data-page-node-id="1bN7jpjfZD3v3PPHsuIkDl">原文作业项 + 作业提示，青轴为本次新增</em></div>
+  <div class="steps" data-page-node-id="ImrRDo0dp2lSTiIuU07DuQ">
+
+    <!-- 1 -->
+    <section class="step" data-page-node-id="Ki1pLDI4jMP9zBfOmAKbom">
+      <div class="axis" data-page-node-id="pKRVXNSqbxpoKC2BTf2WGz"><div class="no" data-page-node-id="B4lQqdQDMtutbNm062Dz90">01</div><div class="lbl" data-page-node-id="xrVu9YixJUGkLicIlUys7N">鼻托</div><div class="dotline" data-page-node-id="ukHAuzGOtg54RKkPWyBm9V"></div></div>
+      <div class="main" data-page-node-id="zxTOwqN3MVdOWLkMpXFDc1">
+        <div class="head" data-page-node-id="KFspnmlLfFKi5VbkSnwbyn">
+          <h3 data-page-node-id="soiUmBJr3JHAGUozHqTaNE">鼻托的调整，鼻托的三个角度</h3>
+          <span class="cat" data-page-node-id="uFJL2FSC8HQ7UAn8CCMSUs">角度调校</span>
+          <span class="tag" data-page-node-id="BduDFdFZOdogrrumy5OpWw">服帖为纲</span>
+        </div>
+        <div class="body" data-page-node-id="FP5XOzSENja170g1vYAED4">
+          <p data-page-node-id="wsdmVxqs1JkH9hkhnd94wB">鼻托有三个可调角度，调整目标是<span class="k" data-page-node-id="EgzSovFQrAUZwBuK8fAktD">托叶面完全服帖鼻梁</span>——受力面积越大，压力越小。</p>
+          <p data-page-node-id="lzmdQMIJGj0clrlSMygvFo">参考《眼镜调校标准手册》D 点：须按顾客鼻梁实际情况调整鼻托的<b data-page-node-id="veC53R68JgZ3w5iC1sIHmK">高低、内外</b>，且各人鼻梁骨两侧肌肉不一定对称，必须按实际逐一校正。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="step" data-page-node-id="1jvcV03CaCzEzgiBXoKEAK">
+      <div class="axis" data-page-node-id="g7E7CbbfMIU7qzOmvELpeo"><div class="no" data-page-node-id="m57535uVURmusY4VrZ9FR4">02</div><div class="lbl" data-page-node-id="m3o6uCsTmAquu2RfjGb1H9">三平</div><div class="dotline" data-page-node-id="3WLrcSXPSmyqZmTFqFDmBH"></div></div>
+      <div class="main" data-page-node-id="YlqDvi5pcNPll4ZsShGMsh">
+        <div class="head" data-page-node-id="vBMFAlsL5aas7kJtyTX5Kb">
+          <h3 data-page-node-id="BwC6FdjftPEsR1I7Mxk12w">三平的调整</h3>
+          <span class="cat" data-page-node-id="JKamq7IdbvUeEhNz1juZ0C">角度调校</span>
+          <span class="tag" data-page-node-id="6P2xU7A4NQAA0CMP5MmLCD">调校基础</span>
+        </div>
+        <div class="body" data-page-node-id="zUqEyyOuQAvDADVPiDgqQc">
+          <p data-page-node-id="2Ry3hHbSBkDmlj0O03A4mv">"三平"是所有角度调整的基础：<span class="k" data-page-node-id="5vkCJSmErFgiE5mjeUGlUR">镜框高低平、前后平、左右平</span>。</p>
+          <p data-page-node-id="ARUhweIZy21fB17qH5X4iH">三平不到位，后面的前倾角、外张角、鼻托调整都会失去基准——所以<span class="r" data-page-node-id="omtmYH1V5ExdEfTYjYGc7n">永远从三平开始调</span>。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="step" data-page-node-id="E4RiTA6O6HWZ9PL8MQ30TZ">
+      <div class="axis" data-page-node-id="mhkoPCAvMPzQoCEC4ZmSpK"><div class="no" data-page-node-id="Oh5d4KcaduHFlQrPhSQuvc">03</div><div class="lbl" data-page-node-id="5UGvfFvldYUVdZYXHFpqI8">外张角</div><div class="dotline" data-page-node-id="VsnGZwAX03skLbvVPvoIUX"></div></div>
+      <div class="main" data-page-node-id="zeitlnSi7hfOjcF7vURvoC">
+        <div class="head" data-page-node-id="jsZS6xBCLz8gnk6fDwQ8S5">
+          <h3 data-page-node-id="1klZI0ZD5O6W6fh2a32Cod">外张角的观察与调整</h3>
+          <span class="cat" data-page-node-id="Rvl2kXHmmTwB2pLERGGMpf">角度调校</span>
+          <span class="tag" data-page-node-id="B95GEihYX48rLgkbtZhGwP">按框型定松紧</span>
+        </div>
+        <div class="body" data-page-node-id="weVlj1aWcpI3suv4EyoFmR">
+          <p data-page-node-id="ahPxXjgaIYQ50M6EgfQRYH">同样遵循<span class="k" data-page-node-id="m64I6k7MNMGcOGACpcUOoV">先观察后调整</span>的顺序，结合顾客头型宽度与实际松紧感受判定。</p>
+          <p data-page-node-id="9WyQRBOHxQBsaJ4vHhcs4s">参考标准：外张角一般 <span class="k" data-page-node-id="pXTinFHdPujJEbroKHa15u">80°—100°</span>；全框刚好、半框略松、无框再松、板材略紧。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="step" data-page-node-id="eGOGghPm2X5tBWCnOTIR5b">
+      <div class="axis" data-page-node-id="M49X7D12GaQ9wgtQ4FScBE"><div class="no" data-page-node-id="3pIE3QneFkXGCuSiwPC213">04</div><div class="lbl" data-page-node-id="uFTMpc9xGOxwkLqPz79cmJ">疑难螺丝</div><div class="dotline" data-page-node-id="ySTEO6NNipteCoXG2nWyac"></div></div>
+      <div class="main" data-page-node-id="I7RETE9InlSaYM2ZyarSoF">
+        <div class="head" data-page-node-id="rBjAYTMt9q9Bz4sIkICnrt">
+          <h3 data-page-node-id="TKyGbDhebJvZiqW9FGxi5K">螺丝松紧的疑难判断</h3>
+          <span class="cat" data-page-node-id="PHqPCjDwulvM5eqeAL136J">疑难处理</span>
+          <span class="tag" data-page-node-id="fHx4oPIQ294Vug9AXFUtj3">现象与原因相反</span>
+        </div>
+        <div class="body" data-page-node-id="tAoayirx5ytQIMBXA6mT64">
+          <p data-page-node-id="TohE2opi2CzLGQg9eLjREx">典型疑难现象：铰链螺丝<span class="k" data-page-node-id="xZiKU0nAEihwadE4oUdeti">已经调得很松了，但是折叠时还是很紧</span>；或者<span class="k" data-page-node-id="vDBi3iPcdQkD3DvJylM8dx">调得很紧但是很松</span>。</p>
+          <p data-page-node-id="lvv1kWNaOlKza8IKdWYQU9"><span class="r" data-page-node-id="q9sf4BeLKpz1yPHyFMsBDX">判断要点：</span>这类"现象与调节方向相反"的问题，往往不是螺丝本身的问题，而需从<b data-page-node-id="841uSOdiT27ve0YAKnZ1uQ">铰链变形、垫圈缺失、桩头错位</b>等结构层面排查，不能一味拧螺丝。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 新增 -->
+    <section class="step added" data-page-node-id="QAawxElfhMAj0YXxw7aOC7">
+      <div class="axis" data-page-node-id="dpI4pIUY72ZQ6IEQTB4BD5"><div class="no" data-page-node-id="a6Xzt7SzOCtG6D087eR5EV">05</div><div class="lbl" data-page-node-id="NmLTRidWf4XT3M9iYMyHAZ">换螺丝</div><div class="dotline" data-page-node-id="0W9CoqDJyIlu2P1Eg3Ywe7"></div></div>
+      <div class="main" data-page-node-id="FXYUNJhtBsFZBidXzaR35h">
+        <div class="head" data-page-node-id="XgTSunhTnTiVcTIPfG1QR4">
+          <h3 data-page-node-id="PR73B4iwseQnAlmH1stmoo">螺丝更换与滑丝处理</h3>
+          <span class="cat" data-page-node-id="eP2eCCmUt5xDiN34KWmVB7">配件更换</span>
+
+          <span class="tag" data-page-node-id="u5YOeYUhC3Mhez66NvfQwD">滑丝是头号故障</span>
+        </div>
+        <div class="body" data-page-node-id="jOZ6jKKmqcQg62ICIhVK2k">
+          <p data-page-node-id="bAJMCOVBpKQjQODGPzDfUQ">螺丝松动、脱落、氧化生锈、滑丝，是眼镜最常见的故障。掌握<span class="k" data-page-node-id="j8P9u69mAseeB6G77Ez6f5">"松紧适度、丝牙吻合"</span>的更换规范，能解决大半售后问题。</p>
+          <p data-page-node-id="xCBLdJsUsYoXEEGreV1N4F"><span class="k" data-page-node-id="GF9GWF1uGzlUBAUDJcRgBm">常见螺丝类型：</span>铰链螺丝、鼻托螺丝、镜圈螺丝、无框打孔螺丝、弹簧腿螺丝——规格（长短/粗细/螺距/材质）各不相同，切不可混用。</p>
+          <div class="chipsline" data-page-node-id="bQ5aWY1vbnkqrkhOixHVum">
+            <i data-page-node-id="I2xFaZfYCEat9uJNRGFfS9"><b data-page-node-id="pnTYO32SbFKluXxJB4pLy7">滑丝预防</b>：选对批头尺寸，垂直施力，拧到位即停</i>
+            <i data-page-node-id="OXiRbREdCSwEf3pOIzavj0"><b data-page-node-id="dZiN4rAoK4YqpYc5nBDLiD">轻微滑丝</b>：垫薄胶皮增大摩擦力后缓拧出</i>
+            <i data-page-node-id="TWWMeeybR9NVfyNosAc8aA"><b data-page-node-id="aRI3IQmbYhNb4ECXC8npnm">严重滑丝</b>：需剖开铰链取出断丝，再换新丝重装</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="Z5MoK1IAoGjcNFCUuf0CH2"><span class="r" data-page-node-id="P1gWnzAxvwKMY41xDhltym">提醒：</span>螺丝胶、生料带都只是临时应急，规范做法是<span class="r" data-page-node-id="z1EquvsqgtdNePHb3mZV5I">换匹配规格的新螺丝</span>；拧紧以"不掉、不卡"为准，宁松勿爆。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 新增 -->
+    <section class="step added" data-page-node-id="I2bRwHdcDmLb3QMB5YmGUZ">
+      <div class="axis" data-page-node-id="hgyyrZDX5NQhpp2UEdiDuS"><div class="no" data-page-node-id="3ue6QEXNydqJyFa2UZPrKq">06</div><div class="lbl" data-page-node-id="pGxDKw0ocChIDXMwQ4jZ1W">鼻托更换</div><div class="dotline" data-page-node-id="RiAUuVRKz2Ad4zr7KaOLwh"></div></div>
+      <div class="main" data-page-node-id="g48O9EtrU5jgduQLAWYIMb">
+        <div class="head" data-page-node-id="o5LzABlRg2WFarkQxUQKrF">
+          <h3 data-page-node-id="y32QCMW3w7fUH4ABY5C11J">鼻托的更换（含鼻托垫/支架）</h3>
+          <span class="cat" data-page-node-id="EepN6PDRpmyIjN7HhD6BnF">配件更换</span>
+
+          <span class="tag" data-page-node-id="N4uIbDlXgpTPGTmR3rxxDt">易损件常换常新</span>
+        </div>
+        <div class="body" data-page-node-id="5HDKWeOWil7hbjMU5nU5ux">
+          <p data-page-node-id="bFzKoBnQG5D9WDMWkP06oQ">鼻托属<span class="k" data-page-node-id="klQr6NjX65yBu15pvNvIcR">易损耗件</span>，长期使用会氧化发黄、变硬开裂、积垢发霉——既影响美观，又压迫鼻梁皮肤造成压痕、红肿。</p>
+          <p data-page-node-id="LGDRL5nh4oBVs3IZlq6YpU"><span class="k" data-page-node-id="Q8DVxfRw60aCVHF0WUeZ0p">更换范围：</span>① 硅胶/软胶鼻托垫；② 金属鼻托支架（脱焊需重新焊接）；③ 一体式板材鼻托（需加热整形）。</p>
+          <div class="chipsline" data-page-node-id="SirJ0uq1NI8eTInhafc6Ln">
+            <i data-page-node-id="Ck9YogODrK1qWZLyNoMQ4a"><b data-page-node-id="AqPQU9c4KSyhh0zS3uF7ra">规格</b>：大小、螺孔距要与原支架匹配，避免打滑</i>
+            <i data-page-node-id="xLoWp5JvSs86SceuHDbh1N"><b data-page-node-id="r8LEsKd5hKLiaX4Hi1yF2L">手法</b>：用螺丝刀拆旧托，清洁托臂后再装新托</i>
+            <i data-page-node-id="eaqdmMVbV4TegYdwyfCzXj"><b data-page-node-id="K7HLTBNGAlIbjDWaXE3Khv">复查</b>：装好后调托叶角度，确保面贴鼻梁、左右一致</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="ZWBfALY7CJKglh5zfXJqA9"><span class="r" data-page-node-id="J1HxsJEUd4GKISxGMWCWvB">配套话术：</span>更换鼻托是门店高频免费服务，也是创造到店与复购的触点——顺便检查镜架松紧、清洗眼镜，一次服务做三件事。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="step" data-page-node-id="p86WhWarPT1S1coKsj2S28">
+      <div class="axis" data-page-node-id="ySmrJBwmqC7SDDsCzu2dzB"><div class="no" data-page-node-id="9x7EkiVjAyD9TKphCdjmuB">07</div><div class="lbl" data-page-node-id="lJ5jvh2P7jV74E33SIcRJx">前倾角</div><div class="dotline" data-page-node-id="6mnRI8yUwNhw4s6nCb1CLZ"></div></div>
+      <div class="main" data-page-node-id="5weUHEXFOsex3ChGCKZsMq">
+        <div class="head" data-page-node-id="CItpROkpDaYcVRYWpWgokX">
+          <h3 data-page-node-id="TOrYAKPHlObCJyPxcrGtsZ">前倾角的观察与调整</h3>
+          <span class="cat" data-page-node-id="H0sOKcdewTxp2u6gqNIZMi">角度调校</span>
+          <span class="tag" data-page-node-id="AEfPVrS0TwrGpFrUL5QpKu">先看后调</span>
+        </div>
+        <div class="body" data-page-node-id="d5PA49XhlOQsENfrE43taC">
+          <p data-page-node-id="7B2GXSU0QWb1kdCFFjJ62X">先<span class="k" data-page-node-id="UZC1sTKzTaJoPvA3JEsOCk">观察</span>、再<span class="k" data-page-node-id="oieXTsa2LpaViBuAy5FiKq">调整</span>——从侧面观察镜腿与镜面的夹角，判断是否偏离标准区间。</p>
+          <p data-page-node-id="xSw57XPj2zJzhStHQrGFB8">参考《眼镜调校标准手册》：正常前倾角 <span class="k" data-page-node-id="TDBD8NdMWxNGgSTjxR4l3Q">8°—15°</span>，渐进片与双光片须重点校准。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 新增 -->
+    <section class="step added" data-page-node-id="8T3hbZHaIXDVxUFBil4qXo">
+      <div class="axis" data-page-node-id="WpYXU05qXn4WIIw6xJFcq6"><div class="no" data-page-node-id="LxryqC1ivtkho70m61VNUW">08</div><div class="lbl" data-page-node-id="9iLobRHC6T4UYFSChFL439">镜腿对称</div><div class="dotline" data-page-node-id="O0ESqEKcR08LHiBymbNQ73"></div></div>
+      <div class="main" data-page-node-id="lAftkjnxghjmSrssUoA6Zr">
+        <div class="head" data-page-node-id="EVtQihi3QX6UYk9F5yXweh">
+          <h3 data-page-node-id="XvHVqmQdIJXR7f5gpxGHTC">镜腿长度与左右对称的校准</h3>
+          <span class="cat" data-page-node-id="qUzfQ65BNKbCQmQBaH2kzU">角度调校</span>
+          <span class="badge-new" data-page-node-id="fb6iXbEzi5CmiPymvlG2B7">新增</span>
+          <span class="tag" data-page-node-id="BWGx31NbpLcY52rmHtLmco">一副眼镜两半等长</span>
+        </div>
+        <div class="body" data-page-node-id="iu1IBwDmLy2hqhbfr2VpQB">
+          <p data-page-node-id="Ub8F2EYoVQLCUBZixK0u4l">两镜腿必须<span class="k" data-page-node-id="nxyuPFgchKxRhv9MG9PSHL">左右等长、弯度高低一致、张角对称</span>，否则眼镜必然歪斜、受力不均。</p>
+          <p data-page-node-id="54VApDKIkeXm8IG7OKj2IK"><span class="k" data-page-node-id="4uMlWCOl6o54qBm7npl9Uz">检测法：</span>把镜架倒扣在平面（或镜片面朝下），观察两镜腿末端<span class="k" data-page-node-id="cm0G3GxDH1QL14I1ZHdy48">是否同时着地</span>——一高一低即为不对称。</p>
+          <div class="chipsline" data-page-node-id="aa8ZWC6NZv2HchauV7HT7B">
+            <i data-page-node-id="9PJtN8FZFJbmfaiwK2xmLE"><b data-page-node-id="JaCOtN4Jsuo8OJ3aPPbRAo">长度偏差</b>：一端着地另一端悬空，需调整腿长</i>
+            <i data-page-node-id="HjPXqSEkeCU7AoA0HuzAB2"><b data-page-node-id="G5AQz5CyuCFYLLQGp3zGPJ">弯点偏差</b>：左右弯点前后不一致，需重新定位</i>
+            <i data-page-node-id="L8yXU04RuQUFaEgY807FH7"><b data-page-node-id="p8iJtEUgdHYdWgXty2zIJ1">张角偏差</b>：合拢时两腿不平行，需调铰链处外张角</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="5hUBx5LpIPbYIPZtFlx72T"><span class="r" data-page-node-id="ORW3P6E7GHB1IYgYdGExao">习惯提示：</span>顾客若有"单手摘戴"习惯，常导致一侧铰链外扩——矫正时应同时纠正佩戴习惯并说明原因。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 新增 -->
+    <section class="step added" data-page-node-id="CDMvdbNA2bIojuZ3t16OeO">
+      <div class="axis" data-page-node-id="WbdzPXq7ewKcWbdn0jgDW5"><div class="no" data-page-node-id="gjlwEDJCA8P7Vua31InKpp">09</div><div class="lbl" data-page-node-id="Ytpe8Y3399Zg3MabWNek8x">耳勾</div><div class="dotline" data-page-node-id="urGhrm7T3S0OdF4TkW15HP"></div></div>
+      <div class="main" data-page-node-id="vp2nmKIoJJlOhNGrnzSyi5">
+        <div class="head" data-page-node-id="9dMvosDcuIpLEhQTxSIRn6">
+          <h3 data-page-node-id="5mPEqRv6DYZS8QOSPSxoHM">耳勾（脚套）弯点的调整</h3>
+          <span class="cat" data-page-node-id="D2BJ9LdI09HPDzjToPv1HF">角度调校</span>
+          <span class="badge-new" data-page-node-id="tW2PNDpNTvImOFp9cyh41x">新增</span>
+          <span class="tag" data-page-node-id="dW0HUbzPVLLan3UAGPryRp">加热塑形</span>
+        </div>
+        <div class="body" data-page-node-id="5I6XLYzAT5Anlyt0B5cMlk">
+          <p data-page-node-id="ptFiIJ7xMPytZ6KMbSMBUF">耳勾（脚套）弯点决定镜腿"挂"在耳后的位置与弧度，是解决<span class="k" data-page-node-id="QPqQE9fGqCtjdmWAXLMVzS">下滑、磨耳、挂不住</span>的核心动作。</p>
+          <p data-page-node-id="CJxBFlCc1qZCohLsPvWYIC"><span class="k" data-page-node-id="xWQoneOBwob45wLbgXjHm5">标准：</span>弯点起点应在耳廓上缘、弧线与耳根形状基本吻合，左右一致；弯弧一般呈 <span class="k" data-page-node-id="LC2EYWEAVOGMGM2yafnJOZ">135°±10°</span>。</p>
+          <div class="chipsline" data-page-node-id="rkkOT3oVdLgXcjkAWzRkTA">
+            <i data-page-node-id="voVKnSSyRNEpZIOyxKxjM6"><b data-page-node-id="2MxcHJMjL4C1D52IXXSdln">① 加热</b>：用烘热器加热脚套塑料部位至微烫（勿烤金属与镜片）</i>
+            <i data-page-node-id="dgpgpNyVOF5Wj19aGEAO7Y"><b data-page-node-id="q3SYwftmgDCQqk3zSvsjMY">② 找位</b>：戴上眼镜，找出耳根正确弯点位置</i>
+            <i data-page-node-id="gHHqnStVf5dH9mFGDSiQKT"><b data-page-node-id="2AlqbeJEpffsr1tdotNHys">③ 塑形</b>：以拇指为支撑弯出与耳根一致的弧度，冷却定型</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="tlFYFr4Zj3zSzNfPcfXtW6"><span class="r" data-page-node-id="9hEm4F3BkvmL1NGDYbp1ze">季节提醒：</span>冬季气温低，塑料脚套<span class="r" data-page-node-id="xWQxxTJ1E00YFqhDPOu7vn">不加热直接掰极易断裂</span>，必须先加热后调整。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="step" data-page-node-id="Dg3gqL3Uy7ebBObmo0lgGO">
+      <div class="axis" data-page-node-id="LBwrWI22yKiO5T7LXkz44e"><div class="no" data-page-node-id="oSOP7aEWHjdX9pGHiCoXrt">10</div><div class="lbl" data-page-node-id="eDACFRNU8EbLA7tsEvwG4L">垂三角度</div><div class="dotline" data-page-node-id="nYbkeD4jP8WMwL9tlhh8h1"></div></div>
+      <div class="main" data-page-node-id="M5FGmVV7EkVhCLOikJ5m9J">
+        <div class="head" data-page-node-id="isY9KQtTRxy22A1fadMrGN">
+          <h3 data-page-node-id="mAZqgfVv2A80NnSk9PIHCi">垂长、垂内角、垂俯角的调整</h3>
+          <span class="cat" data-page-node-id="kShVC36DbqWNJeGXDSShBt">角度调校</span>
+          <span class="tag" data-page-node-id="OFOpdtQH9SMmHyMz1RsJRu">镜腿三维</span>
+        </div>
+        <div class="body" data-page-node-id="alIrNA10UZlwBD2ANAsyb4">
+          <p data-page-node-id="j2hxg4RGz47bHBY8AWgWWp">这一项是镜腿的"三维精调"，三角度分别对应镜腿的<span class="k" data-page-node-id="9qzVRnc0BjJ3j2vJiWmBan">长度方向、内收方向与俯仰方向</span>。</p>
+          <div class="chipsline" data-page-node-id="oM9iHNZkc33fzeAwxG16RT">
+            <i data-page-node-id="kpbIMb7Zg65a2f7DaIct9p"><b data-page-node-id="iKFZAzuEBRptzKxgfUNKIY">垂长</b>：镜腿长度是否够耳后勾住</i>
+            <i data-page-node-id="o066Vk6106qac8Mj4ucQgD"><b data-page-node-id="oLnzwJ4zhBIynaIMDw37hr">垂内角</b>：镜腿向内收的角度</i>
+            <i data-page-node-id="ONtZowzw3SESVeEdo5xK09"><b data-page-node-id="K0pmE5c7RIvT0W615eiKhp">垂俯角</b>：镜腿下压贴合耳后的角度</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="HFXQHgpRabEFJcEtRrCG6A"><span class="r" data-page-node-id="P7KAsxYhs7uQWD5pLnye2T">三者互相关联</span>，调其中一个往往需要复核另外两个。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 新增 -->
+    <section class="step added" data-page-node-id="PN5bLBHBJnAF1qzT3bDr5S">
+      <div class="axis" data-page-node-id="SWK8idjWjSNas60sGijvD2"><div class="no" data-page-node-id="fJwuK3Qg1dUjNqSbpqSDAF">11</div><div class="lbl" data-page-node-id="K4JRW81WGnPGE3sb5Eyqsv">镜眼距</div><div class="dotline" data-page-node-id="dzAdmfNmTuOZCDik3IDpfB"></div></div>
+      <div class="main" data-page-node-id="02TFEHFBfJHVMSZOwzQCIh">
+        <div class="head" data-page-node-id="FKTmErC8GmRqFMUD0OwsSY">
+          <h3 data-page-node-id="3jjM15h9MH65URgB0AP9M4">镜眼距与光学中心的控制</h3>
+          <span class="cat" data-page-node-id="mkZvKlBSci3YEWoH6W7SOn">角度调校</span>
+          <span class="badge-new" data-page-node-id="mTUX4gMVxEHM7SLXpoZZBO">新增</span>
+          <span class="tag" data-page-node-id="zvzSocnqHvetIhkOVXSgWm">12MM 为纲</span>
+        </div>
+        <div class="body" data-page-node-id="w3fJPi0UjkxgzhQqdkRely">
+          <p data-page-node-id="p7Aa7oaeAmDTjAe0RrgyqQ">镜眼距是镜片后表面到角膜顶点的距离，整形时主要靠<span class="k" data-page-node-id="WUYRYBZzp27LU90Sp9b1l8">鼻托的高低与前后</span>来控制，是让"度数真正发挥"的关键一环。</p>
+          <p data-page-node-id="oBtVEGKqALo0tj5uorxxLT"><span class="k" data-page-node-id="4sOGqsjdo458OaJyii2Ekt">标准值：</span>镜眼距一般 <span class="k" data-page-node-id="vqCsUL21iBKZQ5aS6eqJpb">12MM</span>（约 10—14mm 之间），近视片镜眼距变大等于度数变浅、视物变小；远视片则相反。</p>
+          <div class="chipsline" data-page-node-id="99XvVgnRP15iRgknWFk5Wc">
+            <i data-page-node-id="uhIshNunK4uBU2MasEaUmA"><b data-page-node-id="o2BEpv3ev7hQzS23CbJiJo">鼻托前移</b>：镜眼距变小、视物变大（近视片）</i>
+            <i data-page-node-id="ELQtaVm08f6GvPqZf6yg9Y"><b data-page-node-id="D73YBvoiSdUTt8aqJ2MEt3">鼻托后移</b>：镜眼距变大、视物变小</i>
+            <i data-page-node-id="pCopp44GeQUCgfqF5LnJW8"><b data-page-node-id="RqTm8h7X5qiZxEUft0l9TG">核对</b>：交付前用瞳高、光学中心位置与佩戴姿态复核</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="XxzkuDKRzPsmbeLZHDeP5w"><span class="r" data-page-node-id="YvpvXQCSkFJBGsz3N6uZ4k">关联：</span>本项与第 1 项"鼻托三角度"互为表里——鼻托调的是"服帖"，镜眼距调的是"度数发挥"，两者必须同时达标。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 新增 -->
+    <section class="step added" data-page-node-id="GGCeXI8z8UUkJ4qGv2tM5E">
+      <div class="axis" data-page-node-id="EYPPThTy6anDnpxpN13XrX"><div class="no" data-page-node-id="x7sSwFyqP7AQn5FbBwM38a">12</div><div class="lbl" data-page-node-id="6Sm84AyLls0y3IjOhOpoui">铰链</div><div class="dotline" data-page-node-id="31BoA1JxUhUburc6nWMPjp"></div></div>
+      <div class="main" data-page-node-id="YlvuYs8Kqcfo5W9dVqnuaq">
+        <div class="head" data-page-node-id="AS4eTZ6uRCQE901RWRBShq">
+          <h3 data-page-node-id="O2uiDO1fz6XLGBhkQRFFO8">铰链（丁番）的修护</h3>
+          <span class="cat" data-page-node-id="zNmdQYoVjK566AC6EaebZ0">结构工艺</span>
+
+          <span class="tag" data-page-node-id="HZlLlwAqqJgCJCBhMdzaZ8">镜腿开合的核心</span>
+        </div>
+        <div class="body" data-page-node-id="A35umWQ8HE4jm6nTVv20vK">
+          <p data-page-node-id="MNAvQYtkYoHkluLxUSlbQY">铰链（丁番）是连接镜圈与镜腿的活动关节，长期开合会出现<span class="k" data-page-node-id="yXBch8lpYdjpTLduVEOdVz">松动摇晃、开合卡顿、回弹无力</span>等问题，是镜架结构的"命门"。</p>
+          <p data-page-node-id="emQQBfAYrPBOIOhLx4N2Jm"><span class="k" data-page-node-id="usV4zROZMsTlf3Jyadyfge">常见故障与处理：</span></p>
+          <div class="chipsline" data-page-node-id="WCYXEH0dXmRs7H9woN269G">
+            <i data-page-node-id="jB0NHjDqkUph6lv3p3Y556"><b data-page-node-id="uy1Oj3nb5X5Fcmvg0EVZrc">松动摇晃</b>：检查螺丝与垫圈，必要时加垫圈止摆</i>
+            <i data-page-node-id="tTur0wLUey3v16xRWPH8D4"><b data-page-node-id="HnwmdiD0jwpoJ8H6ZW4JFZ">开合卡顿</b>：清理铰链缝隙杂质，检查铰链片是否错位</i>
+            <i data-page-node-id="aoFCHlo0W5bm1yZYi2MYOS"><b data-page-node-id="YdWmB82xhyGvtlUC7IUBb0">丁番脱焊/断裂</b>：金属架重新焊接；板材架需埋入新丁番并加固</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="qWvB5roTDuXpaj6ryzgivT"><span class="r" data-page-node-id="np33h1S59rpsqXwecqunHm">与第 4 项呼应：</span>很多"螺丝松紧疑难"的根因就在铰链本身——先判铰链、再动螺丝，才是正确的排查顺序。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section class="step" data-page-node-id="8kPGxMwxzMZOE1k1w80vKr">
+      <div class="axis" data-page-node-id="k3LHmRAe7lkvQ0DfachTTz"><div class="no" data-page-node-id="OInF1qhFZO7An3ReDwGwxc">13</div><div class="lbl" data-page-node-id="wTlTsq5xGMRMDRl7CHRh8j">塑胶镜脚</div><div class="dotline" data-page-node-id="e1uEKcwq3cSDfVlzA2pXuO"></div></div>
+      <div class="main" data-page-node-id="cwxHo0MZxxENsEOdlQerlD">
+        <div class="head" data-page-node-id="C0LUBmqTzKuCwOaROuC46i">
+          <h3 data-page-node-id="vaqkW6VGtgC3Shlg7OcnqE">塑胶镜脚脱落，如何固定</h3>
+          <span class="cat" data-page-node-id="OkVRBkwzXtpynio6tVG8Vp">疑难处理</span>
+          <span class="tag" data-page-node-id="vALEshH7CE2PMk62Bxg0Zw">复位固定</span>
+        </div>
+        <div class="body" data-page-node-id="E3vDqjBRHyME0GSMpeMsBx">
+          <p data-page-node-id="oiRBrOdEnIGYzBVQ8zPqAu">塑胶镜脚脱落是常见售后问题，需掌握<span class="k" data-page-node-id="gU1LaqmR8RJTaTGB8L3CV4">复位与固定</span>的规范手法。</p>
+          <p data-page-node-id="vBNYH5Ui8rPgFu0LblE5x4"><span class="r" data-page-node-id="BL0mmCOS0Cv3BFcvGYH6XQ">注意：</span>固定前先清洁接口、确认对位准确，避免固定后角度不正导致佩戴不适。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 新增 -->
+    <section class="step added" data-page-node-id="S2fS3TIWSlKPForl6zXS1E">
+      <div class="axis" data-page-node-id="jHxWJz7ELqBkkYuTMXNefG"><div class="no" data-page-node-id="TuY4s3EO613EWNoCIYCriM">14</div><div class="lbl" data-page-node-id="RBWAZj7iioPZA9J9GCjhQU">高低耳</div><div class="dotline" data-page-node-id="mEO0KqJHiyACkWDaK43hxG"></div></div>
+      <div class="main" data-page-node-id="dNyj4pexAJtcXMNJjr0Bhf">
+        <div class="head" data-page-node-id="DZW6dww79bxj1lormNN8pq">
+          <h3 data-page-node-id="ZeFG0q8SzN5uv9nSULs6wC">高低耳（耳位不对称）的适配</h3>
+          <span class="cat" data-page-node-id="NKHrMlvSKqjbSxsHibAQrL">疑难处理</span>
+
+          <span class="tag" data-page-node-id="dA4kQBEbCK4bDzpo7jaVhB">尊重个体差异</span>
+        </div>
+        <div class="body" data-page-node-id="kYnWrCPPtLIruJlJt37w8r">
+          <p data-page-node-id="BYUI3whxSkQNPkSB1N88SH">人的两耳高度、耳位前后、脸型宽窄往往<span class="k" data-page-node-id="P8Q0glsF5VTzAEwF7l8Lb2">并不对称</span>，眼镜戴歪不一定镜架变形，而是顾客本身的高低耳——这是整形中最容易被误判的一项。</p>
+          <p data-page-node-id="WHeTXzSMy9CCSZFyXWpCHq"><span class="k" data-page-node-id="RUw3UgwaohRTehiyzKG9rM">判断方法：</span>先做三平校准，若三平已到位但眼镜仍歪，则需按实际耳位<span class="k" data-page-node-id="NrotgeSdEndjfCvuBab6bJ">"非对称调校"</span>：把一侧镜腿弯点抬高/降低、腿长加长/缩短，让镜架在不对称的脸上取得实际平衡。</p>
+          <div class="chipsline" data-page-node-id="csI9bmYmCG3wrmVhoQhVm0">
+            <i data-page-node-id="HAZwfn0keZiLREcls0uWS0"><b data-page-node-id="HHgT9vxMEbX0R9ToOlDgNY">现象</b>：镜框一高一低、一侧压鼻一侧悬空</i>
+            <i data-page-node-id="xGLg5TwuEIGmVbBXGYjtX4"><b data-page-node-id="D6KIBcj6KvHPTfOO0pJxat">处理</b>：按耳位差异分别调整两侧弯点与腿长</i>
+            <i data-page-node-id="9uGPRjzse9OfmkIJeGR77i"><b data-page-node-id="69G62zGWJ1Km6cjl27XUZX">沟通</b>：须向顾客说明"镜架是直的、脸是不对称的"</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="OSrdZCURUPxb8YQHC9IcTX"><span class="r" data-page-node-id="WGSexU3BWSH1isqWO5blBF">专业价值：</span>能把高低耳调舒服，最能体现技师的功力——很多顾客"配了很多副眼镜都歪"，问题从来不在镜架，而在这里。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15 新增 -->
+    <section class="step added" data-page-node-id="scpg4h6I25EA8eXW14vriV">
+      <div class="axis" data-page-node-id="3UPkJM6B2jBW950NX8AZeT"><div class="no" data-page-node-id="uFcRgcbFv0blEyaCOyREFW">15</div><div class="lbl" data-page-node-id="qBvSUaAJMkBS9Bop9qoBll">面弯</div><div class="dotline" data-page-node-id="BnmjvD2BejqvqFu2sLyhhc"></div></div>
+      <div class="main" data-page-node-id="QzXBM9lmdRsFwPLVLL6lzJ">
+        <div class="head" data-page-node-id="7xdrrAzWIHfHQEz3xpxgEY">
+          <h3 data-page-node-id="RiLs5WIx7BFbF87GSFtunP">镜面弯（面弯）的调整</h3>
+          <span class="cat" data-page-node-id="MJI8B6IGwWNcf5bpuQSfcg">角度调校</span>
+          <span class="badge-new" data-page-node-id="zYTGEeBSM6A7THbFdfFnyB">新增</span>
+          <span class="tag" data-page-node-id="08DUwzFDc79v2qfYq46lNu">170°—180°</span>
+        </div>
+        <div class="body" data-page-node-id="VH8mtFNFkkVPR9ll3P9IXH">
+          <p data-page-node-id="5D2fIt0bqmjvBCt349LGkW">镜面弯指左右两块镜片平面之间的夹角，是把眼睛"包"进镜片光学区的前后弧线，直接决定周边视野的清晰度与畸变大小。</p>
+          <p data-page-node-id="ERcpDPKgAaWoOAuAh1WxA9"><span class="k" data-page-node-id="rInq3AXyw3pgCllD60k04A">标准区间：</span>正常镜面弯 <span class="k" data-page-node-id="37TPHyDKDhoCWLIsh3EswL">170°—180°</span>（约等于 0°—10° 的面弯量），太阳镜、运动镜可略大（弧面更包）。</p>
+          <div class="chipsline" data-page-node-id="ozyC1ahykZgzxdPjA9eGmi">
+            <i data-page-node-id="sM3fdXRkEKWMeyLOBmUERG"><b data-page-node-id="hxA66ejxEyUUzlyU9HOBfI">判断</b>：从镜架上方俯视，两镜片面应呈平缓弧、左右对称</i>
+            <i data-page-node-id="OHMCfpSMUK7Dmy66fFFQqC"><b data-page-node-id="LF8oD8m9k8a5ejpBS4pMpJ">手法</b>：双手拇指与食指分握左右镜框，同时向内或向外缓力弯折</i>
+            <i data-page-node-id="DlvEXJJRmQFoYHOAWGuvKo"><b data-page-node-id="bYknZgdotnZqHKLEkK8fQB">禁区</b>：无框、打孔架严禁调面弯，易造成孔位撕裂</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="uoUdqvCB2tA8uo7yaa67kG"><span class="r" data-page-node-id="0hdNEwJkwHRTOObhTniYjR">为什么重要：</span>面弯过大，镜片周边棱镜效应增强，会产生<span class="r" data-page-node-id="hKIP4XWYF0CewRvULXK4C5">视物变形、头晕</span>；面弯过平，则包不住脸、稳定性差。高度数镜片对镜面弯尤其敏感。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16 -->
+    <section class="step" data-page-node-id="MCtm0KzCGQxK6uii2Fhs2H">
+      <div class="axis" data-page-node-id="19mF36VCFZJaeHAZrIBtUd"><div class="no" data-page-node-id="7YROAIOvzMnC4rYZAnO8jG">16</div><div class="lbl" data-page-node-id="iV6t0uNukgzYNOarwnN601">9部曲</div><div class="dotline" data-page-node-id="HD6GeX3A5bOsQoeF9eVmX7"></div></div>
+      <div class="main" data-page-node-id="1jhJySRPSz0EJNtp6DV8zM">
+        <div class="head" data-page-node-id="AyrAn09ErK6xBnz8ljwUUF">
+          <h3 data-page-node-id="80NHoNkLgYTACwzNfEwxh5">标准整形 9 部曲</h3>
+          <span class="cat" data-page-node-id="uSMyONxusiYyqxVOxbXAF5">标准流程</span>
+          <span class="tag" data-page-node-id="R28N5i0Kqa4rz0UVgGy4jh">收口动作</span>
+        </div>
+        <div class="body" data-page-node-id="EjWBxR0OCN4MHUlkIzlMAt">
+          <p data-page-node-id="EPJJHnmLs7WbBgk25gHYPe">前 18 项技能练熟后，最终要收敛到<span class="k" data-page-node-id="JuYNCE5FCGX20GCOB5jv0J">标准整形 9 部曲</span>这套固定流程上执行。</p>
+          <p data-page-node-id="y2d5jV7lks8IZCHBG0e3US"><span class="r" data-page-node-id="CMcrT5PyBku5rd34XvMAjX">定位：</span>这是一副眼镜交付前的<b data-page-node-id="nTTg7devMGjijF2i2JoEMS">标准整形动作序列</b>，把前述各项能力串成一条稳定的作业链，确保每位顾客、每家门店得到的整形品质完全一致。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17 -->
+    <section class="step" data-page-node-id="ete3JpIwYvAXVzIekoQPvU">
+      <div class="axis" data-page-node-id="ZOFgm8CJSmyi656fMjmvGg"><div class="no" data-page-node-id="dtmwc2UY9RQEhcKQOmnvGZ">17</div><div class="lbl" data-page-node-id="OuodOzcwe1E7kGdE28DklP">备注</div><div class="dotline" data-page-node-id="iuUOuznKbkYCt544Mvgyiq"></div></div>
+      <div class="main" data-page-node-id="CRHpOQ0YSSLc4souDLlXbU">
+        <div class="head" data-page-node-id="uFO1DygSW2N0UY4YQgy9k3">
+          <h3 data-page-node-id="ujSBQW4mIgra1jW0dpLSJz">备注 · 螺丝的辨认</h3>
+          <span class="cat" data-page-node-id="7qH9b03z1T6gGdxHJsfcbz">基础认知</span>
+          <span class="tag" data-page-node-id="yAdErWJxMepOBhs6I8iRat">先认对，再动手</span>
+        </div>
+        <div class="body" data-page-node-id="NgiJ0wRmWDWowxtvr3ESC9">
+          <p data-page-node-id="H2JuWqgtCUkA28IVxzeqsC">原文档末条备注为<span class="k" data-page-node-id="w3s2KjQnMHFWkQCW61pSgE">"螺丝的辨认"</span>——这是一切拆装工作的前置认知。</p>
+          <p data-page-node-id="yIVdg475JCjEIOyFwEeDLg"><span class="r" data-page-node-id="EjYqJgWfIsb5NvvqiGrhea">为什么重要：</span>眼镜螺丝规格繁多（长短、粗细、螺距、材质各不相同），<b data-page-node-id="CNJQxlgMS79D7cgRRsfHEq">认错螺丝</b>是导致滑丝、顶穿镜片、损坏铰链的首要原因。带教时应把螺丝辨认作为第 1 课，先"认对了"再练"动手"。</p>
+        </div>
+      </div>
+    </section>
+
+<!-- 18 -->
+    <section class="step" data-page-node-id="EdguBSiUT6mhCcSe871Zzl">
+      <div class="axis" data-page-node-id="4OiofuAwCvFUHZd73GrRCX"><div class="no" data-page-node-id="T5fTMWR46HaFGAo3ovFiEY">18</div><div class="lbl" data-page-node-id="tWYYBtjrykcvEzhOC5UQT4">熟悉镜架</div><div class="dotline" data-page-node-id="z37vhF5Ybb3hIQewuBNmox"></div></div>
+      <div class="main" data-page-node-id="cjiOWGckVpdOCJ6f9DrVCo">
+        <div class="head" data-page-node-id="iAmjMTDSFN2XbOrvLGWHXf">
+          <h3 data-page-node-id="CIPK01LTLjV3crkBT31JJH">熟悉眼镜架，仔细观察镜架</h3>
+          <span class="cat" data-page-node-id="DYfcmb6jn74F6iqAhUmA2s">基础拆装</span>
+          <span class="tag" data-page-node-id="WE3x1qERY4mqS1czLNH5IE">第一步基本功</span>
+        </div>
+        <div class="body" data-page-node-id="a0rZopeP3UzFVYwBhq1jde">
+          <p data-page-node-id="MX9yQ4bue9wutvxyL4heqm">动手之前先<span class="k" data-page-node-id="Z6lBHDUrmHwdXr68ybLAm8">熟悉眼镜架</span>、<span class="k" data-page-node-id="SmDDiMITgKUmMFRnvMaI8m">仔细观察镜架</span>结构，认清各部件与螺丝位置，再开始操作。</p>
+          <p data-page-node-id="G8fesyayhLHJbTwVgDCKGg">训练动作包括：<span class="k" data-page-node-id="SEiMWXdlgscqlCoN6fwesC">折叠镜腿铰链螺丝（1 分钟）、鼻托螺丝（1 分钟）、镜圈螺丝的拆装以及手法</span>。</p>
+          <p data-page-node-id="94pBobFhRQ1IiqRI3bC0V2"><span class="r" data-page-node-id="KkACPGaQuloNc32MUPwibc">关键：</span>三项螺丝各限时 1 分钟，练的是手速与手感，不是蛮力。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 19 -->
+    <section class="step" data-page-node-id="OEZiVlNIum07QPNtCZzNt6">
+      <div class="axis" data-page-node-id="7Dt34WNXLRm6XCgoyiGKr3"><div class="no" data-page-node-id="6P3rACnx01GoC5HxVTai59">19</div><div class="lbl" data-page-node-id="mNPgQqzkfMTPtDA8Rf9wt3">板材加热</div><div class="dotline" data-page-node-id="FN1FJVP9TGQ2Y1CmZDKhEY"></div></div>
+      <div class="main" data-page-node-id="E9r9kZcxJBOZiiZDudgmUt">
+        <div class="head" data-page-node-id="ppTkd2pItoO91vLFuqujyX">
+          <h3 data-page-node-id="8KAOj4a7UxUQ1v4n5WkC8p">板材架的加热调整</h3>
+          <span class="cat" data-page-node-id="lNY5hhFyEJZpUPlt8AUhPb">板材工艺</span>
+          <span class="tag" data-page-node-id="jgMNyYKUbLpzMxL5vlz8Vx">控温防老化</span>
+        </div>
+        <div class="body" data-page-node-id="wHeG4qB5WL2fIsfQoq4nGb">
+          <p data-page-node-id="ET72D0flOTMwcEsCODkMmx">板材框调整须<span class="k" data-page-node-id="Shgo0hhaCS85cjOT60Aykl">先加热再塑形</span>，掌握加热的<b data-page-node-id="3CkSLZTLnKEOaquL4A9320">温度、时长与受热部位</b>。</p>
+          <p data-page-node-id="TvmBmuM8cUXMky7PGoBqiP"><span class="r" data-page-node-id="bPqgok2Z3iCatvY3omcQwq">风险提示：</span>旧的板材及胶框在加热调整时，可能因<b data-page-node-id="yNLLbyBuSqvUJSXlPvwLJA">材质老化出现断裂</b>——调整前须先与顾客沟通可能出现的意外（详见《眼镜调校标准手册》E 注意事项）。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 20 -->
+    <section class="step" data-page-node-id="xM0GSEDxtGvmX7jU5h2VXK">
+      <div class="axis" data-page-node-id="QWpLBa4ZNZcaoI4ZGcZzf9"><div class="no" data-page-node-id="1G3re8ViMlSMjhWPmVV6jF">20</div><div class="lbl" data-page-node-id="PitxrsFekNFDAxhzXtdNTc">拆镜片</div><div class="dotline" data-page-node-id="0FfqNTGIy6Vyt33KPQig2a"></div></div>
+      <div class="main" data-page-node-id="SFC4EBHk4XwT8ufhOSHJs4">
+        <div class="head" data-page-node-id="KuJcP1NDnaja7d3nuwg3Wn">
+          <h3 data-page-node-id="67AwdVt5LRbTnM64ou9wBh">半框架拆左右镜片的手法</h3>
+          <span class="cat" data-page-node-id="epYb4nMHpCaoFWEF0WqAhZ">镜片拆装</span>
+          <span class="tag" data-page-node-id="yRLJaJP9JSWtEli8Amr14F">防崩边</span>
+        </div>
+        <div class="body" data-page-node-id="ylohJ18ullKDBcdkLZE7aB">
+          <p data-page-node-id="UTUPiK97sS9agNt0i6qCKZ">半框拆片的核心是<span class="k" data-page-node-id="dNRvUJP0UXDowz1HDLoxpX">控制受力点与受力方向</span>——先松丝、再顺势推出，不可硬掰镜片边缘。</p>
+          <p data-page-node-id="lGylO4USfb0RWQghJOKYf8"><span class="r" data-page-node-id="n9FQVs86arR8ARU9twFFgW">常见失误：</span>直接用手抠镜片边缘，造成<span class="r" data-page-node-id="XBV1dtruu8VRO1fKshW8ek">镜片崩边</span>或丝槽变形。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 21 -->
+    <section class="step" data-page-node-id="2XmV7HOATOT8DG22TrYILt">
+      <div class="axis" data-page-node-id="WsWghjj9oVZ9T4hcW17evC"><div class="no" data-page-node-id="4JFOsGItYz3PK1qiETCsyC">21</div><div class="lbl" data-page-node-id="0ItWRYxYQGAQiOr3f9ruVP">装镜片</div><div class="dotline" data-page-node-id="oDGiAkqJmPPI477hrdCwbc"></div></div>
+      <div class="main" data-page-node-id="iC6Z2WZk0LqBMiF8aBmxQF">
+        <div class="head" data-page-node-id="H9IK82Y0nvgQ7ZGhROlcnF">
+          <h3 data-page-node-id="urnzYgB82CPPKg45xh0Jkh">半框架装镜片时的手法</h3>
+          <span class="cat" data-page-node-id="DcfR0nQCzytuCl1tEcdITW">镜片拆装</span>
+          <span class="tag" data-page-node-id="R37AyfV9BL1ka4Dejs1GCe">与拆片配套</span>
+        </div>
+        <div class="body" data-page-node-id="ePSkQpPnPFi3Tp0qfIW62K">
+          <p data-page-node-id="O5EhqVRktmPNdY20sdjxX2">装片须与拆片手法对称：<span class="k" data-page-node-id="KmbaXtfWNDDxLdOgKsgyeW">镜片先入槽、再回丝收紧</span>，全程保持镜片平面不变形。</p>
+          <p data-page-node-id="HKJgqeEBb2mFo6Tqf8X0dQ"><span class="r" data-page-node-id="z1mBephDMn1ZbE1dMuGV7M">验收标准：</span>镜片无松动、无缝隙、丝线完全落槽，框型不因装片而变形。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 22 -->
+    <section class="step" data-page-node-id="RaxXOKGoDXiizu2NFp2j0F">
+      <div class="axis" data-page-node-id="lHF1lMB55zcWCG1sw5l7HE"><div class="no" data-page-node-id="UxtB0Z0bT6LIGRxRjQEWUU">22</div><div class="lbl" data-page-node-id="br6C40qLXn1URUDcIvbk7T">板材拆装</div><div class="dotline" data-page-node-id="8U8VbdaVJbCDUmOPS2csJF"></div></div>
+      <div class="main" data-page-node-id="scPNb5pbKoq0Y5TGxGGFU6">
+        <div class="head" data-page-node-id="DovHNBB3FAIKKjcF2F9Pj8">
+          <h3 data-page-node-id="Ujgex4fZAxvBGgKnCWgiqB">板材镜架镜片的拆装</h3>
+          <span class="cat" data-page-node-id="46qJEMODCbuFGjMgxGyOdu">板材工艺</span>
+          <span class="tag" data-page-node-id="jcrGjnv1NWfUDLQaZ3VfVi">热装热拆</span>
+        </div>
+        <div class="body" data-page-node-id="cDHG1IRT8v2doCLvIWOqrV">
+          <p data-page-node-id="L6MFKPPKT0gEED7HRsn8sF">板材镜架无螺丝固定，镜片全靠<span class="k" data-page-node-id="JKE5hK9n03SyJnl3uNnELy">框内槽口</span>夹持，拆装必须配合加热软化框体。</p>
+          <p data-page-node-id="vjBUxYMMcfFuyo4EBcARC0"><span class="r" data-page-node-id="dlAf8StRxTRUIIfWSxhaC1">要点：</span>加热均匀、受力均匀，装片后冷却定型再复核，避免镜片二次受力变形。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 23 -->
+    <section class="step" data-page-node-id="zFDxsqFTGJZ4DJiGDZWffq">
+      <div class="axis" data-page-node-id="apg5ONWmjKH1DAb61vjfAA"><div class="no" data-page-node-id="D3XPq4FeEtUL3LsC9Hth8K">23</div><div class="lbl" data-page-node-id="7nSmda5iOAggGxqGTY3GdX">外拉丝</div><div class="dotline" data-page-node-id="P7st3WYgpXg0yiKcL31elw"></div></div>
+      <div class="main" data-page-node-id="UPAHDKCuWN4Ve7L88DnH2d">
+        <div class="head" data-page-node-id="cvWNaIVPBp5NEigzsD9BkM">
+          <h3 data-page-node-id="2FD7tqQBof54DgstLovGT4">半框镜架的外拉丝的更换</h3>
+          <span class="cat" data-page-node-id="8UKd0uAaL7HRXDB8RKsF7k">基础拆装</span>
+          <span class="tag" data-page-node-id="dkmzjzIvLLENGAyGSQ48ZA">三要点</span>
+        </div>
+        <div class="body" data-page-node-id="l87zhqyEiORNMzscbqAA8g">
+          <p data-page-node-id="Ufn8cHGLlcWLRtyDnFt7pJ">更换时需注意三点：<span class="k" data-page-node-id="waTsSjlDHvajLS30ROl64y">丝线的长度、手法、拉丝时的技巧</span>。</p>
+          <div class="chipsline" data-page-node-id="MGTNwXC0F4C3PIC47rxQJS">
+            <i data-page-node-id="kYC5TTQqere7FWBsJXbt3k"><b data-page-node-id="9JwiIXC26WjPbqmZf8dlrd">① 丝线长度</b>：过长松、过短崩，需按框型裁准</i>
+            <i data-page-node-id="eHgLJDSV7q4Ueko7kAxLOq"><b data-page-node-id="emZ7T0cenmfvNzCkAsFoft">② 手法</b>：用力方向与角度要顺槽走</i>
+            <i data-page-node-id="VAeclp2eKFAZ6XGtLCnIXl"><b data-page-node-id="s1NiKvs4GfzXy1TpV7mTVn">③ 拉丝技巧</b>：匀速缓拉，避免局部应力集中</i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 24 -->
+    <section class="step" data-page-node-id="IhMaowUGrmOVBqcDyBuYK0">
+      <div class="axis" data-page-node-id="KeRYtlnnH0AQhwhwC8Qihf"><div class="no" data-page-node-id="64FED81ne5rZUENceJc28t">24</div><div class="lbl" data-page-node-id="7WKAi8qXiByoHhMBAikHRb">内丝</div><div class="dotline" data-page-node-id="hN9i90iwKh58UAMduSaWXB"></div></div>
+      <div class="main" data-page-node-id="snaGAn3l49y1fM6rIopyAQ">
+        <div class="head" data-page-node-id="agjGTxMwYd1d9HYJN8RdGp">
+          <h3 data-page-node-id="iZ3CJrOwUHtSrKpZ5T3fvc">半框镜架内丝的更换</h3>
+          <span class="cat" data-page-node-id="nsIs8PIwhvY4XhGlGFOuGF">基础拆装</span>
+          <span class="tag" data-page-node-id="7xBKrGDeVOTBn9DJFZgRpk">与内丝对应</span>
+        </div>
+        <div class="body" data-page-node-id="HBuMBWgr1ZpjWz4cde1SbZ">
+          <p data-page-node-id="wpWyFxvsl6gliLfL8NumKK">内丝更换与外拉丝是一组配套技能，须掌握<span class="k" data-page-node-id="EB9C9zKcDBNd7ETpcO4beC">内槽走线</span>的规范手法。</p>
+          <p data-page-node-id="gPEiBFbmjMxLh7CYJPivMh"><span class="r" data-page-node-id="00gYnLHnIb78gMkFWjDcaQ">注意：</span>内丝更换后要复核镜片<b data-page-node-id="ZAEvh2ihtTKJKqkMsMtrcB">不松动、不崩边</b>，并检查丝线是否完全落槽。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 25 -->
+    <section class="step" data-page-node-id="Bq9BGnlCGlH2JGfvCuNp3Q">
+      <div class="axis" data-page-node-id="oY5j8aH2DUILTFugaMeC0H"><div class="no" data-page-node-id="wtHOy9UGW0gqdC7M9R8KuG">25</div><div class="lbl" data-page-node-id="GlAO6VxT3wv8AWVZ3qILZW">无框</div><div class="dotline" data-page-node-id="P2rCS1smkn3x2jLqy2NOCO"></div></div>
+      <div class="main" data-page-node-id="0cYSykjeICLydLyTIJhwMY">
+        <div class="head" data-page-node-id="empH4wYefiXiuqoKg4hhr1">
+          <h3 data-page-node-id="vyeUNAsadl4EL5AvdCTZUh">无框架的调整</h3>
+          <span class="cat" data-page-node-id="6ws555zTaAsYcsF2x1T2cm">特殊结构</span>
+          <span class="tag" data-page-node-id="tLl3QSnUHyryrh1Bn79kx2">留活动余地</span>
+        </div>
+        <div class="body" data-page-node-id="Gi1ozFhN5Y0Vlf7vqwcks6">
+          <p data-page-node-id="H5SRU6gmrH0KKsJ1Xii3hc">无框眼镜整副靠<span class="k" data-page-node-id="ebqGkZrFBtDD2cK45hBC4W">螺丝固定</span>，调整时必须保留一定的活动余地。</p>
+          <p data-page-node-id="3zjQPwFDP4sfy9wLIUfPZC"><span class="r" data-page-node-id="Vqwo8VpXRABwbIvWkXnX66">原因：</span>调得过紧会导致摘戴不便，容易引发<span class="r" data-page-node-id="A4etvxNS5IMF2zJiT5fNiV">镜片裂片</span>。参考《眼镜调校标准手册》：无框外张角应比全框、半框都<b data-page-node-id="xm7d6BY7OgAf1im7GrmmhU">略松一些</b>。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 26 新增 -->
+    <section class="step added" data-page-node-id="JdqElBb6Hdqi1ToMRqIEis">
+      <div class="axis" data-page-node-id="TvAClKOpzMETQYD4mQoA09"><div class="no" data-page-node-id="qAjigp7RoZBOxgsEBc9xfT">26</div><div class="lbl" data-page-node-id="HmyZADTrZngWBDggyHN5jC">无框加固</div><div class="dotline" data-page-node-id="CN8ck93bAkgpQNQfGe9Eor"></div></div>
+      <div class="main" data-page-node-id="qplTWfRlNImZTnY7GmwGfS">
+        <div class="head" data-page-node-id="6Gdvae9RZeQuEbHBXSNidE">
+          <h3 data-page-node-id="p1eXUcDAKAIR9tOp9UTm23">无框打孔 / 拉丝的加固与复位</h3>
+          <span class="cat" data-page-node-id="dqGunw2FjFzfPoH6FcPbfy">特殊结构</span>
+
+          <span class="tag" data-page-node-id="KZHiBTSGAaF4hrq1e3Oioy">最精细的活</span>
+        </div>
+        <div class="body" data-page-node-id="iTx998v7mkmjzfxZeGbBrh">
+          <p data-page-node-id="K2C5wEg3lqBs8RDLKMue72">无框眼镜结构精细，靠<span class="k" data-page-node-id="FH3QGy5VZTBEtOTLVD4i9T">螺丝与拉丝固定镜片</span>，日常震动、磕碰极易出现螺丝松动、镜片移位、孔位扩大、边缘破损——是最考验手法的维修项目。</p>
+          <p data-page-node-id="ACM0Os6Q2FHxJyaEAvuj39"><span class="k" data-page-node-id="r3H88obP8xr4cC5YWpKtxi">典型问题与处理：</span></p>
+          <div class="chipsline" data-page-node-id="LZHvFbOvtVkW1PPzYvxVCx">
+            <i data-page-node-id="sGEPetLGlHBIpOFZIaqG9H"><b data-page-node-id="eT9Fmx7fC7qGhw8P0UetoE">孔位扩大</b>：加装衬套或用更大规格螺丝加固</i>
+            <i data-page-node-id="xVdAHcIp9FEA6EKtXiRtzl"><b data-page-node-id="iEeVLRfF4bIPRYCygvD4zc">拉丝松动</b>：钢丝重新张紧复位，必要时更换拉丝</i>
+            <i data-page-node-id="V4raqugPVo2tTXN9Y3HVgf"><b data-page-node-id="1Pn82SNg5IfOuvF6F5udke">崩边裂角</b>：轻微崩边可打磨抛光，严重须换片</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="vteN96Qdk9lvt9cijSfbmX"><span class="r" data-page-node-id="Jm87Bo719pNOA2tHGT5OPg">核心原则：</span>全程<span class="r" data-page-node-id="AHC8i2TABGeOXP0vaZK0YR">严控力度</span>，任何一步用力过猛都可能让镜片碎裂或孔位报废——无框维修"慢就是快"。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 27 -->
+    <section class="step" data-page-node-id="FLC6yFYbqJzEw0KUS7Keq2">
+      <div class="axis" data-page-node-id="9y4NV3hDU5wrrfYdaTG2JT"><div class="no" data-page-node-id="UYGqLsfEQvKUuA6C7p5DFx">27</div><div class="lbl" data-page-node-id="kq7eOo9myvfjc8ZgMZ0T29">纯钛垫圈</div><div class="dotline" data-page-node-id="M40eqkiN3f31EWpZ6dmANx"></div></div>
+      <div class="main" data-page-node-id="LRmhniPeEqgAkDFWJL1OQ3">
+        <div class="head" data-page-node-id="On4JFAF0B4hO1wJf0RdisK">
+          <h3 data-page-node-id="U5CeaaDPL4fFwsuOekC0Cm">纯钛镜架的铰链螺丝加垫圈的装卸</h3>
+          <span class="cat" data-page-node-id="GQOUd8C6nBT0nIiu4mNT5w">结构工艺</span>
+          <span class="tag" data-page-node-id="hn0y0fn7Fa9cdgCevZEhqG">纯钛专用</span>
+        </div>
+        <div class="body" data-page-node-id="WHxYluGdAWwgKzB11oOcwV">
+          <p data-page-node-id="ze4MCcMjxWdlg9DvOks4OW">纯钛镜架铰链需按规范加装<span class="k" data-page-node-id="KtH8TMHP38hECQ2G1Z7DPP">垫圈</span>，掌握垫圈的<b data-page-node-id="M4z8N6acFBYggTiAsP77sI">装卸顺序与力度</b>。</p>
+          <p data-page-node-id="vhkGiiEVryeJVpUEDww2PO"><span class="r" data-page-node-id="esDDCarU0I1op0ouk9Pmho">注意：</span>纯钛材质回弹特性与普通金属不同，拧紧力度须<span class="k" data-page-node-id="I0NyYLdcFeTssPkaCHfzk1">格外克制</span>，避免滑丝。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 28 -->
+    <section class="step" data-page-node-id="YDpJP566yGMwRarnIxuoE3">
+      <div class="axis" data-page-node-id="ZVdPI69pGJSqNgseXueoKs"><div class="no" data-page-node-id="vvSQL0198IzEbxHGlyrU9a">28</div><div class="lbl" data-page-node-id="HzCd2LHvyhfYJZlCAg82Bt">弹簧腿</div><div class="dotline" data-page-node-id="HyeE5mjf8lPCtX6srd5AJs"></div></div>
+      <div class="main" data-page-node-id="vw0IJpm8VF0YvlXkQ6ZNju">
+        <div class="head" data-page-node-id="Om7ReV96LQGd2FTIA4WI7u">
+          <h3 data-page-node-id="QvHwIoTNlzEtT9CJKu4FY9">弹簧镜腿螺丝的安装</h3>
+          <span class="cat" data-page-node-id="d43sswRkgxbV2Ec71SZfVN">结构工艺</span>
+          <span class="tag" data-page-node-id="UtYciqwnJwwrrQrmWqxkND">弹性结构</span>
+        </div>
+        <div class="body" data-page-node-id="FOgOD9Ki2co4PEc4C0kdqZ">
+          <p data-page-node-id="3U1kFCAQUfrWLWQti30eJM">弹簧镜腿内部有弹性机构，螺丝安装须<span class="k" data-page-node-id="NNTAefUlm7creJixbq4sEX">对准弹簧孔位</span>并控制拧紧力度。</p>
+          <p data-page-node-id="4cZFWJ5tc4GIEQUzHmgWcx"><span class="r" data-page-node-id="Ph6ZqTMFpNcB1tMt45q76k">常见失误：</span>强行拧入导致弹簧机构错位或螺丝滑丝，使弹簧功能失效。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 29 新增 -->
+    <section class="step added" data-page-node-id="21JRbzCpcLIUhWIPcuA9OM">
+      <div class="axis" data-page-node-id="FemZ13FqVZEigEgERojjRw"><div class="no" data-page-node-id="T5EE94duzAAiSrIXtaaw5a">29</div><div class="lbl" data-page-node-id="tDDrOrSzSbbLmoeIzSey0M">板胶修复</div><div class="dotline" data-page-node-id="OQ1S2aisuC73qwcOIy6pIq"></div></div>
+      <div class="main" data-page-node-id="Cec1xeep6jDKlzYL2iCHTT">
+        <div class="head" data-page-node-id="WTX1TjgkAZQiOCckbQICEA">
+          <h3 data-page-node-id="VAjzOESytcjIeBxVNVVsTG">板材 / TR90 崩边开裂的修复</h3>
+          <span class="cat" data-page-node-id="S6GF8naw8YzgFzOPjInFEO">板材工艺</span>
+
+          <span class="tag" data-page-node-id="hWhkwrQh46G1Y7n0t8Rgft">热熔补位</span>
+        </div>
+        <div class="body" data-page-node-id="csaZGEcFei3sdyoMEQTUKf">
+          <p data-page-node-id="0vaie5XGrgEme0KU5C2ztB">板材与 TR90 塑胶框常见故障包括<span class="k" data-page-node-id="iovcxQdpfMjx8HaPOZp0qi">镜腿开裂、桩头断裂、镜框崩边、螺丝孔开裂、老化松动</span>——这类材质韧性特殊，普通胶水粘合易脱落、发白，寿命极短。</p>
+          <p data-page-node-id="QquAdL6Y6sg4KidZPhUV4q"><span class="k" data-page-node-id="tOWkMNCqmPru284HSCpw5k">规范工艺：</span>采用<span class="k" data-page-node-id="pYZRdZA2AsMvaB5UxWxDkH">塑胶热熔修复、开孔加固、树脂补位</span>，使修复部位韧性贴合原材质特性，不易二次开裂。</p>
+          <div class="chipsline" data-page-node-id="cPYZcsEnBA5ZIWdQAXqL7g">
+            <i data-page-node-id="umbmWtVYehVicTC59kueil"><b data-page-node-id="39xiWitZJ0CjP98FAYP1f6">老化发硬</b>：恒温软化后定型复位，恢复柔韧</i>
+            <i data-page-node-id="WerxVKtrxLK2QbbvtS3cNe"><b data-page-node-id="fqJFW9V0MXgz3Zcb5hEdgc">崩边缺角</b>：同色料热融填补，冷却后打磨平整</i>
+            <i data-page-node-id="IHgcmE5ORpzs62dDXlnNqd"><b data-page-node-id="N5Q1IylZ4LsmGrW2FEZ54h">螺丝孔开裂</b>：树脂补位 + 重新开孔加固</i>
+          </div>
+          <p style="margin-top:6px;" data-page-node-id="ETyD8m1exzSGP4X3ohxhhw"><span class="r" data-page-node-id="L1lnPaOKhjVHqKLnuWWiQS">与第 19、22 项呼应：</span>板材整形的前提是"控温"——加热温度、时长、受热部位三要素同样适用于修复。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 30 -->
+    <section class="step" data-page-node-id="w8byoVqVI4qpvfec9L1Rml">
+      <div class="axis" data-page-node-id="D97gqIPkX9lvoxx7FWDrR9"><div class="no" data-page-node-id="Az2HUqZVcb9o8alTnsKbO4">30</div><div class="lbl" data-page-node-id="AoCsLIKX9cCB61PATcH4jo">金属焊接</div><div class="dotline" data-page-node-id="0f8rftnIDWAxBBLjAhuenp"></div></div>
+      <div class="main" data-page-node-id="b7f9hr2UmRmy8DujtKPOoZ">
+        <div class="head" data-page-node-id="FvKZpf3GoefWnXKPWstfF0">
+          <h3 data-page-node-id="XmuuVuvZlHgqOeSfAm8ETD">金属镜架的焊接，什么样的眼镜不能够焊接</h3>
+          <span class="cat" data-page-node-id="DK14e6ABM3YiDmLicDf7Kp">结构工艺</span>
+          <span class="tag" data-page-node-id="iig53pDJpapjGk3snuDQR0">先判断能不能焊</span>
+        </div>
+        <div class="body" data-page-node-id="wYCh456UqmsaUsocizJjZf">
+          <p data-page-node-id="fOFGuhS9NoNUMuMQvmovjl">焊接前必须先<span class="k" data-page-node-id="mVlAqUrYnJqfCZJa4qDQNA">判断是否可以焊接</span>——不是所有金属镜架都适合焊，材质、镀层、结构位置都会影响结果。</p>
+          <p data-page-node-id="gkMWudx3e1Zd4grA9AjNRI"><span class="r" data-page-node-id="2OpmoAiXa1xgr5XgWblrL9">判断先行：</span>不能焊的镜架切勿强行施工，应向顾客说明并给出替代方案（如换架、换配件），避免损坏后无法挽回。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 备注与训练建议 -->
+  <div class="sec-title" data-page-node-id="qCFQZ540uHOHapm1mDc9vs">配套说明与带教建议</div>
+  <div class="panel" data-page-node-id="SPTWvoF8eUhBoBXmhyevTR">
+
+    <ul class="notelist" style="margin-top:14px;" data-page-node-id="WMEraOqdKjzkCGzHKshVq8">
+      <li data-page-node-id="maBtUfjXUfaBcLPwO1Qhom"><b data-page-node-id="lE84kRkMnBTqiiAhz6iTcD">本页排序说明：</b>全表按门店实际出现频次由高到低排列——第 1—6 项为"每日常用"（到店必调），第 7—12 项为"高频调校"，第 13—18 项为"常见适配"，第 19—24 项为"加工常练"，第 25—30 项为"特殊低频"。新人可按序号顺序逐项练起，越靠前越先上手。</li>
+      <li data-page-node-id="xn97AuEuWb75Xu8zkx6TQb"><b data-page-node-id="IUOZEp8jGCsSHFr12sMbc3">训练节奏建议：</b>第一档（1—6）每项练 1 天、直接结合到店顾客实操；第二档（7—12）每项练 1 天并结合真实旧镜；第三档（13—18）随件带练；第四档（19—24）结合加工件练；第五档（25—30）以售后疑难件实修演练。</li>
+      <li data-page-node-id="EHQXID4ghzF4oyprtQP9Ow"><b data-page-node-id="EkHq4JAkDTi9pGZ1rvGyBk">与《眼镜调校标准手册》配套：</b>第 1、2、3、7、10 项（鼻托、三平、外张角、前倾角、垂三角度）及第 8、9、11、15 项（镜腿对称、耳勾、镜眼距、面弯）的具体参数与"调整意义"见调校手册 C 角度与 D 点章节。</li>
+      <li data-page-node-id="eOiIlSG14uQoOgiSnEoKEJ"><b data-page-node-id="amwwo17Mlc5CXRodULoYRh">与《门店取镜服务标准流程》衔接：</b>第 4 步"成镜检查（三查一看）"、第 5 步"试戴交接"均需用到本页的整形与调校能力；第 5、6 项（螺丝更换、鼻托更换）可作为取镜后的免费增值服务触点。</li>
+      <li data-page-node-id="b8xAsvlVNifPOBBo8UBQnZ"><b data-page-node-id="OBCR57dti8i0OGXshS3I95">安全底线：</b>一切调整必须垫布操作、先判断后动手；旧架旧片须先告知顾客风险，绝不强行施工。无框（第 25、26 项）与板材（第 19、29 项）是易损高风险项目，务必"慢、稳、匀"。</li>
+    </ul>
+    <div class="redline" data-page-node-id="91FAuaK9YlHnWExd6tDGfX">
+      <b data-page-node-id="ePPpzCDHlvrgLdaEufheUR">核心提醒：</b>整形能力是眼镜门店"看得见的手艺"。顾客判断一家店专业与否，往往不是听你说什么，而是看你<b data-page-node-id="gPHWZZ302dmRrJJ3BeXvDq">手里怎么做</b>——认对螺丝、控住力度、调准角度，这三件事做好，专业就立住了。
+    </div>
+  </div>
+
+  <footer data-page-node-id="VWdQshfw2nsupADDRXTfaD">
+    <b data-page-node-id="OEzDgbfTfnUeH2KWIFV67j">爱眼城眼镜</b> · 整形细节三十项（2027 版）<br data-page-node-id="HY9TiSQTivQFKHMg1EJmT0">
+    本手册与《门店取镜服务标准流程》《眼镜调校标准手册》《标准验光流程》《销售服务流程》配套使用
+  <a class="foot-home" href="../index.html">← 返回课程首页</a><br></footer>
+
+</div>
+
+</body></html>
