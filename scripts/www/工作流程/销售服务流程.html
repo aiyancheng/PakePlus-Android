@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="aaEgDiPwM29DxG3VK3fyxA" data-dm-ref="3"><head data-page-node-id="LGnKRQttxaCQOuTcJA4dfj">
+<meta charset="UTF-8" data-page-node-id="3ikxHWSU9MxqGaES8uIckP">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="YmBLiWIhH0ThTHywDJZjL7">
+<title>爱眼城眼镜 · 销售服务流程</title>
+<style>
+:root{
+    --brand:#0b6ab0;
+    --brand-d:#084f84;
+    --brand-l:#eaf3fb;
+    --accent:#c8102e;
+    --ink:#16232e;
+    --ink-2:#405060;
+    --ink-3:#7b8b9a;
+    --line:#dbe6f0;
+    --bg:#eef4f9;
+    --say:#fffaf0;
+    --say-b:#e6cf9a;
+    --say-t:#8a6414;
+    --ok:#0d7a55;
+    --act:#0d7a55;
+    --act-l:#eafaf3;
+    --warn:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.7;font-size:15px;padding:20px 16px 56px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+  /* 页头 */
+
+  .banner{position:relative;
+    background:linear-gradient(120deg,#0b6ab0 0%,#0a5b98 55%,#084f84 100%);
+    color:#fff;border-radius:16px;padding:28px 36px 26px;
+    overflow:hidden;box-shadow:0 10px 28px rgba(8,79,132,.20);
+  }
+  .banner::after{content:"";position:absolute;right:-70px;top:-70px;
+    width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+  }
+  .banner::before{content:"";position:absolute;right:80px;bottom:-90px;
+    width:180px;height:180px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.09),transparent 70%);
+  }
+  .banner-in{position:relative;z-index:1;}
+  .logo-chip{display:inline-block;background:#fff;border-radius:10px;
+    padding:7px 14px;margin-bottom:14px;box-shadow:0 3px 10px rgba(0,0,0,.18);
+  }
+  .logo-chip img{display:block;height:40px;width:auto;}
+  .banner h1{font-size:27px;font-weight:700;letter-spacing:1.5px;line-height:1.35;}
+  .banner .sub{margin-top:8px;font-size:14.5px;opacity:.9;}
+  .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;}
+  .chips span{font-size:12.5px;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:4px 15px;
+  }
+  .banner .creed{margin-top:18px;padding-top:15px;
+    border-top:1px dashed rgba(255,255,255,.32);
+    font-size:14px;letter-spacing:.6px;
+  }
+  .banner .creed b{color:#ffe08a;font-weight:700;}
+  .sec-title{display:flex;align-items:center;gap:10px;
+    margin:26px 0 14px;font-size:17px;font-weight:700;color:var(--brand-d);
+  }
+  .sec-title em{font-style:normal;font-size:12.5px;font-weight:400;color:var(--ink-3);margin-left:2px;}
+  /* 三段式 */
+
+  .ask3{background:linear-gradient(135deg,#0b6ab0,#084f84);color:#fff;
+    border-radius:14px;padding:18px 22px;
+  }
+  .ask3 h4{font-size:15px;font-weight:700;margin-bottom:10px;letter-spacing:.5px;}
+  .ask3 h4 span{font-size:12px;font-weight:400;opacity:.8;margin-left:6px;}
+  .ask3 .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .ask3 .q{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+    border-radius:10px;padding:10px 13px;
+  }
+  .ask3 .q b{display:block;font-size:12px;color:#ffe08a;letter-spacing:.5px;margin-bottom:3px;}
+  .ask3 .q p{font-size:13.5px;line-height:1.6;}
+  /* 距离礼仪 */
+
+  .dist{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;}
+  .dcard{background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:13px 16px;text-align:center;position:relative;overflow:hidden;
+  }
+  .dcard .dn{font-size:22px;font-weight:800;color:var(--brand);
+    font-family:"Segoe UI",Arial,sans-serif;line-height:1.1;
+  }
+  .dcard .dl{font-size:13.5px;color:var(--ink-2);margin-top:4px;}
+  .dcard .dl b{color:var(--ink);}
+  /* 流程轴 */
+
+  .flowbar{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;display:grid;grid-template-columns:repeat(6,1fr);gap:9px;
+  }
+  .flowbar .fl{border:1px solid #cfe2f2;background:var(--brand-l);
+    border-radius:10px;padding:8px 6px;text-align:center;
+  }
+  .flowbar .fl b{display:block;font-size:11px;color:var(--brand);letter-spacing:.4px;}
+  .flowbar .fl i{display:block;font-style:normal;font-size:12.5px;font-weight:600;margin-top:2px;color:var(--ink);}
+  /* 阶段条 */
+
+  .catbar{display:flex;align-items:center;gap:12px;margin:24px 0 12px;}
+  .catbar .big{min-width:44px;height:44px;border-radius:12px;flex:0 0 auto;padding:0 12px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-d));
+    color:#fff;font-size:15px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 8px rgba(11,106,176,.28);letter-spacing:.5px;
+  }
+  .catbar h2{font-size:18px;color:var(--brand-d);font-weight:700;letter-spacing:.5px;}
+  .catbar .cnt{font-size:12px;color:var(--brand-d);background:var(--brand-l);
+    border:1px solid #c6dcf0;border-radius:999px;padding:2px 12px;font-weight:700;
+  }
+  .catbar .desc{font-size:12.5px;color:var(--ink-3);}
+  /* 步骤卡 */
+
+  .steps{display:flex;flex-direction:column;gap:14px;}
+  .step{display:grid;grid-template-columns:96px 1fr;background:#fff;
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,60,100,.05);
+  }
+  .step .axis{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-d) 100%);
+    color:#fff;display:flex;flex-direction:column;align-items:center;
+    justify-content:flex-start;padding:18px 8px 14px;text-align:center;
+  }
+  .step .axis .no{font-size:26px;font-weight:800;line-height:1;
+    font-family:"Segoe UI",Arial,sans-serif;letter-spacing:-1px;
+  }
+  .step .axis .lbl{margin-top:6px;font-size:11.5px;letter-spacing:2px;opacity:.8;}
+  .step .axis .dotline{flex:1;width:0;border-left:1px dashed rgba(255,255,255,.42);margin:12px 0 0;}
+  .step .main{padding:15px 20px 17px;}
+  .step .head{display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+    padding-bottom:10px;border-bottom:1px solid #eef3f8;margin-bottom:12px;
+  }
+  .step .head h3{font-size:17px;font-weight:700;color:var(--brand-d);letter-spacing:.4px;}
+  .step .head .view{font-size:12px;color:var(--brand-d);background:var(--brand-l);
+    border:1px solid #c6dcf0;border-radius:999px;padding:2px 12px;white-space:nowrap;
+  }
+  .step .head .tag{margin-left:auto;font-size:12px;color:var(--accent);
+    background:#fdf2f4;border:1px solid #f2c8ce;
+    border-radius:999px;padding:2px 12px;white-space:nowrap;
+  }
+  .cols{display:grid;grid-template-columns:1.08fr 1fr;gap:14px;}
+  .cols.one{grid-template-columns:1fr;}
+  .pool{border:1px solid #e8eff6;background:#fbfdff;border-radius:10px;
+    padding:11px 14px 12px;
+  }
+  .pool.act{background:#f9fdfb;border-color:#cfeade;}
+  .pool h4{font-size:13.5px;font-weight:700;color:var(--brand-d);
+    margin-bottom:8px;display:flex;align-items:center;gap:7px;
+  }
+  .pool h4 .badge{font-size:11px;font-weight:700;letter-spacing:.5px;
+    border-radius:5px;padding:1px 7px;flex:0 0 auto;
+  }
+  .pool.act h4{color:#0a6a4a;}
+  .pool.act h4 .badge{background:var(--act);color:#fff;}
+  .pool.say h4{color:var(--brand-d);}
+  .pool.say h4 .badge{background:var(--brand);color:#fff;}
+  .pool ul{list-style:none;}
+  .pool li{position:relative;padding-left:14px;margin-bottom:5px;
+    font-size:13.5px;color:var(--ink-2);
+  }
+  .pool li:last-child{margin-bottom:0;}
+  .pool li::before{content:"";position:absolute;left:2px;top:9px;
+    width:5px;height:5px;border-radius:50%;background:#9dc2df;
+  }
+  .pool.act li::before{background:#8fcfb4;}
+  .say{display:inline-block;background:var(--say);border:1px dashed var(--say-b);
+    color:var(--say-t);border-radius:7px;padding:1px 9px;font-size:13.5px;margin:2px 0;
+  }
+  .k{color:var(--brand-d);font-weight:700;}
+  .r{color:var(--accent);font-weight:700;}
+  .sub{display:block;padding-left:6px;margin-top:3px;}
+  .mini{width:100%;border-collapse:collapse;font-size:13px;margin-top:2px;}
+  .mini th{background:var(--brand-l);color:var(--brand-d);font-weight:700;
+    text-align:left;padding:6px 10px;border:1px solid #dbe9f5;font-size:12.5px;
+  }
+  .mini td{padding:6px 10px;border:1px solid #e6eef6;color:var(--ink-2);vertical-align:top;}
+  .mini tr:nth-child(even) td{background:#fafcfe;}
+  .mini td:first-child{font-weight:700;color:#0a6a4a;white-space:nowrap;}
+  /* 子步骤行（C/D/E 三列场景表） */
+
+  .scene{display:flex;flex-direction:column;gap:8px;}
+  .srow{display:grid;grid-template-columns:118px 1fr;gap:0;
+    border:1px solid #e8eff6;border-radius:9px;overflow:hidden;background:#fff;
+  }
+  .srow .sl{background:var(--brand-l);color:var(--brand-d);font-size:12.5px;font-weight:700;
+    padding:9px 12px;display:flex;align-items:center;
+  }
+  .srow .sr{padding:9px 13px;font-size:13px;color:var(--ink-2);}
+  .srow .sr .say{font-size:13px;}
+  /* 索引表 */
+
+  .panel{background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:20px 22px 22px;
+  }
+  .ref{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .ref th{background:var(--brand-d);color:#fff;font-weight:700;
+    padding:9px 12px;text-align:left;font-size:13.5px;letter-spacing:.5px;
+  }
+  .ref td{padding:8px 12px;border:1px solid #e6eef6;color:var(--ink-2);vertical-align:top;}
+  .ref tr:nth-child(even) td{background:#fafcfe;}
+  .ref td:first-child{font-weight:700;color:var(--brand-d);white-space:nowrap;}
+  .redline{margin-top:16px;border-radius:10px;background:#fdf2f4;
+    border:1px solid #f2c8ce;border-left:5px solid var(--accent);
+    padding:13px 18px;font-size:13.5px;color:#8c2436;line-height:1.8;
+  }
+  .redline b{color:var(--accent);}
+  .warnbar{margin-top:16px;border-radius:10px;background:#fffbeb;
+    border:1px solid #f2d99a;border-left:5px solid var(--warn);
+    padding:13px 18px;font-size:13.5px;color:#7a5309;line-height:1.8;
+  }
+  .warnbar b{color:var(--warn);}
+  footer{margin-top:24px;text-align:center;font-size:12.5px;
+    color:var(--ink-3);line-height:2;
+  }
+  footer b{color:var(--brand-d);}
+  @media (max-width:860px){
+.cols{grid-template-columns:1fr;}
+    .ask3 .row{grid-template-columns:1fr;}
+    .dist{grid-template-columns:1fr;}
+  }
+  @media (max-width:700px){
+body{padding:12px 9px 40px;font-size:14.5px;}
+    .banner{padding:18px 16px 18px;border-radius:12px;}
+    .logo-chip img{height:32px;}
+    .logo-chip{padding:5px 10px;margin-bottom:10px;}
+    .banner h1{font-size:20px;letter-spacing:.5px;}
+    .banner .sub{font-size:13.5px;}
+    .flowbar{gap:6px;padding:14px 12px;}
+    .flowbar .fl{padding:7px 3px;}
+    .flowbar .fl i{font-size:11.5px;}
+    .step{grid-template-columns:62px 1fr;border-radius:12px;}
+    .step .axis{padding:12px 4px 10px;}
+    .step .axis .no{font-size:19px;}
+    .step .axis .lbl{font-size:9px;letter-spacing:.5px;}
+    .step .main{padding:12px 13px 14px;}
+    .step .head h3{font-size:15.5px;}
+    .step .head .tag{margin-left:0;}
+    .catbar .big{min-width:38px;height:38px;font-size:13px;padding:0 9px;}
+    .catbar h2{font-size:16px;}
+    .sec-title{font-size:15.5px;margin:20px 0 12px;}
+    .say{font-size:13px;}
+    .srow{grid-template-columns:1fr;}
+    .srow .sl{border-bottom:1px solid #dbe9f5;}
+    .mini th,.mini td{padding:5px 7px;font-size:12px;}
+    .ref th,.ref td{padding:6px 8px;font-size:12.5px;}
+  }
+  @media print{
+@page{size:A4;margin:12mm 10mm;}
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .wrap{max-width:100%;}
+    .step,.panel,.flowbar,.banner,.ask3,.dcard,.srow{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact;
+      break-inside:avoid;
+    }
+    .steps{gap:8px;}
+    .step .axis .dotline{display:none;}
+    .banner{border-radius:0;}
+  }
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}/*@@ HOME-BACK-BTN @@*/
+/* ═══ 返回首页：嵌入页头（banner / topbar）右上角 ═══ */
+.banner,.topbar{position:relative!important}
+.back-home{position:absolute;right:18px;top:16px;z-index:9;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.16);color:#fff!important;font-size:13px;font-weight:700;line-height:1;
+  padding:9px 16px;border-radius:22px;text-decoration:none!important;
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 3px 10px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:inherit;-webkit-tap-highlight-color:transparent}
+.back-home:hover{background:rgba(255,255,255,.30);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.back-home .bh-ico{font-size:14px;line-height:1}
+/* 页脚返回链接 */
+.foot-home{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#0b6ab0!important;
+  font-weight:700;font-size:13px;text-decoration:none!important;border-bottom:1px dashed rgba(11,106,176,.5);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.foot-home:hover{color:#095a96!important;border-bottom-color:#095a96}
+@media(max-width:700px){
+  .back-home{right:10px;top:10px;font-size:12px;padding:8px 13px;border-radius:20px}
+}
+@media print{.back-home{border-color:#0b6ab0;color:#0b6ab0!important;background:#fff}}
+/*@@ TABLE-COL-FIT @@*/
+/* ═══ 表格列宽优化：固定布局 + 智能换行 + 防溢出 ═══ */
+/* 1) 中文长串安全换行，避免撑宽或溢出容器 */
+th,td{overflow-wrap:break-word;word-break:break-word;}
+/* 2) 表头可换行，避免窄列被 nowrap 撑破 */
+thead th{white-space:normal;}
+/* 3) 短标签列（序号/数字）保持紧凑不换行：仅作用于极短首列 */
+table.fit-narrow td:first-child,
+table.fit-narrow th:first-child{white-space:nowrap;}
+/* 4) 宽屏（≥700px）启用固定布局：让声明的 width 真正生效，长文本列不再吞掉短列 */
+@media (min-width:700px){
+  table{table-layout:fixed;}
+}
+/* 5) 窄屏（<700px）恢复自动布局：表格随容器自适应，避免整页横向溢出 */
+@media (max-width:699px){
+  table{table-layout:auto;}
+}
+
+</style></head>
+<body data-page-node-id="W2lXhB9J3myaN6JZNYJslg" style="">
+<div class="wrap" data-page-node-id="Z4Ll8rPi9sKBmLwxMOO7hy">
+
+  <!-- 页头 -->
+  <div class="banner" data-page-node-id="8DcNGmtWth4MY45DPW2qNZ">
+    <a class="back-home" href="../index.html" title="返回课程首页"><span class="bh-ico">🏠</span>返回首页</a>
+    <div class="banner-in" data-page-node-id="D6GDLBlegC5AzfCOE8o7Jf">
+
+      <h1 data-page-node-id="mWpTgCv6GpHWGKfmc56j2s">爱眼城眼镜 · 销售服务流程</h1>
+      <div class="sub" data-page-node-id="QeqwmHWLeiiby0GpGHPhLd">迎宾接待 → 需求探寻 → 处方解读 → 商品推荐 → 异议谈判 → 成交收银 → 送客离店</div>
+      <div class="chips" data-page-node-id="xNfH5TmPCrkXAcaFu25rF5">
+
+      </div>
+      <div class="creed" data-page-node-id="VsUXHEN7wPPdkFztwzBrOa">
+        核心逻辑：<b data-page-node-id="EzAlUPHdIVkHosFLvNIX79">先建立信任，再挖需求；先解处方，再谈商品</b>——把每一步都做成顾客"想买"的理由。
+      </div>
+    </div>
+  </div>
+
+  <!-- 三段式 -->
+  <div class="sec-title" data-page-node-id="L8GY6vNcCV8A3d0SvTBEu1">贯穿全程的三段式表达 <em data-page-node-id="NtQE6nnqjOIv5c1CA2WKgY">每一个环节、每一次讲解都用这三句收口</em></div>
+  <div class="ask3" data-page-node-id="DsMdo5w9ABAsGQorUS03Dh">
+    <h4 data-page-node-id="V8fdFIFZkVVynIxD6miMSm">三段式销售话术 <span data-page-node-id="cxLpKlx7bjRG4ZrJYM29Tt">—— 视标 / 检测 / 配合，通用句式</span></h4>
+    <div class="row" data-page-node-id="6a59Ofb8fzxSODNFoQ0DD8">
+      <div class="q" data-page-node-id="DIx7tRDYKNCSjEOJWcT3tk"><b data-page-node-id="XGCT5RU6jcvHKMqOLvjGzf">① 是什么</b><p data-page-node-id="F308i6nMv4qnpKa9w4hLcL"><b data-page-node-id="y5gDzkSdu8BcItQNWiceP6">前方是 XX 视标 / XX 项目</b><br data-page-node-id="Ws4LMf1U34LLPA6URCEQ24">先讲清顾客眼前面对的是什么。</p></div>
+      <div class="q" data-page-node-id="X1OJ9Fpq1K3QLmFdDWTGM1"><b data-page-node-id="iuuzcc5WAcJ6aNe84gWBN8">② 做什么用</b><p data-page-node-id="9Z5QFuraNI53Y3jc6MsDAi"><b data-page-node-id="NYtL1vOOn5HMrLDcCOvhhY">用来检测 XX</b><br data-page-node-id="Z2MqjusPFyhKNNSBVRrxQv">说明这项检查 / 产品的价值与目的。</p></div>
+      <div class="q" data-page-node-id="HFWe8LqRAXvFMbfmvz3VUK"><b data-page-node-id="nUs7cMbR5BWi0WASVexEGP">③ 请您配合</b><p data-page-node-id="iyESE1FV8vAr9NT9kELcSN"><b data-page-node-id="M7l5vGozcVnaSUNNQpQ8MA">需要您 XX 做（怎么配合我）</b><br data-page-node-id="ALlx0zu0C2VGE0E9gGEoWO">明确交代动作，语气商量。</p></div>
+    </div>
+  </div>
+
+  <!-- 迎宾距离礼仪 -->
+  <div class="sec-title" data-page-node-id="pEDD5poSmsfgl7OuvKWt5e">迎宾距离礼仪 <em data-page-node-id="djLDG9e73Exr1ljkujtOXq">距离决定姿态，姿态决定印象</em></div>
+  <div class="dist" data-page-node-id="a6zSCFbNdvbr4B1AW3dmsn">
+    <div class="dcard" data-page-node-id="YZDY4ZH5ZCffSUXNJETv4C">
+      <div class="dn" data-page-node-id="rl1E8T0hz2dZhBCHwrqXO6">5 米</div>
+      <div class="dl" data-page-node-id="5WvJ6rtJb6DsrzzhHmGVVC"><b data-page-node-id="C994IpoQQZHjrkwsaOYsGK">目光注视</b><br data-page-node-id="o0whJc2L79zVuemdrSqwIj">提前发现顾客，视线先行</div>
+    </div>
+    <div class="dcard" data-page-node-id="Oko96ZWnvXqTz6fpQ1SFH9">
+      <div class="dn" data-page-node-id="XfJyKqKmJeNkpCQPFRzQIR">3 米</div>
+      <div class="dl" data-page-node-id="sgeAFca233UaAeYbkxGkbA"><b data-page-node-id="wEK3OymheTrraHkqXzzsK0">面带微笑</b><br data-page-node-id="jEYDEBSgfceyC6ZklhOk8a">表情到位，释放善意</div>
+    </div>
+    <div class="dcard" data-page-node-id="7GdeKCtuxrF3bC0dEVxUqO">
+      <div class="dn" data-page-node-id="3QcefMlFZ730NUtAHzIqeg">1 米</div>
+      <div class="dl" data-page-node-id="T8Qn8ZPdh3RIPomEMWCcZF"><b data-page-node-id="3gA4ewVRc5wKdZd7AXMGrt">使用问候语</b><br data-page-node-id="6ybnQn5bxye74rpn5Xmjka">距离 1 米且身体略微前倾</div>
+    </div>
+  </div>
+
+  <!-- 流程总览 -->
+  <div class="sec-title" data-page-node-id="BO5uASaTEGMT413rY6MFvZ">流程总览 <em data-page-node-id="ZWqHm8JmJdXwHVcvm9Am6L">12 个步骤按序执行，环环相扣</em></div>
+  <div class="flowbar" data-page-node-id="jtvbykysts6kZCplVjUrL6">
+    <div class="fl" data-page-node-id="4dwrJdKIcpiSyPd6BL1LHE"><b data-page-node-id="IdYvTlQxz9ehf8NZQeFEUO">STEP 1</b><i data-page-node-id="xzh3X5451bBEkWC0xw1ygF">迎宾接待</i></div>
+    <div class="fl" data-page-node-id="99OpNDF3QJ24Pk1335gbwJ"><b data-page-node-id="MOdEZHW4PCBFvCEVU7xzJG">STEP 2</b><i data-page-node-id="SEy3MHNErPmDZARUMccNx2">需求探寻与分析</i></div>
+    <div class="fl" data-page-node-id="0cFHn3inBdwywUQnNoXRUL"><b data-page-node-id="ZiHLJWt4LFII454crGxfce">STEP 3</b><i data-page-node-id="otlRt81EvB8fpyxIjKnVau">引导验光</i></div>
+    <div class="fl" data-page-node-id="AWj7HRI7zs1yht2G6lWw4n"><b data-page-node-id="wUXmE9jf8t4gZ9EJBMKeRi">STEP 4</b><i data-page-node-id="sL7SOd1ICP1JSFj2dkSQaw">验光</i></div>
+    <div class="fl" data-page-node-id="7xUFKZQWtlnjSWlLzBGvip"><b data-page-node-id="REPFOUNd18iGx0qI18ReDF">STEP 5</b><i data-page-node-id="81G5gbbC0HQQORL8sQoqgB">处方解读与方案</i></div>
+    <div class="fl" data-page-node-id="zhGveELhWA3QtoQBsNlLQI"><b data-page-node-id="8WTrah4lNNd15ZKHbmlfqt">STEP 6</b><i data-page-node-id="MlFku1G68MvoH5fg8T34Ak">商品推荐</i></div>
+    <div class="fl" data-page-node-id="P9yvwPXnhULusQ6ITEXCmP"><b data-page-node-id="3KWJ6ILbw6onsU2RrZ3WSF">STEP 7</b><i data-page-node-id="8mPHbOufB4oOMhIwB2B4yc">异议与价格谈判</i></div>
+    <div class="fl" data-page-node-id="ktHWrbGRu53HMvEu2B0Xy9"><b data-page-node-id="AGcpD30IQtXO3eVgPRJKWU">STEP 8</b><i data-page-node-id="O3Qi0HkFl8MmJQeBL5DqYE">成交收银</i></div>
+    <div class="fl" data-page-node-id="yFVlx7gaJYtmmHwonEH2Uw"><b data-page-node-id="QBtpm8lcBo76kqzdBkEtI8">STEP 9</b><i data-page-node-id="aZYBun7nHVZKcYYsqmKEtX">与顾客核单</i></div>
+    <div class="fl" data-page-node-id="jghZE3Htu87DkyEzILN9Q1"><b data-page-node-id="QOtZlboHcenCXbGkOApfE8">STEP 10</b><i data-page-node-id="nChjUnOp7ytp9zHDMqGau9">增值服务</i></div>
+    <div class="fl" data-page-node-id="AAO8RX0ZbwFp4ZefMECCOC"><b data-page-node-id="y7DwB8vM8jNEcjydsfOYxv">STEP 11</b><i data-page-node-id="Or3AAaLb1R6h5LJ73sMlLX">确认取镜时间</i></div>
+    <div class="fl" data-page-node-id="8Dc3DdtLOKkvLcYEPXM1li"><b data-page-node-id="oAGfHOxgwXoz1K24wbdTMT">STEP 12</b><i data-page-node-id="YypX88WDWy5gCgZmF4bhwH">送客离店</i></div>
+  </div>
+
+  <!-- ===== 阶段一 ===== -->
+  <div class="catbar" data-page-node-id="0BmxuzefHMvvtwszv4x5In">
+    <div class="big" data-page-node-id="GkdMOLBkXGjVITkmFtyJrg">阶段一</div>
+    <h2 data-page-node-id="c2TirN4qsmxULgQRm4qB1T">迎宾接待与需求探寻</h2>
+    <span class="cnt" data-page-node-id="hlUiHJEEIg3HIhTBjbPMeH">步骤 1—2</span>
+    <span class="desc" data-page-node-id="R3HDPfwVFHEJqqMYPalX0y">第一印象 + 摸清来意，决定后面能不能谈下去</span>
+  </div>
+  <div class="steps" data-page-node-id="RiSHrF6ePC2LQU2cOFgwZl">
+
+    <!-- 1 -->
+    <section class="step" data-page-node-id="HzmTYWseBPBurq5Cibn9WI">
+      <div class="axis" data-page-node-id="sCfFC8r2R8WES68t2FVoEl"><div class="no" data-page-node-id="6ZUcl2dnEKipatQpTECbLj">01</div><div class="lbl" data-page-node-id="NJsVd3XaFv6x7uhmSPUYOQ">迎宾接待</div><div class="dotline" data-page-node-id="x2CFnKOaRA9kUDZsB9cwhJ"></div></div>
+      <div class="main" data-page-node-id="rF6F8QS07KDbLmFkYW4DZF">
+        <div class="head" data-page-node-id="82dPiPW5loPZtdDMElZmtr">
+          <h3 data-page-node-id="X4Twm9ewWBHQyTmTTcHpqA">迎宾、接待</h3>
+          <span class="view" data-page-node-id="JxAD6BYUIho1L2nsmXN0z0">进店前 → 姓氏询问 → 顾客引导 → 倒水 → 清洗眼镜</span>
+          <span class="tag" data-page-node-id="4QC1gGhbPBqL2xE6QAKXbq">五小节</span>
+        </div>
+        <div class="cols" data-page-node-id="8zZtPw3uuFHmhT49BeieIC">
+          <div class="pool act" data-page-node-id="zWZa2I9SoQ1gzYa4j9atsC">
+            <h4 data-page-node-id="wrA5ZHcm3zRtoaxF1brKjH"><span class="badge" data-page-node-id="mdtZadsN9zAbkFe9L7U5IA">动作</span>标准动作</h4>
+            <ul data-page-node-id="mfSShyBN2nCK77G9Wv7AGh">
+              <li data-page-node-id="vQ9vRDv2F4u0ZsCbvitVlO"><b data-page-node-id="XN2DpKTnAPXZTrIGaNsFiN">进店前：</b>距离顾客 <span class="k" data-page-node-id="e4xfEoJ6XfgDVG0yhpnr14">5 米目光注视</span>；<span class="k" data-page-node-id="kAOaKRWTdjU47qholr0aZ4">3 米面带微笑</span>；<span class="k" data-page-node-id="2R7TGRGDe7iU4CIVQGsxY3">1 米使用问候语</span></li>
+              <li data-page-node-id="NnCDF40wkBieVGcB96Wq2v">站位与门口保持 <span class="k" data-page-node-id="8yC7i5HBskpHlJ6tA0FH4j">1 米距离</span>，身体略微前倾</li>
+              <li data-page-node-id="kCBnRrQo0RMyHNJW7I0VGd"><b data-page-node-id="Na7hIuH6mwX5p4fuhSzRg4">顾客引导：</b>明确目的顾客保持 <span class="k" data-page-node-id="GKb2ypIgEyC440zGh3r4ye">1 米距离</span>；不说话的顾客与随便看看的顾客保持 <span class="k" data-page-node-id="syHUrZiFs89ZqQmzTdQqnw">3 米距离并注视</span></li>
+              <li data-page-node-id="GOBERrECdi5sfUL94gO9P3"><b data-page-node-id="DFPNSH63nZDEzlwYmVv8oJ">倒水：</b>一手扶杯一手托底，<span class="k" data-page-node-id="E5ZeeOkvTPONM6ykLv5EsJ">logo 面向顾客</span></li>
+              <li data-page-node-id="1N7adKY6RBR3zKBD8dqDhT"><b data-page-node-id="b7G3D7hZoYeEij5IRspTYG">清洗眼镜：</b>双手接眼镜</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="GRNr7jihXFMd99SqEjzVin">
+            <h4 data-page-node-id="pAhB8tLGM4xAzpBrAf5tTj"><span class="badge" data-page-node-id="xwFLtZDdeYmTjdgiCB9qq6">话术</span>标准话术</h4>
+            <ul data-page-node-id="BdH4w1vFSVyIIu81Ke8DNk">
+              <li data-page-node-id="9E0nA0SUSSBCKmjd95US8f">进店前：<span class="say" data-page-node-id="YRd0BVYROfc4H259iSP9tD">"早上好/中午好/晚上好，爱眼城眼镜。请问有什么可以帮助您的吗？"</span></li>
+              <li data-page-node-id="0ZGovdWGY9A2I1YoD0Onb3">姓氏询问：<span class="say" data-page-node-id="URGBhys5wfHiwRUbUI2MwS">"您好，请问怎么称呼您？"</span></li>
+              <li data-page-node-id="cOZlFckVTkupYw9kHdbGkc">顾客引导：明确目的讲需求引导；不说话的 / 随便看看的顾客讲活动宣讲（<span class="say" data-page-node-id="b9QBwiTTQPssrO8m9I65Up">"现在有 XXX 活动"</span>）</li>
+              <li data-page-node-id="D0X44M9in75RUzzaKAac8H">倒水：<span class="say" data-page-node-id="nFnPaU396gLE4fiWe8Z8aD">"先生/女士，请喝茶/水。"</span></li>
+              <li data-page-node-id="6MjPwE4nJf2AuNhl6WCaem">清洗眼镜：<span class="say" data-page-node-id="hcgqbD0jJBizDXHJli5Kho">"您的眼镜看起来有段时间没有保养，镜片有点脏了，我帮您清洗保养一下吧。"</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="warnbar" style="margin-top:12px;" data-page-node-id="q0tcV9KGHcSHdBLiwbnrZr">
+          <b data-page-node-id="PxunzhrIvSKaCAy3fFNngK">执行细节：</b>集体问候需在<b data-page-node-id="vHc6C0hFdpYBasr9e1ETET">店里无其他顾客接待</b>的情况下进行；询问动机前需<b data-page-node-id="aty49MQSOGDkCv3iPCLCPF">礼貌性问出消费者姓氏</b>（如：李先生、王小姐）；顾客走动时倒<b data-page-node-id="EgdVuDixl5K3D2CX3z178h">半杯</b>，顾客坐下时倒 <b data-page-node-id="FOZOchyCt07N2cjgQbV4a5">⅔ 杯</b>；浓茶水兑矿泉水各一半。
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="step" data-page-node-id="lEQxDqw8VM55YYA5Zoqvgv">
+      <div class="axis" data-page-node-id="6Csiv9AXBZu2EG407HCnut"><div class="no" data-page-node-id="NHW3upn4ArFj2iFDHDnYfF">02</div><div class="lbl" data-page-node-id="Mzw7VurQ8FhfpLvjXRtB13">需求探寻</div><div class="dotline" data-page-node-id="dOGC8C7h2VjXQ2MjOxKE8W"></div></div>
+      <div class="main" data-page-node-id="ufRsty13UU2E5fphzGeHIj">
+        <div class="head" data-page-node-id="AFe9LpSQk8erqjh686FSJA">
+          <h3 data-page-node-id="UvCm3S99z4dn0Jfm0GZLOQ">需求探寻与分析</h3>
+          <span class="view" data-page-node-id="teiYcZlqGuuGwWmTNMrhcA">验光 / 配镜 / 清洗维修 / 售后 / 活动咨询 / 竞品调研</span>
+          <span class="tag" data-page-node-id="gcwfLa1LO3p4nbAas7JGTE">六类分流</span>
+        </div>
+        <div class="cols one" data-page-node-id="m0h8RFOqCc2csDxD8cQR8J">
+          <div class="pool act" data-page-node-id="nEzeU3aHgCnclxq2QeHy84">
+            <h4 data-page-node-id="gpOLrqB9WYucsNt98hwu4O"><span class="badge" data-page-node-id="ymmEUqKSAwg4xjWKSixAAa">动作</span>六类顾客分流处理</h4>
+            <div class="scene" data-page-node-id="wGKa3MuM4Rp7OWvTERfOAj">
+              <div class="srow" data-page-node-id="Wd9sh5W99aPG2WRF0wwhRp">
+                <div class="sl" data-page-node-id="phkc5JxEU9XqrgAsHXCAAa">验光</div>
+                <div class="sr" data-page-node-id="WGIBDgv5zTXPImYXI8JmnF">动作：引导顾客至<span class="k" data-page-node-id="S2VuoYEM9PQzdJMcQCrQ2Y">验光流程介绍板前</span>　　话术：<span class="say" data-page-node-id="IkrzZWXCpo42HUPerWcCcd">"现在我们有免费验光和收费验光。"</span></div>
+              </div>
+              <div class="srow" data-page-node-id="zOFukHRYEHVMpvqg3KNUMS">
+                <div class="sl" data-page-node-id="BXUAqdHbB1pZaJFTHuXkSI">配镜</div>
+                <div class="sr" data-page-node-id="rteYJIIq7DuHFzCTzLTpd7">动作：<span class="k" data-page-node-id="61X3PdXx0iQA8HyB7iJOGx">至下一步</span>（直接进入引导验光流程）</div>
+              </div>
+              <div class="srow" data-page-node-id="RyQcmpq8Et31ZRxEFnSaIN">
+                <div class="sl" data-page-node-id="vWqub8yWci1MfK9qyQU8Di">清洗 / 维修</div>
+                <div class="sr" data-page-node-id="wlWkkmt55KFVAkOK666MPq">动作：参照<span class="k" data-page-node-id="4oG4QupLTPEUkUphhnZwzJ">标准礼仪——指引动作</span>　　话术：<span class="say" data-page-node-id="xgA1Hk0JvJj3640Ln5VJ9c">"请往这边走。"</span>　备注：参照免费服务 SOP</div>
+              </div>
+              <div class="srow" data-page-node-id="MzjEK5GdkBsHqEmtx1hNSJ">
+                <div class="sl" data-page-node-id="0EIyHPiJlI9CiDzZuO9jtB">售后</div>
+                <div class="sr" data-page-node-id="am9mi4WKSSfvIp9OXOXuDU">话术：<span class="say" data-page-node-id="0wz4MCMzKCwnO6XYXDsiJ8">"您往这边坐，仔细地跟我们说下。"</span>　备注：参照售后流程</div>
+              </div>
+              <div class="srow" data-page-node-id="Z4ntsywNWeDCWOtKOn9D7X">
+                <div class="sl" data-page-node-id="mzhOEmw4NwD6jvQxgwE8qA">活动 / 专业咨询</div>
+                <div class="sr" data-page-node-id="KQJpM6Cty9ZZJWQKn3Gb9j">话术：回答问题，具体视情况而定　备注：<span class="k" data-page-node-id="9jdCJW8uNT6n1whBZm8CII">耐心解答，百问不厌</span></div>
+              </div>
+              <div class="srow" data-page-node-id="DeDrvGCe8q7JPx4OGwEUzm">
+                <div class="sl" data-page-node-id="cWqqM9E35RILnUFbKQHPcm">竞争对手调研</div>
+                <div class="sr" data-page-node-id="z3Kp6FRtcpVGj5JE83mHgS">话术：回答问题，具体视情况而定　备注：若发现，可进行<span class="r" data-page-node-id="iV2RkQVw5oLwABAgcMgyKm">话题转移</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== 阶段二 ===== -->
+  <div class="catbar" data-page-node-id="FAoRU9J55thbyYGJZS0YfS">
+    <div class="big" data-page-node-id="6uQorrWGave0ZHq2nODJuP">阶段二</div>
+    <h2 data-page-node-id="LRLvd6Z9VbjECQVVMzDmoP">引导验光与处方解读</h2>
+    <span class="cnt" data-page-node-id="jgBFKmTDVi5BZtwCBkSRn0">步骤 3—5</span>
+    <span class="desc" data-page-node-id="djtgzSlfmKryEqWZgMfyM2">把人设、设备、数据都讲成专业资产</span>
+  </div>
+  <div class="steps" data-page-node-id="lwyAVlHlxDZ5juJTGdf04F">
+
+    <!-- 3 -->
+    <section class="step" data-page-node-id="f9Xv0WcuFkH3mSIbtAZiuz">
+      <div class="axis" data-page-node-id="k5kQMAkFV6yJD5yUtBmANc"><div class="no" data-page-node-id="VFc1S1v00OxyAlAikSgaGS">03</div><div class="lbl" data-page-node-id="k4YLxJCt2kWahuJEcKzDMZ">引导验光</div><div class="dotline" data-page-node-id="8esGgxtJyWCnMRiPgbupFh"></div></div>
+      <div class="main" data-page-node-id="DCXiAdZBNAXP3JoZqCRxi8">
+        <div class="head" data-page-node-id="n3Gc5lRlcs17HJjD9jqVkr">
+          <h3 data-page-node-id="jLkcmE2qRaqn2PFbU6bQdg">引导验光</h3>
+          <span class="view" data-page-node-id="Hu8dYRbmeuMbKq4o9CCFAB">验光区引导 → 人设介绍 → 仪器介绍</span>
+          <span class="tag" data-page-node-id="Esf2khvOICcA6AGbCCUSeE">三铺垫</span>
+        </div>
+        <div class="cols" data-page-node-id="zOBFYdzFrJgJlnBwfhf9TR">
+          <div class="pool act" data-page-node-id="DNwHbB81nA0cjDIVrKJNA4">
+            <h4 data-page-node-id="ClA3z7hvbbQVJCRpw9z95j"><span class="badge" data-page-node-id="WUJLrPxjCtcfD8f41y27H2">动作</span>标准动作</h4>
+            <ul data-page-node-id="Dj41l8fW0BsjUmpeGQpJmZ">
+              <li data-page-node-id="UYgsfk0M1oy07k7aq7TpcA">引导至验光区，参照<span class="k" data-page-node-id="TK5em251OrM20eQwzRwjzI">标准礼仪——指引动作</span></li>
+              <li data-page-node-id="mv0LDfaf5Kw1lUe8VAqGu8"><b data-page-node-id="UIZlg1qUYKIClAxsDOiAtC">人设介绍：</b>提前介绍验光师资历，为专业感"背书"</li>
+              <li data-page-node-id="4wczdpEgAzpdvFFtJ6c7PV"><b data-page-node-id="6zVlbn3vlKbqNv5bvdNyHR">仪器介绍：</b>点明设备档次</li>
+              <li data-page-node-id="edml5FzsgarTPUMI1A34oC">顺序不能颠倒：先铺人、再铺设备，最后才开始测</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="AYDByfaY4vbsayZZHdLW5H">
+            <h4 data-page-node-id="alxLFCBdddznPyUldbDK2L"><span class="badge" data-page-node-id="juIvrqmcOa9GiYShB7sX2K">话术</span>标准话术</h4>
+            <ul data-page-node-id="I7lAUxEUsLABQrKoEtP5wP">
+              <li data-page-node-id="AXX4ZWPJMtEDtUcqkyYk2w">验光区引导：<span class="say" data-page-node-id="DQ0vaWRjbweRrTKT9D2CDI">"先给您的眼睛进行检查，再根据您的情况我们给您推荐更适合您的眼镜。"</span></li>
+              <li data-page-node-id="kJdtdW70J4dI2vWDAgSaB5">人设介绍：<span class="say" data-page-node-id="Y9qwf16lXrgnFxjvAnDKDO">"这是我们店工作 XX 年的 XX 验光师，帮您进行验光。"</span></li>
+              <li data-page-node-id="HGoTNEuhaG5hG6Om7uF2dP">仪器介绍：<span class="say" data-page-node-id="UoH4X0RfUJ7h6fH7PDO8Ln">"我们的验光仪器都是国际一线进口设备。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="step" data-page-node-id="oopcYSHQxLRfAm5Z9guImF">
+      <div class="axis" data-page-node-id="actr7gr0vVRriVadLQjFsi"><div class="no" data-page-node-id="HYSyHMW1ZRE7j9SQzV8fv2">04</div><div class="lbl" data-page-node-id="KUyxbiEVLwwu0caQaGRoJU">验光</div><div class="dotline" data-page-node-id="kmXhEOwdtWDCcjz5UU77P9"></div></div>
+      <div class="main" data-page-node-id="Eqnz3CXTPKZKGLKyCwfDrA">
+        <div class="head" data-page-node-id="Ot0pCcsZcFHIlD3XaxLgUE">
+          <h3 data-page-node-id="Td9OjxRyACyfT3HfG9EvmZ">验光</h3>
+          <span class="view" data-page-node-id="1h1yuqphjBM4D9rbaKr74w">标准验光 12 步</span>
+          <span class="tag" data-page-node-id="kDzGf08Y4dn1jNInd4EyAN">三段式表达</span>
+        </div>
+        <div class="cols" data-page-node-id="TVQkWvGYoOvsLnzYc5HyZz">
+          <div class="pool act" data-page-node-id="GVjWzvo8T2qxSglcBCSu92">
+            <h4 data-page-node-id="7mJcY4NuSAahEjUjcLEcuY"><span class="badge" data-page-node-id="k9i4BKwy9LvlykRQ1FJRNY">动作</span>标准动作</h4>
+            <ul data-page-node-id="sgFodMvEMptSBJ3553HNPK">
+              <li data-page-node-id="scku4LHMzUfUgYo9aBFliZ">严格参照<span class="k" data-page-node-id="Aiyo7zYxjXRVxEGOC1CdNj">验光 SOP 流程</span>执行（见《标准验光流程》手册）</li>
+              <li data-page-node-id="kaagQlPXYzFqRGjCLDq8rI">每一步都按<span class="k" data-page-node-id="wouDKamkSddrlUgAYGFw54">三段式</span>向顾客说明：是什么 → 做什么 → 怎么配合</li>
+              <li data-page-node-id="ZW7uuLPlTHXD7i9RXPLpQw"><b data-page-node-id="czK6FELBD9pBL7gJz3EEGj">标准验光 12 步</b></li>
+              <li data-page-node-id="UdobPEAiUHo4F6RNVUL6XJ"><b data-page-node-id="ZMCYHRIeEo8cslBDs8PrpL">视健康综合检查 32 步：</b>预检 10 步 + 主观验光 12 步 + 视功能 10 步</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="1DiO97NSGnzEYVcg1Fc0KN">
+            <h4 data-page-node-id="X2plBAMbCx5XumTQfY19Pq"><span class="badge" data-page-node-id="PAA3fYXpW5prF7N4xTcajl">话术</span>三段式句式</h4>
+            <ul data-page-node-id="JELv4AP8zxllq0MOOJ8cf9">
+              <li data-page-node-id="1TrGxeo9U5OYLNMf3TCmmn"><span class="say" data-page-node-id="QHBJfWP5ghu1JDquwPLfKY">"前方是 XX 视标；用来检测 XX；需要您 XX 做（怎么配合我）。"</span></li>
+              <li data-page-node-id="CnTewnXriHDWFwUA5QaItS">示例：<span class="say" data-page-node-id="tFtZDyDKMqVbFE3K3EaQii">"前方是红绿视标，用来检测您的度数是否过矫，需要您比较一下红绿两边的数字哪边更清楚。"</span></li>
+              <li data-page-node-id="acL1NZmxEzn4SQIvKWmC87">要点：<b data-page-node-id="tT1wbTSGfU1fGAlamSYCPH">每换一个视标就复述一次三段式</b>，顾客全程"知道在做什么"，专业感自然建立</li>
+            </ul>
+          </div>
+        </div>
+        <div class="warnbar" style="margin-top:12px;" data-page-node-id="daclmYIT4JdEXI4AZkKnc0">
+          <b data-page-node-id="t4Hj25KR9KruAXpjIJMc2q">与验光流程的衔接：</b>本步骤的动作标准以《爱眼城眼镜 · 标准验光流程》为准，此处只强调"<b data-page-node-id="Q4D92DVpZbAvk3MLeXQeKk">边测边讲</b>"——测的是度数，讲出来的是专业。
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="step" data-page-node-id="EYSsMzG9GufTq3BrJqUm4S">
+      <div class="axis" data-page-node-id="IlUupD0ApBSE4EQctY8rhW"><div class="no" data-page-node-id="lKZg7xzXEgVmaaTlkXlR4i">05</div><div class="lbl" data-page-node-id="TBWvQY9a48XJEuERD1J9am">处方解读</div><div class="dotline" data-page-node-id="wnK8RTxv2wFm6i6hGsURJz"></div></div>
+      <div class="main" data-page-node-id="SEmvKprkgaSPRxkYRBcEtP">
+        <div class="head" data-page-node-id="un8ZUvcDEDEjRcr3DLTC4O">
+          <h3 data-page-node-id="1w3l7fFGo1RsujNAQ8rR2X">处方解读与方案制定</h3>
+          <span class="view" data-page-node-id="XcStzsc1Y01uuv2RdDgQPf">新旧屈光度 · 新旧视力 · 旧镜情况 · 家族史 · 工作环境 · 眼健康 · 视功能</span>
+          <span class="tag" data-page-node-id="sQOLy4WzmIqGOtcGfUKIAq">七大挖掘点</span>
+        </div>
+
+        <!-- 5.1 屈光度变化 -->
+        <div class="pool act" style="margin-bottom:12px;" data-page-node-id="BEx8OzhVJ0aaKqKEqxF3w4">
+          <h4 data-page-node-id="9YA379n0wvrrDyt8oyCW2C"><span class="badge" data-page-node-id="NPcqFCqt1uyxmn4zBnpHIk">核心</span>新旧屈光度对比 · 三种情况应对话术</h4>
+          <table class="mini" data-page-node-id="GSDFvcH8ozqevmCzGUcTvU">
+            <tbody data-page-node-id="xEor454C4rUL5pEiUz3Hnl"><tr data-page-node-id="8aUTG4pFqwQOFefx6Wbbko">
+              <th style="width:104px;" data-page-node-id="n7UJ33FhH0qH9WAzYKzLvE">情况</th>
+              <th data-page-node-id="drxf2LH2BqbP2ueFGSfZHR">标准话术</th>
+              <th style="width:250px;" data-page-node-id="DDGa8tHTj699IzFTj0m3qf">常见原因分析</th>
+            </tr>
+            <tr data-page-node-id="Wy1OqQC9GSZRbxNc2aDlTA">
+              <td data-page-node-id="PO13vxJTK436LmwOnvz4lY">度数无变化</td>
+              <td data-page-node-id="8Qu8AiNOSk5j1nfWXCHzgv"><span class="say" data-page-node-id="eYojc6gXaU4nSzw1SXDW6l">"很高兴，您这次验光度数没有发生变化。"</span></td>
+              <td data-page-node-id="mSHTyyY2HA5eFH7Uc8amfj">① 旧镜配戴不久　② 平时注意眼睛保养　③ 单纯性近视（无遗传因素），一般成年后停止增长</td>
+            </tr>
+            <tr data-page-node-id="EAwSKvEFilnpMlHniHLCtk">
+              <td data-page-node-id="Pnup0j3XlM6mUw5YMHRhYH">度数增加</td>
+              <td data-page-node-id="4xhykbClgIxxzR3JdUbRAl"><span class="say" data-page-node-id="rAT75iY6NlFQdIzVENNGeU">"这次检查的结果不太乐观，您度数增加了 XX 度。"</span></td>
+              <td data-page-node-id="ZvWdLvmD324ZIGerm1XqDs">① 生理发育，14 岁以下每年必定有增加　② 用眼过度，长时间近用眼、作息不规律　③ 旧镜验配欠矫</td>
+            </tr>
+            <tr data-page-node-id="F37RMP9A2bSNWAsDgfAyYj">
+              <td data-page-node-id="CfJRlztb6oCE28Rtr8drFw">度数下降</td>
+              <td data-page-node-id="W4bWT3qQIT4mKDvhzBcc2f"><span class="say" data-page-node-id="18NLGuBdOjtpoHBSGgTDdf">"这次检查发现，您原来的度数可能过高。"</span></td>
+              <td data-page-node-id="Ywrkf6pzfXkWuy0ZKkFPti">① 原镜度数过矫　② 散光度数增加到近视度数　③ 验光检查距离不同，度数偏低</td>
+            </tr>
+          </tbody></table>
+        </div>
+
+        <div class="cols" data-page-node-id="RaK72Zl5HYpTNrEE1me6X6">
+          <div class="pool act" data-page-node-id="CFbQQ5MqFXGYbn29lZf7mr">
+            <h4 data-page-node-id="mxoV30MujYuAFquU1Z1e9J"><span class="badge" data-page-node-id="C6kA3BLZU45ty7P3NBYqq5">动作</span>七大挖掘点</h4>
+            <ul data-page-node-id="zrawsGCP1f2ZRtfKAptc0G">
+              <li data-page-node-id="9hbbmPs6wLbqQV0KpVadXq"><b data-page-node-id="iYEBkAFfgiUWoRJmCBrkSi">新旧屈光度对比</b>：拿着验光单<span class="k" data-page-node-id="4RrFdjNjuIBFTXqXS5NluQ">逐项讲解</span>，从消费者角度分析，求得消费者认同</li>
+              <li data-page-node-id="GdVcwUdiKgX7FrT2lbFuiY"><b data-page-node-id="7310ipiDkTDUi6QQWy8Eni">新旧视力对比</b>：新视力比旧视力相差 XX 行</li>
+              <li data-page-node-id="EM1w4yGfEDjEOH9LECGC7K"><b data-page-node-id="ECZFP915AhhKruOcVlTE7D">旧镜情况</b>：从旧镜的磨损、变形等对视力的影响及危害进行讲解 → <span class="k" data-page-node-id="GFa3MaSyWK2CaAmBZLprNr">旧镜挖掘新镜需求</span></li>
+              <li data-page-node-id="fro7P15iN04uRfcmRbdgZ5"><b data-page-node-id="vftY73XdHr1wyo7jUXuB6H">家族史</b> → 挖掘家里其他人的配镜需求</li>
+              <li data-page-node-id="SjBoupy4LBgU2VYtEslZsL"><b data-page-node-id="gx28Qm1QcDKXQeYCvcvyE0">眼病史</b> → 挖掘镜片特殊功能要求</li>
+              <li data-page-node-id="nFRmhtVRmWAr9rtaKybe6r"><b data-page-node-id="NAqB0ddGLMweKSlffpfkOM">工作环境</b> → 挖掘镜片功能要求</li>
+              <li data-page-node-id="oGxrwgaeAcs5YGrfEdyURx"><b data-page-node-id="9l5HW6BsxwedZ7IpstNYKP">眼健康</b> → 挖掘顾客眼部保养要求</li>
+              <li data-page-node-id="pyGluxQ7Ywm4weVEUmxPHS"><b data-page-node-id="CUVDH9lG85581RVvXuYMcV">视功能数据解读</b> → 调节 / 聚散两大方向</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="bnbIkH0L1XuZwjKp6pi3vn">
+            <h4 data-page-node-id="JBsmeImITKBOArtKXAcMs1"><span class="badge" data-page-node-id="YOoy5TJvy3c8StD9sNytKB">话术</span>挖掘示范</h4>
+            <ul data-page-node-id="KumwlVrJ0joyVqvOaarzLJ">
+              <li data-page-node-id="N0pmofm3USRQgi1yoxRwtE"><b data-page-node-id="yro40RSySvVHnwOYSDnyCD">旧镜：</b><span class="say" data-page-node-id="JKe5mlLEAsWnH46w9YW68S">"您的旧镜变形比较严重。我留意到您平时佩戴习惯很好，但镜架材质不够柔韧、容易变形。视力和镜片有关系，但镜架也会影响最终看东西的效果。"</span></li>
+              <li data-page-node-id="CECAV6AgrjrctShAXm95fR"><b data-page-node-id="UVmEdT1VGCAFgWanPA71Kz">家族史：</b><span class="say" data-page-node-id="qXMmZwhZwJsVhQ0MYVixgg">"之前验光了解到您父母也是近视，那您的近视属于遗传概率较大，平时又喜欢踢球等运动，还是要多关注眼底健康，可以带上我们门店的叶黄素胶囊增强眼底韧性，也可以让家人一起服用。"</span></li>
+              <li data-page-node-id="LGRBkbgQ5AfcReEmcW2xNf"><b data-page-node-id="bUrWiuh0QA06Kdckp070Oq">眼病史：</b><span class="say" data-page-node-id="PZ4F5C19LZgpsExICPQUMa">"您之前眼睛发过炎症、比较敏感，建议平时日常防护上做足准备。我们刚好有缓解眼疲劳的舒适眼贴，可以搭配抗疲劳镜片一起使用。"</span></li>
+              <li data-page-node-id="2s0mm4G6ERl2gePYgme3gD"><b data-page-node-id="y0KSDpyt48AtyCyxemCH7p">工作环境：</b><span class="say" data-page-node-id="5QqH1BavGnWMJdOCSmvSqh">"您每天对着电脑时间很长，还要开车，需要远近兼顾而且防蓝光的产品。"</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5.2 眼健康 + 视功能 -->
+        <div class="cols" style="margin-top:12px;" data-page-node-id="q5FqT19EPVrAbMcGCulEVF">
+          <div class="pool say" data-page-node-id="KdKYdE64TvcaST89G99VdF">
+            <h4 data-page-node-id="AkRuqf9Ctnj2IAOSAECfVd"><span class="badge" data-page-node-id="MJCbNGlD5sS9NyA7jaDSmf">话术</span>眼健康解读</h4>
+            <ul data-page-node-id="eEjcFWL3TxOUxYAk5WBmAI">
+              <li data-page-node-id="nIChLV0Cw55epb1csBGbMi"><span class="say" data-page-node-id="ktprfzNhmukTa6dECZGD4X">"您的眼白上有'睑裂斑'，可能与您长时间在户外工作有关。户外大量紫外线会引发睑裂斑，若不进行有效紫外线防护，可能发展成'翼状胬肉'，到时影响视力、需要手术切除。所以建议您镜片选择有双面防紫外线功能的镜片。"</span></li>
+              <li data-page-node-id="n8UgAgXHJBw9BBYKlm2BLX"><span class="say" data-page-node-id="fv1RhLYWdGlxCiuvTHIMxC">"像您平时看电脑时间特别久，建议睡前用热毛巾敷眼，或者购买我们公司的 XX 眼贴，更简单方便，缓解视疲劳的效果也更显著。"</span></li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="OCisijM0yJliKGOM5o1lOS">
+            <h4 data-page-node-id="gZk9FatAjcPANTFELUNQqx"><span class="badge" data-page-node-id="cdGDPIyXC9WMdCd5oqjUlK">话术</span>视功能数据解读</h4>
+            <ul data-page-node-id="NvEYKqXLAjBIwKpLPlEiy8">
+              <li data-page-node-id="QwR3jyTsedY4cWdD5bq5JG"><b data-page-node-id="EJZYcaUrRwWPDz2jFg9VRB">调节方面：</b><span class="say" data-page-node-id="cvCXDBhmJmm0LycxV3YGhj">"从视功能检查数据来看，您眼睛在调节功能方面出现障碍，主要体现在调节放松功能异常——近距离看手机、电脑、书本一段时间后，看远会短暂模糊，短时间内眼部易疲劳，长期如此度数容易增加。建议首先选择有放松眼睛功能的防疲劳镜片，其次每天高强度用眼后搭配放松眼部疲劳的眼贴，更全面保护眼睛。"</span></li>
+              <li data-page-node-id="ZC8uw9ocS59oxlYsRi9j72"><b data-page-node-id="twxSuzGjsHSzBfOILsTvTD">聚散方面：</b><span class="say" data-page-node-id="kmfwC6zE2py8PBxcCXQ50D">"从视功能检查数据来看，您眼睛在聚散功能方面出现障碍，主要体现在近距离聚集异常——近距离阅读一段时间后聚焦困难、注意力无法集中，长时间下来眼眶周围疼痛而无法近距离阅读。建议先进行眼睛充分度数的矫正，结合眼睛聚集的训练和协助缓解疲劳的眼贴，让眼睛功能更好地恢复正常。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== 阶段三 ===== -->
+  <div class="catbar" data-page-node-id="10SfJ0jIU52NC4upqBNcYM">
+    <div class="big" data-page-node-id="45zZFiEkSB9lISc1a9OVqX">阶段三</div>
+    <h2 data-page-node-id="woYnkoPXORmHF8OspRIHxx">商品推荐与异议谈判</h2>
+    <span class="cnt" data-page-node-id="09mBwDfBTEzb4Qt1iAaobv">步骤 6—7</span>
+    <span class="desc" data-page-node-id="jfNwhLePu5vhUIR2k61sOS">镜架讲感知、镜片讲价值、异议用 LSCPA、价格有层级</span>
+  </div>
+  <div class="steps" data-page-node-id="Dwy6tYIhqbPa1AFYE7mRWC">
+
+    <!-- 6 -->
+    <section class="step" data-page-node-id="O5ABVNDN5BVc1dhePIkbgp">
+      <div class="axis" data-page-node-id="ripxEnPcgXhDdarwRYNy77"><div class="no" data-page-node-id="S8a1N0BXn3Yb7a3lATTKYn">06</div><div class="lbl" data-page-node-id="otEzNIAGADo1flngykFoEu">商品推荐</div><div class="dotline" data-page-node-id="8K2OJ6CSwCkY0lifFyeM8t"></div></div>
+      <div class="main" data-page-node-id="vRiVF97bEu0SVgxT3ziUOo">
+        <div class="head" data-page-node-id="vkEKB4gYaZDKcqdykmrjyR">
+          <h3 data-page-node-id="3bK0oHzb4ENh6rqRZnCn7M">商品推荐</h3>
+          <span class="view" data-page-node-id="sxJHsPTPmgIzAfOnZ6Asyp">镜架推荐 · 镜片推荐</span>
+          <span class="tag" data-page-node-id="xakG4NkTbYTlW3OCD5utVn">三段式销售</span>
+        </div>
+
+        <div class="cols" data-page-node-id="2VmVAtQmvP2xfhOuBoSitn">
+          <div class="pool act" data-page-node-id="8rKWtjESyLFtgJPoLG0WAQ">
+            <h4 data-page-node-id="sINxFUi1EmqPK6nwBpeum5"><span class="badge" data-page-node-id="mnFjd6gB5hO5HDnmZvIpSX">动作</span>镜架推荐 · 七个讲解维度</h4>
+            <ul data-page-node-id="YG6RnE8e7WUAjEuLy3Kv4L">
+              <li data-page-node-id="ffDtJhfiQ8RkFTklxwVMKU"><b data-page-node-id="T1yGoxa391LlBI7QiaCdFn">材质介绍</b>：如 300 和 500 的合金有什么差别，300 和 700 的钛合金有什么差别</li>
+              <li data-page-node-id="1IawqNsUumCmSM8wHncUib"><b data-page-node-id="fw6NQMpnaMZRVSCEsvVJjs">框型介绍</b>：讲解框型的标准名词，也可以是典故（比如蛤蟆镜）</li>
+              <li data-page-node-id="ihy0aGhFT4FpnDgl1GdNzN"><b data-page-node-id="EeM5MEkRl7MsT9hR5zlVok">颜色介绍</b>：颜色的配适与佩戴感觉——黑色更百搭、桤色更商务、红色更知性等</li>
+              <li data-page-node-id="qekrWhY6MeXmf4rnDEW6EB"><b data-page-node-id="1LABID4SedV9lkbUuynmky">设计介绍</b>：如弹簧腿、镶钻、弧度镜腿等</li>
+              <li data-page-node-id="NO6cHBcg0kCzgSeGzUQWZ8"><b data-page-node-id="awiEMTPYbwKx03bGd3DGGQ">脸型匹配介绍</b>：脸型种类 → 对应适<br data-page-node-id="DOBk9pAexRZGHMSMa9PVPx">配的镜架框型　<span class="k" data-page-node-id="BiGBqAewRGpfoKEJD8TEHP">可用自己做对比参照</span></li>
+              <li data-page-node-id="U5RDteeHH9uQUDdmJHJ0AH"><b data-page-node-id="DdAzFPAGX5Xy7BEmHlFwLP">肤色匹配介绍</b>：肤色判定 → 对应适配的镜架颜色　<span class="k" data-page-node-id="AuSZ1Gw2HstGdTfPjX2y4x">可用自己做对比参照</span></li>
+              <li data-page-node-id="4q15k5fKVAdYb30N6EPFUA"><b data-page-node-id="bUV3tOIxDLhQ78aXVEUkof">光学参数匹配介绍</b>：适配的镜片，主要是美观度的感知　<span class="k" data-page-node-id="k0oDCxKagtAsdxHA3SAyKS">可用旧镜或样片作对比</span></li>
+              <li data-page-node-id="Qn6w6BnV28VvHTclD2j41C"><b data-page-node-id="zYwsoqGXQY92e8EWwXU5jX">太阳镜偏光介绍</b>：偏光与不偏光的差异、偏光的好处和注意点　<span class="k" data-page-node-id="d6wU2itDrz8QgFTLtpw91N">两副偏光眼镜垂直叠加演示</span></li>
+              <li data-page-node-id="qo7MdNsdBPB6exDZvT01Qb"><b data-page-node-id="WFJWZrTeeZN3tjAeXrNdKl">太阳镜色彩介绍</b>：灰、茶、绿、黄，渐变色等之间的特性</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="4MFIknNfzQcmCPgBrNO5OZ">
+            <h4 data-page-node-id="qGAnET7Dv4NW4yUKm51Hek"><span class="badge" data-page-node-id="6v0lpaaqEEhVqWB96l5yeV">话术</span>顾客四类常见关注点</h4>
+            <ul data-page-node-id="s2qG7Dsc10PBBoj9JcSfS5">
+              <li data-page-node-id="SmJ64vSYuJS4lj8QWSCnJ5"><b data-page-node-id="PjowSmF9IuC46Ns2WtIwAh">① 舒不舒服</b>——过敏、重</li>
+              <li data-page-node-id="Vr0JHaGOv4PFdi3wtTqvXN"><b data-page-node-id="kjTNUCru0mkhWFOt4mkZ0u">② 质量好不好</b>——脱皮、掉漆、断裂</li>
+              <li data-page-node-id="TZ70q0RRWowIcRbH6b3gcQ"><b data-page-node-id="TsUw3m6EsTPDGIrHx5vG7D">③ 合不合适</b>——脸型、五官、肤色</li>
+              <li data-page-node-id="homqgPTBcUOEsKGAoAMz16"><b data-page-node-id="atG2AM5olWhhbna9mL10If">④ 突不突身份地位</b>——品牌</li>
+              <li data-page-node-id="C4Z9fAPNw4EsxdatB45On6">讲解时<span class="k" data-page-node-id="LH719zJWTtNIAmUddBzlXM">对准这四点</span>组织语言，比单纯背参数更有效</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pool act" style="margin-top:12px;" data-page-node-id="MfDgJFFQSOWzPtFr4DF1Tw">
+          <h4 data-page-node-id="yknHF8ZGFwjHACQ0JsxQ8d"><span class="badge" data-page-node-id="fsXclRTbNkm0MjEUg9y7k8">核心</span>镜片推荐 · 三段式销售</h4>
+          <div class="cols" style="margin-top:2px;" data-page-node-id="B3wfGVdd44Ewh2jxa1qcfI">
+            <div data-page-node-id="EmHuGitBsZ7DBXKFPGUkrR">
+              <ul data-page-node-id="i6LH3yWFUs4w2J7DspW7aN">
+                <li data-page-node-id="tInmdZMBDhAQCMEq7xbVed"><b data-page-node-id="jjHH1cuF3DmbSqG0TRuJhz">价位顺序：</b><span class="k" data-page-node-id="WtbRimmPOGGwxa0P5BYcq3">高 → 中 → 低</span>，卖点介绍占比 <span class="k" data-page-node-id="dA6UCNg8FmymbDe5B38G0V">50% / 30% / 20%</span></li>
+                <li data-page-node-id="zUKNoGBEJgJ7AWmfILiJBP"><b data-page-node-id="UyFts0D33YK2MtTbFhortK">动作：</b>先打开高价位价格表，再打开中价位价格表，最后打开低价位价格表</li>
+                <li data-page-node-id="DJB6gTyL61aJgWLZX1iD0M"><b data-page-node-id="pAI0tJ2mCYWJaYZ3r9g2Ns">讲解顺序：</b>品牌介绍 → 功能介绍（FAB 模型）→ 折射率介绍</li>
+                <li data-page-node-id="UpYJ8lPT4h3Mt4kyu5vnrd"><b data-page-node-id="yuJo1WpAVoOLbL4ZGze3ol">道具辅助演示</b>贯穿功能与折射率两个环节</li>
+              </ul>
+            </div>
+            <div class="pool say" style="background:#fffaf0;border-color:#e6cf9a;" data-page-node-id="QrRYYJDGDHWzxLoFbdj8NF">
+              <h4 data-page-node-id="ICDVmiPxCiELOL3W7DOPHH"><span class="badge" style="background:var(--brand);" data-page-node-id="lXlnU6neTiTb6pKVYeSJdQ">范例</span>高端产品销售时间分配</h4>
+              <ul data-page-node-id="BXmZ7r7xm43osTgyGyAmk8">
+                <li data-page-node-id="Ka4Kvy6g1N2Nv1zPUW8sr6">① 品牌故事演讲　<span class="k" data-page-node-id="EW3CnhuSfPGOFoxTIVg8iJ">5 分钟</span></li>
+                <li data-page-node-id="jVNma6LsC0c5rNTwPjSAPl">② 光学技术、专利技术，FAB 卖点　<span class="k" data-page-node-id="iRM5qliMZhYarynhoPKAFN">10～15 分钟</span></li>
+                <li data-page-node-id="LDCFeMwxWMbYxNBimkScD3">③ 品类解读　<span class="k" data-page-node-id="pjTlps7UnNSmSF7EQidWA9">10～15 分钟</span></li>
+                <li data-page-node-id="qfvsyZugcundkytdVPhSjs">④ 处方解读、确定品类　<span class="k" data-page-node-id="PlVUxtE2Hlfv2DvyR828Bz">10～15 分钟</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="step" data-page-node-id="yXRFCIHDETO5U6ILc6bXCl">
+      <div class="axis" data-page-node-id="wBtFtlPFGpqOVbEb7skX2i"><div class="no" data-page-node-id="vVSXEpMUVGWjsnwA3FcChD">07</div><div class="lbl" data-page-node-id="s8gWWEi2h4k6qDrvl84eMG">异议谈判</div><div class="dotline" data-page-node-id="InVibeM1Fu4FqTJnjvOC3U"></div></div>
+      <div class="main" data-page-node-id="3zYNLiqTiO0eMA901AYgU8">
+        <div class="head" data-page-node-id="uJP23GXvi2oOFQX05Nvxv5">
+          <h3 data-page-node-id="xvY4MuYYhQYVBzuQ1LxkZF">异议处理和价格谈判</h3>
+          <span class="view" data-page-node-id="qc5EHZa8YFumgBPJudv1Fv">LSCPA 五步法 + 价格四条底线</span>
+          <span class="tag" data-page-node-id="3qQ5iRErRjyI0OCvcnzzPj">先处理情绪，再处理价格</span>
+        </div>
+
+        <div class="pool act" style="margin-bottom:12px;" data-page-node-id="CnUbOUCkVt1YC2SPavrLkK">
+          <h4 data-page-node-id="Qh6x3mPkjsy5LuAPB6HXPq"><span class="badge" data-page-node-id="54Gi86ZknbDA6mGY8wHdJ0">核心</span>LSCPA 异议处理法则（倾听 · 分担 · 重述 · 解答 · 要求）</h4>
+          <table class="mini" data-page-node-id="wFZeoc7n18bq0QchouvIlY">
+            <tbody data-page-node-id="vOoiOZw24jXTw75KzdHyOp"><tr data-page-node-id="8oRj3PCDBCqMWNWmogZijC">
+              <th style="width:88px;" data-page-node-id="WzvoWBZp8yQPGF0EG5ak3P">步骤</th>
+              <th data-page-node-id="edx4w9S7nFH6EYHTR1EdgC">做法</th>
+              <th style="width:250px;" data-page-node-id="vy6jtkw1ytDvwjvhgI59Cv">话术示例</th>
+            </tr>
+            <tr data-page-node-id="whlZml7fKnMhh2cvO9b2AC">
+              <td data-page-node-id="PBCnZQn2RBCCfEDbVe5f6C">L 倾听</td>
+              <td data-page-node-id="LwmWnou5NfvGpt8Y7oUFOh">顾客提出异议时表示欢迎，聚精会神倾听，<b data-page-node-id="WguVReAVMElcFaBcJI7tzn">千万不可强行打断</b>；鼓励顾客表达顾虑，了解对方在担心什么</td>
+              <td data-page-node-id="gDeoMA2WP5dTsD1WWLSwFg"><span class="say" data-page-node-id="LuOmHSPhsBsT5LzkoenWmy">"很高兴您能提出意见"</span>　<span class="say" data-page-node-id="W2n32t6B730Foim46xhAql">"您的担心非常合理"</span></td>
+            </tr>
+            <tr data-page-node-id="Ge6qJe3ggASXSWiCtbIvjc">
+              <td data-page-node-id="DjJSuUecVM5J8u3PJof7D7">S 分担</td>
+              <td data-page-node-id="6hGf2lVvsgHlOl5VbFga9I">对顾客提出的异议<b data-page-node-id="h8wkLuxZMQf3bGdlt0OdDz">先表示认同</b>，以示尊敬</td>
+              <td data-page-node-id="KsDrwXM8YOwdJMy79Wj1Zv"><span class="say" data-page-node-id="XA7SC2NEdtoGueUOnqsX1e">"很多人都这么看"</span>　<span class="say" data-page-node-id="O5BNw9JaZttpCDnq8aF5u3">"您说得有道理"</span>　<span class="say" data-page-node-id="UzNTqM5a8UtynOYxJMupno">"我能理解您的感受"</span></td>
+            </tr>
+            <tr data-page-node-id="UwCPMQNBZaUMINEQPmBYlN">
+              <td data-page-node-id="CqC63sQPgT8c8adnVv7y52">C 重述</td>
+              <td data-page-node-id="ILLNoz8S3JWUUcOU4DtsfX">重述顾客提出的意见，并<b data-page-node-id="2NIoudshpsAskD2WbMEbju">询问重述是否正确</b></td>
+              <td data-page-node-id="EyO85lWQlvXL6Mkb3EGKKT"><span class="say" data-page-node-id="qnAs42TgS1AyLloqfLaOoW">"您是觉得镜腿太细容易断，是吗？"</span>　<span class="say" data-page-node-id="inGoTkqqdTZmOGEVL9eW7G">"您是担心镜片不是您购买的实物，对吗？"</span>　<span class="say" data-page-node-id="PkyoRYaPkUFpVN3EEE1qp8">"您的意思是价格高出了预算，是您不愿意购买的原因吗？"</span></td>
+            </tr>
+            <tr data-page-node-id="FdO9zCqVKTu6JaLoSXurNH">
+              <td data-page-node-id="AocGAoLKSjuzCLIQYAiT3h">P 解答</td>
+              <td data-page-node-id="1BbdWpiXIbp0UmCAHUYiCa">以沉着、坦白及直爽的态度，将有关事实、数据、资料或证明，以口述或书面方式递交给顾客。<b data-page-node-id="jbPtF0BD4T5ek2f9pxrJ4T">不能解答就只可承认，不可信口开河</b></td>
+              <td data-page-node-id="9tdmxWEGXkxIWkct2ikdK0">用数据、实物、证书说话</td>
+            </tr>
+            <tr data-page-node-id="dZIDBZFcIuNhLC1qiQWtyn">
+              <td data-page-node-id="qUoVKk14vcDLPir46URYhj">A 要求</td>
+              <td data-page-node-id="fevCc0FDu39jlJroRfbOun">顾客表示能够接受、一时找不出其他疑问时，<b data-page-node-id="NNHyqYlKgLwyB4ltKM0wIk">马上要求顾客做出购买决定</b></td>
+              <td data-page-node-id="RcVbC0mOS7qDEqmaOMt0OR"><span class="say" data-page-node-id="WHQhD6vhLZuAxiFdGRcau6">"您如果没有其他问题的话，这边就帮您开单了，请问现金还是扫码？"</span></td>
+            </tr>
+          </tbody></table>
+        </div>
+
+        <div class="cols" data-page-node-id="5VMfiVCvwW1GIVoaNiekXK">
+          <div class="pool act" data-page-node-id="5vDCtL0Ut5SmZPPr7LXB0T">
+            <h4 data-page-node-id="mIyaSAF80rn3K12s6Aecmo"><span class="badge" data-page-node-id="q4GL46gqKhLnozRkjFGFtL">动作</span>价格谈判 · 四条底线</h4>
+            <ul data-page-node-id="G3VHmxrcJ5GH1ROhNWPYQr">
+              <li data-page-node-id="9SMwO7IlJni380e3NBuffW"><b data-page-node-id="R7OTVqGSqoGNXADzcxMuF1">① 制度</b>：会员制</li>
+              <li data-page-node-id="8BwLLKpCfYXiXDSbqVD7QU"><b data-page-node-id="h6xsCiSVoF6a2RXoh9VgPA">② 不能第一时间降价</b></li>
+              <li data-page-node-id="BEccidNtL814pVftlOp0Cn"><b data-page-node-id="onkA2oWlRtZIHOEXZ2pWMn">③ 找店长权限，层级差异</b>：不同职位不同折扣，折扣层层申请（不能自主决定高于自己权限的折扣）；<span class="r" data-page-node-id="YthKpFnAmU0Qp5Ys4khcfi">店员无打折权限</span>，仅有宣告活动折扣或通过邀约注册会员享受会员折</li>
+              <li data-page-node-id="Ia7lullWzzSDwVpGq6LBZW"><b data-page-node-id="aQpT40NAOkshxEJ70xlIEK">④ 会员积分制度</b>：累计消费金额升级，积分兑换礼品、代金券、折上折等，<span class="k" data-page-node-id="cLVtdmBQ3uKhU6BS89kenQ">优惠额度控制在 10% 以内</span></li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="Sb0PDWNet8x5uFCZPOIYEy">
+            <h4 data-page-node-id="e1I5SNRDyNBGXRvdzNtIEQ"><span class="badge" data-page-node-id="QAxmEp5jzV2wT3HVhttJgo">话术</span>营造氛围 · 谈判技巧</h4>
+            <ul data-page-node-id="zNFqAwezOEYEH1OaewTeNy">
+              <li data-page-node-id="446AxGZR5xgitro7hW4Mr9">注意细节，营造<b data-page-node-id="X37R56ggxSVeMdhqvqoMIB">轻松气氛</b>（适度文字玩笑）</li>
+              <li data-page-node-id="hbwhtjEUB9H2UIcJf7p3Gy"><b data-page-node-id="kQJe1lNSiXUUzAW1AMGhJH">亲切称谓</b>拉近关系；异性间谈价，可撒娇博同情</li>
+              <li data-page-node-id="ETGR6aCSvYbmTvfXffn8yj"><b data-page-node-id="wzKlKjRoiW6eI5p0tEvxEW">类比价格法</b>：顾客觉得暴利时，聊顾客感兴趣的商品（如车、化妆品等）作类比</li>
+              <li data-page-node-id="q1RCJUFE03IsGjdFjYJy0u">核心目标：<span class="k" data-page-node-id="dXWw2eDhzeCvOh3K7xzjiL">尽可能让顾客感觉此折扣来之不易</span>——需层层申请、已达到最低折扣，满足其优越尊贵感</li>
+              <li data-page-node-id="wXCHdySLqfNqJXdDadItvG"><b data-page-node-id="zGF8ZBl3ujhaDBbuGqwymq">顾客常见异议：</b>材质是什么？有什么好处？售后质保？价格还能不能少？</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== 阶段四 ===== -->
+  <div class="catbar" data-page-node-id="rGPFXVY0q4FAcqBJ0eVrwa">
+    <div class="big" data-page-node-id="d5qgcoJsx2Yoi2UfAnCxny">阶段四</div>
+    <h2 data-page-node-id="moGwq2uSY9PnyZ02mm1e8k">成交收银与交付闭环</h2>
+    <span class="cnt" data-page-node-id="bWAUHkDjNp1B3vOsCwuiFr">步骤 8—12</span>
+    <span class="desc" data-page-node-id="GEzTtc5mxfV9JMxEEqjb55">七种成交法 → 收银四唱 → 逐项核单 → 增值服务 → 约取镜 → 送客</span>
+  </div>
+  <div class="steps" data-page-node-id="lUwrJkEANgQdddNp4wNOrs">
+
+    <!-- 8 -->
+    <section class="step" data-page-node-id="LAkwCiZraSKCsuo3OjCH5u">
+      <div class="axis" data-page-node-id="boTRyYAwSN3MkJwxwAeYN0"><div class="no" data-page-node-id="eAqmLlrlI7AQRuuGnWKJOe">08</div><div class="lbl" data-page-node-id="aqsqFCBBmZ3D9TMLAjWcbk">成交收银</div><div class="dotline" data-page-node-id="CZB9YOqqNEnHFZNGFX6Vwz"></div></div>
+      <div class="main" data-page-node-id="sDcutqpAqscQ5bI50KGQ0L">
+        <div class="head" data-page-node-id="2IAXXNDZOBiQ4MlxYYH58C">
+          <h3 data-page-node-id="Z4ifypweS3njsm91p2wFnK">成交、收银</h3>
+          <span class="view" data-page-node-id="Ioa8DfA5wtgt75J6bXoXWH">成交七法 + 收银四步</span>
+          <span class="tag" data-page-node-id="gekLzGaTC0SskQLKbaAYK4">不私号私收</span>
+        </div>
+        <div class="cols" data-page-node-id="aIidsNcKdkygBxk2Zos0iF">
+          <div class="pool act" data-page-node-id="Hz0c9vCZu8j7RCcecFF8pv">
+            <h4 data-page-node-id="SVpRVRc8MbIGyOPKLPgNBR"><span class="badge" data-page-node-id="J90MV5rHBmHniHyuQttIAM">动作</span>成交七法</h4>
+            <ul data-page-node-id="yzUYLsGR8kln7CGApyzNNN">
+              <li data-page-node-id="IonBLRZj7iKRFunJVXj2yb"><b data-page-node-id="byANMURJ8YDF5H5fDsa085">假定成交法</b>：销售员自主决定顾客购买的产品</li>
+              <li data-page-node-id="SHdmZNBP5gP3oiBtFVRdaI"><b data-page-node-id="m1guGLeohOHz9UzVUTxUpZ">选择成交法</b>：方案二选一</li>
+              <li data-page-node-id="cRE0B2E8hYt5VbX9kd3Pm4"><b data-page-node-id="m54BMEsKPeGJb4uzUHT1CB">对比成交法</b>：极端对比</li>
+              <li data-page-node-id="3BMNvwynudgIvdCwaXFMgu"><b data-page-node-id="u4dkNr1TkVa8uVLVWVBAXx">协同成交</b>：同事配合，引导其他顾客配合</li>
+              <li data-page-node-id="sPYUqHUBogjmenkNpfTCf4"><b data-page-node-id="wQaCvMlvOEFvT0IBrjuwwJ">赠品礼品</b></li>
+              <li data-page-node-id="bLXrw7OsStOFT5Xkkrl4FA"><b data-page-node-id="uQFPm0opNL8x69DIyzKWVi">饥饿促销</b>：限量、多人抢购、仅此一副、折扣限时、订货周期长等</li>
+              <li data-page-node-id="R89tZWhSymIs4yBQTtMAxj"><b data-page-node-id="5Q9hTt6cbtyJ64tGMQao49">直接要求法</b>：引导付款</li>
+              <li data-page-node-id="LpXrQPR9PCXxnNwUmLePUl"><b data-page-node-id="bBFkQQ2fAXCdvqFJYpglOQ">重点突破</b>：帮挑选推荐的、付款的、有话语权的亲友</li>
+            </ul>
+          </div>
+          <div class="pool act" data-page-node-id="c2XfVpkUSIgz6PWSqo8zqA">
+            <h4 data-page-node-id="QG8CaEH8mlQHw7SXs9TZk8"><span class="badge" data-page-node-id="u0SUS4HF3DnK5RPgsd5zQN">收银</span>四唱流程（先唱后收）</h4>
+            <table class="mini" data-page-node-id="DDmY4xScuAmxGONehOM9eW">
+              <tbody data-page-node-id="3rYuODKswBAGZyZDDkdpZL"><tr data-page-node-id="Z464okVbEdJZwLeKQP8Qny"><th style="width:66px;" data-page-node-id="YDzwOTQnLRn0lISojKf6Fy">环节</th><th data-page-node-id="LopCqZaad0BVszSKE6hrGy">标准动作</th></tr>
+              <tr data-page-node-id="Y6wrSh4yWpAUHFmMy5E1cn"><td data-page-node-id="tr8QUaOjitq57rYL8lJEFS">唱收</td><td data-page-node-id="QB91ZGAIIUapeYczHxjQU8">付款前，报价（计算准确金额）</td></tr>
+              <tr data-page-node-id="deXKR96OUcNFFquqGY4dcR"><td data-page-node-id="s7ENxkgwvDhwTEKub9HBF9">收款</td><td data-page-node-id="zpFB9X0qxKdoeqpKoToN0Z">使用门店<b data-page-node-id="F4WR6rAGOlNcrsNX2XFXp1">正规收款机器</b>，<b class="r" data-page-node-id="21eFhkSiBGRoLkrKd5ma5o">不能私号私收货款</b>，区别真假币</td></tr>
+              <tr data-page-node-id="xNIQL9ksbwFc9XHNAzOIR6"><td data-page-node-id="3ChxBY2EipkrUg3AwDFAor">唱付</td><td data-page-node-id="2JPHCyCHa0HoV0HYSyc18u">核对刷卡小票金额、签名</td></tr>
+              <tr data-page-node-id="2uTwpkhvWTifKHHyvEN0bg"><td data-page-node-id="cE6E2b8doFkmikQ0aQHEEI">录单</td><td data-page-node-id="oVSGETNSp5Y8rRlyJ0daPM">录单准确性管理</td></tr>
+            </tbody></table>
+            <div class="warnbar" style="margin-top:10px;" data-page-node-id="UJBtFdWaBu8E4sgvaOQFTd">
+              <b data-page-node-id="rLPxVFk6uabEYG69rL3nv1">红线：</b>店员须会识别真假币的方法；执行<b data-page-node-id="zGLtJK2pPLExM7uZIDhyZx">录错责任制制度</b>。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="step" data-page-node-id="nc85quLVNu3blFJIA9MeeS">
+      <div class="axis" data-page-node-id="p9nEzzjfKI4uUbKuVtetZb"><div class="no" data-page-node-id="ft3CDxFVyNWUGJu843EMq8">09</div><div class="lbl" data-page-node-id="WAeryYUevKiy3su0g3JudA">核单</div><div class="dotline" data-page-node-id="sW3EzXWJbBRLU2yVAXqvgB"></div></div>
+      <div class="main" data-page-node-id="wvbubL9newOG3cfZCVWqUw">
+        <div class="head" data-page-node-id="Q30d6eXqHQ8lUrFaXzl7Dr">
+          <h3 data-page-node-id="BBX7aJKh21dDSuBEcT8DQ7">与顾客核单</h3>
+          <span class="view" data-page-node-id="XYIRReiDKhrR4h5Me6Ltqa">内容核实 → 盖章</span>
+          <span class="tag" data-page-node-id="2hTWb0dPoZ9s4md2C137n4">面对面逐项核</span>
+        </div>
+        <div class="cols" data-page-node-id="qGawWPQ7AQEK6qvTEK9bih">
+          <div class="pool act" data-page-node-id="ak6VZ4vu4Dwbi73f811Qcb">
+            <h4 data-page-node-id="vOHbdbB6ASfx2KS4SiHVKn"><span class="badge" data-page-node-id="pxA4kLqlaD7HV5kaL1IsoT">动作</span>标准动作</h4>
+            <ul data-page-node-id="fnsBIh5TXPKG8K3E7KLsGz">
+              <li data-page-node-id="ISk7MmhqB4tvXE1rmxmWiC">把购物单<b data-page-node-id="DEIHru4kUKu3TFWESw9pnF">当面递给顾客，逐项念出</b>并请其确认</li>
+              <li data-page-node-id="35QIEmAoPedzfkc9yCm9GU">核对 <span class="k" data-page-node-id="zXgjikw4o0U9AAG4dLnL0i">姓名、手机号码、度数、商品型色号、镜片品类、收/欠款金额、备注事项</span></li>
+              <li data-page-node-id="xwSftTW1rn9quUNA4iYHcn">顾客确认签字后，<span class="k" data-page-node-id="Y4JI9lZDb2hcyCgCHbOgJ8">敲上店内的收银章</span></li>
+              <li data-page-node-id="mV9IULxRR1KJSv2WrEwEqc">现片还是车房镜片必须当场说明，避免取镜时争议</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="g9mKIsuSa37f1bGbb5TDAz">
+            <h4 data-page-node-id="fODUeGnifhJgzd1pxl7Na7"><span class="badge" data-page-node-id="1N5iVbFucWan9NIXKYMC5J">话术</span>标准话术</h4>
+            <ul data-page-node-id="qkiLIhdNXt2l31VrJjCK6e">
+              <li data-page-node-id="eqRyALl7DaSCRddZGRyJEb"><span class="say" data-page-node-id="F0VWXxyJ58dwF2wBfuxDst">"您看一下，这是您的购物单。您购买的是 XXX 镜架，型号是 XXXX；购买的镜片为 XXXX，是（现片/车房）；您的光度为 XXXX；这里还帮您增加了一项免费的美薄服务……"</span></li>
+              <li data-page-node-id="tHgM5cSzKUyFtFVC4W8Ny7">要点：<b data-page-node-id="FR9HCuzXLmVZVMLAGPoE3l">边念边指</b>，让顾客的眼睛跟着手指走，核单才真正有效</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10-12 合并展示 -->
+    <section class="step" data-page-node-id="0qSTNggw6VlTYkT6GIB3UE">
+      <div class="axis" data-page-node-id="8AkfjQgPgDDpC8d22gymgx"><div class="no" data-page-node-id="rYPvK1wCY75OXfmdT1xuSU">10</div><div class="lbl" data-page-node-id="kRR5DvEbNB9qHD6ndYCVav">增值</div><div class="dotline" data-page-node-id="IqmcUujNP3ly10iKSIwJ07"></div></div>
+      <div class="main" data-page-node-id="995IA1rhmE0XNsMrCogaYx">
+        <div class="head" data-page-node-id="qRZO4S1HWoteP7AH8yi9L2">
+          <h3 data-page-node-id="CYgjl98fOHRCiR8mhhgdVX">增值服务</h3>
+          <span class="view" data-page-node-id="L5E8vqULlZm9rwBdr5xUye">眼部健康护理（洗眼）</span>
+          <span class="tag" data-page-node-id="Egp4QhvkwCV8eRHAQ3tLfi">注意卫生消毒</span>
+        </div>
+        <div class="cols" data-page-node-id="Y8KjsMJFY7WO1a4ny5DTR6">
+          <div class="pool act" data-page-node-id="dml33ozj8Q3vdJWuWyWBiv">
+            <h4 data-page-node-id="hv0gG1TqmXDQuzewkrYINo"><span class="badge" data-page-node-id="6HZM4TFH67AicDgHKMY0wN">动作</span>标准动作</h4>
+            <ul data-page-node-id="fS4Zv7qXKXrABjxpCxzJJb">
+              <li data-page-node-id="FwJXJ9ifuJecciVDSFRUiz">主动邀请顾客体验<span class="k" data-page-node-id="xD19sAXVXVfdHIADYzBhMZ">洗眼服务</span></li>
+              <li data-page-node-id="v6wi5CAJND6ZnglqWQ3CoF">全程注意<span class="k" data-page-node-id="2qAPYYeGNg6vZttGVMuOtu">卫生和消毒</span>——毛巾、器具一人一换</li>
+              <li data-page-node-id="UZZr0adO3FLI0qUFST2R5j">把增值服务做成"意外惊喜"，而非流程负担</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="1iAMnv2fJoW6r1b0DXgg1G">
+            <h4 data-page-node-id="ltNrssxzUjadEtxZkAlH5p"><span class="badge" data-page-node-id="8poxAfVlTPvRCV9vAL5dlZ">话术</span>标准话术</h4>
+            <ul data-page-node-id="UF3JxFQt2Z3UFD7GyJrsuw">
+              <li data-page-node-id="ZKqK2P5uclDpXuN0rbxTys"><span class="say" data-page-node-id="4Dm3ux4Z1opVMXqsFEwN09">"您今天配了眼镜，我们刚好有一项眼部健康护理服务，帮您洗一下眼，缓解一下疲劳，您体验一下？"</span></li>
+              <li data-page-node-id="sGJLSfIQvNCYN9XCV85LBL">要点：<b data-page-node-id="NDlNXg93KpMgzvdwrCUmcF">先给价值、后提要求</b>——服务做在前面，转介绍与复购自然水到渠成</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" data-page-node-id="cOIGdTW3s7N5dBXzY9Jzt9">
+      <div class="axis" data-page-node-id="iYFi61egbf81vFWmUxbrBD"><div class="no" data-page-node-id="ACJzCqyn9kBViUqgqoTNyc">11</div><div class="lbl" data-page-node-id="j8R7lIlfy5fG47WJSE8qQB">约取镜</div><div class="dotline" data-page-node-id="KG7tRNxcYf7JHKYpZpAkBC"></div></div>
+      <div class="main" data-page-node-id="90BEqYv72nkT696BI4c2VE">
+        <div class="head" data-page-node-id="7BeENpXmMjGWEkzpKfMGaI">
+          <h3 data-page-node-id="dIhXXTCgUplgV6XQvOlHuN">确认取镜时间</h3>
+          <span class="view" data-page-node-id="pSvXzGiV2Z21UeVC2HpuzZ">告知加工流程 → 确认通知方式</span>
+          <span class="tag" data-page-node-id="kDiWGARUj6BynzOUHTTBAE">两头确认</span>
+        </div>
+        <div class="cols" data-page-node-id="JNIMJiKyfmcAjvgfovcKWU">
+          <div class="pool act" data-page-node-id="ZI9oBneYuWP4NjTlmNx9Ng">
+            <h4 data-page-node-id="34GCylBZV5PWN5x5kIzD3c"><span class="badge" data-page-node-id="4KszgXADnBbChO1HBGUobn">动作</span>标准动作</h4>
+            <ul data-page-node-id="AwFbSLVOA8NGE7T59xuQCz">
+              <li data-page-node-id="CDsSRUKdAu3ykMBGtBG6xt">告知顾客加工流程，建立对品质的预期</li>
+              <li data-page-node-id="LgVCK0XQfmCKHQ9Q4ALrHN"><span class="k" data-page-node-id="ysj3PwVbaUjtODZsOcEPuR">确认通知方式</span>：方便什么方式通知您、在什么时间</li>
+              <li data-page-node-id="UGRdTCOTdjxpLerGpwEiSc">征得顾客同意后记录在单，避免取镜时联系不上</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="T1QlKenRwrwjmKGMAVmKhi">
+            <h4 data-page-node-id="ahzMNKJbMGSGeJA4AAqjCa"><span class="badge" data-page-node-id="4LqWT5GwFV8t2UEMMVUKlC">话术</span>标准话术</h4>
+            <ul data-page-node-id="R7r8F4G5wsT28xNzCZDvjB">
+              <li data-page-node-id="R4QnmJLjVuKK3wXWutSdjH">加工流程：<span class="say" data-page-node-id="CSr7oNazlmywFmbXQegHdS">"我们有专业的加工师傅进行眼镜加工，确保合格的眼镜到您的手中。"</span></li>
+              <li data-page-node-id="247CN1swunI7bggfGSZMdi">通知方式：<span class="say" data-page-node-id="MqGwzgiCvGANEl0iGyVrbo">"方便什么方式通知您？在什么时间比较方便呢？"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" data-page-node-id="MvOsIesR3BQt9W9xI4ewAX">
+      <div class="axis" data-page-node-id="7AwT4JLSP1z8B6K7Hb4NKs"><div class="no" data-page-node-id="oYWIx83bE0mQw5wzXqckcp">12</div><div class="lbl" data-page-node-id="fY4NIDpD8CZqHDiUIyZRur">送客</div><div class="dotline" data-page-node-id="1HCIZWEpaHFGGWLn74Xoz8"></div></div>
+      <div class="main" data-page-node-id="cBdyprYdrlqeHVTfPUhiYN">
+        <div class="head" data-page-node-id="9BctV7SCNUEB4MtiOhniXE">
+          <h3 data-page-node-id="XzSB2Y6UFJgerV9okA4Phy">送客离店</h3>
+          <span class="view" data-page-node-id="BOOssHMQ655EAoeAdlzC1I">礼送</span>
+          <span class="tag" data-page-node-id="W0cAmDK2a9IlEVzBv34H0i">最后一公里</span>
+        </div>
+        <div class="cols" data-page-node-id="LFm4v2ngXrxQIgAVmk2xcf">
+          <div class="pool act" data-page-node-id="XiJFVMYLnaTOc6A4NadG2O">
+            <h4 data-page-node-id="JsKnE5t9HIB0eB7EDM7fkV"><span class="badge" data-page-node-id="yKmXRsXs9egpyXeF71W8cK">动作</span>标准动作</h4>
+            <ul data-page-node-id="UVGG3NXAzqoSYS03dmI8bj">
+              <li data-page-node-id="nMtntTHV2ReTtaCicS5ni8">送顾客至门口</li>
+              <li data-page-node-id="nGuDuT6fBBFQeNBfMrcRIL"><span class="k" data-page-node-id="OXw4H1AuxThFxdIDPWZ3uJ">目送离店 3 米远</span> / 顾客远离至在视线中消失</li>
+              <li data-page-node-id="B08342gNjyfiH7Lx5KSyGv"><span class="k" data-page-node-id="YULR67kaD5zEkbQEqPQyuY">雨天撑伞送至车门</span></li>
+              <li data-page-node-id="yfLJEUCzOVW1SHS3BegEud">顾客走后再整理台面，不先转身</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="rhhM6wVfflvH9aHBM37LTy">
+            <h4 data-page-node-id="TgzqqNKmQr4DEaUKzSFgyE"><span class="badge" data-page-node-id="Be3QL1jMA1i9T4R33zNuvK">话术</span>标准话术</h4>
+            <ul data-page-node-id="xiOh1FvIKKMrRKnryB1Fcf">
+              <li data-page-node-id="OXS2ZCqT26hUDXm8t5Amhm"><span class="say" data-page-node-id="yHWd5TdkcrbosYVIg7wL12">"谢谢光临，请慢走！"</span></li>
+              <li data-page-node-id="ihqOtgE64NyaoUZvG3ulln"><span class="say" data-page-node-id="UGcCZLPp4pm1v6K1eZL8Js">"欢迎下次光临！"</span></li>
+              <li data-page-node-id="No5FVBcrYYJbTBW3Yj6ONv">要点：<b data-page-node-id="R0Gkbf1rKJ26fDTLOEhQG4">与第 1 步的迎宾 5/3/1 米礼仪首尾呼应</b>，形成完整的服务闭环</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 索引 -->
+  <div class="sec-title" data-page-node-id="1G3siBzgLeQi2lhDtrs61p">销售流程快速索引 <em data-page-node-id="sF5GoWpqE7hjgZS7hZOInk">12 步骤速查版 · 适合打印上墙与带教</em></div>
+  <div class="panel" data-page-node-id="gYguArf94jDXwQJ1VBGQEe">
+    <table class="ref" data-page-node-id="aEuddQbQ9fhyuXUQ8C31XU">
+      <tbody data-page-node-id="6uKdhCNqjb0BJpEDNrpupX"><tr data-page-node-id="KV7gS58wCf42f5dWkeJWn1">
+        <th style="width:56px;" data-page-node-id="jMFDLccKHlUtj7VsFNoRE4">步骤</th>
+        <th style="width:200px;" data-page-node-id="G0mgyREYOks7sE0g1kHrSq">环节</th>
+        <th data-page-node-id="mrMIBwlG0rzs9bqe4J0Bzm">关键抓手</th>
+      </tr>
+      <tr data-page-node-id="rq5MMTLKlZpwCbrnKr4J7Z"><td data-page-node-id="HElgwsjbVkGiYDE0RrdsnL">1</td><td data-page-node-id="7KxKOjmKClLOuwUmQvL4Y2">迎宾、接待</td><td data-page-node-id="dVO6zHvPAzTRYhDLYGt71o">5/3/1 米礼仪；问姓氏；倒水 logo 朝顾客</td></tr>
+      <tr data-page-node-id="1M26hYB2ObJiWhgVHiAUA1"><td data-page-node-id="slHDoYisrp9aYzDBzJ9KFJ">2</td><td data-page-node-id="owJa1DFtEkmyWLTSOl4gE9">需求探寻与分析</td><td data-page-node-id="97zKWRrYzVAD13uNhWI9gI">六类分流：验光/配镜/清洗维修/售后/咨询/竞品</td></tr>
+      <tr data-page-node-id="uHbAtiQVx8pJ8oC9800N0B"><td data-page-node-id="j2xlX2HoqAEcSBDiRF23qW">3</td><td data-page-node-id="saFcfQecije0Ywqs1R2sox">引导验光</td><td data-page-node-id="idd2sDh1dGhfmMG2wsrBaY">验光区引导 + 人设介绍 + 仪器介绍</td></tr>
+      <tr data-page-node-id="bG8wVBfVtg3iAybRD4ei80"><td data-page-node-id="Zu6ViBL0G9GX8ryde4ECDp">4</td><td data-page-node-id="eHyYSHMUvfGR4hMrkC7cgk">验光</td><td data-page-node-id="EgF0jNzutioC4srrHQh9n3">标准验光 12 步；三段式表达；视健康 32 步</td></tr>
+      <tr data-page-node-id="WobWcVgtRbWDMdLqf5r5dE"><td data-page-node-id="ra6lw5MoDlmLLvoGzN7BWa">5</td><td data-page-node-id="DpcBmlykID9eKK5L54WLe4">处方解读与方案制定</td><td data-page-node-id="amqG0JJTesPQOt2LtzfZPh">七大挖掘点；度数变化三类应对话术</td></tr>
+      <tr data-page-node-id="RAn9HlJLXaRWBKjqa0wAAS"><td data-page-node-id="BzVzb6x2xCJNevzSOuGKpV">6</td><td data-page-node-id="YCvJROxEhESYLupTqDgnZe">商品推荐</td><td data-page-node-id="Zyl8Lnrlblkju5gyK5hNoQ">镜架七维度；镜片三段式（高→中→低 50/30/20）</td></tr>
+      <tr data-page-node-id="uxcjhb4dl9zyPBxYcbU8sN"><td data-page-node-id="UbQslCjinbLsACK2tyuHFu">7</td><td data-page-node-id="s7ynocRVMnVuAm4TaCsQZO">异议处理和价格谈判</td><td data-page-node-id="QKxTFn5eTgrQssOGgY5V9X">LSCPA 五步法；价格四条底线、优惠 ≤10%</td></tr>
+      <tr data-page-node-id="rkcBUKFPc6clScsd9nFcn2"><td data-page-node-id="tyoQkQlP6AzIWTl7qIHI5e">8</td><td data-page-node-id="FnJacSyOygJEPo3sb7M4EF">成交、收银</td><td data-page-node-id="jvXLU7mQXoMElJbGa56ZY8">成交七法；收银四唱；不私号私收</td></tr>
+      <tr data-page-node-id="j835lJCvEhqU5fXQjjrOfn"><td data-page-node-id="F9w5wUN4Y7oE72rpzhDFZH">9</td><td data-page-node-id="vm8byX6RJMvX1BCed6jNIh">与顾客核单</td><td data-page-node-id="AF3ks6E30HwrBu1qtiy8uh">面对面逐项核 + 签字盖章</td></tr>
+      <tr data-page-node-id="bXF84dpC7bn2evRe0oejSV"><td data-page-node-id="0NzEy1XXubnhGft81yZM6I">10</td><td data-page-node-id="tK1FD5cSPcP5BuqjUUU5XC">增值服务</td><td data-page-node-id="tyFU0uc8Ap1n29q1tJucAp">洗眼体验；卫生消毒；先给价值</td></tr>
+      <tr data-page-node-id="mmuQXHM3U1ifjjRuWQOig1"><td data-page-node-id="C5V7W4wCARwlEy3cLoDGby">11</td><td data-page-node-id="83gGII62tWtq2CH8b6Gc6I">确认取镜时间</td><td data-page-node-id="H11zAsf84yvrJIohHl0LvA">告知加工流程 + 确认通知方式与时间</td></tr>
+      <tr data-page-node-id="zUuou7lmxJ0hspX1Offndt"><td data-page-node-id="iaNkEA68HGtVBP7mdfOfMK">12</td><td data-page-node-id="5Vd7MWBfspxPFSMDWg7vIn">送客离店</td><td data-page-node-id="PXjBq2vb369Q2CuI7c6F4m">送至门口；目送 3 米；雨天撑伞至车门</td></tr>
+    </tbody></table>
+
+    <div class="warnbar" data-page-node-id="WB4r4LHGGaDzDzM7we6l0A">
+      <b data-page-node-id="kJJFHuqGlJtEB6hFTTF5uz">带教提醒：</b>第 5 步"处方解读"是全流程的<b data-page-node-id="Rff4szGDfS9ZEFIBwZ01hP">价值中枢</b>——它把验光数据翻译成顾客听得懂的"需求"，第 6 步的商品推荐才有落点。新人培训请先练第 5 步的七大挖掘点，再练第 6 步的讲解顺序；价格谈判放最后练，因为<b data-page-node-id="U968u8vv70P150BUfDOKr1">谈价是防守，处方解读才是进攻</b>。
+    </div>
+    <div class="redline" data-page-node-id="GW1UrySXrLZfy12CO8jd0F">
+      <b data-page-node-id="QHbTc7gp7ok4WQEqtI5gjG">核心逻辑回顾：</b>本流程的设计逻辑是<b data-page-node-id="KqUAw7Ej3f0nu4xXS1BSGL">先建立信任（1-3） → 再输出专业（4-5） → 然后匹配商品（6） → 冷静处理异议（7） → 果断促成（8-12）</b>。任何一步跳跃，都会让顾客觉得"你只是想卖东西"；而按顺序走完，顾客会觉得"你是在为我的眼睛负责"。
+    </div>
+  </div>
+
+  <footer data-page-node-id="ZvlTrcl25s8NYpANzuiplF" style="cursor: text;">
+    <b data-page-node-id="eEdmNwL2qePZiHU2xZpk6f">爱眼城眼镜</b> · 销售服务流程（2027 版）<br data-page-node-id="pWycAJ3qjsyFGxI59DupjY"><br><a class="foot-home" href="../index.html">← 返回课程首页</a><br></footer>
+
+</div>
+
+
+
+</body></html>
