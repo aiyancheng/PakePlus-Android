@@ -91,18 +91,19 @@ body{
   font-size:.85em;font-family:inherit;color:var(--text);outline:none;
 }
 .assign-wrap input:focus{border-color:var(--brand)}
-.stats-grid{display:grid;grid-template-columns:repeat(8,1fr)!important;gap:9px;margin-top:16px}
+.stats-grid{display:grid;grid-template-columns:repeat(9,1fr)!important;gap:8px;margin-top:16px}
 .sc{background:#f8fafd;border-radius:11px;padding:13px 6px;text-align:center;border:1px solid var(--line)}
 .sc .n{font-size:1.5em;font-weight:800;line-height:1.2}
 .sc .l{font-size:.74em;color:var(--muted);margin-top:2px}
 .sc.total .n{color:var(--brand)}
 .sc.do .n{color:#c05621}
 .sc.know .n{color:#1a56b0}
-.sc.l4 .n{color:var(--ok)}
-.sc.l3 .n{color:var(--ok-l)}
-.sc.l2 .n{color:var(--mid)}
-.sc.l1 .n{color:var(--part)}
-.sc.l0 .n{color:var(--no)}
+.sc.l5 .n{color:var(--ok)}
+.sc.l4 .n{color:var(--ok-l)}
+.sc.l3 .n{color:var(--mid)}
+.sc.l2 .n{color:var(--part)}
+.sc.l1 .n{color:var(--no)}
+.sc.l0 .n{color:#9e9e9e}
 /* 应会 / 应知 达标双条 */
 .dual-bar{margin-top:15px;display:flex;flex-direction:column;gap:9px}
 .db-row{display:flex;align-items:center;gap:11px}
@@ -114,11 +115,12 @@ body{
 /* 进度条 */
 .bar-wrap{margin-top:16px}
 .bar-outer{height:22px;border-radius:12px;background:#e9eef6;overflow:hidden;display:flex;box-shadow:inset 0 1px 3px rgba(0,0,0,.06)}
-.bar-4{background:linear-gradient(90deg,#43a047,#1b5e20);transition:width .4s ease}
-.bar-3{background:linear-gradient(90deg,#9ccc65,#558b2f);transition:width .4s ease}
-.bar-2{background:linear-gradient(90deg,#ffd54f,#f9a825);transition:width .4s ease}
-.bar-1{background:linear-gradient(90deg,#ffb74d,#ef6c00);transition:width .4s ease}
-.bar-0{background:linear-gradient(90deg,#ef9a9a,#c62828);transition:width .4s ease}
+.bar-5{background:linear-gradient(90deg,#43a047,#1b5e20);transition:width .4s ease}
+.bar-4{background:linear-gradient(90deg,#9ccc65,#558b2f);transition:width .4s ease}
+.bar-3{background:linear-gradient(90deg,#ffd54f,#f9a825);transition:width .4s ease}
+.bar-2{background:linear-gradient(90deg,#ffb74d,#ef6c00);transition:width .4s ease}
+.bar-1{background:linear-gradient(90deg,#ef9a9a,#c62828);transition:width .4s ease}
+.bar-0{background:linear-gradient(90deg,#cfcfcf,#8d8d8d);transition:width .4s ease}
 .bar-legend{display:flex;justify-content:space-between;margin-top:8px;font-size:.76em;color:var(--muted);flex-wrap:wrap;gap:6px}
 .bar-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
 
@@ -177,25 +179,27 @@ body{
 .kind.know{background:#e8f0fe;color:#1a56b0;border:1px solid #c6dafc}
 .kind.do{background:#fdece0;color:#c05621;border:1px solid #f6cba4}
 
-/* 五级选择 */
+/* 六级选择 */
 .choices{display:flex;flex-shrink:0;gap:5px;align-self:center}
 .ch{
   border:1.5px solid var(--line);background:#fff;color:#8a97a8;font-size:.72em;font-weight:700;
   padding:5px 9px;border-radius:8px;cursor:pointer;transition:.15s;white-space:nowrap;font-family:inherit;
 }
 .ch:hover{border-color:#bcd0ee}
-.ch.active[data-v="4"]{background:#e8f5e9;border-color:#4caf50;color:#2e7d32}
-.ch.active[data-v="3"]{background:#f1f8e9;border-color:#aed581;color:#558b2f}
-.ch.active[data-v="2"]{background:#fffde7;border-color:#ffe082;color:#b26a00}
-.ch.active[data-v="1"]{background:#fff4e5;border-color:#ffb74d;color:#ef6c00}
-.ch.active[data-v="0"]{background:#fdeeee;border-color:#ef9a9a;color:#c62828}
+.ch.active[data-v="5"]{background:#e8f5e9;border-color:#4caf50;color:#2e7d32}
+.ch.active[data-v="4"]{background:#f1f8e9;border-color:#aed581;color:#558b2f}
+.ch.active[data-v="3"]{background:#fffde7;border-color:#ffe082;color:#b26a00}
+.ch.active[data-v="2"]{background:#fff4e5;border-color:#ffb74d;color:#ef6c00}
+.ch.active[data-v="1"]{background:#fdeeee;border-color:#ef9a9a;color:#c62828}
+.ch.active[data-v="0"]{background:#f2f3f5;border-color:#c8c8c8;color:#757575}
 
 /* 状态边框 */
-.item.s4{border-left:4px solid #4caf50;background:#f7fdf8}
-.item.s3{border-left:4px solid #aed581;background:#fafdf3}
-.item.s2{border-left:4px solid #ffe082;background:#fffef5}
-.item.s1{border-left:4px solid #ffb74d;background:#fffcf5}
-.item.s0{border-left:4px solid #ef9a9a;background:#fef8f8}
+.item.s5{border-left:4px solid #4caf50;background:#f7fdf8}
+.item.s4{border-left:4px solid #aed581;background:#fafdf3}
+.item.s3{border-left:4px solid #ffe082;background:#fffef5}
+.item.s2{border-left:4px solid #ffb74d;background:#fffcf5}
+.item.s1{border-left:4px solid #ef9a9a;background:#fef8f8}
+.item.s0{border-left:4px solid #cfcfcf;background:#fafafa}
 
 /* 文档内分区（周内小结/流程衔接） */
 .doc-note{
@@ -245,7 +249,7 @@ body{
 /* 响应式 */
 @media(max-width:1100px){
   .wrap{max-width:100%;padding:24px 18px 80px}
-  /* 「整体掌握情况」固定 1 行 8 列，仅压缩间距与字号 */
+  /* 「整体掌握情况」固定 1 行 9 列，仅压缩间距与字号 */
   .stats-grid{gap:6px}
   .sc{padding:10px 3px}
   .sc .n{font-size:1.32em}
@@ -254,7 +258,7 @@ body{
 @media(max-width:900px){
   .hero{padding:26px 22px}
   .hero h1{font-size:1.45em}
-  /* 固定 1 行 8 列：进一步压缩以适配窄屏 */
+  /* 固定 1 行 9 列：进一步压缩以适配窄屏 */
   .stats-grid{gap:5px}
   .sc{padding:9px 2px}
   .sc .n{font-size:1.18em}
@@ -270,11 +274,11 @@ body{
   .hero{padding:22px 18px}
   .hero h1{font-size:1.28em}
   .stats-panel{padding:14px 16px}
-  /* 固定 1 行 8 列：极窄屏兜底压缩 */
-  .stats-grid{gap:4px}
+  /* 固定 1 行 9 列：极窄屏兜底压缩（六级制新增一列，改为 9 卡严格等分并收紧标签字号，避免标签折成 3 行） */
+  .stats-grid{gap:4px;grid-template-columns:repeat(9,minmax(0,1fr))!important}
   .sc{padding:8px 1px}
   .sc .n{font-size:1.05em}
-  .sc .l{font-size:.6em}
+  .sc .l{font-size:.54em;letter-spacing:-.02em}
   .week-head{padding:13px 15px;gap:10px}
   .week-no{width:38px;height:38px}
   .week-body{padding:4px 15px 16px}
@@ -298,7 +302,7 @@ body{
       <span>🗂 8 大周主题</span>
       <span>📘 应知 52 项</span>
       <span>🛠 应会 150 项</span>
-      <span>✅ 五级自评</span>
+      <span>✅ 六级自评</span>
       <span>📊 分类达标</span>
       <span>💾 自动保存</span>
     </div>
@@ -310,10 +314,10 @@ body{
     <ul>
       <li><b>两类条目</b>：每条都标注了类型——<span class="kind know">📘 应知</span>指需要「知道 / 理解」的知识性内容（制度、原理、品牌、数据结构等）；<span class="kind do">🛠 应会</span>指必须能「动手 / 开口」的实操技能（话术、调整、收银、开单、验光协助等）。</li>
       <li><b>每周闭环</b>：每周最后一天为「总结复盘 + 周测卷」——先回顾本周要点 / 难点，完成「要点—难点—自评—改进」四段复盘，再做周测卷（理论 60 + 实操 40，≥70 分达标）。第 4 周另有中期考核，第 8 周为正式结业考核。</li>
-      <li><b>逐项自评</b>：每个条目右侧有「知道 / 理解 / 运用 / 熟练 / 卓越」五档按钮（对应销售能力金字塔 L1-L5），凭真实情况勾选，不夸大、不遗漏。</li>
-      <li><b>五级标准</b>：<b style="color:#c62828">知道</b>＝听说过/学过，但不熟，翻笔记才能找到；<b style="color:#ef6c00">理解</b>＝能解释给别人听；<b style="color:#b26a00">运用</b>＝能独立使用，但需要想一想、偶尔卡壳；<b style="color:#558b2f">熟练</b>＝自然流畅、脱口而出；<b style="color:#2e7d32">卓越</b>＝灵活变通，面对不同顾客有不同策略。</li>
-      <li><b>达标线（分类）</b>：<b>📘 应知</b>达到「理解」即为达标；<b>🛠 应会</b>必须达到「运用」才算达标。优秀员工两类均应达到「熟练」及以上，「卓越」是标杆。</li>
-      <li><b>实时统计</b>：顶部面板汇总条目总计、应会/应知数量、五档分布与掌握率，并给出「应会达标率」「应知达标率」双条进度，一目了然。</li>
+      <li><b>逐项自评</b>：每个条目右侧有「不知道 / 知道 / 理解 / 运用 / 熟练 / 卓越」六档按钮，凭真实情况勾选，不夸大、不遗漏。其中「知道—卓越」对应销售能力金字塔 L1-L5；「不知道」表示这条内容你还没学到、或完全没有印象（千万别跳过——如实勾选才能找出真正的空白点）。</li>
+      <li><b>六级标准</b>：<b style="color:#757575">不知道</b>＝没学过或完全没印象（最需要优先补的空白）；<b style="color:#c62828">知道</b>＝听说过/学过，但不熟，翻笔记才能找到；<b style="color:#ef6c00">理解</b>＝能解释给别人听；<b style="color:#b26a00">运用</b>＝能独立使用，但需要想一想、偶尔卡壳；<b style="color:#558b2f">熟练</b>＝自然流畅、脱口而出；<b style="color:#2e7d32">卓越</b>＝灵活变通，面对不同顾客有不同策略。</li>
+      <li><b>达标线（分类）</b>：<b>📘 应知</b>达到「理解」即为达标；<b>🛠 应会</b>必须达到「运用」才算达标。「不知道」低于任一达标线，结业前必须清零。优秀员工两类均应达到「熟练」及以上，「卓越」是标杆。</li>
+      <li><b>实时统计</b>：顶部面板汇总条目总计、应会/应知数量、六档分布与掌握率，并给出「应会达标率」「应知达标率」双条进度，一目了然。</li>
       <li><b>薄弱项定位</b>：底部「结业自检结论」会自动列出所有未达对应达标线的条目及出处，方便你回原课补课、固化动作。</li>
       <li><b>自动保存</b>：选项保存在本机浏览器中，关闭页面再打开仍会保留。可随时「导出结果」用手机拍屏或打印。</li>
     </ul>
@@ -343,11 +347,12 @@ body{
       <div class="sc total"><div class="n" id="nTotal">0</div><div class="l">条目总计</div></div>
       <div class="sc do"><div class="n" id="nDo">0</div><div class="l">🛠 应会项</div></div>
       <div class="sc know"><div class="n" id="nKnow">0</div><div class="l">📘 应知项</div></div>
-      <div class="sc l4"><div class="n" id="nL4">0</div><div class="l">卓越</div></div>
-      <div class="sc l3"><div class="n" id="nL3">0</div><div class="l">熟练</div></div>
-      <div class="sc l2"><div class="n" id="nL2">0</div><div class="l">运用</div></div>
-      <div class="sc l1"><div class="n" id="nL1">0</div><div class="l">理解</div></div>
-      <div class="sc l0"><div class="n" id="nL0">0</div><div class="l">知道</div></div>
+      <div class="sc l5"><div class="n" id="nL5">0</div><div class="l">卓越</div></div>
+      <div class="sc l4"><div class="n" id="nL4">0</div><div class="l">熟练</div></div>
+      <div class="sc l3"><div class="n" id="nL3">0</div><div class="l">运用</div></div>
+      <div class="sc l2"><div class="n" id="nL2">0</div><div class="l">理解</div></div>
+      <div class="sc l1"><div class="n" id="nL1">0</div><div class="l">知道</div></div>
+      <div class="sc l0"><div class="n" id="nL0">0</div><div class="l">不知道</div></div>
     </div>
 
     <div class="dual-bar">
@@ -365,6 +370,7 @@ body{
 
     <div class="bar-wrap">
       <div class="bar-outer">
+        <div class="bar-5" id="bar5" style="width:0"></div>
         <div class="bar-4" id="bar4" style="width:0"></div>
         <div class="bar-3" id="bar3" style="width:0"></div>
         <div class="bar-2" id="bar2" style="width:0"></div>
@@ -372,11 +378,12 @@ body{
         <div class="bar-0" id="bar0" style="width:0"></div>
       </div>
       <div class="bar-legend">
-        <span><i style="background:#2e7d32"></i>卓越 <b id="lgL4">0%</b></span>
-        <span><i style="background:#7cb342"></i>熟练 <b id="lgL3">0%</b></span>
-        <span><i style="background:#fbc02d"></i>运用 <b id="lgL2">0%</b></span>
-        <span><i style="background:#ef6c00"></i>理解 <b id="lgL1">0%</b></span>
-        <span><i style="background:#c62828"></i>知道 <b id="lgL0">0%</b></span>
+        <span><i style="background:#2e7d32"></i>卓越 <b id="lgL5">0%</b></span>
+        <span><i style="background:#7cb342"></i>熟练 <b id="lgL4">0%</b></span>
+        <span><i style="background:#fbc02d"></i>运用 <b id="lgL3">0%</b></span>
+        <span><i style="background:#ef6c00"></i>理解 <b id="lgL2">0%</b></span>
+        <span><i style="background:#c62828"></i>知道 <b id="lgL1">0%</b></span>
+        <span><i style="background:#9e9e9e"></i>不知道 <b id="lgL0">0%</b></span>
         <span>掌握率（运用及以上）<b id="lgAll" style="color:#2c5aa0">0%</b></span>
       </div>
     </div>
@@ -392,7 +399,7 @@ body{
     <div class="funnel-grid">
       <div class="fc hi"><div class="fn">🟢 达标（熟练 · 卓越）</div><div class="fd">自然流畅、脱口而出，能灵活变通应对不同顾客，可放心独立上岗。</div><div class="fnum" id="fHi">0</div></div>
       <div class="fc mid"><div class="fn">🟡 基本达标（刚好压线）</div><div class="fd">刚好达到对应达标线（应会＝运用 / 应知＝理解）。已在考核底线，建议在师傅监督下多练几次，向「熟练」固化。</div><div class="fnum" id="fMid">0</div></div>
-      <div class="fc low"><div class="fn">🔴 待补课（未达线）</div><div class="fd">应会不足「运用」或应知不足「理解」，还不能独立运用。需回到对应天数重学并实操，结业前必须清零。</div><div class="fnum" id="fLow">0</div></div>
+      <div class="fc low"><div class="fn">🔴 待补课（未达线）</div><div class="fd">应会不足「运用」或应知不足「理解」（含选了「不知道」的条目），还不能独立运用。需回到对应天数重学并实操，结业前必须清零。</div><div class="fnum" id="fLow">0</div></div>
     </div>
 
     <div class="weak-list">
@@ -836,11 +843,11 @@ const WEEKS = [
 /* ═══════════════════════════════════════════════
    状态管理
    ═══════════════════════════════════════════════ */
-const LS_KEY = 'eye8w_final_sheet_v3';   // v2：五级制（0知道 1理解 2运用 3熟练 4卓越）
+const LS_KEY = 'eye8w_final_sheet_v4';   // v4：六级制（0不知道 1知道 2理解 3运用 4熟练 5卓越）
 const LS_ASSIGN = 'eye8w_final_sheet_assign_v1';
-let STATE = {};       // {itemId: 0|1|2|3|4}
-const LV_NAMES = ['知道','理解','运用','熟练','卓越'];
-const LV_EMOJI = ['🔴','🟠','🟡','🟢','🟩'];
+let STATE = {};       // {itemId: 0|1|2|3|4|5}
+const LV_NAMES = ['不知道','知道','理解','运用','熟练','卓越'];
+const LV_EMOJI = ['⚫','🔴','🟠','🟡','🟢','🟩'];
 let EXPANDED = {};    // {weekNo: true/false}
 let ALL_ITEMS = [];   // 扁平化缓存
 
@@ -915,7 +922,7 @@ function render(){
         html += '<div class="it-src">📖 出处：'+it.src+' · '+d.title+'</div>';
         html += '</div>';
         html += '<div class="choices">';
-        for(let v=0; v<=4; v++){
+        for(let v=0; v<=5; v++){
           html += '<button class="ch" data-v="'+v+'" onclick="setState(\''+it._id+'\','+v+')">'+LV_NAMES[v]+'</button>';
         }
         html += '</div>';
@@ -942,12 +949,12 @@ function applyOne(id){
   const el = document.getElementById('it_'+id);
   if(!el) return;
   const v = STATE[id];
-  el.classList.remove('s0','s1','s2','s3','s4');
+  el.classList.remove('s0','s1','s2','s3','s4','s5');
   el.querySelectorAll('.ch').forEach(b=>{
     const bv = parseInt(b.getAttribute('data-v'),10);
     b.classList.toggle('active', bv===v);
   });
-  if(v>=0 && v<=4) el.classList.add('s'+v);
+  if(v>=0 && v<=5) el.classList.add('s'+v);
 }
 function applyAll(){
   ALL_ITEMS.forEach(it=>applyOne(it._id));
@@ -971,46 +978,35 @@ function toggleAssign(){
    统计
    ═══════════════════════════════════════════════ */
 function updateStats(){
-  const lv = [0,0,0,0,0];          // L0知道 ~ L4卓越
-  const wk = {};                   // {no:{l:[五档],t,lv3plus}}
+  const lv = [0,0,0,0,0,0];        // L0不知道 ~ L5卓越
+  const wk = {};                   // {no:{l:[六档],t,lv4plus}}
   let nDo = 0, nKnow = 0;          // 应会 / 应知 总数
   let doPass = 0, knowPass = 0;    // 应会≥运用 / 应知≥理解 的达标数
-  WEEKS.forEach(w=>wk[w.no]={l:[0,0,0,0,0],t:0});
+  WEEKS.forEach(w=>wk[w.no]={l:[0,0,0,0,0,0],t:0});
 
   ALL_ITEMS.forEach(it=>{
     const v = STATE[it._id];
     const cell = wk[it._week];
     cell.t++;
     if(it.k==='do') nDo++; else nKnow++;
-    if(v>=0 && v<=4){ lv[v]++; cell.l[v]++; }
-    // 达标判定：应会≥2(运用)；应知≥1(理解)
-    if(it.k==='do'){ if(v>=2) doPass++; }
-    else { if(v>=1) knowPass++; }
+    if(v>=0 && v<=5){ lv[v]++; cell.l[v]++; }
+    // 达标判定：应会≥3(运用)；应知≥2(理解)
+    if(it.k==='do'){ if(v>=3) doPass++; }
+    else { if(v>=2) knowPass++; }
   });
 
-  document.getElementById('nL0').textContent = lv[0];
-  document.getElementById('nL1').textContent = lv[1];
-  document.getElementById('nL2').textContent = lv[2];
-  document.getElementById('nL3').textContent = lv[3];
-  document.getElementById('nL4').textContent = lv[4];
+  for(let i=0;i<=5;i++) document.getElementById('nL'+i).textContent = lv[i];
   document.getElementById('nDo').textContent = nDo;
   document.getElementById('nKnow').textContent = nKnow;
 
   const total = ALL_ITEMS.length;
   const pct = i => total? Math.round(lv[i]/total*100):0;
 
-  document.getElementById('bar4').style.width = pct(4)+'%';
-  document.getElementById('bar3').style.width = pct(3)+'%';
-  document.getElementById('bar2').style.width = pct(2)+'%';
-  document.getElementById('bar1').style.width = pct(1)+'%';
-  document.getElementById('bar0').style.width = pct(0)+'%';
-
-  document.getElementById('lgL4').textContent = pct(4)+'%';
-  document.getElementById('lgL3').textContent = pct(3)+'%';
-  document.getElementById('lgL2').textContent = pct(2)+'%';
-  document.getElementById('lgL1').textContent = pct(1)+'%';
-  document.getElementById('lgL0').textContent = pct(0)+'%';
-  document.getElementById('lgAll').textContent = (total? Math.round((lv[2]+lv[3]+lv[4])/total*100):0)+'%';
+  for(let i=0;i<=5;i++){
+    document.getElementById('bar'+i).style.width = pct(i)+'%';
+    document.getElementById('lgL'+i).textContent = pct(i)+'%';
+  }
+  document.getElementById('lgAll').textContent = (total? Math.round((lv[3]+lv[4]+lv[5])/total*100):0)+'%';
 
   // 应会 / 应知 达标双条
   const doP = nDo? Math.round(doPass/nDo*100):0;
@@ -1023,23 +1019,23 @@ function updateStats(){
   // 周进度（熟练及以上占比）
   WEEKS.forEach(w=>{
     const c = wk[w.no];
-    const rated = c.l[0]+c.l[1]+c.l[2]+c.l[3]+c.l[4];
-    const lv3 = c.l[3]+c.l[4];
-    const p = c.t? Math.round(lv3/c.t*100):0;
+    const rated = c.l[0]+c.l[1]+c.l[2]+c.l[3]+c.l[4]+c.l[5];
+    const lv4 = c.l[4]+c.l[5];
+    const p = c.t? Math.round(lv4/c.t*100):0;
     document.getElementById('wkPct'+w.no).textContent = p+'%';
-    document.getElementById('wkCnt'+w.no).textContent = lv3+' / '+c.t+'（已评 '+rated+'）';
+    document.getElementById('wkCnt'+w.no).textContent = lv4+' / '+c.t+'（已评 '+rated+'）';
     document.getElementById('wkBar'+w.no).style.width = p+'%';
   });
 
   // 底部漏斗（按达标线判定）：
-  //   应会：≥运用(2) 达标；应知：≥理解(1) 达标
+  //   应会：≥运用(3) 达标；应知：≥理解(2) 达标
   //   达标=熟练/卓越；基本达标=刚好压线；待补课=未达标
   let hi=0, mid=0, low=0;
   ALL_ITEMS.forEach(it=>{
     const v = STATE[it._id];
     if(v===undefined || v===null) { return; }   // 未评不计入漏斗
-    const line = (it.k==='do') ? 2 : 1;         // 达标线
-    if(v >= Math.max(line, 3)) hi++;            // 熟练(3)/卓越(4)
+    const line = (it.k==='do') ? 3 : 2;         // 达标线
+    if(v >= Math.max(line, 4)) hi++;            // 熟练(4)/卓越(5)
     else if(v >= line) mid++;                   // 刚好达线
     else low++;                                 // 未达线
   });
@@ -1051,7 +1047,7 @@ function updateStats(){
   const weak = ALL_ITEMS.filter(it=>{
     const v = STATE[it._id];
     if(v===undefined || v===null) return false;
-    const line = (it.k==='do') ? 2 : 1;
+    const line = (it.k==='do') ? 3 : 2;
     return v < line;
   });
   const weakBox = document.getElementById('weakBox');
@@ -1079,13 +1075,13 @@ function exportResult(){
   const name = document.getElementById('pName').value.trim() || '（未填写）';
   const store = document.getElementById('pStore').value.trim() || '（未填写）';
   const date = document.getElementById('pDate').value.trim() || new Date().toLocaleDateString('zh-CN');
-  const lv = [0,0,0,0,0];
+  const lv = [0,0,0,0,0,0];
   let nDo=0,nKnow=0,doPass=0,knowPass=0;
   ALL_ITEMS.forEach(it=>{
     const v=STATE[it._id];
     if(it.k==='do') nDo++; else nKnow++;
-    if(v>=0&&v<=4) lv[v]++;
-    if(it.k==='do'){ if(v>=2) doPass++; } else { if(v>=1) knowPass++; }
+    if(v>=0&&v<=5) lv[v]++;
+    if(it.k==='do'){ if(v>=3) doPass++; } else { if(v>=2) knowPass++; }
   });
   const total = ALL_ITEMS.length;
   const pc = i => (total? Math.round(lv[i]/total*100):0);
@@ -1098,13 +1094,14 @@ function exportResult(){
   lines.push('日期：'+date);
   lines.push('───────────────────────────────');
   lines.push('条目总计：'+total+'（🛠应会 '+nDo+' 项 ｜ 📘应知 '+nKnow+' 项）');
-  lines.push('🟩 卓越：'+lv[4]+'（'+pc(4)+'%）');
-  lines.push('🟢 熟练：'+lv[3]+'（'+pc(3)+'%）');
-  lines.push('🟡 运用：'+lv[2]+'（'+pc(2)+'%）');
-  lines.push('🟠 理解：'+lv[1]+'（'+pc(1)+'%）');
-  lines.push('🔴 知道：'+lv[0]+'（'+pc(0)+'%）');
-  lines.push('掌握率（运用及以上）：'+(total? Math.round((lv[2]+lv[3]+lv[4])/total*100):0)+'%');
-  lines.push('熟练及以上（理想状态）：'+(total? Math.round((lv[3]+lv[4])/total*100):0)+'%');
+  lines.push('🟩 卓越：'+lv[5]+'（'+pc(5)+'%）');
+  lines.push('🟢 熟练：'+lv[4]+'（'+pc(4)+'%）');
+  lines.push('🟡 运用：'+lv[3]+'（'+pc(3)+'%）');
+  lines.push('🟠 理解：'+lv[2]+'（'+pc(2)+'%）');
+  lines.push('🔴 知道：'+lv[1]+'（'+pc(1)+'%）');
+  lines.push('⚫ 不知道：'+lv[0]+'（'+pc(0)+'%）');
+  lines.push('掌握率（运用及以上）：'+(total? Math.round((lv[3]+lv[4]+lv[5])/total*100):0)+'%');
+  lines.push('熟练及以上（理想状态）：'+(total? Math.round((lv[4]+lv[5])/total*100):0)+'%');
   lines.push('───────────────────────────────');
   lines.push('【分类达标情况】');
   lines.push('🛠 应会达标（≥运用）：'+doPass+' / '+nDo+'（'+(nDo? Math.round(doPass/nDo*100):0)+'%）');
@@ -1115,7 +1112,7 @@ function exportResult(){
   const weak = ALL_ITEMS.filter(it=>{
     const v=STATE[it._id];
     if(v===undefined||v===null) return false;
-    const line = (it.k==='do')?2:1;
+    const line = (it.k==='do')?3:2;
     return v < line;
   });
   if(weak.length===0){
