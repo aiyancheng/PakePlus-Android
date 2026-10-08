@@ -22,7 +22,7 @@
   .step-num{background:#FF9800;color:white;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85em;flex-shrink:0;margin-top:2px;}
   .step-content .title{font-weight:700;color:#333;margin-bottom:4px;}
   .step-content .desc{font-size:0.9em;color:#555;line-height:1.6;}
-  .step-content .tip{font-size:0.82em;color:#FF9800;margin-top:4px;}
+  .step-content .tip{font-size:0.82em;color:#e65100;margin-top:4px;}
   .equipment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;}
   .equip-card{background:#f5f5f5;border-radius:10px;padding:16px;}
   .equip-card h4{color:#e65100;margin-bottom:8px;}
@@ -279,6 +279,30 @@ body{padding:0!important;margin:0!important}
 @media(max-width:600px){
   table:not(.no-fit) th,table:not(.no-fit) td{padding:6px 5px!important;font-size:11px!important}
 }
+
+/*@@ DAY15-TBL-STYLE @@*/
+/* ═══ 补·标准验光流程 18 环节表（std-table 此前无样式定义，裸表渲染） ═══ */
+.std-table{width:100%;border-collapse:collapse;margin:14px 0 4px;border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(230,81,0,.08)}
+.std-table thead th{background:linear-gradient(135deg,#fb8c00,#f57c00);color:#fff;padding:11px 14px;text-align:left;font-size:.9em;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.std-table tbody td{padding:10px 14px;border-bottom:1px solid #fff3e0;font-size:.88em;color:#4a4a4a;line-height:1.7;vertical-align:top}
+.std-table tbody tr:nth-child(even) td{background:#fffdf7}
+.std-table tbody tr:last-child td{border-bottom:0}
+.std-table tbody tr:hover td{background:#fff8ec}
+.std-table tbody td:first-child{color:#e65100;font-weight:700;text-align:center}
+.std-table tbody td:nth-child(2){white-space:nowrap;font-weight:600;color:#333}
+.std-table tbody td strong{color:#d84315}
+@media(max-width:900px){
+  .std-table tbody td:nth-child(2){white-space:normal}
+}
+
+/* ═══ 提示框（tip-box 此前无样式定义） ═══ */
+.tip-box{background:#fff8e1;border:1px solid #ffe0b2;border-left:4px solid #ffb300;border-radius:8px;padding:14px 18px;margin:16px 0}
+.tip-box .label{color:#e65100;font-weight:700;font-size:.9em;margin-bottom:6px}
+.tip-box p{margin-bottom:0;font-size:.9em;color:#5d4037;line-height:1.75}
+
+/* ═══ 设备卡：第 5 张（裂隙灯）跨全宽，避免孤半行 ═══ */
+.equipment-grid .equip-card:last-child{grid-column:1/-1;background:linear-gradient(135deg,#f5f5f5,#fff8f2);border:1px solid #ffe0b2}
+
 </style>
 </head>
 <body>
@@ -394,6 +418,34 @@ body{padding:0!important;margin:0!important}
   </div>
 
     <div class="section">
+    <h2>📐 补·标准验光流程 18 个作业环节总览（手册·标准验光流程）</h2>
+    <p style="line-height:1.9;color:#444;margin-bottom:14px">验光不是"打一台电脑验光仪"就完事。手册把标准验光拆成 <strong>18 个环节</strong>，分三个阶段推进：开场与基础检查（1—7）→ 主觉验光与精调（8—16）→ 复核与试戴（17—18）。销售顾问至少要清楚每个环节顾客会看到什么、自己该配合什么。</p>
+    <table class="std-table">
+      <thead><tr><th style="width:52px">序</th><th style="width:180px">环节</th><th>关键要点 / 参数</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>流程切入</td><td>用肯定语气"我先帮您测个度数"，抢占验光主导权，不被顾客"先看镜框"的惯性带走。</td></tr>
+        <tr><td>2</td><td>电脑验光仪</td><td>顾客未坐好不许先操作；电脑值仅供参考，不作为最终处方。</td></tr>
+        <tr><td>3</td><td>问诊</td><td>全程插入；询问 5 项戴镜史 + 用眼知识，了解用眼场景。</td></tr>
+        <tr><td>4</td><td>验光前仪器检查</td><td>仪器归零 / PD 设定 / 水平 / 顶点距 <strong>12MM</strong>。</td></tr>
+        <tr><td>5</td><td>裸眼测试（旧镜视力）</td><td>单眼测、整版视标；先"打击"再关心，让顾客意识到问题。</td></tr>
+        <tr><td>6</td><td>利眼测试</td><td>双手三角孔法；提前预知顾客反应。</td></tr>
+        <tr><td>7</td><td>PD 测试</td><td>放鼻梁上、力度要轻；测后必解说瞳距含义。</td></tr>
+        <tr><td>8</td><td>主觉式验光</td><td>0.1 视标每差 1 行约 −3.00D；以 0.5 视标为基准。</td></tr>
+        <tr><td>9</td><td>放射线视标</td><td>首次加 0.50D；按轴向验证散光。</td></tr>
+        <tr><td>10</td><td>红绿视标（第一次）</td><td>让绿色稍清晰；为交叉柱镜做准备。</td></tr>
+        <tr><td>11</td><td>交叉柱镜测试</td><td>测轴<strong>进十退五</strong>；测度进 0.50 退 0.25。</td></tr>
+        <tr><td>12</td><td>轴度测试</td><td>翻转 2—5 秒、两面等时；每次转 10 度。</td></tr>
+        <tr><td>13</td><td>散光度数测试</td><td>C−0.25 递进；遵循"加柱减球 / 减柱加球"。</td></tr>
+        <tr><td>14</td><td>红绿视标（第二次）</td><td>复验过矫；红绿原理复核。</td></tr>
+        <tr><td>15</td><td>最高视力</td><td>单排打、从 0.8 起；给顾客成就感。</td></tr>
+        <tr><td>16</td><td>双眼平衡</td><td>只减不加；偏光镜法 / 遮盖法。</td></tr>
+        <tr><td>17</td><td>第二次云雾</td><td>降 1.00D → 加 0.75D；闭眼放松。</td></tr>
+        <tr><td>18</td><td>试戴</td><td>陪同走动、边试边解释；禁止让顾客独自走动。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="section">
     <h2>🔬 电脑验光仪操作详解</h2>
     <h3>📌 操作前准备</h3>
     <ul>
@@ -417,14 +469,17 @@ body{padding:0!important;margin:0!important}
 
   <div class="section">
     <h2>📐 视力表使用规范</h2>
-    <ul>
-      <li>视力表距离：国际标准5米（或镜像5米）</li>
-      <li>检查环境：光线充足均匀，无眩光</li>
-      <li>先查裸眼视力，再查矫正视力</li>
-      <li>从较大字符向下，找到能辨认的最小行</li>
-      <li>每行字符辨认率大于50%才计入该行视力</li>
-    </ul>
-    <p>视力记录：如能辨认0.8行但不能全部辨认0.9行，记录为0.8。</p>
+    <div class="checklist">
+      <div class="checklist-item">视力表距离：国际标准5米（或镜像5米）</div>
+      <div class="checklist-item">检查环境：光线充足均匀，无眩光</div>
+      <div class="checklist-item">先查裸眼视力，再查矫正视力</div>
+      <div class="checklist-item">从较大字符向下，找到能辨认的最小行</div>
+      <div class="checklist-item">每行字符辨认率大于50%才计入该行视力</div>
+    </div>
+    <div class="highlight-box">
+      <div class="label">📌 视力记录规则</div>
+      <p>如能辨认0.8行但不能全部辨认0.9行，记录为 <strong>0.8</strong>。</p>
+    </div>
   </div>
 <!-- LM-START -->
 <div class="lm-block lm-practice">
@@ -473,7 +528,7 @@ body{padding:0!important;margin:0!important}
 <div class="flow-col flow-check"><div class="flow-h">③ 考核 <span class="fh-tag">是否达标</span></div><div class="flow-say"><b>一句话：</b>通过实操检验辅助流程的规范性与安全意识。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>实操：完成一次电脑验光辅助 + 数据记录</li><li>按《验光辅助评分表》打分，合格即通过</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>辅助流程规范、数据记录准确、不越权，即通过。</div><div class="flow-pit"><b>⚠ 常见坑：</b>考核特别关注‘边界意识’——有没有在不该判断的时候判断。</div></div>
 <div class="flow-col flow-opt"><div class="flow-h">④ 优化 <span class="fh-tag">持续迭代</span></div><div class="flow-say"><b>一句话：</b>若出现操作不规范，立即纠正并纳入复训清单。</div><div class="flow-do-t">📋 具体怎么做</div><ul class="flow-do"><li>记录新人操作不规范的具体环节</li><li>纳入复训清单，安排专项重练</li></ul><div class="flow-standard"><b>✔ 完成标准：</b>形成复训清单条目，即完成优化。</div><div class="flow-pit"><b>⚠ 常见坑：</b>验光相关操作是‘安全敏感项’——出错必须当天纠正，不能拖。</div></div>
   </div>
-  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 值班经理（检查考核）· 门店负责人（审批优化）</p>
+  <p class="flow-meta">👤 <b>责任角色：</b>新员工（学习执行）· 训练员（带教施教）· 区域经理（检查考核）· 门店负责人（审批优化）</p>
 </div>
 <!-- FLOW-END -->
 
