@@ -282,10 +282,30 @@ body{padding:0!important;margin:0!important}
   <span style="color:#999;font-size:13px;">Day 33 练习题</span>
   <a href="Day_34_学习内容.html" class="nav-btn next">Day 34 →</a>
 </div>
+  <div class="card">
+    <h2>★ 补充巩固题（对齐门店标准手册）</h2>
+    <div class="q-block">
+      <div class="q-title"><span class="q-num">★</span>按取镜出货质检允差标准，散光轴位的允差范围是？</div>
+          <ul class="options">
+<li>A. ±3°</li><li>B. ±5°</li><li>C. ±10°</li><li>D. ±20°</li>    </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer('day33c1')">查看答案</button>
+      <div class="answer-hint" id="day33c1"><div class="label">✅ 正确答案：C</div><p>出货质检允差：球镜 ±0.25D、散光轴位 ±10°、瞳距 ±1MM。超出允差不得交付。</p></div>
+    </div>
+    <div class="q-block">
+      <div class="q-title"><span class="q-num">★</span>取镜流程中“三查一看”的核对对象是？</div>
+          <ul class="options">
+<li>A. 查单据、查镜片、查镜框，看顾客满意度</li><li>B. 查库存、查价格、查票据，看利润</li><li>C. 查度数、查颜色、查品牌，看销量</li><li>D. 查员工、查班次、查考勤，看纪律</li>    </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer('day33c2')">查看答案</button>
+      <div class="answer-hint" id="day33c2"><div class="label">✅ 正确答案：A</div><p>取镜“三查一看”：查单据、查镜片、查镜框，看顾客满意度，确保交付准确无误。</p></div>
+    </div>
+  </div>
+
 <script>
 function toggleAnswer(id) {
   const box = document.getElementById(id);
-  box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  if (!box) return;
+  const shown = getComputedStyle(box).display !== 'none';
+  box.style.display = shown ? 'none' : 'block';
 }
 </script>
 
