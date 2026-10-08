@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="Mp6VlH4DT0auGtYYc1ZF01" data-dm-ref="3"><head data-page-node-id="lvOF3JxwLMnHafBr5OEyDr">
+<meta charset="UTF-8" data-page-node-id="VZ4VjCDDfo8dsaFmkMfL3k">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="9LNwPV73TUYuutl6GPyVoc">
+<title>爱眼城眼镜 · 眼镜调校标准手册</title>
+<style>
+:root{
+    --brand:#0b6ab0;
+    --brand-d:#084f84;
+    --brand-l:#eaf3fb;
+    --accent:#c8102e;
+    --ink:#16232e;
+    --ink-2:#405060;
+    --ink-3:#7b8b9a;
+    --line:#dbe6f0;
+    --bg:#eef4f9;
+    --say:#fffaf0;
+    --say-b:#e6cf9a;
+    --say-t:#8a6414;
+    --ok:#0d7a55;
+    --act:#0d7a55;
+    --act-l:#eafaf3;
+    --warn:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:15px;
+    padding:20px 16px 56px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  /* ================= 页头 ================= */
+
+  .banner{position:relative;
+    background:linear-gradient(120deg,#0b6ab0 0%,#0a5b98 55%,#084f84 100%);
+    color:#fff;border-radius:16px;
+    padding:28px 36px 26px;
+    overflow:hidden;
+    box-shadow:0 10px 28px rgba(8,79,132,.20);
+  }
+  .banner::after{content:"";position:absolute;right:-70px;top:-70px;
+    width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+  }
+  .banner::before{content:"";position:absolute;right:80px;bottom:-90px;
+    width:180px;height:180px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.09),transparent 70%);
+  }
+  .banner-in{position:relative;z-index:1;}
+  .logo-chip{display:inline-block;background:#fff;border-radius:10px;
+    padding:7px 14px;margin-bottom:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,.18);
+  }
+  .logo-chip img{display:block;height:40px;width:auto;}
+  .banner .eyebrow{font-size:12.5px;letter-spacing:3px;opacity:.78;
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  .banner h1{font-size:27px;font-weight:700;letter-spacing:1.5px;line-height:1.35;}
+  .banner .sub{margin-top:8px;font-size:14.5px;opacity:.9;}
+  .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;}
+  .chips span{font-size:12.5px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);
+    border-radius:999px;padding:4px 15px;
+  }
+  .banner .creed{margin-top:18px;padding-top:15px;
+    border-top:1px dashed rgba(255,255,255,.32);
+    font-size:14px;letter-spacing:.6px;
+  }
+  .banner .creed b{color:#ffe08a;font-weight:700;}
+
+  /* ================= 通用小标题 ================= */
+
+  .sec-title{display:flex;align-items:center;gap:10px;
+    margin:26px 0 14px;
+    font-size:17px;font-weight:700;color:var(--brand-d);
+  }
+  .sec-title em{font-style:normal;font-size:12.5px;font-weight:400;
+    color:var(--ink-3);margin-left:2px;
+  }
+
+  /* ================= 前提要求 ================= */
+
+  .premise{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .pre{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;position:relative;overflow:hidden;
+  }
+  .pre::before{content:attr(data-no);
+    position:absolute;right:14px;top:6px;
+    font-size:52px;font-weight:800;color:var(--brand-l);
+    font-family:"Segoe UI",Arial,sans-serif;line-height:1;
+  }
+  .pre h4{font-size:15.5px;color:var(--brand-d);font-weight:700;margin-bottom:6px;position:relative;}
+  .pre p{font-size:13.5px;color:var(--ink-2);position:relative;}
+  .pre b{color:var(--accent);}
+
+  /* ================= 总览流程轴 ================= */
+
+  .flowbar{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;
+    display:flex;flex-wrap:wrap;gap:7px;align-items:center;
+  }
+  .flowbar .fl{flex:1 1 130px;min-width:130px;
+    border:1px solid #cfe2f2;background:var(--brand-l);
+    border-radius:10px;padding:9px 6px;text-align:center;
+  }
+  .flowbar .fl b{display:block;font-size:11.5px;color:var(--brand);letter-spacing:.6px;}
+  .flowbar .fl i{display:block;font-style:normal;font-size:13px;font-weight:600;margin-top:2px;color:var(--ink);}
+  .flowbar .sep{color:#a9bfd2;font-weight:700;font-size:14px;flex:0 0 auto;}
+  .mnemo{margin-top:12px;text-align:center;font-size:13.5px;color:var(--ink-2);
+  }
+  .mnemo b{color:var(--brand-d);}
+
+  /* ================= 章节条 ================= */
+
+  .catbar{display:flex;align-items:center;gap:12px;
+    margin:24px 0 12px;
+  }
+  .catbar .big{width:44px;height:44px;border-radius:12px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--brand),var(--brand-d));
+    color:#fff;font-size:22px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Segoe UI",Arial,sans-serif;
+    box-shadow:0 3px 8px rgba(11,106,176,.28);
+  }
+  .catbar h2{font-size:18px;color:var(--brand-d);font-weight:700;letter-spacing:.5px;}
+  .catbar .cnt{font-size:12px;color:var(--brand-d);background:var(--brand-l);
+    border:1px solid #c6dcf0;border-radius:999px;padding:2px 12px;font-weight:700;
+  }
+  .catbar .desc{font-size:12.5px;color:var(--ink-3);}
+
+  /* ================= 步骤卡 ================= */
+
+  .steps{display:flex;flex-direction:column;gap:14px;}
+  .step{display:grid;
+    grid-template-columns:96px 1fr;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,60,100,.05);
+  }
+  .step .axis{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-d) 100%);
+    color:#fff;display:flex;flex-direction:column;
+    align-items:center;justify-content:flex-start;
+    padding:18px 8px 14px;text-align:center;
+  }
+  .step .axis .no{font-size:26px;font-weight:800;line-height:1;
+    font-family:"Segoe UI",Arial,sans-serif;letter-spacing:-1px;
+  }
+  .step .axis .lbl{margin-top:6px;font-size:11.5px;letter-spacing:2px;opacity:.8;
+  }
+  .step .axis .dotline{flex:1;width:0;border-left:1px dashed rgba(255,255,255,.42);
+    margin:12px 0 0;
+  }
+  .step .main{padding:15px 20px 17px;}
+  .step .head{display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+    padding-bottom:10px;border-bottom:1px solid #eef3f8;margin-bottom:12px;
+  }
+  .step .head h3{font-size:17px;font-weight:700;color:var(--brand-d);letter-spacing:.4px;}
+  .step .head .view{font-size:12px;color:var(--brand-d);background:var(--brand-l);
+    border:1px solid #c6dcf0;border-radius:999px;padding:2px 12px;white-space:nowrap;
+  }
+  .step .head .tag{margin-left:auto;font-size:12px;color:var(--accent);
+    background:#fdf2f4;border:1px solid #f2c8ce;
+    border-radius:999px;padding:2px 12px;white-space:nowrap;
+  }
+  .param{font-size:13px;font-weight:800;color:var(--accent);
+    background:#fdf2f4;border:1.5px solid #f0b9c1;
+    border-radius:8px;padding:2px 12px;white-space:nowrap;
+    font-family:"Segoe UI",Arial,sans-serif;letter-spacing:.5px;
+  }
+  .cols{display:grid;grid-template-columns:1.08fr 1fr;gap:14px;}
+  .pool{border:1px solid #e8eff6;background:#fbfdff;
+    border-radius:10px;padding:11px 14px 12px;
+  }
+  .pool.act{background:#f9fdfb;border-color:#cfeade;
+  }
+  .pool h4{font-size:13.5px;font-weight:700;color:var(--brand-d);
+    margin-bottom:8px;display:flex;align-items:center;gap:7px;
+  }
+  .pool h4 .badge{font-size:11px;font-weight:700;letter-spacing:.5px;
+    border-radius:5px;padding:1px 7px;flex:0 0 auto;
+  }
+  .pool.act h4{color:#0a6a4a;}
+  .pool.act h4 .badge{background:var(--act);color:#fff;}
+  .pool.say h4{color:var(--brand-d);}
+  .pool.say h4 .badge{background:var(--brand);color:#fff;}
+  .pool ul{list-style:none;}
+  .pool li{position:relative;padding-left:14px;margin-bottom:5px;
+    font-size:13.5px;color:var(--ink-2);
+  }
+  .pool li:last-child{margin-bottom:0;}
+  .pool li::before{content:"";position:absolute;left:2px;top:9px;
+    width:5px;height:5px;border-radius:50%;background:#9dc2df;
+  }
+  .pool.act li::before{background:#8fcfb4;}
+  .say{display:inline-block;background:var(--say);
+    border:1px dashed var(--say-b);color:var(--say-t);
+    border-radius:7px;padding:1px 9px;font-size:13.5px;
+    margin:2px 0;
+  }
+  .k{color:var(--brand-d);font-weight:700;}
+  .ok{color:var(--ok);font-weight:700;}
+  .r{color:var(--accent);font-weight:700;}
+
+  .mini{width:100%;border-collapse:collapse;font-size:13px;margin-top:2px;
+  }
+  .mini th{background:var(--brand-l);color:var(--brand-d);
+    font-weight:700;text-align:left;padding:6px 10px;
+    border:1px solid #dbe9f5;font-size:12.5px;
+  }
+  .mini td{padding:6px 10px;border:1px solid #e6eef6;color:var(--ink-2);
+    vertical-align:top;
+  }
+  .mini tr:nth-child(even) td{background:#fafcfe;}
+
+  /* 检查清单（E 注意事项） */
+
+  .ckwrap{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:18px 22px 20px;
+  }
+  .ckgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;}
+  .ck{display:flex;gap:11px;align-items:flex-start;
+    border:1px solid #e8eff6;border-radius:10px;
+    background:#fbfdff;padding:11px 14px;
+  }
+  .ck .cn{flex:0 0 auto;width:24px;height:24px;border-radius:7px;margin-top:1px;
+    background:var(--accent);color:#fff;font-size:13px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .ck p{font-size:13.5px;color:var(--ink-2);}
+  .ck p b{color:var(--ink);display:block;font-size:14px;margin-bottom:1px;}
+
+  /* 快速索引表 */
+
+  .panel{background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:20px 22px 22px;
+  }
+  .ref{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .ref th{background:var(--brand-d);color:#fff;font-weight:700;
+    padding:9px 12px;text-align:left;font-size:13.5px;letter-spacing:.5px;
+  }
+  .ref td{padding:8px 12px;border:1px solid #e6eef6;color:var(--ink-2);vertical-align:top;
+  }
+  .ref tr:nth-child(even) td{background:#fafcfe;}
+  .ref td:first-child{font-weight:700;color:var(--brand-d);white-space:nowrap;}
+  .ref .pv{font-weight:800;color:var(--accent);white-space:nowrap;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+
+  .redline{margin-top:16px;border-radius:10px;
+    background:#fdf2f4;border:1px solid #f2c8ce;
+    border-left:5px solid var(--accent);
+    padding:13px 18px;font-size:13.5px;color:#8c2436;line-height:1.8;
+  }
+  .redline b{color:var(--accent);}
+
+  footer{margin-top:24px;text-align:center;
+    font-size:12.5px;color:var(--ink-3);line-height:2;
+  }
+  footer b{color:var(--brand-d);}
+
+  /* ================= 响应式 ================= */
+
+  @media (max-width:860px){
+.cols{grid-template-columns:1fr;}
+    .premise{grid-template-columns:1fr;}
+    .ckgrid{grid-template-columns:1fr;}
+  }
+  @media (max-width:700px){
+body{padding:12px 9px 40px;font-size:14.5px;}
+    .banner{padding:18px 16px 18px;border-radius:12px;}
+    .logo-chip img{height:32px;}
+    .logo-chip{padding:5px 10px;margin-bottom:10px;}
+    .banner h1{font-size:20px;letter-spacing:.5px;}
+    .banner .sub{font-size:13.5px;}
+    .flowbar .sep{display:none;}
+    .flowbar .fl{flex:1 1 40%;min-width:0;padding:7px 3px;}
+    .flowbar .fl i{font-size:12px;}
+    .step{grid-template-columns:62px 1fr;border-radius:12px;}
+    .step .axis{padding:12px 4px 10px;}
+    .step .axis .no{font-size:20px;}
+    .step .axis .lbl{font-size:9.5px;letter-spacing:1px;}
+    .step .main{padding:12px 13px 14px;}
+    .step .head h3{font-size:15.5px;}
+    .step .head .tag{margin-left:0;}
+    .catbar .big{width:38px;height:38px;font-size:18px;}
+    .catbar h2{font-size:16px;}
+    .sec-title{font-size:15.5px;margin:20px 0 12px;}
+    .say{font-size:13px;}
+    .mini th,.mini td{padding:5px 7px;font-size:12px;}
+    .ref th,.ref td{padding:6px 8px;font-size:12.5px;}
+  }
+
+  /* ================= 打印 ================= */
+
+  @media print{
+@page{size:A4;margin:12mm 10mm;}
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .wrap{max-width:100%;}
+    .step,.panel,.flowbar,.banner,.ck,.pre,.ckwrap{box-shadow:none;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;
+      break-inside:avoid;
+    }
+    .steps{gap:8px;}
+    .step .axis .dotline{display:none;}
+    .banner{border-radius:0;}
+  }
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}/*@@ HOME-BACK-BTN @@*/
+/* ═══ 返回首页：嵌入页头（banner / topbar）右上角 ═══ */
+.banner,.topbar{position:relative!important}
+.back-home{position:absolute;right:18px;top:16px;z-index:9;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.16);color:#fff!important;font-size:13px;font-weight:700;line-height:1;
+  padding:9px 16px;border-radius:22px;text-decoration:none!important;
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 3px 10px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:inherit;-webkit-tap-highlight-color:transparent}
+.back-home:hover{background:rgba(255,255,255,.30);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.back-home .bh-ico{font-size:14px;line-height:1}
+/* 页脚返回链接 */
+.foot-home{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#0b6ab0!important;
+  font-weight:700;font-size:13px;text-decoration:none!important;border-bottom:1px dashed rgba(11,106,176,.5);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.foot-home:hover{color:#095a96!important;border-bottom-color:#095a96}
+@media(max-width:700px){
+  .back-home{right:10px;top:10px;font-size:12px;padding:8px 13px;border-radius:20px}
+}
+@media print{.back-home{border-color:#0b6ab0;color:#0b6ab0!important;background:#fff}}
+/*@@ TABLE-COL-FIT @@*/
+/* ═══ 表格列宽优化：固定布局 + 智能换行 + 防溢出 ═══ */
+/* 1) 中文长串安全换行，避免撑宽或溢出容器 */
+th,td{overflow-wrap:break-word;word-break:break-word;}
+/* 2) 表头可换行，避免窄列被 nowrap 撑破 */
+thead th{white-space:normal;}
+/* 3) 短标签列（序号/数字）保持紧凑不换行：仅作用于极短首列 */
+table.fit-narrow td:first-child,
+table.fit-narrow th:first-child{white-space:nowrap;}
+/* 4) 宽屏（≥700px）启用固定布局：让声明的 width 真正生效，长文本列不再吞掉短列 */
+@media (min-width:700px){
+  table{table-layout:fixed;}
+}
+/* 5) 窄屏（<700px）恢复自动布局：表格随容器自适应，避免整页横向溢出 */
+@media (max-width:699px){
+  table{table-layout:auto;}
+}
+
+</style></head>
+<body data-page-node-id="3xB7GAvhLH0eiNkjM0IreC" style="">
+<div class="wrap" data-page-node-id="dFsZwDg4TbJsl2P4BRbHwY">
+
+  <!-- ============ 页头 ============ -->
+  <div class="banner" data-page-node-id="ZOd6ddRl8azyH2TfV9xUkD">
+    <a class="back-home" href="../index.html" title="返回课程首页"><span class="bh-ico">🏠</span>返回首页</a>
+    <div class="banner-in" data-page-node-id="7tpnk1PCqmBnmFsHT8FqVG">
+      
+      
+      <h1 data-page-node-id="sR3rkrGV2t6p7Rer2gttfr">爱眼城眼镜 · 眼镜调校标准手册</h1>
+      <div class="sub" data-page-node-id="Ajr4CfcOW2tiu853QOS0mj">A 面 · B 线 · C 角度 · D 点 · E 注意 —— 专业调校五维作业体系</div>
+      <div class="chips" data-page-node-id="hhPJqxTBtXGAeTPw0xucbg">
+        
+        
+        
+        
+      </div>
+      <div class="creed" data-page-node-id="xry8tpN52muLo01qJNtePL">
+        核心理念：调校不是修修补补，而是把<b data-page-node-id="kkJ64kRMElADOTgaYXV9f1">标准参数</b>落到每一位顾客脸上——<b data-page-node-id="SNUWt8MrLTQh44hdmzKSVO">边调、边讲、边确认</b>，让顾客看见我们的专业。
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 调校前提 ============ -->
+  <div class="sec-title" data-page-node-id="ZkNo1VyKAAsRXSNofxQsPZ">调校前提 <em data-page-node-id="h5Vw118bpkqOMBsSsfQ8Yw">两条铁律，先于一切调校动作</em></div>
+  <div class="premise" data-page-node-id="LIT4xvZQnUWZJwD004He0v">
+    <div class="pre" data-no="A" data-page-node-id="hN7I2UYKjO3uQdRLicDAQn">
+      <h4 data-page-node-id="oddPH9ymKwGQG9y77GfqgM">要求 A · 边调整边讲解</h4>
+      <p data-page-node-id="N6ZfFI7cl5GQBur5UhFBBf">给顾客调整时，必须<b data-page-node-id="yf4URkxA1PtDn9E9Z8NRqq">边调整、边讲解</b>——这是体现我们与其他同行专业差异的关键。我们做得规范的同时，也要让顾客<b data-page-node-id="cd4Mjx8VOaUV3yBAS5LIP4">听得见、看得到</b>我们的优势，把技术动作变成专业印象。</p>
+    </div>
+    <div class="pre" data-no="B" data-page-node-id="fLh3V8XXNKa8CZVFbXuZy8">
+      <h4 data-page-node-id="ErcDtNHD8Gs2SWddd9Ne8d">要求 B · 统一规范操作手势</h4>
+      <p data-page-node-id="MMvkI39L4bYBNXMD0ESIwz">在<b data-page-node-id="74PnYUuqGs6sg7xXRB4npO">正确使用工具</b>的前提下，<b data-page-node-id="sFlNssib5tua4zpbb2FakV">统一规范操作手势</b>。全门店同一套动作标准：工具用法正确、手势一致，才能保证任何一位顾客在任何一家门店得到的都是同样的调校品质。</p>
+    </div>
+  </div>
+
+  <!-- ============ 体系总览 ============ -->
+  <div class="sec-title" data-page-node-id="Rg4MPoI7YJD9vDEys53iAi">五维体系总览 <em data-page-node-id="qXX32ISiZ4FTY4TrXZJYPs">调校作业按「面 → 线 → 角度 → 点 → 注意」顺序执行</em></div>
+  <div class="flowbar" data-page-node-id="NQw2m70u9qk5Gkkd5kAevu">
+    <div class="fl" data-page-node-id="H71PmJ1UVX0dNDZKQsRxFB"><b data-page-node-id="flFBlr4xmPnPqNXQ0Yfzku">A · 面</b><i data-page-node-id="1D8KeWj4vSyYMQqokWftcy">3 个面：水平 / 垂直 / 扭曲</i></div>
+    <div class="sep" data-page-node-id="ZKJdSDB4PWlWznGq9JiG9S">›</div>
+    <div class="fl" data-page-node-id="qZDmLSOYxQ5oUNhYbyGEx6"><b data-page-node-id="WK7WM9lFwzo6bOO7fVstJs">B · 线</b><i data-page-node-id="VSOnjWPsC80xJeKBFZaWfN">2 条线：流线 / 叠线</i></div>
+    <div class="sep" data-page-node-id="wKKmqRAMQANHNA9JZEc8MU">›</div>
+    <div class="fl" data-page-node-id="082eUzwJ1tPkBdvGOJEkV5"><b data-page-node-id="DJ2vweYck0ES1cwf3uMOHX">C · 角度</b><i data-page-node-id="gYpzSYo0NHDGGvGw27XKfQ">5 个角度：弯弧 / 倾斜 / 外张 / 脚套弧 / 内切</i></div>
+    <div class="sep" data-page-node-id="A7XlKmqZ4LjICY6rpExpBJ">›</div>
+    <div class="fl" data-page-node-id="rfSfAN4lQBswHFBccBL2Z0"><b data-page-node-id="Gd8fUn29oyKFH5NZOFKT8z">D · 点</b><i data-page-node-id="u7d0XTqA0BuyVFlQoNW3HJ">1 个点：鼻托支撑点</i></div>
+    <div class="sep" data-page-node-id="6LK8wzeWchoSZcTdyxdHMl">›</div>
+    <div class="fl" data-page-node-id="HpjM0cl40gEeSpkWZLYHnq"><b data-page-node-id="5jbdaR9ZWNZycMTjzPCjGN">E · 注意</b><i data-page-node-id="5ikK3xlIiu6a0SbluabWXj">7 条注意事项</i></div>
+  </div>
+  <div class="mnemo" data-page-node-id="MORyx76KDIqowDYBKxXMAd">记忆口诀：<b data-page-node-id="jJ7HGYCDqMY8EDd5s6fFee">A 看 3 个面 · B 对 2 条线 · C 调 5 个角 · D 找 1 个点 · E 记 7 条注意</b></div>
+
+  <!-- ============ A 面 ============ -->
+  <div class="catbar" data-page-node-id="wOo9tXI2DFqTALUWDXwlli">
+    <div class="big" data-page-node-id="hKtNH7KBpYrF6aFDliTuxr">A</div>
+    <h2 data-page-node-id="v9YAzwox7LjuVyeGaj3nZm">面的调整</h2>
+    <span class="cnt" data-page-node-id="PyrHiAZbh1oHJTbZzSQNNO">3 个面</span>
+    <span class="desc" data-page-node-id="pI3cXNKoxEBSjzBwpRPjbn">镜面的三向校验：正面看水平、平面对前后、侧面查扭曲</span>
+  </div>
+  <div class="steps" data-page-node-id="svgunykHjspjd1WNH1Vr7L">
+
+    <!-- A1 -->
+    <section class="step" data-page-node-id="W1PZPyfBOVfTVZcP0CD1nJ">
+      <div class="axis" data-page-node-id="PDOifaNUqulETSeoCZtFIo">
+        <div class="no" data-page-node-id="yD1SXPFAGtFAmVdVpWhzZr">A1</div>
+        <div class="lbl" data-page-node-id="SMPegZyPQMTDW0EfX5Oajk">水平面</div>
+        <div class="dotline" data-page-node-id="BhjBSAqlGEggwwbEuzNBsw"></div>
+      </div>
+      <div class="main" data-page-node-id="boRYXEwegK6wDQ8WMEtpTg">
+        <div class="head" data-page-node-id="v1a3JZGwlWP80RQJjksNg6">
+          <h3 data-page-node-id="E4U74CA3ZjErDhaaHGY0Cp">水平面（正面观）</h3>
+          <span class="view" data-page-node-id="N9dVGfWMk91aqJhRJha549">正面观察</span>
+          <span class="tag" data-page-node-id="Gl6dgNAoM4FDXeQ8vBqHkz">左右同高</span>
+        </div>
+        <div class="cols" data-page-node-id="d8R2GMSwQsBsW8VWtdmU6j">
+          <div class="pool act" data-page-node-id="yLWvdSbhBgeY1nHePzaVes">
+            <h4 data-page-node-id="DlqXLt5S4nNycH0Nd5SDh2"><span class="badge" data-page-node-id="lHh6GDTrPyk3A7N0xDi3TU">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="as9i3kgRvuLqbXROxjDK3c">
+              <li data-page-node-id="yhz1G96XaspLTthinMrbVu">左右两镜面必须保持在<span class="k" data-page-node-id="7SJdS0tNJtUAkEGrGYFpG3">同一水平线</span>上</li>
+              <li data-page-node-id="FVBgpAwnDdXGVtHvTNSlGh">不能<span class="r" data-page-node-id="aGa4IvdOtNMwUoXYIykVb3">一高一低</span>，也不能<span class="r" data-page-node-id="7cWzQX3r3xCHPr1xBsB29F">同时上翘或下垂</span></li>
+              <li data-page-node-id="WFLXPRzxDBjz3uWpWeHIm0">例外：部分特殊、个性化设计的镜框除外</li>
+              <li data-page-node-id="LeIRNk8bDw7Kn0vZLynFCO">操作：正面平视镜架，以桌面/取镜板为参照逐一校正</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="HrJl1n7OuRKOZONHLLpHQz">
+            <h4 data-page-node-id="gra1QTstTWfxGdzCi4Bhpd"><span class="badge" data-page-node-id="Ucp5MCFPRD2sprmts5fONp">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="j7bw2Kh1tKv1CmqjsAp41t">
+              <li data-page-node-id="AJZOyzO6c1tOQmXbHO2KdZ"><b data-page-node-id="WOtoOfJFSgO3C6VP0TtOfW">美观</b>：整副眼镜端正，戴起来才有精神</li>
+              <li data-page-node-id="1UJLtnLidiNMdUNCSRnJAu"><b data-page-node-id="7roiiowlKmroBsKOEROxSB">光学</b>：确保左右镜片光学中心在同一水平，<span class="k" data-page-node-id="rASmJ24S0RYKcQmdJvgqcr">不产生人为棱镜效果</span></li>
+              <li data-page-node-id="D8Cu8FmSltWb4zIsbJN0U5">一般眼镜两镜面应呈<span class="k" data-page-node-id="2cJFy9ykXMXfwAWaglEEe8">水平或略微上扬</span>：<span class="r" data-page-node-id="kgFaT4ueSjgXsEEGX8cbq3">太上翘显得凶</span>，<span class="r" data-page-node-id="a0TKjaZsW5422EecpB5Kuv">太下垂显得无精打采</span></li>
+              <li data-page-node-id="24jPtQ43cFr7JXoEtsvj6r"><span class="say" data-page-node-id="hT25cCgCwFPtEAZ8t1vqrL">"我帮您把两个镜片调到完全一样高，这样看东西两个眼睛受力才均匀。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A2 -->
+    <section class="step" data-page-node-id="1C1hdzS7fpVkPaejbyF3en">
+      <div class="axis" data-page-node-id="jWuOUsWY40beH4Zgkq7eyi">
+        <div class="no" data-page-node-id="VN2dHKdpekmKODCsvRuuqM">A2</div>
+        <div class="lbl" data-page-node-id="YqJ36XD1kTnc42bE1pktjJ">垂直面</div>
+        <div class="dotline" data-page-node-id="OnzKq7XUU3ICpXzsvNDnns"></div>
+      </div>
+      <div class="main" data-page-node-id="yYGcCMg5KYdmzwNouYHoNk">
+        <div class="head" data-page-node-id="eM9KWr351TZlHaRVQ8OJVA">
+          <h3 data-page-node-id="CAs1xystW5WAkhPejQoXDh">垂直面（平面观）</h3>
+          <span class="view" data-page-node-id="kDrJt8RGFpafAPY1cYAwFr">俯视 / 平面观察</span>
+          <span class="tag" data-page-node-id="nBYa613WrcvYaFH4YZ5Aoc">前后无偏差</span>
+        </div>
+        <div class="cols" data-page-node-id="Fc8z8nUDP6MkHIhFRBcNEm">
+          <div class="pool act" data-page-node-id="brDHqHXzo0dtdYZiUH3VQD">
+            <h4 data-page-node-id="oJ5PCrXhHLLYfGxY34AFtk"><span class="badge" data-page-node-id="koNWuZ2RTA9iFU82cPcmpc">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="G3jBQ4FJxe0godi6upWHvo">
+              <li data-page-node-id="FiEfwDLRKjpuNrTGM7BRKc">以<span class="k" data-page-node-id="3Z6nEYVDVUYur4AuQmgkmK">中梁为基准</span>，左右两镜面在同一水平线上</li>
+              <li data-page-node-id="eGLVbQ0VfMZnMFSBMnSSE1">不能存在<span class="r" data-page-node-id="tAviWCNlZoCjfh802FGVYR">一前一后</span>的偏差</li>
+              <li data-page-node-id="Q37KVKGMRezFjVEXWGBduy">操作：俯视镜架，中梁居中，比对左右镜面前后位置</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="RUqMrPif1TZEjbeVao406g">
+            <h4 data-page-node-id="0CmJNSRHi0lVrGzMPeS9Yd"><span class="badge" data-page-node-id="jeNLhf3OIbzsWczmOQdXDf">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="OcBsqB5PXmpHH2zP7l3QUv">
+              <li data-page-node-id="pjQmwxBqbDQPDFBVrMMsLJ">两镜面以中梁为基准<b data-page-node-id="lTdW20htFIlnq2uKXuW0HV">前后一致</b>，才能保证两镜片的<span class="k" data-page-node-id="MkIQXtwOmktjfZNuFU1bfN">镜眼距一致</span></li>
+              <li data-page-node-id="5VUsuuWOpGJGZIx1YttyWj">镜眼距一致，才能确保顾客戴镜时<span class="k" data-page-node-id="AFmVKbbHBwbRvJOGV7EXPH">双眼用眼的平衡度</span></li>
+              <li data-page-node-id="FdPW4VHu5FIfYpPfAYemKg"><span class="say" data-page-node-id="rpd0TKDdd9Slya1kFoROBS">"两个镜片到眼睛的距离要一样，不然一只眼睛多用功，容易疲劳。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A3 -->
+    <section class="step" data-page-node-id="WJjfaBTkYGayfNjnXbl6af">
+      <div class="axis" data-page-node-id="0tOfeOSNERDZf93RMzaSpa">
+        <div class="no" data-page-node-id="sL0KRb3CRxs6P40pr61j3F">A3</div>
+        <div class="lbl" data-page-node-id="WCvyYO8gsB3UTzeRzgx1yG">扭曲面</div>
+        <div class="dotline" data-page-node-id="SGfXZa9pbDvdyOocMy9tax"></div>
+      </div>
+      <div class="main" data-page-node-id="EsnkQuwqPGZoQwoLWHJc45">
+        <div class="head" data-page-node-id="dCuURfJGpgeiWyI2loLqGW">
+          <h3 data-page-node-id="fnuEa74KADapEGsPA3V4qM">扭曲面（侧面观）</h3>
+          <span class="view" data-page-node-id="NAKsJnG2MnBPx7TA4BBE8r">侧面观察</span>
+          <span class="tag" data-page-node-id="RjRR4gJyJpY3UqteGUyd2Z">框线重合 · 不扳面</span>
+        </div>
+        <div class="cols" data-page-node-id="HCNUHxuoSqdNbocTnZsKSW">
+          <div class="pool act" data-page-node-id="UItMpIQnk5pjMVuC6iFGxC">
+            <h4 data-page-node-id="E5hLYyoJzDzCFZnVk3l7dP"><span class="badge" data-page-node-id="LUKDt2UlAUn7wrvImGLB2Q">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="SrRdofvlZkBRLYfiBCUBfZ">
+              <li data-page-node-id="0bhxIFji00HEf3rC8EfGD4">以其中一边镜面为基准，从侧面观察</li>
+              <li data-page-node-id="3K6zK4AEBtmMUYhK9dF9Zi">镜面的<span class="k" data-page-node-id="W70OwK8z8y2gicQTuhtwkt">两条框线完全重合</span>时，另一边也同样要重合</li>
+              <li data-page-node-id="qK4Az0Ieuu3mbUJAhyt7Ky">不能存在<span class="r" data-page-node-id="gpRrF2YEqojfq2zNdJZ5Is">扳掉（扭曲）</span>的现象</li>
+              <li data-page-node-id="eAD2KkUBHfIW5ubgWbm32Z">操作：侧面平视，逐一比对两侧框线的重合度</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="Opn9dCMPJKTU7KBptknpAD">
+            <h4 data-page-node-id="DqCigy7EC2Fq2dthaIOW31"><span class="badge" data-page-node-id="1zDyUxYTpOcHTe6pEF1Vgz">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="pug8kBVZvjCfWJYC0TtA5W">
+              <li data-page-node-id="Jijt5vH7DDSYBnrPSVI9gv">若两面不在同一水平面，顾客戴镜后<span class="k" data-page-node-id="dC3uHYGLa0Ib1QyRFZCpQ0">视线无法都与镜面垂直</span></li>
+              <li data-page-node-id="A7y6rSBwjbRfbHQnUgG2r3">这就是我们常说的<span class="r" data-page-node-id="ijUyaEIIof1wYpmxQYLuse">"面扳了"</span>——看东西会不舒服、易疲劳</li>
+              <li data-page-node-id="Aut7G9meylmoqwHjPt2koP"><span class="say" data-page-node-id="53IfaYalgxE2zAiYOecb1U">"从侧面看两条框线要完全重叠，这样视线才是垂直穿过镜片的。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ B 线 ============ -->
+  <div class="catbar" data-page-node-id="TCKQUPlREOiGW7RzlhANGp">
+    <div class="big" data-page-node-id="4BGGT1JGtIZqaMGWv7fTQF">B</div>
+    <h2 data-page-node-id="ndJlC2CDBA1C4qgAapELDx">线的调整</h2>
+    <span class="cnt" data-page-node-id="2GtarTU3FX1IHRbiL8LdN8">2 条线</span>
+    <span class="desc" data-page-node-id="grssQ9XFFGIrYqFg497mS6">镜腿的两个状态：展开看流线、合拢看叠线</span>
+  </div>
+  <div class="steps" data-page-node-id="H0BbjilizE4SvCAs2erJoX">
+
+    <!-- B1 -->
+    <section class="step" data-page-node-id="hXUNxZQmR2gWKIslGqiBl7">
+      <div class="axis" data-page-node-id="JMZhFSVo0aQZwkv4xCFuwE">
+        <div class="no" data-page-node-id="ye8fxhRfjMrBunsUAJgdQZ">B1</div>
+        <div class="lbl" data-page-node-id="j9KmfV4BmV2lnAnYXQDwJY">流线</div>
+        <div class="dotline" data-page-node-id="WeH2HjLA3FgF4BUbgsUA8e"></div>
+      </div>
+      <div class="main" data-page-node-id="Jh8mfkv0BSSHlBhYHYDx2Z">
+        <div class="head" data-page-node-id="RU9GqURbdkRt2g7TLkj5AV">
+          <h3 data-page-node-id="FGTWYkjKLrBG9FfCgbVeZ6">左右两镜腿的流线（展开观）</h3>
+          <span class="view" data-page-node-id="GqIOFGHytst9fQvr6bA3Az">侧面观察</span>
+          <span class="tag" data-page-node-id="JmcOjQE0PgLVQNV1R9X41D">展开必重合</span>
+        </div>
+        <div class="cols" data-page-node-id="FxXIrXVcDECUiqWXO5O7LK">
+          <div class="pool act" data-page-node-id="PIFmwMuDBTYNtpF4ERkJas">
+            <h4 data-page-node-id="8GEHDBDQT7HZCtFNm7j22P"><span class="badge" data-page-node-id="zAGlihyX9xNJt1BVm3LNGE">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="siMhEEoDTI6gjMrcpOpDE0">
+              <li data-page-node-id="sPtkw1ajwFFxKw7xHsAaZO">镜面调整到位 + <span class="k" data-page-node-id="xgyD6a6bzCPOGeQ8Ydu8dD">镜腿铰链无变形</span>的前提下</li>
+              <li data-page-node-id="zCEAvfBPcbUtmPgYmayPji">展开的两条镜腿从侧面观察，必须<span class="k" data-page-node-id="blxjHwV0n5crggxtOKIo0f">一致、重合</span></li>
+              <li data-page-node-id="rLwEmPJO4K0J61uD37RoCM">细查三点：
+                ① 铰链合口有无<span class="r" data-page-node-id="GljFF4edTu8UyB7Uqkj7Hy">变形、开裂</span>；
+                ② 两镜腿形状及弯曲度是否一致、有无<span class="r" data-page-node-id="uIFq4rfkrUC9UgBARrk22g">人为偏折</span>；
+                ③ 尤其<span class="k" data-page-node-id="4kyMiX3xGfi6xuQzAjelrk">脚套弯曲部位</span>是否对称一致</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="TvITA3CsYSo89sp41GHKN2">
+            <h4 data-page-node-id="CZolLFg7dgR9NjCvMXwIDP"><span class="badge" data-page-node-id="saD4RdFWsb7OMSQ6sW6RyG">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="mQhPnOStr1dIS3CYyShPHI">
+              <li data-page-node-id="cJFONVe305Xaf7OehMHV7b">有些镜腿看上去大致对称，但必须按上述三点<b data-page-node-id="jzTZnx5iq7D344MUdBPRYw">逐项细查</b>，不能凭目测大概</li>
+              <li data-page-node-id="xEG6ru5AUcFiPMdBEuLTmP">流线一致，两侧夹持力才均匀，眼镜才<span class="k" data-page-node-id="31z9rONCVYJBzwFt2ug1jl">不歪、不斜</span></li>
+              <li data-page-node-id="ewAiscwXZOhGB0A6AwiRbF"><span class="say" data-page-node-id="pRoGyTRrJvozANNAv1tEdV">"两条镜腿展开要完全重合，戴起来两边受力才一样，不容易跑偏。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2 -->
+    <section class="step" data-page-node-id="NrF6Vn5ViElJjxyxqCUxd1">
+      <div class="axis" data-page-node-id="CUYNlZwwh3FCWIe0NNbyV4">
+        <div class="no" data-page-node-id="KPPMXV1Lz0JMShMYloTl9n">B2</div>
+        <div class="lbl" data-page-node-id="CoUDXS0RU1C7pDivnR7pER">叠线</div>
+        <div class="dotline" data-page-node-id="orKoLb7hkyUFgOE6gx4dkH"></div>
+      </div>
+      <div class="main" data-page-node-id="FyWJzD2OW8HT4IOFOKakTN">
+        <div class="head" data-page-node-id="Nc9ujmuZ9hXMeDXPEvpqUC">
+          <h3 data-page-node-id="IPx18nk8AFXJwcaLb6btqR">左右镜腿合拢时的叠线</h3>
+          <span class="view" data-page-node-id="cIc4kYao0RN0cxUwdF2rWl">合拢观察</span>
+          <span class="tag" data-page-node-id="J3msZM3ddZymfSswOpTVTh">先左后右 · "一"字型</span>
+        </div>
+        <div class="cols" data-page-node-id="MOsJOfJFI4cO5nybpduR6P">
+          <div class="pool act" data-page-node-id="QY5luIFHDZVa0y3qkmx0kU">
+            <h4 data-page-node-id="suaAesqK1cDMZYleOWnwFp"><span class="badge" data-page-node-id="5ERMpOORlTErNX21DRIiwe">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="DNvJyGB7qvXR11FccnKWXQ">
+              <li data-page-node-id="OxF0Cgq175VCyycC0buqJd">按<span class="k" data-page-node-id="72gT1BLX7H9dJ0jfAQ8YCO">先左后右</span>的顺序将两镜腿合拢</li>
+              <li data-page-node-id="hQwfEnxl0ENqxpW5G8QaaI">合拢后应当<span class="k" data-page-node-id="pCsFcwokjobIt09QPt60as">重叠在一起，呈"一"字型</span></li>
+              <li data-page-node-id="u3EEACnf3tJokoTFriuOQa">例外：部分个性化及弯曲镜腿设计除外</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="Q2RiYBScVapLAQW53Qtxzz">
+            <h4 data-page-node-id="i2M8aVA3eUgJOgjaQmowNi"><span class="badge" data-page-node-id="TOpCPoiKFCG7Z9FfKy07ui">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="yuM938HDhZr2me0mKFblyf">
+              <li data-page-node-id="NV1WmS9ju4tuLTNQGfW5un"><b data-page-node-id="ru8AdsrHk0DsycfnyNeitG">一来看起来美观</b>：合拢整齐是品质感的直接体现</li>
+              <li data-page-node-id="OUUhcXs31sUqvPXRUQLDdi"><b data-page-node-id="uEwMYTNBoQEwBYbZCGfNef">二来方便收纳</b>：放入镜盒不会压到镜腿，避免变形</li>
+              <li data-page-node-id="Fo7dkyzNLv5k7i0F5oDayr"><span class="say" data-page-node-id="yORqKYw1hppmfzAQsD44nK">"收镜腿先折左边再折右边，合上是一条直线，放盒里不占地方也不压腿。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ C 角度 ============ -->
+  <div class="catbar" data-page-node-id="7vRMD2JEQnLAucCNAZ9OKE">
+    <div class="big" data-page-node-id="F9Vy6gABhgG2tUszIqJtm3">C</div>
+    <h2 data-page-node-id="CKCwglrgTE9AChztXVPYnY">角度的调整</h2>
+    <span class="cnt" data-page-node-id="e8Q4ZK38BYOY1KOrpBpUNW">5 个角度</span>
+    <span class="desc" data-page-node-id="ZqKsCQdVhlStWTW33xQiIk">五个标准参数：弯弧 · 倾斜 · 外张 · 脚套弯弧 · 内切</span>
+  </div>
+  <div class="steps" data-page-node-id="AHzpCmwUHCLrhGuH6lg1M3">
+
+    <!-- C1 -->
+    <section class="step" data-page-node-id="ewIByhjPDHvTi5G2ECWk29">
+      <div class="axis" data-page-node-id="OEFzeIqzc22myLEEDpZEFL">
+        <div class="no" data-page-node-id="Of8rhLon1LHfgLhiuoCZEf">C1</div>
+        <div class="lbl" data-page-node-id="4c73mTVk85tHSOaCmM2aFu">前弯弧</div>
+        <div class="dotline" data-page-node-id="DROTVJhq2tECofJJqWfz03"></div>
+      </div>
+      <div class="main" data-page-node-id="Ej4GaumZUQGwvot64MtKS9">
+        <div class="head" data-page-node-id="3QCKogXi4SfRUKxwhqB1mm">
+          <h3 data-page-node-id="7P8uNTo0DVnB1i8YQKzpSA">镜面前弯弧度</h3>
+          <span class="param" data-page-node-id="8ecgnvD11OLaCeGw2uMLKK">170°—180°</span>
+          <span class="tag" data-page-node-id="wVvDe2DDiaGF99q3IK0tKj">服帖 · 符合人体工学</span>
+        </div>
+        <div class="cols" data-page-node-id="9sZD5k0TEtoYOW6A05nceY">
+          <div class="pool act" data-page-node-id="Mixjrqxx16R3uevUEYimcQ">
+            <h4 data-page-node-id="Z5OxMR7kHgjtpF1qOU0GOQ"><span class="badge" data-page-node-id="2X07EsX07FuVVPeAyc2ErP">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="lzmK1IoeqAIhoCVJwEhUPY">
+              <li data-page-node-id="8MJVMyJGpKdfY1LyHTilVd">标准弯弧度应控制在<span class="k" data-page-node-id="pQMpYNXNFoaE2jI6hFP2Cg">约 170—180 度</span>之间</li>
+              <li data-page-node-id="jpB1RaXa7t7cifw7CzoBBc">具体弯度结合顾客<span class="k" data-page-node-id="xwqgn9GZdDpEt9bwslfQx7">脸型差异</span>微调确定</li>
+              <li data-page-node-id="eHInFgufrWM1Iraz43TrFr">操作：正面观察镜面弯曲弧线，对照标准区间校正</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="LTGDO5A8yxg70jHN8vfVAR">
+            <h4 data-page-node-id="ODnNG1lsq61uhTrBiz2ieC"><span class="badge" data-page-node-id="BTlezEztE98wF45VQSNa74">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="xDtBWA1y85LKEN5wVrrDYw">
+              <li data-page-node-id="Y2Tu7Py1NShzP7dyghUb8g">从美学上讲，人的头部是一个<span class="k" data-page-node-id="KvbMxn06A4Y51Bcl2ihDky">圆柱体</span>，前镜面弯弧在 170—180 度正好<span class="k" data-page-node-id="ityL5qBvENUxAsqnT1jwqc">最服帖、最符合人体工学</span></li>
+              <li data-page-node-id="mSsVnG2q6atosDuBhYxfwl">只有<span class="k" data-page-node-id="lYUEmjE64ZTNcG8424bF5P">服帖</span>了，眼睛看侧面时视线才能与镜片垂直，保持<span class="k" data-page-node-id="rFawES0qeC3O4XQHVkRxxz">最大视觉区域</span></li>
+              <li data-page-node-id="cEnfvcr97VJViqe6TjzIfV"><span class="say" data-page-node-id="7SyN3v2jBX6Hr5CfschiGP">"镜面有个自然的弯度，贴着您脸的弧线走，看东西的范围才最大。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C2 -->
+    <section class="step" data-page-node-id="HUVpHHVzADiAARDMrYmKMi">
+      <div class="axis" data-page-node-id="rCN4doYzRmd8gsjFo4cJQK">
+        <div class="no" data-page-node-id="AjGXUcWCHTCrK2PrREgLCr">C2</div>
+        <div class="lbl" data-page-node-id="gKSwLcHsp4f6eriMaizGKF">倾斜角</div>
+        <div class="dotline" data-page-node-id="FtCLatQugrkowyQJq4riiG"></div>
+      </div>
+      <div class="main" data-page-node-id="o3N4ESn4cqanjt7pdGRrep">
+        <div class="head" data-page-node-id="xC6ERozoIyEQDanGfDj0jL">
+          <h3 data-page-node-id="ObRpfhvyDXuhWEFd9xeQHi">镜腿的倾斜角度（前倾角）</h3>
+          <span class="param" data-page-node-id="lnSGaNtAdDBJo4d7ECaSg5">8°—15°</span>
+          <span class="tag" data-page-node-id="JrTkYT0h3NrZnkRmWIo3s7">视线垂直镜片</span>
+        </div>
+        <div class="cols" data-page-node-id="TF2VNAoHN6ho2GsciVniNx">
+          <div class="pool act" data-page-node-id="GECGFeeFwKrKUEIYspQx4L">
+            <h4 data-page-node-id="vPubh3hyP55G0knED088kp"><span class="badge" data-page-node-id="KbXj0oO3rsnu3MU8I2uiqL">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="l9gYMr4gtQm2n5b8TdUnyw">
+              <li data-page-node-id="lyDiYirHjAEQnUDUzeB3On">正常保持在 <span class="k" data-page-node-id="OYZSRqGvInG77OzWABTmsb">8—15 度</span>的倾斜</li>
+              <li data-page-node-id="O2dc11QGuimqoL5FSJsr9w">定义：<span class="k" data-page-node-id="AtHW14W4BUOCZ9Q0nTIEkA">镜腿延长线的垂线与镜面的夹角</span></li>
+              <li data-page-node-id="CV6ldywugOVnHmabDPaemf">须<span class="k" data-page-node-id="GD8WpTAOTEFZJMG34M3LzR">因人而异</span>调整，与鼻梁高低、耳位高低相关</li>
+              <li data-page-node-id="xdwDx2QOBgUoXIaIOJ8GAc">操作：侧面观察镜腿与镜面的角度，结合佩戴效果校正</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="WBAXXbOd5Gg50kvag4mkkZ">
+            <h4 data-page-node-id="QVXt3oO1PqMjKNDVc4oy4G"><span class="badge" data-page-node-id="oWOhI3aqd5Y3b8BvRNhrfg">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="TnQPjFgL53wXcDPSRtvIs4">
+              <li data-page-node-id="F76yybdfBzKNgy2cG7pjrs">人的眼球镶嵌在眼窝里，要有一定倾斜度，才能保证<span class="k" data-page-node-id="CSqGS7Hn9U4Vj8uyr8j69C">视线与镜片垂直</span></li>
+              <li data-page-node-id="I4w1YIJKRIhvcUVseJtaRL">经验验证：因东西方人差异，适合角度恰好在 <span class="k" data-page-node-id="BVHIGl2HVXNuJCtvodqfM5">8—15 度</span>之间</li>
+              <li data-page-node-id="5BEYvZBMjXMIMihyHOzIXB"><span class="r" data-page-node-id="UqhaUYbfpuAXVx43ie3qDL">双光、多焦点镜片</span>受倾斜角影响更明显，必须重点校准</li>
+              <li data-page-node-id="lrs6nXgwbAxAJdivznaPYq"><span class="say" data-page-node-id="YY5M9JQ5Sd0zmWt3lRyH0z">"镜架要稍微前倾一点，视线才是正对着镜片看的，尤其是渐进片，这个角度不对会晕。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C3 -->
+    <section class="step" data-page-node-id="nyJjlFzjKXZUqfkaCpDWH7">
+      <div class="axis" data-page-node-id="rYbOP1OEO9HKegoM2KaZXA">
+        <div class="no" data-page-node-id="BhVf0LfywBCr0R7ROadkzw">C3</div>
+        <div class="lbl" data-page-node-id="O76UPd1Hv0nvpxOcXUhZ8N">外张角</div>
+        <div class="dotline" data-page-node-id="j1mzY0SkKmt4nfM8mSaHKp"></div>
+      </div>
+      <div class="main" data-page-node-id="yv2hsyIbjJEu064mnK2U9J">
+        <div class="head" data-page-node-id="nziHifIzCZsZ9iIaTXmvBE">
+          <h3 data-page-node-id="F433vCxEkVGhw7Fnjp5CX2">两镜腿的外张角</h3>
+          <span class="param" data-page-node-id="gFS3sDh9z6OIPpDwW4SO52">80°—100°</span>
+          <span class="tag" data-page-node-id="C5idAhZ9ntmCKFqCWjelza">松紧按框型定</span>
+        </div>
+        <div class="cols" data-page-node-id="FRYK6qYJOKjjfsjzazaAGT">
+          <div class="pool act" data-page-node-id="S2eykGhGSFVwXBY7xBOVCA">
+            <h4 data-page-node-id="UXPsBvcILtDd48d4HGCi0K"><span class="badge" data-page-node-id="BtOYnyJMVsn4UmIS8ahoZR">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="Qj0EvMxQ6oiNF5NeM1UZ05">
+              <li data-page-node-id="sOXJarNkGWZP1mB9MQgFB4">一般情况下保持在 <span class="k" data-page-node-id="quVvegHnWvvBofwg6FBLCt">80—100 度</span></li>
+              <li data-page-node-id="8aR31H2B8fYNhzBjeIrHJV"><span class="r" data-page-node-id="Mv6xd2GWhCYv0Zu2G38EGG">太松</span>：眼镜易下滑，脸颊与镜腿间空旷（瘦脸型顾客尤甚）</li>
+              <li data-page-node-id="zei0pa7fmSqJDtYhilmDzP"><span class="r" data-page-node-id="hbMwqXc8IM02BA29NJ63Te">太紧</span>：戴一段时间脸颊<span class="r" data-page-node-id="EmtC8vkwsG94BRoLTef7WD">勒出两条痕迹</span>，时间稍长<span class="r" data-page-node-id="16tnFHxyPVQb4XaN0dF3qK">太阳穴晕眩</span></li>
+              <li data-page-node-id="nAAOMGjgvR0404nGMP863W">综合三个因素定松紧：<span class="k" data-page-node-id="rlOxLLrLSo82pfhjw7V9ob">戴镜时长（偶尔戴可松些方便摘戴）、成镜分量（玻璃片/较沉须略紧防滑）、镜框类型</span></li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="bLsyVpOagPgHP3IdFxV3sI">
+            <h4 data-page-node-id="lUq9oBUsIspoFXL31cmHbU"><span class="badge" data-page-node-id="QIIISVW0ZYlVeoS3SApeRP">讲解</span>按框型调松紧</h4>
+            <table class="mini" data-page-node-id="UWpRBxIEh5bDxEOVSpzzDo">
+              <tbody><tr data-page-node-id="IPhBAdhC0dq814mqrX7NUK"><th style="width:76px;" data-page-node-id="A6mQk9iL66eei4ynNSEqO2">框型</th><th data-page-node-id="jAJ9x2VLVbjQq0qZp93EuP">外张角处理</th></tr>
+              <tr data-page-node-id="aBPC5bjX3Op4OhbjL8tqUj"><td data-page-node-id="AD55HzLLshsoPxIaxRAHXH">全框</td><td data-page-node-id="y8HvmlDfNUJVXTPRuhyREY">调到<b data-page-node-id="e8Psuk5SnBOA76yWLfOvSb">松紧刚好</b>即可</td></tr>
+              <tr data-page-node-id="2HgWgCU02qO6uviYH0M0ii"><td data-page-node-id="wD7LKVYQZSMM1GLZlogaxD">半框</td><td data-page-node-id="AYdYMIcBFxK58Twuc10D90">比全框<b data-page-node-id="1yvOsoy1jZNUArCAnAL44o">略松一点</b>——框线只有一半，过紧摘戴易变形或镜片崩边</td></tr>
+              <tr data-page-node-id="dP2iHbGXe4imsn87cBaz27"><td data-page-node-id="IvNRnVh2Pd7wqg6VKIf07r">无框</td><td data-page-node-id="i0gVyxHsninKCtJQs1Ub87">比上两种<b data-page-node-id="ZQgl3VTh1eJS2CuyjFi3WK">再松一些</b>——整副靠螺丝固定，须留活动余地，否则摘戴不便易致镜片裂片</td></tr>
+              <tr data-page-node-id="QuYycS3m1R3NsXNKDlBSSg"><td data-page-node-id="BXzNz9ui7EBy3cC8rb91t6">板材（非金属）</td><td data-page-node-id="9mFjzOkDBdqbu68CUad64s">可比实际<b data-page-node-id="QnmbGu5dA5gw3LroEQY1hd">略紧一些</b>——配戴后会因摘戴渐松；多数胶框无鼻托更易下滑，<b data-page-node-id="nJG1LkYYwdePuzh8iuyvIW">须交代顾客定期回店调整</b></td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C4 -->
+    <section class="step" data-page-node-id="uSrotvJ0IHUhFcykOvvEEE">
+      <div class="axis" data-page-node-id="Qv61t102Mv4yZcmau1FUiu">
+        <div class="no" data-page-node-id="wKZbFluYCWYmwoW6DSFQZ1">C4</div>
+        <div class="lbl" data-page-node-id="xUGMvXw0CGDSM0GheF4u1X">脚套弯弧</div>
+        <div class="dotline" data-page-node-id="vx76pAUO5STPNstSNFV6wm"></div>
+      </div>
+      <div class="main" data-page-node-id="O6RxWqO3KtXhF1AmptXNqf">
+        <div class="head" data-page-node-id="GEwjXw3QVTpda8n89CPNKf">
+          <h3 data-page-node-id="3LkUJ0WvnLBijeTa9MBVvJ">镜脚脚套的弯弧度</h3>
+          <span class="param" data-page-node-id="AG7SrwrOMQopCUorhFmLI2">135°±10°</span>
+          <span class="tag" data-page-node-id="KaR4AeqbQU96r832cnrDLs">勾耳受力 · 防滑防痛</span>
+        </div>
+        <div class="cols" data-page-node-id="jtRtuTx56Lg41zwh2etd6W">
+          <div class="pool act" data-page-node-id="L6b2FjiDbRK7Az3cVveeqg">
+            <h4 data-page-node-id="gC3JaUmgJ4ffSj5OMnRJjR"><span class="badge" data-page-node-id="Ad7FkGCsXxF8lPRJn6Usac">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="japYRMmEtvkATNkQdU7J7F">
+              <li data-page-node-id="B6xqBFFcSA7GNjKmpCcOlZ">正常情况下，脚套弯弧度约为 <span class="k" data-page-node-id="L7UtzKRLPu9Xh7P5D30DDt">135±10 度</span></li>
+              <li data-page-node-id="uGlfFOO8rGm90NdNbDTaeH">松紧须<span class="k" data-page-node-id="BWOzsKroJXUAz4gtTzBMkY">因人而异</span>微调</li>
+              <li data-page-node-id="c3tSps7fvac2M2rsPeaU8b">操作：侧面观察脚套弯钩与耳型的贴合状态</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="bCDvV5bbv3n5Vai8xI8hU9">
+            <h4 data-page-node-id="LYtQ7VLoh9NCc44ayW4ix2"><span class="badge" data-page-node-id="PFlDqyHHANzPqrCJVbwssH">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="Py8yOJ1gUR18vzQLCUoNj3">
+              <li data-page-node-id="GEQrJqwf5h8mIBlW7SofzT">弯弧合适，<span class="k" data-page-node-id="oIFatdMFLqapBBjYGWuAc7">易于摘戴</span>：不会一低头眼镜就下滑，也不会太紧导致<span class="r" data-page-node-id="QOlIq4QB1qOhV2lroNCsRU">耳朵后面疼痛</span></li>
+              <li data-page-node-id="VCMukRajQEpJFRCJ71uU5K">戴镜后<span class="k" data-page-node-id="ipyxvCM4kZUJyUlN6fWH4O">约一半的受力</span>靠脚套勾在耳朵上</li>
+              <li data-page-node-id="DA9KeXAc5h2mnk7WFttPSA">弯弧 135 度时，脚套与耳朵<span class="k" data-page-node-id="AuxlHf2HT0wg8ijGHkix3o">最服帖</span></li>
+              <li data-page-node-id="2bbfnVaD3i7UCAQ8vO9dPz"><span class="say" data-page-node-id="mdvKZY0xGzoi6PzvskZVZ9">"耳朵后面这段弯度很关键，调好了低头也不滑，也不勒耳朵。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C5 -->
+    <section class="step" data-page-node-id="nXJJcksKeKso8gZCtDPI0l">
+      <div class="axis" data-page-node-id="al0eGMurKq7GfUjrPAG6cE">
+        <div class="no" data-page-node-id="KpsXwEPApQ2A60HPzjORDX">C5</div>
+        <div class="lbl" data-page-node-id="EzVn8cdgxqfmZ3P5rtVAmY">内切度</div>
+        <div class="dotline" data-page-node-id="DIEPOhcEKxUKQvYr1lbKk8"></div>
+      </div>
+      <div class="main" data-page-node-id="WhD1ZFpjHHtqHlYigZctT6">
+        <div class="head" data-page-node-id="Rj7fi6s7XF7xExFGltYYsp">
+          <h3 data-page-node-id="dbKFkbeZj0oCaDyQ6YNMwO">镜脚脚套的内切度</h3>
+          <span class="param" data-page-node-id="syYLbyFxco5j9GgnmIKgFW">25°—35°</span>
+          <span class="tag" data-page-node-id="V36rvSYjssnUvi7DskcMGM">摘戴方便 · 稳定舒适</span>
+        </div>
+        <div class="cols" data-page-node-id="i4dSdnGekynd8nCN4GlzO9">
+          <div class="pool act" data-page-node-id="50S2kv3GzVCm93aSBHy2rV">
+            <h4 data-page-node-id="jXmsL3SSilbfo8HHb13FcI"><span class="badge" data-page-node-id="D3sAZGzLKCsU3EZVeRKGiU">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="U9ciOVzLZTYgxnQxhQ8C2D">
+              <li data-page-node-id="5iQc88F1QRGwiEqcB4QBYn">正常情况下为 <span class="k" data-page-node-id="28opEwnZqQb9GHABCTcJHE">25—35 度</span></li>
+              <li data-page-node-id="zlcRkRpHa79LXCZ9f5itGA">操作：俯视脚套向内收的角度，与头部宽度匹配</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="QPdqfx1nE75p7lml5DAeJM">
+            <h4 data-page-node-id="zlylmHA4msF8w1l3YlUyrW"><span class="badge" data-page-node-id="IBEYlwxHxdJXjqQgXqihYQ">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="JbI9WSSjZbYDSJFTB39VoP">
+              <li data-page-node-id="jI32HzN6TzH5BD6cVzTEK1"><span class="k" data-page-node-id="1D5NnuGxr4mlLmPEjF3TTa">方便摘戴</span>：单手摘戴不卡不夹</li>
+              <li data-page-node-id="XG6Jzk8hxfQHAm7eAXJ1T0">确保配戴的<span class="k" data-page-node-id="8xb0RnvekrlaprmYurHRme">舒适性、稳定性</span></li>
+              <li data-page-node-id="gvvcCJ6vAfUlr5ESiT812I"><span class="say" data-page-node-id="WwX16r5n6tMstOCvodcDzh">"脚尾稍微往里收一点，戴得住，取的时候也顺。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ D 点 ============ -->
+  <div class="catbar" data-page-node-id="SwG0C79OnhL4BbEAzSqZDm">
+    <div class="big" data-page-node-id="2Br2OWWhbHkHTRU6cgJl0A">D</div>
+    <h2 data-page-node-id="13YGE8rY0w6yDXAGMK6dAh">点的调整</h2>
+    <span class="cnt" data-page-node-id="mtZdroESdG23I2PJtu3qlY">1 个点</span>
+    <span class="desc" data-page-node-id="uHFj74EGGFqDlnvxPBs7vZ">鼻托支撑点——耳朵之外的另一半受力</span>
+  </div>
+  <div class="steps" data-page-node-id="EGlinLAEIIuGTWB47h4SlQ">
+
+    <!-- D1 -->
+    <section class="step" data-page-node-id="6eZk9vkRvNwHPco5i69TYA">
+      <div class="axis" data-page-node-id="HVmZ1pAGt33FDKiA0K4HDR">
+        <div class="no" data-page-node-id="plhCwZBdCuVGx14qW40cGb">D1</div>
+        <div class="lbl" data-page-node-id="795WnBrFelTMfeqfqn9owq">鼻托</div>
+        <div class="dotline" data-page-node-id="P79KseIU2FV4nlIgjYglcL"></div>
+      </div>
+      <div class="main" data-page-node-id="2Ekgw4kDrLm6lRqw6PnZ0i">
+        <div class="head" data-page-node-id="qmPqAkNkEs6B0J1s7Ypq2x">
+          <h3 data-page-node-id="YUtkM6tvYomgaThkHmCm0c">鼻托的支撑点要服帖</h3>
+          <span class="view" data-page-node-id="XSgHrbT4Vd8ED1ArViQziM">正面 / 侧面观察</span>
+          <span class="tag" data-page-node-id="vFl7HiEgbLjvuwqWFCWFi7">面贴不压痕</span>
+        </div>
+        <div class="cols" data-page-node-id="vWqUmUZy32Bv1CAalhKGwv">
+          <div class="pool act" data-page-node-id="RbbfHHFK0FBoTMstWRTKNf">
+            <h4 data-page-node-id="UV5aImwpma6MmZwFE8aADI"><span class="badge" data-page-node-id="0pzkwJh7ZCu4olg7FJQ15f">标准</span>检查 / 调整标准</h4>
+            <ul data-page-node-id="qK6UbrfjGFChhNbrHgfNEB">
+              <li data-page-node-id="kQx949FbOXTHFhU3JgXOmJ">鼻托<span class="k" data-page-node-id="ZhJKPFLsacURGFnBbMPesc">整个托叶面完全服帖</span>在鼻梁上</li>
+              <li data-page-node-id="hRkqx9qTAY15FrnpFNTeVv">按顾客鼻梁实际情况，调整鼻托的<span class="k" data-page-node-id="gNGwOLq9su66aNZZBl95Wz">高低、内外</span></li>
+              <li data-page-node-id="yMINj3v7DarslLKGaj2miX">注意：每人鼻梁不同，鼻梁骨两侧肌肉<span class="k" data-page-node-id="wjkrUT4U1YNTPFzIhIHukm">不一定对称</span>，须按实际逐一校正</li>
+              <li data-page-node-id="lrSjXoFd6qZMxH5pKZQUjg">操作：轻拉镜架观察托叶贴合面，不留单边悬空</li>
+            </ul>
+          </div>
+          <div class="pool say" data-page-node-id="PzHWBnz5x60hBUvZbZXTg0">
+            <h4 data-page-node-id="aD1ITrYTTToFJOHVXkAGRO"><span class="badge" data-page-node-id="DYX8vWEgAbdbIO6wV6R2Wj">讲解</span>调整意义 · 话术</h4>
+            <ul data-page-node-id="MJ5lD8WHMdNLluODgOE4sf">
+              <li data-page-node-id="SI4Uwj8a6spb3wj7cZjdhs">顾客戴镜后，除耳朵受力外，剩下的分量就靠<span class="k" data-page-node-id="U3LKE8MqCUMhIgPMCS0Vnc">鼻托支撑</span></li>
+              <li data-page-node-id="2xBGOhuyQu1ea3KWALudCO"><span class="k" data-page-node-id="XJgSlXytDb7WkdBseUFUGN">受力面积越大，压力越小</span>——最理想的鼻托是完全服帖鼻梁</li>
+              <li data-page-node-id="rMOnr3MAFqzfTbGBZ9M6vS">调好的标准只有一条：<span class="ok" data-page-node-id="py0cCq2ULbzYqcFdXiE9rD">必须服帖</span></li>
+              <li data-page-node-id="9DqNi4qdCCFeLDHUIwhU9A"><span class="say" data-page-node-id="7z5rlAsY0u3BgC1kLFcCWR">"鼻托要整个贴住鼻梁，接触面大了才不压出印子，戴一天也不累。"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ E 注意事项 ============ -->
+  <div class="catbar" data-page-node-id="DTDs5Rh63zSaFFwyDp4cUS">
+    <div class="big" data-page-node-id="0SC962Zj2DBzUY5eMhIz3S">E</div>
+    <h2 data-page-node-id="uNGckTvPcDkVZDwvudEBBE">调整需注意的事项</h2>
+    <span class="cnt" data-page-node-id="eVK3RkPoMw3tGnEcDM7O1d">7 条</span>
+    <span class="desc" data-page-node-id="MHxfGxIg0LdBst5pk8UJGG">每一条都来自真实售后教训，逐条对照执行</span>
+  </div>
+  <div class="ckwrap" data-page-node-id="rQh8IJs6QDLNPU9A3ocAiL">
+    <div class="ckgrid" data-page-node-id="G63fEWM8tXmLI4ydNLQaXE">
+      <div class="ck" data-page-node-id="aussqP3pJbGjF5dsEbpp2Q"><div class="cn" data-page-node-id="G6tCsPRxu5m9qSkR9QFp0y">1</div><p data-page-node-id="BLvMEehNEXNwRIJnsOZRBr"><b data-page-node-id="7CpBl5T3CoOshvL6KoHVbX">紧固螺丝 · 查旧件</b>检查旧片、旧架的磨损程度，尤其是<span class="r" data-page-node-id="AqtXQqopcuT6HFJiqXlyD9">焊接点的牢固程度</span>！</p></div>
+      <div class="ck" data-page-node-id="tx3g8XEQ4XR5A3telLOW4w"><div class="cn" data-page-node-id="kaPdCN4PhPKPZpzX3gyznL">2</div><p data-page-node-id="ex9NRsB9mpHPEW1YHfQ7uj"><b data-page-node-id="soV8gEfdlwSlX4pZeRQ576">旧镜框先沟通</b>调整时可能出现的意外，必须<span class="k" data-page-node-id="E8WVipaLYrtzadvRFLZJ7x">先告知顾客</span>，以免引起不必要的麻烦和抱怨。</p></div>
+      <div class="ck" data-page-node-id="gLNNoN1AADcFdSpyfFq0hY"><div class="cn" data-page-node-id="ZzAm5QGGnDBQikuyK1Uzb3">3</div><p data-page-node-id="SwuMQwkFUnFnFXiDfKxnZr"><b data-page-node-id="COuawYViJQimCPHe3V9fRt">老化材质防断裂</b>旧的板材及胶框，调整加热时可能因<span class="r" data-page-node-id="CICvgfOTZVdxudLn98qkrY">材质老化断裂</span>。</p></div>
+      <div class="ck" data-page-node-id="tXxwDJBjCy3ofIEBI3B13I"><div class="cn" data-page-node-id="1Nxa81fPkKUr8MRZkHJCnu">4</div><p data-page-node-id="2PEZB5V4pglkSsuqLrbxxL"><b data-page-node-id="GptvvPkWV2nxwp1UGfsauE">工具必须垫布</b>使用工具调整时，必须<span class="k" data-page-node-id="DsTsXkooor0j84j21muZPD">垫布操作</span>，以免划伤眼镜。</p></div>
+      <div class="ck" data-page-node-id="wx0VZAIy2Exmeu0UtxGNY3"><div class="cn" data-page-node-id="6LxIclLa72AwgNFrc0DFhH">5</div><p data-page-node-id="BSeCVruqK23pLXoFd8MpUb"><b data-page-node-id="v6RnHl2P2FMt17qlc6CbEJ">先清洗后试戴</b>调整后要让顾客试戴，须<span class="k" data-page-node-id="Eff3qFC84GFLDpPOhCAN4f">先清洗后再戴</span>，以免顾客觉得模糊又不卫生。</p></div>
+      <div class="ck" data-page-node-id="YL8CssxKntwNOAcnBUhECU"><div class="cn" data-page-node-id="DKiuYyrB32XTbOb5JZyM4o">6</div><p data-page-node-id="JxY9XbFMajHTx3ZQTJt133"><b data-page-node-id="Fzvge0fd6X898VHApp3Ynw">螺丝勿拧过紧</b>试戴舒适、松紧刚好后，铰链螺丝须<span class="k" data-page-node-id="yMHl3HKctadaJ1QU4owm3j">适当放松</span>——太紧不便使用，且易变形。</p></div>
+      <div class="ck" data-page-node-id="g3UXGMmcaOAygOcb8l1hEe"><div class="cn" data-page-node-id="KSs3hqwPPtFkAgtUbDnntu">7</div><p data-page-node-id="eDdKwUpPlOHL8OEc79xmcp"><b data-page-node-id="j9O4q6D7xG6mEN8XPZhG08">交代使用与保养</b>必须告知顾客平时<span class="k" data-page-node-id="M1keWJB7WViKXCkQuo2XPx">正确的使用方式及保养方法</span>。</p></div>
+      <div class="ck" style="background:var(--act-l);border-color:#cfeade;" data-page-node-id="V8uLb08HqzvXXgs5jIEcER"><div class="cn" style="background:var(--act);" data-page-node-id="Fso1r7wvppIqDWlImQ9MJh">✓</div><p data-page-node-id="Gm9YQ0CxoQuxUDWJUdnJJS"><b style="color:#0a6a4a;" data-page-node-id="XvDKtwarNDvNmx1uf59lAw">口诀记忆</b>紧螺丝 · 先沟通 · 防老化 · 要垫布 · 先清洗 · 莫拧紧 · 讲保养。</p></div>
+    </div>
+  </div>
+
+  <!-- ============ 快速索引 ============ -->
+  <div class="sec-title" data-page-node-id="guQrHoJkHqt07QpEj1KiE3">标准参数快速索引 <em data-page-node-id="kJF1XkmbmCedCymRelilTA">上墙速查版 · 五个角度参数一目了然</em></div>
+  <div class="panel" data-page-node-id="mkZy5jxlsJKfpPlEICgG9B">
+    <table class="ref" data-page-node-id="yX722cuIgBUwk7xTgcWNIV">
+      <tbody><tr data-page-node-id="MVbgNGE3aLA0dJkoZBVpjB">
+        <th style="width:60px;" data-page-node-id="yRviEmrUzs1iBNoaYwdM2v">类别</th>
+        <th style="width:210px;" data-page-node-id="fGGPdD1cnxTc1bJqVZGNaW">调校项目</th>
+        <th style="width:150px;" data-page-node-id="AA45tPkPSOd9wUnFTgkboF">标准参数</th>
+        <th data-page-node-id="fxnOA8olvaZBynTyCTv1HE">一句话意义</th>
+      </tr>
+      <tr data-page-node-id="Ia1mUH3CYJVspmOJvwGE6z"><td data-page-node-id="rbHGtv0TehzitUY5wZWco3">A1</td><td data-page-node-id="o4ixAKcXt5SlY7tEGhe8bN">水平面（正面观）</td><td class="pv" data-page-node-id="7sxKRmmlZB883my4R7Hz63">左右同高</td><td data-page-node-id="bCCdRMBoRwEXZlqN75IW86">美观 + 光学中心同水平，无人为棱镜效果</td></tr>
+      <tr data-page-node-id="4HyFHxOcXv9hYIhY19DZQP"><td data-page-node-id="ja8jL6sZsaELiH0Y7qIFLN">A2</td><td data-page-node-id="iAMunkVFwecWBj2OWMAmiR">垂直面（平面观）</td><td class="pv" data-page-node-id="HVurRRA04py5AUO8uV1kyc">前后一致</td><td data-page-node-id="n9d7SblMRAlyOOatKFXIU8">保证两镜片镜眼距一致，双眼用眼平衡</td></tr>
+      <tr data-page-node-id="2BhGnYJWnAAJwekIUMmtVC"><td data-page-node-id="04BZ2IHvGI9PElTXIJsO9L">A3</td><td data-page-node-id="zAizlSJpVR0TAHYp12CqsK">扭曲面（侧面观）</td><td class="pv" data-page-node-id="jyL36hpE4IFB47UDzBPkS8">框线重合</td><td data-page-node-id="aDgYCeivAzSwwcOlhnCCcy">视线与镜面垂直，杜绝"面扳了"</td></tr>
+      <tr data-page-node-id="w8D4X2J1fTaRIjKPPFIgHv"><td data-page-node-id="81DKZctxkjyQCBBBiXpkAM">B1</td><td data-page-node-id="63PDtGfoA6vZ5oHR2DXNiD">镜腿流线（展开）</td><td class="pv" data-page-node-id="zRBguOJYAxyVmiERRy0mHw">完全重合</td><td data-page-node-id="zrZBFfOROiymMlC22mKfoq">两侧夹持力均匀，佩戴不跑偏</td></tr>
+      <tr data-page-node-id="lW6uzFfkcN3tuo9GgQVUjL"><td data-page-node-id="EQg0JE9JhfniOH18k6VYJy">B2</td><td data-page-node-id="3ikplpgcgcvaVJJoJmHjK0">镜腿叠线（合拢）</td><td class="pv" data-page-node-id="NQ3IkAhQ951KRou6V48J5t">"一"字型</td><td data-page-node-id="WIaj4sFFOXLz3TKcFFFaXF">美观，入盒不压镜腿</td></tr>
+      <tr data-page-node-id="jCpzXDGU5zeaVnOKp4R2HX"><td data-page-node-id="GyrqVUKIFfaDMMPwKc3AZ0">C1</td><td data-page-node-id="epH1CXn2ZMXe2vW4KEiEYs">镜面前弯弧度</td><td class="pv" data-page-node-id="fYvZveFf56tNdI0YF6B78A">170°—180°</td><td data-page-node-id="gecmt2OXykEnhCukDRKkWG">贴合头部圆柱弧线，保持最大视觉区域</td></tr>
+      <tr data-page-node-id="hA58IJ8ScXnjZFEZmgEcFu"><td data-page-node-id="wePDWEvZepIb8bS70X5bo3">C2</td><td data-page-node-id="m02qdEL2hIZ6WH3EARnzrO">镜腿倾斜角</td><td class="pv" data-page-node-id="cK09D9OlAxQHyJQeD8YNC4">8°—15°</td><td data-page-node-id="MmIYbjK4BxMvJL5WiCSzqG">视线垂直镜片；渐进片/双光片影响更明显</td></tr>
+      <tr data-page-node-id="YOpqqgs7YjiF6kv1zcqiwj"><td data-page-node-id="L9O8dvfxGRBtl4yo8BOsAG">C3</td><td data-page-node-id="oMqWznHhS61ZIpPZGJ4nm5">两镜腿外张角</td><td class="pv" data-page-node-id="6DAVj1CWos97yMzPSRcHru">80°—100°</td><td data-page-node-id="eAUjCn07I2FOkztjLpS5Dw">松紧适中，按框型与戴镜习惯微调</td></tr>
+      <tr data-page-node-id="UKuVt8O3IjE2NzIdGWyUe9"><td data-page-node-id="diWjuIGesIgOuEdMUBebnG">C4</td><td data-page-node-id="ft4prHxJ4nJqiKE6irJlpo">脚套弯弧度</td><td class="pv" data-page-node-id="FPfAOzcJueW9aDQC7mehvz">135°±10°</td><td data-page-node-id="pX2RVtx0VkELMoyPPghUGU">约一半受力勾耳，防滑防耳后痛</td></tr>
+      <tr data-page-node-id="tqnq02EY7WtHqqkS4AWxZ2"><td data-page-node-id="KIxZ3vUYyDCwBT9XhiBAWO">C5</td><td data-page-node-id="6Ty4jMfFiFN9GAqPffLvjD">脚套内切度</td><td class="pv" data-page-node-id="bCraVL2EO1rXtAjiMV4088">25°—35°</td><td data-page-node-id="WVKYe3aa9OqYnCQ8xk6Myz">摘戴方便，佩戴舒适稳定</td></tr>
+      <tr data-page-node-id="ZuKvziAkAIGuGUoOai5xEy"><td data-page-node-id="AlSQESdAi9Xn6MrD1z3Y9n">D1</td><td data-page-node-id="gmxxhydZswTFsL7FfHkQ2f">鼻托支撑点</td><td class="pv" data-page-node-id="cAFbwJ0zYFUzsXiF4oLMux">完全服帖</td><td data-page-node-id="SoxaMUSsZEccCHnakeV6Dt">受力面积大压力小，不压痕不累鼻</td></tr>
+    </tbody></table>
+    <div class="redline" data-page-node-id="FbKYvbIFh4iAw7oOhIy187">
+      <b data-page-node-id="t52Ztq6LlBh2N3f9mNoHzS">执行提醒：</b>五个角度参数是<b data-page-node-id="bBAW8JXESfMMiLE8IFgbpT">基准区间</b>，不是死数字——先落到区间，再按顾客脸型、鼻梁、耳位、戴镜习惯因人而异微调。每一次调整都要<b data-page-node-id="a07zHQ4L7lLSWFmSXXssut">边调边讲</b>，让顾客听见标准、看见专业，这正是我们与同行的差异所在。
+    </div>
+  </div>
+
+  <footer data-page-node-id="WzBH3z8qRcv8vucz2lVNnf">
+    <b data-page-node-id="ZuNJD8o3QOXMfGVjPaMqJO">爱眼城眼镜</b> · 眼镜调校标准手册（2027 版）<br data-page-node-id="j0qPBNEJF4VFZRxtxrTmYF">
+    依据《眼镜调校》培训资料整理 · 全连锁门店统一执行<br data-page-node-id="WyKD1AzBiWFzjTNENZKJp8">
+    本手册用于门店新人培训与在岗调校自检，与《门店取镜服务标准流程》配套使用
+  <a class="foot-home" href="../index.html">← 返回课程首页</a><br></footer>
+
+</div>
+
+
+</body></html>
