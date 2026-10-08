@@ -291,10 +291,30 @@ body{padding:0!important;margin:0!important}
   <span style="color:#999;font-size:13px;">Day 32 练习题</span>
   <a href="Day_33_学习内容.html" class="nav-btn next">Day 33 →</a>
 </div>
+  <div class="card">
+    <h2>★ 补充巩固题（对齐门店标准手册）</h2>
+    <div class="q-block">
+      <div class="q-title"><span class="q-num">★</span>《标准验光流程》手册提出“验光三个目的”，下列说法错误的是？</div>
+          <ul class="options">
+<li>A. 得出顾客双眼正确度数</li><li>B. 通过验光体现我们的专业性</li><li>C. 验光过程是顾客进店后唯一完全由我们支配的过程</li><li>D. 验光主要是为了让顾客快点买镜框</li>    </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer('day32c1')">查看答案</button>
+      <div class="answer-hint" id="day32c1"><div class="label">✅ 正确答案：D</div><p>验光三目的：① 得出双眼正确度数（准确是底线）② 体现专业性 ③ 充分利用这段由门店支配的过程；与“催顾客买镜框”无关。</p></div>
+    </div>
+    <div class="q-block">
+      <div class="q-title"><span class="q-num">★</span>贯穿验光全程的“三个基本句式”是指？</div>
+          <ul class="options">
+<li>A. 是什么 / 做什么用 / 请您配合</li><li>B. 问价格 / 问品牌 / 问预算</li><li>C. 您好 / 谢谢 / 再见</li><li>D. 检查 / 收费 / 交付</li>    </ul>
+      <button class="show-answer-btn" onclick="toggleAnswer('day32c2')">查看答案</button>
+      <div class="answer-hint" id="day32c2"><div class="label">✅ 正确答案：A</div><p>三个基本句式：① 是什么（眼前看到的是什么）② 做什么用（测试的目的）③ 请您配合（顾客该怎么做），每个环节都要说清。</p></div>
+    </div>
+  </div>
+
 <script>
 function toggleAnswer(id) {
   const box = document.getElementById(id);
-  box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  if (!box) return;
+  const shown = getComputedStyle(box).display !== 'none';
+  box.style.display = shown ? 'none' : 'block';
 }
 </script>
 
