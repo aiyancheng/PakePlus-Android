@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱眼城眼镜 · 消费者需求探寻表</title>
+<style>
+:root{
+    --brand:#0b6ab0;
+    --brand-d:#084f84;
+    --brand-l:#eaf3fb;
+    --accent:#c8102e;
+    --ink:#16232e;
+    --ink-2:#405060;
+    --ink-3:#7b8b9a;
+    --line:#dbe6f0;
+    --bg:#eef4f9;
+    --say:#fffaf0;
+    --say-b:#e6cf9a;
+    --say-t:#8a6414;
+    --ok:#0d7a55;
+    --act:#0d7a55;
+    --act-l:#eafaf3;
+    --warn:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.7;font-size:15px;padding:20px 16px 56px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+  .banner{position:relative;
+    background:linear-gradient(120deg,#0b6ab0 0%,#0a5b98 55%,#084f84 100%);
+    color:#fff;border-radius:16px;padding:28px 36px 26px;
+    overflow:hidden;box-shadow:0 10px 28px rgba(8,79,132,.20);
+  }
+  .banner::after{content:"";position:absolute;right:-70px;top:-70px;
+    width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+  }
+  .banner::before{content:"";position:absolute;right:80px;bottom:-90px;
+    width:180px;height:180px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.09),transparent 70%);
+  }
+  .banner-in{position:relative;z-index:1;}
+  .logo-chip{display:inline-block;background:#fff;border-radius:10px;
+    padding:7px 14px;margin-bottom:14px;box-shadow:0 3px 10px rgba(0,0,0,.18);
+  }
+  .logo-chip img{display:block;height:40px;width:auto;}
+  .banner h1{font-size:27px;font-weight:700;letter-spacing:1.5px;line-height:1.35;}
+  .banner .sub{margin-top:8px;font-size:14.5px;opacity:.9;}
+  .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;}
+  .chips span{font-size:12.5px;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:4px 15px;
+  }
+  .banner .creed{margin-top:18px;padding-top:15px;
+    border-top:1px dashed rgba(255,255,255,.32);
+    font-size:14px;letter-spacing:.6px;
+  }
+  .banner .creed b{color:#ffe08a;font-weight:700;}
+  .sec-title{display:flex;align-items:center;gap:10px;
+    margin:26px 0 14px;font-size:17px;font-weight:700;color:var(--brand-d);
+  }
+  .sec-title em{font-style:normal;font-size:12.5px;font-weight:400;color:var(--ink-3);margin-left:2px;}
+  /* 探寻心法 */
+
+  .mind{background:linear-gradient(135deg,#0b6ab0,#084f84);color:#fff;
+    border-radius:14px;padding:18px 22px;
+  }
+  .mind h4{font-size:15px;font-weight:700;margin-bottom:10px;letter-spacing:.5px;}
+  .mind h4 span{font-size:12px;font-weight:400;opacity:.8;margin-left:6px;}
+  .mind .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .mind .q{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+    border-radius:10px;padding:10px 13px;
+  }
+  .mind .q b{display:block;font-size:12px;color:#ffe08a;letter-spacing:.5px;margin-bottom:3px;}
+  .mind .q p{font-size:13.5px;line-height:1.6;}
+  /* 场景总览 */
+
+  .flowbar{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;display:flex;flex-wrap:wrap;gap:7px;align-items:center;
+  }
+  .flowbar .fl{flex:1 1 132px;min-width:132px;
+    border:1px solid #cfe2f2;background:var(--brand-l);
+    border-radius:10px;padding:9px 6px;text-align:center;
+  }
+  .flowbar .fl b{display:block;font-size:11px;color:var(--brand);letter-spacing:.4px;}
+  .flowbar .fl i{display:block;font-style:normal;font-size:12.5px;font-weight:600;margin-top:2px;color:var(--ink);}
+  /* 步骤卡 */
+
+  .steps{display:flex;flex-direction:column;gap:14px;}
+  .step{display:grid;grid-template-columns:84px 1fr;background:#fff;
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,60,100,.05);
+  }
+  .step .axis{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-d) 100%);
+    color:#fff;display:flex;flex-direction:column;align-items:center;
+    justify-content:flex-start;padding:16px 6px 14px;text-align:center;
+  }
+  .step .axis .no{font-size:24px;font-weight:800;line-height:1;
+    font-family:"Segoe UI",Arial,sans-serif;letter-spacing:-1px;
+  }
+  .step .axis .lbl{margin-top:6px;font-size:10.5px;letter-spacing:1px;opacity:.85;line-height:1.4;}
+  .step .axis .dotline{flex:1;width:0;border-left:1px dashed rgba(255,255,255,.42);margin:12px 0 0;}
+  .step .main{padding:14px 18px 16px;}
+  .step .head{display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+    padding-bottom:9px;border-bottom:1px solid #eef3f8;margin-bottom:11px;
+  }
+  .step .head h3{font-size:16.5px;font-weight:700;color:var(--brand-d);letter-spacing:.3px;}
+  .step .head .cat{font-size:11.5px;color:var(--brand-d);background:var(--brand-l);
+    border:1px solid #c6dcf0;border-radius:999px;padding:2px 11px;white-space:nowrap;
+  }
+  .step .head .cnt{margin-left:auto;font-size:12px;color:var(--accent);
+    background:#fdf2f4;border:1px solid #f2c8ce;
+    border-radius:999px;padding:2px 12px;white-space:nowrap;
+  }
+  /* 场景块 */
+
+  .scene{border:1px solid #e8eff6;border-radius:11px;overflow:hidden;
+    background:#fbfdff;margin-bottom:11px;
+  }
+  .scene:last-child{margin-bottom:0;}
+  .scene .st{display:flex;align-items:center;gap:9px;
+    background:var(--act-l);border-bottom:1px solid #cfeade;
+    padding:8px 14px;
+  }
+  .scene .st .dot{width:7px;height:7px;border-radius:50%;background:var(--act);flex:0 0 auto;
+  }
+  .scene .st b{font-size:14px;color:#0a6a4a;font-weight:700;}
+  .scene .st .sid{margin-left:auto;font-size:11.5px;color:#0a6a4a;
+    background:#fff;border:1px solid #cfeade;border-radius:999px;padding:1px 9px;
+  }
+  .scene .sb{padding:10px 14px 12px;}
+  .scene .sb .lbl{font-size:12px;font-weight:700;color:var(--brand-d);
+    margin-bottom:5px;letter-spacing:.4px;
+  }
+  .say{display:block;background:var(--say);border:1px dashed var(--say-b);
+    color:var(--say-t);border-radius:9px;padding:9px 13px;
+    font-size:13.5px;line-height:1.75;
+  }
+  .tip{margin-top:7px;font-size:12.5px;color:var(--ink-3);
+    padding-left:2px;
+  }
+  .tip b{color:var(--brand-d);}
+  /* 索引表 */
+
+  .panel{background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:20px 22px 22px;
+  }
+  .ref{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .ref th{background:var(--brand-d);color:#fff;font-weight:700;
+    padding:9px 12px;text-align:left;font-size:13.5px;letter-spacing:.5px;
+  }
+  .ref td{padding:8px 12px;border:1px solid #e6eef6;color:var(--ink-2);vertical-align:top;}
+  .ref tr:nth-child(even) td{background:#fafcfe;}
+  .ref td:first-child{font-weight:700;color:var(--brand-d);white-space:nowrap;}
+  .redline{margin-top:16px;border-radius:10px;background:#fdf2f4;
+    border:1px solid #f2c8ce;border-left:5px solid var(--accent);
+    padding:13px 18px;font-size:13.5px;color:#8c2436;line-height:1.8;
+  }
+  .redline b{color:var(--accent);}
+  .warnbar{margin-top:16px;border-radius:10px;background:#fffbeb;
+    border:1px solid #f2d99a;border-left:5px solid var(--warn);
+    padding:13px 18px;font-size:13.5px;color:#7a5309;line-height:1.8;
+  }
+  .warnbar b{color:var(--warn);}
+  footer{margin-top:24px;text-align:center;font-size:12.5px;
+    color:var(--ink-3);line-height:2;
+  }
+  footer b{color:var(--brand-d);}
+  @media (max-width:860px){
+.mind .row{grid-template-columns:1fr;} }
+  @media (max-width:700px){
+body{padding:12px 9px 40px;font-size:14.5px;}
+    .banner{padding:18px 16px 18px;border-radius:12px;}
+    .logo-chip img{height:32px;}
+    .logo-chip{padding:5px 10px;margin-bottom:10px;}
+    .banner h1{font-size:20px;letter-spacing:.5px;}
+    .banner .sub{font-size:13.5px;}
+    .flowbar .fl{flex:1 1 44%;min-width:0;padding:7px 4px;}
+    .flowbar .fl i{font-size:12px;}
+    .step{grid-template-columns:58px 1fr;border-radius:12px;}
+    .step .axis{padding:12px 3px 10px;}
+    .step .axis .no{font-size:18px;}
+    .step .axis .lbl{font-size:9px;}
+    .step .main{padding:12px 13px 14px;}
+    .step .head h3{font-size:15px;}
+    .step .head .cnt{margin-left:0;}
+    .sec-title{font-size:15.5px;margin:20px 0 12px;}
+    .say{font-size:13px;}
+    .ref th,.ref td{padding:6px 8px;font-size:12.5px;}
+  }
+  @media print{
+@page{size:A4;margin:12mm 10mm;}
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .wrap{max-width:100%;}
+    .step,.panel,.banner,.mind,.scene,.flowbar{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact;
+      break-inside:avoid;
+    }
+    .steps{gap:7px;}
+    .step .axis .dotline{display:none;}
+    .banner{border-radius:0;}
+  }
+/*@@ HOME-BACK-BTN @@*/
+/* ═══ 返回首页：嵌入页头（banner / topbar）右上角 ═══ */
+.banner,.topbar{position:relative!important}
+.back-home{position:absolute;right:18px;top:16px;z-index:9;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.16);color:#fff!important;font-size:13px;font-weight:700;line-height:1;
+  padding:9px 16px;border-radius:22px;text-decoration:none!important;
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 3px 10px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:inherit;-webkit-tap-highlight-color:transparent}
+.back-home:hover{background:rgba(255,255,255,.30);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.back-home .bh-ico{font-size:14px;line-height:1}
+/* 页脚返回链接 */
+.foot-home{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#0b6ab0!important;
+  font-weight:700;font-size:13px;text-decoration:none!important;border-bottom:1px dashed rgba(11,106,176,.5);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.foot-home:hover{color:#095a96!important;border-bottom-color:#095a96}
+@media(max-width:700px){
+  .back-home{right:10px;top:10px;font-size:12px;padding:8px 13px;border-radius:20px}
+}
+@media print{.back-home{border-color:#0b6ab0;color:#0b6ab0!important;background:#fff}}
+/*@@ TABLE-COL-FIT @@*/
+/* ═══ 表格列宽优化：固定布局 + 智能换行 + 防溢出 ═══ */
+/* 1) 中文长串安全换行，避免撑宽或溢出容器 */
+th,td{overflow-wrap:break-word;word-break:break-word;}
+/* 2) 表头可换行，避免窄列被 nowrap 撑破 */
+thead th{white-space:normal;}
+/* 3) 短标签列（序号/数字）保持紧凑不换行：仅作用于极短首列 */
+table.fit-narrow td:first-child,
+table.fit-narrow th:first-child{white-space:nowrap;}
+/* 4) 宽屏（≥700px）启用固定布局：让声明的 width 真正生效，长文本列不再吞掉短列 */
+@media (min-width:700px){
+  table{table-layout:fixed;}
+}
+/* 5) 窄屏（<700px）恢复自动布局：表格随容器自适应，避免整页横向溢出 */
+@media (max-width:699px){
+  table{table-layout:auto;}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="banner">
+    <a class="back-home" href="../index.html" title="返回课程首页"><span class="bh-ico">🏠</span>返回首页</a>
+    <div class="banner-in">
+
+      <h1>爱眼城眼镜 · 消费者需求探寻表</h1>
+      <div class="sub">机会探寻 · 七大类别 · 十一种场景 · 直接可照读的探寻话术</div>
+      <div class="chips">
+        <span>专业配眼镜 · 就到爱眼城</span>
+        <span>版本 2027</span>
+        <span>适用：营业员 / 验光师 / 店长</span>
+        <span>11 套场景话术</span>
+      </div>
+      <div class="creed">
+        核心逻辑：<b>需求是问出来的，不是等出来的</b>——先找到场景，再用话术把隐性需求变成显性问题。
+      </div>
+    </div>
+  </div>
+
+  <!-- 探寻心法 -->
+  <div class="sec-title">需求探寻心法 <em>所有话术都遵循同一条推进结构</em></div>
+  <div class="mind">
+    <h4>三步探寻结构 <span>—— 找场景 → 提问题 → 给建议</span></h4>
+    <div class="row">
+      <div class="q"><b>① 找场景</b><p>先通过对眼镜的观察、对顾客的提问，锁定一个<b>具体场景</b>（如镜框与度数不匹配、旧镜变形、陪同人员不戴镜）。</p></div>
+      <div class="q"><b>② 提问题</b><p>用<b>开放式提问</b>引导顾客自己说：在哪儿买的？戴多久了？看的还清楚吗？上次检查是什么时候？</p></div>
+      <div class="q"><b>③ 给建议</b><p>基于顾客的回答给出<b>专业建议 + 当下活动</b>，并给出选择问句收口（"您看是 A 还是 B 呢？"）。</p></div>
+    </div>
+  </div>
+
+  <!-- 场景总览 -->
+  <div class="sec-title">七大类别速览 <em>按顾客到店类型分流，对应不同探寻场景</em></div>
+  <div class="flowbar">
+    <div class="fl"><b>类别 1</b><i>线上团购转化</i></div>
+    <div class="fl"><b>类别 2</b><i>线上验光</i></div>
+    <div class="fl"><b>类别 3</b><i>清洗 / 调整 / 维修</i></div>
+    <div class="fl"><b>类别 4</b><i>线下检查视力</i></div>
+    <div class="fl"><b>类别 5</b><i>陪同人员</i></div>
+    <div class="fl"><b>类别 6</b><i>随意逛逛</i></div>
+    <div class="fl"><b>类别 7</b><i>购买隐形眼镜</i></div>
+  </div>
+
+  <!-- 逐类详解 -->
+  <div class="sec-title">探寻场景与话术详解 <em>共 11 个场景 · 话术可直接照读</em></div>
+  <div class="steps">
+
+    <!-- 类别1 -->
+    <section class="step">
+      <div class="axis"><div class="no">01</div><div class="lbl">线上团购<br>转化</div><div class="dotline"></div></div>
+      <div class="main">
+        <div class="head">
+          <h3>线上团购转化</h3>
+          <span class="cat">到店核销 · 升级机会</span>
+          <span class="cnt">2 个场景</span>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景一 · 光度、折射率，镜框不匹配</b><span class="sid">升级机会</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"XX 先生/女士，根据我们为您验光的最终结果来看，您原来选择的镜片折射率也就是厚薄，跟镜框不是很匹配。建议您选择 XX 折射率以上的镜片，这样看起来会更加美观，同时镜片硬度也会更高、更持久耐用。现在正在做加价升级活动，您只需要加 99 元即可升级。您看您是选择升级更匹配的镜片，还是维持原状嘞？"</span>
+            <div class="tip"><b>要点：</b>先用<b>验光结果</b>建立专业前提，再讲"美观 + 耐用"两个利益点，最后用<b>加价金额明确化（99 元）</b>降低决策门槛，收口用二选一。</div>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景二 · 解决方案的正确处置（眼压偏高）</b><span class="sid">专业升级</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"XX 先生/女士，根据我们为您进行了眼压的专业测量，您的眼压高于正常值，极容易出现视疲劳，表现为眼睛酸涩胀痛。您所购套餐内的镜片只能满足常规矫正，不能缓解视力疲劳，推荐您选用抗疲劳专用镜片。您现在购买只要补 XX 元差价即可，既能让您看得清，又能久看不累。"</span>
+            <div class="tip"><b>要点：</b>这是"<b>数据 → 症状 → 方案</b>"的标准链路。用测得的数据说话（眼压高于正常值），描述顾客能自证的体感（酸涩胀痛），再给出对症产品，最后点明<b>补差价即可</b>。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 类别2 -->
+    <section class="step">
+      <div class="axis"><div class="no">02</div><div class="lbl">线上验光</div><div class="dotline"></div></div>
+      <div class="main">
+        <div class="head">
+          <h3>线上验光</h3>
+          <span class="cat">不在线下店购买 · 竞品调研</span>
+          <span class="cnt">1 个场景</span>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景 · 顾客不在线下门店购买</b><span class="sid">比价探寻</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"您的镜框应该选好了吧？在哪儿买的呢？大概多少钱呢？什么品牌的记得吗？您看一下我们这儿有相同或者类似的款式吗？跟您买的比较，是贵还是便宜呢？"</span>
+            <div class="tip"><b>要点：</b>这是<b>连续问句式</b>探寻，一环套一环：先确认是否已购 → 问渠道 → 问价格 → 问品牌 → 引到店内对比 → 最后用"贵还是便宜"让顾客自己说出结论。<b>不要替顾客下判断</b>，让他自己比。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 类别3 -->
+    <section class="step">
+      <div class="axis"><div class="no">03</div><div class="lbl">清洗<br>调整<br>维修</div><div class="dotline"></div></div>
+      <div class="main">
+        <div class="head">
+          <h3>清洗 / 调整 / 维修</h3>
+          <span class="cat">免费服务场景 · 复购机会</span>
+          <span class="cnt">2 个场景</span>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景一 · 不是本店购买的眼镜</b><span class="sid">新客转化</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"您离我们店远吗？过来大概需要多久？这幅眼镜在哪买的啊？戴着怎么样？您的这幅眼镜汗渍腐蚀比较严重，镜框也有变形，我们建议这幅帮您调整后作为备用眼镜，及时配一副新的；同时我们为您专业检测一下光度，让您佩戴更舒适。"</span>
+            <div class="tip"><b>要点：</b>先用"离店远不远"判断<b>转化可能性</b>；再用"汗渍腐蚀、镜框变形"给出<b>该换的客观理由</b>；关键话术是<b>"调整后作备用眼镜"</b>——不否定旧镜，而是给它一个新身份，让顾客毫无压力地接受新镜。</div>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景二 · 是本店购买的眼镜</b><span class="sid">保养 + 转介绍</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"看您的眼镜有点轻微变形，镜片表面有细微划痕，建议您平时使用时双手摘戴，可以用中性洗洁精去除油污，水洗纸擦，不用的时候用镜布包住放在专用镜盒内，一定不要拿镜布或纸巾干擦，这样会导致镜片划伤。因为镜片自身会发生自然氧化，从而影响透光率，我们建议每 8—12 个月更换新的镜片，即便您的度数没有改变。您空的时候要经常来店清洗保养，方便的话带上您的家人、朋友、同事一起过来清洗保养和检查视力，我们的服务都是免费的。"</span>
+            <div class="tip"><b>要点：</b>这段是三段递进——<b>① 指出问题</b>（变形、划痕）→ <b>② 教方法</b>（双手摘戴、中性洗洁精、禁干擦）→ <b>③ 给周期</b>（8—12 个月换片，即使度数没变）。最后把<b>转介绍包装成"免费服务邀请"</b>，让请托不显刻意。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 类别4 -->
+    <section class="step">
+      <div class="axis"><div class="no">04</div><div class="lbl">线下检查<br>视力</div><div class="dotline"></div></div>
+      <div class="main">
+        <div class="head">
+          <h3>线下检查视力</h3>
+          <span class="cat">只验光不配镜要处方</span>
+          <span class="cnt">1 个场景</span>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景 · 只验光、不配镜，索要处方</b><span class="sid">价值锚定</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"您是需要基础的检查（电脑打单），还是全面的检查？我们的全面检查是由我们的专职验光师帮您进行检查，收费 XX 元/次，您觉得可以吗？我们的验光处方单仅做内部配镜使用，如外用配镜，仅供参考。您在我们这配镜可享受检查费减免。"</span>
+            <div class="tip"><b>要点：</b>核心是<b>把免费检查的价值锚定出来</b>——先给出"基础 / 全面"两条路径，说明全面检查由专职验光师完成、有明确收费标准；再明确处方单<b>仅供内部配镜使用</b>；最后用"<b>配镜可减免检查费</b>"把免费权益与配镜绑定，既守住规矩，又不堵死成交路径。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 类别5 -->
+    <section class="step">
+      <div class="axis"><div class="no">05</div><div class="lbl">陪同<br>人员</div><div class="dotline"></div></div>
+      <div class="main">
+        <div class="head">
+          <h3>陪同人员</h3>
+          <span class="cat">同行者 · 第二成交对象</span>
+          <span class="cnt">2 个场景</span>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景一 · 陪同者不戴镜</b><span class="sid">免费检查切入</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"现在的人平均每天看手机时间达到 8~9 个小时，据统计超过一半的人眼睛会出现酸胀感。我们可以为您做一个免费的眼部视力健康检查，半个小时即可，您闲着也是闲着，您说是吧？"</span>
+            <div class="tip"><b>要点：</b>用<b>数据制造共情</b>（每天 8~9 小时手机、超一半人酸胀），再用"免费 + 半小时 + 闲着也是闲着"<b>三重降低门槛</b>。收口用反问"您说是吧"，不给拒绝留空间。</div>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景二 · 陪同者戴镜</b><span class="sid">保养切入</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"我帮您把眼镜清洗保养一下。这幅眼镜戴多久了啊？看的还清楚吗？您上一次眼睛检查是什么时候呢？方便的话，我们帮您免费测量一下，让您知道您的最新状况。"</span>
+            <div class="tip"><b>要点：</b>用<b>"帮您清洗保养"作为自然破冰动作</b>，手上做事、嘴上提问——戴多久了？看得清吗？上次检查是什么时候？三问自然引导到免费测量，全程不带推销感。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 类别6 -->
+    <section class="step">
+      <div class="axis"><div class="no">06</div><div class="lbl">随意<br>逛逛</div><div class="dotline"></div></div>
+      <div class="main">
+        <div class="head">
+          <h3>随意逛逛</h3>
+          <span class="cat">低意向顾客 · 不施压</span>
+          <span class="cnt">2 个场景</span>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景一 · 走个过场</b><span class="sid">活动告知</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"您好，欢迎光临 XX 眼镜，有什么可以帮到您？现在我们全场满 XXX 减 XXX，有喜欢的您可以随意试戴。"</span>
+            <div class="tip"><b>要点：</b>对低意向顾客<b>只做活动告知 + 邀请试戴</b>，不追问需求、不贴身跟随。"随意试戴"四个字是把压力拿掉，让顾客愿意留下来。</div>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景二 · 试戴挑选商品</b><span class="sid">临门一脚</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"您好，欢迎光临 XX 眼镜，有什么可以帮到您？您现在试戴的这款是我们刚到的明星同款，如果您喜欢可以买一副，刚好有活动，现在买是最划算的时候哦！"</span>
+            <div class="tip"><b>要点：</b>顾客已试戴说明意向上来，此时<b>果断给三个理由</b>：明星同款（流行度）+ 刚到的（新鲜度）+ 活动最划算（时间紧迫感）。语气轻松，"哦"字收尾降低压迫感。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 类别7 -->
+    <section class="step">
+      <div class="axis"><div class="no">07</div><div class="lbl">购买<br>隐形<br>眼镜</div><div class="dotline"></div></div>
+      <div class="main">
+        <div class="head">
+          <h3>购买隐形眼镜</h3>
+          <span class="cat">长戴隐形客户 · 组合销售</span>
+          <span class="cnt">1 个场景</span>
+        </div>
+
+        <div class="scene">
+          <div class="st"><span class="dot"></span><b>场景 · 长戴隐形眼镜的客户</b><span class="sid">护理 + 组合</span></div>
+          <div class="sb">
+            <div class="lbl">探寻话术</div>
+            <span class="say">"根据您的佩戴情况，建议您每天佩戴时长不超过 8 小时，晚上到家需要光度匹配的框架眼镜交替佩戴；那么每周佩戴隐形最长时间不超过 5 天。您的家里有框架眼镜吗？光度匹配吗？马上到了出游季，紫外线会加速隐形眼镜里的水分蒸发，也会对眼角皮肤造成伤害，建议您再选购一副太阳镜，现在也有组合活动，一起购买更划算哦！"</span>
+            <div class="tip"><b>要点：</b>先给<b>专业护理建议</b>（每天 ≤8 小时、每周 ≤5 天、需框架交替），建立"我在为你眼睛负责"的信任；再用两个提问（有框架吗？光度匹配吗？）自然过渡到框架需求；最后借<b>出游季 + 紫外线伤害</b>切入太阳镜，用"组合活动更划算"完成连带销售。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 索引 -->
+  <div class="sec-title">场景话术快速索引 <em>11 个场景速查版 · 适合打印上墙与带教</em></div>
+  <div class="panel">
+    <table class="ref">
+      <tbody><tr>
+        <th style="width:56px;">类别</th>
+        <th style="width:220px;">场景</th>
+        <th>探寻切入点</th>
+      </tr>
+      <tr><td>1</td><td>光度折射率与镜框不匹配</td><td>验光结果 + 加价升级（加 99 元），二选一收口</td></tr>
+      <tr><td>1</td><td>眼压偏高（方案正确处置）</td><td>数据 → 症状 → 抗疲劳镜片，补差价</td></tr>
+      <tr><td>2</td><td>不在线下店购买</td><td>连续问句：渠道 / 价格 / 品牌 → 引到店内对比</td></tr>
+      <tr><td>3</td><td>非本店购买眼镜</td><td>旧镜调整后作备用 → 及时配新 + 免费测光度</td></tr>
+      <tr><td>3</td><td>本店购买眼镜</td><td>指出问题 → 教保养 → 8—12 个月换片 → 转介绍</td></tr>
+      <tr><td>4</td><td>只验光不配镜要处方</td><td>基础/全面两档收费 → 处方仅内部使用 → 配镜减免</td></tr>
+      <tr><td>5</td><td>陪同者不戴镜</td><td>数据共情 + 免费检查半小时 + "您说是吧"</td></tr>
+      <tr><td>5</td><td>陪同者戴镜</td><td>清洗保养破冰 + 三问 + 免费测量</td></tr>
+      <tr><td>6</td><td>走个过场</td><td>只告知活动 + 邀请随意试戴，不施压</td></tr>
+      <tr><td>6</td><td>试戴挑选商品</td><td>明星同款 + 刚到货 + 活动最划算，三理由促成</td></tr>
+      <tr><td>7</td><td>长戴隐形眼镜客户</td><td>护理建议建信任 → 框架需求 → 出游季切太阳镜组合</td></tr>
+    </tbody></table>
+
+    <div class="warnbar">
+      <b>带教提醒：</b>本表话术多为<b>成品话术</b>，新人容易背得很顺、用得生硬。带教时重点练<b>前两句</b>——观察顾客、找到场景切入的那一句。前两句自然了，后面的成品话术才接得住。特别是类别 2、3 的<b>连续问句</b>，要练到"问得轻、听得进、不打断"。
+    </div>
+    <div class="redline">
+      <b>核心逻辑回顾：</b>需求探寻的本质是<b>把顾客自己没意识到的需求，用提问和观察帮他发现</b>。整张表的所有话术都遵循同一条链路：<b>找场景 → 提问题 → 给建议 → 活动收口</b>。切忌跳过前三步直接讲产品——没有场景铺垫的推销，顾客只会觉得你在卖东西；有了场景铺垫，顾客会觉得你在帮他解决问题。
+    </div>
+  </div>
+
+  <footer>
+    <b>爱眼城眼镜</b> · 消费者需求探寻表（2027 版）<br>
+    本表与《门店取镜服务标准流程》《眼镜调校标准手册》《标准验光流程》《销售服务流程》《整形细节二十项》配套使用
+  <a class="foot-home" href="../index.html">← 返回课程首页</a><br></footer>
+
+</div>
+
+</body></html>
