@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱眼城眼镜 · 眼镜质检流程与标准</title>
+<style>
+:root{
+  --brand:#0b6ab0;
+  --brand-d:#084f84;
+  --brand-l:#eaf3fb;
+  --accent:#c8102e;
+  --ink:#16232e;
+  --ink-2:#405060;
+  --ink-3:#7b8b9a;
+  --line:#dbe6f0;
+  --bg:#eef4f9;
+  --ok:#0d7a55;
+  --warn:#b45309;
+  --teal:#0b8f8f;
+  --gold:#e0a52e;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+  background:var(--bg);color:var(--ink);
+  line-height:1.72;font-size:14px;padding:20px 16px 56px;
+}
+.wrap{max-width:1240px;margin:0 auto;}
+
+/* ================= 页头 ================= */
+.banner{position:relative;
+  background:linear-gradient(120deg,#0b6ab0 0%,#0a5b98 55%,#084f84 100%);
+  color:#fff;border-radius:16px;padding:26px 34px 24px;
+  overflow:hidden;box-shadow:0 10px 28px rgba(8,79,132,.20);
+}
+.banner::after{content:"";position:absolute;right:-70px;top:-70px;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+}
+.banner::before{content:"";position:absolute;right:80px;bottom:-90px;
+  width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.10),transparent 70%);
+}
+.banner-in{position:relative;z-index:1;}
+.banner h1{font-size:27px;font-weight:700;letter-spacing:1.5px;line-height:1.35;}
+.banner .sub{margin-top:8px;font-size:14.5px;opacity:.92;}
+.banner .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px;}
+.banner .chips span{font-size:12.5px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:999px;padding:4px 15px;
+}
+.banner .creed{margin-top:18px;padding-top:15px;
+  border-top:1px dashed rgba(255,255,255,.32);
+  font-size:14px;letter-spacing:.6px;
+}
+.banner .creed b{color:#ffe08a;font-weight:700;}
+
+/* ================= 通用小标题 ================= */
+.sec-title{display:flex;align-items:center;gap:10px;
+  margin:26px 0 14px;
+  font-size:17px;font-weight:700;color:var(--brand-d);
+}
+.sec-title em{font-style:normal;font-size:12.5px;font-weight:400;
+  color:var(--ink-3);margin-left:2px;
+}
+.sec-title .order-note{margin-left:auto;font-size:12.5px;font-weight:600;
+  color:var(--ok);background:#e9f7f1;
+  border:1px solid #a8ddc7;border-radius:999px;padding:3px 13px;
+}
+
+/* ================= 关键提示条 ================= */
+.alertbar{border-radius:12px;
+  background:linear-gradient(90deg,#fdf2f4,#fff9fa);
+  border:1px solid #f2c8ce;border-left:6px solid var(--accent);
+  padding:14px 20px;margin:16px 0 4px;
+  font-size:15px;font-weight:700;color:#8c2436;letter-spacing:.4px;
+  display:flex;align-items:center;gap:12px;
+}
+.alertbar .ico{font-size:20px;line-height:1;}
+
+/* ================= 流程轴 ================= */
+.flowbar{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:18px 20px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+}
+.flowbar .fl{border:1px solid #cfe2f2;background:var(--brand-l);
+  border-radius:10px;padding:10px 8px;text-align:center;position:relative;
+}
+.flowbar .fl b{display:block;font-size:11.5px;color:var(--brand);letter-spacing:.6px;}
+.flowbar .fl i{display:block;font-style:normal;font-size:13.5px;font-weight:600;margin-top:3px;color:var(--ink);}
+.flowbar .fl .no{position:absolute;left:8px;top:6px;font-size:10.5px;font-weight:800;
+  color:#fff;background:var(--brand);border-radius:5px;padding:0 5px;line-height:1.5;}
+
+/* ================= 卡片 ================= */
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:18px 22px 20px;margin-top:14px;
+  box-shadow:0 1px 3px rgba(20,60,100,.05);
+}
+.card h4{display:flex;align-items:center;gap:9px;
+  font-size:15.5px;color:var(--brand-d);margin-bottom:12px;font-weight:700;
+}
+.card h4 .pip{display:inline-flex;align-items:center;justify-content:center;
+  width:24px;height:24px;border-radius:7px;background:var(--brand);color:#fff;
+  font-size:12px;font-weight:800;letter-spacing:0;flex:none;
+}
+.card h4 .pip.g{background:var(--teal);}
+.card h4 .pip.o{background:var(--warn);}
+
+/* ================= 检查要点列表 ================= */
+.chk{list-style:none;}
+.chk li{position:relative;padding:8px 0 8px 30px;
+  border-bottom:1px dashed #eaf1f7;font-size:13.5px;color:var(--ink-2);line-height:1.78;
+}
+.chk li:last-child{border-bottom:none;}
+.chk li::before{content:"✓";position:absolute;left:4px;top:8px;
+  color:var(--ok);font-weight:800;font-size:14px;
+}
+.chk li b{color:var(--ink);font-weight:700;}
+.chk li .num{display:inline-block;min-width:22px;
+  font-family:"Segoe UI",Arial,sans-serif;font-weight:800;color:var(--brand);
+}
+.chk li .k{color:var(--brand-d);font-weight:700;
+  background:#f2f8fd;border:1px solid #dceaf6;border-radius:5px;padding:0 6px;
+}
+.chk li .hot{color:var(--accent);font-weight:700;}
+
+/* ================= 步骤卡（数据检测） ================= */
+.steps{display:flex;flex-direction:column;gap:12px;margin-top:14px;}
+.step{display:grid;
+  grid-template-columns:74px 1fr;
+  background:#fff;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;
+  box-shadow:0 1px 3px rgba(20,60,100,.05);
+}
+.step .axis{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-d) 100%);
+  color:#fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:2px;padding:12px 4px;
+}
+.step .axis .s-no{font-family:"Segoe UI",Arial,sans-serif;font-size:22px;font-weight:800;line-height:1;}
+.step .axis .s-tag{font-size:10px;letter-spacing:2px;opacity:.8;}
+.step .s-body{padding:13px 18px;}
+.step .s-body h5{font-size:14.5px;color:var(--brand-d);font-weight:700;margin-bottom:6px;}
+.step .s-body p{font-size:13.5px;color:var(--ink-2);line-height:1.8;}
+.step .s-body .togood{display:inline-block;margin-top:7px;font-size:12.5px;
+  color:var(--warn);background:#fffbf2;border:1px solid #f2dca8;
+  border-radius:7px;padding:3px 10px;
+}
+.step:nth-child(even) .axis{background:linear-gradient(180deg,#0b8f8f 0%,#077272 100%);}
+
+/* ================= 标准表格 ================= */
+.tblwrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  margin-top:12px;box-shadow:0 1px 3px rgba(20,60,100,.05);
+}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;}
+thead th{background:linear-gradient(180deg,#0e74bd,#0a5b98);
+  color:#fff;font-weight:700;font-size:13px;letter-spacing:.4px;
+  padding:11px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.18);
+  line-height:1.5;
+}
+thead th:last-child{border-right:none;}
+tbody td{padding:11px 10px;border-bottom:1px solid #eef3f8;border-right:1px solid #f2f6fa;
+  vertical-align:middle;color:var(--ink-2);text-align:center;
+}
+tbody td:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:nth-child(even) td{background:#fafcfe;}
+tbody td.rowhead{font-weight:700;color:var(--brand-d);background:#f4f9fd;text-align:left;padding-left:14px;}
+tbody tr:nth-child(even) td.rowhead{background:#f0f7fc;}
+tbody td .dd{font-family:"Segoe UI",Arial,sans-serif;font-weight:800;color:var(--accent);font-size:14px;}
+.tblcap{font-size:12.5px;color:var(--ink-3);margin:8px 2px 0;padding-left:2px;}
+.tblcap b{color:var(--brand-d);}
+
+/* ================= 数据检测分组 ================= */
+.datalist{display:flex;flex-direction:column;gap:12px;margin-top:14px;}
+.dataitem{background:#fff;border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;box-shadow:0 1px 3px rgba(20,60,100,.05);
+}
+.dataitem .dh{display:flex;align-items:center;gap:11px;
+  background:linear-gradient(90deg,#eaf3fb,#f6fbfe);
+  border-bottom:1px solid #d7e7f5;padding:11px 18px;
+}
+.dataitem .dh .dn{font-family:"Segoe UI",Arial,sans-serif;font-weight:800;
+  font-size:12px;color:#fff;background:var(--brand);border-radius:6px;
+  padding:2px 9px;letter-spacing:.5px;white-space:nowrap;
+}
+.dataitem .dh h5{font-size:15px;color:var(--brand-d);font-weight:700;}
+.dataitem .dh .dt{margin-left:auto;font-size:12px;color:var(--ink-3);}
+.dataitem .db{padding:14px 18px;}
+.dataitem .db p{font-size:13.5px;color:var(--ink-2);line-height:1.8;margin-bottom:6px;}
+.dataitem .db p:last-child{margin-bottom:0;}
+.dataitem .db .note{font-size:12.8px;color:var(--warn);background:#fffbf2;
+  border:1px solid #f2dca8;border-radius:8px;padding:8px 12px;line-height:1.75;margin-top:8px;
+}
+.dataitem .db .note b{color:var(--warn);}
+
+/* ================= 说明面板 ================= */
+.panel{background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:18px 22px 20px;margin-top:16px;
+}
+.notelist{list-style:none;}
+.notelist li{position:relative;padding-left:18px;font-size:13.5px;color:var(--ink-2);margin-bottom:8px;line-height:1.8;}
+.notelist li:last-child{margin-bottom:0;}
+.notelist li::before{content:"";position:absolute;left:3px;top:10px;width:6px;height:6px;border-radius:50%;background:#9dc2df;}
+.notelist li b{color:var(--brand-d);font-weight:700;}
+
+/* ================= 红线 / 警告 ================= */
+.redline{border-radius:12px;background:#fdf2f4;
+  border:1px solid #f2c8ce;border-left:6px solid var(--accent);
+  padding:14px 20px;font-size:14px;color:#8c2436;line-height:1.85;
+  margin-top:16px;
+}
+.redline b{color:var(--accent);}
+.warnbar{border-radius:12px;background:#fffbeb;
+  border:1px solid #f2d99a;border-left:6px solid var(--warn);
+  padding:14px 20px;font-size:13.5px;color:#7a5309;line-height:1.85;
+  margin-top:16px;
+}
+.warnbar b{color:var(--warn);}
+
+/* ================= 页脚 ================= */
+footer{margin-top:26px;text-align:center;font-size:12.5px;
+  color:var(--ink-3);line-height:2;
+}
+footer b{color:var(--brand-d);}
+
+/* ================= 响应式 ================= */
+@media (max-width:900px){
+  .flowbar{grid-template-columns:repeat(2,1fr);}
+  .banner h1{font-size:22px;}
+  .step{grid-template-columns:60px 1fr;}
+  .step .axis .s-no{font-size:18px;}
+  table{font-size:12.5px;}
+  thead th{padding:9px 6px;font-size:12px;}
+  tbody td{padding:9px 6px;}
+}
+@media (max-width:640px){
+  body{padding:12px 8px 40px;font-size:13.5px;}
+  .banner{padding:18px 16px;border-radius:12px;}
+  .banner h1{font-size:19px;letter-spacing:.5px;}
+  .flowbar{grid-template-columns:1fr;}
+  .tblwrap{overflow-x:auto;}
+  table{min-width:640px;}
+}
+@media print{
+  @page{size:A4;margin:10mm 8mm;}
+  body{background:#fff;padding:0;font-size:9pt;}
+  .wrap{max-width:100%;}
+  .banner,.card,.tblwrap,.dataitem,.panel,.flowbar,.step{box-shadow:none;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .banner{border-radius:0;padding:14px 18px;}
+  .banner h1{font-size:16pt;}
+  .card,.dataitem,.panel,.step,.tblwrap{break-inside:avoid;}
+  tr,td,th{break-inside:avoid;}
+  thead{display:table-header-group;}
+}
+/*@@ HOME-BACK-BTN @@*/
+/* ═══ 返回首页：嵌入页头（banner / topbar）右上角 ═══ */
+.banner,.topbar{position:relative!important}
+.back-home{position:absolute;right:18px;top:16px;z-index:9;display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.16);color:#fff!important;font-size:13px;font-weight:700;line-height:1;
+  padding:9px 16px;border-radius:22px;text-decoration:none!important;
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:0 3px 10px rgba(0,0,0,.16);transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:inherit;-webkit-tap-highlight-color:transparent}
+.back-home:hover{background:rgba(255,255,255,.30);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.back-home .bh-ico{font-size:14px;line-height:1}
+/* 页脚返回链接 */
+.foot-home{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#0b6ab0!important;
+  font-weight:700;font-size:13px;text-decoration:none!important;border-bottom:1px dashed rgba(11,106,176,.5);
+  padding-bottom:1px;transition:color .18s,border-color .18s}
+.foot-home:hover{color:#095a96!important;border-bottom-color:#095a96}
+@media(max-width:700px){
+  .back-home{right:10px;top:10px;font-size:12px;padding:8px 13px;border-radius:20px}
+}
+@media print{.back-home{border-color:#0b6ab0;color:#0b6ab0!important;background:#fff}}
+/*@@ TABLE-COL-FIT @@*/
+/* ═══ 表格列宽优化：固定布局 + 智能换行 + 防溢出 ═══ */
+/* 1) 中文长串安全换行，避免撑宽或溢出容器 */
+th,td{overflow-wrap:break-word;word-break:break-word;}
+/* 2) 表头可换行，避免窄列被 nowrap 撑破 */
+thead th{white-space:normal;}
+/* 3) 短标签列（序号/数字）保持紧凑不换行：仅作用于极短首列 */
+table.fit-narrow td:first-child,
+table.fit-narrow th:first-child{white-space:nowrap;}
+/* 4) 宽屏（≥700px）启用固定布局：让声明的 width 真正生效，长文本列不再吞掉短列 */
+@media (min-width:700px){
+  table{table-layout:fixed;}
+}
+/* 5) 窄屏（<700px）恢复自动布局：表格随容器自适应，避免整页横向溢出 */
+@media (max-width:699px){
+  table{table-layout:auto;}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ 页头 ============ -->
+  <div class="banner">
+    <a class="back-home" href="../index.html" title="返回课程首页"><span class="bh-ico">🏠</span>返回首页</a>
+    <div class="banner-in">
+
+      <h1>爱眼城眼镜 · 眼镜质检流程与标准</h1>
+      <div class="sub">成镜检查 → 外观检测 → 装框数据检测 → 国家标准判定 · 不合格绝不交付</div>
+      <div class="chips">
+        <span>专业配眼镜 · 就到爱眼城</span>
+        <span>版本 2027</span>
+        <span>适用：加工师 / 验光师 / 营业员</span>
+        <span>依据 GB 13511.1-2011</span>
+      </div>
+      <div class="creed">
+        核心红线：<b>爱眼城决不允许不合格的眼镜交付给客户！</b> ｜ 数据不符立即退回加工区重做
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 强调 ============ -->
+  <div class="alertbar">
+    <span class="ico">⚠️</span>
+    重点强调：爱眼城决不允许不合格的眼镜交付给客户！
+  </div>
+
+  <!-- ============ 总览 ============ -->
+  <div class="sec-title">质检总览 <em>一副眼镜从加工区到顾客手上，质检是最后一道、也是最不能省的一道关</em></div>
+  <div class="flowbar">
+    <div class="fl"><span class="no">01</span><b>核对</b><i>单物一致</i></div>
+    <div class="fl"><span class="no">02</span><b>外观检测</b><i>十一个项目</i></div>
+    <div class="fl"><span class="no">03</span><b>装框数据检测</b><i>七个步骤</i></div>
+    <div class="fl"><span class="no">04</span><b>国家标准判定</b><i>四组允差</i></div>
+  </div>
+
+  <!-- ============ 第一步：核对 ============ -->
+  <div class="sec-title">第一步 · 核对 <em>眼睛先看单，再看镜——名字对不上，后面全白做</em></div>
+  <div class="card">
+    <h4><span class="pip">壹</span>核对项目</h4>
+    <ul class="chk">
+      <li>核对 <b>镜片品牌、镜架型号、规格、色号</b> 是否与销售单一致。</li>
+    </ul>
+  </div>
+
+  <!-- ============ 第二步：外观检测 ============ -->
+  <div class="sec-title">第二步 · 眼镜外观检测 <em>十一项逐条对照，肉眼能看出来的问题，绝不能流到顾客手上</em></div>
+  <div class="card">
+    <h4><span class="pip">贰</span>外观检测十一项</h4>
+    <ul class="chk">
+      <li><span class="num">1</span>镜片表面应<b>光洁、透视清晰</b>；有色镜片两镜片应匹配，<span class="k">无明显色差</span>；变色镜片应在阳光下变色一次。</li>
+      <li><span class="num">2</span>左右镜圈水平面平行，<b>镜面角（面弯）</b>一般 <span class="k">170～175 度</span>为宜。</li>
+      <li><span class="num">3</span><b>镜圈与镜腿倾斜角度（前倾角）</b>符合要求并对称，倾斜角 <span class="k">8～15 度</span>，且两镜腿倾斜角互差 <span class="k">不大于 2.5 度</span>。</li>
+      <li><span class="num">4</span><b>镜腿外张角度</b>水平对称，外张角 <span class="k">85～95 度</span>。</li>
+      <li><span class="num">5</span>镜片嵌入镜圈后，<b>几何形状应左右对称</b>。</li>
+      <li><span class="num">6</span>左右托叶匹配对称，达到 <span class="k">3 个 27°</span> 标准，两镜面相互平整。</li>
+      <li><span class="num">7</span>金属框架眼镜锁紧后的间隙 <span class="k">不得大于 0.2mm</span>。</li>
+      <li><span class="num">8</span>正顶焦度镜片配装割边后的<b>边缘厚度不小于 1.2mm</b>，树脂镜片基准点厚度 <b>不得小于 1.0mm</b>。</li>
+      <li><span class="num">9</span>检查镜片装框后有无<b>过松易脱落</b>现象，镜圈内是否有<b>闪缝</b>现象出现。</li>
+      <li><span class="num">10</span>检查眼镜外观有无<span class="hot">崩边、翻边、扭曲、钳痕、镀层脱落及明显擦痕</span>，不允许<b>螺钉滑牙和零件缺损</b>。</li>
+      <li><span class="num">11</span>镜腿<b>收拢、张开、平放、倒伏</b>均应保持平整，无扭曲，且尾部弯曲与耳轮廓吻合，头部无明显压迫感。</li>
+    </ul>
+  </div>
+
+  <div class="warnbar">
+    <b>提个醒：</b>第 2～4 项的「面弯 / 前倾角 / 外张角」三个角度，是外观检测中最容易被忽略、也最容易引起顾客佩戴不适的三项——检测时务必用角度尺实量，不要凭手感估计。
+  </div>
+
+  <!-- ============ 第三步：装框数据检测 ============ -->
+  <div class="sec-title">第三步 · 镜片装框后的数据检测 <em>七步走完，把每一组数据如实登记在检测记录本上</em></div>
+  <div class="steps">
+    <div class="step">
+      <div class="axis"><span class="s-no">1</span><span class="s-tag">STEP</span></div>
+      <div class="s-body">
+        <h5>放置与固定</h5>
+        <p>将眼镜<b>水平放置在焦度计上</b>，轻轻压下固定杆，将眼镜固定在合适位置。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="axis"><span class="s-no">2</span><span class="s-tag">STEP</span></div>
+      <div class="s-body">
+        <h5>对准光学中心并记录</h5>
+        <p>对准镜片光学中心，按<b>记忆键</b>将左右镜片数据记录在焦度计屏幕上。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="axis"><span class="s-no">3</span><span class="s-tag">STEP</span></div>
+      <div class="s-body">
+        <h5>核对光度</h5>
+        <p>核对镜片光度是否与定单相符，是否符合国家标准。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="axis"><span class="s-no">4</span><span class="s-tag">STEP</span></div>
+      <div class="s-body">
+        <h5>核对散光轴位</h5>
+        <p>核对散光眼镜<b>轴位是否准确</b>，是否符合国家标准。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="axis"><span class="s-no">5</span><span class="s-tag">STEP</span></div>
+      <div class="s-body">
+        <h5>测量瞳距与水平互差</h5>
+        <p>将眼镜光学中心打点后取下，用直尺测量两镜片光学中心<b>水平方向距离（瞳距）</b>以及<b>水平互差</b>，检验结果是否符合国家标准。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="axis"><span class="s-no">6</span><span class="s-tag">STEP</span></div>
+      <div class="s-body">
+        <h5>测量瞳高与垂直互差</h5>
+        <p>测量眼镜光学中心至<b>镜圈下边缘的距离（瞳高）</b>，以及<b>垂直方向的互差</b>，检查有无超出国家标准。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="axis"><span class="s-no">7</span><span class="s-tag">STEP</span></div>
+      <div class="s-body">
+        <h5>登记检测数据</h5>
+        <p>将以上检测数据<b>认真登记在眼镜检测记录本上</b>，做到有据可查。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="redline">
+    <b>检测纪律：</b>检测眼镜时一定要<b>轻拿轻放</b>，避免对镜片表面造成刮伤；<b>如实认真</b>地记录检测数据。不合格的眼镜要<b>立即退回加工区</b>，重做加工及调试——不得以任何理由放行。
+  </div>
+
+  <!-- ============ 国家标准 ============ -->
+  <div class="sec-title">装配眼镜国家标准《GB 13511.1-2011》 <em>四组检测数据、四张允差表，逐项对照判定合格与否</em></div>
+
+  <!-- 检测数据 1 -->
+  <div class="datalist">
+    <div class="dataitem">
+      <div class="dh">
+        <span class="dn">检测数据 01</span>
+        <h5>瞳距</h5>
+        <span class="dt">表 1 · 定配眼镜的两镜片光学中心水平距离偏差</span>
+      </div>
+      <div class="db">
+        <div class="tblwrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:30%;text-align:left;padding-left:14px;">顶焦度绝对值最大的子午面上的顶焦度（D）</th>
+                <th>0.00～0.50</th>
+                <th>0.75～1.00</th>
+                <th>1.25～2.00</th>
+                <th>2.25～4.00</th>
+                <th>≥4.25</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rowhead">光学中心水平距离允差</td>
+                <td>0.67△</td>
+                <td><span class="dd">±6.0mm</span></td>
+                <td><span class="dd">±4.0mm</span></td>
+                <td><span class="dd">±3.0mm</span></td>
+                <td><span class="dd">±2.0mm</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tblcap"><b>说明：</b>先看镜片顶焦度落在哪一档，再取该档对应的水平距离允差作为判定依据。</p>
+      </div>
+    </div>
+
+    <!-- 检测数据 2 -->
+    <div class="dataitem">
+      <div class="dh">
+        <span class="dn">检测数据 02</span>
+        <h5>水平互差</h5>
+        <span class="dt">单侧偏差判定</span>
+      </div>
+      <div class="db">
+        <p>定配眼镜的<b>水平光学中心与眼瞳的单侧偏差</b>，均不应大于表 1 中光学中心水平距离允差的<b>二分之一</b>。</p>
+        <p class="note"><b>提示：</b>例如顶焦度在 0.75～1.00 档，水平距离允差为 ±6.0mm，则单侧偏差上限为 ±3.0mm。</p>
+      </div>
+    </div>
+
+    <!-- 检测数据 3 -->
+    <div class="dataitem">
+      <div class="dh">
+        <span class="dn">检测数据 03</span>
+        <h5>垂直互差</h5>
+        <span class="dt">表 2 · 定配眼镜的光学中心垂直互差</span>
+      </div>
+      <div class="db">
+        <div class="tblwrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:30%;text-align:left;padding-left:14px;">顶焦度绝对值最大的子午面上的顶焦度（D）</th>
+                <th>0.00～0.50</th>
+                <th>0.75～1.00</th>
+                <th>1.25～2.50</th>
+                <th>＞2.50</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rowhead">光学中心垂直互差</td>
+                <td>≤0.50△</td>
+                <td><span class="dd">≤3.0mm</span></td>
+                <td><span class="dd">≤2.0mm</span></td>
+                <td><span class="dd">≤1.0mm</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tblcap"><b>说明：</b>垂直互差为单向上限，数值越小越好；先定档、再比数值。</p>
+      </div>
+    </div>
+
+    <!-- 检测数据 4 -->
+    <div class="dataitem">
+      <div class="dh">
+        <span class="dn">检测数据 04</span>
+        <h5>散光轴向</h5>
+        <span class="dt">表 3 · 定配眼镜的柱镜方向偏差</span>
+      </div>
+      <div class="db">
+        <div class="tblwrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:24%;text-align:left;padding-left:14px;">柱镜顶焦度值（D）</th>
+                <th>0.25～≤0.50</th>
+                <th>＞0.50～≤0.75</th>
+                <th>＞0.75～≤1.50</th>
+                <th>＞1.50～≤2.50</th>
+                <th>≥2.50</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rowhead">轴位允差（°）</td>
+                <td>±9</td>
+                <td><span class="dd">±6</span></td>
+                <td><span class="dd">±4.0</span></td>
+                <td><span class="dd">±3</span></td>
+                <td><span class="dd">±2</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tblcap"><b>说明：</b>先按柱镜顶焦度值分档，再取对应轴位允差；散光越大，轴位要求越严。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 判定与处置 ============ -->
+  <div class="sec-title">判定与处置 <em>合格放行，不合格退回——每一步都要留下记录</em></div>
+  <div class="panel">
+    <ul class="notelist">
+      <li>四组数据（<b>瞳距、水平互差、垂直互差、散光轴向</b>）中<b>任一项</b>超出对应允差表范围，即判定为<b>不合格</b>。</li>
+      <li>不合格的眼镜，<b>立即退回加工区</b>，重做加工及调试，不允许"先交给顾客再说"。</li>
+      <li>所有检测数据必须<b>如实登记在眼镜检测记录本上</b>，便于追溯与复盘。</li>
+      <li>检测全过程中<b>轻拿轻放</b>，避免对镜片表面造成刮伤。</li>
+      <li>复检通过后方可进入后续取镜交付环节，与本项目《取镜流程》手册衔接。</li>
+    </ul>
+  </div>
+
+  <div class="redline">
+    <b>一句话记住：</b>质检不是"挑毛病"，而是替顾客把最后一关。爱眼城决不允许不合格的眼镜交付给客户！
+  </div>
+
+  <!-- ============ 页脚 ============ -->
+  <footer>
+    <b>永州爱眼城眼镜</b> · 门店标准作业手册 · 眼镜质检流程与标准<br>
+    依据《GB 13511.1-2011 配装眼镜》国家标准 · 全连锁门店通用 · 可打印上墙
+    <br>
+    <a class="foot-home" href="../index.html">🏠 返回课程首页</a>
+  </footer>
+
+</div>
+</body>
+</html>
