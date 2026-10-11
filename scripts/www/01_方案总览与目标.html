@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>模块01 · 方案总览与目标 | 永州爱眼城 检查报告解读标准化方案</title>
-<style>
+<html lang="zh-CN" data-page-node-id="AlN8TbeNJ65V31PZcmL9ce"><head data-page-node-id="KI5uYdsX3mXxq2MKUNgA87">
+<meta charset="UTF-8" data-page-node-id="9iIlDee3EXyJ3Xig5VnREw">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="Xk3PJWe0HSKYgzDim5ZFgo">
+<title data-page-node-id="kIc5dxg4PmNr7CrEk3YJVt">模块01 · 方案总览与目标 | 永州爱眼城 检查报告解读标准化方案</title>
+<style data-page-node-id="M9DjtEziRJgvK0OSACmJEH">
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.75;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
 .topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
@@ -43,7 +43,7 @@ footer b{color:#fff}
 @media print{.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:12px}}
 </style>
 <!-- LAYOUT-V2 -->
-<style>
+<style data-page-node-id="niA1H2AQthRaoFRjvbuLHo">
 /* ==========================================================================
    平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
    只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
@@ -257,7 +257,7 @@ body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fi
 </style>
 <!-- /LAYOUT-V2 -->
 <!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="2R9zldkXkBBgnyNTiqdACO">
 /* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
    text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
    恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
@@ -278,7 +278,7 @@ body .wrap p.ni,body .wrap .ni p,
 /* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
 body p:lang(en),body p.en{text-indent:0}
 </style>
-<style>
+<style data-page-node-id="h1Z1yC8CzUEkiVvFliNMlr">
 /* ==========================================================================
    TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
    仅调整容器与列宽，不动文字/字段/配色/字号
@@ -319,7 +319,7 @@ body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
 }
 </style>
 <!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
-<style>
+<style data-page-node-id="cOs8GG6KWAkSL1wkWXkSfZ">
 /* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
 body table>thead>tr>th{position:static}
 body table.sticky-on>thead>tr>th{
@@ -334,7 +334,7 @@ body table.sticky-on>thead>tr>th{
 }
 </style>
 <!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
-<style>
+<style data-page-node-id="DL4upt4Gzm0EMfJRwpaVRM">
 /* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
 body .lead{max-width:100%}
 body .hero h1,body .hero p,body .hero .tags{
@@ -350,11 +350,10 @@ body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
 }
 </style>
 
-
 <!-- COLBAL-V1 -->
 <!-- COLFIT-V1 -->
 <!-- MARK : WIDTHFIT2-V1 : 导语文本块与页脚内容对齐正文容器宽度 -->
-<style>
+<style data-page-node-id="HmzipRA7eiBpY9dliKCIYF">
 /* 导语（hero）文本块与页脚内容统一按正文容器宽度对齐：宽屏不错位、窄屏不留白 */
 body .hero h1,body .hero p,body .hero .tags{
   max-width:calc(var(--wrap) - var(--wpx) * 2);
@@ -374,7 +373,7 @@ body footer{
 }
 </style>
 <!-- MARK : WIDTHFIT3-V1 : 顶栏/吸顶导航内容对齐正文容器宽度（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="eobQXdQ3aaK7luAvSEX2QU">
 /* 顶栏（品牌/版本号）与吸顶导航内容边缘对齐正文容器，与页脚同规则；仅 ≥641 生效，窄屏回落 var(--wpx) */
 @media screen and (min-width:641px){
   body .topbar,body .topbar.tb-compact,body .subnav{
@@ -389,174 +388,195 @@ body .topbar .brand span{display:inline;margin-left:10px;margin-top:0}
 body .topbar .meta{text-align:right;margin-left:auto}
 </style>
 <!-- MARK : WIDTHFIT3-V1B : 窄屏 subnav 内边距与正文统一（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="Str3S3Y1UxZRgCxGQzcunG">
 @media screen and (max-width:640px){
   body .subnav{padding-left:var(--wpx);padding-right:var(--wpx)}
 }
 </style>
-</head>
-<body>
-<div class="topbar">
-  <div class="brand" style="text-align: center;">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块01 / 12 ｜ V1.0 ｜ 2026-09-21</div>
+<!-- MARK : WIDTHFIT5-V1 : 顶栏条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style data-page-node-id="2bnPXviAsOEKblczHOGwWE">
+/* 顶栏蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   保证品牌/版本信息仍落在正文容器内容边界上（覆盖 WIDTHFIT3-V1 的整屏 padding 公式） */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT6-V1 : 页脚条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style data-page-node-id="iULwIoa3Th07ngVid0J9rQ">
+/* 页脚深蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT2-V1 的整屏 padding 公式；打印维持通栏（WIDTHFIT2 的 print 规则继续生效） */
+@media screen and (min-width:641px){
+  body footer{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT7-V1 : 吸顶导航条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style data-page-node-id="rBORRHRJBPe1Fbs6MbmAWj">
+/* 模块页吸顶导航白条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT3-V1 的整屏 padding 公式，保证「← 返回首页 ｜ 上一模块…」仍落在正文内容边界上 */
+@media screen and (min-width:641px){
+  body .subnav{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="o2J7ZwhMJpkHYIdSyqzrBV" style="">
+<div class="topbar" data-page-node-id="ECRa2TN8CPQqATe3U2IIMm">
+  <div class="brand" style="text-align: center;" data-page-node-id="vIlGWzuntIYCpRBHiMAPwc">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta" data-page-node-id="Xg8hWD0mGzHNht1AFsaE9g">模块01 / 12 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
-<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：— ｜ 下一模块：<a href="02_七步标准解读SOP.html">02 七步标准解读 SOP</a></div>
+<div class="subnav" data-page-node-id="GcFY49j2HPNfRPnUikAOTP"><a href="index.html" data-page-node-id="JTr1qjb82PDPtHgs0IXhWS">← 返回首页</a> ｜ 上一模块：— ｜ 下一模块：<a href="02_七步标准解读SOP.html" data-page-node-id="PhESD90p7zX1bKOthdTgp9">02 七步标准解读 SOP</a></div>
 
-<div class="wrap">
-  <h1 class="t">模块01 · 方案总览与目标</h1>
-  <p class="lead">本模块回答四个问题：<b>为什么做</b>（背景与目标）、<b>哪些场景做</b>（适用范围与场景）、<b>谁来做</b>（岗位分工）、<b>做到什么算成功</b>（成效标准）。本模块是所有门店统一认知的基础，店长部署前必须通读，员工上岗前必须通过本模块口试。</p>
+<div class="wrap" data-page-node-id="yxcqWiCWAfaIzcBxhLZ6Zs">
+  <h1 class="t" data-page-node-id="eqUYwV4jS3CbZmUV9vQi8L">模块01 · 方案总览与目标</h1>
+  <p class="lead" data-page-node-id="6NkqU2ycNymdhcTMCWHSmp">本模块回答四个问题：<b data-page-node-id="3bDNnnzMhoxEZKkSXLL1p6">为什么做报告解读</b>（背景与目标）、<b data-page-node-id="FBDjZw9TGjigSsoDWRrCuw">哪些场景做</b>（适用范围与场景）、<b data-page-node-id="NB9CP9hV3y7i9CEOmA52BX">谁来做</b>（岗位分工）、<b data-page-node-id="U3zJ0gRcNB0RyWV3rujrpp">做到什么算成功</b>（成效标准）。本模块是所有门店统一认知的基础，店长部署前必须通读，员工上岗前必须通过本模块口试。</p>
 
-  <h2 class="sec">1. 为什么要做报告解读标准化</h2>
-  <div class="card">
-    <p class="ni">顾客拿到手的检查单写满英文缩写和数字，没人讲、或讲得太专业，通常只有三种反应：<b>"看不懂，算了"</b>（只看价格和度数，品牌专业度归零）、<b>"感觉就是想卖东西"</b>（把后续方案都当推销，产生防御）、<b>"回去和家人商量"</b>（现场没形成认知，回去就没有下文）。反过来，一次高质量的解读＝<b>讲明白（信任）→ 意识到急（动机）→ 知道下一步（行动）</b>，直接决定成交率、方案接受率与复查依从性。</p>
-    <p class="ni">目前 15 家门店解读水平参差：少数资深验光师有自己的讲法，多数员工停留在"报度数"层面，由此带来两个风险——<b>品牌风险</b>（顾客跨店对比发现说法不一致）与<b>合规风险</b>（矫正视力、角膜、晶状体等异常提示被漏判）。因此必须标准化。</p>
+  <h2 class="sec" data-page-node-id="5pKPcGlQOSwe5YA0y5Npnc">1. 为什么要做报告解读标准化</h2>
+  <div class="card" data-page-node-id="myzpJDHonctjtsyi9JAjK0">
+    <p class="ni" data-page-node-id="UVur1eP2MUjPepzasRm0yu">顾客拿到手的检查单写满英文缩写和数字，没人讲、或讲得太专业，通常只有三种反应：<b data-page-node-id="Ir8yH41m5QOtp1AZIXKJXb">"看不懂，算了"</b>（只看价格和度数，品牌专业度归零）、<b data-page-node-id="TO7yxkgudJFSiRrdiGBHos">"感觉就是想卖东西"</b>（把后续方案都当推销，产生防御）、<b data-page-node-id="OiAhLVWTLpeLBOI1GkwqUa">"回去和家人商量"</b>（现场没形成认知，回去就没有下文）。反过来，一次高质量的解读＝<b data-page-node-id="VRTuJrQu9IEUziC5ic9zgB">讲明白（信任）→ 意识到急（动机）→ 知道下一步（行动）</b>，直接决定成交率、方案接受率与复查依从性。</p>
+    <p class="ni" data-page-node-id="WLhy0oD2H2CSxP7YQOAZWO">目前 15 家门店解读水平参差：少数资深验光师有自己的讲法，多数员工停留在"报度数"层面，由此带来两个风险——<b data-page-node-id="HNDgvJFt0kAGuPQm9A79At">品牌风险</b>（顾客跨店对比发现说法不一致）与<b data-page-node-id="8chRiSrKPVMMHyvI4Ve28h">合规风险</b>（矫正视力、角膜、晶状体等异常提示被漏判）。因此必须标准化。</p>
   </div>
 
-  <h2 class="sec">2. 方案总目标与四个量化指标</h2>
-  <div class="card">
-    <h3 class="sub">总目标</h3>
-    <p style="font-size:16.5px;color:#1677ff"><b>把"报告解读"建设成永州爱眼城每家门店、每位验配人员都能执行的标准化服务动作，用统一、通俗、有温度的专业解读，提升顾客理解与信任，进而提高复查率、配镜成交率与干预方案接受率。</b></p>
-    <h3 class="sub">四个核心指标（自方案落地之日起计算，滚动 12 个月）</h3>
-    <div class="kpi">
-      <div class="box"><h4>指标一：解读覆盖率</h4><div class="num">≥ 95%</div><p>完成全部检查（含屈光发育档案/眼健康检查）的顾客中，按七步 SOP 完成解读并留痕的比例。<span style="color:#7a8799">口径见模块07</span></p></div>
-      <div class="box"><h4>指标二：顾客理解度</h4><div class="num">≥ 4.5 / 5</div><p>解读结束后顾客评分为"能听懂自己的眼睛情况"的平均得分（门店平板或纸质问卷 5 分制）。</p></div>
-      <div class="box"><h4>指标三：方案接受率</h4><div class="num">≥ 60%</div><p>被解读判为"建议干预"（离焦/渐进/视觉训练/干眼护理；转诊类不计入）的顾客中，当场或 7 日内确认执行的比例。</p></div>
-      <div class="box"><h4>指标四：按期复诊率</h4><div class="num">≥ 70%</div><p>解读时约定了复查时间的顾客中，在约定窗口（±15 天）内实际到店复查的比例。</p></div>
+  <h2 class="sec" data-page-node-id="mqDph4CCEQo479WjCo0kmD">2. 方案总目标与四个量化指标</h2>
+  <div class="card" data-page-node-id="pLnfd94bbSMZvD8c4uTEQK">
+    <h3 class="sub" data-page-node-id="x9yuahenx6pu0mwktV0a8E">总目标</h3>
+    <p style="font-size:16.5px;color:#1677ff" data-page-node-id="FTng9paUW5Pyh8q1mks1Zr"><b data-page-node-id="KUMxzr1LwVtmey7DPVVDVw">把"报告解读"建设成永州爱眼城每家门店、每位验配人员都能执行的标准化服务动作，用统一、通俗、有温度的专业解读，提升顾客理解与信任，进而提高复查率、配镜成交率与干预方案接受率。</b></p>
+    <h3 class="sub" data-page-node-id="kaWxKg7XyALvQ1hfC2K0Zi">四个核心指标（自方案落地之日起计算，滚动 12 个月）</h3>
+    <div class="kpi" data-page-node-id="GLSFeCK76W1rFV2RNWV5j0">
+      <div class="box" data-page-node-id="nbDagBUJ6A8zxNbMKndwsZ"><h4 data-page-node-id="kDnxD1oU0qZc6cuApbJYl6">指标一：解读覆盖率</h4><div class="num" data-page-node-id="8FxEtNPdAOZNykdcBnKusD">≥ 95%</div><p data-page-node-id="hBMKtANlVynDAbEBMYG5pB">完成全部检查（含屈光发育档案/眼健康检查）的顾客中，按七步 SOP 完成解读并留痕的比例。</p></div>
+      <div class="box" data-page-node-id="mwhfYikBkfmSZxf4CgjBjE"><h4 data-page-node-id="K7OE72l2gQZ2haRS6qB80h">指标二：顾客理解度</h4><div class="num" data-page-node-id="4YHIj9v09mm55fYVaXr5vl">≥ 4.5 / 5</div><p data-page-node-id="4ETusxAfbgkfvanBZoHAkg">解读结束后顾客评分为"能听懂自己的眼睛情况"的平均得分（门店平板或纸质问卷 5 分制）。</p></div>
+      <div class="box" data-page-node-id="XGNoTAiRjP6Rq2uyK3VJv2"><h4 data-page-node-id="bJOr8kMXi1DjKRHMCwMeCY">指标三：方案接受率</h4><div class="num" data-page-node-id="smyBh1ztnWMz1vLwFTajwc">≥ 60%</div><p data-page-node-id="fc0oDvzY54co5K29MWqkxz">被解读判为"建议干预"（离焦/渐进/视觉训练/干眼护理；转诊类不计入）的顾客中，当场或 7 日内确认执行的比例。</p></div>
+      <div class="box" data-page-node-id="79vbclqZBzqRBbWXXHnus6"><h4 data-page-node-id="cMfCw5csl6mYdm2DPAF0oh">指标四：按期复诊率</h4><div class="num" data-page-node-id="l8d7g5pKEE0q1x2K2AlsG6">≥ 70%</div><p data-page-node-id="NKZbUicXkxoeS5NqyVUD31">解读时约定了复查时间的顾客中，在约定窗口（±10 天）内实际到店复查的比例。</p></div>
     </div>
-    <div class="note"><b>说明：</b>四项指标为门店月度考核的通用基线，首批推进的门店在前两个月可先按"覆盖率≥85%、理解度≥4.3、接受率≥50%、复诊率≥60%"的中间目标推进，达标后再切换至基线。指标不得通过"只给好沟通的顾客做解读"等方式人为做高，解读的分子与分母均以系统登记的检查记录为准。</div>
+    <div class="note" data-page-node-id="FY4BlF2QpgTX6lFHHH6Jr8"><b data-page-node-id="bmFFzEnZWEuxSQOslZk8fL">说明：</b>四项指标为门店月度考核的通用基线，首批推进的门店在前两个月可先按"覆盖率≥85%、理解度≥4.3、接受率≥50%、复诊率≥60%"的中间目标推进，达标后再切换至基线。指标不得通过"只给好沟通的顾客做解读"等方式人为做高，解读的分子与分母均以系统登记的检查记录为准。</div>
   </div>
 
-  <h2 class="sec">3. 适用范围</h2>
-  <div class="grid2">
-    <div class="stepbox">
-      <h4>✅ 适用场景（应提供解读）</h4>
-      <ul>
-        <li>门店完成的<b>屈光检查与验光</b>（含电脑验光、主觉验光、试戴）</li>
-        <li>门店完成的<b>眼健康检查</b>（裂隙灯、角膜地形图、眼轴生物测量、双眼视功能等）</li>
-        <li><b>青少年屈光发育档案</b>建档与复查</li>
-        <li><b>双眼视功能检查</b>（调节、聚散、隐斜等）</li>
-        <li><b>干眼相关检查</b>（泪膜破裂、泪液分泌、睑板腺影像）</li>
-        <li>顾客<abbr title="外院或上级医院">携带外部机构报告到店</abbr>要求帮忙看的情况（见下方"外院报告"）</li>
+  <h2 class="sec" data-page-node-id="L5iiY7QkwqADkAPDCtoYCY">3. 适用范围</h2>
+  <div class="grid2" data-page-node-id="jEgQ5sbIfYf7Q1c7iH6KZS">
+    <div class="stepbox" data-page-node-id="vX5Mq8m7zxD3QzdVkkVP24">
+      <h4 data-page-node-id="StGMALnTctRYj1sphLaCP6">✅ 适用场景（应提供解读）</h4>
+      <ul data-page-node-id="Bv6m4ykkR3oCivVeVZEA9R">
+        <li data-page-node-id="SoKLrkaphx7e3GMLKotCuP">门店完成的<b data-page-node-id="PbgrkhAZOEpeGA6RMZ0Wwt">屈光检查与验光</b>（含电脑验光、主觉验光、试戴）</li>
+        <li data-page-node-id="IZhAQKSsq3FfsJhwVEWbDN">门店完成的<b data-page-node-id="BoJyVB7NApogldeCYL6FnQ">眼健康检查</b>（裂隙灯、角膜地形图、眼轴生物测量、双眼视功能等）</li>
+        <li data-page-node-id="4Ftm8c1feT7PPl02IHMyVE"><b data-page-node-id="AaFOJbCLCOvGhJaFEtjGVX">青少年屈光发育档案</b>建档与复查</li>
+        <li data-page-node-id="9uxEL5s2pxi2SD7xvZ9IJi"><b data-page-node-id="A6AlCZ3Zge0bryQD3EPb2D">双眼视功能检查</b>（调节、聚散、隐斜等）</li>
+        <li data-page-node-id="jc4hZJH4gHDCzmS2rwL0lE"><b data-page-node-id="2CeMVcwtIP3OvEtIrQFc8I">干眼相关检查</b>（泪膜破裂、泪液分泌、睑板腺影像）</li>
+        <li data-page-node-id="gSoWLdOO3W35lKTERXbZqJ">顾客<abbr title="外院或上级医院" data-page-node-id="INW7YY24cv0m0eN8UFCQSM">携带外部机构报告到店</abbr>要求帮忙看的情况（见下方"外院报告"）</li>
       </ul>
     </div>
-    <div class="stepbox">
-      <h4>⛔ 不适用场景（须受限或停做）</h4>
-      <ul>
-        <li><b>明确的眼病诊断</b>（青光眼、白内障、视网膜病变等）：只做转诊提醒，不做病情解读</li>
-        <li><b>急性症状</b>（眼红剧痛、突发视力下降、闪光感、视野缺损、外伤）：立即停止配镜流程，指引就医（模块08）</li>
-        <li>顾客<b>处于医疗纠纷或投诉情绪中</b>：先由店长接待处理，不进入标准解读</li>
-        <li><b>未满 3 岁儿童</b>首次就诊：建议先至爱眼城眼科检查，门店不承担解读</li>
-        <li>顾客<b>明确拒绝解读</b>或时间不足：记录"顾客拒绝/时间不足"，改为交付书面提示卡并安排回电</li>
+    <div class="stepbox" data-page-node-id="zQJv96I1KHGkTEHoKQVLh4">
+      <h4 data-page-node-id="xgM3DM34BSaSqGqq1iCDLH">⛔ 不适用场景（须受限或停做）</h4>
+      <ul data-page-node-id="Z72Yifs7OBcq4vbCb7ofOm">
+        <li data-page-node-id="dDalk6GNXDQ4RUy6nKMqcY"><b data-page-node-id="sgwJkTVFiCixG599fTRh5z">明确的眼病诊断</b>（青光眼、白内障、视网膜病变等）：只做转诊提醒，不做病情解读</li>
+        <li data-page-node-id="r6Gv3wPbHKmcniMsiOHw22"><b data-page-node-id="G9uRgoCwddRMbBvVLzs9Lg">急性症状</b>（眼红剧痛、突发视力下降、闪光感、视野缺损、外伤）：立即停止配镜流程，指引就医</li>
+        <li data-page-node-id="7EgLtKCVFw1v44B2ATDuKS">顾客<b data-page-node-id="C8qVqDrf6rA0TheQ2OQzOh">处于医疗纠纷或投诉情绪中</b>：先由店长接待处理，不进入标准解读</li>
+        <li style="font-weight: 400;" data-page-node-id="B1g10bq1LVnJKLC3WHdRLU"><b data-page-node-id="W1CuzDawcGUGkiGFYC4IQ4">未满 3 岁儿童</b>首次就诊：建议先至爱眼城眼科检查，门店不承担解读</li>
+        <li data-page-node-id="LYW1LzkOczGrPRDijcYmgc">顾客<b data-page-node-id="PlBZAUSUjIYEJvUGFugF3O">明确拒绝解读</b>或时间不足：记录"顾客拒绝/时间不足"，改为交付书面提示卡并安排回电</li>
       </ul>
     </div>
   </div>
-  <div class="note"><b>关于"顾客带外院报告来问"：</b>可以解读，但必须遵守三条——①只讲"这份报告写了什么"，不讲"这是不是某某病"；②凡报告中出现诊断结论或异常提示，一律引导回出具报告的机构复诊，或建议到爱眼城眼科复查；③在《记录表》"数据来源"栏注明"外院报告（未核验原始数据）"。不得以解读外院报告的方式变相替医生"解释病情"。</div>
+  <div class="note" data-page-node-id="IKfUFwoB9JNxsbSH4WPpYv"><b data-page-node-id="9GsaSXe1ixBGuukP90T63a">关于"顾客带外院报告来咨询"：</b>可以解读，但必须遵守三条——①只讲"这份报告写了什么"，不讲"这是不是某某病"；②凡报告中出现诊断结论或异常提示，一律引导回出具报告的机构复诊，或建议到爱眼城眼科复查；③在《记录表》"数据来源"栏注明"外院报告（未核验原始数据）"。不得以解读外院报告的方式变相替医生"解释病情"。</div>
 
-  <h2 class="sec">4. 岗位分工（RACI 简表）</h2>
-  <div class="card">
-    <div class="tsc w4"><table class="">
-      <thead><tr><th style="width:14%">环节</th><th style="width:21%">主导（R）</th><th style="width:23%">承担支持（A/C 的配合角色）</th><th style="width:42%">具体职责</th></tr></thead>
-      <tbody>
-        <tr><td>① 检查数据梳理</td><td>验光师 / 视光师</td><td>检查技师</td><td>核对检查完整性、录入/打印报告、标记缺失项；确保数据源可靠</td></tr>
-        <tr><td>② 异常值识别</td><td>视光师</td><td>验光师</td><td>对照模块03判定表逐项扫描，圈出"关注/异常/转诊"项，不得口头判断</td></tr>
-        <tr><td>③-⑦ 解读与沟通</td><td>视光师（主解读）</td><td>验光师、眼保健师</td><td>按七步与话术完成解读；通俗表达；填写《记录表》</td></tr>
-        <tr><td>方案书写</td><td>视光师</td><td>客服/门店文员</td><td>生成《方案建议书》，打印交顾客，留存底联</td></tr>
-        <tr><td>复查跟进</td><td>客服/客服专员</td><td>视光师（提供复查建议口径）</td><td>到期前提醒、邀约、预约到店；记录失约原因</td></tr>
-        <tr><td>转诊提醒</td><td>视光师（口头）+ 店长（确认）</td><td>客服（跟进是否就医）</td><td>发现红线指标立即转诊提示、登记、72 小时回访</td></tr>
-        <tr><td>质量管控</td><td>店长</td><td>区域督导</td><td>每日抽查 2 份记录表、每周检查覆盖率、月度复盘会</td></tr>
-        <tr><td>培训认证</td><td>区域督导 / 内训师</td><td>店长</td><td>组织集训、角色扮演、L1-L3 认证考核（模块07）</td></tr>
+  <h2 class="sec" data-page-node-id="YkoQ7F7Ii6QZtpPClJcf8K">4. 岗位分工（RACI 简表）</h2>
+  <div class="card" data-page-node-id="IpxyNqouV5ZmhoA0mzz0Im">
+    <div class="tsc w4" data-page-node-id="THCR5P2B7CnMcx3e9KODwh"><table class="" data-page-node-id="VAQDm0noSVFv0DyWpt5kyA">
+      <thead data-page-node-id="e8BywAJrmkd52oMYR5KPj1"><tr data-page-node-id="usFtZmyUi7SNQjTJ4ZpqxE"><th style="width:14%" data-page-node-id="ypRHW1ozXXj6Vp8r2tRBU9">环节</th><th style="width:21%" data-page-node-id="UH4jqxBht75ihTQsIGwxgI">主导（R）</th><th style="width:23%" data-page-node-id="WIpnOGdgMhCjsdJS1fzJje">承担支持（A/C 的配合角色）</th><th style="width:42%" data-page-node-id="ShzKxVpF9o4ATNh31S2QAX">具体职责</th></tr></thead>
+      <tbody data-page-node-id="ZGK6dmIXeYs08Ckgt9RxPF">
+        <tr data-page-node-id="uFShpnA3l3GgKeOqF7E2BS"><td data-page-node-id="XmVkkzEjIGCBGqrNu3cB4t">① 检查数据梳理</td><td data-page-node-id="f1JFVWl22OYdcehuoMfqaG">验光师 / 视光师</td><td data-page-node-id="ph8yfXuc5h7Pfd8dFGkVxf">检查技师</td><td data-page-node-id="mr28600LKdGdqrYvVAM3YJ">核对检查完整性、录入/打印报告、标记缺失项；确保数据源可靠</td></tr>
+        <tr data-page-node-id="QhspQqyjzxYmpPZ2maR4fc"><td data-page-node-id="vI4GUAwzOaha2Mi9njv5IQ">② 异常值识别</td><td data-page-node-id="6k24k2njQkgj5cbquHX2K1">视光师</td><td data-page-node-id="RLbxD1v2wLzyP0GTr7rlwJ">验光师</td><td data-page-node-id="yvsi0mOLIfeh1wyldEdfjE">对照模块03判定表逐项扫描，圈出"关注/异常/转诊"项，不得口头判断</td></tr>
+        <tr data-page-node-id="tdlBLYvye3ljBAVCawfMJx"><td data-page-node-id="PAkOsYDkEXmxnreCaSzHgb">③-⑦ 解读与沟通</td><td data-page-node-id="AErKfonwQqZQD6XlX3EVpa">视光师（主解读）</td><td data-page-node-id="s5Cau8YfVlX8yFy6N7opDO">验光师</td><td data-page-node-id="MD5aDnQBnMNQ7s7fJhcPnj">按七步与话术完成解读；通俗表达；填写《记录表》</td></tr>
+        <tr data-page-node-id="kz55YhAad3yvPPDw36hTCP"><td data-page-node-id="5witYdPrgVbiSew5OvHqN9">方案书写</td><td data-page-node-id="TI6nggBHd6bYZIxGRunjQC">视光师</td><td data-page-node-id="FionHKEptZGNbaELv3hZhu">客服/门店文员</td><td data-page-node-id="AzCgXbmz53ZCWEQU2g2vqq">生成《方案建议书》，打印交顾客，留存底联</td></tr>
+        <tr data-page-node-id="EGueciOPyongTXJIBqZ5fL"><td data-page-node-id="0VA95boHBufxFRqUsGsC1P">复查跟进</td><td data-page-node-id="WPyEEu3sNqJGOKWQTniAlI">客服/客服专员</td><td data-page-node-id="QHB1HbiJKxQFUZ5kyGcc5J">视光师（提供复查建议口径）</td><td data-page-node-id="RTZoPWp6jNY0sIXE9YAnGR">到期前提醒、邀约、预约到店；记录失约原因</td></tr>
+        <tr data-page-node-id="2ZeNDwGPiju2ND3FixgPpo"><td data-page-node-id="HhhTWY9JG5DDsDDchz0Fd3">转诊提醒</td><td data-page-node-id="Em6z1uYrrZdotG8tqt6y7J">视光师</td><td data-page-node-id="YrYcutjcXfVKansNayXF9u">客服（跟进是否就医）</td><td data-page-node-id="Bbv8dnrvDia8SUnBC771MB">发现红线指标立即转诊提示、登记、72 小时回访</td></tr>
+        <tr data-page-node-id="bfVES8iDDqGilyo7ZqFHDG"><td data-page-node-id="ET1qftHXD0wu7nnkABkQGu">质量管控</td><td data-page-node-id="ql5qnb0k2ggkVZGx3I2I8n">店长</td><td data-page-node-id="gpEytZQDwKY8HUb3nuA10v">区域督导</td><td data-page-node-id="OIQWqF3WOdVEcBRMZgYbx8">每日抽查 2 份记录表、每周检查覆盖率、月度复盘会</td></tr>
+        <tr data-page-node-id="xckzmPf20iD328CdKlWr8U"><td data-page-node-id="0DZhobkEBLkmfmFVRKDL08">培训认证</td><td data-page-node-id="ffcEMGP1CMN7Q8j6F4KMQF">区域督导 / 内训师</td><td data-page-node-id="KKJvb0scZQcEBlkJ7XKl8b">店长</td><td data-page-node-id="JOVdHUood0qTmCuJVPyOhD">组织集训、角色扮演与考核（专项培训见模块10）</td></tr>
       </tbody>
     </table></div>
-    <p class="ni"><b>门店最低配置要求：</b>每家门店至少有 <b>1 名 L2 及以上</b>的视光骨干（具备独立解读与处理异议能力）和 <b>1 名</b>备份人员；高峰时段可按"一人检查—一人解读"的流水方式安排，但<b>视光师必须全程参与异常值识别环节</b>，不得由检查技师代替判断。</p>
+    <p class="ni" data-page-node-id="iCuUJTHUt7HopqP9g2joTv"><b data-page-node-id="4Ea8WxTJHUGITSSVrivsBB">门店最低配置要求：</b>每家门店至少有 <b data-page-node-id="s72EHxEk9cxmePt7HZ2NEj">1 名 </b>视光师（具备独立解读与处理异议能力）和 <b style="font-weight: 400;" data-page-node-id="rsD9XIVuWBE80HPtjONbcd">1 名后备</b>人员；高峰时段可按"一人检查—一人解读"的流水方式安排，但<b data-page-node-id="NAnaNrPpcgP13CwOyV1h9G">视光师必须全程参与异常值识别环节</b>，不得由验光师代替判断。</p>
   </div>
 
-  <h2 class="sec">5. 五大使用场景与触发时机</h2>
-  <div class="card">
-    <div class="tsc w4"><table class="">
-      <thead><tr><th style="width:18%">场景</th><th style="width:20%">触发时机</th><th style="width:34%">解读重点</th><th style="width:28%">目标产出</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><b>场景 A：配镜即解读</b><br>（最主流）</td>
-          <td>验光完成、确定处方后，试戴的同时</td>
-          <td>度数变化幅度 → 是否有与配镜相关的其他提示（散光、屈光参差、双眼视功能等）→ 本次配镜解决什么、不解决什么</td>
-          <td>顾客理解处方依据；签《记录表》；必要时加做/补全检查</td>
+  <h2 class="sec" data-page-node-id="L3WSmDrQpZubNx8Z48Iaha">5. 五大使用场景与触发时机</h2>
+  <div class="card" data-page-node-id="62jfGjNEGn56nA4etja2Lv">
+    <div class="tsc w4" data-page-node-id="fBEukIvvk1EvhvzEwDFtMS"><table class="" data-page-node-id="kZBQoYcQ5ESt46XGJNxcWF">
+      <thead data-page-node-id="VnQfdJJXMZAzeKCtKLrA4Q"><tr data-page-node-id="lEIMKVVXfSLZz9FtlKI7JP"><th style="width:18%" data-page-node-id="1mE5GarqDwfNPOah5KS5pF">场景</th><th style="width:20%" data-page-node-id="UQQPnkuO7n6eWApkZDUX3V">触发时机</th><th style="width:34%" data-page-node-id="a9LNnMLNuARxTJzdTPOmQp">解读重点</th><th style="width:28%" data-page-node-id="UC2iBF43XfF0SwTCZsE0Vx">目标产出</th></tr></thead>
+      <tbody data-page-node-id="qBQ5HAt2wvGzhHarryWFEJ">
+        <tr data-page-node-id="p6VJ2ImpmdizauG5FRROsq">
+          <td data-page-node-id="d0TUZllKZyTGRiqk5iMJGs"><b data-page-node-id="bejUq0StLOKxKfLlaWY0C5">场景 A：配镜即解读</b><br data-page-node-id="UmaNxPXrUpEraiP3WFcCsI">（最主流）</td>
+          <td data-page-node-id="eTX3WiJFxNuOWJmeGLPsCa">验光完成、确定处方后，试戴的同时</td>
+          <td data-page-node-id="zHw19bca2kCjE4s9IUXvOm">度数变化幅度 → 是否有与配镜相关的其他提示（散光、屈光参差、双眼视功能等）→ 本次配镜解决什么、不解决什么</td>
+          <td data-page-node-id="ffUqhg6B0DCVL3pPF7b9NE">顾客理解处方依据；签《记录表》；必要时加做/补全检查</td>
         </tr>
-        <tr>
-          <td><b>场景 B：青少年档案复查</b></td>
-          <td>建档或季度/半年复查时</td>
-          <td>眼轴与角膜曲率变化 → 年增速是否偏快 → 现有控制措施是否有效 → 用眼行为调整</td>
-          <td>家长理解"控制目标"；确定下一步（继续/加强/转诊）；约定下次复查</td>
+        <tr data-page-node-id="dZaHcgxrXThURlMX4ACRe3">
+          <td data-page-node-id="iC4T7q3IpmIlxxeVB53L2K"><b data-page-node-id="W8rkHg0ixu4sZSipj9I1GQ">场景 B：青少年档案复查</b></td>
+          <td data-page-node-id="kcrmxEK7RlZLNh6FDg94S3">建档或季度/半年复查时</td>
+          <td data-page-node-id="yPwmMqZUX2C4YHyVuFi2W7">眼轴与角膜曲率变化 → 年增速是否偏快 → 现有控制措施是否有效 → 用眼行为调整</td>
+          <td data-page-node-id="xvHaPHR8lKyDcQXwrGByVx">家长理解"控制目标"；确定下一步（继续/加强/转诊）；约定下次复查</td>
         </tr>
-        <tr>
-          <td><b>场景 C：视疲劳/干眼诉求</b></td>
-          <td>顾客主诉眼酸、眼干、看近不能持久</td>
-          <td>双眼视功能与泪膜指标 → 与症状的关联 → 用眼负荷与环境影响 → 矫正+行为+护理三线建议</td>
-          <td>顾客确认诱因；接受"矫正镜+习惯调整+干眼护理"组合或转诊</td>
+        <tr data-page-node-id="NSRT99z6HzOxrosQEfBzG0">
+          <td data-page-node-id="CVsnd3YuOpSqPWpkQACKOI"><b data-page-node-id="k7wOBams4nd7LkED29Yk1e">场景 C：视疲劳/干眼诉求</b></td>
+          <td data-page-node-id="Iw1uErcO5IKZrt8u1U1lOS">顾客主诉眼酸、眼干、看近不能持久</td>
+          <td data-page-node-id="2CpraIq2856a1PRG78dL4v">双眼视功能与泪膜指标 → 与症状的关联 → 用眼负荷与环境影响 → 矫正+行为+护理三线建议</td>
+          <td data-page-node-id="Vv9Y5DJxZIELOgqSGzbSmk">顾客确认诱因；接受"矫正镜+习惯调整+干眼护理"组合或转诊</td>
         </tr>
-        <tr>
-          <td><b>场景 D：中老年眼健康检查</b></td>
-          <td>老视验配、白内障筛查后</td>
-          <td>矫正视力能否达标 → 晶状体、前房、双眼视功能提示 → 是否需要医疗介入 → 渐进镜与生活方式适配</td>
-          <td>明确"能配镜解决"与"要转诊"的界限；转诊闭环留痕</td>
+        <tr data-page-node-id="IpeBGLZiSCjbtv6KD62l3J">
+          <td data-page-node-id="AHxIUTHDkRzsCnEKsxfwbH"><b data-page-node-id="snphlVCHkolLen74tQ2q4l">场景 D：中老年眼健康检查</b></td>
+          <td data-page-node-id="BFjmVBNNIBWkkdYHtENXaX">老视验配、白内障筛查后</td>
+          <td data-page-node-id="nAJx7eBfUzr2Zx4CTFDg6r">矫正视力能否达标 → 晶状体、前房、双眼视功能提示 → 是否需要医疗介入 → 渐进镜与生活方式适配</td>
+          <td data-page-node-id="ZGm1V8oy6Q2DswWDEc8YKu">明确"能配镜解决"与"要转诊"的界限；转诊闭环留痕</td>
         </tr>
-        <tr>
-          <td><b>场景 E：顾客主动带报告来问</b></td>
-          <td>顾客持外院/体检报告到店</td>
-          <td>解释报告写了什么 → 提示其中需要重视的项 → 引导到出具机构或爱眼城眼科复诊</td>
-          <td>提升专业形象；登记潜在顾客；不得做诊断性解读</td>
+        <tr data-page-node-id="0465lxrz9czU5KTCJ2BdhB">
+          <td data-page-node-id="dyzrBlOQeyJV7an9SxmDxf"><b data-page-node-id="hVouyiU19ARvWHNG8CwggF">场景 E：顾客主动带报告来问</b></td>
+          <td data-page-node-id="6lmr1vO32eWIdVXTOZfQB3">顾客持外院/体检报告到店</td>
+          <td data-page-node-id="VeBifI7tWbJijzdtEKxDb4">解释报告写了什么 → 提示其中需要重视的项 → 引导到出具机构或爱眼城眼科复诊</td>
+          <td data-page-node-id="hQZYAXb4pcDxfS9yHrjp4D">提升专业形象；登记潜在顾客；不得做诊断性解读</td>
         </tr>
       </tbody>
     </table></div>
-    <div><b>时间配置建议：</b>各场景建议时长、超时取舍与转诊时的弹性处理，统一见<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>《七步标准解读 SOP》"流程总览"。</div>
+    <div data-page-node-id="IGJQXafa1c3PS1vQn4YBvM"><b data-page-node-id="Gb0fM0hEH259VTjLXCakHC">时间配置建议：</b>各场景建议时长、超时取舍与转诊时的弹性处理，统一见<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600" data-page-node-id="FAYb5SvFKF8yLqPwLBBQ1R">模块02</a>《七步标准解读 SOP》"流程总览"。</div>
   </div>
 
-  <h2 class="sec">6. 成功标准：什么样的解读算合格</h2>
-  <div class="card">
-    <h3 class="sub">六条硬性标准（缺一即为"未完成解读"）</h3>
-    <ol>
-      <li><b>七步齐全：</b>①至⑦七个环节全部走到，无跳过、无顺序颠倒（时间不足时经顾客同意可简化⑥⑦，但①②不得跳过）。</li>
-      <li><b>逐项扫描：</b>凡本次实际检查的项目，均已在《指标参考区间与异常值对照》上查过并标注档位，不是只看度数。</li>
-      <li><b>通俗表达：</b>全程未出现未加解释的专业术语（术语出现后 1 句内必须有通俗翻译）。</li>
-      <li><b>方案分层：</b>给出的建议至少包含"必做项"和"建议项"两类，并说明差异，让顾客有选择权。</li>
-      <li><b>留有痕迹：</b>《顾客报告解读记录表》填写完整，关键项（异常提示、建议、复查日期、转诊提示）无空白。</li>
-      <li><b>边界清晰：</b>全程未出现诊断性表述与疗效承诺；涉及红线项已发出转诊提醒并记录。</li>
+  <h2 class="sec" data-page-node-id="IJI1XovVzktFA9yLaHUIFi">6. 成功标准：什么样的解读算合格</h2>
+  <div class="card" data-page-node-id="O9jBytVboVp2rl9r2dmyKQ">
+    <h3 class="sub" data-page-node-id="bYmsUv2zdNS6pCfmuWJm0d">六条硬性标准（缺一即为"未完成解读"）</h3>
+    <ol data-page-node-id="PqVezfsMtVW8u363zOvvQj">
+      <li data-page-node-id="qCTMJTfht5awofHK1nutMh"><b data-page-node-id="pfZ1TIgPUfCaYfQevUkbOS">七步齐全：</b>①至⑦七个环节全部走到，无跳过、无顺序颠倒（时间不足时经顾客同意可简化⑥⑦，但①②不得跳过）。</li>
+      <li data-page-node-id="oVkY50Gp3IRA4d5lpkSwn8"><b data-page-node-id="bVHTGx24XS3zuFMyznGwfL">逐项扫描：</b>凡本次实际检查的项目，均已在《指标参考区间与异常值对照》上查过并标注档位，不是只看度数。</li>
+      <li data-page-node-id="tceNhvZgR7WbepzV7eWN0t"><b data-page-node-id="JFnsfia8Xonok8TDM15IC7">通俗表达：</b>全程未出现未加解释的专业术语（术语出现后 1 句内必须有通俗翻译）。</li>
+      <li data-page-node-id="Yag7cn6frowY4yNZ85BaEp"><b data-page-node-id="ShiHyZ7ygrU3JnbDCF7QiM">方案分层：</b>给出的建议至少包含"必做项"和"建议项"两类，并说明差异，让顾客有选择权。</li>
+      <li data-page-node-id="BjTAlxWzbQPMtDX6VmtLGC"><b data-page-node-id="dP5XZJ74Fd4VQKvSND5W0g">留有痕迹：</b>填写完整，关键项（异常提示、建议、复查日期、转诊提示）无空白。</li>
+      <li data-page-node-id="ymH44GqPasl1d5Ws84AAzW"><b data-page-node-id="FHJObQ4S29NF1JYnZ6nL1R">边界清晰：</b>全程未出现诊断性表述与疗效承诺；涉及红线项已发出转诊提醒并记录。</li>
     </ol>
-    <h3 class="sub">三条加分项（鼓励做到）</h3>
-    <ul>
-      <li>使用了至少一个<b>同类人群</b>的真实案例（模块06），且讲述了"当时怎么做、后来怎样"。</li>
-      <li>至少给出一条<b>当天就能做</b>的行为建议（如"今天回家把书桌灯换成 …级别""今晚开始 20-20-20"）。</li>
-      <li>解读结束时顾客能<b>自己复述</b>出自己眼睛的两条关键信息（现场请顾客复述验证）。</li>
+    <h3 class="sub" data-page-node-id="t2Hdvo0XHZaKBDk1nYKPhF">三条加分项（鼓励做到）</h3>
+    <ul data-page-node-id="r93toTC79g6KNjPmrbXOsr">
+      <li data-page-node-id="epCjsWkEvNNFCIyAR7lRYh">使用了至少一个<b data-page-node-id="NlrH9ARuLvqTsMOrJt7NwW">同类人群</b>的真实案例（模块06），且讲述了"当时怎么做、后来怎样"。</li>
+      <li data-page-node-id="LK5olB5h7bBD1XDWdD66Yp">至少给出一条<b data-page-node-id="6MVpY0VmhwjhwDDEwDCuD5">当天就能做</b>的行为建议（如"今天回家把书桌灯换成 …级别""今晚开始 20-20-20"）。</li>
+      <li data-page-node-id="C0dhYy5dVC3TV97SZwxHvA">解读结束时顾客能<b data-page-node-id="NfvNggmdMKGqPSOSIcwXiu">自己复述</b>出自己眼睛的两条关键信息（现场请顾客复述验证）。</li>
     </ul>
-    <div class="warn"><b>不合格的典型表现（店长抽查重点关注）：</b>只报了度数和散光；通篇念报告没有停顿互动；用"你这个就是近视加深，没办法"等消极恐吓表述；把"建议去医院看"说成"你这个是青光眼/白内障"；顾客走了才发现没填记录表；承诺"配这个镜保证不涨度数"。</div>
+    <div class="warn" data-page-node-id="jRgpZjnraJ9DL5T1r0wcGw"><b data-page-node-id="BBqgqXgbqkw4Dht1WldUml">不合格的典型表现（店长抽查重点关注）：</b>只报了度数和散光；通篇念报告没有停顿互动；用"你这个就是近视加深，没办法"等消极恐吓表述；把"建议去医院看"说成"你这个是青光眼/白内障"；顾客走了才发现没填记录表；承诺"配这个镜保证不涨度数"。</div>
   </div>
 
-  <h2 class="sec">7. 与其他模块的衔接关系</h2>
-  <div class="card">
-    <div class="tsc"><table class="">
-      <thead><tr><th style="width:30%">本模块产出</th><th style="width:70%">交给谁 / 怎么用</th></tr></thead>
-      <tbody>
-        <tr><td>适用范围与场景</td><td>→ 模块02：不同场景下七步的侧重不同（场景 B、C 需加重第二步异常识别）</td></tr>
-        <tr><td>岗位分工</td><td>→ 模块07：分工是培训分组和考核对象划分的依据</td></tr>
-        <tr><td>四个量化指标</td><td>→ 模块07 定义统计口径；→ 门店阶段验收与店长抽查共用同一套口径</td></tr>
-        <tr><td>六条硬性标准</td><td>→ 用作门店表单栏目设计与店长抽查清单</td></tr>
-        <tr><td>边界原则</td><td>→ 模块08 细化展开，本模块只做原则性声明</td></tr>
-        <tr><td>配套工具链</td><td>→ 模块09–12 是模块07 的配套扩展：09 情景卡库、10 情景诊断分析与解决方案模板集、11 会诊专家专项培训、12 全流程情景还原，全部服从模块02 七步 SOP 与模块08 合规边界，不新增独立标准</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="btnwrap">
-    <button class="btn" onclick="window.print()">打印本模块</button>
-    <a class="btn ghost" href="index.html">返回首页</a>
-    <a class="btn ghost" href="02_七步标准解读SOP.html">下一模块：02 七步标准解读 SOP →</a>
+  <div class="btnwrap" data-page-node-id="qUgbqIc3jEJCSoS3Ob84dB">
+    
+    <a class="btn ghost" href="index.html" data-page-node-id="7T5orqrWrKOqrxlolDJ5ic">返回首页</a>
+    <a class="btn ghost" href="02_七步标准解读SOP.html" data-page-node-id="p8ZHixcenUjPIOx7rGitDv">下一模块：02 七步标准解读 SOP →</a>
   </div>
 </div>
 
-<footer>
-  <b>模块01 · 方案总览与目标</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
+<footer data-page-node-id="DSydo54U8JfFVdIMGkGeKd">
+  <b data-page-node-id="50jl2DVKpxXKd4xPCnKJUC">模块01 · 方案总览与目标</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br data-page-node-id="fF2AmVAktcldzb5RD1HvYH">
   本文件所有指标数值均为门店服务管理目标，非医疗诊疗标准；涉及疾病的内容一律以医疗机构诊断为唯一依据。
 </footer>
-<script>
+<script data-page-node-id="lOXH6UFCMgbT20NdBCuFur">
 /* SMART-STICKY-V1 : 智能表头吸顶 */
 (function(){
   var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
