@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="docx-page-size" content="A4">
+<title>模块03 · 指标参考区间与异常值对照</title>
+<style>
+@page { @bottom-center { content: counter(page); } }
+@page cover { @bottom-center { content: none; } }
+section[role="cover"] { page: cover; }
+
+:root{
+  --typography-fontFamily-heading: "微软雅黑","Microsoft YaHei","PingFang SC",sans-serif;
+  --typography-fontFamily-body: "微软雅黑","Microsoft YaHei","PingFang SC",sans-serif;
+  --typography-fontSize-h2: 11pt;
+  --typography-fontSize-h3: 10pt;
+  --typography-fontSize-body: 9pt;
+  --typography-fontSize-small: 8pt;
+  --typography-fontSize-coverTitle: 22pt;
+  --typography-fontSize-coverCategory: 14pt;
+  --typography-lineHeight-body: 1.6;
+  --color-primary: #1565C0;
+  --color-secondary: #0288D1;
+  --color-accent: #00897B;
+  --color-info: #01579B;
+  --color-warning: #E65100;
+  --color-danger: #C62828;
+  --color-success: #2E7D32;
+  --color-text: #212121;
+  --color-textSecondary: #616161;
+  --color-heading: #1A237E;
+  --color-divider: #E0E0E0;
+  --color-background: #FFFFFF;
+  --color-surface: #F5F7FA;
+  --spacing-xxs: 0.25em;
+  --spacing-xs: 0.35em;
+  --spacing-sm: 0.5em;
+  --spacing-md: 0.9em;
+  --spacing-lg: 1.5em;
+  --spacing-indent: 1.2em;
+  --spacing-paragraph: 0.5em;
+  --spacing-section: 1.2em;
+  --spacing-block: 1em;
+  --spacing-cover: 4.5cm;
+  --page-content-width: 15.6cm;
+  --fs-h2: var(--typography-fontSize-h2);
+  --fs-h3: var(--typography-fontSize-h3);
+  --fs-body: var(--typography-fontSize-body);
+  --fs-small: var(--typography-fontSize-small);
+  --ff-heading: var(--typography-fontFamily-heading);
+  --ff-body: var(--typography-fontFamily-body);
+  --lh-body: var(--typography-lineHeight-body);
+  --color-emphasis: var(--color-danger);
+}
+
+body{
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+  background: var(--color-background);
+  max-width: var(--page-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2{
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  margin-top: var(--spacing-section);
+  margin-bottom: var(--spacing-paragraph);
+  border-bottom: 1pt solid var(--color-divider);
+}
+
+h2.sec{ border-bottom: 1pt solid var(--color-divider); }
+
+h3{
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+p{
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  line-height: var(--lh-body);
+  text-align: left;
+  text-indent: 0;
+  margin-bottom: var(--spacing-paragraph);
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+  margin-bottom: var(--spacing-block);
+}
+
+th{
+  font-family: var(--ff-heading);
+  font-size: var(--fs-small);
+  color: var(--color-heading);
+  font-weight: 700;
+  background: var(--color-surface);
+  text-align: center;
+  border: 0.5pt solid var(--color-divider);
+}
+
+td{
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  text-align: left;
+  border: 0.5pt solid var(--color-divider);
+}
+
+ul{ margin-left: var(--spacing-indent); }
+
+li{
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  line-height: var(--lh-body);
+  text-align: left;
+  margin-bottom: var(--spacing-xxs);
+}
+
+.lv1{ color: var(--color-success); font-weight: 700; }
+.lv2{ color: var(--color-warning); font-weight: 700; }
+.lv3{ color: var(--color-danger); font-weight: 700; }
+.data-emphasis{ color: var(--color-emphasis); font-weight: 700; }
+.flag-y{ color: var(--color-danger); font-weight: 700; }
+.flag-c{ color: var(--color-warning); font-weight: 700; }
+.flag-n{ color: var(--color-success); font-weight: 700; }
+
+.note-plain{
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  line-height: var(--lh-body);
+  text-align: left;
+  background: var(--color-surface);
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cover-category{
+  font-family: var(--ff-heading);
+  font-size: var(--typography-fontSize-coverCategory);
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: var(--spacing-cover);
+  margin-bottom: var(--spacing-md);
+}
+.cover-title{
+  font-family: var(--ff-heading);
+  font-size: var(--typography-fontSize-coverTitle);
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+}
+.cover-subtitle{
+  font-family: var(--ff-body);
+  font-size: var(--fs-h2);
+  color: var(--color-textSecondary);
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-lg);
+}
+.cover-meta{
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  color: var(--color-textSecondary);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.toc-title{
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: var(--spacing-sm);
+}
+.toc-list, .toc-list ol, .toc-list ul{ list-style: none; list-style-type: none; }
+.toc-list li{
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  text-indent: 0;
+  margin-bottom: var(--spacing-xxs);
+}
+.toc-list a{ color: var(--color-primary); text-decoration: none; }
+
+.executive-summary{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-section);
+}
+.executive-summary thead th{
+  border-left: 4pt solid var(--color-primary);
+  border-top: 0.5pt solid var(--color-divider);
+  border-right: 0.5pt solid var(--color-divider);
+  background: var(--color-surface);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: left;
+  padding: var(--spacing-sm) var(--spacing-block);
+}
+.executive-summary tbody td{
+  border-left: 4pt solid var(--color-primary);
+  border-right: 0.5pt solid var(--color-divider);
+  border-bottom: 0.5pt solid var(--color-divider);
+  background: var(--color-surface);
+  padding: var(--spacing-sm) var(--spacing-block);
+}
+
+.summary-lead{
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  line-height: var(--lh-body);
+  text-align: left;
+  margin-bottom: var(--spacing-sm);
+}
+
+.appendix-note{
+  font-size: var(--fs-small);
+  color: var(--color-textSecondary);
+  line-height: var(--lh-body);
+  text-align: left;
+  margin-bottom: var(--spacing-xs);
+}
+</style>
+</head>
+<body>
+<section role="cover" class="cover">
+<p class="cover-category" style="text-align: center;">永州爱眼城 · 检查报告解读标准化方案</p><p class="cover-title" style="text-align: center;">模块03 · 指标参考区间与异常值对照</p><p class="cover-subtitle" style="text-align: center;">上篇 · 参考区间与异常判定（四档定级）｜下篇 · 异常值对照（16 条：原因 → 影响 → 对策 → 话术）</p><p class="cover-meta" style="text-align: center;">永州爱眼城连锁门店 ｜ V1.0 ｜ 2026-09-21 ｜ 编制：闫胜君整理</p>
+</section>
+<section role="body" data-page-restart="1">
+<nav class="doc-toc" aria-label="文档目录">
+<p class="toc-title">目录</p>
+<ol class="toc-list"><li><a href="#section-1">查表规则：四档判定怎么标</a></li><li><a href="#section-2">一、视力</a></li><li><a href="#section-3">二、屈光度</a></li><li><a href="#section-4">三、眼轴长度与角膜曲率（眼生物测量）</a></li><li><a href="#section-5">四、双眼视功能</a></li><li><a href="#section-6">五、眼前节、晶状体与干眼相关</a></li><li><a href="#section-7">六、查表常见错误与纠正</a></li><li><a href="#section-8">七、异常值对照表怎么用（下篇）</a></li><li><a href="#section-9">八、屈光与视力类</a></li><li><a href="#section-10">九、眼轴与角膜类</a></li><li><a href="#section-11">十、双眼视功能与干眼类</a></li><li><a href="#section-12">十一、晶状体、老视与特殊类</a></li><li><a href="#section-13">十二、异常值对照表使用纪律</a></li><li><a href="#section-14">附录 · 口径来源与免责说明</a></li></ol>
+</nav>
+<table class="executive-summary">
+<thead><tr><th>&nbsp;&nbsp;本模块导读</th></tr></thead>
+<tbody><tr><td><p class="summary-lead">本模块是门店的“字典 + 话术对照”两用表：<strong>上篇</strong>回答“这项算不算异常”，把每项指标定到正常 / 关注 / 异常 / 转诊提示四档；<strong>下篇</strong>回答“发现异常之后说什么、做什么”，把 16 类高频异常逐条拆成可能原因、潜在影响、应对对策与话术要点。建议打印成台卡压在验光台下，或塑封随身携带。使用前先看下面的“查表规则”。</p></td></tr></tbody>
+</table>
+<table><thead><tr><th style="width:25%">判定档位</th><th style="width:25%">参考区间表</th><th style="width:25%">异常条目</th><th style="width:25%">门店必查项</th></tr></thead><tbody><tr><td>4 档（正常 / 关注 / 异常 / 转诊提示）</td><td>7 张（上篇：按 5 类检查逐项定级）</td><td>16 类（下篇：原因 → 影响 → 对策 → 话术）</td><td>5 项（视力 / 验光 / 眼轴曲率 / 双眼视 / 眼前节）</td></tr></tbody></table>
+<div data-component="callout" data-variant="warning"><div class="callout-content"><p><strong>四条使用前必读：</strong></p><p>1. <strong>本表为健康宣教与转诊提示用的参考区间</strong>，不是诊断标准。参考区间会因设备型号、测量方法、人群与教材版本而有差异。<strong>与最新国家诊疗指南或接诊医疗机构意见不一致时，以后者为准。</strong></p><p>2. <strong>单次异常不等于有病。</strong>任何“异常”档位，标准动作是<strong>复查确认 + 必要时转诊</strong>，而不是直接下结论。</p><p>3. <strong>看趋势比看单次数值重要。</strong>尤其是儿童青少年，一次眼轴 / 度数值没有意义，半年、一年的变化量才有意义。</p><p>4. <strong>转诊去向统一为爱眼城眼科。</strong>本表所有“转诊提示”档位，口头与书面指引一律指向<strong>爱眼城眼科</strong>（完整口径见模块 08）；遇急性症状或爱眼城眼科闭诊时段，<strong>就近前往有眼科急诊的医院，不因去向而拖延</strong>。</p></div></div>
+<h2 class="sec" id="section-1">查表规则：四档判定怎么标</h2>
+<table><thead><tr><th style="width:11%">档位</th><th style="width:26%">含义</th><th style="width:30%">标准动作</th><th style="width:33%">对顾客怎么说</th></tr></thead><tbody><tr><td><span class="lv1">正常（绿）</span></td><td>在参考范围内</td><td>记录，无需处理</td><td>“这项在正常范围，没问题。”（一句带过，不要展开）</td></tr><tr><td><span class="lv2">关注（橙）</span></td><td>接近临界值，或有轻度偏离，或本次较上次变化明显</td><td>纳入解读要点；调整用眼行为的建议；缩短复查周期</td><td>“这项稍微偏一点点，我们先留意，三个月后复查看看趋势。”</td></tr><tr><td><span class="lv3">异常（红）</span></td><td>明确超出参考范围，或与症状相符</td><td>纳入重点讲解；给出方案；必要时安排复测确认</td><td>“这项不在正常范围，我们具体来看一下，然后商量怎么处理好。”</td></tr><tr><td><span class="lv3">转诊提示</span></td><td>可能提示眼病，超出门店服务范围</td><td><strong>停止推销</strong>；书面 + 口头转诊提醒；登记；72 小时回访；留存记录</td><td>“这一项我建议尽快到爱眼城眼科做个检查确认，我们门店看不了这个，不能耽误。”</td></tr></tbody></table>
+<p class="note-plain"><strong>两条补充规则（口令版见“六、查表常见错误与纠正”之后）：</strong>① <strong>就低不就高</strong>——拿不准按更严重一档处理；② <strong>双 hit</strong>——两个及以上相关指标同时异常（如眼轴增长快 + 角膜曲率异常），直接按“转诊提示”处理。</p>
+<h2 class="sec" id="section-2">一、视力</h2>
+<p>视力是门店最基础、也最容易被“一句带过”的项目。先按年龄取参考下限，再看单次结果是否落在关注 / 异常档；判断时结合年龄、双眼差异与矫正能否达标综合看。</p>
+<h3>1.1 不同年龄的视力参考（单眼）</h3>
+<table><thead><tr><th style="width:14%">年龄</th><th style="width:33%">参考下限（小数记录 / 五分记录）</th><th style="width:9%">关注</th><th style="width:15%">异常 / 转诊提示</th><th style="width:29%">备注</th></tr></thead><tbody><tr><td>3 岁</td><td>0.5 / 4.7</td><td>0.4</td><td>≤0.3</td><td>配合度影响大，图形视力表测</td></tr><tr><td>4 岁</td><td>0.6 / 4.8</td><td>0.5</td><td>≤0.4</td><td>双眼视力相差 ≥2 行需查</td></tr><tr><td>5 岁</td><td>0.6~0.8 / 4.8~4.9</td><td>0.5</td><td>≤0.4</td><td>&#8203;</td></tr><tr><td>6 岁</td><td>0.7~0.8 / 4.85~4.9</td><td>0.6</td><td>≤0.5</td><td>入小学前应完成一次系统检查</td></tr><tr><td>7 岁及以上</td><td>0.8~1.0 / 4.9~5.0</td><td>0.7</td><td>≤0.6</td><td>达不到就要查原因：屈光不正 / 弱视 / 眼病</td></tr><tr><td>成年人（18-45）</td><td>1.0 / 5.0</td><td>0.8</td><td>≤0.6 且矫正不达标</td><td>矫正视力＜1.0 必须查原因</td></tr><tr><td>中老年（45+）</td><td>0.8~1.0 / 4.9~5.0</td><td>0.6</td><td>矫正视力＜0.6</td><td>老视为看近下降，看远应正常</td></tr><tr><td>70 岁+</td><td>0.6~0.8 / 4.8~4.9</td><td>0.5</td><td>矫正视力＜0.5</td><td>矫正后仍不达标需到院排查白内障等眼病</td></tr></tbody></table>
+<h3>1.2 裸眼视力与矫正视力</h3>
+<table><thead><tr><th style="width:14%">项目</th><th style="width:14%">正常</th><th style="width:9%">关注</th><th style="width:27%">异常 / 转诊提示</th><th style="width:36%">备注</th></tr></thead><tbody><tr><td>裸眼远视力</td><td>≥1.0</td><td>0.6~0.8</td><td>&lt;0.6 需查屈光</td><td>结合年龄上限综合看</td></tr><tr><td>矫正远视力</td><td>达年龄对应上限</td><td>欠矫一行</td><td><strong>矫正不达标（&lt;0.8）→ 必须查明原因</strong></td><td>足矫仍不达标，<strong>转诊</strong>（排查弱视、白内障等眼病）</td></tr><tr><td>双眼视力差</td><td>≤1 行</td><td>2 行</td><td>≥2 行且一眼矫正不达标</td><td>儿童提示弱视风险</td></tr><tr><td>近视力（成人）</td><td>≥1.0（33cm）</td><td>0.8</td><td>&lt;0.6（45 岁以上先考虑老视）</td><td>45 岁以下看近明显差需查调节</td></tr></tbody></table>
+<p class="note-plain"><strong>通俗讲法：</strong>“矫正视力就是戴上最合适的眼镜以后能看到的最好水平。如果连戴上眼镜都看不清 1.0，那就不是‘度数配不准’这么简单，眼睛本身可能有问题，需要到爱眼城眼科查一下。”</p>
+<h2 class="sec" id="section-3">二、屈光度</h2>
+<table><thead><tr><th style="width:14%">项目</th><th style="width:27%">正常 / 参考</th><th style="width:19%">关注</th><th style="width:22%">异常 / 转诊提示</th><th style="width:18%">备注</th></tr></thead><tbody><tr><td>球镜 S（等效球镜 SE）</td><td>正视：-0.50 ~ +0.50D</td><td>±0.50~0.75D</td><td>见下方分级</td><td>SE = 球镜 + 1/2 柱镜</td></tr><tr><td>近视分级</td><td>—</td><td>低度 -0.50~-3.00D<br>中度 -3.00~-6.00D</td><td><strong>高度 &lt; -6.00D</strong>（每年做一次全面眼健康检查）</td><td>高度近视需关注眼轴长度与并发症风险</td></tr><tr><td>远视（儿童）</td><td>生理性远视（远视储备，见下表）</td><td>低于同龄下限</td><td>储备过早消耗完毕</td><td>储备不足是近视预警信号</td></tr><tr><td>散光 C</td><td>≤0.50D（生理性）</td><td>0.75~1.50D</td><td><strong>&gt;2.00D 需排查</strong>（尤其伴角膜曲率异常）</td><td>规则散光常见，不规则散光注意圆锥角膜</td></tr><tr><td>散光度数快速增加</td><td>年变化 ≤0.50D</td><td>年增加 0.50~1.00D</td><td>年增加 &gt;1.00D 或角膜散光 &gt;2.00D → 转诊排查</td><td>警惕圆锥角膜</td></tr><tr><td>屈光参差（球镜差）</td><td>&lt;1.00D</td><td>1.00~1.50D</td><td><strong>≥1.50D</strong>（儿童 ≥1.00D 即关注）</td><td>影响双眼单视，儿童警惕弱视</td></tr><tr><td>屈光参差（柱镜差）</td><td>&lt;0.75D</td><td>0.75~1.00D</td><td>≥1.00D</td><td>同上</td></tr><tr><td>年增加量（近视儿童）</td><td>&lt;0.50D/年</td><td>0.50~0.75D/年</td><td><strong>&gt;1.00D/年 控制不佳</strong></td><td>与眼轴年增长结合判断</td></tr><tr><td>老视（近附加 ADD）</td><td>45 岁约 +1.00D；50 岁约 +1.50D；55 岁约 +2.00D；60 岁约 +2.50D</td><td>明显偏离同龄经验值</td><td>ADD &gt;+3.00D 或短期快速上升</td><td>经验参考，必须主觉验光确认</td></tr></tbody></table>
+<h3>2.1 儿童远视储备参考（睫状肌麻痹 / 散瞳验光为准）</h3>
+<table><thead><tr><th style="width:16%">年龄</th><th style="width:26%">参考远视储备</th><th style="width:23%">偏低 / 关注</th><th style="width:35%">提示</th></tr></thead><tbody><tr><td>3 岁</td><td>约 +2.00 ~ +3.00D</td><td>&lt;+1.50D</td><td>储备偏低，近视风险上升</td></tr><tr><td>4-5 岁</td><td>约 +1.50 ~ +2.50D</td><td>&lt;+1.25D</td><td>加强户外，3-6 个月复查</td></tr><tr><td>6-7 岁</td><td>约 +1.00 ~ +1.75D</td><td>&lt;+0.75D</td><td>入学前后是关键窗口期</td></tr><tr><td>8-9 岁</td><td>约 +0.75 ~ +1.25D</td><td>&lt;+0.50D</td><td>储备接近耗尽，需密切随访</td></tr><tr><td>10-11 岁</td><td>约 +0.25 ~ +0.75D</td><td>≤0.00D</td><td>已到临界，任何近视都需管理</td></tr><tr><td>12 岁及以上</td><td>接近正视（0 ~ +0.50D）</td><td>已近视</td><td>进入近视进展管理阶段</td></tr></tbody></table>
+<div data-component="callout" data-variant="danger"><div class="callout-content"><p><strong>注意：</strong>未散瞳电脑验光会<strong>高估近视、低估远视</strong>（儿童调节力强）。儿童远视储备判断必须以<strong>散瞳验光结果</strong>为准；门店不具备条件时提醒家长到爱眼城眼科做。<strong>不得凭未散瞳的电脑验光单给家长下“储备不足”结论。</strong></p></div></div>
+<h2 class="sec" id="section-4">三、眼轴长度与角膜曲率（眼生物测量）</h2>
+<table><thead><tr><th style="width:14%">项目</th><th style="width:20%">参考区间</th><th style="width:16%">关注</th><th style="width:28%">异常 / 转诊提示</th><th style="width:22%">备注</th></tr></thead><tbody><tr><td>眼轴 AL（成人正视）</td><td>约 23.0 ~ 24.0mm</td><td>24.0~25.0mm</td><td><strong>&gt;26.0mm（高度近视，并发症风险升高）</strong></td><td>与身高体型、种族相关</td></tr><tr><td>眼轴 AL（儿童参考均值）</td><td>3 岁 21.5~22.0；6 岁 22.0~22.5；8 岁 22.5~23.0；10 岁 23.0 左右；12 岁 23.5 左右</td><td>高于同龄均值 0.5mm 以上</td><td>高于同龄均值 1.0mm 以上</td><td>个体差异大，<strong>看增长速率更重要</strong>；亦可按同龄百分位（P50 / P95）参考</td></tr><tr><td>眼轴年增长（未近视儿童）</td><td>&lt;0.20mm/年</td><td>0.20~0.30mm/年</td><td>&gt;0.30mm/年</td><td>生理性增长</td></tr><tr><td>眼轴年增长（近视儿童）</td><td><strong>控制目标：≤0.20~0.30mm/年</strong></td><td>0.30~0.40mm/年</td><td><strong>&gt;0.40mm/年为控制不佳</strong>，需调整方案并考虑就医评估</td><td>核心控近指标</td></tr><tr><td>轴率比 AL/CR</td><td>约 3.00</td><td>3.00~3.10</td><td>&gt;3.10 提示近视化明显</td><td>比单独看眼轴更能反映“结构匹配”</td></tr><tr><td>角膜曲率 K（平均）</td><td>39.0 ~ 46.0D（常见 42~44D）</td><td>46.0~47.0D 或 &lt;39.0D</td><td><strong>&gt;47.0D 或 &lt;38.0D → 转诊排查圆锥 / 扁平角膜</strong></td><td>需看地形图</td></tr><tr><td>角膜散光（K1-K2）</td><td>0.50 ~ 1.25D</td><td>1.50~2.00D</td><td>&gt;2.00D 或不规则 → 转诊排查</td><td>多为顺规散光（轴位 180±30）</td></tr><tr><td>双眼角膜曲率差</td><td>&lt;0.75D</td><td>0.75~1.00D</td><td><strong>&gt;1.00D → 转诊排查圆锥角膜</strong></td><td>结合地形图形态</td></tr><tr><td>前房深度 ACD</td><td>2.5 ~ 3.5mm</td><td>2.0~2.5mm（偏浅）</td><td>&lt;2.0mm（浅前房）→ 转诊评估</td><td>远视眼 / 老年人偏浅</td></tr><tr><td>角膜厚度 CCT</td><td>500 ~ 560μm</td><td>&gt;580 或 &lt;480μm</td><td>&lt;450μm（圆锥风险，需转诊评估）</td><td>戴隐形眼镜 / 做过屈光手术者需说明</td></tr></tbody></table>
+<p class="note-plain"><strong>通俗讲法（眼轴）：</strong>“眼球的前后长度叫眼轴。孩子长个子时会穿不上去年的裤子，眼球也是——眼轴每长 1 毫米，近视大概增加 250-300 度左右（个体有差异）。所以<strong>我们不只看眼镜多少度，更要看这条‘生长曲线’的斜率。</strong>”</p>
+<h2 class="sec" id="section-5">四、双眼视功能</h2>
+<table><thead><tr><th style="width:18%">项目</th><th style="width:25%">参考区间</th><th style="width:31%">关注 / 异常</th><th style="width:26%">备注</th></tr></thead><tbody><tr><td>远距隐斜</td><td>约 1△ 外隐斜（±2△）</td><td>外隐斜 &gt;6△ 或内隐斜 &gt;2△</td><td>需结合症状（视疲劳、重影）</td></tr><tr><td>近距隐斜</td><td>约 3△ 外隐斜（±3△）</td><td>外隐斜 &gt;10△ 或内隐斜 &gt;4△</td><td>集合不足常见</td></tr><tr><td>AC/A（梯度法）</td><td>3 ~ 5 △/D</td><td>&lt;3 或 &gt;6</td><td>高 AC/A 常伴看近内隐斜</td></tr><tr><td>集合近点 NPC</td><td>破裂点 ≤5~6cm，恢复点 ≤7cm</td><td><strong>破裂点 &gt;10cm 提示集合不足</strong></td><td>结合近距外隐斜判断</td></tr><tr><td>调节幅度 AMP（推进法）</td><td>最小估计值 = 15 - 0.25×年龄</td><td><strong>实测低于最小值 2D 以上 → 调节不足</strong></td><td>Hofstetter 公式；单眼测</td></tr><tr><td>调节灵敏度 Flipper</td><td>单眼 ≥11 cpm；双眼 ≥8 cpm（±2.00D）</td><td>明显低于上述值</td><td>低于参考常伴阅读疲劳</td></tr><tr><td>NRA（负相对调节）</td><td>+1.75 ~ +2.50D</td><td>&lt;+1.50 或 &gt;+2.50</td><td>过低提示调节紧张 / 痉挛</td></tr><tr><td>PRA（正相对调节）</td><td>-1.50 ~ -3.50D</td><td>低于 -1.50</td><td>偏低提示调节不足</td></tr><tr><td>BCC / FCC</td><td>+0.25 ~ +0.75D</td><td>&lt;0 提示调节超前；&gt;+0.75 提示调节滞后</td><td>调节滞后与近视进展相关（宣教用，非因果）</td></tr><tr><td>融像性聚散（远 BI）</td><td>模糊 5~9△ / 破裂 15~23△ / 恢复 10~16△</td><td>明显低于上述范围</td><td>不同设备 / 方法差异大，以手册为准</td></tr><tr><td>融像性聚散（远 BO）</td><td>模糊 7~11△ / 破裂 15~25△ / 恢复 9~15△</td><td>明显低于上述范围</td><td>结合 Sheard / Percival 准则评估</td></tr><tr><td>立体视（Titmus 苍蝇 / 圆圈）</td><td>≤60 弧秒</td><td>60~100" 偏低；<strong>&gt;100" 或无法完成 → 排查斜视 / 弱视 / 抑制</strong></td><td>儿童务必检查</td></tr><tr><td>Worth 四点</td><td>看到 4 个点（双眼同时视）</td><td><strong>看到 2 或 3 个点 → 存在单眼抑制</strong></td><td>意义与斜视 / 弱视相关</td></tr><tr><td>眼位 / 遮盖试验</td><td>正位，无显斜</td><td><strong>任何显性斜视 → 转诊</strong></td><td>儿童斜视需尽早到爱眼城眼科评估</td></tr></tbody></table>
+<p class="note-plain"><strong>通俗讲法（双眼视）：</strong>“看东西不是一只眼的事，是两只眼睛像两台相机同时拍，再由大脑合成一张图。这两台相机要‘对得齐’‘调得动’‘合得起来’，哪一项弱了，人就容易头疼、串行、看久了酸胀。我们现在测的就是这三项能力。”</p>
+<h2 class="sec" id="section-6">五、眼前节、晶状体与干眼相关</h2>
+<table><thead><tr><th style="width:20%">项目</th><th style="width:24%">正常</th><th style="width:24%">关注 / 异常</th><th style="width:32%">备注</th></tr></thead><tbody><tr><td>泪膜破裂时间 BUT</td><td>≥10 秒</td><td>5~10 秒（干眼倾向）；<strong>&lt;5 秒（明显异常）</strong></td><td>最常见干眼筛查项</td></tr><tr><td>泪液分泌试验 Schirmer I</td><td>≥10mm/5min</td><td>5~10mm（干眼倾向）；<strong>≤5mm（明显异常）</strong></td><td>无表麻条件下测</td></tr><tr><td>角膜荧光素染色</td><td>无着染或偶见 1-2 点</td><td>&gt;5 个点状着染或融合成片</td><td>结合 BUT 综合判断</td></tr><tr><td>睑板腺形态</td><td>腺体结构清晰，缺失 &lt;1/3</td><td>缺失 1/3~1/2；<strong>&gt;1/2 明显异常</strong></td><td>与干眼、睑缘炎相关</td></tr><tr><td>晶状体透明度</td><td>透明</td><td>皮质 / 核轻度混浊</td><td><strong>明显混浊影响视力 → 转诊到爱眼城眼科评估</strong></td></tr><tr><td>眼前节（结膜 / 角膜 / 房水）</td><td>无充血、透明、房水清</td><td>充血、分泌物、角膜白斑、房水闪辉</td><td><strong>急性红痛 + 视力下降 → 立即就医</strong></td></tr><tr><td>瞳孔与 RAPD</td><td>等大等圆，直径 2.5-4mm，对光反应灵敏</td><td>不等大、反应迟钝、<strong>RAPD 阳性</strong></td><td>RAPD 阳性提示视神经或视网膜病变，<strong>必须转诊</strong></td></tr><tr><td>玻璃体</td><td>透明或轻度飞蚊（长期稳定）</td><td><strong>突然增多、伴闪光感、幕样遮挡 → 急诊</strong></td><td>飞蚊突然变化是视网膜脱离预警</td></tr><tr><td>色觉</td><td>正常</td><td>色弱（多为先天）</td><td>后天色觉改变需就医</td></tr><tr><td>前房深度（浅前房）</td><td>正常，房角开放</td><td><strong>浅前房 + 眼胀痛、虹视 → 立即就医</strong></td><td><strong>浅前房者禁自行散瞳，先转诊评估</strong></td></tr></tbody></table>
+<h2 class="sec" id="section-7">六、查表常见错误与纠正</h2>
+<table><thead><tr><th style="width:30%">常见错误</th><th style="width:31%">为什么错</th><th style="width:39%">正确做法</th></tr></thead><tbody><tr><td>把电脑验光单直接当度数判异常</td><td>电脑验光偏倚大，尤其儿童</td><td>以主觉验光结果为准；儿童以散瞳结果为准</td></tr><tr><td>只看一次眼轴绝对值就下结论</td><td>个体差异大，绝对值意义有限</td><td>看<strong>年化增长速率</strong>与 AL/CR 趋势</td></tr><tr><td>戴隐形眼镜当天测曲率 / 地形图</td><td>角膜水肿 / 塑形导致假异常</td><td>软镜停戴 ≥1 周、OK 镜停戴 ≥3 周后复测</td></tr><tr><td>用成人参考区间套儿童</td><td>儿童处于发育中，参考值随年龄变动</td><td>儿童用儿童年龄对应表</td></tr><tr><td>把“关注”档说成“没问题”安抚顾客</td><td>既失真又有风险</td><td>如实告知档位 + 复查计划</td></tr><tr><td>凭单一指标判“有病”</td><td>筛查 ≠ 诊断</td><td>组合判断 + 复查 + 转诊流程</td></tr><tr><td>不同设备数值直接对比历史</td><td>设备间存在系统差异</td><td>同一台设备、同一条件下的前后对比才有意义</td></tr></tbody></table>
+<div data-component="callout" data-variant="info"><div class="callout-content"><p><strong>本模块使用口令（员工背下来）：</strong>“先看全、再打档；<strong>拿不准就往重里判</strong>；<strong>两个相关项一起异常就转诊</strong>；<strong>儿童看增速，成人看病灶</strong>；任何超出门店能力的，一律落到爱眼城眼科的检查上。”</p></div></div>
+<h2 class="sec" id="section-8">七、异常值对照表怎么用（下篇）</h2>
+<table><thead><tr><th style="width:7%">序号</th><th style="width:43%">异常条目</th><th style="width:7%">序号</th><th style="width:43%">异常条目</th></tr></thead><tbody><tr><td>1</td><td>矫正视力不达标</td><td>2</td><td>近视进展偏快</td></tr><tr><td>3</td><td>远视储备不足</td><td>4</td><td>散光偏大 / 快增</td></tr><tr><td>5</td><td>屈光参差</td><td>6</td><td>眼轴增长偏快</td></tr><tr><td>7</td><td>角膜曲率异常</td><td>8</td><td>调节异常</td></tr><tr><td>9</td><td>集合不足</td><td>10</td><td>内隐斜 / 高 AC/A</td></tr><tr><td>11</td><td>干眼指标异常</td><td>12</td><td>晶状体混浊</td></tr><tr><td>13</td><td>看近困难 / 老视</td><td>14</td><td>双眼视功能异常</td></tr><tr><td>15</td><td>儿童斜视 / 弱视风险</td><td>16</td><td>急性症状</td></tr></tbody></table>
+<p class="note-plain"><strong>使用三步法：</strong>① 在上篇查到“关注 / 异常”项 → ② 在本模块找到对应条目，重点读“可能原因”和“潜在影响”（就是你要对顾客讲的内容）→ ③ 照“应对对策”落方案、写建议书。<strong>原因只讲最贴切的一两条，切忌照表全念。</strong></p>
+<h2 class="sec" id="section-9">八、屈光与视力类</h2>
+<p>以下 5 条覆盖屈光与视力类高频异常，逐条给出可能原因、潜在影响、应对对策与话术要点，照表取用即可。</p>
+<h3>01. 矫正视力不达标（足矫后仍 ＜0.8，或低于同龄下限） <span class="flag-y">（需转诊）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>未足矫或验光不准；弱视（儿童）；屈光介质混浊（白内障等）；视神经病变；不规则散光（圆锥角膜等）</td></tr><tr><td>潜在影响</td><td>看东西长期模糊，儿童可造成弱视发育停滞；成年人影响驾驶、职业与日常安全；可能掩盖眼病</td></tr><tr><td>应对对策</td><td>① 核对验光是否足矫（重测）；<br>② 儿童必须做散瞳验光并评估注视性质；<br>③ 排除弱视（儿童）、屈光介质混浊（成人）等常见原因后仍不达标者，<strong>转诊到爱眼城眼科</strong>做进一步检查（OCT、VEP、眼部 B 超等）；<br>④ 记录“转诊提示”并 72 小时回访</td></tr><tr><td>话术要点</td><td>“戴上最合适的眼镜还是达不到清晰水平，说明不只是度数问题，需要到爱眼城眼科查清楚。”</td></tr></tbody></table>
+<h3>02. 近视度数增长偏快（＞1.00D/年 或半年＞0.50D） <span class="flag-c">（视情况）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>近距离用眼时间过长、户外时间严重不足；读写距离过近；矫正方式不当（欠矫 / 过矫）；生长发育高峰；家族高度近视史；配戴不合适或已磨损的眼镜</td></tr><tr><td>潜在影响</td><td>中短期：频繁换镜、镜片加厚、生活不便；长期：向高度近视发展，成年后眼部并发症风险上升（视网膜脱离、黄斑病变、青光眼风险增加）</td></tr><tr><td>应对对策</td><td>① 核实配戴记录与戴镜时长（镜架歪了、镜片花了）；<br>② 评估并调整矫正 / 控制方案（离焦镜、OK 镜等，须由医师评估适应证与禁忌证）；<br>③ 行为干预：每天户外 ≥2 小时、近距离用眼 30-40 分钟休息、“一尺一拳一寸”；<br>④ <strong>3 个月复查（查眼轴）</strong>，不等“看不清了再来”；<br>⑤ 增速显著偏快者，到爱眼城眼科评估是否需要医疗干预</td></tr><tr><td>话术要点</td><td>“问题不在度数本身，在速度。我们要做的第一步是把这条上升的线压平。”</td></tr></tbody></table>
+<h3>03. 远视储备低于同龄下限 / 提前消耗 <span class="flag-n">（门店可管）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>户外时间不足；近距离用眼过早过多；学业压力大睡眠不足；父母高度近视的遗传背景</td></tr><tr><td>潜在影响</td><td>未来 1-2 年内发生近视的概率明显升高；一旦进入近视，进展往往更快</td></tr><tr><td>应对对策</td><td>① 立即启动预防：每天户外 ≥2 小时（最关键的一条）；② 控制单次近距离用眼时长；<br>③ 建立<strong>每 3-6 个月</strong>的屈光发育档案（查眼轴 + 曲率）；<br>④ 不必戴镜，但也不宜“观察一段时间再说”；<br>⑤ 告知家长：储备是“用一点少一点”，早介入最省力</td></tr><tr><td>话术要点</td><td>“还没有近视，但账户里的‘余额’不多了。现在不用配镜，但要把户外时间加回来。”</td></tr></tbody></table>
+<h3>04. 散光度数偏大（＞2.00D）或快速增加（＞1.00D/年） <span class="flag-c">（需排查）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>先天角膜形态；眼睑压迫 / 揉眼习惯；圆锥角膜早期；外伤或角膜病变后；晶状体散光</td></tr><tr><td>潜在影响</td><td>未矫正时视物重影、眯眼、头痛、夜间视力差；儿童大散光伴屈光参差可致弱视</td></tr><tr><td>应对对策</td><td>① 必须给足散光矫正（尤其儿童）；② 做<strong>角膜地形图</strong>检查确认形态；<br>③ 若角膜曲率＞47D、角膜散光＞2.00D 或不规则、地形图偏心 / 下方陡峭、或散光度数持续快速增加 → <strong>转诊排查圆锥角膜</strong>；<br>④ 宣教：避免用力揉眼，规范治疗过敏性眼病</td></tr><tr><td>话术要点</td><td>“这个散光不算低，而且比上次有变化。我们先做一个角膜地形图，把形状看清楚。”</td></tr></tbody></table>
+<h3>05. 屈光参差（球镜差≥1.50D 或柱镜差≥1.00D；儿童≥1.00D 即关注） <span class="flag-c">（视情况）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>双眼发育不同步；长时间侧躺 / 歪头看东西；单眼视力长期被忽略；外伤或手术史；单眼眼病</td></tr><tr><td>潜在影响</td><td>双眼成像大小不等导致融合困难；易出现视疲劳、立体感差；儿童可发展为<strong>弱视</strong>；配镜适应困难（头晕、地面起伏感）</td></tr><tr><td>应对对策</td><td>① 全矫并坚持常戴（儿童尤其不能“省着戴”）；② 儿童必须检查眼位、立体视、Worth 四点；<br>③ 已存在视力差者，评估遮盖 / 弱视训练，<strong>转诊到爱眼城眼科</strong>由医生制定方案；<br>④ 框架不耐受时可评估接触镜（需医师评估）；⑤ <strong>每 3-6 个月复查</strong>，儿童缩短周期</td></tr><tr><td>话术要点</td><td>“两只眼度数差得多，大脑合成一张图就比较费劲。这个不能拖，越早处理越容易。”</td></tr></tbody></table>
+<h2 class="sec" id="section-10">九、眼轴与角膜类</h2>
+<p>以下 2 条覆盖眼轴与角膜类异常，判读以“趋势 + 形态”为准，必要时转诊排查圆锥角膜。</p>
+<h3>06. 眼轴年增长偏快（＞0.30mm/年；已近视儿童＞0.40mm 为控制不佳） <span class="flag-c">（视情况）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>近距离用眼负荷过重；户外活动不足；现有控制措施效果不佳或依从性差（戴镜时间不足、OK 镜停戴）；处于生长高峰期</td></tr><tr><td>潜在影响</td><td>眼轴每增长约 1mm，近视度数大致增加 250-300 度（个体差异存在）；眼轴越长，成年后眼部并发症风险越高</td></tr><tr><td>应对对策</td><td>① 确认戴镜时长与依从性（这是最常见原因）；② 重新评估并调整控制方案（换 / 叠加措施须专业评估）；<br>③ 强化行为干预并检查落实情况；④ <strong>缩短复查周期至 3 个月</strong>，用眼轴数据说话；<br>⑤ 控制不佳者建议到爱眼城眼科评估其他干预方式</td></tr><tr><td>话术要点</td><td>“这半年眼轴长了 0.25，换算成度数大概六七十度。我们要看看是戴的时间不够，还是方法要换。”</td></tr></tbody></table>
+<h3>07. 角膜曲率异常（K＞47D 或＜38D、双眼差＞1.00D、角膜散光＞2.00D 或不规则） <span class="flag-y">（需转诊）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>圆锥角膜早期或进展期；角膜扩张性病变；先天扁平角膜；长期戴接触镜导致的角膜变形（需停戴复查）；角膜炎症后的瘢痕</td></tr><tr><td>潜在影响</td><td>不规则散光导致矫正视力难以提升；圆锥角膜进展可严重影响视力</td></tr><tr><td>应对对策</td><td>① 先排除测量因素：软性隐形眼镜停戴 ≥1 周、OK 镜停戴 ≥3 周后复查；<br>② 做<strong>角膜地形图 + 角膜厚度</strong>确认；<br>③ 符合上述数值或地形图可疑者，<strong>立即转诊到爱眼城眼科进行角膜专科检查</strong>；<br>④ 不推销任何塑形镜或接触镜；⑤ 宣教：避免揉眼</td></tr><tr><td>话术要点</td><td>“角膜的形状和平常不太一样，需要在爱眼城眼科做进一步的专科检查确认，这不是配眼镜能解决的事。”</td></tr></tbody></table>
+<h2 class="sec" id="section-11">十、双眼视功能与干眼类</h2>
+<p>以下 4 条覆盖双眼视功能与干眼类异常，多数可通过门店视觉训练与行为指导管理。</p>
+<h3>08. 调节相关异常（调节不足：AMP 低于年龄最小值 2D 以上；调节灵活度下降；调节滞后 BCC＞+0.75D） <span class="flag-n">（门店可管）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>长时间近距离用眼导致睫状肌疲劳；年龄相关变化；全身疲劳、睡眠不足；某些药物影响</td></tr><tr><td>潜在影响</td><td>阅读不能持久、看远看近切换慢、看书串行跳字、眼酸胀头痛、作业效率下降；儿童可能表现为不想看书、注意力不集中</td></tr><tr><td>应对对策</td><td>① 首先排除屈光不正是否已经足矫并且常戴；② 调整近距离工作方式（定时休息、距离、照明）；<br>③ 评估是否需要近用附加 / 渐进 / 抗疲劳镜片；④ 符合条件者安排<strong>视觉训练</strong>（须有方案与复查评估）；⑤ 训练 6-8 周后复测 AMP / Flipper 看变化</td></tr><tr><td>话术要点</td><td>“眼睛里负责调焦的小肌肉没力气了，所以看近一会儿就累。这个可以通过训练练回来。”</td></tr></tbody></table>
+<h3>09. 集合不足（NPC 破裂点＞10cm、近距外隐斜＞10△、BO 储备偏低） <span class="flag-n">（门店可管）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>双眼向内协调能力不足；长时间近距离阅读；习惯性差集合；部分与未矫正的屈光不正有关</td></tr><tr><td>潜在影响</td><td>阅读 / 书写时字重叠、串行、跳字；眼胀头痛、困倦；儿童表现为阅读慢、抄写差、抗拒阅读</td></tr><tr><td>应对对策</td><td>① 先足矫屈光不正；② 评估远近隐斜与融像储备；<br>③ <strong>视觉训练</strong>（集合训练为主）是主流非手术手段，须按方案执行 8-12 周并复查；<br>④ 必要时评估棱镜处方（需专业判断）；⑤ 配合阅读卫生（距离、休息、照明）</td></tr><tr><td>话术要点</td><td>“两只眼睛往中间‘靠拢’的能力弱了，看书时大脑得一直硬撑，所以会累。这个训练效果好。”</td></tr></tbody></table>
+<h3>10. 内隐斜 / 高 AC/A（＞6△/D，看近明显内隐斜） <span class="flag-c">（视情况）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>调节与集合联动过强；未矫正的中高度远视（儿童常见）；屈光不正长期欠矫</td></tr><tr><td>潜在影响</td><td>近距离工作易疲劳、重影；儿童可能出现间歇性内斜视，长期可影响双眼视发育</td></tr><tr><td>应对对策</td><td>① 必须<strong>足矫远视</strong>（儿童尤其重要，常需散瞳验光确认）；② 评估近附加需求；<br>③ 儿童伴显性斜视或斜视频繁者，<strong>转诊到爱眼城眼科</strong>评估是否需要手术 / 遮盖等；<br>④ 定期复查眼位</td></tr><tr><td>话术要点</td><td>“孩子看近的时候眼睛会往里跑，往往和远视没配够有关。第一步是把度数给足。”</td></tr></tbody></table>
+<h3>11. 干眼指标异常（BUT＜10 秒、Schirmer＜10mm/5min、睑板腺缺失＞1/3） <span class="flag-c">（视情况）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>长时间盯屏幕导致眨眼减少；空调 / 干燥环境；睑板腺功能障碍；长时间戴隐形眼镜；年龄（尤其绝经期女性）；某些药物（抗过敏、抗抑郁、降压药）</td></tr><tr><td>潜在影响</td><td>眼干、异物感、烧灼、视物波动（眨眼后变清晰）、畏光、戴隐形眼镜不耐受；严重时影响角膜健康</td></tr><tr><td>应对对策</td><td>① 行为调整：20-20-20、主动眨眼、屏幕略低于视线、加湿、避免直吹空调；<br>② 合理使用湿房镜 / 防护镜、热敷；③ 人工泪液类<strong>需遵从药师 / 医师建议，门店不做药品推荐</strong>；<br>④ 睑板腺功能障碍明显者转诊到爱眼城眼科；⑤ 隐形眼镜配戴者评估是否更换镜片类型或停戴</td></tr><tr><td>话术要点</td><td>“眼睛表面那层‘保湿膜’不稳定，眨一次眼才清楚一下——这是典型的干眼信号。”</td></tr></tbody></table>
+<h2 class="sec" id="section-12">十一、晶状体、老视与特殊类</h2>
+<p>以下 5 条覆盖晶状体、老视与特殊类情况，其中急性症状一律按急诊处理。</p>
+<h3>12. 晶状体混浊（裂隙灯下可见皮质 / 核 / 后囊混浊） <span class="flag-y">（需转诊）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>年龄相关（最常见）；紫外线长期暴露；糖尿病；外伤；长期使用某些药物（如激素）；吸烟</td></tr><tr><td>潜在影响</td><td>渐进性无痛性视力下降、眩光、色觉变暗、夜间视力差；成熟期可引发并发症</td></tr><tr><td>应对对策</td><td>① 明确告知：门店<strong>不能判断是否为白内障、更不能判断程度</strong>，需由医生检查；<br>② 评估当前矫正视力对生活的影响；③ <strong>转诊到爱眼城眼科</strong>明确是否需要手术；<br>④ 说明配镜只是暂时光学改善、不夸大；⑤ 建议每年复查；宣教 UV400 太阳镜、戒烟、控糖</td></tr><tr><td>话术要点</td><td>“眼里的‘镜头’变浑浊了，这个需要到爱眼城眼科确认是不是到了要处理的程度。配镜能暂时提亮，但解决不了根本。”</td></tr></tbody></table>
+<h3>13. 看近困难 / 老视（45 岁后近视力下降、ADD 需 +1.00D 以上） <span class="flag-n">（门店可管）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>年龄增长导致晶状体弹性下降、调节力衰退（生理现象，不是病）</td></tr><tr><td>潜在影响</td><td>看书报、手机、缝纫等近距离活动困难；强撑看近易疲劳，可能加重干眼与视疲劳</td></tr><tr><td>应对对策</td><td>① 明确这是<strong>正常生理现象</strong>，消除焦虑；② 准确测定 ADD（必须主觉验光，不可套年龄公式）；<br>③ 按用眼场景选择：单光近用镜 / 双光 / 渐进多焦点（结合职业、驾车、中距离需求）；<br>④ 渐进适应期说明（1-2 周，下楼先看脚，开车需适应）；⑤ 每年复查 ADD 变化</td></tr><tr><td>话术要点</td><td>“这不是眼睛坏了，是年龄到了每个人都有的变化，就像头发变白一样。解决办法很多，我们挑最适合您生活方式的。”</td></tr></tbody></table>
+<h3>14. 双眼视功能异常（立体视＞100"、Worth 四点见 2/3 点、明显斜位） <span class="flag-y">（需转诊）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>未矫正的屈光参差；斜视；单眼抑制；弱视；黄斑或视神经病变；双眼融像功能发育异常</td></tr><tr><td>潜在影响</td><td>立体感差：运动中接球困难、上下楼梯判断不准、精细操作（某些职业）受影响；儿童影响学习与运动信心</td></tr><tr><td>应对对策</td><td>① 先排除屈光因素，足矫后复测；② <strong>儿童一律转诊到爱眼城眼科</strong>（排查弱视、斜视，弱视有年龄窗口期）；③ 成人新发生的立体视下降需排查眼病；<br>④ 稳定者在医生指导下评估视觉训练</td></tr><tr><td>话术要点</td><td>“两只眼没有一起好好工作。先到爱眼城眼科排除弱视和斜视，排除之后再看要不要做视觉训练。”</td></tr></tbody></table>
+<h3>15. 儿童疑似斜视 / 弱视风险（眼位偏斜、视力差 ≥2 行、注视不稳） <span class="flag-y">（需转诊）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>未矫正的屈光不正（尤其远视、屈光参差）；斜视导致单眼抑制；先天性白内障等屈光介质混浊；家族史</td></tr><tr><td>潜在影响</td><td>错过视觉发育关键期（一般 8 岁前仍有较好可塑性，年龄越小越强）可造成终身视力损害；影响学习与运动</td></tr><tr><td>应对对策</td><td>① <strong>立即转诊到爱眼城眼科（小儿眼科）</strong>，说明“早发现早处理，窗口期有限”；<br>② 家长须严格、持续地执行遮盖 / 训练医嘱（随访重点）；<br>③ 门店负责：配镜精度、镜架佩戴舒适、定期复查矫正视力；④ 建立随访提醒（通常遵医嘱 1-3 个月一次）</td></tr><tr><td>话术要点</td><td>“这个不能等，孩子眼睛发育有窗口期。我们今天就把资料整理好，建议您尽快带孩子去看看。”</td></tr></tbody></table>
+<h3>16. 急性症状（突发红痛 / 视力骤降 / 闪光感 / 飞蚊爆发式增加 / 视野幕样遮挡 / 外伤） <span class="flag-y">（急诊）</span></h3><table><thead><tr><th style="width:18%">分析维度</th><th style="width:82%">内容</th></tr></thead><tbody><tr><td>可能原因</td><td>可能为急性闭角型青光眼、视网膜脱离、视神经炎、葡萄膜炎、角膜损伤、眼内感染等 —— <strong>均超出门店能力范围</strong></td></tr><tr><td>潜在影响</td><td>延误处理可造成永久性视力丧失</td></tr><tr><td>应对对策</td><td>① <strong>立即停止验光配镜流程</strong>；② 不滴任何药、不揉眼、不热敷；<br>③ 协助联系家属 / 车辆，立即前往爱眼城眼科；如为急症或非营业时间，就近前往有眼科急诊的医院（提前整理好本店可用的就医指引）；<br>④ 记录顾客信息与当日情况；⑤ 24 小时内回访确认就医结果</td></tr><tr><td>话术要点</td><td>“您这个情况我现在不能再往下查了，必须马上到爱眼城眼科，越早越好。我帮您联系家人 / 车。”</td></tr></tbody></table>
+<h2 class="sec" id="section-13">十二、异常值对照表使用纪律</h2>
+<ul><li><strong>先核对，再下结论。</strong>单次异常先安排复测（如戴隐形者停戴后重测），避免把测量误差讲成问题；两个及以上相关指标同时异常时，按“转诊提示”处理，不单独解释某一项。</li><li><strong>凡“需转诊”条目，一律同一个动作：停止推荐。</strong>此刻不再谈任何镜片 / 训练 / 护理产品，只谈“去哪看、为什么现在看、资料怎么带”。</li><li><strong>不解释病因，只讲常识。</strong>“为什么会这样”用通俗的健康常识表达；涉及疾病机制的一律交给医生。</li><li><strong>每次都要给时间节点。</strong>对策栏若含复查要求，必须在《方案建议书》和系统中写明具体日期。</li></ul>
+<p class="note-plain"><strong>补充强调：</strong>表中“可能原因”“潜在影响”均为一般性宣教，<strong>不等于该顾客的实际病因与预后</strong>。对顾客统一使用“这类情况常见的做法是……”“一般建议……”句式。</p>
+<h2 class="sec" id="section-14">附录 · 口径来源与免责说明</h2>
+<p class="appendix-note">本表参考数值来源于视光学教材与行业通行筛查标准的整理，仅供门店健康宣教与转诊提示使用，不构成任何医疗诊断依据。数值如与国家最新诊疗指南不一致，以指南和接诊医疗机构意见为准。</p>
+<p class="appendix-note">编制：闫胜君整理 ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 口径基准日 2026-09-21。</p>
+</section>
+</body>
+</html>
