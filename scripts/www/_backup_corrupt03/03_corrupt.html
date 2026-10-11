@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="4R9hRfpfp6om45omznzD6G"><head data-page-node-id="cgIFZpqUuuvB3a2ItrDukG">
+<meta charset="UTF-8" data-page-node-id="3N1MglUPa5UKj6G9UKJE78">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="UN3N6eeXyDlSEEBxm32dge">
+<title data-page-node-id="o4CO6rmRjqtT9ak1y1IHW1">模块03 · 指标参考区间与异常值对照 | 永州爱眼城 检查报告解读标准化方案</title>
+<style data-page-node-id="3YdFXBnHoFnQTqc24vwzIY">
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.7;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:calc(18px * var(--fs));font-weight:700}
+.topbar .meta{font-size:calc(13px * var(--fs));opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:calc(13.5px * var(--fs));color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:calc(22px * var(--fs));color:#1677ff;margin:0 auto 6px;line-height:1.45;text-align:center}
+.lead{text-indent:2em;color:#5b6b7d;font-size:calc(15.5px * var(--fs));margin-bottom:22px;max-width:1050px}
+h2.sec{font-size:calc(20px * var(--fs));color:#1677ff;margin:32px 0 12px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+h3.sub{font-size:calc(17px * var(--fs));color:#1677ff;margin:16px 0 8px;background:#e8f1ff;display:inline-block;padding:4px 12px;border-radius:6px}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:18px 22px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:calc(14px * var(--fs));margin-bottom:10px}
+th,td{border:1px solid #dae3f5;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:#fafcff}
+ul,ol{margin:6px 0 10px 20px;font-size:calc(15px * var(--fs))}
+li{margin-bottom:5px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#6b4a25;margin:14px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#1f5c40;margin:14px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-radius:8px;padding:14px 16px;font-size:calc(14.5px * var(--fs));color:#7d2b2b;margin:14px 0}
+.lv1{color:#2e9e6b;font-weight:600}
+.lv2{color:#e07b39;font-weight:600}
+.lv3{color:#d94b4b;font-weight:600}
+.tag{display:inline-block;font-size:calc(12px * var(--fs));padding:1px 7px;border-radius:4px;color:#fff;background:#7a8799}
+.tag.r{background:#d94b4b}
+.tag.o{background:#e07b39}
+.knife{background:#0b3d91;color:#c9dfff;border-radius:10px;padding:14px 18px;font-size:calc(14px * var(--fs));margin:16px 0}
+.knife b{color:#ffd479}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:calc(13.5px * var(--fs));line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:calc(14px * var(--fs));cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media print{.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:11.5px}table th{white-space:normal}}
+</style>
+<!-- LAYOUT-V2 -->
+<style data-page-node-id="LKGkYBcGPoA2ona59vi7WN">
+/* ==========================================================================
+   平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
+   只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
+   ========================================================================== */
+:root{
+  --fs:1;            /* 字号/组件缩放系数 */
+  --wrap:1180px;     /* 正文容器最大宽度 */
+  --wpx:22px;        /* 容器左右留白 */
+  --wpy:26px;        /* 容器上留白 */
+  --cy:9px; --cx:12px;  /* 表格单元格内边距 */
+  --subh:44px;       /* 吸顶导航高度 */
+}
+/* 平板（横屏 1280 / 竖屏 800 均命中）：整站同比缩放，--fs=1.02（较上一版 -11.3%） */
+@media screen and (min-width:641px) and (max-width:1400px){
+  :root{--fs:1.02;--wrap:1160px;--wpx:24px;--wpy:20px;--cy:11px;--cx:13px;--subh:44px}
+}
+@media screen and (max-width:640px){
+  :root{--fs:1.04;--wrap:100%;--wpx:14px;--wpy:16px;--cy:9px;--cx:10px;--subh:44px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","HarmonyOS Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;letter-spacing:.012em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:rgba(22,119,255,.12);
+}
+::selection{background:#c9dfff;color:#0b3d91}
+
+/* ---------- 容器与页头 ---------- */
+body .wrap{max-width:var(--wrap);padding:var(--wpy) var(--wpx) 72px}
+body .hero{padding:26px var(--wpx) 24px}
+body .topbar{padding:14px var(--wpx);gap:12px}
+body footer{padding:20px var(--wpx);line-height:1.9}
+
+/* ---------- 吸顶导航：翻到任何位置都能一眼跳模块 ---------- */
+body .subnav{
+  position:sticky;top:0;z-index:80;
+  min-height:var(--subh);
+  padding:calc((var(--subh) - 1.5em - 1px) / 2) var(--wpx);
+  line-height:1.5;
+  white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+  background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 2px 12px rgba(22,119,255,.07);
+  scrollbar-width:none;
+}
+body .subnav::-webkit-scrollbar{height:0}
+body .subnav a{white-space:nowrap;padding:0 1px;text-decoration:none}
+
+/* ---------- 标题节奏与锚点定位 ---------- */
+body h1.t{line-height:1.45}
+body h2.sec{margin:38px 0 16px;line-height:1.4}
+body h2.sec,body h3.sub,body h3.sub2,body .card,body .step,body .form,body .item{
+  scroll-margin-top:calc(var(--subh) + 16px);
+}
+body .lead{margin-bottom:24px;line-height:1.85}
+
+/* ---------- 卡片 / 提示块 ---------- */
+body .card{padding:20px 24px;margin-bottom:18px;border-radius:14px}
+body .note,body .good,body .warn{padding:15px 18px;margin:16px 0;border-radius:10px;line-height:1.8}
+body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:16px 18px}
+body .case{padding:16px 20px;margin-bottom:16px}
+body .case .txt{padding:12px 15px}
+body .quote{padding:12px 16px;margin:10px 0}
+body .scard{padding:14px 16px}
+body .fnode{padding:12px 16px}
+body .step .hd,body .form .fhead{padding:13px 22px}
+body .form .fbody{padding:18px 22px}
+body .peopledet .hd{padding:16px 24px}
+body .daybar{padding:12px 18px;margin:26px 0 14px}
+body .sec-title{padding:9px 12px}
+body .blk{padding:12px 14px}
+body .line2{gap:14px;margin-bottom:10px}
+body .check{margin-right:16px}
+
+/* ---------- 表格：更容易一行一行读下去 ---------- */
+body table{
+  border-collapse:separate;border-spacing:0;border-radius:12px;
+  line-height:1.62;margin:12px 0 16px;
+}
+body th,body td{
+  border:0;
+  border-right:1px solid #dae3f5;border-bottom:1px solid #dae3f5;
+  padding:var(--cy) var(--cx);
+  overflow-wrap:break-word;
+}
+body th{
+  background:linear-gradient(180deg,#f1f7ff,#e4eeff);
+  color:#0b3d91;font-weight:700;letter-spacing:.02em;
+text-align:center;}
+body thead th{
+  border-top:1px solid #dae3f5;
+  position:sticky;top:calc(var(--subh) + 1px);z-index:6;
+}
+body tr>th:first-child,body tr>td:first-child{border-left:1px solid #dae3f5}
+body table>thead>tr:first-child>th:first-child{border-top-left-radius:12px}
+body table>thead>tr:first-child>th:last-child{border-top-right-radius:12px}
+body table:not(:has(thead))>tbody>tr:first-child>td:first-child{border-top-left-radius:12px;border-top:1px solid #dae3f5}
+body table:not(:has(thead))>tbody>tr:first-child>td:last-child{border-top-right-radius:12px;border-top:1px solid #dae3f5}
+body table>tbody>tr:last-child>td:first-child{border-bottom-left-radius:12px}
+body table>tbody>tr:last-child>td:last-child{border-bottom-right-radius:12px}
+body tbody tr:nth-child(even)>td{background:#fafcff}
+body tbody tr:hover>td{background:#eef5ff}
+body tbody td{transition:background .15s}
+body table.ct th,body table.ct td{text-align:center;vertical-align:middle}
+
+/* ---------- 触控友好：按钮、胶囊、复选框 ---------- */
+body .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 20px;border-radius:10px;
+}
+body .btnwrap{margin:30px 0 10px}
+body .chips{gap:10px}
+body .chips a,body .idxbar a{
+  display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:10px;
+}
+body .idxbar{gap:10px;margin-bottom:20px}
+body .check input,body input[type=checkbox]{width:18px;height:18px;accent-color:#1677ff}
+body .fill{min-height:1.35em}
+body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:3px 9px;border-radius:6px}
+body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:3px 10px}
+body .farrow,body .story .arrow{padding:0 2px}
+body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fill:focus-visible{
+  outline:2px solid #1677ff;outline-offset:2px;border-radius:6px;
+}
+
+/* ---------- 小屏栅格回流（仅屏幕，不影响打印分栏） ---------- */
+@media screen and (max-width:1000px){
+  body .steps{grid-template-columns:1fr 1fr !important}
+}
+@media screen and (max-width:900px){
+  body .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important}
+  body .scards,body .pkg4{grid-template-columns:1fr !important}
+  body .scards{gap:10px}
+}
+@media screen and (max-width:640px){
+  body .grid,body .steps,body .kpi,body .kpi4,body .lv,body .chk,
+  body .std,body .three{grid-template-columns:1fr !important}
+  body .subnav{padding-left:12px;padding-right:12px}
+}
+
+/* ---------- 打印兜底：恢复紧凑版式，A4 友好 ---------- */
+/* ---------- 平板档专项：行高 / 间距 / 图标同步收缩（仅 641–1400px） ---------- */
+@media screen and (min-width:641px) and (max-width:1400px){
+  body{line-height:1.62;letter-spacing:.008em}
+  body .wrap{padding:20px var(--wpx) 64px}
+  body .hero{padding:22px var(--wpx) 20px}
+  body .topbar{padding:12px var(--wpx);gap:10px}
+  body footer{padding:17px var(--wpx);line-height:1.72}
+  body .subnav{line-height:1.45}
+  body h2.sec{margin:32px 0 14px;line-height:1.38}
+  body .lead{margin-bottom:20px;line-height:1.68}
+  body .card{padding:16px 20px;margin-bottom:15px;border-radius:12px}
+  body .note,body .good,body .warn{padding:12px 15px;margin:13px 0;border-radius:9px;line-height:1.62}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:13px 15px}
+  body .case{padding:13px 16px;margin-bottom:13px}
+  body .case .txt{padding:10px 13px}
+  body .quote{padding:10px 13px;margin:8px 0}
+  body .scard{padding:12px 14px}
+  body .fnode{padding:10px 14px}
+  body .step .hd,body .form .fhead{padding:11px 18px}
+  body .form .fbody{padding:15px 18px}
+  body .peopledet .hd{padding:13px 20px}
+  body .daybar{padding:10px 15px;margin:22px 0 12px}
+  body .sec-title{padding:7px 10px}
+  body .blk{padding:10px 12px}
+  body .line2{gap:12px;margin-bottom:8px}
+  body .check{margin-right:13px}
+  body table{line-height:1.5;margin:10px 0 14px;border-radius:10px}
+  body .btn{min-height:42px;padding:8px 17px;border-radius:9px}
+  body .btnwrap{margin:26px 0 8px}
+  body .chips{gap:9px}
+  body .chips a,body .idxbar a{min-height:40px;padding:7px 12px;border-radius:9px}
+  body .idxbar{gap:9px;margin-bottom:17px}
+  body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:2px 8px;border-radius:5px}
+  body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:2px 8px}
+}
+@media print{
+  :root{--fs:1;--wpx:0;--wpy:0}
+  body{line-height:1.55;letter-spacing:0;background:#fff}
+  body .wrap{max-width:none;padding:0 0 8px}
+  body .topbar,body .btnwrap{box-shadow:none}
+  body .subnav{position:static;box-shadow:none;background:#fff;overflow:visible;white-space:normal;
+    min-height:0;padding:0 0 6px}
+  body .card{padding:10px 12px;margin-bottom:10px;border-radius:0;box-shadow:none}
+  body .note,body .good,body .warn{padding:8px 10px;margin:8px 0;border-radius:0}
+  body .step .hd,body .form .fhead,body .form .fbody,body .peopledet .hd,body .daybar{padding:7px 10px}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item,body .case,body .scard{
+    padding:8px 10px;border-radius:0;box-shadow:none}
+  body table{border-collapse:collapse;border-radius:0;margin:6px 0 10px}
+  body thead th{position:static}
+  body th,body td{border:1px solid #cbd5e1;padding:4px 6px}
+  body th{background:#e8f1ff !important;color:#0b3d91 !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body tbody tr:nth-child(even)>td{background:#fafcff !important}
+  body tbody tr:hover>td{background:transparent !important}
+}
+</style>
+<!-- /LAYOUT-V2 -->
+<!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
+<style data-page-node-id="XQKeg3FSrjXIJWRDxLB7VH">
+/* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
+   text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
+   恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
+body .wrap p,
+body .hero p{text-indent:2em;overflow-wrap:break-word}
+
+/* 相邻正文段落间距：用 margin 分隔，不插空行伪造缩进 */
+body .wrap p + p{margin-top:.5em}
+
+/* ---- 例外：以下不属于"正文段落"，一律不缩进（选择器特异性高于上方规则） ---- */
+/* 结构元素：列表项内 / 表格单元格 / 图注 / 代码 / 引用块 / 页眉页脚导航 */
+body .wrap :is(li,td,th,caption,figcaption,dt,dd,pre,code,blockquote,figure) p,
+body .topbar p,body .subnav p,body footer p,body .btnwrap p,
+/* 组件化短行：四大板块标签、KPI 数值卡说明行、人群卡元信息行 */
+body .wrap .pkg4 p,body .wrap .kpi p,body .wrap .kpi4 p,body .wrap .hd p,
+/* 字段行（注入时自动识别并加 ni 类），以及手工豁免 */
+body .wrap p.ni,body .wrap .ni p,
+/* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
+body p:lang(en),body p.en{text-indent:0}
+</style>
+<style data-page-node-id="fGbezEPOydDsrLjArpAUkY">
+/* ==========================================================================
+   TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
+   仅调整容器与列宽，不动文字/字段/配色/字号
+   ========================================================================== */
+/* 表格外层容器：宽屏不裁剪（保留吸顶表头），窄屏启用横向滚动 */
+body .tsc{margin:12px 0 16px}
+body .tsc>table{margin:0}
+@media screen and (max-width:820px){
+  body .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  /* 多列表给出最小可读宽度，超出即横向滚动，绝不撑破页面 */
+  body .tsc.w4>table{min-width:calc(460px * var(--fs))}
+  body .tsc.w5>table{min-width:calc(560px * var(--fs))}
+  body .tsc.w6>table{min-width:calc(660px * var(--fs))}
+  body .tsc.w7>table,body .tsc.w8>table{min-width:calc(780px * var(--fs))}
+  body .tsc.w9>table{min-width:calc(940px * var(--fs))}
+  /* 滚动容器内表头吸顶失效，显式降级，避免错位 */
+  body .tsc thead th{position:static}
+}
+/* 打印兜底：容器不裁剪，边距回落到原紧凑值 */
+@media print{
+  body .tsc{margin:6px 0 10px;overflow:visible}
+  body .tsc>table{min-width:0}
+}
+/* 单元格兜底：长文本优先换行，短字段不折行 */
+body th,body td{overflow-wrap:break-word;word-break:break-word}
+body .tsc table.now1 th:nth-child(1),body .tsc table.now1 td:nth-child(1),
+body .tsc table.now2 th:nth-child(2),body .tsc table.now2 td:nth-child(2),
+body .tsc table.now3 th:nth-child(3),body .tsc table.now3 td:nth-child(3),
+body .tsc table.now4 th:nth-child(4),body .tsc table.now4 td:nth-child(4),
+body .tsc table.now5 th:nth-child(5),body .tsc table.now5 td:nth-child(5),
+body .tsc table.now6 th:nth-child(6),body .tsc table.now6 td:nth-child(6),
+body .tsc table.now7 th:nth-child(7),body .tsc table.now7 td:nth-child(7),
+body .tsc table.now8 th:nth-child(8),body .tsc table.now8 td:nth-child(8),
+body .tsc table.now9 th:nth-child(9),body .tsc table.now9 td:nth-child(9),
+body .tsc table.now10 th:nth-child(10),body .tsc table.now10 td:nth-child(10),
+body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(240px * var(--fs));
+}
+</style>
+<!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
+<style data-page-node-id="7XPS2hp551yFdOyCB2u4v8">
+/* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
+body table>thead>tr>th{position:static}
+body table.sticky-on>thead>tr>th{
+  position:sticky;top:calc(var(--subh,0px) + 1px);z-index:6;
+  box-shadow:0 6px 14px -9px rgba(11,61,145,.45);
+}
+@media screen and (max-width:820px){
+  body table.sticky-on>thead>tr>th{position:static;box-shadow:none}
+}
+@media print{
+  body table.sticky-on>thead>tr>th{position:static}
+}
+</style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style data-page-node-id="SlTdPd0OE4q83gsTpwu3Vy">
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+
+<!-- MARK : MERGE0304-V1 : 随原 04 模块正文并入的条目卡样式（幂等注入，勿手改） -->
+<style data-page-node-id="aboDamJmqrq80se4MIj1p5">
+/* 原 04 条目卡：编号徽标 + 转诊标记 + 16 条索引条；作用域与原文一致 */
+.card h3{font-size:calc(17px * var(--fs));color:#1677ff;margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card h3 .id{background:#1677ff;color:#fff;border-radius:6px;padding:2px 9px;font-size:calc(13px * var(--fs));font-weight:700}
+.card h3 .flag{font-size:calc(12.5px * var(--fs));font-weight:600;border-radius:4px;padding:2px 9px;color:#fff}
+.flag.n{background:#2e9e6b}
+.flag.y{background:#d94b4b}
+.flag.c{background:#e07b39}
+tbody tr:nth-child(2n){background:#fafcff}
+.idxbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.idxbar a{background:#fff;border:1px solid #c9dfff;border-radius:8px;padding:5px 11px;font-size:calc(13px * var(--fs));color:#1677ff;text-decoration:none}
+.idxbar a:hover{background:#1677ff;color:#fff}
+/* HD04-V1 表头紧凑化：作用域收窄到下篇，不影响上篇表头 */
+body .p2 .tsc thead th{font-size:calc(13.5px * var(--fs));padding:calc(7px * var(--fs)) var(--cx);line-height:1.5;white-space:nowrap}
+@media print{
+  body .p2 .tsc thead th{font-size:10.5px;padding:4px 6px;line-height:1.35}
+}
+</style>
+
+<!-- COLBAL-V1 -->
+<!-- COLFIT-V1 -->
+<!-- MARK : WIDTHFIT2-V1 : 导语文本块与页脚内容对齐正文容器宽度 -->
+<style data-page-node-id="d7glP9H5O3FR2txfX2cV8r">
+/* 导语（hero）文本块与页脚内容统一按正文容器宽度对齐：宽屏不错位、窄屏不留白 */
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body footer{
+  padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+}
+@media screen and (max-width:640px){
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+@media print{
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:0;padding-right:0}
+}
+</style>
+<!-- MARK : WIDTHFIT3-V1 : 顶栏/吸顶导航内容对齐正文容器宽度（幂等注入，勿手改） -->
+<style data-page-node-id="DnAwXNd30SO24ADRWr5IjF">
+/* 顶栏（品牌/版本号）与吸顶导航内容边缘对齐正文容器，与页脚同规则；仅 ≥641 生效，窄屏回落 var(--wpx) */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact,body .subnav{
+    padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+    padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  }
+}
+/* 顶栏统一为「品牌居左 / 版本信息居右」的通栏结构（首页原为三行居中，此处统一） */
+body .topbar{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;gap:12px}
+body .topbar .brand{text-align:left;line-height:1.35}
+body .topbar .brand span{display:inline;margin-left:10px;margin-top:0}
+body .topbar .meta{text-align:right;margin-left:auto}
+</style>
+<!-- MARK : WIDTHFIT3-V1B : 窄屏 subnav 内边距与正文统一（幂等注入，勿手改） -->
+<style data-page-node-id="PeI8bHrBkNi2S6GBascC7p">
+@media screen and (max-width:640px){
+  body .subnav{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+</style>
+<style id="SPLIT03-V1" data-page-node-id="KzlKug3uBqv9Rxhp0BVCQz">
+/* SPLIT03-V1 : 上篇 / 下篇 双界面 + 下篇扩充块 */
+html,body{overflow-anchor:none}
+.parttabs{display:flex;gap:12px;margin:6px 0 20px;flex-wrap:wrap}
+.parttabs .ptab{flex:1 1 0;min-width:240px;text-align:left;background:#fff;border:1.5px solid #c9dfff;
+  border-radius:12px;padding:12px 16px;cursor:pointer;font-family:inherit;color:#1677ff;transition:.15s}
+.parttabs .ptab b{display:block;font-size:calc(16px * var(--fs));font-weight:700;line-height:1.45}
+.parttabs .ptab span{display:block;font-size:calc(12.5px * var(--fs));color:#7a8799;margin-top:3px;line-height:1.5}
+.parttabs .ptab:hover{border-color:#1677ff;box-shadow:0 2px 8px rgba(22,119,255,.12)}
+.parttabs .ptab.on{background:linear-gradient(135deg,#1677ff,#3c89ff);border-color:#1677ff;
+  box-shadow:0 2px 10px rgba(22,119,255,.22)}
+.parttabs .ptab.on b{color:#fff}
+.parttabs .ptab.on span{color:rgba(255,255,255,.92)}
+.view{display:none}
+.view.on{display:block}
+.xlink{font-size:calc(13px * var(--fs));color:#7a8799;margin:-2px 0 10px;line-height:1.6}
+.xlink a{color:#1677ff;text-decoration:none;border-bottom:1px dashed #9dc2ff}
+.xlink a:hover{border-bottom-style:solid}
+.refbox{background:#f4f9ff;border:1px solid #cfe2ff;border-left:4px solid #1677ff;border-radius:8px;
+  padding:10px 12px;margin:0 0 12px}
+.refbox .rb-h{font-size:calc(13.5px * var(--fs));font-weight:700;color:#0b3d91;margin-bottom:7px}
+.refbox table{font-size:calc(13px * var(--fs));margin-bottom:0}
+.refbox th{background:#e2eeff;white-space:normal;font-size:calc(12.5px * var(--fs))}
+.refbox td{padding:6px 8px}
+.refbox .rb-note{margin-top:7px;font-size:calc(12.5px * var(--fs));color:#5b6b7d;line-height:1.7}
+.meanbox{background:#f7fbf8;border:1px solid #cfe9dc;border-left:4px solid #2e9e6b;border-radius:8px;
+  padding:10px 12px;margin:12px 0 0;font-size:calc(13.5px * var(--fs));line-height:1.78}
+.meanbox .mb-h{font-size:calc(13.5px * var(--fs));font-weight:700;color:#1f7a55;margin-bottom:6px}
+.meanbox p{margin:0 0 6px}
+.meanbox p:last-child{margin-bottom:0}
+.planbox{background:#fffaf3;border:1px solid #f3ddc0;border-left:4px solid #e07b39;border-radius:8px;
+  padding:10px 12px;margin:10px 0 0;font-size:calc(13.5px * var(--fs));line-height:1.78}
+.planbox .pb-h{font-size:calc(13.5px * var(--fs));font-weight:700;color:#a4571f;margin-bottom:6px}
+.planbox .pl{display:block;margin-bottom:5px}
+.planbox .pl:last-child{margin-bottom:0}
+.bridge{background:#eef6ff;border:1px dashed #9dc2ff;border-radius:10px;padding:14px 16px;margin:24px 0 0}
+.bridge h3{font-size:calc(15px * var(--fs));color:#0b3d91;margin:0 0 8px}
+.bridge p{font-size:calc(13.5px * var(--fs));color:#45596e;line-height:1.78;margin:0 0 9px}
+.bridge table{font-size:calc(13px * var(--fs));margin-bottom:0}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 2px}
+.tagrow a{background:#fff;border:1px solid #c9dfff;border-radius:8px;padding:5px 11px;
+  font-size:calc(12.5px * var(--fs));color:#1677ff;text-decoration:none}
+.tagrow a:hover{background:#1677ff;color:#fff}
+.card .refbox table{min-width:0}
+@media (max-width:900px){.parttabs .ptab{min-width:0;flex:1 1 46%}}
+@media (max-width:640px){
+  .parttabs{gap:8px}
+  .parttabs .ptab{padding:10px 12px;border-radius:10px}
+  .parttabs .ptab b{font-size:calc(15px * var(--fs))}
+  .refbox,.meanbox,.planbox,.bridge{padding:9px 10px}
+}
+@media print{
+  .parttabs{display:none !important}
+  .view{display:block !important}
+  .xlink{display:none !important}
+  .refbox,.meanbox,.planbox,.bridge,.card,.tsc{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+<!-- MARK : WIDTHFIT5-V1 : 顶栏条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style data-page-node-id="GFLWBFPeSfLTzlb1v66zbi">
+/* 顶栏蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   保证品牌/版本信息仍落在正文容器内容边界上（覆盖 WIDTHFIT3-V1 的整屏 padding 公式） */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT6-V1 : 页脚条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style data-page-node-id="KGLjJl0H2SamMJJCDBGEzZ">
+/* 页脚深蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT2-V1 的整屏 padding 公式；打印维持通栏（WIDTHFIT2 的 print 规则继续生效） */
+@media screen and (min-width:641px){
+  body footer{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT7-V1 : 吸顶导航条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style data-page-node-id="pEEVGnXhFN6JJqOcIDDiGA">
+/* 模块页吸顶导航白条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT3-V1 的整屏 padding 公式，保证「← 返回首页 ｜ 上一模块…」仍落在正文内容边界上 */
+@media screen and (min-width:641px){
+  body .subnav{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body style="position: relative;" data-page-node-id="gx2MyWhvOV2cR9Nyf0h56i">
+<div class="topbar" data-page-node-id="lwuE2aPwsv4MpZ7JZ6uc4x">
+  <div class="brand" data-page-node-id="aaY0kfd80LBCRG2kD9kt6t">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta" data-page-node-id="0ULvJnCqqS7usjxahUdh5j">模块03 / 12 ｜ V1.0 ｜ 2026-09-21</div>
+</div>
+<div class="subnav" data-page-node-id="ClUZGzZKblxi5uTDVniKjc"><a href="index.html" data-page-node-id="jD6gFMKrgnddW5eQIxgniY">← 返回首页</a> ｜ 上一模块：<a href="02_七步标准解读SOP.html" data-page-node-id="Kle9g53mljejMhkKdhYDH4">02 七步标准解读 SOP</a> ｜ 下一模块：<a href="04_三类人群差异化解读.html" data-page-node-id="7Kgv3siQ2EOD4HNnWSuFki">04 三类人群差异化解读</a> ｜ 篇内：<a href="#part1" data-page-node-id="JVS9xnoJ6AlmbzxQEzyftw">上篇</a> / <a href="#part2" data-page-node-id="fs5M4R5hKWOedIFupaC5bT">下篇</a></div>
+
+
+
+<footer data-page-node-id="PtVGwqLoyB9jyBYHGHtkXU">
+  <b data-page-node-id="lYoqSp5Qg2J7xV4vjZevWF">模块03 · 指标参考区间与异常值对照（上篇判定表 + 下篇对照表）</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br data-page-node-id="cNKXW6F95Rh4zkNXPY5lZc">
+  本表数值主要参考《眼轴长度在近视防控管理中的应用专家共识（2023）》《近视管理白皮书（2025）》《近视防治指南（2024 年版）》、Scheiman《双眼视觉的临床处理》（第 5 版）、《眼病学》（第 3 版）、《斜视弱视学》（第 2 版）、《眼视光学理论和方法》（第 3 版）及本店《视功能检测与诊断》标准表整理，仅供门店健康宣教与转诊提示使用，不构成任何医疗诊断依据。数值如与国家最新诊疗指南不一致，以指南和接诊医疗机构意见为准。
+</footer>
+<script data-page-node-id="Yfe1JSu2Avp9f6FcB4zot6">
+/* SMART-STICKY-V1 : 智能表头吸顶 */
+(function(){
+  var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
+  function calc(){
+    var vh = window.innerHeight || 800;
+    var wide = (window.innerWidth || 1280) > WIDE;
+    var tabs = document.querySelectorAll('table'), i, t, on;
+    for(i = 0; i < tabs.length; i++){
+      t = tabs[i];
+      if(!t.tHead) continue;
+      on = wide && t.rows.length >= MIN_ROWS && t.getBoundingClientRect().height >= vh * MIN_H;
+      if(on) { t.className += ' sticky-on'; } else { t.className = t.className.replace(/\s*sticky-on\b/g, ''); }
+    }
+  }
+  function defer(){ if(tm) clearTimeout(tm); tm = setTimeout(calc, 120); }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', calc); } else { calc(); }
+  window.addEventListener('load', calc);
+  window.addEventListener('resize', defer);
+  var ds = document.querySelectorAll('details'), j;
+  for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+
+<script data-page-node-id="eplj7CSTELZmpxEdfTRu9y">
+/* SPLIT03-V1 : 上篇 / 下篇 界面切换 + 锚点跨界面跳转 */
+(function(){
+  var views = {'part1': document.getElementById('view-part1'), 'part2': document.getElementById('view-part2')};
+  var tabs = document.querySelectorAll('.ptab');
+  function paint(id){
+    for (var k in views){ if (views[k]) views[k].classList.toggle('on', k === id); }
+    for (var i = 0; i < tabs.length; i++){
+      var on = (tabs[i].getAttribute('data-view') === id);
+      tabs[i].className = on ? 'ptab on' : 'ptab';
+      tabs[i].setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+  }
+  function owner(id){
+    var el = document.getElementById(id);
+    while (el){
+      if (el.id === 'view-part1') return 'part1';
+      if (el.id === 'view-part2') return 'part2';
+      el = el.parentNode;
+    }
+    return null;
+  }
+  function kick(){ try { window.dispatchEvent(new Event('resize')); } catch(e){} }
+  function scrollToId(id){
+    var el = document.getElementById(id);
+    if (!el) return;
+    void el.offsetHeight;                       // 强制回流，确保容器已可见
+    var doIt = function(){
+      var de = document.documentElement;
+      var prev = de.style.scrollBehavior;       // 页面原有 scroll-behavior:smooth 会导致慢速动画
+      de.style.scrollBehavior = 'auto';
+      var sn = document.querySelector('.subnav');   // 吸顶导航会盖住顶部，需让出高度
+      var off = (sn && sn.offsetHeight) ? sn.offsetHeight + 8 : 10;
+      var y = el.getBoundingClientRect().top
+            + (window.pageYOffset || document.documentElement.scrollTop || 0) - off;
+      if (y < 0) y = 0;
+      window.scrollTo(0, y);
+      de.style.scrollBehavior = prev;
+    };
+    if (window.requestAnimationFrame) requestAnimationFrame(function(){ requestAnimationFrame(doIt); });
+    else setTimeout(doIt, 16);
+  }
+  function go(id){
+    var o = owner(id);
+    if (o) paint(o);
+    kick();
+    scrollToId(id);
+  }
+  function setHash(h){ try { if (history.replaceState) history.replaceState(null, '', h); } catch(e){ location.hash = h; } }
+  for (var i = 0; i < tabs.length; i++){
+    tabs[i].addEventListener('click', function(e){
+      e.preventDefault();
+      paint(this.getAttribute('data-view'));
+      setHash('#' + this.getAttribute('data-view'));
+      kick();
+      window.scrollTo(0, 0);
+    });
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target;
+    while (a && a.tagName !== 'A'){ a = a.parentNode; }
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.charAt(0) !== '#' || h.length < 2) return;
+    var id = h.slice(1);
+    if (!owner(id)) return;
+    e.preventDefault(); go(id); setHash(h);
+  }, false);
+  var h0 = (location.hash || '').slice(1);
+  if (h0 && owner(h0)){ paint(owner(h0)); if (h0 !== 'part1' && h0 !== 'part2') scrollToId(h0); }
+  else if (h0 === 'part1' || h0 === 'part2') paint(h0);
+  else paint('part1');
+})();
+</script>
+
+
+
+</body></html>
