@@ -1,0 +1,69 @@
+request_id: 20261010-mod03-word
+entry_type: full_pipeline
+created_at: "2026-10-10"
+user_request: "把模块03的参考区间与异常判定的内容整理成word版本，便于打印"
+workspace: "D:/验光处方解读"
+
+intent:
+  stage0_classification: convert_to_docx        # 已有完整内容 → 转 Word，非创作
+  genre: business-report
+  theme: business-modern
+  source_route: html-template                   # 无 ref_doc，走内置模板
+
+source:
+  type: local_html
+  path: "D:/验光处方解读/03_指标参考区间与异常值对照.html"
+  bytes: 66811
+  note: "内容逐字搬运；仅做排版所需结构拆分（多列宽表保留；下篇 16 条 4 列宽表 → 4 行 × 2 列转置）"
+
+artifacts:
+  stage1:
+    path: null
+    note: "转换型任务，无独立 Stage1 文稿；源 HTML 即内容来源"
+  stage2:
+    path: "D:/验光处方解读/output/20261010-mod03-word/stage2/formatted-模块03_指标参考区间与异常值对照.html"
+    bytes: 50743
+    generator: "D:/验光处方解读/.workbuddy/_s2_build.py + _s2_data.py"
+    design_tokens: "tencent-docx/skills/design-token/tokens/compiled/business-report.json"
+    template: "tencent-docx/skills/doc-typeset/templates/business-report.html"
+  stage3:
+    path: "D:/验光处方解读/output/20261010-mod03-word/stage3/模块03_指标参考区间与异常值对照.docx"
+    bytes: 70064
+    delivered_copy: "D:/验光处方解读/模块03_指标参考区间与异常值对照.docx"
+    converter: "html-to-docx (html_to_docx.convert, page_size=A4)"
+    warnings: []
+    fields: []
+
+gates:
+  html_review:
+    script: "tencent-docx/skills/html-review/scripts/review_html.py"
+    genre: business-report
+    passed: true
+    score: 100
+    remaining_warnings:
+      - "[TQ-05] 文档出现 14 个 <h2>（WARNING），建议检查是否过于碎片化"
+    resolved_issues:
+      - "[DT-03] 裸间距 → 全部改为 var(--spacing-*) 令牌"
+      - "[TQ-03] h2 后直达 h3 → 为「一、视力」「八/九/十/十一」补章节导语"
+      - "[BR-01] 缺执行摘要区 → 新增 .executive-summary（thead 标题 + tbody 导读正文）"
+      - "[DU-01] callout 9 个超限 → 精简为 3 个（必读 warning / 散瞳注意 danger / 使用口令 info），其余改为 .note-plain 底纹段落"
+      - "[SI-02] 摘要框表缺 thead → 补 thead/th"
+
+verification:
+  sections: 2                     # 封面节（无页脚）+ 正文节（PAGE 域，页码从 1 起）
+  footer: "word/footer1.xml，含 w:instr=\"PAGE\""
+  heading2: 14
+  heading3: 19
+  tables: 31                      # 28 内容表 + 3 callout 表
+  bookmark_start: 28
+  h2_paragraph_borders: 14        # 每个 h2 下边框均已落地
+  shd: 90
+  tc_borders: 560
+  content_diff: "源 25 张表 / 478 个非空单元格 → docx 命中 478/478（零丢失）；块级文本仅 16 条条目标题因编号改「01.」、标记加「（需转诊）」而形态不同，文字本身全在"
+  literal_newline_or_backslash: 0
+  spurious_fields: 0              # 源中 1 个空 <td> 已用零宽空格标记，避免被误判为可填字段
+
+notes:
+  - "按用户偏好：内容原意不变、只做排版；口径与模块 03 HTML 完全一致（未改动任何数值／档位／话术）"
+  - "版式为打印优化：A4、正文 15.6cm、9pt 正文 / 8pt 表格、商务蓝主色 #1565C0"
+  - "偏离设计系统一处：执行摘要用 4 列指标表而非 data-card（避免组件嵌套进表格单元格），未使用 .data-emphasis（本文档几乎全为数据单元格，全篇标红将失去强调意义）"
