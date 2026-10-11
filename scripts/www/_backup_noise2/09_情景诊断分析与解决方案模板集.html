@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块09 · 情景诊断分析与解决方案模板集 | 永州爱眼城 检查报告解读标准化方案</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.72;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:calc(18px * var(--fs));font-weight:700}
+.topbar .meta{font-size:calc(13px * var(--fs));opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:calc(13.5px * var(--fs));color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:calc(22px * var(--fs));color:#1677ff;margin:0 auto 6px;line-height:1.45;text-align:center}
+.lead{text-indent:2em;color:#5b6b7d;font-size:calc(15.5px * var(--fs));margin-bottom:20px;max-width:1040px}
+h2.sec{font-size:calc(20px * var(--fs));color:#1677ff;margin:30px 0 12px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+h3.sub{font-size:calc(16.5px * var(--fs));color:#1677ff;margin:14px 0 8px}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:16px 20px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:calc(14.2px * var(--fs));margin-bottom:8px}
+th,td{border:1px solid #dae3f5;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600}
+tbody tr:nth-child(even){background:#fafcff}
+ul,ol{margin:6px 0 8px 20px;font-size:calc(15px * var(--fs))}
+li{margin-bottom:4px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-radius:8px;padding:13px 15px;font-size:calc(14.5px * var(--fs));color:#6b4a25;margin:12px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-radius:8px;padding:13px 15px;font-size:calc(14.5px * var(--fs));color:#1f5c40;margin:12px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-radius:8px;padding:13px 15px;font-size:calc(14.5px * var(--fs));color:#7d2b2b;margin:12px 0}
+.daybar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 100%);color:#fff;border-radius:10px;padding:10px 16px;font-size:calc(17px * var(--fs));font-weight:700;margin:24px 0 12px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.daybar span{font-weight:400;font-size:calc(13.5px * var(--fs));opacity:.95}
+.lsn{position:relative}
+.lsn h3.sub{display:flex;align-items:center;gap:10px;margin-top:0;flex-wrap:wrap}
+.day{background:#1677ff;color:#fff;border-radius:6px;padding:2px 10px;font-size:calc(13px * var(--fs));font-weight:700;flex:none}
+.clk{color:#e07b39;font-size:calc(13.5px * var(--fs));font-weight:700;flex:none}
+.fld{font-size:calc(14.2px * var(--fs));color:#45596e;margin:5px 0;line-height:1.7}
+.fld b{color:#1677ff}
+.fld.out{background:#f1f6ff;border:1px solid #c7ddff;border-radius:6px;padding:7px 10px;color:#23477f}
+.fld.out b{color:#1677ff}
+.pass{background:#eaf7f0;border-radius:6px;padding:7px 10px;color:#1f5c40;font-size:calc(14.2px * var(--fs));margin-top:6px}
+.pass b{color:#2e9e6b}
+.kpi4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 16px}
+.kpi4 .box{background:#fff;border:1px solid #dae3f5;border-radius:10px;padding:13px 15px}
+.kpi4 .box h4{font-size:calc(15px * var(--fs));color:#1677ff;margin-bottom:4px}
+.kpi4 .box .big{font-size:calc(22px * var(--fs));font-weight:700;color:#e07b39;margin:4px 0}
+.kpi4 .box p{font-size:calc(13.4px * var(--fs));color:#5b6b7d;margin:0}
+.fill{display:inline-block;min-width:calc(70px * var(--fs));border-bottom:1px solid #8aa4c9;height:1.35em;margin:0 4px;vertical-align:bottom}
+.tpl{background:#f1f6ff;border:1px dashed #c7ddff;border-radius:8px;padding:14px 16px;font-size:calc(14.4px * var(--fs));color:#23477f;line-height:1.9}
+.tpl b{color:#1677ff}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:calc(13.5px * var(--fs));line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:calc(14px * var(--fs));cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media screen and (max-width:820px){.kpi4{grid-template-columns:repeat(2,1fr)}}
+@media screen and (max-width:640px){.kpi4{grid-template-columns:1fr}}
+@media print{.kpi4{grid-template-columns:repeat(2,1fr)}}
+@media print{@page{size:A4;margin:12mm}.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:11.6px}.card,.lsn{border-color:#999;box-shadow:none;page-break-inside:avoid}.daybar{background:#1677ff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<!-- LAYOUT-V2 -->
+<style>
+/* ==========================================================================
+   平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
+   只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
+   ========================================================================== */
+:root{
+  --fs:1;            /* 字号/组件缩放系数 */
+  --wrap:1180px;     /* 正文容器最大宽度 */
+  --wpx:22px;        /* 容器左右留白 */
+  --wpy:26px;        /* 容器上留白 */
+  --cy:9px; --cx:12px;  /* 表格单元格内边距 */
+  --subh:44px;       /* 吸顶导航高度 */
+}
+/* 平板（横屏 1280 / 竖屏 800 均命中）：整站同比缩放，--fs=1.02（较上一版 -11.3%） */
+@media screen and (min-width:641px) and (max-width:1400px){
+  :root{--fs:1.02;--wrap:1160px;--wpx:24px;--wpy:20px;--cy:11px;--cx:13px;--subh:44px}
+}
+@media screen and (max-width:640px){
+  :root{--fs:1.04;--wrap:100%;--wpx:14px;--wpy:16px;--cy:9px;--cx:10px;--subh:44px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","HarmonyOS Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;letter-spacing:.012em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:rgba(22,119,255,.12);
+}
+::selection{background:#c9dfff;color:#0b3d91}
+
+/* ---------- 容器与页头 ---------- */
+body .wrap{max-width:var(--wrap);padding:var(--wpy) var(--wpx) 72px}
+body .hero{padding:26px var(--wpx) 24px}
+body .topbar{padding:14px var(--wpx);gap:12px}
+body footer{padding:20px var(--wpx);line-height:1.9}
+
+/* ---------- 吸顶导航：翻到任何位置都能一眼跳模块 ---------- */
+body .subnav{
+  position:sticky;top:0;z-index:80;
+  min-height:var(--subh);
+  padding:calc((var(--subh) - 1.5em - 1px) / 2) var(--wpx);
+  line-height:1.5;
+  white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+  background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 2px 12px rgba(22,119,255,.07);
+  scrollbar-width:none;
+}
+body .subnav::-webkit-scrollbar{height:0}
+body .subnav a{white-space:nowrap;padding:0 1px;text-decoration:none}
+
+/* ---------- 标题节奏与锚点定位 ---------- */
+body h1.t{line-height:1.45}
+body h2.sec{margin:38px 0 16px;line-height:1.4}
+body h2.sec,body h3.sub,body h3.sub2,body .card,body .step,body .form,body .item{
+  scroll-margin-top:calc(var(--subh) + 16px);
+}
+body .lead{margin-bottom:24px;line-height:1.85}
+
+/* ---------- 卡片 / 提示块 ---------- */
+body .card{padding:20px 24px;margin-bottom:18px;border-radius:14px}
+body .note,body .good,body .warn{padding:15px 18px;margin:16px 0;border-radius:10px;line-height:1.8}
+body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:16px 18px}
+body .case{padding:16px 20px;margin-bottom:16px}
+body .case .txt{padding:12px 15px}
+body .quote{padding:12px 16px;margin:10px 0}
+body .scard{padding:14px 16px}
+body .fnode{padding:12px 16px}
+body .step .hd,body .form .fhead{padding:13px 22px}
+body .form .fbody{padding:18px 22px}
+body .peopledet .hd{padding:16px 24px}
+body .daybar{padding:12px 18px;margin:26px 0 14px}
+body .sec-title{padding:9px 12px}
+body .blk{padding:12px 14px}
+body .line2{gap:14px;margin-bottom:10px}
+body .check{margin-right:16px}
+
+/* ---------- 表格：更容易一行一行读下去 ---------- */
+body table{
+  border-collapse:separate;border-spacing:0;border-radius:12px;
+  line-height:1.62;margin:12px 0 16px;
+}
+body th,body td{
+  border:0;
+  border-right:1px solid #dae3f5;border-bottom:1px solid #dae3f5;
+  padding:var(--cy) var(--cx);
+  overflow-wrap:break-word;
+}
+body th{
+  background:linear-gradient(180deg,#f1f7ff,#e4eeff);
+  color:#0b3d91;font-weight:700;letter-spacing:.02em;
+text-align:center;}
+body thead th{
+  border-top:1px solid #dae3f5;
+  position:sticky;top:calc(var(--subh) + 1px);z-index:6;
+}
+body tr>th:first-child,body tr>td:first-child{border-left:1px solid #dae3f5}
+body table>thead>tr:first-child>th:first-child{border-top-left-radius:12px}
+body table>thead>tr:first-child>th:last-child{border-top-right-radius:12px}
+body table:not(:has(thead))>tbody>tr:first-child>td:first-child{border-top-left-radius:12px;border-top:1px solid #dae3f5}
+body table:not(:has(thead))>tbody>tr:first-child>td:last-child{border-top-right-radius:12px;border-top:1px solid #dae3f5}
+body table>tbody>tr:last-child>td:first-child{border-bottom-left-radius:12px}
+body table>tbody>tr:last-child>td:last-child{border-bottom-right-radius:12px}
+body tbody tr:nth-child(even)>td{background:#fafcff}
+body tbody tr:hover>td{background:#eef5ff}
+body tbody td{transition:background .15s}
+body table.ct th,body table.ct td{text-align:center;vertical-align:middle}
+
+/* ---------- 触控友好：按钮、胶囊、复选框 ---------- */
+body .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 20px;border-radius:10px;
+}
+body .btnwrap{margin:30px 0 10px}
+body .chips{gap:10px}
+body .chips a,body .idxbar a{
+  display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:10px;
+}
+body .idxbar{gap:10px;margin-bottom:20px}
+body .check input,body input[type=checkbox]{width:18px;height:18px;accent-color:#1677ff}
+body .fill{min-height:1.35em}
+body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:3px 9px;border-radius:6px}
+body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:3px 10px}
+body .farrow,body .story .arrow{padding:0 2px}
+body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fill:focus-visible{
+  outline:2px solid #1677ff;outline-offset:2px;border-radius:6px;
+}
+
+/* ---------- 小屏栅格回流（仅屏幕，不影响打印分栏） ---------- */
+@media screen and (max-width:1000px){
+  body .steps{grid-template-columns:1fr 1fr !important}
+}
+@media screen and (max-width:900px){
+  body .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important}
+  body .scards,body .pkg4{grid-template-columns:1fr !important}
+  body .scards{gap:10px}
+}
+@media screen and (max-width:640px){
+  body .grid,body .steps,body .kpi,body .kpi4,body .lv,body .chk,
+  body .std,body .three{grid-template-columns:1fr !important}
+  body .subnav{padding-left:12px;padding-right:12px}
+}
+
+/* ---------- 打印兜底：恢复紧凑版式，A4 友好 ---------- */
+/* ---------- 平板档专项：行高 / 间距 / 图标同步收缩（仅 641–1400px） ---------- */
+@media screen and (min-width:641px) and (max-width:1400px){
+  body{line-height:1.62;letter-spacing:.008em}
+  body .wrap{padding:20px var(--wpx) 64px}
+  body .hero{padding:22px var(--wpx) 20px}
+  body .topbar{padding:12px var(--wpx);gap:10px}
+  body footer{padding:17px var(--wpx);line-height:1.72}
+  body .subnav{line-height:1.45}
+  body h2.sec{margin:32px 0 14px;line-height:1.38}
+  body .lead{margin-bottom:20px;line-height:1.68}
+  body .card{padding:16px 20px;margin-bottom:15px;border-radius:12px}
+  body .note,body .good,body .warn{padding:12px 15px;margin:13px 0;border-radius:9px;line-height:1.62}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:13px 15px}
+  body .case{padding:13px 16px;margin-bottom:13px}
+  body .case .txt{padding:10px 13px}
+  body .quote{padding:10px 13px;margin:8px 0}
+  body .scard{padding:12px 14px}
+  body .fnode{padding:10px 14px}
+  body .step .hd,body .form .fhead{padding:11px 18px}
+  body .form .fbody{padding:15px 18px}
+  body .peopledet .hd{padding:13px 20px}
+  body .daybar{padding:10px 15px;margin:22px 0 12px}
+  body .sec-title{padding:7px 10px}
+  body .blk{padding:10px 12px}
+  body .line2{gap:12px;margin-bottom:8px}
+  body .check{margin-right:13px}
+  body table{line-height:1.5;margin:10px 0 14px;border-radius:10px}
+  body .btn{min-height:42px;padding:8px 17px;border-radius:9px}
+  body .btnwrap{margin:26px 0 8px}
+  body .chips{gap:9px}
+  body .chips a,body .idxbar a{min-height:40px;padding:7px 12px;border-radius:9px}
+  body .idxbar{gap:9px;margin-bottom:17px}
+  body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:2px 8px;border-radius:5px}
+  body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:2px 8px}
+}
+@media print{
+  :root{--fs:1;--wpx:0;--wpy:0}
+  body{line-height:1.55;letter-spacing:0;background:#fff}
+  body .wrap{max-width:none;padding:0 0 8px}
+  body .topbar,body .btnwrap{box-shadow:none}
+  body .subnav{position:static;box-shadow:none;background:#fff;overflow:visible;white-space:normal;
+    min-height:0;padding:0 0 6px}
+  body .card{padding:10px 12px;margin-bottom:10px;border-radius:0;box-shadow:none}
+  body .note,body .good,body .warn{padding:8px 10px;margin:8px 0;border-radius:0}
+  body .step .hd,body .form .fhead,body .form .fbody,body .peopledet .hd,body .daybar{padding:7px 10px}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item,body .case,body .scard{
+    padding:8px 10px;border-radius:0;box-shadow:none}
+  body table{border-collapse:collapse;border-radius:0;margin:6px 0 10px}
+  body thead th{position:static}
+  body th,body td{border:1px solid #cbd5e1;padding:4px 6px}
+  body th{background:#e8f1ff !important;color:#0b3d91 !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body tbody tr:nth-child(even)>td{background:#fafcff !important}
+  body tbody tr:hover>td{background:transparent !important}
+}
+</style>
+<!-- /LAYOUT-V2 -->
+<!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
+<style>
+/* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
+   text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
+   恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
+body .wrap p,
+body .hero p{text-indent:2em;overflow-wrap:break-word}
+
+/* 相邻正文段落间距：用 margin 分隔，不插空行伪造缩进 */
+body .wrap p + p{margin-top:.5em}
+
+/* ---- 例外：以下不属于"正文段落"，一律不缩进（选择器特异性高于上方规则） ---- */
+/* 结构元素：列表项内 / 表格单元格 / 图注 / 代码 / 引用块 / 页眉页脚导航 */
+body .wrap :is(li,td,th,caption,figcaption,dt,dd,pre,code,blockquote,figure) p,
+body .topbar p,body .subnav p,body footer p,body .btnwrap p,
+/* 组件化短行：四大板块标签、KPI 数值卡说明行、人群卡元信息行 */
+body .wrap .pkg4 p,body .wrap .kpi p,body .wrap .kpi4 p,body .wrap .hd p,
+/* 字段行（注入时自动识别并加 ni 类），以及手工豁免 */
+body .wrap p.ni,body .wrap .ni p,
+/* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
+body p:lang(en),body p.en{text-indent:0}
+</style>
+<style>
+/* ==========================================================================
+   TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
+   仅调整容器与列宽，不动文字/字段/配色/字号
+   ========================================================================== */
+/* 表格外层容器：宽屏不裁剪（保留吸顶表头），窄屏启用横向滚动 */
+body .tsc{margin:12px 0 16px}
+body .tsc>table{margin:0}
+@media screen and (max-width:820px){
+  body .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  /* 多列表给出最小可读宽度，超出即横向滚动，绝不撑破页面 */
+  body .tsc.w4>table{min-width:calc(460px * var(--fs))}
+  body .tsc.w5>table{min-width:calc(560px * var(--fs))}
+  body .tsc.w6>table{min-width:calc(660px * var(--fs))}
+  body .tsc.w7>table,body .tsc.w8>table{min-width:calc(780px * var(--fs))}
+  body .tsc.w9>table{min-width:calc(940px * var(--fs))}
+  /* 滚动容器内表头吸顶失效，显式降级，避免错位 */
+  body .tsc thead th{position:static}
+}
+/* 打印兜底：容器不裁剪，边距回落到原紧凑值 */
+@media print{
+  body .tsc{margin:6px 0 10px;overflow:visible}
+  body .tsc>table{min-width:0}
+}
+/* 单元格兜底：长文本优先换行，短字段不折行 */
+body th,body td{overflow-wrap:break-word;word-break:break-word}
+body .tsc table.now1 th:nth-child(1),body .tsc table.now1 td:nth-child(1),
+body .tsc table.now2 th:nth-child(2),body .tsc table.now2 td:nth-child(2),
+body .tsc table.now3 th:nth-child(3),body .tsc table.now3 td:nth-child(3),
+body .tsc table.now4 th:nth-child(4),body .tsc table.now4 td:nth-child(4),
+body .tsc table.now5 th:nth-child(5),body .tsc table.now5 td:nth-child(5),
+body .tsc table.now6 th:nth-child(6),body .tsc table.now6 td:nth-child(6),
+body .tsc table.now7 th:nth-child(7),body .tsc table.now7 td:nth-child(7),
+body .tsc table.now8 th:nth-child(8),body .tsc table.now8 td:nth-child(8),
+body .tsc table.now9 th:nth-child(9),body .tsc table.now9 td:nth-child(9),
+body .tsc table.now10 th:nth-child(10),body .tsc table.now10 td:nth-child(10),
+body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(240px * var(--fs));
+}
+</style>
+<!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
+<style>
+/* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
+body table>thead>tr>th{position:static}
+body table.sticky-on>thead>tr>th{
+  position:sticky;top:calc(var(--subh,0px) + 1px);z-index:6;
+  box-shadow:0 6px 14px -9px rgba(11,61,145,.45);
+}
+@media screen and (max-width:820px){
+  body table.sticky-on>thead>tr>th{position:static;box-shadow:none}
+}
+@media print{
+  body table.sticky-on>thead>tr>th{position:static}
+}
+</style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+<!-- TPL10-V1 : 逐卡模板样式（幂等注入，勿手改） -->
+<style>
+/* ---------- TPL10-V1 : 逐卡诊断分析与解决方案模板 ---------- */
+.tpl{background:#fff;border:1px solid #dae3f5;border-radius:12px;margin:0 0 14px;overflow:hidden;box-shadow:0 1px 3px rgba(22,119,255,.08);break-inside:avoid}
+.tplh{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:linear-gradient(100deg,#1677ff 0%,#3c89ff 100%);color:#fff;padding:9px 16px}
+.tplh .no{font-weight:700;font-size:calc(15.5px * var(--fs));letter-spacing:.5px}
+.tplh .g,.tplh .q{background:rgba(255,255,255,.22);border-radius:20px;padding:0 10px;font-size:calc(13px * var(--fs));line-height:1.9}
+.tplh .c{flex:1 1 100%;font-size:calc(14px * var(--fs));opacity:.96;line-height:1.55}
+.trow{display:flex;border-top:1px solid #eaf0fb}
+.trow>.k{flex:0 0 92px;background:#f4f8ff;border-right:1px solid #eaf0fb;padding:9px 11px;font-weight:700;color:#1677ff;font-size:calc(13.5px * var(--fs))}
+.trow>.v{flex:1 1 auto;min-width:0;padding:9px 14px;font-size:calc(14px * var(--fs));color:#1f2b3d;line-height:1.75}
+.trow.red>.k{color:#d94b4b;background:#fdf3f3}
+.trow.red>.v{color:#7d2b2b}
+.trow>.v b{color:#1677ff}
+.trow.red>.v b{color:#d94b4b}
+.trow>.v em{font-style:normal;background:#f1f6ff;border-radius:4px;padding:0 4px;color:#1677ff}
+@media screen and (max-width:640px){
+  .trow{display:block}
+  .trow>.k{flex:none;border-right:none;border-bottom:1px solid #eaf0fb}
+}
+@media print{
+  .tpl{border:1px solid #ccc;box-shadow:none}
+}
+</style>
+<!-- TOTOP-V1 : 可交互式回到顶部样式（幂等注入，勿手改） -->
+<style>
+/* ===== TOTOP-V1 可交互式回到顶部按钮（幂等注入，勿手改）===== */
+#toTop{
+  position:fixed;right:calc(22px * var(--fs));bottom:calc(26px * var(--fs));
+  width:calc(50px * var(--fs));height:calc(50px * var(--fs));padding:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(1px * var(--fs));
+  border:none;border-radius:50%;cursor:pointer;color:#fff;
+  background:linear-gradient(160deg,#1677ff 0%,#3c89ff 55%,#69b1ff 100%);
+  box-shadow:0 6px 16px rgba(22,119,255,.32);
+  opacity:0;visibility:hidden;transform:translateY(calc(16px * var(--fs))) scale(.9);
+  transition:opacity .26s ease,transform .26s ease,visibility .26s ease,box-shadow .2s ease;
+  z-index:150;-webkit-tap-highlight-color:transparent;
+}
+#toTop.show{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+#toTop:hover{box-shadow:0 10px 22px rgba(22,119,255,.46);background:linear-gradient(160deg,#0e63dd 0%,#2c7cf5 55%,#5aa6fb 100%)}
+#toTop:active{transform:scale(.93)}
+#toTop:focus-visible{outline:3px solid #ffd591;outline-offset:3px}
+#toTop .tt-ico{display:block;line-height:1}
+#toTop .tt-ico svg{display:block;width:calc(19px * var(--fs));height:calc(19px * var(--fs))}
+#toTop .tt-txt{font-size:calc(10.5px * var(--fs));line-height:1.1;letter-spacing:.02em;font-weight:600}
+@media (max-width:820px){
+  #toTop{right:calc(13px * var(--fs));bottom:calc(16px * var(--fs));width:calc(52px * var(--fs));height:calc(52px * var(--fs))}
+}
+@media (prefers-reduced-motion:reduce){#toTop{transition:opacity .2s linear}}
+@media print{#toTop{display:none !important}}
+</style>
+
+<!-- COLBAL-V1 -->
+<!-- COLFIT-V1 -->
+<!-- MARK : WIDTHFIT2-V1 : 导语文本块与页脚内容对齐正文容器宽度 -->
+<style>
+/* 导语（hero）文本块与页脚内容统一按正文容器宽度对齐：宽屏不错位、窄屏不留白 */
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body footer{
+  padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+}
+@media screen and (max-width:640px){
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+@media print{
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:0;padding-right:0}
+}
+</style>
+<!-- MARK : WIDTHFIT3-V1 : 顶栏/吸顶导航内容对齐正文容器宽度（幂等注入，勿手改） -->
+<style>
+/* 顶栏（品牌/版本号）与吸顶导航内容边缘对齐正文容器，与页脚同规则；仅 ≥641 生效，窄屏回落 var(--wpx) */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact,body .subnav{
+    padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+    padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  }
+}
+/* 顶栏统一为「品牌居左 / 版本信息居右」的通栏结构（首页原为三行居中，此处统一） */
+body .topbar{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;gap:12px}
+body .topbar .brand{text-align:left;line-height:1.35}
+body .topbar .brand span{display:inline;margin-left:10px;margin-top:0}
+body .topbar .meta{text-align:right;margin-left:auto}
+</style>
+<!-- MARK : WIDTHFIT3-V1B : 窄屏 subnav 内边距与正文统一（幂等注入，勿手改） -->
+<style>
+@media screen and (max-width:640px){
+  body .subnav{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+</style>
+<!-- MARK : WIDTHFIT5-V1 : 顶栏条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style>
+/* 顶栏蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   保证品牌/版本信息仍落在正文容器内容边界上（覆盖 WIDTHFIT3-V1 的整屏 padding 公式） */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT6-V1 : 页脚条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style>
+/* 页脚深蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT2-V1 的整屏 padding 公式；打印维持通栏（WIDTHFIT2 的 print 规则继续生效） */
+@media screen and (min-width:641px){
+  body footer{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT7-V1 : 吸顶导航条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style>
+/* 模块页吸顶导航白条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT3-V1 的整屏 padding 公式，保证「← 返回首页 ｜ 上一模块…」仍落在正文内容边界上 */
+@media screen and (min-width:641px){
+  body .subnav{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta">模块09 / 12 ｜ V1.0 ｜ 2026-09-21</div>
+</div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="08_情景卡库30张演练卡.html">08 情景卡库（30 张）</a> ｜ 关联：<a href="02_七步标准解读SOP.html">02 七步标准解读 SOP</a> ｜ <a href="03_指标参考区间与异常值对照.html">03 参考区间与异常值对照</a> ｜ 下一模块：<a href="10_会诊专家七步解读专项培训.html">10 会诊专家专项培训</a></div>
+
+<div class="wrap">
+  <h1 class="t">模块09 · 情景诊断分析与解决方案模板集</h1>
+  <p class="lead">本模块是 <a href="08_情景卡库30张演练卡.html" style="color:#1677ff;font-weight:600">模块08《情景卡库（30 张演练卡）》</a> 的逐卡配套填写模板：<b>30 张情景卡 ↔ 30 份模板，编号一一对应</b>。每一份都按同一副骨架展开——<b>诊断分析（先问什么 / 看哪些数据 / 怎么判读 / 结论怎么写）→ 解决方案（必做 · 建议做 · 可选）→ 复查与转诊（时机 / 要点 / 条件）→ 现场话术（可直接照读）→ 红线（禁止事项）</b>。视光师既可把它当<b>演练后的对照答案</b>，也可当<b>真实接待时的现场底稿</b>，抽到哪张卡就翻到哪一号，照填照念即可上手。</p>
+
+  <h2 class="sec">一、这套模板怎么用</h2>
+  <div class="card">
+    <p class="ni">本模块是 <a href="08_情景卡库30张演练卡.html" style="color:#1677ff;font-weight:600">模块08《情景卡库（30 张演练卡）》</a> 的<b>逐卡配套填写模板</b>：抽到哪一张卡，就翻到本模块同一个编号，照着填、照着念。<b>30 张卡 ↔ 30 份模板，编号一一对应，不多不少。</b></p>
+    <p class="ni">用法与 <a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a> 的七步 SOP 完全对齐：每一份模板统一按五段展开，段内小标题固定，填完即可用。</p>
+    <ol>
+      <li><b>诊断分析</b>——<b>先问什么 → 看哪些数据 → 怎么判读 → 结论怎么写</b>，四步依次落笔；判读口径一律以<a href="03_指标参考区间与异常值对照.html" style="color:#1677ff;font-weight:600">模块03</a>为准。</li>
+      <li><b>解决方案</b>——按<b>必做 / 建议做 / 可选</b>三档勾选，每档不超过 3 条；必做项必须写清"不做会怎样"。</li>
+      <li><b>复查与转诊</b>——<b>复查时机、复查要点、转诊条件</b>三项都要写死：具体时间、查哪些项目、拿什么标准判断。</li>
+      <li><b>现场话术</b>——<b>可直接照读</b>的完整台词，含接情绪、讲数据、给结论、回应追问、约定复查五个环节。</li>
+      <li><b>红线</b>——本场不可逾越的禁止事项，逐条对照，踩到即判不合格。</li>
+    </ol>
+    <div class="note"><b>与演练的关系：</b>模板是<b>演练后的对照答案</b>，也是<b>真实接待时的现场底稿</b>。演练者讲完，第三人拿同号模板逐行核对——五个段落是否说到、必做项是否漏、红线是否踩到——比只凭印象打分更硬。评分标准与通过线以<a href="08_情景卡库30张演练卡.html" style="color:#1677ff;font-weight:600">模块08 第二节</a>为准。</div>
+
+  </div>
+
+  <h2 class="sec">二、通用字段与填写纪律（30 份模板统一）</h2>
+  <div class="card">
+    <div class="note"><b>30 份模板共用同一套六段骨架，段落编号一一对应，做到"换人不换格式"：</b><br>
+      ①<b>客户基本信息</b>——姓名 / 性别 / 年龄 / 人群类别 ＋ 门店 / 视光师 / 日期 / 档案号 ＋ 上次检查日期与间隔；<br>
+      ②<b>本次关键数据</b>——本次实测值 ＋ 上次值 ＋ 本次变化；数字必须能在《报告解读记录表》或档案中查到，<b>不得估算、不得沿用上次</b>；<br>
+      ③<b>诊断分析</b>——先问清楚、再看数据、再判读、最后给一句结论（四小标题对应本模块每份模板的第一段），术语留在记录表里，说给顾客的用生活话；<br>
+      ④<b>解决方案</b>——分"必做项 / 建议做项 / 可选项"三档勾选，每档不超过 3 条，一档写太多等于没重点；<br>
+      ⑤<b>复查与转诊</b>——复查<b>写具体日期</b>（不写"三个月后"，写"2026 年 12 月 20 日前后"）并注明复查项目与判断标准；触发红线的一律转诊，写明去向、科室与紧迫程度；<br>
+      ⑥<b>顾客（监护人）确认</b>——听懂了没有、方案意向、双方签字。<br>
+      <b>归档：</b>底联与《报告解读记录表》同号归档，顾客带走一份、门店存一份，下次接待直接调阅。</div>
+
+  </div>
+
+  <h2 class="sec">三、A 组 · 儿童青少年（S-01~S-11，共 11 份）</h2>
+
+    <div class="tpl" id="s01">
+      <div class="tplh"><span class="no">S-01</span><span class="g">儿童青少年</span><span class="q">常规题 ★★</span><span class="c">场景：学校体检提示视力有问题，家长开口就说"我们家没有近视的，是不是眼睛累了"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "学校体检是哪只眼、说多少？"；② "孩子坐第几排，黑板看不看得清？"；③ "大人有近视吗？孩子每天户外大概多久？"——这三句决定后面讲多深。<br><b>看哪些数据</b>：远用屈光 OD −1.25D / OS −1.00D（小瞳）；裸眼视力 0.6 / 0.6，矫正视力 1.0 / 1.0；眼轴 23.85mm / 23.78mm（首次记录）；泪膜破裂时间 8 秒；双眼视功能未见异常。<br><b>怎么判读</b>：① 屈光度已达近视档（对照模块03 屈光度参考区间）；② 眼轴本次为<b>首次记录</b>，只能作基线，不得判"长得快"；③ 小瞳数据<b>不得</b>下"假性近视"或"能恢复"的结论，是否散瞳由医疗机构决定；④ 泪膜与双眼视功能未见异常，本次不触发模块12 转诊。<br><b>结论怎么写</b>：一句模板——"经检查右眼 125 度、左眼 100 度近视，矫正视力 1.0，本次为第一次记录；眼轴 23.85 / 23.78mm 作为今后比较的起点。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 按本次验光处方配镜，<b>上课与看远时佩戴</b>（不戴则看不清黑板，影响课堂效率）；② 建立视力档案，本次全部数据登记入册；③ 6 个月复查一次（含眼轴），现场把复查日期写进记录表并录入系统提醒。<br><b>建议做</b>：① 每日户外 <b>≥2 小时</b>，拆成"上学路上 30 分钟 + 课间 30 分钟 + 傍晚 1 小时"；② 读写距离 <b>≥33cm</b>（一尺），胸口离桌一拳、握笔一寸，现场量一次给孩子看；③ 近距离用眼 40 分钟一停，抬头看 6 米外 20 秒。<br><b>可选</b>：① 离焦镜片——仅在后续复查显示增速偏快时作为升级选项，先讲原理与复查要求，<b>不承诺效果</b>；② 备用镜一副（校内应急）。<br><b>不做会怎样</b>：不配镜，孩子长期看不清会眯眼、歪头、往前坐，视疲劳反而更重；不建档，下次复查没有基线可比，也就判断不出快慢。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：6 个月后（现场把预约日期写在记录表上，并录入系统提醒）。<br><b>复查要点</b>：屈光度、眼轴（<b>同设备</b>）、裸眼视力与矫正视力三项；与本次逐项对比，重点看眼轴增速——年化 ≤0.20~0.30mm 为达标，&gt;0.30mm 为控制不佳。<br><b>转诊条件</b>：本次无。若复查出现眼轴年增 &gt;0.6mm、矫正视力较上次明显下降或新增异常项，按模块12 执行并转爱眼城眼科（小儿眼科）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先接情绪）您先别急，我把今天的检查一项一项跟您说清楚。<br>（讲数据）孩子这次右眼 125 度、左眼 100 度，矫正以后都能到 1.0，说明镜片能把视力补回来。您说的"眼睛累"确实有，但疲劳不会让视力从 1.0 掉到 0.6。<br>（给结论）所以孩子是近视了。这只是一次测量，不能说以后就一定涨得快。<br>（回应追问）您问"能不能恢复"——这句话我不能讲，讲了就是骗您。我们能做的是把眼轴记下来：23.85 和 23.78，以后每次复查都跟它比，才看得出控制得好不好。<br>（收尾）今天定三件事：配镜、建档、半年后复查。复查日期我写在这张纸上，您也拍一张存手机里。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不说</b>"假性近视，休息休息就好"——小瞳数据不能下这个结论；<br>② <b>不承诺</b>"能恢复到 1.0""度数能降下来"；<br>③ <b>不遗漏</b>建档与复查时间——方案里没有具体复查日期的视为不合格；<br>④ <b>不推荐</b>任何药品或所谓"调理"产品；<br>⑤ <b>不用</b>"再不控制就要瞎了"这类恐吓话术催单。</div></div>
+    </div>
+
+    <div class="tpl" id="s02">
+      <div class="tplh"><span class="no">S-02</span><span class="g">儿童青少年</span><span class="q">常规题 ★★★</span><span class="c">场景：一年后复查，家长拿着两次单子问"是不是涨了 100 度，怎么这么快"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 4 句</b>：① "这一年孩子长高了多少？"；② "每天户外还有 2 小时吗？"；③ "现在坐第几排、看得清吗？"；④ "旧镜多久没换了、平时戴得多不多？"<br><b>看哪些数据</b>：本次 OD −3.50D，上次 −2.50D（一年 −1.00D）；OS 对应变化；眼轴 25.10mm（一年 +0.42mm）；角膜曲率与上次一致；矫正视力 1.0 / 1.0；裸眼视力较上次下降。<br><b>怎么判读</b>：① 年化 −1.00D 属偏快；② 眼轴 +0.42mm/年已超模块03 的 &gt;0.30mm"控制不佳"线，但<b>未达模块12 的 &gt;0.6mm 转诊红线</b>，两档不可混用；③ 角膜曲率稳定，说明度数增长主要来自眼轴拉长，不是角膜变陡；④ 身高增长属正常发育，可解释一部分自然增长，但不能解释全部。<br><b>结论怎么写</b>：把"度数是结果、眼轴是原因"写进结论，目标定成"把速度降下来"，而不是"不涨"——"一年增长 100 度、眼轴 +0.42mm，属偏快但未达转诊红线；目标是把年增速压到 0.30mm 以内。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 按现处方换镜（旧镜度数已不足）；② 6 个月内复查（屈光度 + 眼轴），因增速偏快取偏短端；③ 现场把复查日期写死。<br><b>建议做</b>：① 近视管理手段（离焦镜片等），讲清原理与"半年后拿什么数据判断是否有效"；② 户外 ≥2 小时，按时段拆解；③ 读写距离 ≥33cm 与屏幕时间管理（累计 ≤1 小时）。<br><b>可选</b>：① 如同时存在调节或集合功能异常，可加视觉训练（须先评估）；② 家庭视力表自查，每月记录一次作趋势参考。<br><b>不做会怎样</b>：继续戴旧镜，孩子长期欠矫，看远不清会加重视疲劳；不管增速、不复查，等于放弃唯一能判断效果的依据。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：3 个月内（因年增已过 0.30mm，此时尚不需要转诊，但需加密观察）；后续依增速决定 6 个月或 1 年。<br><b>复查要点</b>：屈光度、眼轴（同设备）、矫正视力；把年化增速算出来写入结论，与本次 0.42mm 对比——降到 ≤0.30mm 为有效，仍 &gt;0.30mm 需升级方案，&gt;0.6mm 按红线转诊。<br><b>转诊条件</b>：本次无。出现眼轴年增 &gt;0.6mm、或矫正视力不达 1.0、或泪膜与视功能新增异常提示，转爱眼城眼科（小儿眼科）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（认可家长）您算得没错，正好一年，涨了 100 度，确实比我们希望的快。<br>（讲原因）您再看这一项：眼轴从半年那个数到现在长了 0.42 毫米。角膜没变，说明度数主要是眼球被拉长带出来的——所以光换镜片不够。<br>（划边界）0.42 这个数，在我们标准里属于"要盯紧"，但还没到必须转诊的程度，这个分界我会写在单子上，不含糊。<br>（给动作）接下来两件事：一是换镜，二是把速度压下来——户外、距离、用眼节奏。半年后我们再看一次眼轴，用数据说话。<br>（明确不承诺）我不会说"保证不涨"，谁说都不算数；我能保证的是把每一次的数记清楚。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不说</b>"保证不涨""一定控制住"；<br>② <b>不只讲度数不讲眼轴</b>——两者要一起讲，否则家长只记得"100 度"；<br>③ <b>不混淆两档标准</b>，不得把 03 的 0.30mm 控制线说成转诊红线；<br>④ <b>不省略</b>复查时间与判定标准；<br>⑤ <b>不贬低</b>上一次的方案或验光结果。</div></div>
+    </div>
+
+    <div class="tpl" id="s03">
+      <div class="tplh"><span class="no">S-03</span><span class="g">儿童青少年</span><span class="q">常规题 ★★★</span><span class="c">场景：学校筛查提示"远视储备不足"，家长第一次听到，问"这是要近视了吗"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "学校筛查是在哪一天、用了什么方法？"；② "孩子写字看书一般多远？"；③ "每天户外和睡觉时间大概多少？"<br><b>看哪些数据</b>：散瞳验光 OD +0.25D / OS +0.50D；眼轴 23.20mm / 23.15mm；裸眼视力 0.8 / 0.9；泪膜与双眼视功能未见异常。<br><b>怎么判读</b>：① 散瞳后仍为轻度远视，说明储备<b>尚存但偏少</b>，可参同龄百分位（P50/P95）看位置；② 裸眼 0.8 / 0.9 未达 1.0，与轻度远视相符；③ 眼轴同样按同龄百分位参考（对照模块03 眼轴项）；④ <b>筛查结果不能作为诊断</b>，结论必须以散瞳验光 + 眼轴趋势为准。<br><b>结论怎么写</b>：用"存款"类比并把范围说清——"散瞳后仍为轻度远视，目前不是近视，本次不需要配镜；储备低于同龄常见水平，建议 3~6 个月复查趋势。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 建立视力档案，登记本次散瞳验光与眼轴数据；② 3~6 个月复查散瞳验光 + 眼轴；③ 今日就可开始的三件事写进方案：户外 ≥2 小时、读写距离 ≥33cm、读写照明充足（同时开顶灯与台灯）。<br><b>建议做</b>：① 睡眠充足（小学生 10 小时），用眼 40 分钟一停；② 每学期配合学校筛查，结果并入档案做趋势。<br><b>可选</b>：<b>无</b>——本类不推荐任何产品，包括各类"护眼"器械与营养品。<br><b>不做会怎样</b>：不建档、不复查，等到看不清再来往往已跨入近视档，错过了储备期最该干预的时间窗。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：3~6 个月（首次复查取 3 个月，看趋势明确后再拉长至 6 个月）。<br><b>复查要点</b>：散瞳验光（慢散或遵医嘱）、眼轴（同设备）、裸眼视力；重点是<b>趋势</b>——储备是否继续减少、眼轴年化是否 ≤0.20~0.30mm。<br><b>转诊条件</b>：本次无。若复查已进入近视档（散瞳后出现负值）、或裸眼视力持续下降、或双眼差异明显，按模块12 评估并转爱眼城眼科（小儿眼科）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"家长您好，先说结论：孩子现在<b>不是近视</b>，今天也不用配镜，您可以先松口气。<br>（打比方）远视储备就像眼睛的一笔存款，孩子现在还有一点，但比同龄孩子少。<br>（划边界）这句话的意思是"要开始省着花"，不是"马上就近视"。学校筛查只是一个提示，真正算数的是今天这份散瞳验光和眼轴。<br>（给动作）今天能开始做的三件事：户外每天两小时、读写别低于一尺、写作业的灯别只开台灯。三个月到半年我们再复查一次，看趋势。<br>（明确不推销）今天我不推荐您买任何东西，包括护眼的产品。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不用</b>小瞳验光单下"储备不足"的结论；<br>② <b>不制造恐慌</b>促单（不说"再不治就近视了"）；<br>③ <b>不推荐配镜</b>，本类本次不需要配镜；<br>④ <b>不推荐</b>任何护眼器械、营养品、眼贴类产品；<br>⑤ <b>不省略</b>复查时间与趋势判断口径。</div></div>
+    </div>
+
+    <div class="tpl" id="s04">
+      <div class="tplh"><span class="no">S-04</span><span class="g">儿童青少年</span><span class="q">常规题 ★★</span><span class="c">场景：家长打听某种滴眼液或调理方法，问"你们这儿有没有，能不能不做别的"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "您说的这个方法是医生开的，还是听人介绍的？"；② "孩子现在多久复查一次、有没有就诊记录？"；③ "除了这个方法，户外和用眼习惯现在做得怎么样？"<br><b>看哪些数据</b>：OD −2.50D / OS −2.25D；眼轴 24.60mm（半年 +0.22mm，年化 ≈0.44mm/年）；裸眼视力下降、矫正视力 1.0；泪膜与双眼视功能未见异常。<br><b>怎么判读</b>：① 屈光度属中度近视档（对照模块03）；② 半年 +0.22mm 折年化 ≈0.44mm/年，已超 03 的 &gt;0.30mm 控制线、<b>未达 12 的 &gt;0.6mm 红线</b>；③ <b>门店不碰药品、不做疗效评价</b>，涉及用药一律建议到爱眼城眼科（小儿眼科）评估；④ 家长问的"能不能只做这个、不做别的"，本质是想找省事方案，要用数据说明"行为管理是基础，不可替代"。<br><b>结论怎么写</b>：只写门店能提供的部分——"中度近视，眼轴增速偏快；门店提供镜片方案与行为管理，用药部分建议由眼科医生评估后决定。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 按处方配镜；② 6 个月复查（屈光度 + 眼轴）；③ 写下半年可量化的数据目标（如"把眼轴年增速压到 0.30mm 以内"）。<br><b>建议做</b>：① 门店可提供的近视管理手段（离焦镜片等），讲清原理与复查要求；② 户外 2 小时的拆解执行法（上学路上 + 课间 + 傍晚）；③ 读写距离量化到"一尺"，现场量一次。<br><b>可选</b>：<b>无药品类选项</b>——门店不提供、不代购、不评价任何滴眼液与调理方法。<br><b>不做会怎样</b>：只盯着"用药"这一条路，忽略了每天都能做的行为管理，半年后数据大概率还是在涨。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：3 个月（用药与否都不影响门店复查节奏）。<br><b>复查要点</b>：屈光度、眼轴（同设备）、矫正视力；算年化增速，与本次 0.44mm/年 对比，判断管理是否有效。<br><b>转诊条件</b>：涉及用药评估、或复查眼轴年增 &gt;0.6mm、或出现角膜、泪膜或视功能异常项 → 爱眼城眼科（小儿眼科）。本次不含用药转诊，仅作提示。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先划清）您说的那个方法，我不能替您评价，也不能卖——这类属于用药，得让医生看了孩子的检查结果才能定，这不是门店能做的部分。<br>（给数据）我能给您的是这几件事：孩子现在中度近视，半年眼轴长了 0.22 毫米，折成一年大概 0.44，比我们希望的快一点，但还没到必须转诊的程度。<br>（给动作）所以今天定三件事：镜片怎么配、户外两小时怎么凑够、半年后拿什么数据来比。这三件今天就能落地。<br>（回应追单）您要是问"能不能只做那个、不做别的"——我的答案是：行为管理是底子，谁都不能替你省掉。<br>（收尾）复查日期我写在这张单子上。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不推荐、不代购、不评价</b>任何药品与"调理"方法；<br>② <b>不承诺</b>任何方法的控制效果；<br>③ <b>不说</b>"用了那个就不用管别的了"；<br>④ <b>不贬低</b>顾客带来的信息或他院方案；<br>⑤ <b>不省略</b>6 个月复查与眼轴对比要求。</div></div>
+    </div>
+
+    <div class="tpl" id="s05">
+      <div class="tplh"><span class="no">S-05</span><span class="g">儿童青少年</span><span class="q">常规题 ★★</span><span class="c">场景：孩子说不想戴眼镜"同学会笑我"，家长在旁边催"你就说配哪种"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>（<b>其中至少一句要问孩子本人</b>）：① 问孩子："你坐第几排？黑板哪一块看不清？"；② 问孩子："体育课、课间你想不想摘？"；③ 问家长："您在家是支持他戴，还是也想让他少戴？"<br><b>看哪些数据</b>：OD −1.50D / OS −1.75D；矫正视力 1.0 / 1.0；眼轴 24.30mm / 24.42mm；裸眼视力下降；泪膜与双眼视功能未见异常。<br><b>怎么判读</b>：① 典型轻中度近视，矫正视力正常，<b>数据本身没有争议</b>；② 眼轴按同龄百分位参考（对照模块03）；③ 本卡的难点<b>不在判读，在沟通对象</b>——真正的使用者和决策参与者是孩子本人，不是家长；④ 孩子抗拒戴镜，多来自"怕被笑"，不是怕看不清。<br><b>结论怎么写</b>：把戴镜的意义落在生活场景（看清黑板、体育课、看路），<b>不落在"度数会涨"的恐吓上</b>；写明佩戴规则——"上课与看黑板时佩戴，运动按约定场合摘"。</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 配镜，并<b>现场与孩子一起定</b>"什么场合戴、什么场合摘"（让他自己说出来，写成一句话）；② 6 个月复查（屈光度 + 眼轴）。<br><b>建议做</b>：① 镜架让孩子自己挑——外观是他最在意的点，这一步能明显提高佩戴率；② 户外 ≥2 小时；③ 读写距离 ≥33cm。<br><b>可选</b>：① 备用镜一副（运动或应急）；② 轻量镜架、防滑耳钩，减少"戴着不舒服"的借口。<br><b>不做会怎样</b>：不配镜或配了不戴，孩子长期看不清 → 眯眼、凑近、坐前移，视疲劳加重，上课效率也下降。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：6 个月（写在记录表上，同时提醒家长：佩戴率低的孩子要提前看）。<br><b>复查要点</b>：屈光度、眼轴（同设备）、矫正视力；<b>同时问一句"平时戴得多不多"</b>——佩戴率直接决定复查数据的意义。<br><b>转诊条件</b>：本次无。若复查眼轴年增 &gt;0.6mm、或矫正视力不达 1.0、或出现明显视疲劳伴双眼视功能异常，按模块12 转爱眼城眼科（小儿眼科）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>先对孩子说，蹲下来和他平视</b>）你不想戴，我理解，同学会问对吧？那我先问你一句——你坐第几排，黑板看得清吗？<br>（继续对孩子）看不清的地方，我们让镜片帮你；看得清的地方，你想摘就摘，<b>这个规则你自己定</b>，我写下来。<br>（对孩子）镜架你也自己挑，挑你喜欢的。<br>（<b>再对家长</b>）镜架让他自己挑，他愿意戴，比什么都管用。逼他戴、他不戴，度数还是那个度数。<br>（对家长，收尾）半年后复查，我到时候会问他一句"平时戴得多不多"，您别替他答。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不当着孩子的面</b>贬低他、说他"不听话""不懂事"；<br>② <b>不全程只对家长讲</b>、无视孩子本人；<br>③ <b>不替孩子做决定</b>——佩戴规则要他自己说出来；<br>④ <b>不用</b>"不戴眼镜度数会越涨越高"恐吓孩子；<br>⑤ <b>不承诺</b>戴镜后度数不涨。</div></div>
+    </div>
+
+    <div class="tpl" id="s06">
+      <div class="tplh"><span class="no">S-06</span><span class="g">儿童青少年</span><span class="q">常规题 ★★★★</span><span class="c">场景：家长直接问"配角膜塑形镜还是那个离焦的"，手机里存好了几个产品名</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "您是从哪里了解到这两个的？"；② "孩子平时运动多吗、晚上几点睡？"；③ "家里离医院远不远，能不能保证按时复查？"<br><b>看哪些数据</b>：OD −4.00D / OS −3.75D；眼轴 26.00mm / 25.92mm；角膜曲率 43.2D / 43.0D；泪膜正常；角膜地形图（如门店有）与眼表检查未见异常。<br><b>怎么判读</b>：① 中度以上近视，眼轴已 &gt;26mm，按模块03 需一并关注并发症风险；② <b>本卡考的不是"哪个更好"，而是"讲清适用条件与检查项目"</b>，门店不做横向效果比较、不排序；③ 角膜塑形镜属医疗机构验配范畴，门店只做前置条件说明与转介；④ 泪膜、角膜曲率与眼表正常，说明眼下没有明显禁忌提示项，但仍需医疗机构评估。<br><b>结论怎么写</b>：写"两条路径"——"门店可做：框架镜方案 + 半年复查；须由医疗机构评估：角膜塑形镜验配（需角膜地形图、泪膜、依从性等五项前置条件）。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 讲清五项前置条件：角膜地形图、泪膜、卫生条件、家长操作能力、复查依从性；② 角膜塑形镜转介爱眼城眼科（小儿眼科）评估；③ 门店这边给出框架镜方案（含离焦镜片可选）。<br><b>建议做</b>：① 6 个月复查眼轴，用数据判断管理效果；② 户外 ≥2 小时与用眼距离管理。<br><b>可选</b>：① 离焦镜片等门店可提供的近视管理选项；② 运动场景下的备用镜。<br><b>不做会怎样</b>：只谈产品、不谈条件，家长带着"哪个好"的预期离店，一旦不符合条件或效果不及预期，就会产生纠纷；不做框架镜兜底方案，孩子这段时间等于没有矫正手段。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：3~6 个月（考虑眼轴已 &gt;26mm，取偏短端），同时按医疗机构要求另排角膜塑形镜相关复查。<br><b>复查要点</b>：屈光度、眼轴、角膜曲率（同设备）、矫正视力；重点看眼轴年化增速是否 ≤0.20~0.30mm。<br><b>转诊条件</b>：角膜塑形镜验配需求 → 爱眼城眼科（小儿眼科）；若复查眼轴年增 &gt;0.6mm、或角膜、泪膜与眼表出现异常提示项 → 按模块12 转诊。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先纠问题）您问的"哪个更好"，这两个不是同一类东西，也谈不上谁更好——是<b>条件问题</b>。<br>（讲条件）角膜塑形镜要先看角膜地形图、泪膜情况，还要看孩子和您能不能坚持复查、卫生习惯过不过关；这属于医疗机构的验配范围，得让医生评估。<br>（讲门店能给什么）门店这边能给您的，是框架镜方案和每半年的眼轴对比——这是无论走哪条路都要做的事。<br>（划边界）所以今天我能给您的是：先配一副合适的框架镜，同时把角膜塑形镜的评估转给眼科。两条路不冲突。<br>（明确不承诺）效果我不承诺，谁也不能保证。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不承诺</b>控制效果，不说"多少度以内都没问题"；<br>② <b>不在门店承诺</b>验配角膜塑形镜，不代订、不代购；<br>③ <b>不做产品横向比较</b>、不给"哪个更好"的排序；<br>④ <b>不省略</b>五项前置条件的说明；<br>⑤ <b>不因顾客点名要某产品</b>就跳过框架镜方案与复查安排。</div></div>
+    </div>
+
+    <div class="tpl" id="s07">
+      <div class="tplh"><span class="no">S-07</span><span class="g">儿童青少年</span><span class="q">常规题 ★★★★</span><span class="c">场景：度数配够了，孩子还说看近累、看书跳行，家长带着情绪怀疑"是不是你们验得不准"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>（顺序很重要，<b>先接情绪再问数据</b>）：① "您说换过两次还不行，是哪一家的镜、大概什么时候？"；② "孩子看书多久开始累？跳行是整页都跳还是某几行？"；③ "看远的时候会有这些情况吗？"<br><b>看哪些数据</b>：OD −2.00D / OS −2.00D，矫正视力 1.0 / 1.0；集合近点 14cm（偏近）；调节幅度低于同龄参考值；看近隐斜偏大；立体视正常；眼位与眼球运动未见异常。<br><b>怎么判读</b>：① 屈光矫正已到位，说明"验得不准"这个怀疑可以排除——<b>先把这一点明确告诉家长</b>；② 症状指向调节与集合功能异常（对照模块03 双眼视功能项）；③ <b>必须先排除斜视、弱视等需就医情况</b>，再谈训练；④ 立体视正常，说明没有明显的眼位性双眼视损害，但看近隐斜偏大仍可解释"看书跳行、看久累"。<br><b>结论怎么写</b>：先写"度数没问题"，再写"问题在另一项"，用生活语言解释"对焦速度"与"两眼配合"，最后写"先请医生看一眼"这一步。</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 先接住"换过两次还不行"的情绪，明确告知度数确实配足了；② 转介爱眼城眼科（小儿眼科）排除斜视、弱视；③ 说明训练是周期性的、需复查对比，<b>不给恢复时间的承诺</b>。<br><b>建议做</b>：① 视觉训练（按评估制定计划，写明复评节点，如每 4~6 周一次）；② 读写姿势与用眼节奏（40 分钟一停），减轻症状诱因。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：不排查斜视、弱视就直接训练，可能把需要就医的情况当成功能问题处理；不训练只换镜，症状会继续存在，家长对门店的信任也会持续下降。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：先转诊（排斜视、弱视）；训练期间每 4~6 周复评一次。<br><b>复查要点</b>：集合近点、调节幅度、看近隐斜、症状日记（累的时间是否推迟）；把训练前与复评后的数据并列记录，用趋势说话。<br><b>转诊条件</b>：<b>先转诊</b>排除斜视、弱视（爱眼城眼科 小儿眼科）；训练中若症状无改善或加重、或出现眼位异常，按模块12 再次转诊。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先接情绪）您先别急，也先别怀疑自己——换过两次还不行，这事确实让人烦。<br>（排除怀疑）今天的验光结果我可以负责任地说：度数<b>配足了</b>，矫正视力 1.0，这一块没有问题。<br>（给方向）问题在另一个地方——眼睛"对焦"的速度，和两只眼的配合。<br>（打比方）就像相机调焦慢，看久了当然累；两只眼配合不默契，字就会跳行。这两项和度数没关系。<br>（给步骤）这个能练，但练之前得请医生先看一眼，把斜视、弱视这些排除掉——这是对孩子负责。<br>（明确不承诺）我不给您说几个月能好，我们按次复查看变化，每 4~6 周比一次。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不承诺</b>训练效果或恢复时间；<br>② <b>不提排除斜视、弱视</b>就直接安排训练；<br>③ <b>不把问题全归为</b>"用眼习惯差"，也不推给家长；<br>④ <b>不否定</b>前两次的验光结果或同行；<br>⑤ <b>不擅自</b>下"调节不足""集合不足"这类诊断性结论——只描述现象、建议就医评估。</div></div>
+    </div>
+
+    <div class="tpl" id="s08">
+      <div class="tplh"><span class="no">S-08</span><span class="g">儿童青少年</span><span class="q">压力题 ★★★★</span><span class="c">场景：讲到方案时家长打断："保证不涨我就买，不保证我不做，回头涨了你退款吗"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "您说的"不涨"，是指度数还是眼轴？"；② "如果半年后涨幅比现在慢一半，您觉得算不算有效？"；③ "孩子现在每天户外多久、作业写到几点？"<br><b>看哪些数据</b>：10 岁男孩；OD −3.25D / OS −3.00D；眼轴 24.10mm（一年 +0.45mm）；矫正视力 1.0；泪膜与双眼视功能未见异常。<br><b>怎么判读</b>：① 眼轴 +0.45mm/年已超模块03 的 0.30mm 控制不佳线，<b>未达模块12 的 0.6mm 红线</b>；② <b>没有任何方法能保证不涨</b>——眼球随发育生长是客观过程，本卡考的就是能否守住"不做疗效承诺"这条线；③ 家长提出"不保证就退款"，属情绪化施压，不是真的在研究方案；④ 可谈的是"增速可控"与"用什么数据判断是否有效"。<br><b>结论怎么写</b>：把话题转到可控部分——"眼轴年增 0.45mm，目标是把年增速压到 0.30mm 以内；半年后以同设备眼轴数据判断是否有效。"<b>不写任何效果保证</b>。</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 配镜；② 6 个月复查（含眼轴）；③ 出具书面建议书，写明做什么、多久复查、<b>怎么判断是否有效</b>。<br><b>建议做</b>：① 近视管理手段（离焦等），说清原理与数据目标；② 户外 ≥2 小时；③ 作业时段的距离与光照管理。<br><b>可选</b>：<b>无</b>——不设"保证型"选项，也不设"效果不达标退费"类承诺。<br><b>不做会怎样</b>：如果为了留住顾客答应了"保证不涨"，半年后一旦涨了，退款、投诉、口碑损失都会跟着来；这是门店承担不起的风险。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：3 个月（书面写死日期）。<br><b>复查要点</b>：屈光度、眼轴（同设备）、矫正视力；把本次 0.45mm/年 与复查结果并列对比，用"快了还是慢了"给结论。<br><b>转诊条件</b>：本次无。若复查眼轴年增 &gt;0.6mm、或矫正视力下降、或出现新的异常提示，转爱眼城眼科（小儿眼科）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先接住）您这句话我听明白了，怕的是花了钱还是涨。<br>（正面回答，不含糊）那我直接说：<b>没有谁能保证不涨</b>，这句话我今天不会说，说了就是骗您。孩子长个子，眼球本身也在长，这是客观规律。<br>（给可控项）我能写下来的是三件事：半年后眼轴涨多少算正常、什么时候复查、哪几件事做了能把速度压下来。<br>（给判定标准）您拿这张纸去对比，做到没做到一目了然——比"保证"两个字实在。<br>（回应退款）退款这句我不能答应，谁答应谁不负责；但我可以答应您：每一次的数据都如实记录，涨了我不改口。<br>（收尾）您今天也可以什么都不买，只做检查、只建档。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>任何形式的承诺或变相承诺</b>（"基本不会涨""我们做过的都没涨"）；<br>② <b>不为留客答应退费承诺</b>或"效果不达标退款"；<br>③ <b>不因顾客施压而夸大</b>产品作用；<br>④ <b>不省略</b>书面建议书——须写明复查时间与判定标准；<br>⑤ <b>不用</b>"不做就更严重"这类反向恐吓促成交易。</div></div>
+    </div>
+
+    <div class="tpl" id="s09">
+      <div class="tplh"><span class="no">S-09</span><span class="g">儿童青少年</span><span class="q">压力题 ★★★</span><span class="c">场景：外婆陪孩子来，全程说"现在别配那么认真，长大做个手术就行了"，母亲在旁边犹豫</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① 问外婆："您说的是不是长大做激光那种？"（先承认她说的有道理）；② 问母亲："孩子平时作业写到几点、户外多不多？"；③ 问孩子："现在黑板看得清吗？"<br><b>看哪些数据</b>：9 岁女孩；OD −2.75D / OS −2.50D；眼轴 24.85mm / 24.70mm；矫正视力 1.0 / 1.0；泪膜与双眼视功能未见异常。<br><b>怎么判读</b>：① 中度近视、眼轴接近 25mm，按模块03 需一并关注并发症风险；② <b>手术能解决的是"要不要戴镜"（屈光度），解决不了眼轴过长带来的影响</b>——并发症风险与眼轴长度相关；③ 本卡的核心不是判读，而是<b>不反驳长辈、把话题从"度数"引到"眼轴"</b>；④ 母亲是实际决策者，方案要向她确认。<br><b>结论怎么写</b>：承认对方的合理部分，再补充被忽略的部分——"度数将来确实可以通过手术处理；但眼轴已 24.85mm，需长期随访眼轴变化，这与手术是两件事。本次建议配镜 + 6 个月复查。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 按处方配镜；② 6 个月复查（屈光度 + 眼轴 + 双眼视功能）；③ <b>让母亲成为明确的决策者</b>，方案由她确认签字。<br><b>建议做</b>：① 户外 ≥2 小时；② 读写距离与用眼节律（40 分钟一停）；③ 把外婆也纳入沟通——请她在户外和作业时间上帮忙盯着。<br><b>可选</b>：① 近视管理手段（按检查条件评估）。<br><b>不做会怎样</b>：不配镜，孩子这几年一直看不清，课堂受影响；不管眼轴，等将来做手术时眼轴已经过长，相关风险基础已经形成，手术也解决不了。<br><b>沟通提示</b>：与长辈沟通要"先肯定、后补充"，不争对错。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：6 个月（并写入记录表）。<br><b>复查要点</b>：屈光度、眼轴（同设备）、矫正视力；重点讲眼轴长度与增速，把眼轴随访作为常规项。<br><b>转诊条件</b>：本次无。眼轴年增 &gt;0.6mm、出现新的异常提示项、或矫正视力下降 → 爱眼城眼科（小儿眼科）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>先对外婆，绝不辩论</b>）阿姨您说得对，手术确实能解决度数，现在很多人也这么做，这个我不反驳。<br>（转向被忽略的部分）但有一点得补上：手术解决的是"要不要戴眼镜"，解决不了眼轴太长带来的风险。<br>（用今天的数字说话）孩子现在眼轴 24.8，比一般孩子长，我们今天先把它记下来，往后一年一年比——这是今天最该做的事。<br>（<b>再对母亲</b>）您看这样安排：这次先配镜，半年后复查我们把眼轴再量一遍，数据我写在这张表上，您带回去。<br>（请长辈帮忙）阿姨，户外和写作业的时间您帮我盯着点，这两件比配什么镜都管用。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不与长辈争执</b>，不说"你不懂""别听人乱说"；<br>② <b>不宣称手术有害</b>或"手术效果不好"；<br>③ <b>不用</b>"不做防控以后会瞎"这类恐吓话术；<br>④ <b>不把度数当成唯一话题</b>——必须讲到眼轴与并发症风险；<br>⑤ <b>不绕过母亲</b>让外婆做决定，也不当着长辈贬低孩子。</div></div>
+    </div>
+
+    <div class="tpl" id="s10">
+      <div class="tplh"><span class="no">S-10</span><span class="g">儿童青少年</span><span class="q">压力题 ★★★★</span><span class="c">场景：家长念网上的文章："说眼轴检查没必要，孩子长个子眼轴也会变长，你们是不是多收钱"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "您那篇文章里说的"眼轴会随发育变长"，说的是不是对的？"（引导他自己确认）；② "咱们这两次的数据您带着吗？"；③ "这一年孩子度数有没有变、换了镜没有？"<br><b>看哪些数据</b>：11 岁；两次间隔一年——眼轴 24.95mm → 25.38mm（+0.43mm）；同期身高正常增长；屈光度 −3.00D → −3.50D；矫正视力 1.0。<br><b>怎么判读</b>：① 文章里"眼轴随发育增长"这句<b>本身是对的</b>，先认可；② <b>单纯看长度不够，要看增长速度与是否伴随屈光度改变</b>——本例两条同时在变（一年 +0.43mm、度数 +0.50D），这才是要盯的信号；③ 门店设备用于筛查与随访参考，诊断以医疗机构为准；④ 本卡考的<b>不是辩论，而是"用自家两次数据讲清为什么必须复查"</b>。<br><b>结论怎么写</b>：用数据回答疑问——"两次对比：眼轴一年 +0.43mm，同期度数 +0.50D，两者同时在变；建议继续同设备、同项目复查，数据才可对比。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 配镜；② 继续<b>按同设备、同项目</b>复查（否则数据不可比）；③ 第②步异常值扫描照做，<b>不因被质疑而缩短流程</b>。<br><b>建议做</b>：① 户外 ≥2 小时与读写距离管理；② 把两次数据做成一张对比表给家长带走，让趋势自己说话。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：为了"安抚"而减免检查项目，等于破坏随访链条；以后再也拿不到可比的数据。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：6 个月（同设备、同项目）。<br><b>复查要点</b>：眼轴、屈光度、矫正视力；<b>必须标注"同一设备、同一项目"</b>，并在记录表上写清设备编号或项目名，保证可对比。<br><b>转诊条件</b>：本次无。眼轴年增 &gt;0.6mm、矫正视力下降、或出现角膜与泪膜异常提示 → 爱眼城眼科（小儿眼科）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先认可）文章里那句是对的——孩子长个子眼轴也会长，这没错。<br>（再补一半）所以单看长度没什么意义。您看这两次：一年长了 0.43 毫米，同期度数也涨了 50 度。<b>两样一起长，这才是要盯的信号</b>，也正好说明复查的价值。<br>（回应"多收钱"）这台设备我们是统一用来随访的，不是每次都换，就是为了让数据能跟上次对比。<br>（划边界）它不是诊断工具，查出问题我们会建议去医院确认——这一点我从不含糊。<br>（收尾）半年后我们再测一次，还是这台设备、还是这几项。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不贬低</b>顾客的信息来源，不说"你不懂""网上都是骗人的"；<br>② <b>不为迎合顾客而承诺减免</b>指标检查；<br>③ <b>不因被质疑而缩短</b>第②步异常值扫描流程；<br>④ <b>不夸大</b>门店设备的作用，不说它可以"代替医院检查"；<br>⑤ <b>不省略</b>同设备、同项目复查的说明。</div></div>
+    </div>
+
+    <div class="tpl" id="s11">
+      <div class="tplh"><span class="no">S-11</span><span class="g">儿童青少年</span><span class="q">压力题 ★★★★</span><span class="c">场景：家长一进门就开录像，说"上次你们也是这么讲的，最后就是让我买贵的"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "上次是哪一次、哪个门店？大概什么时候？"；② "今天您最想弄清楚的是哪一项？"；③ "孩子最近的用眼情况有没有变化？"<br><b>看哪些数据</b>：12 岁男孩；OD −5.00D / OS −4.75D；眼轴 26.40mm / 26.28mm；矫正视力 1.0 / 1.0；泪膜与双眼视功能未见异常。<br><b>怎么判读</b>：① 接近高度近视，眼轴已超 26mm，按模块03 需关注并发症风险；② <b>本卡的沟通重点是流程与留痕，不是产品</b>——前半程只讲数据，不谈价格；③ 顾客录像行为本身不违规，门店不得因此拒绝服务或争执；④ 方案中必须包含"可以什么都不选"这一项，并逐项说明"解决什么问题、不做会怎样"。<br><b>结论怎么写</b>：不写推荐排序，只写事实与选项——"本次检查结果如下（列数据）；可选项目与各自作用见下，顾客可自行决定是否采纳，本次亦可不做任何选择。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① <b>先为上次的不愉快致歉</b>；② 前半程<b>只讲数据与结论、不谈价格</b>；③ 方案含"什么都不选"选项，并写明每项的作用与不做的后果；④ 记录表交顾客带走。<br><b>建议做</b>：① 眼轴与眼表定期随访（按医生建议间隔）；② 6 个月复查（屈光度 + 眼轴）；③ 用眼距离与户外管理。<br><b>可选</b>：① 近视管理手段，逐项讲清适用条件与不适用的情况。<br><b>不做会怎样</b>：先报价、先推产品，录像一旦外传，"诱导消费"的印象就坐实了；不给"可以不选"的选项，顾客会认为没有退路。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：6 个月（屈光度 + 眼轴）；并按医生建议定期随访。<br><b>复查要点</b>：屈光度、眼轴（同设备）、矫正视力、随访记录；把本次数据与复查结果并列对比。<br><b>转诊条件</b>：本次无（眼轴随访按需转介爱眼城眼科 小儿眼科）；若眼轴年增 &gt;0.6mm 或出现新的异常提示，按模块12 执行。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>先道歉，不谈别的</b>）上次让您不舒服，我先道个歉——这件事我记下了。<br>（明确流程）今天我把流程改一下：前半段我只讲数据，一分钱不谈；<br>（讲数据）孩子现在右眼 500 度、左眼 475 度，矫正后 1.0；眼轴 26.4 和 26.28，超过 26 了，这类数据我们会建议定期随访。<br>（给选项，含"不选"）最后我给您一张纸，每个选项解决什么问题、不做会怎样，都写在上面，<b>也包括"今天什么都不选"这一项</b>。<br>（留给顾客主动权）您带走，回头再决定。今天完全可以不消费。<br>（回应录像）您录没问题，我说的每一句都能写在纸上，写的和说的对得上。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不因录像与顾客争执</b>，也不得拒绝服务；<br>② <b>不先报价、不先推产品</b>再讲数据；<br>③ <b>不省略</b>"可以什么都不选"这一选项；<br>④ <b>不暗示</b>"不选就是不负责"；<br>⑤ <b>不夸大</b>眼轴 26mm 的意义（按模块03 属于需关注并发症风险，不等于确诊眼病）。</div></div>
+    </div>
+
+  <h2 class="sec">四、B 组 · 成年人（S-12~S-21，共 10 份）</h2>
+
+    <div class="tpl" id="s12">
+      <div class="tplh"><span class="no">S-12</span><span class="g">成年人</span><span class="q">常规题 ★★</span><span class="c">场景：顾客说"我度数好几年没变了，眼镜还能戴，为什么你们说该换了"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "这副镜配了多久？平时怎么放、怎么擦？"；② "晚上开车、看屏幕，有没有觉得比从前费劲？"；③ "旧镜戴着有没有歪、会不会往下滑？"<br><b>看哪些数据</b>：OD −3.50D / OS −3.25D，与两年前一致；旧镜镜片有明显划痕与膜层脱落；旧镜瞳距比实测小 4mm；镜架变形、镜眼距偏大；矫正视力 1.0。<br><b>怎么判读</b>：① 屈光度稳定，<b>问题在镜片的物理状态与装配参数，不在度数</b>——两者必须分开讲；② 所有问题都要是<b>可当场验证</b>的（划痕散射、膜层脱落、瞳距偏差、镜架变形）；③ 瞳距偏小 4mm 会产生棱镜效应，用久易疲劳；④ 镜眼距偏大会改变有效度数，尤其高度数更明显。<br><b>结论怎么写</b>：逐个列可验证项，再用顾客自己的体验反证（夜间眩光、看屏幕易累），最后给"换片 / 换整副"两个层级——"度数无变化；旧镜镜片磨损、瞳距偏差 4mm、镜架变形，建议换片并校正装配。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 换片（划痕散射与膜层脱落影响透光与夜间视觉）；② 重新实测瞳距瞳高并校正镜架（装配参数不准，度数再对也白搭）。<br><b>建议做</b>：① 若镜架变形明显、镜眼距偏大，建议换整副，光学效果更可控；② 现场试戴确认，让顾客对比"戴旧镜 / 戴新片"的差别。<br><b>可选</b>：① 按用眼场景选择功能镜片（如长时间户外、夜间驾驶）。<br><b>不做会怎样</b>：继续戴磨损变形镜，透光率下降、装配偏差持续，视疲劳和夜间行车风险都会留着；顾客自己也说不清"为什么就是不得劲"。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：1 年后（本次换片，无需加密）。<br><b>复查要点</b>：屈光度、矫正视力、镜片状态与装配参数（瞳距瞳高是否仍准）；提醒顾客镜片一般 2 年左右评估一次。<br><b>转诊条件</b>：本次无。若出现角膜、泪膜或视力异常项，按模块12 转爱眼城眼科。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>先肯定</b>）度数确实没变，这点您说得对，我不会硬说您度数涨了。<br>（讲可验证的）但您看这几处：镜片上有划痕、边上这块膜已经脱了——它们会把光打散，晚上开车尤其明显；再看瞳距，这副比您现在实测的小 4 毫米，眼睛得额外使劲。度数对，眼睛和镜片的配合不对，一样不清楚、一样累。<br>（给方案）所以这次不是"换度数"，是换镜片、把装配参数校正回来。<br>（给选择）镜架要是您想继续用，我们只换片；要是变形厉害，也可以整套换。<br>（收尾）一年后再复查一次，镜片状态我们也一起看。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>只说"该换了"却给不出可验证依据</b>；<br>② <b>为提高单值硬说度数变了</b>；<br>③ <b>不检测</b>瞳距瞳高就直接推荐镜片；<br>④ <b>不夸大</b>划痕危害（不得说"会伤眼睛、会加深度数"）；<br>⑤ <b>不省略</b>装配校正这一必做项。</div></div>
+    </div>
+
+    <div class="tpl" id="s13">
+      <div class="tplh"><span class="no">S-13</span><span class="g">成年人</span><span class="q">常规题 ★★★</span><span class="c">场景：顾客说"每天看电脑十小时，下午眼睛就胀、看字发虚，是不是度数不够了"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "上午一般没问题、下午才明显，是吗？"；② "办公室有没有空调直吹、屏幕多高、一天眨眼多不多？"；③ "晚上回家看手机还会不会不舒服？"<br><b>看哪些数据</b>：OD −2.75D / OS −2.50D，矫正视力 1.0；调节灵敏度偏低；调节滞后偏大；看近隐斜轻度偏斜；BUT 5 秒（<b>&lt;10 秒</b>）；角膜与眼表未见异常。<br><b>怎么判读</b>：① 屈光矫正已到位，<b>不是"度数不够"</b>；② 症状来自两组数据——<b>调节功能（对焦速度慢）+ 泪膜不稳定（BUT 5 秒）</b>，正好解释"越到下午越明显"；③ 调节滞后偏大意味着看近时成像落在视网膜后，大脑要持续调焦，久了就胀、就虚；④ 未达模块12 转诊条件。<br><b>结论怎么写</b>：分别用生活语言解释"对焦慢"与"泪膜不稳"各自造成什么感受——"矫正视力正常，症状与调节功能及泪膜稳定性相关；建议从用眼节奏与环境入手，可选调节训练。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 用眼节奏（把 20-20-20 落到具体动作：看屏 20 分钟 → 看 6 米外 20 秒）；② 环境调整（避开空调直吹、屏幕顶端略低于视线、室内湿度、有意识眨眼）。<br><b>建议做</b>：① 视觉训练（针对调节功能，写明复评节点，如 4~6 周）；② 长时间近距作业者可考虑办公型镜片。<br><b>可选</b>：<b>无</b>——不推荐药品，不讲"防蓝光能治视疲劳"。<br><b>不做会怎样</b>：加度数解决不了对焦慢与泪膜不稳，症状照旧；长期不调整节奏与环境，症状只会更频繁。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：训练每 4~6 周复评；仅做环境与习惯调整者，2~4 周看症状变化。<br><b>复查要点</b>：调节灵敏度、调节滞后、BUT、症状日记（下午发虚的时间点是否推迟）；把训练前后数据并列记录。<br><b>转诊条件</b>：症状加重、视力波动明显、或 BUT 持续偏低伴角膜上皮改变 → 爱眼城眼科。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先纠一个前提）您想加度数，但今天的数据说不是度数的问题——矫正视力是 1.0。<br>（讲第一组）您的眼睛"对焦速度"偏慢，看近时得一直使劲调焦，所以下午才会又胀又虚。<br>（讲第二组）另外泪膜 5 秒就破了，正常要 10 秒以上，眼睛表面不够润，字就显得发虚。<br>（给动作）这两件事都不是加度数能解决的，得从三处入手：用眼节奏（看屏 20 分钟抬头看远 20 秒）、办公环境（别让空调吹眼睛、屏幕压低一点）、还有对焦训练。<br>（回应追问）您问要不要买什么产品——今天我不推荐任何东西，先把节奏和环境改两周，您再来说感受。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>只靠加度数</b>解决视疲劳；<br>② <b>把视疲劳一句"用眼过度"带过</b>，不给具体动作；<br>③ <b>推荐任何药品</b>或把它说成"润眼必需"；<br>④ <b>宣称"防蓝光镜片能治视疲劳"</b>；<br>⑤ <b>不测量</b>调节与泪膜就直接给结论。</div></div>
+    </div>
+
+    <div class="tpl" id="s14">
+      <div class="tplh"><span class="no">S-14</span><span class="g">成年人</span><span class="q">常规题 ★★★</span><span class="c">场景：顾客说"眼睛干、有异物感，早上睁眼困难，你们有没有治干眼的眼药水"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "什么时候最难受——早上睁眼、还是下午看屏幕？"；② "平时滴过什么、滴了管多久？"；③ "有没有口干、关节不舒服，或长期吃什么药？"<br><b>看哪些数据</b>：BUT 4 秒（<b>&lt;10 秒</b>）；角膜上皮点状着色（提示）；睑缘轻度充血；Schirmer 试验 8mm/5min；屈光度稳定；矫正视力基本正常。<br><b>怎么判读</b>：① 眼表多项筛查提示异常（BUT 短、Schirmer 偏低、上皮点状着色、睑缘充血）——<b>门店只做症状评估与筛查，不下诊断</b>；② 持续干眼伴角膜上皮改变需就医评估，这不是单靠换个镜片能解决的；③ 睑缘充血提示睑缘因素可能参与，同样属医生判断范围；④ 门店的边界是"环境与习惯指导 + 书面提示就医"。<br><b>结论怎么写</b>：写清"门店能做的"与"必须就医的"——"眼表筛查提示多项异常（BUT 4 秒、Schirmer 8mm/5min、角膜上皮点状着色）；门店提供环境与习惯指导，用药与角膜评估建议尽快到爱眼城眼科。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 用眼环境与习惯调整（空调、湿度、屏幕高度、主动眨眼）；② <b>书面提示</b>：建议到爱眼城眼科评估；③ 2~4 周后复查眼表与症状。<br><b>建议做</b>：① 记录症状日记（什么时候最干、持续多久、滴过什么），就诊时带给医生；② 减少长时间连续用屏。<br><b>可选</b>：<b>无</b>——<b>不推荐、不代购、不评价任何滴眼液</b>。<br><b>不做会怎样</b>：只做环境调整不提示就医，角膜上皮改变可能被延误；反过来，只让顾客"回去滴眼药水"，则越过了门店的边界。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：门店 2~4 周复查症状与眼表；就医时间建议尽快（不等复查）。<br><b>复查要点</b>：BUT、Schirmer、角膜上皮情况、症状日记；与本次 4 秒 / 8mm 对比，判断是否有改善。<br><b>转诊条件</b>：症状持续加重、视力波动、明显疼痛畏光、或上皮着色加重 → <b>尽快到爱眼城眼科</b>。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先划边界）滴眼液我不能给您推荐，也不能卖——这属于用药，得医生看过您的角膜情况再定。<br>（讲今天查到的）今天查下来，您的泪膜 4 秒就破了（正常 10 秒以上），泪液分泌量也偏低，角膜表面还有一些点状的染色。<br>（给门店能做的）我这边能做的是两件：把眼表情况和今天的数据写下来；再把办公室里影响眼睛的几件事调一调——空调挡一下、屏幕压低、有意识地多眨几次眼。<br>（给时间点）两周后您回来复查一次；要是这两周里症状加重、看东西发飘、或者疼、怕光，就别等，尽快去医院。<br>（回应追问）您问哪个牌子好，这个评价我也不能给——为什么？因为我不是医生，替您选药是越界。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>推荐或以门店名义销售</b>任何滴眼液、洗眼液、眼贴；<br>② <b>对干眼相关症状下诊断性结论</b>（不下"您这就是干眼"这类结论）；<br>③ <b>用"没事、滴点水就行"打发</b>，不提示就医；<br>④ <b>不记录</b>眼表筛查结果；<br>⑤ <b>不承诺</b>环境调整能"治好"。</div></div>
+    </div>
+
+    <div class="tpl" id="s15">
+      <div class="tplh"><span class="no">S-15</span><span class="g">成年人</span><span class="q">常规题 ★★★</span><span class="c">场景：顾客说"晚上开车看不清路牌、对面车灯特别晃，是不是夜盲"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "这种"看不清"是这几年慢慢来的，还是最近突然出现？"；② "白天看远处有没有问题？"；③ "旧镜配了多久、有没有减反射膜？"<br><b>看哪些数据</b>：OD −3.75D / OS −3.50D，散光 −1.25D / −0.75D；矫正视力 1.0；暗适应主观描述明显下降；裂隙灯与眼表未见异常提示项；旧镜为普通镜片、无明显减反射膜。<br><b>怎么判读</b>：① <b>不使用"夜盲"这类诊断名词</b>，只描述"夜间视觉质量差"；② 可解释的方向有两个：散光是否矫正到位、镜片光学质量（无减反射膜导致眩光与光晕）；③ 眼表与裂隙灯未见异常提示项，说明暂无转诊指征；④ 若症状为近期突然出现或伴视野变化，性质不同，需进一步检查。<br><b>结论怎么写</b>：先解决"散光矫正是否到位"，再谈镜片——"散光 −1.25D / −0.75D 已足矫；旧镜无减反射膜，夜间眩光可由此解释；建议更换带减反射膜镜片后复评。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 重新验光核对散光度数与轴位，确认矫正到位；② 换用带减反射膜的镜片。<br><b>建议做</b>：① 按驾驶场景选择镜片光学设计（如视野更宽的像差控制）；② 保持镜片清洁、避免划痕累积。<br><b>可选</b>：① 夜间驾驶专用镜（按实际需求评估）。<br><b>不做会怎样</b>：散光欠矫 + 镜片无膜层，夜间眩光会持续存在，行车风险留在路上；只换镜片不核对散光轴位，问题可能只解决一半。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：换镜后 1~2 周问感受（可电话回访）；常规 1 年复查。<br><b>复查要点</b>：散光度数与轴位、矫正视力、夜间视觉主观感受；必要时做镜片透光对比。<br><b>转诊条件</b>：症状持续不缓解、症状近期突然出现、或伴视野缺损/视野变化 → 爱眼城眼科进一步检查。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先划词）"夜盲"这个词我不能用，那是医生下的诊断，我说了就是越界。<br>（讲可能性）您的情况我看到两个方向：一是散光有没有矫正到位，二是镜片有没有减反射膜。<br>（讲原因）这两件事都会让对面的车灯变成一大片光——光是散的，路牌自然看不清。<br>（给顺序）我们先把第一件查清楚：重新核对散光的度数和轴位；然后把膜层加上。很多人换完当天晚上就有区别。<br>（给边界）要是换完还这样，或者最近是突然变差的，那就得去医院查一查，不在这儿猜。<br>（收尾）换完一周我给您打个电话问感受。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>不下"夜盲症"等诊断性结论</b>；<br>② <b>不把症状归因于营养缺乏</b>并推荐保健品；<br>③ <b>不承诺"换了镜片就一定能看清"</b>；<br>④ <b>不忽略</b>症状突然出现或伴视野变化需就医的情形；<br>⑤ <b>不省略</b>散光轴位的重新核对。</div></div>
+    </div>
+
+    <div class="tpl" id="s16">
+      <div class="tplh"><span class="no">S-16</span><span class="g">成年人</span><span class="q">常规题 ★★★★</span><span class="c">场景：戴隐形眼镜十年，最近眼睛红、怕光、戴着不舒服，问"是不是该换一副新的隐形"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "每天戴多久？有没有戴着睡过？"；② "这副用了多久、护理液换得勤不勤？"；③ "红和怕光是这几天开始的，还是有一阵子了？"<br><b>看哪些数据</b>：角膜周边可见浅层新生血管（提示）；角膜上皮点状着色（提示）；眼红明显；日戴 12 小时以上，有连续过夜配戴史；屈光度基本稳定；矫正视力下降。<br><b>怎么判读</b>：① 多项<b>角膜缺氧相关信号</b>（新生血管、上皮点状着色）叠加长期过夜配戴 → 触发模块12 转诊清单；② <b>今天不配镜</b>，先建议到眼科评估；③ "换一副新的"解决不了缺氧问题——换镜不改变配戴时长与习惯，风险还在；④ 本卡考的是能否顶住"顾客想买"的冲动，先守住安全边界。<br><b>结论怎么写</b>：不用诊断名词，只描述现象与"为什么需要医生判断"——"角膜周边可见浅层新生血管、角膜上皮点状着色，提示长期缺氧；建议尽快到爱眼城眼科评估，今天不交付隐形眼镜。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 建议<b>停止继续配戴</b>，并书面提示尽快到爱眼城眼科评估；② 说明"换一副新的"不能解决当前问题。<br><b>建议做</b>：① 评估通过后再选镜（材料透氧性、更换周期）；② 严格控时（日戴 ≤8~10 小时，<b>不过夜</b>）；③ 明确复查节点并记录在案。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：今天卖了镜片，顾客继续过夜配戴，缺氧相关改变可能进一步加重；一旦出现角膜问题，门店要承担的是无法推脱的责任。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：按医生建议复查；门店在顾客就诊后主动回访确认结果。<br><b>复查要点</b>：角膜新生血管与上皮着色是否好转、配戴史是否改变、矫正视力；恢复配戴前须有医疗机构的评估结论。<br><b>转诊条件</b>：<b>尽快到爱眼城眼科</b>（角膜相关检查）——本卡属必须转诊，今天不交付隐形眼镜。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（直接给结论）这个不是换一副新镜片能解决的，我不能只卖您一副镜就完事。<br>（讲看到的）您角膜周边已经长出一些浅层新生血管，角膜表面也有点状染色，眼红和怕光就是这么来的——这些是长期缺氧的信号。<br>（给建议）今天我不给您配镜，先请医生看。不是我小题大做，是这种情况必须由医生判断。<br>（给后续路径）医生评估通过以后，我们再谈换什么材料、能戴多久、多久复查；在那之前，先别戴。<br>（回应追问）您问"那旧的还能不能凑合戴"——建议也先停。等症状好了再谈。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>在角膜有明显异常提示的情况下继续推荐或交付隐形眼镜</b>；<br>② <b>对顾客宣称</b>"没事，换新的就行"；<br>③ <b>下角膜病变的诊断性结论</b>；<br>④ <b>不书面提示就医</b>、不留痕；<br>⑤ <b>不核实</b>顾客就诊结果就恢复配戴。</div></div>
+    </div>
+
+    <div class="tpl" id="s17">
+      <div class="tplh"><span class="no">S-17</span><span class="g">成年人</span><span class="q">常规题 ★★★</span><span class="c">场景：顾客说"我一只眼睛清楚一只眼睛模糊，平时也还行，就是看久了累"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "这种情况多久了？另一只眼是一直这样还是后来才差？"；② "开车时判断车距有没有觉得费劲？"；③ "以前配的镜两眼度数差多少，戴着累不累？"<br><b>看哪些数据</b>：OD −4.00D / OS −2.00D（<b>屈光参差 2.00D</b>）；矫正视力 1.0 / 1.0；立体视功能下降；无明显眼位异常；泪膜与眼表未见异常。<br><b>怎么判读</b>：① 屈光参差导致不等像、双眼配合困难与视疲劳（对照模块03 双眼视功能项）；② 立体视下降会影响距离判断，与驾驶安全直接相关；③ <b>注意：模块12 转诊清单不含"屈光参差 &gt;2.50D"这条红线</b>，本例不因参差本身转诊；④ 双眼矫正视力均达 1.0，说明单眼功能尚可，问题在"两眼配合"。<br><b>结论怎么写</b>：讲清因果链——"两眼相差 200 度 → 左右像大小不一 → 大脑整合费力 → 易疲劳且立体感下降；本次建议足矫配镜，1 个月后回访。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 足矫配镜（尽量缩小两眼成像差）；② 约定 1 个月适应期回访。<br><b>建议做</b>：① 镜片选择（减少像差与重量，薄型更利于缩小双眼差异感受）；② 如评估发现双眼视功能异常，进一步检查。<br><b>可选</b>：① 视功能训练（评估后适用才做）。<br><b>不做会怎样</b>：长期不纠正两眼成像差，疲劳持续存在，立体感继续下降；驾驶时对距离判断吃亏，是这个年龄段的实际问题。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：配镜后 1 个月回访（适应情况）；之后 1 年复查。<br><b>复查要点</b>：双眼矫正视力、立体视功能、主观疲劳程度（看久是否还累）；把回访结果与配镜前对比。<br><b>转诊条件</b>：双眼视评估异常、或伴眼位问题、或矫正视力不达 1.0 → 爱眼城眼科。<b>注</b>：屈光参差 2.00D 本身不构成转诊条件。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先解释现象）您说的是两眼差得比较多——右眼 400 度、左眼 200 度，差 200 度。<br>（讲因果）差这么多，两边看到的像大小不一样，大脑要把一大一小拼在一起，拼久了就累；<br>（讲实际影响）而且立体感会变弱，立体感就是判断远近的能力——开车、下楼梯就能感觉到。<br>（给方案）所以第一件事就是把度数配足，让两个像尽量一样大。镜片我们选薄一点、像差小一点的。<br>（给时间点）戴一个月您再来说感受，我们再决定要不要进一步查双眼视功能——现在还不必。<br>（明确不夸大）我不能说戴上就"治好"，参差是结构性的，我们做的是把差距带来的影响降到尽量小。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>宣称可"治好"参差或提升视力</b>；<br>② <b>只讲配镜价格</b>不讲参差带来的影响；<br>③ <b>把屈光参差说成转诊红线</b>（模块12 清单中无此项）；<br>④ <b>不做</b>双眼矫正视力核对就给结论；<br>⑤ <b>不承诺</b>"戴镜后就不累了"。</div></div>
+    </div>
+
+    <div class="tpl" id="s18">
+      <div class="tplh"><span class="no">S-18</span><span class="g">成年人</span><span class="q">常规题 ★★★★</span><span class="c">场景：高度近视顾客复查，眼轴远超同龄参考提示需定期随访，顾客认为"我每年都配镜，眼睛没问题"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "上一次量眼轴是什么时候？"；② "有没有见过闪光、飞蚊突然变多？"；③ "平时运动强度大不大（跳水、蹦极、球类对抗）？"<br><b>看哪些数据</b>：OD −9.50D / OS −9.00D；眼轴 27.60mm / 27.45mm（远超同龄参考）；泪膜破裂时间 8 秒；双眼视功能未见明显异常；矫正视力基本稳定。<br><b>怎么判读</b>：① 高度近视 + 眼轴 &gt;27mm，<b>度数与眼球本身的健康是两件事</b>，不能互相替代；② 眼轴持续过长带来的并发症风险需定期随访，门店只做筛查，随访方案以医疗机构为准；③ 泪膜与双眼视功能未见异常，本次不触发模块12 转诊；④ 必须<b>主动告知立即就医的警示信号</b>，这是本卡的考核重点。<br><b>结论怎么写</b>：写清随访间隔并列出警示信号——"高度近视，眼轴 27.60 / 27.45mm；建议 6~12 个月复查眼轴一次；出现突然闪光、飞蚊骤增、视野缺损、视力骤降，立即就医。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 配镜方案照常给；② 明确眼轴复查间隔（一般 6~12 个月，以医生建议为准）；③ <b>书面列出四条立即就医的警示信号</b>。<br><b>建议做</b>：① 避免剧烈冲击性运动的提示；② 建立随访记录，每次留档便于对比。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：顾客以为"每年配镜就是查过眼睛了"，眼球本身的变化长期无人随访；一旦出现并发症相关问题，往往已经错过最佳处理时机。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：配镜 1 年；<b>并按医生建议定期随访（一般 6~12 个月）</b>。<br><b>复查要点</b>：屈光度、矫正视力、随访结果留档，逐次对比；关注眼轴是否继续增长。<br><b>转诊条件</b>：眼轴与眼表随访建议转介爱眼城眼科；<b>出现任一警示信号（突然闪光、飞蚊骤增、视野缺损、视力骤降）立即就医</b>。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先纠一个误会）配镜解决的是看得清楚，眼球本身的状态是另一件事，这两件不能互相代替。<br>（讲数据）您眼轴 27.6 毫米，比一般人长，眼球壁相应被拉薄了，所以对您来说，盯住眼轴比换镜更重要。<br>（给安排）一般建议 6 到 12 个月查一次，具体听医生的；我把结果记在您这张表上，下次一对比就知道有没有变化。<br>（必讲警示信号）有四件事出现，别等复查，马上到医院：突然看到闪光、飞蚊突然变多、眼前像有黑影挡住、视力突然下降。<br>（收尾）这四条我也写在单子上，您带回去给家里人看一眼。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>以并发症话题恐吓下单</b>；<br>② <b>下诊断性结论</b>；<br>③ <b>不交代需立即就医的警示信号</b>；<br>④ <b>不记录</b>本次随访结果；<br>⑤ <b>不夸大</b>眼轴过长的意义，不得说成"眼睛已经坏了"。</div></div>
+    </div>
+
+    <div class="tpl" id="s19">
+      <div class="tplh"><span class="no">S-19</span><span class="g">成年人</span><span class="q">压力题 ★★★★</span><span class="c">场景：刚开始讲第二组数据，顾客打断："不用讲了，我知道你们就是想卖东西，直接说多少钱吧"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 2 句</b>（被打断后仅问必要项）：① "这副镜配了多久？"；② "现在看远、看路牌清楚吗？"<br><b>看哪些数据</b>：OD −4.50D / OS −4.25D；眼轴 25.60mm；旧镜为三年前配，<b>矫正视力仅 0.8</b>；镜片有明显磨损；泪膜与眼表未见异常。<br><b>怎么判读</b>：① 旧镜矫正视力仅 0.8，未达 1.0，说明矫正不足或镜片磨损已影响视觉质量；② 眼轴 25.60mm 按模块03 需一并关注；③ <b>第②步异常值扫描不得因情绪打断而跳过</b>——这是流程底线，与顾客态度无关；④ 顾客的抵触来自对"被推销"的预期，破解办法是<b>先把"今天可以不买"说在前头</b>。<br><b>结论怎么写</b>：把"矫正视力未达标"作为核心结论写出来——"旧镜矫正视力 0.8，未达 1.0；镜片磨损明显；建议换镜并重新核对装配参数，方案按数据给，不按价格给。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 完成解读并做完整异常值扫描（不因被打断而省略）；② 换镜（矫正视力未达 1.0）；③ 记录表交顾客带走。<br><b>建议做</b>：① 6 个月复查；② 镜片按用眼场景选择。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：因为顾客态度差就草草结束，异常值没扫、视力未达标的结论没讲，顾客带着"他们只想卖东西"的印象离开，问题也照样没解决。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：6 个月。<br><b>复查要点</b>：矫正视力是否回到 1.0、镜片状态、屈光度变化；若矫正视力仍不达 1.0，进入转诊评估。<br><b>转诊条件</b>：矫正视力持续不达 1.0、或出现角膜与泪膜异常提示 → 爱眼城眼科。本次无。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>先把退路给足</b>）今天完全可以不消费，这句话我放在最前面，您先记住。<br>（讲最硬的一条数据）有一件事我必须讲完：您这副镜戴了三年，现在矫正视力只有 0.8，正常应该到 1.0。<br>（把问题说清）这不是"想不想买"的问题，是现在这副确实不够用了——镜片磨损、度数也不一定跟得上。<br>（回应价格）价格您问到我就说，但先说一句：我不会拿"最后一天优惠"这种话催您。<br>（给凭证）这张记录表您带走，上面有今天的数；下次来对着看就行。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>用限时优惠、赠品等方式施压</b>；<br>② <b>因顾客态度差而草率结束解读</b>、跳过异常值扫描；<br>③ <b>不写</b>矫正视力未达标的结论，只谈产品；<br>④ <b>不交付</b>记录表；<br>⑤ <b>不与顾客争辩</b>或反讽"您不信就算了"。</div></div>
+    </div>
+
+    <div class="tpl" id="s20">
+      <div class="tplh"><span class="no">S-20</span><span class="g">成年人</span><span class="q">压力题 ★★★</span><span class="c">场景：顾客说"我只有 5 分钟，你快点，能配就配"，此时报告刚出，其中一项视功能指标明显异常需复核</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 2 句</b>：① "平时看近久了会不会觉得眼睛发胀、容易串行？"；② "今天能不能多留十分钟？这一项要复核。"<br><b>看哪些数据</b>：OD −2.25D / OS −2.00D；<b>调节灵敏度 5 cpm、集合近点 12cm（需复核）</b>；泪膜破裂时间 7 秒；矫正视力 1.0。<br><b>怎么判读</b>：① 调节灵敏度与集合近点明显低于同龄参考，属"需复核"项；② 复核仍偏低、或伴明显视疲劳、阅读串行、复视，即触发模块12 转诊；③ 复核须使用同一设备与同一方法，排除疲劳与配合误差；④ <b>时间不足时的取舍原则：先说结论，再说最关键的一项异常，其余留到下次；但第②步异常值扫描不得省略</b>；⑤ 必须写明"本次未完成解读"。<br><b>结论怎么写</b>：先写最要紧的一条——"调节灵敏度 5 cpm、集合近点 12cm，属需复核项；今日因时间不足仅完成该项复核与异常项筛查，其余项目下次补测。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 当场复核视功能；② 完成异常值扫描（<b>不省略</b>）；③ 书面提示到爱眼城眼科做双眼视功能相关检查；④ 明确写出本次未完成解读、下次补测项目。<br><b>建议做</b>：① 1~2 周内门店回访确认是否已就诊。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：为了赶时间直接把镜配了，视功能这条被跳过；万一后续出现问题，门店的记录里对这一项是空白的。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：门店 1~2 周内复核视功能并回访；就医建议<b>尽快</b>（不等复查）。<br><b>复查要点</b>：视功能复核值、与同龄参考的差距；下次补测本次未完成的项目，把数据补全入档。<br><b>转诊条件</b>：调节或集合功能复核仍明显异常、或伴复视、阅读串行加重 → <b>尽快到爱眼城眼科</b>（双眼视功能与相关检查）。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（不绕弯）五分钟够我说一件最重要的事：您这项视功能指标明显异常，需要复核。<br>（说清为什么不能省）这项不能因为赶时间跳过，也不能直接配完就走——这是我们的流程，跟您时间紧不紧没关系。<br>（给退路）其他数据我留到下次，今天先把这项复核完，再把该提醒您的写清楚。<br>（给凭证）这张单子您带回去，上面写了去哪个科、查什么、多久之内去。<br>（收尾）配镜的事我们下次数据补齐了再定，不耽误您。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>因赶时间跳过异常值处理</b>直接成交；<br>② <b>对明显异常的视功能指标不做任何提示与交代</b>；<br>③ <b>不注明</b>本次未完成解读、不写补测项目；<br>④ <b>因顾客说不累就说</b>"视功能没问题"；<br>⑤ <b>不推荐</b>任何号称能"治好视功能"的产品。</div></div>
+    </div>
+
+    <div class="tpl" id="s21">
+      <div class="tplh"><span class="no">S-21</span><span class="g">成年人</span><span class="q">压力题 ★★★</span><span class="c">场景：顾客拿着别家的验光单："你就照这个度数配，网上便宜一半，我就是来比个价"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "这张单子是哪天做的、配了没有？"；② "您现在戴的这副，戴多久了？"；③ "两家给的度数差多少，您看过吗？"<br><b>看哪些数据</b>：外单单眼足矫、<b>双眼平衡未做</b>；外单散光轴位与旧镜不一致；实测瞳距与旧镜相差 3mm；实测矫正视力 1.0；泪膜与眼表未见异常。<br><b>怎么判读</b>：① 外单缺项（未做双眼平衡、轴位与旧镜不一致）→ 门店<b>不评价同行对错</b>，只讲"单子上写了什么、缺了什么"；② 瞳距与旧镜相差 3mm，会带来装配偏差与不适；③ 价格不做承诺、不评价线上渠道；④ 本卡考的是"被比价时仍能守住解读流程与服务边界"。<br><b>结论怎么写</b>：写清本次<b>补做了哪些项目</b>、这些项目各自影响什么体验——"本次补做双眼平衡与散光轴位核对；轴位与旧镜相差 15 度，瞳距与旧镜相差 3mm；是否在本店配镜由顾客决定。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 补做双眼平衡与散光轴位核对；② 按实测参数给出配镜方案并留存对比记录；③ <b>如顾客坚持外配，仍完成解读并交付记录表</b>。<br><b>建议做</b>：① 试戴确认；② 镜架调整与佩戴指导。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：直接照抄外单参数配镜，把缺项带进新镜；或者一听比价就缩短服务，顾客的感受就是"这里只是比价的地方"。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：1 年。<br><b>复查要点</b>：屈光度、矫正视力、装配参数是否与实测一致；若顾客外配，可提示下次带新镜来做一次装配核对。<br><b>转诊条件</b>：本次无。若出现角膜、泪膜或视力异常项，按模块12 转爱眼城眼科。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先划边界）那张单子我不评价，也不说人家对错。<br>（讲缺什么）您看这两处：它做了单眼，没做双眼平衡；散光轴位跟您旧镜差了 15 度。这两项影响的是戴上舒不舒服、清不清楚，<b>不是价格</b>。<br>（讲价格）价格我不做承诺，也不是我该跟您比的地方。<br>（给服务范围）我们这边的服务范围我列给您：验光补项、装配核对、试戴调整、记录表。<br>（把决定权交出去）配不配由您定，一点不勉强。<br>（兜底）今天解读和记录表我照样给您做完，您带走也行。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>贬低同行或线上渠道</b>、编造对方验光不准；<br>② <b>为成交做出未经授权的价格承诺</b>；<br>③ <b>直接照抄外单参数</b>配镜、不补做双眼平衡；<br>④ <b>因顾客比价就缩短服务</b>、不给记录表；<br>⑤ <b>不实测</b>瞳距瞳高即交付。</div></div>
+    </div>
+
+  <h2 class="sec">五、C 组 · 中老年（S-22~S-30，共 9 份）</h2>
+
+    <div class="tpl" id="s22">
+      <div class="tplh"><span class="no">S-22</span><span class="g">中老年</span><span class="q">常规题 ★★★</span><span class="c">场景：55 岁顾客说"看手机要拿远才行，是不是近视加深了"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "主要看什么——手机、看书，还是电脑？离多远？"；② "看远清楚吗，开车、看电视有没有问题？"；③ "看近久了会不会头胀、眼睛酸？"<br><b>看哪些数据</b>：远用 OD −1.50D / OS −1.25D；近用需加正镜（<b>实测加光度</b>）；调节幅度下降；晶状体轻度混浊（提示）；泪膜破裂时间 6 秒。<br><b>怎么判读</b>：① <b>老视是调节能力下降，不是近视加深</b>——这两件事必须分开说，否则顾客会以为度数一直涨；② 近用加光度要按<b>实际用眼距离</b>定，不是固定值；③ 晶状体轻度混浊只描述观察到的现象、建议到爱眼城眼科进一步评估，<b>不下诊断性结论</b>；④ 泪膜与眼表未见异常，本次不触发模块12 转诊。<br><b>结论怎么写</b>：先区分"看远度数"与"看近助视"，再用生活场景确认距离——"远用度数基本稳定；看近需加 +__D（按实际用眼距离实测），属老视（调节下降），不是近视加深。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 按用眼距离（手机 / 看书 / 电脑）确定加光度；② 讲清两副单光镜与渐进镜的差别与各自代价。<br><b>建议做</b>：① 镜架与瞳高按佩戴习惯测准；② 提醒照明充足（看近时同时开顶灯与台灯）。<br><b>可选</b>：① 渐进镜（需评估适应意愿与用眼场景）；② 两副单光镜作为替代。<br><b>不做会怎样</b>：把老视当成"度数加深"随手加度数配远用镜，看近照样不清；不加助视，长期凑近、眯眼，头颈负担也随之加重。<br><b>话术提示</b>：<b>不强推</b>渐进镜——先讲清区别与代价，由顾客自己选。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：1 年。<br><b>复查要点</b>：远用屈光度、近用加光度、矫正视力；询问用眼距离是否变化（换手机、换阅读习惯都会影响加光度）。<br><b>转诊条件</b>：晶状体混浊建议到爱眼城眼科进一步评估；若视力近期明显下降或出现其他异常项，按模块12 转诊。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先纠一个说法）不是度数加深，是眼睛的"变焦"能力下降了——就像相机调不动焦，看近只能把东西拿远。<br>（给名词）这个叫老视，五十岁上下的人都会遇到，跟近视加深是两回事。<br>（问场景）您主要看手机还是看书？距离不一样，加的度数就不一样，我们先按您平时的用法定。<br>（给两种方案，不推）有两种做法：一种是配两副，一副看远、一副看近，便宜、但换镜麻烦；另一种是渐进镜，一副顶两副，但刚开始会有点晃、两边有点变形。<br>（把选择交出去）您平时出门多不多、愿不愿意适应，决定选哪种，我不替您定。<br>（提示）另外您眼表和晶状体我建议定期看一下，今天的数据我写在表上。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>把老视说成近视加深</b>或"眼睛老化没办法"；<br>② <b>对晶状体改变下诊断性结论</b>；<br>③ <b>强推渐进镜</b>或不讲适应代价；<br>④ <b>未实测</b>加成光就开处方；<br>⑤ <b>不提示</b>晶状体改变的随访建议。</div></div>
+    </div>
+
+    <div class="tpl" id="s23">
+      <div class="tplh"><span class="no">S-23</span><span class="g">中老年</span><span class="q">常规题 ★★★★</span><span class="c">场景：顾客第一次听说渐进镜，问"这个一副顶两副，是不是戴上就方便了"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "平时看远、看手机、看电脑，各占大概多少时间？"；② "出门多不多，开不开车？"；③ "愿不愿意花一两周适应？"<br><b>看哪些数据</b>：远用 OD −2.00D / OS −1.75D，散光 −0.50D / −0.50D；近加 +2.00D；瞳距 64mm；<b>瞳高需实测</b>；眼位与双眼视基本正常；泪膜与眼表未见异常。<br><b>怎么判读</b>：① 具备渐进镜适配的基本条件（双眼视基本正常、无眼位异常）；② 但<b>渐进镜并非人人首选</b>，须按场景问诊判断——看书、手机、开车、电脑各自的时间占比决定它合不合适；③ 瞳高必须实测，瞳高不准是戴后不适的首要原因；④ 三点预期必须提前讲清：适应期、周边变形、看近需低头配合。<br><b>结论怎么写</b>：把三点评预期与实测参数写进方案——"远用 −2.00D / −1.75D，近加 +2.00D，瞳距 64mm，瞳高实测 __mm；方案：渐进镜（需 1~2 周适应，周边有变形区，看近需配合低头）；替代方案：两副单光镜。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 场景问诊后再定方案；② <b>现场实测瞳高与瞳距</b>；③ 提前讲清三点适应预期。<br><b>建议做</b>：① 镜架选择（框高足够、稳定性好、不易下滑）；② 取镜后 1~2 周回访适应情况。<br><b>可选</b>：① 两副单光镜（看远 + 看近）作为替代方案。<br><b>不做会怎样</b>：不测瞳高就配渐进镜，多数不适都出在这里；不预先讲清预期，顾客戴上后头晕、看两边变形，回头就是退货。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：取镜后 1~2 周回访；之后 1 年复查。<br><b>复查要点</b>：瞳高瞳距是否仍准、镜架是否下滑、适应情况（上下楼梯、看手机、开车各有什么感受）；必要时微调镜架。<br><b>转诊条件</b>：本次无。若出现持续头晕伴眼位异常或视物重影，按模块12 转爱眼城眼科评估。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先把好处说清）渐进镜确实一副顶两副，看远、看近不用换镜，这一点真的方便。<br>（再把代价说清）但有三个前提您得先知道：第一，刚开始会有点晃，尤其下楼梯；第二，镜片左右两边有一块变形区，转头要配合；第三，看近要习惯稍微低头用镜片下部。<br>（讲取舍）这三点能接受，我们再往下谈；接受不了，我建议就配两副单光镜，换镜麻烦点，但戴上立刻适应。<br>（给关键一步）如果选渐进，我一定要测瞳高——瞳高不准，戴上去就是不舒服，这个位置差一两毫米您都会有感觉。<br>（收尾）所以先测，再配；取镜后一两周我打电话问您适应得怎么样。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>宣称"戴上就和年轻时一样""完全没有适应期"</b>；<br>② <b>未测量瞳高即交付</b>渐进镜；<br>③ <b>省略</b>三点预期管理与替代方案；<br>④ <b>不按场景问诊</b>就推荐渐进；<br>⑤ <b>不安排</b>取镜后回访。</div></div>
+    </div>
+
+    <div class="tpl" id="s24">
+      <div class="tplh"><span class="no">S-24</span><span class="g">中老年</span><span class="q">常规题 ★★★★</span><span class="c">场景：戴渐进镜一周后回来，情绪激动："头晕、走路不稳，退了，你们这镜不行"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "什么时候最明显——走路、下楼梯，还是看近？"；② "镜架有没有往下滑过？平时怎么放？"；③ "这一周大概戴了多久、主要在什么场景戴？"<br><b>看哪些数据</b>：<b>实测瞳高比配镜时记录低 3mm</b>；镜架明显下滑、镜眼距偏大；远用度数复查与处方一致；近加 +2.25D；通道位置核对。<br><b>怎么判读</b>：① 存在<b>可验证的配戴问题</b>——瞳高偏差 3mm、镜架下滑、镜眼距偏大，这三项与头晕直接相关；② <b>度数本身无误</b>，不要含糊说"再适应适应"；③ 处理顺序必须是"先排查 → 先调整 → 再判断是否重做"；④ 情绪先于技术：顾客激动时先接情绪，再逐项验证。<br><b>结论怎么写</b>：逐项写实测结果，再给处理顺序与时限——"复测瞳高较配镜时低 3mm，镜架下滑、镜眼距偏大；远用度数无误。处理：调整镜架并复测瞳高，3~5 天回访；若仍不适，重新测参后重做。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 逐项排查（瞳高、镜架下滑、镜眼距、通道位置）；② 先调整镜架与复测，再判断是否重做；③ 把处理方案与时限写清并约定回访时间。<br><b>建议做</b>：① 调整后 3~5 天回访确认；② 复测时让顾客当场试走、试下楼梯。<br><b>可选</b>：① 若调整后仍不适，重新测参后重做。<br><b>不做会怎样</b>：一句"再适应适应"把顾客打发回去，第二次回来情绪只会更大；不排查就答应退，等于承认产品有问题，成本与责任都由门店承担。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：调整后 3~5 天回访（电话 + 到店复测）。<br><b>复查要点</b>：瞳高复测值、镜架稳定性、镜眼距、通道位置；逐项与配镜记录对比，把差异写进记录表。<br><b>转诊条件</b>：本次无。若调整到位、参数复核无误而症状仍持续，按模块12 转爱眼城眼科评估。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>先道歉，不谈技术</b>）先跟您道歉，让您跑这一趟，还难受了一周。<br>（明确不推诿）我不说"再适应适应"这句话——我们逐项查。<br>（给证据）您看：现在的瞳高比配镜那天低了 3 毫米，镜架也往下滑了，这两项都会让人晕，尤其下楼梯。度数本身是准的。<br>（给处理顺序）所以先调镜架、再复测瞳高，今天就能做完；三天后我给您打电话回访，还不行我们就重新测参数重做，费用我们这边承担。<br>（收尾）您的要求我记下了，退镜这条路也留着——但我建议先按这个顺序走一遍，多数情况调完就好。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>把问题全部推给顾客</b>"不适应"；<br>② <b>未经排查即承诺全额退货</b>；<br>③ <b>拒绝处理</b>或回避复测；<br>④ <b>不记录</b>本次复测的瞳高与镜架数据；<br>⑤ <b>不与顾客争执</b>或说她"使用方法不对"。</div></div>
+    </div>
+
+    <div class="tpl" id="s25">
+      <div class="tplh"><span class="no">S-25</span><span class="g">中老年</span><span class="q">常规题 ★★★</span><span class="c">场景：顾客说"我就是来配镜的，你们给我测视功能和泪膜干嘛，多此一举"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 2 句</b>：① "平时看近久了会不会觉得眼睛发酸、容易串行？"；② "有没有明显的干涩、异物感，或者长时间看屏幕后不舒服？"<br><b>看哪些数据</b>：矫正视力 0.9；调节灵敏度偏低、集合近点偏远；泪膜破裂时间 7 秒（偏低）；屈光度轻度变化。<br><b>怎么判读</b>：① 视功能与泪膜结果基本正常——<b>正常也是重要信息，必须写进记录表留档</b>；② 同时要说明哪些人群更需要定期查：长期近距离用眼、长时间看屏幕、中老年、经常眼干、眼涩者；③ 这两项检查不是"额外消费"，它是把眼睛用起来累不累记下来，供以后对比；④ 本卡考的是能否用<b>一句话</b>把用途讲明白，而不是压着顾客做检查。<br><b>结论怎么写</b>：一句话讲清用途 + 定下一次时间——"视功能与泪膜检查未见明显异常（结果留档）；配镜解决看得清，这两项查的是眼睛用起来累不累；建议按风险等级 6~12 个月复查一次。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 一句话讲清这两项检查的用途；② <b>结果正常也要写入记录表留档</b>；③ 按风险等级确定下次检查时间。<br><b>建议做</b>：① 说明高危人群（高度近视、糖尿病、高血压、中老年）的定期检查建议。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：正常结果不留档，明年复查没有可比基线；顾客也会一直觉得"这项是多余的"。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：视功能与泪膜按风险等级 6~12 个月；配镜 1 年复查。<br><b>复查要点</b>：视功能与泪膜结果与上次逐次对比、矫正视力、屈光度；把"本次正常"明确写进记录表。<br><b>转诊条件</b>：本次无。若视功能或泪膜出现异常提示项 → 爱眼城眼科。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（一句话讲用途）配镜解决的是看得清；这两项查的是眼睛用起来累不累，这两件事不一样。<br>（讲今天的结果）您这次查下来是正常的——正常就是好消息，不是白花钱。<br>（讲为什么留档）我把结果写在您这张表上，明年再查一对比，就知道有没有变化。<br>（给理由）您这个年龄段、加上您的情况，本来就建议定期查一下视功能和泪膜，跟配不配镜没关系。<br>（不施压）今天不查也完全可以配镜，我只是建议；数据留档对您以后有用。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>把额外检查说成必须购买的服务</b>并加价捆绑；<br>② <b>为促成检查夸大风险</b>；<br>③ <b>不记录</b>本次检查结果；<br>④ <b>把检查结果当诊断</b>下结论；<br>⑤ <b>因顾客拒绝检查而降低服务</b>或态度变差。</div></div>
+    </div>
+
+    <div class="tpl" id="s26">
+      <div class="tplh"><span class="no">S-26</span><span class="g">中老年</span><span class="q">常规题 ★★★★</span><span class="c">场景：顾客说"医院说我有白内障，还不到做手术的时候，那你给我配副镜能看清就行吧"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "医院是哪次看的、医生怎么说的？"；② "现在哪样最不方便——看远、看近、还是晚上？"；③ "视力最近掉得快不快？"<br><b>看哪些数据</b>：矫正视力 OD 0.5 / OS 0.6；晶状体混浊（提示）；屈光度有变化；泪膜破裂时间 4 秒、角膜上皮点状染色（提示）。<br><b>怎么判读</b>：① 矫正视力受限（0.5 / 0.6）与晶状体混浊相关——<b>配镜能在一定程度上改善视物质量，但解决不了混浊本身</b>；② 手术时机由医疗机构判断，门店不评价、不催促；③ 晶状体混浊会影响成像质量，进一步检查需由医疗机构完成；④ 本卡的核心是<b>预期管理</b>——避免"配了还看不清"的投诉。<br><b>结论怎么写</b>：把"能改善"与"改善不了"都写清——"晶状体混浊致矫正视力 0.5 / 0.6；配镜可改善清晰度但无法改变混浊本身；手术时机遵医嘱；建议 3~6 个月复查，视力快速下降及时就医。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 按现屈光状态配镜；② <b>书面管理预期</b>（改善什么、改善不了什么）；③ 约定复查时间，并提示视力快速下降时及时就医。<br><b>建议做</b>：① 照明与用眼环境调整（提高对比度、避免眩光）；② 需要时提供助视辅助的说明。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：不做预期管理，顾客戴上仍觉模糊，很容易认为"配镜没用、白花钱"；甚至怀疑验光不准。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：3~6 个月（含视力与屈光的复查）。<br><b>复查要点</b>：矫正视力、屈光度变化、晶状体情况；重点看视力下降速度，判断是否需要提前就诊。<br><b>转诊条件</b>：视力快速下降、或出现其他异常提示 → 及时到爱眼城眼科就诊。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先说能做的）配镜能帮您看得清楚一些，这个我们今天就能做。<br>（再说做不到的）但它解决不了晶状体混浊这件事——混浊在里面，镜片再准也改变不了它。<br>（讲时机）什么时候做手术，得医生说了算，我不评价、也不催您。<br>（给凭证）我把能改善的部分和改善不了的部分都写在单子上，您心里有数，就不会觉得"配了没效果"。<br>（给警示）有一条您记住：要是视力掉得快，别等复查，直接去医院——这句话我也写在上面。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>宣称配镜能"治好白内障""不用手术了"</b>；<br>② <b>建议顾客推迟或放弃手术</b>；<br>③ <b>评价医院的诊疗方案</b>；<br>④ <b>不做预期管理</b>；<br>⑤ <b>不提示</b>视力快速下降需及时就医。</div></div>
+    </div>
+
+    <div class="tpl" id="s27">
+      <div class="tplh"><span class="no">S-27</span><span class="g">中老年</span><span class="q">常规题 ★★★★</span><span class="c">场景：顾客有 10 年糖尿病史，配镜时说"我血糖控制得还行，眼睛不用查"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "得病多少年了？血糖最近查的是多少？"；② "平时眼睛干不干、看久了会不会发涩？"；③ "最近看东西有没有时清时糊、或者变形？"<br><b>看哪些数据</b>：矫正视力 0.7 / 0.8；泪膜破裂时间 2 秒、角膜上皮点状染色（提示）；屈光度波动。<br><b>怎么判读</b>：① 眼表与泪膜筛查提示异常（泪膜破裂时间明显缩短、角膜上皮点状染色）+ 屈光度波动，<b>属筛查提示，需尽快到眼科进一步检查</b>；② <b>不下任何诊断性结论</b>，不使用结论性病名，只描述观察到的现象；③ 屈光度波动本身也可能是血糖波动的表现，要如实告知、但不解释成病名；④ 配镜可以做，但<b>不能替代眼表检查与护理</b>。<br><b>结论怎么写</b>：写清边界与紧迫程度——"泪膜破裂时间 2 秒、角膜上皮点状染色（筛查提示），屈光度有波动；建议尽快到爱眼城眼科进一步检查；配镜照常进行，但不能替代检查与护理。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① <b>书面提示尽快</b>到爱眼城眼科进一步检查；② 说明配镜不能替代眼表检查与护理；③ 记录并安排回访，确认是否已就诊。<br><b>建议做</b>：① 向顾客说明血糖波动、病程年限与眼表健康的关系；② 建议把本次筛查结果带给内分泌科医生一并参考。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：用"血糖好就没问题"安抚顾客，把异常筛查结果放下，是门店最不该犯的错误——病程 10 年的人，眼部风险不会因为配了镜就消失。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：按医生建议随访眼表与泪膜；门店安排回访确认就诊情况（3~7 天内）。<br><b>复查要点</b>：眼表与泪膜筛查结果逐次留档对比、矫正视力、屈光度波动情况；确认顾客是否已就诊。<br><b>转诊条件</b>：<b>尽快到爱眼城眼科</b>（眼表与泪膜相关检查）——本卡属必须转诊。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先肯定）您血糖控制得不错，这点很好，我记下了。<br>（划边界）但眼睛这件事跟血糖、跟得病年限都有关系，得定期查——不能靠感觉。<br>（讲看到的）今天照相看到几个需要医生判断的地方：有几处点状出血和渗出，度数也比上次有波动。<br>（明确不是诊断）我不是医生，这个不能叫病名，我能做的是把"看到了什么"写清楚。<br>（给动作）建议您尽快去医院查一次，我把该查哪些项目写在这张单子上，您带着去。<br>（兜底）配镜我们照做，可它代替不了检查——这两件事得分开办。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>下"糖尿病相关眼病"等诊断性结论</b>；<br>② <b>配镜后不提示就医</b>、不留痕；<br>③ <b>用"血糖好就没问题"安抚</b>顾客；<br>④ <b>不记录</b>本次筛查结果与转诊提示；<br>⑤ <b>不跟踪</b>顾客是否就诊。</div></div>
+    </div>
+
+    <div class="tpl" id="s28">
+      <div class="tplh"><span class="no">S-28</span><span class="g">中老年</span><span class="q">压力题 ★★★★★</span><span class="c">场景：角膜地形图显示角膜曲率 47.5D、形态不规则，换设备复核结果一致。顾客说"我又不疼不痒，你别吓我，赶紧给我配镜"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "以前做过角膜地形图吗？家里人有没有角膜方面的病史？"；② "最近有没有觉得看东西变形、散光变化快？"；③ "今天能不能先让我们把这项处理完？配镜随后安排。"<br><b>看哪些数据</b>：角膜曲率 47.5D / 47.2D（<b>复核一致</b>）；角膜形态不规则（提示）；中央角膜厚度偏薄；散光度数短期内明显增加；矫正视力 0.9 / 0.9。<br><b>怎么判读</b>：① 角膜曲率 &gt;47D 且形态不规则 + 散光短期内明显增加 → <b>明确触发模块12 转诊</b>；② <b>不使用"圆锥角膜""角膜变性"等诊断名词</b>，只说明"角膜曲率与形态超出一般参考范围，需要专业机构进一步检查"；③ 角膜形态异常会影响成像质量，因此判断不能只看一次读数，需复核确认；④ 角膜地形图复核门店可以做，进一步诊断须由医疗机构完成。<br><b>结论怎么写</b>：写清"角膜形态异常早期常常没有感觉，这正是需要检查的原因"——"角膜曲率 47.5 / 47.2D，复核一致，形态不规则；建议尽快到爱眼城眼科做角膜相关检查；配镜需求照常安排。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① 当场复测并留档；② <b>书面提示尽快</b>到爱眼城眼科（含角膜地形图与角膜相关检查）；③ 记录并 1 周内回访确认是否就诊；④ 配镜需求照常安排。<br><b>建议做</b>：① 说明定期复查角膜形态的意义；② 提醒直系亲属也可关注角膜相关情况。<br><b>可选</b>：<b>无</b>——<b>不得推销任何所谓"治疗角膜"的药品或器械</b>。<br><b>不做会怎样</b>：因顾客抵触就放弃提示，等于把风险留给顾客；一旦后续出现问题，门店记录里没有这次转诊建议，责任无法厘清。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：门店 1 周内回访；就医建议<b>尽快</b>（不等复查）。<br><b>复查要点</b>：角膜曲率复核值、角膜形态记录；确认顾客是否已就诊。<br><b>转诊条件</b>：角膜曲率 &gt;47D 且形态不规则、或散光短期内明显增加 → <b>尽快到爱眼城眼科</b>（角膜地形图与角膜相关检查）——本卡属必须转诊。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（先把话说透）我知道您不疼不痒，但角膜形态异常这件事，早期就是不疼不痒，等有感觉往往就晚了。<br>（划边界）我不能下结论，也不给您开什么产品，这两件我都不能做。<br>（给动作）我只做一件事：把这项写在单子上，建议您尽快去医院查一下——查什么、挂什么科，我都写清楚。<br>（回应"别吓我"）我不是吓您，我是如实告诉您这个数字比一般范围高，而且复测还是高；您可以不信我，但值得去医院确认一下。<br>（兜底）配镜我们照做，两件事不冲突；一周后我打电话问您去没去。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>说出"圆锥角膜""角膜变性"等诊断名词</b>；<br>② <b>推荐任何所谓治疗角膜的药品或器械</b>；<br>③ <b>因顾客抵触而放弃提示或不留痕</b>；<br>④ <b>不复测</b>就以单次读数下结论；<br>⑤ <b>不安排回访</b>、不确认就诊结果。</div></div>
+    </div>
+
+    <div class="tpl" id="s29">
+      <div class="tplh"><span class="no">S-29</span><span class="g">中老年</span><span class="q">压力题 ★★★★★</span><span class="c">场景：矫正视力只有 0.6、屈光度短期内变化明显，建议到爱眼城眼科就诊，顾客说"排队一整天，不用了，你给我配就行，我自己负责"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>：① "您平时哪天方便一点？上午还是下午？"；② "家里有人能陪您去吗？"；③ "除了排队，还有别的顾虑吗——路远、还是挂号难？"<br><b>看哪些数据</b>：矫正视力 0.6 / 0.5（低于同龄预期）；屈光度短期内变化明显；裂隙灯下角膜与晶状体未见明显异常。<br><b>怎么判读</b>：① 矫正视力仅 0.6 / 0.5 且屈光度短期内变化明显 → <b>触发模块12 转诊</b>；② 本次<b>不出具任何产品方案</b>，只填转诊提示型模板；③ 顾客说"自己负责"，<b>不能因此改口</b>——免责不是门店放弃提示的理由；④ 真正的难点是<b>解决实际障碍</b>（排队、路程、挂号、家属沟通），而不是重复讲风险。<br><b>结论怎么写</b>：坚持转诊并解决障碍——"矫正视力 0.6 / 0.5（低于同龄预期），屈光度短期内变化明显；本次不出具产品方案，仅转诊提示；已协助说明就诊科室与就近机构，并记录顾客的知情选择。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① <b>坚持转诊</b>，不配镜、不出常规方案；② 给出可执行的帮忙方式（科室、就近机构、家属沟通、陪同协助），把障碍解决掉；③ 只填写转诊提示型模板；④ 留痕并明确回访时间；若顾客坚持不就诊，记录其知情选择。<br><b>建议做</b>：① 协助说明可安排的时段、挂号方式；② 与家属沟通，请家人一起劝。<br><b>可选</b>：<b>无</b>。<br><b>不做会怎样</b>：顾客说"我自己负责"就顺水推舟配镜，一旦后续视力问题加重，门店既无产品方案依据，也无转诊记录，风险极大。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：门店 3 日内回访确认就诊情况。<br><b>复查要点</b>：是否已就诊、医生意见（如顾客愿意告知）、视力变化；把过程如实记录。<br><b>转诊条件</b>：<b>尽快到爱眼城眼科</b>——本卡属必须转诊，本次不交付产品方案。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>不改口，先说明</b>）这件事我不能改口，也不能因为您说"自己负责"就给您配镜了事——这是我们的底线。<br>（讲原因）不是我想为难您：视力已经到 0.5、0.6，还有需要医生判断的地方，配镜解决不了它。<br>（解决实际困难）您说排队累，我帮您想办法：哪天去人少、挂哪个科、要不要我帮您跟家里人说一声，或者约个上午早点去。<br>（给凭证）今天的产品方案我就不出了，只给您这张转诊提示单，上面有科室、项目和该带的东西。<br>（留温度）三天后我给您打个电话，问一声去了没有——不是催您买东西，是怕您真耽误了。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>因顾客坚持而配镜并出具常规方案</b>；<br>② <b>在疑似眼病的情况下推荐高单价产品</b>；<br>③ <b>说"您自己负责就行"</b>顺势成交；<br>④ <b>不记录</b>顾客的知情选择与回访；<br>⑤ <b>不协助</b>解决就诊障碍就放弃跟进。</div></div>
+    </div>
+
+    <div class="tpl" id="s30">
+      <div class="tplh"><span class="no">S-30</span><span class="g">中老年</span><span class="q">压力题 ★★★★</span><span class="c">场景：子女陪着来，坚持要给父亲配渐进镜"钱我出"，老人全程说"我不用、我看得见"</span></div>
+      <div class="trow"><div class="k">诊断分析</div><div class="v"><b>先问 3 句</b>（<b>必须问老人本人</b>）：① 问老人："平时看报纸、看电视、看手机，哪一样觉得不得劲？"；② 问老人："出门多不多？走楼梯、走夜路方不方便？"；③ 问子女："您最担心他哪件事？"<br><b>看哪些数据</b>：远用 OD +1.00D / OS +0.75D；近加 +2.50D；矫正视力 0.7 / 0.8；晶状体轻度混浊（提示）；泪膜破裂时间 6 秒。<br><b>怎么判读</b>：① 远视 + 老视，客观上具配镜需求；② 但<b>配镜必要性以老人本人的用眼习惯与实际需求为准</b>，不替顾客做决定；③ 矫正视力 0.7 / 0.8 尚可，说明并非"看不清到必须立刻配"；④ 本卡考的是能否顶住"家属出钱"的成交压力，把老人放在沟通中心。<br><b>结论怎么写</b>：把老人作为主要沟通对象，先问实际困扰，再写——"客观存在远视与老视；配镜方案以本人用眼需求与意愿为前提；家属意愿已说明，知情选择签字留痕。"</div></div>
+      <div class="trow"><div class="k">解决方案</div><div class="v"><b>必做</b>：① <b>先问老人自己的困扰</b>；② 向女儿说明判断依据是老人的用眼需求；③ 明确知情选择并签字留痕。<br><b>建议做</b>：① 降低使用门槛的方案（如先配看近的单光镜；镜架轻、操作简单）；② 适应支持与 1 个月回访。<br><b>可选</b>：① 渐进镜（<b>须老人本人有意愿</b>）。<br><b>不做会怎样</b>：按子女的意思配了渐进镜，老人不戴或戴不惯，钱花了、镜闲置，回头投诉的还是门店；更糟的是把不情愿的顾客当成成交对象，口碑损失更大。</div></div>
+      <div class="trow"><div class="k">复查与转诊</div><div class="v"><b>复查时机</b>：1 个月回访；之后 1 年复查。<br><b>复查要点</b>：是否实际佩戴、佩戴场合、适应情况；把回访结果记录在案。<br><b>转诊条件</b>：晶状体混浊建议到爱眼城眼科评估；若出现其他异常项，按模块12 转诊。</div></div>
+      <div class="trow"><div class="k">现场话术</div><div class="v">"（<b>先对老人，蹲下来或坐到他旁边</b>）张叔，先不说配不配，我先问您一句：平时看报纸、看电视，哪一样觉得不得劲？<br>（继续问老人）出门走楼梯、晚上看路，有没有不方便？<br>（<b>再对女儿</b>）您的心意我明白，也完全支持。但配什么得看叔叔自己怎么用眼——他愿意戴，才有用；不愿意戴，配了也是放着。<br>（给降门槛方案）要不这样：先按最不方便的那一样配，镜架选轻的、好操作的，戴一阵子适应了，我们再谈要不要升级到渐进。<br>（给凭证）今天谈的内容我们写下来，您和叔叔都看一眼，签个字。<br>（明确不勉强）叔叔要是觉得现在还行，我们也可以先不配，只做检查和建档。"</div></div>
+      <div class="trow red"><div class="k">红线</div><div class="v">① <b>只与家属谈、无视本人意愿</b>；<br>② <b>用"子女孝顺你就得配"这类话语施压</b>；<br>③ <b>把不情愿的顾客当作成交对象</b>；<br>④ <b>不签字留痕</b>；<br>⑤ <b>不说明</b>判断依据是本人的用眼需求。</div></div>
+    </div>
+
+  <h2 class="sec">六、归档、复核与更新</h2>
+  <div class="card">
+    <ul>
+      <li><b>归档：</b>每场解读的模板底联，与《报告解读记录表》同号归档；顾客带走一份、门店存一份。下次接待直接调阅上一份，接续对比，不必让顾客重讲。</li>
+      <li><b>复核：</b>店长每周抽查 2 份，逐项看四件事——<b>诊断分析四小标题</b>（先问什么 / 看哪些数据 / 怎么判读 / 结论怎么写）是否齐全、<b>必做项</b>是否写清"不做会怎样"、<b>复查与转诊三项</b>（时机 / 要点 / 条件）是否写死、<b>红线</b>是否踩到。不合格者当场退回重填。</li>
+
+    </ul>
+    <div class="warn"><b>唯一禁止的做法：</b>把模板当"标准答案"背下来照念。模板给的是<b>要点清单与口径边界</b>，话术必须按眼前这位顾客的实际情况改——数据是新的、人也是新的，照背一定露馅。</div>
+  </div>
+<div class="btnwrap">
+    <a class="btn ghost" href="08_情景卡库30张演练卡.html">← 上一模块</a>
+    <a class="btn" href="08_情景卡库30张演练卡.html">对照情景卡（30 张）</a>
+    <a class="btn ghost" href="index.html">返回首页</a>
+    <a class="btn ghost" href="10_会诊专家七步解读专项培训.html">下一模块 →</a>
+    <button class="btn" onclick="window.print()">打印全部模板</button>
+  </div>
+</div>
+
+<footer>
+  <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 · 模块09 情景诊断分析与解决方案模板集</b><br>
+  编制：闫胜君整理 ｜ 适用门店：零陵 8 家、冷水滩 2 家、祁阳 5 家（共 15 家）｜ 归口部门：视光运营部<br>
+  说明：本模块是模块08《情景卡库（30 张演练卡）》的逐卡配套填写模板，编号与卡片一一对应。所有示例数据均为教学示例，不得作为真实案例对外讲述；检查指标判定仅供参考与健康宣教使用，不构成医疗诊断意见；涉及需转诊情形一律按模块12《医疗边界与合规红线》执行。
+</footer>
+<script>
+/* SMART-STICKY-V1 : 智能表头吸顶 */
+(function(){
+  var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
+  function calc(){
+    var vh = window.innerHeight || 800;
+    var wide = (window.innerWidth || 1280) > WIDE;
+    var tabs = document.querySelectorAll('table'), i, t, on;
+    for(i = 0; i < tabs.length; i++){
+      t = tabs[i];
+      if(!t.tHead) continue;
+      on = wide && t.rows.length >= MIN_ROWS && t.getBoundingClientRect().height >= vh * MIN_H;
+      if(on) { t.className += ' sticky-on'; } else { t.className = t.className.replace(/\s*sticky-on\b/g, ''); }
+    }
+  }
+  function defer(){ if(tm) clearTimeout(tm); tm = setTimeout(calc, 120); }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', calc); } else { calc(); }
+  window.addEventListener('load', calc);
+  window.addEventListener('resize', defer);
+  var ds = document.querySelectorAll('details'), j;
+  for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+
+<!-- TOTOP-V1 : 可交互式回到顶部 -->
+<button id="toTop" type="button" aria-label="回到顶部" title="回到顶部" class="show" aria-hidden="false">
+  <span class="tt-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19V6.5M12 6.5 5.5 13M12 6.5 18.5 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+  <span class="tt-txt">顶部</span>
+</button>
+
+<!-- TOTOP-V1 : 交互脚本 -->
+<script>
+(function(){
+  var btn = document.getElementById('toTop');
+  if(!btn) return;
+  var HIDE = 420, last = 0;
+  function pos(){
+    return (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+  }
+  function sync(){
+    var show = pos() > HIDE;
+    if(show === btn.classList.contains('show')) return;
+    btn.classList.toggle('show', show);
+    btn.setAttribute('aria-hidden', show ? 'false' : 'true');
+  }
+  function onScroll(){
+    var now = Date.now();
+    if(now - last < 80) return;
+    last = now; sync();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  btn.addEventListener('click', function(){
+    try { window.scrollTo({top:0, left:0, behavior:'smooth'}); }
+    catch(e) { window.scrollTo(0, 0); }
+    window.setTimeout(function(){ btn.blur(); }, 450);
+  });
+  sync();
+})();
+</script>
+
+</body></html>
