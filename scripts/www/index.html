@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN" data-page-node-id="DsxvvlInZPpg8ecN5GUDYT"><head data-page-node-id="H2XGSBNKj6ph3vLBWiu6j8">
+<meta charset="UTF-8" data-page-node-id="LaRRxg14RScMRduOguFLey">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="KYHaS52OWPHX8fMYknreiG">
 <title>首页 · 永州爱眼城 检查报告解读标准化落地方案</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -328,22 +327,22 @@ body table.sticky-on>thead>tr>th{
 </style>
 <!-- GRID3-V1 : 模块卡片三列栅格（幂等注入，勿手改） -->
 <style>
-/* ---------- GRID3-V1 : 模块卡片 5 行 × 3 列（15 张卡片） ---------- */
-body .grid{grid-template-columns:repeat(3,1fr);gap:calc(16px * var(--fs))}
+/* ---------- GRID3-V1 : 模块卡片固定 4 行 × 3 列（12 张卡片） ---------- */
+body .grid{grid-template-columns:repeat(3,1fr) !important;gap:calc(16px * var(--fs))}
 body .grid > a.card{min-width:0}
-/* 窄屏逐级降级：宽屏 3 列 → 平板竖屏 3 列 → 小平板 2 列 → 手机 1 列 */
+/* 统一 3 列：任何屏幕宽度下 12 张卡都排成 4 行 × 3 列；窄屏只收缩间距与内边距，不改变列数 */
 @media screen and (max-width:1024px){
   body .grid{grid-template-columns:repeat(3,1fr) !important;gap:calc(12px * var(--fs))}
 }
-@media screen and (max-width:940px){
-  body .grid{grid-template-columns:repeat(2,1fr) !important}
+@media screen and (max-width:640px){
+  body .grid{grid-template-columns:repeat(3,1fr) !important;gap:calc(9px * var(--fs))}
+  body .grid > a.card{padding:12px 12px}
+  body .grid > a.card h3{font-size:calc(15px * var(--fs));gap:6px}
+  body .grid > a.card ul{margin-left:14px}
 }
-@media screen and (max-width:560px){
-  body .grid{grid-template-columns:1fr !important}
-}
-/* 打印：A4 纸宽约 794px，2 列最舒适 */
+/* 打印：与屏幕一致，固定 3 列 */
 @media print{
-  body .grid{grid-template-columns:repeat(2,1fr) !important;gap:10px}
+  body .grid{grid-template-columns:repeat(3,1fr) !important;gap:10px}
 }
 </style>
 <!-- HEADER-STICKY-V1 : 顶部标题栏居中吸顶（幂等注入，勿手改） -->
@@ -393,180 +392,183 @@ body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
 
 <!-- COLBAL-V1 -->
 <!-- COLFIT-V1 -->
+<!-- MARK : WIDTHFIT2-V1 : 导语文本块与页脚内容对齐正文容器宽度 -->
+<style>
+/* 导语（hero）文本块与页脚内容统一按正文容器宽度对齐：宽屏不错位、窄屏不留白 */
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body footer{
+  padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+}
+@media screen and (max-width:640px){
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+@media print{
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:0;padding-right:0}
+}
+</style>
+<!-- MARK : WIDTHFIT3-V1 : 顶栏/吸顶导航内容对齐正文容器宽度（幂等注入，勿手改） -->
+<style>
+/* 顶栏（品牌/版本号）与吸顶导航内容边缘对齐正文容器，与页脚同规则；仅 ≥641 生效，窄屏回落 var(--wpx) */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact,body .subnav{
+    padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+    padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  }
+}
+/* 顶栏统一为「品牌居左 / 版本信息居右」的通栏结构（首页原为三行居中，此处统一） */
+body .topbar{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;gap:12px}
+body .topbar .brand{text-align:left;line-height:1.35}
+body .topbar .brand span{display:inline;margin-left:10px;margin-top:0}
+body .topbar .meta{text-align:right;margin-left:auto}
+</style>
+<!-- MARK : WIDTHFIT3-V1B : 窄屏 subnav 内边距与正文统一（幂等注入，勿手改） -->
+<style>
+@media screen and (max-width:640px){
+  body .subnav{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+</style>
 </head>
-<body>
-<div class="topbar">
-  <div class="brand">永州爱眼城 · 检查报告解读标准化方案<span>YONGZHOU AIYANCHENG · REPORT INTERPRETATION SOP</span></div>
-  <div class="meta">版本 V1.0 ｜ 基准日 2026-09-21 ｜ 适用：零陵 / 冷水滩 / 祁阳 全连锁门店</div>
+<body data-page-node-id="igi00PTrxtgslh6gE9WQ7j">
+<div class="topbar tb-compact" data-page-node-id="AF9RU745Gzg1Y2svmt6mQf">
+  <div class="brand" data-page-node-id="40J7m60uNsNwBetBlzJ7FB">永州爱眼城 · 检查报告解读标准化方案<span data-page-node-id="DnEvd8UzSNApdqgsvHzv60">YONGZHOU AIYANCHENG · REPORT INTERPRETATION SOP</span></div>
+  <div class="meta" data-page-node-id="Fjx6DpoyVejT45MYk4sSmV">版本 V1.0 ｜ 基准日 2026-09-21 ｜ 适用：零陵 / 冷水滩 / 祁阳 全连锁门店</div>
 </div>
 
-<div class="hero">
-  <h1>检查报告解读，是门店最容易被忽视、也最容易拉开差距的一步</h1>
-  <p>验光单打完、报告打印出来，顾客往往只看两行：「多少度」「涨没涨」。剩下的指标——眼轴、角膜曲率、眼压、眼底、双眼视功能——顾客看不懂，员工讲不清，结果是：<b>顾客不信、配镜犹豫、复查不来、干预方案推不动。</b></p>
-  <p>本方案把"报告解读"从一个人的临场发挥，变成一套<b>所有人都能复制的标准动作</b>：一套七步 SOP、判定与异常两张对照表、三类人群话术、一套表单与建议书模板、一条合规红线，外加科普清单、案例库、情景卡库与培训考核、推广节奏的整套配套。目标只有一个——<b>让顾客听懂、听进去、肯行动。</b></p>
-  <div class="tags">
-    <em>15 家门店统一口径</em><em>7 步标准解读流程</em><em>3 类人群差异化话术</em><em>4 项核心考核指标</em><em>明确医疗边界</em>
+<div class="hero" data-page-node-id="BGiVIpbuzs3oAskuLQrEw6">
+  <h1 data-page-node-id="uCHNNkKskjnDkpkcnnEnoc">检查报告解读，是门店最容易被忽视、也最容易拉开差距的一步</h1>
+  <p data-page-node-id="9nq0WPLhyjoRj7KvlTQrha">验光单打完、报告打印出来，顾客往往只看两行：「多少度」「涨没涨」。剩下的指标——眼轴、角膜曲率、双眼视功能、泪膜、晶状体——顾客看不懂，员工讲不清，结果是：<b data-page-node-id="arTgWRHy3ZdO2d4vP3eHME">顾客不信、配镜犹豫、复查不来、干预方案推不动。</b></p>
+  <p data-page-node-id="VPjj1TUad6nwNRWWfREgHH">本方案把"报告解读"从一个人的临场发挥，变成一套<b data-page-node-id="zB90k1nxQtSajGhpIMj8Lm">所有人都能复制的标准动作</b>：一套七步 SOP、一张定档与对照合一的判定表、三类人群话术、一套情景诊断分析与解决方案模板、一条合规红线，外加科普清单、案例库、情景卡库与培训考核的整套配套。目标只有一个——<b data-page-node-id="8NMAJIgrT0AwAPJEq3QWge">让顾客听懂、听进去、肯行动。</b></p>
+  <div class="tags" data-page-node-id="kC2BDAZnVfx5wipig9Cpit">
+    <em data-page-node-id="C1sJrFRCePE360YLUYNKFo">15 家门店统一口径</em><em data-page-node-id="A4KDpnnKAkH3hVeDSLvEkR">7 步标准解读流程</em><em data-page-node-id="YcDJJWilxb53XNuzd9iwNA">3 类人群差异化话术</em><em data-page-node-id="tFOt1Zr2NaDlt6pJKyFBbu">4 项核心考核指标</em><em data-page-node-id="2YaylXDaq6ajHqkJ7ohaOM">明确医疗边界</em>
   </div>
 </div>
 
-<div class="wrap">
+<div class="wrap" data-page-node-id="wV0jNBgP69dMrzAV6ehvnv">
 
-  <h2 class="sec">一、这套方案解决什么问题</h2>
-  <div class="tsc"><table>
-    <thead><tr><th style="width:16%">当前痛点</th><th style="width:40%">典型表现</th><th style="width:44%">本方案的对应解法</th></tr></thead>
-    <tbody>
-      <tr><td>口径不统一</td><td>同一个"-2.00D、眼轴年增 0.4mm"的报告，A 店说"稍微注意"，B 店说"必须马上干预"，顾客互相打听后不信任品牌</td><td>统一<b>参考区间表 + 异常判定表 + 异常对照表</b>（<a href="03_指标参考区间与异常判定表.html" style="color:#1677ff;font-weight:600">模块03</a>、04），同一份报告在任何门店得到同一套判定结论</td></tr>
-      <tr><td>讲得太多听不懂</td><td>一开口就是"轴率比""调节滞后""AC/A 比值"，顾客点头但没记住任何东西</td><td>七步流程里每一步只讲一个点；话术采用<b>"先共情→再讲数据→后给方案"</b>结构，数据一律翻译成生活语言（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>）</td></tr>
-      <tr><td>只讲度数，忽视风险</td><td>眼压偏高、眼底杯盘比大、屈光参差等提示被漏掉，既坑顾客也有合规风险</td><td>SOP 第②步强制做<b>异常值全项扫描</b>，凡属"红线清单"必须转诊并记录（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>、<a href="11_医疗边界与合规红线.html" style="color:#1677ff;font-weight:600">模块11</a>）</td></tr>
-      <tr><td>方案推不动</td><td>讲了半小时，顾客还是"回去考虑考虑"，离焦/渐进/视觉训练接受率低</td><td>第⑤⑥⑦步用<b>方案分级（必做/建议做/可选）+ 科普 + 同类案例</b>三线并进，把"我要卖"变成"你需要"（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>、<a href="07_科普知识点清单.html" style="color:#1677ff;font-weight:600">07 科普清单</a>、<a href="08_案例库选取与讲述.html" style="color:#1677ff;font-weight:600">08 案例库</a>）</td></tr>
-      <tr><td>没有记录、无法追踪</td><td>讲了什么没留痕，下次换人接待，顾客要重讲一遍</td><td>《报告解读记录表》《方案建议书》两张表固化，进顾客档案，可查、可追、可交接（<a href="06_记录表与方案建议书.html" style="color:#1677ff;font-weight:600">模块06</a>）</td></tr>
-      <tr><td>新人不敢讲</td><td>入职 3 个月只会念数字，遇到家长提问就答不上来</td><td>培训—演练—认证—考核闭环，L1/L2/L3 三级资质，配备带教跟诊（<a href="09_培训演练与考核指标.html" style="color:#1677ff;font-weight:600">模块09</a>）</td></tr>
+  <h2 class="sec" data-page-node-id="r4uPBcbClFfIEz41CcoAmK">一、这套方案解决什么问题</h2>
+  <div class="tsc" data-page-node-id="F8lhMSmBA6B2jnmpoHcSOR"><table class="" data-page-node-id="UcCxfBAOaD3DHZbKDkKc9H">
+    <thead data-page-node-id="qvzfh4ytI4xC6Aq6YJqbO0"><tr data-page-node-id="q0Qio93V6ktaRoj9MVlhWX"><th style="width:16%" data-page-node-id="dyN13ZkEZzUGEBrJMHMhA4">当前痛点</th><th style="width:40%" data-page-node-id="XMCfZKPUxL8psA8QPa049V">典型表现</th><th style="width:44%" data-page-node-id="w5cOI7EyAE8RRUciIao6Ww">本方案的对应解法</th></tr></thead>
+    <tbody data-page-node-id="YJGHhooYYSXbAI07zO8rA2">
+      <tr data-page-node-id="vfuqwVFkEjkNGJAeA1dQwv"><td data-page-node-id="RrX8GXk5UoKxFx7sGHRZal">口径不统一</td><td data-page-node-id="p9r3bCi7t1aKEMi9OORJws">同一个"-2.00D、眼轴年增 0.4mm"的报告，A 店说"稍微注意"，B 店说"必须马上干预"，顾客互相打听后不信任品牌</td><td data-page-node-id="pAm1Waws55GiverLKhBFVm">统一<b data-page-node-id="HN354ebsOUQzccvTyFbmXB">参考区间、异常判定与异常对照</b>合一的判定表（<a href="03_指标参考区间与异常值对照.html" style="color:#1677ff;font-weight:600" data-page-node-id="KoIlVKEGAmTAnPCnoMRsl1">模块03</a>），同一份报告在任何门店得到同一套判定结论</td></tr>
+      <tr data-page-node-id="oUGeQVDqp4BuyaiOaUrqbD"><td data-page-node-id="KRLjeyEYjGo2gPTj2hObGS">讲得太多听不懂</td><td data-page-node-id="qUXBTyO0Czp9nJN4ldM33c">一开口就是"轴率比""调节滞后""AC/A 比值"，顾客点头但没记住任何东西</td><td data-page-node-id="xLxFxXyAyGm2l8opDYK157">七步流程里每一步只讲一个点；话术采用<b data-page-node-id="0D4OL8G3PX7RxYHzFI964R">"先共情→再讲数据→后给方案"</b>结构，数据一律翻译成生活语言（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600" data-page-node-id="i3hnXAfQGwnlrtEMeHmknJ">模块02</a>）</td></tr>
+      <tr data-page-node-id="cmd8Gt2popA55D8eV5UZkd"><td data-page-node-id="xPgZ8TaTHECwk75tCd54jB">只讲度数，忽视风险</td><td data-page-node-id="yOragQUK3uaFGkWx82Qikk">矫正视力不达标、角膜异常、晶状体混浊等提示被漏掉，既坑顾客也有合规风险</td><td data-page-node-id="u7M5Dm2EQPbOfDqiZQYGJR">SOP 第②步强制做<b data-page-node-id="7CUbS63JAw8HeJeUpmscUK">异常值全项扫描</b>，凡属"红线清单"必须转诊并记录（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600" data-page-node-id="DBGO3NFpjgKyR99wJfDOQ0">模块02</a>、<a href="08_医疗边界与合规红线.html" style="color:#1677ff;font-weight:600" data-page-node-id="3iER2mFsbFbMjbzwTEgn36">模块08</a>）</td></tr>
+      <tr data-page-node-id="g7F82fQY9JalGtLIWDRPuy"><td data-page-node-id="DFJg8F8yjI0plvofcGAUOS">方案推不动</td><td data-page-node-id="FRmDPDxFm5FRHYcerOEyk4">讲了半小时，顾客还是"回去考虑考虑"，离焦/渐进/视觉训练接受率低</td><td data-page-node-id="tv6d92g4ESRzvqTWpivRlC">第⑤⑥⑦步用<b data-page-node-id="Eb5BmQr97NOVF6uPxDuG69">方案分级（必做/建议做/可选）+ 科普 + 同类案例</b>三线并进，把"我要卖"变成"你需要"（<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600" data-page-node-id="TefkFf0yF856454xizBBeg">模块02</a>、<a href="05_科普知识点清单.html" style="color:#1677ff;font-weight:600" data-page-node-id="8dAzcZCHAa0S7iwi8Jeyfk">05 科普清单</a>、<a href="06_案例库选取与讲述.html" style="color:#1677ff;font-weight:600" data-page-node-id="z7wz5Xivun0w2b4jvOuQZR">06 案例库</a>）</td></tr>
+      <tr data-page-node-id="TClDSVOHnQXHP0k8SJrBgX"><td data-page-node-id="A2EA8LlPzyGzBNJSOLIhdB">没有记录、无法追踪</td><td data-page-node-id="8rRyr70Bb1hQXfqTrdgOxm">讲了什么没留痕，下次换人接待，顾客要重讲一遍</td><td data-page-node-id="deCbMD1oiFBShskhY6CKqL">逐场按模板填写《方案建议书》：顾客带走一份、门店存一份，进顾客档案，可查、可追、可交接（<a href="10_情景诊断分析与解决方案模板集.html" style="color:#1677ff;font-weight:600" data-page-node-id="SPfQG94usAmeNk7DirMs2E">模块10</a>）</td></tr>
+      <tr data-page-node-id="asHuXJdrZPVBsQ0N11HAwQ"></tr>
     </tbody>
   </table></div>
 
-  <h2 class="sec">二、15 个模块，各解决什么事（点击卡片直达）</h2>
-  <div class="grid">
-    <a class="card" href="01_方案总览与目标.html">
-      <h3><i>01</i>方案总览与目标</h3>
-      <div class="desc">搞清楚"为什么做、谁来做、在哪用、做到什么算成功"。</div>
-      <ul><li>四个可量化的方案目标</li><li>适用范围与不适用场景</li><li>验光师/视光师/店长/客服/眼保健师 五岗分工</li><li>五大使用场景与触发时机</li></ul>
-      <div class="who"><b>谁用：</b>店长（部署）· 全体验配人员（执行）</div>
-      <div class="go">打开完整内容 →</div>
+  <h2 class="sec" data-page-node-id="aVLXMAwCqcp7BNLXjZeVyT">二、12 个模块，各解决什么事</h2>
+  <div class="grid" data-page-node-id="lmfetIWfT6sdkWJq7KJILM">
+    <a class="card" href="01_方案总览与目标.html" data-page-node-id="uigxYkOppaVYPHn4LXLvCI">
+      <h3 data-page-node-id="A2b5MHza4Olykg5Vr0ILDH"><i data-page-node-id="CM9WwgziTaTb7DxDJAnunU">01</i>方案总览与目标</h3>
+      <div class="desc" data-page-node-id="hV0M0pX2a71taA62vwDFyv">搞清楚"为什么做、谁来做、在哪用、做到什么算成功"。</div>
+      <ul data-page-node-id="0xH9cDnTWEGg7vCuRGbHB8"><li data-page-node-id="h7ub20m1A8p9SGUVo3BCzZ">四个可量化的方案目标</li><li data-page-node-id="0HP5IfCGn8CBMoAWBSbDU6">适用范围与不适用场景</li><li data-page-node-id="8BlOmzSiirlegIf8dLpMjA">验光师/视光师/店长/客服/眼保健师 五岗分工</li><li data-page-node-id="gXAA0D8ix5SwxhkrN3Kyl6">五大使用场景与触发时机</li></ul>
+      <div class="who" data-page-node-id="7fiOmmCoDfgrOPPbTaZowS"><b data-page-node-id="i8yXHtnQZDQjdoN4KJqRLb">谁用：</b>店长（部署）· 全体验配人员（执行）</div>
+      <div class="go" data-page-node-id="UXcJEgE5Jvfp2bKkB2J2sX">打开完整内容 →</div>
     </a>
-    <a class="card" href="02_七步标准解读SOP.html">
-      <h3><i>02</i>七步标准解读 SOP</h3>
-      <div class="desc">整套方案的主心骨，顾客的每一次解读都按这七步走。</div>
-      <ul><li>①检查数据梳理 → ②异常值识别 → ③异常原因 → ④异常影响 → ⑤解决方案 → ⑥科普宣教 → ⑦案例佐证</li><li>每步的输入、动作、输出、完成标准、建议时长</li><li>时间分配与"超时怎么办"</li><li><b>每步配套可照念话术</b>＋转诊提醒、通用句式库、12 条常见异议应答</li><li><b>附：检查项目四大板块</b>——与常规配镜流程的差异化对比 + 现场三句话讲法</li></ul>
-      <div class="who"><b>谁用：</b>视光师（主岗）· 记录人（辅助）</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="02_七步标准解读SOP.html" data-page-node-id="33FlbcfNOzBBm2CK5kkBMC">
+      <h3 data-page-node-id="l4SQD6lfH5B9K1FTCR6CXl"><i data-page-node-id="dZH5yMozYyUFGZcuHAuqVD">02</i>七步标准解读 SOP</h3>
+      <div class="desc" data-page-node-id="SFPyB8ESJDCqB8eonliANX">整套方案的主心骨，顾客的每一次解读都按这七步走。</div>
+      <ul data-page-node-id="salPy5wCXGcupcCrPBpbVQ"><li data-page-node-id="GSmajXp7hEPym3sPGfk6Dr">①检查数据梳理 → ②异常值识别 → ③异常原因 → ④异常影响 → ⑤解决方案 → ⑥科普宣教 → ⑦案例佐证</li><li data-page-node-id="keyfSIcyyEnFGncBzbyMEt">每步的输入、动作、输出、完成标准、建议时长</li><li data-page-node-id="WXJviA1qcnScGUBjR220W6">时间分配与"超时怎么办"</li><li data-page-node-id="bFCqZbrfgf8L723iQHhwrC"><b data-page-node-id="D8aevvSMsgUdmqR3QP5CGO">每步配套可照念话术</b>＋转诊提醒、通用句式库、12 条常见异议应答</li><li data-page-node-id="u0KswNWeJKIsd8OnZZUkGQ"><b data-page-node-id="BA5polQuP1hIxMPj45MvAc">附：检查项目四大板块</b>——与常规配镜流程的差异化对比 + 现场三句话讲法</li></ul>
+      <div class="who" data-page-node-id="NPGnYVx2jqTzTo3XKDoHwg"><b data-page-node-id="RZVH34pY9I5TpzUVqRW3T9">谁用：</b>视光师（主岗）· 记录人（辅助）</div>
+      <div class="go" data-page-node-id="EAR9chGUyZMmkA3MU70H8Z">打开完整内容 →</div>
     </a>
-    <a class="card" href="03_指标参考区间与异常判定表.html">
-      <h3><i>03</i>参考区间与异常判定表</h3>
-      <div class="desc">门店版的"字典"，查到指标就知道是否正常。</div>
-      <ul><li>视力、屈光度、眼轴、角膜曲率、眼压、眼底</li><li>双眼视功能（调节/聚散/隐斜/立体视）</li><li>泪膜、干眼、色觉、晶状体等</li><li>每项给"正常 / 关注 / 异常 / 转诊"四档判定</li></ul>
-      <div class="who"><b>谁用：</b>解读前后必查，建议打印成桌垫/台卡</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="03_指标参考区间与异常值对照.html" data-page-node-id="g1EfCHsc9ALWa5awACUJUs">
+      <h3 data-page-node-id="qHbXmuDDuTdJEIeSBHHsug"><i data-page-node-id="niT7ZonFe1iLyFfcXf65MH">03</i>参考区间与异常值对照</h3>
+      <div class="desc" data-page-node-id="umZE3Ow1f7YHUgt799OFN9">门店版的"字典 + 话术对照"：上篇定档，下篇给原因、影响与对策。</div>
+      <ul data-page-node-id="nmLKpt0pc5PUcYx2aJ0ZUn"><li data-page-node-id="3QxJKMutzzDDGOflzswgT1"><b data-page-node-id="BeYAhi9b4769joXqD41kNd">上篇</b>：视力、屈光度、眼轴与角膜曲率、双眼视功能、眼前节与干眼</li><li data-page-node-id="YcdSViMeUMYb0MNIngKr6z">每项给"正常 / 关注 / 异常 / 转诊"四档判定</li><li data-page-node-id="lz6DJ6ijpRFmsLnZepN8Qv"><b data-page-node-id="EbUAk0k4bdysF3L3p08V5y">下篇</b>：16 类高频异常 → 可能原因 / 潜在影响 / 应对对策 / 话术要点</li><li data-page-node-id="ESxqBlLEJepJfVEjo5e99v">每条附"是否需转诊"标记 + 对照表使用纪律</li></ul>
+      <div class="who" data-page-node-id="6yiafUizbtschYODRtHtQQ"><b data-page-node-id="yGxiebIdyCYpDTzXU7iBDG">谁用：</b>解读前后必查，建议打印成桌垫/台卡</div>
+      <div class="go" data-page-node-id="B7Gw7gbbpM8llDAlzpvTEc">打开完整内容 →</div>
     </a>
-    <a class="card" href="04_异常值对照表.html">
-      <h3><i>04</i>异常值对照表</h3>
-      <div class="desc">从"发现异常"直接跳到"说什么、做什么"。</div>
-      <ul><li>异常值 → 可能原因 → 潜在影响 → 应对对策</li><li>覆盖 20 类高频异常场景</li><li>每条附"是否需转诊"标记</li></ul>
-      <div class="who"><b>谁用：</b>视光师现场对照使用</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="04_三类人群差异化解读.html" data-page-node-id="Js7lnOSrbYMTqjcxOxEfmK">
+      <h3 data-page-node-id="JGtbD2148N9u0VVKohbQEZ"><i data-page-node-id="aCSbuUucBmBzMDJ3ze6g5b">04</i>三类人群差异化解读</h3>
+      <div class="desc" data-page-node-id="p9N5f0ZJvcRHmBQSkw4JPf">同一份报告，讲给家长、讲给上班族、讲给老人，重点完全不同。</div>
+      <ul data-page-node-id="EtUfsDMCGuj6u0JGpzhERg"><li data-page-node-id="c43Mkvf3INUHw42jEm2IvF">儿童青少年：眼轴管理、家长决策、弱视/斜视风险</li><li data-page-node-id="gzp1Z7sUSHBtNXSeVnDlwT">成人：视疲劳、干眼、配镜与用眼场景</li><li data-page-node-id="pdVMcePJG0R9DJCjag65fm">中老年：老视、白内障、慢病相关眼健康</li></ul>
+      <div class="who" data-page-node-id="F0eO4XlokStNsxaRvrOhHf"><b data-page-node-id="ofpjK1FCDO9AnPmHA4S0Ql">谁用：</b>视光师按客群切换侧重点</div>
+      <div class="go" data-page-node-id="udavuJA7pHriLc0RrXrMsU">打开完整内容 →</div>
     </a>
-    <a class="card" href="05_三类人群差异化解读.html">
-      <h3><i>05</i>三类人群差异化解读</h3>
-      <div class="desc">同一份报告，讲给家长、讲给上班族、讲给老人，重点完全不同。</div>
-      <ul><li>儿童青少年：眼轴管理、家长决策、弱视/斜视风险</li><li>成人：视疲劳、干眼、配镜与用眼场景</li><li>中老年：老视、白内障、眼底与慢病关联</li></ul>
-      <div class="who"><b>谁用：</b>视光师按客群切换侧重点</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="05_科普知识点清单.html" data-page-node-id="rVx5lttYW4eR5bzxxO6RkH">
+      <h3 data-page-node-id="UsT4vGIbI1gRmJWn8t5cNG"><i data-page-node-id="0FYDnVq7CaEb2FbSf7ataE">05</i>科普知识点清单</h3>
+      <div class="desc" data-page-node-id="F7vaZhmMmj3uJfO5e5WARG">解读第⑥步的弹药库，30 条随时能讲。</div>
+      <ul data-page-node-id="kbEMPTCrGCwPTnxnwvMGKC"><li data-page-node-id="FFHCeGVARFgesLH7zWJCqX">近视成因 / 户外活动 / 眼轴与度数</li><li data-page-node-id="GamSCU8OEjOwLH02seLL7V">20-20-20 / 读写姿势 / 灯光与睡眠</li><li data-page-node-id="hn6C4jWHFbbAGeeKIJPv52">干眼 / 老视 / 白内障 / 青光眼 / 糖网</li><li data-page-node-id="JyqoHVElVd8hjhwNel4DK8">每条给"一句话讲法 + 常见误区"</li></ul>
+      <div class="who" data-page-node-id="Kc4qve6g68a1sdG1PJWefZ"><b data-page-node-id="qLXBUssKmJjLRL2F06dAXt">谁用：</b>视光师、客服回访、短视频选题</div>
+      <div class="go" data-page-node-id="MQWayHOe6Jl6KdFVM1Gz2q">打开完整内容 →</div>
     </a>
-    <a class="card" href="06_记录表与方案建议书.html">
-      <h3><i>06</i>记录表与方案建议书</h3>
-      <div class="desc">讲得再好，不留痕等于没讲。</div>
-      <ul><li>《顾客报告解读记录表》（A4 一页，可打印手填）</li><li>《个性化处理方案建议书》模板</li><li>顾客确认签字栏 + 复查提醒栏</li><li>填写规范与常见错误</li></ul>
-      <div class="who"><b>谁用：</b>现场填写 + 顾客带走一份</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="06_案例库选取与讲述.html" data-page-node-id="WjJMElkjkbiJMumnkFxiJ5">
+      <h3 data-page-node-id="tcd1rRMh2NLTAK98WCLl4u"><i data-page-node-id="AHZ5xE8TRKEbVhJuO3YxVY">06</i>案例库选取与讲述</h3>
+      <div class="desc" data-page-node-id="QEnKXCEFIaF1BEbpWk3v6S">第⑦步用的"临门一脚"，让顾客觉得"这事儿有人做过、有效"。</div>
+      <ul data-page-node-id="XqogzG2Wu2Zey4GyK3uuse"><li data-page-node-id="GxhC4HmY1wEpp8NwHUNks3">案例选取四标准：真实、同类、可感知、合规</li><li data-page-node-id="gurgdoxoWWgvsrG3UBDcNJ">六段式讲述结构（背景-发现-解释-行动-结果-启示）</li><li data-page-node-id="9TmjMo3Vp4I97b9n8bsWma">10 个可直接讲的标准案例</li><li data-page-node-id="yTTJ379UyAAOgZbygc1m2V">案例登记模板与禁用行为</li></ul>
+      <div class="who" data-page-node-id="yP8lQgN6WsOYa1q5i0hBqK"><b data-page-node-id="PoIKCb5l0i1KV3mE8D2cSe">谁用：</b>视光师、店长（案例征集）</div>
+      <div class="go" data-page-node-id="QSJyPB5E76wJHiWOPWHFDX">打开完整内容 →</div>
     </a>
-    <a class="card" href="07_科普知识点清单.html">
-      <h3><i>07</i>科普知识点清单</h3>
-      <div class="desc">解读第⑥步的弹药库，30 条随时能讲。</div>
-      <ul><li>近视成因 / 户外活动 / 眼轴与度数</li><li>20-20-20 / 读写姿势 / 灯光与睡眠</li><li>干眼 / 老视 / 白内障 / 青光眼 / 糖网</li><li>每条给"一句话讲法 + 常见误区"</li></ul>
-      <div class="who"><b>谁用：</b>视光师、客服回访、短视频选题</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="07_培训演练与考核指标.html" data-page-node-id="LCz8FOqssF3o0ZWb3NJ3N8">
+      <h3 data-page-node-id="rm2OVcVjP31FliO9WN5PTk"><i data-page-node-id="FTE21AojtGPCzZYOT7aBlT">07</i>培训演练与考核</h3>
+      <div class="desc" data-page-node-id="nsrKiesBuGZSun4BFA9kot">把标准变成习惯，把习惯变成业绩。</div>
+      <ul data-page-node-id="yi6i78WTvrIzc9QTz1Tl3k"><li data-page-node-id="fAhEU6nCWGlFqj5atvOHqZ">新人一周上手带教 + 会诊专家七步专项培训（教案见模块11）+ 每日晨会 15 分钟演练（卡片见模块09）</li><li data-page-node-id="4crVIAkv6D0BL2P69oxUOA">角色扮演 / 情景卡 / 录音复盘 / 带教跟诊</li><li data-page-node-id="yeELevO9pt2upUtMzSREaw">四项核心指标：解读覆盖率、顾客理解度、方案接受率、复诊率</li><li data-page-node-id="4pBLs73SkCYnSUx60JduBE">L1-L3 三级认证与月度复盘会</li></ul>
+      <div class="who" data-page-node-id="7J9FFf5qbCDsSQkHNsiKDG"><b data-page-node-id="dNpb4MGkzVGmEPqF0KsZlW">谁用：</b>店长、内训师、区域督导</div>
+      <div class="go" data-page-node-id="pns8suEGBp7QdQJslHstxZ">打开完整内容 →</div>
     </a>
-    <a class="card" href="08_案例库选取与讲述.html">
-      <h3><i>08</i>案例库选取与讲述</h3>
-      <div class="desc">第⑦步用的"临门一脚"，让顾客觉得"这事儿有人做过、有效"。</div>
-      <ul><li>案例选取四标准：真实、同类、可感知、合规</li><li>六段式讲述结构（背景-发现-解释-行动-结果-启示）</li><li>10 个可直接讲的标准案例</li><li>案例登记模板与禁用行为</li></ul>
-      <div class="who"><b>谁用：</b>视光师、店长（案例征集）</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="08_医疗边界与合规红线.html" data-page-node-id="MuDmrLooVbJSt4i9Ac9Qle">
+      <h3 data-page-node-id="neYiMLEElB4cC2hKdgc8Od"><i data-page-node-id="hxz2iHzD8UwDZDl5vyKY3v">08</i>医疗边界与合规红线</h3>
+      <div class="desc" data-page-node-id="OKh5oxgQIiF1837xC5uXz1">门店不是医院，这条线必须写死。</div>
+      <ul data-page-node-id="DZbQOQnizXSgIW35nrdH8S"><li data-page-node-id="MsPDvEyFNNBRD6ryiiResT">"三不做五必须"原则</li><li data-page-node-id="L03GPLYxSDSYgO0Jx04iTR">必须转诊的 12 类情况</li><li data-page-node-id="177ofmjc8OQYnFMB7AiKJ3">转诊去向统一为爱眼城眼科 + 四条禁令</li><li data-page-node-id="J2jlPALpVlTXphiE0qq6gT">话术禁区与替换说法</li><li data-page-node-id="yvBJB9FmQE8JfCSLqcNUOO">顾客突发不适的处理流程</li><li data-page-node-id="m3S3yF44Dbo1Glet1zyWAi">隐私保护、儿童告知、知情同意</li></ul>
+      <div class="who" data-page-node-id="GlaHSvgohzjY2iRvNeRkmZ"><b data-page-node-id="Fcez6MzW9rtGNCztDyBMzM">全员必读，上岗前签字确认</b></div>
+      <div class="go" data-page-node-id="Zxdz2r1dVGFtpvwlkZqMZu">打开完整内容 →</div>
     </a>
-    <a class="card" href="09_培训演练与考核指标.html">
-      <h3><i>09</i>培训演练与考核</h3>
-      <div class="desc">把标准变成习惯，把习惯变成业绩。</div>
-      <ul><li>3 天集训 + 每日晨会 15 分钟演练（教案见模块14、卡片见模块13）</li><li>角色扮演 / 情景卡 / 录音复盘 / 带教跟诊</li><li>四项核心指标：解读覆盖率、顾客理解度、方案接受率、复诊率</li><li>L1-L3 三级认证与月度复盘会</li></ul>
-      <div class="who"><b>谁用：</b>店长、内训师、区域督导</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="09_情景卡库30张演练卡.html" data-page-node-id="jiwnOlF0RYfDqyhERfhTzf">
+      <h3 data-page-node-id="X6vw0pXaKx58gTZcR8jGJw"><i data-page-node-id="W6V44ohh4hlmJzmspjms46">09</i>情景卡库（30 张演练卡）</h3>
+      <div class="desc" data-page-node-id="zw2KBxA4Z5zR6xGESaRuYA">模块07 角色扮演的弹药箱：30 张卡＝30 个真实顾客，把最容易讲砸的局面全演一遍。</div>
+      <ul data-page-node-id="T9LdTj4xdqXjByIX56pTAe"><li data-page-node-id="MJ9WiNqUMl7uAZLyK038wm">儿童青少年 11 张 / 成年人 10 张 / 中老年 9 张（常规题 20 + 压力题 10）</li><li data-page-node-id="hQpUCJFfR88b7VJRuOd3uP">每张含：场景、顾客设定、参考数据、考察重点、通过标准、否决项</li><li data-page-node-id="JKUEQBEVijC4615JJ5uwQo">抽卡与评分规则、通过线与一票否决、重考机制</li><li data-page-node-id="96C4aGD6vcZvBop6BRUuCf">组合扩题法（30 张可扩到 90 张）、印制与半年更新要求</li></ul>
+      <div class="who" data-page-node-id="VoSxlxZfuTtvxoW9208OxD"><b data-page-node-id="q10NBsQHC5BMYlaT3Qwf9d">谁用：</b>店长抽卡 · 全员轮演 · 第三人打分</div>
+      <div class="go" data-page-node-id="mRh3VuX50agQzVfhCPMmDj">打开完整内容 →</div>
     </a>
-    <a class="card" href="10_试点复盘与全门店推广.html">
-      <h3><i>10</i>试点复盘与全门店推广</h3>
-      <div class="desc">先跑通 3 家，再复制 12 家。</div>
-      <ul><li>试点门店选择标准</li><li>T+30 准备 / T+60 试点 / T+75 复盘 / T+120 推广 / T+180 固化 五阶段</li><li>每阶段任务、责任人、交付物、验收标准</li><li>常见问题与纠偏机制</li></ul>
-      <div class="who"><b>谁用：</b>项目负责人、区域经理</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="10_情景诊断分析与解决方案模板集.html" data-page-node-id="SOHWH39iAIuueS7aKPqz4C">
+      <h3 data-page-node-id="0yAfnw61sQGgULwCPxCn1F"><i data-page-node-id="Tvja1jT9PrSDRQhUDCLvKB">10</i>情景诊断分析与解决方案模板集</h3>
+      <div class="desc" data-page-node-id="Eu0vB1l0MsrVo7KBfkYXmt">与模块09 的 30 张卡一一对应：抽到哪张卡，就翻到同号模板照填照念。</div>
+      <ul data-page-node-id="eQtHnn4viGmeLcg3ck8irX"><li data-page-node-id="PtD3JkpxaxISLS5yLhBFcu">S-01 ~ S-30 逐卡一套模板：诊断分析要点 + 三档解决方案 + 复查与转诊</li><li data-page-node-id="aGsQNSfWdXQdSqbxdVE4mZ">每份另附现场话术示例与该卡红线提醒</li><li data-page-node-id="8v54Armjuz4hTEvqL6kYW8">统一六段字段骨架：客户信息 / 关键数据 / 诊断分析 / 方案三档 / 复查转诊 / 顾客确认</li><li data-page-node-id="z5SUcfB8U3WyoVf8YPb0LB">含 30 行快速索引表，按卡号直接跳转</li></ul>
+      <div class="who" data-page-node-id="6rMTR9IThOo3fX5MFNBaV7"><b data-page-node-id="E84FoSZIHCCVvPNImd5h8J">谁用：</b>视光师现场填写 · 店长复核归档</div>
+      <div class="go" data-page-node-id="yEoNDkJietF8kiu0xCclty">打开完整内容 →</div>
     </a>
-    <a class="card" href="11_医疗边界与合规红线.html">
-      <h3><i>11</i>医疗边界与合规红线</h3>
-      <div class="desc">门店不是医院，这条线必须写死。</div>
-      <ul><li>"三不做五必须"原则</li><li>必须转诊的 12 类情况</li><li>转诊去向统一为爱眼城眼科 + 四条禁令</li><li>话术禁区与替换说法</li><li>顾客突发不适的处理流程</li><li>隐私保护、儿童告知、知情同意</li></ul>
-      <div class="who"><b>全员必读，上岗前签字确认</b></div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="11_会诊专家七步解读专项培训.html" data-page-node-id="8mUaTQNvIYgZ0dn1b8hqeE">
+      <h3 data-page-node-id="meFKu3BdleFEUXyxqkXzVB"><i data-page-node-id="vRaJXZJsvmWmODkkxQB26i">11</i>会诊专家七步解读专项培训</h3>
+      <div class="desc" data-page-node-id="l8LoxwUf7gqoDu31FqEFQW">围绕七步处方解读的专项培训：面向各店资深解读骨干（会诊专家），三天逐步骤精讲并把关考核。</div>
+      <ul data-page-node-id="6FbICSEKhAMG7JADEeBews"><li data-page-node-id="xA4uV7kZX7y3bQxeNw13TE">Day1 精讲①-④ / Day2 精讲⑤-⑦ / Day3 全流程实战，共 15 节</li><li data-page-node-id="wnjeyqf7nLuhCXklN73lwQ">覆盖七步核心环节，含各步会诊级要求与红线筛查口径</li><li data-page-node-id="OasFKoL6DjlMLhCn61aejs">学员准入、组织方式、七步测评卷与会诊专家认证认定流程</li><li data-page-node-id="HSJl0EDsB8g9CihEMD1OBF">含 15 节课教学讲解方案、时间进度、组织方式与考核标准</li></ul>
+      <div class="who" data-page-node-id="BiHqXdegMlYJrIDbGUM3ZZ"><b data-page-node-id="wTOgJckOXEfCiTqAMXrpwL">谁用：</b>区域督导（主办）· 内训师 · 在岗会诊专家</div>
+      <div class="go" data-page-node-id="kPgmqenGxKYwZ887DoChef">打开完整内容 →</div>
     </a>
-    <a class="card" href="12_方案建议书标准模板集.html">
-      <h3><i>12</i>建议书标准模板集</h3>
-      <div class="desc">模块06通用版之外，按六类高频场景各做一份专用建议书，勾选即用。</div>
-      <ul><li>A 儿童青少年近视管理 / B 成人视疲劳与干眼 / C 中老年老视与渐进</li><li>D 双眼视功能异常·视觉训练 / E 角膜塑形镜与接触镜 / F 转诊提示型</li><li>每份含：关键数据表、异常勾选、方案三档、复查计划、顾客确认与免责声明</li><li>选型原则、六条通用填写规范、共同禁语、印制与抽查要求</li></ul>
-      <div class="who"><b>谁用：</b>视光师现场填写，顾客带走一份</div>
-      <div class="go">打开完整内容 →</div>
-    </a>
-    <a class="card" href="13_情景卡库30张演练卡.html">
-      <h3><i>13</i>情景卡库（30 张演练卡）</h3>
-      <div class="desc">模块09 角色扮演的弹药箱：30 张卡＝30 个真实顾客，把最容易讲砸的局面全演一遍。</div>
-      <ul><li>儿童青少年 11 张 / 成年人 10 张 / 中老年 9 张（常规题 20 + 压力题 10）</li><li>每张含：场景、顾客设定、参考数据、考察重点、通过标准、否决项</li><li>抽卡与评分规则、通过线与一票否决、重考机制</li><li>组合扩题法（30 张可扩到 90 张）、印制与半年更新要求</li></ul>
-      <div class="who"><b>谁用：</b>店长抽卡 · 全员轮演 · 第三人打分</div>
-      <div class="go">打开完整内容 →</div>
-    </a>
-    <a class="card" href="14_新人三天集训执行方案.html">
-      <h3><i>14</i>新人三天集训执行方案</h3>
-      <div class="desc">把模块09 的课程表展开成 15 节课的标准教案，督导照此排期即可开班。</div>
-      <ul><li>Day1 懂标准 / Day2 会操作 / Day3 能开口，共 15 节课</li><li>每节课含：教学目标、内容要点、组织形式、教具、当堂产出、过关标准</li><li>开班准备清单（T-7 到 T-1）、教材印制清单、结课三张测评卷</li><li>20 场带教衔接 + 培训通知、签到表、结业评定表模板</li></ul>
-      <div class="who"><b>谁用：</b>区域督导（主办）· 内训师 · 店长</div>
-      <div class="go">打开完整内容 →</div>
-    </a>
-    <a class="card" href="15_12岁近视学生近视防控全流程情景还原.html">
-      <h3><i>15</i>12 岁近视学生防控全流程情景还原</h3>
-      <div class="desc">以 12 岁学生就诊为主线，八幕还原视光师与家长的真实沟通过程。</div>
-      <ul><li>角色设定：学生用眼档案、家长画像、视光师能力职责</li><li>八幕推进：问诊 → 检查 → 解读 → 风险 → 方案 → 异议 → 指导 → 复查</li><li>每幕四项：场景背景、标准动作清单、即时反应、逐句对话（标沟通意图）</li><li>可切换焦虑型／质疑型／配合型家长，查看策略与话术差异</li></ul>
-      <div class="who"><b>谁用：</b>新人（跟诊预习）· 内训师（演练）· 店长（考核）</div>
-      <div class="go">打开完整内容 →</div>
+    <a class="card" href="12_12岁近视学生七步解读情景还原.html" data-page-node-id="eoTWDGVIN7WIGhQl8D2E3S">
+      <h3 data-page-node-id="21xAF8RXcCYAIBs1IrlkLK"><i data-page-node-id="HjMwpjGCuAmqiYhtDRnGHe">12</i>12 岁近视学生七步解读情景还原</h3>
+      <div class="desc" data-page-node-id="nBJYLECuEZTdNv2p3bYLlv">以 12 岁学生解读为主线，按模块02 七步逐幕还原，幕号与步号一一对应。</div>
+      <ul data-page-node-id="tzB975t25HQLlCpvvcEO3Z"><li data-page-node-id="IFV9VsnVdlPiPplWMBziAy">案例背景与数据基线：角色设定、用眼档案、本次检查数据</li><li data-page-node-id="tXvbwK0AEvJcFi9SfvFgPJ">七幕对应七步：数据梳理 → 异常识别 → 异常原因 → 异常影响 → 解决方案 → 科普宣教 → 案例佐证</li><li data-page-node-id="quM9c8tBVFao3m6gPl8IGO">每幕六项：沟通策略、场景背景、标准动作清单、即时反应、逐句对话、交付物与验收</li><li data-page-node-id="NIcP9bbs8brILZQTuqQfYF">可切换焦虑型／质疑型／配合型家长，查看策略与话术差异</li></ul>
+      <div class="who" data-page-node-id="E2ojA3ngTSTtLntTTJK1Mm"><b data-page-node-id="HOR1QBk4dRnGhIZXz2kCIs">谁用：</b>新人（跟诊预习）· 内训师（演练）· 店长（考核）</div>
+      <div class="go" data-page-node-id="q7s8USpetWobHmbjzdMCKO">打开完整内容 →</div>
     </a>
   </div>
 
-  <h2 class="sec">三、门店怎么用这套方案（三步上手）</h2>
-  <div class="good">
-    <b>第一步（第1周）：先记流程。</b>所有人把<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>的七步顺序背下来，做到"不跳过、不颠倒"。打印<a href="03_指标参考区间与异常判定表.html" style="color:#1677ff;font-weight:600">模块03</a>的判定表压在验光台玻璃下，遇到拿不准的指标先查表，不查不许开口。<br><br>
-    <b>第二步（第2-4 周）：照着话术讲。</b><a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>的七步话术打印成卡片随身携带，新人允许照念。每场解读后填写<a href="06_记录表与方案建议书.html" style="color:#1677ff;font-weight:600">模块06</a>的记录表，店长每天抽查 2 份。<br><br>
-    <b>第三步（第2个月起）：讲出自己的味道。</b>熟悉后用<a href="07_科普知识点清单.html" style="color:#1677ff;font-weight:600">模块07</a>的科普点、<a href="08_案例库选取与讲述.html" style="color:#1677ff;font-weight:600">模块08</a>的案例替换进去，形成个人讲述风格。每月用<a href="09_培训演练与考核指标.html" style="color:#1677ff;font-weight:600">模块09</a>的考核表自评一次，接受公司抽查。
+  <h2 class="sec" data-page-node-id="Jupt0MMRNSnaSs7DEK0Og8">三、门店怎么用这套方案（三步上手）</h2>
+  <div class="good" data-page-node-id="ouwTGJS6GHLTdEFYulStXn">
+    <b data-page-node-id="JQaxkYpgKYdkreqAvJuUJk">第一步（第1周）：先记流程。</b>所有人把<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600" data-page-node-id="IXgdpQyx2mbMBcDKOpW1Oe">模块02</a>的七步顺序背下来，做到"不跳过、不颠倒"。打印<a href="03_指标参考区间与异常值对照.html" style="color:#1677ff;font-weight:600" data-page-node-id="OWm3XAekZgJYVw2GstoF72">模块03</a>的判定表压在验光台玻璃下，遇到拿不准的指标先查表，不查不许开口。<br data-page-node-id="mXfQrzlc3RNZfi03ZKCAi5"><br data-page-node-id="UMKarLcmn3dAPw6AgFSCKb">
+    <b data-page-node-id="7sDIc23qhFZHs89486yR3t">第二步（第2-4 周）：照着话术讲。</b><a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600" data-page-node-id="LUr3SfmVcMWNmAX80gH1Xq">模块02</a>的七步话术打印成卡片随身携带，新人允许照念。每场解读后按模板填写《方案建议书》并归档，店长每天抽查 2 份。<br data-page-node-id="FzouDKxvDRAH9EvqdIpYbN"><br data-page-node-id="g2FwHBDZSbKqgEYGR6Yvba">
+    <b data-page-node-id="hBkJnLrBhRvFnOwCkPXrOG">第三步（第2个月起）：讲出自己的味道。</b>熟悉后用<a href="05_科普知识点清单.html" style="color:#1677ff;font-weight:600" data-page-node-id="JybtBwXZZzs5FIZwWCV2GQ">模块05</a>的科普点、<a href="06_案例库选取与讲述.html" style="color:#1677ff;font-weight:600" data-page-node-id="V3JkjtcifBqQpS2SGLO8q6">模块06</a>的案例替换进去，形成个人讲述风格。每月用<a href="07_培训演练与考核指标.html" style="color:#1677ff;font-weight:600" data-page-node-id="lH2cGGH8mgPtrxqmGJBxb4">模块07</a>的考核表自评一次，接受公司抽查。
   </div>
+  
 
-  <h2 class="sec">四、整套方案的"四个统一"</h2>
-  <div class="tsc"><table>
-    <thead><tr><th style="width:11%">统一项</th><th style="width:25%">统一前</th><th style="width:64%">统一后（标准）</th></tr></thead>
-    <tbody>
-      <tr><td>统一口径</td><td>凭经验，各店各说</td><td>判定结论来自同一张《参考区间与异常判定表》，同报告同结论</td></tr>
-      <tr><td>统一流程</td><td>想到哪讲到哪</td><td>七步固定顺序，每步有完成标准，缺一步视为解读未完成</td></tr>
-      <tr><td>统一话术</td><td>术语堆叠，顾客听不懂</td><td>先共情—再讲数据—后给方案；所有数据配生活化翻译</td></tr>
-      <tr><td>统一留痕</td><td>口头讲完即结束</td><td>记录表进档案 + 建议书交顾客，形成可追踪的服务链</td></tr>
-    </tbody>
-  </table></div>
-
-  <div class="warn">
-    <b>边界提醒（所有门店必须遵守）：</b>本方案是<b>验配服务与健康宣教</b>工具，<b>不是医疗诊断</b>。门店人员不得做出疾病诊断、不得推荐或停用任何药品、不得承诺治疗效果。凡涉及疑似眼病、眼压异常、眼底改变、急性症状者，一律按<a href="11_医疗边界与合规红线.html" style="color:#1677ff;font-weight:600">模块11</a>执行<b>转诊提醒</b>，由医疗机构出具诊断。所有健康宣教内容不得使用"治疗""治愈""根治""保证不涨"等表述。
-  </div>
-
-  <div style="text-align:center;margin:30px 0 10px">
-    <button class="btn" onclick="window.print()">打印本页</button>
-    <a class="btn ghost" href="#top">回到顶部</a>
-  </div>
+  
 </div>
 
-<footer>
-  <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0</b><br>
-  编制：闫胜君整理 ｜ 适用门店：零陵 8 家、冷水滩 2 家、祁阳 5 家（共 15 家）｜ 归口部门：视光运营部<br>
-  说明：本方案为门店内部服务标准文件，所有参考数值仅供健康宣教与转诊提示使用，不构成医疗诊断意见。表中数值如与国家最新诊疗指南不一致，以指南和接诊医疗机构意见为准。使用者上岗前须通读<a href="11_医疗边界与合规红线.html" style="color:#1677ff;font-weight:600">模块11</a>《医疗边界与合规红线》并签字确认。
+<footer data-page-node-id="YhxDR3NrkMNVT5DzdOQARq">
+  <b data-page-node-id="o22NGTMb9Af2dsndGFtcFe">永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0</b><br data-page-node-id="VkYVvUEvXDcpDZeLKPxZRf">
+  编制：闫胜君整理 ｜ 适用门店：零陵 8 家、冷水滩 2 家、祁阳 5 家（共 15 家）｜ 归口部门：视光运营部<br data-page-node-id="qS1FKyQIiWhoXVIxizpMaQ">
+  说明：本方案为门店内部服务标准文件，所有参考数值仅供健康宣教与转诊提示使用，不构成医疗诊断意见。表中数值如与国家最新诊疗指南不一致，以指南和接诊医疗机构意见为准。使用者上岗前须通读<a href="08_医疗边界与合规红线.html" style="color:#1677ff;font-weight:600" data-page-node-id="QJBB3ciXhPQlNoRcQ9oGKY">模块08</a>《医疗边界与合规红线》并签字确认。
 </footer>
-<div id="top"></div>
+<div id="top" data-page-node-id="JxNNSl7gXT2puAdFG3lhFP"></div>
 <script>
 /* SMART-STICKY-V1 : 智能表头吸顶 */
 (function(){
@@ -612,5 +614,8 @@ body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
   sync();
 })();
 </script>
-</body>
-</html>
+
+
+
+
+</body></html>
