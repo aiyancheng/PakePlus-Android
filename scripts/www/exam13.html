@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第13套 | 365天培训综合测试卷</title>
+    <link rel="stylesheet" href="training-styles.css">
+    <style>
+        .exam-info { margin-bottom: 4px; }
+        .exam-info p { margin-bottom: 10px; }
+        .exam-badge {
+            display: inline-block; margin: 8px 6px 0 0; padding: 4px 12px;
+            background: #E6F0FF; color: #1677FF; border: 1px solid #D6E4FF;
+            border-radius: 20px; font-size: 13px;
+        }
+        .score-display .score-text { white-space: pre-line; line-height: 1.7; }
+        .reset-btn {
+            display: inline-block; margin-left: 10px; padding: 10px 22px;
+            background: #F5F5F5; color: #666; border: 1px solid #E0E0E0;
+            border-radius: 10px; font-size: 15px; cursor: pointer;
+            font-family: var(--font-family);
+        }
+        .reset-btn:hover { background: #EEE; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="day-number">模拟测试 · 第 13 套</div>
+            <h1 class="page-title">365天培训综合测试卷（第13套）</h1>
+            <div class="page-subtitle">共 20 题 · 每题 5 分 · 满分 100 分</div>
+        </div>
+
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📝</div>
+                <div class="card-title">考试说明</div>
+            </div>
+            <div class="learning-section exam-info">
+                <p>1. 本试卷共 <strong>20</strong> 道选择题（含单选、多选），每题 <strong>5</strong> 分，满分 <strong>100</strong> 分。</p>
+                <p>2. <strong>多选题</strong>须全部选对才得分，多选、少选、错选均不得分。</p>
+                <p>3. 题目从 365 天课程题库中随机抽取，各套试卷题目互不重复。</p>
+                <p>4. 作答完成后点击下方「📝 提交答案并评分」，系统自动评分并给出答题解析。</p>
+                <div>
+                    <span class="exam-badge">📚 题库总量 1000+ 题</span>
+                    <span class="exam-badge">🎯 满分 100 分</span>
+                    <span class="exam-badge">⏱ 建议用时 20 分钟</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <div class="section-title">试 题</div>
+            <div id="questionArea"></div>
+
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitExam()">📝 提交答案并评分</button>
+                <button class="reset-btn" onclick="location.reload()">🔄 重新作答</button>
+            </div>
+
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0/100分</div>
+                <div class="score-text" id="scoreText">本次测试成绩</div>
+            </div>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+        </div>
+    </div>
+
+    <div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
+
+    <script>
+        // ========== 本套试卷题目数据（随机抽取） ==========
+        const examData = [{"src":348,"type":"single","text":"判断门店5S是否做到位的最简单方法是？","options":["看销售数据","看员工考勤","看厕所","看财务报表"],"answer":[2],"score":5,"explanation":"判断5S是否到位的最简单方法是\"看厕所\"。厕所干净整洁说明5S做到位，厕所脏乱说明5S失败。这是5S的\"试金石\"。"},{"src":321,"type":"single","text":"会员日转化设计中，进店后的第一步应该是？（单选）","options":["立即推销产品","先让会员体验或服务（免费验光/清洗）","直接告知优惠力度","要求会员留下联系方式"],"answer":[1],"score":5,"explanation":"进店后第一步是先让会员体验或服务，产生\"亏欠感\"，后续推销更容易接受。"},{"src":299,"type":"single","text":"5W追问法中，最后一层\"How\"要解决的核心问题是？","options":["找到是谁的错并追究责任","找到流程缺陷并建立防止再发的机制","给顾客提供最大限度的补偿","确认投诉是否真实"],"answer":[1],"score":5,"explanation":"5W追问法的最终目的是找到流程缺陷并建立预防机制，而非追责。归因于流程而非人。"},{"src":258,"type":"single","text":"以下哪种说法是推荐折射率的过度销售行为？","options":["给-6.00D顾客推荐1.74","给-2.00D顾客推荐1.56说性价比好","给-1.00D顾客推荐1.74说\"最薄最好\"","给-4.00D顾客推荐1.67说边缘会薄一些"],"answer":[2],"score":5,"explanation":"-1.00D属于极轻度近视，镜片本身就很薄，推荐1.74不仅价格贵，而且比重大更重，没有实际益处，属于典型过度销售。"},{"src":81,"type":"single","text":"电竞防蓝光镜片的推荐阻断率是多少？","options":["20-30%","40-50%","60-70%","80%以上"],"answer":[1],"score":5,"explanation":"电竞防蓝光镜片推荐阻断率40-50%，平衡防护与色彩准确性。太高（>60%）色偏严重，影响游戏体验。"},{"src":238,"type":"single","text":"综合验光仪上红绿平衡测试中，\"绿色更清楚\"说明什么？","options":["近视欠矫，需要加-0.25D","近视过矫，需要减-0.25D","球镜最佳，无需调整","散光未矫正"],"answer":[1],"score":5,"explanation":"红绿测试中绿色更清楚说明绿色光聚焦在视网膜前（过矫），应减少负镜（减-0.25D）或增加正镜。"},{"src":354,"type":"single","text":"与轮椅顾客沟通时，正确的做法是？","options":["站着俯视说话，显得有权威","蹲下或弯腰，与顾客视线平齐","让陪同人员替顾客做决定","直接说\"你肯定买不了这个\""],"answer":[1],"score":5,"explanation":"正确做法是B：蹲下或弯腰，与顾客视线平齐。A错误：站着俯视像领导视察。C错误：不能替顾客做决定。D错误：这是歧视性语言。"},{"src":102,"type":"single","text":"接待一家三口的家庭团体时，最佳策略是？","options":["让三个人一起排队等着，按顺序逐个接待","分流服务：一部分人先验光，另一部分人先选镜框，提高效率","只接待主决策人，其他人在旁边等着","先给孩子配，其他人下次再来"],"answer":[1],"score":5,"explanation":"家庭团体接待的核心是‘分流服务’——让一部分人先验光，另一部分人先选镜框，提高效率。不要 everyone挤在一起，那样效率低且混乱。"},{"src":344,"type":"multi","text":"关于工作服卫生标准，以下说法正确的有？","options":["工作服可以连续两天穿同一件","工作服应无污渍、无褶皱、无破损、无异味","工作服沾上饭菜味没关系，第二天继续穿","工作服应每日更换，使用除菌洗衣液清洗"],"answer":[1,3],"score":5,"explanation":"A错误：工作服应每日更换，不能连续两天穿同一件。B正确：工作服四无标准是基本要求。C错误：工作服沾上异味必须重新清洗。D正确：每日更换+除菌洗衣液是标准做法。"},{"src":341,"type":"single","text":"女士美甲规定中，以下哪项是不允许的？","options":["透明指甲油","淡粉色指甲油","延长甲（甲片）","裸色指甲油"],"answer":[2],"score":5,"explanation":"女士美甲禁止延长甲（甲片）、复杂美甲（镶钻、立体装饰）、鲜艳颜色等，延长甲是明确禁止的。"},{"src":145,"type":"single","text":"顾客说\"我再看看\"，最佳损失厌恶话术是？","options":["\"您再看看，不买算\"","\"您再看看可以，但这几天眼睛在受伤害\"","不回应，让顾客自己决定","直接降价200元"],"answer":[1],"score":5,"explanation":"最佳话术是\"您再看看可以，但这几天眼睛在受伤害\"——用健康损失提醒。"},{"src":64,"type":"multi","text":"依视路钻晶A4系列的主要特点是什么？","options":["带防蓝光功能","价格最便宜","适合办公族","膜层最耐用"],"answer":[0,2],"score":5,"explanation":"A正确：钻晶A4带防蓝光功能。B错误：A4不是最便宜的，A3更便宜。C正确：适合办公族。D错误：膜层最耐用的是钻晶X。"},{"src":341,"type":"multi","text":"关于指甲管理，以下说法正确的有？","options":["指甲长度不得超过指尖2毫米","长指甲容易划伤镜片表面","女士可以涂鲜艳红色指甲油，显得精神","男士禁止任何指甲油或美甲"],"answer":[0,1,3],"score":5,"explanation":"A正确：指甲长度不得超过指尖2毫米。B正确：长指甲硬度高于镜片膜层，容易划伤镜片。C错误：女士禁止鲜艳颜色指甲油。D正确：男士禁止任何指甲油或美甲。"},{"src":251,"type":"single","text":"处方为 -2.00DS/-1.50DC × 90°，其等效球镜度数（SE）是？","options":["-2.75D","-3.50D","-2.25D","-3.75D"],"answer":[0],"score":5,"explanation":"SE = -2.00 + (-1.50)/2 = -2.00 - 0.75 = -2.75D。"},{"src":208,"type":"single","text":"\"20-20-20法则\"是指？","options":["每20分钟休息20秒，看20英尺（6米）外","每20分钟休息20分钟，看20米外","每2小时休息20分钟，看20英尺外","每20秒休息20分钟，看20米外"],"answer":[0],"score":5,"explanation":"\"20-20-20法则\"是指每20分钟休息20秒，看20英尺（约6米）外的物体，以缓解视疲劳。"},{"src":151,"type":"multi","text":"3天回访时顾客反映\"偶尔头晕\"，正确的处理方式是？","options":["告诉顾客这是正常适应过程，继续佩戴","询问是持续头晕还是偶尔头晕","如持续头晕，可能需要复查验光数据","邀请回店免费调整或检查"],"answer":[1,2,3],"score":5,"explanation":"A错误（不能一概而论说正常），B正确（区分持续还是偶尔），C正确（持续头晕需复查），D正确（邀请回店解决）。"},{"src":151,"type":"single","text":"配镜后回访的黄金时间点是？","options":["1天、3天、7天","3天、7天、30天","7天、15天、30天","10天、20天、30天"],"answer":[1],"score":5,"explanation":"配镜后回访的黄金时间点是3天（初步适应）、7天（完全适应）、30天（保养提醒）。"},{"src":49,"type":"single","text":"驾驶时最适合的太阳镜镜片颜色是？","options":["蓝色","灰色","粉色","红色"],"answer":[1],"score":5,"explanation":"驾驶时适合灰色镜片，因为色彩还原最好，交通信号灯颜色不变。茶色也可以，但灰色更通用。"},{"src":267,"type":"single","text":"个性化护眼方案的\"防护层\"主要包含什么？","options":["精准的验光配镜处方","针对用眼风险的防护措施（蓝光/UV/近视防控）","定期复查计划和用眼习惯改善","护镜产品推荐"],"answer":[1],"score":5,"explanation":"防护层的核心是针对用眼风险的防护措施，包括蓝光/UV防护、近视防控和眼疲劳缓解。A是基础层，C是管理层。"},{"src":192,"type":"single","text":"小瞳验光适用于以下哪种情况？","options":["8岁儿童首次验光","成人复查换镜","调节痉挛（假性近视）","妊娠期女性"],"answer":[1],"score":5,"explanation":"小瞳验光适用于成人复查换镜。8岁儿童首次验光应散瞳验光，调节痉挛应散瞳验光鉴别真假近视，妊娠期女性散瞳需谨慎（相对禁忌）。"}];
+        const LETTERS = 'ABCDEFGH';
+
+        // ========== 渲染试题 ==========
+        function renderExam() {
+            const area = document.getElementById('questionArea');
+            examData.forEach((q, qi) => {
+                const box = document.createElement('div');
+                box.className = 'choice-question';
+
+                const qt = document.createElement('div');
+                qt.className = 'question-text';
+                qt.textContent = (qi + 1) + '. ' + q.text + (q.type === 'multi' ? '（多选）' : '');
+                box.appendChild(qt);
+
+                const meta = document.createElement('div');
+                meta.className = 'question-meta';
+                meta.textContent = (q.type === 'multi' ? '多选题' : '单选题') + ' · ' + q.score + '分';
+                box.appendChild(meta);
+
+                const ul = document.createElement('ul');
+                ul.className = 'options-list';
+                q.options.forEach((opt, oi) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    const mk = document.createElement('div');
+                    mk.className = 'option-marker';
+                    mk.textContent = LETTERS[oi];
+                    const tx = document.createElement('span');
+                    tx.className = 'option-text';
+                    tx.textContent = opt;
+                    li.appendChild(mk);
+                    li.appendChild(tx);
+                    li.addEventListener('click', () => toggleOption(qi, oi, q.type === 'multi'));
+                    ul.appendChild(li);
+                });
+                box.appendChild(ul);
+
+                const fb = document.createElement('div');
+                fb.className = 'feedback';
+                box.appendChild(fb);
+
+                area.appendChild(box);
+            });
+        }
+
+        function toggleOption(qi, oi, isMulti) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const item = items[oi];
+            if (isMulti) {
+                item.classList.toggle('selected');
+            } else {
+                items.forEach(li => li.classList.remove('selected'));
+                item.classList.add('selected');
+            }
+        }
+
+        function getSelected(qi) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const sel = [];
+            items.forEach((li, i) => { if (li.classList.contains('selected')) sel.push(i); });
+            return sel.sort((a, b) => a - b);
+        }
+
+        // ========== 自动评分 ==========
+        function submitExam() {
+            let total = 0, correctCount = 0, answered = 0;
+            examData.forEach((q, qi) => {
+                const box = document.querySelectorAll('.choice-question')[qi];
+                const items = box.querySelectorAll('.option-item');
+                const sel = getSelected(qi);
+                if (sel.length) answered++;
+                const corr = q.answer.slice().sort((a, b) => a - b);
+                const ok = JSON.stringify(sel) === JSON.stringify(corr);
+
+                items.forEach(li => li.classList.remove('correct', 'wrong'));
+                const fb = box.querySelector('.feedback');
+                fb.classList.remove('show', 'correct-feedback', 'wrong-feedback');
+                items.forEach((li, oi) => {
+                    if (corr.includes(oi)) li.classList.add('correct');
+                    if (sel.includes(oi) && !corr.includes(oi)) li.classList.add('wrong');
+                });
+
+                if (ok) {
+                    total += q.score;
+                    correctCount++;
+                    fb.classList.add('correct-feedback', 'show');
+                    fb.innerHTML = '✅ 回答正确！' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                } else {
+                    const letters = corr.map(i => LETTERS[i]).join('、');
+                    fb.classList.add('wrong-feedback', 'show');
+                    fb.innerHTML = '❌ 回答错误。正确答案：<strong>' + letters + '</strong>。' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                }
+            });
+
+            const max = examData.reduce((s, q) => s + q.score, 0);
+            const pct = Math.round(total / max * 100);
+            let result, tip;
+            if (pct >= 90) { result = '🏆 优秀！知识掌握非常扎实'; }
+            else if (pct >= 80) { result = '👍 良好，继续巩固即可'; }
+            else if (pct >= 60) { result = '✅ 合格，请重点复习错题'; }
+            else { result = '⚠️ 不合格，建议回看相关课程后重新测试'; }
+            tip = (answered < examData.length ? '（有 ' + (examData.length - answered) + ' 题未作答）' : '（已全部作答）');
+
+            document.getElementById('scoreNumber').textContent = total + '/' + max + '分';
+            document.getElementById('scoreText').innerHTML =
+                result + '\n答对 ' + correctCount + '/' + examData.length + ' 题 · 正确率 ' + pct + '% ' + tip;
+
+            const disp = document.getElementById('scoreDisplay');
+            disp.classList.add('show');
+            disp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        window.addEventListener('DOMContentLoaded', renderExam);
+    </script>
+</body>
+</html>
