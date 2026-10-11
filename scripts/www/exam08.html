@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第8套 | 365天培训综合测试卷</title>
+    <link rel="stylesheet" href="training-styles.css">
+    <style>
+        .exam-info { margin-bottom: 4px; }
+        .exam-info p { margin-bottom: 10px; }
+        .exam-badge {
+            display: inline-block; margin: 8px 6px 0 0; padding: 4px 12px;
+            background: #E6F0FF; color: #1677FF; border: 1px solid #D6E4FF;
+            border-radius: 20px; font-size: 13px;
+        }
+        .score-display .score-text { white-space: pre-line; line-height: 1.7; }
+        .reset-btn {
+            display: inline-block; margin-left: 10px; padding: 10px 22px;
+            background: #F5F5F5; color: #666; border: 1px solid #E0E0E0;
+            border-radius: 10px; font-size: 15px; cursor: pointer;
+            font-family: var(--font-family);
+        }
+        .reset-btn:hover { background: #EEE; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="day-number">模拟测试 · 第 8 套</div>
+            <h1 class="page-title">365天培训综合测试卷（第8套）</h1>
+            <div class="page-subtitle">共 20 题 · 每题 5 分 · 满分 100 分</div>
+        </div>
+
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📝</div>
+                <div class="card-title">考试说明</div>
+            </div>
+            <div class="learning-section exam-info">
+                <p>1. 本试卷共 <strong>20</strong> 道选择题（含单选、多选），每题 <strong>5</strong> 分，满分 <strong>100</strong> 分。</p>
+                <p>2. <strong>多选题</strong>须全部选对才得分，多选、少选、错选均不得分。</p>
+                <p>3. 题目从 365 天课程题库中随机抽取，各套试卷题目互不重复。</p>
+                <p>4. 作答完成后点击下方「📝 提交答案并评分」，系统自动评分并给出答题解析。</p>
+                <div>
+                    <span class="exam-badge">📚 题库总量 1000+ 题</span>
+                    <span class="exam-badge">🎯 满分 100 分</span>
+                    <span class="exam-badge">⏱ 建议用时 20 分钟</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <div class="section-title">试 题</div>
+            <div id="questionArea"></div>
+
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitExam()">📝 提交答案并评分</button>
+                <button class="reset-btn" onclick="location.reload()">🔄 重新作答</button>
+            </div>
+
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0/100分</div>
+                <div class="score-text" id="scoreText">本次测试成绩</div>
+            </div>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+        </div>
+    </div>
+
+    <div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
+
+    <script>
+        // ========== 本套试卷题目数据（随机抽取） ==========
+        const examData = [{"src":268,"type":"multi","text":"关于档案隐私保护，以下哪些做法是正确的？","options":["档案不得对外分享或泄露","离职员工立即撤销系统权限","电子档案定期备份","顾客无权查阅自己的档案"],"answer":[0,1,2],"score":5,"explanation":"A/B/C均是正确的隐私保护做法。D错误：顾客有权查阅和要求删除自己的健康档案，这是基本的数据权利。"},{"src":130,"type":"single","text":"顾客52岁，老花明显，平时开车+看电脑+看手机都需要。最适合推荐哪种方案？","options":["单光老花镜（只看近）","双光镜（上看远下看近）","渐进多焦点镜片（远中近都看）","不配眼镜，凑合着看"],"answer":[2],"score":5,"explanation":"顾客开车（远）+看电脑（中）+看手机（近），远中近都要看，最适合渐进多焦点镜片。"},{"src":34,"type":"single","text":"彩色隐形眼镜最安全的着色工艺是？","options":["表面着色","夹层着色","内表面着色","以上都不安全"],"answer":[1],"score":5,"explanation":"夹层着色（三明治工艺）是最安全的着色工艺，色素夹在两层材料之间，不接触眼睛。"},{"src":27,"type":"multi","text":"关于镜框保养，以下说法正确的是？","options":["可以不用衣服干擦镜片","板材镜框不能用超声波清洗","鼻托应该每6-12个月更换","眼镜可以放在汽车仪表盘上"],"answer":[0,1,2],"score":5,"explanation":"A、B、C正确。D错误：不能放在汽车仪表盘上，高温会导致镜片脱膜、镜框变形。"},{"src":53,"type":"single","text":"渐变染色片相比全染色片的优势是？","options":["价格更便宜","下方浅色看仪表盘更清晰","防紫外线效果更好","更时尚美观"],"answer":[1],"score":5,"explanation":"渐变染色片下方浅色，看仪表盘和导航仪更清晰，不会因为镜片太深而看不清下方。这是驾驶镜的重要设计。"},{"src":141,"type":"single","text":"竞品对比成交法的核心是？","options":["诋毁竞品，说他不好","客观对比差异，让顾客理性决策","不提竞品，只说自己好","直接降价，比竞品更便宜"],"answer":[1],"score":5,"explanation":"竞品对比核心是客观对比差异，让顾客理性决策。不是诋毁竞品，也不是不提竞品。"},{"src":44,"type":"multi","text":"下列哪些是偏光太阳镜的适用场景？","options":["驾驶","钓鱼/水上运动","夜间驾驶","滑雪"],"answer":[0,1,3],"score":5,"explanation":"偏光镜适合驾驶、钓鱼、滑雪等场景。C错误：夜间驾驶绝对不能用偏光镜，会进一步降低亮度。"},{"src":57,"type":"single","text":"以下哪种人群不适合推荐防蓝光镜片？","options":["每天使用电脑8小时的程序员","需要准确判断颜色的专业摄影师","经常出现眼疲劳的中年女性","担心蓝光危害的退休老人"],"answer":[1],"score":5,"explanation":"摄影师对色彩准确度要求极高，防蓝光镜片的色偏会影响其工作，应谨慎推荐或不推荐。"},{"src":81,"type":"multi","text":"电竞眼镜的镜框设计需要考虑哪些因素？","options":["轻量化（<20g）","兼容耳机（镜腿不能太粗）","包裹式设计（阻挡侧面杂光）","金属镜框（耐用）"],"answer":[0,1,2],"score":5,"explanation":"电竞眼镜镜框需要轻量化(<20g)、兼容耳机、包裹式设计。金属镜框太重且不舒适，电竞眼镜通常选TR90或板材。"},{"src":109,"type":"single","text":"对于长时间看电脑的办公室白领，最适合推荐什么镜片？","options":["普通单光镜片","防蓝光、抗疲劳镜片","变色镜片","偏光镜片"],"answer":[1],"score":5,"explanation":"长时间看电脑的办公室白领容易眼疲劳，最适合防蓝光和抗疲劳镜片。"},{"src":220,"type":"single","text":"菊花茶适合哪种症状？","options":["脾胃虚寒","眼睛红肿、头目眩晕","孕妇","糖尿病"],"answer":[1],"score":5,"explanation":"菊花茶性微寒，适合眼红肿痛、头目眩晕等\"热证\"。脾胃虚寒、孕妇、糖尿病是禁忌或慎用人群。"},{"src":129,"type":"single","text":"关于太阳镜UV防护，以下说法正确的是？","options":["颜色越深，UV防护越好","UV400能阻挡波长400nm以下的所有紫外线","装饰太阳镜没有UV防护，对眼睛更安全","灰色镜片UV防护最好"],"answer":[1],"score":5,"explanation":"UV400是最高防护标准，能阻挡波长400nm以下的所有紫外线（UVA+UVB）。颜色深浅≠UV防护能力。"},{"src":82,"type":"multi","text":"睡眠眼镜的遮光设计包括哪些方面？","options":["镜片遮光（深红色/橙色）","镜框遮光（全覆盖+侧翼）","鼻托密封（无缝隙）","电致变色（自动调节）"],"answer":[0,1,2],"score":5,"explanation":"睡眠眼镜遮光设计包括：镜片遮光（深红/橙色）、镜框遮光（全覆盖+侧翼）、鼻托密封（无缝隙）。电致变色是高端技术，非必需。"},{"src":16,"type":"single","text":"注入成型工艺的主要优点是什么？","options":["每副镜框纹理独一无二","可以制作复杂内部结构设计","生产效率高，适合大批量生产","材料利用率低，废料多"],"answer":[2],"score":5,"explanation":"注入成型工艺的主要优点是生产效率高，适合大批量生产，成本低。"},{"src":110,"type":"single","text":"关于用眼时长，以下哪种情况风险最高？","options":["一天累计看屏幕2-4小时","一天累计看屏幕4-8小时","一天累计看屏幕8小时以上","一天累计看屏幕1小时以内"],"answer":[2],"score":5,"explanation":"一天累计看屏幕8小时以上属于重度用眼，眼疲劳和近视加深风险最高，建议配抗疲劳+防蓝光镜片。"},{"src":272,"type":"single","text":"关于同理心与同情心的区别，以下说法正确的是？","options":["同理心是\"我替你难过\"，同情心是\"我理解你为什么难过\"","同理心是切换到对方视角，同情心是从自己视角俯视对方","两者完全相同，只是说法不同","同情心比同理心效果更好"],"answer":[1],"score":5,"explanation":"同理心是切换到对方视角理解其情绪，让对方感到被理解；同情心是从自己角度俯视，可能让对方感到被怜悯。"},{"src":206,"type":"single","text":"高血压患者应多久检查一次眼底？","options":["每半年一次","每年一次","每2-3年一次","出现症状再查"],"answer":[1],"score":5,"explanation":"高血压患者应每年检查一次眼底，以便及时发现眼底改变并评估靶器官损害程度。"},{"src":21,"type":"multi","text":"关于儿童镜框选择，以下说法正确的是？","options":["儿童鼻梁低平，需要可调鼻托","儿童眼镜光学中心可以不对瞳","儿童镜框需要防滑设计","含镍金属合金适合儿童"],"answer":[0,2],"score":5,"explanation":"A正确：儿童鼻梁低平，需要可调鼻托。B错误：儿童眼镜光学中心必须对瞳，否则影响视力发育。C正确：儿童好动，镜腿需要防滑。D错误：含镍合金可能导致接触性皮炎，不适合儿童。"},{"src":283,"type":"single","text":"以下哪种情况需要\"即时汇报\"给上司？","options":["今天销售了3副眼镜","店内综合验光仪突然出现故障，无法正常使用","一位新顾客询问了价格但没有购买","库存中某款镜架剩余2个"],"answer":[1],"score":5,"explanation":"设备故障会影响正常服务，属于例外情况，需立即汇报。日常销售情况、顾客询价离店、库存状态等属于日常汇报范畴，不需要即时上报。"},{"src":4,"type":"single","text":"有害蓝光的波长范围是？","options":["380-445nm","445-500nm","500-550nm","550-600nm"],"answer":[0],"score":5,"explanation":"有害蓝光（高能短波蓝光）的波长范围是380-445nm，这部分蓝光可穿透晶状体直达视网膜，长期暴露有损伤风险。"}];
+        const LETTERS = 'ABCDEFGH';
+
+        // ========== 渲染试题 ==========
+        function renderExam() {
+            const area = document.getElementById('questionArea');
+            examData.forEach((q, qi) => {
+                const box = document.createElement('div');
+                box.className = 'choice-question';
+
+                const qt = document.createElement('div');
+                qt.className = 'question-text';
+                qt.textContent = (qi + 1) + '. ' + q.text + (q.type === 'multi' ? '（多选）' : '');
+                box.appendChild(qt);
+
+                const meta = document.createElement('div');
+                meta.className = 'question-meta';
+                meta.textContent = (q.type === 'multi' ? '多选题' : '单选题') + ' · ' + q.score + '分';
+                box.appendChild(meta);
+
+                const ul = document.createElement('ul');
+                ul.className = 'options-list';
+                q.options.forEach((opt, oi) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    const mk = document.createElement('div');
+                    mk.className = 'option-marker';
+                    mk.textContent = LETTERS[oi];
+                    const tx = document.createElement('span');
+                    tx.className = 'option-text';
+                    tx.textContent = opt;
+                    li.appendChild(mk);
+                    li.appendChild(tx);
+                    li.addEventListener('click', () => toggleOption(qi, oi, q.type === 'multi'));
+                    ul.appendChild(li);
+                });
+                box.appendChild(ul);
+
+                const fb = document.createElement('div');
+                fb.className = 'feedback';
+                box.appendChild(fb);
+
+                area.appendChild(box);
+            });
+        }
+
+        function toggleOption(qi, oi, isMulti) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const item = items[oi];
+            if (isMulti) {
+                item.classList.toggle('selected');
+            } else {
+                items.forEach(li => li.classList.remove('selected'));
+                item.classList.add('selected');
+            }
+        }
+
+        function getSelected(qi) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const sel = [];
+            items.forEach((li, i) => { if (li.classList.contains('selected')) sel.push(i); });
+            return sel.sort((a, b) => a - b);
+        }
+
+        // ========== 自动评分 ==========
+        function submitExam() {
+            let total = 0, correctCount = 0, answered = 0;
+            examData.forEach((q, qi) => {
+                const box = document.querySelectorAll('.choice-question')[qi];
+                const items = box.querySelectorAll('.option-item');
+                const sel = getSelected(qi);
+                if (sel.length) answered++;
+                const corr = q.answer.slice().sort((a, b) => a - b);
+                const ok = JSON.stringify(sel) === JSON.stringify(corr);
+
+                items.forEach(li => li.classList.remove('correct', 'wrong'));
+                const fb = box.querySelector('.feedback');
+                fb.classList.remove('show', 'correct-feedback', 'wrong-feedback');
+                items.forEach((li, oi) => {
+                    if (corr.includes(oi)) li.classList.add('correct');
+                    if (sel.includes(oi) && !corr.includes(oi)) li.classList.add('wrong');
+                });
+
+                if (ok) {
+                    total += q.score;
+                    correctCount++;
+                    fb.classList.add('correct-feedback', 'show');
+                    fb.innerHTML = '✅ 回答正确！' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                } else {
+                    const letters = corr.map(i => LETTERS[i]).join('、');
+                    fb.classList.add('wrong-feedback', 'show');
+                    fb.innerHTML = '❌ 回答错误。正确答案：<strong>' + letters + '</strong>。' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                }
+            });
+
+            const max = examData.reduce((s, q) => s + q.score, 0);
+            const pct = Math.round(total / max * 100);
+            let result, tip;
+            if (pct >= 90) { result = '🏆 优秀！知识掌握非常扎实'; }
+            else if (pct >= 80) { result = '👍 良好，继续巩固即可'; }
+            else if (pct >= 60) { result = '✅ 合格，请重点复习错题'; }
+            else { result = '⚠️ 不合格，建议回看相关课程后重新测试'; }
+            tip = (answered < examData.length ? '（有 ' + (examData.length - answered) + ' 题未作答）' : '（已全部作答）');
+
+            document.getElementById('scoreNumber').textContent = total + '/' + max + '分';
+            document.getElementById('scoreText').innerHTML =
+                result + '\n答对 ' + correctCount + '/' + examData.length + ' 题 · 正确率 ' + pct + '% ' + tip;
+
+            const disp = document.getElementById('scoreDisplay');
+            disp.classList.add('show');
+            disp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        window.addEventListener('DOMContentLoaded', renderExam);
+    </script>
+</body>
+</html>
