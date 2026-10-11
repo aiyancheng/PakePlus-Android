@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第3套 | 365天培训综合测试卷</title>
+    <link rel="stylesheet" href="training-styles.css">
+    <style>
+        .exam-info { margin-bottom: 4px; }
+        .exam-info p { margin-bottom: 10px; }
+        .exam-badge {
+            display: inline-block; margin: 8px 6px 0 0; padding: 4px 12px;
+            background: #E6F0FF; color: #1677FF; border: 1px solid #D6E4FF;
+            border-radius: 20px; font-size: 13px;
+        }
+        .score-display .score-text { white-space: pre-line; line-height: 1.7; }
+        .reset-btn {
+            display: inline-block; margin-left: 10px; padding: 10px 22px;
+            background: #F5F5F5; color: #666; border: 1px solid #E0E0E0;
+            border-radius: 10px; font-size: 15px; cursor: pointer;
+            font-family: var(--font-family);
+        }
+        .reset-btn:hover { background: #EEE; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="day-number">模拟测试 · 第 3 套</div>
+            <h1 class="page-title">365天培训综合测试卷（第3套）</h1>
+            <div class="page-subtitle">共 20 题 · 每题 5 分 · 满分 100 分</div>
+        </div>
+
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📝</div>
+                <div class="card-title">考试说明</div>
+            </div>
+            <div class="learning-section exam-info">
+                <p>1. 本试卷共 <strong>20</strong> 道选择题（含单选、多选），每题 <strong>5</strong> 分，满分 <strong>100</strong> 分。</p>
+                <p>2. <strong>多选题</strong>须全部选对才得分，多选、少选、错选均不得分。</p>
+                <p>3. 题目从 365 天课程题库中随机抽取，各套试卷题目互不重复。</p>
+                <p>4. 作答完成后点击下方「📝 提交答案并评分」，系统自动评分并给出答题解析。</p>
+                <div>
+                    <span class="exam-badge">📚 题库总量 1000+ 题</span>
+                    <span class="exam-badge">🎯 满分 100 分</span>
+                    <span class="exam-badge">⏱ 建议用时 20 分钟</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <div class="section-title">试 题</div>
+            <div id="questionArea"></div>
+
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitExam()">📝 提交答案并评分</button>
+                <button class="reset-btn" onclick="location.reload()">🔄 重新作答</button>
+            </div>
+
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0/100分</div>
+                <div class="score-text" id="scoreText">本次测试成绩</div>
+            </div>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+        </div>
+    </div>
+
+    <div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
+
+    <script>
+        // ========== 本套试卷题目数据（随机抽取） ==========
+        const examData = [{"src":119,"type":"multi","text":"以下哪些话术属于Benefit（利益）层面的描述？","options":["\"这款镜片是1.67高折射率的\"（Feature）","\"镜片更薄，戴上去更美观，别人看不出您度数高\"（Benefit）","\"1.67折射率比1.56薄30%\"（Advantage）","\"您从早戴到晚，鼻子和耳朵都不会有压痕\"（Benefit）"],"answer":[1,3],"score":5,"explanation":"B和D是Benefit（利益）描述，说的是对顾客的价值。A是Feature（特性），C是Advantage（优势）。"},{"src":236,"type":"multi","text":"老年家庭照明改造的\"五要\"中包括？","options":["选暖白至自然光，色温3000K-4000K","选无频闪LED灯具","用透明灯罩让光线更明亮","灯具选高显色指数CRI>90"],"answer":[0,1,3],"score":5,"explanation":"A、B、D正确。C错误：应该用磨砂/乳白灯罩柔化光线、防止眩光，透明灯罩会造成强烈眩光困扰老年人。"},{"src":195,"type":"multi","text":"以下哪些是近视性眼底病变的危险信号？","options":["突然出现的闪光感","黑影飘动突然增多","视野出现幕布样遮挡","轻微眼疲劳"],"answer":[0,1,2],"score":5,"explanation":"A、B、C都是视网膜脱离的危险信号。D（轻微眼疲劳）不是危险信号，但也是需要关注的症状。"},{"src":314,"type":"multi","text":"以下哪些是有效的会员唤醒策略？","options":["群发\"全场8折\"短信给所有会员","发送含会员姓名的专属优惠短信","打电话以\"免费服务\"为理由邀请到店","在微信群分享有价值的护眼科普文章"],"answer":[1,2,3],"score":5,"explanation":"A错误：群发无专属感，是错误做法。B正确：专属优惠是有效唤醒。C正确：以服务为理由降低防备。D正确：内容唤醒重新吸引关注。"},{"src":75,"type":"single","text":"有害蓝光的波长范围是？","options":["380-455nm","455-500nm","500-550nm","550-600nm"],"answer":[0],"score":5,"explanation":"有害蓝光的波长范围是380-455nm，这部分蓝光能量高、穿透力强，会导致视网膜损伤。"},{"src":166,"type":"single","text":"生日营销自动化流程中，生日后3天的动作是？","options":["再次发送生日祝福","微信提醒优惠券即将到期","电话回访满意度","发送下一年生日预告"],"answer":[1],"score":5,"explanation":"生日后3天的动作是\"微信提醒优惠券即将到期\"，目的是促消费。生日后7天才进行电话回访。"},{"src":168,"type":"multi","text":"以下哪些属于\"时尚/心理复购时机\"？","options":["镜框流行趋势变化（板材→金属）","重要场合需求（面试、婚礼、同学会）","度数增加-0.75D","送礼需求（送父母、孩子、伴侣）"],"answer":[0,1,3],"score":5,"explanation":"A（流行趋势）、B（重要场合）、D（送礼需求）都属于时尚/心理复购时机。C（度数变化）属于生理/视力变化时机。"},{"src":268,"type":"single","text":"近视进展中的青少年，档案复查提醒频率应设置为？","options":["每年一次","每两年一次","每3-6个月一次","每月一次"],"answer":[2],"score":5,"explanation":"近视进展中的青少年度数变化快，应每3-6个月复查一次，便于及时调整防控方案。"},{"src":145,"type":"single","text":"损失厌恶原理的核心是？","options":["得到快乐>失去痛苦","失去痛苦>得到快乐（2.5倍）","得到和失去一样","失去无所谓"],"answer":[1],"score":5,"explanation":"损失厌恶核心：失去痛苦>得到快乐（2.5倍）。"},{"src":324,"type":"multi","text":"以下哪些属于\"优惠类内容\"的有效设计？","options":["限时优惠（仅限今天）","限量优惠（前50名）","阶梯优惠（不同等级不同折扣）","纯硬广（全场8折，无时限）"],"answer":[0,1,2],"score":5,"explanation":"A、B、C都是有效优惠设计。D错误：纯硬广无创意，会员会疲劳。"},{"src":136,"type":"single","text":"顾客说\"太贵了，我再看看\"，最佳分期话术是？","options":["\"您再看看吧，不买就算了\"","\"这款1680元，12期免息每月140元，每天4.7元，比一包烟便宜\"","不回应，等顾客自己决定","直接降价200元"],"answer":[1],"score":5,"explanation":"最佳分期话术是\"12期免息每月140元，每天4.7元，比一包烟便宜\"——降低价格敏感度，强调划算。"},{"src":271,"type":"multi","text":"积极倾听的六个实践动作包括？","options":["停——放下手头工作","看——保持眼神接触","催——催促顾客尽快说完","点——适时点头回应","E. 等——等对方说完再开口"],"answer":[0,1,3,4],"score":5,"explanation":"积极倾听的六个动作是：停、看、听、点、记、等。\"催\"是错误行为，会破坏倾听氛围。"},{"src":110,"type":"multi","text":"以下哪些属于不良的用眼距离习惯？","options":["手机贴脸看（距离<20cm）","趴着看书（距离<20cm）","看电脑保持50-70cm距离","关灯看手机"],"answer":[0,1,3],"score":5,"explanation":"A、B、D都是不良用眼距离/光线习惯。C是正确距离（50-70cm），不属于不良习惯。"},{"src":274,"type":"single","text":"顾客刚进门，员工最适合的第一个问题是？","options":["\"您的预算是多少？\"","\"您要近视镜还是老花镜？\"","\"今天来是想配眼镜还是检查视力呢？\"","\"您要什么牌子的镜片？\""],"answer":[2],"score":5,"explanation":"顾客刚进门，应先用开放/轻松的问题了解来意，\"配眼镜还是检查视力\"是自然友好的开场，让顾客感到被关注而非被审问。"},{"src":15,"type":"single","text":"下列哪种金属材料的密度最低（最轻）？","options":["不锈钢","蒙乃尔合金","纯钛","镁合金"],"answer":[2],"score":5,"explanation":"纯钛密度4.5 g/cm³，是最轻的金属材料，远低于不锈钢（7.9）和蒙乃尔（8.8）。"},{"src":83,"type":"single","text":"实验室防护眼镜必须有什么设计？","options":["侧面开放式设计","侧面防护（包裹式）","轻便设计","时尚外观"],"answer":[1],"score":5,"explanation":"实验室眼镜必须有侧面防护！普通眼镜侧面开放，液体可能从侧面溅入。必须选择包裹式护目镜（goggles）。"},{"src":12,"type":"multi","text":"下列哪些情况下推荐选择渐进多焦点镜片？","options":["45岁，近视-3.00D，开始有老花症状","60岁，从未戴过眼镜，第一次配镜","50岁，远视+2.00D，需要看远看近","30岁，近视-6.00D，无老花"],"answer":[0,2],"score":5,"explanation":"A正确：45岁出现老花，适合渐进。B错误：60岁首次配镜，可能难以适应渐进，建议单光。C正确：50岁远视需看远看近，渐进适合。D错误：30岁无老花，不需要渐进。"},{"src":256,"type":"single","text":"-4.00D镜片，光学中心偏差5mm，产生的棱镜量是？","options":["1.0Δ","1.5Δ","2.0Δ","0.8Δ"],"answer":[2],"score":5,"explanation":"棱镜量 = 4.00 × 0.5cm = 2.0Δ（5mm = 0.5cm）。"},{"src":92,"type":"single","text":"介绍商品时，正确的手势是？","options":["用食指指商品","用拇指指商品","用手掌朝上/侧朝上示意","不用手势，只用语言描述"],"answer":[2],"score":5,"explanation":"介绍商品时，正确手势是用\"手掌\"示意方向（手掌朝上或侧朝上），不要用食指指点点。食指指人/物在很多文化中是不礼貌的，像\"训斥\"。"},{"src":198,"type":"single","text":"散光患者最典型的症状是什么？","options":["视力下降","视物重影（复视）","眼痛","流泪"],"answer":[1],"score":5,"explanation":"散光最典型的症状是视物重影（复视），尤其在晚上或暗光环境下更明显。"}];
+        const LETTERS = 'ABCDEFGH';
+
+        // ========== 渲染试题 ==========
+        function renderExam() {
+            const area = document.getElementById('questionArea');
+            examData.forEach((q, qi) => {
+                const box = document.createElement('div');
+                box.className = 'choice-question';
+
+                const qt = document.createElement('div');
+                qt.className = 'question-text';
+                qt.textContent = (qi + 1) + '. ' + q.text + (q.type === 'multi' ? '（多选）' : '');
+                box.appendChild(qt);
+
+                const meta = document.createElement('div');
+                meta.className = 'question-meta';
+                meta.textContent = (q.type === 'multi' ? '多选题' : '单选题') + ' · ' + q.score + '分';
+                box.appendChild(meta);
+
+                const ul = document.createElement('ul');
+                ul.className = 'options-list';
+                q.options.forEach((opt, oi) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    const mk = document.createElement('div');
+                    mk.className = 'option-marker';
+                    mk.textContent = LETTERS[oi];
+                    const tx = document.createElement('span');
+                    tx.className = 'option-text';
+                    tx.textContent = opt;
+                    li.appendChild(mk);
+                    li.appendChild(tx);
+                    li.addEventListener('click', () => toggleOption(qi, oi, q.type === 'multi'));
+                    ul.appendChild(li);
+                });
+                box.appendChild(ul);
+
+                const fb = document.createElement('div');
+                fb.className = 'feedback';
+                box.appendChild(fb);
+
+                area.appendChild(box);
+            });
+        }
+
+        function toggleOption(qi, oi, isMulti) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const item = items[oi];
+            if (isMulti) {
+                item.classList.toggle('selected');
+            } else {
+                items.forEach(li => li.classList.remove('selected'));
+                item.classList.add('selected');
+            }
+        }
+
+        function getSelected(qi) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const sel = [];
+            items.forEach((li, i) => { if (li.classList.contains('selected')) sel.push(i); });
+            return sel.sort((a, b) => a - b);
+        }
+
+        // ========== 自动评分 ==========
+        function submitExam() {
+            let total = 0, correctCount = 0, answered = 0;
+            examData.forEach((q, qi) => {
+                const box = document.querySelectorAll('.choice-question')[qi];
+                const items = box.querySelectorAll('.option-item');
+                const sel = getSelected(qi);
+                if (sel.length) answered++;
+                const corr = q.answer.slice().sort((a, b) => a - b);
+                const ok = JSON.stringify(sel) === JSON.stringify(corr);
+
+                items.forEach(li => li.classList.remove('correct', 'wrong'));
+                const fb = box.querySelector('.feedback');
+                fb.classList.remove('show', 'correct-feedback', 'wrong-feedback');
+                items.forEach((li, oi) => {
+                    if (corr.includes(oi)) li.classList.add('correct');
+                    if (sel.includes(oi) && !corr.includes(oi)) li.classList.add('wrong');
+                });
+
+                if (ok) {
+                    total += q.score;
+                    correctCount++;
+                    fb.classList.add('correct-feedback', 'show');
+                    fb.innerHTML = '✅ 回答正确！' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                } else {
+                    const letters = corr.map(i => LETTERS[i]).join('、');
+                    fb.classList.add('wrong-feedback', 'show');
+                    fb.innerHTML = '❌ 回答错误。正确答案：<strong>' + letters + '</strong>。' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                }
+            });
+
+            const max = examData.reduce((s, q) => s + q.score, 0);
+            const pct = Math.round(total / max * 100);
+            let result, tip;
+            if (pct >= 90) { result = '🏆 优秀！知识掌握非常扎实'; }
+            else if (pct >= 80) { result = '👍 良好，继续巩固即可'; }
+            else if (pct >= 60) { result = '✅ 合格，请重点复习错题'; }
+            else { result = '⚠️ 不合格，建议回看相关课程后重新测试'; }
+            tip = (answered < examData.length ? '（有 ' + (examData.length - answered) + ' 题未作答）' : '（已全部作答）');
+
+            document.getElementById('scoreNumber').textContent = total + '/' + max + '分';
+            document.getElementById('scoreText').innerHTML =
+                result + '\n答对 ' + correctCount + '/' + examData.length + ' 题 · 正确率 ' + pct + '% ' + tip;
+
+            const disp = document.getElementById('scoreDisplay');
+            disp.classList.add('show');
+            disp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        window.addEventListener('DOMContentLoaded', renderExam);
+    </script>
+</body>
+</html>
