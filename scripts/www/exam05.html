@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第5套 | 365天培训综合测试卷</title>
+    <link rel="stylesheet" href="training-styles.css">
+    <style>
+        .exam-info { margin-bottom: 4px; }
+        .exam-info p { margin-bottom: 10px; }
+        .exam-badge {
+            display: inline-block; margin: 8px 6px 0 0; padding: 4px 12px;
+            background: #E6F0FF; color: #1677FF; border: 1px solid #D6E4FF;
+            border-radius: 20px; font-size: 13px;
+        }
+        .score-display .score-text { white-space: pre-line; line-height: 1.7; }
+        .reset-btn {
+            display: inline-block; margin-left: 10px; padding: 10px 22px;
+            background: #F5F5F5; color: #666; border: 1px solid #E0E0E0;
+            border-radius: 10px; font-size: 15px; cursor: pointer;
+            font-family: var(--font-family);
+        }
+        .reset-btn:hover { background: #EEE; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="day-number">模拟测试 · 第 5 套</div>
+            <h1 class="page-title">365天培训综合测试卷（第5套）</h1>
+            <div class="page-subtitle">共 20 题 · 每题 5 分 · 满分 100 分</div>
+        </div>
+
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📝</div>
+                <div class="card-title">考试说明</div>
+            </div>
+            <div class="learning-section exam-info">
+                <p>1. 本试卷共 <strong>20</strong> 道选择题（含单选、多选），每题 <strong>5</strong> 分，满分 <strong>100</strong> 分。</p>
+                <p>2. <strong>多选题</strong>须全部选对才得分，多选、少选、错选均不得分。</p>
+                <p>3. 题目从 365 天课程题库中随机抽取，各套试卷题目互不重复。</p>
+                <p>4. 作答完成后点击下方「📝 提交答案并评分」，系统自动评分并给出答题解析。</p>
+                <div>
+                    <span class="exam-badge">📚 题库总量 1000+ 题</span>
+                    <span class="exam-badge">🎯 满分 100 分</span>
+                    <span class="exam-badge">⏱ 建议用时 20 分钟</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <div class="section-title">试 题</div>
+            <div id="questionArea"></div>
+
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitExam()">📝 提交答案并评分</button>
+                <button class="reset-btn" onclick="location.reload()">🔄 重新作答</button>
+            </div>
+
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0/100分</div>
+                <div class="score-text" id="scoreText">本次测试成绩</div>
+            </div>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+        </div>
+    </div>
+
+    <div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
+
+    <script>
+        // ========== 本套试卷题目数据（随机抽取） ==========
+        const examData = [{"src":120,"type":"single","text":"产品卖点提炼三要素不包括以下哪项？","options":["差异化","量化","场景化","情感化"],"answer":[3],"score":5,"explanation":"产品卖点提炼三要素是：差异化、量化、场景化。情感化不是独立要素，而是场景化带来的结果。"},{"src":53,"type":"multi","text":"下列哪些是驾驶太阳镜的正确配置？","options":["白天用渐变灰色偏光镜","夜间用浅黄色增晰镜","夜间用深色偏光镜","隧道内用变色镜自动调节"],"answer":[0,1,3],"score":5,"explanation":"正确配置：A白天渐变偏光+B夜间黄片+D隧道变色。C错误：夜间绝对不能用深色镜。"},{"src":287,"type":"single","text":"专业型顾客主动使用\"透光率\"\"色散\"\"屈光度\"等词汇，说明他属于？","options":["对服务态度不满意","做过功课，具备一定专业知识","想故意刁难店员","只是随便看看而已"],"answer":[1],"score":5,"explanation":"使用专业术语是\"做过功课\"的明确信号，说明这类顾客具备一定专业知识。"},{"src":166,"type":"single","text":"生日营销的客户回应率通常能达到多少？","options":["5-10%","15-25%","30-50%","60-80%"],"answer":[2],"score":5,"explanation":"生日营销的客户回应率通常能达到30-50%，远高于普通营销（5-10%），是ROI最高的营销方式之一。"},{"src":299,"type":"single","text":"眼镜门店投诉中，哪一类根源最容易被忽视但转化率最高？","options":["产品根源——度数偏差、质量缺陷","服务根源——态度、效率、专业水平","沟通根源——信息不对称导致的期望落差","外部根源——顾客自身原因"],"answer":[2],"score":5,"explanation":"沟通根源约占25%，是最容易被忽视的投诉类型。产品和人都没问题，但信息不对称导致期望落差。处理简单、转化快。"},{"src":356,"type":"multi","text":"以下哪些任务属于门店工作中的\"第二象限\"（重要不紧急）？","options":["学习新产品知识（如离焦镜片原理）","维护老顾客：电话回访、微信问候","顾客现场投诉，情绪激动","整理顾客档案，分析复购机会"],"answer":[0,1,3],"score":5,"explanation":"A、B、D都是重要但不紧急的任务（第二象限）。C是重要且紧急（第一象限），不属于第二象限。"},{"src":202,"type":"single","text":"白内障最常见的类型是？","options":["先天性白内障","年龄相关性白内障（老年性白内障）","外伤性白内障","代谢性白内障"],"answer":[1],"score":5,"explanation":"年龄相关性白内障（老年性白内障）是最常见的白内障类型，50岁以上高发。"},{"src":139,"type":"multi","text":"关于难缠顾客应对，以下做法正确的是？","options":["用同理心理解顾客顾虑","跟顾客\"对着干\"，证明他错","用专业度化解疑虑","直接降价打发顾客"],"answer":[0,2],"score":5,"explanation":"A（同理心）和C（专业度）正确。B（对着干）和D（降价打发）错误。"},{"src":43,"type":"single","text":"UV400标准的具体要求是？","options":["UVB透射比≤1%，UVA透射比≤1%","UVB透射比≤5%，UVA透射比≤5%","阻挡50%紫外线","镜片颜色深度达到标准"],"answer":[0],"score":5,"explanation":"UV400标准要求：UVB（280-315nm）平均透射比≤1%，UVA（315-380nm）平均透射比≤1%。符合此标准可阻挡99%以上紫外线。"},{"src":194,"type":"multi","text":"关于验光单上的符号，以下说法正确的是？","options":["\"S\"表示球镜度数，即近视或远视的度数","\"C\"表示柱镜度数，即散光的度数","\"A\"表示轴位，范围是0-360度","\"PD\"表示瞳距，即两眼瞳孔中心之间的距离"],"answer":[0,1,3],"score":5,"explanation":"A正确：S表示球镜度数。B正确：C表示柱镜度数。C错误：轴位范围是0-180度，不是0-360度。D正确：PD表示瞳距。"},{"src":155,"type":"single","text":"换片服务相比整镜销售，利润率通常要高出多少？","options":["5-10%","15-25%","30-40%","持平，无差异"],"answer":[1],"score":5,"explanation":"换片服务相比整镜销售，利润率通常要高出15-25%，因为无需采购镜框成本。"},{"src":97,"type":"single","text":"说话前\"3秒法则\"不包括以下哪个问题？","options":["这句话会让顾客不高兴吗？","这句话涉及隐私/评判吗？","这句话顾客会买吗？","这句话是事实还是夸大？"],"answer":[2],"score":5,"explanation":"说话前\"3秒法则\"包括三个问题：①这句话会让顾客不高兴吗？②这句话涉及隐私/评判吗？③这句话是事实还是夸大？不包括\"这句话顾客会买吗\"（这是销售问题，不是说话禁忌问题）。"},{"src":97,"type":"single","text":"顾客觉得价格太贵时，你应该如何回应？","options":["\"这个太贵了，你买不起\"","\"这副眼镜就是贵，你换便宜的吧\"","\"这款是高端系列，价格不低。如果您对价格敏感，我推荐几款性价比更高的...\"","\"不买别看了\""],"answer":[2],"score":5,"explanation":"顾客觉得价格太贵时，正确做法是给替代方案，不嫌贫爱富。如\"这款是高端系列，价格不低。如果您对价格敏感，我推荐几款性价比更高的...\"。不要说\"买不起\"\"换便宜的\"等伤人的话。"},{"src":130,"type":"multi","text":"关于渐进镜片，以下说法正确的是？","options":["渐进镜片适合有垂直斜视>2△的顾客","渐进镜片需要1-2周适应期","渐进镜片框高要求≥28mm","渐进镜片不适合颈椎病患者"],"answer":[1,2,3],"score":5,"explanation":"B、C、D正确。A错误：垂直斜视>2△不适合渐进，因为棱镜需求无法通过渐进镜片满足。"},{"src":357,"type":"single","text":"当压力突然袭来时（如被顾客当面投诉），最有效的\"急救\"方法是？","options":["立即反驳顾客，保护自己的尊严","深呼吸3次（4-7-8法），然后专注于\"下一步该做什么\"","假装没听见，继续做手头的事","立即找同事倾诉，释放情绪"],"answer":[1],"score":5,"explanation":"B是正确答案。4-7-8呼吸法能在60秒内降低压力反应，然后专注于解决方案而非情绪。A会激化矛盾，C是逃避，D应该在事后做而不是当下。"},{"src":85,"type":"single","text":"以下哪种话术属于\"需求延伸法\"？","options":["\"您有没有遇到过眼镜坏了急着用的情况？\"","\"您平时除了上班看电脑，还会开车吗？\"","\"根据您的验光结果，我建议配两副眼镜。\"","\"现在买有优惠，过几天就恢复原价了。\""],"answer":[1],"score":5,"explanation":"需求延伸法是通过了解顾客的其他需求，自然地延伸推荐其他产品。例如：\"您平时除了上班，还会开车吗？如果会的话，建议配一副偏光太阳镜。\""},{"src":39,"type":"single","text":"关于隐形眼镜并发症的预防，下列哪项是最重要的措施？","options":["使用最贵的镜片","严格控制佩戴时间","每天用自来水冲洗镜片","镜盒终身不换"],"answer":[1],"score":5,"explanation":"严格控制佩戴时间是预防并发症最重要的措施。每日不超过8-10小时，不要戴镜过夜。"},{"src":15,"type":"single","text":"一位顾客说自己对金属过敏，应该推荐哪种材料的镜框？","options":["不锈钢","蒙乃尔合金","纯钛","以上都可以"],"answer":[2],"score":5,"explanation":"纯钛生物相容性好，几乎无人过敏，是过敏体质者的最佳选择。不锈钢和蒙乃尔都含镍，可能过敏。"},{"src":190,"type":"single","text":"电脑验光结果中，SPH -3.50表示什么？","options":["近视350度","远视350度","散光350度","老花350度"],"answer":[0],"score":5,"explanation":"SPH（Sphere）表示球镜度数。负值表示近视，正值表示远视。-3.50表示近视350度。"},{"src":355,"type":"single","text":"责任的三层境界，从低到高依次是？","options":["被动负责 → 替他人负责 → 主动负责","主动负责 → 被动负责 → 替他人负责","被动负责 → 主动负责 → 替他人负责","替他人负责 → 主动负责 → 被动负责"],"answer":[2],"score":5,"explanation":"责任的三层境界从低到高是：被动负责（不得不做，合格）→ 主动负责（应该做，不需要提醒，优秀）→ 替他人负责（主动帮忙，卓越）。"}];
+        const LETTERS = 'ABCDEFGH';
+
+        // ========== 渲染试题 ==========
+        function renderExam() {
+            const area = document.getElementById('questionArea');
+            examData.forEach((q, qi) => {
+                const box = document.createElement('div');
+                box.className = 'choice-question';
+
+                const qt = document.createElement('div');
+                qt.className = 'question-text';
+                qt.textContent = (qi + 1) + '. ' + q.text + (q.type === 'multi' ? '（多选）' : '');
+                box.appendChild(qt);
+
+                const meta = document.createElement('div');
+                meta.className = 'question-meta';
+                meta.textContent = (q.type === 'multi' ? '多选题' : '单选题') + ' · ' + q.score + '分';
+                box.appendChild(meta);
+
+                const ul = document.createElement('ul');
+                ul.className = 'options-list';
+                q.options.forEach((opt, oi) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    const mk = document.createElement('div');
+                    mk.className = 'option-marker';
+                    mk.textContent = LETTERS[oi];
+                    const tx = document.createElement('span');
+                    tx.className = 'option-text';
+                    tx.textContent = opt;
+                    li.appendChild(mk);
+                    li.appendChild(tx);
+                    li.addEventListener('click', () => toggleOption(qi, oi, q.type === 'multi'));
+                    ul.appendChild(li);
+                });
+                box.appendChild(ul);
+
+                const fb = document.createElement('div');
+                fb.className = 'feedback';
+                box.appendChild(fb);
+
+                area.appendChild(box);
+            });
+        }
+
+        function toggleOption(qi, oi, isMulti) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const item = items[oi];
+            if (isMulti) {
+                item.classList.toggle('selected');
+            } else {
+                items.forEach(li => li.classList.remove('selected'));
+                item.classList.add('selected');
+            }
+        }
+
+        function getSelected(qi) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const sel = [];
+            items.forEach((li, i) => { if (li.classList.contains('selected')) sel.push(i); });
+            return sel.sort((a, b) => a - b);
+        }
+
+        // ========== 自动评分 ==========
+        function submitExam() {
+            let total = 0, correctCount = 0, answered = 0;
+            examData.forEach((q, qi) => {
+                const box = document.querySelectorAll('.choice-question')[qi];
+                const items = box.querySelectorAll('.option-item');
+                const sel = getSelected(qi);
+                if (sel.length) answered++;
+                const corr = q.answer.slice().sort((a, b) => a - b);
+                const ok = JSON.stringify(sel) === JSON.stringify(corr);
+
+                items.forEach(li => li.classList.remove('correct', 'wrong'));
+                const fb = box.querySelector('.feedback');
+                fb.classList.remove('show', 'correct-feedback', 'wrong-feedback');
+                items.forEach((li, oi) => {
+                    if (corr.includes(oi)) li.classList.add('correct');
+                    if (sel.includes(oi) && !corr.includes(oi)) li.classList.add('wrong');
+                });
+
+                if (ok) {
+                    total += q.score;
+                    correctCount++;
+                    fb.classList.add('correct-feedback', 'show');
+                    fb.innerHTML = '✅ 回答正确！' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                } else {
+                    const letters = corr.map(i => LETTERS[i]).join('、');
+                    fb.classList.add('wrong-feedback', 'show');
+                    fb.innerHTML = '❌ 回答错误。正确答案：<strong>' + letters + '</strong>。' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                }
+            });
+
+            const max = examData.reduce((s, q) => s + q.score, 0);
+            const pct = Math.round(total / max * 100);
+            let result, tip;
+            if (pct >= 90) { result = '🏆 优秀！知识掌握非常扎实'; }
+            else if (pct >= 80) { result = '👍 良好，继续巩固即可'; }
+            else if (pct >= 60) { result = '✅ 合格，请重点复习错题'; }
+            else { result = '⚠️ 不合格，建议回看相关课程后重新测试'; }
+            tip = (answered < examData.length ? '（有 ' + (examData.length - answered) + ' 题未作答）' : '（已全部作答）');
+
+            document.getElementById('scoreNumber').textContent = total + '/' + max + '分';
+            document.getElementById('scoreText').innerHTML =
+                result + '\n答对 ' + correctCount + '/' + examData.length + ' 题 · 正确率 ' + pct + '% ' + tip;
+
+            const disp = document.getElementById('scoreDisplay');
+            disp.classList.add('show');
+            disp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        window.addEventListener('DOMContentLoaded', renderExam);
+    </script>
+</body>
+</html>
