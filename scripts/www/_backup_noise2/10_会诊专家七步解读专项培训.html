@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块10 · 会诊专家七步解读专项培训 | 永州爱眼城 检查报告解读标准化方案</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.72;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
+.topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-size:calc(18px * var(--fs));font-weight:700}
+.topbar .meta{font-size:calc(13px * var(--fs));opacity:.92}
+.subnav{background:#fff;border-bottom:1px solid #dae3f5;padding:9px 28px;font-size:calc(13.5px * var(--fs));color:#7a8799}
+.subnav a{color:#1677ff;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:26px 20px 60px}
+h1.t{font-size:calc(22px * var(--fs));color:#1677ff;margin:0 auto 6px;line-height:1.45;text-align:center}
+.lead{text-indent:2em;color:#5b6b7d;font-size:calc(15.5px * var(--fs));margin-bottom:20px;max-width:1040px}
+h2.sec{font-size:calc(20px * var(--fs));color:#1677ff;margin:30px 0 12px;padding-left:12px;border-left:5px solid #e07b39;line-height:1.35}
+h3.sub{font-size:calc(16.5px * var(--fs));color:#1677ff;margin:14px 0 8px}
+.card{background:#fff;border:1px solid #dae3f5;border-radius:12px;padding:16px 20px;box-shadow:0 1px 3px rgba(22,119,255,.08);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:calc(14.2px * var(--fs));margin-bottom:8px}
+th,td{border:1px solid #dae3f5;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e8f1ff;color:#1677ff;font-weight:600}
+tbody tr:nth-child(even){background:#fafcff}
+ul,ol{margin:6px 0 8px 20px;font-size:calc(15px * var(--fs))}
+li{margin-bottom:4px}
+.note{background:#fdf1e7;border:1px solid #f4d3b0;border-radius:8px;padding:13px 15px;font-size:calc(14.5px * var(--fs));color:#6b4a25;margin:12px 0}
+.good{background:#eaf7f0;border:1px solid #bde3cd;border-radius:8px;padding:13px 15px;font-size:calc(14.5px * var(--fs));color:#1f5c40;margin:12px 0}
+.warn{background:#fdecec;border:1px solid #f3c4c4;border-radius:8px;padding:13px 15px;font-size:calc(14.5px * var(--fs));color:#7d2b2b;margin:12px 0}
+.daybar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 100%);color:#fff;border-radius:10px;padding:10px 16px;font-size:calc(17px * var(--fs));font-weight:700;margin:24px 0 12px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.daybar span{font-weight:400;font-size:calc(13.5px * var(--fs));opacity:.95}
+.lsn{position:relative}
+.lsn h3.sub{display:flex;align-items:center;gap:10px;margin-top:0;flex-wrap:wrap}
+.day{background:#1677ff;color:#fff;border-radius:6px;padding:2px 10px;font-size:calc(13px * var(--fs));font-weight:700;flex:none}
+.clk{color:#e07b39;font-size:calc(13.5px * var(--fs));font-weight:700;flex:none}
+.fld{font-size:calc(14.2px * var(--fs));color:#45596e;margin:5px 0;line-height:1.7}
+.fld b{color:#1677ff}
+.fld.out{background:#f1f6ff;border:1px solid #c7ddff;border-radius:6px;padding:7px 10px;color:#23477f}
+.fld.out b{color:#1677ff}
+.pass{background:#eaf7f0;border-radius:6px;padding:7px 10px;color:#1f5c40;font-size:calc(14.2px * var(--fs));margin-top:6px}
+.pass b{color:#2e9e6b}
+.kpi4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 16px}
+.kpi4 .box{background:#fff;border:1px solid #dae3f5;border-radius:10px;padding:13px 15px}
+.kpi4 .box h4{font-size:calc(15px * var(--fs));color:#1677ff;margin-bottom:4px}
+.kpi4 .box .big{font-size:calc(22px * var(--fs));font-weight:700;color:#e07b39;margin:4px 0}
+.kpi4 .box p{font-size:calc(13.4px * var(--fs));color:#5b6b7d;margin:0}
+.fill{display:inline-block;min-width:calc(70px * var(--fs));border-bottom:1px solid #8aa4c9;height:1.35em;margin:0 4px;vertical-align:bottom}
+.tpl{background:#f1f6ff;border:1px dashed #c7ddff;border-radius:8px;padding:14px 16px;font-size:calc(14.4px * var(--fs));color:#23477f;line-height:1.9}
+.tpl b{color:#1677ff}
+footer{background:#0b3d91;color:#c9dfff;padding:18px 28px;font-size:calc(13.5px * var(--fs));line-height:1.8}
+footer b{color:#fff}
+.btnwrap{text-align:center;margin:28px 0 6px}
+.btn{display:inline-block;background:#1677ff;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:calc(14px * var(--fs));cursor:pointer;text-decoration:none;font-family:inherit}
+.btn.ghost{background:#fff;color:#1677ff;border:1px solid #c9dfff}
+@media screen and (max-width:820px){.kpi4{grid-template-columns:repeat(2,1fr)}}
+@media screen and (max-width:640px){.kpi4{grid-template-columns:1fr}}
+@media print{.kpi4{grid-template-columns:repeat(2,1fr)}}
+@media print{@page{size:A4;margin:12mm}.topbar,.subnav,.btnwrap{display:none}body{background:#fff;font-size:11.6px}.card,.lsn{border-color:#999;box-shadow:none;page-break-inside:avoid}.daybar{background:#1677ff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<!-- LAYOUT-V2 -->
+<style>
+/* ==========================================================================
+   平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
+   只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
+   ========================================================================== */
+:root{
+  --fs:1;            /* 字号/组件缩放系数 */
+  --wrap:1180px;     /* 正文容器最大宽度 */
+  --wpx:22px;        /* 容器左右留白 */
+  --wpy:26px;        /* 容器上留白 */
+  --cy:9px; --cx:12px;  /* 表格单元格内边距 */
+  --subh:44px;       /* 吸顶导航高度 */
+}
+/* 平板（横屏 1280 / 竖屏 800 均命中）：整站同比缩放，--fs=1.02（较上一版 -11.3%） */
+@media screen and (min-width:641px) and (max-width:1400px){
+  :root{--fs:1.02;--wrap:1160px;--wpx:24px;--wpy:20px;--cy:11px;--cx:13px;--subh:44px}
+}
+@media screen and (max-width:640px){
+  :root{--fs:1.04;--wrap:100%;--wpx:14px;--wpy:16px;--cy:9px;--cx:10px;--subh:44px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","HarmonyOS Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;letter-spacing:.012em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:rgba(22,119,255,.12);
+}
+::selection{background:#c9dfff;color:#0b3d91}
+
+/* ---------- 容器与页头 ---------- */
+body .wrap{max-width:var(--wrap);padding:var(--wpy) var(--wpx) 72px}
+body .hero{padding:26px var(--wpx) 24px}
+body .topbar{padding:14px var(--wpx);gap:12px}
+body footer{padding:20px var(--wpx);line-height:1.9}
+
+/* ---------- 吸顶导航：翻到任何位置都能一眼跳模块 ---------- */
+body .subnav{
+  position:sticky;top:0;z-index:80;
+  min-height:var(--subh);
+  padding:calc((var(--subh) - 1.5em - 1px) / 2) var(--wpx);
+  line-height:1.5;
+  white-space:nowrap;overflow-x:auto;overflow-y:hidden;
+  background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  box-shadow:0 2px 12px rgba(22,119,255,.07);
+  scrollbar-width:none;
+}
+body .subnav::-webkit-scrollbar{height:0}
+body .subnav a{white-space:nowrap;padding:0 1px;text-decoration:none}
+
+/* ---------- 标题节奏与锚点定位 ---------- */
+body h1.t{line-height:1.45}
+body h2.sec{margin:38px 0 16px;line-height:1.4}
+body h2.sec,body h3.sub,body h3.sub2,body .card,body .step,body .form,body .item{
+  scroll-margin-top:calc(var(--subh) + 16px);
+}
+body .lead{margin-bottom:24px;line-height:1.85}
+
+/* ---------- 卡片 / 提示块 ---------- */
+body .card{padding:20px 24px;margin-bottom:18px;border-radius:14px}
+body .note,body .good,body .warn{padding:15px 18px;margin:16px 0;border-radius:10px;line-height:1.8}
+body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:16px 18px}
+body .case{padding:16px 20px;margin-bottom:16px}
+body .case .txt{padding:12px 15px}
+body .quote{padding:12px 16px;margin:10px 0}
+body .scard{padding:14px 16px}
+body .fnode{padding:12px 16px}
+body .step .hd,body .form .fhead{padding:13px 22px}
+body .form .fbody{padding:18px 22px}
+body .peopledet .hd{padding:16px 24px}
+body .daybar{padding:12px 18px;margin:26px 0 14px}
+body .sec-title{padding:9px 12px}
+body .blk{padding:12px 14px}
+body .line2{gap:14px;margin-bottom:10px}
+body .check{margin-right:16px}
+
+/* ---------- 表格：更容易一行一行读下去 ---------- */
+body table{
+  border-collapse:separate;border-spacing:0;border-radius:12px;
+  line-height:1.62;margin:12px 0 16px;
+}
+body th,body td{
+  border:0;
+  border-right:1px solid #dae3f5;border-bottom:1px solid #dae3f5;
+  padding:var(--cy) var(--cx);
+  overflow-wrap:break-word;
+}
+body th{
+  background:linear-gradient(180deg,#f1f7ff,#e4eeff);
+  color:#0b3d91;font-weight:700;letter-spacing:.02em;
+text-align:center;}
+body thead th{
+  border-top:1px solid #dae3f5;
+  position:sticky;top:calc(var(--subh) + 1px);z-index:6;
+}
+body tr>th:first-child,body tr>td:first-child{border-left:1px solid #dae3f5}
+body table>thead>tr:first-child>th:first-child{border-top-left-radius:12px}
+body table>thead>tr:first-child>th:last-child{border-top-right-radius:12px}
+body table:not(:has(thead))>tbody>tr:first-child>td:first-child{border-top-left-radius:12px;border-top:1px solid #dae3f5}
+body table:not(:has(thead))>tbody>tr:first-child>td:last-child{border-top-right-radius:12px;border-top:1px solid #dae3f5}
+body table>tbody>tr:last-child>td:first-child{border-bottom-left-radius:12px}
+body table>tbody>tr:last-child>td:last-child{border-bottom-right-radius:12px}
+body tbody tr:nth-child(even)>td{background:#fafcff}
+body tbody tr:hover>td{background:#eef5ff}
+body tbody td{transition:background .15s}
+body table.ct th,body table.ct td{text-align:center;vertical-align:middle}
+
+/* ---------- 触控友好：按钮、胶囊、复选框 ---------- */
+body .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 20px;border-radius:10px;
+}
+body .btnwrap{margin:30px 0 10px}
+body .chips{gap:10px}
+body .chips a,body .idxbar a{
+  display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:10px;
+}
+body .idxbar{gap:10px;margin-bottom:20px}
+body .check input,body input[type=checkbox]{width:18px;height:18px;accent-color:#1677ff}
+body .fill{min-height:1.35em}
+body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:3px 9px;border-radius:6px}
+body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:3px 10px}
+body .farrow,body .story .arrow{padding:0 2px}
+body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fill:focus-visible{
+  outline:2px solid #1677ff;outline-offset:2px;border-radius:6px;
+}
+
+/* ---------- 小屏栅格回流（仅屏幕，不影响打印分栏） ---------- */
+@media screen and (max-width:1000px){
+  body .steps{grid-template-columns:1fr 1fr !important}
+}
+@media screen and (max-width:900px){
+  body .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important}
+  body .scards,body .pkg4{grid-template-columns:1fr !important}
+  body .scards{gap:10px}
+}
+@media screen and (max-width:640px){
+  body .grid,body .steps,body .kpi,body .kpi4,body .lv,body .chk,
+  body .std,body .three{grid-template-columns:1fr !important}
+  body .subnav{padding-left:12px;padding-right:12px}
+}
+
+/* ---------- 打印兜底：恢复紧凑版式，A4 友好 ---------- */
+/* ---------- 平板档专项：行高 / 间距 / 图标同步收缩（仅 641–1400px） ---------- */
+@media screen and (min-width:641px) and (max-width:1400px){
+  body{line-height:1.62;letter-spacing:.008em}
+  body .wrap{padding:20px var(--wpx) 64px}
+  body .hero{padding:22px var(--wpx) 20px}
+  body .topbar{padding:12px var(--wpx);gap:10px}
+  body footer{padding:17px var(--wpx);line-height:1.72}
+  body .subnav{line-height:1.45}
+  body h2.sec{margin:32px 0 14px;line-height:1.38}
+  body .lead{margin-bottom:20px;line-height:1.68}
+  body .card{padding:16px 20px;margin-bottom:15px;border-radius:12px}
+  body .note,body .good,body .warn{padding:12px 15px;margin:13px 0;border-radius:9px;line-height:1.62}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item{padding:13px 15px}
+  body .case{padding:13px 16px;margin-bottom:13px}
+  body .case .txt{padding:10px 13px}
+  body .quote{padding:10px 13px;margin:8px 0}
+  body .scard{padding:12px 14px}
+  body .fnode{padding:10px 14px}
+  body .step .hd,body .form .fhead{padding:11px 18px}
+  body .form .fbody{padding:15px 18px}
+  body .peopledet .hd{padding:13px 20px}
+  body .daybar{padding:10px 15px;margin:22px 0 12px}
+  body .sec-title{padding:7px 10px}
+  body .blk{padding:10px 12px}
+  body .line2{gap:12px;margin-bottom:8px}
+  body .check{margin-right:13px}
+  body table{line-height:1.5;margin:10px 0 14px;border-radius:10px}
+  body .btn{min-height:42px;padding:8px 17px;border-radius:9px}
+  body .btnwrap{margin:26px 0 8px}
+  body .chips{gap:9px}
+  body .chips a,body .idxbar a{min-height:40px;padding:7px 12px;border-radius:9px}
+  body .idxbar{gap:9px;margin-bottom:17px}
+  body .tag,body .flag,body .pill,body .gtag,body .st,body .hint{padding:2px 8px;border-radius:5px}
+  body .no,body .card h3 i,body .card h3 .id,body .form .fhead .no{padding:2px 8px}
+}
+@media print{
+  :root{--fs:1;--wpx:0;--wpy:0}
+  body{line-height:1.55;letter-spacing:0;background:#fff}
+  body .wrap{max-width:none;padding:0 0 8px}
+  body .topbar,body .btnwrap{box-shadow:none}
+  body .subnav{position:static;box-shadow:none;background:#fff;overflow:visible;white-space:normal;
+    min-height:0;padding:0 0 6px}
+  body .card{padding:10px 12px;margin-bottom:10px;border-radius:0;box-shadow:none}
+  body .note,body .good,body .warn{padding:8px 10px;margin:8px 0;border-radius:0}
+  body .step .hd,body .form .fhead,body .form .fbody,body .peopledet .hd,body .daybar{padding:7px 10px}
+  body .pkg4 .box,body .steps .box,body .kpi .box,body .kpi4 .box,body .lv .box,
+  body .chk .box,body .std .box,body .three .box,body .stepbox,body .item,body .case,body .scard{
+    padding:8px 10px;border-radius:0;box-shadow:none}
+  body table{border-collapse:collapse;border-radius:0;margin:6px 0 10px}
+  body thead th{position:static}
+  body th,body td{border:1px solid #cbd5e1;padding:4px 6px}
+  body th{background:#e8f1ff !important;color:#0b3d91 !important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body tbody tr:nth-child(even)>td{background:#fafcff !important}
+  body tbody tr:hover>td{background:transparent !important}
+}
+</style>
+<!-- /LAYOUT-V2 -->
+<!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
+<style>
+/* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
+   text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
+   恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
+body .wrap p,
+body .hero p{text-indent:2em;overflow-wrap:break-word}
+
+/* 相邻正文段落间距：用 margin 分隔，不插空行伪造缩进 */
+body .wrap p + p{margin-top:.5em}
+
+/* ---- 例外：以下不属于"正文段落"，一律不缩进（选择器特异性高于上方规则） ---- */
+/* 结构元素：列表项内 / 表格单元格 / 图注 / 代码 / 引用块 / 页眉页脚导航 */
+body .wrap :is(li,td,th,caption,figcaption,dt,dd,pre,code,blockquote,figure) p,
+body .topbar p,body .subnav p,body footer p,body .btnwrap p,
+/* 组件化短行：四大板块标签、KPI 数值卡说明行、人群卡元信息行 */
+body .wrap .pkg4 p,body .wrap .kpi p,body .wrap .kpi4 p,body .wrap .hd p,
+/* 字段行（注入时自动识别并加 ni 类），以及手工豁免 */
+body .wrap p.ni,body .wrap .ni p,
+/* 中英文混排：纯英文段落可加 lang="en" 或 class="en" 豁免缩进 */
+body p:lang(en),body p.en{text-indent:0}
+</style>
+<style>
+/* ==========================================================================
+   TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
+   仅调整容器与列宽，不动文字/字段/配色/字号
+   ========================================================================== */
+/* 表格外层容器：宽屏不裁剪（保留吸顶表头），窄屏启用横向滚动 */
+body .tsc{margin:12px 0 16px}
+body .tsc>table{margin:0}
+@media screen and (max-width:820px){
+  body .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  /* 多列表给出最小可读宽度，超出即横向滚动，绝不撑破页面 */
+  body .tsc.w4>table{min-width:calc(460px * var(--fs))}
+  body .tsc.w5>table{min-width:calc(560px * var(--fs))}
+  body .tsc.w6>table{min-width:calc(660px * var(--fs))}
+  body .tsc.w7>table,body .tsc.w8>table{min-width:calc(780px * var(--fs))}
+  body .tsc.w9>table{min-width:calc(940px * var(--fs))}
+  /* 滚动容器内表头吸顶失效，显式降级，避免错位 */
+  body .tsc thead th{position:static}
+}
+/* 打印兜底：容器不裁剪，边距回落到原紧凑值 */
+@media print{
+  body .tsc{margin:6px 0 10px;overflow:visible}
+  body .tsc>table{min-width:0}
+}
+/* 单元格兜底：长文本优先换行，短字段不折行 */
+body th,body td{overflow-wrap:break-word;word-break:break-word}
+body .tsc table.now1 th:nth-child(1),body .tsc table.now1 td:nth-child(1),
+body .tsc table.now2 th:nth-child(2),body .tsc table.now2 td:nth-child(2),
+body .tsc table.now3 th:nth-child(3),body .tsc table.now3 td:nth-child(3),
+body .tsc table.now4 th:nth-child(4),body .tsc table.now4 td:nth-child(4),
+body .tsc table.now5 th:nth-child(5),body .tsc table.now5 td:nth-child(5),
+body .tsc table.now6 th:nth-child(6),body .tsc table.now6 td:nth-child(6),
+body .tsc table.now7 th:nth-child(7),body .tsc table.now7 td:nth-child(7),
+body .tsc table.now8 th:nth-child(8),body .tsc table.now8 td:nth-child(8),
+body .tsc table.now9 th:nth-child(9),body .tsc table.now9 td:nth-child(9),
+body .tsc table.now10 th:nth-child(10),body .tsc table.now10 td:nth-child(10),
+body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(240px * var(--fs));
+}
+</style>
+<!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
+<style>
+/* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
+body table>thead>tr>th{position:static}
+body table.sticky-on>thead>tr>th{
+  position:sticky;top:calc(var(--subh,0px) + 1px);z-index:6;
+  box-shadow:0 6px 14px -9px rgba(11,61,145,.45);
+}
+@media screen and (max-width:820px){
+  body table.sticky-on>thead>tr>th{position:static;box-shadow:none}
+}
+@media print{
+  body table.sticky-on>thead>tr>th{position:static}
+}
+</style>
+<!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
+<style>
+/* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
+body .lead{max-width:100%}
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
+@media screen and (max-width:640px){
+  body .lead,body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+}
+@media print{
+  body .lead,body .hero p{max-width:100%}
+}
+</style>
+<!-- TOTOP-V1 : 可交互式回到顶部样式（幂等注入，勿手改） -->
+<style>
+/* ===== TOTOP-V1 可交互式回到顶部按钮（幂等注入，勿手改）===== */
+#toTop{
+  position:fixed;right:calc(22px * var(--fs));bottom:calc(26px * var(--fs));
+  width:calc(50px * var(--fs));height:calc(50px * var(--fs));padding:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(1px * var(--fs));
+  border:none;border-radius:50%;cursor:pointer;color:#fff;
+  background:linear-gradient(160deg,#1677ff 0%,#3c89ff 55%,#69b1ff 100%);
+  box-shadow:0 6px 16px rgba(22,119,255,.32);
+  opacity:0;visibility:hidden;transform:translateY(calc(16px * var(--fs))) scale(.9);
+  transition:opacity .26s ease,transform .26s ease,visibility .26s ease,box-shadow .2s ease;
+  z-index:150;-webkit-tap-highlight-color:transparent;
+}
+#toTop.show{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+#toTop:hover{box-shadow:0 10px 22px rgba(22,119,255,.46);background:linear-gradient(160deg,#0e63dd 0%,#2c7cf5 55%,#5aa6fb 100%)}
+#toTop:active{transform:scale(.93)}
+#toTop:focus-visible{outline:3px solid #ffd591;outline-offset:3px}
+#toTop .tt-ico{display:block;line-height:1}
+#toTop .tt-ico svg{display:block;width:calc(19px * var(--fs));height:calc(19px * var(--fs))}
+#toTop .tt-txt{font-size:calc(10.5px * var(--fs));line-height:1.1;letter-spacing:.02em;font-weight:600}
+@media (max-width:820px){
+  #toTop{right:calc(13px * var(--fs));bottom:calc(16px * var(--fs));width:calc(52px * var(--fs));height:calc(52px * var(--fs))}
+}
+@media (prefers-reduced-motion:reduce){#toTop{transition:opacity .2s linear}}
+@media print{#toTop{display:none !important}}
+</style>
+
+<!-- COLBAL-V1 -->
+<!-- COLFIT-V1 -->
+<!-- MARK : WIDTHFIT2-V1 : 导语文本块与页脚内容对齐正文容器宽度 -->
+<style>
+/* 导语（hero）文本块与页脚内容统一按正文容器宽度对齐：宽屏不错位、窄屏不留白 */
+body .hero h1,body .hero p,body .hero .tags{
+  max-width:calc(var(--wrap) - var(--wpx) * 2);
+  margin-left:auto;margin-right:auto;
+}
+body footer{
+  padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+}
+@media screen and (max-width:640px){
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+@media print{
+  body .hero h1,body .hero p,body .hero .tags{max-width:100%}
+  body footer{padding-left:0;padding-right:0}
+}
+</style>
+<!-- MARK : WIDTHFIT3-V1 : 顶栏/吸顶导航内容对齐正文容器宽度（幂等注入，勿手改） -->
+<style>
+/* 顶栏（品牌/版本号）与吸顶导航内容边缘对齐正文容器，与页脚同规则；仅 ≥641 生效，窄屏回落 var(--wpx) */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact,body .subnav{
+    padding-left:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+    padding-right:max(var(--wpx), calc((100% - var(--wrap)) / 2 + var(--wpx)));
+  }
+}
+/* 顶栏统一为「品牌居左 / 版本信息居右」的通栏结构（首页原为三行居中，此处统一） */
+body .topbar{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;gap:12px}
+body .topbar .brand{text-align:left;line-height:1.35}
+body .topbar .brand span{display:inline;margin-left:10px;margin-top:0}
+body .topbar .meta{text-align:right;margin-left:auto}
+</style>
+<!-- MARK : WIDTHFIT3-V1B : 窄屏 subnav 内边距与正文统一（幂等注入，勿手改） -->
+<style>
+@media screen and (max-width:640px){
+  body .subnav{padding-left:var(--wpx);padding-right:var(--wpx)}
+}
+</style>
+<!-- MARK : WIDTHFIT5-V1 : 顶栏条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style>
+/* 顶栏蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   保证品牌/版本信息仍落在正文容器内容边界上（覆盖 WIDTHFIT3-V1 的整屏 padding 公式） */
+@media screen and (min-width:641px){
+  body .topbar,body .topbar.tb-compact{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT6-V1 : 页脚条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style>
+/* 页脚深蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT2-V1 的整屏 padding 公式；打印维持通栏（WIDTHFIT2 的 print 规则继续生效） */
+@media screen and (min-width:641px){
+  body footer{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+<!-- MARK : WIDTHFIT7-V1 : 吸顶导航条收窄为与正文容器同宽（幂等注入，勿手改） -->
+<style>
+/* 模块页吸顶导航白条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
+   覆盖 WIDTHFIT3-V1 的整屏 padding 公式，保证「← 返回首页 ｜ 上一模块…」仍落在正文内容边界上 */
+@media screen and (min-width:641px){
+  body .subnav{
+    max-width:var(--wrap);
+    margin-left:auto;margin-right:auto;
+    padding-left:var(--wpx);padding-right:var(--wpx);
+  }
+}
+</style>
+</head>
+<body style="position: relative;">
+<div class="topbar">
+  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta">模块10 / 12 ｜ V1.0 ｜ 2026-10-10</div>
+</div>
+<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="09_情景诊断分析与解决方案模板集.html">09 情景诊断分析与解决方案模板</a> ｜ 关联：<a href="02_七步标准解读SOP.html">02 七步标准解读 SOP</a> ｜ 下一模块：<a href="11_12岁近视学生七步解读情景还原.html">11 七步解读情景还原</a></div>
+
+<div class="wrap">
+  <h1 class="t">模块10 · 会诊专家七步解读专项培训</h1>
+
+  <p class="lead">本模块是面向<b>在岗会诊专家</b>（各店资深解读骨干）的专项培训，整门课只围绕一件事——<b>把模块02 的"七步处方解读"从"能照着做"练到"会诊级精通"</b>。三天时间逐步骤精讲 <b>①检查数据梳理 → ②异常值识别 → ③异常原因 → ④异常影响 → ⑤解决方案 → ⑥科普宣教 → ⑦案例佐证</b>，配话术对练、疑难案例工作坊与全流程实战演练，共 <b>15 节课</b>；每节课另附<b>培训师教学讲解方案</b>——讲什么、怎么切入、重点难点如何阐释、如何组织学员理解与实践。结业须通过<b>七步知识卷、合规测验与疑难案例实操</b>三项考核，通过即认定为会诊专家，取得疑难把关、跨店会诊与带教资格。</p>
+
+  <h2 class="sec">一、培训定位与目标</h2>
+  <div class="kpi4">
+    <div class="box"><h4>培训对象</h4><div class="big">在岗会诊专家</div><p class="ni">各店资深解读骨干：L2 满 1 年或 L3、累计独立解读 ≥150 场、有带教经验；每期 8–12 人</p></div>
+    <div class="box"><h4>集训时长</h4><div class="big">3 天 · 19.5h</div><p class="ni">每天 09:00–17:30（含 5 节 + 复盘），午休 12:00–14:00</p></div>
+    <div class="box"><h4>结业门槛</h4><div class="big">三项全过</div><p>七步知识卷 ≥8/10、合规测验必须满分、疑难案例实操 ≥85 分</p></div>
+    <div class="box"><h4>结业认定</h4><div class="big">会诊专家</div><p>取得疑难把关、跨店会诊与带教资格，纳入骨干培养序列</p></div>
+  </div>
+  <div class="card">
+    <h3 class="sub">三个培训目标（一条都不能少）</h3>
+    <div class="tsc w4"><table>
+      <thead><tr><th style="width:16%">目标</th><th style="width:47%">内涵</th><th style="width:37%">达标标志</th></tr></thead>
+      <tbody>
+        <tr><td><b>① 七步精通</b></td><td>把七步从"知道怎么做"练到"讲得清为什么、做得到位"，每一步都能说清判断依据与边界</td><td>七步知识卷 ≥8/10；每步当堂产出齐全</td></tr>
+        <tr><td><b>② 会诊把关</b></td><td>能对他人解读做复核与纠偏，盯住最容易被跳过的一环（尤其第②步异常识别），主持疑难案例会诊</td><td>疑难案例实操 ≥85 分；复核他人打档能指出偏差</td></tr>
+        <tr><td><b>③ 带教输出</b></td><td>把七步 SOP 拆成可教的动作，带教 L1/L2 并按交付物倒查，成为区域经验分享者</td><td>完成 1 次当堂带教演示；按月做 1 次区域案例分享</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>为什么要单独办这门专项培训：</b>七步 SOP 是门店服务的"操作系统"。新人学的是"照着流程走一遍"，会诊专家要能"卡住每一环的质量"——同一个第②步，新人只需"识别出异常"，会诊专家要"打档不出错、红线不放过、还能纠别人的错"。这门课不铺技能面，只把七步练到会诊级。</div>
+  </div>
+
+  <h2 class="sec">二、覆盖的核心环节：七步处方解读全景</h2>
+  <div class="card">
+    <div class="fld ni" style="text-align:center;font-weight:700;color:#1677ff;font-size:calc(16px * var(--fs));margin:6px 0 12px">① 检查数据梳理 → ② 异常值识别 → ③ 异常原因 → ④ 异常影响 → ⑤ 解决方案 → ⑥ 科普宣教 → ⑦ 案例佐证</div>
+    <p class="fld ni">七步是一条链，<b>上一步的交付物就是下一步的输入</b>，缺输入必须回退补齐，不许跳步。本培训覆盖全部七步，但每一环都按"会诊级"标准教：不只会做，还要会讲、会把关。下表只列各步的"会诊级要求"，基础时长与一句话任务见<a href="02_七步标准解读SOP.html" style="color:#1677ff;font-weight:600">模块02</a>。</p>
+    <div class="tsc w4"><table>
+      <thead><tr><th style="width:20%">环节</th><th style="width:80%">会诊级要求（比普通视光师多做到什么）</th></tr></thead>
+      <tbody>
+        <tr><td><b>① 检查数据梳理</b></td><td>不只自己会看，还要能对他人提交的数据快速<b>验真</b>：一眼判断"够不够用、可不可信"，缺项可疑项当场给出补测或复核意见</td></tr>
+        <tr><td><b>② 异常值识别</b></td><td>全项查表打档<b>不凭印象</b>，红线 12 项筛查零遗漏；能复核他人的打档并指出偏差——这一步是整个 SOP 的"安全阀"</td></tr>
+        <tr><td><b>③ 异常原因</b></td><td>原因必须与档位挂钩，最多两条；讲"生活相关"的原因，不讲生理机制；讲完能让顾客用自己的话复述</td></tr>
+        <tr><td><b>④ 异常影响</b></td><td>把数据翻译成顾客的生活场景，讲趋势也给希望；把控"值得重视"与"不被吓住"的分寸，无一句恐吓用语</td></tr>
+        <tr><td><b>⑤ 解决方案</b></td><td>必做 / 建议 / 可选三层，各带时间节点与透明费用，始终保留"可以不选"；口头讲什么、建议书写什么两处一致</td></tr>
+        <tr><td><b>⑥ 科普宣教</b></td><td>只给 2~3 条"今晚就能做"的动作，落到本次异常上，并纠正一个常见误区；不带任何承诺性表述</td></tr>
+        <tr><td><b>⑦ 案例佐证</b></td><td>案例必须取自模块06 的真实案例库（严禁现编、数据脱敏），60~90 秒讲完并"回到顾客本人"；案例是佐证不是承诺</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn"><b>会诊专家的第一条职责：</b>第②步异常识别最容易被跳过，却恰好是唯一的安全阀——<b>时间不够可砍⑥⑦，②③④绝不能砍，尤其是②</b>。会诊专家在场，盯的就是别人有没有把②做实。</div>
+  </div>
+
+  <h2 class="sec">三、时间与进度安排</h2>
+  <div class="card">
+    <h3 class="sub">三天总览（15 节课一览）</h3>
+    <div class="tsc w6"><table class="ct now1 now2">
+      <thead><tr><th style="width:12%">时间</th><th style="width:6%">节次</th><th style="width:21%">Day 1 · 精讲①-④</th><th style="width:20%">Day 2 · 精讲⑤-⑦</th><th style="width:23%">Day 3 · 实战演练</th><th style="width:18%">当堂产出</th></tr></thead>
+      <tbody>
+        <tr><td>09:00-10:30</td><td>第1节</td><td>①数据梳理 + ②异常识别（会诊级与红线筛查）</td><td>⑤解决方案（三层结构与方案建议书）</td><td>全流程情景演练 ×2 轮（常规 + 疑难）</td><td>当堂练习件各 1 份</td></tr>
+        <tr><td>10:45-12:00</td><td>第2节</td><td>③异常原因 + ④异常影响</td><td>⑥科普宣教 + ⑦案例佐证</td><td>疑难案例会诊主持演练</td><td>对练记录 / 错题记录</td></tr>
+        <tr><td>14:00-15:30</td><td>第3节</td><td>七步链条串联与"不跳步"演练</td><td>疑难案例工作坊（学员自带案例）</td><td>转诊红线与合规边界实战</td><td>案例判读作业 + 方案草稿</td></tr>
+        <tr><td>15:45-17:00</td><td>第4节</td><td>七步话术对练（三人一组轮换）</td><td>会诊复核与纠偏（互当考官）</td><td>全流程综合实战 ×1 轮 + 讲评</td><td>3 张考评表</td></tr>
+        <tr><td>17:00-17:30</td><td>第5节</td><td>复盘答疑 + Day 1 测评</td><td>复盘答疑 + Day 2 测评</td><td>结业测评 + 会诊专家认证</td><td>测评成绩单</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">七步训练时长分配（每步在培训中的投入）</h3>
+    <div class="tsc w5"><table class="ct">
+      <thead><tr><th style="width:18%">环节</th><th style="width:16%">解读建议时长</th><th style="width:14%">培训精讲</th><th style="width:16%">对练 / 实操</th><th style="width:36%">考核方式</th></tr></thead>
+      <tbody>
+        <tr><td>① 检查数据梳理</td><td>1~2 分钟</td><td>45 分钟</td><td>30 分钟</td><td>数据验真情境题</td></tr>
+        <tr><td>② 异常值识别</td><td>1~2 分钟</td><td>45 分钟</td><td>30 分钟</td><td>全项打档 + 红线筛查</td></tr>
+        <tr><td>③ 异常原因</td><td>2~3 分钟</td><td>30 分钟</td><td>20 分钟</td><td>原因改写（≤2 条）</td></tr>
+        <tr><td>④ 异常影响</td><td>1~2 分钟</td><td>30 分钟</td><td>20 分钟</td><td>影响改写（场景 + 趋势 + 对策）</td></tr>
+        <tr><td>⑤ 解决方案</td><td>3~5 分钟</td><td>45 分钟</td><td>30 分钟</td><td>三层方案 + 费用透明</td></tr>
+        <tr><td>⑥ 科普宣教</td><td>2~3 分钟</td><td>30 分钟</td><td>20 分钟</td><td>动作清单 + 误区纠正</td></tr>
+        <tr><td>⑦ 案例佐证</td><td>1~2 分钟</td><td>30 分钟</td><td>20 分钟</td><td>90 秒讲案例并回到顾客</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">阶段推进节奏（T-7 → 结业后 90 天）</h3>
+    <div class="tsc w5"><table>
+      <thead><tr><th style="width:14%">阶段</th><th style="width:14%">时间</th><th style="width:42%">动作</th><th style="width:14%">责任人</th><th style="width:16%">交付物</th></tr></thead>
+      <tbody>
+        <tr><td>报名与准入</td><td>T-7</td><td>核定名单，核验准入条件（资质层级、累计场次、带教记录、合规记录）</td><td>区域督导</td><td>《集训名单表》</td></tr>
+        <tr><td>课前准备</td><td>T-5 ～ T-3</td><td>下发预习任务与 3 份自备案例；确认场地与设备；印制教材表单</td><td>店长 + 行政</td><td>预习确认、设备清单</td></tr>
+        <tr><td>教案对齐</td><td>T-2</td><td>三位讲师对齐七步评分口径、疑难案例选题与设备轮转次序</td><td>三位讲师</td><td>教案对齐记录</td></tr>
+        <tr><td>开班准备</td><td>T-1</td><td>发《集训通知》；确认出勤与交通；准备签到表、桌牌、文具</td><td>区域督导</td><td>通知送达、物资到位</td></tr>
+        <tr><td>Day 1</td><td>D1</td><td>精讲①-④ + 话术对练 + Day1 测评</td><td>主训师 + 助教</td><td>互测记录、测评成绩</td></tr>
+        <tr><td>Day 2</td><td>D2</td><td>精讲⑤-⑦ + 疑难案例工作坊 + Day2 测评</td><td>主训师 + 临床讲师</td><td>判读作业、测评成绩</td></tr>
+        <tr><td>Day 3</td><td>D3</td><td>全流程实战演练 + 结业测评 + 会诊专家认证</td><td>三位讲师</td><td>结业认定表、承诺书</td></tr>
+        <tr><td>结业后 30 天</td><td>D+30</td><td>店长随场听 1 次完整解读、每日抽查记录表，完成首月质量管控</td><td>店长</td><td>复评记录</td></tr>
+        <tr><td>结业后 90 天</td><td>D+90</td><td>区域会诊复盘：疑难案例处理质量与门店四项指标</td><td>区域督导</td><td>《会诊质量复盘报告》</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>时间纪律：</b>每节课严格按表推进，超时不超过 5 分钟；上午第二节与下午第二节前留 15 分钟茶歇。<b>宁可当天延长 30 分钟补课，也不压缩第②步异常识别与 Day3 的实战演练</b>——这两块是本培训的关键。</div>
+  </div>
+
+  <h2 class="sec">四、15 节课培训师教学讲解方案</h2>
+  <div class="card">
+    <p class="fld ni">本节是给<b>培训师</b>的授课手册：逐节课说明"这一节讲什么、从哪儿切入、重点难点怎么掰开揉碎、学员怎么练"。每节课统一六栏——<b>本课定位 / 讲解要点 / 教学思路 / 重点难点怎么讲 / 组织学员理解与实践 / 当堂产出与验收</b>。讲师按此备课，即可保证 15 节课口径一致、各节衔接不重复、不遗漏。配套授课素材见第三节"三天总览"与第五节"组织方式"。</p>
+  </div>
+
+  <div class="daybar">Day 1 · 精讲①-④（主训师主讲）<span>09:00–17:30 ｜ 5 节 ｜ 当堂产出：打档表、改写稿、链图、对练记录、测评卷</span></div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 1 · 第 1 节</span><span class="clk">09:00–10:30</span>①数据梳理 + ②异常识别</h3>
+    <p class="fld ni"><b>本课定位：</b>全课的"地基课"，对应七步第①②步，也是整套 SOP 的安全阀。目标是把学员从"会看数据"升级为"会验真、会把关"。场地：教室 + 验光设备（2:1 配置）。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>五必有核对清单与"本次未查"的标准写法；</li>
+      <li>数据验真三条红线：生理逻辑不符、左右眼录反、多次测量差异过大；</li>
+      <li>模块03 逐项打四档的方法，强调"查表、不凭印象、不跳项"；</li>
+      <li>模块12 十二类转诊红线逐条过筛，以及临界值（角膜曲率 K 值、地形图形态、晶状体混浊、矫正视力）的判定；</li>
+      <li>重点项 ≤3 项的选择逻辑：优先影响安全与视功能的项。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>先"制造冲突"再给方法——开课即抛一份"看起来完整、其实有问题"的报告（眼轴与屈光度不符），让学员先讲、先犯错，再引出验真三红线，用"先暴露直觉、后建立标准"替代单向灌输。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·第②步易被跳过：放一段 3 分钟解读录音，先让学员找"哪一步没做"，再回放打档过程，指出漏筛红线的代价（延误就医），用后果感替代说教。</li>
+      <li>难点二·临界值转不转：板书"三条判据"——是否达模块03 阈值、是否伴其他异常、形态与趋势如何；举正反三例让学员自己分类。</li>
+      <li>难点三·凭经验打档：随机抽取学员过往报告，用模块03 对照表逐项复核，现场找出偏差，让"经验"与"表"对撞。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>分 3~4 组，每组 10 份脱敏报告（含缺失项、可疑项、临界值、1 份触红线）；</li>
+      <li>第一轮 20 分钟：全组打档 + 红线筛查；第二轮：交换报告互评，用"红黄绿"卡片标出对方偏差；</li>
+      <li>讲师只做点名纠偏，把"该异常判成正常"等典型错误累积成"错题墙"。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>每人 10 份打档表 + 1 份《数据验真与红线筛查记录》；漏项为 0、红线无遗漏方算通过。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 1 · 第 2 节</span><span class="clk">10:45–12:00</span>③异常原因 + ④异常影响</h3>
+    <p class="fld ni"><b>本课定位：</b>把"数据"翻译成"顾客听得懂的话"，对应第③④步。训练核心是"分寸感"——讲清而不吓人、讲趋势也给希望。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>原因＝假设，必须与第②步档位挂钩，最多两条、只讲生活相关的原因；</li>
+      <li>限度词统一（可能 / 常见 / 通常），禁用定论句式；讲完请顾客复述确认；</li>
+      <li>影响＝场景翻译（看清不清黑板、夜里开车吃力），讲趋势也给对策；</li>
+      <li>恐吓红线：对照模块12 禁区话术替换表，"再这样就瞎了"等一律禁用。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>用"翻译三问"贯穿——这说明了什么？为什么可能这样？不管会怎样、管了会怎样？先由讲师做一次"术语堆砌"的病态示范（学员听得一头雾水），再换成生活化版本，让学员体感差异；最后固化"改写公式"：异常项 → 生活场景 → 趋势 → 对策。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·讲成病理课：立"术语黑名单"（调节滞后、睫状肌痉挛等），出现即要求换成顾客能复述的说法，现场做 3 组改写接力。</li>
+      <li>难点二·原因与档位脱节：用"档位—原因"连线题，把模块03 档位与常见生活原因连起来，连错即暴露。</li>
+      <li>难点三·吓得顾客不敢配：收集"吓人话术"贴上"禁用墙"，每人把 3 条恐惧句改写成"趋势句 + 对策句"，全班投票选最佳。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>三人一组轮换（解读 / 顾客 / 评分员），用模块08 情景卡抽题，每人 3 分钟完成③④步；</li>
+      <li>评分员用"三查卡"：查条数（≤2）、查档位挂钩、查有无恐吓用语；</li>
+      <li>每组推 1 人到台前以"顾客视角"复述，检验是否真听懂。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>每人 3 份"原因 + 影响"改写稿，全部通过"无恐吓用语"检查。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 1 · 第 3 节</span><span class="clk">14:00–15:30</span>七步链条串联与"不跳步"演练</h3>
+    <p class="fld ni"><b>本课定位：</b>从"单步会"到"连起来会"。七步是一条链，上一步的交付物就是下一步的输入，缺输入必须回退补齐。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>链条运行逻辑与四类常见断点：漏②、③无档位依据、⑤无复查节点、⑦讲完不回顾客；</li>
+      <li>"缺输入"的标准处理：回退补齐上一步交付物再继续，不许跳步；</li>
+      <li>"可砍与不可砍"清单：时间不够可砍⑥⑦，②③④绝不可砍，尤其是②。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>把七步画成"生产线"，每一步都有"进料 / 出料"，用一张白板把交付物串成链；再故意"断链"——中途抽走一份交付物，看学员是否发现并回退补齐。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·时间紧就砍步：用反问固化——"砍掉②会漏掉哪一类红线？"，让学员自己说出代价。</li>
+      <li>难点二·链条感缺失：以模块11 的七幕为参照（第 1 幕对应①、……、第 7 幕对应⑦），让学员按"幕—步"对齐复述整链。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>分组用同一份报告走"接力"：每人只做一步并交接，交接时必须口头复述"我交给你的输入是什么"；</li>
+      <li>讲师随机喊停，检查是否存在"无输入硬讲"的情况。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>一张小组共创的《七步交付物链图》 + 接力记录。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 1 · 第 4 节</span><span class="clk">15:45–17:00</span>七步话术对练（三人一组轮换）</h3>
+    <p class="fld ni"><b>本课定位：</b>把前四步的"标准动作"落成"开口能说的话"，以第①②③④步话术为主。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>模块02 话术模板的结构与"标记意图"（这句话想达到什么效果）；</li>
+      <li>语气、停顿与短句化；"请顾客复述"的确认句设计；</li>
+      <li>越界自检：话术里不得出现诊断名词、疗效承诺、绝对化表述。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>三阶段递进——先"照稿读"，再"只给要点脱稿讲"，最后"加顾客打断"。辅以录音 / 录像回放做"照镜子"，聚焦口头禅与语速。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·能写不能讲：设置"20 秒限制"逼出关键句，把长句拆成"短句 + 停顿"。</li>
+      <li>难点二·被顾客打断就乱：预设 6 个常见打断（"是不是要花很多钱""这准不准"），练"接住 + 拉回"。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>三人轮换（会诊专家 / 顾客 / 评分员），每节对练轮换一次角色；</li>
+      <li>评分员用《话术对练记录》勾选"覆盖要点 / 有无越界"；每组选 1 组上台演示，讲师按七步标准点评。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>《话术对练记录》每人 1 份 + 错题清单。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 1 · 第 5 节</span><span class="clk">17:00–17:30</span>复盘答疑 + Day 1 测评</h3>
+    <p class="fld ni"><b>本课定位：</b>当天闭环：清错题、堵漏洞、以考促学，验收第①~④步的会诊级掌握度。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>当天"错题墙"的共性错误归类讲评；</li>
+      <li>各步过关标准的再强调；布置"3 天微任务"——每天在门店实操 1 次①~④步并录像。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>"错题回放 + 二次过关"：先集中讲评共性错误，再让学员对错题重做一遍，把"当堂记住"变成"回去还会做"。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点·当场听懂、回去就忘：用"错题重做 + 门店实操录像"双闭环，把课堂标准带回岗位。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>当堂测七步知识卷第 1~5 题（通过线 ≥8/10，与结业口径一致），当场批改、当场订正。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>Day 1 测评成绩单；不合格者当晚补练 1 小时，次日晨练后复测。</p>
+  </div>
+
+  <div class="daybar">Day 2 · 精讲⑤-⑦ + 案例工作坊<span>09:00–17:30 ｜ 5 节 ｜ 当堂产出：方案建议书、科普清单、判读作业、复核记录、测评卷</span></div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 2 · 第 1 节</span><span class="clk">09:00–10:30</span>⑤解决方案（三层结构与方案建议书）</h3>
+    <p class="fld ni"><b>本课定位：</b>把判定结果落成"顾客敢拍的方案"，对应第⑤步。方案的接受率分母不含转诊类（口径见模块01）。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>三层结构：必做（安全底线）/ 建议（效果优化）/ 可选（体验提升）；</li>
+      <li>每层写清时间节点与透明费用，逐项报价、不打包含糊；</li>
+      <li>始终保留"可以不选"，决定权交顾客；口头所讲与《方案建议书》书面口径两处一致。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>用"点菜单"类比三层结构——必做是主食、建议是配菜、可选是加料；让学员先写"菜单"再报"价"；再用"双份建议书对读"检查门店留存版与顾客手持版是否一致。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·把"可选"讲成"必须"：立"施压红线"，凡出现"今天不定就没了"即扣分，练习"把选择权交回"的句式。</li>
+      <li>难点二·模糊报价：用《费用拆解表》逐项报价，禁止打包含糊。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>给定 1 份含异常的报告，30 分钟写出三层方案；同桌互换扮演"顾客"，模拟"讨价还价"与"直接拒绝"两种情形。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>每人 1 份《方案建议书》草稿（必须含"可以不选"项，费用透明、节点明确）。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 2 · 第 2 节</span><span class="clk">10:45–12:00</span>⑥科普宣教 + ⑦案例佐证</h3>
+    <p class="fld ni"><b>本课定位：</b>收尾两步，把"听懂了"变成"愿意做"。第⑥步给动作，第⑦步给信心。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>科普：2~3 条"今晚就能做"的动作 + 纠正一个常见误区，必须贴本次异常；</li>
+      <li>案例：取自模块06 案例库、同类才用、60~90 秒讲完、讲完回到顾客本人；</li>
+      <li>两步共同的红线：不带任何承诺性 / 绝对性表述。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>科普用"今晚就能做"检验法——凡是今晚做不了的动作，删掉重写；案例用"三句结构"（背景—做了什么—结果）+ 收句模板（"您的情况和他类似，所以……"）。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·科普讲成健康课：要求每条动作必须"贴本次异常"，脱离异常即判无效。</li>
+      <li>难点二·案例讲成疗效承诺：立"不作承诺"红线，禁用"你一定也能这样"；练习把"保证句"改成统计性描述（对照模块12 禁区替换表）。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>从模块06 案例册各选 1 例，90 秒讲完并收回顾客；同伴计时并用"三查"（来源、同类、回收）评分。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>每人 1 份《科普动作清单（含 1 个误区纠正）》 + 1 段案例讲述录音。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 2 · 第 3 节</span><span class="clk">14:00–15:30</span>疑难案例工作坊（学员自带案例）</h3>
+    <p class="fld ni"><b>本课定位：</b>从"标准案例"走向"真实疑难"，覆盖七步全链，重点练第②步的门槛与第⑤步的取舍。讲师：主训师 + 特邀临床讲师。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>疑难案例的识别特征：跨项矛盾、临界反复、合并全身慢病、儿童复杂情况；</li>
+      <li>会诊级的处理次序：先定数据可信度，再定档，再定重点，最后才谈方案；</li>
+      <li>"三条上报线"：触红线、跨科室、判定两可——拿不准就上报。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>讲师先示范 1 例（完整走七步并自述每一处判断依据）→ 分组拆解学员自带案例 → 集中讲评；原则是"先自己判、再看讲师判"，暴露差距才有提升。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·不敢定档 / 定不准：用"证据—结论"两栏法，先列证据再定档，避免拍脑袋。</li>
+      <li>难点二·超范围不知何时上报：明确"三条上报线"并当场演练上报话术。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>每人带 1 例（课前准备），组内交叉盲判，讲师逐例点评"打档是否准、红线是否漏、方案是否过度承诺"。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>每人 2 例《疑难案例判读作业》（≥85 分且转诊表述零越界为达标）。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 2 · 第 4 节</span><span class="clk">15:45–17:00</span>会诊复核与纠偏（互当考官）</h3>
+    <p class="fld ni"><b>本课定位：</b>会诊专家的"增值动作"——不仅能自己做，还能纠别人的错。这是"会诊把关"这一培训目标的落点。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>复核的三个抓手：数据可信度、打档准确性、红线完整性；</li>
+      <li>两类高频偏差："该异常的判成正常""临界当正常或当异常"；</li>
+      <li>纠偏的沟通原则：对事不对人，统一句式"这里我建议再对一下表：……"。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>"找茬"式训练——给每人一份"故意埋错"的解读记录（含 3~5 处偏差），限时找出并给整改意见；再两人一组互当考官，复核方必须给出至少 1 条有效纠偏。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·发现不了别人的错（尤其②的漏项）：给《复核清单》逐项打勾，把"找错"变成"查表"。</li>
+      <li>难点二·不敢说 / 怕伤和气：统一纠偏句式，先肯定再指出，落到"表"上而非"人"上。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>轮换互评 + 讲师仲裁；把典型偏差汇总为《高频偏差清单》全班共享。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>每人 1 份《复核纠偏记录》（含 ≥1 条有效纠偏）。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 2 · 第 5 节</span><span class="clk">17:00–17:30</span>复盘答疑 + Day 2 测评</h3>
+    <p class="fld ni"><b>本课定位：</b>Day 2 闭环，验收⑤⑥⑦三步与疑难案例能力。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>Day 2 共性错误归类讲评；⑤⑥⑦三步过关标准的再强调；</li>
+      <li>疑难案例判读作业逐例讲评（讲师给出"差在哪、怎么补"的具体意见）。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>"错题回放 + 作业点评"双线并行，讲评时始终回到模块03 判定表与模块12 红线，不凭印象评价。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点·"会做但做不稳"：用作业中的实际偏差做样例，把偶发失误变成可复现的检查动作。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>当堂完成 Day 2 测评（疑难案例判读，≥85 分且转诊表述零越界）；不合格者当晚留堂重做。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>Day 2 测评成绩单 + 判读作业讲评记录。</p>
+  </div>
+
+  <div class="daybar">Day 3 · 实战演练 + 结业<span>09:00–17:30 ｜ 5 节 ｜ 当堂产出：考评表、主持记录、红线记录、综合实战评分、结业认定表</span></div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 3 · 第 1 节</span><span class="clk">09:00–10:30</span>全流程情景演练 ×2 轮（常规 + 疑难）</h3>
+    <p class="fld ni"><b>本课定位：</b>把三天所学合成"一场完整的解读"，用模块08 情景卡抽题实战，检验七步能否连起来、能不能不越界。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>演练前用 5 分钟做全流程串讲回顾（七步一页纸）；</li>
+      <li>评分维度：七步齐全、合规边界、沟通效果三项；</li>
+      <li>常规题与压力题各 1 轮——压力题专门考"守边界不失温度"。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>抽卡定题后用"五步循环"：演练 → 录像回看 → 自评 → 互评 → 讲师评。让学员先自己发现问题，讲师只补关键盲区。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·紧张导致跳步：给学员"七步口令牌"，每完成一步翻一张，用物理动作防跳步。</li>
+      <li>难点二·压力题易越界：预置压力情境，重点练"先共情、再给依据、后给选择"的应对链。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>每场抽 3 张卡（模块08）；评分员用《情景演练考评表》；全员至少完整演练 1 次并接受讲评。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>《情景演练考评表》每人 3 张（平均 ≥85 分为达标口径）。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 3 · 第 2 节</span><span class="clk">10:45–12:00</span>疑难案例会诊主持演练</h3>
+    <p class="fld ni"><b>本课定位：</b>练"主持"能力——组织一次多人在场的疑难讨论，这是会诊专家的身份动作。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>会诊主持四段式：亮数据 → 定疑点 → 分工判读 → 汇总结论；</li>
+      <li>结论的边界：门店只出验配建议与健康宣教，诊断性问题一律转爱眼城眼科；</li>
+      <li>主持人的职责：多提问、少下结论，把判断权交给证据与表。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>角色扮演——学员轮流当"主持"，讲师当"疑难提出者"，其余人当"与会视光师"，模拟真实会诊；讲师先示范 1 次标准主持，再让学员对照复盘。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·主持变成"自己讲"：立"主持不越位"原则，要求主持人每 3 句必须提一个问题。</li>
+      <li>难点二·结论越界：练"边界收口句"——"我们能定的是……需要医生判断的是……"。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>每人至少主持 1 次；其余人用《会诊主持评价表》打分；讲师给每人一条改进意见。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>主持评价记录 + 一页《会诊结论模板》。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 3 · 第 3 节</span><span class="clk">14:00–15:30</span>转诊红线与合规边界实战</h3>
+    <p class="fld ni"><b>本课定位：</b>把模块12 的红线从"背得出"练到"做得对"，由特邀临床讲师主评。这是结业考核"合规边界"一票否决项的实战铺垫。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>十二类转诊情形：新发复视 / 眼球运动受限、瞳孔异常、浅前房伴眼胀痛与虹视、矫正视力不达标、儿童疑似弱视、显性斜视、眼球震颤 / 异常头位、急性症状、角膜异常、晶状体混浊、眼轴异常增长、全身慢病相关；</li>
+      <li>禁区话术替换（诊断、承诺、恐吓、夸大设备、攀比施压等）；</li>
+      <li>转诊三步动作：口头说清（哪一项、为什么去、多久内去）+ 书面写明 + 记录留痕。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>"红灯演练"——给出 12 个现场片段，学员判断"转 / 不转 / 关注"并说出判据；再做"话术替换"接力，把禁区话术改成合规说法。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点一·该转的不敢转（怕丢单）：算"风险账"——借模块12 违规处理措施（轻度 / 中度 / 重度）讲清代价，一次应转未转远大于一单损失。</li>
+      <li>难点二·转诊话术生硬：提供"三句模板"并按模块12 话术要点对练，练到自然不生硬。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>12 个片段分类赛（小组抢答 + 讲师判分）；每人完成 4 题话术替换并互评。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>每人 1 份《红线判定与话术替换记录》（零越界为达标）。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 3 · 第 4 节</span><span class="clk">15:45–17:00</span>全流程综合实战 ×1 轮 + 讲评</h3>
+    <p class="fld ni"><b>本课定位：</b>结业前的"总彩排"，按《疑难案例实操评分表》五个维度完整走一遍流程。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>五维度权重复述：第①②步 25 分、第③④步 20 分、第⑤步 15 分、第⑥⑦步 15 分、合规边界 25 分；</li>
+      <li>一票否决项单独标注：疗效承诺、应转未转、推荐药品、诊断性结论、争执贬低、泄露隐私。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>全程录像，演练后按评分表五维度逐项回看——先看是否有"一票否决"，再看各项得分，最后给"距结业还差什么"的个性化清单。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点·"会做"如何变成"稳定发挥"：强调收尾原则——宁可少讲，不可越界；给可复用的"收口三句"。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>1 轮完整实战 + 全员讲评；讲师给出每人一份"待改进清单"。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>3 张考评表（情景演练 + 综合实战 + 讲师评语）。</p>
+  </div>
+  <div class="card lsn">
+    <h3 class="sub"><span class="day">Day 3 · 第 5 节</span><span class="clk">17:00–17:30</span>结业测评 + 会诊专家认证</h3>
+    <p class="fld ni"><b>本课定位：</b>结业认定：三项考核全过即认定为会诊专家。</p>
+    <p class="fld ni"><b>讲解要点：</b></p>
+    <ul>
+      <li>三项判定口径：七步知识卷 ≥8/10、合规测验必须满分、疑难案例实操 ≥85 分；</li>
+      <li>一票否决清单与补考规则；认证有效期一年、到期复评。</li>
+    </ul>
+    <p class="fld ni"><b>教学思路：</b>测评 → 认定 → 签约 → 颁证四步走；成绩与认定结论当场公布，做到公开透明。</p>
+    <p class="fld ni"><b>重点难点怎么讲：</b></p>
+    <ul>
+      <li>难点·未通过者如何安置：明确补训与重测路径（随下一期补训，或一对一带教后 15 日内重测），避免"一考定终身"的挫败感。</li>
+    </ul>
+    <p class="fld ni"><b>组织学员理解与实践：</b></p>
+    <ul>
+      <li>现场完成结业测评；通过者签署《合规承诺书》并领取《结业认定表》。</li>
+    </ul>
+    <p class="pass ni"><b>当堂产出与验收：</b>测评成绩单、《结业认定表》、《合规承诺书》原件各 1 份。</p>
+  </div>
+
+  <h2 class="sec">五、组织方式</h2>
+  <div class="card">
+    <h3 class="sub">讲师配置（每期）</h3>
+    <div class="note"><b>主训师 1 名</b>+ <b>特邀临床讲师 1 名</b>（合作眼科医师或资深视光专家，负责疑难案例工作坊与转诊边界）。</div>
+
+    <h3 class="sub">教学组织形式</h3>
+    <div class="tsc w5"><table>
+      <thead><tr><th style="width:16%">项目</th><th style="width:84%">具体做法</th></tr></thead>
+      <tbody>
+        <tr><td><b>分组</b></td><td>8–12 人分 3–4 组，每组指定组长负责计时与记录，保证人人上台、人人被评</td></tr>
+        <tr><td><b>角色轮换</b></td><td>三人一组（会诊专家 / 顾客 / 评分员），每节对练轮换一次，确保三种角色都练到</td></tr>
+        <tr><td><b>案例工作坊</b></td><td>以学员课前提交的脱敏病例为主：讲师示范 1 例 → 分组拆解 → 集中讲评，边练边纠</td></tr>
+        <tr><td><b>设备实操</b></td><td>读图与设备类环节按 2:1 配置，轮流上手，助教逐组纠正；设备须提前 30 分钟调试</td></tr>
+        <tr><td><b>教学配比</b></td><td>精讲约 40%、对练与实操约 40%、案例与考核约 20%——以练为主，讲为辅</td></tr>
+        <tr><td><b>留痕</b></td><td>每节当堂产出现场收取，作为结业材料归档；店长按交付物倒查</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">场地与教具清单（每期）</h3>
+    <div class="tsc"><table class="now2">
+      <thead><tr><th style="width:26%">项目</th><th style="width:14%">数量</th><th style="width:60%">用途与备注</th></tr></thead>
+      <tbody>
+        <tr><td>模块02 七步 SOP + 话术打印稿</td><td>每人 1 套</td><td>七步精讲与话术对练的底本；单面留白便于做笔记</td></tr>
+        <tr><td>模块03 判定表打印稿</td><td>每人 1 套</td><td>第②步全项打档与红线筛查</td></tr>
+        <tr><td>模块12 转诊清单打印稿</td><td>每人 1 套</td><td>转诊表述与合规边界训练</td></tr>
+        <tr><td>模块06 案例册 + 参考答案</td><td>每人 1 套</td><td>第⑦步案例佐证与疑难案例工作坊</td></tr>
+        <tr><td>情景卡（模块08）</td><td>每场 3 张</td><td>Day3 全流程演练抽卡；压力题单独封装</td></tr>
+        <tr><td>综合验光仪 + 试戴架</td><td>每 2 人 1 台</td><td>数据梳理与复核演练；须提前校准</td></tr>
+        <tr><td>双眼视功能检查工具</td><td>每 2 人 1 套</td><td>异常识别环节实测（调节尺、棱镜排、Worth 四点）</td></tr>
+        <tr><td>生物测量 / 地形图 / 干眼设备</td><td>场地各 1 台</td><td>读图环节现场操作</td></tr>
+        <tr><td>七步知识卷 / 合规测验卷 / 实操考评表</td><td>每人 1 份</td><td>三项考核使用</td></tr>
+        <tr><td>《合规承诺书》</td><td>每人 1 份</td><td>结业当场签署，原件入门店人事档案</td></tr>
+        <tr><td>投影、翻页笔、白板、便利贴、计时器</td><td>场地 1 套</td><td>读图展示与小组研讨用</td></tr>
+      </tbody>
+    </table></div>
+    <div class="good"><b>规模与费用参考（供排期测算）：</b>每期 8–12 人最经济（分组实操 3–4 组，讲师能逐组纠正）；每天 6.5 小时教学、3 天共 19.5 小时；设备优先用自有培训室或旗舰店，特邀临床讲师按次计；开班前把本模块打印成册发给三位讲师，作为统一教案。</div>
+  </div>
+
+  <h2 class="sec">六、考核标准</h2>
+  <div class="card">
+    <h3 class="sub">测评一 · 七步知识卷（抽 10 题，≥8 分通过）</h3>
+    <div class="tsc"><table class="now1">
+      <thead><tr><th style="width:7%">题号</th><th style="width:44%">题目</th><th style="width:49%">参考答案要点</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>第①步"五必有"核对包含哪五项？</td><td>视力（裸眼 + 矫正）、客观 + 主觉验光、眼轴 / 角膜曲率、双眼视功能、眼前节 + 泪膜</td></tr>
+        <tr><td>2</td><td>数据真实性有哪三条红线？</td><td>生理逻辑不符、左右眼录反、多次测量差异过大；发现即重测</td></tr>
+        <tr><td>3</td><td>为什么第②步是整套 SOP 的"安全阀"？</td><td>它是唯一筛出红线与转诊项的环节；其余各步的档位都依赖它，漏做即失去安全防线</td></tr>
+        <tr><td>4</td><td>角膜曲率 K 值 46D、双眼差 0.5D 时门店应如何处理？</td><td>对照模块03：未达 &gt;47D 阈值，列为关注；结合角膜地形图看形态，形态不规则或有圆锥征象即按模块12 转诊并留痕</td></tr>
+        <tr><td>5</td><td>第③步原因最多讲几条、为什么？</td><td>最多两条（一条主因 + 一条次要）；多了顾客记不住，也无法复述</td></tr>
+        <tr><td>6</td><td>第④步如何做到"讲清但不吓人"？</td><td>落到生活场景、讲趋势也给对策；不用威胁句，每句风险都配一句希望</td></tr>
+        <tr><td>7</td><td>第⑤步方案分哪三层？各层给什么？</td><td>必做（安全底线）、建议（效果优化）、可选（体验提升）；各带时间节点与透明费用</td></tr>
+        <tr><td>8</td><td>第⑥步科普的"可执行"标准是什么？</td><td>今晚就能做、一次 2~3 条、贴本次异常、含一个误区纠正</td></tr>
+        <tr><td>9</td><td>第⑦步案例必须满足哪两条硬性要求？</td><td>必须取自模块06 案例库（不许现编）且数据脱敏；讲完必须回到顾客本人</td></tr>
+        <tr><td>10</td><td>七步链条中"缺输入"时应如何处理？</td><td>回头补齐上一步交付物再继续，不许跳步；交付物必须落纸留痕</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">测评二 · 合规测验（20 题，结业时必须满分）</h3>
+    <div class="tsc"><table class="now1 now2">
+      <thead><tr><th style="width:17%">题型</th><th style="width:17%">题量</th><th style="width:66%">出题范围与判定口径</th></tr></thead>
+      <tbody>
+        <tr><td>判断题</td><td>8 题</td><td>三不做五必须、边界表述、宣传用语；错在诊断名词或疗效承诺即为零容忍项</td></tr>
+        <tr><td>选择题</td><td>6 题</td><td>12 类转诊情形识别（含临界值）；正确选项必须包含"停止推荐 + 转诊提示 + 留痕"</td></tr>
+        <tr><td>话术替换</td><td>4 题</td><td>把禁用话术改成合规说法；替换后不得残留承诺性、诊断性、绝对化表述</td></tr>
+        <tr><td>情景判断</td><td>2 题</td><td>给出完整现场片段（含七步越界点），指出越界处并给出正确做法</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">测评三 · 疑难案例实操评分表（百分制，≥85 通过）</h3>
+    <div class="tsc"><table class="now2">
+      <thead><tr><th style="width:21%">评分项</th><th style="width:13%">分值</th><th style="width:66%">评分要点</th></tr></thead>
+      <tbody>
+        <tr><td>第①②步 数据与识别</td><td>25</td><td>数据验真是否到位、全项打档是否无漏、红线是否筛全（漏红线即本项不给分）</td></tr>
+        <tr><td>第③④步 原因与影响</td><td>20</td><td>原因 ≤2 条且与档位挂钩、生活化；影响落到场景、讲趋势给希望、无恐吓用语</td></tr>
+        <tr><td>第⑤步 方案</td><td>15</td><td>三层结构完整、含"可以不选"、费用透明、时间节点明确、与建议书一致</td></tr>
+        <tr><td>第⑥⑦步 科普与案例</td><td>15</td><td>科普 2~3 条可执行 + 纠一个误区；案例取自库、同类、讲完回到顾客</td></tr>
+        <tr><td>合规边界</td><td>25</td><td>是否出现诊断名词、疗效承诺、药品推荐、施压推销；该转诊的是否转诊并留痕</td></tr>
+        <tr><td colspan="3" style="background:#fdecec;color:#7d2b2b"><b>一票否决（出现任一项即本次不合格，不论总分）：</b>作出疗效承诺或变相承诺；对需转诊情形继续推荐产品；推荐或代购药品；使用诊断性结论；与顾客发生争执或贬低同行；泄露顾客隐私。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>补考规则：</b>Day1 测评不合格者当晚补练 1 小时、次日晨练后复测；Day2 测评不合格者当晚留堂重做；结业测评不通过者随下一期补训，或由店长安排一对一带教，15 日内重测；<b>合规测验两次不通过者</b>暂不承担会诊与高风险解读工作，先从事辅助岗并接受专项辅导。</div>
+  </div>
+
+  <h2 class="sec">七、预期成果</h2>
+  <div class="card">
+    <h3 class="sub">结业认定与权限</h3>
+    <div class="tsc"><table>
+      <thead><tr><th style="width:16%">环节</th><th style="width:42%">动作</th><th style="width:42%">要求 / 产出</th></tr></thead>
+      <tbody>
+        <tr><td>结业认定</td><td>三项考核全过 → 主训师与合规讲师签字 → 区域督导备案</td><td>《结业认定表》与会诊专家认证记录入人事档案</td></tr>
+        <tr><td>会诊权限</td><td>可对他人解读复核纠偏、主持疑难案例会诊、发起转诊提醒</td><td>超出能力范围的疑难仍上报 L3 或医疗端</td></tr>
+        <tr><td>带教资格</td><td>取得 L1 / L2 带教资格，纳入带教绩效</td><td>师徒结对，每场后 3 条反馈</td></tr>
+        <tr><td>区域支持</td><td>纳入区域会诊专家组，参与跨店疑难支持与经验分享</td><td>每月至少 1 次区域案例分享</td></tr>
+        <tr><td>复训与降级</td><td>认证有效期一年，到期复评；出现合规事故或连续两次考评不合格者降级</td><td>按视光运营部《认证与复评管理办法》执行</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">可量化的预期成果（结业后 90 天）</h3>
+    <div class="tsc w4"><table class="ct">
+      <thead><tr><th style="width:20%">指标</th><th style="width:24%">口径（模块01）</th><th style="width:20%">结业后 90 天目标</th><th style="width:36%">说明</th></tr></thead>
+      <tbody>
+        <tr><td>覆盖率</td><td>解读覆盖率</td><td>≥ 95%</td><td>会诊专家所在门店常规解读不留空白、应检尽检</td></tr>
+        <tr><td>理解度</td><td>顾客理解度评分</td><td>≥ 4.5 / 5</td><td>七步话术与"请顾客复述"训练后通俗表达显著提升</td></tr>
+        <tr><td>接受率</td><td>方案接受率</td><td>≥ 60%</td><td>分层可选方案 + 案例佐证提升合理接受</td></tr>
+        <tr><td>复诊率</td><td>复查依从率</td><td>≥ 70%</td><td>明确复查节点与催复诊话术落地</td></tr>
+        <tr><td>疑难处理质量</td><td>会诊复核合格率</td><td>≥ 95%</td><td>由区域督导按季复盘，重点看第②步是否做实</td></tr>
+        <tr><td>带教产出</td><td>带教合格 L1 / L2</td><td>每人至少 1 名</td><td>带教结果纳入骨干绩效</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">当场产出的交付物清单</h3>
+    <div class="tsc w4"><table class="ct">
+      <thead><tr><th style="width:8%">序号</th><th style="width:40%">交付物</th><th style="width:16%">数量</th><th style="width:36%">归档去向</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>七步知识卷（Day1）</td><td>每人 1 份</td><td>门店培训档案</td></tr>
+        <tr><td>2</td><td>疑难案例判读作业（Day2）</td><td>每人 2 例</td><td>区域督导备案</td></tr>
+        <tr><td>3</td><td>情景演练考评表（Day3）</td><td>每人 3 张</td><td>结业材料</td></tr>
+        <tr><td>4</td><td>疑难案例实操评分表（结业）</td><td>每人 1 份</td><td>人事档案</td></tr>
+        <tr><td>5</td><td>《合规承诺书》原件</td><td>每人 1 份</td><td>门店人事档案</td></tr>
+        <tr><td>6</td><td>《结业认定表》</td><td>每人 1 份</td><td>人事档案 + 区域备案</td></tr>
+      </tbody>
+    </table></div>
+    <div class="good"><b>结业后首月质量管控：</b>店长每日抽查 2 份记录表（重点看第②步红线是否做实）、每周随场听 1 次完整解读、每月做 1 次《实操考评表》复评；连续两月合格方可承担跨店会诊支持。</div>
+    <div class="warn"><b>红线：</b>结业后出现疗效承诺、对需转诊情形继续推荐产品、使用诊断性结论的，立即停止会诊资格，重新参加本培训的转诊表述与结业测评，通过后方可恢复；主训师与带教人负连带管理责任。</div>
+  </div>
+
+  <h2 class="sec">附录：可直接复制使用的三份表格</h2>
+
+  <div class="card">
+    <h3 class="sub">附录 A · 集训通知模板</h3>
+    <div class="tpl">
+      <b>【集训通知】永州爱眼城「七步处方解读」会诊专家专项培训</b><br>
+      各位店长：<br>
+      　第 <span class="fill"></span> 期会诊专家七步解读专项培训定于 <span class="fill"></span> 年 <span class="fill"></span> 月 <span class="fill"></span> 日至 <span class="fill"></span> 日（共 3 天，每天 09:00–17:30）在 <span class="fill" style="min-width:calc(150px * var(--fs))"></span> 举行，请于 <span class="fill"></span> 月 <span class="fill"></span> 日前将参训名单报区域督导。<br>
+      　参训对象为<b>在岗会诊专家</b>（各店资深解读骨干），须符合准入条件（L2 满 1 年或 L3、累计独立解读 ≥150 场、有带教经验），并于开班前完成：① 通读模块02、03 与模块12，标出自己最没把握的步骤；② 自备 3 份脱敏病例（≥1 份含异常项）；③ 写一句话"我在七步中最想把哪一步练到会诊级"。<br>
+      　结业须通过三项考核：七步知识卷 ≥8/10、合规测验满分、疑难案例实操 ≥85 分；Day2 疑难案例判读 ≥85 分且转诊表述零越界、Day3 全流程情景演练 ≥85 分作为过程分须同步达标。结业即认定为会诊专家，不通过者随下一期补训。<br>
+      　联系人：<span class="fill"></span>　　电话：<span class="fill"></span>
+    </div>
+
+    <h3 class="sub">附录 B · 三日签到与进度表</h3>
+    <div class="tsc w9"><table class="ct now1">
+      <thead><tr><th style="width:6%">序号</th><th style="width:11%">姓名</th><th style="width:11%">门店</th><th style="width:11%">Day1 签到</th><th style="width:11%">Day2 签到</th><th style="width:11%">Day3 签到</th><th style="width:12%">七步知识卷</th><th style="width:15%">疑难案例 / 结业分</th><th style="width:12%">会诊专家认定</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">附录 C · 结业认定表</h3>
+    <div class="tsc w4"><table class="ct">
+      <thead><tr><th style="width:31%">认定项目</th><th style="width:35%">标准</th><th style="width:13%">实际得分</th><th style="width:21%">评委意见</th></tr></thead>
+      <tbody>
+        <tr><td>七步知识卷（Day1）</td><td>≥8 / 10</td><td></td><td></td></tr>
+        <tr><td>疑难案例判读（Day2）</td><td>≥85 分，转诊表述零越界</td><td></td><td></td></tr>
+        <tr><td>全流程情景演练（Day3）</td><td>平均 ≥85 分</td><td></td><td></td></tr>
+        <tr><td>疑难案例实操（结业）</td><td>≥85 分</td><td></td><td></td></tr>
+        <tr><td>合规测验</td><td>必须满分</td><td></td><td></td></tr>
+        <tr><td>《合规承诺书》</td><td>已签署</td><td>□ 是　□ 否</td><td></td></tr>
+        <tr><td colspan="2"><b>结业结论</b></td><td colspan="2">□ 通过（认定为会诊专家）　□ 不通过（随下期补训 / 一对一带教后 15 日内重测）</td></tr>
+        <tr><td colspan="2">主训师签字</td><td colspan="2"></td></tr>
+        <tr><td colspan="2">合规讲师签字</td><td colspan="2"></td></tr>
+        <tr><td colspan="2">区域督导确认</td><td colspan="2"></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+<div class="btnwrap">
+    <a class="btn ghost" href="09_情景诊断分析与解决方案模板集.html">← 上一模块</a>
+    <a class="btn" href="08_情景卡库30张演练卡.html">回到模块08 情景卡库</a>
+    <a class="btn ghost" href="index.html">返回首页</a>
+    <button class="btn" onclick="window.print()">打印本模块</button>
+  </div>
+</div>
+
+<footer>
+  <b>永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 · 模块10 会诊专家七步解读专项培训</b><br>
+  编制：闫胜君整理 ｜ 适用门店：零陵 8 家、冷水滩 2 家、祁阳 5 家（共 15 家）｜ 归口部门：视光运营部<br>
+  说明：本模块为在岗会诊专家（各店资深解读骨干）的七步解读专项培训执行文件，不承担新人基础培训（新人入门以模块02 七步 SOP 为准，跟诊演练见模块11）。七步流程与话术以模块02 为准，判定口径以模块03 为准，合规要求以模块12 为准，情景卡以模块08 为准，逐场填写模板见模块09。本方案涉及的所有检查指标判定仅供参考与健康宣教使用，不构成医疗诊断意见；涉及需转诊情形一律按模块12 执行。培训中使用的样例报告与卡片数据均为教学示例，须去除顾客可识别信息。
+</footer>
+<script>
+/* SMART-STICKY-V1 : 智能表头吸顶 */
+(function(){
+  var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
+  function calc(){
+    var vh = window.innerHeight || 800;
+    var wide = (window.innerWidth || 1280) > WIDE;
+    var tabs = document.querySelectorAll('table'), i, t, on;
+    for(i = 0; i < tabs.length; i++){
+      t = tabs[i];
+      if(!t.tHead) continue;
+      on = wide && t.rows.length >= MIN_ROWS && t.getBoundingClientRect().height >= vh * MIN_H;
+      if(on) { t.className += ' sticky-on'; } else { t.className = t.className.replace(/\s*sticky-on\b/g, ''); }
+    }
+  }
+  function defer(){ if(tm) clearTimeout(tm); tm = setTimeout(calc, 120); }
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', calc); } else { calc(); }
+  window.addEventListener('load', calc);
+  window.addEventListener('resize', defer);
+  var ds = document.querySelectorAll('details'), j;
+  for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
+})();
+</script>
+
+<!-- TOTOP-V1 : 可交互式回到顶部 -->
+<button id="toTop" type="button" aria-label="回到顶部" title="回到顶部" class="show" aria-hidden="false">
+  <span class="tt-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19V6.5M12 6.5 5.5 13M12 6.5 18.5 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+  <span class="tt-txt">顶部</span>
+</button>
+
+<!-- TOTOP-V1 : 交互脚本 -->
+<script>
+(function(){
+  var btn = document.getElementById('toTop');
+  if(!btn) return;
+  var HIDE = 420, last = 0;
+  function pos(){
+    return (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+  }
+  function sync(){
+    var show = pos() > HIDE;
+    if(show === btn.classList.contains('show')) return;
+    btn.classList.toggle('show', show);
+    btn.setAttribute('aria-hidden', show ? 'false' : 'true');
+  }
+  function onScroll(){
+    var now = Date.now();
+    if(now - last < 80) return;
+    last = now; sync();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  btn.addEventListener('click', function(){
+    try { window.scrollTo({top:0, left:0, behavior:'smooth'}); }
+    catch(e) { window.scrollTo(0, 0); }
+    window.setTimeout(function(){ btn.blur(); }, 450);
+  });
+  sync();
+})();
+</script>
+
+</body></html>
