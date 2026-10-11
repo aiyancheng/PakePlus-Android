@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第4套 | 365天培训综合测试卷</title>
+    <link rel="stylesheet" href="training-styles.css">
+    <style>
+        .exam-info { margin-bottom: 4px; }
+        .exam-info p { margin-bottom: 10px; }
+        .exam-badge {
+            display: inline-block; margin: 8px 6px 0 0; padding: 4px 12px;
+            background: #E6F0FF; color: #1677FF; border: 1px solid #D6E4FF;
+            border-radius: 20px; font-size: 13px;
+        }
+        .score-display .score-text { white-space: pre-line; line-height: 1.7; }
+        .reset-btn {
+            display: inline-block; margin-left: 10px; padding: 10px 22px;
+            background: #F5F5F5; color: #666; border: 1px solid #E0E0E0;
+            border-radius: 10px; font-size: 15px; cursor: pointer;
+            font-family: var(--font-family);
+        }
+        .reset-btn:hover { background: #EEE; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="day-number">模拟测试 · 第 4 套</div>
+            <h1 class="page-title">365天培训综合测试卷（第4套）</h1>
+            <div class="page-subtitle">共 20 题 · 每题 5 分 · 满分 100 分</div>
+        </div>
+
+        <div class="learning-card">
+            <div class="card-header">
+                <div class="card-icon">📝</div>
+                <div class="card-title">考试说明</div>
+            </div>
+            <div class="learning-section exam-info">
+                <p>1. 本试卷共 <strong>20</strong> 道选择题（含单选、多选），每题 <strong>5</strong> 分，满分 <strong>100</strong> 分。</p>
+                <p>2. <strong>多选题</strong>须全部选对才得分，多选、少选、错选均不得分。</p>
+                <p>3. 题目从 365 天课程题库中随机抽取，各套试卷题目互不重复。</p>
+                <p>4. 作答完成后点击下方「📝 提交答案并评分」，系统自动评分并给出答题解析。</p>
+                <div>
+                    <span class="exam-badge">📚 题库总量 1000+ 题</span>
+                    <span class="exam-badge">🎯 满分 100 分</span>
+                    <span class="exam-badge">⏱ 建议用时 20 分钟</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <div class="section-title">试 题</div>
+            <div id="questionArea"></div>
+
+            <div class="submit-area">
+                <button class="submit-btn" onclick="submitExam()">📝 提交答案并评分</button>
+                <button class="reset-btn" onclick="location.reload()">🔄 重新作答</button>
+            </div>
+
+            <div class="score-display" id="scoreDisplay">
+                <div class="score-number" id="scoreNumber">0/100分</div>
+                <div class="score-text" id="scoreText">本次测试成绩</div>
+            </div>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="index.html" class="nav-home">🏠 返回首页</a>
+        </div>
+    </div>
+
+    <div class="footer-support">
+        技术支持：闫胜君视光工作室
+    </div>
+
+    <script>
+        // ========== 本套试卷题目数据（随机抽取） ==========
+        const examData = [{"src":200,"type":"multi","text":"关于弱视治疗，以下说法正确的是？","options":["3-6岁是弱视治疗的黄金期，治愈率可达80-90%","7-12岁是敏感期，治愈率约50-70%","12岁以上弱视无法治疗，无需尝试","弱视治疗需要医生、家长和患儿三方配合"],"answer":[0,1,3],"score":5,"explanation":"A、B、D正确。C错误：12岁以上弱视虽治疗效果差，但部分研究显示通过强化训练仍可能改善，不应完全放弃。"},{"src":261,"type":"single","text":"与球面镜片相比，非球面镜片的主要优点是？","options":["价格更低廉","阿贝数更高，色散更少","更薄更平，周边视野更清晰","折射率更高，度数效果更强"],"answer":[2],"score":5,"explanation":"非球面镜片的核心优势是通过曲率渐变：①镜片更薄更平（外观改善）；②周边像差减少，视野更清晰。折射率和阿贝数与球/非球面无关。"},{"src":36,"type":"multi","text":"配适评估中，镜片移动度的理想范围是？","options":["0.5mm以下","1-2mm","镜片移动直观可见但不脱离角膜","3-4mm"],"answer":[1,2],"score":5,"explanation":"镜片移动度理想范围是1-2mm，移动应直观可见但不过度，确保镜片配适良好。"},{"src":253,"type":"single","text":"顾客单眼PD为 R 34 / L 32，总远用PD是多少？","options":["62mm","64mm","66mm","68mm"],"answer":[2],"score":5,"explanation":"总PD = R34 + L32 = 66mm。"},{"src":352,"type":"multi","text":"以下哪些时机不适合送饮品？","options":["验光时","试戴镜框时","顾客投诉时","顾客等待取镜时"],"answer":[0,1,2],"score":5,"explanation":"验光时、试戴镜框时、顾客投诉时都不适合送饮品。等待取镜时适合送饮品（缓解等待焦虑）。"},{"src":20,"type":"multi","text":"关于脸型与镜框搭配，以下说法正确的是？","options":["方脸适合圆形镜框","长脸适合大框镜框","心形脸适合大框深色镜框","椭圆脸是百搭脸型"],"answer":[0,1,3],"score":5,"explanation":"A正确：方脸适合圆形镜框柔化线条。B正确：长脸适合大框增加横向视觉。C错误：心形脸应避免大框深色镜框。D正确：椭圆脸几乎适合所有镜框。"},{"src":25,"type":"single","text":"经典风格镜框的特点不包括？","options":["线条简洁","色彩鲜艳","低调色彩","适合商务"],"answer":[1],"score":5,"explanation":"色彩鲜艳是时尚风格的特点，不是经典风格。经典风格色彩低调（黑/灰/棕）。"},{"src":141,"type":"single","text":"顾客说\"A店镜片才300元，你们要800元\"，最佳应对是？","options":["说\"A店质量差，别去买\"","用品质、服务、风险三维度客观对比","直接降价到300元","不回应，让顾客自己比"],"answer":[1],"score":5,"explanation":"最佳应对是用品质、服务、风险三维度客观对比，让顾客自己决策。"},{"src":114,"type":"single","text":"对于每天开车通勤的上班族，最合适的多副组合是？","options":["日常佩戴 + 运动眼镜","办公用（防蓝光） + 驾驶用（偏光）","室内用 + 户外用（变色）","正装款 + 休闲款"],"answer":[1],"score":5,"explanation":"上班族每天开车通勤，最适合办公用（防蓝光）+ 驾驶用（偏光）的组合。"},{"src":205,"type":"single","text":"糖尿病性黄斑水肿（DME）的首选治疗是？","options":["口服降糖药","抗VEGF药物玻璃体注射","全视网膜激光光凝（PRP）","玻璃体切割术（PPV）"],"answer":[1],"score":5,"explanation":"DME首选抗VEGF药物（雷珠单抗、阿柏西普）玻璃体注射，可有效减轻水肿、提高视力。"},{"src":48,"type":"multi","text":"儿童太阳镜的必须要求包括？","options":["UV400防护","PC抗冲击镜片","深色镜片（透光率＜20%）","TR90柔软镜框"],"answer":[0,1,3],"score":5,"explanation":"A正确：UV400必须。B正确：PC镜片抗冲击，防止破碎伤眼。C错误：8岁以下儿童不宜深色镜。D正确：TR90柔软，适合儿童。"},{"src":175,"type":"single","text":"复盘会最容易犯的错误是？","options":["只表扬不批评","只批评不表扬（批斗会）","3优点+3改进点（balanced）","不反馈，让员工自己悟"],"answer":[1],"score":5,"explanation":"复盘会最容易犯的错误是变成\"批斗会\"——只批评不表扬，打击士气。正确做法是\"3优点+3改进点\"。"},{"src":80,"type":"multi","text":"以下哪些情况适合推荐茶色镜片？","options":["阴天骑行","雾霾天气","夜晚骑行","强光晴天"],"answer":[0,1],"score":5,"explanation":"茶色镜片增强对比度，适合阴天、雾霾、树林等低对比度环境。夜晚应选黄色，强光晴天应选灰色。"},{"src":113,"type":"single","text":"顾客说\"我先看看，回头带我老公来\"，你应该如何回应？","options":["\"好的，您回头带您老公一起来\"","\"您老公大概什么度数？我可以先帮您了解一下\"","\"您老公来不了就算了，您自己配吧\"","\"您老公肯定也需要配，您现在就给他选一款吧\""],"answer":[1],"score":5,"explanation":"B的回应最合适：当场了解基本信息（度数、需求），提前准备，提高成交率。A太被动，C太消极，D太强推。"},{"src":243,"type":"multi","text":"关于验光设备日常保养，以下做法正确的是？","options":["直接用液体喷到综合验光仪镜片上清洁","电脑验光仪每位顾客更换下颌托纸","眼压计每周清洁喷嘴和检查空气过滤器","设备故障立即停用并贴标识，禁止继续用于顾客检查"],"answer":[1,2,3],"score":5,"explanation":"B、C、D正确。A错误：绝对禁止将液体直接喷到镜片上，液体会渗入夹缝损坏涂层，应使用镜头纸+无水乙醇轻擦。"},{"src":65,"type":"single","text":"蔡司钻立方蓝膜层的防蓝光方式是？","options":["镀膜式（表面镀膜）","基片式（材料添加）","混合式","没有防蓝光功能"],"answer":[1],"score":5,"explanation":"蔡司钻立方蓝采用基片式防蓝光，在镜片材料中添加防蓝光因子，阻断率较高但色偏明显。"},{"src":32,"type":"single","text":"散光隐形眼镜的核心设计是？","options":["球面设计","环面（Toric）设计","非球面设计","自由曲面设计"],"answer":[1],"score":5,"explanation":"散光隐形眼镜的核心设计是环面（Toric）设计，镜片两个经线曲率不同，形成柱镜效应。"},{"src":338,"type":"single","text":"内训师的核心价值是什么？","options":["降低培训成本、提升培训针对性、传承内部经验","让业绩好的员工有事情做，不让他们闲着","完成公司规定的培训任务，应付检查","提升门店知名度，让外界知道我们很专业"],"answer":[0],"score":5,"explanation":"内训师的核心价值是：降低培训成本（外部培训贵，内部培训便宜）、提升培训针对性（内训师了解实际情况，培训更接地气）、传承内部经验（把优秀员工的经验传给新员工）。"},{"src":56,"type":"single","text":"顾客要求\"全额退款\"，最合适的应对是？","options":["立即退款，平息情绪","解释政策，给出解决方案（换/修），不轻易退款","让顾客找厂家","不理睬，顾客会放弃"],"answer":[1],"score":5,"explanation":"顾客要求全额退款时，应解释政策（质量问题才可退），给出解决方案（换/修），不轻易退款。A可能过度承诺；C/D是错误做法。"},{"src":200,"type":"single","text":"根据中华医学会标准，5岁儿童诊断弱视的最佳矫正视力阈值是？","options":["低于0.5","低于0.6","低于0.7","低于0.8"],"answer":[1],"score":5,"explanation":"根据中华医学会标准，4-5岁儿童诊断弱视的最佳矫正视力阈值是低于0.6。"}];
+        const LETTERS = 'ABCDEFGH';
+
+        // ========== 渲染试题 ==========
+        function renderExam() {
+            const area = document.getElementById('questionArea');
+            examData.forEach((q, qi) => {
+                const box = document.createElement('div');
+                box.className = 'choice-question';
+
+                const qt = document.createElement('div');
+                qt.className = 'question-text';
+                qt.textContent = (qi + 1) + '. ' + q.text + (q.type === 'multi' ? '（多选）' : '');
+                box.appendChild(qt);
+
+                const meta = document.createElement('div');
+                meta.className = 'question-meta';
+                meta.textContent = (q.type === 'multi' ? '多选题' : '单选题') + ' · ' + q.score + '分';
+                box.appendChild(meta);
+
+                const ul = document.createElement('ul');
+                ul.className = 'options-list';
+                q.options.forEach((opt, oi) => {
+                    const li = document.createElement('li');
+                    li.className = 'option-item';
+                    const mk = document.createElement('div');
+                    mk.className = 'option-marker';
+                    mk.textContent = LETTERS[oi];
+                    const tx = document.createElement('span');
+                    tx.className = 'option-text';
+                    tx.textContent = opt;
+                    li.appendChild(mk);
+                    li.appendChild(tx);
+                    li.addEventListener('click', () => toggleOption(qi, oi, q.type === 'multi'));
+                    ul.appendChild(li);
+                });
+                box.appendChild(ul);
+
+                const fb = document.createElement('div');
+                fb.className = 'feedback';
+                box.appendChild(fb);
+
+                area.appendChild(box);
+            });
+        }
+
+        function toggleOption(qi, oi, isMulti) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const item = items[oi];
+            if (isMulti) {
+                item.classList.toggle('selected');
+            } else {
+                items.forEach(li => li.classList.remove('selected'));
+                item.classList.add('selected');
+            }
+        }
+
+        function getSelected(qi) {
+            const box = document.querySelectorAll('.choice-question')[qi];
+            const items = box.querySelectorAll('.option-item');
+            const sel = [];
+            items.forEach((li, i) => { if (li.classList.contains('selected')) sel.push(i); });
+            return sel.sort((a, b) => a - b);
+        }
+
+        // ========== 自动评分 ==========
+        function submitExam() {
+            let total = 0, correctCount = 0, answered = 0;
+            examData.forEach((q, qi) => {
+                const box = document.querySelectorAll('.choice-question')[qi];
+                const items = box.querySelectorAll('.option-item');
+                const sel = getSelected(qi);
+                if (sel.length) answered++;
+                const corr = q.answer.slice().sort((a, b) => a - b);
+                const ok = JSON.stringify(sel) === JSON.stringify(corr);
+
+                items.forEach(li => li.classList.remove('correct', 'wrong'));
+                const fb = box.querySelector('.feedback');
+                fb.classList.remove('show', 'correct-feedback', 'wrong-feedback');
+                items.forEach((li, oi) => {
+                    if (corr.includes(oi)) li.classList.add('correct');
+                    if (sel.includes(oi) && !corr.includes(oi)) li.classList.add('wrong');
+                });
+
+                if (ok) {
+                    total += q.score;
+                    correctCount++;
+                    fb.classList.add('correct-feedback', 'show');
+                    fb.innerHTML = '✅ 回答正确！' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                } else {
+                    const letters = corr.map(i => LETTERS[i]).join('、');
+                    fb.classList.add('wrong-feedback', 'show');
+                    fb.innerHTML = '❌ 回答错误。正确答案：<strong>' + letters + '</strong>。' + (q.explanation || '') + '  <em>（出自第' + q.src + '天）</em>';
+                }
+            });
+
+            const max = examData.reduce((s, q) => s + q.score, 0);
+            const pct = Math.round(total / max * 100);
+            let result, tip;
+            if (pct >= 90) { result = '🏆 优秀！知识掌握非常扎实'; }
+            else if (pct >= 80) { result = '👍 良好，继续巩固即可'; }
+            else if (pct >= 60) { result = '✅ 合格，请重点复习错题'; }
+            else { result = '⚠️ 不合格，建议回看相关课程后重新测试'; }
+            tip = (answered < examData.length ? '（有 ' + (examData.length - answered) + ' 题未作答）' : '（已全部作答）');
+
+            document.getElementById('scoreNumber').textContent = total + '/' + max + '分';
+            document.getElementById('scoreText').innerHTML =
+                result + '\n答对 ' + correctCount + '/' + examData.length + ' 题 · 正确率 ' + pct + '% ' + tip;
+
+            const disp = document.getElementById('scoreDisplay');
+            disp.classList.add('show');
+            disp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        window.addEventListener('DOMContentLoaded', renderExam);
+    </script>
+</body>
+</html>
