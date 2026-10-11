@@ -324,7 +324,7 @@ body {
 /* ===== 平板横屏：红米12.1寸横屏 1280x800 等（>=1024px） ===== */
 @media (min-width: 1024px) {
     .container {
-        max-width: 1100px;
+        max-width: 1300px;
         padding: 30px 40px 120px;
     }
 
@@ -1311,6 +1311,6 @@ p, li, td, th, .option-text, .question-text, .page-title {
 /* 超大桌面：内容不过分拉长 */
 @media (min-width: 1600px) {
     .container {
-        max-width: 1200px;
+        max-width: 1300px;
     }
 }
