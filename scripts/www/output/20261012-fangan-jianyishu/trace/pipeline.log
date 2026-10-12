@@ -1,0 +1,7 @@
+[Pipeline Log] request_id=20261012-fangan-jianyishu
+  stage: 0  entry_type: full_pipeline  intent_len: 22  topic: 方案建议书（通用版）
+  stage: 1  agent: doc-writer  route: general_writing  genre: general
+  decision_path: intent_analysis  target_expert: general-writer
+  critic: skip（低风险 genre，模板填空型无枚举要素）
+  final_draft_path: output/20261012-fangan-jianyishu/stage1/final_draft.md
+  fallback: false
