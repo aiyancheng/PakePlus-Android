@@ -1,0 +1,33 @@
+request_id: 20261012-fangan-jianyishu
+entry_type: full_pipeline
+current_stage: 2
+created_at: "2026-10-12T09:20:00+08:00"
+intent:
+  summary: "设计一份通用版《方案建议书》Word 文档（门店标准化可填写模板）"
+  intent_len: 22
+  topic: "方案建议书（通用版）"
+output_docx_path: "D:\\验光处方解读\\output\\20261012-fangan-jianyishu\\stage3\\方案建议书（通用版）.docx"
+output_docx_user_specified: false
+stage_1:
+  status: completed
+  completed_at: "2026-10-12T09:26:00+08:00"
+  agent: doc-writer
+  route_tag: general_writing
+  genre: general
+  expert_used: general-writer
+  critic_decision: null
+  critic_mode: skip
+  fallback: false
+  output: output/20261012-fangan-jianyishu/stage1/final_draft.md
+stage_2:
+  status: pending
+  agent: doc-formatter
+  entry_type: stage2_flow
+  content_source: output/20261012-fangan-jianyishu/stage1/final_draft.md
+  intermediate_dir: "D:\\验光处方解读\\output\\20261012-fangan-jianyishu\\stage2\\intermediate"
+  output: output/20261012-fangan-jianyishu/stage2/formatted-方案建议书通用版.html
+stage_3:
+  status: pending
+  agent: doc-converter
+  input: output/20261012-fangan-jianyishu/stage2/formatted-方案建议书通用版.html
+  output: "D:\\验光处方解读\\output\\20261012-fangan-jianyishu\\stage3\\方案建议书（通用版）.docx"
