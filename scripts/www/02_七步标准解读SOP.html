@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>模块02 · 七步标准解读 SOP | 永州爱眼城 检查报告解读标准化方案</title>
-<style>
+<html lang="zh-CN" data-page-node-id="Ev0InqynxiAAuVDF4NqcVz"><head data-page-node-id="nzxtJymW8oU2oRpqz9pzUo">
+<meta charset="UTF-8" data-page-node-id="IDx1TOEykoDAk69pGHXKGZ">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="NNa8h8DGydUceMVjpbfHi7">
+<title data-page-node-id="OlyuZtd74l7nboo2fJcRmF">模块02 · 七步标准解读 SOP | 永州爱眼城 检查报告解读标准化方案</title>
+<style data-page-node-id="8ZC3juyEliwjHIs4UzN4aC">
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;background:#f5f8fd;color:#1f2b3d;line-height:1.75;font-size:calc(16px * var(--fs));-webkit-text-size-adjust:100%}
 .topbar{background:linear-gradient(100deg,#1677ff 0%,#3c89ff 60%,#69b1ff 100%);color:#fff;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
@@ -84,7 +83,7 @@ body .step>.line,body .step>.say,body .step>.bad,body .step>.note,body .step>.go
 }
 </style>
 <!-- LAYOUT-V2 -->
-<style>
+<style data-page-node-id="2iZ6JnHSbXbo7xRkAMQpFI">
 /* ==========================================================================
    平板排版增强层 —— 目标设备：红米 Pad 12.1"（2560×1600，CSS 视口 1280×800）
    只调排版，不改内容。可用 --fs 一个变量控制全站等比缩放。
@@ -297,7 +296,7 @@ body a:focus-visible,body button:focus-visible,body input:focus-visible,body .fi
 </style>
 <!-- /LAYOUT-V2 -->
 <!-- INDENT-P-V1 : 正文段落首行缩进层（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="ZZKQQC97ikdvEFCzZOxl8N">
 /* ===== 正文段落首行缩进 2 字符（INDENT-P-V1）=====
    text-indent:2em —— em 绑定当前段落字号（16px × var(--fs)），
    恒等于 2 个中文字符宽：平板 --fs / 手机 --fs / 打印 --fs:1 全部自适应，无写死像素 */
@@ -319,7 +318,7 @@ body .wrap p.ni,body .wrap .ni p,
 body p:lang(en),body p.en{text-indent:0}
 </style>
 <!-- FOLD-V1 : 四大板块附件可折叠（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="o1cXlgBlMB0EydyzF1I4ef">
 /* 折叠标题沿用章节标题样式：橙色强调条 + 蓝字，仅加展开标记 */
 body .fold{margin:30px 0 16px}
 body .fold>summary{
@@ -344,7 +343,7 @@ body .fold[open]>summary .foldtip{visibility:hidden}
   body .fold>summary{padding:0 0 6px;box-shadow:none;background:none}
 }
 </style>
-<script>
+<script data-page-node-id="gBS7aWuRn0SKXOloJg3D4x">
 /* 打印前自动展开折叠区，打印后恢复原状态，保证纸质稿内容完整 */
 (function(){
   var ds = document.querySelectorAll('details.fold');
@@ -356,7 +355,7 @@ body .fold[open]>summary .foldtip{visibility:hidden}
   });
 })();
 </script>
-<style>
+<style data-page-node-id="Is9KUUBfuas4IaIZ6YAVuU">
 /* ==========================================================================
    TABLE-FIT-V1 : 表格展示层优化（幂等注入，勿手改）
    仅调整容器与列宽，不动文字/字段/配色/字号
@@ -397,7 +396,7 @@ body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
 }
 </style>
 <!-- TOTOP-V1 : 可交互式回到顶部样式（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="q97uUucQgjxe1FVHlDV4Kt">
 /* ===== TOTOP-V1 可交互式回到顶部按钮（幂等注入，勿手改）===== */
 #toTop{
   position:fixed;right:calc(22px * var(--fs));bottom:calc(26px * var(--fs));
@@ -424,7 +423,7 @@ body .tsc table.now11 th:nth-child(11),body .tsc table.now11 td:nth-child(11){
 @media print{#toTop{display:none !important}}
 </style>
 <!-- SMART-STICKY-V1 : 智能表头吸顶样式 -->
-<style>
+<style data-page-node-id="GOTFaZgg1y5GV4aap4laDb">
 /* SMART-STICKY-V1 : 智能表头吸顶——短表不吸顶，长表才吸顶（幂等注入，勿手改） */
 body table>thead>tr>th{position:static}
 body table.sticky-on>thead>tr>th{
@@ -439,7 +438,7 @@ body table.sticky-on>thead>tr>th{
 }
 </style>
 <!-- MARK : WIDTHFIT-V1 : 通栏文本框按容器宽度自适应 -->
-<style>
+<style data-page-node-id="V1fbbyb2UFP6F1rIQR4itj">
 /* hero / lead 文本框宽度统一跟随正文容器，避免宽屏错位、窄屏留白 */
 body .lead{max-width:100%}
 body .hero h1,body .hero p,body .hero .tags{
@@ -459,7 +458,7 @@ body .hero h1{max-width:min(900px, calc(var(--wrap) - var(--wpx) * 2))}
 <!-- COLFIT-V1 -->
 <!-- OPT02-V1 -->
 <!-- MARK : WIDTHFIT2-V1 : 导语文本块与页脚内容对齐正文容器宽度 -->
-<style>
+<style data-page-node-id="rp6QDnDqPTHneyivFJxbjW">
 /* 导语（hero）文本块与页脚内容统一按正文容器宽度对齐：宽屏不错位、窄屏不留白 */
 body .hero h1,body .hero p,body .hero .tags{
   max-width:calc(var(--wrap) - var(--wpx) * 2);
@@ -479,7 +478,7 @@ body footer{
 }
 </style>
 <!-- MARK : WIDTHFIT3-V1 : 顶栏/吸顶导航内容对齐正文容器宽度（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="Y8tcCC3NvacXVnY5ccLWhB">
 /* 顶栏（品牌/版本号）与吸顶导航内容边缘对齐正文容器，与页脚同规则；仅 ≥641 生效，窄屏回落 var(--wpx) */
 @media screen and (min-width:641px){
   body .topbar,body .topbar.tb-compact,body .subnav{
@@ -494,13 +493,13 @@ body .topbar .brand span{display:inline;margin-left:10px;margin-top:0}
 body .topbar .meta{text-align:right;margin-left:auto}
 </style>
 <!-- MARK : WIDTHFIT3-V1B : 窄屏 subnav 内边距与正文统一（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="vwe0UD50HkWW8SfHfZwNab">
 @media screen and (max-width:640px){
   body .subnav{padding-left:var(--wpx);padding-right:var(--wpx)}
 }
 </style>
 <!-- MARK : STEP02-LEAN-V1 : 七步卡精简后，「关键动作 / 话术 / 注意事项」三项视觉强化（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="6Z4lxmnN22o38cTQYKIBDr">
 body .step .bd{padding:14px 22px 18px}
 body .step .bd .row{
   display:grid;grid-template-columns:calc(96px * var(--fs)) 1fr;gap:12px;
@@ -526,7 +525,7 @@ body .step>h3.sub{
 }
 </style>
 <!-- MARK : WIDTHFIT5-V1 : 顶栏条收窄为与正文容器同宽（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="m4FVSx11cS3xIdVSLY3MaL">
 /* 顶栏蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
    保证品牌/版本信息仍落在正文容器内容边界上（覆盖 WIDTHFIT3-V1 的整屏 padding 公式） */
 @media screen and (min-width:641px){
@@ -538,7 +537,7 @@ body .step>h3.sub{
 }
 </style>
 <!-- MARK : WIDTHFIT6-V1 : 页脚条收窄为与正文容器同宽（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="vEZ6om8hAmW6ZiJfQED9ZI">
 /* 页脚深蓝条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
    覆盖 WIDTHFIT2-V1 的整屏 padding 公式；打印维持通栏（WIDTHFIT2 的 print 规则继续生效） */
 @media screen and (min-width:641px){
@@ -550,7 +549,7 @@ body .step>h3.sub{
 }
 </style>
 <!-- MARK : WIDTHFIT7-V1 : 吸顶导航条收窄为与正文容器同宽（幂等注入，勿手改） -->
-<style>
+<style data-page-node-id="HJ4E4EXsaCam7OtTFqLW7d">
 /* 模块页吸顶导航白条不再通栏：≥641px 时与 .wrap 正文容器同宽居中；内边距重置为 var(--wpx)，
    覆盖 WIDTHFIT3-V1 的整屏 padding 公式，保证「← 返回首页 ｜ 上一模块…」仍落在正文内容边界上 */
 @media screen and (min-width:641px){
@@ -561,304 +560,304 @@ body .step>h3.sub{
   }
 }
 </style>
-</head>
-<body>
-<div class="topbar">
-  <div class="brand">永州爱眼城 · 检查报告解读标准化方案</div>
-  <div class="meta">模块02 / 12 ｜ V1.0 ｜ 2026-09-21</div>
+<style id="__dm_no_drag_style__" data-page-node-id="47NDfZbpDGNwaCQOFdz1dY">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__" data-page-node-id="3ipoWwd5K503KuIjQfTNoA">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="fqN2yc5WfxZmrLxjMHcANu" style="">
+<div class="topbar" data-page-node-id="OwMxzvka87Iz2wI9C03bFT">
+  <div class="brand" data-page-node-id="sHvNDNDge6unCF5m2WKhxP">永州爱眼城 · 检查报告解读标准化方案</div>
+  <div class="meta" data-page-node-id="qlto3EOlQ5Xq2f0Sjl3SE1">模块02 / 12 ｜ V1.0 ｜ 2026-09-21</div>
 </div>
-<div class="subnav"><a href="index.html">← 返回首页</a> ｜ 上一模块：<a href="01_方案总览与目标.html">01 方案总览与目标</a> ｜ 下一模块：<a href="03_指标参考区间与异常值对照.html">03 指标参考区间与异常值对照</a></div>
+<div class="subnav" data-page-node-id="qS3qQdp6o1GO98JJFI2xSJ"><a href="index.html" data-page-node-id="p47nsXMdaPRAEeBcxTXrAO">← 返回首页</a> ｜ 上一模块：<a href="01_方案总览与目标.html" data-page-node-id="7Cmsw280vf6XPmKD8FKs1P">01 方案总览与目标</a> ｜ 下一模块：<a href="03_指标参考区间与异常值对照.html" data-page-node-id="oqaiHnrjsyoj3StcUh0Qsx">03 指标参考区间与异常值对照</a></div>
 
-<div class="wrap">
-  <h1 class="t">模块02 · 七步标准解读 SOP</h1>
-  <p class="lead" style="text-align: left;">每一次解读，都必须按七步依次完成：<b>①数据梳理 → ②异常识别 → ③异常原因 → ④异常影响 → ⑤解决方案 → ⑥科普宣教 → ⑦案例佐证</b>。顺序不能颠倒——顾客听懂原因才会接受方案，听过方案，科普和案例才有落脚点。<b>每步已配可照念话术</b>，各步聚焦三件事：关键动作、话术、注意事项。</p>
+<div class="wrap" data-page-node-id="gAdV31wOEqsX5GzA8GcZUE">
+  <h1 class="t" data-page-node-id="c51HF01kiY3xtRt9lHyVE9">模块02 · 七步标准解读 SOP</h1>
+  <p class="lead" style="text-align: left;" data-page-node-id="l6GwziG1tnjgpm1iLOppsF">每一次解读，都必须按七步依次完成：<b data-page-node-id="52CdiPswmVgQDSgh1l6FXC">①数据梳理 → ②异常识别 → ③异常原因 → ④异常影响 → ⑤解决方案 → ⑥科普宣教 → ⑦案例佐证</b>。顺序不能颠倒——顾客听懂原因才会接受方案，听过方案，科普和案例才有落脚点。<b data-page-node-id="Mx2IMeKr3n0rUEnye2fVqp">每步已配可照念话术</b>，各步聚焦三件事：关键动作、话术、注意事项。</p>
 
-  <h2 class="sec">流程总览与建议时间分配</h2>
-  <div class="card">
-    <div class="tsc w4"><table class="now2">
-      <thead><tr><th style="width:14%">环节</th><th style="width:15%">建议时长</th><th style="width:18%">一句话任务</th><th style="width:53%">这一步做完后，顾客心里应该有的感受/想法</th></tr></thead>
-      <tbody>
-        <tr><td>① 检查数据梳理</td><td>1~2 分钟</td><td>把报告看全、看准</td><td>（顾客不在场，视光师心中有数：数据够用吗）</td></tr>
-        <tr><td>② 异常值识别</td><td>1~2 分钟</td><td>圈出需要讲的项</td><td>（视光师心中有数：重点讲哪 2~3 项）</td></tr>
-        <tr><td>③ 异常原因</td><td>2~3 分钟</td><td>解释为什么会这样</td><td>"原来是这样来的，不是无缘无故的"</td></tr>
-        <tr><td>④ 异常影响</td><td>1~2 分钟</td><td>说明不处理的后果</td><td>"这个事跟我有关系，值得重视"</td></tr>
-        <tr><td>⑤ 解决方案</td><td>3~5 分钟</td><td>给分层可选的处理</td><td>"有办法，而且我能选"</td></tr>
-        <tr><td>⑥ 科普宣教</td><td>2~3 分钟</td><td>给日常可执行的动作</td><td>"讲得挺细，是真心为我着想"</td></tr>
-        <tr><td>⑦ 案例佐证</td><td>1~2 分钟</td><td>讲一个同类的真实故事</td><td>"别人这么做有效果，我也可以试试"</td></tr>
+  <h2 class="sec" data-page-node-id="1RHYbJxUGWSWQo8RNs7E6u">流程总览与建议时间分配</h2>
+  <div class="card" data-page-node-id="wsZ32vcLWErsqLdCpcEXRQ">
+    <div class="tsc w4" data-page-node-id="ZBEOJFs7zaBoomCvDZX74w"><table class="now2" data-page-node-id="eHn0HNKIuM1Hz4FkhqWBsS">
+      <thead data-page-node-id="pKAyb2psxdG1oNFlpfb3b8"><tr data-page-node-id="yBxmgglAXYaDVY0h9ZEyvt"><th style="width:14%" data-page-node-id="okEQP0y45X2eGh7Zc0NfpG">环节</th><th style="width:15%" data-page-node-id="jqwcweMD5iXZvFMgVpb7Cb">建议时长</th><th style="width:18%" data-page-node-id="r7S1eOJOqTCp4lswHioWVn">一句话任务</th><th style="width:53%" data-page-node-id="cghM4GOV7HcAmNsMw2xZa3">这一步做完后，顾客心里应该有的感受/想法</th></tr></thead>
+      <tbody data-page-node-id="ptJT7D2r1ic3ggHDMVaMYe">
+        <tr data-page-node-id="1sBMmCYYY20v4DWjNJDqMK"><td data-page-node-id="CMn2OaBEnnI4ZBVfsHtfMd">① 检查数据梳理</td><td data-page-node-id="EcQHTbElV9cRKE2Lj9BRp5">1~2 分钟</td><td data-page-node-id="JxYAGRacRsfpYrUn1zMDsZ">把报告看全、看准</td><td data-page-node-id="vKte4ULpQEjkk3Tfiq4BD8">（顾客不在场，视光师心中有数：数据够用吗）</td></tr>
+        <tr data-page-node-id="fk2pw3S37PI9M2jGepkHy7"><td data-page-node-id="l3JrPB575bivNkezcXDwBN">② 异常值识别</td><td data-page-node-id="tzWvbu5bm6kh5s6GLNNVFQ">1~2 分钟</td><td data-page-node-id="CcZbztVh12Trm9nL2DHeoU">圈出需要讲的项</td><td data-page-node-id="lg6RqhCXjHwpR6aTZrk4QF">（视光师心中有数：重点讲哪 2~3 项）</td></tr>
+        <tr data-page-node-id="vhEgWXk4pxmdznqwBhVpbF"><td data-page-node-id="TMDSuzXx0d6pALr2PGdLnS">③ 异常原因</td><td data-page-node-id="bwMMjye6e9TM1aeeUt5mX0">2~3 分钟</td><td data-page-node-id="512wMuQwvcp3ab0yrEfpAp">解释为什么会这样</td><td data-page-node-id="zIO5cHM1EBD0ZLG33kpCno">"原来是这样来的，不是无缘无故的"</td></tr>
+        <tr data-page-node-id="KCBxNbGGp2G5prMYXPnvDi"><td data-page-node-id="IkPxBQntKCBydj9ro9OCG2">④ 异常影响</td><td data-page-node-id="bTRjUqZYbo7Yp83mqAbPbj">1~2 分钟</td><td data-page-node-id="kXOtNQhxRxCfcTDHtrK8lF">说明不处理的后果</td><td data-page-node-id="Qw71FaHhjzed458aa0JxpZ">"这个事跟我有关系，值得重视"</td></tr>
+        <tr data-page-node-id="MYDWm1YXBggJFTLyslGsmT"><td data-page-node-id="PSCPuTx001ADdeRE4QKQFY">⑤ 解决方案</td><td data-page-node-id="pPjszsSajxKwB48TCLtGKt">3~5 分钟</td><td data-page-node-id="3WvMUMCMMJQvu8EFOuTiBG">给分层可选的处理</td><td data-page-node-id="P5TdpPRB8QjmEZPz0o1VP9">"有办法，而且我能选"</td></tr>
+        <tr data-page-node-id="IU1y4ppon2OX1oBr0s4AMO"><td data-page-node-id="vpeO7EOFFs7q1CsRGcvbDZ">⑥ 科普宣教</td><td data-page-node-id="2too2ElznzlYApuKaNB5ZC">2~3 分钟</td><td data-page-node-id="rqqR2QZFzEqSKKbckmkP2W">给日常可执行的动作</td><td data-page-node-id="JIoWOahp9c3NvH288nrosx">"讲得挺细，是真心为我着想"</td></tr>
+        <tr data-page-node-id="LtQGSqeliR8dTEsZ6jXtCq"><td data-page-node-id="oBZSLkRhdp7ziQPDvKcv5s">⑦ 案例佐证</td><td data-page-node-id="4myfYEdsnKAXASHDQVvbf0">1~2 分钟</td><td data-page-node-id="8OmcyblBCDC20BnBN1NLcZ">讲一个同类的真实故事</td><td data-page-node-id="KKBjOFqhisqlfYafupn6JU">"别人这么做有效果，我也可以试试"</td></tr>
       </tbody>
     </table></div>
-    <div class="note"><b>时间弹性：</b>常规配镜 8~12 分钟；青少年建档/复查 15~20 分钟；中老年首次眼健康 15~25 分钟。<b>时间不够时砍⑥⑦，②③④不能砍，尤其②绝不能省</b>。需转诊时前半程直接切入，重心放在"是什么、为什么要到爱眼城眼科、怎么去"；发现转诊提示时可适当延长，但须确保顾客情绪稳定、有人陪同。</div>
+    <div class="note" data-page-node-id="JDCMmpBU4PMJAhNnhTMuNd"><b data-page-node-id="5xMGO7Ic8Up91wJWtKR2Qn">时间弹性：</b>常规配镜 8~12 分钟；青少年建档/复查 15~20 分钟；中老年首次眼健康 15~25 分钟。<b data-page-node-id="v2kiFbE8Y7CYeKTtEv4CXN">时间不够时砍⑥⑦，②③④不能砍，尤其②绝不能省</b>。需转诊时前半程直接切入，重心放在"是什么、为什么要到爱眼城眼科、怎么去"；发现转诊提示时可适当延长，但须确保顾客情绪稳定、有人陪同。</div>
   </div>
 
   <!-- ===================== 开场话术 ===================== -->
-  <h2 class="sec">开场话术：解读正式开始前（通用）</h2>
-  <div class="card">
-    <p style="font-size:15px;color:#45596e;margin-bottom:10px">七步之前，先用一句话把顾客拉进对话。全部话术遵循同一条主线：<span class="pill" style="text-align: left; font-weight: 700;">先共情</span>→<span class="pill" style="text-align: center; font-weight: 700;">再讲数据</span>→<span class="pill" style="text-align: left; font-weight: 700;">后给方案</span>。新人可照念，熟练后可改造语气，但<b>结构与立场不许改</b>。</p>
-    <div class="warn">
-      <b>三条不可违反的表达纪律：</b><br>
-      ① <b>不承诺：</b>禁止"保证""一定""根治""治好""永不""度数能降"等绝对化表达。<br>
-      ② <b>不诊断：</b>禁止"你这是青光眼/白内障/弱视"等结论句式，只能说"这一项提示需要到爱眼城眼科进一步确认"。<br>
-      ③ <b>不恐吓：</b>禁止"再这样就瞎了""以后肯定视网膜脱离"等威胁式表达；讲趋势的同时必须给对策。
+  <h2 class="sec" data-page-node-id="BBgGX54F1UDMG7mHjesHwF">开场话术：解读正式开始前（通用）</h2>
+  <div class="card" data-page-node-id="TToN6n0BhApsYJCCXC68CP">
+    <p style="font-size:15px;color:#45596e;margin-bottom:10px" data-page-node-id="4kLO6FHh5C1oHo6HYYEdG7">七步之前，先用一句话把顾客拉进对话。全部话术遵循同一条主线：<span class="pill" style="text-align: left; font-weight: 700;" data-page-node-id="BSRdxZwBwZIY7E7kASEhH8">先共情</span>→<span class="pill" style="text-align: left; font-weight: 700;" data-page-node-id="FTx20ckVJGbQrxrdLwjT9P">再讲数据</span>→<span class="pill" style="text-align: left; font-weight: 700;" data-page-node-id="j0uk69ql5rlAUO3clD5wzO">后给方案</span>。新人可照念，熟练后可改造语气，但<b data-page-node-id="qPHw7gijBwkGFbyTPjGGOV">结构与立场不许改</b>。</p>
+    <div class="warn" data-page-node-id="F6zU0OlWtFPr5Gw8Tq5mGh">
+      <b data-page-node-id="hzxnm2d1C4NNHDuMeHdWmX">三条不可违反的表达纪律：</b><br data-page-node-id="0vpmqeNmf8uKaNF0rfzWGE">
+      ① <b data-page-node-id="DycQ3cvfg6mWuDWu7nUv7o">不承诺：</b>禁止"保证""一定""根治""治好""永不""度数能降"等绝对化表达。<br data-page-node-id="iAd4kpln8OEk33wI0sFAIg">
+      ② <b data-page-node-id="A3kg0px2CgHYUSsIW97ab6">不诊断：</b>禁止"你这是青光眼/白内障/弱视"等结论句式，只能说"这一项提示需要到爱眼城眼科进一步确认"。<br data-page-node-id="dv71VVS3wZeQd47XhJS0HN">
+      ③ <b data-page-node-id="G2cNYonGOimiYsJRfEJstT">不恐吓：</b>禁止"再这样就瞎了""以后肯定视网膜脱离"等威胁式表达；讲趋势的同时必须给对策。
     </div>
-    <h3 class="sub">通用开场（把顾客拉进对话）</h3>
-    <div class="line">"今天检查做完了，数据我都看了一遍。<b>我一项一项跟您说，听不明白随时问我</b>，好不好？"</div>
-    <div class="line">（对家长）"您好，孩子检查都做完了，我先对比一下上次的数据，然后咱们再聊怎么办。"（对孩子）"你今天配合得特别好，一会儿你也一起听，好不好？"</div>
-    <div class="line"><span class="tagx">中老年</span>"叔叔/阿姨，检查都做完了，您别着急，我慢慢说，说快了您随时喊停。"</div>
+    <h3 class="sub" data-page-node-id="bgLmYVXpdERYZzl3bShEan">通用开场（把顾客拉进对话）</h3>
+    <div class="line" data-page-node-id="WInJJ9EL4tfsV6xJP7oRnM">"今天检查做完了，数据我都看了一遍。<b data-page-node-id="92rIWXVqBQDrLlYf5BRJZY">我一项一项跟您说，听不明白随时问我</b>，好不好？"</div>
+    <div class="line" data-page-node-id="3WeOrwYdBa90BWQ6cj5jhJ">（对家长）"您好，孩子检查都做完了，我先对比一下上次的数据，然后咱们再聊怎么办。"（对孩子）"你今天配合得特别好，一会儿你也一起听，好不好？"</div>
+    <div class="line" data-page-node-id="QaE1lhBSWdWDeihSid6kds"><span class="tagx" data-page-node-id="aKtH5QT85uVLEkY9lP3eBM">中老年</span>"叔叔/阿姨，检查都做完了，您别着急，我慢慢说，说快了您随时喊停。"</div>
   </div>
 
   <!-- ===================== 第①步 ===================== -->
-  <h2 class="sec">第①步 · 检查数据梳理</h2>
-  <div class="step">
-    <div class="hd"><h3>① 检查数据梳理：先看全，再开口</h3><span class="time">建议 1~2 分钟</span></div>
-    <div class="bd">
-      <div class="row ka" style="border-color: transparent; border-width: 1px; border-style: solid;"><div class="k">关键动作</div><div><b>1. 查完整性：</b>用"五必有"核对——①视力（裸眼+矫正）②客观+主觉验光③眼轴/角膜曲率 ④双眼视功能 ⑤眼前节+泪膜。缺项标注"本次未查"。<br>
-        <b>2. 查真实性：</b>数据须符合生理逻辑（如眼轴 21mm 却高度近视、左右眼录反、多次测量差异过大）；可疑立即重测。<br>
-        <b>3. 查连续性：</b>列出本次与上次的<b>差值</b>（度数、眼轴年化增长、矫正视力）；首次到店者本次为基线。<br>
-        <b>4. 查背景：</b>年龄、职业/学业、用眼时长、戴镜习惯、家族史、全身病、既往手术与外伤。<br>
-        <b>5. 留痕：</b>在《记录表》"数据梳理"区勾选已完成项，留白填关键差值。</div></div>
-      <div class="row nz" style="border-color: transparent;"><div class="k">注意事项</div><div>只看最新报告不调历史；不能把电脑验光单当最终度数；异常数据不照念；儿童无眼轴数据不下结论。</div></div>
+  <h2 class="sec" data-page-node-id="2otVsUXykA6FMVpsmGUCh0">第①步 · 检查数据梳理</h2>
+  <div class="step" data-page-node-id="81LwHf5nMzDlEH7uCV4LRu">
+    <div class="hd" data-page-node-id="bfC92i4KdKmrVxCbMj9teP"><h3 data-page-node-id="D156IL6AJ18P7umk1Rt40G">① 检查数据梳理：先看全，再开口</h3><span class="time" data-page-node-id="AOJvARHfnf0Sbb1PmLwXma">建议 1~2 分钟</span></div>
+    <div class="bd" data-page-node-id="viKls7kG7MI8CkXwF9AZ0v">
+      <div class="row ka" style="border-color: transparent; border-width: 1px; border-style: solid;" data-page-node-id="MMgHvfTEOyJQyOxHOLOZ3R"><div class="k" data-page-node-id="A0tExnturoZuCmXA7JysJC">关键动作</div><div data-page-node-id="J165OuObCVrhXGIU60EFf3"><b data-page-node-id="diptbGuuJ3ECM8DghbO2SG">1. 查完整性：</b>用"五必有"核对——①视力（裸眼+矫正）②客观+主觉验光③眼轴/角膜曲率 ④双眼视功能 ⑤眼前节+泪膜。缺项标注"本次未查"。<br data-page-node-id="DIRC1Dj7wlA1Cyd87JLKiV">
+        <b data-page-node-id="aSjG8OCKVshQXpgbptdcaJ">2. 查真实性：</b>数据须符合生理逻辑（如眼轴 21mm 却高度近视、左右眼录反、多次测量差异过大）；可疑立即重测。<br data-page-node-id="OpkBGWboDiyTIxmLM6rYs1">
+        <b data-page-node-id="G1Ox9L8kijSzb3oxvj7wjv">3. 查连续性：</b>列出本次与上次的<b data-page-node-id="qQ6XR0eCoq2dfBPlYzVljD">差值</b>（度数、眼轴年化增长、矫正视力）；首次到店者本次为基线。<br data-page-node-id="EfCNGh8lP7h0ZXVNmyOfZ8">
+        <b data-page-node-id="tFXFUgkL3BcSVJUKbxhZ2W">4. 查背景：</b>年龄、职业/学业、用眼时长、戴镜习惯、家族史、全身病、既往手术与外伤。<br data-page-node-id="srf969fpEBrmt9vMdycGq0">
+        <b data-page-node-id="jz9LjA6HO3uJeTLkd4Un3I">5. 留痕：</b>在《记录表》"数据梳理"区勾选已完成项，留白填关键差值。</div></div>
+      <div class="row nz" style="border-color: transparent;" data-page-node-id="KTOUqDUkDvfFWCfl4QC1AR"><div class="k" data-page-node-id="bFuVGO6swDHI4BuHi0lJOJ">注意事项</div><div data-page-node-id="z0LrZDcgQutGWuXvIhpfJo">只看最新报告不调历史；不能把电脑验光单当最终度数；异常数据不照念；儿童无眼轴数据不下结论。</div></div>
     </div>
-    <h3 class="sub">话术模板 · 第①步 检查数据梳理（过渡句）—— 用一句话建立"我在认真比对"的印象</h3>
-    <div class="line">"我先调一下您上次的数据——上次是<span class="hl">3 月</span>做的，眼轴<span class="hl">23.62</span>，这次<span class="hl">23.90</span>。<b>这些变化我都会标出来，一会儿重点说。</b>"</div>
-    <div class="line">"您之前没在咱们这边做过眼轴检查，这次的数据就作为<b>基线</b>留档，下次来就有自己的曲线可以比对了。"</div>
-    <div class="line"><span class="tagx">需补查</span>"有<span class="hl">两项</span>建议今天补一下再讲，不然结论不准。大概多花<span class="hl">5 分钟</span>，可以吗？"</div>
-    <div class="line badx"><span class="tagx">忌</span>直接拿起单子就念："裸眼视力零点三，矫正一点零，右眼负二点七五……"（顾客瞬间关闭耳朵）</div>
+    <h3 class="sub" data-page-node-id="DlaFcC186ulj7wpDgpyR6X">话术模板 · 第①步 检查数据梳理（过渡句）—— 用一句话建立"我在认真比对"的印象</h3>
+    <div class="line" data-page-node-id="uz6ttFaHSAoK2jFqirkyLS">"我先调一下您上次的数据——上次是<span class="hl" data-page-node-id="4akaYBH2iXSVNMupOHZCMh">3 月</span>做的，眼轴<span class="hl" data-page-node-id="lDT6BtgoN4Ke03cdWqJ9AT">23.62</span>，这次<span class="hl" data-page-node-id="4IKNfVmHyQXXCv8s2XRSYQ">23.90</span>。<b data-page-node-id="c75QaoAd4HcT6bEll7bSZN">这些变化我都会标出来，一会儿重点说。</b>"</div>
+    <div class="line" data-page-node-id="IS4CH3qqw0cUR2QGswTRGr">"您之前没在咱们这边做过眼轴检查，这次的数据就作为<b data-page-node-id="zuO00DaPESYtg0W1Idd9eO">基线</b>留档，下次来就有自己的曲线可以比对了。"</div>
+    <div class="line" data-page-node-id="NCHZk4fmtg4CFxuO6GwEnj" style=""><span class="tagx" data-page-node-id="uydq6FGp4CXTJW8kJ12lzi">需补查</span>"有<span class="hl" data-page-node-id="oZaDBhKhY6C5QBpeMRHmK3">两项检查需要</span>补查一下，查完再来找我，不然结论不准。大概多花<span class="hl" data-page-node-id="de2iOAoOvTlDxEGDlsnGqQ">5 分钟</span>，可以吗？"</div>
+    <div class="line badx" data-page-node-id="TZjXudm9jqiTRoVYTdfR3X"><span class="tagx" data-page-node-id="0XCBLxuu80JnuHLDGwzBZZ">忌</span>直接拿起单子就念："裸眼视力零点三，矫正一点零，右眼负二点七五……"（顾客瞬间关闭耳朵）</div>
   </div>
 
   <!-- ===================== 第②步 ===================== -->
-  <h2 class="sec">第②步 · 异常值识别</h2>
-  <div class="step">
-    <div class="hd"><h3>② 异常值识别：这一步是整套 SOP 的安全阀</h3><span class="time">建议 1~2 分钟</span></div>
-    <div class="bd">
-      <div class="row ka" style="border-color: transparent;"><div class="k">关键动作</div><div>
-        <b>1. 全项扫描：</b>按"视力—屈光—眼轴曲率—双眼视功能—眼前节—泪膜/干眼"次序，逐项对照模块03打档：<b>正常 / 关注 / 异常 / 转诊提示</b>。<br>
-        <b>2. 排序取舍：</b>按"重要且顾客在意"排序，只选 <b>2~3 项</b>重点讲，其余一句带过。<br>
-        <b>3. 红线筛查：</b>对照模块12《医疗边界与合规红线》中的"必须转诊的 12 类情况"清单，命中即启动<b>转诊提醒</b>（口头 + 书面 + 记录 + 72 小时回访），解读转为就医导向，不再推方案。<br>
-        <b>4. 填《记录表》"异常项登记"栏：</b>逐项写明指标名、数值、判定档位。</div></div>
-      <div class="row nz" style="border-color: transparent;"><div class="k">注意事项</div><div>只看度数不看眼轴；漏掉双眼视功能异常；把"关注"说成"正常"；因怕顾客跑掉而隐瞒异常项。</div></div>
-      <div class="warn"><b>红线提示：</b>角膜曲率&gt;47D 或双眼差&gt;1D、角膜形态不规则（可疑圆锥角膜）、晶状体明显混浊、突发视力下降、视野缺损、视物变形、突发眼痛伴头痛或恶心呕吐、眼前黑影骤增或闪光感、糖尿病顾客新发视力下降、眼红剧痛——以上任一情况，<b>必须先走转诊提醒</b>，详见模块12。</div>
+  <h2 class="sec" data-page-node-id="EZYSKql30KQiDd0bQiLvLU">第②步 · 异常值识别</h2>
+  <div class="step" data-page-node-id="USO9JsAbrudkBzjxCiOGiT">
+    <div class="hd" data-page-node-id="tRLsCTV8VE9SaGoSGUj6dl"><h3 data-page-node-id="pQqvbdJcOBPCNyA4cT2USa">② 异常值识别：这一步是整套 SOP 的安全阀</h3><span class="time" data-page-node-id="1e7lMWqewzBKqexlGzo5wH">建议 1~2 分钟</span></div>
+    <div class="bd" data-page-node-id="vCRJCxUWwvpfbLmyQET7id">
+      <div class="row ka" style="border-color: transparent;" data-page-node-id="GLLjARqGkcr63oC71z8vcD"><div class="k" data-page-node-id="H2NnnsD5bzSzKPjQSER32J">关键动作</div><div data-page-node-id="9F05eQJv15DJICrMEZ1qGf">
+        <b data-page-node-id="l0g0Xo8w3UOO6R0wbYf58L">1. 全项扫描：</b>按"视力—屈光—眼轴曲率—双眼视功能—眼前节—泪膜/干眼"次序，逐项对照模块03打档：<b data-page-node-id="lQGAHLKpcpn0lCABUl6qGA">正常 / 关注 / 异常 / 转诊提示</b>。<br data-page-node-id="mwPse1KrDE44PMnLv81JAB">
+        <b data-page-node-id="Mmeom9nCiTxwF22AZzF01E">2. 排序取舍：</b>按"重要且顾客在意"排序，只选 <b data-page-node-id="Ilf9LXZu1jeqX66Z4U87o2">2~3 项</b>重点讲，其余一句带过。<br data-page-node-id="7dWQwiHYgcOINnkHkd1J2Y">
+        <b data-page-node-id="Ubo8nZPGuu1urzq1ogvdnG">3. 红线筛查：</b>对照模块12《医疗边界与合规红线》中的"必须转诊的 12 类情况"清单，命中即启动<b data-page-node-id="suz05r8kbv09GIuQQSAaZM">转诊提醒</b>（口头 + 书面 + 记录 + 72 小时回访），解读转为就医导向，不再推方案。<br data-page-node-id="DDOg9Fv0kPqBBf8CYMqJ6B">
+        <b data-page-node-id="HRtMX9Uz2ket7lrWWDk1Oy" style="white-space: pre-wrap;">4. 填《方案建议书》"异常项登记"栏：​</b>逐项写明指标名、数值、判定档位。</div></div>
+      <div class="row nz" style="border-color: transparent;" data-page-node-id="1tTqBWoy297Z0GCnIhI5Pc"><div class="k" data-page-node-id="QSkAw6XvvFi9oX3wsa4lJB">注意事项</div><div data-page-node-id="KwccVFct1qwVfy66VZZ8vC">只看度数不看眼轴；漏掉双眼视功能异常；把"关注"说成"正常"；因怕顾客跑掉而隐瞒异常项。</div></div>
+      <div class="warn" data-page-node-id="LwmHPxTqPEGjmRYc1NIzIf"><b data-page-node-id="HXRlXK0m3qW9l5pEHFh7VX">红线提示：</b>角膜曲率&gt;47D 或双眼差&gt;1D、角膜形态不规则（可疑圆锥角膜）、晶状体明显混浊、突发视力下降、视野缺损、视物变形、突发眼痛伴头痛或恶心呕吐、眼前黑影骤增或闪光感、糖尿病顾客新发视力下降、眼红剧痛——以上任一情况，<b data-page-node-id="dDftF3YofFQ7zBCKs819uX">必须先走转诊提醒</b>，详见模块12。</div>
     </div>
-    <h3 class="sub">话术模板 · 第②步 异常值识别（先讲正常，再讲异常）—— 先给安心，再给重点</h3>
-    <div class="line">"先把好的说了：<b>角膜、晶状体、双眼视功能都没问题</b>，这部分放心。今天主要说<span class="hl">两项</span>——度数的变化和眼轴的增长速度。"</div>
-    <div class="line">"这次全部项目都在正常范围内，<b>没有什么需要担心的</b>。唯一能做得更好的是……（讲一个提升项）"</div>
-    <div class="line"><span class="tagx">有多项异常</span>"今天有三项要跟您说，我按重要程度讲，<b>先讲最关键的那一项</b>。"</div>
-    <div class="line badx"><span class="tagx">忌</span>把七八项异常一口气列出来。顾客只记得住 2~3 项，讲多了等于没讲。</div>
-    <div class="good"><b>技巧：</b>用荧光笔在顾客那份报告上<b>圈出重点项</b>，一边讲一边指。<b>看得见的标记更容易被记住。</b></div>
-    <h3 class="sub">场景专用话术 · 转诊提醒（人人必须会背）</h3>
-    <div class="line">"叔叔/阿姨，<b>有一项我要先跟您说清楚</b>——它可能需要进一步检查。"</div>
-    <div class="line">"晶状体这一项有点变化。<b>这个年龄段出现，不代表一定是某种眼病</b>，但它不属于门店能处理的范围，<b>建议到爱眼城眼科做一套完整检查确认</b>。"</div>
-    <div class="line">"这次的数据里有一项我拿不准，<b>需要医生用专业设备进一步确认</b>。这个我不能下判断，也不建议您自己上网猜。我把检查记录打印好，您带过去。"</div>
-    <div class="line">"您先别紧张。<b>去查不等于一定有问题</b>，很多时候查完医生说'定期观察就行'。我们是不敢耽误才提醒您。"</div>
-    <div class="line">"这张纸上我写了建议去的科室和检查项目。<b>72 小时内我会给您打个电话</b>，看看您去了没有、结果怎么样，可以吗？"</div>
-    <div class="line">"这个情况比较急，<b>今天就到爱眼城眼科去，不要等到明天</b>。要是闭诊或时间来不及，我帮您查附近哪家医院有眼科急诊。"</div>
-    <div class="note"><b>转诊时禁止：</b>①推荐药品或眼药水；②给出疾病名称；③同时推销产品；④替医生预估方案。</div>
-    <div class="good"><b>去向统一：</b>转诊机构统一为<b>爱眼城眼科</b>；急性症状或闭诊时段<b>就近去有眼科急诊的医院，不因去向拖延</b>。顾客坚持去其他机构时，正常提示回访，不阻拦、不贬低。</div>
+    <h3 class="sub" data-page-node-id="acXwUub4e2ka1amueXnG85">话术模板 · 第②步 异常值识别（先讲正常，再讲异常）—— 先给安心，再给重点</h3>
+    <div class="line" data-page-node-id="OwFiXSt0wWhbZBNVQTqhRU">"先把好的说了：<b data-page-node-id="n5JLDtL6O6yOT3NMmS6tfL">角膜、晶状体、双眼视功能都没问题</b>，这部分放心。今天主要说<span class="hl" data-page-node-id="5k7ocYHo2B6sAk2lqLKOnY">两项</span>——度数的变化和眼轴的增长速度。"</div>
+    <div class="line" data-page-node-id="2rppvVahBInPDGRdJ4sguX">"这次全部项目都在正常范围内，<b data-page-node-id="XO2nCG0s6nz3LyT9Cr3ThS">没有什么需要担心的</b>。唯一能做得更好的是……（讲一个提升项）"</div>
+    <div class="line" data-page-node-id="i7PrUdyiTpK6phZPZV88xM"><span class="tagx" data-page-node-id="DiBNI63jJ3PMdqd67hDkPs">有多项异常</span>"今天有三项要跟您说，我按重要程度讲，<b data-page-node-id="xHovUP2oXJbGUUcoFI3PRK">先讲最关键的那一项</b>。"</div>
+    <div class="line badx" data-page-node-id="YeZLGz1B1DLXuY6RVn4gMM"><span class="tagx" data-page-node-id="XSvzu3fH0hUrqD50uIZCSz">忌</span>把七八项异常一口气列出来。顾客只记得住 2~3 项，讲多了等于没讲。</div>
+    <div class="good" data-page-node-id="qtPo0xFHvF3xcMnZ538vZE"><b data-page-node-id="0SSYK2t2M4aDCEKrFFH3aN">技巧：</b>用荧光笔在顾客那份报告上<b data-page-node-id="CACBV3PHWGzn3Ptym703RA">圈出重点项</b>，一边讲一边指。<b data-page-node-id="VxMMHA5QBLiqIuNyQlbXrf">看得见的标记更容易被记住。</b></div>
+    <h3 class="sub" data-page-node-id="FS19cE6anVFJ4uyG0rOpL5">场景专用话术 · 转诊提醒（人人必须会背）</h3>
+    <div class="line" data-page-node-id="LItTJ2b7Nrfv7pTjtFORTe">"叔叔/阿姨，<b data-page-node-id="kmzXBFHfZx3rsGdPGvbpEl">有一项我要先跟您说清楚</b>——它可能需要进一步检查。"</div>
+    <div class="line" data-page-node-id="cuB14u9nNHXNpea9ODUGj0">"晶状体这一项有点变化。<b data-page-node-id="HPoRbBTv0ignHqoAUHd6Vy">这个年龄段出现，不代表一定是某种眼病</b>，但它不属于门店能处理的范围，<b data-page-node-id="TOhO5ItRSRyukQDG8Lk1xr">建议到爱眼城眼科做一套完整检查确认</b>。"</div>
+    <div class="line" data-page-node-id="KtB8IKeM7r7hse4SrbYpLG">"这次的数据里有一项我拿不准，<b data-page-node-id="pyFgVkNdOalDh8nIlS3031">需要医生用专业设备进一步确认</b>。这个我不能下判断，也不建议您自己上网猜。我把检查记录打印好，您带过去。"</div>
+    <div class="line" data-page-node-id="DW1SPwVS9W70hZeaiXoK5P">"您先别紧张。<b data-page-node-id="1Xou1TEDdAnu9ri3LwR7Tf">去查不等于一定有问题</b>，很多时候查完医生说'定期观察就行'。我们是不敢耽误才提醒您。"</div>
+    <div class="line" data-page-node-id="F4gKOCOTKyBBwHlaws5bbQ">"这张纸上我写了建议去的科室和检查项目。<b data-page-node-id="XG7b5LreZyPOEOljITdxE7">72 小时内我会给您打个电话</b>，看看您去了没有、结果怎么样，可以吗？"</div>
+    <div class="line" data-page-node-id="EN2t60pQ5eWqPOU70ZFXfn">"这个情况比较急，<b data-page-node-id="T9vc9EMTrGsQNYcImnfTvO">今天就到爱眼城眼科去，不要等到明天</b>。要是闭诊或时间来不及，我帮您查附近哪家医院有眼科急诊。"</div>
+    <div class="note" data-page-node-id="AltuRco8uV37kXKujhXIWf"><b data-page-node-id="3L5UNAsFXJYhu6ZUn9jLWD">转诊时禁止：</b>①推荐药品或眼药水；②给出疾病名称；③同时推销产品；④替医生预估方案。</div>
+    <div class="good" data-page-node-id="u86EWEmoUQPNeULyCbyyHi"><b data-page-node-id="DUqabpBaSDfkEjekNKZIVb">去向统一：</b>转诊机构统一为<b data-page-node-id="AbBCirOACqaPuaNHxtZapK">爱眼城眼科</b>；急性症状或闭诊时段<b data-page-node-id="xFCTbWBIDPIhyHOWyQDLb7">就近去有眼科急诊的医院，不因去向拖延</b>。顾客坚持去其他机构时，正常提示回访，不阻拦、不贬低。</div>
   </div>
 
   <!-- ===================== 第③步 ===================== -->
-  <h2 class="sec">第③步 · 异常原因</h2>
-  <div class="step">
-    <div class="hd"><h3>③ 异常原因：把"怎么会这样"讲成顾客能理解的故事</h3><span class="time">建议 2~3 分钟</span></div>
-    <div class="bd">
-      <div class="row ka" style="border-color: transparent;"><div class="k">关键动作</div><div><b>1. 归因三问：</b>变化<b>是结构带来的</b>（眼轴变长、角膜变陡、晶状体混浊）？<b>用眼/习惯带来的</b>（长时间近距离、户外少、睡眠不足）？<b>发育/年龄带来的</b>（远视储备消耗、老视）？<br>
-        <b>2. 只选一两条：</b>最多讲两条，优先选与顾客生活直接相关的那条。<br>
-        <b>3. 用比喻翻译：</b>每个专业原因配一个生活化说法（见下表）。<br>
-        <b>4. 口径克制：</b>讲"可能""常见"，不下定论——说"最常见的原因是……"，不说"就是因为……"。</div></div>
-      <div class="row nz" style="border-color: transparent;"><div class="k">注意事项</div><div>把机制讲成生理课；罗列所有可能原因；指责式归因（"你肯定是因为玩手机"）。</div></div>
-      <div class="tsc"><table>
-        <thead><tr><th style="width:17%">专业说法</th><th style="width:62%">通俗翻译（推荐这样讲）</th><th style="width:21%">适用场景</th></tr></thead>
-        <tbody>
-          <tr><td>眼轴增长</td><td>"眼球像气球被慢慢吹长，光提前落在视网膜前面。就像长个子衣服会变短，眼球一长度数就往上走。"</td><td>儿童青少年近视进展</td></tr>
-          <tr><td>角膜曲率偏陡</td><td>"黑眼珠前面那层透明的'窗户玻璃'弧度更弯一些，所以光折射得更多。"</td><td>散光、圆锥角膜筛查</td></tr>
-          <tr><td>调节不足 / 调节滞后</td><td>"眼睛里负责看近'调焦'的小肌肉力量偏弱，看久了容易累，看远要缓一缓才清楚。"</td><td>视疲劳、青少年度数波动</td></tr>
-          <tr><td>集合不足</td><td>"两只眼睛往中间'对拢'的能力弱一点，看近久了容易串行、重影、头痛。"</td><td>阅读困难、近距离工作疲劳</td></tr>
-          <tr><td>泪膜破裂时间短</td><td>"眼球表面那层'滋润膜'维持不住，眨眼没多久就干了，所以会觉得干、涩、像有沙子。"</td><td>干眼、长时间用屏幕</td></tr>
-          <tr><td>晶状体混浊</td><td>"眼睛里那个像'镜头'的透明结构变浑浊了，就像相机镜头脏了、起雾了。"</td><td>中老年视力下降</td></tr>
-          <tr><td>屈光参差</td><td>"两只眼睛度数差得比较多，大脑要把两个大小不同的画面合成一个，比较费劲。"</td><td>双眼度数差异大</td></tr>
+  <h2 class="sec" data-page-node-id="7zbvA6B692oLowEDNzEae1">第③步 · 异常原因</h2>
+  <div class="step" data-page-node-id="8nQtXFbsGagRq7vdLxKDFC">
+    <div class="hd" data-page-node-id="o52J7JxhrsgOdp1R2GJtE4"><h3 data-page-node-id="I6kghB2nV2AMXSuXHeHm1x">③ 异常原因：把"怎么会这样"讲成顾客能理解的故事</h3><span class="time" data-page-node-id="Wh6h6V4QC4sYEFcXP53vLb">建议 2~3 分钟</span></div>
+    <div class="bd" data-page-node-id="J6T2RSE6S0acWK0k7ALTp8">
+      <div class="row ka" style="border-color: transparent;" data-page-node-id="EA4V85cJaTKGN5Xy7I24UP"><div class="k" data-page-node-id="qqRVvOyGkFuluqvY7TREL7">关键动作</div><div data-page-node-id="egamIB1qFavMZD1HifhOkl"><b data-page-node-id="RbontfYtT3E7N0DqGxpdWv">1. 归因三问：</b>变化<b data-page-node-id="JGchK74bhXtylSl8sKvGkU">是结构带来的</b>（眼轴变长、角膜变陡、晶状体混浊）？<b data-page-node-id="QylRrCAHC4pEqSQd8XuF04">用眼/习惯带来的</b>（长时间近距离、户外少、睡眠不足）？<b data-page-node-id="xV2Ws63RjW45dCnmbTWSA5">发育/年龄带来的</b>（远视储备消耗、老视）？<br data-page-node-id="BJTdPSb0MqxNCI7vskByRU">
+        <b data-page-node-id="CWvilF71v39Fg7SNCEasD5">2. 只选一两条：</b>最多讲两条，优先选与顾客生活直接相关的那条。<br data-page-node-id="MDJ3o1lBZwCV9p0vkOCTfj">
+        <b data-page-node-id="DEnwE3ST02Dknn89AmeD5Q">3. 用比喻翻译：</b>每个专业原因配一个生活化说法（见下表）。<br data-page-node-id="IwczvTAZSqOoEfF9Ycly4x">
+        <b data-page-node-id="8xCsjS64UqDSRzDpdJTXnE">4. 口径克制：</b>讲"可能""常见"，不下定论——说"最常见的原因是……"，不说"就是因为……"。</div></div>
+      <div class="row nz" style="border-color: transparent;" data-page-node-id="IDAAIkxSi1WjhcqiwlzBKj"><div class="k" data-page-node-id="EC6aRkgi8ACjfG8fTHdhjs">注意事项</div><div data-page-node-id="p0c21dz7buRLRe2CT65B4M">把机制讲成生理课；罗列所有可能原因；指责式归因（"你肯定是因为玩手机"）。</div></div>
+      <div class="tsc" data-page-node-id="pUQzYTjXfqqNlvdUTDHQ4L"><table class="" data-page-node-id="xhYGu5ndjJggdO6RUBgcHT">
+        <thead data-page-node-id="rplPgKFMnev5BMFdlPmI9w"><tr data-page-node-id="fssnNCL7nDdO2YfoJ9oQpB"><th style="width:17%" data-page-node-id="63qPq3NvHKhiAJpdn6tH0y">专业说法</th><th style="width:62%" data-page-node-id="E8A8XYDpBxiwGxQMHFWWWi">通俗翻译（推荐这样讲）</th><th style="width:21%" data-page-node-id="f4gDyb4nAz8rqKhMYcyJF8">适用场景</th></tr></thead>
+        <tbody data-page-node-id="vDL2ENKEMmAWjwswCwB1sh">
+          <tr data-page-node-id="BWIM0MOzCopTMDtmAm2iSO"><td data-page-node-id="UELIWVhDIdgJ5r3l7Xratw">眼轴增长</td><td data-page-node-id="6wmNSKeJvHr0NHm0WsWBPw">"眼球像气球被慢慢吹长，光提前落在视网膜前面。就像长个子衣服会变短，眼球一长度数就往上走。"</td><td data-page-node-id="zjvGQhIu0taE2btUrohXGS">儿童青少年近视进展</td></tr>
+          <tr data-page-node-id="PE8FtaxUBYCwsyh8i1sC8C"><td data-page-node-id="DcecULEtf9jQThXd5E1Iq9">角膜曲率偏陡</td><td data-page-node-id="B1EbENULFB0YlDQi87e7a4">"黑眼珠前面那层透明的'窗户玻璃'弧度更弯一些，所以光折射得更多。"</td><td data-page-node-id="U4yzVAzuA6TiBOtU1Ev5PH">散光、圆锥角膜筛查</td></tr>
+          <tr data-page-node-id="qZmF3n26NLJdHtlvCoNhdf"><td data-page-node-id="mW3zOEpR81RnPXP2vqS13t">调节不足 / 调节滞后</td><td data-page-node-id="x4xOV1EszGF7wV8dU79TJ2">"眼睛里负责看近'调焦'的小肌肉力量偏弱，看久了容易累，看远要缓一缓才清楚。"</td><td data-page-node-id="cOa1IhpH8B5PMR48YHe2H3">视疲劳、青少年度数波动</td></tr>
+          <tr data-page-node-id="xyA2PFFJKDrr3YHrO94Dct"><td data-page-node-id="NC15VULAKKKCDoUyLqgeWH">集合不足</td><td data-page-node-id="9hixN9nIeAKqgRH9NyeAlw">"两只眼睛往中间'对拢'的能力弱一点，看近久了容易串行、重影、头痛。"</td><td data-page-node-id="lHNLIUmiXFmoNzAIFXtE10">阅读困难、近距离工作疲劳</td></tr>
+          <tr data-page-node-id="iDbYRcl5izSq54wDSLsQNV"><td data-page-node-id="Kg1ZrAGBM9yjPEFkFC1w9n">泪膜破裂时间短</td><td data-page-node-id="F3ZdnwIR0Pf9EHDQ7psU3H">"眼球表面那层'滋润膜'维持不住，眨眼没多久就干了，所以会觉得干、涩、像有沙子。"</td><td data-page-node-id="2fyPHH1SYTYhWMYpOasfRq">干眼、长时间用屏幕</td></tr>
+          <tr data-page-node-id="OUiJyZAAI9D4Hgqp4CE5AJ"><td data-page-node-id="soBLB3VHDKSub8wv5lN8Ee">晶状体混浊</td><td data-page-node-id="PLKtnzOsHvLA9HKPF8S4Ja">"眼睛里那个像'镜头'的透明结构变浑浊了，就像相机镜头脏了、起雾了。"</td><td data-page-node-id="bsPNojGxeTaLxQqKvJL1Oq">中老年视力下降</td></tr>
+          <tr data-page-node-id="1mAVlT1uEta1nUDPuWgxjk"><td data-page-node-id="BwgwOvEWBhK2ykke7z30Vv">屈光参差</td><td data-page-node-id="Aynzsw5DWeLpkP2OJTSyOo">"两只眼睛度数差得比较多，大脑要把两个大小不同的画面合成一个，比较费劲。"</td><td data-page-node-id="WYJfGVHMnzhXTuk95JxxzI">双眼度数差异大</td></tr>
         </tbody>
       </table></div>
     </div>
-    <h3 class="sub">话术模板 · 第③步 异常原因（最多讲两条）—— 讲"和生活有关的原因"，不讲生理机制</h3>
-    <div class="line">"眼球像个被慢慢吹大的气球，<b>每长 1 毫米，度数大概增加两百多度</b>。孩子正在长身体，眼球也在长，用眼负担一重它就长得快。"</div>
-    <div class="line">"您这个是眼睛里负责<b>调焦的小肌肉</b>力量不够了。就像提一桶水，提久了胳膊酸。您每天对着屏幕这么多小时，这块肌肉一直在用力。"</div>
-    <div class="line">"眼睛表面有一层<b>保湿膜</b>，眨眼时会重新涂一次。盯屏幕时眨眼少了一大半，这层膜跟不上，所以会干、会涩。"</div>
-    <div class="line">"眼睛里那个像镜头一样的结构，用几十年会慢慢变硬、弹性变差，<b>看近就调不动了</b>。这是每个人都会有的变化，不是病。"</div>
-    <div class="line">"最常见的原因是……<b>在您身上主要是这一条</b>。<span class="hl">不敢说百分百</span>，但改掉它通常能看到变化。"</div>
-    <div class="line badx"><span class="tagx">忌</span>"你就是天天玩手机玩的"（指责式）。改说："近距离用眼时间这一块，咱们能不能想办法调一调？"</div>
+    <h3 class="sub" data-page-node-id="t8roVuvytGHojJx298MjA3">话术模板 · 第③步 异常原因（最多讲两条）—— 讲"和生活有关的原因"，不讲生理机制</h3>
+    <div class="line" data-page-node-id="hkW6GEAEqAn3hFtM8iUwHW">"眼球像个被慢慢吹大的气球，<b data-page-node-id="GSiMIXuNIZuynvuFdygTpO">每长 1 毫米，度数大概增加两百多度</b>。孩子正在长身体，眼球也在长，用眼负担一重它就长得快。"</div>
+    <div class="line" data-page-node-id="twqPPvqIs2XzNO5xb2FlOZ">"您这个是眼睛里负责<b data-page-node-id="bWKQVCxgnwDS63eaUpS8ue">调焦的小肌肉</b>力量不够了。就像提一桶水，提久了胳膊酸。您每天对着屏幕这么多小时，这块肌肉一直在用力。"</div>
+    <div class="line" data-page-node-id="gT1NLnc8hbBsjIkewTcz7R">"眼睛表面有一层<b data-page-node-id="qkDDSpjACAcCmVeNCTFCGk">保湿膜</b>，眨眼时会重新涂一次。盯屏幕时眨眼少了一大半，这层膜跟不上，所以会干、会涩。"</div>
+    <div class="line" data-page-node-id="sTp0qShJwSwuiUR5Nj4Q4y">"眼睛里那个像镜头一样的结构，用几十年会慢慢变硬、弹性变差，<b data-page-node-id="aTqzux01qhmJWkFTyMgXxH">看近就调不动了</b>。这是每个人都会有的变化，不是病。"</div>
+    <div class="line" data-page-node-id="0wDPtqaUp27Bh6YtcexyBu">"最常见的原因是……<b data-page-node-id="DA3h0XZinHlZi4KUItJDCr">在您身上主要是这一条</b>。<span class="hl" data-page-node-id="QoR8HaXYO3X98PZiNknswO">不敢说百分百</span>，但改掉它通常能看到变化。"</div>
+    <div class="line badx" data-page-node-id="Xbnlg8bk3bD9SwcyfqNe1V"><span class="tagx" data-page-node-id="yuA2MHZ6UBMWHoz8Vk0CZy">忌</span>"你就是天天玩手机玩的"（指责式）。改说："近距离用眼时间这一块，咱们能不能想办法调一调？"</div>
   </div>
 
   <!-- ===================== 第④步 ===================== -->
-  <h2 class="sec">第④步 · 异常影响</h2>
-  <div class="step">
-    <div class="hd"><h3>④ 异常影响：讲清"和我有什么关系"，但不制造恐慌</h3><span class="time">建议 1~2 分钟</span></div>
-    <div class="bd">
-      <div class="row ka" style="border-color: transparent;"><div class="k">关键动作</div><div><b>1. 场景化：</b>把影响落到真实生活（看黑板眯眼、看不清路牌、看手机头晕），不要只说"会加深"。<br>
-        <b>2. 看趋势：</b>说明现在什么程度、继续下去大概怎样，用<b>趋势</b>而非<b>必然结果</b>。<br>
-        <b>3. 分档提醒：</b>"关注"只说先留意；"异常"说需要处理；"转诊提示"明确先让医生看。<br>
-        <b>4. 控语气：</b>关心式而非威胁式——可以说"如果不注意可能会……"，禁说"再这样你就瞎了"。</div></div>
-      <div class="row nz" style="border-color: transparent;"><div class="k">注意事项</div><div>过度恐吓；说不出与生活的关系；越界断言（"高度近视一定视网膜脱离"）。</div></div>
-      <div class="say"><b>推荐句式：</b>"现在是<b>轻中度</b>，还不用太担心。但按这个速度，明年可能有 xxx 的变化，<b>现在开始管</b>最划算。"——<b>给出希望，是这一步最重要的任务。</b></div>
+  <h2 class="sec" data-page-node-id="huwEvSM3qyF09IUpKVZYGr">第④步 · 异常影响</h2>
+  <div class="step" data-page-node-id="UweeW4Cb06mo54fKbQ4RGf">
+    <div class="hd" data-page-node-id="5mECfGHXbC7DiZZgmIo4Q2"><h3 data-page-node-id="OVzDZM8WhnGo8ftEZGRRtD">④ 异常影响：讲清"和我有什么关系"，但不制造恐慌</h3><span class="time" data-page-node-id="NGJV8DTq06EKoltB3GISYa">建议 1~2 分钟</span></div>
+    <div class="bd" data-page-node-id="5pzDiGKhj8ebYyyQRFpdXE">
+      <div class="row ka" style="border-color: transparent;" data-page-node-id="xIfDugOdQglGLI80IHu30a"><div class="k" data-page-node-id="J7UjpSGgVu5f0eZlW9mKIY">关键动作</div><div data-page-node-id="sMEeF9CyRHAhPNRx5lUrPv"><b data-page-node-id="dW7ynnKPisKaYKpHga7zwb">1. 场景化：</b>把影响落到真实生活（看黑板眯眼、看不清路牌、看手机头晕），不要只说"会加深"。<br data-page-node-id="7vovJYySHUFl0xzsrfwyos">
+        <b data-page-node-id="wciFCwRy7EV59fqyFnw09x">2. 看趋势：</b>说明现在什么程度、继续下去大概怎样，用<b data-page-node-id="OyiFLbJQMQKVxU5RZCq132">趋势</b>而非<b data-page-node-id="RuAFHAV23eCKQBIQyrilpb">必然结果</b>。<br data-page-node-id="TPOdh392df00sPXfrF37fW">
+        <b data-page-node-id="CnrwNHDGYJHUkpDEBwnO2x">3. 分档提醒：</b>"关注"只说先留意；"异常"说需要处理；"转诊提示"明确先让医生看。<br data-page-node-id="WUKqJK8wR9gUSL2NIOjJHE">
+        <b data-page-node-id="OV5tYWBC8DrIxtZpaz2GiL">4. 控语气：</b>关心式而非威胁式——可以说"如果不注意可能会……"，禁说"再这样你就瞎了"。</div></div>
+      <div class="row nz" style="border-color: transparent;" data-page-node-id="hZFPSonOpV9q3Lf274zxP5"><div class="k" data-page-node-id="yJbgWxR4sNFgXuSHuTD6zs">注意事项</div><div data-page-node-id="jFXKkeBmivGkT7TvBCVfFi">过度恐吓；说不出与生活的关系；越界断言（"高度近视一定视网膜脱离"）。</div></div>
+      <div class="say" data-page-node-id="W1olldGUzX4273HP2Pl8YA"><b data-page-node-id="WFfbK87FvSbIzaQcLkq2E3">推荐句式：</b>"现在是<b data-page-node-id="SLY8rSzeaT9Gu8MQq4UiAY">轻中度</b>，还不用太担心。但按这个速度，明年可能有 xxx 的变化，<b data-page-node-id="4PmUcCJvLBwt13l04adHXE">现在开始管</b>最划算。"——<b data-page-node-id="gUkNXXV1XEVjm4Uk9qFOAW">给出希望，是这一步最重要的任务。</b></div>
     </div>
-    <h3 class="sub">话术模板 · 第④步 异常影响（要讲清，但不能吓人）—— 归因到生活场景 + 给希望</h3>
-    <div class="line">"现在度数不算高，<b>先不用紧张</b>。但按这个速度，明年这个时候大概<span class="hl">增加一百多度</span>——到那时看黑板就要眯眼，跑步也容易撞到东西。"</div>
-    <div class="line">"影响主要是：看近半小时就得歇一会儿，久了下午效率下降，晚上开车也更吃力。"</div>
-    <div class="line">"好消息是，<b>现在是我们最能动得了的时候</b>。真变成高度近视，能做的就不是控制而是观察和处理并发症了。所以<b>现在开始管最划算。</b>"</div>
-    <div class="line">"成年人度数大多稳定，像您这样每年还明显加深的不算多见，<b>建议还是查一下原因</b>更稳妥。"</div>
-    <div class="line badx">"你这样下去迟早视网膜脱离""再不看就要瞎了"。——改说："我们要做的，就是把这个概率往下压。"</div>
+    <h3 class="sub" data-page-node-id="4Kxt5vGCEHjaOQN2ARzxkh">话术模板 · 第④步 异常影响（要讲清，但不能吓人）—— 归因到生活场景 + 给希望</h3>
+    <div class="line" data-page-node-id="L2kCONFyQZ60831rj7fOe9">"现在度数不算高，<b data-page-node-id="DP5VjLuH8R0xvLyqLrrJbD">先不用紧张</b>。但按这个速度，明年这个时候大概<span class="hl" data-page-node-id="bgZUJrZT5Xcv3UwomVEdId">增加一百多度</span>——到那时看黑板就要眯眼，跑步也容易撞到东西。"</div>
+    <div class="line" data-page-node-id="NgTjonbb3WHlinXlBMxyBG">"影响主要是：看近半小时就得歇一会儿，久了下午效率下降，晚上开车也更吃力。"</div>
+    <div class="line" data-page-node-id="XxrTgmDAEvEjDoXdUUYJEy">"好消息是，<b data-page-node-id="wrogE84jzJBAhAuy24xSc8">现在是我们最能动得了的时候</b>。真变成高度近视，能做的就不是控制而是观察和处理并发症了。所以<b data-page-node-id="0QNeqcZ68BeZTMWEN5hTJq">现在开始管最划算。</b>"</div>
+    <div class="line" data-page-node-id="gnATIUPnGW1g9oYtamh1k2">"成年人度数大多稳定，像您这样每年还明显加深的不算多见，<b data-page-node-id="HbjhGgXmQbElC01Aiz6w6m">建议还是查一下原因</b>更稳妥。"</div>
+    <div class="line badx" data-page-node-id="vpFL1nCxi0yAHK5UdeSN5W">"你这样下去迟早视网膜脱离""再不看就要瞎了"。——改说："我们要做的，就是把这个概率往下压。"</div>
   </div>
 
   <!-- ===================== 第⑤步 ===================== -->
-  <h2 class="sec">第⑤步 · 解决方案</h2>
-  <div class="step">
-    <div class="hd"><h3>⑤ 解决方案：分层给选择，让顾客自己拍板</h3><span class="time">建议 3~5 分钟</span></div>
-    <div class="bd">
-      <div class="row ka" style="border-color: transparent;"><div class="k">关键动作</div><div><b>1. 三层结构：</b>
-        <ul>
-          <li><b>必做项（基础）：</b>如足矫配镜、定期复查、调整用眼时长。（成本最低，顾客最易答应）</li>
-          <li><b>建议项（核心）：</b>针对本次异常的干预。如离焦镜片/角膜塑形镜评估、渐进镜、视觉训练、干眼护理。</li>
-          <li><b>可选项（加分）：</b>锦上添花。如防蓝光（按需）、偏光镜、护眼灯具。</li>
+  <h2 class="sec" data-page-node-id="NAk97fvbs3JUctLCWiJNSm">第⑤步 · 解决方案</h2>
+  <div class="step" data-page-node-id="P34mbvNWjNNOMiYea4h8A7">
+    <div class="hd" data-page-node-id="UrBcYTlaz7Q037rqClFOg9"><h3 data-page-node-id="C9e5wim1FG2zwml6mmJrma">⑤ 解决方案：分层给选择，让顾客自己拍板</h3><span class="time" data-page-node-id="bZYMnFO6uEaPrMnnarKF3V">建议 3~5 分钟</span></div>
+    <div class="bd" data-page-node-id="xDfB1HYpD54a0wASFOOhos">
+      <div class="row ka" style="border-color: transparent;" data-page-node-id="DDB7wXHOYVKasKVyd5dX8f"><div class="k" data-page-node-id="XdlmjcF5iAWGLxKJsc2FwN">关键动作</div><div data-page-node-id="HVI2yKxUvc6bo5f0lHbkaJ"><b data-page-node-id="twpDHHTcGCXHrcLUJmdxqh">1. 三层结构：</b>
+        <ul data-page-node-id="Xoi6jtd3kx3lBkrBdnPKpY">
+          <li data-page-node-id="dO4DN355jJl2BzX1CQsBOU"><b data-page-node-id="nmadIDuHEVHGTIdcQEkL4T">必做项（基础）：</b>如足矫配镜、定期复查、调整用眼时长。（成本最低，顾客最易答应）</li>
+          <li data-page-node-id="wSqeRzkFe4ONDXcgQuJGWZ"><b data-page-node-id="WzTqgiMGE87JdGBNeThrJf">建议项（核心）：</b>针对本次异常的干预。如离焦镜片/角膜塑形镜评估、渐进镜、视觉训练、干眼护理。</li>
+          <li data-page-node-id="Fo79sIbssrYhbfWStkJuY8"><b data-page-node-id="FgESGE9xSnACIu96nas3rn">可选项（加分）：</b>锦上添花。如防蓝光（按需）、偏光镜、护眼灯具。</li>
         </ul>
-        <b>2. 每项说清三件事：</b>做什么 / 为什么有用 / 多少时间和费用（费用必须透明）。<br>
-        <b>3. 给默认值：</b>新人最容易卡在这。用"一般先用 X，三个月后看效果再决定要不要加 Y"给台阶。<br>
-        <b>4. 医嘱优先：</b>已有医疗机构诊断或医嘱的，门店方案<b>不得与之冲突</b>。<br>
-        <b>5. 写入“方案建议”，明确复查时间点。</b></div></div>
-      <div class="row nz" style="border-color: transparent;"><div class="k">注意事项</div><div>一上来推最贵；只讲产品不讲行为；把"建议"说成"必须"；承诺疗效（<b>合规红线</b>）。</div></div>
-      <div class="bad"><b>禁止出现的表述：</b>"这个镜片能治好近视""保证度数不涨""戴上就不用复查了""别的牌子没用，只有这个有效"。</div>
+        <b data-page-node-id="CYi6QZbsE8EUhlojD9GDos">2. 每项说清三件事：</b>做什么 / 为什么有用 / 多少时间和费用（费用必须透明）。<br data-page-node-id="q9rBATMh0n5KrFUQ1pByX9">
+        <b data-page-node-id="rFGDTWQl9CAbMHIuvqZ7kE">3. 给默认值：</b>新人最容易卡在这。用"一般先用 X，三个月后看效果再决定要不要加 Y"给台阶。<br data-page-node-id="6WWvNp5wJOXSGZnXFoxG9t">
+        <b data-page-node-id="81PhTvlSAkD4qyqC1TJuBM">4. 医嘱优先：</b>已有医疗机构诊断或医嘱的，门店方案<b data-page-node-id="7Gfx7wsdk3xOEXgq6FNI4n">不得与之冲突</b>。<br data-page-node-id="e2zVHw5m5bPegxe4XA6oih">
+        <b data-page-node-id="sEb0xSQAIH1sQPw6NrAGwC">5. 写入“方案建议”，明确复查时间点。</b></div></div>
+      <div class="row nz" style="border-color: transparent;" data-page-node-id="yeVG4A9rAPeuGrBkZlg7o4"><div class="k" data-page-node-id="lgzVY1g8MCgaLM8iw8QlSZ">注意事项</div><div data-page-node-id="SxFsoKfpKwYDBArjJXtwUk">一上来推最贵；只讲产品不讲行为；把"建议"说成"必须"；承诺疗效（<b data-page-node-id="GEFFHM7s7e8xWKaEFdSVfY">合规红线</b>）。</div></div>
+      <div class="bad" data-page-node-id="QmCCOorO9OH5Qz0DMxHXj5"><b data-page-node-id="TAvOcKLHvUeh4VoBFWHDL4">禁止出现的表述：</b>"这个镜片能治好近视""保证度数不涨""戴上就不用复查了""别的牌子没用，只有这个有效"。</div>
     </div>
-    <h3 class="sub">话术模板 · 第⑤步 解决方案（分层给选择）—— 必做 / 建议 / 可选，三层结构</h3>
-    <div class="line">"咱们分三层说：<b>第一层必须做</b>，第二层<b>针对您的情况</b>，第三层<b>让体验更好</b>。您听完自己选。"</div>
-    <div class="line">"第一层：眼镜要<b>配准并常戴</b>，每天<span class="hl">两个小时</span>户外，近距离每 30 分钟抬头看远。这几样不花钱，但最重要。"</div>
-    <div class="line">"第二层：针对<span class="hl">眼轴长得快</span>，可换一副<span class="hl">离焦设计的镜片</span>。它不是让度数消失，而是给眼球一个'减速'信号，帮眼轴长得慢一点。<b>效果因人而异，三个月后的数据说了算。</b>"</div>
-    <div class="line"><span class="tagx">可选层</span>"第三层：如果预算允许，可以加……这个是锦上添花，<b>不做也不影响前面两项。</b>"</div>
-    <div class="line">"三个方案的价格和时间都写在这张纸上了，您看着选，<b>我不会因为您选哪个就态度不一样。</b>"</div>
-    <div class="line">"完全没问题，那咱们<b>先把第一层做好</b>，这是最重要的。三个月后复查看数据再决定要不要加，我会把今天说的都留档。"</div>
-    <div class="line badx"><span class="tagx">忌</span>"这个是必须要配的，不配就完了""这个效果最好，别的都不行"（剥夺选择权、贬低其他选项）。</div>
+    <h3 class="sub" data-page-node-id="HQiqHSxaRx9sqXnf79r747">话术模板 · 第⑤步 解决方案（分层给选择）—— 必做 / 建议 / 可选，三层结构</h3>
+    <div class="line" data-page-node-id="JE0ZhBZf9sB1R6I2Ftufvn">"咱们分三层说：<b data-page-node-id="lievkBii82i6m3Faprpfeu">第一层必须做</b>，第二层<b data-page-node-id="pSH6oiYauwyeHoSlbDo6hy">针对您的情况</b>，第三层<b data-page-node-id="80gm818YStTXCmyytwg2sz">让体验更好</b>。您听完自己选。"</div>
+    <div class="line" data-page-node-id="U5zqIkD7n4HIcGvHnuJYuO">"第一层：眼镜要<b data-page-node-id="BU87MpNTjZDDjfM5qKSNBc">配准并常戴</b>，每天<span class="hl" data-page-node-id="zkWMlF47nITmj8f4yaHOuA">两个小时</span>户外，近距离每 30 分钟抬头看远。这几样不花钱，但最重要。"</div>
+    <div class="line" data-page-node-id="w3KsJXsLi3VqutFofORHwI">"第二层：针对<span class="hl" data-page-node-id="TrirxvOdWljVfPkZs7VxWL">眼轴长得快</span>，可换一副<span class="hl" data-page-node-id="YYIlGSUmSuDFHC2cGfwe6f">离焦设计的镜片</span>。它不是让度数消失，而是给眼球一个'减速'信号，帮眼轴长得慢一点。<b data-page-node-id="lz2i2lUaLilClYQZ0DUhSm">效果因人而异，三个月后的数据说了算。</b>"</div>
+    <div class="line" data-page-node-id="67K29pRa7jdFZYwCslEgey"><span class="tagx" data-page-node-id="qFAbih4dEigHymw65sItrl">可选层</span>"第三层：如果预算允许，可以加……这个是锦上添花，<b data-page-node-id="tbw6JJXP6qWqNEF2YfK1mi">不做也不影响前面两项。</b>"</div>
+    <div class="line" data-page-node-id="GMiuMin6xuIxXnLbMXR8hq">"三个方案的价格和时间都写在这张纸上了，您看着选，<b data-page-node-id="mXK0Se51OgpvHhyNmUxQjz">我不会因为您选哪个就态度不一样。</b>"</div>
+    <div class="line" data-page-node-id="4KtcSjgyPgVEwAK2dcGgG5">"完全没问题，那咱们<b data-page-node-id="J9tNB1ORfb7xGE85lxX03C">先把第一层做好</b>，这是最重要的。三个月后复查看数据再决定要不要加，我会把今天说的都留档。"</div>
+    <div class="line badx" data-page-node-id="ZYcJ0D3SXSL6c7tQeGkhPB"><span class="tagx" data-page-node-id="1CXm3hlvJzoElLkAYAaecH">忌</span>"这个是必须要配的，不配就完了""这个效果最好，别的都不行"（剥夺选择权、贬低其他选项）。</div>
   </div>
 
   <!-- ===================== 第⑥步 ===================== -->
-  <h2 class="sec">第⑥步 · 科普宣教</h2>
-  <div class="step">
-    <div class="hd"><h3>⑥ 科普宣教：给一条今晚就能开始做的事</h3><span class="time">建议 2~3 分钟</span></div>
-    <div class="bd">
-      <div class="row ka" style="border-color: transparent;"><div class="k">关键动作</div><div><b>1. 只讲 2~3 条：</b>挑与本次异常最相关的，讲透比讲多重要。<br>
-        <b>2. 每条配一个动作：</b>知识 + 行动。"每天户外 2 小时"→"放学后先在小区玩 30 分钟再写作业"。<br>
-        <b>3. 纠正一个误区：</b>主动点破一个常见误解。<br>
-        <b>4. 发材料：</b>有条件时给科普小卡带回家。</div></div>
-      <div class="row nz" style="border-color: transparent;"><div class="k">注意事项</div><div>一口气讲十几条；只讲大道理；把科普讲成产品广告。</div></div>
-      <div class="good"><b>速用版：</b><br>
-        <b>儿童：</b>①每天户外 2 小时（最关键）；②读写"一尺一拳一寸"+ 每 30 分钟看远 20 秒以上；③晚上 9~10 点前睡，熄灯后不看手机。<br>
-        <b>成人：</b>①近距离每 30~40 分钟休息 5 分钟（20-20-20）；②主动眨眼；屏幕略低于视线。<br>
-        <b>中老年：</b>①每年做一次完整的眼健康检查（即使没不舒服）；②控制血压血糖，比任何保健都管用。</div>
+  <h2 class="sec" data-page-node-id="TIKD6mYnDjGmxSL4XEUMog">第⑥步 · 科普宣教</h2>
+  <div class="step" data-page-node-id="kq2CmSq2j4fg8G7WVXTfG4">
+    <div class="hd" data-page-node-id="jNSO722mlXgPCizawaxcHP"><h3 data-page-node-id="8iUfy49CM9ZwBEQSOAIXVZ">⑥ 科普宣教：给一条今晚就能开始做的事</h3><span class="time" data-page-node-id="mybAGTZfzUZnESkPrC24SM">建议 2~3 分钟</span></div>
+    <div class="bd" data-page-node-id="6qARaBZ5dcQ4gcqVoHVKVi">
+      <div class="row ka" style="border-color: transparent;" data-page-node-id="dDlmQOI7zwYGfHP8hFGpKA"><div class="k" data-page-node-id="1GgQYzZ1cHgiSLIxiIjz3E">关键动作</div><div data-page-node-id="9VxI8cDsCrY1LPstUqSAsb"><b data-page-node-id="2VXHbmC0VpilUQJTwTyEVe">1. 只讲 2~3 条：</b>挑与本次异常最相关的，讲透比讲多重要。<br data-page-node-id="8yvViFpMhyx7kxOEbRs9Nq">
+        <b data-page-node-id="JYigw5j5oheD44xySXdwKp">2. 每条配一个动作：</b>知识 + 行动。"每天户外 2 小时"→"放学后先在小区玩 30 分钟再写作业"。<br data-page-node-id="AzBSX99WvVMd9DHjJZ8a4L">
+        <b data-page-node-id="3pFYvbeQ50luC94yq3VWoy">3. 纠正一个误区：</b>主动点破一个常见误解。<br data-page-node-id="WqUD4CM4ww60HyvBf4k8Nu">
+        <b data-page-node-id="HX2kqj0KJuRDyyy1e04BXU">4. 发材料：</b>有条件时给科普小卡带回家。</div></div>
+      <div class="row nz" style="border-color: transparent;" data-page-node-id="A7jXIVcTqTtVnxxAHSU49x"><div class="k" data-page-node-id="L5mmGOEvR35x6Nb611mCh3">注意事项</div><div data-page-node-id="ockSqI050l1pkEI0tZOOfN">一口气讲十几条；只讲大道理；把科普讲成产品广告。</div></div>
+      <div class="good" data-page-node-id="5lBPLeTKrGnTPka4Qu3FYp"><b data-page-node-id="umJZ0mDyVGRg3Rz442zpYF">速用版：</b><br data-page-node-id="baCqxGeGt12YvRnhoY3kEw">
+        <b data-page-node-id="t0Fd9brz7RnvTVsBaaSYFG">儿童：</b>①每天户外 2 小时（最关键）；②读写"一尺一拳一寸"+ 每 30 分钟看远 20 秒以上；③晚上 9~10 点前睡，熄灯后不看手机。<br data-page-node-id="uBGolczdqso2xhmQQvMBNF">
+        <b data-page-node-id="4m3loz40JFTgPfnGnAUHhD">成人：</b>①近距离每 30~40 分钟休息 5 分钟（20-20-20）；②主动眨眼；屏幕略低于视线。<br data-page-node-id="yr2JzHMNEK1pVPS5pWIX1f">
+        <b data-page-node-id="IvXA2vaQR9qDIDY3sbwCum">中老年：</b>①每年做一次完整的眼健康检查（即使没不舒服）；②控制血压血糖，比任何保健都管用。</div>
     </div>
-    <h3 class="sub">话术模板 · 第⑥步 科普宣教（一次只讲两三条）—— 每条都要落到"今天能做到的事"</h3>
-    <div class="line">"最重要的不是护眼产品，是<b>户外</b>。每天两小时，不用整块时间——上学路上、下课、饭后散步都算。<b>阴天户外也有效。</b>"</div>
-    <div class="line">"记住'20-20-20'：看近 20 分钟，抬头看 20 英尺（约 6 米）以外的远处 20 秒。<b>就是每隔二三十分钟，抬头看看远处。</b>"</div>
-    <div class="line">"记住'一尺一拳一寸'：眼离本子一尺（33 厘米），胸离桌一拳，手离笔尖一寸。台灯放<b>写字手的斜对面</b>，大灯要开着。"</div>
-    <div class="line"><span class="tagx">睡眠</span>"睡不够也会让眼睛更容易往近视发展。小学生尽量每天<b>睡够 10 小时</b>，初中生 9 小时。"</div>
-    <div class="line">"很多人以为'眼镜越戴度数越深'，<b>其实不是</b>。加深是因为眼球在长，跟戴不戴眼镜没必然联系。看不清还硬撑，反而更累。"</div>
-    <div class="line badx"><span class="tagx">忌</span>一次讲十几条。讲完请顾客复述："刚才说的这几条，您觉得哪一条最容易先从今天开始做？"</div>
+    <h3 class="sub" data-page-node-id="ecrtrcSKMytl7nt5gB3MBD">话术模板 · 第⑥步 科普宣教（一次只讲两三条）—— 每条都要落到"今天能做到的事"</h3>
+    <div class="line" data-page-node-id="hwKqYCUygbRTjZvLlPgbdg">"最重要的不是护眼产品，是<b data-page-node-id="GYDteh4FEZblb1x98FHIEW">户外</b>。每天两小时，不用整块时间——上学路上、下课、饭后散步都算。<b data-page-node-id="xiC1Y6wbA9qLchbUqbE0dN">阴天户外也有效。</b>"</div>
+    <div class="line" data-page-node-id="Js1e4aor2aMFElcDZYAHJO">"记住'20-20-20'：看近 20 分钟，抬头看 20 英尺（约 6 米）以外的远处 20 秒。<b data-page-node-id="NWGzA8tDZca2Mzk6hFPoOT">就是每隔二三十分钟，抬头看看远处。</b>"</div>
+    <div class="line" data-page-node-id="aRLZjNrtpqEkgWEnHleyCp">"记住'一尺一拳一寸'：眼离本子一尺（33 厘米），胸离桌一拳，手离笔尖一寸。台灯放<b data-page-node-id="MkhuIbdMuwQDAMBirS5KAv">写字手的斜对面</b>，大灯要开着。"</div>
+    <div class="line" data-page-node-id="LWfaOBIHCeDjQJVmGPisCB"><span class="tagx" data-page-node-id="pg1HS5DppqGtKg8X5jZkN8">睡眠</span>"睡不够也会让眼睛更容易往近视发展。小学生尽量每天<b data-page-node-id="GIQeqClfG0XjelhwztOUXS">睡够 10 小时</b>，初中生 9 小时。"</div>
+    <div class="line" data-page-node-id="OahuFXTM5T1lPPEnNsOUFF">"很多人以为'眼镜越戴度数越深'，<b data-page-node-id="YsExeZNjGJ3HtJdr7C4AeW">其实不是</b>。加深是因为眼球在长，跟戴不戴眼镜没必然联系。看不清还硬撑，反而更累。"</div>
+    <div class="line badx" data-page-node-id="pCybZqpU9hqkqjGH9to35T"><span class="tagx" data-page-node-id="IDz8QdAFSCl8Gsx0HeUlNF">忌</span>一次讲十几条。讲完请顾客复述："刚才说的这几条，您觉得哪一条最容易先从今天开始做？"</div>
   </div>
 
   <!-- ===================== 第⑦步 ===================== -->
-  <h2 class="sec">第⑦步 · 案例佐证</h2>
-  <div class="step">
-    <div class="hd"><h3>⑦ 案例佐证：用别人的真实经历，压下最后一点犹豫</h3><span class="time">建议 1~2 分钟</span></div>
-    <div class="bd">
-      <div class="row ka" style="border-color: transparent;"><div class="k">关键动作</div><div><b>1. 选同类：</b>优先"年龄相仿 + 问题相同 + 起点相近"，相似度越高越有说服力。<br>
-        <b>2. 六段式讲述：</b>背景 → 发现 → 解释 → 行动 → 结果 → 启示（详见模块06），60~90 秒。<br>
-        <b>3. 数据要具体：</b>"眼轴三个月长了 0.2，后来半年长了 0.1"比"效果不错"有效十倍。<br>
-        <b>4. 合规：</b>隐去姓名；不得有疗效承诺、价格折扣或诱导表述。</div></div>
-      <div class="row nz" style="border-color: transparent;"><div class="k">注意事项</div><div>例子与顾客不同类；编造数据；讲完不回到顾客本人（缺"启示"段）。</div></div>
+  <h2 class="sec" data-page-node-id="aV1LiGTOHH0wwDhNiF10Y3">第⑦步 · 案例佐证</h2>
+  <div class="step" data-page-node-id="xkQjwCqlIKyUUQkeBGaYu2">
+    <div class="hd" data-page-node-id="PYvW5iN3ihPtlq8FBCY2H9"><h3 data-page-node-id="3C7LRxY7oxwZXz3BN5FPCW">⑦ 案例佐证：用别人的真实经历，压下最后一点犹豫</h3><span class="time" data-page-node-id="9F58kKWRbwUyr7VYdSPC83">建议 1~2 分钟</span></div>
+    <div class="bd" data-page-node-id="ZoED0jz9R7maxcBrRRQba9">
+      <div class="row ka" style="border-color: transparent;" data-page-node-id="DFXfSaotMauQh2IQIuBNeQ"><div class="k" data-page-node-id="r3Dl78WVD1d7MVYH0mRptb">关键动作</div><div data-page-node-id="HvJCIH54BHkgPBDoLYcmJv"><b data-page-node-id="KE2mU9UbnmzSyIuw0uKprv">1. 选同类：</b>优先"年龄相仿 + 问题相同 + 起点相近"，相似度越高越有说服力。<br data-page-node-id="ba0lg1JESV1KC37EhgtG64">
+        <b data-page-node-id="itdPpOt0o6F6ErAkH3cFhZ">2. 六段式讲述：</b>背景 → 发现 → 解释 → 行动 → 结果 → 启示（详见模块06），60~90 秒。<br data-page-node-id="mOcCYaTQaKzEkAEamPz5Ls">
+        <b data-page-node-id="BNEYQ4rKcvNHd80oAmZaCM">3. 数据要具体：</b>"眼轴三个月长了 0.2，后来半年长了 0.1"比"效果不错"有效十倍。<br data-page-node-id="lk9QbL0RZMJRP8Dd5vt1FW">
+        <b data-page-node-id="02PNAvRqRjC1AIH1ZypuE5">4. 合规：</b>隐去姓名；不得有疗效承诺、价格折扣或诱导表述。</div></div>
+      <div class="row nz" style="border-color: transparent;" data-page-node-id="Hx3ecV6dH60fvgfaQBgQ6u"><div class="k" data-page-node-id="Om2pRBCRJFHU7TAxsmdtyx">注意事项</div><div data-page-node-id="3T0jn0fTbPx2nIiNMhKHCY">例子与顾客不同类；编造数据；讲完不回到顾客本人（缺"启示"段）。</div></div>
     </div>
-    <h3 class="sub">话术模板 · 第⑦步 案例佐证（60~90 秒，讲完必须回到顾客）—— 讲完故事，一定要落回他本人</h3>
-    <div class="line">"我讲一个去年管过的孩子。三年级，跟您孩子情况差不多，<b>一年涨了一百多度</b>，家长特别着急。配了离焦镜片，同时把户外时间加上去。<b>半年后复查，只涨了二十五度。</b>"</div>
-    <div class="line">"我讲这个不是说结果一定一样——<b>每个孩子情况不同，我不敢保证。</b>我是想说：<b>这种情况能管，越早越主动。</b>我们先按刚才说的做三个月，三个月后<b>看您孩子自己的数据</b>，好吗？"</div>
-    <div class="line">"上个月有位顾客，跟您一样做财务，天天盯表格，看半小时就得停。测出来集合近点 12 厘米（正常应在 6 厘米以内），训练八周后复测到 7 厘米，她说现在能连续看一个多小时。"</div>
-    <div class="line badx"><span class="tagx">忌</span>编数据；讲不适用人群的例子；讲完不回扣（缺"回到顾客"这一步，案例就变成了吹牛）。</div>
+    <h3 class="sub" data-page-node-id="9k1weUxL903iEYxD1f9qV0">话术模板 · 第⑦步 案例佐证（60~90 秒，讲完必须回到顾客）—— 讲完故事，一定要落回他本人</h3>
+    <div class="line" data-page-node-id="RxVkWdDkFRHUTLujRAhqJm">"我讲一个去年管过的孩子。三年级，跟您孩子情况差不多，<b data-page-node-id="gxQ1p62aZhGxrmgrUsg3fn">一年涨了一百多度</b>，家长特别着急。配了离焦镜片，同时把户外时间加上去。<b data-page-node-id="3D8zvfKKiH36A5tKohIhRD">半年后复查，只涨了二十五度。</b>"</div>
+    <div class="line" data-page-node-id="DRXXZ5JfJjEIfdQ3hxk8GY">"我讲这个不是说结果一定一样——<b data-page-node-id="vK6GkLjfLqToLLrBqfIFfW">每个孩子情况不同，我不敢保证。</b>我是想说：<b data-page-node-id="9KtBBuUG2LdgxeQxbV5TKx">这种情况能管，越早越主动。</b>我们先按刚才说的做三个月，三个月后<b data-page-node-id="W9zMTVX4b5w1QSLU0UHOGa">看您孩子自己的数据</b>，好吗？"</div>
+    <div class="line" data-page-node-id="cMhFFgGSFXepqzh2WH5FaJ">"上个月有位顾客，跟您一样做财务，天天盯表格，看半小时就得停。测出来集合近点 12 厘米（正常应在 6 厘米以内），训练八周后复测到 7 厘米，她说现在能连续看一个多小时。"</div>
+    <div class="line badx" data-page-node-id="nK0idp0lWdENeamlhefbQw"><span class="tagx" data-page-node-id="oMtBw4Yq3OORwrUfpgRBTN">忌</span>编数据；讲不适用人群的例子；讲完不回扣（缺"回到顾客"这一步，案例就变成了吹牛）。</div>
   </div>
 
-  <h2 class="sec">七步之后：收尾动作（必做 4 件）</h2>
-  <div class="card">
-    <ol>
-      <li><b>请顾客复述（理解度的现场检验）：</b>话术见下方《通用结尾 · 复述》。顾客能用自己话说出今天的两件事，才算听懂——这是七步是否有效的最终验收。</li>
-      <li><b>填写《记录表》：</b>当场填，不补填；写完签字。</li>
-      <li><b>交付《方案建议书》：</b>顾客带走一份，门店留存一份；复查日期录入系统，生成提醒任务。</li>
-      <li><b>约定下一次复查：</b>给具体日期，不说"有空再来"；说明复查是看趋势，不为收费。</li>
+  <h2 class="sec" data-page-node-id="xahpPjpZ82SbOtFaJkuOw9">七步之后：收尾动作（必做 4 件）</h2>
+  <div class="card" data-page-node-id="l7cpDCYCh9QpUiRCDhjsXI">
+    <ol data-page-node-id="wrmeebpCmIkzUQn7cAKrUr">
+      <li data-page-node-id="suwCjubnh11VU85rsEX4Tv"><b data-page-node-id="MmE3F3x1xFWpKve29GKGjK">请顾客复述（理解度的现场检验）：</b>话术见下方《通用结尾 · 复述》。顾客能用自己话说出今天的两件事，才算听懂——这是七步是否有效的最终验收。</li>
+      <li data-page-node-id="nUdesapGwjxaW3PV31wYRH"><b data-page-node-id="O11Qg8hSNPLRxYQExeH3ih">填写《记录表》：</b>当场填，不补填；写完签字。</li>
+      <li data-page-node-id="HH7PoCCqSWa3KbC9QVF7O7"><b data-page-node-id="tLLUG2UmYlMXh3DVygkyBF">交付《方案建议书》：</b>顾客带走一份，门店留存一份；复查日期录入系统，生成提醒任务。</li>
+      <li data-page-node-id="D7tTJEZUaLr1TiSXIRCID2"><b data-page-node-id="c3mDq9tHqQzx0XC7Asv2uK">约定下一次复查：</b>给具体日期，不说"有空再来"；说明复查是看趋势，不为收费。</li>
     </ol>
-    <h3 class="sub">通用结尾（收口必用的三句话）</h3>
-    <div class="line">"能不能用您自己的话说一下，今天主要讲了哪两件事？"（能说出＝听懂了）</div>
-    <div class="line"><span class="tagx">落地</span>"那我们就按这个来：<b>先做 xxx，三个月后再看数据决定下一步</b>。"</div>
-    <div class="line">"今天说的都写在这张建议书上了，您带回去。复查定在<span class="hl">12 月 20 日</span>左右，到时候让客服提前给您打电话。"</div>
-    <div class="note"><b>两人配合时的分工：</b>一人主讲解读（视光师），一人在旁记录并补充生活化提问。记录人<b>记下顾客原话</b>，跟进与异议处理都靠它。</div>
+    <h3 class="sub" data-page-node-id="RsWGvjPNOlS2eQMJrpdGRy">通用结尾（收口必用的三句话）</h3>
+    <div class="line" data-page-node-id="UIDZ4MR40XR0v8u9TAfkGw">"能不能用您自己的话说一下，今天主要讲了哪两件事？"（能说出＝听懂了）</div>
+    <div class="line" data-page-node-id="vjVXHN7dsAMIkauSBMZT1E"><span class="tagx" data-page-node-id="HvzNiG9tdlyAAH94bZJ2gW">落地</span>"那我们就按这个来：<b data-page-node-id="39JoS5ujeXHEDaUp0VVEIG">先做 xxx，三个月后再看数据决定下一步</b>。"</div>
+    <div class="line" data-page-node-id="auQGtcWJqUhgpZZQj8jpAb">"今天说的都写在这张建议书上了，您带回去。复查定在<span class="hl" data-page-node-id="lLTTyqwnTHw4cqgXLZzZVC">12 月 20 日</span>左右，到时候让客服提前给您打电话。"</div>
+    <div class="note" data-page-node-id="9FfwDuzdRcHQuGlBPc0EjV"><b data-page-node-id="pEEMh1QBMAVW5EhpmT5AzK">两人配合时的分工：</b>一人主讲解读（视光师），一人在旁记录并补充生活化提问。记录人<b data-page-node-id="VZGNdFrdpjwIRgfApX3yme">记下顾客原话</b>，跟进与异议处理都靠它。</div>
   </div>
 
-  <h2 class="sec">附一 · 通用句式库（随取随用）</h2>
-  <div class="card">
-    <h3 class="sub">共情句（顾客开口前先用一句）</h3>
-    <div class="line">"确实挺让人着急的，我特别理解。"｜"您观察得很仔细，这个细节很重要。"｜"带孩子跑一趟不容易，我们尽量一次说清楚。"｜"您担心这个问题是对的，换我也一样。"｜"现在孩子确实辛苦，作业多、屏幕多。"</div>
-    <h3 class="sub">数据翻译句（术语出口后立即翻译）</h3>
-    <div class="line">"眼轴就是<b>眼球的前后长度</b>。"｜"角膜曲率说的是<b>黑眼珠前面那层'玻璃'的弯曲程度</b>。"｜"调节功能就是眼睛里<b>负责变焦的肌肉能力</b>。"｜"集合能力，就是<b>两只眼睛往中间对拢、合力看近的能力</b>。"</div>
-    <h3 class="sub">方案陈述句</h3>
-    <div class="line">"我们一步步来，<b>先解决最要紧的</b>。"｜"这个不急着今天定，您回去考虑也不迟。"｜"费用写在纸上了，<b>没有隐藏收费</b>。"｜"如果只能做一件事，建议先做<b>xxx</b>。"｜"三个月后用数据说话，<b>有用就继续，没用就调整。</b>"</div>
-    <h3 class="sub">催复诊句（不做推销，只讲意义）</h3>
-    <div class="line">"复查<b>不是为了再收您钱</b>，是看这条曲线的斜率有没有变平。"｜"三个月是个节点，太短看不出规律，太长容易错过时机。"｜"我们约个具体日期吧，<b>到时候我提前提醒您</b>。"</div>
+  <h2 class="sec" data-page-node-id="aQbXnlICquEaFiMRum6VyZ">附一 · 通用句式库（随取随用）</h2>
+  <div class="card" data-page-node-id="rwiwMsYbJbocKeilMGAQjN">
+    <h3 class="sub" data-page-node-id="MAoBfX2ZFYebBc3gCFg6RI">共情句（顾客开口前先用一句）</h3>
+    <div class="line" data-page-node-id="6ZFHwdyNrCM6a3fFPaBng9">"确实挺让人着急的，我特别理解。"｜"您观察得很仔细，这个细节很重要。"｜"带孩子跑一趟不容易，我们尽量一次说清楚。"｜"您担心这个问题是对的，换我也一样。"｜"现在孩子确实辛苦，作业多、屏幕多。"</div>
+    <h3 class="sub" data-page-node-id="rVjZ3KaDHMoE4UGMqSeS91">数据翻译句（术语出口后立即翻译）</h3>
+    <div class="line" data-page-node-id="R3ibSCl6Q7m7ErxA7xqT0P">"眼轴就是<b data-page-node-id="Gq9aNIOdYvhOHImH5XNKRN">眼球的前后长度</b>。"｜"角膜曲率说的是<b data-page-node-id="Q0nqtF2flqtnhNYXQcR8Ds">黑眼珠前面那层'玻璃'的弯曲程度</b>。"｜"调节功能就是眼睛里<b data-page-node-id="0MBIaaQ4PF9DH9B1GMkTRL">负责变焦的肌肉能力</b>。"｜"集合能力，就是<b data-page-node-id="4ONz3K1xgkpfadWZMTCBxP">两只眼睛往中间对拢、合力看近的能力</b>。"</div>
+    <h3 class="sub" data-page-node-id="SEKUNvp4vaZerGHLeT2zMh">方案陈述句</h3>
+    <div class="line" data-page-node-id="MFmKY2yFIdeVHE9qSEqdXd">"我们一步步来，<b data-page-node-id="YVqykMiqwrsUke22X82R9n">先解决最要紧的</b>。"｜"这个不急着今天定，您回去考虑也不迟。"｜"费用写在纸上了，<b data-page-node-id="cYuuy0881VHEkVDi9MTc3j">没有隐藏收费</b>。"｜"如果只能做一件事，建议先做<b data-page-node-id="cAnvmSGo4w7nQ5zmAbIBz5">xxx</b>。"｜"三个月后用数据说话，<b data-page-node-id="ME8ACD12TWHthAwSXP8qS0">有用就继续，没用就调整。</b>"</div>
+    <h3 class="sub" data-page-node-id="PWBuNY43j6DASwMIYaGxcU">催复诊句（不做推销，只讲意义）</h3>
+    <div class="line" data-page-node-id="TRMRABJgwvDlII3b0AjpQS">"复查<b data-page-node-id="UCsgRLFTl5G3U4YfEDZBzH">不是为了再收您钱</b>，是看这条曲线的斜率有没有变平。"｜"三个月是个节点，太短看不出规律，太长容易错过时机。"｜"我们约个具体日期吧，<b data-page-node-id="ygdrQ9IDWhLGSg9yoSN76k">到时候我提前提醒您</b>。"</div>
   </div>
 
-  <h2 class="sec">附二 · 常见异议标准应答（12 条）</h2>
-  <div class="card">
-    <div class="tsc"><table>
-      <thead><tr><th style="width:19%">顾客异议</th><th style="width:24%">错误说法</th><th style="width:57%">标准应答</th></tr></thead>
-      <tbody>
-        <tr><td>"太贵了"</td><td>"一分价钱一分货，便宜的没用"</td><td>"预算这块我们完全理解。<b>我把它分成必做和建议两部分</b>——必做的今天就能开始，不花钱。第三部分先不做也没关系。"</td></tr>
-        <tr><td>"我再考虑考虑"</td><td>"这个优惠今天最后一天"</td><td>"当然可以。那我们<b>先把不花钱的部分定下来</b>，我写在纸上您带回去。您考虑好了随时找我，我不催您。"</td></tr>
-        <tr><td>"要回去问家里人"</td><td>"这么点事还要问啊"</td><td>"应该的，配眼镜是大几百上千的事。<b>我写一份完整的建议书</b>，您给家人看，他们有任何问题可以直接打我电话。"</td></tr>
-        <tr><td>"网上说……"</td><td>"网上的都是骗人的"</td><td>"网上信息确实多，有些说得也有道理。<b>我讲的是针对您这份检查的结果。</b>我们可以现场验证一下——比如……"</td></tr>
-        <tr><td>"你们是不是为了卖东西"</td><td>急着否认</td><td>"您有这个顾虑很正常。我们把话说清楚：<b>今天您什么都不买，这份解读和建议一样有效</b>，您带回去自己慢慢看。我只做我认为对您有用的建议。"</td></tr>
-        <tr><td>"之前在别家配的挺好的"</td><td>"那种早就过时了"</td><td>"能配到合适的就好。我们来了解一下<b>现在戴的这副用了多久、有没有不合适</b>，这样新配的可以避开这些问题。"</td></tr>
-        <tr><td>"我没时间做训练/复查"</td><td>"那您眼睛就别管了"</td><td>"理解，大家都忙。那我们<b>先把最省时间的一条做起来</b>——每天户外二十分钟就行，其他的等您时间宽裕了再说。"</td></tr>
-        <tr><td>"医生说没关系"</td><td>"医生可能没说清楚"</td><td>"那就听医生的，<b>医嘱优先</b>。我们这边可以配合的是配镜和定期记录，复查数据我可以整理好给您带去给医生看。"</td></tr>
-        <tr><td>"能不能降度数"</td><td>"戴我们的镜片能降"</td><td>"目前没有任何眼镜能把已经长的度数'戴掉'，<b>我们管的是速度</b>。目标是让这条上升的线变平。"</td></tr>
-        <tr><td>"孩子不肯戴镜"</td><td>"您得强迫他戴"</td><td>"常见。我们先看是不是眼镜不舒服、或者孩子怕同学说。<b>可以让孩子自己挑一副喜欢的镜架</b>，参与感一上来，配合度就好了。"</td></tr>
-        <tr><td>"我不信这些检查有用"</td><td>争论</td><td>"不用信我，<b>我们看数据</b>。今天先把这次的记录留好，三个月后复查看变化。数据比谁的话都管用。"</td></tr>
-        <tr><td>"配了眼镜能不能打折"</td><td>"最低不能再少了"</td><td>"价格的事我帮您问问店长有没有合适的活动。<b>不过镜片戴两年摊下来每天几毛钱</b>，关键是配得准不准、戴着舒不舒服。"</td></tr>
+  <h2 class="sec" data-page-node-id="ZQZfTL17CCpLTEL0kes4U1">附二 · 常见异议标准应答（12 条）</h2>
+  <div class="card" data-page-node-id="EKUuCULvg0qVnajRu3aX7x">
+    <div class="tsc" data-page-node-id="AOHCrZYBrFIPdcn35GM9tk"><table class="" data-page-node-id="XlnYf5Ak15AdcRI48u8Eaa">
+      <thead data-page-node-id="NbZI3ZowSaZGpUfleennOC"><tr data-page-node-id="Zk9FrUbMUK7LnndvnEwuKf"><th style="width:19%" data-page-node-id="Vtd45u0YgUIc1lbt0gPCJR">顾客异议</th><th style="width:24%" data-page-node-id="1O3lp4GLhubIySR8I6A7cv">错误说法</th><th style="width:57%" data-page-node-id="kr559kkjBBJ6VkYLtnq72Y">标准应答</th></tr></thead>
+      <tbody data-page-node-id="b8RlOWejjbfqMrE8iv1MVm">
+        <tr data-page-node-id="fV53X32xIuKbyTFMLIA4ia"><td data-page-node-id="lB9qvz1HmQHSSu4bNLCbPZ">"太贵了"</td><td data-page-node-id="4nI0DTF7jUYYFqwob4KGEt">"一分价钱一分货，便宜的没用"</td><td data-page-node-id="zmtRlLHiLWSITHXaZfsCjG">"预算这块我们完全理解。<b data-page-node-id="NRkALE8pmwTYKHCSbPqM65">我把它分成必做和建议两部分</b>——必做的今天就能开始，不花钱。第三部分先不做也没关系。"</td></tr>
+        <tr data-page-node-id="3pNlJQxfVQKnqaTg8Wn0jc"><td data-page-node-id="ZaUqQqIxoldEPZZ3huTeqi">"我再考虑考虑"</td><td data-page-node-id="UM0SlSXA0tcKtcx9KfyIHH">"这个优惠今天最后一天"</td><td data-page-node-id="JF4fU5DGWsTKXI0JmBhswl">"当然可以。那我们<b data-page-node-id="DBOsqqRagVOmF2gtqzR5Cl">先把不花钱的部分定下来</b>，我写在纸上您带回去。您考虑好了随时找我，我不催您。"</td></tr>
+        <tr data-page-node-id="FP0GdgvU2HdUXpke4CZh1X"><td data-page-node-id="v2RKCBG0VTRKsWyTL16yk3">"要回去问家里人"</td><td data-page-node-id="ymokqrHSFCy7TNnXu05XVl">"这么点事还要问啊"</td><td data-page-node-id="3UJ8XjX3S1AgyAO4PMDHCe">"应该的，配眼镜是大几百上千的事。<b data-page-node-id="T71Us84Dx1WZlFHrCuhwzv">我写一份完整的建议书</b>，您给家人看，他们有任何问题可以直接打我电话。"</td></tr>
+        <tr data-page-node-id="H4CUnlTaqkn4jNOREfQonF"><td data-page-node-id="erLbYWqHuw7ANU7m6g6ojl">"网上说……"</td><td data-page-node-id="1A58obigsZNAa3ZwaIRBTZ">"网上的都是骗人的"</td><td data-page-node-id="4PeNHjDDjUmEusBfkc0GAF">"网上信息确实多，有些说得也有道理。<b data-page-node-id="W8xRPfvYigdUIpkhYZVAIw">我讲的是针对您这份检查的结果。</b>我们可以现场验证一下——比如……"</td></tr>
+        <tr data-page-node-id="Q7exaLYroYJ6TunYToDujn"><td data-page-node-id="fOQHI5uGMcoCb2m7CuDB4A">"你们是不是为了卖东西"</td><td data-page-node-id="k9iwYOkeIYdmQqqsCvEXAu">急着否认</td><td data-page-node-id="7J3shHVTr19RBK9s0k68pR">"您有这个顾虑很正常。我们把话说清楚：<b data-page-node-id="51HysRK1BNAQxQQ9ial42H">今天您什么都不买，这份解读和建议一样有效</b>，您带回去自己慢慢看。我只做我认为对您有用的建议。"</td></tr>
+        <tr data-page-node-id="MrwFuDd0NkDUtUiFE7jw8C"><td data-page-node-id="JlXK3C58DSVquZVA3QVY5m">"之前在别家配的挺好的"</td><td data-page-node-id="HsPDEV2l1wpAiDYfhzBcsG">"那种早就过时了"</td><td data-page-node-id="sSiLaFnq7qYiKQMMl8YeQe">"能配到合适的就好。我们来了解一下<b data-page-node-id="2UB70ID2xUf6aGA62D45XG">现在戴的这副用了多久、有没有不合适</b>，这样新配的可以避开这些问题。"</td></tr>
+        <tr data-page-node-id="YovLahnA2UBDoaRWKJihqM"><td data-page-node-id="HKiEfZTEqCi036r4kAjTpk">"我没时间做训练/复查"</td><td data-page-node-id="cdb0BYZp8Z6X8mvhzHORwy">"那您眼睛就别管了"</td><td data-page-node-id="g5lpWTGKuqcbohHnfp9F05">"理解，大家都忙。那我们<b data-page-node-id="dCuJ0jaowUK3rZrH0eiVa8">先把最省时间的一条做起来</b>——每天户外二十分钟就行，其他的等您时间宽裕了再说。"</td></tr>
+        <tr data-page-node-id="NFyuYR8KwgcLEOy9OBVtaT"><td data-page-node-id="2kNLNl8Jz4jCKJgg2iCtOa">"医生说没关系"</td><td data-page-node-id="jUzsMbZodm9olpBm6LMAWQ">"医生可能没说清楚"</td><td data-page-node-id="31HHLuQTHYFl5IhVyMjejK">"那就听医生的，<b data-page-node-id="9SUhUtlFk8xeHz7b26LtqF">医嘱优先</b>。我们这边可以配合的是配镜和定期记录，复查数据我可以整理好给您带去给医生看。"</td></tr>
+        <tr data-page-node-id="BQNKRNtvyxbQTq6GcLAjXP"><td data-page-node-id="A9iDHBARpsumdTqNETesRZ">"能不能降度数"</td><td data-page-node-id="9WttwuQfKjUAOwI62VGqeO">"戴我们的镜片能降"</td><td data-page-node-id="wTfdGwHDCViFfP3EmCaZti">"目前没有任何眼镜能把已经长的度数'戴掉'，<b data-page-node-id="6bTxRarkTccAuVNVG41KAB">我们管的是速度</b>。目标是让这条上升的线变平。"</td></tr>
+        <tr data-page-node-id="jqyEhP5pL0YnozDEdE1qyG"><td data-page-node-id="9WknTtkyKhdTIAIq3Fvjni">"孩子不肯戴镜"</td><td data-page-node-id="Q0S92f7YFeq8rmEV4Wa5TK">"您得强迫他戴"</td><td data-page-node-id="20BQBcCmmhDq10WtdjRNOU">"常见。我们先看是不是眼镜不舒服、或者孩子怕同学说。<b data-page-node-id="xttXv6rDmUCrA8S85r3roV">可以让孩子自己挑一副喜欢的镜架</b>，参与感一上来，配合度就好了。"</td></tr>
+        <tr data-page-node-id="w0D3g8GkuOvxq2Fn38QB5s"><td data-page-node-id="xIjiBqW2ZBl0fS3meFR2RB">"我不信这些检查有用"</td><td data-page-node-id="cHpTf3yip1WNmnMBSEbS5x">争论</td><td data-page-node-id="vRDiedtQpp8duAHrzGfvQw">"不用信我，<b data-page-node-id="Kwb7RfdILvq4Nk0bHg6FWi">我们看数据</b>。今天先把这次的记录留好，三个月后复查看变化。数据比谁的话都管用。"</td></tr>
+        <tr data-page-node-id="vRIEa0jVzR2Eqm4KLbwm9T"><td data-page-node-id="02eXXTSk8UEGjz0Klpf4Iu">"配了眼镜能不能打折"</td><td data-page-node-id="hu9uCWLZ5Zj6ZCi9MCCI0b">"最低不能再少了"</td><td data-page-node-id="lhLBu2EdufAwtbWtuWfiqF">"价格的事我帮您问问店长有没有合适的活动。<b data-page-node-id="sEdSrT8CCYHUxUrqKL2dmd">不过镜片戴两年摊下来每天几毛钱</b>，关键是配得准不准、戴着舒不舒服。"</td></tr>
       </tbody>
     </table></div>
   </div>
 
-  <h2 class="sec">附三 · 语气、节奏与提问技巧</h2>
-  <div class="card">
-    <ul>
-      <li><b>三秒停顿：</b>讲完一个知识点停一下。<b>讲得不累＝顾客没听进去。</b></li>
-      <li><b>一次一个问题：</b>问完等回答，不要连珠炮。</li>
-      <li><b>用开放式提问开头：</b>"您平时感觉哪里最不舒服？"比"是不是眼睛干"更易收集真实信息。</li>
-      <li><b>把专业词放后：</b>"眼睛有点累（先）……这在临床上叫视疲劳（后）"。</li>
-      <li><b>重复两次关键信息：</b>最重要的那条，开头讲一次、结尾再复述一次。</li>
-      <li><b>记录顾客原话：</b>跟进与异议处理的最好素材。</li>
+  <h2 class="sec" data-page-node-id="aijja90ZDbslJPqg0G6B5B">附三 · 语气、节奏与提问技巧</h2>
+  <div class="card" data-page-node-id="2S6YwEzMifwopABVzPuJLo">
+    <ul data-page-node-id="nK8ZT4ZrdPaEEbitT3ueuA">
+      <li data-page-node-id="jfNB0ZZVSfnxkuyL1bu5rB"><b data-page-node-id="IQo1BgeZWIFm8rsCX14j4E">三秒停顿：</b>讲完一个知识点停一下。<b data-page-node-id="i7Yb5aWVFKHoQUfUurvtwH">讲得不累＝顾客没听进去。</b></li>
+      <li data-page-node-id="IJoo0gUKFvr28HNg20K2F0"><b data-page-node-id="QJ3xAHa7nYqOzaV1I3BNng">一次一个问题：</b>问完等回答，不要连珠炮。</li>
+      <li data-page-node-id="hzNyPidzI7MpZBPZsFA2ei"><b data-page-node-id="MACRyK0Ftz3CGCMPx7NDFb">用开放式提问开头：</b>"您平时感觉哪里最不舒服？"比"是不是眼睛干"更易收集真实信息。</li>
+      <li data-page-node-id="g1Omk4vDJbPkVj68BzvkiB"><b data-page-node-id="jEa2zSzDidfDyATCEcTCxc">把专业词放后：</b>"眼睛有点累（先）……这在临床上叫视疲劳（后）"。</li>
+      <li data-page-node-id="qsslfq4REFee2Aq86j1vNq"><b data-page-node-id="fH8qUzZY8OTuj5etQyvXEl">重复两次关键信息：</b>最重要的那条，开头讲一次、结尾再复述一次。</li>
+      <li data-page-node-id="7Pa76Jrs9Fr1Is1HQd7eD7"><b data-page-node-id="9zUjAM6tWeN5GtT2EN8MI2">记录顾客原话：</b>跟进与异议处理的最好素材。</li>
     </ul>
-    <div class="good"><b>练习方法：</b>录音回听 + 晨会轮念转诊话术 + 新人前 20 场允许照念；训练安排与考核见模块10。</div>
+    <div class="good" data-page-node-id="Z14qEjb8tJ4tWgQMRU6Wej"><b data-page-node-id="scqFdImNq1mWhfucavmscN">练习方法：</b>录音回听 + 晨会轮念转诊话术 + 新人前 20 场允许照念；训练安排与考核见模块10。</div>
   </div>
 
-  <div class="btnwrap">
+  <div class="btnwrap" data-page-node-id="8ygMBSIHk4F8St8w6NdIXF">
 
-    <a class="btn ghost" href="index.html">返回首页</a>
-    <a class="btn ghost" href="03_指标参考区间与异常值对照.html">下一模块：03 指标参考区间与判定表 →</a>
+    <a class="btn ghost" href="index.html" data-page-node-id="Usd5FcLuRLex8wxviBnMGC">返回首页</a>
+    <a class="btn ghost" href="03_指标参考区间与异常值对照.html" data-page-node-id="DT5DMWlkQ2BqHxBdiQfUVh">下一模块：03 指标参考区间与判定表 →</a>
   </div>
 </div>
 
-<footer>
-  <b>模块02 · 七步标准解读 SOP</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br>
-  本流程为门店服务流程，其中任何涉及疾病判断的内容均为"提醒就医"，不构成诊断。执行中如遇红线指标，一律以医疗机构诊断为准。<br>
+<footer data-page-node-id="ZLqP5x9fnmRvkWyYlhPSBl">
+  <b data-page-node-id="O4mC5d4pz20f7Z949kFwnX">模块02 · 七步标准解读 SOP</b> ｜ 永州爱眼城连锁门店 · 检查报告解读标准化落地方案 V1.0 ｜ 编制：闫胜君整理<br data-page-node-id="I1WK7GOhjE0GGuu435UG6L">
+  本流程为门店服务流程，其中任何涉及疾病判断的内容均为"提醒就医"，不构成诊断。执行中如遇红线指标，一律以医疗机构诊断为准。<br data-page-node-id="SNsJN22lrsdWnZOmFVysA5">
   话术部分涉及疾病判断与医疗干预的内容均为就医提醒，不含诊断与治疗承诺；执行时员工可根据个人语气调整表达，但不得改变语义与立场。
 </footer>
 
 <!-- TOTOP-V1 : 可交互式回到顶部 -->
-<button id="toTop" type="button" aria-label="回到顶部" title="回到顶部" class="show" aria-hidden="false">
-  <span class="tt-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19V6.5M12 6.5 5.5 13M12 6.5 18.5 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-  <span class="tt-txt">顶部</span>
+<button id="toTop" type="button" aria-label="回到顶部" title="回到顶部" class="show" aria-hidden="false" data-page-node-id="YLA2WcXYLhK6RYt7CIyyFx">
+  <span class="tt-ico" aria-hidden="true" data-page-node-id="QRpMX6nDALbuuiVA4DUcKv"><svg viewBox="0 0 24 24" fill="none" data-page-node-id="aLBobb4Pb1kR1R7e52rFfz"><path d="M12 19V6.5M12 6.5 5.5 13M12 6.5 18.5 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="OrNuV7zeaaHuG2JTKuk21q"></path></svg></span>
+  <span class="tt-txt" data-page-node-id="V8JcoEWjBD32tQSuf7TCDV">顶部</span>
 </button>
 
 <!-- TOTOP-V1 : 交互脚本 -->
-<script>
+<script data-page-node-id="M0XyIfu1ESYk5cY0mT1kXJ">
 (function(){
   var btn = document.getElementById('toTop');
   if(!btn) return;
@@ -887,7 +886,7 @@ body .step>h3.sub{
   sync();
 })();
 </script>
-<script>
+<script data-page-node-id="ZjlgB5HYx4G0pS0vDTJ9aS">
 /* SMART-STICKY-V1 : 智能表头吸顶 */
 (function(){
   var MIN_ROWS = 10, MIN_H = 0.75, WIDE = 820, tm = null;
@@ -910,5 +909,8 @@ body .step>h3.sub{
   for(j = 0; j < ds.length; j++){ ds[j].addEventListener('toggle', defer); }
 })();
 </script>
+
+
+
 
 </body></html>
