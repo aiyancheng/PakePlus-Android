@@ -1,0 +1,7 @@
+critic_mode_hint: "skip"
+force_mode: null
+reason: "genre=general（L1 通用兜底，低风险）；且为空白模板+填写说明，无可枚举的事实性必备要素，自审价值低"
+rubrics_files:
+  - "experts/general-writer/references/quality-framework.md"
+pass_score: 75
+max_loops: 2
